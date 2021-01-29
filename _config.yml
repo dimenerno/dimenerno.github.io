@@ -1,7 +1,7 @@
 # Site
 name: "Stilla"
 title: "Stilla"
-description: "Stilla_디멘이의 블로그"
+description: "Stilla_디멘이의 포트폴리오"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ''
@@ -14,24 +14,15 @@ email: dimenerno@gmail.com
 
 # Authors
 authors:
-  sal:
+  dimen:
     name: Jeongdam Choi
-    display_name: Jeongdam
+    display_name: Dimen
     avatar: 'assets/images/avatar.png'
-    gravatar: e56154546cf4be74e393c62d1ae9f9d4
+    # gravatar: e56154546cf4be74e393c62d1ae9f9d4
     email: dimenerno@gmail.com
-    web: https://www.wowthemes.net/donate/
-    twitter: https://twitter.com/wowthemesnet
+    web: https://www.buymeacoffee.com/dimenerno
+    twitter: https://www.facebook.com/profile.php?id=100009547912016
     description: "카이스트 전산학부 학생입니다. 수학, 언어, 그리고 바흐를 좋아합니다."
-  john:
-    name: John
-    display_name: John    
-    avatar: 'assets/images/avatar.png'
-    gravatar: b1cc14991db7a456fcd761680bbc8f81
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "This is the author box. Write a short description of the author here. You are currently previewing Mediumish demo, a Jekyll template compatible with Github pages."
 
 # Plugins
 plugins:
