@@ -7,8 +7,8 @@ var documents = [{
     }, {
     "id": 1,
     "url": "/about",
-    "title": "Memoirs, a free minimalist Jekyll blogging theme with modern design",
-    "body": "This website is a demonstration to see Memoirs Jekyll theme in action. The theme is compatible with Github pages, in fact even this demo itself is created with Github Pages and hosted with Github.  Get Memoirs for Jekyll → "
+    "title": "Stilla는 물방울의 라틴어입니다.",
+    "body": "안녕하세요, 디멘입니다. 저는 카이스트 전산학부에 재학 중인 대학생입니다. 수학, 언어, 그리고 바흐를 좋아합니다. 취미는 컴퓨터로 이것저것 만드는 것이고,비전은 모두에게 재미있는 교육의 기회를 주는 것입니다. 중학교 때 수학에 재미를 느끼고 시작한 블로그가 저의 첫 창작 활동이었습니다. 이후 고등학교 때 유사수학 페이지를 관리하며 더 많은 사람들에게 수학의 재미를 알리고자 하였고,현재는 재미있는 학습의 기회를 제공해주는 무료 플랫폼을 만들고자 개발을 공부하고 있습니다. 이 블로그는 제가 개발한 것과 공부한 것을 기록하는 공간입니다.  하늘에서 이따금씩 떨어지는 물방울이 이윽고 커다란 연못을 이루듯,저의 하루하루의 노력이 언젠가 커다란 뜻을 이뤄내기를 바라고 있습니다. "
     }, {
     "id": 2,
     "url": "/categories",
@@ -18,7 +18,7 @@ var documents = [{
     "id": 3,
     "url": "/contact",
     "title": "Contact",
-    "body": "  Please send your message to {{site. name}}. We will reply as soon as possible!   "
+    "body": "  문의하고 싶으신 내용이 있으시다면 연락 주세요. 문의하고 싶으신 내용은 없지만 저랑 친구하고 싶으신 분들도 연락 주세요 :)   "
     }, {
     "id": 4,
     "url": "/",
@@ -108,7 +108,7 @@ var idx = lunr(function () {
 function lunr_search(term) {
     document.getElementById('lunrsearchresults').innerHTML = '<ul></ul>';
     if(term) {
-        document.getElementById('lunrsearchresults').innerHTML = "<p>Search results for '" + term + "'</p>" + document.getElementById('lunrsearchresults').innerHTML;
+        document.getElementById('lunrsearchresults').innerHTML = "<p>'" + term + "'의 검색결과</p>" + document.getElementById('lunrsearchresults').innerHTML;
         //put results on the screen.
         var results = idx.search(term);
         if(results.length>0){
@@ -123,7 +123,7 @@ function lunr_search(term) {
                 document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><span class='body'>"+ body +"</span><span class='url'>"+ url +"</span></a></li>";
             }
         } else {
-            document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>No results found...</li>";
+            document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>검색 결과는 공허했습니다.</li>";
         }
     }
     return false;
@@ -135,7 +135,7 @@ function lunr_search(term) {
     
     document.getElementById('lunrsearchresults').innerHTML = '<div id="resultsmodal" class="modal fade show d-block"  tabindex="-1" role="dialog" aria-labelledby="resultsmodal"> <div class="modal-dialog shadow" role="document"> <div class="modal-content"> <div class="modal-header" id="modtit"> <button type="button" class="close" id="btnx" data-dismiss="modal" aria-label="Close"> &times; </button> </div> <div class="modal-body"> <ul class="mb-0"> </ul>    </div> <div class="modal-footer"><button id="btnx" type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button></div></div> </div></div>';
     if(term) {
-        document.getElementById('modtit').innerHTML = "<h5 class='modal-title'>Search results for '" + term + "'</h5>" + document.getElementById('modtit').innerHTML;
+        document.getElementById('modtit').innerHTML = "<h5 class='modal-title'>'" + term + "'의 검색결과</h5>" + document.getElementById('modtit').innerHTML;
         //put results on the screen.
         var results = idx.search(term);
         if(results.length>0){
@@ -150,7 +150,7 @@ function lunr_search(term) {
                 document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><small><span class='body'>"+ body +"</span><span class='url'>"+ url +"</span></small></a></li>";
             }
         } else {
-            document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>Sorry, no results found. Close & try a different search!</li>";
+            document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = "<li class='lunrsearchresult'>검색 결과는 공허했습니다.</li>";
         }
     }
     return false;

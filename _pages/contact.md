@@ -6,7 +6,7 @@ comments: false
 ---
 
 <form action="https://formspree.io/f/mleozqna" method="POST">    
-<p class="mb-4">문의하고 싶으신 내용이 있으시다면 연락 주세요. 문의하고 싶으신 내용은 없지만 저랑 친구하고 싶으신 분들도 연락 주세요 :)</p>
+<p class="mb-4">문의하고 싶으신 내용이 있으시다면 연락 주세요.<br>문의하고 싶으신 내용은 없지만 저랑 친구하고 싶으신 분들도 연락 주세요 :)</p>
 <div class="form-group row">
 <div class="col-md-6">
 <input class="form-control" type="text" name="name" placeholder="Name*" required>

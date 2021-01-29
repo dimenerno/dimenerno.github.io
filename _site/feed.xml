@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Memoirs</title>
-    <description>I will take you on the fabulous world of exploration. Travel, culture, lifestyle. Eat, Pray, Love!</description>
+    <title>Stilla</title>
+    <description>Stilla_디멘이의 블로그</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Jan 2021 17:01:05 +0900</pubDate>
-    <lastBuildDate>Fri, 29 Jan 2021 17:01:05 +0900</lastBuildDate>
+    <pubDate>Fri, 29 Jan 2021 18:41:51 +0900</pubDate>
+    <lastBuildDate>Fri, 29 Jan 2021 18:41:51 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
