@@ -1,13 +1,16 @@
 ---
 layout: page
-title: Memoirs, a free minimalist Jekyll blogging theme with modern design 
+title: Stilla; (f. 라틴어 제1변화 명사) 물방울
 permalink: /about
 comments: false
-image: assets/images/screenshot.jpg
+image: assets/images/banner.jpg
 imageshadow: true
 ---
 
-This website is a demonstration to see **Memoirs Jekyll theme** in action. The theme is compatible with Github pages, in fact even this demo itself is created with Github Pages and hosted with Github. 
-
-<a target="_blank" href="https://bootstrapstarter.com/bootstrap-templates/jekyll-theme-memoirs/" class="btn btn-dark"> Get Memoirs for Jekyll &rarr;</a>
-
+안녕하세요, 디멘입니다.
+저는 카이스트 전산학부에 재학 중인 대학생입니다. 
+수학, 언어, 그리고 바흐를 좋아합니다. 
+컴퓨터로 이것저것 만드는 것이 취미입니다. 
+이 블로그는 제가 개발한 것과 공부한 것을 기록하는 공간입니다.
+하늘에서 이따금씩 떨어지는 물방울이 이윽고 커다란 연못을 이루듯,
+저의 하루하루의 노력이 언젠가 커더란 뜻을 이뤄내기를 바라고 있습니다.
