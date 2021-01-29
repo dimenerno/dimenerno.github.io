@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>iOS 개발 공부 2일차 | Stilla</title>
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>iOS 개발 공부 2일차 | Stilla</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="iOS 개발 공부 2일차" />
+<meta name="author" content="dimen" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="iOS 앱 개발 원정을 시작했습니다. 혹시 iOS 앱을 개발하고 싶으신 분들을 위해 ‘이 정도 공부하면 이 정도 수준에 도달할 수 있다’라는 동기부여가 되어보고자 저의 iOS 앱 개발 성장 과정을 이 블로그에서 공유하고자 합니다. 참고로 저는 하루에 2-3시간 정도 iOS 개발을 공부하고 있습니다." />
+<meta property="og:description" content="iOS 앱 개발 원정을 시작했습니다. 혹시 iOS 앱을 개발하고 싶으신 분들을 위해 ‘이 정도 공부하면 이 정도 수준에 도달할 수 있다’라는 동기부여가 되어보고자 저의 iOS 앱 개발 성장 과정을 이 블로그에서 공유하고자 합니다. 참고로 저는 하루에 2-3시간 정도 iOS 개발을 공부하고 있습니다." />
+<meta property="og:site_name" content="Stilla" />
+<meta property="og:image" content="/assets/images/ios1.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-29T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="/assets/images/ios1.jpg" />
+<meta property="twitter:title" content="iOS 개발 공부 2일차" />
+<script type="application/ld+json">
+{"url":"/iOS1/","author":{"@type":"Person","name":"dimen"},"description":"iOS 앱 개발 원정을 시작했습니다. 혹시 iOS 앱을 개발하고 싶으신 분들을 위해 ‘이 정도 공부하면 이 정도 수준에 도달할 수 있다’라는 동기부여가 되어보고자 저의 iOS 앱 개발 성장 과정을 이 블로그에서 공유하고자 합니다. 참고로 저는 하루에 2-3시간 정도 iOS 개발을 공부하고 있습니다.","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/logo.png"},"name":"dimen"},"image":"/assets/images/ios1.jpg","headline":"iOS 개발 공부 2일차","dateModified":"2021-01-29T00:00:00+09:00","datePublished":"2021-01-29T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"/iOS1/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+<link href="/assets/css/prism.css" rel="stylesheet">
+
+<link href="/assets/css/theme.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<div class="sidebar">    
+</div>   
+<div class="nav-icon">
+    <div class="hamburger-bar"></div>
+</div>
+<div id="blackover-nav" class="blackover"></div>
+<nav id="menu">
+    <ul>
+        <h3>Navigation</h3>
+        <li><a href="/">⭐️ 메인</a></li>
+        <li><a href="/about">🔍 저에 대하여</a></li>
+        <li><a href="/categories">📚 카테고리</a></li>
+        <li><a href="/contact">📮 연락하기</a></li>
+        <li><a href="https://www.buymeacoffee.com/dimenerno">🍡 디멘이에게 찹쌀떡 사주기</a></li>   
+    </ul>   
+</nav>
+
+<script src="/assets/js/lunr.js"></script>
+
+<style>
+    
+</style>
+
+<div class="wrap-search">
+    <div class="d-flex align-items-center ml-auto">
+        <i class="fas fa-search show-search"></i>
+        <form class="bd-search ml-3" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+            <input type="text" class="form-control bigradius text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+        </form>
+    </div>
+</div>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content ">
+
+<div class="container">
+
+    <!-- Site Logo/Name
+    ================================================== -->
+   
+    <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo.png" alt="Stilla">
+    </a>  
+   
+
+    <!-- Site Tag
+    ================================================== -->
+    
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <div class="entry-header">
+    <!-- Post Title -->
+    <h1 class="posttitle">iOS 개발 공부 2일차</h1>
+    <!-- Author & Date  Box -->
+    
+    
+    <div class="d-flex align-items-center mt-4">
+        <div>
+            
+            <img class="author-thumb" src="/assets/images/avatar.png" alt="Dimen">
+            
+        </div>            
+        <div>
+        Written by <a target="_blank" class="text-dark" href="https://www.buymeacoffee.com/dimenerno">Dimen</a> on 
+        <span class="post-date"><time class="post-date" datetime="2021-01-29">29 Jan 2021</time></span>           
+        
+        </div>            
+    </div>
+    
+</div>
+
+<!-- Adsense under title if enabled from _config.yml (change your pub id and slot) -->
+
+
+<!-- Featured Image -->
+
+<div class="entry-featured-image">
+    
+    <img class="featured-image " src="/assets/images/ios1.jpg" alt="iOS 개발 공부 2일차">
+    
+</div>
+
+
+<!-- Content -->
+<!-- Post, Page Content
+================================================== -->
+<div class="article-post">
+    <!-- Toc if any -->
+    
+    <!-- End Toc -->
+    <p>iOS 앱 개발 원정을 시작했습니다. 혹시 iOS 앱을 개발하고 싶으신 분들을 위해 ‘이 정도 공부하면 이 정도 수준에 도달할 수 있다’라는 동기부여가 되어보고자 저의 iOS 앱 개발 성장 과정을 이 블로그에서 공유하고자 합니다. 참고로 저는 하루에 2-3시간 정도 iOS 개발을 공부하고 있습니다.</p>
+
+<p>어제부터 iOS 앱 공부를 시작해서 열심히 완성한 앱은…그냥 간단한 팁 계산기입니다. 게다가 이 마저도 <a href="https://www.makeschool.com/academy/track/apps-explorer---microsoft-japan">makeschool</a>이라는 사이트에서 좋은 튜토리얼이 있길레 보고 따라 만든 겁니다. 한마디로 아직 초라한 실력이란 것이죠. 하지만 오히려 이틀 만에 뭔가 대단한 앱을 만들었다면 그 사람이 사기캐인 거겠죠?</p>
+
+<p>저는 이전에 C#, Python, Java 등 객체지향언어에 나름의 경험이 있었기 때문에 Swift 언어에 입문하는 것은 그렇게 힘들지 않았습니다. 조금 어색했던 거라면 Optional 문법이겠네요. Optional이란 Swift에서 프로그래밍의 안전성을 확보하고자 <code>nil</code>(<code>null</code>) 을 저장할 수 있는지 없는지를 명시해 주는 역할입니다. 제가 여기서 약간 헷갈렸는데, 마찬가지로 Swift를 배우는 과정에서 Optional이 헷갈리는 분들은 아래의 좋은 글을 읽어보시길 바랍니다.</p>
+
+<p><a href="https://medium.com/@codenamehong/swift-optional-1-54ae4d37ee09">홍창남님의 좋은 글</a></p>
+
+<p>그리하여 제가 어제오늘 배운 내용은,</p>
+
+<ul>
+  <li>Swift의 기본 문법(반복문 조건문 함수 클래스 등 항상 하는 것들 + Optional 등)</li>
+  <li>IBOutlet, IBAction 등 Xcode 기본 사용법</li>
+  <li>Auto Layout(약간 CSS 비슷한 건데 재미있었어요. UI를 처음 접해보시는 거라면 처음에 어색할 수도 있지만 금방 괜찮아지실 거에요.)</li>
+</ul>
+
+<p>이며, 위 내용으로 간단한 팁 계산기를 만들어 봤네요. 조금 더 실력이 발전하면 다시 일지로 돌아오겠습니다👋</p>
+
+</div>
+
+<!-- Rating -->
+
+
+<!-- Author Box if enabled from _config.yml -->
+<!-- Author Box -->
+
+
+
+
+<!-- Comments if not disabled with comments: false -->
+<!-- Comments
+================================================== -->
+ 
+<div class="comments">
+    <button class="btn btn-dark show-comments">Load Comments</button>         
+    <div id="comments">  
+        <h4 class="mb-4">Comments</h4>                 
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+     
+    <div class="clearfix"></div>              
+    </div>    
+</div>       
+
+
+<!-- Share -->
+<div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=iOS 개발 공부 2일차&url=/iOS1/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=/iOS1/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=/iOS1/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- Related Post -->
+<!-- Related Posts
+================================================== -->
+<div class=" related-posts ">  
+
+    
+    <h2 class="text-center mb-4">Explore more like this</h2>
+    
+    
+    <div class="d-flex justify-content-center align-items-center">
+    
+    <!-- Categories -->
+    
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/categories#Create">Create</a>                
+    
+
+    <!-- Tags -->  
+    
+                    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/tags#Mathematics">Mathematics</a>               
+    
+
+    </div>
+
+    
+    
+    
+    <div class="blog-grid-container">
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/youtube/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/youtube.png" alt="작곡한 음악과 언어학/수학 영상이 올라오는 유튜브 채널 🎼"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/youtube/">작곡한 음악과 언어학/수학 영상이 올라오는 유튜브 채널 🎼</a>
+                
+            </h2>
+            <h4 class="card-text">친구들과 개발 중인 게임에 사용할 목적으로 음악을 몇 개 작곡했는데, 유튜브에 올리는 것도 괜찮겠다 싶어서 올렸습니다.
+</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar.png" alt="Dimen">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name"><a target="_blank" href="https://www.buymeacoffee.com/dimenerno">Dimen</a></span> 
+                
+                <span class="post-date">08 Jan 2021</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/calendar/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/2021-calendar.png" alt="감성이 담긴 2021 수학 캘린더"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/calendar/">감성이 담긴 2021 수학 캘린더</a>
+                
+            </h2>
+            <h4 class="card-text">2021 수학 캘린더가 발매되었습니다! 🥳🎉 캘린더는 12개의 수학 정리와, 각각의 정리를 시각적으로 나타내는 아름다운 그림으로 구성되어 있습니다.
+</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar.png" alt="Dimen">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name"><a target="_blank" href="https://www.buymeacoffee.com/dimenerno">Dimen</a></span> 
+                
+                <span class="post-date">20 Dec 2020</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+            <!-- begin post -->
+
+
+<div class="blog-grid-item">
+    <div class="card h-100">
+        <div class="maxthumb">
+            <a href="/pseudomath/">
+                
+
+                    
+                        <img class="img-thumb" src="/assets/images/pseudomath.jpg" alt="위트있는 수학 카드뉴스로 가득한 유사수학 페이스북 페이지"> 
+                    
+
+                
+            </a>
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="text-dark" href="/pseudomath/">위트있는 수학 카드뉴스로 가득한 유사수학 페이스북 페이지</a>
+                
+            </h2>
+            <h4 class="card-text">유사수학 페이스북 페이지는 제가 고등학생 때부터 관리해 온 페이지로, 제가 느껴온 수학의 아름다움과 재미를 더 많은 사람들과 공유하고자 만든 페이지입니다.
+</h4>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="wrapfooter">
+                
+                <span class="meta-footer-thumb">
+                
+                <img class="author-thumb" src="/assets/images/avatar.png" alt="Dimen">
+                
+                </span>
+                <span class="author-meta">
+                <span class="post-name"><a target="_blank" href="https://www.buymeacoffee.com/dimenerno">Dimen</a></span> 
+                
+                <span class="post-date">05 Dec 2020</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->
+            
+            
+                
+        </div>        
+</div>
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    
+    
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © 2021 Stilla 
+            </div>
+            <!--<div class="col-md-6 col-sm-12 text-center text-lg-right">    
+                 <a target="_blank" href="https://www.wowthemes.net/memoirs-free-jekyll-theme/">Memoirs Jekyll Theme</a> by WowThemes.net
+            </div>-->
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+
+<script src="/assets/js/prism.js"></script>
+
+<script src="/assets/js/theme.js"></script>
+
+
+
+
+<script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+
+
+</body>
+</html>
