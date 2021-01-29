@@ -1,7 +1,7 @@
 # Site
-name: "Memoirs"
-title: "Memoirs"
-description: "I will take you on the fabulous world of exploration. Travel, culture, lifestyle. Eat, Pray, Love!"
+name: "Stilla"
+title: "Stilla"
+description: "물방울이 떨어져서 연못을 이루는 그 날까지"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ''
@@ -15,13 +15,13 @@ email: dimenerno@gmail.com
 # Authors
 authors:
   sal:
-    name: Sal
-    display_name: Sal
+    name: Jeongdam Choi
+    display_name: Jeongdam
     gravatar: e56154546cf4be74e393c62d1ae9f9d4
-    email: wowthemesnet@gmail.com
+    email: dimenerno@gmail.com
     web: https://www.wowthemes.net/donate/
     twitter: https://twitter.com/wowthemesnet
-    description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
+    description: "카이스트 전산학부 학생입니다. 수학, 언어, 그리고 바흐를 좋아합니다."
   john:
     name: John
     display_name: John    
