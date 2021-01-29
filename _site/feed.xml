@@ -5,13 +5,13 @@
     <description>Stilla_디멘이의 포트폴리오</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Jan 2021 21:21:23 +0900</pubDate>
-    <lastBuildDate>Fri, 29 Jan 2021 21:21:23 +0900</lastBuildDate>
+    <pubDate>Fri, 29 Jan 2021 21:44:30 +0900</pubDate>
+    <lastBuildDate>Fri, 29 Jan 2021 21:44:30 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>자연스러운 언어 학습을 도와주는 크롬 확장자</title>
-        <description>&lt;p&gt;크라셴이라는 언어 학자는 언어를 학습하는 방법에 대해 오랜 기간 연구했습니다. 그 결과, 그는 단어의 철자와 뜻을 무작정 &lt;strong&gt;암기&lt;/strong&gt;하는 학습은 매우 비효율적이라는 것을 알아냈습니다. 대신 문맥을 통해 단어의 뜻을 자연스럽게 &lt;strong&gt;습득&lt;/strong&gt;하는 학습이 훨씬 효율적이었습니다.&lt;/p&gt;
+        <description>&lt;p&gt;크라셴이라는 언어학자는 언어를 학습하는 방법에 대해 오랜 기간 연구했습니다. 그 결과, 그는 단어의 철자와 뜻을 무작정 &lt;strong&gt;암기&lt;/strong&gt;하는 학습은 매우 비효율적이라는 것을 알아냈습니다. 대신 문맥을 통해 단어의 뜻을 자연스럽게 &lt;strong&gt;습득&lt;/strong&gt;하는 학습이 훨씬 효율적이었습니다.&lt;/p&gt;
 
 &lt;p&gt;이 앱은 크라셴의 언어 학습 모델을 응용하기 위해 만들어졌습니다. 이 크롬 확장자는 사용자가 읽고 있는 글에서 일부 단어를 영어나 스페인어 등의 외국어로 바꿔칩니다. 하지만 일부 단어만 바꿔치기 때문에, 대부분의 경우 학습자는 문맥 상에서 바꿔쳐진 외국어 단어가 무슨 뜻인지 유추할 수 있습니다. 이러한 자연스러운 뜻의 유추를 통해 단어 습득을 용이하게 함으로써 언어 학습을 더욱 효율적으로 만드는 것이 이 확장자의 목표입니다.&lt;/p&gt;
 
@@ -45,11 +45,11 @@
 
 &lt;p&gt;게임의 목적은 플레이어가 노란색 공을 조정하여 빨간색 큐브까지 도착하는 것입니다. 빨간색 큐브는 건너편 섬에 있기 때문에 일반적인 방법으로는 도달할 수 없습니다. 그러나 아래 영상과 같이 차원을 2차원으로 줄이고, 남색 큐브를 통해 건너간 뒤, 다시 차원을 3차원으로 옮기면 빨간색 큐브에 도착할 수 있습니다.&lt;/p&gt;
 
-&lt;video controls=&quot;&quot; src=&quot;../assets/images/puzzle-demo.mov&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;
+&lt;figure&gt;&lt;video controls=&quot;&quot; src=&quot;../assets/images/puzzle-demo.mov&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;&lt;figcaption&gt;배경음악은 녹음하려고 했던 것은 아니지만 듣기 좋으니 남겨두죠 ( ・∇・)&lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;p&gt;이 퍼즐은 위와 같은 기믹을 사용하여 차원을 넘나드는 것이 특징입니다. 현재 개발 중에 있으며, 위의 기믹을 활용한 재미있는 레벨이나, 게임에 도입하면 좋을 거 같은 창의적인 장치가 떠오르신 분들은 제 블로그 좌측 상단의 메뉴 아이콘을 클릭하면 나오는 ‘문의하기’를 통해 저에게 알려주시길 바랍니다! 게임 개발에 도움을 주신 분들은 게임의 크레딧 항목에 수록해 드리겠습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.facebook.com/pseudomath&quot;&gt;유사수학 바로가기(이름은 유사수학이지만 다루는 것은 진짜 수학입니다!)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;이 프로젝트를 지원하고 싶으시다면 이 블로그 좌측 상단의 메뉴 아이콘을 클릭한 후 &lt;strong&gt;정담이에게 찹쌀떡 사주기&lt;/strong&gt;를 클릭하여 도와주실 수 있습니다. 여러분의 응원은 저에게 무엇보다 큰 힘이 됩니다😇&lt;/p&gt;
 </description>
         <pubDate>Tue, 12 Jan 2021 00:00:00 +0900</pubDate>
         <link>/puzzle/</link>
