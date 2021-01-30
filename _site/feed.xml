@@ -5,8 +5,8 @@
     <description>Stilla_디멘이의 포트폴리오</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Jan 2021 16:29:03 +0900</pubDate>
-    <lastBuildDate>Sat, 30 Jan 2021 16:29:03 +0900</lastBuildDate>
+    <pubDate>Sat, 30 Jan 2021 16:33:39 +0900</pubDate>
+    <lastBuildDate>Sat, 30 Jan 2021 16:33:39 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -31,7 +31,7 @@
       </item>
     
       <item>
-        <title>자연스러운 언어 학습을 도와주는 크롬 확장자</title>
+        <title>에스페로_자연스러운 언어 학습을 도와주는 크롬 확장자</title>
         <description>&lt;p&gt;크라셴이라는 언어학자는 언어를 학습하는 방법에 대해 오랜 기간 연구했습니다. 그 결과, 그는 단어의 철자와 뜻을 무작정 &lt;strong&gt;암기&lt;/strong&gt;하는 학습은 매우 비효율적이라는 것을 알아냈습니다. 대신 문맥을 통해 단어의 뜻을 자연스럽게 &lt;strong&gt;습득&lt;/strong&gt;하는 학습이 훨씬 효율적이었습니다.&lt;/p&gt;
 
 &lt;p&gt;이 앱은 크라셴의 언어 학습 모델을 응용하기 위해 만들어졌습니다. 이 크롬 확장자는 사용자가 읽고 있는 글에서 일부 단어를 영어나 스페인어 등의 외국어로 바꿔칩니다. 하지만 일부 단어만 바꿔치기 때문에, 대부분의 경우 학습자는 문맥 상에서 바꿔쳐진 외국어 단어가 무슨 뜻인지 유추할 수 있습니다. 이러한 자연스러운 뜻의 유추를 통해 단어 습득을 용이하게 함으로써 언어 학습을 더욱 효율적으로 만드는 것이 이 확장자의 목표입니다.&lt;/p&gt;
@@ -61,7 +61,7 @@
       </item>
     
       <item>
-        <title>차원을 넘나드는 퍼즐 게임</title>
+        <title>차원의 결정_공간을 넘나드는 퍼즐 게임</title>
         <description>&lt;p&gt;Unity와 C#을 이용하여 퍼즐 게임을 만들고 있습니다. 이 퍼즐의 특징은 2차원과 3차원을 넘나들어야지만 퍼즐을 풀 수 있다는 것입니다.&lt;/p&gt;
 
 &lt;p&gt;게임의 목적은 플레이어가 노란색 공을 조정하여 빨간색 큐브까지 도착하는 것입니다. 빨간색 큐브는 건너편 섬에 있기 때문에 일반적인 방법으로는 도달할 수 없습니다. 그러나 아래 영상과 같이 차원을 2차원으로 줄이고, 남색 큐브를 통해 건너간 뒤, 다시 차원을 3차원으로 옮기면 빨간색 큐브에 도착할 수 있습니다.&lt;/p&gt;
