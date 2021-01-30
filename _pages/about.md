@@ -21,3 +21,7 @@ imageshadow: true
 블로그의 이름인 Stilla는 라틴어로써, '물방울'이라는 의미입니다.   
 하늘에서 조금씩 떨어지는 물방울이 이윽고 커다란 연못을 이루듯,  
 저의 하루하루의 노력이 언젠가 커다란 뜻을 이뤄내기를 바라고 있습니다.
+
+---
+
+이 블로그는 WowThemes.net의 [Memoirs Jekyll Theme](https://www.wowthemes.net/memoirs-free-jekyll-theme/) 테마를 베이스로 하여 만들어졌으며, Jekyll과 Github으로 호스팅됩니다.
