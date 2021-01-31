@@ -25,9 +25,9 @@
                 </div>
                 {% endif %}
             </h2>
-            <div style="font-size: 16px; font-weight: bold" class="text-dark">
-                {{ post.subtitle }}
-            </div>
+            <h2 class="card-subheading">
+                <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.subtitle }}</a>
+            </h2>
             <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:30 }}</h4>
         </div>
         <div class="card-footer bg-white">

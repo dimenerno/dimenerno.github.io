@@ -253,6 +253,9 @@ img, img:hover {
            .card-title a { 
                 background-size: 100% 100%;
             }
+            .card-subheading a {
+                background-size: 100% 100%;
+            }
         }
     }
     .card-title {
@@ -261,6 +264,21 @@ img, img:hover {
         line-height:1.4;
         a { 
             background-image: linear-gradient(180deg, transparent 89%, $primary 0);
+            background-repeat: no-repeat;
+            background-size: 0 100%;
+            transition: background-size .6s ease;
+            position:relative;
+            &:hover {
+                text-decoration:none;
+            }
+        }
+    }
+    .card-subheading {
+        font-weight:700;
+        font-size: 16px;
+        line-height:1.4;
+        a { 
+            background-image: linear-gradient(180deg, transparent 0, #faf4da 0);
             background-repeat: no-repeat;
             background-size: 0 100%;
             transition: background-size .6s ease;
