@@ -1,6 +1,8 @@
 ---
 layout: post
-title:  위트있는 수학 카드뉴스로 가득한 유사수학 페이스북 페이지
+title:  유사수학
+subtitle: 위트있는 수학 콘텐츠가 가득한 페이스북 페이지
+order: 3
 author: dimen
 categories: [ Create ]
 tags: [ Mathematics ]

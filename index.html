@@ -6,7 +6,8 @@ title: Home
 <!-- Posts Index
 ================================================== -->
 <div class="blog-grid-container">
-    {% for post in paginator.posts %}
+    {% assign list = paginator.posts | sort: 'order' %}
+    {% for post in list %}
         {% include postbox.html %}
     {% endfor %}
 </div>

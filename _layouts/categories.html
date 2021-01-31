@@ -4,8 +4,8 @@ layout: default
 permalink: "/categories.html"
 ---
 
-
-{% for category in site.categories %}
+{% assign list= site.categories | sort: category[1]%}
+{% for category in list %}
 <h4 class="mt-5 mb-neg-30" id="{{ category[0] | replace: " ","-" }}"><span class="text-capitalize badge badge-primary text-small">{{ category[0] }}</span></h4>
 <div class="blog-grid-container">
 {% assign pages_list = category[1] %}
