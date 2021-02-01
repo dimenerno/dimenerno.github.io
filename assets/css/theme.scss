@@ -15,9 +15,10 @@ $enable-rounded: false;
 @import 'bootstrap/bootstrap';
 @import 'stars';
 
-@font-face { font-family: NanumSquare; src: url('../_site/assets/fonts/NanumSquareRegular.ttf'); }
-@font-face { font-family: NanumSquareExtraBold; src: url('../_site/assets/fonts/NanumSquareExtraBold.ttf'); } 
-@font-face { font-family: NanumBarunGothic; src: url('../_site/assets/fonts/NanumBarunGothic.ttf');}
+@font-face { font-family: NanumSquare; src: url('../fonts/NanumSquareRegular.ttf'); }
+@font-face { font-family: NanumSquareBold; src: url('../fonts/NanumSquareBold.ttf'); } 
+@font-face { font-family: NanumSquareExtraBold; src: url('../fonts/NanumSquareExtraBold.ttf'); } 
+@font-face { font-family: NanumBarunGothic; src: url('../fonts/NanumBarunGothic.ttf');}
 
 // general
 body, input, button, select, optgroup, textarea {   
@@ -262,7 +263,7 @@ img, img:hover {
         }
     }
     .card-title {
-        font-family: NanumSquareExtraBold;
+        font-family: NanumSquareBold;
         font-size:22px;
         line-height:1.4;
         a { 
@@ -277,7 +278,7 @@ img, img:hover {
         }
     }
     .card-subheading {
-        font-weight:700;
+        font-family: NanumSquare;
         font-size: 16px;
         line-height:1.4;
         a { 
