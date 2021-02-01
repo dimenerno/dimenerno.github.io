@@ -15,9 +15,9 @@ $enable-rounded: false;
 @import 'bootstrap/bootstrap';
 @import 'stars';
 
-@font-face { font-family: NanumSquare; src: url('../dimenerno.github.io/_site/assets/fonts/NanumSquareRegular.ttf'); }
-@font-face { font-family: NanumSquareExtraBold; src: url('../dimenerno.github.io/_site/assets/fonts/NanumSquareExtraBold.ttf'); } 
-@font-face { font-family: NanumBarunGothic; src: url('../dimenerno.github.io/_site/assets/fonts/NanumBarunGothic.ttf');}
+@font-face { font-family: NanumSquare; src: url('../_site/assets/fonts/NanumSquareRegular.ttf'); }
+@font-face { font-family: NanumSquareExtraBold; src: url('../_site/assets/fonts/NanumSquareExtraBold.ttf'); } 
+@font-face { font-family: NanumBarunGothic; src: url('../_site/assets/fonts/NanumBarunGothic.ttf');}
 
 // general
 body, input, button, select, optgroup, textarea {   
