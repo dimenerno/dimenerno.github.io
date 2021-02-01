@@ -5,8 +5,8 @@
     <description>Stilla_디멘이의 포트폴리오</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Feb 2021 13:10:30 +0900</pubDate>
-    <lastBuildDate>Mon, 01 Feb 2021 13:10:30 +0900</lastBuildDate>
+    <pubDate>Mon, 01 Feb 2021 13:23:35 +0900</pubDate>
+    <lastBuildDate>Mon, 01 Feb 2021 13:23:35 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -66,7 +66,7 @@
 
 &lt;p&gt;게임의 목적은 플레이어가 노란색 공을 조정하여 빨간색 큐브까지 도착하는 것입니다. 빨간색 큐브는 건너편 섬에 있기 때문에 일반적인 방법으로는 도달할 수 없습니다. 그러나 아래 영상과 같이 차원을 2차원으로 줄이고, 남색 큐브를 통해 건너간 뒤, 다시 차원을 3차원으로 옮기면 빨간색 큐브에 도착할 수 있습니다.&lt;/p&gt;
 
-&lt;figure&gt;&lt;video controls=&quot;&quot; src=&quot;../assets/images/puzzle-demo.mov&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;&lt;figcaption&gt;배경음악은 녹음하려고 했던 것은 아니지만 듣기 좋으니 남겨두죠 ( ・∇・)&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;video controls=&quot;&quot; src=&quot;../assets/images/puzzle-demo.mov&quot; width=&quot;100%&quot;&gt;&lt;/video&gt;&lt;figcaption&gt;&lt;span style=&quot;color: gray;&quot;&gt;배경음악은 녹음하려고 했던 것은 아니지만 듣기 좋으니 남겨두죠 ( ・∇・)&lt;/span&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;p&gt;이 퍼즐은 위와 같은 기믹을 사용하여 차원을 넘나드는 것이 특징입니다. 현재 개발 중에 있으며, 위의 기믹을 활용한 재미있는 레벨이나, 게임에 도입하면 좋을 거 같은 창의적인 장치가 떠오르신 분들은 제 블로그 좌측 상단의 메뉴 아이콘을 클릭하면 나오는 ‘문의하기’를 통해 저에게 알려주시길 바랍니다! 게임 개발에 도움을 주신 분들은 게임의 크레딧 항목에 수록해 드리겠습니다.&lt;/p&gt;
 
