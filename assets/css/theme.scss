@@ -18,7 +18,7 @@ $enable-rounded: false;
 
 // general
 body, input, button, select, optgroup, textarea {   
-    font-family:Sen;
+    font-family: NanumSquare;
 }
 body {
     line-height:1.7;
@@ -463,6 +463,7 @@ img, img:hover {
 .article-post {    
     font-size:18px;
     p {
+        font-family: NanumBarunGothic;
         margin-top:30px;
         margin-bottom:30px;
     }
