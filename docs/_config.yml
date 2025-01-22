@@ -1,42 +1,19 @@
-title: "디멘의 블로그"
-author: "최정담"
-description: "이데아를 여행하는 히치하이커 | 수학, 논리학, 철학, 물리학 " # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+# Setup
+title:               디멘의 블로그
+tagline:             이데아를 여행하는 히치하이커
+description:         이데아를 여행하는 히치하이커
+paginate:            5
+permalink:           pretty
 
-# Email / Social media user names used by the minima theme:
-# All of these are optional and can be removed or commented out
-email: "dimenerno@kaist.ac.kr"
-twitter_username: "dimenerno"
-github_username: "dimenerno"
-youtube_username: "dimenerno"
+# About/contact
+author:
+  name:              최정담
+  email:             dimenerno@kaist.ac.kr
 
-#########################################################################################
-######### Nothing below needs to be changed (unless you know what you're doing) #########
-#########################################################################################
-theme: "minima"
-
-rss: rss
-
-markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-kramdown:
-  syntax_highlighter_opts:
-    disable: true
-
+# Gems
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
+  - jekyll-paginate
 
-titles_from_headings:
-  strip_title: true
-  collections: true
-
-defaults:
-  - scope:
-      path: ""
-      type: post
-    values:
-      tags: Other
+# Custom vars
+version:             1.1.0
+google_analytics_id: #UA-XXXX-Y
