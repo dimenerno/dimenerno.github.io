@@ -316,8 +316,28 @@ a.sidebar-nav-item:focus {
 .post-date {
   display: block;
   margin-top: -.8rem;
-  margin-bottom: 1.5rem;
   color: #b0b2b9;
+}
+
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #f0f1f4;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background-color: #e3e5ea;
 }
 
 /* Related posts */
