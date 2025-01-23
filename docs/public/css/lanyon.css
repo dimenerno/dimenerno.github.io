@@ -99,15 +99,13 @@ h1, h2, h3, h4, h5, h6 {
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
-  color: #505050;
 }
 .masthead-title a {
-  color: #505050;
 }
 .masthead-title small {
   font-size: 75%;
   font-weight: 400;
-  color: #c0c0c0;
+  color: #b0b2b9;
   letter-spacing: 0;
 }
 
@@ -319,7 +317,7 @@ a.sidebar-nav-item:focus {
   display: block;
   margin-top: -.8rem;
   margin-bottom: 1.5rem;
-  color: #bbbec7;
+  color: #b0b2b9;
 }
 
 /* Related posts */

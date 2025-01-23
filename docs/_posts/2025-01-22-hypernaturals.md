@@ -53,7 +53,7 @@ $$
 
 **하세 다이어그램(Hasse diagram)**을 통해 필터를 더 직관적으로 이해할 수 있다. 색칠된 영역은 $X = \lbrace 0, 1, 2 \rbrace$의 필터이다. 하세 다이어그램을 $\varnothing$에서 $X$로 가는 물줄기의 흐름으로 이해하면, 특정 지점에 잉크를 떨어뜨렸을 때 그 잉크가 퍼져 나가는 영역은 필터를 이룬다.
 
-![](https://velog.velcdn.com/images/dimenerno/post/86ac1e36-13fe-46fb-a9cc-b6749d1c5a69/image.png)
+<img src="https://velog.velcdn.com/images/dimenerno/post/86ac1e36-13fe-46fb-a9cc-b6749d1c5a69/image.png" width="400px" style="margin: 20px auto 30px auto;">
 
 2번 공리와 4번 공리에 의해, $A \in \mathcal{F}$라면 $A^c := X \setminus A \notin \mathcal{F}$이다. 이 사실을 강화하여, $X$의 *모든* 부분집합에 대해 그 집합 또는 여집합이 필터에 있을 것을 요구하면 **초필터(ultrafilter)**의 정의를 얻는다.
 
@@ -130,20 +130,20 @@ $\mathbb{N}^*$을 **초자연수(hypernaturals)**라고 한다. 초자연수의 
 초자연수의 덧셈은 다음과 같이 자연스럽게 정의한다.
 
 $$
-(n_0, n_1, n_2, \dots) + (m_0, m_1, m_2, \dots) = (n_0 + m_0, n_1 + m_1, n_2 + m_2, \dots)
+(n_0, n_1, \dots) + (m_0, m_1, \dots) = (n_0 + m_0, n_1 + m_1, \dots)
 $$
 
 여기에는 한 가지 미묘한 문제가 있다. 초자연수의 정의가 동치류이기 때문에, 동치류의 어떤 원소를 택하더라도 위 덧셈의 결과에 영향을 주지 않음을 보여야 한다. 즉,
 
 $$\begin{gather}
-(n_0, n_1, n_2, \dots), (n_0', n_1', n_2', \dots) \in [n]\\
-(m_0, m_1, m_2, \dots), (m_0', m_1', m_2', \dots) \in [m]
+(n_0, n_1, \dots), (n_0', n_1',  \dots) \in [n]\\
+(m_0, m_1,  \dots), (m_0', m_1', \dots) \in [m]
 \end{gather}$$
 
 에 대해,
 
 $$
-(n_0, n_1, n_2, \dots) + (m_0, m_1, m_2, \dots), (n_0', n_1', n_2', \dots) + (m_0', m_1', m_2', \dots) \in [n + m]
+(n_0, n_1, \dots) + (m_0, m_1,  \dots), (n_0', n_1', \dots) + (m_0', m_1', \dots) \in [n + m]
 $$
 
 임을 보여야 한다. 다행히 이는 어렵지 않다.

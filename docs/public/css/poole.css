@@ -35,6 +35,10 @@
  * Update the foundational and global aspects of the page.
  */
 
+ mjx-container {
+  margin: 30px 0 !important;
+ }
+
  @font-face {
 	font-family: 'Pretendard Variable';
 	font-weight: 45 920;
@@ -226,7 +230,7 @@ pre code {
 
 /* Quotes */
 blockquote {
-  padding: 1rem 1rem;
+  padding: 1rem 0rem 1rem 1rem;
   margin: 1.5rem 0;
   color: #313131;;
   border-left: .25rem solid #cbd2da;
@@ -237,16 +241,15 @@ blockquote p:last-child {
 }
 @media (min-width: 30em) {
   blockquote {
-    padding-right: 5rem;
     padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 }
 
 img {
   display: block;
   max-width: 100%;
-  margin: 0 0 1rem;
-  border-radius: 5px;
+  margin: 2rem 0;
 }
 
 /* Tables */
@@ -323,10 +326,10 @@ tbody tr:nth-child(odd) th {
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
-  color: #505050;
+  color: black;
 }
 .masthead-title a {
-  color: #505050;
+  color: black;
 }
 .masthead-title small {
   font-size: 75%;
