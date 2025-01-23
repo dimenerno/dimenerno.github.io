@@ -58,7 +58,7 @@ body {
 html {
   font-family: "Pretendard Variable", sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.75;
 }
 @media (min-width: 38em) {
   html {
@@ -226,11 +226,11 @@ pre code {
 
 /* Quotes */
 blockquote {
-  padding: .5rem 1rem;
-  margin: 1.5rem 0 1.5rem 0.5rem;
+  padding: 1rem 1rem;
+  margin: 1.5rem 0;
   color: #313131;;
   border-left: .25rem solid #cbd2da;
-  background-color: #fbfbfc;
+  background-color: #fafbfd;
 }
 blockquote p:last-child {
   margin-bottom: 0;

@@ -25,7 +25,7 @@ $$
 그런데 생각해 보면 모든 항이 0으로 차 있어야 $[0]$으로 간주하는 것은 지나치게 엄격하다. 예를 들어 처음 두 개의 항만 1이고 나머지 항은 모두 0인 튜플 $(1, 1, 0, 0, 0, \dots)$ 또한 $[0]$으로 보는 것이 자연스럽다. 따라서 유한 개의 항을 제외한 모든 항이 $n$이라면 그 튜플 또한 $[n]$으로 간주하도록 하자. 즉,
 
 $$
-[n] = \{ (x_1, x_2, x_3, \dots) \in \mathbb{N}^\omega : \{ i \in \mathbb{N}: x_i \neq n \} \text{ is finite} \}
+[n] = \lbrace (x_1, x_2, x_3, \dots) \in \mathbb{N}^\omega : \lbrace i \in \mathbb{N}: x_i \neq n \rbrace \text{ is finite} \rbrace
 $$
 
 하지만 이제 다음의 문제가 생긴다. 다음 튜플은 $[0]$으로 간주해야 하는가, $[1]$로 간주해야 하는가?
@@ -51,7 +51,7 @@ $$
 
 여담으로 필터는 초곱뿐 아니라 퍼지 논리(fuzzy logic)의 모형을 고전 논리의 모형으로 변환하는 데도 쓰인다. 이때 필터는 "큰 집합들의 모임"이 아닌 "참인 문장들의 모임"이 된다. 그리고 퍼지 논리에서 고전 논리로의 변환은 코헨의 강제법을 이해하는 한 가지 방식이기도 하다.
 
-**하세 다이어그램(Hasse diagram)**을 통해 필터를 더 직관적으로 이해할 수 있다. 색칠된 영역은 $X = \{ 0, 1, 2 \}$의 필터이다. 하세 다이어그램을 $\varnothing$에서 $X$로 가는 물줄기의 흐름으로 이해하면, 특정 지점에 잉크를 떨어뜨렸을 때 그 잉크가 퍼져 나가는 영역은 필터를 이룬다.
+**하세 다이어그램(Hasse diagram)**을 통해 필터를 더 직관적으로 이해할 수 있다. 색칠된 영역은 $X = \lbrace 0, 1, 2 \rbrace$의 필터이다. 하세 다이어그램을 $\varnothing$에서 $X$로 가는 물줄기의 흐름으로 이해하면, 특정 지점에 잉크를 떨어뜨렸을 때 그 잉크가 퍼져 나가는 영역은 필터를 이룬다.
 
 ![](https://velog.velcdn.com/images/dimenerno/post/86ac1e36-13fe-46fb-a9cc-b6749d1c5a69/image.png)
 
@@ -85,7 +85,7 @@ $$
 
 > **정리.** $\mathbb{N}$의 모든 여유한 부분집합의 모임을 $\mathcal{F}$라고 하자. $\mathcal{F}$는 자유 필터이다.
 
-증명은 연습문제로 남긴다. 위 정리의 $\mathcal{F}$를 **프레셰 필터(Fréchet filter)**라고 부른다. 일례로 10보다 큰 수들의 집합 $\\{ 11, 12, 13, 14, \dots \\}$은 $\mathcal{F}$의 원소이지만, 짝수의 집합은 $\mathcal{F}$의 원소가 아니다.
+증명은 연습문제로 남긴다. 위 정리의 $\mathcal{F}$를 **프레셰 필터(Fréchet filter)**라고 부른다. 일례로 10보다 큰 수들의 집합 $\\lbrace 11, 12, 13, 14, \dots \\rbrace$은 $\mathcal{F}$의 원소이지만, 짝수의 집합은 $\mathcal{F}$의 원소가 아니다.
 
 프레셰 필터는 초필터가 아니다. 하지만 다음 정리에 의해 초필터로 확장할 수 있다.
 
@@ -94,7 +94,7 @@ $$
 *Proof.* $X$의 모든 필터들의 모임 $\Omega$에 포함 관계로 정의되는 순서를 주자. 이 순서 하에서 체인을 이루는 필터들의 합집합은 필터임을 어렵지 않게 보일 수 있다. 따라서 초른의 보조정리에 의해 $\Omega$는 극대(maximal) 원소 $\mathcal{U}$를 가진다. 만약 $\mathcal{U}$가 초필터가 아니라면, 어떤 $A_0 \subset X$가 존재하여 $A_0, A_0^c \notin U$이다. 이제 다음과 같이 $\mathcal{V}$를 정의한다.
 
 $$
-\mathcal{V} = \mathcal{U} \cup \{ A \subset X : A_0 \subset A \} \cup \{ A_0 \cap U : U \in \mathcal{U} \}
+\mathcal{V} = \mathcal{U} \cup \lbrace A \subset X : A_0 \subset A \rbrace \cup \lbrace A_0 \cap U : U \in \mathcal{U} \rbrace
 $$
 
 $\mathcal{V}$는 필터임을 확인할 수 있다. 이것은 $\mathcal{U}$의 극대성에 위배된다. 따라서 $\mathcal{U}$는 초필터이다. ■
@@ -116,7 +116,7 @@ $\mathcal{V}$는 필터임을 확인할 수 있다. 이것은 $\mathcal{U}$의 �
 $\mathcal{U}$가 자유 초필터라고 하자. $\mathbb{N}^\omega$ 위에 다음의 동치 관계를 정의한다.
 
 $$
-(n_0, n_1, n_2, \dots) \sim (m_0, m_1, m_2, \dots) \iff \{ i \in \mathbb{N} : n_i = m_i \} \in \mathcal{U}
+(n_0, n_1, n_2, \dots) \sim (m_0, m_1, m_2, \dots) \iff \lbrace i \in \mathbb{N} : n_i = m_i \rbrace \in \mathcal{U}
 $$
 
 이것이 동치 관계임은 어렵지 않게 확인할 수 있다. 따라서 다음과 같이 동치류를 취할 수 있다.
@@ -151,7 +151,7 @@ $$
 곱셈과 역원 또한 비슷하게 정의하면 된다. 한편 $<$와 같은 이항 관계는 다음과 같이 정의한다.
 
 $$
-(n_0, n_1, n_2, \dots) < (m_0, m_1, m_2, \dots) \iff \{ i \in \mathbb{N} : n_i < m_i \} \in \mathcal{U}
+(n_0, n_1, n_2, \dots) < (m_0, m_1, m_2, \dots) \iff \lbrace i \in \mathbb{N} : n_i < m_i \rbrace \in \mathcal{U}
 $$
 
 이 정의는 자연스럽게 삼항, 사항 관계로 일반화할 수 있다.
