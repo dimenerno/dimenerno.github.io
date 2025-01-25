@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      어드조인트에 대한 직관적 이해 &middot; 디의 블로그
+    
+  </title>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  
+
+  <link rel="stylesheet" href="http://localhost:4000/public/css/poole.css">
+  <link rel="stylesheet" href="http://localhost:4000/public/css/syntax.css">
+  <link rel="stylesheet" href="http://localhost:4000/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="http://localhost:4000/public/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml">
+
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>이데아를 여행하는 히치하이커</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="http://localhost:4000/">최근 글</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/about/">저에 대하여</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/archive-date/">날짜별로 보기</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="http://localhost:4000/archive-tag/">주제별로 보기</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">디의 블로그</a>
+            <small>이데아를 여행하는 히치하이커</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">어드조인트에 대한 직관적 이해</h1>
+  <span class="post-date">16 Dec 2024</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'" >범주론</div>
+      
+    </div>
+  
+  <p>카테고리 이론의 핵심 개념 중 하나는 어드조인트(adjoint)이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{A}, \mathcal{B}$가 카테고리이고, $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자(functor)라고 하자. $F$가 $G$의 <strong>좌 어드조인트(left adjoint)</strong>라는 것은 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 $\mathcal{B}(F(A), B)$와 $\mathcal{A}(A, G(B))$가 자연스럽게 일대일 대응될 수 있다는 것이다. 즉,</p>
+
+\[\begin{gather}
+(F(A) \xrightarrow{g} B) \quad \mapsto \quad (A \xrightarrow{\bar{g}} G(B))\\
+(A \xrightarrow{f} G(B)) \quad \mapsto \quad (F(A) \xrightarrow{\bar{f}} B)
+\end{gather}\]
+
+  <p>또한 $G$를 $F$의 <strong>우 어드조인트(right adjoint)</strong>라고 한다. 기호로 $F \dashv G$로 표기한다.</p>
+</blockquote>
+
+<p>필자는 이 정의를 형식적인 수준에서만 이해하고 있었는데, 최근 어드조인트를 직관적으로 이해하는 몇 가지 방식을 발견했다.</p>
+
+<h3 id="1-형-변환으로서의-어드조인트">1. 형 변환으로서의 어드조인트</h3>
+
+<p>좌 어드조인트는 프로그래밍에서 다운캐스팅 형 변환에, 우 어드조인트는 업캐스팅 형 변환에 비견할 수 있다.</p>
+
+<p>예를 들어 $\mathbf{Z}$가 정수를 원소로 가지고, $x \leq y$일 때 그리고 오직 그 경우에만 $x \to y$ 사상이 유일하게 존재하는 카테고리라고 하자. 또한 $\mathbf{Z}^2$가 정수쌍을 원소로 가지고, $\mathbf{x} \preceq \mathbf{y}$일 때 그리고 오직 그 경우에만 $\mathbf{x} \to \mathbf{y}$ 사상이 유일하게 존재하는 카테고리라고 하자(여기서 $\preceq$는 사전식 순서이다).</p>
+
+<p>$F: \mathbf{Z} \to \mathbf{Z}^2, G: \mathbf{Z}^2 \to \mathbf{Z}$가 각각 $F(x) = (x, 0), G(x, y) = x$라면 자연스러운 방식으로 함자가 된다. 또한 $F \dashv G$이다. $x \in \mathbf{Z}, y \in \mathbf{Z}^2$에 대해 $F(x) \leq y$라면 $x \leq G(y)$이고, 그 역도 성립하기 때문이다.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/8040c20d-c1bc-4d92-bd45-256f48b79d75/image.png" alt="" /></p>
+
+<p>위의 논의를 코드로 표현하면 다음과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Z</span> <span class="o">{</span>
+	<span class="kt">int</span> <span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Z2</span> <span class="kd">extends</span> <span class="no">Z</span> <span class="o">{</span>
+	<span class="c1">// int x;</span>
+	<span class="kt">int</span> <span class="n">y</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="no">Z2</span> <span class="nf">F</span><span class="o">(</span><span class="no">Z</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="k">new</span> <span class="nf">Z2</span><span class="o">(</span><span class="n">z</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="no">Z</span> <span class="nf">G</span><span class="o">(</span><span class="no">Z2</span> <span class="n">z2</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="k">new</span> <span class="nf">Z</span><span class="o">(</span><span class="n">z2</span><span class="o">.</span><span class="na">x</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이 코드에서 $F$는 실질적으로 다운캐스팅, $G$는 업캐스팅에 해당함에 주목하라.</p>
+
+<h3 id="2-근사로서의-어드조인트">2. 근사로서의 어드조인트</h3>
+
+<p>$F \dashv G$일 때 $F, G$는 $\mathcal{A}$과 $\mathcal{B}$의 원소들을 서로 근사하는 방법으로 생각할 수 있다. 특히 좌 어드조인트는 ‘좌측에서 우측으로‘의 근사이고, 우 어드조인트는 ‘우측에서 좌측으로’의 근사이다.</p>
+
+<p>예를 들어 $\mathbf{Z}$가 정수를 원소로 가지고, $x \leq y$일 때 그리고 오직 그 경우에만 $x \to y$ 사상이 유일하게 존재하는 카테고리라고 하자. 또한 $\mathbf{R}$이 실수를 원소로 가지고, $x \leq y$일 때 그리고 오직 그 경우에만 $x \to y$ 사상이 유일하게 존재하는 카테고리라고 하자. 이때 $\lceil \cdot \rceil, \lfloor \cdot \rfloor$는 표준적인 방식으로 함자 $\mathbf{R} → \mathbf{Z}$가 되고, 포함 사상 $\iota$는 함자 $\mathbf{Z} → \mathbf{R}$이 된다. 또한 $\lceil \cdot \rceil \dashv \iota \dashv \lfloor \cdot \rfloor$임을 확인할 수 있다.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/e26ee728-09b0-4280-ac4c-511f89cef615/image.png" alt="" /></p>
+
+<p>즉 $\lceil \cdot \rceil$는 $r$을 $r \leq \lceil r \rceil$로 ‘좌측에서 우측으로 끌어올리는’ 변환이고, $\lfloor \cdot \rfloor$은 $r$을 $\lfloor r \rfloor \leq r$로 ‘우측에서 좌측으로 잡아당기는’ 변환이다.</p>
+
+<p>또한 $I, T$가 각각 $\mathcal{A}$의 초기 대상(initial object) 및 종단 대상(terminal object)라고 하자. 즉, 임의의 $A \in \mathcal{A}$에 대해</p>
+
+<ul>
+  <li>사상 $I \to A$가 유일하게 존재한다.</li>
+  <li>사상 $A \to T$가 유일하게 존재한다.</li>
+</ul>
+
+<p>일례로 $\mathbf{Set}$에서 공집합은 초기 대상이고 홑원소 집합은 종단 대상이다.</p>
+
+<p>홑원소 카테고리 $\mathcal{U}$에 대해 함자 $F: \mathcal{A} \to \mathcal{U}$가 유일하게 존재한다. $G_I, G_T: \mathcal{U} \to \mathcal{A}$가 각각 상이 $I, T$인 함자라고 하자. 이때 앞선 경우와 비슷한 원리로 $G_T \dashv F \dashv G_I$가 됨을 확인하라. (종단 대상은 가장 “오른쪽”에 있는 대상이므로 $G_T$는 “왼쪽에서 오른쪽으로”의 근사이며, 초기 대상은 가장 “왼쪽”에 있는 대상이므로 $G_I$는 “오른쪽에서 왼쪽으로”의 근사이다.)</p>
+
+<h3 id="3-구축과-파괴로서의-어드조인트">3. 구축과 파괴로서의 어드조인트</h3>
+
+<p>좌 어드조인트는 구축을, 우 어드조인트는 파괴를 의미한다. 따라서 일반적으로 자유함자(free functor)는 좌 어드조인트, 망각함자(forgetful functor)는 우 어드조인트이다.</p>
+
+<p>일례로 군의 카테고리를 $\mathbf{Grp}$, 모노이드의 카테고리를 $\mathbf{Mon}$이라 하자. $F$를 자유함자, $U$를 망각함자라고 하자. 그리고 $R: \mathbf{Mon} → \mathbf{Grp}$를 다음과 같이 정의한다.</p>
+
+<ul>
+  <li>$R(M) = \lbrace  m \in M : \exists m^{-1} \in M \rbrace$</li>
+  <li>$R(f): m \mapsto f(m)$</li>
+</ul>
+
+<p>이 때, 다음 다이어그램이 성립하여 $F \dashv U \dashv R$이다.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/1640d6b4-bd6a-4098-9fe8-e9a7ab164041/image.png" alt="" /></p>
+
+<p>$R$이 $U$보다 더 파괴적이기 때문에 $U \dashv R$인 것으로 이해할 수 있다.</p>
+
+
+</div>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='/public/js/script.js'></script>
+  </body>
+</html>
