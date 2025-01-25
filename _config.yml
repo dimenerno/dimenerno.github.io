@@ -20,3 +20,6 @@ google_analytics_id: #UA-XXXX-Y
 
 slugify: default
 encoding: UTF-8
+
+url: "https://dimenerno.github.io"
+baseurl: ""
