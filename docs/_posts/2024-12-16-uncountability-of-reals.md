@@ -11,7 +11,7 @@ tags: [수학, 위상수학]
 
 ### 1. 동형성 정리를 이용한 증명
 
-[칸토어의 동형성 정리](https://velog.io/@dimenerno/%EC%B9%B8%ED%86%A0%EC%96%B4%EC%9D%98-%EB%8F%99%ED%98%95%EC%84%B1-%EC%A0%95%EB%A6%AC%EC%99%80-%EB%8D%B0%EB%8D%B0%ED%82%A8%ED%8A%B8-%EC%A0%88%EB%8B%A8)에 따르면 다음을 만족하는 전순서 집합 $(S, \leq)$는 모두 순서 동형이다.
+[칸토어의 동형성 정리](https://dimenerno.github.io/2024/11/20/Rational-Real/)에 따르면 다음을 만족하는 전순서 집합 $(S, \leq)$는 모두 순서 동형이다.
 
 1. $S$는 가산이다.
 2. $S$는 조밀하다. 즉, $x, y \in S$에 대해 $x < y$라면 $x < z < y$인 $z \in S$가 존재한다.
