@@ -15,9 +15,8 @@ layout: default
   {{ content }}
 </div>
 
-<div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
-
 {% if page.related %}
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
   <h3>관련 글</h3>
   <ul>
     {% for related_title in page.related %}
@@ -29,6 +28,5 @@ layout: default
       {% endif %}
     {% endfor %}
   </ul>
+  <div style="margin-bottom: 3em;" ></div>
 {% endif %}
-
-<div style="margin-bottom: 3em;" ></div>
