@@ -8,27 +8,27 @@ layout: default
   {% if page.tags %}
     <div class="tag-container">
       {% for tag in page.tags %}
-      <div class="tag" onclick="location.href='naver.com'" >{{ tag }}</div>
+      <div class="tag" onclick="location.href='/tags/{{ tag | slugify }}/'" >{{ tag }}</div>
       {% endfor %}
     </div>
   {% endif %}
   {{ content }}
 </div>
 
-{% if site.related_posts.size >= 1 %}
-<div class="related">
-  <h2>Related posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
+<div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+
+{% if page.related %}
+  <h3>관련 글</h3>
+  <ul>
+    {% for related_title in page.related %}
+      {% assign related_post = site.posts | where: "title", related_title | first %}
+      {% if related_post %}
+        <li><a href="{{ related_post.url }}">{{ related_post.title }}</a></li>
+      {% else %}
+        <li>{{ related_title }} (Post not found)</li>
+      {% endif %}
     {% endfor %}
   </ul>
-</div>
 {% endif %}
+
+<div style="margin-bottom: 3em;" ></div>

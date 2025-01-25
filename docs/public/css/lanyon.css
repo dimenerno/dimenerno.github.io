@@ -36,9 +36,15 @@
 
 /* Prevent scroll on narrow devices */
 
+:root {
+  --slate: #b0b2b9;
+  --lighter-slate: #d3d5dd;
+  --lightest-slate: #eff1f5;
+}
+
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: scroll;
   font-family: 'Pretendard Variable', sans-serif;
 }
 
@@ -105,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 .masthead-title small {
   font-size: 75%;
   font-weight: 400;
-  color: #b0b2b9;
+  color: var(--slate);
   letter-spacing: 0;
 }
 
@@ -316,7 +322,7 @@ a.sidebar-nav-item:focus {
 .post-date {
   display: block;
   margin-top: -.8rem;
-  color: #b0b2b9;
+  color: var(--slate);
 }
 
 .tag-container {
@@ -327,7 +333,7 @@ a.sidebar-nav-item:focus {
 
 .tag {
   display: inline-block;
-  background-color: #f0f1f4;
+  background-color: var(--lightest-slate);
   padding: 5px 10px;
   border-radius: 10px;
   font-size: 0.8rem;

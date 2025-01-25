@@ -16,12 +16,13 @@ title: 최근 글
     {% if post.tags %}
     <div class="tag-container">
       {% for tag in post.tags %}
-      <div class="tag">{{ tag }}</div>
+      <div class="tag" onclick="location.href='/tags/{{ tag | slugify }}/'" >{{ tag }}</div>
       {% endfor %}
     </div>
   {% endif %}
     {{ post.content }}
   </div>
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
   {% endfor %}
 </div>
 
