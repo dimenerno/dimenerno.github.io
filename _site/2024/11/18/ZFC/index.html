@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      ZFC 공리의 목록 &middot; 디멘의 블로그
+    
+  </title>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  
+  <link rel="canonical" href="/2024/11/18/ZFC/">
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="http://localhost:4000/public/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml">
+
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>이데아를 여행하는 히치하이커</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">최근 글</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">저에 대하여</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive-date/">날짜별로 보기</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive-tag/">주제별로 보기</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">디멘의 블로그</a>
+            <small>이데아를 여행하는 히치하이커</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">ZFC 공리의 목록</h1>
+  <span class="post-date">18 Nov 2024</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+    </div>
+  
+  <table>
+  <thead>
+    <tr>
+      <th>공리명</th>
+      <th>의미</th>
+      <th>논리식(자유변수는 $\forall$로 양화)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>외연 공리</td>
+      <td>집합은 원소의 모임이다.</td>
+      <td>$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$</td>
+    </tr>
+    <tr>
+      <td>공집합 공리*</td>
+      <td>공집합이 존재한다.</td>
+      <td>$\exists Z : z \not\in Z$</td>
+    </tr>
+    <tr>
+      <td>짝 공리*</td>
+      <td>$X, Y$로부터 $Z = \lbrace  X, Y \rbrace$를 정의할 수 있다.</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$</td>
+    </tr>
+    <tr>
+      <td>합집합 공리</td>
+      <td>$X = \lbrace  Y_i \rbrace$로부터 $Z = \bigcup Y_i$를 정의할 수 있다.</td>
+      <td>$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$</td>
+    </tr>
+    <tr>
+      <td>멱집합 공리</td>
+      <td>$X$로부터 $\mathcal{P}(X)$를 정의할 수 있다.</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$</td>
+    </tr>
+    <tr>
+      <td>분류 공리꼴**</td>
+      <td>$X$로부터 $Y = \lbrace  y \in X : \phi(y) \rbrace$를 정의할 수 있다. ($\phi$는 1차 논리식)</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$</td>
+    </tr>
+    <tr>
+      <td>무한 공리</td>
+      <td>모든 자연수를 포함하는 집합이 존재한다.</td>
+      <td>$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$</td>
+    </tr>
+    <tr>
+      <td>정칙 공리</td>
+      <td>$\in$은 정렬 순서이다.</td>
+      <td>$\exists x \in X : \forall y \in X [ y \not\in x]$</td>
+    </tr>
+    <tr>
+      <td>치환 공리꼴</td>
+      <td>$X$로부터 $f[X]$를 정의할 수 있다. ($f$는 class function)</td>
+      <td>$\displaylines{&amp;[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow \\ &amp;[\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$</td>
+    </tr>
+    <tr>
+      <td>선택 공리</td>
+      <td>집합족 $\lbrace  X_i \rbrace$에 대해 각 $X_i$의 원소를 하나씩 선택할 수 있다.</td>
+      <td>$\displaylines{&amp;\varnothing \notin X \rightarrow \\&amp;\exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Remarks.</strong></p>
+<ul>
+  <li>정칙 공리는 다음과 동치</li>
+</ul>
+
+\[\exists x \in X : x \cap X = \varnothing\]
+
+<ul>
+  <li>
+    <p>(*)로 표시된 공리는 분류 공리꼴로부터 유도할 수 있다.</p>
+  </li>
+  <li>
+    <p>(**)로 표시된 공리는 치환 공리꼴로부터 유도할 수 있다.</p>
+    <ul>
+      <li>분류 공리꼴의 내용은 “X가 집합이다 → f[X]가 집합이다(f는 함수)”이라는 것이다. f가 함수임을(즉, f의 정의역이 집합임을) 선결적으로 요구함에 유의하라.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="공리의-필요성">공리의 필요성</h3>
+<p><strong>정리.</strong> 다음의 정리들은 선택 공리를 필요로 한다.</p>
+
+<ul>
+  <li>
+    <p>$f: X → Y$가 전사일 때, 어떤 $X$의 부분집합 $Z$에 대해 $f\vert_Z$는 전단사이다.</p>
+  </li>
+  <li>
+    <p>$\varnothing \not\in \lbrace  X_i\rbrace$일 때  $\prod X_i \neq \varnothing$이다.</p>
+  </li>
+  <li>
+    <p><strong>정렬 원리:</strong> 임의의 집합에 정렬 순서를 줄 수 있다.</p>
+  </li>
+  <li>
+    <p><strong>초른의 보조정리:</strong> $(X, &lt;)$의 임의의 체인이 $X$에서 상계를 가진다면, $X$는 극댓값(maximal element)을 가진다.</p>
+  </li>
+</ul>
+
+<p><strong>정리.</strong> 다음의 정리들은 치환 공리꼴을 필요로 한다.</p>
+
+<ul>
+  <li>
+    <p>$\omega + \omega$가 존재한다.</p>
+  </li>
+  <li>
+    <p><strong>서수 완전성 정리.</strong> 모든 정렬 순서는 서수와 순서 동형이다.</p>
+  </li>
+</ul>
+
+
+</div>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='/public/js/script.js'></script>
+  </body>
+</html>

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      디멘의 블로그 &middot; 이데아를 여행하는 히치하이커
+    
+  </title>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  
+  <link rel="canonical" href="/page3/">
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="http://localhost:4000/public/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml">
+
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>이데아를 여행하는 히치하이커</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">최근 글</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">저에 대하여</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive-date/">날짜별로 보기</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive-tag/">주제별로 보기</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">디멘의 블로그</a>
+            <small>이데아를 여행하는 히치하이커</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://localhost:4000/2024/12/01/net/">
+        콤팩트성과 그물
+      </a>
+    </h1>
+
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'" >위상수학</div>
+      
+    </div>
+  
+    <h3 id="콤팩트성">콤팩트성</h3>
+<blockquote>
+  <p><strong>정의.</strong> $X$가 위상공간이라고 하자.</p>
+
+  <ol>
+    <li>임의의 열린 덮개가 유한한 부분덮개를 가질 때 $X$를 <strong>콤팩트</strong>하다고 한다.</li>
+    <li>임의의 점렬 $\lbrace x_n \in X \rbrace$가 수렴하는 부분점렬을 가질 때 $X$를 <strong>점렬 콤팩트</strong>하다고 한다.</li>
+    <li>임의의 무한집합 $S \subset X$가 극점을 가질 때 $X$를 <strong>극점 콤팩트</strong>하다고 한다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>점렬 콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$S \subset X$가 극점이 없는 무한집합이라고 하자. $\overline{S} = S \cup S’ = S$이므로 $S$는 닫힌 집합이며, $X \setminus S$는 열린 집합이다. 임의의 $s \in S$에 대해, $s$가 극점이 아니므로 $U_s \cap S = \lbrace  s \rbrace$인 $s$의 근방 $U_s$가 존재한다. 따라서 다음 $X$의 열린 덮개는 유한한 부분덮개를 가지지 않는다.</li>
+</ol>
+
+\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
+
+<ol>
+  <li>$S \subset X$가 무한집합이라고 하자. $S$의 원소들을 임의로 추출하여 점렬 $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$을 만든다. $X$가 점렬 콤팩트하므로 $\lbrace  s_n \rbrace → s$이며, $s$는 $S$의 극점이다.</li>
+  <li>순서 토폴로지가 주어진 $\omega_1$은 극점 콤팩트하지만 콤팩트하지 않다.</li>
+  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, $\mathbb{N}$에는 이산 토폴로지가 주어지고 $\lbrace  0, 1\rbrace$에는 자명한 토폴로지가 주어짐.</li>
+</ol>
+
+<p><strong>Remark.</strong> 4의 올바르지 못한 “증명”</p>
+
+<blockquote>
+  <p>$X$가 극점 콤팩트하다고 하자. 점렬 $(x_n)$이 주어졌을 때, $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$이 유한집합이라면 $(x_n)$은 수렴하는 부분점렬을 자명하게 가진다. $S$가 무한집합이라면 $X$의 극점 콤팩트성에 의해 $x \in S’$가 존재한다. <strong>이제 다음 조건을 만족하는 $x$의 근방들의 가산 모임 $\mathcal{U} = \lbrace  U_n \rbrace$을 정의한다.</strong></p>
+
+  <ol>
+    <li>$n &lt; m \implies U_n \supset U_m$</li>
+    <li>$V$가 $x$의 근방일 때, $\exists U \in \mathcal{U} : U \subset V$</li>
+  </ol>
+
+  <p>이로부터 다음 두 조건을 만족하는 함수 $k: \mathbb{N} → \mathbb{N}$을 정의할 수 있다.</p>
+
+  <ol>
+    <li>$x_{k(n)} \in U_n$</li>
+    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+  </ol>
+
+  <p>2가 가능한 이유는 $k(i)$가 $i \leq n$까지 정의되었을 때 $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$가 여전히 $x$를 극점으로 가지기 때문이다. 즉, $(x_n)$은 수렴하는 부분점렬 $(x_{k(n)})$을 가진다.</p>
+</blockquote>
+
+<p>위 증명이 올바르지 않은 이유는 볼드체 부분이 일반적으로 가능하지 않기 때문이다. 대신 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 1차 가산 T₁ 공간에서 극점 콤팩트성과 점렬 콤팩트성은 동치이다.</p>
+</blockquote>
+
+<h3 id="그물과-점렬">그물과 점렬</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 전순서라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합(directed set)</strong>이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종(cofinal)</strong>이라고 한다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> $(J, \leq)$가 방향 집합이고 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물(net)</strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>정의.</strong> 그물 $(x_\alpha)$가 $x$로 수렴한다는 것은, 임의의 $x$의 근방 $U$에 대해 어떤 $\alpha \in J$가 존재하여</p>
+
+  <p>\(\alpha \leq \beta \implies x_\beta \in U\)
+인 것이다.</p>
+</blockquote>
+
+<p>일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 1차 가산 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 점렬 $(x_n)$이 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면  $f(x_n) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 위상 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 그물 $(x_\alpha)$가 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면  $f(x_\alpha) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$\mathcal{U}_x$를 $x$의 근방들의 집합이라고 하자. 역포함관계로 $\mathcal{U}_x$에 순서 $\leq$를 준다. $x \in \bar{A}$라면 임의의 $U_\alpha \in \mathcal{U}_x$에 대해 $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$인 $x_\alpha$가 존재한다. $x_\alpha → x$임을 확인하라.</li>
+</ol>
+
+<blockquote>
+  <p><strong>정의.</strong> $(x_\alpha)_{\alpha \in J}$가 그물이라고 하자. $(I, \preceq)$가 방향 집합이고, $g: (I, \preceq) → (J, \leq)$가 순서 보존이며, $\operatorname{im}g$가 공종일 때, $(x_{g(\beta)})_{\beta \in I}$를 $(x_\alpha)$의 부분그물이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 콤팩트할 필요충분조건은 임의의 그물이 수렴하는 부분그물을 가지는 것이다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> ”수렴하는 점렬이 존재한다“는 ”수렴하는 그물이 존재한다“보다 강한 조건이지만, ”임의의 점렬이 수렴하는 부분점렬을 가진다”는 “임의의 그물이 수렴하는 부분그물을 가진다”보다 강하지도, 약하지도 않은 조건임에 유의하라. 주어는 후자가 더 강하고, 술어는 전자가 더 강하다. 따라서 <strong>콤팩트성과 점렬 콤팩트성은 일반적으로 시사 관계가 없다.</strong> 구체적으로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+    <li>점렬 콤팩트 $\not\rightarrow$ 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$[0, 1]^{[0, 1]}$은 티호노프 정리에 의해 콤팩트하지만 점렬 콤팩트하지 않다.</li>
+  <li>Long line과 $\omega_1$은 점렬 콤팩트하지만 콤팩트하지 않다.</li>
+</ol>
+
+  </div>
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://localhost:4000/2024/12/01/baire/">
+        베르 범주 정리
+      </a>
+    </h1>
+
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'" >위상수학</div>
+      
+    </div>
+  
+    <h3 id="1-베르-공간">1. 베르 공간</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $S$가 위상공간 $X$의 부분집합일 때, 다음은 동치이다.</p>
+  <ul>
+    <li>$\left( \operatorname{cl}S \right)^\circ$가 공집합이다.</li>
+    <li>$(\operatorname{cl}S)^c$가 조밀하다.</li>
+    <li>$S$는 어떠한 $X$의 열린 집합에서도 조밀하지 않다.</li>
+  </ul>
+
+  <p>이때, $S$를 <strong>희박(rare)</strong>하다고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> 희박한 닫힌 집합들의 가산 합집합 $\bigcup F_n$이 희박한 공간 $X$를 베르 공간이라고 한다.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png" alt="" /></p>
+
+<p><em>Remark.</em> TFAE:</p>
+<ul>
+  <li>$X$가 베르 공간이다.</li>
+  <li>$X$의 열린 조밀 집합들의 가산 교집합은 조밀하다.</li>
+</ul>
+
+<p><strong>예시.</strong> $\mathbb{Q}$는 베르 공간이 아니다.</p>
+<ul>
+  <li>$\lbrace  q \rbrace$는 닫힌 희박 집합이지만 $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$는 희박하지 않다.</li>
+  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$는 열린 조밀 집합이지만 $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$은 조밀하지 않다.</li>
+</ul>
+
+<h3 id="2-베르-범주-정리">2. 베르 범주 정리</h3>
+
+<blockquote>
+  <p><strong>콤팩트 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$X$가 콤팩트하다.</li>
+    <li>임의의 유한 교집합 속성을 가진 닫힌 집합들의 모임 $\mathcal{C}$에 대해 $\bigcap_{C \in \mathcal{C}} C \neq \varnothing$이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>완비 거리 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$X$가 완비 거리 공간이다.</li>
+    <li>임의의 공집합이 없는 닫힌 집합열 $C_1 \supset C_2 \supset \cdots$에 대해 $\bigcap C_n \neq \varnothing$이며, 특히 $\operatorname{diam}C_n \to 0$일 때 $\bigcap C_n$은 홑원소 집합이다.</li>
+  </ol>
+</blockquote>
+
+<p><em>Remark.</em> 2는 4를 함의한다. 이로부터 콤팩트 거리 공간은 완비임을 보일 수 있다. <strong>역은 성립하지 않는다.</strong></p>
+
+<blockquote>
+  <p><strong>정리.</strong> 완비 거리 공간과 콤팩트 하우스도르프 공간은 베르 공간이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p>$X$가 완비 거리 공간 또는 콤팩트 하우스도르프 공간이라고 하자. 희박한 닫힌 집합들의 가산 모임 $\lbrace  F_n \rbrace$이 주어졌을 때, 임의의 열린 집합 $U$에 대해 $U \not\subset \bigcup F_n$임을 보이면 된다. 이를 위해 $\forall n : x \not\in F_n$인 $x \in U$를 찾을 것이다.</p>
+
+<p>$F_1$이 희박하므로 $x_1 \in U \setminus F_1$이 존재한다. $X$는 정칙 공간이므로 $x_1 \in U_1$, $\overline{U_1} \cap F_1 = \varnothing$인 열린 집합 $U_1$이 존재한다. 귀납적으로 다음과 같이 정의할 수 있다.</p>
+
+<ul>
+  <li>$x_n \in U_n \setminus F_n$</li>
+  <li>$U_n \subset U_{n - 1}$</li>
+  <li>$\overline{U_n} \cap F_n = \varnothing$</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png" alt="" /></p>
+
+<p>칸토어 축소 정리에 의해 $x \in \bigcap \overline{U_n}$인 $x$가 존재한다.</p>
+
+<h3 id="3-베르-범주-정리의-응용">3. 베르 범주 정리의 응용</h3>
+
+<blockquote>
+  <p><strong>연속함수열의 수렴은 거의 연속이다.</strong> $\lbrace  f_n : X → (Y, d) \rbrace$가 $f$로 수렴하는 연속함수열일 때,</p>
+
+\[S = \lbrace  x \in X : f\text{ is continuous at } x \rbrace\]
+
+  <p>는 $X$에서 조밀하다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>KAIST POW2024-20.</strong> $f$가 연속함수이고,</p>
+
+\[\forall x \geq 0 : \lim_{n \to \infty} f(nx) = 0\]
+
+  <p>라면 $\lim_{x \to \infty} f(x) = 0$이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>병리적 함수의 존재성.</strong> $h : [0, 1] → \mathbb{R}$가 연속함수라고 하자. 임의의 $ε &gt; 0$에 대해 다음을 만족하는 함수 $g : [0,1] → \mathbb{R}$가 존재한다.</p>
+
+  <ul>
+    <li>$\lVert h − g\rVert &lt; ε$이다.</li>
+    <li>$g$는 전 구간에서 연속이다.</li>
+    <li>$g$는 전 구간에서 미분 불가능하다.</li>
+  </ul>
+</blockquote>
+
+
+  </div>
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://localhost:4000/2024/11/21/trichotomy/">
+        정렬의 삼분성과 서수의 완전성
+      </a>
+    </h1>
+
+    <span class="post-date">21 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+    </div>
+  
+    <h3 id="1-기본-개념">1. 기본 개념</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 다음을 만족하는 $(W, &lt;)$를 정렬 집합(well-ordered set)이라고 한다.</p>
+
+  <ol>
+    <li>$(W, &lt;)$은 전순서이다.</li>
+    <li>$W$의 임의의 부분집합은 최소 원소를 가진다.</li>
+  </ol>
+
+  <p><strong>정의.</strong> $(W, &lt;)$가 정렬 집합일 때, $a \in S$에 대해 $x &lt; a \rightarrow x \in S$인 $W$의 부분집합 $S$를 초기단(initial segment)이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $S$가 정렬 집합 $(W, &lt;)$의 초기단일 때, 어떤 $a \in W$에 대해 다음이 성립한다.</p>
+
+\[S = W[a] := \lbrace  x \in W : x &lt; a \rbrace\]
+</blockquote>
+
+<p><strong>증명.</strong> $a$를 $W \setminus S$의 최솟값으로 잡는다.</p>
+
+<h3 id="2-정렬의-삼분성">2. 정렬의 삼분성</h3>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>정렬 집합은 자신의 초기단과 동형일 수 없다.</li>
+    <li>정렬 집합의 자기동형사상은 항등사상이다.</li>
+    <li>두 정렬 집합 간 동형사상은 유일하다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><em>보조정리.</em></p>
+
+<p>$f: (W, &lt;) → (W, &lt;)$가 순서 보존이라면 $x \in W$에 대해 $x \leq f(x)$이다.</p>
+
+<p><em>보조정리의 증명.</em></p>
+
+<p>귀류법에 따라 $S = \lbrace  x \in W : x &gt; f(x) \rbrace$가 공집합이 아니라고 하자. $W$는 정렬 집합이므로 $c = \min S$가 존재한다. $c \in S$이므로 $c &gt; f(c)$이며,  $f$가 순서 보존이므로 $f(c) &gt; f(f(c))$이다. 한편 $c = \min S$이므로 $f(c) \notin S$이며, $f(f(c)) \geq f(c)$이므로 모순이다. □</p>
+
+<p><em>(1)의 증명.</em></p>
+
+<p>$f: (W, &lt;) → (W[a], &lt;)$가 동형사상이라고 하자. 포함사상 $j: W[a] → W$에 대해 $jf: (W, &lt;) → (W, &lt;)$는 순서 보존이다. 따라서 $jf(a) \geq a$이다. 하지만 $a \notin \mathrm{im}f$이므로 모순이다. □</p>
+
+<p><em>(2)의 증명.</em></p>
+
+<p>$f: (W, &lt;) → (W, &lt;)$가 동형사상이라고 하자. $f^{-1}$ 또한 동형사상이므로 $x \in W$에 대해 $x \leq f(x)$, $f(x) \leq f^{-1}(f(x)) = x$이다. 따라서 $x = f(x)$이다. □</p>
+
+<p><em>(3)의 증명.</em></p>
+
+<p>$f, g: (W_1, &lt;_1) → (W_2, &lt;_2)$가 동형사상이라고 하자. $g^{-1}f: (W_1, &lt;_1) → (W_1, &lt;_1)$은 자기동형사상이므로 (2)에 의해 항등사상이다. 따라서 $f = g$이다. ■</p>
+
+<blockquote>
+  <p><strong>정렬의 삼분성.</strong> $(W_1, &lt;_1), (W_2, &lt;_2)$가 정렬 집합일 때 다음 중 정확히 하나가 성립한다.</p>
+
+  <ol>
+    <li>$(W_1, &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>어떤 $a$에 대해 $(W_1[a], &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>어떤 $b$에 대해 $(W_1, &lt;_1) \sim (W_2[b], &lt;_2)$</li>
+  </ol>
+
+  <p>각 경우 동형사상은 유일하며, 또한 2, 3의 경우 $a, b$는 유일하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p>앞선 정리는 1, 2, 3이 mutually exclusive함과, 유일성에 대한 주장을 보증한다. 따라서 임의의 $(W_1, &lt;_1), (W_2, &lt;_2)$가 위 세 경우에 속함을 보이면 충분하다.</p>
+
+<p>다음과 같이 부분함수 $f: W_1 → W_2$를 정의한다.</p>
+
+\[f := \lbrace  (x, y) \in (W_1, W_2) : (W_1[x], &lt;_1) \sim (W_2[y], &lt;_2) \rbrace\]
+
+<p>$f$가 단사이고 순서 보존임을 쉽게 확인할 수 있다. 이제 두 가지 경우를 고려한다.</p>
+
+<p><em>Case 1.</em> $\mathrm{dom} f = W_1$</p>
+
+<p>정리의 3번 경우에 해당하여 증명이 끝난다.</p>
+
+<p><em>Case 2.</em> $\mathrm{dom} f \subsetneq W_1$</p>
+
+<p>먼저 어떤 $a \in W$에 대해 $\mathrm{dom}f = W_1[a]$임을 보인다. $x \in \mathrm{dom}f$라면 $W_1[x] \sim W_2[f(x)]$이다. 해당 동형의 동형사상을 $\phi$라고 하면 $x’ &lt; x$에 대해 $W_1[x’] = W_2[\phi(x’)]$이므로 $x’ \in \mathrm{dom}f$이다. 따라서 $\mathrm{dom} f$는 초기단이다.</p>
+
+<p>두 번째로 $\mathrm{im} f = W_2$임을 보인다. $\mathrm{dom}f = W_1[a]$라고 하자. 앞선 문단과 비슷한 논증으로 $\mathrm{im}f$ 또한 $W_2$의 초기단임을 알 수 있다. $\mathrm{im}f = W_2[b]$라면, $(a, b) \in f$이므로 $a \in \mathrm{dom}f$이며 모순이다. ■</p>
+
+<h3 id="3-서수의-완전성">3. 서수의 완전성</h3>
+
+<blockquote>
+  <p><strong>서수의 완전성.</strong> 모든 정렬 집합은 어떤 서수와 순서 동형이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $(W, &lt;)$가 정렬 집합이라고 하자. 다음과 같이 $A, S$를 정의한다.</p>
+
+\[A = \lbrace  a \in W : W[a] \sim \alpha\_a \text{ where $\alpha\_a \in$Ord} \rbrace\\
+S = \lbrace  \alpha\_a \in \mathrm{Ord} :  a \in A\rbrace\]
+
+<p>$S$가 서수이고 $A$가 초기단임을 쉽게 보일 수 있다. $S = \beta$, $A = W[c]$라고 하자. $f: A → S; a \mapsto \alpha_a$는 $(A, &lt;)$와 $(S, \in)$의 순서동형사상이다. 즉, $W[c] \simeq \beta$이므로 $c \in A$이며, 이는 모순이다. 따라서 $A = W \sim \beta$이다. ■</p>
+
+<h3 id="4-치환-공리">4. 치환 공리</h3>
+
+<p>위 증명에서 $S$의 존재성은 치환 공리꼴 없이 보장되지 않는다. 왜냐하면 부랄리포르티 역설에 의해 $\mathrm{Ord}$는 집합이 아니며, 이에 따라 분류 공리꼴로 $S$의 존재성을 보장할 수 없기 때문이다.</p>
+
+<p>치환 공리의 필요성을 보여주는 다른 예시로, 치환 공리꼴 없이는 $\omega + \omega$의 존재성을 보장할 수 없다. 각 $n \in \mathbb{N}$에 대해 $\omega + n$이 존재함은 짝 공리와 합집합 공리로 보일 수 있지만, $\omega + \omega := \cup_{n \in \mathbb{N}} (\omega + n)$가 존재함은 보일 수 없다. 그렇다고 임의의 집합들의 합집합을 허용하는 공리를 추가할 수는 없는데, 이는 $V$를 집합으로 만들기 때문이다.</p>
+
+<p>위 두 경우에서 우리에게 필요한 것은, “잘 정의된 일대일 대응 관계 $R(x,y)$와 집합 $X$가 주어졌을 때 $\lbrace  y : R(x, y), x \in X \rbrace$는 집합이다”라는 내용의 공리이다. 이 공리가 치환 공리이다. 치환 공리를 사용하면 $\omega = \lbrace 0, 1, 2, … \rbrace$와 관계 $R(x, y): y = \omega + x$에 대해 $\mathrm{im}R\vert_\omega = \lbrace  \omega, \omega + 1, \omega + 2, … \rbrace$가 존재하며, $\omega \cup \mathrm{im}R\vert_\omega = \omega + \omega$가 존재함을 보일 수 있다.</p>
+
+  </div>
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://localhost:4000/2024/11/20/Rational-Real/">
+        유리수와 실수의 집합론적 정의
+      </a>
+    </h1>
+
+    <span class="post-date">20 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+    </div>
+  
+    <h3 id="1-칸토어의-동형성-정리">1. 칸토어의 동형성 정리</h3>
+
+<blockquote>
+  <p><strong>칸토어의 동형성 정리.</strong> 가산이고 양끝점이 없으며 조밀한 전순서 집합은 순서 동형에 대해 유일하다.</p>
+</blockquote>
+
+<p><strong>증명 1. (Back-and-Forth Argument)</strong>
+<img src="https://velog.velcdn.com/images/dimenerno/post/888ce5aa-5181-425a-98ca-91db8396e86a/image.png" alt="" /></p>
+
+<p>$n$번째 단계에서 $\mathrm{argmin}_k a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 $b \in B  \setminus \mathrm{im} f_n$과 대응시키고, $\mathrm{argmin}_{l}b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$
+을 순서 동형성을 만족하게끔 임의의 
+$a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$
+와 대응시킨다.</p>
+
+<p><strong>증명 2. (Only-Forth Argument)</strong>
+<img src="https://velog.velcdn.com/images/dimenerno/post/1ecaf995-ba92-4708-8d0b-fb81f7c2aad1/image.png" alt="" /></p>
+
+<p>$n$ 번째 단계에서 $\mathrm{argmin}_k a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 $b \in B \setminus  \mathrm{im}f_n$ 중에서 <em>가장 인덱스가 작은</em> $b_l$과 대응시킨다.</p>
+
+<p><strong>잘못된 증명. (Incorrect Only-Forth Argument)</strong></p>
+
+<p>$n$번째 단계에서 $\mathrm{argmin}_k a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <em>임의의</em> $b \in B \setminus  \mathrm{im}f_n$와 대응시킨다.</p>
+
+<p><strong>잘못된 이유:</strong> $\mathrm{im} \left[ \bigcup f_n \right]$이 $B$ 전체를 소진한다는 보장이 없다. 일례로 모든 경우 선택된 $b$의 인덱스가 짝수인 경우가 가능하다.</p>
+
+<h3 id="2-데데킨트-절단">2. 데데킨트 절단</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 전순서 집합 $(P, &lt;)$에 대하여 $P$의 부분집합 $A, B$가 다음을 만족할 때 $(A, B)$를 <strong>절단</strong>이라고 한다.</p>
+
+  <ol>
+    <li>$A \sqcup B = P$</li>
+    <li>임의의 $a \in A, b \in B$에 대해 $a &lt; b$이다.</li>
+  </ol>
+
+  <p>추가로 다음을 만족할 때 <strong>데데킨트 절단</strong>이라고 한다.</p>
+
+  <ol>
+    <li>$A$는 최대 원소를 가지지 않는다.</li>
+  </ol>
+
+  <p>추가로 다음까지 만족할 때 <strong>틈</strong>이라고 한다.</p>
+
+  <ol>
+    <li>$B$는 최소 원소를 가지지 않는다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Remark 1.</strong> $P$가 완비이다 ⇔ $P$는 틈을 가지지 않는다.
+<strong>Remark 2.</strong> $P = \mathbb{Q}$일 때 틈은 무리수 집합을, 데데킨트 절단은 실수 집합을 나타낸다.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/9620e89e-2363-4d11-865a-7ecb11ea26d9/image.png" alt="" /></p>
+
+<h3 id="3-완비화-정리">3. 완비화 정리</h3>
+
+<blockquote>
+  <p><strong>완비화 정리.</strong> $(P, &lt;)$가 양끝점이 없는 조밀한 전순서라면 다음을 만족하는 완비 전순서 $(C, \prec)$가 순서 동형에 대해 유일하게 존재한다.</p>
+
+  <ol>
+    <li>$P \subseteq C$</li>
+    <li>$\prec$는 $P$에서 $&lt;$와 일치한다.</li>
+    <li>$P$는 $C$에서 조밀하다. 즉, $c_1 &lt; c_2 \in C$에 대해 $c_1 &lt; p &lt; c_2$를 만족하는 $p \in P$가 언제나 존재한다.</li>
+    <li>$C$는 양끝점이 없다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>유일성 증명.</strong>
+$(C, \prec)$와 $(C^\ast, \prec^\ast)$가 조건을 만족하는 완비 전순서라고 하자. 다음과 같이 정의된 $\phi: C → C^\ast$는 순서 동형 사상이다.</p>
+
+<ol>
+  <li>$c \in P$라면 $\phi(c)=c$</li>
+  <li>$c \notin P$라면 $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
+</ol>
+
+<p><strong>존재성 증명.</strong>
+다음과 같이 정의한다.</p>
+
+\[\begin{gather}
+\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
+\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
+\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
+\end{gather}\]
+
+<p>라고 하자. 다음과 같이 $\mathcal{D}$에 순서를 준다.</p>
+
+\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
+
+<p>$(A, B) \in \mathcal{P}$라면 어떤 $p$에 대해 $B = \lbrace  x \in P : x \geq p  \rbrace$이며, 이때 $(A, B) = [p]$라고 적자. 즉,</p>
+
+\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
+
+<p>$(\mathcal{P}, \prec) \sim (P, &lt;)$임을 쉽게 확인할 수 있다. 이제 다음을 보인다.</p>
+
+<p><em>Claim.</em> $\mathcal{D}$는 $\mathcal{P}$에 대해 완비화 정리의 4가지 조건을 모두 만족하는 확장이다.</p>
+
+<p>1, 2, 4는 자명하다. 3을 보인다.</p>
+
+<p>$\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$에 대해 $\mathfrak{d_1} \prec \mathfrak{d}_2$, 즉 $A_1 \subset A_2$라고 하자. $p \in A_2 \setminus A_1$이며 $p$가 $B$의 최소 원소가 아닌 $p \in P$가 존재한다. 그러한 $p$에 대해 $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$이다. □</p>
+
+<p>마지막으로 다음을 보인다.</p>
+
+<p><em>Claim.</em> $(\mathcal{D}, \prec)$는 완비이다.</p>
+
+<p>$\mathcal{S}$가 위로 유계인 $\mathcal{D}$의 공집합이 아닌 부분집합이라고 하자. 다음과 같이 정의한다.</p>
+
+\[\begin{gather}
+A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
+B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
+\end{gather}\]
+
+<p>$(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$이며, $\mathcal{S}$의 최소 상계임을 확인할 수 있다. ◾</p>
+
+<blockquote>
+  <p><strong>집합론적 실수의 정의.</strong> 다음을 만족하는 집합 $(R, &lt;)$은 순서 동형에 대해 유일하다.</p>
+
+  <ol>
+    <li>완비 전순서 집합이다.</li>
+    <li>양끝점이 없다.</li>
+    <li>분리 가능하다(separable). 즉, $Q \subset R$이 존재하여 $Q$는 가산집합이고 $R$에서 조밀하다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 칸토어의 동형성 정리와 완비화 정리로부터 따라 나온다.</p>
+
+  </div>
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://localhost:4000/2024/11/19/CSB/">
+        칸토어-슈뢰더-베른슈타인 정리
+      </a>
+    </h1>
+
+    <span class="post-date">19 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+    </div>
+  
+    <blockquote>
+  <p><strong>정리.</strong> 두 집합 $A, B$에 대해 $|A| \leq |B|$, $|A| \geq |B|$라면 $|A| = |B|$이다.</p>
+</blockquote>
+
+<p>매우 당연해 보이지만 $\leq$가 단사함수의 존재성으로, $=$가 전단사함수의 존재성으로 정의된다는 점에서 트리키한 함수 핸들링을 요구한다.</p>
+
+<p>여담으로 “칸토어-베른슈타인 정리(위키피디아)” 또는 “슈뢰더-베른슈타인 정리(나무위키)”라고도 부르는데 “칸토어-슈뢰더 정리”라고 부르는 경우는 못 봤다. 홍대병에 취해 있다면 “칸토어-슈뢰더 정리”라고 불러보자.</p>
+
+<h3 id="첫-번째-증명">첫 번째 증명</h3>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/3e3b706b-77bc-4de3-a9ea-76fa4ffd8dbe/image.png" alt="" /></p>
+
+<p>실선이 $f: A → B$, 점선이 $g: B → A$이다. 조건에 의해 $f, g$는 단사이다. $C := \mathrm{Im} f$가 $B$와 같다면 증명이 끝나므로, $C \subsetneq B$라고 하자.</p>
+
+<p>임의의 $y \in B \setminus C$에 대해,</p>
+
+<ul>
+  <li>$x_1^y = g^{-1}(y)$</li>
+  <li>
+    <p>$x_{n+1}^y = g(f(x_n))$</p>
+  </li>
+  <li>$h_y(x_1^y) = y$</li>
+  <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
+</ul>
+
+<p>로 정의한다(보라색). 다음이 성립함을 확인하라.</p>
+
+\[x^y_n = x^z_m \iff y = z, n = m\]
+
+<p>따라서 다음의 함수 $h: X → Y$는 well-defined이다.</p>
+
+\[h(x) = \begin{cases}
+h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
+f(x) &amp;\text{otherwise}
+\end{cases}\]
+
+<p>$h$가 전단사임을 확인하라. ◾</p>
+
+<h3 id="두-번째-증명">두 번째 증명</h3>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $A_1 \subset B \subset A$에 대해 $|A_1| \leq |B| \leq |A|$이고 $|A_1| = |A|$라면 $|A_1| = |B| = |A|$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $f: A → A_1$가 전사라고 하자. 다음과 같이 $\lbrace A_n\rbrace, \lbrace B_n\rbrace, \lbrace C_n\rbrace$을 정의한다.</p>
+
+\[\begin{gather*}
+A_0 = A, \; A_{n+1} = f[A_n] \\
+B_0 = B, \; B_{n+1} = f[B_n] \\
+C_n = A_n \setminus B_n
+\end{gather*}\]
+
+<p>$C = \bigcup C_n, D = A \setminus C$라고 하자. $f[C] \subset C, f[D] \subset D$임을 확인하라. 따라서 다음의 $g: A → B$는 전사이다.</p>
+
+\[g(x) = \begin{cases}
+f(x) &amp; x \in C\\
+x &amp; x \in D
+\end{cases}\]
+
+<p><strong>본 정리의 증명.</strong> $f: A → B, g: B → A$가 전사일 때 $|gf[A]| \leq |g[B]| \leq |A|$이므로 보조정리에 의해 $|g[B]| = |B| = |A|$이다. ◾</p>
+
+<p>잘 생각해 보면 두 증명은 사실 같다.</p>
+
+
+  </div>
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="http://localhost:4000/page4">이전 글</a>
+  
+  
+    
+      <a class="pagination-item newer" href="http://localhost:4000/page2">다음 글</a>
+    
+  
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='/public/js/script.js'></script>
+  </body>
+</html>

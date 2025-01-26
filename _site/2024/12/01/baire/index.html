@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      베르 범주 정리 &middot; 디멘의 블로그
+    
+  </title>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  
+  <link rel="canonical" href="/2024/12/01/baire/">
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="http://localhost:4000/public/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml">
+
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>이데아를 여행하는 히치하이커</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">최근 글</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">저에 대하여</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive-date/">날짜별로 보기</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive-tag/">주제별로 보기</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">디멘의 블로그</a>
+            <small>이데아를 여행하는 히치하이커</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">베르 범주 정리</h1>
+  <span class="post-date">01 Dec 2024</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'" >위상수학</div>
+      
+    </div>
+  
+  <h3 id="1-베르-공간">1. 베르 공간</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $S$가 위상공간 $X$의 부분집합일 때, 다음은 동치이다.</p>
+  <ul>
+    <li>$\left( \operatorname{cl}S \right)^\circ$가 공집합이다.</li>
+    <li>$(\operatorname{cl}S)^c$가 조밀하다.</li>
+    <li>$S$는 어떠한 $X$의 열린 집합에서도 조밀하지 않다.</li>
+  </ul>
+
+  <p>이때, $S$를 <strong>희박(rare)</strong>하다고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> 희박한 닫힌 집합들의 가산 합집합 $\bigcup F_n$이 희박한 공간 $X$를 베르 공간이라고 한다.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png" alt="" /></p>
+
+<p><em>Remark.</em> TFAE:</p>
+<ul>
+  <li>$X$가 베르 공간이다.</li>
+  <li>$X$의 열린 조밀 집합들의 가산 교집합은 조밀하다.</li>
+</ul>
+
+<p><strong>예시.</strong> $\mathbb{Q}$는 베르 공간이 아니다.</p>
+<ul>
+  <li>$\lbrace  q \rbrace$는 닫힌 희박 집합이지만 $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$는 희박하지 않다.</li>
+  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$는 열린 조밀 집합이지만 $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$은 조밀하지 않다.</li>
+</ul>
+
+<h3 id="2-베르-범주-정리">2. 베르 범주 정리</h3>
+
+<blockquote>
+  <p><strong>콤팩트 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$X$가 콤팩트하다.</li>
+    <li>임의의 유한 교집합 속성을 가진 닫힌 집합들의 모임 $\mathcal{C}$에 대해 $\bigcap_{C \in \mathcal{C}} C \neq \varnothing$이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>완비 거리 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$X$가 완비 거리 공간이다.</li>
+    <li>임의의 공집합이 없는 닫힌 집합열 $C_1 \supset C_2 \supset \cdots$에 대해 $\bigcap C_n \neq \varnothing$이며, 특히 $\operatorname{diam}C_n \to 0$일 때 $\bigcap C_n$은 홑원소 집합이다.</li>
+  </ol>
+</blockquote>
+
+<p><em>Remark.</em> 2는 4를 함의한다. 이로부터 콤팩트 거리 공간은 완비임을 보일 수 있다. <strong>역은 성립하지 않는다.</strong></p>
+
+<blockquote>
+  <p><strong>정리.</strong> 완비 거리 공간과 콤팩트 하우스도르프 공간은 베르 공간이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p>$X$가 완비 거리 공간 또는 콤팩트 하우스도르프 공간이라고 하자. 희박한 닫힌 집합들의 가산 모임 $\lbrace  F_n \rbrace$이 주어졌을 때, 임의의 열린 집합 $U$에 대해 $U \not\subset \bigcup F_n$임을 보이면 된다. 이를 위해 $\forall n : x \not\in F_n$인 $x \in U$를 찾을 것이다.</p>
+
+<p>$F_1$이 희박하므로 $x_1 \in U \setminus F_1$이 존재한다. $X$는 정칙 공간이므로 $x_1 \in U_1$, $\overline{U_1} \cap F_1 = \varnothing$인 열린 집합 $U_1$이 존재한다. 귀납적으로 다음과 같이 정의할 수 있다.</p>
+
+<ul>
+  <li>$x_n \in U_n \setminus F_n$</li>
+  <li>$U_n \subset U_{n - 1}$</li>
+  <li>$\overline{U_n} \cap F_n = \varnothing$</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png" alt="" /></p>
+
+<p>칸토어 축소 정리에 의해 $x \in \bigcap \overline{U_n}$인 $x$가 존재한다.</p>
+
+<h3 id="3-베르-범주-정리의-응용">3. 베르 범주 정리의 응용</h3>
+
+<blockquote>
+  <p><strong>연속함수열의 수렴은 거의 연속이다.</strong> $\lbrace  f_n : X → (Y, d) \rbrace$가 $f$로 수렴하는 연속함수열일 때,</p>
+
+\[S = \lbrace  x \in X : f\text{ is continuous at } x \rbrace\]
+
+  <p>는 $X$에서 조밀하다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>KAIST POW2024-20.</strong> $f$가 연속함수이고,</p>
+
+\[\forall x \geq 0 : \lim_{n \to \infty} f(nx) = 0\]
+
+  <p>라면 $\lim_{x \to \infty} f(x) = 0$이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>병리적 함수의 존재성.</strong> $h : [0, 1] → \mathbb{R}$가 연속함수라고 하자. 임의의 $ε &gt; 0$에 대해 다음을 만족하는 함수 $g : [0,1] → \mathbb{R}$가 존재한다.</p>
+
+  <ul>
+    <li>$\lVert h − g\rVert &lt; ε$이다.</li>
+    <li>$g$는 전 구간에서 연속이다.</li>
+    <li>$g$는 전 구간에서 미분 불가능하다.</li>
+  </ul>
+</blockquote>
+
+
+</div>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='/public/js/script.js'></script>
+  </body>
+</html>
