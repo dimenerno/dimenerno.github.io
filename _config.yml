@@ -5,6 +5,8 @@ description:         이데아를 여행하는 히치하이커
 paginate:            5
 permalink:           pretty
 
+destination: docs
+
 # About/contact
 author:
   name:              최정담
