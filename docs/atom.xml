@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-01-26T18:21:36+09:00</updated>
+ <updated>2025-01-28T08:10:50+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -1639,8 +1639,12 @@
 
 &lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $(W, &amp;lt;)$가 정렬 집합이라고 하자. 다음과 같이 $A, S$를 정의한다.&lt;/p&gt;
 
-\[A = \lbrace  a \in W : W[a] \sim \alpha\_a \text{ where $\alpha\_a \in$Ord} \rbrace\\
-S = \lbrace  \alpha\_a \in \mathrm{Ord} :  a \in A\rbrace\]
+\[\begin{gather}
+A = \lbrace  a \in W : W[a] \sim \alpha_a \text{ where $\alpha_a \in$Ord} \rbrace\\
+S = \lbrace  \alpha_a \in \mathrm{Ord} :  a \in A\rbrace
+\end{gather}\]
+
+\[aaaaaaaasiodfjaowiefjoaisdjozidnvoizjsdfpoaiwjefoaiaosdifjsopdijvzoidxcjvaosidjfaosijdfpaoisdjfpaoisdjfaopisdjfoaisd\]
 
 &lt;p&gt;$S$가 서수이고 $A$가 초기단임을 쉽게 보일 수 있다. $S = \beta$, $A = W[c]$라고 하자. $f: A → S; a \mapsto \alpha_a$는 $(A, &amp;lt;)$와 $(S, \in)$의 순서동형사상이다. 즉, $W[c] \simeq \beta$이므로 $c \in A$이며, 이는 모순이다. 따라서 $A = W \sim \beta$이다. ■&lt;/p&gt;
 

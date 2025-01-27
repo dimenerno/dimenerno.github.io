@@ -92,9 +92,13 @@ $f$가 단사이고 순서 보존임을 쉽게 확인할 수 있다. 이제 두 
 
 **증명.** $(W, <)$가 정렬 집합이라고 하자. 다음과 같이 $A, S$를 정의한다.
 
+$$\begin{gather}
+A = \lbrace  a \in W : W[a] \sim \alpha_a \text{ where $\alpha_a \in$Ord} \rbrace\\
+S = \lbrace  \alpha_a \in \mathrm{Ord} :  a \in A\rbrace
+\end{gather}$$
+
 $$
-A = \lbrace  a \in W : W[a] \sim \alpha\_a \text{ where $\alpha\_a \in$Ord} \rbrace\\
-S = \lbrace  \alpha\_a \in \mathrm{Ord} :  a \in A\rbrace
+aaaaaaaasiodfjaowiefjoaisdjozidnvoizjsdfpoaiwjefoaiaosdifjsopdijvzoidxcjvaosidjfaosijdfpaoisdjfpaoisdjfaopisdjfoaisd
 $$
 
 $S$가 서수이고 $A$가 초기단임을 쉽게 보일 수 있다. $S = \beta$, $A = W[c]$라고 하자. $f: A → S; a \mapsto \alpha\_a$는 $(A, <)$와 $(S, \in)$의 순서동형사상이다. 즉, $W[c] \simeq \beta$이므로 $c \in A$이며, 이는 모순이다. 따라서 $A = W \sim \beta$이다. ■

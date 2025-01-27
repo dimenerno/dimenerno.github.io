@@ -44,7 +44,6 @@
 
 html,
 body {
-  overflow-x: scroll;
   font-family: 'Pretendard Variable', sans-serif;
 }
 
@@ -77,6 +76,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   max-width: 28rem;
+  overflow-x: auto;
+}
+.container::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 @media (min-width: 38em) {
   .container {

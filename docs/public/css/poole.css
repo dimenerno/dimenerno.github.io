@@ -230,7 +230,7 @@ pre code {
 
 /* Quotes */
 blockquote {
-  padding: 1rem 0rem 1rem 1rem;
+  padding: 1rem 0.5rem 1rem 1rem;
   margin: 1.5rem 0;
   color: #313131;;
   border-left: .25rem solid #cbd2da;
