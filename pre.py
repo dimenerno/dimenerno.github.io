@@ -32,5 +32,5 @@ def process_markdown(file_path):
         file.write(content)
 
 # Example usage
-file_path = '_posts/2024-11-19-CSB.md'  # Replace with your markdown file
+file_path = '_posts/2025-01-29-beta-function.md'  # Replace with your markdown file
 process_markdown(file_path)
