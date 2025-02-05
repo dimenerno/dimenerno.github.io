@@ -9,7 +9,7 @@
 
   <title>
     
-      Tag: 물리 &middot; 디멘의 블로그
+      곱군과 위수에 관한 노트: 페르마 소수 정리와 윌슨의 정리 &middot; 디멘의 블로그
     
   </title>
 
@@ -29,7 +29,7 @@
   </script>
 
   
-  <link rel="canonical" href="/tags/%EB%AC%BC%EB%A6%AC/">
+  <link rel="canonical" href="/2025/02/05/order/">
   
 
   <link rel="stylesheet" href="/public/css/poole.css">
@@ -117,8 +117,6 @@
       
     
       
-    
-      
         
       
     
@@ -181,55 +179,85 @@
       </div>
 
       <div class="container content">
-        <a href="/archive-tag">모든 주제 보기</a>
+        <div class="post">
+  <h1 class="post-title">곱군과 위수에 관한 노트: 페르마 소수 정리와 윌슨의 정리</h1>
+  <span class="post-date">05 Feb 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/대수학/'" >대수학</div>
+      
+    </div>
+  
+  <h3 id="remarks">Remarks</h3>
 
-<h1>물리</h1>
+<table>
+  <thead>
+    <tr>
+      <th><strong>곱군</strong></th>
+      <th><strong>합군</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1이 항등원</td>
+      <td>0이 항등원</td>
+    </tr>
+    <tr>
+      <td>$x$의 위수가 $r$일 때, $x^r = 1$</td>
+      <td>$x$의 위수가 $r$일 때, $rx = 0$</td>
+    </tr>
+  </tbody>
+</table>
 
 <ul>
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <a href="/2024/11/17/bell-rocket/">벨의 우주선 사고실험: 수동적 로렌츠 수축과 능동적 로렌츠 수축</a>
-      </li>
-    
-  
+  <li>소수 $p$에 대해 $p - 1$에 대한 정보가 주어졌다면 위수가 $p - 1$인 곱군 $(\mathbb{Z}/p\mathbb{Z})^\times$을 생각해 보자.</li>
+  <li>곱군 $G$에 대해 $nm \mid |G|$는, $x^{nm} = 1$이지만 $x^n, x^m \neq 1$인 원소 $x$의 존재성과 동치이다.</li>
+  <li>위수는 주기와 다르다. 일반적으로 <strong>(주기) = (위수) + 1</strong>이다.</li>
 </ul>
+
+<h3 id="페르마-소수-정리">페르마 소수 정리</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> 소수 $p$가 두 정수 $a, b$에 대해 $p = a^2 + b^2$ 꼴로 나타내어질 필요충분조건은 $p \bmod 1 = 4$인 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p>(⇒) 자명</p>
+
+<p>(⇐) $G = (\mathbb{Z}/p\mathbb{Z})^\times$라고 하자. 조건에 의해 $4 \mid |G|$이다. 따라서 $n^4 = 1$이지만 $n^2 \neq 1$인 원소 $n$이 존재한다. 즉, $n^2 = -1$이다. 따라서 $p \mid n^2 + 1$이다. 이제 $\mathbb{Z}[i]$에서 생각해 보면 $p \mid (n + i)(n - i)$이다. 만약 $p$가 $\mathbb{Z}[i]$에서 기약이었다면 $p \mid n + i$ 또는 $p \mid n - i$인데 둘 다 불가능하다. 따라서 $p$는 기약이 아니며, 켤레성에 의해</p>
+
+\[p = (a + bi)(a - bi) = a^2 + b^2\]
+
+<p>이다. ■</p>
+
+<h3 id="윌슨의-정리">윌슨의 정리</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $p$가 소수일 필요충분조건은 $(p - 1)! \equiv -1 \mod p$인 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p>(⇒) $G = (\mathbb{Z}/p\mathbb{Z})^\times$라고 하자. $G$의 원소를 모두 곱한 값은 $(p - 1)!$이다. $x^2 = 1$의 근인 $\pm 1$을 제외한 $G$의 모든 원소는 자기 자신을 역원으로 가지지 않는다. 따라서 $(p - 1)! \equiv -1$이다.</p>
+
+<p>(⇐) $N = (p - 1)! + 1$이라고 하자. 조건에 의해 $p \mid N$이다. 만약 $p$가 소수가 아니라면 어떤 소수 $q &lt; p$에 대해 $q \mid N$이다. 그러나 $N \bmod q = 1$이므로 모순이다. ■</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
       </div>
     </div>
 

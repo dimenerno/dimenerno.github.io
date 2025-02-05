@@ -4,13 +4,75 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-01-29T11:28:22+09:00</updated>
+ <updated>2025-02-05T14:22:23+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>곱군과 위수에 관한 노트: 페르마 소수 정리와 윌슨의 정리</title>
+   <link href="http://localhost:4000/2025/02/05/order/"/>
+   <updated>2025-02-05T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/02/05/order</id>
+   <content type="html">&lt;h3 id=&quot;remarks&quot;&gt;Remarks&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;곱군&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;합군&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1이 항등원&lt;/td&gt;
+      &lt;td&gt;0이 항등원&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$x$의 위수가 $r$일 때, $x^r = 1$&lt;/td&gt;
+      &lt;td&gt;$x$의 위수가 $r$일 때, $rx = 0$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;소수 $p$에 대해 $p - 1$에 대한 정보가 주어졌다면 위수가 $p - 1$인 곱군 $(\mathbb{Z}/p\mathbb{Z})^\times$을 생각해 보자.&lt;/li&gt;
+  &lt;li&gt;곱군 $G$에 대해 $nm \mid |G|$는, $x^{nm} = 1$이지만 $x^n, x^m \neq 1$인 원소 $x$의 존재성과 동치이다.&lt;/li&gt;
+  &lt;li&gt;위수는 주기와 다르다. 일반적으로 &lt;strong&gt;(주기) = (위수) + 1&lt;/strong&gt;이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;페르마-소수-정리&quot;&gt;페르마 소수 정리&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 소수 $p$가 두 정수 $a, b$에 대해 $p = a^2 + b^2$ 꼴로 나타내어질 필요충분조건은 $p \bmod 1 = 4$인 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(⇒) 자명&lt;/p&gt;
+
+&lt;p&gt;(⇐) $G = (\mathbb{Z}/p\mathbb{Z})^\times$라고 하자. 조건에 의해 $4 \mid |G|$이다. 따라서 $n^4 = 1$이지만 $n^2 \neq 1$인 원소 $n$이 존재한다. 즉, $n^2 = -1$이다. 따라서 $p \mid n^2 + 1$이다. 이제 $\mathbb{Z}[i]$에서 생각해 보면 $p \mid (n + i)(n - i)$이다. 만약 $p$가 $\mathbb{Z}[i]$에서 기약이었다면 $p \mid n + i$ 또는 $p \mid n - i$인데 둘 다 불가능하다. 따라서 $p$는 기약이 아니며, 켤레성에 의해&lt;/p&gt;
+
+\[p = (a + bi)(a - bi) = a^2 + b^2\]
+
+&lt;p&gt;이다. ■&lt;/p&gt;
+
+&lt;h3 id=&quot;윌슨의-정리&quot;&gt;윌슨의 정리&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $p$가 소수일 필요충분조건은 $(p - 1)! \equiv -1 \mod p$인 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(⇒) $G = (\mathbb{Z}/p\mathbb{Z})^\times$라고 하자. $G$의 원소를 모두 곱한 값은 $(p - 1)!$이다. $x^2 = 1$의 근인 $\pm 1$을 제외한 $G$의 모든 원소는 자기 자신을 역원으로 가지지 않는다. 따라서 $(p - 1)! \equiv -1$이다.&lt;/p&gt;
+
+&lt;p&gt;(⇐) $N = (p - 1)! + 1$이라고 하자. 조건에 의해 $p \mid N$이다. 만약 $p$가 소수가 아니라면 어떤 소수 $q &amp;lt; p$에 대해 $q \mid N$이다. 그러나 $N \bmod q = 1$이므로 모순이다. ■&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>베타 함수를 통한 페아노 산술에서의 괴델 수 정의</title>
