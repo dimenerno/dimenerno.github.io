@@ -5,7 +5,7 @@ date: 2025-02-07
 tags: [수학, 수리논리학]
 ---
 
-> **주의.** 이 글은 상당 부분 뇌피셜로 쓰였기 때문에 엄밀하지 않고, 심지어 틀린 내용이 있을 수 있습니다.
+> **주의.** 이 글은 뇌피셜로 쓰였기 때문에 엄밀하지 않고, 심지어 틀린 내용이 있을 수 있습니다.
 
 **산술 위계(arithmetical hierarchy)**는 산술 — 엄밀히는 1차 페아노 산술 — 의 명제들을 양화사의 복잡도에 따라 분류한 것이다. 산술 위계는 증명 이론 및 계산 복잡도 이론의 핵심 개념이며, 기술적 집합론과도 연관이 있다.
 
@@ -20,9 +20,11 @@ tags: [수학, 수리논리학]
 예를 들어 다음 네 명제들은 모두 $\Delta\_0$ 명제들이다.
 
 $$
+\begin{gather}
 \phi_1 : 0 = 1\\
 \phi_2(x) : \exists y < x \; [y + y = x] \\
 \phi_3(x, y) : \exists z \leq y \;[ xz = y ] \\
+\end{gather}
 $$
 
 $\phi\_1$은 거짓인 문장이다. $\phi\_2$는 $x$가 짝수일 때, $\phi\_3$는 $x$가 $y$의 약수일 때 참인 명제이다.
@@ -58,6 +60,7 @@ for y < x:
   for z <= y:
     if yz == x:
       return false;
+
 return true;
 ```
 
@@ -82,9 +85,11 @@ return a
 > **정의.**
 >
 > $$
+> \begin{gather}
 > \Sigma_1 := \{ \exists x_1 \cdots \exists x_n \;\phi : \phi \in \Pi_0 \}\\
 > \Pi_1 := \{ \forall x_1 \cdots \forall x_n \;\phi : \phi \in \Sigma_0 \}\\
 > \Delta_1 := \Sigma_1 \cap \Pi_1
+> \end{gather}
 > $$
 
 ### 2.1. $\Sigma\_1$ 명제
@@ -92,8 +97,10 @@ return a
 다음 명제들은 $\Sigma\_1$이다.
 
 $$
+\begin{gather}
 \phi_1(x): \exists y \; \underbrace{[y^2 + y + 1 = x]}_{\Pi_0}\\
 \phi_2(x): ∃y\; ∃z\; \underbrace{(y \text{ is prime} ∧ z \text{ is prime} ∧ x = y + z ∧ x \text{ is even})}_{\Pi_0}
+\end{gather}
 $$
 
 $\phi\_1$은 집합 $\lbrace 1, 3, 7, 13, \dots \rbrace$에서 참이다. $\phi\_2$는 골드바흐의 추측으로, 모든 $x$가 이를 만족하는지는 알려져 있지 않다.
@@ -122,7 +129,7 @@ $\phi \in \Sigma\_1$이 표준 자연수 모형에서 참인 문장이라면 $\m
 
 ### 2.2. $\Sigma\_1 \setminus \Delta\_0$ 명제
 
-그런데 사실 지금까지 필자는 독자를 오도했다. 앞서 $\Delta\_0$의 예시로 나열한 명제들은 사실 $\Sigma\_0$로 쓸 수 있기 때문이다.
+그런데 사실 지금까지 필자는 독자를 오도했다. 앞서 $\Sigma\_1$의 예시로 나열한 명제들은 사실 $\Delta\_0$로 쓸 수 있기 때문이다.
 
 $$
 \phi_1: \exists y<x \;{[y^2 + y + 1 = x]}\\
@@ -154,11 +161,13 @@ $$
 $\Sigma\_1$ 명제가 재귀적으로 열거 가능한 명제들의 모임이라면, $\Pi\_1$ 명제는 **쌍대-재귀적으로 열거 가능한(co-recursively enumerable)** 명제들의 모임이다. 즉 $\Pi\_1$의 문장은 거짓이라면 결정 가능하지만 참이라면 결정 가능성이 보장되지 않는다. 예를 들어 다음 두 명제는 $\Delta\_0$가 아닌 $\Pi\_1$ 문장이다.
 
 $$
+\begin{gather}
 \phi_3(x): \forall y \;[ \lnot \mathrm{HaltsIn}(x, y) ] \\
 \phi_4(x): \forall y \; [ \lnot \mathrm{Proves}(x, y) ]
+\end{gather}
 $$
 
-$\Sigma\_1$의 경우와 달리, $\Pi\_1$은 완전하지 않다. $\Sigma\_1$ 문장의 부정이 $\Pi\_1$이기 때문에, $\Pi\_1$ 또한 완전하다면 $\Sigma\_1 = \Pi\_1 = \Delta\_1$이 되기 때문이다.
+$\Sigma\_1$의 경우와 달리, $\Pi\_1$은 완전하지 않다. $\Sigma\_1$ 문장의 부정이 $\Pi\_1$이기 때문에, $\Pi\_1$ 또한 완전하다면 $\Sigma\_1 = \Pi\_1=$ (결정 가능한 명제들의 모임)이 되기 때문이다.
 
 > **정리.** 참인 $\Pi\_1$ 문장들의 집합은 완전하지 않다.
 
@@ -171,9 +180,11 @@ $\Delta\_1$ 명제는 $\Sigma\_1$과 $\Pi\_1$에 모두 속한다. 따라서 $\D
 > **정의.**
 >
 > $$
+> \begin{gather}
 > \Sigma_2 := \{ \exists x_1 \cdots \exists x_n \;\phi : \phi \in \Pi_1 \}\\
 > \Pi_2 := \{ \forall x_1 \cdots \forall x_n \;\phi : \phi \in \Sigma_1 \}\\
 > \Delta_2 := \Sigma_2 \cap \Pi_2
+> \end{gather}
 > $$
 
 이제 패턴이 보일 거라 생각한다. $\Sigma\_2$ 명제의 예시로, 다음을 보자.
@@ -194,8 +205,7 @@ $\psi(x)$가 임의의 $\Delta\_0$ 명제라고 하자. $\theta : \forall x \;\p
 if ψ(x):
    return 1;
 
-while (True):
-   /* Infinite Loop */
+while True:
 ```
 
 이 튜링 기계는 값 $x$에 대해 $\psi(x)$가 참이면 정지하고 거짓이면 정지하지 않는다. 따라서 $\theta$가 참이라는 것은 모든 $x$에 대해 $M$이 정지한다는 것과 동치이며, 이것은 $\phi\_5(\ulcorner M \urcorner)$이 거짓임과 동치이다. 그리고 가정에 의해 $\phi\_5 \in \Pi\_1$이므로, $\phi\_5(\ulcorner M \urcorner)$이 거짓이라면 $\mathsf{PA} \vdash \lnot \phi(\ulcorner M \urcorner)$이다. 즉, $\mathsf{PA} \vdash \theta$가 되어 모든 참인 $\Pi\_1$ 문장은 증명 가능하게 된다. 이것은 모순이다. ■
@@ -236,7 +246,7 @@ $$
 
 여기서 $x\|\_y$는 괴델 수가 $x$인 튜링 기계에 $y$를 입력한 상태의 괴델 수이다. 즉, $\Sigma\_2$ 명제는 정지 문제의 오라클이 주어졌을 때 $\Sigma\_1$ 명제로 환원된다. 비슷한 원리로, $\Pi\_2$ 명제와 $\Delta\_2$ 명제는 각각 정지 문제의 오라클이 주어졌을 때 $\Pi\_1$ 명제와 $\Delta\_1$ 명제로 환원된다.
 
-나아가 **2차 오라클**을 정의할 수 있다. 2차 정지 문제 오라클은, 정지 문제 오라클을 사용하는 튜링 기계들에 대한 정지 문제 오라클이다. 예를 들어 $\mathcal{O}$가 다음 코드의 정지 여부를 판단한다면,
+나아가 **2차 오라클**을 정의할 수 있다. 2차 정지 문제 오라클은, 정지 문제 오라클을 사용하는 튜링 기계들에 대한 정지 문제 오라클이다. 예를 들어 $\mathcal{O}$가 다음 코드의 정지 여부를 판단하는 데 그치는 데 반해,
 
 ```
 for x > 0:
