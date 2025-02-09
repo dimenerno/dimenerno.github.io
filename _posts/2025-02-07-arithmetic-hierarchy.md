@@ -132,8 +132,10 @@ $\phi \in \Sigma\_1$이 표준 자연수 모형에서 참인 문장이라면 $\m
 그런데 사실 지금까지 필자는 독자를 오도했다. 앞서 $\Sigma\_1$의 예시로 나열한 명제들은 사실 $\Delta\_0$로 쓸 수 있기 때문이다.
 
 $$
+\begin{gather}
 \phi_1: \exists y<x \;{[y^2 + y + 1 = x]}\\
 \phi_2(x): ∃y<x\; ∃z<x\; {(y \text{ is prime} ∧ z \text{ is prime} ∧ x = y + z ∧ x \text{ is even})}
+\end{gather}
 $$
 
 그렇다면 $\Delta\_0$에 속하지 않는 $\Sigma\_1$ 명제는 어떻게 생겼을까? 한 가지 답은 **정지 문제**에서 찾을 수 있다.
