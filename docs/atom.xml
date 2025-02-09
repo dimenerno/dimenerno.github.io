@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-02-09T15:31:42+09:00</updated>
+ <updated>2025-02-09T15:34:46+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -147,13 +147,13 @@
 &lt;p&gt;$F$는 가장 형식화하기 쉬운 개념이다. 특히 다음 사실들이 알려져 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;형식 체계-튜링 기계 대응.&lt;/strong&gt; $F$가 재귀적으로 공리화 가능한recursively axiomatisable 형식 체계일 때, $F$로부터 증명 가능한 명제들을 재귀적으로 열거recursively enumerate하는 튜링 기계가 존재한다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;형식 체계-튜링 기계 대응.&lt;/strong&gt; $F$가 재귀적으로 공리화 가능한&lt;sub&gt;recursively axiomatisable&lt;/sub&gt; 형식 체계일 때, $F$로부터 증명 가능한 명제들을 재귀적으로 열거&lt;sub&gt;recursively enumerate&lt;/sub&gt;하는 튜링 기계가 존재한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;덧붙이자면, 우리가 관심을 가질 만한 형식 체계는 재귀적으로 공리화 가능하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;클레이니 술어의 재귀성.&lt;/strong&gt; 튜링 기계의 작동은 페아노 산술 내에서 형식화될 수 있다. 구체적으로, 괴델 수가 $x$인 튜링 기계가 자연수 $y$를 입력받았을 때 괴델 수가 $z$인 작동 기록computation record으로 끝나는지를 판단하는 1차 논리 술어 $K(x, y, z)$가 존재한다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;클레이니 술어의 재귀성.&lt;/strong&gt; 튜링 기계의 작동은 페아노 산술 내에서 형식화될 수 있다. 구체적으로, 괴델 수가 $x$인 튜링 기계가 자연수 $y$를 입력받았을 때 괴델 수가 $z$인 작동 기록&lt;sub&gt;computation record&lt;/sub&gt;으로 끝나는지를 판단하는 1차 논리 술어 $K(x, y, z)$가 존재한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;위 두 정리의 따름정리로 다음을 얻는다.&lt;/p&gt;
@@ -166,7 +166,7 @@
 
 &lt;h4 id=&quot;122-t&quot;&gt;1.2.2. $T$&lt;/h4&gt;
 
-&lt;p&gt;$T$의 형식적 정의로는 &lt;strong&gt;타르스키의 유형적 참 정의&lt;/strong&gt;가 가장 유망하다. 타르스키의 유형적 참 정의는 의미론적 정의가 아니라 형태론적 정의이지만, 현 논의의 목적으로는 적합하다. 타르스키의 정의는 다음을 비롯한 공리들로 이루어져 있다.&lt;/p&gt;
+&lt;p&gt;$T$의 형식적 정의로는 &lt;strong&gt;타르스키의 유형적 참 정의&lt;sub&gt;Tarski’s typed truth definition&lt;/sub&gt;&lt;/strong&gt;가 가장 유망하다. 타르스키의 유형적 참 정의는 의미론적 정의가 아니라 형태론적 정의이지만, 현 논의의 목적으로는 적합하다. 타르스키의 정의는 다음을 비롯한 공리들로 이루어져 있다.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -328,7 +328,7 @@
 
 &lt;h2 id=&quot;3-결론&quot;&gt;3. 결론&lt;/h2&gt;
 
-&lt;p&gt;지금까지의 논의는 괴델의 조건문으로부터 반기계주의를 직접적으로 이끌어내려는 더이상의 시도를 방지하는 데 충분할 것이다. 그러나 수리논리학의 결과로부터 반기계주의를 논증하려는 또다른 접근 방식이 있다. 흔히 &lt;strong&gt;펜로즈의 새 논증&lt;/strong&gt;이라고 불리는 이 논증은 타르스키의 유형적 참과는 구별되는, 유형 독립적 참&lt;sub&gt;type-free truth predicate&lt;/sub&gt;을 내세우는 논증이다. 해당 논증의 형식화와 그것이 시사하는 바는 본 논문의 2편에서 다루도록 한다.&lt;/p&gt;
+&lt;p&gt;지금까지의 논의는 괴델의 조건문으로부터 반기계주의를 직접적으로 이끌어내려는 더이상의 시도를 방지하는 데 충분할 것이다. 그러나 수리논리학의 결과로부터 반기계주의를 논증하려는 또다른 접근 방식이 있다. 흔히 &lt;strong&gt;펜로즈의 새 논증&lt;/strong&gt;이라고 불리는 이 논증은 타르스키의 유형적 참과는 구별되는, 유형 독립적 참&lt;sub&gt;type-free truth&lt;/sub&gt;을 내세우는 논증이다. 해당 논증의 형식화와 그것이 시사하는 바는 본 논문의 2편에서 다루도록 한다.&lt;/p&gt;
 </content>
  </entry>
  
