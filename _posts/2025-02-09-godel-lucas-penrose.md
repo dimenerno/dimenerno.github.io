@@ -85,7 +85,7 @@ tags: [수학, 철학, 수리논리학]
 
 이에 대해 괴델은 다음과 같이 말한다.
 
-> [만약 그러한 형식 체계가 존재한다면] 인간 이성은 (적어도 수학적인 측면에서는) 유한한 기계와 동등하다. 그러나 그 기계는 자기 자신의 동작을 [스스로의 무모순성을 증명할 수 없다는 점에서] 완전히 이해할 수는 없다. 이 불능은 인간에게 있어 정신의 무한한 확장성으로 오인될 것이다.
+> [만약 그러한 형식 체계가 존재한다면] 인간 이성은 — 적어도 수학적인 측면에서는 — 유한한 기계와 동등하다. 그러나 그 기계는 자기 자신의 동작을 [스스로의 무모순성을 증명할 수 없다는 점에서] 완전히 이해할 수는 없다. 이 불능은 인간에게 있어 정신의 무한한 확장성으로 오인될 것이다.
 
 대신 괴델의 세 번째 주장은 다음과 같다. 이 주장이 괴델의 조건문이다.
 
@@ -201,9 +201,9 @@ $$
 
 $$
 \begin{gather}
-\forall e \; \exists x \;(\mathrm{Sent}\_{L\_{\mathsf{PA}}}(x) \land T(\hat{K}x) \land x \notin F\_e  ) \\\\
+\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(\hat{K}x) \land x \notin F_e  ) \\\\
 \lor\\\\
-\exists x \;(\mathrm{Sent}\_{L\_{\mathsf{PA}}}(x) \land T(x) \land \lnot T(\hat{K}x) \land \lnot T(\hat{K}\lnot x)
+\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot T(\hat{K}x) \land \lnot T(\hat{K}\lnot x))
 \end{gather}
 $$
 
