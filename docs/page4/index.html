@@ -189,6 +189,165 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/2024/12/01/net/">
+        콤팩트성과 그물
+      </a>
+    </h1>
+
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'" >위상수학</div>
+      
+    </div>
+  
+    <h3 id="콤팩트성">콤팩트성</h3>
+<blockquote>
+  <p><strong>정의.</strong> $X$가 위상공간이라고 하자.</p>
+
+  <ol>
+    <li>임의의 열린 덮개가 유한한 부분덮개를 가질 때 $X$를 <strong>콤팩트</strong>하다고 한다.</li>
+    <li>임의의 점렬 $\lbrace x_n \in X \rbrace$가 수렴하는 부분점렬을 가질 때 $X$를 <strong>점렬 콤팩트</strong>하다고 한다.</li>
+    <li>임의의 무한집합 $S \subset X$가 극점을 가질 때 $X$를 <strong>극점 콤팩트</strong>하다고 한다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>점렬 콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$S \subset X$가 극점이 없는 무한집합이라고 하자. $\overline{S} = S \cup S’ = S$이므로 $S$는 닫힌 집합이며, $X \setminus S$는 열린 집합이다. 임의의 $s \in S$에 대해, $s$가 극점이 아니므로 $U_s \cap S = \lbrace  s \rbrace$인 $s$의 근방 $U_s$가 존재한다. 따라서 다음 $X$의 열린 덮개는 유한한 부분덮개를 가지지 않는다.</li>
+</ol>
+
+\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
+
+<ol>
+  <li>$S \subset X$가 무한집합이라고 하자. $S$의 원소들을 임의로 추출하여 점렬 $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$을 만든다. $X$가 점렬 콤팩트하므로 $\lbrace  s_n \rbrace → s$이며, $s$는 $S$의 극점이다.</li>
+  <li>순서 토폴로지가 주어진 $\omega_1$은 극점 콤팩트하지만 콤팩트하지 않다.</li>
+  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, $\mathbb{N}$에는 이산 토폴로지가 주어지고 $\lbrace  0, 1\rbrace$에는 자명한 토폴로지가 주어짐.</li>
+</ol>
+
+<p><strong>Remark.</strong> 4의 올바르지 못한 “증명”</p>
+
+<blockquote>
+  <p>$X$가 극점 콤팩트하다고 하자. 점렬 $(x_n)$이 주어졌을 때, $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$이 유한집합이라면 $(x_n)$은 수렴하는 부분점렬을 자명하게 가진다. $S$가 무한집합이라면 $X$의 극점 콤팩트성에 의해 $x \in S’$가 존재한다. <strong>이제 다음 조건을 만족하는 $x$의 근방들의 가산 모임 $\mathcal{U} = \lbrace  U_n \rbrace$을 정의한다.</strong></p>
+
+  <ol>
+    <li>$n &lt; m \implies U_n \supset U_m$</li>
+    <li>$V$가 $x$의 근방일 때, $\exists U \in \mathcal{U} : U \subset V$</li>
+  </ol>
+
+  <p>이로부터 다음 두 조건을 만족하는 함수 $k: \mathbb{N} → \mathbb{N}$을 정의할 수 있다.</p>
+
+  <ol>
+    <li>$x_{k(n)} \in U_n$</li>
+    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+  </ol>
+
+  <p>2가 가능한 이유는 $k(i)$가 $i \leq n$까지 정의되었을 때 $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$가 여전히 $x$를 극점으로 가지기 때문이다. 즉, $(x_n)$은 수렴하는 부분점렬 $(x_{k(n)})$을 가진다.</p>
+</blockquote>
+
+<p>위 증명이 올바르지 않은 이유는 볼드체 부분이 일반적으로 가능하지 않기 때문이다. 대신 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 1차 가산 T₁ 공간에서 극점 콤팩트성과 점렬 콤팩트성은 동치이다.</p>
+</blockquote>
+
+<h3 id="그물과-점렬">그물과 점렬</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 전순서라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합(directed set)</strong>이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종(cofinal)</strong>이라고 한다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> $(J, \leq)$가 방향 집합이고 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물(net)</strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>정의.</strong> 그물 $(x_\alpha)$가 $x$로 수렴한다는 것은, 임의의 $x$의 근방 $U$에 대해 어떤 $\alpha \in J$가 존재하여</p>
+
+  <p>\(\alpha \leq \beta \implies x_\beta \in U\)
+인 것이다.</p>
+</blockquote>
+
+<p>일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 1차 가산 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 점렬 $(x_n)$이 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면  $f(x_n) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 위상 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 그물 $(x_\alpha)$가 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면  $f(x_\alpha) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$\mathcal{U}_x$를 $x$의 근방들의 집합이라고 하자. 역포함관계로 $\mathcal{U}_x$에 순서 $\leq$를 준다. $x \in \bar{A}$라면 임의의 $U_\alpha \in \mathcal{U}_x$에 대해 $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$인 $x_\alpha$가 존재한다. $x_\alpha → x$임을 확인하라.</li>
+</ol>
+
+<blockquote>
+  <p><strong>정의.</strong> $(x_\alpha)_{\alpha \in J}$가 그물이라고 하자. $(I, \preceq)$가 방향 집합이고, $g: (I, \preceq) → (J, \leq)$가 순서 보존이며, $\operatorname{im}g$가 공종일 때, $(x_{g(\beta)})_{\beta \in I}$를 $(x_\alpha)$의 부분그물이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 콤팩트할 필요충분조건은 임의의 그물이 수렴하는 부분그물을 가지는 것이다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> ”수렴하는 점렬이 존재한다“는 ”수렴하는 그물이 존재한다“보다 강한 조건이지만, ”임의의 점렬이 수렴하는 부분점렬을 가진다”는 “임의의 그물이 수렴하는 부분그물을 가진다”보다 강하지도, 약하지도 않은 조건임에 유의하라. 주어는 후자가 더 강하고, 술어는 전자가 더 강하다. 따라서 <strong>콤팩트성과 점렬 콤팩트성은 일반적으로 시사 관계가 없다.</strong> 구체적으로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+    <li>점렬 콤팩트 $\not\rightarrow$ 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$[0, 1]^{[0, 1]}$은 티호노프 정리에 의해 콤팩트하지만 점렬 콤팩트하지 않다.</li>
+  <li>Long line과 $\omega_1$은 점렬 콤팩트하지만 콤팩트하지 않다.</li>
+</ol>
+
+  </div>
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/2024/12/01/baire/">
         베르 범주 정리
       </a>
@@ -662,137 +821,6 @@ x &amp; x \in D
 <p><strong>본 정리의 증명.</strong> $f: A → B, g: B → A$가 전사일 때 $|gf[A]| \leq |g[B]| \leq |A|$이므로 보조정리에 의해 $|g[B]| = |B| = |A|$이다. ◾</p>
 
 <p>잘 생각해 보면 두 증명은 사실 같다.</p>
-
-
-  </div>
-  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2024/11/18/ZFC/">
-        ZFC 공리의 목록
-      </a>
-    </h1>
-
-    <span class="post-date">18 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
-      
-    </div>
-  
-    <table>
-  <thead>
-    <tr>
-      <th>공리명</th>
-      <th>의미</th>
-      <th>논리식(자유변수는 $\forall$로 양화)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>외연 공리</td>
-      <td>집합은 원소의 모임이다.</td>
-      <td>$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$</td>
-    </tr>
-    <tr>
-      <td>공집합 공리*</td>
-      <td>공집합이 존재한다.</td>
-      <td>$\exists Z : z \not\in Z$</td>
-    </tr>
-    <tr>
-      <td>짝 공리*</td>
-      <td>$X, Y$로부터 $Z = \lbrace  X, Y \rbrace$를 정의할 수 있다.</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$</td>
-    </tr>
-    <tr>
-      <td>합집합 공리</td>
-      <td>$X = \lbrace  Y_i \rbrace$로부터 $Z = \bigcup Y_i$를 정의할 수 있다.</td>
-      <td>$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$</td>
-    </tr>
-    <tr>
-      <td>멱집합 공리</td>
-      <td>$X$로부터 $\mathcal{P}(X)$를 정의할 수 있다.</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$</td>
-    </tr>
-    <tr>
-      <td>분류 공리꼴**</td>
-      <td>$X$로부터 $Y = \lbrace  y \in X : \phi(y) \rbrace$를 정의할 수 있다. ($\phi$는 1차 논리식)</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$</td>
-    </tr>
-    <tr>
-      <td>무한 공리</td>
-      <td>모든 자연수를 포함하는 집합이 존재한다.</td>
-      <td>$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$</td>
-    </tr>
-    <tr>
-      <td>정칙 공리</td>
-      <td>$\in$은 정렬 순서이다.</td>
-      <td>$\exists x \in X : \forall y \in X [ y \not\in x]$</td>
-    </tr>
-    <tr>
-      <td>치환 공리꼴</td>
-      <td>$X$로부터 $f[X]$를 정의할 수 있다. ($f$는 class function)</td>
-      <td>$\displaylines{&amp;[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow \\ &amp;[\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$</td>
-    </tr>
-    <tr>
-      <td>선택 공리</td>
-      <td>집합족 $\lbrace  X_i \rbrace$에 대해 각 $X_i$의 원소를 하나씩 선택할 수 있다.</td>
-      <td>$\displaylines{&amp;\varnothing \notin X \rightarrow \\&amp;\exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Remarks.</strong></p>
-<ul>
-  <li>정칙 공리는 다음과 동치</li>
-</ul>
-
-\[\exists x \in X : x \cap X = \varnothing\]
-
-<ul>
-  <li>
-    <p>(*)로 표시된 공리는 분류 공리꼴로부터 유도할 수 있다.</p>
-  </li>
-  <li>
-    <p>(**)로 표시된 공리는 치환 공리꼴로부터 유도할 수 있다.</p>
-    <ul>
-      <li>분류 공리꼴의 내용은 “X가 집합이다 → f[X]가 집합이다(f는 함수)”이라는 것이다. f가 함수임을(즉, f의 정의역이 집합임을) 선결적으로 요구함에 유의하라.</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="공리의-필요성">공리의 필요성</h3>
-<p><strong>정리.</strong> 다음의 정리들은 선택 공리를 필요로 한다.</p>
-
-<ul>
-  <li>
-    <p>$f: X → Y$가 전사일 때, 어떤 $X$의 부분집합 $Z$에 대해 $f\vert_Z$는 전단사이다.</p>
-  </li>
-  <li>
-    <p>$\varnothing \not\in \lbrace  X_i\rbrace$일 때  $\prod X_i \neq \varnothing$이다.</p>
-  </li>
-  <li>
-    <p><strong>정렬 원리:</strong> 임의의 집합에 정렬 순서를 줄 수 있다.</p>
-  </li>
-  <li>
-    <p><strong>초른의 보조정리:</strong> $(X, &lt;)$의 임의의 체인이 $X$에서 상계를 가진다면, $X$는 극댓값(maximal element)을 가진다.</p>
-  </li>
-</ul>
-
-<p><strong>정리.</strong> 다음의 정리들은 치환 공리꼴을 필요로 한다.</p>
-
-<ul>
-  <li>
-    <p>$\omega + \omega$가 존재한다.</p>
-  </li>
-  <li>
-    <p><strong>서수 완전성 정리.</strong> 모든 정렬 순서는 서수와 순서 동형이다.</p>
-  </li>
-</ul>
 
 
   </div>
