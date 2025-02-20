@@ -25,3 +25,6 @@ encoding: UTF-8
 
 url: "https://dimenerno.github.io"
 baseurl: ""
+
+google_analytics:
+  id: "G-PVGYLWF7GR"
