@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-02-20T16:53:13+09:00</updated>
+ <updated>2025-02-20T19:42:58+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -185,22 +185,28 @@
 
 &lt;p&gt;임의의 $G$의 정점 $v_0$에 대해, 다음과 같이 정의하자.&lt;/p&gt;
 
-\[R_1 = \{ w \in G : \overline{v_0w} \in R \}\\
-B_1 = \{ w \in G : \overline{v_0w} \in B \}\]
+\[\begin{aligned}
+R_1 = \{ w \in G : \overline{v_0w} \in R \}\\
+B_1 = \{ w \in G : \overline{v_0w} \in B \}
+\end{aligned}\]
 
 &lt;p&gt;$R_1 \cup B_1 \cup \lbrace v_0 \rbrace = G$이므로, $R_1$과 $B_1$ 중 적어도 하나는 무한집합이다. 만약 $R_1$이 무한집합이라면 $v_0 \in R$와 같이 표기하고, $B_1$이 무한집합이라면 $v_0 \in B$와 같이 표기하자.&lt;/p&gt;
 
 &lt;p&gt;$R_1$이 무한집합이라고 가정하자. 선택 공리로부터 $R_1$의 원소 $v_1$을 선택할 수 있다. 이제 다음과 같이 정의하자.&lt;/p&gt;
 
-\[R_2 = \{ w \in R_1 : \overline{v_1w} \in R \}\\
-B_2 = \{ w \in R_1 : \overline{v_1w} \in B \}\]
+\[\begin{aligned}
+R_2 = \{ w \in R_1 : \overline{v_1w} \in R \}\\
+B_2 = \{ w \in R_1 : \overline{v_1w} \in B \}
+\end{aligned}\]
 
 &lt;p&gt;$R_2 \cup B_2 \cup \lbrace v_1\rbrace = R_1$이므로, $R_2$와 $B_2$ 중 적어도 하나는 무한집합이다. 마찬가지로 $R_2$가 무한집합이라면 $v_1 \in R$, $B_2$가 무한집합이라면 $v_1 \in B$와 같이 표기하자.&lt;/p&gt;
 
 &lt;p&gt;$B_2$가 무한집합이라고 가정하자. $B_2$의 원소 $v_2$를 선택하여 다음과 같이 정의하자.&lt;/p&gt;
 
-\[R_3 = \{ w \in B_2 : \overline{v_2w} \in R \}\\
-B_3 = \{ w \in B_2 : \overline{v_2w} \in B \}\]
+\[\begin{aligned}
+R_3 = \{ w \in B_2 : \overline{v_2w} \in R \}\\
+B_3 = \{ w \in B_2 : \overline{v_2w} \in B \}
+\end{aligned}\]
 
 &lt;p&gt;이같은 식으로 반복함으로써 다음의 정점열을 얻는다.&lt;/p&gt;
 
