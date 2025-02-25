@@ -13,7 +13,6 @@
  * https://github.com/poole/poole.
  */
 
-
 /*
  * Contents
  *
@@ -28,29 +27,28 @@
  * Themes
  */
 
-
 /*
  * Body resets
  *
  * Update the foundational and global aspects of the page.
  */
 
- mjx-container {
+mjx-container {
   margin: 30px 0 !important;
- }
+}
 
- @font-face {
-	font-family: 'Pretendard Variable';
-	font-weight: 45 920;
-	font-style: normal;
-	font-display: swap;
-	src: url('./woff2/PretendardVariable.woff2') format('woff2-variations');
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("./woff2/PretendardVariable.woff2") format("woff2-variations");
 }
 
 * {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -92,8 +90,13 @@ a:focus {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
   font-weight: bold;
   line-height: 1.5;
   color: #313131;
@@ -115,7 +118,9 @@ h3 {
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-size: 1.1rem;
@@ -131,9 +136,10 @@ strong {
   color: #303030;
 }
 
-
 /* Lists */
-ul, ol, dl {
+ul,
+ol,
+dl {
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -142,7 +148,7 @@ dt {
   font-weight: bold;
 }
 dd {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Misc */
@@ -171,7 +177,7 @@ pre {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
 code {
-  padding: .25em .5em;
+  padding: 0.25em 0.5em;
   font-size: 85%;
   color: #bf616a;
   background-color: #f9f9f9;
@@ -182,7 +188,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 1rem;
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
@@ -218,7 +224,7 @@ pre code {
   background-color: transparent;
 }
 .gist .gist-file .gist-data {
-  font-size: .8rem !important;
+  font-size: 0.8rem !important;
   line-height: 1.4;
 }
 .gist code {
@@ -232,9 +238,9 @@ pre code {
 blockquote {
   padding: 1rem 0.5rem 1rem 1rem;
   margin: 1.5rem 0;
-  color: #313131;;
-  border-left: .25rem solid #cbd2da;
-  background-color: #fafbfd;
+  color: #313131;
+  border-left: 0.25rem solid #cbd2da;
+  background-color: #fafbfc;
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -261,14 +267,13 @@ table {
 }
 td,
 th {
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   border: 1px solid #e5e5e5;
 }
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
 }
-
 
 /*
  * Custom type
@@ -280,7 +285,6 @@ tbody tr:nth-child(odd) th {
   font-size: 1.25rem;
   font-weight: 300;
 }
-
 
 /*
  * Messages
@@ -296,7 +300,6 @@ tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
 }
 
-
 /*
  * Container
  *
@@ -305,12 +308,11 @@ tbody tr:nth-child(odd) th {
 
 .container {
   max-width: 38rem;
-  padding-left:  1rem;
+  padding-left: 1rem;
   padding-right: 1rem;
-  margin-left:  auto;
+  margin-left: auto;
   margin-right: auto;
 }
-
 
 /*
  * Masthead
@@ -319,7 +321,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .masthead {
-  padding-top:    1rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
 }
@@ -337,7 +339,6 @@ tbody tr:nth-child(odd) th {
   color: #c0c0c0;
   letter-spacing: 0;
 }
-
 
 /*
  * Posts and pages
@@ -365,7 +366,7 @@ tbody tr:nth-child(odd) th {
 /* Meta data line below post title */
 .post-date {
   display: block;
-  margin-top: -.5rem;
+  margin-top: -0.5rem;
   margin-bottom: 1rem;
   color: var(--slate);
 }
@@ -394,7 +395,6 @@ tbody tr:nth-child(odd) th {
 .related-posts li a:hover small {
   color: inherit;
 }
-
 
 /*
  * Pagination
@@ -437,12 +437,12 @@ a.pagination-item:hover {
   }
   .pagination-item:first-child {
     margin-bottom: 0;
-    border-top-left-radius:    4px;
+    border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
   }
   .pagination-item:last-child {
     margin-left: -1px;
-    border-top-right-radius:    4px;
+    border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
   }
 }

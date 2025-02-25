@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      카라테오도리 정리를 이용한 측도의 구성 &middot; 디멘의 블로그
+    
+  </title>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  
+  <link rel="canonical" href="/2025/02/24/caratheodory/">
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon.png">
+   <link rel="shortcut icon" href="/public/favicon.ico">
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="">
+
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'G-PVGYLWF7GR', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>이데아를 여행하는 히치하이커</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">최근 글</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">저에 대하여</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive-date/">날짜별로 보기</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive-tag/">주제별로 보기</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/guestbook/">방명록</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">디멘의 블로그</a>
+            <small>이데아를 여행하는 히치하이커</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">카라테오도리 정리를 이용한 측도의 구성</h1>
+  <span class="post-date">24 Feb 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/측도론/'" >측도론</div>
+      
+    </div>
+  
+  <p>필자는 카라테오도리 정리<sub>Carathéodory theorem</sub>를 3가지로 구분해서 이해하는 방식을 선호하기 때문에, 이 글에서도 해당 방식을 따른다. 각각 다음과 같다.</p>
+
+<ol>
+  <li><strong>카라테오도리 구축 정리:</strong> 임의의 집합족과 양함수로부터 외측도<sub>outer measure</sub> 를 정의할 수 있다.</li>
+  <li><strong>카라테오도리 제한 정리:</strong> 외측도의 정의역을 가측 집합으로 제한한 함수는 측도가 된다.</li>
+  <li><strong>카라테오도리 확장 정리:</strong> 대수 $\mathcal{A}_0$ 위의 예비측도<sub>premeasure</sub> $\mu_0$를 확장하는 $\sigma(\mathcal{A}_0)$ 위의 측도는, 집합족을 $\mathcal{A}_0$, 양함수를 $\mu_0$로 잡은 뒤 구축 정리를 적용하여 얻은 외측도 $\mu^\ast$에, 제한 정리를 적용하여 얻은 측도가 유일하다.</li>
+</ol>
+
+<p>도식적으로, 다음과 같이 이해할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>(1)</th>
+      <th>(2)</th>
+      <th>(3)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>정의역</td>
+      <td>대수 $\mathcal{A}_0$</td>
+      <td>$\sigma$-대수 $\mathcal{A}$</td>
+      <td>멱집합 $\mathcal{P}(X)$</td>
+    </tr>
+    <tr>
+      <td>함수</td>
+      <td>예비측도 $\mu_0$</td>
+      <td>측도 $\mu$</td>
+      <td>외측도 $\mu^\ast$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>구축 정리는 (1) → (3), 제한 정리는 (3) → (2), 확장 정리는 (1) → (2)의 방향을 가진다. 하나하나 살펴 보자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X$ 위의 <strong>외측도</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$는 다음을 만족하는 함수이다.</p>
+
+  <ol>
+    <li>$\mu^\ast(\varnothing) = 0$</li>
+    <li>$A \subset B \implies \mu^\ast(A) \leq \mu^\ast(B)$</li>
+    <li>$\mu^\ast\left( \bigcup_{n \in \mathbb{N}} A_n  \right) \leq \sum_{n \in \mathbb{N}} \mu^\ast(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>카라테오도리 구축 정리.</strong> $X$의 부분집합으로 이루어진 임의의 집합족 $\mathcal{S}$와, $l(\varnothing) = 0$을 만족하는 임의의 함수 $l: \mathcal{S} \to [0, \infty]$가 주어졌을 때, 다음과 같이 정의된 $\mu^\ast$은 외측도이다.</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} l(A_n) : \{ A_n \} \subset \mathcal{S} \text{ covers }E  \right\}\]
+</blockquote>
+
+<p>즉, $\mu^\ast$은 덮개의 극한으로서 $E$의 ‘측도’ 비스무리한 것을 정의하는 함수이며, 구분구적법에서 상합<sub>upper sum</sub>과 개념적으로 비슷하다.</p>
+
+<p><strong>증명.</strong> 1과 2는 자명하다. 3을 보인다.</p>
+
+<p>$A = \bigcup A_n$이라고 하고, 임의의 $\epsilon &gt; 0$이 주어졌다고 하자. $\mu^\ast$의 정의에 의해, 각 $n$에 대해 다음을 만족하는 $A_n$의 덮개 $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$가 존재한다.</p>
+
+\[\sum l(A_{nm}) \leq \mu^*(A_n) + \epsilon/2^n\]
+
+<p>따라서,</p>
+
+\[\sum_{n, m \in \mathbb{N}} l(A_{nm}) \leq \sum \mu^*(A_n) + \epsilon.\]
+
+<p>그리고 $\bigcup \mathcal{C}_n$이 $A$를 덮으므로, $\mu^\ast$의 정의에 의해 $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$이다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. 임의의 $E$에 대해 다음을 만족하는 집합 $A$를 $\mu^\ast$에 대해 <strong>가측<sub>measurable</sub></strong>이라고 한다.</p>
+
+\[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast(N) = 0$인 $N$을 <strong>영집합<sub>null set</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<p>즉, 가측 집합은 $\mu^\ast$에 대해 임의의 집합을 ‘깔끔하게’ 분할하는 집합이다. 따라서 가측 집합으로만 이루어진 모임 위에서 $\mu^\ast$은 일반적인 측도와 같이 행동할 것으로 예측할 수 있다. 이 예측을 입증하는 것이 다음의 제한 정리이다.</p>
+
+<blockquote>
+  <p><strong>카라테오도리 제한 정리.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast$에 대해 가측인 집합들의 모임을 $\mathcal{A}$라고 할 때, 다음이 성립한다.</p>
+
+  <ol>
+    <li>$\mathcal{A}$는 $\sigma$-대수이다.</li>
+    <li>$\mu^\ast |_\mathcal{A}$는 측도이다.</li>
+    <li>$\mathcal{A}$는 $\mu^\ast$의 모든 영집합을 포함한다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><strong>1. $\mathcal{A}$는 대수이다.</strong></p>
+
+<p>여집합 닫힘은 자명하다. 유한 교집합 닫힘임을 보인다.</p>
+
+<p>$A, B$가 가측이라고 하자. $A \cap B$가 가측임을 보이기 위해 다음을 보이면 충분하다.</p>
+
+\[\mu^*(E \cap (A \cap B)) + \mu^*(E \cap (A \cap B)^c) \leq \mu^*(E) \quad \cdots \quad (*)\]
+
+<p>$A, B$가 가측이므로 다음이 성립한다.</p>
+
+\[\begin{aligned}
+\mu^*(E) &amp;= \mu^*(E \cap A) + \mu^*(E \cap A^c) \\
+&amp;= \mu^*(E \cap A \cap B) + \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B) + \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>따라서 $(\ast)$은 다음과 동치이다.</p>
+
+\[\begin{aligned}
+\mu^*(E \cap (A^c \cup B^c)) &amp;\leq \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B)  \quad \cdots \quad (**) \\ &amp;+ \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>간단한 집합론으로부터 다음을 알 수 있다.</p>
+
+\[A^c \cup B^c = (A \cap B^c) \cup (A^c \cap B) \cup (A^c \cap B^c)\]
+
+<p>따라서 $(\ast\ast)$가 성립한다. □</p>
+
+<p><strong>2. $\mathcal{A}$는 $\sigma$-대수이다.</strong></p>
+
+<p>$A_n \uparrow A$인 $\lbrace  A_n \rbrace  \subset \mathcal{A}$에 대해 $A \in \mathcal{A}$임을 보이면 충분하다. (why?)</p>
+
+<p>외측도의 정의에 의해 $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$이다. $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$이라고 하자. $\bigsqcup C_n = A$이다. 또한,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n) &amp;= \mu^*(E \cap A_n \cap C_n) + \mu^*(E \cap A_n \cap C_n^c) \\
+&amp;= \mu^*(E \cap C_n) + \mu^*(E \cap A_{n - 1}) \\
+&amp;= \cdots \\
+&amp;= \sum^n_{k = 1} \mu^*(E \cap C_k)
+\end{aligned}\]
+
+<p>이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$이다. 그런데 $\lbrace  E \cap C_n \rbrace $이 $E \cap A$를 덮으므로, $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$이다.</p>
+
+<p>따라서 임의의 $\epsilon &gt; 0$에 대해, 충분히 큰 $N$이 존재하여 $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$이다. 따라서,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n^c) &amp;= \mu^*(E) - \mu^*(E \cap A_n) \\
+&amp;\leq \mu^*(E) - \mu^*(E \cap A) + \epsilon
+\end{aligned}\]
+
+<p>이므로 다음을 얻는다.</p>
+
+\[\mu^*(E) \leq \mu^*(E \cap A_n) + \mu^*(E \cap A_n^c) \leq \mu^*(E) + \epsilon\]
+
+<p>$n \to \infty$로 보내면 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$이다. □</p>
+
+<p><strong>3. $\mu^\ast|_\mathcal{A}$는 측도이다, 4. $\mathcal{A}$는 모든 영집합을 포함한다.</strong></p>
+
+<p>Left as an exercise to the readers. (어렵지 않음) ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{A}_0$가 대수라고 하자. $\rho: \mathcal{A}_0 \to [0, \infty]$가 <strong>예비측도</strong>라는 것은 다음을 만족한다는 것이다.</p>
+
+  <ol>
+    <li>$\rho(\varnothing) = 0$</li>
+    <li>쌍으로 서로소인 가산 집합족 $\lbrace  A_n \rbrace $에 대해, $\bigcup A_n \in \mathcal{A}_0$라면 $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>카라테오도리 확장 정리.</strong> 대수 $\mathcal{A}_0$ 위의 예비측도 $\rho$에 대해, 다음과 같이 정의하자.</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
+
+  <p>이 때, 다음이 성립한다.</p>
+
+  <ol>
+    <li>$A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</li>
+    <li>$\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</li>
+    <li>$\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><strong>1. $A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</strong></p>
+
+<p>$A$가 $A$의 덮개이므로 $\mu^\ast(A) \leq \rho(A)$이다. 만약 $\mu^\ast(A) &lt; \rho(A)$라면 어떤 $A$의 덮개 $\lbrace  A_n \rbrace $이 존재하여 $\sum \rho(A_n) &lt; \rho(A)$이다. 그런데 $\rho$가 예비측도이므로 이는 모순이다. □</p>
+
+<p><strong>2. $\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</strong></p>
+
+<p>먼저 $\mathcal{A}_0$가 가측임을 보인다. 임의의 $A \in \mathcal{A}_0$에 대해 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$임을 보이면 충분하다. $\mu^\ast$의 정의에 의해, 임의의 $\epsilon &gt; 0$에 대해 어떤 $E$의 덮개 $\mathcal{C}$가 존재하여 다음이 성립한다.</p>
+
+\[\sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon\]
+
+<p>$\mathcal{A}_0$가 대수이므로, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$이다. 따라서,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A) + \mu^*(E \cap A^c) &amp;\leq \sum^\infty_{n = 1} \mu^*(A \cap C_n) + \sum^\infty_{n = 1} \mu^*(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(A \cap C_n) + \sum^\infty_{n = 1} \rho(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon
+\end{aligned}\]
+
+<p>(엄밀히 따지자면 $\sum^n_{k=1}$을 고려한 다음에 $n \to \infty$ 극한을 취해야 한다) 따라서 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$이며, $\mathcal{A}_0$는 가측이다. 카라테오도리 제한 정리에 의해 가측 집합은 $\sigma$-대수를 이루므로, $\sigma(\mathcal{A}_0)$ 또한 가측이다. □</p>
+
+<p><strong>3. $\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</strong></p>
+
+<p>먼저 $\rho &lt; \infty$를 가정하자. $\sigma(\mathcal{A}_0)$ 위에서 정의된 측도 $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치한다고 하자. 또한 $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$라고 하자. $\nu = \mu$임을 보인다.</p>
+
+<p>$E \in \sigma(\mathcal{A}_0)$라고 하자. 어떤 $E$의 덮개 $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$가 존재하여,</p>
+
+\[\sum \rho(A_n) \leq \mu(E) + \epsilon\]
+
+<p>이다. $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치하므로, $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$이다. 따라서 $\nu \leq \mu$이다.</p>
+
+<p>이제 $B_n = \bigcup^n_{k=1}A_k$로 정의하고, $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$이라고 하자. $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$이므로 $\mu(B \setminus E) \leq \epsilon$이다. $\nu$가 측도이므로,</p>
+
+\[\mu(A) = \lim \rho(B_n) = \lim \nu(B_n) = \nu(A)\]
+
+<p>따라서,</p>
+
+\[\begin{aligned}
+\mu(E) \leq \mu(B) &amp;= \mu(B \setminus E) + \mu(E) \\
+&amp;\leq \epsilon + \nu(E)
+\end{aligned}\]
+
+<p>즉 $\mu \leq \nu$이다. 따라서 $\mu = \nu$이다.</p>
+
+<p>이제 $\rho$가 $\sigma$-유한하다고 가정하자. 어떤 집합족 $\lbrace  C_n \rbrace $이 존재하여 $C_n \uparrow X$이고, $\rho(C_n) &lt; \infty$이다. 앞선 논의에 의해 $C_n$에서 $\mu$와 $\nu$는 일치한다. 따라서,</p>
+
+\[\mu(A) = \lim \mu(A \cap C_i) = \lim \nu (A \cap C_i) = \nu(A)\]
+
+<p>이므로 $\mu$와 $\nu$는 전체 공간에서 일치한다. ■</p>
+
+<p>다음 글에서는 카라테오도리 정리를 이용하여 르베그 측도를 구성한 뒤, 모든 보렐 가측 집합은 르베그 가측 집합이지만 그 역은 성립하지 않음을 보인다.</p>
+
+</div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3>관련 글</h3>
+  <ul>
+    
+      
+      
+        <li><a href="/2025/02/24/algebra-measure/">측도와 대수의 정의</a></li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='/public/js/script.js'></script>
+  </body>
+</html>

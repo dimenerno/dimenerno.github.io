@@ -5,6 +5,8 @@ date: 2025-02-07
 tags: [수학, 수리논리학]
 ---
 
+<img src="/public/arithmetic-hierarchy.png" width="340px" style="margin: 2em auto;"/>
+
 > **주의.** 이 글은 뇌피셜로 쓰였기 때문에 엄밀하지 않고, 심지어 틀린 내용이 있을 수 있습니다.
 
 **산술 위계(arithmetical hierarchy)**는 산술 — 엄밀히는 1차 페아노 산술 — 의 명제들을 양화사의 복잡도에 따라 분류한 것이다. 산술 위계는 증명 이론 및 계산 복잡도 이론의 핵심 개념이며, 기술적 집합론과도 연관이 있다.
