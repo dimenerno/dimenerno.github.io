@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      르베그 가측 집합과 보렐 가측 집합 &middot; 디멘의 블로그
+    
+  </title>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  
+  <link rel="canonical" href="/2025/02/25/lebesgue-borel/">
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon.png">
+   <link rel="shortcut icon" href="/public/favicon.ico">
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="">
+
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'G-PVGYLWF7GR', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>이데아를 여행하는 히치하이커</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">최근 글</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">저에 대하여</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive-date/">날짜별로 보기</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive-tag/">주제별로 보기</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/guestbook/">방명록</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">디멘의 블로그</a>
+            <small>이데아를 여행하는 히치하이커</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">르베그 가측 집합과 보렐 가측 집합</h1>
+  <span class="post-date">25 Feb 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/측도론/'" >측도론</div>
+      
+    </div>
+  
+  <h3 id="1-르베그-측도">1. 르베그 측도</h3>
+
+<p>카라테오도리 정리로부터 다음과 같이 측도 $m$을 정의할 수 있다.</p>
+
+<ol>
+  <li>
+    <p>$\mathcal{A}_0 = \lbrace \cup^n_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $는 대수임을 보인다.</p>
+  </li>
+  <li>
+    <p>$A \in \mathcal{A}_0$에 대해, $A = \sqcup^n_{k=1} (a_k, b_k]$로 표현하는 방법이 유일함을 보인다.</p>
+  </li>
+  <li>
+    <p>함수 $\rho: \mathcal{A}_0 \to [0, \infty]$를</p>
+
+\[\rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)\]
+
+    <p>와 같이 정의했을 때 $\rho$가 예비측도임을 보인다.</p>
+  </li>
+  <li>
+    <p>$\mathcal{A}_0, \rho$에 대해 카라테오도리 구축 정리를 적용하여 외측도 $m^\ast$을 얻는다.</p>
+  </li>
+  <li>
+    <p>$m^\ast$의 정의역을 $m^\ast$-가측집합으로 제한하여 측도 $m$을 얻는다.</p>
+  </li>
+</ol>
+
+<p>대수는 유한 합집합에만 닫혀 있기 때문에 1, 2, 3은 거의 자명하다. 4, 5의 증명은 <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">관련 글</a>을 참조하라.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 상술한 $m$을 <strong>르베그 측도<sub>Lebesgue measure</sub></strong>라고 부른다. 또한, $m$의 정의역에 속하는 집합을 <strong>르베그 가측<sub>Lebesgue measurable</sub></strong>이라고 부른다.</p>
+</blockquote>
+
+<p>카라테오도리 정리들로부터 다음 사실들이 어렵지 않게 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$m([a, b]) = m((a, b)) = m((a, b]) = m([a, b)) = b - a$</li>
+    <li>$A \subset \mathbb{R}$이 가산일 때, $m(A) = 0$</li>
+  </ol>
+</blockquote>
+
+<p>그리고 카라테오도리 확장 정리로 얻어지는 측도는 완비 측도<sub>complete measure</sub>이므로 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $m$은 완비 측도이다.</p>
+</blockquote>
+
+<p>또한 $\sigma(\mathcal{A}_0)$는 보렐 $\sigma$-대수 $\mathcal{B}$이므로, 다음이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 보렐 가측 집합은 르베그 가측이다.</p>
+</blockquote>
+
+<h3 id="2-르베그-가측이지만-보렐-가측이-아닌-집합">2. 르베그 가측이지만 보렐 가측이 아닌 집합</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 집합열 $\lbrace C_n \rbrace$을 다음과 같이 정의한다.</p>
+
+\[\begin{gather}
+C_0 = [0, 1]\\
+C_1 = I_0 \setminus (1/3, 2/3) \\
+C_2 = I_1 \setminus \{ (1/9, 2/9) \cup (7/9, 8/9) \} \\
+\vdots
+\end{gather}\]
+
+  <p><strong>칸토어 집합<sub>Cantor set</sub></strong> $C$를 $\cap^\infty_{n = 0}C_n$으로 정의한다.</p>
+
+  <p><img src="/public/cantor.png" width="500px" style="margin: 0 auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>칸토어 집합은 비가산이다.</li>
+    <li>칸토어 집합은 르베그 측도 0이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>
+    <p>칸토어 집합에 속하는 원소들은 삼진법으로 소숫점 전개했을 때 어느 자리에도 2가 등장하지 않는 수들이다. 그러한 수는 $2^\aleph_0$개 있으므로 비가산이다.</p>
+  </li>
+  <li>
+    <p>$m(C_n) = (2/3)^n$이므로 $m(C) = \lim_{n \to infty} (2/3)^n = 0$. ■</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><strong>정의.</strong> 칸토어 집합을 정의할 때 각 단계에서 빠지는 집합을 $J_n$이라고 하자. 즉,</p>
+
+\[\begin{gather}
+J_1 = (1/3, 2/3) \\
+J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
+\vdots
+\end{gather}\]
+
+  <p>다음과 같이 함수열을 정의한다.</p>
+
+\[\begin{gather}
+\operatorname{dom} f_1 = J_1,\; f_1(x) = \frac{1}{2} \\\\
+\operatorname{dom} f_2 = J_1 \cup J_2, \; f_2(x) = \begin{cases} 1/4 &amp; x \in (1/9, 2/9) \\ 1/2 &amp; x \in (1/3, 2/3) \\ 3/4 &amp; x \in (7/9, 8/9) \end{cases} \\\\
+\vdots
+\end{gather}\]
+
+  <p>$f: I \to I$를 다음과 같이 정의한다.</p>
+
+\[f(x) = \inf \{ f_n(y) : y \geq x, y \in \mathrm{dom} f \}\]
+
+  <p>$f$를 <strong>칸토어 함수<sub>Cantor function</sub></strong>라고 한다.</p>
+
+  <p><img src="/public/CantorEscalier.svg.png" width="300px" style="margin: 0 auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 칸토어 함수는 연속이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $f$를 칸토어 함수라고 하자. $f$는 증가함수이므로 $f$가 불연속점을 가진다면 해당 불연속은 틈 불연속<sub>gap discontinuity</sub>이며, 따라서 어떤 $\epsilon &gt; 0$와 $y_0 \in I$에 대해 $(y_0 - \epsilon, y_0 + \epsilon)$이 $\operatorname{im} f$ 밖에 속한다. 그런데 $(y_0 - \epsilon, y_0 + \epsilon)$의 원소 중에는 이진법으로 소숫점 전개했을 때 자릿수가 유한한 수가 존재한다. 해당 수는 $\operatorname{im}f$에 속하므로 모순이다. ■</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 르베그 가측이지만 보렐 가측이 아닌 함수가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><em>보조정리.</em> $f$가 증가함수라면 $f^{-1}$은 보렐 집합을 보렐 집합에 사상한다.</p>
+
+<p><em>보조정리의 증명.</em> $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $라고 하자. 열린 집합들의 모음 $\mathcal{G}$에 대해 $\mathcal{G} \subset \mathcal{A}$임이 자명하다. 또한 $\mathcal{A}$가 $\sigma$-대수임이 역함수의 성질로부터 자명하다. 따라서 $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$이다.</p>
+
+<p>$f$가 칸토어 함수라고 하고, $F$를 다음과 같이 정의하자.</p>
+
+\[F(x) =\inf \{y : f(y) \geq x \}\]
+
+<p>$F$는 증가함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■</p>
+
+</div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3>관련 글</h3>
+  <ul>
+    
+      
+      
+        <li><a href="/2025/02/25/caratheodory/">카라테오도리 정리를 이용한 측도의 구성</a></li>
+      
+    
+      
+      
+        <li><a href="/2025/02/24/algebra-measure/">대수와 측도의 정의</a></li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='/public/js/script.js'></script>
+  </body>
+</html>
