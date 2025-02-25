@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-02-25T10:48:45+09:00</updated>
+ <updated>2025-02-25T10:51:16+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>카라테오도리 정리를 이용한 측도의 구성</title>
-   <link href="http://localhost:4000/2025/02/24/caratheodory/"/>
-   <updated>2025-02-24T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/02/24/caratheodory</id>
+   <link href="http://localhost:4000/2025/02/25/caratheodory/"/>
+   <updated>2025-02-25T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/02/25/caratheodory</id>
    <content type="html">&lt;p&gt;필자는 카라테오도리 정리&lt;sub&gt;Carathéodory theorem&lt;/sub&gt;를 3가지로 구분해서 이해하는 방식을 선호하기 때문에, 이 글에서도 해당 방식을 따른다. 각각 다음과 같다.&lt;/p&gt;
 
 &lt;ol&gt;
