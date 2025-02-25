@@ -12,7 +12,7 @@ related:
 
 카라테오도리 정리로부터 다음과 같이 측도 $m$을 정의할 수 있다.
 
-1. $\mathcal{A}\_0 = \lbrace \cup^n\_{k=1} (a\_k, b\_k] : a\_k, b\_k \in \mathbb{R}^\infty \rbrace $는 대수임을 보인다.
+1. $\mathcal{A}\_0 = \lbrace \cup^n\_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $는 대수임을 보인다.
 
 2. $A \in \mathcal{A}\_0$에 대해, $A = \sqcup^n\_{k=1} (a\_k, b\_k]$로 표현하는 방법이 유일함을 보인다.
 
@@ -121,4 +121,4 @@ $$
 F(x) =\inf \{y : f(y) \geq x \}
 $$
 
-$F$는 증가함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 [비탈리 집합](https://dimenerno.github.io/2025/02/24/algebra-measure/)이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■
+$F$는 엄격히 증가하는 함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 [비탈리 집합](https://dimenerno.github.io/2025/02/24/algebra-measure/)이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■
