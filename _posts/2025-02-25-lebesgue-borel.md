@@ -10,7 +10,7 @@ related:
 
 ### 1. 르베그 측도
 
-카라테오도리 정리로부터 다음과 같이 측도 $m$을 정의할 수 있다.
+[카라테오도리 정리](https://dimenerno.github.io/2025/02/25/caratheodory/)로부터 다음과 같이 측도 $m$을 정의할 수 있다.
 
 1. $\mathcal{A}\_0 = \lbrace \cup^n\_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $는 대수임을 보인다.
 
