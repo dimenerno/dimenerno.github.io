@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-02-25T15:32:50+09:00</updated>
+ <updated>2025-02-25T15:56:30+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -19,7 +19,7 @@
    <id>http://localhost:4000/2025/02/25/lebesgue-borel</id>
    <content type="html">&lt;h3 id=&quot;1-르베그-측도&quot;&gt;1. 르베그 측도&lt;/h3&gt;
 
-&lt;p&gt;카라테오도리 정리로부터 다음과 같이 측도 $m$을 정의할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/02/25/caratheodory/&quot;&gt;카라테오도리 정리&lt;/a&gt;로부터 다음과 같이 측도 $m$을 정의할 수 있다.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -155,7 +155,7 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 
 \[F(x) =\inf \{y : f(y) \geq x \}\]
 
-&lt;p&gt;$F$는 증가함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 &lt;a href=&quot;https://dimenerno.github.io/2025/02/24/algebra-measure/&quot;&gt;비탈리 집합&lt;/a&gt;이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■&lt;/p&gt;
+&lt;p&gt;$F$는 엄격히 증가하는 함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 &lt;a href=&quot;https://dimenerno.github.io/2025/02/24/algebra-measure/&quot;&gt;비탈리 집합&lt;/a&gt;이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■&lt;/p&gt;
 </content>
  </entry>
  
