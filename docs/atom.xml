@@ -4,13 +4,246 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-02-25T15:56:30+09:00</updated>
+ <updated>2025-02-28T14:40:24+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>일반 공변성에 대한 노트</title>
+   <link href="http://localhost:4000/2025/02/27/general-covariance/"/>
+   <updated>2025-02-27T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/02/27/general-covariance</id>
+   <content type="html">&lt;p&gt;어떤 이론이 &lt;strong&gt;일반 공변적&lt;sub&gt;general covariant&lt;/sub&gt;&lt;/strong&gt;이라는 것은, 물리 법칙의 형태&lt;sub&gt;form&lt;/sub&gt;가 미분가능한 좌표계 변환에 대해 보존된다는 것이다. 구체적으로, 좌표계 $\lbrace q_i \rbrace $와 좌표계 $\lbrace q’_i \rbrace $가 다음 관계에 있다고 하자.&lt;/p&gt;
+
+\[q_i&apos; = f_i(\{ q \})\]
+
+&lt;p&gt;각 $i$에 대해 $f_i$가 미분 가능하다고 하자. 일반 공변적 이론이라면 좌표계 $\lbrace q_i \rbrace $를 사용했을 때와 좌표계 $\lbrace q_i’ \rbrace $를 사용했을 때의 물리 법칙이 형태가 같아야 한다.&lt;/p&gt;
+
+&lt;p&gt;예시를 보자. 퍼텐셜이 0인 계 안의 입자의 위치를 극좌표계 $(r, \theta)$ 또는 직교 좌표계 $(x, y)$를 사용하여 표현하는 경우를 생각해 보자. 두 좌표계는 다음 관계에 있다.&lt;/p&gt;
+
+\[\begin{gather}
+x = f_1(r, \theta) = r \cos \theta\\
+y = f_2(r, \theta) = r \sin \theta
+\end{gather}\]
+
+&lt;p&gt;$f_1$과 $f_2$가 미분 가능하므로 일반 공변적 이론은 두 좌표계로 표현했을 때의 형태가 같아야 한다.&lt;/p&gt;
+
+&lt;p&gt;먼저 뉴턴 역학의 경우를 보자. 뉴턴 역학의 물리 법칙은 다음과 같다.&lt;/p&gt;
+
+\[\begin{gather}
+-\frac{dV(x, y)}{dx} = m\ddot{x} \\
+-\frac{dV(x, y)}{dy} = m\ddot{y}
+\end{gather}\]
+
+&lt;p&gt;$V(x, y) = 0$이므로 $\ddot{x} = \ddot{y} = 0$이다. 즉 입자는 등속 선형 운동을 한다. 만약 뉴턴 역학이 일반 공변적이라면 위 법칙을 $(x, y)$에서 $(r, \theta)$로 바꿔 표현해도 결과가 같아야 한다.&lt;/p&gt;
+
+\[\begin{gather}
+-\frac{dV(r, \theta)}{dr} = m\ddot{r} \\
+-\frac{dV(r, \theta)}{d\theta} = m\ddot{\theta}
+\end{gather}\]
+
+&lt;p&gt;$V(r, \theta) = 0$이므로 $\ddot{r} = \ddot{\theta} = 0$이다. 이번에는 입자가 등속 원운동을 한다. 결과가 달라졌으므로 &lt;strong&gt;뉴턴 역학은 일반 공변적이지 않다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 &lt;a href=&quot;http://dimenerno.github.io/2025/02/27/euler-lagrange/&quot;&gt;라그랑주 역학&lt;/a&gt;의 경우를 보자. 라그랑주 역학의 물리 법칙은 다음과 같다.&lt;/p&gt;
+
+\[\begin{gather}
+\frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
+\frac{\partial \mathcal{L}}{\partial y} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{y}}
+\end{gather}\]
+
+&lt;p&gt;$\mathcal{L}(x, y) = T - V = \frac{m}{2}(\dot{x}^2 + \dot{y}^2)$를 대입하면 $\ddot{x} = \ddot{y} = 0$, 즉 등속 선형 운동을 얻는다. 여기까지는 뉴턴 역학과 같다.&lt;/p&gt;
+
+&lt;p&gt;이제 오일러-라그랑주 방정식의 $(x, y)$를 $(r, \theta)$로 치환해 보자.&lt;/p&gt;
+
+\[\begin{gather}
+\frac{\partial \mathcal{L}}{\partial r} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{r}} \\
+\frac{\partial \mathcal{L}}{\partial \theta} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}}
+\end{gather}\]
+
+&lt;p&gt;$x = r\cos\theta, y = r\sin\theta$를 대입하여 정리하면 $\mathcal{L}(r, \theta)$는 다음과 같다.&lt;/p&gt;
+
+\[\mathcal{L}(r, \theta) = \frac{m}{2}(\dot{r}^2 + r^2 \dot{\theta}^2)\]
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; 오일러-라그랑주 방정식에서는 단순히 $(x, y)$를 $(r, \theta)$로 치환했지만, 라그랑지안에서는 $x = r \cos \theta, y = r \sin \theta$ 관계식을 대입하는 이유는 라그랑지안이 &lt;strong&gt;실수쌍&lt;/strong&gt;에 대한 함수가 아니라 &lt;strong&gt;시공간의 점&lt;/strong&gt;에 대한 함수이기 때문이다. 일반 공변성은 무지성, 일편단률적인 좌표 변환에 대해서 식의 형태가 유지된다는 의미가 아니라, 물리계를 표현하는 함수들은 유지된 채 그것을 표현하는 좌표가 바뀌었을 때 식의 형태가 유지된다는 의미이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;대입하여 계산하면 다음과 같다.&lt;/p&gt;
+
+\[\begin{gather}
+\ddot{r} = r\dot{\theta}^2 \\
+2\dot{r}\dot{\theta} + r\ddot{\theta} = 0
+\end{gather}\]
+
+&lt;p&gt;미분방정식이 복잡해서 알아보기 힘들지만, 위 두 미분방정식은 $\ddot{x} = \ddot{y} = 0$과 동치이다. 일례로 $\theta = \tan^{-1}t, r = \sqrt{1 + t^2}$가 방정식의 해인 것을 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;일반적으로 다음이 성립한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 라그랑주 역학은 일반 공변성을 가진다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;뉴턴 역학은 일반 공변성이 없지만 라그랑주 역학은 있다는 것이 신기하게 느껴질 수 있지만, 잘 생각해 보면 이것은 당연하다. 뉴턴의 제1법칙은 보통 $F = 0 \implies \ddot{x} = 0$이라는 수식으로 표현되지만 정확한 진술은 다음과 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;외력을 받지 않는 입자의 시공간 다이어그램은 선형이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;‘선형’이라는 표현에 주목하라. 선형성은 특정한 기하학에 의존적인 표현이다. 예를 들어 유클리드 기하학에서 ‘선형’이란 우리가 흔히 말하는 직선이지만, 구면 기하학에서 ‘선형’은 대원으로 주어진다. 그러므로 위 진술은 다음과 같이 밝혀 쓰는 것이 가장 정확하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;뉴턴 역학&lt;/strong&gt;. 외력을 받지 않는 입자의 시공간 다이어그램은 유클리드 기하학의 선형이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그리고 유클리드 기하학의 선형은 직교 좌표계에서 $\ddot{x} = \ddot{y} = 0$ 꼴로 주어진다. 따라서 $F = 0 \implies \ddot{x} = 0$은, 유클리드 기하학과 직교 좌표계를 전제했을 때에만 올바른 수식인 것이다.&lt;/p&gt;
+
+&lt;p&gt;거꾸로 말해, 이론이 특정한 기하학에 의존하지 않는다면 그 이론은 일반 공변적이다. 라그랑주 역학은 그러한 이론의 사례이다. 라그랑주 역학의 진술은 다음과 같이 표현할 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;라그랑주 역학&lt;/strong&gt;. 라그랑지안의 적분을 극화시키는 경로가 입자의 운동 경로이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그리고 라그랑지안은 특정 기하학에 의존적인 함수가 아닌, 그저 시공간의 점들에 대해 실숫값을 출력하는 함수이다. 따라서 위 진술은 어떠한 기하학에 대해서도 의존적이지 않으며, 라그랑주 역학은 일반 공변적이다.&lt;/p&gt;
+
+&lt;p&gt;구멍 논증&lt;sub&gt;hole argument&lt;/sub&gt;에 따르면 일반 공변적인 이론들은 형이상학적인 의미에서 비결정론적이다. 이에 대한 설명은 나중에 하도록 하겠다.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>오일러-라그랑주 방정식과 라그랑주 역학</title>
+   <link href="http://localhost:4000/2025/02/27/euler-lagrange/"/>
+   <updated>2025-02-27T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/02/27/euler-lagrange</id>
+   <content type="html">&lt;h2 id=&quot;1-도입&quot;&gt;1. 도입&lt;/h2&gt;
+
+&lt;p&gt;1차원 위에서 운동하는 입자의 운동 경로는 $x(t)$와 같이 표현할 수 있다. 입자의 위치와 속도에 의존적인 함수 $f(x, x’)$를 생각하자. 이 입자가 시간 $t_1$일 때 $x_1$에서 출발하여 시간 $t_2$일 때 $x_2$에 도착하는데, 그 과정에서 다음 값을 극화&lt;sub&gt;extremise&lt;/sub&gt;하는 경로, 즉 다음 값이 극대 또는 극소가 되도록 하는 경로 $x(t)$를 찾는 것이 목표이다.&lt;/p&gt;
+
+\[A[x] = \int^{t_2}_{t_1} f(x, \dot{x}) dt\]
+
+&lt;p&gt;대괄호는 $A$의 매개변수가 실수가 아닌 함수임을 의미한다. 따라서 직관적으로 생각했을 때 $A[x]$를 최소화하는 $x(t)$를 찾기 위해서는 함수에 대한 미분식을 세워야 한다.&lt;/p&gt;
+
+\[\frac{dA[x]}{dx(t)} = 0?\]
+
+&lt;h2 id=&quot;2-오일러-라그랑주-방정식&quot;&gt;2. 오일러-라그랑주 방정식&lt;/h2&gt;
+
+&lt;p&gt;물론 함수에 대한 미분을 우리는 정의한 적이 없다. 하지만 간단한 트릭을 통해 함수에 대한 미분을 일반적인 미분으로 환원할 수 있다. 먼저 $x_0(t)$가 우리가 찾고자 하는 경로, 즉 $A[x]$를 극화시키는 경로라고 하자. $x_0(t)$의 ‘주변’에 있는 경로는 다음과 같은 꼴이다.&lt;/p&gt;
+
+\[x(\alpha, t) = x_0(t) + \alpha h(t)\]
+
+&lt;p&gt;&lt;img src=&quot;public/euler-lagrange.png&quot; width=&quot;400px&quot; style=&quot;margin: 2em auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;경계 조건은 $h(t_1) = h(t_2) = 0$이다. $x_0(t)$가 $A[x]$를 극화시키므로, 충분히 작은 $\epsilon$에 대해 $A[x_0] = A[x(0, t)] \leq A[x(\epsilon, t)]$이다. 따라서,&lt;/p&gt;
+
+\[\left. \frac{dA[x(\alpha, t)]}{d\alpha} \right\vert_{\alpha = 0} = 0\]
+
+&lt;p&gt;위 식을 전개하면 다음과 같다.&lt;/p&gt;
+
+\[\begin{aligned}
+\frac{dA}{d\alpha} &amp;amp;= \int^{t_2}_{t_1} \frac{d}{d\alpha} \Big[ f \big( x(\alpha, t), \dot{x}(\alpha, t) \big) \Big] dt \\
+&amp;amp;= \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} + \frac{\partial f}{\partial \dot{x}}\frac{\partial \dot{x}}{\partial \alpha} \right) dt \\
+&amp;amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \int^{t_2}_{t_1} \frac{\partial f}{\partial \dot{x}} \cdot \frac{d}{dt} \left( \frac{\partial x}{\partial \alpha} \right) dt \\
+&amp;amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \left[ \frac{\partial f}{\partial \dot{x}} \frac{\partial x}{\partial \alpha} \right]^{t_2}_{t_1} -  \int^{t_2}_{t_1} \frac{d}{dt} \left( \frac{\partial f}{\partial \dot{x}} \right) \frac{\partial x}{\partial \alpha} dt
+\end{aligned}\]
+
+&lt;p&gt;3번 식에서 4번 식으로 넘어가는 데 부분적분이 쓰였다. ${\partial x}/{\partial \alpha} = h(t)$이므로, 경계 조건에 의해 4번 식의 두 번째 항은 소거된다. 따라서,&lt;/p&gt;
+
+\[\frac{dA}{d\alpha} = \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x} - \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right) \right) \frac{\partial x}{\partial \alpha} dt = 0\]
+
+&lt;p&gt;임의의 $h \in C^1$에 대해 위 식이 만족되어야 하므로, $x(t)$가 $A$를 극화할 다음의 &lt;em&gt;필요조건&lt;/em&gt;을 얻는다.&lt;/p&gt;
+
+\[\frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
+
+&lt;p&gt;이것이 &lt;strong&gt;오일러-라그랑주 방정식&lt;sub&gt;Euler-Lagrange equation&lt;/sub&gt;&lt;/strong&gt;이다. 값 $A$를 극화한다는 것을 $\delta A = 0$과 같이 표현하므로, 오일러-라그랑주 방정식의 결론은 다음과 같이 적을 수 있다.&lt;/p&gt;
+
+\[\delta A = 0 \implies \frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
+
+&lt;p&gt;방금 우리는 일변수 함수에 대해 증명했지만, 다변수 함수에 대해서도 마찬가지 식이 성립한다. 즉, 어떤 입자(들)의 운동을 나타내는 좌표가 $\lbrace  q_i \rbrace _{i \leq n}$라고 하자. 예를 들어 2개의 입자가 3차원에서 운동하는 경우 $n = 6$이다. 이들의 운동이 $\int f(q_1, \dot{q_1}, \dots, q_n, \dot{q_n}) dt$를 극화할 필요조건은 각 $i$에 대해 다음이 성립하는 것이다.&lt;/p&gt;
+
+\[\frac{\partial f}{\partial q_i} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{q_i}} \right)\]
+
+&lt;!-- ## 3. 최단 강하 곡선 문제
+
+앞서 $t$를 시간, $x(t)$를 경로로 설정했지만, 다른 변수에 대해서도 오일러-라그랑주 방정식을 적용할 수 있다. 그 예시로, 최단 강하 곡선 문제를 풀어보자.
+
+&lt;img src=&quot;public/brachistochrone.png&quot; width=&quot;400px&quot; style=&quot;margin: 2em auto;&quot;&gt;
+
+에너지 보존 법칙에 의해 다음 식이 성립한다.
+
+$$
+\dot{x}^2 + \dot{y}^2 = -2gy
+$$
+
+따라서 곡선 $y(x)$를 따라 $(x\_1, y\_1)$에서 $(x\_2, y\_2)$까지 강하하는 데 걸리는 시간은 다음과 같다.
+
+$$
+\begin{aligned}
+T &amp;= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{ds}{v} \\
+&amp;= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{\sqrt{dx^2 + dy^2}}{\sqrt{\dot{x}^2 + \dot{y}^2}} \\
+&amp;= \int^{x_2}_{x_1} \sqrt{-\frac{1 + y&apos;^2}{2gy}} dx
+\end{aligned}
+$$
+
+다음과 같이 $f(y, y&apos;)$을 두자.
+
+$$
+f(y, y&apos;) = \sqrt{-\frac{1 + y&apos;^2}{2gy}}
+$$
+
+오일러-라그랑주 방정식에 따르면 $T$가 극솟값을 가질 필요조건은 다음과 같다.
+
+$$
+\frac{\partial f}{\partial y} = \frac{d}{dx} \frac{\partial f}{\partial {y&apos;}}
+$$
+
+위 식을 풀면 $y(x)$가 **사이클로이드** 꼴로 나타난다. 자세한 계산 과정은 연습문제로 땡처리하는 것을 양해 바란다. --&gt;
+
+&lt;h2 id=&quot;3-라그랑주-역학&quot;&gt;3. 라그랑주 역학&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 계 $S$의 입자(들)의 운동을 나타내는 좌표가 $\lbrace  q_i \rbrace _{1 \leq i \leq n}$라고 하자. $S$의 &lt;strong&gt;라그랑지안&lt;sub&gt;Lagrangian&lt;/sub&gt;&lt;/strong&gt; $\mathcal{L}(\lbrace  q , \dot{q} \rbrace, t)$를, 다음의 값을 극화시키는 조건에 대한 방정식이 입자들의 운동 방정식과 같아지도록 하는 함수로 정의한다.&lt;/p&gt;
+
+\[\mathcal{S} = \int^{t_2}_{t_1} \mathcal{L}(\{ q, \dot{q} \}, t) dt\]
+
+  &lt;p&gt;$\mathcal{S}$를 &lt;strong&gt;작용&lt;sub&gt;action&lt;/sub&gt;&lt;/strong&gt;이라고 부른다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;예를 들어 1차원 퍼텐셜 장 $V(x)$에 속하는 입자의 라그랑지안은 다음과 같다.&lt;/p&gt;
+
+\[\begin{aligned}
+\mathcal{L}(x, \dot{x}) &amp;amp;= T - V \\
+&amp;amp;= \frac{1}{2}m\dot{x}^2 - V(x)
+\end{aligned}\]
+
+&lt;p&gt;위 함수가 라그랑지안이라는 것을 확인해 보자. 오일러-라그랑주 방정식을 사용하면 해당 라그랑지안에 따른 작용이 극화될 조건은 다음과 같다.&lt;/p&gt;
+
+\[\begin{aligned}
+\delta \mathcal{S} = 0 &amp;amp;\implies \frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
+&amp;amp;\iff -\frac{dV}{dx} = \frac{d}{dt}(m\dot{x}) \\
+&amp;amp;\iff -\frac{dV}{dx} = m\ddot{x}
+\end{aligned}\]
+
+&lt;p&gt;마지막 식은 뉴턴의 운동 방정식이다. 따라서 $\mathcal{L}$은 이 계의 라그랑지안이 맞다. 일반적으로 다음이 성립한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 다음 두 조건을 만족하는 고전역학적 계의 라그랑지안은 $\mathcal{L} = T - V$로 주어진다.&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;계의 경계 조건이 홀로노믹&lt;sub&gt;holonomic&lt;/sub&gt;하다. 즉, 경계 조건이 입자들의 위치에만 의존하고 속도에 의존하지 않는다.&lt;/li&gt;
+    &lt;li&gt;계에 작용하는 힘 $\mathbf{F}_i$가 퍼텐셜 함수 $U_i(\lbrace q, \dot{q} \rbrace, t)$를 가진다.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 링크된 &lt;a href=&quot;https://physics.stackexchange.com/questions/78138/is-there-a-proof-from-the-first-principle-that-the-lagrangian-l-t-v&quot;&gt;SE 포스트&lt;/a&gt;를 참조.&lt;/p&gt;
+
+&lt;p&gt;그러나 일반적으로 계의 라그랑지안이 $T - V$로 주어지는 것은 아니다. 예를 들어 상대론적 입자의 운동 에너지는 $(\gamma - 1)m_0c^2$이지만, 올바른 라그랑지안은 $-m_0c^2/\gamma$이다.&lt;/p&gt;
+
+&lt;p&gt;뉴턴 역학과 달리 라그랑주 역학은 매우 자유로운 좌표계 변환을 허용한다는 점에서 강점을 가진다. 뉴턴 역학과 달리 라그랑주 역학은 일반 공변성을 가지기 때문이다. 이에 대한 자세한 설명은 &lt;a href=&quot;http://dimenerno.github.io/2025/02/27/general-covariance/&quot;&gt;다음 글&lt;/a&gt;에 있다.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>르베그 가측 집합과 보렐 가측 집합</title>
@@ -400,11 +633,11 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
    <content type="html">&lt;h2 id=&quot;1-비탈리-정리&quot;&gt;1. 비탈리 정리&lt;/h2&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mu$가 집합 $X$ 위의 &lt;strong&gt;측도&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;measure&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;/sub&amp;gt;&lt;/code&gt;&lt;/strong&gt;라는 것은 다음을 만족한다는 것이다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mu$가 집합 $X$ 위의 &lt;strong&gt;측도&lt;sub&gt;measure&lt;/sub&gt;&lt;/strong&gt;라는 것은 다음을 만족한다는 것이다.&lt;/p&gt;
 
   &lt;ol&gt;
     &lt;li&gt;$\mu(\varnothing) = 0$&lt;/li&gt;
-    &lt;li&gt;쌍으로 서로소&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;pairwise disjoint&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;/sub&amp;gt;&lt;/code&gt;인 가산 집합족 $\lbrace A_n \rbrace$에 대해, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$&lt;/li&gt;
+    &lt;li&gt;쌍으로 서로소&lt;sub&gt;pairwise disjoint&lt;/sub&gt;인 가산 집합족 $\lbrace A_n \rbrace$에 대해, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
@@ -437,7 +670,7 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 &lt;p&gt;따라서 올바른 측도를 구축하기 위해서는 측도의 정의역을 적절히 제한할 필요가 있다. 이에 대수의 개념을 도입한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 집합 $X$의 &lt;strong&gt;대수&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;algebra&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;/sub&amp;gt;&lt;/code&gt;&lt;/strong&gt; $\mathcal{A}_0$는 다음을 만족하는 집합족이다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 집합 $X$의 &lt;strong&gt;대수&lt;sub&gt;algebra&lt;/sub&gt;&lt;/strong&gt; $\mathcal{A}_0$는 다음을 만족하는 집합족이다.&lt;/p&gt;
 
   &lt;ol&gt;
     &lt;li&gt;$\varnothing, X \in \mathcal{A}_0$&lt;/li&gt;
@@ -462,7 +695,7 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
   &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\lbrace \mathcal{A}_i \rbrace_{i \in I}$가 $X$의 $\sigma$-대수들의 모임이라면 $\bigcap_{i \in I}\mathcal{A}_i$ 또한 $X$의 $\sigma$-대수이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $\sigma$-대수의 정의로부터 쉽게 증명할 수 있다. 그런데 이렇게만 적으면 재미 없으니까, 조금 독특한 증명을 남긴다. &lt;strong&gt;워시-타르스키 정리&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;Łoś-Tarski theorem&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;/sub&amp;gt;&lt;/code&gt;&lt;/strong&gt;에 따르면 1차 이론이 교집합에 대해 보존적일 필요충분조건은 1차 이론의 모든 문장이 $\Pi_1$ 문장인 것이다. 그리고 $\sigma$-대수의 세 공리는 모두 $\Pi_1$ 문장이므로, $\sigma$-대수는 교집합에 대해 보존적이다. ■&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $\sigma$-대수의 정의로부터 쉽게 증명할 수 있다. 그런데 이렇게만 적으면 재미 없으니까, 조금 독특한 증명을 남긴다. &lt;strong&gt;워시-타르스키 정리&lt;sub&gt;Łoś-Tarski theorem&lt;/sub&gt;&lt;/strong&gt;에 따르면 1차 이론이 교집합에 대해 보존적일 필요충분조건은 1차 이론의 모든 문장이 $\Pi_1$ 문장인 것이다. 그리고 $\sigma$-대수의 세 공리는 모두 $\Pi_1$ 문장이므로, $\sigma$-대수는 교집합에 대해 보존적이다. ■&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;따름정리.&lt;/strong&gt; $\mathcal{C}$가 $X$의 부분집합으로 이루어진 집합족일 때, $\mathcal{C}$를 포함하는 가장 작은 $\sigma$-대수가 존재한다. 그러한 $\sigma$-대수를 $\sigma(\mathcal{C})$와 같이 적는다.&lt;/p&gt;
@@ -473,10 +706,10 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 &lt;p&gt;대표적인 $\sigma$-대수의 예시로, 보렐 $\sigma$-대수를 살펴보자.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathcal{G}$가 $\mathbb{R}$의 열린 집합들의 집합족이라고 하자. $\sigma(\mathcal{G})$를 &lt;strong&gt;보렐 $\sigma$-대수&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;Borel $\sigma$-algebra&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;/sub&amp;gt;&lt;/code&gt;&lt;/strong&gt;라고 하며, $\mathcal{B}$와 같이 적는다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathcal{G}$가 $\mathbb{R}$의 열린 집합들의 집합족이라고 하자. $\sigma(\mathcal{G})$를 &lt;strong&gt;보렐 $\sigma$-대수&lt;sub&gt;Borel $\sigma$-algebra&lt;/sub&gt;&lt;/strong&gt;라고 하며, $\mathcal{B}$와 같이 적는다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;보렐 $\sigma$-대수는 &lt;strong&gt;보렐 위계&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;Borel hierarchy&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;/sub&amp;gt;&lt;/code&gt;&lt;/strong&gt;를 통해서 이해할 수도 있다. $\Sigma_1$을 열린 집합들의 모임, $\Pi_1$을 닫힌 집합들의 모임이라고 하자. 다음과 같이 정의한다.&lt;/p&gt;
+&lt;p&gt;보렐 $\sigma$-대수는 &lt;strong&gt;보렐 위계&lt;sub&gt;Borel hierarchy&lt;/sub&gt;&lt;/strong&gt;를 통해서 이해할 수도 있다. $\Sigma_1$을 열린 집합들의 모임, $\Pi_1$을 닫힌 집합들의 모임이라고 하자. 다음과 같이 정의한다.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$\Delta_n = \Sigma_n \cap \Pi_n$&lt;/li&gt;
@@ -492,7 +725,7 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 
 &lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 생략. 하지만 직관적으로 이해할 수 있다. $\mathcal{B}$는 가산 교집합과 가산 합집합, 그리고 여집합에 대해 닫혀 있어야 하므로 모든 가산 서수 $\alpha$에 대해 $\Sigma_\alpha, \Pi_\alpha, \Delta_\alpha \subset \mathcal{B}$이다. 이 사실로부터 초한 귀납을 취해 정리를 얻는다. ■&lt;/p&gt;
 
-&lt;p&gt;어떤 집합 위의 대수와 예비측도라는 것이 주어졌을 때, 이로부터 측도를 정의하는 방법이 알려져 있다. 이 방법을 카라테오도리 방법&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sub&amp;gt;&lt;/code&gt;Carathéodory method&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;/sub&amp;gt;&lt;/code&gt;이라고 부른다. 예비측도는 구성하기가 매우 쉽기 때문에, 이 방법을 이용하면 측도를 아주 쉽게 구성할 수 있다. 카라테오도리 방법에 대해서는 &lt;a href=&quot;http://dimenerno.github.io/2025/02/25/caratheodory/&quot;&gt;다음 글&lt;/a&gt;에서 알아본다.&lt;/p&gt;
+&lt;p&gt;어떤 집합 위의 대수와 예비측도라는 것이 주어졌을 때, 이로부터 측도를 정의하는 방법이 알려져 있다. 이 방법을 카라테오도리 방법&lt;sub&gt;Carathéodory method&lt;/sub&gt;이라고 부른다. 예비측도는 구성하기가 매우 쉽기 때문에, 이 방법을 이용하면 측도를 아주 쉽게 구성할 수 있다. 카라테오도리 방법에 대해서는 &lt;a href=&quot;http://dimenerno.github.io/2025/02/25/caratheodory/&quot;&gt;다음 글&lt;/a&gt;에서 알아본다.&lt;/p&gt;
 </content>
  </entry>
  

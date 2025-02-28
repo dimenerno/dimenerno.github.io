@@ -2,59 +2,80 @@
 <html lang="en-us">
 
   <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
 
   <title>
-    
-      대수와 측도의 정의 &middot; 디멘의 블로그
-    
+     대수와 측도의 정의 &middot; 디멘의 블로그 
   </title>
 
   <script>
     MathJax = {
       tex: {
-        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
       },
       svg: {
-        fontCache: 'global'
-      }
+        fontCache: "global",
+      },
     };
   </script>
   <script
-    type="text/javascript" id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-  </script>
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
 
   
-  <link rel="canonical" href="/2025/02/24/algebra-measure/">
+  <link rel="canonical" href="/2025/02/24/algebra-measure/" />
   
 
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/lanyon.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
 
   <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
   <link rel="shortcut icon" href="">
    -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon.png">
-   <link rel="shortcut icon" href="/public/favicon.ico">
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
   <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="">
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
 
-  
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'G-PVGYLWF7GR', 'auto');
-    ga('send', 'pageview');
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
   </script>
-  
 </head>
 
 
@@ -185,6 +206,14 @@
         
       
     
+      
+        
+      
+    
+      
+        
+      
+    
   </nav>
 
   <div class="sidebar-item">
@@ -223,11 +252,11 @@
   <h2 id="1-비탈리-정리">1. 비탈리 정리</h2>
 
 <blockquote>
-  <p><strong>정의.</strong> $\mu$가 집합 $X$ 위의 <strong>측도<code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>measure<code class="language-plaintext highlighter-rouge">&lt;/sub&gt;</code></strong>라는 것은 다음을 만족한다는 것이다.</p>
+  <p><strong>정의.</strong> $\mu$가 집합 $X$ 위의 <strong>측도<sub>measure</sub></strong>라는 것은 다음을 만족한다는 것이다.</p>
 
   <ol>
     <li>$\mu(\varnothing) = 0$</li>
-    <li>쌍으로 서로소<code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>pairwise disjoint<code class="language-plaintext highlighter-rouge">&lt;/sub&gt;</code>인 가산 집합족 $\lbrace A_n \rbrace$에 대해, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$</li>
+    <li>쌍으로 서로소<sub>pairwise disjoint</sub>인 가산 집합족 $\lbrace A_n \rbrace$에 대해, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$</li>
   </ol>
 </blockquote>
 
@@ -260,7 +289,7 @@
 <p>따라서 올바른 측도를 구축하기 위해서는 측도의 정의역을 적절히 제한할 필요가 있다. 이에 대수의 개념을 도입한다.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> 집합 $X$의 <strong>대수<code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>algebra<code class="language-plaintext highlighter-rouge">&lt;/sub&gt;</code></strong> $\mathcal{A}_0$는 다음을 만족하는 집합족이다.</p>
+  <p><strong>정의.</strong> 집합 $X$의 <strong>대수<sub>algebra</sub></strong> $\mathcal{A}_0$는 다음을 만족하는 집합족이다.</p>
 
   <ol>
     <li>$\varnothing, X \in \mathcal{A}_0$</li>
@@ -285,7 +314,7 @@
   <p><strong>정리.</strong> $\lbrace \mathcal{A}_i \rbrace_{i \in I}$가 $X$의 $\sigma$-대수들의 모임이라면 $\bigcap_{i \in I}\mathcal{A}_i$ 또한 $X$의 $\sigma$-대수이다.</p>
 </blockquote>
 
-<p><strong>증명.</strong> $\sigma$-대수의 정의로부터 쉽게 증명할 수 있다. 그런데 이렇게만 적으면 재미 없으니까, 조금 독특한 증명을 남긴다. <strong>워시-타르스키 정리<code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>Łoś-Tarski theorem<code class="language-plaintext highlighter-rouge">&lt;/sub&gt;</code></strong>에 따르면 1차 이론이 교집합에 대해 보존적일 필요충분조건은 1차 이론의 모든 문장이 $\Pi_1$ 문장인 것이다. 그리고 $\sigma$-대수의 세 공리는 모두 $\Pi_1$ 문장이므로, $\sigma$-대수는 교집합에 대해 보존적이다. ■</p>
+<p><strong>증명.</strong> $\sigma$-대수의 정의로부터 쉽게 증명할 수 있다. 그런데 이렇게만 적으면 재미 없으니까, 조금 독특한 증명을 남긴다. <strong>워시-타르스키 정리<sub>Łoś-Tarski theorem</sub></strong>에 따르면 1차 이론이 교집합에 대해 보존적일 필요충분조건은 1차 이론의 모든 문장이 $\Pi_1$ 문장인 것이다. 그리고 $\sigma$-대수의 세 공리는 모두 $\Pi_1$ 문장이므로, $\sigma$-대수는 교집합에 대해 보존적이다. ■</p>
 
 <blockquote>
   <p><strong>따름정리.</strong> $\mathcal{C}$가 $X$의 부분집합으로 이루어진 집합족일 때, $\mathcal{C}$를 포함하는 가장 작은 $\sigma$-대수가 존재한다. 그러한 $\sigma$-대수를 $\sigma(\mathcal{C})$와 같이 적는다.</p>
@@ -296,10 +325,10 @@
 <p>대표적인 $\sigma$-대수의 예시로, 보렐 $\sigma$-대수를 살펴보자.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> $\mathcal{G}$가 $\mathbb{R}$의 열린 집합들의 집합족이라고 하자. $\sigma(\mathcal{G})$를 <strong>보렐 $\sigma$-대수<code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>Borel $\sigma$-algebra<code class="language-plaintext highlighter-rouge">&lt;/sub&gt;</code></strong>라고 하며, $\mathcal{B}$와 같이 적는다.</p>
+  <p><strong>정의.</strong> $\mathcal{G}$가 $\mathbb{R}$의 열린 집합들의 집합족이라고 하자. $\sigma(\mathcal{G})$를 <strong>보렐 $\sigma$-대수<sub>Borel $\sigma$-algebra</sub></strong>라고 하며, $\mathcal{B}$와 같이 적는다.</p>
 </blockquote>
 
-<p>보렐 $\sigma$-대수는 <strong>보렐 위계<code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>Borel hierarchy<code class="language-plaintext highlighter-rouge">&lt;/sub&gt;</code></strong>를 통해서 이해할 수도 있다. $\Sigma_1$을 열린 집합들의 모임, $\Pi_1$을 닫힌 집합들의 모임이라고 하자. 다음과 같이 정의한다.</p>
+<p>보렐 $\sigma$-대수는 <strong>보렐 위계<sub>Borel hierarchy</sub></strong>를 통해서 이해할 수도 있다. $\Sigma_1$을 열린 집합들의 모임, $\Pi_1$을 닫힌 집합들의 모임이라고 하자. 다음과 같이 정의한다.</p>
 
 <ul>
   <li>$\Delta_n = \Sigma_n \cap \Pi_n$</li>
@@ -315,7 +344,7 @@
 
 <p><strong>증명.</strong> 생략. 하지만 직관적으로 이해할 수 있다. $\mathcal{B}$는 가산 교집합과 가산 합집합, 그리고 여집합에 대해 닫혀 있어야 하므로 모든 가산 서수 $\alpha$에 대해 $\Sigma_\alpha, \Pi_\alpha, \Delta_\alpha \subset \mathcal{B}$이다. 이 사실로부터 초한 귀납을 취해 정리를 얻는다. ■</p>
 
-<p>어떤 집합 위의 대수와 예비측도라는 것이 주어졌을 때, 이로부터 측도를 정의하는 방법이 알려져 있다. 이 방법을 카라테오도리 방법<code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>Carathéodory method<code class="language-plaintext highlighter-rouge">&lt;/sub&gt;</code>이라고 부른다. 예비측도는 구성하기가 매우 쉽기 때문에, 이 방법을 이용하면 측도를 아주 쉽게 구성할 수 있다. 카라테오도리 방법에 대해서는 <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">다음 글</a>에서 알아본다.</p>
+<p>어떤 집합 위의 대수와 예비측도라는 것이 주어졌을 때, 이로부터 측도를 정의하는 방법이 알려져 있다. 이 방법을 카라테오도리 방법<sub>Carathéodory method</sub>이라고 부른다. 예비측도는 구성하기가 매우 쉽기 때문에, 이 방법을 이용하면 측도를 아주 쉽게 구성할 수 있다. 카라테오도리 방법에 대해서는 <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">다음 글</a>에서 알아본다.</p>
 
 </div>
 
