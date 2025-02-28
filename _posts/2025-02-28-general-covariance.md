@@ -2,7 +2,7 @@
 layout: post
 title: "일반 공변성에 대한 노트"
 date: 2025-02-27
-tags: [수학, 물리학]
+tags: [물리학, 역학]
 related:
 ---
 
