@@ -4,7 +4,7 @@ title: "오일러-라그랑주 방정식과 라그랑주 역학"
 date: 2025-02-27
 tags: [물리학, 역학]
 related:
-  - "일반 공변성"
+  - "일반 공변성에 대한 노트"
 ---
 
 ## 1. 도입
@@ -29,7 +29,7 @@ $$
 x(\alpha, t) = x_0(t) + \alpha h(t)
 $$
 
-<img src="public/euler-lagrange.png" width="400px" style="margin: 2em auto;">
+<img src="/public/euler-lagrange.png" width="400px" style="margin: 2em auto;">
 
 경계 조건은 $h(t\_1) = h(t\_2) = 0$이다. $x\_0(t)$가 $A[x]$를 극화시키므로, 충분히 작은 $\epsilon$에 대해 $A[x\_0] = A[x(0, t)] \leq A[x(\epsilon, t)]$이다. 따라서,
 
