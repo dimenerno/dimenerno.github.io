@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-03-04T15:33:14+09:00</updated>
+ <updated>2025-03-05T10:26:26+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -4262,6 +4262,42 @@ x &amp;amp; x \in D
 &lt;p&gt;³ (나)와 (나’)은 같은 다이어그램이다. 이 부분이 이해가 안 된다면 이 글을 읽기에 앞서 로렌츠 변환과 민코프스키 다이어그램을 복습하자!&lt;/p&gt;
 
 &lt;p&gt;⁴ 그림에서는 $d’ &amp;gt; d$인 것으로 보이지만, 민코스프키 다이어그램의 기하학은 유클리드 기하학이 아닌 민코프스키 기하학임을 유념해야 한다. 평면지도에서는 알래스카가 아프리카와 거의 비슷한 크기이지만 실제로는 아프리카가 훨씬 더 크듯이, 민코프스키 다이어그램에서는 $d’ &amp;gt; d$인 것으로 보이지만 실제 로렌츠 변환을 계산하면 $d’ &amp;lt; d$이다.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>[POW] 2025-01 Integer sum of reciprocals</title>
+   <link href="http://localhost:4000/2023/03/05/pow-1/"/>
+   <updated>2023-03-05T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2023/03/05/pow-1</id>
+   <content type="html">&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
+
+&lt;p&gt;Find all positive integers $a, n$ such that&lt;/p&gt;
+
+\[\frac{1}{a} + \frac{1}{a+1} + \dots + \frac{1}{a+n}\]
+
+&lt;p&gt;is an integer.&lt;/p&gt;
+
+&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
+
+&lt;p&gt;We claim that there is no integer $a, n$ such that the given expression evaluates to an integer. Choose $a, n$ arbitrarily. Define $f$ as follows.&lt;/p&gt;
+
+\[f(k) = \operatorname{argmax}_x (2^x \mid k)\]
+
+&lt;p&gt;Choose $a, n$ arbitarily. Define $m$ as follows.&lt;/p&gt;
+
+\[m = \operatorname{argmax}_{a \leq k \leq a + n} f(k)\]
+
+&lt;p&gt;Note that since $n \geq 1$, $m$ is even. Note also that the above definition is well-defined, i.e. the argmax is a singleton. Indeed, if we have $f(m) = f(m’) = k$ for $m \neq m’$, then we have $m = 2^k \cdot o,$ $m’ = 2^k \cdot o’$ where $o, o’$ are both odd. Hence there exists an even number $e$ between $o$ and $o’$. It follows that $f(2^k \cdot e) &amp;gt; k$, so $m$ is not in the argmax of $f$.&lt;/p&gt;
+
+&lt;p&gt;Let $L$ be the least common multiple of $a, a + 1, \dots, a + n$. We have $f(L) = f(m)$, and for all other integers $k$ between $a$ and $a + n$ inclusive, $f(L) &amp;gt; f(k)$. Hence,&lt;/p&gt;
+
+\[\begin{align}
+\frac{1}{a} + \dots + \frac{1}{a+n} &amp;amp;= \frac{\overbrace{ \frac{L}{a} + \dots + \frac{L}{m-1} }^{ \text{even} } + \overbrace{\frac{L}{m}}^{\text{odd}} + \overbrace{\frac{L}{m+1} + \dots + \frac{L}{a + n}}^{\text{even}} }{L} \\
+&amp;amp;= \frac{N}{L}
+\end{align}\]
+
+&lt;p&gt;where $N$ is odd. Since $L$ is even, $N/L \not\in \mathbb{Z}$. $\quad \blacksquare$&lt;/p&gt;
 </content>
  </entry>
  

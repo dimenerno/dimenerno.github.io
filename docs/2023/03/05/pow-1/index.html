@@ -1,0 +1,109 @@
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     [POW] 2025-01 Integer sum of reciprocals &middot; 디멘의 블로그 
+  </title>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2023/03/05/pow-1/" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+<div class="page" style="margin: 3em 3em; font-size: 0.8em">
+  <!-- <h1 class="page-title">[POW] 2025-01 Integer sum of reciprocals</h1> -->
+  <h3 id="problem">Problem</h3>
+
+<p>Find all positive integers $a, n$ such that</p>
+
+\[\frac{1}{a} + \frac{1}{a+1} + \dots + \frac{1}{a+n}\]
+
+<p>is an integer.</p>
+
+<h3 id="solution">Solution</h3>
+
+<p>We claim that there is no integer $a, n$ such that the given expression evaluates to an integer. Choose $a, n$ arbitrarily. Define $f$ as follows.</p>
+
+\[f(k) = \operatorname{argmax}_x (2^x \mid k)\]
+
+<p>Choose $a, n$ arbitarily. Define $m$ as follows.</p>
+
+\[m = \operatorname{argmax}_{a \leq k \leq a + n} f(k)\]
+
+<p>Note that since $n \geq 1$, $m$ is even. Note also that the above definition is well-defined, i.e. the argmax is a singleton. Indeed, if we have $f(m) = f(m’) = k$ for $m \neq m’$, then we have $m = 2^k \cdot o,$ $m’ = 2^k \cdot o’$ where $o, o’$ are both odd. Hence there exists an even number $e$ between $o$ and $o’$. It follows that $f(2^k \cdot e) &gt; k$, so $m$ is not in the argmax of $f$.</p>
+
+<p>Let $L$ be the least common multiple of $a, a + 1, \dots, a + n$. We have $f(L) = f(m)$, and for all other integers $k$ between $a$ and $a + n$ inclusive, $f(L) &gt; f(k)$. Hence,</p>
+
+\[\begin{align}
+\frac{1}{a} + \dots + \frac{1}{a+n} &amp;= \frac{\overbrace{ \frac{L}{a} + \dots + \frac{L}{m-1} }^{ \text{even} } + \overbrace{\frac{L}{m}}^{\text{odd}} + \overbrace{\frac{L}{m+1} + \dots + \frac{L}{a + n}}^{\text{even}} }{L} \\
+&amp;= \frac{N}{L}
+\end{align}\]
+
+<p>where $N$ is odd. Since $L$ is even, $N/L \not\in \mathbb{Z}$. $\quad \blacksquare$</p>
+
+</div>

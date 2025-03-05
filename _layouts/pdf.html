@@ -1,0 +1,82 @@
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+    {% if page.title == "최근 글" %} {{ site.title }} &middot; {{ site.tagline
+    }} {% else %} {{ page.title }} &middot; {{ site.title }} {% endif %}
+  </title>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  {% if page.url and site.baseurl %}
+  <link rel="canonical" href="{{ page.url | relative_url }}" />
+  {% endif %}
+
+  <link rel="stylesheet" href="{{ '/public/css/poole.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/public/css/syntax.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/public/css/lanyon.css' | relative_url }}" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ /public/apple-touch-icon.png | relative_url }}">
+  <link rel="shortcut icon" href="{{ /public/favicon.ico | relative_url }}">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href="{{/atom.xml | relative_url}}"
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+<div class="page" style="margin: 3em 3em; font-size: 0.8em">
+  <!-- <h1 class="page-title">{{ page.title }}</h1> -->
+  {{ content }}
+</div>
