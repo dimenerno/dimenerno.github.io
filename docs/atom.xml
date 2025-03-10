@@ -4,13 +4,93 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-03-10T09:15:32+09:00</updated>
+ <updated>2025-03-10T16:27:53+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>가산 공리와 분리 공리에 대한 노트</title>
+   <link href="http://localhost:4000/2025/03/10/topology-notes/"/>
+   <updated>2025-03-10T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/03/10/topology-notes</id>
+   <content type="html">&lt;p&gt;자꾸 가물가물해져서 정리해 본다. 단순히 외우지 말고 직관적인 수준에서 원리를 이해해 보려고 노력하자.&lt;/p&gt;
+
+&lt;h3 id=&quot;가산-공리&quot;&gt;가산 공리&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 거리 공간 $\to$ 1차 가산&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 점 $x$의 국소 가산 기저는 $\lbrace B(x, 1/n) \rbrace $이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 2차 가산 $\to$ 1차 가산, 린델뢰프, 분리 가능&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2차 가산 $\to$ 1차 가산&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;자명&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2차 가산 $\to$ 린델뢰프&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;공간의 가산 기저가 $\mathcal{B}$라고 하자. $\mathcal{C}$가 임의의 열린 덮개일 때, 각 $C \in \mathcal{C}$는 $\mathcal{B}$의 원소를 일부 소진한다. $\mathcal{B}$가 가산이므로, $\mathcal{C}$의 가산 부분 덮개로 $\mathcal{B}$를 소진할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2차 가산 $\to$ 분리 가능&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;공간의 가산 기저가 $\mathcal{B}$라고 하자. $\mathcal{B}$의 각 열린집합에서 하나의 원소를 뽑아 만든 집합을 $S$라고 하자. 임의의 열린집합 $U$는 어떤 $B \in \mathcal{B}$를 포함하므로, $S$와 교점을 가진다. 따라서 $S$는 가산 조밀 집합이다. ■&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 거리 공간에서, 2차 가산 $\leftrightarrow$ 린델뢰프 $\leftrightarrow$ 분리 가능&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;린델뢰프 $\to$ 2차 가산&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;분리 가능 $\to$ 2차 가산&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;다음 성질들은 부분공간과 가산곱에 대해 보존된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1차 가산&lt;/li&gt;
+  &lt;li&gt;2차 가산&lt;/li&gt;
+  &lt;li&gt;분리 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;cf. 린델뢰프 공간에 대해서는 성립하지 않는다.&lt;/p&gt;
+
+&lt;h3 id=&quot;분리-공리&quot;&gt;분리 공리&lt;/h3&gt;
+
+&lt;p&gt;다음은 정규&lt;sub&gt;normal&lt;/sub&gt; 공간이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;콤팩트 하우스도르프&lt;/li&gt;
+  &lt;li&gt;정칙&lt;sub&gt;regular&lt;/sub&gt; 2차 가산&lt;/li&gt;
+  &lt;li&gt;거리 위상&lt;/li&gt;
+  &lt;li&gt;순서 위상&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;다음 성질들은 부분공간에 대해 보존된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;하우스도르프&lt;/li&gt;
+  &lt;li&gt;정칙&lt;/li&gt;
+  &lt;li&gt;완전 정칙&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;cf. 정규성은 보존되지 &lt;em&gt;않는다&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;우리손 정리.&lt;/strong&gt; 정칙 2차 가산 공간은 거리화 가능하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;티체 확장 정리.&lt;/strong&gt; $X$가 정규 공간이고 $A$가 $X$의 닫힌집합일 떄, 연속함수 $f: A \to [0, 1]$은 $\tilde{f}: X \to [0, 1]$로 확장될 수 있다.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>시제 논리</title>
@@ -1633,7 +1713,7 @@ K = \{ v \in V : v \in B \}
    <content type="html">&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/b71a00d7-efdf-4ec3-ad5c-cc32b67cf70c/image.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;이 글은 &lt;a href=&quot;image/2025-02-09-godel-lucas-penrose/On the question of whether the mind can be mechanized 1.pdf&quot;&gt;Peter Koellner, &lt;em&gt;On the question of whether the mind can be mechanized&lt;/em&gt; (2018)&lt;/a&gt;을 요약 및 정리한 것이다.&lt;/p&gt;
+  &lt;p&gt;이 글은 &lt;a href=&quot;/public/On the question of whether the mind can be mechanized 1.pdf&quot;&gt;Peter Koellner, &lt;em&gt;On the question of whether the mind can be mechanized&lt;/em&gt; (2018)&lt;/a&gt;을 요약 및 정리한 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;초록.&lt;/strong&gt; 처치-튜링 논제와 괴델의 불완전성 정리는 기계로 증명할 수 없는 수학적 참의 존재를 시사한다. 그러나 만약 이상적인 인간 정신은 모든 수학적 참을 증명할 수 있다면, 이상적인 인간 정신은 기계와 같지 않다는 결론이 얻어진다. 이 글에서는 이같은 방식으로 반기계주의를 입증하려는 루카스와 펜로즈의 논증을 검토하고, 이 논증을 반박하는 형식 증명을 소개한다.&lt;/p&gt;

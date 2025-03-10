@@ -7,7 +7,7 @@ tags: [수학, 철학, 논리학]
 
 ![](https://velog.velcdn.com/images/dimenerno/post/b71a00d7-efdf-4ec3-ad5c-cc32b67cf70c/image.jpeg)
 
-> 이 글은 <a href="image/2025-02-09-godel-lucas-penrose/On the question of whether the mind can be mechanized 1.pdf">Peter Koellner, _On the question of whether the mind can be mechanized_ (2018)</a>을 요약 및 정리한 것이다.
+> 이 글은 <a href="/public/On the question of whether the mind can be mechanized 1.pdf">Peter Koellner, _On the question of whether the mind can be mechanized_ (2018)</a>을 요약 및 정리한 것이다.
 
 **초록.** 처치-튜링 논제와 괴델의 불완전성 정리는 기계로 증명할 수 없는 수학적 참의 존재를 시사한다. 그러나 만약 이상적인 인간 정신은 모든 수학적 참을 증명할 수 있다면, 이상적인 인간 정신은 기계와 같지 않다는 결론이 얻어진다. 이 글에서는 이같은 방식으로 반기계주의를 입증하려는 루카스와 펜로즈의 논증을 검토하고, 이 논증을 반박하는 형식 증명을 소개한다.
 
