@@ -287,7 +287,7 @@
   <li>$P^\mathcal{T}(t)$: $P$가 시점 $t$에서 참이라는 의미이다.</li>
 </ul>
 
-<p>예를 들어 어제, 오늘, 그리고 내일만을 고려하는 시제 논리의 경우 $T = { -1, 0, 1 }$로 둘 수 있다. 고전 역학은 $T = \mathbb{R}$을 간주한다.</p>
+<p>예를 들어 어제, 오늘, 그리고 내일만을 고려하는 시제 논리의 경우 $T = \lbrace  -1, 0, 1 \rbrace $로 둘 수 있다. 고전 역학은 $T = \mathbb{R}$을 간주한다.</p>
 
 <p>가영이가 등교하는 사건을 $A$, 나영이가 등교하는 사건을 $B$라고 하면 도입의 3은 다음과 같이 쓸 수 있다.</p>
 
@@ -297,7 +297,7 @@
 
 <h3 id="12-프레임">1.2. 프레임</h3>
 
-<p>집합과, 그 위에 정의된 이항 관계의 쌍 $(T, \prec)$를 <strong>프레임<sub>frame</sub></strong>이라고 부른다. $\mathbf{F}$가 프레임의 모임<sub>class</sub>이라고 하자. $(T, \prec) \in \mathbf{F}$인 임의의 모델 $\mathcal{T} = (T, \prec, { P^\mathcal{T} })$와 임의의 $t \in T$에 대해 $\mathcal{T} \vDash \phi[t]$일 때, $\phi$가 $\mathbf{F}$에 대해 참이라고 한다.</p>
+<p>집합과, 그 위에 정의된 이항 관계의 쌍 $(T, \prec)$를 <strong>프레임<sub>frame</sub></strong>이라고 부른다. $\mathbf{F}$가 프레임의 모임<sub>class</sub>이라고 하자. $(T, \prec) \in \mathbf{F}$인 임의의 모델 $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$와 임의의 $t \in T$에 대해 $\mathcal{T} \vDash \phi[t]$일 때, $\phi$가 $\mathbf{F}$에 대해 참이라고 한다.</p>
 
 <p>$\mathbf{F}$가 특정 성질을 가질 것을 요구함으로써 시간의 특징을 포착할 수 있다. 다음과 같은 성질을 요구할 수 있다.</p>
 
@@ -331,7 +331,7 @@
 
 <p>독립적 시제 논리의 명제는 <strong>메레디스 번역<sub>Meredith translation</sub></strong>을 통해 언제나 고전적 시제 논리의 명제로 변환할 수 있다. 예를 들어 $\mathsf{G}p$는 $\forall x \succ t \; p(x)$로 번역된다. 그러나 역은 성립하지 않는다. 따라서 독립적 시제 논리는 고전적 시제 논리보다 표현력이 약하다. 그럼에도 독립적 시제 논리가 연구할 만한 주제인 이유는, 표현력을 일부 포기하는대가로 결정 가능성, 완전성 등의 좋은 성질을 얻을 수 있을 뿐더러, 양상 논리와의 연결 고리를 제공하는 등 철학적 의의 또한 크기 때문이다.</p>
 
-<p>독립적 시제 논리의 모델은 종속적 시제 논리와 마찬가지로 $\mathcal{T} = (T, \prec, { P^\mathcal{T} })$이다. 만족 관계는 자연스럽게 정의한다. 예를 들어,</p>
+<p>독립적 시제 논리의 모델은 종속적 시제 논리와 마찬가지로 $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$이다. 만족 관계는 자연스럽게 정의한다. 예를 들어,</p>
 
 <ul>
   <li>$\mathcal{T} \vDash \mathsf{F}p[t] \iff$ 어떤 $t \prec t’$에 대해, $\mathcal{T} \vDash p[t’]$</li>
