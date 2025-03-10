@@ -2,7 +2,7 @@
 layout: post
 title: "산술 위계"
 date: 2025-02-07
-tags: [수학, 수리논리학]
+tags: [수학, 논리학]
 ---
 
 <img src="/public/arithmetic-hierarchy.png" width="340px" style="margin: 2em auto;"/>
