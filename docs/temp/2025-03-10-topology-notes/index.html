@@ -11,7 +11,7 @@
   />
 
   <title>
-     [새벽빛 수학] 1. 들어가며 &middot; 디멘의 블로그 
+     가산 공리와 분리 공리에 대한 노트 &middot; 디멘의 블로그 
   </title>
 
   <script>
@@ -35,7 +35,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/temp/2025-02-26-logic-1/" />
+  <link rel="canonical" href="/temp/2025-03-10-topology-notes/" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -151,20 +151,89 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">[새벽빛 수학] 1. 들어가며</h1>
-  <span class="post-date">25 Feb 2025</span>
+  <h1 class="post-title">가산 공리와 분리 공리에 대한 노트</h1>
+  <span class="post-date">10 Mar 2025</span>
   
     <div class="tag-container">
       
       <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
       
-      <div class="tag" onclick="location.href='/tags/논리학/'" >논리학</div>
+      <div class="tag" onclick="location.href='/tags/위상수학/'" >위상수학</div>
       
     </div>
   
-  <h3 id="프롤로그">프롤로그</h3>
+  <p>자꾸 가물가물해져서 정리해 본다. 단순히 외우지 말고 직관적인 수준에서 원리를 이해해 보려고 노력하자.</p>
 
-<p>세계가 신비로 가득했던 때가 있습니다.</p>
+<h3 id="가산-공리">가산 공리</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> 거리 공간 $\to$ 1차 가산</p>
+</blockquote>
+
+<p><strong>증명.</strong> 점 $x$의 국소 가산 기저는 $\lbrace B(x, 1/n) \rbrace $이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 2차 가산 $\to$ 1차 가산, 린델뢰프, 분리 가능</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><strong>2차 가산 $\to$ 1차 가산</strong></p>
+
+<p>자명</p>
+
+<p><strong>2차 가산 $\to$ 린델뢰프</strong></p>
+
+<p>공간의 가산 기저가 $\mathcal{B}$라고 하자. $\mathcal{C}$가 임의의 열린 덮개일 때, 각 $C \in \mathcal{C}$는 $\mathcal{B}$의 원소를 일부 소진한다. $\mathcal{B}$가 가산이므로, $\mathcal{C}$의 가산 부분 덮개로 $\mathcal{B}$를 소진할 수 있다.</p>
+
+<p><strong>2차 가산 $\to$ 분리 가능</strong></p>
+
+<p>공간의 가산 기저가 $\mathcal{B}$라고 하자. $\mathcal{B}$의 각 열린집합에서 하나의 원소를 뽑아 만든 집합을 $S$라고 하자. 임의의 열린집합 $U$는 어떤 $B \in \mathcal{B}$를 포함하므로, $S$와 교점을 가진다. 따라서 $S$는 가산 조밀 집합이다. ■</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 거리 공간에서, 2차 가산 $\leftrightarrow$ 린델뢰프 $\leftrightarrow$ 분리 가능</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><strong>린델뢰프 $\to$ 2차 가산</strong></p>
+
+<p><strong>분리 가능 $\to$ 2차 가산</strong></p>
+
+<p>다음 성질들은 부분공간과 가산곱에 대해 보존된다.</p>
+
+<ul>
+  <li>1차 가산</li>
+  <li>2차 가산</li>
+  <li>분리 가능</li>
+</ul>
+
+<p>cf. 린델뢰프 공간에 대해서는 성립하지 않는다.</p>
+
+<h3 id="분리-공리">분리 공리</h3>
+
+<p>다음은 정규<sub>normal</sub> 공간이다.</p>
+
+<ul>
+  <li>콤팩트 하우스도르프</li>
+  <li>정칙<sub>regular</sub> 2차 가산</li>
+  <li>거리 위상</li>
+  <li>순서 위상</li>
+</ul>
+
+<p>다음 성질들은 부분공간에 대해 보존된다.</p>
+
+<ul>
+  <li>하우스도르프</li>
+  <li>정칙</li>
+  <li>완전 정칙</li>
+</ul>
+
+<p>cf. 정규성은 보존되지 <em>않는다</em>.</p>
+
+<p><strong>우리손 정리.</strong> 정칙 2차 가산 공간은 거리화 가능하다.</p>
+
+<p><strong>티체 확장 정리.</strong> $X$가 정규 공간이고 $A$가 $X$의 닫힌집합일 떄, 연속함수 $f: A \to [0, 1]$은 $\tilde{f}: X \to [0, 1]$로 확장될 수 있다.</p>
 
 </div>
 
