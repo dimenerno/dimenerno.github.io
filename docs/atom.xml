@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-03-11T18:23:16+09:00</updated>
+ <updated>2025-03-11T20:19:24+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -29,9 +29,7 @@
 
 &lt;p&gt;위로부터 다음을 추론할 수 있다.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;가영이가 먼저 등교하고 나영이가 등교할 것이다.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;   4. 가영이가 먼저 등교하고 나영이가 등교할 것이다.&lt;/p&gt;
 
 &lt;p&gt;그러나 고전 논리는 — 적어도 표면적으로는 — 위의 추론 관계를 함의하지 않는다. 따라서 우리에게 필요한 것은 시간에 대해 추론할 수 있는 논리학, 즉 &lt;strong&gt;시제 논리&lt;sub&gt;temporal logic&lt;/sub&gt;&lt;/strong&gt;이다.&lt;/p&gt;
 
