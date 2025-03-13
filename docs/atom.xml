@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-03-13T14:04:38+09:00</updated>
+ <updated>2025-03-13T14:09:09+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -493,42 +493,6 @@
 &lt;p&gt;$L_P$가 바르칸 명제 같은 병리적 명제를 도출하는 이유는 TG가 열린 명제에 대해 유효하지 않기 때문이다(TG는 베커 규칙의 증명에 필요하다. 즉, 증명의 문제는 2단계에 있다). 앞서 말했듯이 TG는 논리적으로 참인 명제는 시간에 상관 없이 참이라는 의미이다. 그러나 열린 명제는 참도 아니고 거짓도 아니다. 열린 명제는 특정 대상에 의해 만족되거나, 만족되지 않기 때문이다.&lt;/p&gt;
 
 &lt;p&gt;이 문제를 극복하기 위해 TG를 닫힌 명제에 대해서만 적용 가능하도록 제안하는 방안을 강구할 수 있으나, 제한된 시제 술어 논리는 일부 바람직한 명제를 증명하지 못함이 알려져 있다. 건전하면서도 완전한 시제 술어 논리를 만드는 작업은 아직도 해결되지 않은 문제이다.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>[POW] 2025-01 Integer sum of reciprocals</title>
-   <link href="http://localhost:4000/2025/03/06/pow-1/"/>
-   <updated>2025-03-06T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/03/06/pow-1</id>
-   <content type="html">&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
-
-&lt;p&gt;Find all positive integers $a, n$ such that&lt;/p&gt;
-
-\[\frac{1}{a} + \frac{1}{a+1} + \dots + \frac{1}{a+n}\]
-
-&lt;p&gt;is an integer.&lt;/p&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-
-&lt;p&gt;We claim that there is no integer $a, n$ such that the given expression evaluates to an integer. Choose $a, n$ arbitrarily. Define $f$ as follows.&lt;/p&gt;
-
-\[f(k) = \operatorname{argmax}_x (2^x \mid k)\]
-
-&lt;p&gt;Define $m$ as follows.&lt;/p&gt;
-
-\[m = \operatorname{argmax}_{a \leq k \leq a + n} f(k)\]
-
-&lt;p&gt;Note that since $n \geq 1$, $m$ is even. Note also that the above definition is well-defined, i.e. the argmax is a singleton. Indeed, if we have $f(m) = f(m’) = k$ for $m \neq m’$, then we have $m = 2^k \cdot o,$ $m’ = 2^k \cdot o’$ where $o, o’$ are both odd. Hence there exists an even number $e$ between $o$ and $o’$. It follows that $f(2^k \cdot e) &amp;gt; k$, so $m$ is not in the argmax of $f$.&lt;/p&gt;
-
-&lt;p&gt;Let $L$ be the least common multiple of $a, a + 1, \dots, a + n$. We have $f(L) = f(m)$, and for all other integers $k$ between $a$ and $a + n$ inclusive, $f(L) &amp;gt; f(k)$. Hence,&lt;/p&gt;
-
-\[\begin{align}
-\frac{1}{a} + \dots + \frac{1}{a+n} &amp;amp;= \frac{\overbrace{ \frac{L}{a} + \dots + \frac{L}{m-1} }^{ \text{even} } + \overbrace{\frac{L}{m}}^{\text{odd}} + \overbrace{\frac{L}{m+1} + \dots + \frac{L}{a + n}}^{\text{even}} }{L} \\
-&amp;amp;= \frac{N}{L}
-\end{align}\]
-
-&lt;p&gt;where $N$ is odd. Since $L$ is even, $N/L \not\in \mathbb{Z}$. $\quad \blacksquare$&lt;/p&gt;
 </content>
  </entry>
  
