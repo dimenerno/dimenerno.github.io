@@ -128,7 +128,7 @@
       href="/guestbook/"
       >방명록</a
     >
-                                                                                        
+                                                                                            
   </nav>
 
   <div class="sidebar-item">
@@ -151,6 +151,56 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2025/03/20/yoneda/">
+        요네다 보조정리
+      </a>
+    </h1>
+
+    <span class="post-date">20 Mar 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'" >범주론</div>
+      
+    </div>
+  
+    <blockquote>
+  <p><em>Notation.</em> $-$는 매개변수의 자릿값이다. $-$가 두 개 쓰였으면 매개변수가 두 개라는 뜻이다. 어느 매개변수가 어느 자리에 해당하는지는 맥락으로 결정한다. $\cdot$은 $-$를 우선하는 매개변수이다. 따라서 $\mathrm{Hom}(-, \cdot)$은 $A \in \mathcal{A}$를 받았을 때 함자 $\mathrm{Hom}(-, A): \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$을 내놓는 함자이다.</p>
+</blockquote>
+
+<p>요네다 보조정리<sub>Yoneda lemma</sub>는 표현가능함자<sub>representable</sub>가 다른 함자를 <em>바라볼</em> 때 <em>보이는</em> 것이 무엇인지를 알려주는 정리이다.</p>
+
+<p>예를 들어 $A \in \mathcal{A}$에 대해, 표현가능함자 $\mathrm{Hom}_{\mathcal{A}}(-, A)$를 생각하자. 이 함자가 속하는 범주는 $[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$이다. 따라서 $\mathrm{Hom}_{\mathcal{A}}(-, A)$가 함자 $X : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$를 <em>바라볼</em> 때 <em>보이는</em> 것은 다음 사상들의 집합이다.</p>
+
+\[\mathrm{Hom}_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(\mathrm{Hom}_{\mathcal{A}}(-, A), X) = \{ \alpha \mid \alpha: \mathrm{Hom}_{\mathcal{A}}(-, A) \to X\}\]
+
+<p>위 집합은 $A \in \mathcal{A}$와 $X \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$으로부터 정의된 집합이다. 그런데 $A, X$로부터 집합을 정의할 수 있는 또다른 자연스러운 방식이 있다. 단순히 $X$에 $A$를 취하는 것이다.</p>
+
+\[X(A)\]
+
+<p>요네다 보조정리에 따르면 두 집합은 <strong>동형<sub>isomorphic</sub></strong>이다. 게다가 그냥 동형인 것이 아니라, $A \in \mathcal{A}$에서 자연스럽게 동형<sub>naturally isomorphic in $A \in \mathcal{A}$</sub>이다. 요컨대 다음 두 함자가 $[\mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}], \mathbf{Set}]$에서 동형이다.</p>
+
+\[\begin{aligned}
+\text{(i)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
+&amp;\xrightarrow{\hspace{0.15cm} \mathrm{Hom}_{\mathcal{A}}(-, \cdot)^{\mathrm{op}} \times 1 \hspace{0.15cm}} [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}] \\
+&amp;\xrightarrow{\mathrm{Hom}_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(-, -)} \mathbf{Set} \\\\
+\text{(ii)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
+&amp;\xrightarrow{-(-)} \mathbf{Set}
+\end{aligned}\]
+
+<blockquote>
+  <p><em>Remark.</em> $\mathrm{Hom}_{\mathcal{A}}(-, \cdot)^{\mathrm{op}}$에 붙은 $\mathrm{op}$는 함자의 정의역을 $\mathcal{A}^\mathrm{op}$로 맞춰주기 위함이고, 실질적으로는 $\mathrm{Hom}_{\mathcal{A}}(-, \cdot)$와 같다.</p>
+</blockquote>
+
+<p>증명은 필자가 현재 혼자서 해보려고 시도 중이라서 일단 공란으로 비워둔다.</p>
+
+  </div>
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
   
   <div class="post">
     <h1 class="post-title">
@@ -614,7 +664,7 @@
 
 <h3 id="물리주의와-환원">물리주의와 환원</h3>
 
-<p>타르스키의 참 이론은 2에 해당하며, 여기에는 그의 철학적 배경이 작용했다. 타르스키는 검소한 물리주의자<sub>moderate physicalist</sub>였다. ‘검소한’의 의미는 그가 환원의 종착지를 물리학뿐 아니라 논리학과 집합론까지 포함하는 것으로 이해했다는 것이다. 그는 자신의 물리주의와 호환 가능한 참의 정의를 원했으며, 때문에 참을 선험적 개념으로 인정하고 그 특징에 관한 공리를 나열하는 방식을 거부했다. 대신 그는 어떤 집합을 귀납적으로 정의한 다음에, ① 해당 집합을 진리집합으로 가지는 술어가 T-스키마를 모두 함의한다는 사실과, ② 귀납적 정의를 만족하는 집합이 유일함을 보임으로써 참을 집합론으로 환원했다.</p>
+<p>타르스키의 참 이론은 2에 해당하며, 여기에는 그의 철학적 배경이 작용했다. 타르스키는 검소한 물리주의자<sub>moderate physicalist</sub>였다. ‘검소한’의 의미는 그가 환원의 종착지를 물리학뿐 아니라 논리학과 집합론까지 포함하는 것으로 이해했다는 것이다. 그는 자신의 물리주의와 호환 가능한 참의 정의를 원했으며, 때문에 참을 선험적 개념으로 인정하고 그 특징에 관한 공리를 나열하는 방식을 거부했다. 대신 그는 어떤 집합을 귀납적으로 정의한 다음에, ① 해당 집합을 진리집합으로 가지는 술어가 T-스키마를 모두 함의한다는 사실과, ② 해당 귀납적 정의를 만족하는 집합이 유일함을 보임으로써 참을 집합론으로 환원했다.</p>
 
 <p>현대에 이르러 타르스키의 참 이론은 철학적 비판의 대상이 되었다. 본 논문의 저자는 이것이 부당한 비판이라고 주장한다. 비판의 주된 골자는 그의 이론이 참에 대한 이론이 응당 갖춰야 할 조건을 갖추지 못했다는 것인데, 이 조건들이 사실은 부당하거나 비정합적이기 때문이다.</p>
 
@@ -788,7 +838,7 @@
 
 <p>그러나 $1 + 1 = 2$의 의미가 페르마의 마지막 정리인 것은 아니다.</p>
 
-<h2 id="4-결론">4. 결론</h2>
+<h2 id="5-결론">5. 결론</h2>
 
 <p>결론적으로 논문의 저자는 참에 대한 이론이 의미에 대한 이론과 직결되어 있어야 한다는 요구는 부당하다고 주장함으로써 타르스키의 참 정의와, 그것이 함의하는 참에 대한 축소주의<sub>deflationism</sub>를 옹호한다. 이것이 참에 대한 이론이 불필요함을 의미하지는 않는다. 크립키의 참 이론은 타르스키의 참 이론을 실질적으로 발전시켰다. 그러나 그 발전은 이미 우리에게 익숙한 참의 성질들을 T-스키마로써 정확히 해명하고, 올바르게 설계된 형태론으로 거짓말쟁이 역설과 같은 모순을 회피하는 데 있다. 참에 대한 이론으로부터 이 이상을 기대하는 것은 바람직하지 않다.</p>
 
@@ -1150,120 +1200,6 @@ U^* \otimes V^* &amp;\cong U^{***} \otimes V^{***} \\
 <p>두 번째 식에서 세 번째 식으로 넘어갈 때 $V \cong V^{\ast\ast}$ 표준<sub>canonical</sub> 동일시를 사용했다. ■</p>
 
 <p>따라서 쌍대 공간의 텐서는 쌍선형 사상과 표준적으로 동일시할 수 있다.</p>
-
-  </div>
-  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2025/02/27/general-covariance/">
-        일반 공변성에 대한 노트
-      </a>
-    </h1>
-
-    <span class="post-date">27 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/물리학/'" >물리학</div>
-      
-      <div class="tag" onclick="location.href='/tags/역학/'" >역학</div>
-      
-    </div>
-  
-    <p>어떤 이론이 <strong>일반 공변적<sub>general covariant</sub></strong>이라는 것은, 물리 법칙의 형태<sub>form</sub>가 미분가능한 좌표계 변환에 대해 보존된다는 것이다. 구체적으로, 좌표계 $\lbrace q_i \rbrace $와 좌표계 $\lbrace q’_i \rbrace $가 다음 관계에 있다고 하자.</p>
-
-\[q_i' = f_i(\{ q \})\]
-
-<p>각 $i$에 대해 $f_i$가 미분 가능하다고 하자. 일반 공변적 이론이라면 좌표계 $\lbrace q_i \rbrace $를 사용했을 때와 좌표계 $\lbrace q_i’ \rbrace $를 사용했을 때의 물리 법칙이 형태가 같아야 한다.</p>
-
-<p>예시를 보자. 퍼텐셜이 0인 계 안의 입자의 위치를 극좌표계 $(r, \theta)$ 또는 직교 좌표계 $(x, y)$를 사용하여 표현하는 경우를 생각해 보자. 두 좌표계는 다음 관계에 있다.</p>
-
-\[\begin{gather}
-x = f_1(r, \theta) = r \cos \theta\\
-y = f_2(r, \theta) = r \sin \theta
-\end{gather}\]
-
-<p>$f_1$과 $f_2$가 미분 가능하므로 일반 공변적 이론은 두 좌표계로 표현했을 때의 형태가 같아야 한다.</p>
-
-<p>먼저 뉴턴 역학의 경우를 보자. 뉴턴 역학의 물리 법칙은 다음과 같다.</p>
-
-\[\begin{gather}
--\frac{dV(x, y)}{dx} = m\ddot{x} \\
--\frac{dV(x, y)}{dy} = m\ddot{y}
-\end{gather}\]
-
-<p>$V(x, y) = 0$이므로 $\ddot{x} = \ddot{y} = 0$이다. 즉 입자는 등속 선형 운동을 한다. 만약 뉴턴 역학이 일반 공변적이라면 위 법칙을 $(x, y)$에서 $(r, \theta)$로 바꿔 표현해도 결과가 같아야 한다.</p>
-
-\[\begin{gather}
--\frac{dV(r, \theta)}{dr} = m\ddot{r} \\
--\frac{dV(r, \theta)}{d\theta} = m\ddot{\theta}
-\end{gather}\]
-
-<p>$V(r, \theta) = 0$이므로 $\ddot{r} = \ddot{\theta} = 0$이다. 이번에는 입자가 등속 원운동을 한다. 결과가 달라졌으므로 <strong>뉴턴 역학은 일반 공변적이지 않다.</strong></p>
-
-<p>이제 <a href="http://dimenerno.github.io/2025/02/27/euler-lagrange/">라그랑주 역학</a>의 경우를 보자. 라그랑주 역학의 물리 법칙은 다음과 같다.</p>
-
-\[\begin{gather}
-\frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
-\frac{\partial \mathcal{L}}{\partial y} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{y}}
-\end{gather}\]
-
-<p>$\mathcal{L}(x, y) = T - V = \frac{m}{2}(\dot{x}^2 + \dot{y}^2)$를 대입하면 $\ddot{x} = \ddot{y} = 0$, 즉 등속 선형 운동을 얻는다. 여기까지는 뉴턴 역학과 같다.</p>
-
-<p>이제 오일러-라그랑주 방정식의 $(x, y)$를 $(r, \theta)$로 치환해 보자.</p>
-
-\[\begin{gather}
-\frac{\partial \mathcal{L}}{\partial r} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{r}} \\
-\frac{\partial \mathcal{L}}{\partial \theta} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}}
-\end{gather}\]
-
-<p>$x = r\cos\theta, y = r\sin\theta$를 대입하여 정리하면 $\mathcal{L}(r, \theta)$는 다음과 같다.</p>
-
-\[\mathcal{L}(r, \theta) = \frac{m}{2}(\dot{r}^2 + r^2 \dot{\theta}^2)\]
-
-<blockquote>
-  <p><em>Remark.</em> 오일러-라그랑주 방정식에서는 단순히 $(x, y)$를 $(r, \theta)$로 치환했지만, 라그랑지안에서는 $x = r \cos \theta, y = r \sin \theta$ 관계식을 대입하는 이유는 라그랑지안이 <strong>실수쌍</strong>에 대한 함수가 아니라 <strong>시공간의 점</strong>에 대한 함수이기 때문이다. 일반 공변성은 무지성, 일편단률적인 좌표 변환에 대해서 식의 형태가 유지된다는 의미가 아니라, 물리계를 표현하는 함수들은 유지된 채 그것을 표현하는 좌표가 바뀌었을 때 식의 형태가 유지된다는 의미이다.</p>
-</blockquote>
-
-<p>대입하여 계산하면 다음과 같다.</p>
-
-\[\begin{gather}
-\ddot{r} = r\dot{\theta}^2 \\
-2\dot{r}\dot{\theta} + r\ddot{\theta} = 0
-\end{gather}\]
-
-<p>미분방정식이 복잡해서 알아보기 힘들지만, 위 두 미분방정식은 $\ddot{x} = \ddot{y} = 0$과 동치이다. 일례로 $\theta = \tan^{-1}t, r = \sqrt{1 + t^2}$가 방정식의 해인 것을 확인할 수 있다.</p>
-
-<p>일반적으로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 라그랑주 역학은 일반 공변성을 가진다.</p>
-</blockquote>
-
-<p>뉴턴 역학은 일반 공변성이 없지만 라그랑주 역학은 있다는 것이 신기하게 느껴질 수 있지만, 잘 생각해 보면 이것은 당연하다. 뉴턴의 제1법칙은 보통 $F = 0 \implies \ddot{x} = 0$이라는 수식으로 표현되지만 정확한 진술은 다음과 같다.</p>
-
-<blockquote>
-  <p>외력을 받지 않는 입자의 시공간 다이어그램은 선형이다.</p>
-</blockquote>
-
-<p>‘선형’이라는 표현에 주목하라. 선형성은 특정한 기하학에 의존적인 표현이다. 예를 들어 유클리드 기하학에서 ‘선형’이란 우리가 흔히 말하는 직선이지만, 구면 기하학에서 ‘선형’은 대원으로 주어진다. 그러므로 위 진술은 다음과 같이 밝혀 쓰는 것이 가장 정확하다.</p>
-
-<blockquote>
-  <p><strong>뉴턴 역학</strong>. 외력을 받지 않는 입자의 시공간 다이어그램은 유클리드 기하학의 선형이다.</p>
-</blockquote>
-
-<p>그리고 유클리드 기하학의 선형은 직교 좌표계에서 $\ddot{x} = \ddot{y} = 0$ 꼴로 주어진다. 따라서 $F = 0 \implies \ddot{x} = 0$은, 유클리드 기하학과 직교 좌표계를 전제했을 때에만 올바른 수식인 것이다.</p>
-
-<p>거꾸로 말해, 이론이 특정한 기하학에 의존하지 않는다면 그 이론은 일반 공변적이다. 라그랑주 역학은 그러한 이론의 사례이다. 라그랑주 역학의 진술은 다음과 같이 표현할 수 있다.</p>
-
-<blockquote>
-  <p><strong>라그랑주 역학</strong>. 라그랑지안의 적분을 극화시키는 경로가 입자의 운동 경로이다.</p>
-</blockquote>
-
-<p>그리고 라그랑지안은 특정 기하학에 의존적인 함수가 아닌, 그저 시공간의 점들에 대해 실숫값을 출력하는 함수이다. 따라서 위 진술은 어떠한 기하학에 대해서도 의존적이지 않으며, 라그랑주 역학은 일반 공변적이다.</p>
-
-<p>구멍 논증<sub>hole argument</sub>에 따르면 일반 공변적인 이론들은 형이상학적인 의미에서 비결정론적이다. 이에 대한 설명은 나중에 하도록 하겠다.</p>
 
   </div>
   <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
