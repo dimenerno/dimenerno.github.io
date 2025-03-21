@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-03-21T10:51:47+09:00</updated>
+ <updated>2025-03-21T10:55:38+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>요네다 보조정리</title>
-   <link href="http://localhost:4000/2025/03/20/yoneda/"/>
-   <updated>2025-03-20T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/03/20/yoneda</id>
+   <link href="http://localhost:4000/2025/03/21/yoneda/"/>
+   <updated>2025-03-21T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/03/21/yoneda</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;em&gt;Notation.&lt;/em&gt;&lt;/p&gt;
 
