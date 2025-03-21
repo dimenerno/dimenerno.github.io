@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-03-20T10:59:16+09:00</updated>
+ <updated>2025-03-21T10:51:47+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -18,34 +18,85 @@
    <updated>2025-03-20T00:00:00+09:00</updated>
    <id>http://localhost:4000/2025/03/20/yoneda</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Notation.&lt;/em&gt; $-$는 매개변수의 자릿값이다. $-$가 두 개 쓰였으면 매개변수가 두 개라는 뜻이다. 어느 매개변수가 어느 자리에 해당하는지는 맥락으로 결정한다. $\cdot$은 $-$를 우선하는 매개변수이다. 따라서 $\mathrm{Hom}(-, \cdot)$은 $A \in \mathcal{A}$를 받았을 때 함자 $\mathrm{Hom}(-, A): \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$을 내놓는 함자이다.&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Notation.&lt;/em&gt;&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;$-$는 매개변수의 자릿값이다. $-$가 두 개 쓰였으면 매개변수가 두 개라는 뜻이다. 어느 매개변수가 어느 자리에 해당하는지는 맥락으로 파악한다.&lt;/li&gt;
+    &lt;li&gt;$\bullet$은 $-$를 우선하는 매개변수이다. 따라서 $\hom(-, \bullet)$은 $A$를 함자 $\hom(-, A)$에 대응시키는 함자이다.&lt;/li&gt;
+    &lt;li&gt;함자 $F, G$에 대해 $[F, G]$를 $F$에서 $G$로 가는 자연적 변환&lt;sub&gt;natural transformation&lt;/sub&gt;들의 모임으로 정의한다.&lt;/li&gt;
+    &lt;li&gt;모든 범주는 국소적으로 작은&lt;sub&gt;locally small&lt;/sub&gt; 범주라고 가정한다.&lt;/li&gt;
+  &lt;/ol&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;요네다 보조정리&lt;sub&gt;Yoneda lemma&lt;/sub&gt;는 표현가능함자&lt;sub&gt;representable&lt;/sub&gt;가 다른 함자를 &lt;em&gt;바라볼&lt;/em&gt; 때 &lt;em&gt;보이는&lt;/em&gt; 것이 무엇인지를 알려주는 정리이다.&lt;/p&gt;
 
-&lt;p&gt;예를 들어 $A \in \mathcal{A}$에 대해, 표현가능함자 $\mathrm{Hom}_{\mathcal{A}}(-, A)$를 생각하자. 이 함자가 속하는 범주는 $[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$이다. 따라서 $\mathrm{Hom}_{\mathcal{A}}(-, A)$가 함자 $X : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$를 &lt;em&gt;바라볼&lt;/em&gt; 때 &lt;em&gt;보이는&lt;/em&gt; 것은 다음 사상들의 집합이다.&lt;/p&gt;
+&lt;p&gt;예를 들어 $A \in \mathcal{A}$에 대해, 표현가능함자 $\hom_{\mathcal{A}}(-, A)$를 생각하자. 이 함자가 속하는 범주는 $[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$이다. 따라서 $\hom_{\mathcal{A}}(-, A)$가 함자 $X : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$를 &lt;em&gt;바라볼&lt;/em&gt; 때 &lt;em&gt;보이는&lt;/em&gt; 것은 다음 자연적 변환들의 집합이다.&lt;/p&gt;
 
-\[\mathrm{Hom}_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(\mathrm{Hom}_{\mathcal{A}}(-, A), X) = \{ \alpha \mid \alpha: \mathrm{Hom}_{\mathcal{A}}(-, A) \to X\}\]
+\[[\hom_{\mathcal{A}}(-, A), X]\]
 
 &lt;p&gt;위 집합은 $A \in \mathcal{A}$와 $X \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$으로부터 정의된 집합이다. 그런데 $A, X$로부터 집합을 정의할 수 있는 또다른 자연스러운 방식이 있다. 단순히 $X$에 $A$를 취하는 것이다.&lt;/p&gt;
 
 \[X(A)\]
 
-&lt;p&gt;요네다 보조정리에 따르면 두 집합은 &lt;strong&gt;동형&lt;sub&gt;isomorphic&lt;/sub&gt;&lt;/strong&gt;이다. 게다가 그냥 동형인 것이 아니라, $A \in \mathcal{A}$에서 자연스럽게 동형&lt;sub&gt;naturally isomorphic in $A \in \mathcal{A}$&lt;/sub&gt;이다. 요컨대 다음 두 함자가 $[\mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}], \mathbf{Set}]$에서 동형이다.&lt;/p&gt;
+&lt;p&gt;요네다 보조정리에 따르면 두 집합은 &lt;strong&gt;동형&lt;sub&gt;isomorphic&lt;/sub&gt;&lt;/strong&gt;이다. 게다가 그냥 동형인 것이 아니라, $A \in \mathcal{A}$와 $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$에서 자연스럽게 동형&lt;sub&gt;naturally isomorphic&lt;/sub&gt;이다. 요컨대 다음 두 함자가 $[\mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}], \mathbf{Set}]$에서 동형이다.&lt;/p&gt;
 
 \[\begin{aligned}
 \text{(i)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
-&amp;amp;\xrightarrow{\hspace{0.15cm} \mathrm{Hom}_{\mathcal{A}}(-, \cdot)^{\mathrm{op}} \times 1 \hspace{0.15cm}} [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}] \\
-&amp;amp;\xrightarrow{\mathrm{Hom}_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(-, -)} \mathbf{Set} \\\\
+&amp;amp;\xrightarrow{\hspace{0.15cm} \hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}} \times 1 \hspace{0.15cm}} [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}] \\
+&amp;amp;\xrightarrow{\hom_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(-, -)} \mathbf{Set} \\\\
 \text{(ii)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
 &amp;amp;\xrightarrow{-(-)} \mathbf{Set}
 \end{aligned}\]
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; $\mathrm{Hom}_{\mathcal{A}}(-, \cdot)^{\mathrm{op}}$에 붙은 $\mathrm{op}$는 함자의 정의역을 $\mathcal{A}^\mathrm{op}$로 맞춰주기 위함이고, 실질적으로는 $\mathrm{Hom}_{\mathcal{A}}(-, \cdot)$와 같다.&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; $\hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}}$에 붙은 $\mathrm{op}$는 함자의 정의역을 $\mathcal{A}^\mathrm{op}$로 맞춰주기 위함이고, 실질적으로는 $\hom_{\mathcal{A}}(-, \cdot)$와 같다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;증명은 필자가 현재 혼자서 해보려고 시도 중이라서 일단 공란으로 비워둔다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 증명의 개요만 적자면, $\hat{(\;\;)} : [\hom_\mathcal{A}(-, A), F] \to F(A)$와 $\tilde{(\;\;)}: F(A) \to [\hom_\mathcal{A}(-, A), F]$를 다음과 같이 정의한다.&lt;/p&gt;
+
+\[\hat{\alpha} = \alpha_A(1_A), \quad \tilde{x} = \theta\]
+
+&lt;p&gt;여기서 $\theta$는 $f : A’ \to A$를 다음과 같이 사상하는 자연적 변환이다.&lt;/p&gt;
+
+\[\theta_{A&apos;}: f \mapsto F(f^{\mathrm{op}})(x)\]
+
+&lt;p&gt;$\theta$를 위와 같이 정의하는 이유는 다음 가환 도식을 만족하게끔 만들기 위함이다. ($(-)$에 $1_A$를 대입해 확인해 보라.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/yoneda-def.png&quot; style=&quot;margin: 0 auto; width: 400px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 임의의 $A \in \mathcal{A}, F : \mathcal{A}^\mathrm{op} \to \mathbf{Set}$에 대해 다음이 성립함을 보여아 한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;임의의 $\alpha \in [\hom_\mathcal{A}(-, A), F]$에 대해 $\tilde{\hat{\alpha}} = \alpha$이다.&lt;/li&gt;
+  &lt;li&gt;임의의 $x \in F(A)$에 대해 $\hat{\tilde{x}} = x$이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이것은 $[\hom_\mathcal{A}(-, A), F] \cong F(A)$임을 보인다. 여기에 더해, 해당 동형이 자연적임을 보여아 한다. 자아아알 생각해 보면 이것은 임의의 $A, A’ \in \mathcal{A}$와 $F, G \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$와 $f: A’ \to A$와 $\alpha: F \Rightarrow G$에 대해 다음 도식이 가환임을 보이는 것과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/yoneda-naturality.png&quot; style=&quot;margin: 0 auto; width: 500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;원소 단위로 적으면,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/yoneda-comm.png&quot; style=&quot;margin: 0 auto; margin-bottom: 2em; width: 450px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위가 성립함은 $\theta$의 자연성으로부터 따라 나온다. ■&lt;/p&gt;
+
+&lt;h2 id=&quot;요네다-따름정리와-관계론적-존재론&quot;&gt;요네다 따름정리와 관계론적 존재론&lt;/h2&gt;
+
+&lt;p&gt;요네다 보조정리가 함의하는 결과 중 다음은 아주 중요하다. 필자는 이를 그냥 &lt;strong&gt;요네다 따름정리&lt;/strong&gt;라고 부른다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;요네다 따름정리.&lt;/strong&gt; $X, Y \in \mathcal{A}$라고 하자.&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;$[\hom(-, X), \hom(-, Y)] \cong \hom(X, Y)$&lt;/li&gt;
+    &lt;li&gt;$X \cong Y \iff \hom(-, X) \cong \hom(-, Y)$&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $F = \hom(-, Y)$로 둔다. ■&lt;/p&gt;
+
+&lt;p&gt;요컨대 범주론에서 &lt;strong&gt;대상은, 그것이 받는 사상들의 집합과 다름없다.&lt;/strong&gt; 일례로 정수 순서 범주에서 $0$은 초기 대상으로 정의할 수 있고, 더 일반적으로 $n$은 받는 사상들의 수가 $n$개인 대상으로 정의할 수 있다. 요네다 따름정리는 이처럼 대상을 그것이 다른 대상과 맺는 사상들로서 정의하는 접근이 모든&lt;small&gt;(엄밀히는 국소적으로 작은)&lt;/small&gt; 범주에서 유효함을 보장한다. 필자는 이 접근을 &lt;strong&gt;관계론적 존재론&lt;/strong&gt;이라고 부른다.&lt;/p&gt;
 </content>
  </entry>
  
