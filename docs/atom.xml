@@ -4,13 +4,118 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-03-21T15:56:59+09:00</updated>
+ <updated>2025-04-01T10:41:18+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>Box V Product</title>
+   <link href="http://localhost:4000/2025/04/01/box-v-product/"/>
+   <updated>2025-04-01T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/04/01/box-v-product</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>양상 논리</title>
+   <link href="http://localhost:4000/2025/03/21/modal-logic/"/>
+   <updated>2025-03-21T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/03/21/modal-logic</id>
+   <content type="html">&lt;h3 id=&quot;종류&quot;&gt;종류&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;이름&lt;/th&gt;
+      &lt;th&gt;함의&lt;/th&gt;
+      &lt;th&gt;공리&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;K&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;가능세계에 대한 크립키 모델&lt;/td&gt;
+      &lt;td&gt;$\Box(p \to q) \to (\Box p \to \Box q)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;T&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;반사성&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;K&lt;/strong&gt; + $\Box p \to p$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;S4&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;반사성 + 추이성&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;T&lt;/strong&gt; + $\Box p \to \Box \Box p$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;S4.2&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;반사성 + 추이성 + R-수렴성&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;S4&lt;/strong&gt; + $\Diamond \Box p \to \Box \Diamond p$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;S4.3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;반사성 + 추이성 + R-선형성&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;S4&lt;/strong&gt; + $(\Diamond p \land \Diamond q) \to$ &lt;br /&gt; $(\Diamond (p \land \Diamond q) \lor \Diamond(\Diamond p \land q))$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;S5&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;반사성 + 추이성 + 대칭성&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;S4&lt;/strong&gt; + $(p \to \Box \Diamond p)$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;표의 밑으로 갈수록 논리는 엄격히 강해진다.&lt;/p&gt;
+
+&lt;h3 id=&quot;양상의-축약&quot;&gt;양상의 축약&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; &lt;strong&gt;S4&lt;/strong&gt;에서 양상 연산자의 나열은 6개의 조합 중 하나와 동등하며, 각 조합의 함의 관계는 다음과 같다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;/public/modal-operators.jpeg&quot; width=&quot;550px&quot; style=&quot;margin: 0 auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; &lt;strong&gt;S5&lt;/strong&gt;에서 양상 연산자의 나열은 $\Box$ 또는 $\Diamond$와 동등하다. 나아가 모든 논리식은 &lt;strong&gt;평평한&lt;sub&gt;flat&lt;/sub&gt;&lt;/strong&gt; 논리식 — 즉, 양상 연산자 안에 양상 연산자가 있는 경우가 없는 논리식과 동치이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;완전성-정리&quot;&gt;완전성 정리&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; &lt;strong&gt;K&lt;/strong&gt;는 완전하다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;린덴바움 보조정리.&lt;/strong&gt; 임의의 무모순적인 이론은 극대적으로 무모순적인&lt;sub&gt;maximally consistent&lt;/sub&gt; 이론으로 확장될 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;완전성 진술은 “무모순적인 이론은 만족 가능하다”와 동치이며, 여기에 린덴바움 보조정리를 적용하면 이는 “극대적으로 무모순적인 이론은 만족 가능하다”와 동치이다.&lt;/p&gt;
+
+&lt;p&gt;$u, v$가 극대적으로 무모순적인 이론이라고 하자. $\Box p \in u \implies p \in v$일 때 $u \lhd v$라고 적자. 다음을 어렵지 않게 보일 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$u \lhd v$일 때, $p \in v \implies \Diamond p \in u$&lt;/li&gt;
+  &lt;li&gt;임의의 극대적으로 무모순적인 이론 $u$에 대해, $p \in u$이고 $\Box p \notin u$라면, 어떤 극대적으로 무모순적인 이론 $v, v’$가 존재하여 $p \in v, \lnot p \in v’$이고 $u \lhd v, v’$이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이로부터 극대적으로 무모순적인 이론 $u$에 대해, &lt;strong&gt;표준적&lt;sub&gt;canonical&lt;/sub&gt; 크립키 모델&lt;/strong&gt; $\mathfrak{K} = (U, \prec, V)$를 다음과 같이 정의할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가능세계들의 모임 $U$는 $u \lhd v$를 만족하는 $v$의 모임이다.&lt;/li&gt;
+  &lt;li&gt;접근 관계 $\prec$은 $\lhd$이다.&lt;/li&gt;
+  &lt;li&gt;평가 함수&lt;sub&gt;valuation function&lt;/sub&gt; $V(p, v)$는 $p \in v$일 때, 그리고 오직 그 경우에만 참이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;$\mathfrak{K}$가 $u$를 만족함을 어렵지 않게 보일 수 있다. ■&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>요네다 보조정리</title>
@@ -73,11 +178,11 @@
 
 &lt;p&gt;이것은 $[\hom_\mathcal{A}(-, A), F] \cong F(A)$임을 보인다. 여기에 더해, 해당 동형이 자연적임을 보여아 한다. 자아아알 생각해 보면 이것은 임의의 $A, A’ \in \mathcal{A}$와 $F, G \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$와 $f: A’ \to A$와 $\alpha: F \Rightarrow G$에 대해 다음 도식이 가환임을 보이는 것과 같다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/yoneda-naturality.png&quot; style=&quot;margin: 0 auto; width: 500px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/yoneda-naturality.png&quot; style=&quot;margin: 0 auto; width: 470px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;원소 단위로 적으면,&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/yoneda-comm.png&quot; style=&quot;margin: 0 auto; margin-bottom: 2em; width: 450px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/yoneda-comm.png&quot; style=&quot;margin: 0 auto; margin-bottom: 2em; width: 400px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;위가 성립함은 $\theta$의 자연성으로부터 따라 나온다. ■&lt;/p&gt;
 

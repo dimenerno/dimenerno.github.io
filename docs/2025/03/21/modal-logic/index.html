@@ -11,7 +11,7 @@
   />
 
   <title>
-     양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게 &middot; 디멘의 블로그 
+     양상 논리 &middot; 디멘의 블로그 
   </title>
 
   <script>
@@ -35,7 +35,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/temp/2025-03-19-quantifying-in-2/" />
+  <link rel="canonical" href="/2025/03/21/modal-logic/" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -151,20 +151,105 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게</h1>
-  <span class="post-date">19 Mar 2025</span>
+  <h1 class="post-title">양상 논리</h1>
+  <span class="post-date">21 Mar 2025</span>
   
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/철학/'" >철학</div>
-      
-      <div class="tag" onclick="location.href='/tags/언어철학/'" >언어철학</div>
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
       
       <div class="tag" onclick="location.href='/tags/논리학/'" >논리학</div>
       
     </div>
   
-  
+  <h3 id="종류">종류</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>이름</th>
+      <th>함의</th>
+      <th>공리</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>K</strong></td>
+      <td>가능세계에 대한 크립키 모델</td>
+      <td>$\Box(p \to q) \to (\Box p \to \Box q)$</td>
+    </tr>
+    <tr>
+      <td><strong>T</strong></td>
+      <td>반사성</td>
+      <td><strong>K</strong> + $\Box p \to p$</td>
+    </tr>
+    <tr>
+      <td><strong>S4</strong></td>
+      <td>반사성 + 추이성</td>
+      <td><strong>T</strong> + $\Box p \to \Box \Box p$</td>
+    </tr>
+    <tr>
+      <td><strong>S4.2</strong></td>
+      <td>반사성 + 추이성 + R-수렴성</td>
+      <td><strong>S4</strong> + $\Diamond \Box p \to \Box \Diamond p$</td>
+    </tr>
+    <tr>
+      <td><strong>S4.3</strong></td>
+      <td>반사성 + 추이성 + R-선형성</td>
+      <td><strong>S4</strong> + $(\Diamond p \land \Diamond q) \to$ <br /> $(\Diamond (p \land \Diamond q) \lor \Diamond(\Diamond p \land q))$</td>
+    </tr>
+    <tr>
+      <td><strong>S5</strong></td>
+      <td>반사성 + 추이성 + 대칭성</td>
+      <td><strong>S4</strong> + $(p \to \Box \Diamond p)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>표의 밑으로 갈수록 논리는 엄격히 강해진다.</p>
+
+<h3 id="양상의-축약">양상의 축약</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> <strong>S4</strong>에서 양상 연산자의 나열은 6개의 조합 중 하나와 동등하며, 각 조합의 함의 관계는 다음과 같다.</p>
+
+  <p><img src="/public/modal-operators.jpeg" width="550px" style="margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> <strong>S5</strong>에서 양상 연산자의 나열은 $\Box$ 또는 $\Diamond$와 동등하다. 나아가 모든 논리식은 <strong>평평한<sub>flat</sub></strong> 논리식 — 즉, 양상 연산자 안에 양상 연산자가 있는 경우가 없는 논리식과 동치이다.</p>
+</blockquote>
+
+<h3 id="완전성-정리">완전성 정리</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> <strong>K</strong>는 완전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<blockquote>
+  <p><strong>린덴바움 보조정리.</strong> 임의의 무모순적인 이론은 극대적으로 무모순적인<sub>maximally consistent</sub> 이론으로 확장될 수 있다.</p>
+</blockquote>
+
+<p>완전성 진술은 “무모순적인 이론은 만족 가능하다”와 동치이며, 여기에 린덴바움 보조정리를 적용하면 이는 “극대적으로 무모순적인 이론은 만족 가능하다”와 동치이다.</p>
+
+<p>$u, v$가 극대적으로 무모순적인 이론이라고 하자. $\Box p \in u \implies p \in v$일 때 $u \lhd v$라고 적자. 다음을 어렵지 않게 보일 수 있다.</p>
+
+<ul>
+  <li>$u \lhd v$일 때, $p \in v \implies \Diamond p \in u$</li>
+  <li>임의의 극대적으로 무모순적인 이론 $u$에 대해, $p \in u$이고 $\Box p \notin u$라면, 어떤 극대적으로 무모순적인 이론 $v, v’$가 존재하여 $p \in v, \lnot p \in v’$이고 $u \lhd v, v’$이다.</li>
+</ul>
+
+<p>이로부터 극대적으로 무모순적인 이론 $u$에 대해, <strong>표준적<sub>canonical</sub> 크립키 모델</strong> $\mathfrak{K} = (U, \prec, V)$를 다음과 같이 정의할 수 있다.</p>
+
+<ul>
+  <li>가능세계들의 모임 $U$는 $u \lhd v$를 만족하는 $v$의 모임이다.</li>
+  <li>접근 관계 $\prec$은 $\lhd$이다.</li>
+  <li>평가 함수<sub>valuation function</sub> $V(p, v)$는 $p \in v$일 때, 그리고 오직 그 경우에만 참이다.</li>
+</ul>
+
+<p>$\mathfrak{K}$가 $u$를 만족함을 어렵지 않게 보일 수 있다. ■</p>
 
 </div>
 
@@ -175,7 +260,7 @@
     
       
       
-        <li><a href="/2025/03/18/quanitfying-in/">양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게</a></li>
+        <li><a href="/2025/03/10/temporal-logic/">시제 논리</a></li>
       
     
   </ul>
