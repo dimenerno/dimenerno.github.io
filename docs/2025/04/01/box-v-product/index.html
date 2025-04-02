@@ -193,7 +193,7 @@
     <li>임의의 $A \in \mathcal{A}$와 $f: A \to X$, $g: A \to Y$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: A \to P$가 언제나 유일하게 존재한다.</li>
   </ul>
 
-  <p><img src="/public/product.png" style="width: 350px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
+  <p><img src="/public/categorical-product.png" style="width: 350px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
 </blockquote>
 
 <p>위의 정의는 자연스러운 방식으로 3개 이상, 또는 무한한 대상들의 곱으로 일반화된다. 극한<sub>limit</sub>의 개념이 익숙한 독자라면, 곱은 이산 범주의 극한으로 이해할 수 있다. 또는, 곱은 주어진 대상들의 정보를 온전히 인코딩하는 <em>가장 작은</em> 범주로 이해할 수 있다.</p>
@@ -233,6 +233,28 @@
 <p>일례로 다음의 경우를 보자. 일차원 실수 공간 $\mathbb{R}$의 직합 $\mathbb{R}^\omega$를 고려하자. 만약 직합이 범주론적 곱이라면, 임의의 선형인 $f_k: \mathbb{R} \to \mathbb{R}$에 대해 $\pi_k \circ i = f_k$가 되도록 하는 연속함수 $i : \mathbb{R} \to \mathbb{R}^\omega$가 존재해야 한다. $f_k: x \mapsto x$라면 $i$는 $x \mapsto (x, x, x, \dots)$이다. 그런데 $i(1) = (1, 1, 1, \dots) \notin \mathbb{R}^\omega$이므로, 직합은 곱의 성질을 만족하지 않는다.</p>
 
 <p>대신 직합은 <strong>범주론적 합<sub>sum</sub></strong>에 대응된다. 범주론적 합은 곱의 켤레<sub>dual</sub>이기 때문에 쌍곱<sub>coproduct</sub>이라고도 한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X, Y$가 범주 $\mathcal{A}$의 대상이라고 하자. $S \in \mathcal{A}$와 사상 $\sigma_X : X \to S$, $\sigma_Y : Y \to S$에 대해, 다음 조건이 만족될 때 $S$를 $X, Y$의 <strong>합</strong><sub>sum</sub>이라고 하며, $P = X + Y$와 같이 적는다.</p>
+
+  <ul>
+    <li>임의의 $A \in \mathcal{A}$와 $f: X \to A$, $g: Y \to X$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: P \to A$가 언제나 유일하게 존재한다.</li>
+  </ul>
+
+  <p><img src="/public/categorical-sum.png" style="width: 350px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<p>앞서 들었던 예시를 다시 보자. 직합 $\bigoplus_\omega \mathbb{R}$를 고려하자. $\sigma_k: \mathbb{R} \to \bigoplus_\omega \mathbb{R}$은 다음과 같이 주어진다.</p>
+
+\[x \mapsto (0, \dots, 0, x, 0, \dots) \quad \text{($x$ is at the $k$th index)}\]
+
+<p>$A = \mathbb{R}$이라고 하고, 항등사상 $f_k : \mathbb{R} \to \mathbb{R}$을 고려하자. $\bigoplus_\omega \mathbb{R}$가 범주론적 합이라면 $i \circ \sigma_k = f_k$가 되도록 하는 연속함수 $i : \bigoplus_\omega \mathbb{R} \to \mathbb{R}$가 존재해야 한다. 실제로 이는 다음과 같이 존재한다.</p>
+
+\[i: (x_i)_{i \in \omega} \mapsto \sum_{i \in \omega} x_i\]
+
+<p>$\bigoplus_\omega \mathbb{R}$의 원소는 오직 유한한 비자명 항을 가지므로 $i$는 잘 정의됨에 주목하라. 반면, 이 예시는 직곱 $\mathbb{R}^\omega$가 범주론적 합이 아님을 보여준다. 직곱의 경우 $i$가 잘 정의되지 않기 때문이다. 이는 $i$에 $(1, 1, 1, \dots)$를 대입해 보면 알 수 있다.</p>
+
+<p>군의 경우 범주론적 곱과 범주론적 합에 대응되는 연산은 일반적인 군의 범주를 따지냐, 아벨군의 범주를 따지냐에 따라 조금 다르다. 이 부분은 간단한 노트 정도로 남겨둔다.</p>
 
 <table>
   <thead>
