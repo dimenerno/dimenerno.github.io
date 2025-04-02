@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-04-03T08:57:34+09:00</updated>
+ <updated>2025-04-03T08:59:33+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -88,10 +88,10 @@
 &lt;p&gt;대신 직합은 &lt;strong&gt;범주론적 합&lt;sub&gt;sum&lt;/sub&gt;&lt;/strong&gt;에 대응된다. 범주론적 합은 곱의 켤레&lt;sub&gt;dual&lt;/sub&gt;이기 때문에 쌍곱&lt;sub&gt;coproduct&lt;/sub&gt;이라고도 한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X, Y$가 범주 $\mathcal{A}$의 대상이라고 하자. $S \in \mathcal{A}$와 사상 $\sigma_X : X \to S$, $\sigma_Y : Y \to S$에 대해, 다음 조건이 만족될 때 $S$를 $X, Y$의 &lt;strong&gt;합&lt;/strong&gt;&lt;sub&gt;sum&lt;/sub&gt;이라고 하며, $P = X + Y$와 같이 적는다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X, Y$가 범주 $\mathcal{A}$의 대상이라고 하자. $S \in \mathcal{A}$와 사상 $\sigma_X : X \to S$, $\sigma_Y : Y \to S$에 대해, 다음 조건이 만족될 때 $S$를 $X, Y$의 &lt;strong&gt;합&lt;/strong&gt;&lt;sub&gt;sum&lt;/sub&gt;이라고 하며, $S = X + Y$와 같이 적는다.&lt;/p&gt;
 
   &lt;ul&gt;
-    &lt;li&gt;임의의 $A \in \mathcal{A}$와 $f: X \to A$, $g: Y \to X$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: P \to A$가 언제나 유일하게 존재한다.&lt;/li&gt;
+    &lt;li&gt;임의의 $A \in \mathcal{A}$와 $f: X \to A$, $g: Y \to X$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: S \to A$가 언제나 유일하게 존재한다.&lt;/li&gt;
   &lt;/ul&gt;
 
   &lt;p&gt;&lt;img src=&quot;/public/categorical-sum.png&quot; style=&quot;width: 350px; margin: 2em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;

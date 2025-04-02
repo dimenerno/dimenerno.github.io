@@ -70,9 +70,9 @@ related:
 
 대신 직합은 **범주론적 합<sub>sum</sub>**에 대응된다. 범주론적 합은 곱의 켤레<sub>dual</sub>이기 때문에 쌍곱<sub>coproduct</sub>이라고도 한다.
 
-> **정의.** $X, Y$가 범주 $\mathcal{A}$의 대상이라고 하자. $S \in \mathcal{A}$와 사상 $\sigma\_X : X \to S$, $\sigma\_Y : Y \to S$에 대해, 다음 조건이 만족될 때 $S$를 $X, Y$의 **합**<sub>sum</sub>이라고 하며, $P = X + Y$와 같이 적는다.
+> **정의.** $X, Y$가 범주 $\mathcal{A}$의 대상이라고 하자. $S \in \mathcal{A}$와 사상 $\sigma\_X : X \to S$, $\sigma\_Y : Y \to S$에 대해, 다음 조건이 만족될 때 $S$를 $X, Y$의 **합**<sub>sum</sub>이라고 하며, $S = X + Y$와 같이 적는다.
 >
-> - 임의의 $A \in \mathcal{A}$와 $f: X \to A$, $g: Y \to X$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: P \to A$가 언제나 유일하게 존재한다.
+> - 임의의 $A \in \mathcal{A}$와 $f: X \to A$, $g: Y \to X$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: S \to A$가 언제나 유일하게 존재한다.
 >
 > <img src="/public/categorical-sum.png" style="width: 350px; margin: 2em auto; mix-blend-mode: multiply;">
 
