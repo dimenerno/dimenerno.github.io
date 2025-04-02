@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-04-03T08:55:14+09:00</updated>
+ <updated>2025-04-03T08:57:34+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>범주론적 관점에서의 곱 위상·상자 위상과 직곱·직합의 차이</title>
-   <link href="http://localhost:4000/2025/04/01/box-v-product/"/>
-   <updated>2025-04-01T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/04/01/box-v-product</id>
+   <link href="http://localhost:4000/2025/04/02/box-v-product/"/>
+   <updated>2025-04-02T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/04/02/box-v-product</id>
    <content type="html">&lt;h2 id=&quot;곱-위상과-상자-위상&quot;&gt;곱 위상과 상자 위상&lt;/h2&gt;
 
 &lt;p&gt;학부 위상에서 곱 위상&lt;sub&gt;product topology&lt;/sub&gt;과 상자 위상&lt;sub&gt;box topology&lt;/sub&gt;을 다루는 부분은 많은 학생에게 난관으로 다가오는 대목이다. 겉보기에는 상자 위상이 훨씬 직관적인데, 교재에서는 상자 위상보다 곱 위상이 다루기에 자연스러운 개념이라고 가르치기 때문이다.&lt;/p&gt;
@@ -140,9 +140,9 @@
  
  <entry>
    <title>양상 논리</title>
-   <link href="http://localhost:4000/2025/03/21/modal-logic/"/>
-   <updated>2025-03-21T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/03/21/modal-logic</id>
+   <link href="http://localhost:4000/2025/04/01/modal-logic/"/>
+   <updated>2025-04-01T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/04/01/modal-logic</id>
    <content type="html">&lt;h3 id=&quot;종류&quot;&gt;종류&lt;/h3&gt;
 
 &lt;table&gt;

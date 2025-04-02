@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "양상 논리"
-date: 2025-03-21
+date: 2025-04-01
 tags: ["수학", "논리학"]
 related:
   - "시제 논리"
