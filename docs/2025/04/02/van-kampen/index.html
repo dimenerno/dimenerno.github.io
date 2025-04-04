@@ -11,7 +11,7 @@
   />
 
   <title>
-     Tag: 논리학 &middot; 디멘의 블로그 
+     자이페르트-판 캄펀 정리에 대한 노트 &middot; 디멘의 블로그 
   </title>
 
   <script>
@@ -35,7 +35,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/%EB%85%BC%EB%A6%AC%ED%95%99/" />
+  <link rel="canonical" href="/2025/04/02/van-kampen/" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -128,7 +128,7 @@
       href="/guestbook/"
       >방명록</a
     >
-                                                                                                  
+                                                                                                
   </nav>
 
   <div class="sidebar-item">
@@ -150,123 +150,49 @@
       </div>
 
       <div class="container content">
-        <a href="/archive-tag">모든 주제 보기</a>
+        <div class="post">
+  <h1 class="post-title">자이페르트-판 캄펀 정리에 대한 노트</h1>
+  <span class="post-date">02 Apr 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'" >위상수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'" >범주론</div>
+      
+    </div>
+  
+  <p>위상공간 $X$의 열린 덮개 $U, V$를 생각하자. 위상공간들의 범주 $\mathbf{Top}$에서 다음 푸시아웃<sub>pushout</sub> 도식의 극한은 $X$이다.</p>
 
-<h1>논리학</h1>
+<p><img src="/public/seifert-1.png" style="margin: 1.5em auto 2em auto; width: 250px" /></p>
 
-<ul>
-  
-    
-  
-    
-  
-    
-      <li>
-        <a href="/2025/04/01/modal-logic/">양상 논리</a>
-      </li>
-    
-  
-    
-  
-    
-      <li>
-        <a href="/2025/03/18/quanitfying-in/">양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게</a>
-      </li>
-    
-  
-    
-  
-    
-      <li>
-        <a href="/2025/03/10/temporal-logic/">시제 논리</a>
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <a href="/2025/02/20/ramsey/">램지 수와 무한 램지 정리</a>
-      </li>
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <a href="/2025/02/09/godel-lucas-penrose/">정신은 기계로 환원될 수 있는가: 괴델의 조건문과 펜로즈-루카스 논증</a>
-      </li>
-    
-  
-    
-      <li>
-        <a href="/2025/02/07/arithmetic-hierarchy/">산술 위계</a>
-      </li>
-    
-  
-    
-  
-    
-      <li>
-        <a href="/2025/01/25/beta-function/">베타 함수를 통한 페아노 산술에서의 괴델 수 정의</a>
-      </li>
-    
-  
-    
-      <li>
-        <a href="/2025/01/25/los/">워시의 정리</a>
-      </li>
-    
-  
-    
-      <li>
-        <a href="/2025/01/22/hypernaturals/">프레셰 필터와 비표준 자연수</a>
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</ul>
+<p>자이페르트-판 캄펀 정리는, $U, V$가 경로 연결<sub>path connected</sub>이고 $x_0 \in U \cap V$일 때, 위 극한이 함자 $\pi_1(-, x_0): \mathbf{Top} \to \mathbf{Grp}$에 대해 보존된다는 내용이다.</p>
+
+<p><img src="/public/seifert-2.png" style="margin: 2em auto; width: 300px" /></p>
+
+<p>그런데 푸시아웃의 극한은 왼쪽 도식의 쌍대 극한<sub>colimit</sub>이다. 만약 $I$에 대응되는 대상이 초기 대상<sub>initial object</sub>이라면, 사상 $I \to J, J \to K$는 유일하게 결정되므로 사실상 왼쪽 도식의 쌍대 극한은 오른쪽 도식의 쌍대 극한과 같으며, 이는 <a href="https://dimenerno.github.io/2025/04/02/box-v-product/">범주론적 합</a>에 해당한다.</p>
+
+<div style="display: grid; margin: 0 auto; width: 400px; grid-template-columns: 1fr 1fr; gap: 3em; align-items: center;">
+  <img src="/public/pushout-diag.png" style="width: 200px; margin: 1em 0 2em 0;" />
+  <img src="/public/product-diag.png" style="width: 200px; margin: 1em 0 2em 0;" />
+</div>
+
+<p>$\mathbf{Grp}$의 초기 대상은 자명군<sub>trivial group</sub>이며, 범주론적 합은 자유곱이다. 이에 따라 $U \cap V$가 단순 연결 공간일 때, $\pi_1(X)$는 $\pi_1(U)$와 $\pi_1(V)$의 자유곱이라는 결론을 얻는다.</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
       </div>
     </div>
 

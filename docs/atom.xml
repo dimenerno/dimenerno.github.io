@@ -4,13 +4,37 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-04-03T08:59:33+09:00</updated>
+ <updated>2025-04-04T09:35:37+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>자이페르트-판 캄펀 정리에 대한 노트</title>
+   <link href="http://localhost:4000/2025/04/02/van-kampen/"/>
+   <updated>2025-04-02T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/04/02/van-kampen</id>
+   <content type="html">&lt;p&gt;위상공간 $X$의 열린 덮개 $U, V$를 생각하자. 위상공간들의 범주 $\mathbf{Top}$에서 다음 푸시아웃&lt;sub&gt;pushout&lt;/sub&gt; 도식의 극한은 $X$이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/seifert-1.png&quot; style=&quot;margin: 1.5em auto 2em auto; width: 250px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;자이페르트-판 캄펀 정리는, $U, V$가 경로 연결&lt;sub&gt;path connected&lt;/sub&gt;이고 $x_0 \in U \cap V$일 때, 위 극한이 함자 $\pi_1(-, x_0): \mathbf{Top} \to \mathbf{Grp}$에 대해 보존된다는 내용이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/seifert-2.png&quot; style=&quot;margin: 2em auto; width: 300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그런데 푸시아웃의 극한은 왼쪽 도식의 쌍대 극한&lt;sub&gt;colimit&lt;/sub&gt;이다. 만약 $I$에 대응되는 대상이 초기 대상&lt;sub&gt;initial object&lt;/sub&gt;이라면, 사상 $I \to J, J \to K$는 유일하게 결정되므로 사실상 왼쪽 도식의 쌍대 극한은 오른쪽 도식의 쌍대 극한과 같으며, 이는 &lt;a href=&quot;https://dimenerno.github.io/2025/04/02/box-v-product/&quot;&gt;범주론적 합&lt;/a&gt;에 해당한다.&lt;/p&gt;
+
+&lt;div style=&quot;display: grid; margin: 0 auto; width: 400px; grid-template-columns: 1fr 1fr; gap: 3em; align-items: center;&quot;&gt;
+  &lt;img src=&quot;/public/pushout-diag.png&quot; style=&quot;width: 200px; margin: 1em 0 2em 0;&quot; /&gt;
+  &lt;img src=&quot;/public/product-diag.png&quot; style=&quot;width: 200px; margin: 1em 0 2em 0;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;$\mathbf{Grp}$의 초기 대상은 자명군&lt;sub&gt;trivial group&lt;/sub&gt;이며, 범주론적 합은 자유곱이다. 이에 따라 $U \cap V$가 단순 연결 공간일 때, $\pi_1(X)$는 $\pi_1(U)$와 $\pi_1(V)$의 자유곱이라는 결론을 얻는다.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>범주론적 관점에서의 곱 위상·상자 위상과 직곱·직합의 차이</title>
@@ -46,7 +70,7 @@
     &lt;li&gt;임의의 $A \in \mathcal{A}$와 $f: A \to X$, $g: A \to Y$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: A \to P$가 언제나 유일하게 존재한다.&lt;/li&gt;
   &lt;/ul&gt;
 
-  &lt;p&gt;&lt;img src=&quot;/public/categorical-product.png&quot; style=&quot;width: 350px; margin: 2em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/public/categorical-product.png&quot; style=&quot;width: 320px; margin: 2em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;위의 정의는 자연스러운 방식으로 3개 이상, 또는 무한한 대상들의 곱으로 일반화된다. 극한&lt;sub&gt;limit&lt;/sub&gt;의 개념이 익숙한 독자라면, 곱은 이산 범주의 극한으로 이해할 수 있다. 또는, 곱은 주어진 대상들의 정보를 온전히 인코딩하는 &lt;em&gt;가장 작은&lt;/em&gt; 범주로 이해할 수 있다.&lt;/p&gt;
@@ -94,7 +118,7 @@
     &lt;li&gt;임의의 $A \in \mathcal{A}$와 $f: X \to A$, $g: Y \to X$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: S \to A$가 언제나 유일하게 존재한다.&lt;/li&gt;
   &lt;/ul&gt;
 
-  &lt;p&gt;&lt;img src=&quot;/public/categorical-sum.png&quot; style=&quot;width: 350px; margin: 2em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/public/categorical-sum.png&quot; style=&quot;width: 320px; margin: 2em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;앞서 들었던 예시를 다시 보자. 직합 $\bigoplus_\omega \mathbb{R}$를 고려하자. $\sigma_k: \mathbb{R} \to \bigoplus_\omega \mathbb{R}$은 다음과 같이 주어진다.&lt;/p&gt;
@@ -3135,7 +3159,8 @@ for y ∈ P:
 
 &lt;ul&gt;
   &lt;li&gt;소수 $p$에 대해 $p - 1$에 대한 정보가 주어졌다면 위수가 $p - 1$인 곱군 $(\mathbb{Z}/p\mathbb{Z})^\times$을 생각해 보자.&lt;/li&gt;
-  &lt;li&gt;곱군 $G$에 대해 $nm \mid |G|$는, $x^{nm} = 1$이지만 $x^n, x^m \neq 1$인 원소 $x$의 존재성과 동치이다.&lt;/li&gt;
+  &lt;li&gt;유한체의 곱군은 순환군이다.&lt;/li&gt;
+  &lt;li&gt;순환적 곱군 $G$에 대해 $nm \mid |G|$는, $x^{nm} = 1$이지만 $x^n, x^m \neq 1$인 원소 $x$의 존재성과 동치이다.&lt;/li&gt;
   &lt;li&gt;위수는 주기와 다르다. 일반적으로 &lt;strong&gt;(주기) = (위수) + 1&lt;/strong&gt;이다.&lt;/li&gt;
 &lt;/ul&gt;
 

@@ -32,7 +32,7 @@ related:
 >
 > - 임의의 $A \in \mathcal{A}$와 $f: A \to X$, $g: A \to Y$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: A \to P$가 언제나 유일하게 존재한다.
 >
-> <img src="/public/categorical-product.png" style="width: 350px; margin: 2em auto; mix-blend-mode: multiply;">
+> <img src="/public/categorical-product.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;">
 
 위의 정의는 자연스러운 방식으로 3개 이상, 또는 무한한 대상들의 곱으로 일반화된다. 극한<sub>limit</sub>의 개념이 익숙한 독자라면, 곱은 이산 범주의 극한으로 이해할 수 있다. 또는, 곱은 주어진 대상들의 정보를 온전히 인코딩하는 _가장 작은_ 범주로 이해할 수 있다.
 
@@ -74,7 +74,7 @@ related:
 >
 > - 임의의 $A \in \mathcal{A}$와 $f: X \to A$, $g: Y \to X$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: S \to A$가 언제나 유일하게 존재한다.
 >
-> <img src="/public/categorical-sum.png" style="width: 350px; margin: 2em auto; mix-blend-mode: multiply;">
+> <img src="/public/categorical-sum.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;">
 
 앞서 들었던 예시를 다시 보자. 직합 $\bigoplus\_\omega \mathbb{R}$를 고려하자. $\sigma\_k: \mathbb{R} \to \bigoplus\_\omega \mathbb{R}$은 다음과 같이 주어진다.
 
