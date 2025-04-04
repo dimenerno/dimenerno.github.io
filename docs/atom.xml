@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-04-04T09:35:37+09:00</updated>
+ <updated>2025-04-04T09:36:12+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>자이페르트-판 캄펀 정리에 대한 노트</title>
-   <link href="http://localhost:4000/2025/04/02/van-kampen/"/>
-   <updated>2025-04-02T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/04/02/van-kampen</id>
+   <link href="http://localhost:4000/2025/04/04/van-kampen/"/>
+   <updated>2025-04-04T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/04/04/van-kampen</id>
    <content type="html">&lt;p&gt;위상공간 $X$의 열린 덮개 $U, V$를 생각하자. 위상공간들의 범주 $\mathbf{Top}$에서 다음 푸시아웃&lt;sub&gt;pushout&lt;/sub&gt; 도식의 극한은 $X$이다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/seifert-1.png&quot; style=&quot;margin: 1.5em auto 2em auto; width: 250px&quot; /&gt;&lt;/p&gt;
