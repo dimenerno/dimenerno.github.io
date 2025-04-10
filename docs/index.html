@@ -128,7 +128,7 @@
       href="/guestbook/"
       >방명록</a
     >
-                                                                                                
+                                                                                                        
   </nav>
 
   <div class="sidebar-item">
@@ -151,6 +151,116 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2025/04/10/completeness-theorem/">
+        완전성 정리와 뢰벤하임-스콜렘 정리
+      </a>
+    </h1>
+
+    <span class="post-date">10 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'" >논리학</div>
+      
+    </div>
+  
+    <p>괴델의 완전성 정리와 뢰벤하임-스콜렘 정리는 수리논리학의 가장 기본적인 정리들이다. 그래도 기본기를 다져보는 김에, 이 정리들의 증명을 복습해 보았다. 이 글에서 $T$는 언어 $\mathcal{L}$의 1차 논리 이론으로 간주한다.</p>
+
+<h2 id="괴델의-완전성-정리">괴델의 완전성 정리</h2>
+
+<blockquote>
+  <p><strong>괴델의 완전성 정리.</strong> $T \vDash \phi$라면 $T \vdash \phi$이다.</p>
+</blockquote>
+
+<h3 id="증명">증명</h3>
+
+<p>다음의 동치인 진술을 증명한다. (연습문제: 왜 동치인가?)</p>
+
+<blockquote>
+  <p>$T$가 건전한<sub>consistent</sub> 이론이라면, $T$는 모델을 가진다.</p>
+</blockquote>
+
+<h4 id="1-mathcall을-스콜렘-언어-mathcall_s로-확장하기">1. $\mathcal{L}$을 스콜렘 언어 $\mathcal{L}_S$로 확장하기</h4>
+
+<p>$\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $T$에 상수 $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ ($\alpha$는 서수)를 추가한 언어를 $\mathcal{L}_S$라고 하자. 여기서 첨자 $S$는 각 상수가 <strong>스콜렘 상수<sub>Skolem constant</sub></strong>의 역할을 담당할 것임을 의미한다.</p>
+
+<h4 id="2-t를-헨킨-이론-t_h로-확장하기">2. $T$를 헨킨 이론 $T_H$로 확장하기</h4>
+
+<p>$\mathcal{L}_S$의 명제 중 하나의 자유변수를 가지는 명제들의 집합의 크기는 $\kappa$와 같으므로, 정렬 원리로부터 $\lbrace  P_\alpha \rbrace _{\alpha \in \kappa}$와 같이 나타낼 수 있다. 이로부터 다음의 문장 집합을 정의한다.</p>
+
+\[\Sigma = \{ Q_\alpha := \exists x P_\alpha \rightarrow P_\alpha(c_\lambda) \mid \alpha \in \kappa \}\]
+
+<p>여기서 $c_\lambda$는 $P_\alpha$와 $Q_\beta \; (\beta &lt; \alpha)$에 등장하지 않는 상수 중 첨자가 최소인 상수이다(그러한 상수가 존재함은 서수가 정렬이라는 사실로부터 보장된다). 이제 $T_H = T \cup \Sigma$로 정의한다. $T_H$를 <strong>헨킨 이론<sub>Henkin theory</sub></strong>이라고 하고, $Q_\alpha$를 헨킨 공리라고 한다.</p>
+
+<h4 id="3-t_h를-극대적으로-건전한-이론-overlinet_h로-확장하기">3. $T_H$를 극대적으로 건전한 이론 $\overline{T_H}$로 확장하기</h4>
+
+<blockquote>
+  <p><strong>린덴바움 보조정리.</strong> $T$가 건전한 이론일 때, $T$를 확장하는 극대적으로 건전한 이론 $\overline{T}$가 존재한다. 즉, $T \subseteq T’$이고 임의의 $\mathcal{L}$ 문장 $\phi$에 대해 $\phi \in \overline{T}$거나 $\lnot\phi \in \overline{T}$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T$를 확장하는 건전한 이론들의 모임에 $\subseteq$로 순서 관계를 준 뒤, 초른의 보조정리를 적용한다.</p>
+
+<p>$T$가 건전한 이론일 때 $T_H$ 또한 건전함을 쉽게 보일 수 있다. 따라서 린덴바움 보조정리에 의해 $T_H$를 확장하는 극대적으로 건전한 이론 $\overline{T_H}$가 존재한다.</p>
+
+<h4 id="4-overlinet_h의-표준적canonical-모델-정의하기">4. $\overline{T_H}$의 표준적<sub>canonical</sub> 모델 정의하기</h4>
+
+<p>$c_\alpha \sim c_\beta$를 $(c_\alpha = c_\beta) \in \overline{T_H}$일 때 성립하는 관계로 정의하자. $\overline{T_H}$가 건전한 이론이라는 사실로부터 $\sim$이 동치 관계임을 보일 수 있다. 따라서 상수들의 동치류 $[c_\alpha]$가 잘 정의된다. 이제 다음과 같이 $\mathcal{L}_S$의 구조 $\mathfrak{M}$을 정의한다.</p>
+
+<ol>
+  <li>상수: $c_\alpha^{\mathfrak{M}} = [c_\alpha]$</li>
+  <li>술어: $R^{\mathfrak{M}}(c_{\alpha_1}^\mathfrak{M}, \dots, c_{\alpha_n}^{\mathfrak{M}}) \iff \overline{T_H} \vdash R(c_{\alpha_1}, \dots, c_{\alpha_n}) $</li>
+  <li>함수: $f(c_\alpha^\mathfrak{M}) = c_\beta^\mathfrak{M} \iff T_H \vdash \exists x (f(c_\alpha) = x) \rightarrow f(c_\alpha) = c_\beta$</li>
+</ol>
+
+<p>$\overline{T_H}$가 극대적으로 건전하므로 2가 잘 정의되고, 헨킨 이론이므로 3이 잘 정의된다. 따라서 $\mathfrak{M}$이 잘 정의되며, $\mathfrak{M}$이 $\overline{T_H}$의 모델임을 쉽게 확인할 수 있다. 그리고 $\mathfrak{M}$은 $T$의 모델이기도 하므로, $T$는 모델을 가진다. ■</p>
+
+<p><strong>Remark 1.</strong> 완전성 정리의 증명은 정렬 원리와 초른의 보조정리를 사용한다는 점에서 선택 공리에 의존적이다. 쾨니히 보조정리나 의존적 선택 공리와 같이 더 약한 유형의 선택 공리로도 증명할 수 있긴 하다.</p>
+
+<p><strong>Remark 2.</strong> <strong>콤팩트성 정리</strong>가 완전성 정리의 따름정리로서 얻어진다. (연습문제)</p>
+
+<p><strong>Remark 3.</strong> 완전성 정리의 증명에서 구축하는 모델의 크기는 $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$를 넘지 않는다. 마지막 단계에서 동치류를 취하므로 $\kappa$와 같다는 보장은 없다.</p>
+
+<h2 id="뢰벤하임-스콜렘-정리">뢰벤하임-스콜렘 정리</h2>
+
+<blockquote>
+  <p><strong>뢰벤하임-스콜렘 정리.</strong> $T$가 무한 모델을 가진다고 하자. 임의의 $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$에 대해, 크기가 $\kappa$인 $T$의 모델이 존재한다.</p>
+</blockquote>
+
+<h3 id="증명-1">증명</h3>
+
+<h4 id="하향-뢰벤하임-스콜렘-정리">하향 뢰벤하임-스콜렘 정리</h4>
+
+<blockquote>
+  <p><strong>하향 뢰벤하임-스콜렘 정리.</strong> $T$는 크기가 $\mathrm{max}(\aleph_0, |\mathcal{L}|)$을 넘지 않는 모델을 가진다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> Remark 2에서 즉시 얻어진다. □</p>
+
+<h4 id="상향-뢰벤하임-스콜렘-정리">상향 뢰벤하임-스콜렘 정리</h4>
+
+<blockquote>
+  <p><strong>상향 뢰벤하임-스콜렘 정리.</strong> $T$가 무한 모델을 가진다고 하자. 임의의 무한 기수 $\kappa$에 대해, 크기가 $\kappa$ 이상인 $T$의 모델이 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathcal{L}’$을 $\mathcal{L}$에 상수 $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$를 추가한 언어로 정의하자. 다음의 $\mathcal{L}’$-문장 집합을 정의하자.</p>
+
+\[\Sigma = \{ c_\alpha \neq c_\beta : \alpha, \beta \in \kappa, \alpha \neq \beta \}\]
+
+<p>$T’ = T \cup \Sigma$라고 하자. <em>$T$가 무한 모델 $\mathfrak{M}$을 가지므로,</em> 임의의 $T’$의 유한 부분이론은 $\mathfrak{M}$에 의해 만족된다. 따라서 콤팩트성 정리에 의해 $T’$은 건전하며, 완전성 정리에 의해 모델을 가진다. $\Sigma$는 $T’$의 모델이 적어도 $\kappa$개의 원소를 가질 것을 요구하므로, $T’$은 크기가 $\kappa$ 이상인 모델을 가지며, 이에 따라 $T$ 또한 크기가 $\kappa$ 이상인 모델을 가진다. □</p>
+
+<h4 id="뢰벤하임-스콜렘-정리-1">뢰벤하임-스콜렘 정리</h4>
+
+<p>$\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $\mathcal{L}’$과 $T’$을 앞선 바와 같이 정의한다.</p>
+
+<p>$\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$이므로 하향 뢰벤하임-스콜렘 정리에 의해 $T’$은 크기가 $\kappa$를 넘지 않는 모델을 가진다. 그런데 상향 뢰벤하임-스콜렘 정리의 증명에서 지적했듯이 $T’$의 모든 모델은 크기가 $\kappa$ 이상이다. 따라서 $T’$은 크기가 정확히 $\kappa$인 모델을 가지며, 이에 따라 $T$ 또한 크기가 정확히 $\kappa$인 모델을 가진다. ■</p>
+
+  </div>
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
   
   <div class="post">
     <h1 class="post-title">
@@ -261,13 +371,13 @@
 <p>상자 위상과 곱 위상의 차이는 전체 공간이 아닌 인덱스가 유한한지의 여부에 있다. 이와 유사한 차이를 대수학에서도 발견할 수 있다.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> 벡터 공간들의 모임 ${ V_i }_{i \in I}$에 대해, <strong>직곱<sub>direct product</sub></strong> $\prod V_i$를 다음과 같이 정의한다.</p>
+  <p><strong>정의.</strong> 벡터 공간들의 모임 $\lbrace  V_i \rbrace _{i \in I}$에 대해, <strong>직곱<sub>direct product</sub></strong> $\prod V_i$를 다음과 같이 정의한다.</p>
 
 \[\prod V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i \right\}\]
 </blockquote>
 
 <blockquote>
-  <p><strong>정의.</strong> 벡터 공간들의 모임 ${ V_i }_{i \in I}$에 대해, <strong>직합<sub>direct sum</sub></strong> $\bigoplus V_i$를 다음과 같이 정의한다.</p>
+  <p><strong>정의.</strong> 벡터 공간들의 모임 $\lbrace  V_i \rbrace _{i \in I}$에 대해, <strong>직합<sub>direct sum</sub></strong> $\bigoplus V_i$를 다음과 같이 정의한다.</p>
 
 \[\bigoplus V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i,\; v_i \neq 0 \text{ for only finitely many }i \right\}\]
 </blockquote>
@@ -538,378 +648,6 @@
 <p><strong>증명.</strong> $F = \hom(-, Y)$로 둔다. ■</p>
 
 <p>요컨대 범주론에서 <strong>대상은, 그것이 받는 사상들의 집합과 다름없다.</strong> 일례로 정수 순서 범주에서 $0$은 초기 대상으로 정의할 수 있고, 더 일반적으로 $n$은 받는 사상들의 수가 $n$개인 대상으로 정의할 수 있다. 요네다 따름정리는 이처럼 대상을 그것이 다른 대상과 맺는 사상들로서 정의하는 접근이 모든<small>(엄밀히는 국소적으로 작은)</small> 범주에서 유효함을 보장한다. 필자는 이 접근을 <strong>관계론적 존재론</strong>이라고 부른다.</p>
-
-  </div>
-  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2025/03/18/quanitfying-in/">
-        양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게
-      </a>
-    </h1>
-
-    <span class="post-date">18 Mar 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/철학/'" >철학</div>
-      
-      <div class="tag" onclick="location.href='/tags/언어철학/'" >언어철학</div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'" >논리학</div>
-      
-    </div>
-  
-    <blockquote>
-  <p>이 글은 <a href="/public/Quantifying In.pdf">David Kaplan, <em>Quantifying In</em> (1968)</a>을 정리한 것이다.</p>
-</blockquote>
-
-<h2 id="1-평범한-발생-우연적-발생-모호한-발생">1. 평범한 발생, 우연적 발생, 모호한 발생</h2>
-
-<p>다음 두 문장을 보자.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(1)</div>
-<div>둘은 하나보다 크다.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(2)</div>
-<div>둘리는 고길동과 같이 산다.</div>
-</div>
-
-<p>(1)과 (2)에서 모두 ‘둘’이 나타나지만, 매우 다른 방식으로 나타난다. (1)에서 ‘둘’이 나타나는 방식을 <strong>평범한 발생<sub>vulgar occurence</sub></strong>이라고 하고, (2)에서 ‘둘’이 나타나는 방식을 <strong>우연적 발생<sub>accidental occurence</sub></strong>이라고 하자.</p>
-
-<p>단어가 평범하게 발생할 경우 해당 단어는 지시하며, 동일성에 대한 라이프니츠 원리를 만족한다(예컨데 ‘둘’을 ‘화성의 위성 개수’로 대치해도 문장의 진릿값이 보존된다). 단어가 우연적으로 발생할 경우 해당 단어는 지시하지 않으며, 라이프니츠 원리를 만족하지 않는다.</p>
-
-<p>이제 다음의 문장들을 보자.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(3)</div>
-<div>'둘은 하나보다 크다'는 산술의 참인 명제이다.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(4)</div>
-<div>필연적으로, 둘은 하나보다 크다.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(5)</div>
-<div>코페르니쿠스는 둘이 하나보다 크다고 믿었다.</div>
-</div>
-
-<p>(3), (4), (5)에서 ‘둘’은 지시를 하는 것으로 보인다. 그러나 ‘둘’을 ‘화성의 위성 개수’로 바꾸면 문장의 진릿값이 보존되지 않는 것으로 보인다. 이것을 <strong>모호한 발생<sub>intermediate occurence</sub></strong>이라고 하자.</p>
-
-<p>언어철학에서 모호한 발생은 크게 두 가지 방식으로 설명된다. 첫째는 모호한 발생을 우연적 발생에 동화하는 것이고, 둘째는 모호한 발생을 평범한 발생에 동화하는 것이다.</p>
-
-<h2 id="2-콰인-모호한-발생은-우연적-발생이다">2. 콰인: 모호한 발생은 우연적 발생이다</h2>
-
-<p>콰인은 모호한 발생을 우연적 발생에 동화한다. 그는 (3)에서 따옴표로 감싸진 문장은 하나의 단어이고, (5)에서 <em>둘이 하나보다 크다고 믿었다</em> 는 원자 술어라고 주장한다. 특히 (3), (4), (5)에서 ‘둘’이 나타나는 문맥을 <strong>불투명 문맥<sub>opaque context</sub></strong>이라고 명명한 것은 그가 모호한 발생과 우연적 발생의 동일시를 염두에 뒀음을 시사한다.</p>
-
-<p>콰인은 (3), (4), (5)와, 다음의 (6), (7), (8)을 대조한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(6)</div>
-<div>둘에 대해, 그것은 뒤에 '하나보다 크다'를 적었을 때 산술의 참인 명제이다. <sub>Two is such that the result of writing it after 'is greater than one' is a truth of Arithmetics</sub></div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(7)</div>
-<div>둘에 대해, 그것은 필연적으로 하나보다 크다. <sub>Two is such that necessarily it is greater than one.</sub></div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(8)</div>
-<div>둘에 대해, 그것은 코페르니쿠스가 하나보다 크다고 믿었다. <sub>Two is such that Copernicus believed it to be greater than one.</sub></div>
-</div>
-
-<p>(3), (4), (5)와 달리 (6), (7), (8)의 문형에서 ‘둘’은 평범하게 발생하는 것으로 보인다 (콰인이라면 ‘하나’는 여전히 우연적으로 발생한다고 주장할 것이다). 그러나 (6), (7), (8)은 고전 논리로 표현할 수 있는 문장이 아니다. 고전 논리는 ‘There exists $x$ such that…‘이라는 문형은 허용하지만 ‘$n$ is such that…‘이라는 표현은 결여하기 때문이다. 따라서 (6), (7), (8)의 의미론을 정당화하는 것이 과제로 남는다.</p>
-
-<p>우선 (6)부터 보자. 최소한의 논리적 분석으로도 (6)이 적형식<sub>well-formed formula</sub>이 아님을 알 수 있다. 주어의 <em>둘</em> 은 이름의 사용<sub>use</sub>에 해당하지만, <em>뒤에 ‘하나보다 크다’를 적기</em> 는 이름의 언급<sub>mention</sub>에 해당하기 때문이다. 따라서 (6)은 의미론적으로 정당하지 않다.</p>
-
-<p>(7)의 의미는 아리스토텔레스적 본질주의<sub>Aristotelian essentialism</sub>로써 설명할 수 있다. 이 설명은 임의의 대상에 대해, 그에게 본질적인 속성과 우연적인 속성이 무엇인지를 규정한다. 콰인은 이같은 방식으로 (7)의 정당성을 설명한 바 있다.</p>
-
-<p>(8)이 의미론적으로 정당함을 시사하는 예시는 많이 있다. 러셀의 다음 유명한 문장을 보자.</p>
-
-<ul>
-  <li>네 요트의 길이에 대해, 내가 생각한 네 요트의 길이는 그것보다 길다. <sub>The length of your yacht is such that I thought that your yacht was longer than that.</sub></li>
-</ul>
-
-<p>위 문장은 직관적으로 이해가 되며, 참인 듯하다. 이것은 (8)의 의미론적 정당성을 지지한다. 또한 콰인은 다음의 유명한 문장의 쌍을 거론한다.</p>
-
-<blockquote>
-  <p>a. 랄프는 누군가가 스파이라고 믿는다. <sub>Ralph believes that someone is a spy.</sub></p>
-
-  <p>b. 누군가에 대해, 랄프는 그가 스파이라고 믿는다. <sub>Someone is such that Ralph believes they are a spy.</sub></p>
-</blockquote>
-
-<p>a에서는 존재 양화가 믿음 문맥 안에서, b에서는 밖에서 이루어진다. 한편 콰인은 믿음 문맥 속의 단어들을 우연적 발생과 동일시하기 때문에, 그에 따르면</p>
-
-<ul>
-  <li>랄프는 올트커트가 스파이라고 믿는다.</li>
-</ul>
-
-<p>로부터 $\exists$-첨가를 적용하여 b를 유도할 수 없음에 유의하라. 그러나,</p>
-
-<ul>
-  <li>올트커트 씨에 대해, 랄프는 그가 스파이라고 믿는다.</li>
-</ul>
-
-<p>로부터 b를 유도하는 것은 가능하다.</p>
-
-<p>결론적으로 애매한 발생에 대한 콰인의 입장은 두 가지이다. 첫째, 애매한 발생은 우연적 발생과 동일시할 수 있다. 둘째, 불투명 문맥 안과 밖에서 단어가 등장하는 경우를 구분해야 할 필요가 있을 때는 ‘…에 대해<sub>such that</sub>’ 구문을 사용할 수 있다. 콰인은 이 구문을 <strong>관계론적 의미에서의 믿음<sub>relational sense of belief</sub></strong>이라고 부른다. 마찬가지로 우리는 관계론적 의미에서의 양상, 주장, 생각 등의 구문을 도입할 수 있겠으나, 각 구문의 도입은 별도의 정당화를 요구한다.</p>
-
-<h2 id="3-프레게-모호한-발생은-평범한-발생이다">3. 프레게: 모호한 발생은 평범한 발생이다</h2>
-
-<p>프레게는 모호한 발생을 평범한 발생에 동화한다. 프레게는 모호한 발생에서 라이프니츠 원리가 어긋나는 것으로 보이는 이유는, 해당 문맥에서 단어들의 실제 지시체를 우리가 혼동하기 때문이라고 주장한다. 이 혼동에는 두 가지 원인이 있다. 첫째는 지시 표현이 <em>언제나</em> 동일한 대상을 지시한다는 믿음이다. 이로부터 도출되는 둘째 믿음은, 대부분의 맥락에서 같은 대상을 지시하는 지시 표현은 언제나 같은 대상을 지시한다는 믿음이다.</p>
-
-<p>그러나 지시 표현이 언제나 같은 대상을 지시한다는 믿음에 반하는 사례는 많다. 일례로 다음과 같이 중의적이거나 모호한<sub>ambiguous</sub> 단어의 사례가 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(11)</div>
-<div>F.D.R.은 여러 번 출마했지만, F.D.R.은 텔레비전에 딱 한 번 방영되었다.</div>
-</div>
-
-<p>(11)에 대한 자연스러운 분석은, 전자의 ‘F.D.R.’은 정치인을 지칭하는 한편 후자의 ‘F.D.R.’은 텔레비전 방송을 지칭한다고 보는 것이다. 이 경우 두 ‘F.D.R.’은 모두 평범한 발생이다. 그러나 극단적인 이름-지시체-일대일-대응-주의자라면 (11)이 ‘텔레비전에 딱 한 번 방영되었다’가 불투명 문맥임을 드러내며, 후자의 ‘F.D.R.’은 우연적 발생이라고 주장할지 모른다. 이 입장을 조금 더 그럴듯하게 포장하면, (11)은 올바르지 않은 문장이며 후자의 ‘F.D.R.’은 ‘‘F.D.R’이라는 이름의 텔레비전 방송’으로 수정되어야 한다고 주장할 수 있다.</p>
-
-<p>이 사례가 보여주는 것은, 누군가 불투명 문맥으로 이해할 문장을 누군가는 모호함의 발생으로 이해할 수 있다는 것이다. 프레게는 지시 표현은 보통 그 일상적인 지시체를 지시하지만, 뜻<sub>sense</sub> 따위의 중간 대상을 지시할 수도 있으며, 이같은 모호함이 철학자들을 애매한 발생의 문제로 빠뜨린 원인이라고 주장한다. 프레게는 전자를 <strong>직접 지시</strong><sub>direct reference</sub>, 후자를 <strong>간접 지시</strong><sub>indirect reference</sub>라고 부른다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>콰인</th>
-      <th>프레게</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>둘은 하나보다 크다</td>
-      <td>지시 문맥</td>
-      <td>직접 지시</td>
-    </tr>
-    <tr>
-      <td>필연적으로, 둘은 하나보다 크다</td>
-      <td>불투명 문맥</td>
-      <td>간접 지시</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>그렇다면 애매한 발생에서 표현의 지시체가 무엇인지 어떻게 알아낼 수 있을까? 저자는 <strong>합성의 원리<sub>principle of compositionality</sub></strong>가 핵심이라고 말한다. 문장을 이루는 개별 요소의 지칭체가 불분명하다면, 문장 전체의 지칭체를 먼저 확인하고, 문장의 지칭체가 어떻게 분석 가능한지를 파악함으로써 개별 요소의 지칭체를 역추적할 수 있다는 것이다.</p>
-
-<p>이 방법론에 따라 프레게는 인용구 안의 표현<sub>expression</sub>들은 자기 자신을 지시한다는 입장에 도달했다. 예를 들어 $\ulcorner 1 + 2 = 3 \urcorner$에서 $\ulcorner 1 \urcorner$의 지시체는 $\ulcorner 1 \urcorner$이다. 이같은 프레게의 입장은 인용 문맥 내의 양화사 사용을 가능하게 만든다. 로마 문자의 정의역이 대상이고, 그리스 문자의 정의역이 표현이라고 하면 프레게의 이론 하에서 우리는 다음과 같은 참을 표현할 수 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(12)</div>
-<div>$\exists \alpha \big( \ulcorner \alpha$는 하나보다 크다$\urcorner$는 산술의 참인 명제이다$\big)$ </div>
-</div>
-
-<p>표현에 비해 뜻<sub>sense</sub> 또는 의미<sub>meaning</sub>의 존재론적 위상은 불분명하지만, 비슷한 접근을 시도해 볼 수 있다. 먼저 다음의 사례로 예증되는 의미 따옴표를 도입하자.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(13)</div>
-<div>'할아버지'의 의미 = <sup>m</sup>아버지의 아버지<sup>m</sup></div>
-</div>
-
-<p>고딕 문자의 정의역이 의미라고 하면 프레게주의는 다음과 같은 참을 표현할 수 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(14)</div>
-<div>$\exists \mathsf{a, b} \big($ <sup>M</sup>$\mathsf{a}$가 $\mathsf{b}$를 찼다<sup>M</sup> $=$  <sup>M</sup>$\mathsf{b}$가 $\mathsf{a}$에게 차였다<sup>M</sup> $\big)$ </div>
-</div>
-
-<blockquote>
-  <p><em>Remark.</em> 작은따옴표는 표현을 나타내는 반면, $\ulcorner$…$\urcorner$은 표현들의 합성을 의미한다. 마찬가지로 <sup>m</sup>…<sup>m</sup>은 의미를 나타내는 반면, <sup>M</sup>…<sup>M</sup>은 의미들의 합성을 의미한다. 물론 표현들의 합성도 표현이고, 의미들의 합성도 의미이기 때문에, 등식 1, 2가 성립한다. 저자가 등식 1, 2를 등식 3에 빗대어 설명했다는 사실을 떠올리면 도움이 된다.</p>
-
-  <ol>
-    <li>‘The cat is on the mat’ $=$ $\ulcorner$The cat is on the mat$\urcorner$</li>
-    <li><sup>m</sup>The cat is on the mat<sup>m</sup> $=$ <sup>M</sup>The cat is on the mat<sup>M</sup></li>
-    <li>$237 = 2 \times 10^2  + 3 \times 10 + 7$</li>
-  </ol>
-
-  <p>그러나 작은따옴표와 $\ulcorner$…$\urcorner$가 완전히 같고, 그리고 <sup>m</sup>…<sup>m</sup>과 <sup>M</sup>…<sup>M</sup>이 완전히 같은 것은 결코 아니다. 각 경우 전자는 불투명하지만 후자는 투명하기 때문이다. 따라서 1은 불가능하지만 2는 가능하다. 이것은 3은 말이 안 되지만 4는 올바른 것과 같은 이치이다.</p>
-
-  <ol>
-    <li>$\exists \alpha\; \big($ ‘$\alpha$ is on the mat’ is true$\big)$</li>
-    <li>$\exists \alpha\; \big(\ulcorner \alpha$ is on the mat$\urcorner$ is true$\big)$</li>
-    <li>$\exists n\; (237 &lt; 2n7)$</li>
-    <li>$\exists n\; (237 &lt; 2 \times 10^2 + n \times 10 + 7)$</li>
-  </ol>
-</blockquote>
-
-<h2 id="4-지시-술어를-통한-프레게주의의-보강">4. 지시 술어를 통한 프레게주의의 보강</h2>
-
-<p>이제 프레게주의가 (6), (7), (8)을 어떻게 설명하는지 보자.</p>
-
-<p>그에 앞서, (4), (5), (7), (8)에서 믿음의 대상이 되는 것이 정확히 무엇인지를 명료화하는 것이 도움이 된다. S가 문장일 때, 누군가가 S를 믿는다는 것, 또는 S가 필연적이라는 것은 어떻게 형식화할 수 있는가? 본 논문에서는 간단한 길을 택하여, 문장은 자기 자신을 지시하는 것으로 간주하고, 필연을 문장에 대한 단항 술어로, 믿음을 주체와 문장 사이의 이항 술어로 간주한다. 따라서 (4), (5)는 다음과 같이 적을 수 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(15)</div>
-<div>$\mathbf{N}$ '둘은 하나보다 크다'</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(16)</div>
-<div>코페르니쿠스 $\mathbf{B}$ '둘은 하나보다 크다'</div>
-</div>
-
-<p>(7), (8)을 콰인식으로 형식화하기 위해, 콰인의 관계론적 믿음과 관계론적 필연을 나타낼 술어 $\mathbf{Nec}$와 $\mathbf{Bel}$를 도입하자.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(17)</div>
-<div>$\mathbf{Nec}\big($'$\mathbf{x}$는 하나보다 크다', 둘$\big)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(18)</div>
-<div>코페르니쿠스 $\mathbf{Bel}\big($'$\mathbf{x}$는 하나보다 크다', 둘$\big)$</div>
-</div>
-
-<p>여기서 볼드체 문자 $\mathbf{x}$는 $\mathbf{x}$가 지시적으로서가 아닌, 오직 자리값<sub>placeholder</sub>으로서 사용되었음을 의미한다. 콰인에 따르면 $\mathbf{x}$는 불투명 문맥에 있으므로, 지시할 수 없기 때문이다.</p>
-
-<p>프레게주의는 (15)와 (16)을 다음과 같이 형식한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(19)</div>
-<div>$\mathbf{N}$ $\ulcorner$둘은 하나보다 크다$\urcorner$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(20)</div>
-<div>코페르니쿠스 $\mathbf{B} \ulcorner$둘은 하나보다 크다$\urcorner$</div>
-</div>
-
-<p>상술한 Remark로 인해 동일한 술어 $\mathbf{N}, \mathbf{B}$를 사용할 수 있다.</p>
-
-<p>하지만 (19)와 (20)만으로는 부족한 점이 있다. (19)와 (20)의 ‘둘’이 지시적이긴 하지만, (7)과 (8)의 ‘둘’과는 다른 대상을 지시한다. 전자는 표현을, 후자는 수를 지시하기 때문이다. 따라서 (7)과 (8), 또는 (17)과 (18)로부터 가능했을 논리적 추론이 (19)와 (20)만으로는 얻어지지 않는다. 예를 들어 (17)과 다음이 주어졌을 때,</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(21)</div>
-<div>둘 $=$ 화성의 위성 수</div>
-</div>
-
-<p>다음을 도출할 수 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(22)</div>
-<div>$\exists y \big(y =$ 화성의 위성 수 $\land$ $\mathbf{Nec}($'$\mathbf{x}$는 하나보다 크다', $y)\big)$</div>
-</div>
-
-<p>그러나 (19)와 (21)은 다음을 도출하는 데 그친다.</p>
-
-<ul>
-  <li>$\exists y \big(y =$ 화성의 위성 수 $\land$ $\mathbf{N}\ulcorner$둘은 하나보다 크다$\urcorner\big)$</li>
-</ul>
-
-<p>한편 다음은 올바르지 않다. $\alpha$는 수가 아니라 표현이기 때문이다.</p>
-
-<ul>
-  <li>$\exists \alpha \big(\alpha =$ 화성의 위성 수 $\land$ $\mathbf{N}\ulcorner \alpha$는 하나보다 크다$\urcorner\big)$</li>
-</ul>
-
-<p>그러나 이 문제는 처치가 도입한 바 있는 <strong>지시 술어</strong> $\Delta$를 도입함으로써 해결할 수 있다. $\alpha$가 $c$를 지칭할 때, 그리고 오직 그럴 때만 $\Delta(\alpha, c)$라고 하자. 그러면 프레게식으로 (22), (17), 그리고 (18)은 각각 다음과 같이 적을 수 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(23)</div>
-<div>$\exists y \Big(y =$ 화성의 위성 수 $\land$ $\exists \alpha \big(\Delta(\alpha, y) \land \mathbf{N}\ulcorner \alpha$는 하나보다 크다$\urcorner\big)\Big)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(24)</div>
-<div>$\exists \alpha \big(\Delta(\alpha, 2) \land \mathbf{N}\ulcorner \alpha$는 하나보다 크다$\urcorner\big)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(25)</div>
-<div>$\exists \alpha \big(\Delta(\alpha, 2)$ $\land$ 코페르니쿠스 $\mathbf{B}\ulcorner \alpha$는 하나보다 크다$\urcorner\big)$</div>
-</div>
-
-<p>논문의 저자는 (23), (24), (25)가 원 문장의 직관적인 의미를 포착할 뿐 아니라, 콰인과 달리 $\mathbf{Bel}, \mathbf{Nec}$ 등의 추가적인 술어를 소개하고 정의할 필요가 없다는 점을 강조한다.</p>
-
-<h2 id="5-올트커트-역설">5. 올트커트 역설</h2>
-
-<p>콰인은 다음의 사고실험을 제시한 바 있다. 랄프는 골목에서 갈색 모자를 쓴 수상한 인물이 벤치 밑의 서류가방을 가져가는 것을 보고는 그가 스파이일 것이라고 믿는다. 한편 랄프는 그가 속한 도시의 시장을 존경하며, 그가 스파이일 리가 없다고 믿는다. 그런데 사실 수상한 사람과 시장은 동일한 인물, 올트커트 씨이다.</p>
-
-<p>콰인은 이를 다음과 같이 형식화한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(26)</div>
-<div>랄프 $\mathbf{B}$ '갈색 모자를 쓴 사람은 스파이이다'</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(27)</div>
-<div>랄프 $\mathbf{B}$ '시장은 스파이가 아니다'</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(28)</div>
-<div>갈색 모자를 쓴 사람 = 시장 = 올트커트</div>
-</div>
-
-<p>(26), (27)을 관계론적 믿음으로 표현하면,</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(29)</div>
-<div>랄프 $\mathbf{Bel}($'$\mathbf{x}$는 스파이이다', 갈색 모자를 쓴 사람$)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(30)</div>
-<div>랄프 $\mathbf{Bel}($'$\mathbf{x}$는 스파이가 아니다', 시장$)$</div>
-</div>
-
-<p>(28)에 의해 (29), (30)은 각각 다음을 시사한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(32)</div>
-<div>랄프 $\mathbf{Bel}($'$\mathbf{x}$는 스파이이다', 올트커트$)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(33)</div>
-<div>랄프 $\mathbf{Bel}($'$\mathbf{x}$는 스파이가 아니다', 올트커트$)$</div>
-</div>
-
-<p>따라서 랄프는 다음을 믿는 것으로 보인다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(34)</div>
-<div>랄프 $\mathbf{Bel}($'$\mathbf{x}$는 스파이이고, $\mathbf{x}$는 스파이가 아니다', 올트커트$)$</div>
-</div>
-
-<p>그러나 (34)는 문제적이다. 콰인은 문제의 원인이 (32), (33)으로부터 (34)를 도출하는 데 있다고 주장한다. 프레게적 형식화는 콰인의 직관이 올바름을 증명한다. 자세한 과정은 생략하지만, (26), (27), (28)은 오직 다음을 도출한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(37)</div>
-<div>$\exists \alpha, \beta \big( \Delta(\alpha,$ 오트커트$) \land \Delta(\beta,$ 오트커트$)$ $\land$ 랄프 $\mathbf{B}\ulcorner \alpha$는 스파이이다$\urcorner \land$ 랄프 $\mathbf{B}\ulcorner \beta$는 스파이가 아니다 $\urcorner\big)$</div>
-</div>
-
-<p>여기까지는 좋다. 문제는 두 번째 역설이다. (9)가 참이라고 하자. 즉, 랄프는 스파이의 존재를 믿는다. 또한 랄프는 세상에 키가 정확히 똑같은 두 사람은 존재하지 않는다고 믿으므로 (매우 합당한 믿음이다) 키가 가장 짧은 스파이가 존재하리라 믿는다. 따라서 (39)가 성립한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(39)</div>
-<div>랄프 $\mathbf{B}$'키가 가장 작은 스파이는 스파이이다'</div>
-</div>
-
-<p>콰인식으로 ‘키가 가장 작은 스파이’를 추출<sub>exportation</sub>하면,</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(40)</div>
-<div>랄프 $\mathbf{Bel}\big($'$\mathbf{x}$는 스파이이다', 키가 가장 작은 스파이$\big)$</div>
-</div>
-
-<p>$\exists$-첨가에 의해,</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(41)</div>
-<div>$\exists y\Big($랄프 $\mathbf{Bel}\big($'$\mathbf{x}$는 스파이이다', $y\big)\Big)$</div>
-</div>
-
-<p>그리고 (41)은 (10)과 내용이 같다. 따라서 (9)와 (10)이 서로를 시사하게 되는 모순이 발생한다. 논문의 저자는 이 문제가 너무 까다로운 나머지 한때 양상 및 믿음 문맥에서 양화하는 것은 불가능하다는 입장으로 기울었으나, 이를 공략할 방안이 떠올랐다는 일화를 이야기한다. 이에 대해서는 다음 글에서 소개하도록 하겠다.</p>
 
   </div>
   <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>

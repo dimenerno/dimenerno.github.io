@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     구멍 논증: 시공간의 존재론과 비결정론적 상대론 &middot; 디멘의 블로그 
+  </title>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/temp/2025-03-05-hole-argument/" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>이데아를 여행하는 히치하이커</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+      class="sidebar-nav-item"
+      href="/"
+      >최근 글</a
+    >
+
+                
+    <a
+      class="sidebar-nav-item"
+      href="/about/"
+      >저에 대하여</a
+    >
+        
+    <a
+      class="sidebar-nav-item"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+        
+    <a
+      class="sidebar-nav-item"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+          
+    <a
+      class="sidebar-nav-item"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+        
+    <a
+      class="sidebar-nav-item"
+      href="/guestbook/"
+      >방명록</a
+    >
+                                                                                                        
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">디멘의 블로그</a>
+            <small>이데아를 여행하는 히치하이커</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">구멍 논증: 시공간의 존재론과 비결정론적 상대론</h1>
+  <span class="post-date">05 Mar 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/물리학/'" >물리학</div>
+      
+      <div class="tag" onclick="location.href='/tags/상대론/'" >상대론</div>
+      
+      <div class="tag" onclick="location.href='/tags/철학/'" >철학</div>
+      
+    </div>
+  
+  <p><strong>초록.</strong> 일반 상대성 이론은 크게 세 가지 대상을 상정한다. 시공간 매니폴드<sub>spacetime manifold</sub>, 계량 장<sub>metric field</sub>, 그리고 물질 장<sub>matter field</sub>이 그것이다. 구멍 논증<sub>hole argument</sub>에 따르면, ① 시공간 매니폴드의 존재론과 ② 양상 표현의 의미론을 어떻게 상정하느냐에 따라 일반 상대성 이론은 완벽히 결정론적인 이론이 될 수도, 극단적으로 비결정론적인 이론이 될 수도 있다. 구체적으로, 시공간 매니폴드를 물질 장과 독립적으로 존재하는 대상으로 상정하고, 평행세계 간 사건<sub>event</sub>의 동일성을 상정할 경우 임의의 천체가 특정 사건을 통과하는지를 결정할 수 없다. 이 글에서는 구멍 논증을 소개하고, 그에 따른 몇 가지 반박을 살펴본다.</p>
+
+<h2 id="1-속성으로-일반-상대성-이론-훑기">1. 속성으로 일반 상대성 이론 훑기</h2>
+
+<p>흔히 “일반 상대성 이론에 따르면 질량 주변의 시공간은 휘어진다”라고 알려져 있다. 그러나 이는 오해의 여지가 있다. 일반 상대성 이론에서 시공간 매니폴드는 변하지 않기 떄문이다. 마치 고전역학에서 좌표평면이 입자들이 물리적으로 상호작용하는 배경이듯이, 상대성 이론에서 시공간 매니폴드는 계량 장과 물질 장이 상호작용하는 배경이다.</p>
+
+<p>물론 우리는 휘어 있는 시공간 매니폴드를 상정할 수 있다. 예를 들어 시공간 매니폴드는 구일 수도 있고, 토러스일 수도 있다. 전자의 경우 한 방향으로 쭉 나아가는 우주선은 시작점으로 되돌아올 것이고, 후자의 경우 우주를 누빈 밧줄은 중 어떤 밧줄은 원점으로 회수 불가능할 것이다. 이처럼 시공간 매니폴드의 위상적 특징이 물리적 함의를 가질 수는 있지만, 질량의 분포에 따라 시공간 매니폴드가 변화한다는 생각은 잘못이다. 더구나 일반 상대성 이론은 국소적 이론이기 때문에, 시공간 매니폴드의 위상적 특징에 대해서는 말하는 바가 거의 없다.</p>
+
+<p>그렇다면 교양서적이나 과학 다큐에서 으레 보여주는 시공간이 휘어지는 그림은 무엇인가? 일반 상대성 이론에서 그것은 시공간 매니폴드가 휘는 것이 아니라, 계량 장이 변화하는 것이다. 간단한 예시를 보자. 구 위에서 직각삼각형을 그리면 피타고라스의 정리가 성립하지 않는다. 구의 곡률로 인해 빗변의 제곱이 언제나 밑변 제곱과 높이 제곱의 합보다 커지기 때문이다. 반대로 쌍곡면에서는 빗변의 제곱이 밑변 제곱과 높이 제곱의 합보다 작다. 따라서 직교 좌표계 하에서 곡률에 따른 거리 미분소와 단위 미분소의 관계는 다음과 같다.</p>
+
+<ul>
+  <li>양의 곡률: $ds^2 &gt; dx^2 + dy^2$</li>
+  <li>평면: $ds^2 = dx^2 + dy^2$</li>
+  <li>음의 곡률: $ds^2 &lt; dx^2 + dy^2$</li>
+</ul>
+
+<p>일반적으로 곡률에 따른 거리 미분소와 단위 미분소의 관계는 다음과 같이 주어진다.</p>
+
+\[ds^2 = E dx^2 + 2F dxdy + G dy^2\]
+
+<p>여기서 $E, F, G$는 $x, y$에 의존하는 함수이다. 이것을 간결하게 다음과 같이 표현할 수 있다.</p>
+
+\[\begin{bmatrix}
+E &amp; F \\
+F &amp; G
+\end{bmatrix}\]
+
+<p>위 값을 <strong>계량 텐서<sub>metric tensor</sub></strong>라고 부른다. 요컨대 점 $p$에서의 계량 텐서는 $p$가 그 미소 근방에 있는 점들과 맺는 거리 관계에 대한 정보를 담고 있으며, 이 정보는 점 $p$에서의 곡률에 대한 정보로도 읽을 수 있다. 매니폴드 $M$의 각 점에 대해 계량 텐서를 부여하는 함수를 계량 텐서장, 또는 간단히 <strong>계량 장<sub>metric field</sub></strong>이라고 부른다. 평평한 매니폴드 위에 양의 곡률의 계량 장을 부여하는 것 또한 가능함에 주목하라. <strong>매니폴드는 점들의 집합과 위상을 제공할 뿐이고, 점들 간의 거리와 그로 인한 곡률은 계량 장이 결정한다.</strong></p>
+
+<blockquote>
+  <p><em>Remark 1.</em> 매니폴드 상에서 점들의 위상과, 계량 장으로 주어지는 점들 간 거리를 구분하는 것은 미묘한 용어 문제를 일으킨다. 일반적으로 매니폴드의 토폴로지는 거리 토폴로지<sub>metric topology</sub>로 주어지기 때문이다. 매니폴드의 거리 토폴로지는 점 $p$의 근방을 결정하고, 계량 텐서<sub>metric tensor</sub>는 그 근방에 있는 점들 간의 “관측 가능한 거리”, 즉 빛이 두 사건을 통과하는 데 걸리는 시간을 결정한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><em>Remark 2.</em> 이름에서 알 수 있듯이 사실 계량 텐서는 행렬이 아니라 <a href="http:/dimenerno.github.io/2025/03/04/tensor/">텐서, 즉 쌍선형 형식<sub>bilinear form</sub>이다.</a> 계량 텐서가 행렬이 아니라 텐서로 간주되어야 하는 이유는 계량 텐서가 포착하려는 정보인 ‘점들 간 거리’가 좌표계와 독립적이기 때문이다. 좌표계를 바꾸었다고 계량 텐서가 달라졌다면, 이것은 계량 텐서의 정의가 잘못되었음을 의미한다. 따라서 앞서 소개한 것처럼 행렬로서 계량 텐서를 정의하는 것은 부적절하다.</p>
+
+  <p>그렇다면 어떻게 좌표 독립적인 계량 텐서를 정의할 수 있을까? 근사하게도, 점 $p$의 접공간<sub>tangent space</sub>에서의 내적을 정의하는 것으로, 점 $p$가 그 근방에 있는 점들과 맺는 거리 관계를 기술할 수 있음이 알려져 있다. 자세한 증명은 미분기하학 책을 참조하거나, <a href="https://youtu.be/UYiAlYlSwBo?si=OnMEQWjLq4hM01tz">링크된 훌륭한 영상</a>을 참조하길 바란다. 어쨌거나 이 대응 관계 덕분에 점 $p$에서의 계량 텐서를, $p$의 접공간의 내적으로 정의하면 좌표 독립적인 계량 텐서의 정의를 얻는다. 그리고 실수 벡터 공간에서 내적은 쌍선형 형식이므로, ‘텐서’라는 이름이 적절하다.</p>
+</blockquote>
+
+<p>한편 <strong>물질 장<sub>matter field</sub></strong>은 시공간 매니폴드에서 물질의 분포와 궤적을 나타내는 함수이다. 특수 상대성 이론에서 민코프스키 다이어그램과 비슷한 개념이다. 예를 들어 1차원 공간에서 등속 운동하는 질량 $m$인 점입자가 있다면, 이 우주의 물질 장은 다음과 같다.</p>
+
+\[F(\mathbf{p}) = m, \quad F(\mathbf{q}) = 0\]
+
+<blockquote>
+  <p><em>Remark 3.</em> 사실 위의 설명은 매우 단순화된 설명이고 엄밀히 말하면, 물질 장은 매니폴드의 각 점에 대해 해당 점에서 운동량과 에너지가 흐르는 방향을 기술하는 텐서 — 이 텐서를 <strong>응력-에너지 텐서<sub>stress-energy tensor</sub></strong>라고 부른다 — 를 부여하는 함수이다. 질량-에너지 등가 원리를 고려하여 입자의 운동 궤적뿐 아니라 에너지의 흐름에 대한 정보까지 추가된 것이라고 생각할 수 있다.</p>
+</blockquote>
+
+<p>아인슈타인의 중력 방정식은 계량 장과 물질 장이 맺는 관계를 기술한다.</p>
+
+\[R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} = \kappa T_{\mu\nu}\]
+
+<p>$R_{\mu\nu}$는 리치 곡률 텐서<sub>Ricci curvature tensor</sub>, $R$은 스칼라 곡률<sub>scalar curvature</sub>, 그리고 $g_{\mu\nu}$가 거리 텐서이다. 리치 곡률 텐서와 스칼라 곡률은 거리 텐서에 의해 결정되기 때문에, 좌변은 거리 텐서에만 의존적이다. 한편 $\kappa$는 상수이고, $T_{\mu\nu}$는 응력-에너지 텐서를 나타낸다. 종합해 보면 위 식은 대강 질량과 에너지가 밀집된 곳이 곡률이 크다는 의미이다.</p>
+
+<h2 id="2-일반-공변성">2. 일반 공변성</h2>
+
+<p>일반 공변성이란 물리 법칙의 형태가 좌표계의 선택과 무관하게 유지된다는 원리이다. 일반 공변성에 관해서는 필자가 <a href="https://dimenerno.github.io/2025/02/27/general-covariance/">이전에 쓴 글</a>이 있으므로 해당 글을 참조하길 바란다. 이후 논의는 해당 글을 읽었다는 전제 하에 진행한다.</p>
+
+<p>일반 상대성 이론은 일반 공변적 이론이다. 따라서 우리가 계량 장을 표현하는 좌표계를 변화시키면, 그에 맞추어 물질 장이 변화한다. 예를 들어 다음의 그림은 동일한 시공간 매니폴드 위에서 그려진 서로 다른 두 좌표계를 나타낸다. 2번 좌표계는 1번 좌표계에 구멍을 그린 뒤 이 구멍 내부의 좌표계를 부드럽게 변화시킨 것이다 (이같은 좌표계 변환을 구멍 미분변환<sub>hole diffeomorphism</sub>이라고 한다).</p>
+
+<p>이제 왼쪽이 1번 좌표계를 이용하여 구한 중력 방정식의 한 해라고 하자. 파란색은 계량 장을 나타낸다. 일반 상대성 이론의 공변성에 따라, 우리는 2번 좌표계를 이용하여 해를 구할 수도 있다. 그</p>
+
+</div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3>관련 글</h3>
+  <ul>
+    
+      
+      
+        <li><a href="/2025/02/27/general-covariance/">일반 공변성에 대한 노트</a></li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='/public/js/script.js'></script>
+  </body>
+</html>
