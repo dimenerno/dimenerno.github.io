@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-04-17T14:28:53+09:00</updated>
+ <updated>2025-04-18T13:53:53+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>무한 죄수 모자 문제</title>
-   <link href="http://localhost:4000/2025/04/17/prisoner-hat/"/>
-   <updated>2025-04-17T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/04/17/prisoner-hat</id>
+   <link href="http://localhost:4000/2025/04/18/prisoner-hat/"/>
+   <updated>2025-04-18T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/04/18/prisoner-hat</id>
    <content type="html">&lt;head&gt;
   &lt;style&gt;
     .answer {
@@ -38,10 +38,12 @@
   }
 &lt;/script&gt;
 
-&lt;p&gt;아마 여러분은 죄수들이 자신의 모자 색을 맞추는 내용의 퍼즐을 제법 보았을 것이다. 예시는 다음과 같다.&lt;/p&gt;
+&lt;p&gt;아마 여러분은 죄수들이 자신의 모자 색을 맞히는 내용의 퍼즐을 제법 보았을 것이다. 예시는 다음과 같다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;3명의 죄수 A, B, C가 일렬로 서 있다. 간부는 검은 모자 2개와 흰 모자 3개 중 세 개를 골라 각 죄수에게 씌우고는, 만약 어느 한 명이라도 자신의 모자의 색을 맞추면 모두 풀려나지만 틀릴 경우 모두 사형에 처해질 것이라고 말한다. 죄수는 자기 앞에 있는 죄수들의 모자 색은 볼 수 있지만, 자신의 모자 색이나 자기 뒤에 있는 죄수들의 모자 색은 볼 수 없다. 오랜 침묵이 흐른 후, 한 죄수가 자신의 모자 색을 정확히 맞췄다. 문제를 맞춘 죄수는 누구인가?&lt;/p&gt;
+  &lt;p&gt;3명의 죄수 A, B, C가 일렬로 서 있다. 간부는 검은 모자 2개와 흰 모자 3개 중 세 개를 골라 각 죄수에게 씌우고는, 만약 어느 한 명이라도 자신의 모자의 색을 맞히면 모두 풀려나지만 틀릴 경우 모두 사형에 처해질 것이라고 말한다. 죄수는 자기 앞에 있는 죄수들의 모자 색은 볼 수 있지만, 자신의 모자 색이나 자기 뒤에 있는 죄수들의 모자 색은 볼 수 없다. 오랜 침묵이 흐른 후, 한 죄수가 자신의 모자 색을 정확히 맞혔다. 문제를 맞힌 죄수는 누구인가?&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;/public/hat-1.png&quot; style=&quot;max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;div onclick=&quot;toggleAnswer(1)&quot; style=&quot;cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;&quot;&gt;
@@ -49,16 +51,28 @@
 &lt;/div&gt;
 
 &lt;div id=&quot;answer1&quot; class=&quot;answer&quot; style=&quot;padding-bottom: 1em;&quot;&gt;
-&lt;p&gt;&lt;strong&gt;C가 정답을 맞춘다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;만약 B와 C의 모자 색이 모두 검은색이었다면 A는 자신의 모자가 흰색임을 맞췄을 것이다. 그러나 &quot;오랜 침묵&quot;이 흘렀으므로, A는 자신의 모자 색을 맞추지 못하는 상황이며 이는 B, C의 모자 색이 (흰, 검), (검, 흰), (흰, 흰)의 경우 중 하나임을 시사한다.&lt;/p&gt;
-&lt;p&gt;이 사실을 고려했을 때, 만약 C의 모자 색이 검정색이었다면 B는 자신의 모자 색이 흰색임을 맞췄을 것이다. 그럼에도 &quot;오랜 침묵&quot;이 흘렀다는 것은 B 또한 자신의 모자 색을 맞추지 못하는 상황임을 의미하므로, C의 모자 색은 흰색이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;C가 정답을 맞힌다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;만약 B와 C의 모자 색이 모두 검은색이었다면 A는 자신의 모자가 흰색임을 맞혔을 것이다. 그러나 &quot;오랜 침묵&quot;이 흘렀으므로, A는 자신의 모자 색을 맞히지 못하는 상황이며 이는 B, C의 모자 색이 (흰, 검), (검, 흰), (흰, 흰)의 경우 중 하나임을 시사한다.&lt;/p&gt;
+&lt;p&gt;이 사실을 고려했을 때, 만약 C의 모자 색이 검정색이었다면 B는 자신의 모자 색이 흰색임을 맞혔을 것이다. 그럼에도 &quot;오랜 침묵&quot;이 흘렀다는 것은 B 또한 자신의 모자 색을 맞히지 못하는 상황임을 의미하므로, C의 모자 색은 흰색이다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;조금 더 어려운 문제도 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;100명의 죄수가 일렬로 서 있다. 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 처음에 서 있는 사람부터 차례대로 자신의 모자 색을 맞추게 시킨다. 맞추는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 최대 몇 명의 생존을 확실히 보장할 수 있는가?&lt;/p&gt;
+  &lt;p&gt;100명의 죄수가 일렬로 서 있다. 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 최대 몇 명의 생존을 확실히 보장할 수 있는가?&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;/public/hat-2.png&quot; style=&quot;max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;div onclick=&quot;toggleAnswer(8)&quot; style=&quot;cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;&quot;&gt;
+&lt;u&gt;힌트 보기&lt;/u&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;answer8&quot; class=&quot;answer&quot; style=&quot;padding-bottom: 1em;&quot;&gt;
+&lt;p&gt;첫 번째 죄수를 제외한 99명의 생존을 보장할 수 있다.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div&gt;&lt;/div&gt;
 
 &lt;div onclick=&quot;toggleAnswer(2)&quot; style=&quot;cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;&quot;&gt;
 &lt;u&gt;답안 보기&lt;/u&gt;
@@ -66,13 +80,15 @@
 
 &lt;div id=&quot;answer2&quot; class=&quot;answer&quot; style=&quot;padding-bottom: 1em;&quot;&gt;
 &lt;p&gt;&lt;strong&gt;첫 번째 죄수를 제외한 99명의 생존을 보장할 수 있다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;첫 번째 죄수는 자신을 제외한 99명의 모자 색을 볼 수 있다. 그 중 검은색 모자가 짝수 개라면 자신의 모자 색을 검은색으로 맞추고, 홀수 개라면 흰색으로 맞춘다. 그러면 두 번째 죄수는 첫 번째 죄수가 전달한 정보와, 자기 앞에 있는 모자들 중 검은색 모자의 홀짝성을 비교함으로서 자신의 모자 색을 정확히 맞출 수 있다. 세 번째 죄수 또한 첫 번째 죄수가 전달한 정보와, 두 번째 죄수가 자신의 모자 색을 맞췄다는 사실로부터 자신의 모자 색을 정확히 맞출 수 있고, 이같은 식으로 99명이 모두 풀려날 수 있다.&lt;/p&gt;
+&lt;p&gt;첫 번째 죄수는 자신을 제외한 99명의 모자 색을 볼 수 있다. 그 중 검은색 모자가 짝수 개라면 자신의 모자 색을 검은색으로 맞히고, 홀수 개라면 흰색으로 맞힌다. 그러면 두 번째 죄수는 첫 번째 죄수가 전달한 정보와, 자기 앞에 있는 모자들 중 검은색 모자의 홀짝성을 비교함으로서 자신의 모자 색을 정확히 맞힐 수 있다. 세 번째 죄수 또한 첫 번째 죄수가 전달한 정보와, 두 번째 죄수가 자신의 모자 색을 맞혔다는 사실로부터 자신의 모자 색을 정확히 맞힐 수 있고, 이같은 식으로 99명이 모두 풀려날 수 있다.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;이제 문제를 더 괴랄하게 만들어 보자.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;무한히 많은 죄수가 일렬로 서 있다.&lt;/strong&gt; 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 처음에 서 있는 사람부터 차례대로 자신의 모자 색을 맞추게 시킨다. 맞추는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 가능한 적은 죄수가 죽도록 하는 전략은 무엇인가? &lt;strong&gt;단, 모든 죄수는 무한한 연산 능력을 가지며, 수학적으로 전지전능하다고 가정한다.&lt;/strong&gt; 즉, $f$가 수학적으로 존재하는 함수일 때, 죄수들은 $f$의 함숫값을 언제나 계산할 수 있으며, 사전에 전략을 의논할 때 $f$를 사용하자고 합의할 수 있다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;무한히 많은 죄수가 일렬로 서 있다.&lt;/strong&gt; 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 가능한 적은 죄수가 죽도록 하는 전략은 무엇인가? &lt;strong&gt;단, 모든 죄수는 무한한 연산 능력을 가지며, 수학적으로 전지전능하다고 가정한다.&lt;/strong&gt; 즉, $f$가 수학적으로 존재하는 함수일 때, 죄수들은 $f$의 함숫값을 언제나 계산할 수 있으며, 사전에 전략을 의논할 때 $f$를 사용하자고 합의할 수 있다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;/public/hat-3.png&quot; style=&quot;max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;div onclick=&quot;toggleAnswer(3)&quot; style=&quot;cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;&quot;&gt;
@@ -111,9 +127,9 @@ $$
 
 &lt;p&gt;$\sim$은 동치 관계임을 쉽게 보일 수 있다. 따라서 동치류 $[0, 1]/\sim$을 취할 수 있다. 선택 공리에 의해 $[0, 1]/\sim$의 선택 함수 $\iota$가 존재한다. 죄수들이 수학적으로 전지전능하다고 가정했으므로 사전에 죄수들은 어떤 선택 함수 $\iota$를 사용할지 합의할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;모자 맞추기가 시작되었을 때 $n$번째 죄수는 $n$개의 모자를 제외한 모든 모자의 색을 볼 수 있다. 즉, 죄수들의 모자 배열에 대응되는 실수가 $r$일 때, $n$번째 죄수는 $r$의 소숫점 아래 $n$개 자릿수 이외의 모든 자릿수를 알고 있다. 즉, 그는 $r$이 $[0, 1]/\sim$의 어떤 동치류에 속하는지 알며, $r$이 속하는 동치류를 $[r]$이라고 했을 때 $\iota([r])$을 계산할 수 있다.&lt;/p&gt;
+&lt;p&gt;모자 맞히기가 시작되었을 때 $n$번째 죄수는 $n$개의 모자를 제외한 모든 모자의 색을 볼 수 있다. 즉, 죄수들의 모자 배열에 대응되는 실수가 $r$일 때, $n$번째 죄수는 $r$의 소숫점 아래 $n$개 자릿수 이외의 모든 자릿수를 알고 있다. 즉, 그는 $r$이 $[0, 1]/\sim$의 어떤 동치류에 속하는지 알며, $r$이 속하는 동치류를 $[r]$이라고 했을 때 $\iota([r])$을 계산할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;이제 다음의 전략을 취한다. $\sim$의 정의에 의해 $r$과 $\iota([r])$은 유한한 개수의 자릿수에서만 차이가 난다. 첫 번째 죄수는 자신이 보는 모자들의 배열과 $\iota([r])$에 대응되는 모자들의 배열이 짝수만큼 차이가 나면 자신의 모자색을 검정색으로 맞추고, 홀수만큼 차이가 나면 흰색으로 맞춘다. 이제 나머지 죄수들은 100명의 죄수 문제와 같은 방식으로 자신의 모자 색을 맞출 수 있다.&lt;/p&gt;
+&lt;p&gt;이제 다음의 전략을 취한다. $\sim$의 정의에 의해 $r$과 $\iota([r])$은 유한한 개수의 자릿수에서만 차이가 난다. 첫 번째 죄수는 자신이 보는 모자들의 배열과 $\iota([r])$에 대응되는 모자들의 배열이 짝수만큼 차이가 나면 자신의 모자색을 검정색으로 맞히고, 홀수만큼 차이가 나면 흰색으로 맞힌다. 이제 나머지 죄수들은 100명의 죄수 문제와 같은 방식으로 자신의 모자 색을 맞힐 수 있다.&lt;/p&gt;
 
 &lt;p&gt;즉, 선택 공리는 $N$명의 죄수 문제에서 $N \to \infty$를 취했을 때에도 첫 번째 죄수를 제외한 전원이 생존할 수 있다는 결론이 존속되도록 보장하는 원리이다.&lt;/p&gt;
 
@@ -122,7 +138,9 @@ $$
 &lt;p&gt;위 퍼즐도 상당히 신기하지만, 다음의 퍼즐은 더 기묘하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;무한히 많은 죄수가 일렬로 서 있다. 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 처음에 서 있는 사람부터 차례대로 자신의 모자 색을 맞추게 시킨다. 맞추는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 또한, &lt;strong&gt;모자가 씌워지는 순간 죄수들은 청력을 완전히 상실하여 아무런 정보를 주고받을 수 없다.&lt;/strong&gt; 오직 유한한 수의 죄수만이 죽도록 하는 전략이 있는가? (마찬가지로 죄수는 무한한 연산 능력을 가지며 수학적으로 전지전능하다.)&lt;/p&gt;
+  &lt;p&gt;무한히 많은 죄수가 일렬로 서 있다. 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 또한, &lt;strong&gt;모자가 씌워지는 순간 죄수들은 청력을 완전히 상실하여 아무런 정보를 주고받을 수 없다.&lt;/strong&gt; 오직 유한한 수의 죄수만이 죽도록 하는 전략이 있는가? (마찬가지로 죄수는 무한한 연산 능력을 가지며 수학적으로 전지전능하다.)&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;/public/hat-4.png&quot; style=&quot;max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;div onclick=&quot;toggleAnswer(6)&quot; style=&quot;cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;&quot;&gt;
@@ -131,11 +149,11 @@ $$
 
 &lt;div id=&quot;answer6&quot; class=&quot;answer&quot; style=&quot;padding-bottom: 1em;&quot;&gt;
 
-&lt;p&gt;이전 문제와 같이 $\iota$를 $[0, 1]/\sim$의 선택 함수라고 하자. 다음의 전략을 취한다. $n$번째 죄수는 자신의 모자 색을 $\iota([r])$의 $n$번째 자릿수에 대응되는 색으로 맞춘다. 그러면 $\sim$의 정의에 의해 유한한 수의 죄수를 제외한 전원이 정답을 맞춘다.&lt;/p&gt;
+&lt;p&gt;이전 문제와 같이 $\iota$를 $[0, 1]/\sim$의 선택 함수라고 하자. 다음의 전략을 취한다. $n$번째 죄수는 자신의 모자 색을 $\iota([r])$의 $n$번째 자릿수에 대응되는 색으로 맞힌다. 그러면 $\sim$의 정의에 의해 유한한 수의 죄수를 제외한 전원이 정답을 맞힌다.&lt;/p&gt;
 
 &lt;/div&gt;
 
-&lt;p&gt;위 퍼즐이 특히 기묘한 이유는, 청력 상실 조건에 의해 서로 다른 두 죄수가 모자를 맞추는 사건이 독립이므로, $n &amp;gt; 1$번째 죄수가 정답을 맞출 확률은 $p$로 동일해야 할 듯하기 때문이다. 이 경우 총 $N$명의 죄수가 정답을 맞추는 확률은 $p^N$이 되므로, $N \to \infty$에 따라 확률이 0으로 수렴하지만, 실제로는 무한히 많은 죄수들이 정답을 맞춘다. 이 역설의 뿌리는, $n &amp;gt; 1$번째 죄수가 정답을 맞출 확률이 &lt;strong&gt;정의되지 않는다&lt;/strong&gt;는 데 있다. 잘 생각해 보면, $n &amp;gt; 1$번째 죄수가 정답을 맞추는 사건은 주어진 실수 $r \in [0, 1]$이 &lt;a href=&quot;https://dimenerno.github.io/2025/02/24/algebra-measure/&quot;&gt;비탈리 집합&lt;/a&gt;에 포함되는 사건과 동일한데, 비탈리 집합은 비가측 집합이므로 이 사건에는 확률을 정의할 수 없기 때문이다.&lt;/p&gt;
+&lt;p&gt;위 퍼즐이 특히 기묘한 이유는, 청력 상실 조건에 의해 서로 다른 두 죄수가 모자를 맞히는 사건이 독립이므로, $n &amp;gt; 1$번째 죄수가 정답을 맞힐 확률은 $p$로 동일해야 할 듯하기 때문이다. 이 경우 총 $N$명의 죄수가 정답을 맞히는 확률은 $p^N$이 되므로, $N \to \infty$에 따라 확률이 0으로 수렴하지만, 실제로는 무한히 많은 죄수들이 정답을 맞힌다. 이 역설의 뿌리는, $n &amp;gt; 1$번째 죄수가 정답을 맞힐 확률이 &lt;strong&gt;정의되지 않는다&lt;/strong&gt;는 데 있다. 잘 생각해 보면, $n &amp;gt; 1$번째 죄수가 정답을 맞히는 사건은 주어진 실수 $r \in [0, 1]$이 &lt;a href=&quot;https://dimenerno.github.io/2025/02/24/algebra-measure/&quot;&gt;비탈리 집합&lt;/a&gt;에 포함되는 사건과 동일한데, 비탈리 집합은 비가측 집합이므로 이 사건에는 확률을 정의할 수 없기 때문이다.&lt;/p&gt;
 </content>
  </entry>
  
