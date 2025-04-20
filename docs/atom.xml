@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-04-20T14:05:07+09:00</updated>
+ <updated>2025-04-20T14:11:17+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -235,7 +235,9 @@ $$
 
 &lt;/div&gt;
 
-&lt;p&gt;위 퍼즐이 특히 기묘한 이유는, 청력 상실 조건에 의해 서로 다른 두 죄수가 모자를 맞히는 사건이 독립이므로, $n &amp;gt; 1$번째 죄수가 정답을 맞힐 확률은 $p$로 동일해야 할 듯하기 때문이다. 이 경우 총 $N$명의 죄수가 정답을 맞히는 확률은 $p^N$이 되므로, $N \to \infty$에 따라 확률이 0으로 수렴하지만, 실제로는 무한히 많은 죄수들이 정답을 맞힌다. 이 역설의 뿌리는, $n &amp;gt; 1$번째 죄수가 정답을 맞힐 확률이 &lt;strong&gt;정의되지 않는다&lt;/strong&gt;는 데 있다. 잘 생각해 보면, $n &amp;gt; 1$번째 죄수가 정답을 맞히는 사건은 주어진 실수 $r \in [0, 1]$이 &lt;a href=&quot;https://dimenerno.github.io/2025/02/24/algebra-measure/&quot;&gt;비탈리 집합&lt;/a&gt;에 포함되는 사건과 동일한데, 비탈리 집합은 비가측 집합이므로 이 사건에는 확률을 정의할 수 없기 때문이다.&lt;/p&gt;
+&lt;p&gt;위 퍼즐이 특히 기묘한 이유는, 청력 상실 조건에 의해 서로 다른 두 죄수가 모자를 맞히는 사건이 독립이므로, 각각의 죄수가 정답을 맞힐 확률은 $p$로 동일해야 할 듯하기 때문이다. 이 경우 총 $N$명의 죄수가 정답을 맞히는 확률은 $p^N$이 되므로, $N \to \infty$에 따라 확률은 0으로 수렴한다. 그러나 실제로는 무한히 많은 죄수들이 정답을 맞힌다.&lt;/p&gt;
+
+&lt;p&gt;이 역설의 뿌리는, 임의의 죄수가 정답을 맞히는 확률이 &lt;strong&gt;정의되지 않는다&lt;/strong&gt;는 데 있다. 잘 생각해 보면, 임의의 죄수가 정답을 맞히는 사건은 주어진 실수 $r \in [0, 1]$이 &lt;a href=&quot;https://dimenerno.github.io/2025/02/24/algebra-measure/&quot;&gt;비탈리 집합&lt;/a&gt;에 포함되는 사건과 동일한데, 비탈리 집합은 비가측 집합이므로 이 사건에는 확률을 정의할 수 없기 때문이다.&lt;/p&gt;
 </content>
  </entry>
  
@@ -310,7 +312,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
       &lt;td&gt;기초적 동일성&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;2가 3보다 약하지 않다&lt;/td&gt;
+      &lt;td&gt;3이 2보다 약하지 않다&lt;/td&gt;
       &lt;td&gt;구성 가능한 대상&lt;/td&gt;
       &lt;td&gt;임의의 대상&lt;/td&gt;
     &lt;/tr&gt;
