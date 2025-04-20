@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-04-20T14:11:17+09:00</updated>
+ <updated>2025-04-20T14:22:42+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -18,14 +18,14 @@
    <updated>2025-04-20T00:00:00+09:00</updated>
    <id>http://localhost:4000/2025/04/20/cardinality</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X$에서 $Y$로 가는 전사 사상이 존재할 때, $|X| \leq |Y|$라고 적는다. 전단사 사상이 존재할 때, $|X| = |Y|$라고 적는다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X$에서 $Y$로 가는 단사 사상이 존재할 때, $|X| \leq |Y|$라고 적는다. 전단사 사상이 존재할 때, $|X| = |Y|$라고 적는다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;집합론을 처음 공부하는 학생들이 흔히 하는 오해는, 위 정의의 $|\cdot|$과 $\leq$를 복소수에서의 $|\cdot|$과 $\leq$와 유사한 것으로 은연 중에 취급하는 것이다. 요컨대 복소수 $z$에 대해 $|z|$가 실수이고 $\leq$가 실수의 대소 관계이듯이, 집합 $X$에 대해 $|X|$는 집합의 크기 — 이른바 &lt;strong&gt;기수&lt;sub&gt;cardinality&lt;/sub&gt;&lt;/strong&gt;이고, $\leq$는 기수의 대소 관계라고 생각하는 것이다.&lt;/p&gt;
 
 &lt;p&gt;그러나 이는 문제의 여지가 많은 접근이다. 왜냐하면 위 정의만으로는 &lt;strong&gt;&lt;u&gt;기수라는 수학적 대상&lt;/u&gt;을 정의할 수 있다는 보장이 없기 때문이다.&lt;/strong&gt; 우리가 정의한 것은 이항 관계에 불과하다.&lt;/p&gt;
 
-&lt;p&gt;이해를 위한 예시를 들어보자. $A$가 $B$를 좋아할 때, $|A| \leq |B|$라고 적을 수 있을 것이다. 그러나 이렇게 적었다고 해서, $|A|$는 ‘$A$의 호감도’를 의미하며 $\leq$가 호감도의 대소 관계라고 해석한다면 완전히 틀린 것이다. 이와 마찬가지로 $|X| \leq |Y|$는 전사 관계의 유무로 정의되는 이항 관계일 뿐, 이 관계 자체가 기수의 개념을 시사하는 것은 아니다.&lt;/p&gt;
+&lt;p&gt;이해를 위한 예시를 들어보자. $A$가 $B$를 좋아할 때, $|A| \leq |B|$라고 적을 수 있을 것이다. 그러나 이렇게 적었다고 해서, $|A|$는 ‘$A$의 호감도’를 의미하며 $\leq$가 호감도의 대소 관계라고 해석한다면 완전히 틀린 것이다. 이와 마찬가지로 $|X| \leq |Y|$는 단사 관계의 유무로 정의되는 이항 관계일 뿐, 이 관계 자체가 기수의 개념을 시사하는 것은 아니다.&lt;/p&gt;
 
 &lt;p&gt;특히 ZFC에서는 모든 것이 집합이기 때문에, 만약 기수를 정의하고 싶다면 다음의 사실을 논증해야 한다.&lt;/p&gt;
 
@@ -90,7 +90,7 @@
   &lt;p&gt;&lt;strong&gt;정리 2.&lt;/strong&gt; 임의의 집합 $X, Y$에 대해, $|X| \leq |Y|$이거나 $|Y| \leq |X|$이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;즉, 선택 공리를 사용하지 않더라도 a) 스콧의 트릭을 통해 $\mathrm{Card}(X)$를 정의하거나, b) 전사 사상의 유무를 통해 $|X| \leq |Y|$를 정의할 수 있지만, a)와 b)가 맞물린다는 사실을 보일 때는 선택 공리가 필요하다.&lt;/p&gt;
+&lt;p&gt;즉, 선택 공리를 사용하지 않더라도 a) 스콧의 트릭을 통해 $\mathrm{Card}(X)$를 정의하거나, b) 단사 사상의 유무를 통해 $|X| \leq |Y|$를 정의할 수 있지만, a)와 b)가 맞물린다는 사실을 보일 때는 선택 공리가 필요하다.&lt;/p&gt;
 </content>
  </entry>
  
