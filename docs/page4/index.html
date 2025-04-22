@@ -177,6 +177,21 @@
         transform: translateY(0);
       }
     }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
   </style>
 </head>
 
@@ -184,7 +199,7 @@
 
 <div class="posts">
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/02/25/caratheodory/"> 카라테오도리 정리를 이용한 측도의 구성 </a>
     </h1>
@@ -429,11 +444,12 @@
 <p>다음 글에서는 카라테오도리 정리를 이용하여 르베그 측도를 구성한 뒤, 모든 보렐 가측 집합은 르베그 가측 집합이지만 그 역은 성립하지 않음을 보인다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/02/24/algebra-measure/"> 대수와 측도의 정의 </a>
     </h1>
@@ -549,11 +565,12 @@
 <p>어떤 집합 위의 대수와 예비측도라는 것이 주어졌을 때, 이로부터 측도를 정의하는 방법이 알려져 있다. 이 방법을 카라테오도리 방법<sub>Carathéodory method</sub>이라고 부른다. 예비측도는 구성하기가 매우 쉽기 때문에, 이 방법을 이용하면 측도를 아주 쉽게 구성할 수 있다. 카라테오도리 방법에 대해서는 <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">다음 글</a>에서 알아본다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/02/20/ramsey/"> 램지 수와 무한 램지 정리 </a>
     </h1>
@@ -837,11 +854,12 @@ K = \{ v \in V : v \in B \}
 <p>¹ Joel H. Spencer (1994), <em>Ten Lectures on the Probabilistic Method</em></p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/02/13/spectral-theorem/"> 어드조인트, 정규 변환, 그리고 스펙트럼 정리 </a>
     </h1>
@@ -983,11 +1001,12 @@ K = \{ v \in V : v \in B \}
 <p><strong>증명.</strong> <em>TODO</em> ■</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/02/13/three-definitions-of-adjoint/"> 어드조인트에 대한 세 가지 접근 </a>
     </h1>
@@ -1126,9 +1145,10 @@ K = \{ v \in V : v \in B \}
 <p>역으로 $\eta$가 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상이 되도록 하는 자연적 변환일 때, 어떤 $\epsilon: FG \to 1_{\mathcal{B}}$가 유일하게 존재하여 $(\eta, \epsilon)$이 삼각 항등식을 만족함을 보이자.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
 </div>
 
@@ -1147,6 +1167,28 @@ K = \{ v \in V : v \in B \}
   >
    
 </div>
+
+<script>
+  const faders = document.querySelectorAll(".fade-in-section");
+
+  const appearOptions = {
+    // threshold: 0.05,
+    // rootMargin: "0px 0px 50px 0px",
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+</script>
 </div>
     </div>
 

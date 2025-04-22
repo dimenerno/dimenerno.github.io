@@ -177,6 +177,21 @@
         transform: translateY(0);
       }
     }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
   </style>
 </head>
 
@@ -184,7 +199,7 @@
 
 <div class="posts">
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/01/22/hypernaturals/"> 프레셰 필터와 비표준 자연수 </a>
     </h1>
@@ -353,11 +368,12 @@
 <p>이로써 우리는 초자연수를 정의했다. 다음 글에서는 초자연수의 여러 비표준적인 특징과, 그런 비표준성에도 불구하고 초자연수와 자연수를 1차 논리로 구분할 수 없음을 보이는 워시의 정리를 살펴볼 것이다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/01/18/reference-3/"> 지시에 대하여 — 한정 기술구 </a>
     </h1>
@@ -456,11 +472,12 @@
 <p>그러나 데이비드슨은 이것이 본말을 전도하는 것이라고 주장한다. 데이비드슨은 문장에 대한 참 이론을 제시하는 것만으로 해당 언어의 의미론을 세울 수 있고, 이에 따라 지시 이론은 불필요하다고 주장한다. 참에 대한 철학적 논의는 이후 별개의 시리즈로 정리하도록 하겠다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/01/13/reference-2/"> 지시에 대하여 — 특성 모델과 의도주의 </a>
     </h1>
@@ -581,11 +598,12 @@
 <p>이에 대해 라이머는 의도주의에 제약을 가하기 위한 다른 전략을 택하는데, 그의 전략은 <strong>제스처 우선순위</strong>로 요약할 수 있다. 라이머의 제약된 의도주의는 기대 이상으로 많은 험티덤티 문제를 명쾌하게 해결하는 것으로 보인다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/01/07/reference-1/"> 지시에 대하여 — 기술주의와 인과 이론 </a>
     </h1>
@@ -858,11 +876,12 @@
 <p>캐플런과 구별되는 또 하나의 노선은 다수의 담지자 문제를 인과 이론과 지표사 이론의 혼합으로 해결하려는 시도이다. 이 노선은 르카나티, 펠처, 래인스버리 등에 의해 채택되었으며, 다음 글에서 살펴 볼 지표사 이론에 대한 이해를 요구한다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2024/12/26/uncountability-of-reals/"> 대각선 논법 없이 실수의 비가산성 증명하기 </a>
     </h1>
@@ -921,9 +940,10 @@
 <p><em>Proof of Claim 3.</em> $[0, 1]$은 고립점을 가지지 않는 콤팩트 하우스도르프 공간이다. 따라서 비가산이다. 이에 따라 $\mathbb{R}$은 비가산이다. ■</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
 </div>
 
@@ -942,6 +962,28 @@
   >
    
 </div>
+
+<script>
+  const faders = document.querySelectorAll(".fade-in-section");
+
+  const appearOptions = {
+    // threshold: 0.05,
+    // rootMargin: "0px 0px 50px 0px",
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+</script>
 </div>
     </div>
 

@@ -177,6 +177,21 @@
         transform: translateY(0);
       }
     }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
   </style>
 </head>
 
@@ -184,7 +199,7 @@
 
 <div class="posts">
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2024/12/01/baire/"> 베르 범주 정리 </a>
     </h1>
@@ -305,11 +320,12 @@
 
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2024/11/21/trichotomy/"> 정렬의 삼분성과 서수의 완전성 </a>
     </h1>
@@ -438,11 +454,12 @@ S = \lbrace  \alpha_a \in \mathrm{Ord} :  a \in A\rbrace
 <p>위 두 경우에서 우리에게 필요한 것은, “잘 정의된 일대일 대응 관계 $R(x,y)$와 집합 $X$가 주어졌을 때 $\lbrace  y : R(x, y), x \in X \rbrace$는 집합이다”라는 내용의 공리이다. 이 공리가 치환 공리이다. 치환 공리를 사용하면 $\omega = \lbrace 0, 1, 2, … \rbrace$와 관계 $R(x, y): y = \omega + x$에 대해 $\mathrm{im}R\vert_\omega = \lbrace  \omega, \omega + 1, \omega + 2, … \rbrace$가 존재하며, $\omega \cup \mathrm{im}R\vert_\omega = \omega + \omega$가 존재함을 보일 수 있다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2024/11/20/Rational-Real/"> 유리수와 실수의 집합론적 정의 </a>
     </h1>
@@ -585,11 +602,12 @@ B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
 <p><strong>증명.</strong> 칸토어의 동형성 정리와 완비화 정리로부터 따라 나온다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2024/11/19/CSB/"> 칸토어-슈뢰더-베른슈타인 정리 </a>
     </h1>
@@ -672,11 +690,12 @@ x &amp; x \in D
 
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2024/11/18/ZFC/"> ZFC 공리의 목록 </a>
     </h1>
@@ -806,9 +825,10 @@ x &amp; x \in D
 
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
 </div>
 
@@ -827,6 +847,28 @@ x &amp; x \in D
   >
    
 </div>
+
+<script>
+  const faders = document.querySelectorAll(".fade-in-section");
+
+  const appearOptions = {
+    // threshold: 0.05,
+    // rootMargin: "0px 0px 50px 0px",
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+</script>
 </div>
     </div>
 

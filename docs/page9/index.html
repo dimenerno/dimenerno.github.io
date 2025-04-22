@@ -177,6 +177,21 @@
         transform: translateY(0);
       }
     }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
   </style>
 </head>
 
@@ -184,7 +199,7 @@
 
 <div class="posts">
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2024/11/17/bell-rocket/"> 벨의 우주선 사고실험: 수동적 로렌츠 수축과 능동적 로렌츠 수축 </a>
     </h1>
@@ -350,9 +365,10 @@
 <p>⁴ 그림에서는 $d’ &gt; d$인 것으로 보이지만, 민코스프키 다이어그램의 기하학은 유클리드 기하학이 아닌 민코프스키 기하학임을 유념해야 한다. 평면지도에서는 알래스카가 아프리카와 거의 비슷한 크기이지만 실제로는 아프리카가 훨씬 더 크듯이, 민코프스키 다이어그램에서는 $d’ &gt; d$인 것으로 보이지만 실제 로렌츠 변환을 계산하면 $d’ &lt; d$이다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
 </div>
 
@@ -367,6 +383,28 @@
   >
    
 </div>
+
+<script>
+  const faders = document.querySelectorAll(".fade-in-section");
+
+  const appearOptions = {
+    // threshold: 0.05,
+    // rootMargin: "0px 0px 50px 0px",
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+</script>
 </div>
     </div>
 

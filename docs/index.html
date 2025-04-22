@@ -177,6 +177,21 @@
         transform: translateY(0);
       }
     }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
   </style>
 </head>
 
@@ -217,7 +232,7 @@
 
 <div class="posts">
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/04/20/cardinality/"> 기수의 정의에 관한 노트 </a>
     </h1>
@@ -311,11 +326,12 @@
 <p>즉, 선택 공리를 사용하지 않더라도 a) 스콧의 트릭을 통해 $\mathrm{Card}(X)$를 정의하거나, b) 단사 사상의 유무를 통해 $|X| \leq |Y|$를 정의할 수 있지만, a)와 b)가 맞물린다는 사실을 보일 때는 선택 공리가 필요하다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/04/18/prisoner-hat/"> 무한 죄수 모자 문제 </a>
     </h1>
@@ -474,11 +490,12 @@ $$
 <p>이 역설의 뿌리는, 임의의 죄수가 정답을 맞히는 확률이 <strong>정의되지 않는다</strong>는 데 있다. 잘 생각해 보면, 임의의 죄수가 정답을 맞히는 사건은 주어진 실수 $r \in [0, 1]$이 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>에 포함되는 사건과 동일한데, 비탈리 집합은 비가측 집합이므로 이 사건에는 확률을 정의할 수 없기 때문이다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/04/17/los-tarski/"> 워시-타르스키 보존 정리 </a>
     </h1>
@@ -677,11 +694,12 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 </ul>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/04/10/completeness-theorem/"> 완전성 정리와 뢰벤하임-스콜렘 정리 </a>
     </h1>
@@ -790,11 +808,12 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 <p>$\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$이므로 하향 뢰벤하임-스콜렘 정리에 의해 $T’$은 크기가 $\kappa$를 넘지 않는 모델을 가진다. 그런데 상향 뢰벤하임-스콜렘 정리의 증명에서 지적했듯이 $T’$의 모든 모델은 크기가 $\kappa$ 이상이다. 따라서 $T’$은 크기가 정확히 $\kappa$인 모델을 가지며, 이에 따라 $T$ 또한 크기가 정확히 $\kappa$인 모델을 가진다. ■</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/04/04/van-kampen/"> 자이페르트-판 캄펀 정리에 대한 노트 </a>
     </h1>
@@ -834,9 +853,10 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 <p>$\mathbf{Grp}$의 초기 대상은 자명군<sub>trivial group</sub>이며, 범주론적 합은 자유곱이다. 이에 따라 $U \cap V$가 단순 연결 공간일 때, $\pi_1(X)$는 $\pi_1(U)$와 $\pi_1(V)$의 자유곱이라는 결론을 얻는다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
 </div>
 
@@ -851,6 +871,28 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
   <span class="pagination-item newer">다음 글</span>
   
 </div>
+
+<script>
+  const faders = document.querySelectorAll(".fade-in-section");
+
+  const appearOptions = {
+    // threshold: 0.05,
+    // rootMargin: "0px 0px 50px 0px",
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+</script>
 </div>
     </div>
 

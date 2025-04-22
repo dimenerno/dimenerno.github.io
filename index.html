@@ -32,6 +32,21 @@ title: 메인
         transform: translateY(0);
       }
     }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
   </style>
 </head>
 
@@ -72,7 +87,7 @@ title: 메인
 
 <div class="posts">
   {% for post in paginator.posts %}
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
     </h1>
@@ -88,9 +103,10 @@ title: 메인
     </div>
     {% endif %} {{ post.content }}
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   {% endfor %}
 </div>
 
@@ -115,3 +131,25 @@ title: 메인
   <span class="pagination-item newer">다음 글</span>
   {% endif %}
 </div>
+
+<script>
+  const faders = document.querySelectorAll(".fade-in-section");
+
+  const appearOptions = {
+    // threshold: 0.05,
+    // rootMargin: "0px 0px 50px 0px",
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+</script>

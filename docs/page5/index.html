@@ -177,6 +177,21 @@
         transform: translateY(0);
       }
     }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
   </style>
 </head>
 
@@ -184,7 +199,7 @@
 
 <div class="posts">
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/02/09/godel-lucas-penrose/"> 정신은 기계로 환원될 수 있는가: 괴델의 조건문과 펜로즈-루카스 논증 </a>
     </h1>
@@ -521,11 +536,12 @@
 <p>지금까지의 논의는 괴델의 조건문으로부터 반기계주의를 직접적으로 이끌어내려는 더이상의 시도를 방지하는 데 충분할 것이다. 그러나 논리학의 결과로부터 반기계주의를 논증하려는 또다른 접근 방식이 있다. 흔히 <strong>펜로즈의 새 논증</strong>이라고 불리는 이 논증은 타르스키의 유형적 참과는 구별되는, 유형 독립적 참<sub>type-free truth</sub>을 내세우는 논증이다. 해당 논증의 형식화와 그것이 시사하는 바는 본 논문의 2편에서 다루도록 한다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/02/07/arithmetic-hierarchy/"> 산술 위계 </a>
     </h1>
@@ -811,11 +827,12 @@ for y ∈ P:
 </blockquote>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/02/05/order/"> 곱군과 위수에 관한 노트: 페르마 소수 정리와 윌슨의 정리 </a>
     </h1>
@@ -890,11 +907,12 @@ for y ∈ P:
 <p>(⇐) $N = (p - 1)! + 1$이라고 하자. 조건에 의해 $p \mid N$이다. 만약 $p$가 소수가 아니라면 어떤 소수 $q &lt; p$에 대해 $q \mid N$이다. 그러나 $N \bmod q = 1$이므로 모순이다. ■</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/01/25/beta-function/"> 베타 함수를 통한 페아노 산술에서의 괴델 수 정의 </a>
     </h1>
@@ -1039,11 +1057,12 @@ for y ∈ P:
 <p>이런 이유로 지금까지의 과정을 <strong>베타 암호화(Beta coding)</strong>라고 부른다. 괴델은 베타 암호화를 이용하여 지수 연산과 소인수분해를 PA에서 성공적으로 정의했으며, 이로부터 괴델 수와 비롯된 여러 술어를 PA에서 형식화할 수 있었다. 제목에서 드러나다시피 원래 이 글의 목표는 이 과정을 모두 개괄하는 것이었으나 때늦게 찾아온 필자의 귀찮음 이슈와, 글을 여기까지 읽은 독자라면 이후 내용은 어렵지 않게 유추 가능하리라는 생각으로 이만 줄인다.</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
-  <div class="post">
+  <div class="post fade-in-section">
     <h1 class="post-title">
       <a href="/2025/01/25/los/"> 워시의 정리 </a>
     </h1>
@@ -1201,9 +1220,10 @@ for y ∈ P:
 <p><em>Proof.</em> 워시의 정리에 의해 $\mathbb{N}^* \vDash \phi$일 필요충분조건은 $\lbrace i \in \mathbb{N} : \mathbb{N}^\ast_i \vDash \phi \rbrace \in \mathcal{U}$인 것이다. 그런데 $\mathbb{N}^*_i = \mathbb{N}$이므로, 필요충분조건은 $\mathbb{N} \vDash \phi$로 환원된다. ■</p>
 
   </div>
-  <div
+  <!-- <div
     style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div>
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
 </div>
 
@@ -1222,6 +1242,28 @@ for y ∈ P:
   >
    
 </div>
+
+<script>
+  const faders = document.querySelectorAll(".fade-in-section");
+
+  const appearOptions = {
+    // threshold: 0.05,
+    // rootMargin: "0px 0px 50px 0px",
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+</script>
 </div>
     </div>
 
