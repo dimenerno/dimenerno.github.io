@@ -1,44 +1,59 @@
 ---
 layout: default
-title: 최근 글
+title: 메인
 ---
+
+<div style="margin-top: 4em; margin-bottom: 8em; text-align: center">
+  <img src="/public/banner.png" style="max-width: 350px; margin: 0 auto" />
+  <h1 style="margin: 1em 0 0.5em 0">
+    $T \vdash \mathrm{Welcome}(\mathrm{I}, \mathrm{You})$
+  </h1>
+  논리학, 집합론, 철학 등을 다루는 블로그입니다.<br />
+  아래에서 저의 가장 최근 글들을 읽을 수 있습니다.
+</div>
 
 <div class="posts">
   {% for post in paginator.posts %}
   <div class="post">
     <h1 class="post-title">
-      <a href="{{ post.url | relative_url }}">
-        {{ post.title }}
-      </a>
+      <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
     {% if post.tags %}
     <div class="tag-container">
       {% for tag in post.tags %}
-      <div class="tag" onclick="location.href='/tags/{{ tag | slugify }}/'" >{{ tag }}</div>
+      <div class="tag" onclick="location.href='/tags/{{ tag | slugify }}/'">
+        {{ tag }}
+      </div>
       {% endfor %}
     </div>
-  {% endif %}
-    {{ post.content }}
+    {% endif %} {{ post.content }}
   </div>
-  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em;"></div>
+  <div
+    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
+  ></div>
   {% endfor %}
 </div>
 
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">이전 글</a>
+  <a
+    class="pagination-item older"
+    href="{{ paginator.next_page_path | relative_url }}"
+    >이전 글</a
+  >
   {% else %}
-    <span class="pagination-item older">이전 글</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ '/' | relative_url }}">다음 글</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | relative_url }}">다음 글</a>
-    {% endif %}
+  <span class="pagination-item older">이전 글</span>
+  {% endif %} {% if paginator.previous_page %} {% if paginator.page == 2 %}
+  <a class="pagination-item newer" href="{{ '/' | relative_url }}">다음 글</a>
   {% else %}
-    <span class="pagination-item newer">다음 글</span>
+  <a
+    class="pagination-item newer"
+    href="{{ paginator.previous_page_path | relative_url }}"
+    >다음 글</a
+  >
+  {% endif %} {% else %}
+  <span class="pagination-item newer">다음 글</span>
   {% endif %}
 </div>
