@@ -148,15 +148,71 @@
         </div>
       </div>
 
-      <div class="container content">
-<div style="margin-top: 4em; margin-bottom: 8em; text-align: center">
-  <img src="/public/banner.png" style="max-width: 350px; margin: 0 auto" />
-  <h1 style="margin: 1em 0 0.5em 0">
-    $T \vdash \mathrm{Welcome}(\mathrm{I}, \mathrm{You})$
-  </h1>
-  논리학, 집합론, 철학 등을 다루는 블로그입니다.<br />
-  아래에서 저의 가장 최근 글들을 읽을 수 있습니다.
+      <div class="container content"><head>
+  <style>
+    .fade-rise-1 {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    .fade-rise-2 {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.4s;
+    }
+
+    .fade-rise-3 {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.6s;
+    }
+
+    @keyframes fadeRise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+
+<div
+  style="
+    width: 100vw;
+    min-height: 600px;
+    height: 100vh;
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  "
+>
+  <div style="margin: auto">
+    <img
+      class="fade-rise-1"
+      src="/public/banner.png"
+      style="max-width: 350px; margin: 0 auto"
+    />
+    <h1 style="margin: 1em 0 0.5em 0" class="fade-rise-2">
+      $T \vdash \mathrm{Welcome}(\mathrm{I}, \mathrm{You})$
+    </h1>
+    <p class="fade-rise-3">
+      논리학, 집합론, 철학 등을 다루는 블로그입니다.<br />
+      아래에서 저의 가장 최근 글들을 읽을 수 있습니다.
+    </p>
+  </div>
 </div>
+<div style="margin-top: 100vh"></div>
 
 
 <div class="posts">
