@@ -10,11 +10,11 @@ related:
 
 예를 들어 다음의 색칠은 3개의 색깔을 사용하는데, 세 꼭짓점이 모두 같은 색인 직각삼각형을 쉽게 찾을 수 있다.
 
-<img src="/public/color-1.png" style="max-width: 400px; margin: 1.5em auto;">
+<img src="/public/color-1.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;">
 
 물론 위의 경우는 단순한 경우이고, 아래와 같이 무한히 많은 색깔들이 매우 불규칙적으로 칠해져 있는 경우에도 문제의 직각삼각형이 존재하는지를 따져야 한다.
 
-<img src="/public/color-2.png" style="max-width: 400px; margin: 1.5em auto;">
+<img src="/public/color-2.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;">
 
 놀랍게도 언뜻 자명해 보이는 이 문제는 연속체 가설과 동치이다.
 
@@ -32,7 +32,7 @@ related:
 
 가장 작은 비가산 서수 $\omega\_1$에 대해, $\omega\_1^2$은 세 꼭짓점이 같은 색인 직각삼각형이 존재하지 않도록 색칠하는 다음의 방법이 존재한다. 먼저 가산 개의 색을 정수와 일대일 대응시킨다. $\alpha < \omega\_1$은 가산 서수이므로, 빨간색 선분 $\lbrace  (\beta, \alpha) : 0 \leq \beta \leq \alpha \rbrace $의 모든 점을 서로 다른 가산 개의 색으로 칠할 수 있다. 이들 점을 양의 정수에 대응되는 색들로 칠한다. 한편 파란색 선분 $\lbrace  (\alpha, \beta) : 0 \leq \beta < \alpha \rbrace $의 점들은 음의 정수에 대응되는 색들로 칠한다.
 
-<img src="/public/color-3.png" style="max-width: 350px; margin: 1.5em auto;">
+<img src="/public/color-3.png" style="width: 100%; max-width: 350px; margin: 1.5em auto;">
 
 위와 같이 색칠했을 때 세 꼭짓점이 모두 같은 색인 직각삼각형이 없음을 쉽게 보일 수 있다.
 
@@ -48,7 +48,7 @@ $x$축과 평행인 $X$의 직선들의 집합을 $L\_0$라고 하자. $l \in L\
 
 해당 점들을 모두 빼면 듬성듬성한 직선들의 집합이 된다. 이 집합을 $L\_1$이라고 하자.
 
-<img src="/public/color-4.png" style="max-width: 550px; margin: 1.5em auto;">
+<img src="/public/color-4.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;">
 
 두 가지 경우가 가능하다. a) $L\_1$의 직선들 중 $\aleph\_1$개의 점들을 가지는 직선이 $2^{\aleph\_0}$개이다. b) $L\_1$의 직선들 중 $\aleph\_1$개의 점들을 가지는 직선이 $\aleph\_1$개 이하이다.
 
