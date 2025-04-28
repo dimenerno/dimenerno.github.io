@@ -156,22 +156,33 @@
     .fade-rise-1 {
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeRise 0.8s ease-out forwards;
-      animation-delay: 0.2s;
+      /* animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.2s; */
     }
 
     .fade-rise-2 {
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeRise 0.8s ease-out forwards;
-      animation-delay: 0.4s;
+      /* animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.4s; */
     }
 
     .fade-rise-3 {
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeRise 0.8s ease-out forwards;
-      animation-delay: 0.6s;
+      /* animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.6s; */
+    }
+
+        /* 이미지가 로드된 후 추가될 클래스에 animation 속성 추가 */
+    .fade-rise-1.is-loaded {
+      animation: fadeRise 0.8s ease-out forwards 0.2s;
+    }
+    .fade-rise-2.is-loaded {
+      animation: fadeRise 0.8s ease-out forwards 0.4s;
+    }
+    .fade-rise-3.is-loaded {
+      animation: fadeRise 0.8s ease-out forwards 0.6s;
     }
 
     @keyframes fadeRise {
@@ -542,6 +553,52 @@
   faders.forEach((fader) => {
     appearOnScroll.observe(fader);
   });
+
+  // 배너 이미지 로드 후 애니메이션 트리거 스크립트
+  document.addEventListener('DOMContentLoaded', () => {
+  const bannerImages = document.querySelectorAll('.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'); // 애니메이션 시작을 기다릴 이미지들
+  const elementsToAnimate = document.querySelectorAll('.fade-rise-1, .fade-rise-2, .fade-rise-3'); // 애니메이션 될 요소들
+  let loadedImagesCount = 0;
+  const totalImagesToWait = bannerImages.length;
+
+  // 기다릴 이미지가 없으면 즉시 애니메이션 시작
+  if (totalImagesToWait === 0) {
+    elementsToAnimate.forEach(el => el.classList.add('is-loaded'));
+    return;
+  }
+
+  const checkAllImagesLoaded = () => {
+    if (loadedImagesCount === totalImagesToWait) {
+      // 모든 이미지가 로드되면 애니메이션 클래스 추가
+      elementsToAnimate.forEach(el => el.classList.add('is-loaded'));
+    }
+  };
+
+  bannerImages.forEach(img => {
+    // 이미지가 캐시되어 이미 로드 완료된 경우
+    if (img.complete) {
+      loadedImagesCount++;
+    } else {
+      // 이미지 로드 완료 이벤트 리스너 추가
+      img.addEventListener('load', () => {
+        loadedImagesCount++;
+        checkAllImagesLoaded(); // 이미지 로드될 때마다 체크
+      });
+      // 에러 발생 시 처리 (선택 사항)
+      img.addEventListener('error', () => {
+        console.error('Failed to load image:', img.src);
+        // 에러 발생 시에도 애니메이션을 시작하려면 여기서 loadedImagesCount를 증가시키거나 다른 로직 추가
+        // 현재 로직에서는 에러 시 카운트가 증가하지 않아 모든 이미지 로드되지 않으면 애니메이션 안 시작
+        loadedImagesCount++; // 에러 발생 시에도 카운트 증가 (모든 이미지를 처리했음을 알림)
+        checkAllImagesLoaded();
+      });
+    }
+  });
+
+  // 모든 이미지에 대해 complete 상태를 확인하거나 리스너를 설정한 후,
+  // 이미 모든 이미지가 로드 완료 상태였을 경우를 대비해 마지막으로 체크
+  checkAllImagesLoaded();
+});
 </script>
 </div>
     </div>
