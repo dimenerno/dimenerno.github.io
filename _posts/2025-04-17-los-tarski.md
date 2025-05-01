@@ -16,9 +16,9 @@ related:
 
 일례로 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 부분모델이고, $(\mathbb{Q}, +, \cdot)$는 $(\mathbb{R}, +, \cdot)$의 부분모델이다.
 
-> **정의.** 임의의 $\mathcal{L}$-문장 $\phi$에 대해 $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$일 때 $\mathfrak{M}$과 $\mathfrak{N}$이 **기초적으로 동등<sub>elementarily equivalent</sub>**하다고 하며, 기호로 $\mathfrak{M} \equiv \mathfrak{N}$과 같이 적는다.
+> **정의.** 임의의 $\mathcal{L}$-문장 $\phi$에 대해 $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$일 때 $\mathfrak{M}$과 $\mathfrak{N}$이 **초등적으로 동등<sub>elementarily equivalent</sub>**하다고 하며, 기호로 $\mathfrak{M} \equiv \mathfrak{N}$과 같이 적는다.
 
-[뢰벤하임-스콜렘 정리](https://dimenerno.github.io/2025/04/10/completeness-theorem/)에 의해 $\kappa$가 $\|\mathcal{L}\|$ 이상의 무한 기수라면, 임의의 무한 구조 $\mathfrak{M}$과 기초적으로 동등하며 크기가 $\kappa$인 모델 $\mathfrak{N}$이 존재한다. (cf. 워시-보트 판별<sub>Łoś-Vaught test</sub>)
+[뢰벤하임-스콜렘 정리](https://dimenerno.github.io/2025/04/10/completeness-theorem/)에 의해 $\kappa$가 $\|\mathcal{L}\|$ 이상의 무한 기수라면, 임의의 무한 구조 $\mathfrak{M}$과 초등적으로 동등하며 크기가 $\kappa$인 모델 $\mathfrak{N}$이 존재한다. (cf. 워시-보트 판별<sub>Łoś-Vaught test</sub>)
 
 > **정의.** $\mathfrak{M}$과 $\mathfrak{N}$이 구조적으로 동일할 때 **동형<sub>isomorphic</sub>**이라고 하며, 기호로 $\mathfrak{M} \cong \mathfrak{N}$과 같이 적는다. 구체적으로, 어떤 일대일 대응 $\phi: M \to N$이 존재하여, $\mathcal{L}$의 임의의 함수 $f$와 관계 $R$에 대해 다음이 임의의 $a\_1, \dots, a\_n \in M$에 대해 성립할 때 $\mathfrak{M} \cong \mathfrak{N}$이다.
 >
@@ -33,9 +33,9 @@ $(\mathbb{Z}, +)$와 $(2\mathbb{Z}, +)$는 $\phi: x \mapsto 2x$를 통해 동형
 
 다음 정리의 증명은 거의 자명하다.
 
-> **정리.** 동형인 두 구조는 기초적으로 동등하다.
+> **정리.** 동형인 두 구조는 초등적으로 동등하다.
 
-> **정의.** $\mathfrak{N} \subseteq \mathfrak{M}$이라고 하자. 임의의 $\mathcal{L}$-명제 $\phi$와 $\mathfrak{N}$에서의 자유변수 할당<sub>assignment</sub> $g$에 대해, $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$일 때 $\mathfrak{N}$이 $\mathfrak{M}$의 **기초적 부분모델<sub>elementary submodel</sub>**이라고 하며, 기호로 $\mathfrak{N} \preceq \mathfrak{M}$과 같이 적는다.
+> **정의.** $\mathfrak{N} \subseteq \mathfrak{M}$이라고 하자. 임의의 $\mathcal{L}$-명제 $\phi$와 $\mathfrak{N}$에서의 자유변수 할당<sub>assignment</sub> $g$에 대해, $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$일 때 $\mathfrak{N}$이 $\mathfrak{M}$의 **초등적 부분모델<sub>elementary submodel</sub>**이라고 하며, 기호로 $\mathfrak{N} \preceq \mathfrak{M}$과 같이 적는다.
 
 2와 3은 1보다 강하지만, 2와 3은 서로를 시사하지 않는다.
 
@@ -43,14 +43,14 @@ $(\mathbb{Z}, +)$와 $(2\mathbb{Z}, +)$는 $\phi: x \mapsto 2x$를 통해 동형
 2. $\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \cong \mathfrak{M}$
 3. $\mathfrak{N} \preceq \mathfrak{M}$
 
-2와 3이 서로를 시사하지 않는 이유는, 2가 구조적 동등을 요구한다는 점에서 3보다 약하지 않은 한편, 3이 임의의 할당에 대한 동등을 요구한다는 점에서 2보다 약하지 않기 때문이다. 예를 들어 $\mathfrak{M} = (\mathbb{R}, +, \cdot)$에 대해, $\mathfrak{N}$이 $\mathfrak{M}$의 동형인 부분모델이기 위해서는 _구성 가능한_ 실수에 대해 _구조적으로_ 동일해야 하는 반면, $\mathfrak{N}$이 $\mathfrak{M}$의 기초적 부분모델이기 위해서는 두 모델이 _모든_ 실수에 대해 _기초적으로_ 동등해야 한다.
+2와 3이 서로를 시사하지 않는 이유는, 2가 구조적 동등을 요구한다는 점에서 3보다 약하지 않은 한편, 3이 임의의 할당에 대한 동등을 요구한다는 점에서 2보다 약하지 않기 때문이다. 예를 들어 $\mathfrak{M} = (\mathbb{R}, +, \cdot)$에 대해, $\mathfrak{N}$이 $\mathfrak{M}$의 동형인 부분모델이기 위해서는 _구성 가능한_ 실수에 대해 _구조적으로_ 동일해야 하는 반면, $\mathfrak{N}$이 $\mathfrak{M}$의 초등적 부분모델이기 위해서는 두 모델이 _모든_ 실수에 대해 _초등적으로_ 동등해야 한다.
 
 |                       | 2                | 3             |
 | --------------------- | ---------------- | ------------- |
-| 2가 3보다 약하지 않다 | 구조적 동일성    | 기초적 동일성 |
+| 2가 3보다 약하지 않다 | 구조적 동일성    | 초등적 동일성 |
 | 3이 2보다 약하지 않다 | 구성 가능한 대상 | 임의의 대상   |
 
-일례로 앞서 보았듯이 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 동형인 부분모델이지만, $\exists y \; (y + y = x)$에 $x \mapsto 2$ 할당을 고려하면 기초적 부분모델은 아님을 알 수 있다.
+일례로 앞서 보았듯이 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 동형인 부분모델이지만, $\exists y \; (y + y = x)$에 $x \mapsto 2$ 할당을 고려하면 초등적 부분모델은 아님을 알 수 있다.
 
 ## 워시-타르스키 정리
 

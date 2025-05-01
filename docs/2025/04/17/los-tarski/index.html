@@ -126,7 +126,7 @@
       href="/guestbook/"
       >방명록</a
     >
-                                                                                                        
+                                                                                                            
   </nav>
 
   <div class="sidebar-item">
@@ -179,10 +179,10 @@
 <p>일례로 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 부분모델이고, $(\mathbb{Q}, +, \cdot)$는 $(\mathbb{R}, +, \cdot)$의 부분모델이다.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> 임의의 $\mathcal{L}$-문장 $\phi$에 대해 $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$일 때 $\mathfrak{M}$과 $\mathfrak{N}$이 <strong>기초적으로 동등<sub>elementarily equivalent</sub></strong>하다고 하며, 기호로 $\mathfrak{M} \equiv \mathfrak{N}$과 같이 적는다.</p>
+  <p><strong>정의.</strong> 임의의 $\mathcal{L}$-문장 $\phi$에 대해 $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$일 때 $\mathfrak{M}$과 $\mathfrak{N}$이 <strong>초등적으로 동등<sub>elementarily equivalent</sub></strong>하다고 하며, 기호로 $\mathfrak{M} \equiv \mathfrak{N}$과 같이 적는다.</p>
 </blockquote>
 
-<p><a href="https://dimenerno.github.io/2025/04/10/completeness-theorem/">뢰벤하임-스콜렘 정리</a>에 의해 $\kappa$가 $|\mathcal{L}|$ 이상의 무한 기수라면, 임의의 무한 구조 $\mathfrak{M}$과 기초적으로 동등하며 크기가 $\kappa$인 모델 $\mathfrak{N}$이 존재한다. (cf. 워시-보트 판별<sub>Łoś-Vaught test</sub>)</p>
+<p><a href="https://dimenerno.github.io/2025/04/10/completeness-theorem/">뢰벤하임-스콜렘 정리</a>에 의해 $\kappa$가 $|\mathcal{L}|$ 이상의 무한 기수라면, 임의의 무한 구조 $\mathfrak{M}$과 초등적으로 동등하며 크기가 $\kappa$인 모델 $\mathfrak{N}$이 존재한다. (cf. 워시-보트 판별<sub>Łoś-Vaught test</sub>)</p>
 
 <blockquote>
   <p><strong>정의.</strong> $\mathfrak{M}$과 $\mathfrak{N}$이 구조적으로 동일할 때 <strong>동형<sub>isomorphic</sub></strong>이라고 하며, 기호로 $\mathfrak{M} \cong \mathfrak{N}$과 같이 적는다. 구체적으로, 어떤 일대일 대응 $\phi: M \to N$이 존재하여, $\mathcal{L}$의 임의의 함수 $f$와 관계 $R$에 대해 다음이 임의의 $a_1, \dots, a_n \in M$에 대해 성립할 때 $\mathfrak{M} \cong \mathfrak{N}$이다.</p>
@@ -198,11 +198,11 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 <p>다음 정리의 증명은 거의 자명하다.</p>
 
 <blockquote>
-  <p><strong>정리.</strong> 동형인 두 구조는 기초적으로 동등하다.</p>
+  <p><strong>정리.</strong> 동형인 두 구조는 초등적으로 동등하다.</p>
 </blockquote>
 
 <blockquote>
-  <p><strong>정의.</strong> $\mathfrak{N} \subseteq \mathfrak{M}$이라고 하자. 임의의 $\mathcal{L}$-명제 $\phi$와 $\mathfrak{N}$에서의 자유변수 할당<sub>assignment</sub> $g$에 대해, $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$일 때 $\mathfrak{N}$이 $\mathfrak{M}$의 <strong>기초적 부분모델<sub>elementary submodel</sub></strong>이라고 하며, 기호로 $\mathfrak{N} \preceq \mathfrak{M}$과 같이 적는다.</p>
+  <p><strong>정의.</strong> $\mathfrak{N} \subseteq \mathfrak{M}$이라고 하자. 임의의 $\mathcal{L}$-명제 $\phi$와 $\mathfrak{N}$에서의 자유변수 할당<sub>assignment</sub> $g$에 대해, $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$일 때 $\mathfrak{N}$이 $\mathfrak{M}$의 <strong>초등적 부분모델<sub>elementary submodel</sub></strong>이라고 하며, 기호로 $\mathfrak{N} \preceq \mathfrak{M}$과 같이 적는다.</p>
 </blockquote>
 
 <p>2와 3은 1보다 강하지만, 2와 3은 서로를 시사하지 않는다.</p>
@@ -213,7 +213,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
   <li>$\mathfrak{N} \preceq \mathfrak{M}$</li>
 </ol>
 
-<p>2와 3이 서로를 시사하지 않는 이유는, 2가 구조적 동등을 요구한다는 점에서 3보다 약하지 않은 한편, 3이 임의의 할당에 대한 동등을 요구한다는 점에서 2보다 약하지 않기 때문이다. 예를 들어 $\mathfrak{M} = (\mathbb{R}, +, \cdot)$에 대해, $\mathfrak{N}$이 $\mathfrak{M}$의 동형인 부분모델이기 위해서는 <em>구성 가능한</em> 실수에 대해 <em>구조적으로</em> 동일해야 하는 반면, $\mathfrak{N}$이 $\mathfrak{M}$의 기초적 부분모델이기 위해서는 두 모델이 <em>모든</em> 실수에 대해 <em>기초적으로</em> 동등해야 한다.</p>
+<p>2와 3이 서로를 시사하지 않는 이유는, 2가 구조적 동등을 요구한다는 점에서 3보다 약하지 않은 한편, 3이 임의의 할당에 대한 동등을 요구한다는 점에서 2보다 약하지 않기 때문이다. 예를 들어 $\mathfrak{M} = (\mathbb{R}, +, \cdot)$에 대해, $\mathfrak{N}$이 $\mathfrak{M}$의 동형인 부분모델이기 위해서는 <em>구성 가능한</em> 실수에 대해 <em>구조적으로</em> 동일해야 하는 반면, $\mathfrak{N}$이 $\mathfrak{M}$의 초등적 부분모델이기 위해서는 두 모델이 <em>모든</em> 실수에 대해 <em>초등적으로</em> 동등해야 한다.</p>
 
 <table>
   <thead>
@@ -227,7 +227,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
     <tr>
       <td>2가 3보다 약하지 않다</td>
       <td>구조적 동일성</td>
-      <td>기초적 동일성</td>
+      <td>초등적 동일성</td>
     </tr>
     <tr>
       <td>3이 2보다 약하지 않다</td>
@@ -237,7 +237,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
   </tbody>
 </table>
 
-<p>일례로 앞서 보았듯이 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 동형인 부분모델이지만, $\exists y \; (y + y = x)$에 $x \mapsto 2$ 할당을 고려하면 기초적 부분모델은 아님을 알 수 있다.</p>
+<p>일례로 앞서 보았듯이 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 동형인 부분모델이지만, $\exists y \; (y + y = x)$에 $x \mapsto 2$ 할당을 고려하면 초등적 부분모델은 아님을 알 수 있다.</p>
 
 <h2 id="워시-타르스키-정리">워시-타르스키 정리</h2>
 
