@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-05-01T21:56:41+09:00</updated>
+ <updated>2025-05-01T22:54:46+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -17,7 +17,7 @@
    <link href="http://localhost:4000/2025/05/01/elementary-embedding/"/>
    <updated>2025-05-01T00:00:00+09:00</updated>
    <id>http://localhost:4000/2025/05/01/elementary-embedding</id>
-   <content type="html">&lt;p&gt;이 글에서는 편의를 위해 술어와 함수를 별도의 대상으로 생각하는 대신, 함수식 $f(a) = c$를 단항 술어 $F(a, c)$로 환원하는 접근을 택한다.&lt;/p&gt;
+   <content type="html">&lt;p&gt;이 글에서는 편의를 위해 술어와 함수를 별도의 대상으로 생각하는 대신, 함수식 $f(a) = c$를 이항 술어 $F(a, c)$로 환원하는 접근을 택한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathfrak{A}, \mathfrak{B}$가 언어 $\mathcal{L}$의 구조라고 하자. 다음을 만족하는 사상 $f: \mathfrak{A} \to \mathfrak{B}$을 &lt;strong&gt;준동형 사상&lt;sub&gt;homomorphism&lt;/sub&gt;&lt;/strong&gt;이라고 부른다. $R$이 $\mathcal{L}$의 관계일 때, 임의의 $a_1, \dots, a_n \in \mathfrak{A}$에 대해,&lt;/p&gt;
