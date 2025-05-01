@@ -4,22 +4,13 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-05-01T15:57:52+09:00</updated>
+ <updated>2025-05-01T21:56:41+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
- 
- <entry>
-   <title>L-구조 유도계</title>
-   <link href="http://localhost:4000/2025/05/01/model-basic/"/>
-   <updated>2025-05-01T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/05/01/model-basic</id>
-   <content type="html">&lt;p&gt;asdf&lt;/p&gt;
-</content>
- </entry>
  
  <entry>
    <title>준동형 사상, 임베딩, 초등적 임베딩</title>
