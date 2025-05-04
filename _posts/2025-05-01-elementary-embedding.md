@@ -27,7 +27,7 @@ related:
 
 <img src="/public/model-injective-vs-embedding.png" style="width: 100%; max-width: 500px; margin: 1.5em auto;">
 
-$\mathfrak{A}$의 원소들은 $<^\mathfrak{A}$를 만족시키는 경우가 없으므로 $f: a\_1 \mapsto b\_1, a\_2 \mapsto b\_2$는 자명하게 준동형사상이며, 단사이다. 그러나 $f$는 임베딩이 아니다. $f$가 임베딩이라면 $b\_1 <^\mathfrak{B} b\_2$으로부터 $a\_1 <^\mathfrak{A} a\_2$가 성립해야 하기 때문이다. 즉, 임베딩은 $\mathfrak{A}$의 원소들뿐 아니라 원소들 간의 관계까지 그대로 $\mathfrak{B}$에 대응시켜야 한다. 이런 면에서 임베딩은 범주론에서의 충실한 함자<sub>faithful functor</sub>와 비슷하다.
+$\mathfrak{A}$의 원소들은 $<^\mathfrak{A}$를 만족시키는 경우가 없으므로 $f: a\_1 \mapsto b\_1, a\_2 \mapsto b\_2$는 자명하게 준동형사상이며, 단사이다. 그러나 $f$는 임베딩이 아니다. $f$가 임베딩이라면 $b\_1 <^\mathfrak{B} b\_2$으로부터 $a\_1 <^\mathfrak{A} a\_2$가 성립해야 하기 때문이다. 즉, 임베딩은 $\mathfrak{A}$의 원소들뿐 아니라 원소들 간의 관계까지 그대로 $\mathfrak{B}$에 대응시켜야 한다. 이런 면에서 임베딩은 범주론에서의 포화된 함자<sub>full functor</sub>와 비슷하다.
 
 > **정의.** $\mathfrak{A}$가 언어 $\mathcal{L}$의 구조라고 하자. $\mathcal{L}\_\mathfrak{A}$를 $\mathcal{L}$에 $\mathfrak{A}$의 정의역 크기만큼의 상수를 추가한 언어로 정의한다.
 
