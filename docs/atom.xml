@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-05-07T11:10:25+09:00</updated>
+ <updated>2025-05-08T11:06:35+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -13,41 +13,41 @@
 
  
  <entry>
-   <title>로빈슨, 크레이그, 베스의 정리</title>
-   <link href="http://localhost:4000/2025/05/07/robinson-craig-beth/"/>
-   <updated>2025-05-07T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/05/07/robinson-craig-beth</id>
+   <title>로빈슨 건전성 정리와 크레이그 보간 정리</title>
+   <link href="http://localhost:4000/2025/05/08/robinson-craig/"/>
+   <updated>2025-05-08T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/05/08/robinson-craig</id>
    <content type="html">&lt;h3 id=&quot;초등적-병합-성질elementary-amalgamation-property&quot;&gt;초등적 병합 성질&lt;sub&gt;Elementary amalgamation property&lt;/sub&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}’$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화&lt;sub&gt;$\mathcal{L}$-reduct&lt;/sub&gt;가 $\mathfrak{A}$와 초등적으로 동등&lt;sub&gt;elementarily equivalent&lt;/sub&gt;하다고 하자. 이 때, $\mathcal{L}’$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 &lt;a href=&quot;https://dimenerno.github.io/2025/05/01/elementary-embedding/&quot;&gt;초등적 임베딩&lt;/a&gt;이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}’$의 초등적 임베딩이다.&lt;/p&gt;
 
-  &lt;p&gt;&lt;img src=&quot;/public/elementary-amalgamation-2.png&quot; style=&quot;width: 100%; max-width: 130px; margin: 1em auto; mix-blend-mode: multiply&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/public/elementary-amalgamation-2.png&quot; style=&quot;width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; &lt;a href=&quot;https://dimenerno.github.io/2025/05/01/elementary-embedding/&quot;&gt;이 글&lt;/a&gt;의 표기법을 따라, 언어 $L_\mathfrak{A}$의 이론 $E(\mathfrak{A})$와 언어 $L’_\mathfrak{B}$의 이론 $E(\mathfrak{B})$를 생각하자. $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$는 언어 $\mathcal{L}’_{\mathfrak{AB}} = \mathcal{L}_\mathfrak{A} \cup \mathcal{L}_\mathfrak{B}$의 이론이다. $T$가 모델 $\mathfrak{C}$를 가짐을 보이자.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; &lt;a href=&quot;https://dimenerno.github.io/2025/05/01/elementary-embedding/&quot;&gt;이 글&lt;/a&gt;의 표기법을 따라, 언어 $L_\mathfrak{A}$의 이론 $E(\mathfrak{A})$와 언어 $L’_\mathfrak{B}$의 이론 $E(\mathfrak{B})$를 생각하자. $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$는 언어 $\mathcal{L}’_{\mathfrak{AB}} = \mathcal{L}_\mathfrak{A} \cup \mathcal{L}’_\mathfrak{B}$의 이론이다. $T$가 모델 $\mathfrak{C}$를 가짐을 보이자.&lt;/p&gt;
 
-&lt;p&gt;만약 $T$가 모델이 없다면 $T$는 모순적이다. 따라서 콤팩트성 정리에 의해 어떤 $\mathcal{L}$-명제 $\phi$와 $\mathcal{L}’$-명제 $\psi$가 존재하여, 적절한 $\lbrace  a_i \rbrace  \subset \mathcal{L}_\mathfrak{A}$, $\lbrace  b_j \rbrace  \subset \mathcal{L}_\mathfrak{B}$에 대해,&lt;/p&gt;
+&lt;p&gt;만약 $T$가 모델이 없다면 $T$는 모순적이다. 따라서 콤팩트성 정리에 의해 어떤 $\mathcal{L}$-논리식 $\phi$와 $\mathcal{L}’$-논리식 $\psi$가 존재하여, 적절한 $\lbrace  a_i \rbrace  \subset \mathcal{L}_\mathfrak{A}$, $\lbrace  b_j \rbrace  \subset \mathcal{L}_\mathfrak{B}$에 대해,&lt;/p&gt;
 
 \[\lbrace  \phi(a_1, \dots, a_n), \psi(b_1, \dots, b_m) \rbrace\]
 
-&lt;p&gt;이 모순적이다. $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$이므로, $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$를 만족하도록 상수 $a_1, \dots, a_n$을 $\mathfrak{B}$의 정의역에 대응시키는 방법이 존재하지 않아야 한다. 즉,&lt;/p&gt;
+&lt;p&gt;이 모델을 가지지 않는다. $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$이므로, $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$를 만족하도록 상수 $a_1, \dots, a_n$을 $\mathfrak{B}$의 정의역에 대응시키는 방법이 존재하지 않아야 한다. 즉,&lt;/p&gt;
 
 \[\mathfrak{B} \not\vDash \exists x_1, \dots x_n \; \phi(x_1, \dots, x_n)\]
 
 &lt;p&gt;그런데 $\mathfrak{B}$의 $\mathcal{L}$-퇴화가 $\mathfrak{A}$와 초등적으로 동등하며, 위 식의 우변이 $\mathcal{L}$-문장이고, $\mathfrak{A}$가 해당 문장을 만족하므로 이는 모순이다. 따라서 $T$는 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{A})$와 $E(\mathfrak{B})$의 모델이므로, $\mathfrak{A}$와 $\mathfrak{B}$는 $\mathfrak{C}$로 자연스럽게 초등적으로 임베딩된다. ■&lt;/p&gt;
 
-&lt;h3 id=&quot;로빈슨-건전성-정리&quot;&gt;로빈슨 건전성 정리&lt;/h3&gt;
+&lt;h3 id=&quot;로빈슨-건전성-정리robinson-consistency-theorem&quot;&gt;로빈슨 건전성 정리&lt;sub&gt;Robinson consistency theorem&lt;/sub&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$라고 하자. $T$가 $\mathcal{L}$의 (의미론적으로) 완전한&lt;sub&gt;complete&lt;/sub&gt; 이론이고, $T_1$과 $T_2$가 각각 $T$를 확장하는 건전한&lt;sub&gt;consistent&lt;/sub&gt; $\mathcal{L}_1, \mathcal{L}_2$ 이론일 때, $T_1 \cup T_2$는 $\mathcal{L}_1 \cup \mathcal{L}_2$ 이론으로서 건전하다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$라고 하자. $T$가 $\mathcal{L}$의 (의미론적으로) 완전한 이론이고, $T_1$과 $T_2$가 각각 $T$를 확장하는 건전한 $\mathcal{L}_1, \mathcal{L}_2$ 이론일 때, $T_1 \cup T_2$는 $\mathcal{L}_1 \cup \mathcal{L}_2$ 이론으로서 건전하다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $T_1 \cup T_2$의 모델을 구축하면 정리가 보여진다.&lt;/p&gt;
 
-&lt;p&gt;$T_1, T_2$가 각각 건전하므로, 모델 $\mathfrak{A}, \mathfrak{B}$를 가진다. $T = T_1 \cap T_2$가 완전하므로, $\mathcal{L}$-퇴화로서의 $\mathfrak{A}$와 $\mathfrak{B}$는 초등적으로 동등하다. 따라서 초등적 병합 성질에 의해, $\mathcal{L}$-초등적 임베딩 $f_0$와 $\mathcal{L}_2$-초등적 임베딩 $h_0$가 존재하여 다음이 성립한다.&lt;/p&gt;
+&lt;p&gt;$T_1, T_2$가 각각 건전하므로, 모델 $\mathfrak{A}_0, \mathfrak{B}_0$를 가진다. $T = T_1 \cap T_2$가 완전하므로, $\mathcal{L}$-퇴화로서의 $\mathfrak{A}_0$와 $\mathfrak{B}_0$는 초등적으로 동등하다. 따라서 초등적 병합 성질에 의해, $\mathcal{L}$-초등적 임베딩 $f_0$와 $\mathcal{L}_2$-초등적 임베딩 $h_0$가 존재하여 다음이 성립한다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/robinson-1.png&quot; style=&quot;width: 100%; max-width: 120px; margin: 1em auto&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/robinson-1.png&quot; style=&quot;width: 100%; max-width: 115px; margin: 1em auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;이제 $\mathfrak{B}_1$의 $\mathcal{L}$-퇴화를 생각해 보면, 이는 $\mathfrak{A}_0$와 초등적으로 동등하므로, 다시 초등적 병합 성질에 의해 $\mathcal{L}$-초등적 임베딩 $g_0$와 $\mathcal{L}_1$-초등적 임베딩 $k_0$가 존재하여 다음이 성립한다.&lt;/p&gt;
 
@@ -56,6 +56,63 @@
 &lt;p&gt;이 과정을 반복하여 다음의 구조 유도계&lt;sub&gt;directed system of structures&lt;/sub&gt;를 얻는다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/robinson-3.png&quot; style=&quot;width: 100%; max-width: 285px; margin: 1em auto&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;사상&lt;/th&gt;
+      &lt;th&gt;성질&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$f, g$&lt;/td&gt;
+      &lt;td&gt;$\mathcal{L}$-초등적 임베딩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$k$&lt;/td&gt;
+      &lt;td&gt;$\mathcal{L}_1$-초등적 임베딩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$h$&lt;/td&gt;
+      &lt;td&gt;$\mathcal{L}_2$-초등적 임베딩&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;위 유도계의 모든 모델을 $\mathcal{L}$로 퇴화시키면 $\mathcal{L}$-구조 유도계를 얻는다. 해당 유도계의 쌍대극한&lt;sub&gt;colimit&lt;/sub&gt;을 $\mathfrak{C}$라고 하자. $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{A}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 회색으로 표시된 원 유도계의 일부는 모두 $\lbrace  \mathfrak{A}_i \rbrace $ 중 하나로 투사되기 때문이다. 따라서 $\mathfrak{C}$는 $\mathfrak{A}_0$를 초등적으로 임베딩하는 $\mathcal{L}_1$ 구조이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/robinson-4.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 1.5em auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;같은 이유로 $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{B}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 따라서 $\mathfrak{C}$는 $\mathfrak{B}_0$를 초등적으로 임베딩하는 $\mathcal{L}_2$ 구조이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/robinson-5.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 1.5em auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;즉, $\mathfrak{C}$는 $\mathfrak{A}$와 $\mathfrak{B}$를 모두 임베딩하며, 이로부터 $T_1 \cup T_2$의 모델임이 보여졌다. ■&lt;/p&gt;
+
+&lt;h3 id=&quot;크레이그-보간-정리craig-interpolation-theorem&quot;&gt;크레이그 보간 정리&lt;sub&gt;Craig interpolation theorem&lt;/sub&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\mathcal{L}$-문장 $\phi, \psi$에 대해 $\phi \vDash \psi$라면, 어떤 $\mathcal{L}$-문장 $\theta$가 존재하여 $\phi \vDash \theta, \theta \vDash \psi$이다. 또한, $\theta$에 포함된 비논리 기호(상수, 술어, 함수)는 $\phi$와 $\psi$에 공통적으로 포함된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;$\theta$를 $\phi$와 $\psi$의 &lt;strong&gt;크레이그 보간&lt;/strong&gt;이라고 부른다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 귀류법으로 증명한다. 크레이그 보간이 존재하지 않는다고 가정하자. 그러면 $\phi$는 모델을 가진다. 만약 $\phi$가 모델을 가지지 않는다면 $\perp$가 $\phi, \psi$의 크레이그 보간이기 때문이다. 또한 $\lnot \psi$도 모델을 가진다. 그렇지 않다면 $\top$가 크레이그 보간이기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;$\mathcal{L}’$을 $\phi$와 $\psi$에 공통적으로 포함되는 비논리 기호들로 이루어진 언어라고 하자. $\Gamma$를, $\phi \vDash \sigma$이거나 $\lnot \psi \vDash \sigma$인 $\mathcal{L}’$-문장 $\sigma$의 집합이라고 하자.&lt;/p&gt;
+
+&lt;p&gt;$\Gamma \cup \lbrace  \phi \rbrace $는 무모순적임을 보이자. 만약 모순적이라면, 콤팩트성 정리에 의해 어떤 $\mathcal{L}’$-문장 $\sigma_1, \sigma_2$가 존재하여 $\phi \vDash \sigma_1, \lnot\psi \vDash \sigma_2$이고 $\lbrace  \sigma_1, \sigma_2, \phi \rbrace $가 모순적이다. 그런데 $\phi \vDash \sigma_1$이므로 $\phi \vDash \lnot\sigma_2$이다. 대우법에 의해 $\lnot\psi\ \vDash \sigma_2$로부터 $\lnot\sigma_2 \vDash \psi$가 따라 나온다. 즉, $\sigma_2$는 $\phi, \psi$의 크레이그 보간이다. 이는 가정에 모순된다.&lt;/p&gt;
+
+&lt;p&gt;따라서 $\Gamma \cup \lbrace  \phi \rbrace $는 무모순적이며, 같은 이유로 $\Gamma \cup \lbrace  \lnot\psi \rbrace $ 또한 무모순적이다. 이제 초른의 보조정리를 적용하여, $\overline{\Gamma}$를 다음 $\mathcal{L}’$-이론들의 순서의 극대로 정의한다.&lt;/p&gt;
+
+\[\{ \Gamma&apos; : \Gamma \subseteq \Gamma&apos;, \Gamma&apos; \cup \{\phi\} \text{ and } \Gamma&apos; \cup \{\lnot \psi\} \text{ are consistent} \}\]
+
+&lt;p&gt;$\overline{\Gamma}$는 완전함을 보이자. 만약 $\overline{\Gamma}$가 완전하지 않다면, 어떤 $\mathcal{L}’$-문장 $\sigma$가 존재하여 $\sigma \notin \overline{\Gamma}$이고, $\overline{\Gamma} \cup \lbrace \sigma, \phi \rbrace $ 또는 $\overline{\Gamma} \cup \lbrace \sigma, \lnot \psi \rbrace $가 무모순적이다.&lt;/p&gt;
+
+&lt;p&gt;전자의 경우, 콤팩트성 정리에 의해 어떤 $\overline{\Gamma}$의 문장 $\theta$가 존재하여 $\phi \vDash \theta \rightarrow \lnot \sigma$이다. $\Gamma$의 정의에 의해 $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$이다. 따라서 $\overline{\Gamma} \cup \lbrace  \sigma, \phi \rbrace $는 $\lnot\phi$를 증명한다. 이는 모순이다. 후자의 경우에도 마찬가지 모순이 발생한다. 따라서 $\overline{\Gamma}$는 완전하다.&lt;/p&gt;
+
+&lt;p&gt;$\overline{\Gamma}$가 완전하고, $\overline{\Gamma} \cup \lbrace \phi \rbrace , \overline{\Gamma} \cup \lbrace \lnot\psi \rbrace $가 건전하므로, 로빈슨 건전성 정리에 의해 $\overline{\Gamma} \cup \lbrace \phi, \lnot \psi \rbrace $가 건전하다. 그런데 이는 $\phi \vDash \psi$에 모순된다. 따라서 귀류법에 의해 $\phi, \psi$는 크레이그 보간을 가진다. ■&lt;/p&gt;
 </content>
  </entry>
  
