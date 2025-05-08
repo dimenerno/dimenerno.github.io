@@ -250,7 +250,7 @@
   
   <div class="post fade-in-section">
     <h1 class="post-title">
-      <a href="/2025/05/08/robinson-craig/"> 로빈슨 건전성 정리와 크레이그 보간 정리 </a>
+      <a href="/2025/05/08/robinson-craig/"> 로빈슨, 크레이그, 베스의 정리 </a>
     </h1>
 
     <span class="post-date">08 May 2025</span>
@@ -366,6 +366,72 @@
 <p>전자의 경우, 콤팩트성 정리에 의해 어떤 $\overline{\Gamma}$의 문장 $\theta$가 존재하여 $\phi \vDash \theta \rightarrow \lnot \sigma$이다. $\Gamma$의 정의에 의해 $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$이다. 따라서 $\overline{\Gamma} \cup \lbrace  \sigma, \phi \rbrace $는 $\lnot\phi$를 증명한다. 이는 모순이다. 후자의 경우에도 마찬가지 모순이 발생한다. 따라서 $\overline{\Gamma}$는 완전하다.</p>
 
 <p>$\overline{\Gamma}$가 완전하고, $\overline{\Gamma} \cup \lbrace \phi \rbrace , \overline{\Gamma} \cup \lbrace \lnot\psi \rbrace $가 건전하므로, 로빈슨 건전성 정리에 의해 $\overline{\Gamma} \cup \lbrace \phi, \lnot \psi \rbrace $가 건전하다. 그런데 이는 $\phi \vDash \psi$에 모순된다. 따라서 귀류법에 의해 $\phi, \psi$는 크레이그 보간을 가진다. ■</p>
+
+<h3 id="베스-정의-가능성-정리beth-definability-theorem">베스 정의 가능성 정리<sub>Beth definability theorem</sub></h3>
+
+<p>언어 $\mathcal{L}$과, $\mathcal{L}$에 포함되어 있지 않은 술어 $P$를 생각하자. $T$가 $\mathcal{L} \cup \lbrace  P \rbrace $의 이론이라고 하자. $T$를 만족하는 $\mathcal{L}$의 구조 $\mathfrak{A}$를 $\mathcal{L} \cup \lbrace  P \rbrace $로 확장하는 방법이 유일할 때, $T$가 $P$를 <strong>암시적으로 정의<sub>implicitly define</sub></strong>한다고 한다.</p>
+
+<p>이는 다음과 같이 말할 수도 있다. $T(P’)$가 $T$에서 등장하는 모든 $P$를 $P’$으로 바꾼 $\mathcal{L} \cup \lbrace P’ \rbrace $ 이론이라고 하자. $T$가 $P$를 암시적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
+
+\[T \cup T(P') \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow P'(x_1, \dots, x_n)\]
+
+<p>반면 $T$가 $P$를 <strong>명시적으로 정의<sub>explicitly define</sub></strong>한다는 것은 다음을 만족시키는 $\mathcal{L}$-논리식 $\phi$가 존재한다는 것이다.</p>
+
+\[T \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow \phi(x_1, \dots, x_n)\]
+
+<p>예를 들어 보자. $\mathcal{L} = (0, S, +, \cdot)$의 이론 $\mathsf{PA}$에 술어 $P(x, y)$에 관한 공리를 추가한 다음의 이론을 $T$라고 하자.</p>
+
+\[T = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
+
+<p>$T(P’)$은 다음과 같다.</p>
+
+\[T(P') = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P'(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
+
+<p>$T$가 $P$를 암묵적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
+
+\[T \cup T(P') \vDash \forall x, y \big[ P(x, y) \leftrightarrow P'(x, y) \big]\]
+
+<p>이는 귀납 공리꼴로부터 자연스럽게 따라 나온다. 그런데 $P$는 다음과 같이 $T$에서 명시적으로 정의될 수도 있다.</p>
+
+\[\begin{gather}
+T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
+\text{where}\\\\
+\phi(x, y) : \forall z \big[ x + z = S(0) \rightarrow z = y \big]
+\end{gather}\]
+
+<p>이는 우연이 아니다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 언어 $\mathcal{L}$에 대해, $\mathcal{L} \cup \lbrace  P \rbrace $의 이론 $T$가 $P$를 암시적으로 정의하면, $T$는 $P$를 명시적으로 정의한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $P$가 $n$항 술어라고 하자. $\mathcal{L}$에 새로운 상수 $c_1, \dots, c_n$을 추가한 언어를 $\mathcal{L}’$이라고 하자. $T$가 $P$를 암시적으로 정의하므로,</p>
+
+\[T \cup T(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>이다. 콤팩트성 정리에 의해 어떤 $\mathcal{L} \cup \lbrace  P \rbrace $ 문장 $\psi$가 존재하여, $T \vdash \psi$이고 다음이 성립한다.</p>
+
+\[\psi \land \psi(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>함축 원리를 이용하여 이항하면 다음과 같다.</p>
+
+\[\psi \land P(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>좌변은 $\mathcal{L}’ \cup \lbrace  P \rbrace $의 문장이고, 우변은 $\mathcal{L}’ \cup \lbrace  P’ \rbrace $의 문장이다. 따라서 크레이그 보간 정리에 의해 $\mathcal{L}$-논리식 $\theta$가 존재하여 다음이 성립한다.</p>
+
+\[\begin{gather}
+\psi \land P(c_1, \dots, c_n) \vDash \theta(c_1, \dots, c_n), \\\\
+\theta(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)
+\end{gather}\]
+
+<p>다시 이항하고 $P’$을 $P$로 치환하면,</p>
+
+\[\begin{gather}
+\psi \vDash P(c_1, \dots, c_n) \rightarrow \theta(c_1, \dots, c_n), \\\\
+\psi \vDash \theta(c_1, \dots, c_n) \rightarrow P(c_1, \dots, c_n)
+\end{gather}\]
+
+<p>따라서 $\theta$는 $P$를 명시적으로 정의한다. ■</p>
 
   </div>
   <!-- <div
@@ -506,6 +572,10 @@
       
       <div class="tag" onclick="location.href='/tags/수학/'">
         수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
       </div>
       
       <div class="tag" onclick="location.href='/tags/모델론/'">
