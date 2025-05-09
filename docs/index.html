@@ -127,7 +127,7 @@
       href="/guestbook/"
       >방명록</a
     >
-                                                                                                            
+                                                                                                                
   </nav>
 
   <div class="sidebar-item">
@@ -247,6 +247,156 @@
 
 
 <div class="posts">
+  
+  <div class="post fade-in-section">
+    <h1 class="post-title">
+      <a href="/2025/05/08/resiliency/"> η 집합 </a>
+    </h1>
+
+    <span class="post-date">08 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <p>가산 조밀 무계 전순서<sub>countable dense unbounded linear order</sub>는 모두 동형임을 보인 칸토어의 앞뒤 논법<sub>back-and-forth argument</sub>에서 핵심이 되는 원리는 다음이다.</p>
+
+<blockquote>
+  <p><strong>가산 데데킨트 성질.</strong> $(L, &lt;)$이 전순서라고 하자. 다음은 동치이다.</p>
+
+  <ol>
+    <li>$(L, &lt;)$은 조밀하고 무계이다.</li>
+    <li>$L$의 유한 부분집합 $C, D$에 대해, $C &lt; D$일 경우 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
+  </ol>
+</blockquote>
+
+<p>여기서 $C &lt; D$는 $\forall c \in C, d \in D : c &lt; d$를 줄인 표기이다.</p>
+
+<p>유한 데데킨트 성질로부터 동형성 정리를 다음과 같이 보일 수 있다. $(A, &lt;_A), (B, &lt;_B)$가 두 가산 조밀 무계 전순서라고 하자. 가산이므로 $A, B$의 원소를 자연수로 인덱싱할 수 있다. $f: A \to B$를 다음과 같이 귀납적으로 정의한다.</p>
+
+<ol>
+  <li>$f(a_0) = b_0$로 두고, $n = 1$로 정한다.</li>
+  <li>$a_n \in \mathrm{dom} f$을 확인한다.
+    <ol>
+      <li>$a_n \in \mathrm{dom} f$라면 3으로 넘어간다.</li>
+      <li>$a_n \notin \mathrm{dom} f$라면 보조정리에 의해 $C = \lbrace  f(a_k) : k &lt; n, a_k &lt;_A a_n \rbrace , D = \lbrace  f(a_k) : k &lt; n, a_k &gt;_A a_n \rbrace $에 대해 $C &lt; y &lt; D$인 $y \in B$가 존재한다. $f(a_n) = y$로 정의한다.</li>
+    </ol>
+  </li>
+  <li>$b_n \in \mathrm{ran} f$를 확인한다.
+    <ol>
+      <li>$b_n \in \mathrm{ran} f$라면 4로 넘어간다.</li>
+      <li>$b_n \notin \mathrm{ran} f$라면, 보조정리에 의해 $C = \lbrace  f^{-1}(b_k) : k &lt; n, b_k &lt;_B b_n \rbrace , D = \lbrace  f^{-1}(b_k) : k &lt; n, b_k &gt;_B b_n \rbrace $에 대해 $C &lt; x &lt; D$인 $x \in A$가 존재한다. $f(x) = b_n$으로 정의한다.</li>
+    </ol>
+  </li>
+  <li>$n$을 $n + 1$로 갱신하고 2로 되돌아간다.</li>
+</ol>
+
+<p>위 과정의 귀납적 극한으로서 얻어지는 $f$는 $A$와 $B$의 동형 사상이다.</p>
+
+<p>그런데 위 보조정리의 다음 일반화는 일반적으로 성립하지 않는다.</p>
+
+<blockquote>
+  <p><strong>(틀린 명제)</strong> $(L, &lt;)$이 전순서라고 하자. 다음은 동치이다.</p>
+
+  <ol>
+    <li>$(L, &lt;)$은 조밀하고 무계이다.</li>
+    <li>$L$보다 작은 기수인 $L$의 부분집합 $C, D$에 대해, $C &lt; D$일 경우 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
+  </ol>
+</blockquote>
+
+<p>예를 들어 $(\mathbb{R} \setminus \lbrace  0 \rbrace , &lt;)$는 조밀하고 무계인 전순서이며, $C = (-\infty, 0) \cap \mathbb{Q}, D = (0, \infty) \cap \mathbb{Q}$일 때 $C &lt; D$이고 $|C|, |D| &lt; |\mathbb{R}|$이지만 $C &lt; y &lt; D$를 만족하는 실수 $y$는 존재하지 않는다.</p>
+
+<p>만약 위 보조정리의 일반화가 성립했다면, 다음과 같이 기수가 $\kappa &gt; \aleph_0$인 조밀 무계 전순서가 유일함을 증명할 수 있었을 것이다. 선택 공리를 가정했을 때, $A$와 $B$는 $\kappa$와 순서 동형이도록 정렬될 수 있다. 이제 서수 $\alpha &lt; \kappa$에 대해 초한귀납적으로 $f$를 정의한다.</p>
+
+<ol>
+  <li>$f(a_0) = b_0$로 두고, $\alpha = 1$로 정한다.</li>
+  <li>$a_\alpha \in \mathrm{dom} f$을 확인한다.
+    <ol>
+      <li>$a_\alpha \in \mathrm{dom} f$라면 3으로 넘어간다.</li>
+      <li>$a_\alpha \notin \mathrm{dom} f$라면 일반화된 보조정리에 의해 $C = \lbrace  f(a_\beta) : \beta &lt; \alpha, a_\beta &lt;_A a_\alpha \rbrace , D = \lbrace  f(a_\beta) : \beta &lt; \alpha, a_\beta &gt;_A a_\alpha \rbrace $에 대해 $C &lt; y &lt; D$인 $y \in B$가 존재한다. $f(a_\alpha) = y$로 정의한다.</li>
+    </ol>
+  </li>
+  <li>$b_\alpha \in \mathrm{ran} f$를 확인한다.
+    <ol>
+      <li>$b_\alpha \in \mathrm{ran} f$라면 4로 넘어간다.</li>
+      <li>$b_\alpha \notin \mathrm{ran} f$라면, 일반화된 보조정리에 의해 $C = \lbrace  f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &lt;_B b_\alpha \rbrace , D = \lbrace  f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &gt;_B b_\alpha \rbrace $에 대해 $C &lt; x &lt; D$인 $x \in A$가 존재한다. $f(x) = b_\alpha$로 정의한다.</li>
+    </ol>
+  </li>
+  <li>초한귀납적으로 $f$를 완성한다.</li>
+</ol>
+
+<p>그러나 일반화된 보조정리가 성립하지 않으므로, 칸토어의 앞뒤 논법은 비가산 조밀 무계 전순서가 유일하다는 것을 보이는 데 적용될 수 없다. 실제로 비가산 조밀 무계 전순서는 $\mathbb{R}$ 이외에도 $\lbrace 0\rbrace  \times \mathbb{R} \sqcup \lbrace 1\rbrace  \times \mathbb{Q}$에 사전식 순서를 준 순서 등 유일하지 않다.</p>
+
+<p>그렇다면 보조정리의 성질은 어느 정도까지 일반화될 수 있을까? 이 물음과 관련된 개념은 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong></p>
+
+  <ol>
+    <li>집합족 $\mathcal{C}$가 <strong>유한 교집합 속성<sub>finite intersection property</sub></strong>을 가진다는 것은, $\mathcal{C}$의 집합-원소들의 유한한 교집합은 언제나 공집합이 아니라는 것이다.</li>
+    <li>집합족 $\mathcal{C}$가 <strong>탄력적<sub>resilient</sub></strong>이라는 것은, $\mathcal{D}$가 유한 교집합 속성을 가지는 $\mathcal{C}$의 부분모임일 때, $\bigcap_{D \in \mathcal{D}} D \neq \varnothing$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p>위상수학을 공부한 독자라면 이는 친숙한 개념일 것이다.</p>
+
+<blockquote>
+  <p><strong>칸토어 축소구간 정리.</strong> $K$가 콤팩트할 필요충분조건은 $K$의 모든 닫힌 집합들의 모임 $\mathcal{F}$가 탄력적인 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $(\Rightarrow)$ $\mathcal{F}$가 탄력적이지 않다고 하자. 그러면 어떤 닫힌 집합들의 모임 $\mathcal{C}$가 존재하여, $\mathcal{C}$가 유한 교집합 속성을 가지지만 $\bigcap_{C \in \mathcal{C}} C = \varnothing$이다. 드 모르간 법칙에 의해 $\bigcup_{C \in \mathcal{C}} C^c = K$이다. 즉 $\lbrace  C^c : C \in \mathcal{C} \rbrace $는 $K$의 열린 덮개이다. $K$가 콤팩트하므로 이는 유한 부분 덮개를 가진다. 그러나 이 경우 다시 드 모르간 법칙에 의해, 어떤 유한한 $\mathcal{C}’ \subset \mathcal{C}$에 대해 $\bigcap_{C \in \mathcal{C}’} C = \varnothing$이다. 이는 $\mathcal{C}$의 유한 교집합 속성에 모순된다.</p>
+
+<p>$(\Leftarrow)$ 거의 비슷한 방식으로 증명한다. ■</p>
+
+<p>이제 다음과 같이 보조정리를 일반화할 수 있다.</p>
+
+<blockquote>
+  <p><strong>비가산 데데킨트 성질.</strong> $(L, &lt;)$이 전순서이고, $\kappa$가 비가산 기수라고 하자. 다음은 동치이다.</p>
+
+  <ol>
+    <li>$(L, &lt;)$은 조밀하고 무계이다. 또한, $\kappa$개보다 적은 임의의 열린 구간 및 반직선들의 모임은 탄력적이다.</li>
+    <li>$L$의 부분집합 $C, D$에 대해, $|C|, |D| &lt; \kappa$이고 $C &lt; D$라면 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> $(\Rightarrow)$</p>
+
+<h4 id="i-d--varnothing">i. $D = \varnothing$</h4>
+
+<p>$\mathcal{C} = \lbrace  (c, \infty) : c \in C \rbrace$를 고려하자. $|\mathcal{C}| = |C| &lt; \kappa$이므로 전제에 의해 $\mathcal{C}$는 탄력적이다. $\mathcal{C}$가 유한 교집합 속성을 가지므로 $\bigcap_{c \in C} (c, \infty) = (c’, \infty)$이다. 해당 $c’$이 찾고자 하는 $y$이다.</p>
+
+<h4 id="ii-c--varnothing">ii. $C = \varnothing$</h4>
+
+<p>i.의 경우와 거의 동일하다.</p>
+
+<h4 id="iii-c-d-neq-varnothing">iii. $C, D \neq \varnothing$</h4>
+
+<p>$\mathcal{E} = \lbrace  (c, d) : c \in C, d \in D \rbrace $를 고려하자. 기수 관계식 $\lambda \cdot \epsilon = \mathrm{max}(\lambda, \epsilon)$에 의해 $|\mathcal{E}| &lt; \kappa$이며, $\mathcal{E}$는 탄력적이다. $\mathcal{E}$가 유한 교집합 속성을 가지므로 ($\because$ 가산 데데킨트 성질) $\bigcap_{c \in C, d \in D} (c, d) = (c’, d’)$이다. $(c’, d’) \neq \varnothing$이므로 $y \in (c’, d’)$가 존재하며, 이것이 우리가 찾고자 하는 $y$이다.</p>
+
+<p>$(\Leftarrow)$ $(L, &lt;)$이 조밀하고 무계임은 자명하다.</p>
+
+<p>$\mathcal{E}$가 $\kappa$개보다 적은 열린 구간 및 반직선들의 모임이라고 하자. $\mathcal{F} \subseteq \mathcal{E}$가 유한 교집합 속성을 가진다고 하자. 그렇다면 $C = \lbrace  c : (c, d) \in \mathcal{F} \text{ or } (c, \infty) \in \mathcal{F} \rbrace $, $D = \lbrace  d : (c, d) \in \mathcal{F} \text{ or } (-\infty, d) \in \mathcal{F}\rbrace $에 대하여 $C &lt; D$이다. 그렇지 않다면 어떤 $c’ \in C, d’ \in D$에 대해 $d’ &lt; c’$라는 것인데, 이 경우 $c’$을 왼쪽 끝점으로 가지는 열린 구간 $(c’, d’’) \in \mathcal{F}$와 $d’$을 오른쪽 끝점으로 가지는 열린 구간 $(c’’, d’) \in \mathcal{F}$에 대해 $(c’, d’’) \cap (c’’, d’) = \varnothing$이 되어 $\mathcal{F}$의 유한 교집합 속성에 모순되기 때문이다.</p>
+
+<p>따라서 $C &lt; D$이며, 조건에 의해 $C &lt; y &lt; D$인 $y$가 존재한다. 이로부터 $y \in \bigcap_{I \in \mathcal{F}} I$가 따라 나오며, $\mathcal{E}$가 탄력적임이 보여진다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 비가산 데데킨트 성질을 만족하는 집합을 <a href="https://en.wikipedia.org/wiki/Η_set"><strong>$\eta$ 집합</strong></a>이라고 한다. 특히, $\kappa = \aleph_\alpha$에 대해 비가산 데데킨트 성질을 만족하는 집합을 $\eta_\alpha$ 집합이라고 한다.</p>
+</blockquote>
+
+<p>$\eta$ 집합은 하우스도르프에 의해 제시되었다. $\eta$ 집합은 다음 글에서 알아 볼 <strong>포화<sub>saturation</sub></strong> 개념과 밀접한 관련이 있다.</p>
+
+  </div>
+  <!-- <div
+    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
     <h1 class="post-title">
@@ -766,105 +916,6 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 <p>a의 경우, 다시 비둘기집의 원리에 의해 $c_1 \in \aleph_1(l)$을 만족하는 직선 $l \in L_1$의 개수가 $2^{\aleph_0}$인 색깔 $c_1$이 존재한다. 그러한 $L_1$의 직선들의 집합을 $L_1’$이라고 하자. 앞선 논의에 의해 $L_1’$에는 총 $\aleph_1$개의 $c_1$ 점들이 존재한다. 이 점들을 뺀 집합을 $L_2$라고 하자. 이같은 과정을 b가 될 때까지 반복한다. (색깔이 가산 개 있기 때문에 언젠가는 b에 도달함을 확인하라)</p>
 
 <p>b가 되었을 때 $L_n$은 최대 $\aleph_1$개의 점들을 가진다. 그런데 $L$이 $L_n$이 되는 과정에서 빠진 점들의 개수는 $\aleph_1 \cdot \aleph_0 = \aleph_1$을 넘지 않는다. 한편 $L$은 $2^{\aleph_0}$개의 점들을 가지고 있었기 때문에, 이는 $\aleph_1 &lt; 2^{\aleph_0}$에 모순된다. ■</p>
-
-  </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
-  <div style="margin-bottom: 6em"></div>
-  
-  <div class="post fade-in-section">
-    <h1 class="post-title">
-      <a href="/2025/04/20/cardinality/"> 기수의 정의에 관한 노트 </a>
-    </h1>
-
-    <span class="post-date">20 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>정의.</strong> $X$에서 $Y$로 가는 단사 사상이 존재할 때, $|X| \leq |Y|$라고 적는다. 전단사 사상이 존재할 때, $|X| = |Y|$라고 적는다.</p>
-</blockquote>
-
-<p>집합론을 처음 공부하는 학생들이 흔히 하는 오해는, 위 정의의 $|\cdot|$과 $\leq$를 복소수에서의 $|\cdot|$과 $\leq$와 유사한 것으로 은연 중에 취급하는 것이다. 요컨대 복소수 $z$에 대해 $|z|$가 실수이고 $\leq$가 실수의 대소 관계이듯이, 집합 $X$에 대해 $|X|$는 집합의 크기 — 이른바 <strong>기수<sub>cardinality</sub></strong>이고, $\leq$는 기수의 대소 관계라고 생각하는 것이다.</p>
-
-<p>그러나 이는 문제의 여지가 많은 접근이다. 왜냐하면 위 정의만으로는 <strong><u>기수라는 수학적 대상</u>을 정의할 수 있다는 보장이 없기 때문이다.</strong> 우리가 정의한 것은 이항 관계에 불과하다.</p>
-
-<p>이해를 위한 예시를 들어보자. $A$가 $B$를 좋아할 때, $|A| \leq |B|$라고 적을 수 있을 것이다. 그러나 이렇게 적었다고 해서, $|A|$는 ‘$A$의 호감도’를 의미하며 $\leq$가 호감도의 대소 관계라고 해석한다면 완전히 틀린 것이다. 이와 마찬가지로 $|X| \leq |Y|$는 단사 관계의 유무로 정의되는 이항 관계일 뿐, 이 관계 자체가 기수의 개념을 시사하는 것은 아니다.</p>
-
-<p>특히 ZFC에서는 모든 것이 집합이기 때문에, 만약 기수를 정의하고 싶다면 다음의 사실을 논증해야 한다.</p>
-
-<blockquote>
-  <p><strong>정리 1.</strong> 임의의 집합 $X, Y$에 대해, 어떤 집합 $\mathrm{Card}(X), \mathrm{Card}(Y)$가 존재하여, 다음이 성립한다.</p>
-
-  <ol>
-    <li>$|X| \leq |Y|$ iff $\mathrm{Card}(X) \subseteq \mathrm{Card}(Y)$</li>
-    <li>$|X| = |Y|$ iff $\mathrm{Card}(X) = \mathrm{Card}(Y)$</li>
-  </ol>
-
-  <p>$\mathrm{Card}(X)$를 $X$의 기수라고 부른다.</p>
-</blockquote>
-
-<p>즉 ① $\mathrm{Card}(X)$를 정의해야 하고, ② 해당 정의에 대해 위 진술이 성립함을 보여야 한다.</p>
-
-<p>표현의 편의를 위해 $|X| \leq |Y|$와 $|X| = |Y|$를 “$Y$가 $X$보다 작지 않다”, ”$X$와 $Y$의 크기가 같다“라고 부르자. ①부터 살펴 보자면, 크게 네 가지 접근이 가능하다. 짤막하게 알아보자면 이렇다.</p>
-
-<ol>
-  <li>
-    <p>칸토어의 정의</p>
-
-    <ul>
-      <li>정의: $\mathrm{Card}(X)$를 $X$와 크기가 같은 집합들의 집합으로 정의한다.</li>
-      <li>장점: 정의가 가장 직관적임</li>
-      <li>단점: $\mathrm{Card}(X)$는 사실 집합이 아니라 모임<sub>class</sub>임</li>
-    </ul>
-  </li>
-  <li>
-    <p>스콧의 트릭<sub>Scott’s trick</sub></p>
-
-    <ul>
-      <li>정의: $X$와 크기가 같은 집합 중 폰 노이만 위계에서 가장 먼저 등장하는 집합의 랭크가 $V_\alpha$일 때, $\mathrm{Card}(X)$를 $V_\alpha$로 정의한다.</li>
-      <li>장점: 모임의 문제 없이 기수를 정의함</li>
-      <li>단점: 정의가 직관적이지 않고 ad-hoc적인 면모가 있음</li>
-    </ul>
-  </li>
-  <li>
-    <p>정렬 원리<sub>well-ordering theorem</sub>를 사용하여 기수를 정의하기</p>
-
-    <ul>
-      <li>정의: $X$의 정렬에 대응되는 서수<sub>ordinal</sub>들보다 작지 않은 서수 중 가장 작은 서수를 $\mathrm{Card}(X)$로 정의한다.</li>
-      <li>장점: 정의가 다소 직관적이고, 모임의 문제가 없음</li>
-      <li>단점: 선택 공리 없이는 임의의 집합에 대해 해당 집합의 정렬이 존재함을 보장할 수 없음</li>
-    </ul>
-  </li>
-  <li>
-    <p>하르토그스 수<sub>Hartogs number</sub>를 사용하여 기수를 정의하기</p>
-    <ul>
-      <li>정의: $X$의 정렬 가능한 부분집합들에 대응되는 서수들보다 작지 않은 서수 중 가장 작은 서수를 $X$의 하르토그수 수로 정의한다.</li>
-      <li>장점: 정의가 어느 정도 직관적이고, 모임의 문제가 없으며, 선택 공리에 의존적이지 않음</li>
-      <li>단점: 다루기 불편하고 제약이 많음</li>
-    </ul>
-  </li>
-</ol>
-
-<p>현대 집합론에서는 2 또는 3을 기수의 정의로 채택한다. 두 경우 모두 정리 1이 성립함을 ZFC에서 보일 수 있다.</p>
-
-<p>흥미로운 것은, 스콧의 트릭을 사용하여 기수를 정의하면 선택 공리가 필요하지는 않지만, 스콧의 트릭으로 정의된 기수가 정리 1을 만족함을 보일 때에는 선택 공리가 필요하다는 사실이다. 왜냐하면 다음이 선택 공리와 동치이기 때문이다.</p>
-
-<blockquote>
-  <p><strong>정리 2.</strong> 임의의 집합 $X, Y$에 대해, $|X| \leq |Y|$이거나 $|Y| \leq |X|$이다.</p>
-</blockquote>
-
-<p>즉, 선택 공리를 사용하지 않더라도 a) 스콧의 트릭을 통해 $\mathrm{Card}(X)$를 정의하거나, b) 단사 사상의 유무를 통해 $|X| \leq |Y|$를 정의할 수 있지만, a)와 b)가 맞물린다는 사실을 보일 때는 선택 공리가 필요하다.</p>
 
   </div>
   <!-- <div
