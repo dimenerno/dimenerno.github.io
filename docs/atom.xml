@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-05-09T14:59:19+09:00</updated>
+ <updated>2025-05-10T12:42:06+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -406,7 +406,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 
 \[\kappa = \aleph_{\aleph_{\aleph_{\aleph_{\ddots}}}}\]
 
-&lt;p&gt;여기서 집고 넘어갈 점이 있다. 비록 $\kappa$가 $\kappa = \aleph_\kappa$를 보이긴 했지만, $\kappa$가 도달 불가능함을 보인 것은 아니다. 이는 도달 불가능성의 필요조건에 불과하기 때문이다. 오히려 $\kappa$가 도달 불가능함은 ZFC만으로부터 증명할 수 없다. 도달 불가능 기수의 존재성은 ZFC와 독립적이기 때문이다.&lt;/p&gt;
+&lt;p&gt;여기서 집고 넘어갈 점이 있다. 비록 $\kappa$가 $\kappa = \aleph_\kappa$를 보이긴 했지만, $\kappa$가 도달 불가능함을 보인 것은 아니다. 오히려 $\kappa$는 특이 기수이다. 길이가 $\omega$인 기수열 $\alpha_n$의 극한이기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;사실 도달 불가능 기수의 존재성은 ZFC와 독립적이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 도달 불가능 기수의 존재성은 ZFC와 독립이다.&lt;/p&gt;
@@ -461,6 +463,8 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 \[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
 &lt;/blockquote&gt;
 
+&lt;p&gt;$\Delta$라는 표기법은 &lt;a href=&quot;https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/&quot;&gt;산술 위계&lt;/a&gt;와 관련이 있다.&lt;/p&gt;
+
 &lt;p&gt;$\Delta_\mathfrak{A}^+$에 빠진 원자명제들의 부정을 추가한 것이 곧 $\Delta_\mathfrak{A}$이기 때문에, 두 집합이 내포하는 정보량은 사실상 같다. 그럼에도 두 집합을 구분하여 정의하는 것은 다음의 정리 때문이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -494,6 +498,18 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
   &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. 초등적 임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $E(\mathfrak{A})$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
+&lt;p&gt;마지막으로 다음의 문장 집합을 언급할 만하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합을 $\mathrm{Th}(\mathfrak{A})$라고 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$와 $\mathfrak{B}$가 초등적으로 동등할 필요충분조건은 $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$인 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;사실 이는 초등적 동등성의 정의나 다름이 없어서 정리라고 부르기는 무색하지만, 이 글에서 소개한 나머지 정리들과 일관성을 유지하기 위해 소개하였다.&lt;/p&gt;
+
 &lt;p&gt;표로 정리하면 이렇다.&lt;/p&gt;
 
 &lt;table&gt;
@@ -508,19 +524,25 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;$\Delta_\mathfrak{A}^+$&lt;/td&gt;
-      &lt;td&gt;$\mathfrak{A}$가 만족시키는 원자명제&lt;/td&gt;
+      &lt;td&gt;$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제&lt;/td&gt;
       &lt;td&gt;$0 &amp;lt; 1$&lt;/td&gt;
       &lt;td&gt;전사 준동형&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;$\Delta_\mathfrak{A}$&lt;/td&gt;
-      &lt;td&gt;$\mathfrak{A}$가 만족시키는 원자명제 및 부정&lt;/td&gt;
+      &lt;td&gt;$\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제&lt;/td&gt;
       &lt;td&gt;$\lnot(1 &amp;lt; 0)$&lt;/td&gt;
       &lt;td&gt;임베딩&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
+      &lt;td&gt;$\mathrm{Th}(\mathfrak{A})$&lt;/td&gt;
+      &lt;td&gt;$\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제&lt;/td&gt;
+      &lt;td&gt;$\forall x \exists y (x &amp;lt; y)$&lt;/td&gt;
+      &lt;td&gt;초등적 동등성&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
       &lt;td&gt;$E(\mathfrak{A})$&lt;/td&gt;
-      &lt;td&gt;$\mathfrak{A}$가 만족시키는 명제&lt;/td&gt;
+      &lt;td&gt;$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제&lt;/td&gt;
       &lt;td&gt;$\not \exists x (x &amp;lt; 0)$&lt;/td&gt;
       &lt;td&gt;초등적 임베딩&lt;/td&gt;
     &lt;/tr&gt;
@@ -657,7 +679,7 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
   &lt;li&gt;
     &lt;p&gt;하르토그스 수&lt;sub&gt;Hartogs number&lt;/sub&gt;를 사용하여 기수를 정의하기&lt;/p&gt;
     &lt;ul&gt;
-      &lt;li&gt;정의: $X$의 정렬 가능한 부분집합들에 대응되는 서수들보다 작지 않은 서수 중 가장 작은 서수를 $X$의 하르토그수 수로 정의한다.&lt;/li&gt;
+      &lt;li&gt;정의: $X$의 정렬 가능한 부분집합들에 대응되는 서수들보다 큰 서수 중 가장 작은 서수를 $X$의 하르토그수 수로 정의한다.&lt;/li&gt;
       &lt;li&gt;장점: 정의가 어느 정도 직관적이고, 모임의 문제가 없으며, 선택 공리에 의존적이지 않음&lt;/li&gt;
       &lt;li&gt;단점: 다루기 불편하고 제약이 많음&lt;/li&gt;
     &lt;/ul&gt;
@@ -942,13 +964,13 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
   &lt;p&gt;$T$가 부분모델에 대해 보존적인 이론이라고 하자. $T$의 모델 $\mathfrak{A}$에 대해, $\mathfrak{B}$가 $\mathfrak{A}$에서 만족되는 모든 $\Pi_1$ 문장들을 만족한다면 $\mathfrak{B}$ 또한 $T$의 모델이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;$\mathcal{L}_\mathfrak{B}$를 $\mathcal{L}$에 $\mathfrak{B}$의 정의역과 일대일 대응되는 개수만큼의 상수를 추가한 언어로 정의한다. $\Delta_\mathfrak{B}$가 $\mathfrak{B}$에서 참인 $\mathcal{L}_\mathfrak{B}$ 문장들의 집합이라고 하자. 즉, $\mathfrak{M}$이 $\Delta_\mathfrak{B}$를 만족할 때 $\mathfrak{B} \preceq \mathfrak{M}$이다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/05/01/elementary-embedding/&quot;&gt;이 글&lt;/a&gt;에서의 표기법을 따라 $E(\mathfrak{B})$를 정의하자. 즉, $\mathfrak{M}$이 $E(\mathfrak{B})$를 만족할 때 $\mathfrak{B} \preceq \mathfrak{M}$이다.&lt;/p&gt;
 
-&lt;p&gt;$T \cup \Delta_{\mathfrak{B}}$는 무모순적임을 보이자. 만약 $T \cup \Delta_{\mathfrak{B}}$가 모순적이라면, 어떤 $\Delta_{\mathfrak{B}}$의 문장 $\phi(b_1, \dots, b_n)$이 존재하여 $T \cup \lbrace  \phi \rbrace $는 모델을 가지지 않는다. 따라서 $T$의 모델인 $\mathfrak{A}$는 $\phi$를 만족시키는 $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ 모델로 확장될 수 없다. 즉, 다음이 성립한다.&lt;/p&gt;
+&lt;p&gt;$T \cup E(\mathfrak{B})$는 무모순적임을 보이자. 만약 $T \cup E(\mathfrak{B})$가 모순적이라면, 어떤 $E(\mathfrak{B})$의 문장 $\phi(b_1, \dots, b_n)$이 존재하여 $T \cup \lbrace  \phi \rbrace $는 모델을 가지지 않는다. 따라서 $T$의 모델인 $\mathfrak{A}$는 $\phi$를 만족시키는 $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ 모델로 확장될 수 없다. 즉, 다음이 성립한다.&lt;/p&gt;
 
 \[\mathfrak{A} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)\]
 
-&lt;p&gt;우변은 $\Pi_1$ 문장이므로, 가정에 의해 $\mathfrak{B} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)$이다. 그런데 $\phi(b_1, \dots, b_n) \in \Delta_\mathfrak{B}$이므로, 이는 모순이다. 따라서 $T \cup \Delta_{\mathfrak{B}}$는 무모순적이며, 완전성 정리에 의해 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $\Delta_\mathfrak{B}$를 만족하므로, $\mathfrak{B} \preceq \mathfrak{C}$이다. 한편 $\mathfrak{C}$는 부분모델에 대해 보존적인 이론 $T$의 모델이므로, $\mathfrak{B}$는 $T$의 모델이다. ■&lt;/p&gt;
+&lt;p&gt;우변은 $\Pi_1$ 문장이므로, 가정에 의해 $\mathfrak{B} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)$이다. 그런데 $\phi(b_1, \dots, b_n) \in E(\mathfrak{B})$이므로, 이는 모순이다. 따라서 $T \cup E(\mathfrak{B})$는 무모순적이며, 완전성 정리에 의해 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{B})$를 만족하므로, $\mathfrak{B} \preceq \mathfrak{C}$이다. 한편 $\mathfrak{C}$는 부분모델에 대해 보존적인 이론 $T$의 모델이므로, $\mathfrak{B}$는 $T$의 모델이다. ■&lt;/p&gt;
 
 &lt;h2 id=&quot;응용&quot;&gt;응용&lt;/h2&gt;
 

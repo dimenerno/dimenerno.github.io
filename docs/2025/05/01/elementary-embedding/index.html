@@ -200,6 +200,8 @@
 \[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
 </blockquote>
 
+<p>$\Delta$라는 표기법은 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 관련이 있다.</p>
+
 <p>$\Delta_\mathfrak{A}^+$에 빠진 원자명제들의 부정을 추가한 것이 곧 $\Delta_\mathfrak{A}$이기 때문에, 두 집합이 내포하는 정보량은 사실상 같다. 그럼에도 두 집합을 구분하여 정의하는 것은 다음의 정리 때문이다.</p>
 
 <blockquote>
@@ -233,6 +235,18 @@
   <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. 초등적 임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $E(\mathfrak{A})$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</p>
 </blockquote>
 
+<p>마지막으로 다음의 문장 집합을 언급할 만하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합을 $\mathrm{Th}(\mathfrak{A})$라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$와 $\mathfrak{B}$가 초등적으로 동등할 필요충분조건은 $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$인 것이다.</p>
+</blockquote>
+
+<p>사실 이는 초등적 동등성의 정의나 다름이 없어서 정리라고 부르기는 무색하지만, 이 글에서 소개한 나머지 정리들과 일관성을 유지하기 위해 소개하였다.</p>
+
 <p>표로 정리하면 이렇다.</p>
 
 <table>
@@ -247,19 +261,25 @@
   <tbody>
     <tr>
       <td>$\Delta_\mathfrak{A}^+$</td>
-      <td>$\mathfrak{A}$가 만족시키는 원자명제</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제</td>
       <td>$0 &lt; 1$</td>
       <td>전사 준동형</td>
     </tr>
     <tr>
       <td>$\Delta_\mathfrak{A}$</td>
-      <td>$\mathfrak{A}$가 만족시키는 원자명제 및 부정</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제</td>
       <td>$\lnot(1 &lt; 0)$</td>
       <td>임베딩</td>
     </tr>
     <tr>
+      <td>$\mathrm{Th}(\mathfrak{A})$</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제</td>
+      <td>$\forall x \exists y (x &lt; y)$</td>
+      <td>초등적 동등성</td>
+    </tr>
+    <tr>
       <td>$E(\mathfrak{A})$</td>
-      <td>$\mathfrak{A}$가 만족시키는 명제</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제</td>
       <td>$\not \exists x (x &lt; 0)$</td>
       <td>초등적 임베딩</td>
     </tr>

@@ -45,6 +45,8 @@ $\mathfrak{A}$의 원소들은 $<^\mathfrak{A}$를 만족시키는 경우가 없
 > \Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}
 > $$
 
+$\Delta$라는 표기법은 [산술 위계](https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/)와 관련이 있다.
+
 $\Delta\_\mathfrak{A}^+$에 빠진 원자명제들의 부정을 추가한 것이 곧 $\Delta\_\mathfrak{A}$이기 때문에, 두 집합이 내포하는 정보량은 사실상 같다. 그럼에도 두 집합을 구분하여 정의하는 것은 다음의 정리 때문이다.
 
 > **정리.** $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자.
@@ -70,12 +72,21 @@ $E(\mathfrak{A})$가 $\Delta_\mathfrak{A}$와 가장 구별되는 특징은 양�
 
 > **정리.** $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. 초등적 임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $E(\mathfrak{A})$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.
 
+마지막으로 다음의 문장 집합을 언급할 만하다.
+
+> **정의.** $\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합을 $\mathrm{Th}(\mathfrak{A})$라고 한다.
+
+> **정리.** $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$와 $\mathfrak{B}$가 초등적으로 동등할 필요충분조건은 $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$인 것이다.
+
+사실 이는 초등적 동등성의 정의나 다름이 없어서 정리라고 부르기는 무색하지만, 이 글에서 소개한 나머지 정리들과 일관성을 유지하기 위해 소개하였다.
+
 표로 정리하면 이렇다.
 
 |                         | 정의                                         | 예시                     | 사상          |
 | ----------------------- | -------------------------------------------- | ------------------------ | ------------- |
-| $\Delta_\mathfrak{A}^+$ | $\mathfrak{A}$가 만족시키는 원자명제         | $0 < 1$                  | 전사 준동형   |
-| $\Delta_\mathfrak{A}$   | $\mathfrak{A}$가 만족시키는 원자명제 및 부정 | $\lnot(1 < 0)$           | 임베딩        |
-| $E(\mathfrak{A})$       | $\mathfrak{A}$가 만족시키는 명제             | $\not \exists x (x < 0)$ | 초등적 임베딩 |
+| $\Delta_\mathfrak{A}^+$ | $\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제         | $0 < 1$                  | 전사 준동형   |
+| $\Delta_\mathfrak{A}$   | $\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제 | $\lnot(1 < 0)$           | 임베딩        |
+| $\mathrm{Th}(\mathfrak{A})$       | $\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제             | $\forall x \exists y (x < y)$ | 초등적 동등성 |
+| $E(\mathfrak{A})$       | $\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제             | $\not \exists x (x < 0)$ | 초등적 임베딩 |
 
 예를 들어 $\mathfrak{A} = (\mathbb{N}, <)$은 $\mathfrak{B} = (\mathbb{Z}, <)$에 임베딩되지만, 초등적으로 임베딩되지는 않는다. $\mathfrak{B}$가 $E(\mathfrak{A})$의 문장인 $\not \exists x (x < 0)$을 만족하지 않기 때문이다.

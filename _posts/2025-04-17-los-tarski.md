@@ -87,15 +87,15 @@ $T \cup \Sigma$가 무모순적이므로 완전성 정리에 의해 모델을 �
 
 > $T$가 부분모델에 대해 보존적인 이론이라고 하자. $T$의 모델 $\mathfrak{A}$에 대해, $\mathfrak{B}$가 $\mathfrak{A}$에서 만족되는 모든 $\Pi\_1$ 문장들을 만족한다면 $\mathfrak{B}$ 또한 $T$의 모델이다.
 
-$\mathcal{L}\_\mathfrak{B}$를 $\mathcal{L}$에 $\mathfrak{B}$의 정의역과 일대일 대응되는 개수만큼의 상수를 추가한 언어로 정의한다. $\Delta\_\mathfrak{B}$가 $\mathfrak{B}$에서 참인 $\mathcal{L}\_\mathfrak{B}$ 문장들의 집합이라고 하자. 즉, $\mathfrak{M}$이 $\Delta\_\mathfrak{B}$를 만족할 때 $\mathfrak{B} \preceq \mathfrak{M}$이다.
+[이 글](https://dimenerno.github.io/2025/05/01/elementary-embedding/)에서의 표기법을 따라 $E(\mathfrak{B})$를 정의하자. 즉, $\mathfrak{M}$이 $E(\mathfrak{B})$를 만족할 때 $\mathfrak{B} \preceq \mathfrak{M}$이다.
 
-$T \cup \Delta\_{\mathfrak{B}}$는 무모순적임을 보이자. 만약 $T \cup \Delta\_{\mathfrak{B}}$가 모순적이라면, 어떤 $\Delta\_{\mathfrak{B}}$의 문장 $\phi(b\_1, \dots, b\_n)$이 존재하여 $T \cup \lbrace  \phi \rbrace $는 모델을 가지지 않는다. 따라서 $T$의 모델인 $\mathfrak{A}$는 $\phi$를 만족시키는 $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ 모델로 확장될 수 없다. 즉, 다음이 성립한다.
+$T \cup E(\mathfrak{B})$는 무모순적임을 보이자. 만약 $T \cup E(\mathfrak{B})$가 모순적이라면, 어떤 $E(\mathfrak{B})$의 문장 $\phi(b\_1, \dots, b\_n)$이 존재하여 $T \cup \lbrace  \phi \rbrace $는 모델을 가지지 않는다. 따라서 $T$의 모델인 $\mathfrak{A}$는 $\phi$를 만족시키는 $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ 모델로 확장될 수 없다. 즉, 다음이 성립한다.
 
 $$
 \mathfrak{A} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)
 $$
 
-우변은 $\Pi\_1$ 문장이므로, 가정에 의해 $\mathfrak{B} \vDash \forall x\_1 \cdots \forall x\_n \lnot \phi(x\_1, \dots, x\_n)$이다. 그런데 $\phi(b\_1, \dots, b\_n) \in \Delta\_\mathfrak{B}$이므로, 이는 모순이다. 따라서 $T \cup \Delta\_{\mathfrak{B}}$는 무모순적이며, 완전성 정리에 의해 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $\Delta\_\mathfrak{B}$를 만족하므로, $\mathfrak{B} \preceq \mathfrak{C}$이다. 한편 $\mathfrak{C}$는 부분모델에 대해 보존적인 이론 $T$의 모델이므로, $\mathfrak{B}$는 $T$의 모델이다. ■
+우변은 $\Pi\_1$ 문장이므로, 가정에 의해 $\mathfrak{B} \vDash \forall x\_1 \cdots \forall x\_n \lnot \phi(x\_1, \dots, x\_n)$이다. 그런데 $\phi(b\_1, \dots, b\_n) \in E(\mathfrak{B})$이므로, 이는 모순이다. 따라서 $T \cup E(\mathfrak{B})$는 무모순적이며, 완전성 정리에 의해 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{B})$를 만족하므로, $\mathfrak{B} \preceq \mathfrak{C}$이다. 한편 $\mathfrak{C}$는 부분모델에 대해 보존적인 이론 $T$의 모델이므로, $\mathfrak{B}$는 $T$의 모델이다. ■
 
 ## 응용
 
