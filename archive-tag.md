@@ -18,6 +18,7 @@ title: 주제별로 보기
 {% endfor %}
 <li style="color: white;">피부 미용 (김현서)</li>
 <li style="color: white;">자녀 양육 (김현서)</li>
+<li style="color: white;">건강 및 웰빙 (김현서)</li>
 </ul>
 
 <!-- {% assign postsByYearMonth = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" %}

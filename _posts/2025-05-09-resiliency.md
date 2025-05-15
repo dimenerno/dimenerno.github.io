@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "η 집합"
-date: 2025-05-08
+date: 2025-05-09
 tags: ["수학", "집합론"]
 related:
   - "유리수와 실수의 집합론적 정의"

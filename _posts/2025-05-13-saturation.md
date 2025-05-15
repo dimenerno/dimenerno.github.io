@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "포화된 구조와 실수체의 완전성"
-date: 2025-05-08
+date: 2025-05-13
 tags: ["수학", "집합론"]
 related:
   - "η 집합"
