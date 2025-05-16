@@ -8,28 +8,68 @@ related:
 
 다음은 학부 수리논리학의 유명한 정리이다.
 
-> **콤팩트성 정리.** $\mathcal{L}$의 이론 $T$에 대해, $T$의 모든 유한한 부분이론이 건전하다면, $T$는 건전하다.
+> **콤팩트성 정리.** $\mathcal{L}$의 이론 $T$에 대해, $T$의 모든 유한한 부분이론이 모델을 가진다면, $T$는 모델을 가진다.
 
 그런데 왜 이 정리의 이름은 콤팩트성 정리인 것일까? 잘 들여다 보면, 위 정리의 진술은 다음과 같이 적을 수 있다.
 
-> 임의의 $\mathcal{L}$-문장들의 집합 $\Gamma$가 $T$에서 모순적이라면, 어떤 유한한 부분집합 $\Gamma' \subset \Gamma$가 존재하여 $\Gamma'$이 $T$에서 모순적이다.
+> 임의의 $\mathcal{L}$-문장들의 집합 $T$가 모델을 가지지 않는다면, 어떤 유한한 부분집합 $T' \subset T$가 존재하여 $T'$이 모델을 가지지 않는다.
 
 확실히 이는 위상수학에서 콤팩트의 정의와 유사하다.
 
 > 임의의 열린집합들의 모임 $\mathcal{C}$가 전채 공간의 덮개라면, 어떤 유한한 부분집합 $\mathcal{C}' \subset \mathcal{C}$가 존재하여 $\mathcal{C}$가 전체 공간을 덮는다.
 
-이 유사성은 단순한 관찰 이상으로 확대될 수 있다. 아이디어는 완전<sub>complete</sub>한 $\mathcal{L}$-이론들의 모임에 적절한 위상을 부여하였을 때, 콤팩트성 정리가 해당 공간이 콤팩트할 필요충분조건이 되는 것이다. 먼저 다음을 정의한다.
+이 유사성은 단순한 관찰 이상으로 확대될 수 있다. 아이디어는 각각의 완전<sub>complete</sub>한 $\mathcal{L}$-이론을 공간의 한 점으로 본 뒤, 이들 모임에 적절한 위상을 부여하였을 때, 콤팩트성 정리가 해당 공간이 콤팩트할 필요충분조건이 되는 것이다. 먼저 다음을 정의한다.
 
 > **정의.** $\mathcal{L}$-구조 $\mathfrak{A}$에 대해, $\mathrm{Th}(\mathfrak{A})$를 $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합으로 정의한다.
 
 참고로 위 집합은 [이전 글](https://dimenerno.github.io/2025/05/01/elementary-embedding/)에서 초등적 동등성을 설명하며 정의한 바 있다.
 
-$\mathrm{Th}(\mathfrak{A})$는 무모순적인 완전한 이론임이 자명하다. 반대로, 이론 $T$가 무모순적인 완전한 이론일 때, 괴델의 완전성 정리에 의해 $T$는 모델 $\mathfrak{A}$를 가지며, $T = \mathrm{Th}(\mathfrak{A})$이다. 따라서 $\mathrm{Th}$는 모든 무모순적인 완전한 이론을 생성한다.
+$\mathrm{Th}(\mathfrak{A})$는 무모순적이며 형태론적으로 완전한 이론임이 자명하다. 반대로, 이론 $T$가 무모순적이며 형태론적으로 완전한 이론일 때, 괴델의 완전성 정리에 의해 $T$는 모델 $\mathfrak{A}$를 가지며, $T = \mathrm{Th}(\mathfrak{A})$이다. 따라서 $\mathrm{Th}$는 모든 무모순적이며 형태론적으로 완전한 이론을 생성한다.
 
-이제 앞서 말한 대로 위상공간을 정의해 보자. 먼저 공간 $\mathcal{S}$를 다음과 같이 정의한다.
+이제 위상공간의 배경이 될 공간을 정의해 보자. 먼저 언어 $\mathcal{L}$에 대해, 공간 $\mathcal{S}$를 다음과 같이 정의한다.
 
 $$
 \mathcal{S} = \{ \mathrm{Th}(\mathfrak{A}) : \mathfrak{A}\text{ is a $\mathcal{L}$-structure } \}
 $$
 
-직관적으로 $\mathcal{S}$는 무모순적이며 완전한 이론들의 모임으로 생각할 수 있다. 단, 이 경우 의미론적으로는 동등하지만 형태론적으로 상이한 이론들이 중복해서 들어가기 때문에 서술한 바와 같이 $\mathrm{Th}$를 활용하여 정의하는 것이다. 또는, $\mathcal{S}$는 무모순적이며 완전한 이론들의 모임에 초등적 동등성 $\equiv$를 토대로 동치류를 취한 공간으로 생각할 수 있다.
+앞서 말했듯이 괴델의 완전성 정리에 의해 $\mathcal{S}$는 무모순적이며 형태론적으로 완전한 이론들의 모임과 사실상 같다. 그러나 후술하겠듯이, 완전성 정리를 사용하지 않더라도 $\mathcal{S}$의 위상적 콤팩트성과 1차 논리의 콤팩트성 정리가 동치임을 보이는 것이 목적이기 때문에, 일단은 $\mathcal{S}$를 그저 $\mathrm{Th}(\mathfrak{A})$의 모임으로서 생각하는 것이 낫다.
+
+이제 $\mathcal{S}$의 위상 기저를 정의하자. $\mathcal{L}$-문장 $\phi$에 대해, 다음과 같이 정의한다.
+
+$$
+U_\phi = \{ T \in \mathcal{S} : \phi \in T \}
+$$
+
+자명하게, $U\_\phi \cap U\_\psi = U\_{\phi \land \psi}$이다. 즉, $U\_\phi$의 모임 $\mathcal{B}$는 유한 교집합에 대해 닫혀 있다. 또한 $\mathcal{B}$는 $\mathcal{S}$를 덮는다. $T \in \mathcal{S}$에 대해, $\phi \in T$라면 $T \in U\_\phi$이기 때문이다. 따라서 $\mathcal{B}$는 위상 기저의 조건을 만족하며, 이에 따라 $\mathcal{B}$로 생성되는 위상을 $\mathcal{S}$에 부여하자.
+
+> **정리.** $\mathcal{S}$는 다음의 특징을 가진다.
+>
+> 1. 하우스도르프이다.
+> 2. 완전 비연결 공간<sub>totally disconnected space</sub>이다. 즉, $\mathcal{S}$에서 연결된 공간은 오직 홑원소 집합뿐이다.
+
+**증명.**
+
+1. $T\_1, T\_2 \in \mathcal{S}$에 대해, $T\_1 \neq T\_2$라면 어떤 문장 $\phi$가 존재하여 $\phi \in T\_1, \lnot\phi \in T\_2$이다. 따라서 $U\_\phi, U\_{\lnot \phi}$가 $T\_1$과 $T\_2$를 각각 분리한다.
+2. $T\_1$ 공간이 완전 비연결 공간일 충분조건은 모든 원소가 열린닫힌집합<sub>clopen</sub>인 기저를 가지는 것이다. $U\_\phi^c =U\_{\lnot \phi}$에 의해 $\mathcal{B}$는 이 조건을 만족한다. ■
+
+> **정리.** 1차 논리의 콤팩트성 정리는 $\mathcal{S}$가 콤팩트 공간인 것과 동치이다.
+
+**증명.**
+
+> **보조정리.** $\mathcal{C} \subset \mathcal{B}$가 $\mathcal{S}$를 덮을 필요충분조건은, $\Gamma = \lbrace \lnot \phi : U\_\phi \in \mathcal{C} \rbrace $가 모델을 가지지 않는 것이다.
+
+_증명._ 만약 $\Gamma$가 모델 $\mathfrak{A}$를 가진다면 $T = \mathrm{Th}(\mathfrak{A})$가 $\mathcal{C}$에 의해 덮여지지 않는다. 한편, $\mathcal{C}$가 $\mathcal{S}$를 덮지 못한다면 어떤 구조 $\mathfrak{A}$가 존재하여 $\phi \in \Gamma$에 대해 $\phi \notin \mathfrak{A}$이고, 이는 $\mathfrak{A}$가 $\Gamma$의 모델임을 의미한다. □
+
+이제 본 정리를 증명하자. $\mathcal{S}$가 콤팩트할 필요충분조건은 임의의 기저 원소들로 이루어진 $\mathcal{S}$의 덮개가 유한 부분덮개를 가지는 것이다. $\mathcal{C} \subset \mathcal{B}$에 대해, $\mathcal{C}$가 $\mathcal{S}$를 덮을 필요충분조건은 (보조정리에 의해) $\Gamma$가 모델을 가지지 않는 것이다. 따라서,
+
+$\mathcal{S}$가 콤팩트하다
+
+$\Leftrightarrow$ 임의의 기저 원소들의 모임 $\mathcal{C}$가 덮개라면, 유한 부분덮개가 존재한다.
+
+$\Leftrightarrow$ 임의의 이론 $\Gamma$가 모델을 가지지 않는다면, 모델을 가지지 않는 유한 부분이론이 존재한다.
+
+$\Leftrightarrow$ 콤팩트성 정리 ■
+
+> **정의.** 완전 비연결인 콤팩트 하우스도르프 공간을 **스톤 공간<sub>Stone space</sub>**이라고 부른다.
+
+1차 논리의 콤팩트성 정리에 의해, $\mathcal{S}$는 스톤 공간이다. 이와 같이 논리적 구조를 위상적으로 분석하는 접근은 **스톤 이중성<sub>Stone duality</sub>**이라고 불리는, 현대수학의 깊은 주제와 연관이 있다.
