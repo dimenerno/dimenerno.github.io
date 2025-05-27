@@ -6,27 +6,6 @@ tags: ["수학", "논리학"]
 related:
 ---
 
-<head>
-  <style>
-    .answer {
-      display: none;
-      margin-top: 10px;
-      color: #333;
-    }
-  </style>
-</head>
-
-<script>
-  function toggleAnswer(id) {
-    const answer = document.getElementById("answer" + id);
-    if (answer.style.display === "none" || answer.style.display === "") {
-      answer.style.display = "block";
-    } else {
-      answer.style.display = "none";
-    }
-  }
-</script>
-
 아마 여러분은 죄수들이 자신의 모자 색을 맞히는 내용의 퍼즐을 제법 보았을 것이다. 예시는 다음과 같다.
 
 > 3명의 죄수 A, B, C가 일렬로 서 있다. 간부는 검은 모자 2개와 흰 모자 3개 중 세 개를 골라 각 죄수에게 씌우고는, 만약 어느 한 명이라도 자신의 모자의 색을 맞히면 모두 풀려나지만 틀릴 경우 모두 사형에 처해질 것이라고 말한다. 죄수는 자기 앞에 있는 죄수들의 모자 색은 볼 수 있지만, 자신의 모자 색이나 자기 뒤에 있는 죄수들의 모자 색은 볼 수 없다. 오랜 침묵이 흐른 후, 한 죄수가 자신의 모자 색을 정확히 맞혔다. 문제를 맞힌 죄수는 누구인가?

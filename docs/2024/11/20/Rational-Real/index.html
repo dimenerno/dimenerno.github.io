@@ -13,6 +13,25 @@
      유리수와 실수의 집합론적 정의 &middot; 디멘의 블로그 
   </title>
 
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
   <script>
     MathJax = {
       tex: {
@@ -126,7 +145,7 @@
       href="/guestbook/"
       >방명록</a
     >
-                                                                                                                
+                                                                                                                    
   </nav>
 
   <div class="sidebar-item">

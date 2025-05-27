@@ -13,6 +13,25 @@
      정신은 기계로 환원될 수 있는가: 괴델의 조건문과 펜로즈-루카스 논증 &middot; 디멘의 블로그 
   </title>
 
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
   <script>
     MathJax = {
       tex: {
@@ -126,7 +145,7 @@
       href="/guestbook/"
       >방명록</a
     >
-                                                                                                                
+                                                                                                                    
   </nav>
 
   <div class="sidebar-item">
