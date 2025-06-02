@@ -82,11 +82,11 @@ $E(\mathfrak{A})$가 $\Delta_\mathfrak{A}$와 가장 구별되는 특징은 양�
 
 표로 정리하면 이렇다.
 
-|                         | 정의                                         | 예시                     | 사상          |
-| ----------------------- | -------------------------------------------- | ------------------------ | ------------- |
-| $\Delta_\mathfrak{A}^+$ | $\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제         | $0 < 1$                  | 전사 준동형   |
-| $\Delta_\mathfrak{A}$   | $\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제 | $\lnot(1 < 0)$           | 임베딩        |
-| $\mathrm{Th}(\mathfrak{A})$       | $\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제             | $\forall x \exists y (x < y)$ | 초등적 동등성 |
-| $E(\mathfrak{A})$       | $\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제             | $\not \exists x (x < 0)$ | 초등적 임베딩 |
+|                             | 정의                                                                   | 예시                          | 사상                            |
+| --------------------------- | ---------------------------------------------------------------------- | ----------------------------- | ------------------------------- |
+| $\Delta_\mathfrak{A}^+$     | $\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제        | $0 < 1$                       | 전사 준동형                     |
+| $\Delta_\mathfrak{A}$       | $\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제 | $\lnot(1 < 0)$                | 임베딩 (부분모델)               |
+| $\mathrm{Th}(\mathfrak{A})$ | $\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제                         | $\forall x \exists y (x < y)$ | 초등적 동등성                   |
+| $E(\mathfrak{A})$           | $\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제            | $\not \exists x (x < 0)$      | 초등적 임베딩 (초등적 부분모델) |
 
 예를 들어 $\mathfrak{A} = (\mathbb{N}, <)$은 $\mathfrak{B} = (\mathbb{Z}, <)$에 임베딩되지만, 초등적으로 임베딩되지는 않는다. $\mathfrak{B}$가 $E(\mathfrak{A})$의 문장인 $\not \exists x (x < 0)$을 만족하지 않기 때문이다.

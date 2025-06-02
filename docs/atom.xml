@@ -4,8 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-06-01T12:42:36+09:00</updated>
- <updated>2025-06-02T10:48:24+09:00</updated>
+ <updated>2025-06-02T15:17:05+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -15,9 +14,9 @@
  
  <entry>
    <title>논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》</title>
-   <link href="http://localhost:4000/2025/05/27/wittgenstein-conant/"/>
-   <updated>2025-05-27T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/05/27/wittgenstein-conant</id>
+   <link href="http://localhost:4000/2025/06/02/wittgenstein-conant/"/>
+   <updated>2025-06-02T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/06/02/wittgenstein-conant</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;이 글은 &lt;a href=&quot;/public/Search for Logically Alien Thought.pdf&quot;&gt;James Conant, &lt;em&gt;The Search for Logically Alien Thought: Descartes, Kant, Frege, and the&lt;/em&gt; Tractatus (1991)&lt;/a&gt;를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -101,7 +100,7 @@
 
 &lt;h2 id=&quot;3-프레게-논리적-외계인-사고실험&quot;&gt;3. 프레게: 논리적 외계인 사고실험&lt;/h2&gt;
 
-&lt;p&gt;프레게는 칸트와 마찬가지로 논리학이 이성의 산출물이 아니라 이성 — 인간 이성이 아닌 이성 일반 — 의 구성 조건임을 강조한다. 특히 프레게는 판단의 성립 요건으로서, 그것이 참과 거짓의 여부를 따질 수 있는 명제여야 함을 주장한다. &lt;strong&gt;판단의 성립 요건을 만족하지 않는 생각은 가짜 생각&lt;sub&gt;Scheingedanke&lt;/sub&gt;이다.&lt;/strong&gt; 이는 프레게가 논리 법칙으로 내세우는 — 칸트의 경우 &lt;em&gt;유일한&lt;/em&gt; 논리 법칙으로 내세우는 — 배중률의 요구이다.&lt;/p&gt;
+&lt;p&gt;프레게는 칸트와 마찬가지로 논리학이 이성의 산출물이 아니라 이성 — 인간 이성이 아닌 이성 일반 — 의 구성 조건임을 강조한다. 특히 프레게는 판단의 성립 요건으로서 그것이 참과 거짓의 여부를 따질 수 있는 명제일 것을 주장한다. &lt;strong&gt;판단의 성립 요건을 만족하지 않는 생각은 가짜 생각&lt;sub&gt;Scheingedanke&lt;/sub&gt;이다.&lt;/strong&gt; 이는 프레게가 논리 법칙으로 내세우는 — 칸트의 경우 &lt;em&gt;유일한&lt;/em&gt; 논리 법칙으로 내세우는 — 배중률의 요구이다.&lt;/p&gt;
 
 &lt;p&gt;이러한 입장을 바탕으로 프레게는 당대에 유행하던 심리학주의를 강하게 비판했다. &lt;strong&gt;프레게는 심리학주의가 원인의 질문과 정당화의 질문을 혼동한다고 비판한다.&lt;/strong&gt; 인간의 뇌에 대한 심리적, 생리학적 연구는 우리가 어째서 논리 법칙을 절대적 참으로 &lt;em&gt;받아들이는지에&lt;/em&gt; 대한 설명을 제공할 수는 있다. 그러나 그 설명이 어째서 논리 법칙이 &lt;em&gt;절대적으로 참인지를&lt;/em&gt; 정당화하는 것은 아니다. 논리 법칙의 정당성은 심리학을 선행한다.&lt;/p&gt;
 
@@ -134,7 +133,11 @@
 
 &lt;p&gt;여기서 궁극적으로 드러나는 사실은, 논리적 외계인에 대한 사고실험 자체가 일종의 가짜 생각&lt;sub&gt;Scheingedanke&lt;/sub&gt;이라는 것이다. “논리적 외계인은 가능하다”는 심리학주의의 주장은 의미를 결여한 문장이다. 그것은 “참 또는 거짓의 여부를 따질 수 있는 명제일 것”이라는 판단의 성립 요건을 만족하지 않는다. 그리고 이것이 함의하는 바는, “논리적 외계인이 불가능하다”는 &lt;em&gt;우리의 주장&lt;/em&gt; 또한 의미를 결여한다는 것이다.&lt;a href=&quot;#sub5&quot; id=&quot;sup5&quot;&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;그러나 어떤 의미에서 “논리적 외계인이 불가능하다”는 문장에는 무언가 참인 진술이 있는 듯하다. 그것은 논리의 본성에 관한 어떤 진리를 드러내고 있다. 그러나&lt;/p&gt;
+&lt;p&gt;그러나 어떤 의미에서 “논리적 외계인이 불가능하다”는 문장에는 무언가 참인 진술이 있는 듯하다. 그것은 논리의 본성에 관한 어떤 진리를 드러내고 있지 않은가? 단지 우리 언어의 논리적 구조가 그 진리의 발화를 불가능하게 만드는 것이다. 전통적으로 《논고》는 이러한 맥락에서 해석되었다. 특히 해커&lt;sub&gt;Hacker&lt;/sub&gt;, 기치&lt;sub&gt;Geach&lt;/sub&gt; 등의 학자는 《논고》가 반구문론적 명제&lt;sub&gt;countersyntactic proposition&lt;/sub&gt;를 통해 “엄밀한 의미에서는 말해질 수 없는” 진리를 “드러내 보이는” 저술이라고 해석해 왔다. 여기서 &lt;strong&gt;반구문론적 명제&lt;/strong&gt;란, 언어의 자연적 구문론은 따르되 — 이를테면 주어는 서술어를 선행해야 한다 — 어느 시점에서 논리적 구문론을 위배하는 명제이다 — 이를테면 서로 다른 위계에 있는 유형론적 대상들을 같은 술어에 양화시킨다. 예를 들어 대상&lt;sub&gt;object&lt;/sub&gt;과 개념&lt;sub&gt;concept&lt;/sub&gt;의 구분은 엄격한 논리적 언어에서 표현될 수 있는 것이 아니다. 둘은 유형론적으로 다르기 때문이다. 대상과 개념의 구분은 ‘개념’을 대상화함으로써, 러셀의 역설과 같은 유형의 문제를 발생시킨다. 그럼에도 이 구분은 논리의 중요한 특성을 담지하는 것으로 보인다. 전통적 해석에 따르면 《논고》 또한 이러한 반구문론적 명제들 — 엄밀히 말해 무의미하지만 그럼에도 유의미한 진리를 담지하는 명제들 — 로 구성되어 있으며, “사다리를 걷어차야 한다”는 《논고》의 최종적인 메시지는 그 명제들의 반구문론적 특징을 폭로하는 대목이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;그러나 논문의 저자는 이러한 전통적 해석을 강하게 비판한다.&lt;/strong&gt; 전통적 해석은 데카르트의 ‘이해’와 ‘파악’의 구분과 같은, 말장난에 불과한 허황된 구분들 — “엄밀히 말해 생각”과 “생각”, “그저 무의미”와 “깊은 무의미”, “사실”과 “&lt;em&gt;사실&lt;/em&gt;” — 을 통해 《논고》의 내적 긴장을 해소하는 시늉을 했을 뿐, 실질적으로 그 긴장을 해소하는 데는 완전히 실패했다. 전통적 해석은 이들 구분에 완전히 의존하고 있으면서도, 어떻게 논리적 규칙을 위배하는 문장이 “무의미”하지만 “그저 무의미”하지 않을 수 있는지, 어떻게 “생각은 결코 비논리적일 수 없다(§3.03)”는 《논고》의 구절을 인정하면서도 비논리적인 “생각”이 가능한지를 명료하게 해명하지 못한다. 따라서 논문의 저자는 전통적 해석과 단절된 새 해석을 제시한다. 그것은 소위 “새로운 비트겐슈타인”으로 일컬어지는 해석의 일환이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;2편에서 계속&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1219,7 +1222,7 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
       &lt;td&gt;$\Delta_\mathfrak{A}$&lt;/td&gt;
       &lt;td&gt;$\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제&lt;/td&gt;
       &lt;td&gt;$\lnot(1 &amp;lt; 0)$&lt;/td&gt;
-      &lt;td&gt;임베딩&lt;/td&gt;
+      &lt;td&gt;임베딩 (부분모델)&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;$\mathrm{Th}(\mathfrak{A})$&lt;/td&gt;
@@ -1231,7 +1234,7 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
       &lt;td&gt;$E(\mathfrak{A})$&lt;/td&gt;
       &lt;td&gt;$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제&lt;/td&gt;
       &lt;td&gt;$\not \exists x (x &amp;lt; 0)$&lt;/td&gt;
-      &lt;td&gt;초등적 임베딩&lt;/td&gt;
+      &lt;td&gt;초등적 임베딩 (초등적 부분모델)&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
