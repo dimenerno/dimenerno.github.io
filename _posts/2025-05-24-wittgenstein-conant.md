@@ -105,11 +105,19 @@ related:
 
 여기서 궁극적으로 드러나는 사실은, 논리적 외계인에 대한 사고실험 자체가 일종의 가짜 생각<sub>Scheingedanke</sub>이라는 것이다. "논리적 외계인은 가능하다"는 심리학주의의 주장은 의미를 결여한 문장이다. 그것은 "참 또는 거짓의 여부를 따질 수 있는 명제일 것"이라는 판단의 성립 요건을 만족하지 않는다. 그리고 이것이 함의하는 바는, "논리적 외계인이 불가능하다"는 _우리의 주장_ 또한 의미를 결여한다는 것이다.<a href="#sub5" id="sup5"><sup>5</sup></a>
 
+그러나 어떤 의미에서 "논리적 외계인이 불가능하다"는 문장에는 무언가 참인 진술이 있는 듯하다. 그것은 논리의 본성에 관한 어떤 진리를 드러내고 있다. 그러나
+
 ---
 
-#### 필자의 <strike>뇌피셜</strike>보충
+<a href="#sup1" id="sub1">1.</a> [이런 걸](https://namu.wiki/w/한국%20칸트%20학계%20번역어%20논쟁) 신경 쓰는 독자라면, 필자는 'a priori'를 '선험적', 'transzendent'를 '초험적', 'transzendental'을 '초월적'이라고 번역한 아카넷 칸트전집의 용어를 사용한다.
 
-원 논문에서는 다음과 같이 말한다.
+<a href="#sup2" id="sub2">2.</a> 데카르트의 주장은 묘하게 칸트적이다. 실제로 윌슨<sub>Margaret Wilson</sub>은 논리 법칙에 대한 데카르트의 입장을 칸트의 초월철학과 현대의 자연주의의 시조로 평가한다. 그러나 이후 드러나듯이, 논리 법칙에 대한 데카르트의 입장과 칸트의 입장에는 간과할 수 없는 간극이 있다.
+
+<a href="#sup3" id="sub3">3.</a> 엄밀히는 토러스. 토러스는 도넛의 겉면이다.
+
+<a href="#sup4" id="sub4">4.</a> 엄밀히는 1차 호몰로지 군. 구의 경우 이는 $\mathbb{Z}$이고 토러스의 경우 $\mathbb{Z} \times \mathbb{Z}$이다.
+
+<a href="#sup5" id="sub5">5.</a> 원 논문에서는 다음과 같이 말한다.
 
 > If we take the sentences "illogical thought is impossible" or "we cannot think illogically" to indeed present us with _thoughts_ (with senses which we can affirm the truth of), then we concede what a moment ago we wished to deny (namely, that the negation of these sentences preseunt us with a genuine content, one which is able to stand up to the demand for judgment). But if we conclude that these words (which we want to utter in response to the psychologicstic logician) do not express a thought with a sense, then aren't _we_, if we judge psychologism to be false, equally victims of an illusion of judgment? This is the problem at the heart of the onion.
 
@@ -150,16 +158,4 @@ related:
 
 이는 다음의 수학적 예시를 통해 이해할 수 있다. 독자 분은 $0 < i$가 올바르지 않은 부등식임을 배웠을 것이다. 왜냐하면 해당 맥락에서 $<$는 실수 위에서만 정의되기 관계이기 때문이다. 그리고 $<$가 실수 위에서만 정의 가능한 이유는 실수, 허수, 그리고 $<$가 요구하는 논리적 규칙들과 연관한다. $<$의 규칙에 따르면, 양변에 0보다 큰 수를 곱하면 부등호의 방향이 유지되고, 0보다 작은 수를 곱하면 부등호의 방향이 뒤집힌다. 그런데 만약 $0 < i$라면 $0 = 0 \cdot i < i \cdot i = -1$이 되어 모순이고, $i < 0$이라면 $-1 = i \cdot i > 0 \cdot i = 0$이 되어 모순이다. 따라서 $0 < i$는 의미를 결여한 부등식이다. 이는 $0 < i$가 **거짓**임을 의미하지 않는다. $0 < i$가 거짓이라면 $0 > i$가 참이어야 하기 때문이다.
 
----
-
----
-
-<a href="#sup1" id="sub1">1.</a> [이런 걸](https://namu.wiki/w/한국%20칸트%20학계%20번역어%20논쟁) 신경 쓰는 독자라면, 필자는 'a priori'를 '선험적', 'transzendent'를 '초험적', 'transzendental'을 '초월적'이라고 번역한 아카넷 칸트전집의 용어를 사용한다.
-
-<a href="#sup2" id="sub2">2.</a> 데카르트의 주장은 묘하게 칸트적이다. 실제로 윌슨<sub>Margaret Wilson</sub>은 논리 법칙에 대한 데카르트의 입장을 칸트의 초월철학과 현대의 자연주의의 시조로 평가한다. 그러나 이후 드러나듯이, 논리 법칙에 대한 데카르트의 입장과 칸트의 입장에는 간과할 수 없는 간극이 있다.
-
-<a href="#sup3" id="sub3">3.</a> 엄밀히는 토러스. 토러스는 도넛의 겉면이다.
-
-<a href="#sup4" id="sub4">4.</a> 엄밀히는 1차 호몰로지 군. 구의 경우 이는 $\mathbb{Z}$이고 토러스의 경우 $\mathbb{Z} \times \mathbb{Z}$이다.
-
-<a href="#sup5" id="sub5">5.</a>
+참고: [https://forum.owlofsogang.com/t/topic/6465](https://forum.owlofsogang.com/t/topic/6465)

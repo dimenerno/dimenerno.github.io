@@ -5,6 +5,7 @@
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
  <updated>2025-06-01T12:42:36+09:00</updated>
+ <updated>2025-06-02T10:48:24+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -133,11 +134,19 @@
 
 &lt;p&gt;여기서 궁극적으로 드러나는 사실은, 논리적 외계인에 대한 사고실험 자체가 일종의 가짜 생각&lt;sub&gt;Scheingedanke&lt;/sub&gt;이라는 것이다. “논리적 외계인은 가능하다”는 심리학주의의 주장은 의미를 결여한 문장이다. 그것은 “참 또는 거짓의 여부를 따질 수 있는 명제일 것”이라는 판단의 성립 요건을 만족하지 않는다. 그리고 이것이 함의하는 바는, “논리적 외계인이 불가능하다”는 &lt;em&gt;우리의 주장&lt;/em&gt; 또한 의미를 결여한다는 것이다.&lt;a href=&quot;#sub5&quot; id=&quot;sup5&quot;&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 
+&lt;p&gt;그러나 어떤 의미에서 “논리적 외계인이 불가능하다”는 문장에는 무언가 참인 진술이 있는 듯하다. 그것은 논리의 본성에 관한 어떤 진리를 드러내고 있다. 그러나&lt;/p&gt;
+
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;필자의-뇌피셜보충&quot;&gt;필자의 &lt;strike&gt;뇌피셜&lt;/strike&gt;보충&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;#sup1&quot; id=&quot;sub1&quot;&gt;1.&lt;/a&gt; &lt;a href=&quot;https://namu.wiki/w/한국%20칸트%20학계%20번역어%20논쟁&quot;&gt;이런 걸&lt;/a&gt; 신경 쓰는 독자라면, 필자는 ‘a priori’를 ‘선험적’, ‘transzendent’를 ‘초험적’, ‘transzendental’을 ‘초월적’이라고 번역한 아카넷 칸트전집의 용어를 사용한다.&lt;/p&gt;
 
-&lt;p&gt;원 논문에서는 다음과 같이 말한다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;#sup2&quot; id=&quot;sub2&quot;&gt;2.&lt;/a&gt; 데카르트의 주장은 묘하게 칸트적이다. 실제로 윌슨&lt;sub&gt;Margaret Wilson&lt;/sub&gt;은 논리 법칙에 대한 데카르트의 입장을 칸트의 초월철학과 현대의 자연주의의 시조로 평가한다. 그러나 이후 드러나듯이, 논리 법칙에 대한 데카르트의 입장과 칸트의 입장에는 간과할 수 없는 간극이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#sup3&quot; id=&quot;sub3&quot;&gt;3.&lt;/a&gt; 엄밀히는 토러스. 토러스는 도넛의 겉면이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#sup4&quot; id=&quot;sub4&quot;&gt;4.&lt;/a&gt; 엄밀히는 1차 호몰로지 군. 구의 경우 이는 $\mathbb{Z}$이고 토러스의 경우 $\mathbb{Z} \times \mathbb{Z}$이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#sup5&quot; id=&quot;sub5&quot;&gt;5.&lt;/a&gt; 원 논문에서는 다음과 같이 말한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;If we take the sentences “illogical thought is impossible” or “we cannot think illogically” to indeed present us with &lt;em&gt;thoughts&lt;/em&gt; (with senses which we can affirm the truth of), then we concede what a moment ago we wished to deny (namely, that the negation of these sentences preseunt us with a genuine content, one which is able to stand up to the demand for judgment). But if we conclude that these words (which we want to utter in response to the psychologicstic logician) do not express a thought with a sense, then aren’t &lt;em&gt;we&lt;/em&gt;, if we judge psychologism to be false, equally victims of an illusion of judgment? This is the problem at the heart of the onion.&lt;/p&gt;
@@ -182,27 +191,15 @@
 
 &lt;p&gt;이는 다음의 수학적 예시를 통해 이해할 수 있다. 독자 분은 $0 &amp;lt; i$가 올바르지 않은 부등식임을 배웠을 것이다. 왜냐하면 해당 맥락에서 $&amp;lt;$는 실수 위에서만 정의되기 관계이기 때문이다. 그리고 $&amp;lt;$가 실수 위에서만 정의 가능한 이유는 실수, 허수, 그리고 $&amp;lt;$가 요구하는 논리적 규칙들과 연관한다. $&amp;lt;$의 규칙에 따르면, 양변에 0보다 큰 수를 곱하면 부등호의 방향이 유지되고, 0보다 작은 수를 곱하면 부등호의 방향이 뒤집힌다. 그런데 만약 $0 &amp;lt; i$라면 $0 = 0 \cdot i &amp;lt; i \cdot i = -1$이 되어 모순이고, $i &amp;lt; 0$이라면 $-1 = i \cdot i &amp;gt; 0 \cdot i = 0$이 되어 모순이다. 따라서 $0 &amp;lt; i$는 의미를 결여한 부등식이다. 이는 $0 &amp;lt; i$가 &lt;strong&gt;거짓&lt;/strong&gt;임을 의미하지 않는다. $0 &amp;lt; i$가 거짓이라면 $0 &amp;gt; i$가 참이어야 하기 때문이다.&lt;/p&gt;
 
-&lt;hr /&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;#sup1&quot; id=&quot;sub1&quot;&gt;1.&lt;/a&gt; &lt;a href=&quot;https://namu.wiki/w/한국%20칸트%20학계%20번역어%20논쟁&quot;&gt;이런 걸&lt;/a&gt; 신경 쓰는 독자라면, 필자는 ‘a priori’를 ‘선험적’, ‘transzendent’를 ‘초험적’, ‘transzendental’을 ‘초월적’이라고 번역한 아카넷 칸트전집의 용어를 사용한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#sup2&quot; id=&quot;sub2&quot;&gt;2.&lt;/a&gt; 데카르트의 주장은 묘하게 칸트적이다. 실제로 윌슨&lt;sub&gt;Margaret Wilson&lt;/sub&gt;은 논리 법칙에 대한 데카르트의 입장을 칸트의 초월철학과 현대의 자연주의의 시조로 평가한다. 그러나 이후 드러나듯이, 논리 법칙에 대한 데카르트의 입장과 칸트의 입장에는 간과할 수 없는 간극이 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#sup3&quot; id=&quot;sub3&quot;&gt;3.&lt;/a&gt; 엄밀히는 토러스. 토러스는 도넛의 겉면이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#sup4&quot; id=&quot;sub4&quot;&gt;4.&lt;/a&gt; 엄밀히는 1차 호몰로지 군. 구의 경우 이는 $\mathbb{Z}$이고 토러스의 경우 $\mathbb{Z} \times \mathbb{Z}$이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#sup5&quot; id=&quot;sub5&quot;&gt;5.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;참고: &lt;a href=&quot;https://forum.owlofsogang.com/t/topic/6465&quot;&gt;https://forum.owlofsogang.com/t/topic/6465&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>콰인, ⟪경험주의의 두 독단⟫</title>
-   <link href="http://localhost:4000/2025/05/26/quinie-two-dogmas/"/>
+   <link href="http://localhost:4000/2025/05/26/quine-two-dogmas/"/>
    <updated>2025-05-26T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2025/05/26/quinie-two-dogmas</id>
+   <id>http://localhost:4000/2025/05/26/quine-two-dogmas</id>
    <content type="html">&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
 
 &lt;p&gt;분석·종합의 구분과 검증가능성 원리는 논리실증주의를 이루는 두 기둥이다. 하지만 콰인은 ⟪경험주의의 두 독단⟫에서 분석·종합의 구분과 검증가능성 원리는 문제적이라고 지적한다. 콰인은 분석성의 정의는 자기순환적이며, 명제는 독립적으로 검증될 수 없고 오로지 믿음의 망&lt;sub&gt;web of beliefs&lt;/sub&gt; 전체가 검증의 대상이 될 수 있다고 주장한다. 콰인이 ⟪두 독단⟫에서 제시하는 논증은 논리실증주의를 와해할 뿐 아니라, 의미의 개념 자체가 허구적이라는 의미 회의주의와, 극단적 전체론을 시사한다. 또한 콰인의 논증에 대한 반론을 검토한다.&lt;/p&gt;
@@ -507,9 +504,9 @@
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathcal{L}$-이론 $T$가 &lt;strong&gt;양화사 제거&lt;sub&gt;quantifier elimination&lt;/sub&gt;&lt;/strong&gt; 가능하다는 것은 임의의 $\mathcal{L}$-명제 $\phi$에 대해 어떤 $\Delta_0$ $\mathcal{L}$-명제 $\psi$가 존재하여 다음이 성립하는 것이다.&lt;/p&gt;
 
 \[T \vdash \phi \leftrightarrow \psi\]
-&lt;/blockquote&gt;
 
-&lt;p&gt;$\psi$는 문장&lt;sub&gt;sentence&lt;/sub&gt;이 아니라 명제&lt;sub&gt;formula&lt;/sub&gt;임에 주목하라. 따라서 $\Pi_1$ 명제는 자명하게 양화사 제거 가능하다. 예를 들어 $\forall x, y \phi(x, y)$는 $\phi(x, y)$로 양화사 제거 가능하다. 한편 $\Sigma_1$ 명제가 양화사 제거 가능할 경우, 다음 정리에서 드러나듯이 모든 명제가 양화사 제거 가능해진다.&lt;/p&gt;
+  &lt;p&gt;단, $\psi$의 자유변수는 모두 $\phi$의 자유변수이다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;양화사 제거 판별법.&lt;/strong&gt; $T$가 양화사 제거 가능할 충분조건은, $T$가 $\exists x \psi \; (\psi \in \Delta_0)$ 꼴의 명제에 대해 양화사 제거 가능한 것이다.&lt;/p&gt;
@@ -517,31 +514,7 @@
 
 &lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 먼저 임의의 $\Delta_0$ 명제 $\psi$에 대해 $\forall x \psi$가 양화사 제거 가능함을 보이자. $\forall x \psi$는 $\lnot\exists x \lnot \psi$와 동치이고, 가정에 의해 $\exists x \lnot \psi$는 어떤 양화사가 없는 명제 $\theta$와 동치이다. 따라서 $\forall x \psi$는 $\lnot \theta$와 동치이며, 양화사 제거 가능하다. 이제 양화사 개수에 대한 귀납법을 적용하면 임의의 명제에 대해 양화사 제거가 가능함이 보여진다. ■&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;표준 양화사 제거 형식.&lt;/strong&gt; $T$가 양화사 제거 가능할 때, 임의의 $\mathcal{L}$-명제 $\phi$에 대해 $T \vdash \phi \leftrightarrow \psi$이다. 여기서 $\psi$는 다음의 특징을 가진다.&lt;/p&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;$\phi$가 자유변수를 가지는 경우: $\psi$의 자유변수는 모두 $\phi$의 자유변수이다.&lt;/li&gt;
-    &lt;li&gt;$\phi$가 자유변수를 가지지 않는 경우
-      &lt;ul&gt;
-        &lt;li&gt;$\mathcal{L}$이 적어도 하나의 상수 기호를 가지는 경우: $\psi$는 문장이다.&lt;/li&gt;
-        &lt;li&gt;$\mathcal{L}$이 상수 기호를 가지지 않는 경우: $\psi$는 최대 하나의 자유변수를 가지는 명제이다.&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $T \vdash \phi \leftrightarrow \psi$라고 하자. $\psi$가 자유변수 $x$를 가진다고 하자. $\forall$-첨가에 의해 $T \vdash \forall x(\phi \leftrightarrow \psi(x))$이다. 만약 $\phi$가 자유변수 $y$를 가지면 다음과 같이 $x$를 $y$로 치환할 수 있다.&lt;/p&gt;
-
-\[\begin{align}
-&amp;amp;T  \vdash \forall x(\phi \leftrightarrow \psi(x)) \\
-&amp;amp;\implies T \vdash \forall y(\phi \leftrightarrow \psi(y)) \\
-&amp;amp;\implies T \vdash \phi \leftrightarrow \psi(y)
-\end{align}\]
-
-&lt;p&gt;비슷한 방식으로 나머지 경우를 증명할 수 있다. ■&lt;/p&gt;
-
-&lt;p&gt;표준 양화사 제거 형식 덕분에, 어떤 이론이 양화사 제거 가능할 경우 해당 이론이 완전함을 보일 수 있는 경우가 종종 있다. 일례로 다음을 보자.&lt;/p&gt;
+&lt;p&gt;어떤 이론이 양화사 제거 가능할 경우 해당 이론이 완전함을 보일 수 있는 경우가 종종 있다. 일례로 다음을 보자.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 조밀 무계 전순서 이론 $T$는 양화사 제거 가능하다.&lt;/p&gt;
