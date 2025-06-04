@@ -240,6 +240,154 @@
   
   <div class="post fade-in-section">
     <h1 class="post-title">
+      <a href="/2025/05/13/saturation/"> 포화된 구조와 실수체의 완전성 </a>
+    </h1>
+
+    <span class="post-date">13 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <p>$\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $A$는 $\mathfrak{A}$의 정의역이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X \subseteq A$가 <strong>정의가능<sub>definable</sub></strong>하다는 것은, 어떤 $\mathcal{L}$-논리식 $\phi$와 자유변수 할당 $g$가 존재하여 다음이 성립한다는 것이다.</p>
+
+\[X = \{ x \in A : \mathfrak{A} \vDash \phi[g^0_x] \}\]
+
+  <p>$\phi$가 $v_0$ 이외의 자유변수를 가지지 않을 때, $X$는 $\emptyset$-정의가능하다고 한다.</p>
+</blockquote>
+
+<p><em>Remark.</em> 정의가능성은 <a href="https://dimenerno.github.io/2024/12/11/VL-axiom/">괴델의 구성가능성</a>과 같은 의미이다.</p>
+
+<p>예를 들어 $(\mathbb{R}, &lt;)$에서 $(e, 2\pi)$는 다음의 $\phi$와 $g$에 의해 정의가능하다.</p>
+
+<ul>
+  <li>$\phi \equiv (v_1 &lt; v_0 \land v_0 &lt; v_2)$</li>
+  <li>$g: v_1 \mapsto e, v_2 \mapsto 2\pi$</li>
+</ul>
+
+<p>그러나 $(e, 2\pi)$는 $\emptyset$-정의가능하지 않다. $(\mathbb{R}, &lt;)$에서 $e$와 $2\pi$를 특정할 방법이 없기 때문이다.</p>
+
+<p>한편 표준 산술 모형 $(\mathbb{N}, 0, +, S)$에서 짝수의 집합 $E$는 다음의 $\phi$에 의해 $\emptyset$-정의가능하다.</p>
+
+<ul>
+  <li>$\phi \equiv \exists y (x = y + y)$</li>
+</ul>
+
+<p>모든 유한집합은 정의가능하다. 예를 들어 $A = \lbrace a_1, a_2, a_3 \rbrace $는 다음과 같이 정의가능하다.</p>
+
+<ul>
+  <li>$\phi \equiv (v_0 = v_1) \lor (v_0 = v_2) \lor (v_0 = v_3)$</li>
+  <li>$g: v_1 \mapsto a_1, v_2 \mapsto a_2, v_3 \mapsto a_3$</li>
+</ul>
+
+<p>같은 이유로 모든 쌍대 유한집합<sub>cofinite set</sub> 또한 정의가능하다.</p>
+
+<p><a href="https://dimenerno.github.io/2025/05/08/resiliency/">저번 글</a>에서 탄력적<sub>resilient</sub> 집합족에 대해 알아 보았다. 이제 다음을 정의하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\kappa$가 비가산 기수라고 하자. $\mathfrak{A}$가 <strong>$\kappa$-포화<sub>$\kappa$-saturated</sub></strong>되었다는 것은, $\kappa$개보다 적은 $A$의 정의가능한 부분집합들의 모임이 언제나 탄력적이라는 것이다. 특히, $\mathfrak{A}$가 $|A|$-포화되었을 때, $\mathfrak{A}$는 <strong>포화<sub>saturated</sub></strong>되었다고 한다.</p>
+</blockquote>
+
+<p>따라서 $\aleph_1$-포화된 구조 $\mathfrak{A}$는, 가산 개의 $\mathfrak{A}$의 정의가능한 부분집합들의 모임이 유한 교집합 속성을 만족할 떄, 전체 교집합 또한 공집합이 아닌 구조이다. 한편 구조 $\mathfrak{A}$가 $|A|^+$-포화되는 것은 불가능하다. 다음의 집합족이 유한 교집합 속성을 만족하지만 교집합은 공집합이기 때문이다.</p>
+
+\[\Big\{ A - \{ a \} : a \in A \Big\}\]
+
+<p>포화된 구조의 중요성은 다음 정리에 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 초등적으로 동등하며 기수가 같은 두 포화된 $\mathcal{L}$-구조는 동형이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 생략. 기초적인 아이디어는 <a href="https://dimenerno.github.io/2025/05/08/resiliency/">저번 글</a>에서 본 칸토어의 앞뒤 논법을 일반화한 것이다.</p>
+
+<p>그러나 유감스럽게도 포화된 구조는 구성하기가 까다롭다. 일례로 비가산 기수 $\kappa$와, $|T| \leq \kappa$인 건전한 이론 $T$에 대해, $T$는 $\kappa^+$-포화된, 기수 $2^\kappa$의 모델을 가진다. 따라서 일반화된 연속체 가설을 인정할 시 해당 모델은 포화되어 있다. 그러나 ZFC만으로는 포화된 구조가 존재함을 증명할 수 없음이 알려져 있다.</p>
+
+<p>따라서 다음의 더 약한 조건을 가진 개념을 도입한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 <strong>특별<sub>special</sub></strong>하다는 것은, $\mathfrak{A}$가 방향 유도계 $\lbrace  \mathfrak{A}_\kappa \rbrace _{\kappa &lt; |A|}$의 쌍대 극한이라는 것이다. 여기서 $\kappa$는 무한 기수이며, 각 $\mathfrak{A}_\kappa$는 $\kappa^+$-포화되어 있다.</p>
+</blockquote>
+
+<p>모든 포화된 구조는 특별하다. 각 $\mathfrak{A}_\kappa$를 자기 자신으로 두면 되기 때문이다. 그러나 모든 특별한 구조가 포화된 것은 아니다. 따라서 특별함은 포화보다 엄격히 약한 조건이다. 그럼에도 특별한 구조는 동형성 성질을 만족한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 초등적으로 동등하며 기수가 같은 두 특별한 $\mathcal{L}$-구조는 동형이다.</p>
+</blockquote>
+
+<p>더구나 특별한 구조는 포화된 구조보다 더 구성하기 쉽다. 특히, 다음 뢰벤하임-스콜렘 정리의 특수화가 알려져 있다.</p>
+
+<blockquote>
+  <p><strong>특별 뢰벤하임-스콜렘 정리.</strong> $T$가 언어 $\mathcal{L}$의 이론이라고 하자.</p>
+
+  <ol>
+    <li>$T$가 무한 모델을 가진다면, $T$는 임의의 기수보다 큰 기수의 특별한 모델을 가진다.</li>
+    <li>$T$가 무한 모델을 가지고, $\mathcal{L}$이 가산이라면, $T$는 기수가 $\beth_\omega$인 특별한 모델을 가진다.</li>
+  </ol>
+</blockquote>
+
+<p>이 정리의 응용으로서, 다음의 유명한 결과를 보자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> <strong>실수 닫힌 순서체 이론</strong> 또는 <strong>RCOF</strong>란 다음의 공리들로 이루어진 언어 $(0, 1, +, \cdot, &lt;)$의 이론이다. ($x^n$은 $x \underbrace{\cdot \;\cdots\; \cdot}_{n} x$를 줄인 표기법)</p>
+
+  <ol>
+    <li>순서체 공리
+      <ul>
+        <li>$\forall a, b, c : (a &lt; b) \rightarrow (a + c &lt; b + c)$</li>
+        <li>$\forall a, b : (a &gt; 0 \land b &gt; 0) \rightarrow ab &gt; 0$</li>
+        <li>체 공리</li>
+      </ul>
+    </li>
+    <li>제곱근 공리: $\forall a &gt; 0 \; \exists x : x^2 = a$</li>
+    <li>닫힘 공리꼴:
+      <ul>
+        <li>$\forall a_2, a_1, a_0 \; \exists x :x^3 + a_2x^2 + a_1x + a_0 = 0$</li>
+        <li>$\forall a_4, a_3, a_2, a_1, a_0\; \exists x : x^5 + a_4x^4 + \cdots + a_0 = 0$</li>
+        <li>…</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p><strong>실수 닫힌체 이론</strong> 또는 <strong>RCF</strong>란 다음의 공리들로 이루어진 언어 $(0, 1, +, \cdot)$의 이론이다.</p>
+
+  <ol>
+    <li>체 공리</li>
+    <li>형식적 실수 공리: $\forall x : x^2 \neq -1$</li>
+    <li>제곱근 공리: $\forall a \; \exists x : x^2 = a \lor x^2 = -a$</li>
+    <li>닫힘 공리꼴</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>타르스키 정리.</strong> RCOF와 RCF는 완전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 핵심은 다음의 보조정리이다.</p>
+
+<blockquote>
+  <p><strong>에르되시-길만-헨릭슨<sub>Erdös-Gillman-Henriksen</sub> 보조정리.</strong> 기수가 같은 두 특별한 실수 닫힌체는 동형이다.</p>
+</blockquote>
+
+<p>보조정리를 인정하고 타르스키 정리를 증명해 보자. 만약 RCF가 완전하지 않다면, RCF의 확장 $T_1$과 $T_2$가 존재하여 $T_1$의 모델과 $T_2$의 모델은 초등적으로 동등하지 않다. RCF의 모든 모델은 무한 모델이므로 (why?) 특별 뢰벤하임-스콜렘 정리에 의해 $T_1$과 $T_2$는 각각 기수가 $\beth_\omega$인 모델 $\mathfrak{A}_1, \mathfrak{A}_2$를 가진다. 그런데 보조정리에 의해 $\mathfrak{A}_1 \cong \mathfrak{A}_2$인데, 이는 $\mathfrak{A}_1 \not\equiv \mathfrak{A}_2$와 모순이다. ■</p>
+
+  </div>
+  <!-- <div
+    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
+  
+  <div class="post fade-in-section">
+    <h1 class="post-title">
       <a href="/2025/05/09/resiliency/"> η 집합 </a>
     </h1>
 
@@ -848,86 +996,6 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 </table>
 
 <p>예를 들어 $\mathfrak{A} = (\mathbb{N}, &lt;)$은 $\mathfrak{B} = (\mathbb{Z}, &lt;)$에 임베딩되지만, 초등적으로 임베딩되지는 않는다. $\mathfrak{B}$가 $E(\mathfrak{A})$의 문장인 $\not \exists x (x &lt; 0)$을 만족하지 않기 때문이다.</p>
-
-  </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
-  <div style="margin-bottom: 6em"></div>
-  
-  <div class="post fade-in-section">
-    <h1 class="post-title">
-      <a href="/2025/04/24/continuum-coloring/"> 연속체 가설과 동치인 색칠 문제 </a>
-    </h1>
-
-    <span class="post-date">24 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>문제.</strong> 좌표평면을 가산 개의 색깔을 사용하여 칠했을 때, 세 꼭짓점이 같은 색깔인 직각삼각형이 언제나 존재하는가?</p>
-</blockquote>
-
-<p>예를 들어 다음의 색칠은 3개의 색깔을 사용하는데, 세 꼭짓점이 모두 같은 색인 직각삼각형을 쉽게 찾을 수 있다.</p>
-
-<p><img src="/public/color-1.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;" /></p>
-
-<p>물론 위의 경우는 단순한 경우이고, 아래와 같이 무한히 많은 색깔들이 매우 불규칙적으로 칠해져 있는 경우에도 문제의 직각삼각형이 존재하는지를 따져야 한다.</p>
-
-<p><img src="/public/color-2.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;" /></p>
-
-<p>놀랍게도 언뜻 자명해 보이는 이 문제는 연속체 가설과 동치이다.</p>
-
-<blockquote>
-  <p><strong>연속체 가설.</strong> 자연수보다 크고 실수보다 작은 무한집합은 존재하지 않는다.</p>
-</blockquote>
-
-<p>가장 작은 무한집합인 자연수의 기수를 $\aleph_0$, 자연수보다 큰 무한집합 중 가장 작은 무한집합의 기수를 $\aleph_1$이라고 정의한다. 한편 실수는 자연수의 멱집합과 크기가 같음을 쉽게 보일 수 있으며 집합 $X$의 멱집합은 크기가 $2^{|X|}$이므로, 실수의 기수는 $2^{\aleph_0}$이다. 따라서 연속체 가설의 진술은 $\aleph_1 = 2^{\aleph_0}$와 같다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 문제의 반례가 존재할 필요충분조건은 $\aleph_1 = 2^{\aleph_0}$이다.</p>
-</blockquote>
-
-<p>참고로 아래 증명은 필자가 구상한 것이기 때문에 오류가 있을 수도 있다.</p>
-
-<p><strong>증명.</strong> $\aleph_1 = 2^{\aleph_0}$라면 문제의 반례가 존재함과, 문제의 반례가 존재하면 $\aleph_1 = 2^{\aleph_0}$임을 각각 보인다.</p>
-
-<h4 id="aleph_1--2aleph_0라면-문제의-반례가-존재한다">$\aleph_1 = 2^{\aleph_0}$라면 문제의 반례가 존재한다.</h4>
-
-<p>가장 작은 비가산 서수 $\omega_1$에 대해, $\omega_1^2$은 세 꼭짓점이 같은 색인 직각삼각형이 존재하지 않도록 색칠하는 다음의 방법이 존재한다. 먼저 가산 개의 색을 정수와 일대일 대응시킨다. $\alpha &lt; \omega_1$은 가산 서수이므로, 빨간색 선분 $\lbrace  (\beta, \alpha) : 0 \leq \beta \leq \alpha \rbrace $의 모든 점을 서로 다른 가산 개의 색으로 칠할 수 있다. 이들 점을 양의 정수에 대응되는 색들로 칠한다. 한편 파란색 선분 $\lbrace  (\alpha, \beta) : 0 \leq \beta &lt; \alpha \rbrace $의 점들은 음의 정수에 대응되는 색들로 칠한다.</p>
-
-<p><img src="/public/color-3.png" style="width: 100%; max-width: 350px; margin: 1.5em auto;" /></p>
-
-<p>위와 같이 색칠했을 때 세 꼭짓점이 모두 같은 색인 직각삼각형이 없음을 쉽게 보일 수 있다.</p>
-
-<p>만약 $\aleph_1 = 2^{\aleph_0}$라면, 어떤 일대일 대응 $f: \mathbb{R} \to \omega_1$이 존재한다. 이제 평면의 색칠을 다음과 같이 정의한다. 점 $p = (x, y) \in \mathbb{R}^2$을 점 $f(p) = (f(x), f(y)) \in \omega_1^2$와 같은 색으로 칠한다. $f$가 일대일 대응이기 때문에, 만약 해당 색칠해서 점 $p_1, p_2, p_3$가 색깔이 같은 직각삼각형의 세 꼭짓점이라면 $f(p_1), f(p_2), f(p_3)$ 또한 색깔이 같은 직각삼각형의 세 꼭짓점이다. 그런데 그러한 삼각형은 $\omega_1^2$에서 존재하지 않음을 보였으므로, 평면 또한 해당 색칠에서 요구되는 직각삼각형을 가지지 않는다.</p>
-
-<h4 id="문제의-반례가-존재한다면-aleph_1--2aleph_0이다">문제의 반례가 존재한다면 $\aleph_1 = 2^{\aleph_0}$이다.</h4>
-
-<p>$2^{\aleph_0} &gt; \aleph_1$이라고 가정하고 모순을 이끌어 내자. $I$가 크기 $\aleph_1$인 실수의 부분집합이라고 하자. 평면의 부분집합 $X = I \times \mathbb{R}$을 고려하자.</p>
-
-<p>$x$축과 평행인 $X$의 직선들의 집합을 $L_0$라고 하자. $l \in L_0$에 대해, $l$을 이루는 점들 중 색깔 $c$로 칠해진 점의 개수가 $\aleph_1$ 이상일 때, $c \in \aleph_1(l)$이라고 적자. 임의의 $l \in L_0$에 대해, $|l| = \aleph_1$이므로 비둘기집의 원리에 의해 $c \in \aleph_1(l)$인 색깔 $c$가 직선마다 적어도 하나 존재함을 확인하라.</p>
-
-<p>또한 $|L_0| = 2^{\aleph_0}$이므로 비둘기집의 원리에 의해 어떤 색깔 $c_0$가 존재하여, $c_0 \in \aleph_1(l)$을 만족하는 직선 $l$의 개수가 $2^{\aleph_0}$이다. 그러한 직선들의 집합 $L_0’$을 고려하자. $L_0’$의 직선들을 지나는 수직선을 그었을 때 어느 두 교점의 색이 $c_0$라면, 세 꼭짓점의 색이 모두 $c_0$인 직각삼각형이 존재하게 된다. 따라서 임의의 수직선과 $L_0’$의 직선들이 이루는 교점 중 $c_0$로 칠해진 점은 최대 1개이다. 수직선의 개수가 총 $|I| = \aleph_1$개이므로, $L_0’$에는 총 $\aleph_1$개의 $c_0$ 점들이 존재한다.</p>
-
-<p>해당 점들을 모두 빼면 듬성듬성한 직선들의 집합이 된다. 이 집합을 $L_1$이라고 하자.</p>
-
-<p><img src="/public/color-4.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
-
-<p>두 가지 경우가 가능하다. a) $L_1$의 직선들 중 $\aleph_1$개의 점들을 가지는 직선이 $2^{\aleph_0}$개이다. b) $L_1$의 직선들 중 $\aleph_1$개의 점들을 가지는 직선이 $\aleph_1$개 이하이다.</p>
-
-<p>a의 경우, 다시 비둘기집의 원리에 의해 $c_1 \in \aleph_1(l)$을 만족하는 직선 $l \in L_1$의 개수가 $2^{\aleph_0}$인 색깔 $c_1$이 존재한다. 그러한 $L_1$의 직선들의 집합을 $L_1’$이라고 하자. 앞선 논의에 의해 $L_1’$에는 총 $\aleph_1$개의 $c_1$ 점들이 존재한다. 이 점들을 뺀 집합을 $L_2$라고 하자. 이같은 과정을 b가 될 때까지 반복한다. (색깔이 가산 개 있기 때문에 언젠가는 b에 도달함을 확인하라)</p>
-
-<p>b가 되었을 때 $L_n$은 최대 $\aleph_1$개의 점들을 가진다. 그런데 $L$이 $L_n$이 되는 과정에서 빠진 점들의 개수는 $\aleph_1 \cdot \aleph_0 = \aleph_1$을 넘지 않는다. 한편 $L$은 $2^{\aleph_0}$개의 점들을 가지고 있었기 때문에, 이는 $\aleph_1 &lt; 2^{\aleph_0}$에 모순된다. ■</p>
 
   </div>
   <!-- <div
