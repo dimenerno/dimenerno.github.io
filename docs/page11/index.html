@@ -152,7 +152,7 @@
       href="/notes/"
       >복습노트 아카이브</a
     >
-                                                                                                                      
+                                                                                                                          
   </nav>
 
   <div class="sidebar-item">
@@ -237,6 +237,94 @@
 
 
 <div class="posts">
+  
+  <div class="post fade-in-section">
+    <h1 class="post-title">
+      <a href="/2024/11/19/CSB/"> 칸토어-슈뢰더-베른슈타인 정리 </a>
+    </h1>
+
+    <span class="post-date">19 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>정리.</strong> 두 집합 $A, B$에 대해 $|A| \leq |B|$, $|A| \geq |B|$라면 $|A| = |B|$이다.</p>
+</blockquote>
+
+<p>매우 당연해 보이지만 $\leq$가 단사함수의 존재성으로, $=$가 전단사함수의 존재성으로 정의된다는 점에서 트리키한 함수 핸들링을 요구한다.</p>
+
+<p>여담으로 “칸토어-베른슈타인 정리(위키피디아)” 또는 “슈뢰더-베른슈타인 정리(나무위키)”라고도 부르는데 “칸토어-슈뢰더 정리”라고 부르는 경우는 못 봤다. 홍대병에 취해 있다면 “칸토어-슈뢰더 정리”라고 불러보자.</p>
+
+<h3 id="첫-번째-증명">첫 번째 증명</h3>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/3e3b706b-77bc-4de3-a9ea-76fa4ffd8dbe/image.png" alt="" /></p>
+
+<p>실선이 $f: A → B$, 점선이 $g: B → A$이다. 조건에 의해 $f, g$는 단사이다. $C := \mathrm{Im} f$가 $B$와 같다면 증명이 끝나므로, $C \subsetneq B$라고 하자.</p>
+
+<p>임의의 $y \in B \setminus C$에 대해,</p>
+
+<ul>
+  <li>$x_1^y = g^{-1}(y)$</li>
+  <li>
+    <p>$x_{n+1}^y = g(f(x_n))$</p>
+  </li>
+  <li>$h_y(x_1^y) = y$</li>
+  <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
+</ul>
+
+<p>로 정의한다(보라색). 다음이 성립함을 확인하라.</p>
+
+\[x^y_n = x^z_m \iff y = z, n = m\]
+
+<p>따라서 다음의 함수 $h: X → Y$는 well-defined이다.</p>
+
+\[h(x) = \begin{cases}
+h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
+f(x) &amp;\text{otherwise}
+\end{cases}\]
+
+<p>$h$가 전단사임을 확인하라. ◾</p>
+
+<h3 id="두-번째-증명">두 번째 증명</h3>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $A_1 \subset B \subset A$에 대해 $|A_1| \leq |B| \leq |A|$이고 $|A_1| = |A|$라면 $|A_1| = |B| = |A|$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $f: A → A_1$가 전사라고 하자. 다음과 같이 $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace $을 정의한다.</p>
+
+\[\begin{gather}
+A_0 = A, \; A_{n+1} = f[A_n] \\
+B_0 = B, \; B_{n+1} = f[B_n] \\
+C_n = A_n \setminus B_n
+\end{gather}\]
+
+<p>$C = \bigcup C_n, D = A \setminus C$라고 하자. $f[C] \subset C, f[D] \subset D$임을 확인하라. 따라서 다음의 $g: A → B$는 전사이다.</p>
+
+\[g(x) = \begin{cases}
+f(x) &amp; x \in C\\
+x &amp; x \in D
+\end{cases}\]
+
+<p><strong>본 정리의 증명.</strong> $f: A → B, g: B → A$가 전사일 때 $|gf[A]| \leq |g[B]| \leq |A|$이므로 보조정리에 의해 $|g[B]| = |B| = |A|$이다. ◾</p>
+
+<p>잘 생각해 보면 두 증명은 사실 같다.</p>
+
+
+  </div>
+  <!-- <div
+    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
+  ></div> -->
+  <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
     <h1 class="post-title">
