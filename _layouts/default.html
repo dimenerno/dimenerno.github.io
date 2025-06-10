@@ -39,7 +39,7 @@
           style="
             display: flex;
             justify-content: center;
-            gap: 6em;
+            gap: 8em;
             padding: 0px;
             margin-left: 70px;
             margin-right: 0;
@@ -51,19 +51,25 @@
             style="
               display: flex;
               flex-direction: row;
-              gap: 0.3em;
+              gap: 0.4em;
               align-items: end;
             "
           >
             <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
             <small>{{ site.tagline }}</small>
           </h3>
-          <form id="search-form" action="/search.html" method="get">
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="height: 34px"
+          >
             <input
               type="text"
               name="q"
               id="search-input"
               placeholder="검색어를 입력하세요"
+              style="margin-top: 2px"
             />
           </form>
         </div>
