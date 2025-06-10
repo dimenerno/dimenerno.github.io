@@ -98,6 +98,31 @@
 </head>
 
 
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+  </style>
+
   <body>
     <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
      styles, `#sidebar-checkbox` for behavior. -->
@@ -140,7 +165,7 @@
       href="/book/"
       >새벽의 자연학 수업</a
     >
-        
+          
     <a
       class="sidebar-nav-item"
       href="/guestbook/"
@@ -152,7 +177,7 @@
       href="/notes/"
       >복습노트 아카이브</a
     >
-                                                                                                                          
+                                                                                                                                    
   </nav>
 
   <div class="sidebar-item">
@@ -167,12 +192,39 @@
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 6em;
+            padding: 0px;
+            margin-left: 70px;
+            margin-right: 0;
+            max-width: none;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+            "
+          >
             <a href="/" title="Home">디멘의 블로그</a>
             <small>이데아를 여행하는 히치하이커</small>
           </h3>
+          <form id="search-form" action="/search.html" method="get">
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색어를 입력하세요"
+            />
+          </form>
         </div>
       </div>
 
@@ -199,7 +251,7 @@
       animation-delay: 0.6s; */
     }
 
-        /* 이미지가 로드된 후 추가될 클래스에 animation 속성 추가 */
+    /* 이미지가 로드된 후 추가될 클래스에 animation 속성 추가 */
     .fade-rise-1.is-loaded {
       animation: fadeRise 0.8s ease-out forwards 0.2s;
     }
@@ -347,9 +399,6 @@
 <p>$\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$이므로 하향 뢰벤하임-스콜렘 정리에 의해 $T’$은 크기가 $\kappa$를 넘지 않는 모델을 가진다. 그런데 상향 뢰벤하임-스콜렘 정리의 증명에서 지적했듯이 $T’$의 모든 모델은 크기가 $\kappa$ 이상이다. 따라서 $T’$은 크기가 정확히 $\kappa$인 모델을 가지며, 이에 따라 $T$ 또한 크기가 정확히 $\kappa$인 모델을 가진다. ■</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -392,9 +441,6 @@
 <p>$\mathbf{Grp}$의 초기 대상은 자명군<sub>trivial group</sub>이며, 범주론적 합은 자유곱이다. 이에 따라 $U \cap V$가 단순 연결 공간일 때, $\pi_1(X)$는 $\pi_1(U)$와 $\pi_1(V)$의 자유곱이라는 결론을 얻는다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -539,9 +585,6 @@
 </table>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -652,9 +695,6 @@
 <p>$\mathfrak{K}$가 $u$를 만족함을 어렵지 않게 보일 수 있다. ■</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -757,9 +797,6 @@
 <p>요컨대 범주론에서 <strong>대상은, 그것이 받는 사상들의 집합과 다름없다.</strong> 일례로 정수 순서 범주에서 $0$은 초기 대상으로 정의할 수 있고, 더 일반적으로 $n$은 받는 사상들의 수가 $n$개인 대상으로 정의할 수 있다. 요네다 따름정리는 이처럼 대상을 그것이 다른 대상과 맺는 사상들로서 정의하는 접근이 모든<small>(엄밀히는 국소적으로 작은)</small> 범주에서 유효함을 보장한다. 필자는 이 접근을 <strong>관계론적 존재론</strong>이라고 부른다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
 </div>
@@ -802,50 +839,54 @@
   });
 
   // 배너 이미지 로드 후 애니메이션 트리거 스크립트
-  document.addEventListener('DOMContentLoaded', () => {
-  const bannerImages = document.querySelectorAll('.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'); // 애니메이션 시작을 기다릴 이미지들
-  const elementsToAnimate = document.querySelectorAll('.fade-rise-1, .fade-rise-2, .fade-rise-3'); // 애니메이션 될 요소들
-  let loadedImagesCount = 0;
-  const totalImagesToWait = bannerImages.length;
+  document.addEventListener("DOMContentLoaded", () => {
+    const bannerImages = document.querySelectorAll(
+      '.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'
+    ); // 애니메이션 시작을 기다릴 이미지들
+    const elementsToAnimate = document.querySelectorAll(
+      ".fade-rise-1, .fade-rise-2, .fade-rise-3"
+    ); // 애니메이션 될 요소들
+    let loadedImagesCount = 0;
+    const totalImagesToWait = bannerImages.length;
 
-  // 기다릴 이미지가 없으면 즉시 애니메이션 시작
-  if (totalImagesToWait === 0) {
-    elementsToAnimate.forEach(el => el.classList.add('is-loaded'));
-    return;
-  }
-
-  const checkAllImagesLoaded = () => {
-    if (loadedImagesCount === totalImagesToWait) {
-      // 모든 이미지가 로드되면 애니메이션 클래스 추가
-      elementsToAnimate.forEach(el => el.classList.add('is-loaded'));
+    // 기다릴 이미지가 없으면 즉시 애니메이션 시작
+    if (totalImagesToWait === 0) {
+      elementsToAnimate.forEach((el) => el.classList.add("is-loaded"));
+      return;
     }
-  };
 
-  bannerImages.forEach(img => {
-    // 이미지가 캐시되어 이미 로드 완료된 경우
-    if (img.complete) {
-      loadedImagesCount++;
-    } else {
-      // 이미지 로드 완료 이벤트 리스너 추가
-      img.addEventListener('load', () => {
+    const checkAllImagesLoaded = () => {
+      if (loadedImagesCount === totalImagesToWait) {
+        // 모든 이미지가 로드되면 애니메이션 클래스 추가
+        elementsToAnimate.forEach((el) => el.classList.add("is-loaded"));
+      }
+    };
+
+    bannerImages.forEach((img) => {
+      // 이미지가 캐시되어 이미 로드 완료된 경우
+      if (img.complete) {
         loadedImagesCount++;
-        checkAllImagesLoaded(); // 이미지 로드될 때마다 체크
-      });
-      // 에러 발생 시 처리 (선택 사항)
-      img.addEventListener('error', () => {
-        console.error('Failed to load image:', img.src);
-        // 에러 발생 시에도 애니메이션을 시작하려면 여기서 loadedImagesCount를 증가시키거나 다른 로직 추가
-        // 현재 로직에서는 에러 시 카운트가 증가하지 않아 모든 이미지 로드되지 않으면 애니메이션 안 시작
-        loadedImagesCount++; // 에러 발생 시에도 카운트 증가 (모든 이미지를 처리했음을 알림)
-        checkAllImagesLoaded();
-      });
-    }
-  });
+      } else {
+        // 이미지 로드 완료 이벤트 리스너 추가
+        img.addEventListener("load", () => {
+          loadedImagesCount++;
+          checkAllImagesLoaded(); // 이미지 로드될 때마다 체크
+        });
+        // 에러 발생 시 처리 (선택 사항)
+        img.addEventListener("error", () => {
+          console.error("Failed to load image:", img.src);
+          // 에러 발생 시에도 애니메이션을 시작하려면 여기서 loadedImagesCount를 증가시키거나 다른 로직 추가
+          // 현재 로직에서는 에러 시 카운트가 증가하지 않아 모든 이미지 로드되지 않으면 애니메이션 안 시작
+          loadedImagesCount++; // 에러 발생 시에도 카운트 증가 (모든 이미지를 처리했음을 알림)
+          checkAllImagesLoaded();
+        });
+      }
+    });
 
-  // 모든 이미지에 대해 complete 상태를 확인하거나 리스너를 설정한 후,
-  // 이미 모든 이미지가 로드 완료 상태였을 경우를 대비해 마지막으로 체크
-  checkAllImagesLoaded();
-});
+    // 모든 이미지에 대해 complete 상태를 확인하거나 리스너를 설정한 후,
+    // 이미 모든 이미지가 로드 완료 상태였을 경우를 대비해 마지막으로 체크
+    checkAllImagesLoaded();
+  });
 </script>
 </div>
     </div>

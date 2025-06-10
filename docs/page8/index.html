@@ -98,6 +98,31 @@
 </head>
 
 
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+  </style>
+
   <body>
     <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
      styles, `#sidebar-checkbox` for behavior. -->
@@ -140,7 +165,7 @@
       href="/book/"
       >새벽의 자연학 수업</a
     >
-        
+          
     <a
       class="sidebar-nav-item"
       href="/guestbook/"
@@ -152,7 +177,7 @@
       href="/notes/"
       >복습노트 아카이브</a
     >
-                                                                                                                          
+                                                                                                                                    
   </nav>
 
   <div class="sidebar-item">
@@ -167,12 +192,39 @@
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 6em;
+            padding: 0px;
+            margin-left: 70px;
+            margin-right: 0;
+            max-width: none;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+            "
+          >
             <a href="/" title="Home">디멘의 블로그</a>
             <small>이데아를 여행하는 히치하이커</small>
           </h3>
+          <form id="search-form" action="/search.html" method="get">
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색어를 입력하세요"
+            />
+          </form>
         </div>
       </div>
 
@@ -199,7 +251,7 @@
       animation-delay: 0.6s; */
     }
 
-        /* 이미지가 로드된 후 추가될 클래스에 animation 속성 추가 */
+    /* 이미지가 로드된 후 추가될 클래스에 animation 속성 추가 */
     .fade-rise-1.is-loaded {
       animation: fadeRise 0.8s ease-out forwards 0.2s;
     }
@@ -383,9 +435,6 @@
 <p>이런 이유로 지금까지의 과정을 <strong>베타 암호화(Beta coding)</strong>라고 부른다. 괴델은 베타 암호화를 이용하여 지수 연산과 소인수분해를 PA에서 성공적으로 정의했으며, 이로부터 괴델 수와 비롯된 여러 술어를 PA에서 형식화할 수 있었다. 제목에서 드러나다시피 원래 이 글의 목표는 이 과정을 모두 개괄하는 것이었으나 때늦게 찾아온 필자의 귀찮음 이슈와, 글을 여기까지 읽은 독자라면 이후 내용은 어렵지 않게 유추 가능하리라는 생각으로 이만 줄인다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -546,9 +595,6 @@
 <p><em>Proof.</em> 워시의 정리에 의해 $\mathbb{N}^* \vDash \phi$일 필요충분조건은 $\lbrace i \in \mathbb{N} : \mathbb{N}^\ast_i \vDash \phi \rbrace \in \mathcal{U}$인 것이다. 그런데 $\mathbb{N}^*_i = \mathbb{N}$이므로, 필요충분조건은 $\mathbb{N} \vDash \phi$로 환원된다. ■</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -720,9 +766,6 @@
 <p>이로써 우리는 초자연수를 정의했다. 다음 글에서는 초자연수의 여러 비표준적인 특징과, 그런 비표준성에도 불구하고 초자연수와 자연수를 1차 논리로 구분할 수 없음을 보이는 워시의 정리를 살펴볼 것이다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -824,9 +867,6 @@
 <p>그러나 데이비드슨은 이것이 본말을 전도하는 것이라고 주장한다. 데이비드슨은 문장에 대한 참 이론을 제시하는 것만으로 해당 언어의 의미론을 세울 수 있고, 이에 따라 지시 이론은 불필요하다고 주장한다. 참에 대한 철학적 논의는 이후 별개의 시리즈로 정리하도록 하겠다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -950,9 +990,6 @@
 <p>이에 대해 라이머는 의도주의에 제약을 가하기 위한 다른 전략을 택하는데, 그의 전략은 <strong>제스처 우선순위</strong>로 요약할 수 있다. 라이머의 제약된 의도주의는 기대 이상으로 많은 험티덤티 문제를 명쾌하게 해결하는 것으로 보인다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
 </div>
@@ -995,50 +1032,54 @@
   });
 
   // 배너 이미지 로드 후 애니메이션 트리거 스크립트
-  document.addEventListener('DOMContentLoaded', () => {
-  const bannerImages = document.querySelectorAll('.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'); // 애니메이션 시작을 기다릴 이미지들
-  const elementsToAnimate = document.querySelectorAll('.fade-rise-1, .fade-rise-2, .fade-rise-3'); // 애니메이션 될 요소들
-  let loadedImagesCount = 0;
-  const totalImagesToWait = bannerImages.length;
+  document.addEventListener("DOMContentLoaded", () => {
+    const bannerImages = document.querySelectorAll(
+      '.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'
+    ); // 애니메이션 시작을 기다릴 이미지들
+    const elementsToAnimate = document.querySelectorAll(
+      ".fade-rise-1, .fade-rise-2, .fade-rise-3"
+    ); // 애니메이션 될 요소들
+    let loadedImagesCount = 0;
+    const totalImagesToWait = bannerImages.length;
 
-  // 기다릴 이미지가 없으면 즉시 애니메이션 시작
-  if (totalImagesToWait === 0) {
-    elementsToAnimate.forEach(el => el.classList.add('is-loaded'));
-    return;
-  }
-
-  const checkAllImagesLoaded = () => {
-    if (loadedImagesCount === totalImagesToWait) {
-      // 모든 이미지가 로드되면 애니메이션 클래스 추가
-      elementsToAnimate.forEach(el => el.classList.add('is-loaded'));
+    // 기다릴 이미지가 없으면 즉시 애니메이션 시작
+    if (totalImagesToWait === 0) {
+      elementsToAnimate.forEach((el) => el.classList.add("is-loaded"));
+      return;
     }
-  };
 
-  bannerImages.forEach(img => {
-    // 이미지가 캐시되어 이미 로드 완료된 경우
-    if (img.complete) {
-      loadedImagesCount++;
-    } else {
-      // 이미지 로드 완료 이벤트 리스너 추가
-      img.addEventListener('load', () => {
+    const checkAllImagesLoaded = () => {
+      if (loadedImagesCount === totalImagesToWait) {
+        // 모든 이미지가 로드되면 애니메이션 클래스 추가
+        elementsToAnimate.forEach((el) => el.classList.add("is-loaded"));
+      }
+    };
+
+    bannerImages.forEach((img) => {
+      // 이미지가 캐시되어 이미 로드 완료된 경우
+      if (img.complete) {
         loadedImagesCount++;
-        checkAllImagesLoaded(); // 이미지 로드될 때마다 체크
-      });
-      // 에러 발생 시 처리 (선택 사항)
-      img.addEventListener('error', () => {
-        console.error('Failed to load image:', img.src);
-        // 에러 발생 시에도 애니메이션을 시작하려면 여기서 loadedImagesCount를 증가시키거나 다른 로직 추가
-        // 현재 로직에서는 에러 시 카운트가 증가하지 않아 모든 이미지 로드되지 않으면 애니메이션 안 시작
-        loadedImagesCount++; // 에러 발생 시에도 카운트 증가 (모든 이미지를 처리했음을 알림)
-        checkAllImagesLoaded();
-      });
-    }
-  });
+      } else {
+        // 이미지 로드 완료 이벤트 리스너 추가
+        img.addEventListener("load", () => {
+          loadedImagesCount++;
+          checkAllImagesLoaded(); // 이미지 로드될 때마다 체크
+        });
+        // 에러 발생 시 처리 (선택 사항)
+        img.addEventListener("error", () => {
+          console.error("Failed to load image:", img.src);
+          // 에러 발생 시에도 애니메이션을 시작하려면 여기서 loadedImagesCount를 증가시키거나 다른 로직 추가
+          // 현재 로직에서는 에러 시 카운트가 증가하지 않아 모든 이미지 로드되지 않으면 애니메이션 안 시작
+          loadedImagesCount++; // 에러 발생 시에도 카운트 증가 (모든 이미지를 처리했음을 알림)
+          checkAllImagesLoaded();
+        });
+      }
+    });
 
-  // 모든 이미지에 대해 complete 상태를 확인하거나 리스너를 설정한 후,
-  // 이미 모든 이미지가 로드 완료 상태였을 경우를 대비해 마지막으로 체크
-  checkAllImagesLoaded();
-});
+    // 모든 이미지에 대해 complete 상태를 확인하거나 리스너를 설정한 후,
+    // 이미 모든 이미지가 로드 완료 상태였을 경우를 대비해 마지막으로 체크
+    checkAllImagesLoaded();
+  });
 </script>
 </div>
     </div>

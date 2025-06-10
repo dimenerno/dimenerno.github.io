@@ -98,6 +98,31 @@
 </head>
 
 
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+  </style>
+
   <body>
     <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
      styles, `#sidebar-checkbox` for behavior. -->
@@ -140,7 +165,7 @@
       href="/book/"
       >새벽의 자연학 수업</a
     >
-        
+          
     <a
       class="sidebar-nav-item"
       href="/guestbook/"
@@ -152,7 +177,7 @@
       href="/notes/"
       >복습노트 아카이브</a
     >
-                                                                                                                          
+                                                                                                                                    
   </nav>
 
   <div class="sidebar-item">
@@ -167,12 +192,39 @@
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 6em;
+            padding: 0px;
+            margin-left: 70px;
+            margin-right: 0;
+            max-width: none;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+            "
+          >
             <a href="/" title="Home">디멘의 블로그</a>
             <small>이데아를 여행하는 히치하이커</small>
           </h3>
+          <form id="search-form" action="/search.html" method="get">
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색어를 입력하세요"
+            />
+          </form>
         </div>
       </div>
 
@@ -199,7 +251,7 @@
       animation-delay: 0.6s; */
     }
 
-        /* 이미지가 로드된 후 추가될 클래스에 animation 속성 추가 */
+    /* 이미지가 로드된 후 추가될 클래스에 animation 속성 추가 */
     .fade-rise-1.is-loaded {
       animation: fadeRise 0.8s ease-out forwards 0.2s;
     }
@@ -611,9 +663,6 @@
 <p>그리고 (41)은 (10)과 내용이 같다. 따라서 (9)와 (10)이 서로를 시사하게 되는 모순이 발생한다. 논문의 저자는 이 문제가 너무 까다로운 나머지 한때 양상 및 믿음 문맥에서 양화하는 것은 불가능하다는 입장으로 기울었으나, 이를 공략할 방안이 떠올랐다는 일화를 이야기한다. 이에 대해서는 다음 글에서 소개하도록 하겠다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -886,9 +935,6 @@
 <p>결론적으로 논문의 저자는 참에 대한 이론이 의미에 대한 이론과 직결되어 있어야 한다는 요구는 부당하다고 주장함으로써 타르스키의 참 정의와, 그것이 함의하는 참에 대한 축소주의<sub>deflationism</sub>를 옹호한다. 이것이 참에 대한 이론이 불필요함을 의미하지는 않는다. 크립키의 참 이론은 타르스키의 참 이론을 실질적으로 발전시켰다. 그러나 그 발전은 이미 우리에게 익숙한 참의 성질들을 T-스키마로써 정확히 해명하고, 올바르게 설계된 형태론으로 거짓말쟁이 역설과 같은 모순을 회피하는 데 있다. 참에 대한 이론으로부터 이 이상을 기대하는 것은 바람직하지 않다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -1129,9 +1175,6 @@
 <p>이 문제를 극복하기 위해 TG를 닫힌 명제에 대해서만 적용 가능하도록 제안하는 방안을 강구할 수 있으나, 제한된 시제 술어 논리는 일부 바람직한 명제를 증명하지 못함이 알려져 있다. 건전하면서도 완전한 시제 술어 논리를 만드는 작업은 아직도 해결되지 않은 문제이다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -1253,9 +1296,6 @@ U^* \otimes V^* &amp;\cong U^{***} \otimes V^{***} \\
 <p>따라서 쌍대 공간의 텐서는 쌍선형 사상과 표준적으로 동일시할 수 있다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
@@ -1371,9 +1411,6 @@ y = f_2(r, \theta) = r \sin \theta
 <p>구멍 논증<sub>hole argument</sub>에 따르면 일반 공변적인 이론들은 형이상학적인 의미에서 비결정론적이다. 이에 대한 설명은 나중에 하도록 하겠다.</p>
 
   </div>
-  <!-- <div
-    style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 4em"
-  ></div> -->
   <div style="margin-bottom: 6em"></div>
   
 </div>
@@ -1416,50 +1453,54 @@ y = f_2(r, \theta) = r \sin \theta
   });
 
   // 배너 이미지 로드 후 애니메이션 트리거 스크립트
-  document.addEventListener('DOMContentLoaded', () => {
-  const bannerImages = document.querySelectorAll('.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'); // 애니메이션 시작을 기다릴 이미지들
-  const elementsToAnimate = document.querySelectorAll('.fade-rise-1, .fade-rise-2, .fade-rise-3'); // 애니메이션 될 요소들
-  let loadedImagesCount = 0;
-  const totalImagesToWait = bannerImages.length;
+  document.addEventListener("DOMContentLoaded", () => {
+    const bannerImages = document.querySelectorAll(
+      '.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'
+    ); // 애니메이션 시작을 기다릴 이미지들
+    const elementsToAnimate = document.querySelectorAll(
+      ".fade-rise-1, .fade-rise-2, .fade-rise-3"
+    ); // 애니메이션 될 요소들
+    let loadedImagesCount = 0;
+    const totalImagesToWait = bannerImages.length;
 
-  // 기다릴 이미지가 없으면 즉시 애니메이션 시작
-  if (totalImagesToWait === 0) {
-    elementsToAnimate.forEach(el => el.classList.add('is-loaded'));
-    return;
-  }
-
-  const checkAllImagesLoaded = () => {
-    if (loadedImagesCount === totalImagesToWait) {
-      // 모든 이미지가 로드되면 애니메이션 클래스 추가
-      elementsToAnimate.forEach(el => el.classList.add('is-loaded'));
+    // 기다릴 이미지가 없으면 즉시 애니메이션 시작
+    if (totalImagesToWait === 0) {
+      elementsToAnimate.forEach((el) => el.classList.add("is-loaded"));
+      return;
     }
-  };
 
-  bannerImages.forEach(img => {
-    // 이미지가 캐시되어 이미 로드 완료된 경우
-    if (img.complete) {
-      loadedImagesCount++;
-    } else {
-      // 이미지 로드 완료 이벤트 리스너 추가
-      img.addEventListener('load', () => {
+    const checkAllImagesLoaded = () => {
+      if (loadedImagesCount === totalImagesToWait) {
+        // 모든 이미지가 로드되면 애니메이션 클래스 추가
+        elementsToAnimate.forEach((el) => el.classList.add("is-loaded"));
+      }
+    };
+
+    bannerImages.forEach((img) => {
+      // 이미지가 캐시되어 이미 로드 완료된 경우
+      if (img.complete) {
         loadedImagesCount++;
-        checkAllImagesLoaded(); // 이미지 로드될 때마다 체크
-      });
-      // 에러 발생 시 처리 (선택 사항)
-      img.addEventListener('error', () => {
-        console.error('Failed to load image:', img.src);
-        // 에러 발생 시에도 애니메이션을 시작하려면 여기서 loadedImagesCount를 증가시키거나 다른 로직 추가
-        // 현재 로직에서는 에러 시 카운트가 증가하지 않아 모든 이미지 로드되지 않으면 애니메이션 안 시작
-        loadedImagesCount++; // 에러 발생 시에도 카운트 증가 (모든 이미지를 처리했음을 알림)
-        checkAllImagesLoaded();
-      });
-    }
-  });
+      } else {
+        // 이미지 로드 완료 이벤트 리스너 추가
+        img.addEventListener("load", () => {
+          loadedImagesCount++;
+          checkAllImagesLoaded(); // 이미지 로드될 때마다 체크
+        });
+        // 에러 발생 시 처리 (선택 사항)
+        img.addEventListener("error", () => {
+          console.error("Failed to load image:", img.src);
+          // 에러 발생 시에도 애니메이션을 시작하려면 여기서 loadedImagesCount를 증가시키거나 다른 로직 추가
+          // 현재 로직에서는 에러 시 카운트가 증가하지 않아 모든 이미지 로드되지 않으면 애니메이션 안 시작
+          loadedImagesCount++; // 에러 발생 시에도 카운트 증가 (모든 이미지를 처리했음을 알림)
+          checkAllImagesLoaded();
+        });
+      }
+    });
 
-  // 모든 이미지에 대해 complete 상태를 확인하거나 리스너를 설정한 후,
-  // 이미 모든 이미지가 로드 완료 상태였을 경우를 대비해 마지막으로 체크
-  checkAllImagesLoaded();
-});
+    // 모든 이미지에 대해 complete 상태를 확인하거나 리스너를 설정한 후,
+    // 이미 모든 이미지가 로드 완료 상태였을 경우를 대비해 마지막으로 체크
+    checkAllImagesLoaded();
+  });
 </script>
 </div>
     </div>
