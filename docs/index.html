@@ -107,7 +107,7 @@
       border-radius: 20px;
       outline: none;
       transition: all 0.2s ease-in-out;
-      width: 100%;
+      width: 90%;
       max-width: 240px;
       background-color: #fefefe;
     }
@@ -197,10 +197,10 @@
           class="container"
           style="
             display: flex;
-            justify-content: center;
-            gap: 8em;
+            justify-content: space-evenly;
+            align-items: center;
             padding: 0px;
-            margin-left: 70px;
+            margin-left: 4em;
             margin-right: 0;
             max-width: none;
           "
@@ -214,21 +214,21 @@
               align-items: end;
             "
           >
-            <a href="/" title="Home">디멘의 블로그</a>
+            <a href="/" style="white-space: nowrap;" title="Home">디멘의 블로그</a>
             <small>이데아를 여행하는 히치하이커</small>
           </h3>
           <form
             id="search-form"
             action="/search.html"
             method="get"
-            style="height: 34px"
+            style="      display: flex;
+      justify-content: end; padding-right: 1em;"
           >
             <input
               type="text"
               name="q"
               id="search-input"
               placeholder="검색어를 입력하세요"
-              style="margin-top: 2px"
             />
           </form>
         </div>
