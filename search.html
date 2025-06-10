@@ -1,0 +1,60 @@
+---
+layout: default
+title: 검색 결과
+permalink: /search.html
+---
+
+<h1 style="margin-bottom: 1em">검색 결과</h1>
+<ul id="search-results"></ul>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async function () {
+    const params = new URLSearchParams(window.location.search);
+    const query = (params.get("q") || "").toLowerCase().trim();
+    const resultsContainer = document.getElementById("search-results");
+
+    if (!query) {
+      resultsContainer.innerHTML = "<li>검색어를 입력해주세요.</li>";
+      return;
+    }
+
+    try {
+      const res = await fetch("/search.json");
+      const data = await res.json();
+
+      // 필터링
+      const results = data.filter((entry) => {
+        const title = (entry.title || "").toLowerCase();
+        const content = (entry.content || "").toLowerCase();
+        return title.includes(query) || content.includes(query);
+      });
+
+      document.querySelector(
+        "h1"
+      ).textContent = `\'${query}\' 의 검색 결과 (${results.length})`;
+
+      if (results.length === 0) {
+        resultsContainer.innerHTML = "<li>검색 결과가 없습니다.</li>";
+      } else {
+        resultsContainer.innerHTML = results
+          .map(
+            (entry) => `
+          <li style="margin-bottom: 1.5em;">
+            <a href="${entry.url}">
+              <strong>${entry.title}</strong>
+            </a><br/>
+            <small>${entry.content.slice(0, 100)}...</small>
+          </li>
+        `
+          )
+          .join("");
+        if (window.MathJax && window.MathJax.typeset) {
+          MathJax.typeset();
+        }
+      }
+    } catch (e) {
+      console.error("검색 중 오류 발생:", e);
+      resultsContainer.innerHTML = "<li>검색 데이터를 불러올 수 없습니다.</li>";
+    }
+  });
+</script>
