@@ -51,19 +51,24 @@
             style="
               display: flex;
               flex-direction: row;
-              gap: 0.4em;
+              gap: 0.3em;
               align-items: end;
+              line-height: 1;
             "
           >
-            <a href="{{ site.baseurl }}/" style="white-space: nowrap;" title="Home">{{ site.title }}</a>
+            <a
+              href="{{ site.baseurl }}/"
+              style="white-space: nowrap"
+              title="Home"
+              >{{ site.title }}</a
+            >
             <small>{{ site.tagline }}</small>
           </h3>
           <form
             id="search-form"
             action="/search.html"
             method="get"
-            style="      display: flex;
-      justify-content: end; padding-right: 1em;"
+            style="display: flex; justify-content: end; padding-right: 1em"
           >
             <input
               type="text"
