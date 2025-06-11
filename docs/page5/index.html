@@ -177,7 +177,7 @@
       href="/notes/"
       >복습노트 아카이브</a
     >
-                                                                                                                                    
+                                                                                                                                        
   </nav>
 
   <div class="sidebar-item">
@@ -300,6 +300,108 @@
 
 
 <div class="posts">
+  
+  <div class="post fade-in-section">
+    <h1 class="post-title">
+      <a href="/2025/03/21/yoneda/"> 요네다 보조정리 </a>
+    </h1>
+
+    <span class="post-date">21 Mar 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'">
+        범주론
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><em>Notation.</em></p>
+
+  <ol>
+    <li>$-$는 매개변수의 자릿값이다. $-$가 두 개 쓰였으면 매개변수가 두 개라는 뜻이다. 어느 매개변수가 어느 자리에 해당하는지는 맥락으로 파악한다.</li>
+    <li>$\bullet$은 $-$를 우선하는 매개변수이다. 따라서 $\hom(-, \bullet)$은 $A$를 함자 $\hom(-, A)$에 대응시키는 함자이다.</li>
+    <li>함자 $F, G$에 대해 $[F, G]$를 $F$에서 $G$로 가는 자연적 변환<sub>natural transformation</sub>들의 모임으로 정의한다.</li>
+    <li>모든 범주는 국소적으로 작은<sub>locally small</sub> 범주라고 가정한다.</li>
+  </ol>
+</blockquote>
+
+<p>요네다 보조정리<sub>Yoneda lemma</sub>는 표현가능함자<sub>representable</sub>가 다른 함자를 <em>바라볼</em> 때 <em>보이는</em> 것이 무엇인지를 알려주는 정리이다.</p>
+
+<p>예를 들어 $A \in \mathcal{A}$에 대해, 표현가능함자 $\hom_{\mathcal{A}}(-, A)$를 생각하자. 이 함자가 속하는 범주는 $[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$이다. 따라서 $\hom_{\mathcal{A}}(-, A)$가 함자 $F : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$를 <em>바라볼</em> 때 <em>보이는</em> 것은 다음 자연적 변환들의 집합이다.</p>
+
+\[[\hom_{\mathcal{A}}(-, A), F]\]
+
+<p>위 집합은 $A \in \mathcal{A}$와 $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$으로부터 정의된 집합이다. 그런데 $A, F$로부터 집합을 정의할 수 있는 또다른 자연스러운 방식이 있다. 단순히 $F$에 $A$를 취하는 것이다.</p>
+
+\[F(A)\]
+
+<p>요네다 보조정리에 따르면 두 집합은 <strong>동형<sub>isomorphic</sub></strong>이다. 게다가 그냥 동형인 것이 아니라, $A \in \mathcal{A}$와 $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$에서 자연스럽게 동형<sub>naturally isomorphic</sub>이다. 요컨대 다음 두 함자가 $[\mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}], \mathbf{Set}]$에서 동형이다.</p>
+
+\[\begin{aligned}
+\text{(i)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
+&amp;\xrightarrow{\hspace{0.15cm} \hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}} \times 1 \hspace{0.15cm}} [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}] \\
+&amp;\xrightarrow{\hom_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(-, -)} \mathbf{Set} \\\\
+\text{(ii)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
+&amp;\xrightarrow{-(-)} \mathbf{Set}
+\end{aligned}\]
+
+<blockquote>
+  <p><em>Remark.</em> $\hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}}$에 붙은 $\mathrm{op}$는 함자의 정의역을 $\mathcal{A}^\mathrm{op}$로 맞춰주기 위함이고, 실질적으로는 $\hom_{\mathcal{A}}(-, \cdot)$와 같다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 증명의 개요만 적자면, $\hat{(\;\;)} : [\hom_\mathcal{A}(-, A), F] \to F(A)$와 $\tilde{(\;\;)}: F(A) \to [\hom_\mathcal{A}(-, A), F]$를 다음과 같이 정의한다.</p>
+
+\[\hat{\alpha} = \alpha_A(1_A), \quad \tilde{x} = \theta\]
+
+<p>여기서 $\theta$는 $f : A’ \to A$를 다음과 같이 사상하는 자연적 변환이다.</p>
+
+\[\theta_{A'}: f \mapsto F(f^{\mathrm{op}})(x)\]
+
+<p>$\theta$를 위와 같이 정의하는 이유는 다음 가환 도식을 만족하게끔 만들기 위함이다. ($(-)$에 $1_A$를 대입해 확인해 보라.)</p>
+
+<p><img src="/public/yoneda-def.png" style="margin: 0 auto; width: 400px" /></p>
+
+<p>이제 임의의 $A \in \mathcal{A}, F : \mathcal{A}^\mathrm{op} \to \mathbf{Set}$에 대해 다음이 성립함을 보여아 한다.</p>
+
+<ul>
+  <li>임의의 $\alpha \in [\hom_\mathcal{A}(-, A), F]$에 대해 $\tilde{\hat{\alpha}} = \alpha$이다.</li>
+  <li>임의의 $x \in F(A)$에 대해 $\hat{\tilde{x}} = x$이다.</li>
+</ul>
+
+<p>이것은 $[\hom_\mathcal{A}(-, A), F] \cong F(A)$임을 보인다. 여기에 더해, 해당 동형이 자연적임을 보여아 한다. 자아아알 생각해 보면 이것은 임의의 $A, A’ \in \mathcal{A}$와 $F, G \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$와 $f: A’ \to A$와 $\alpha: F \Rightarrow G$에 대해 다음 도식이 가환임을 보이는 것과 같다.</p>
+
+<p><img src="/public/yoneda-naturality.png" style="margin: 0 auto; width: 470px" /></p>
+
+<p>원소 단위로 적으면,</p>
+
+<p><img src="/public/yoneda-comm.png" style="margin: 0 auto; margin-bottom: 2em; width: 400px" /></p>
+
+<p>위가 성립함은 $\theta$의 자연성으로부터 따라 나온다. ■</p>
+
+<h2 id="요네다-따름정리와-관계론적-존재론">요네다 따름정리와 관계론적 존재론</h2>
+
+<p>요네다 보조정리가 함의하는 결과 중 다음은 아주 중요하다. 필자는 이를 그냥 <strong>요네다 따름정리</strong>라고 부른다.</p>
+
+<blockquote>
+  <p><strong>요네다 따름정리.</strong> $X, Y \in \mathcal{A}$라고 하자.</p>
+
+  <ol>
+    <li>$[\hom(-, X), \hom(-, Y)] \cong \hom(X, Y)$</li>
+    <li>$X \cong Y \iff \hom(-, X) \cong \hom(-, Y)$</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> $F = \hom(-, Y)$로 둔다. ■</p>
+
+<p>요컨대 범주론에서 <strong>대상은, 그것이 받는 사상들의 집합과 다름없다.</strong> 일례로 정수 순서 범주에서 $0$은 초기 대상으로 정의할 수 있고, 더 일반적으로 $n$은 받는 사상들의 수가 $n$개인 대상으로 정의할 수 있다. 요네다 따름정리는 이처럼 대상을 그것이 다른 대상과 맺는 사상들로서 정의하는 접근이 모든<small>(엄밀히는 국소적으로 작은)</small> 범주에서 유효함을 보장한다. 필자는 이 접근을 <strong>관계론적 존재론</strong>이라고 부른다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
   
   <div class="post fade-in-section">
     <h1 class="post-title">
@@ -1305,121 +1407,6 @@ U^* \otimes V^* &amp;\cong U^{***} \otimes V^{***} \\
 <p>두 번째 식에서 세 번째 식으로 넘어갈 때 $V \cong V^{\ast\ast}$ 표준<sub>canonical</sub> 동일시를 사용했다. ■</p>
 
 <p>따라서 쌍대 공간의 텐서는 쌍선형 사상과 표준적으로 동일시할 수 있다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-  <div class="post fade-in-section">
-    <h1 class="post-title">
-      <a href="/2025/02/27/general-covariance/"> 일반 공변성에 대한 노트 </a>
-    </h1>
-
-    <span class="post-date">27 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/물리학/'">
-        물리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/역학/'">
-        역학
-      </div>
-      
-    </div>
-     <p>어떤 이론이 <strong>일반 공변적<sub>general covariant</sub></strong>이라는 것은, 물리 법칙의 형태<sub>form</sub>가 미분가능한 좌표계 변환에 대해 보존된다는 것이다. 구체적으로, 좌표계 $\lbrace q_i \rbrace $와 좌표계 $\lbrace q’_i \rbrace $가 다음 관계에 있다고 하자.</p>
-
-\[q_i' = f_i(\{ q \})\]
-
-<p>각 $i$에 대해 $f_i$가 미분 가능하다고 하자. 일반 공변적 이론이라면 좌표계 $\lbrace q_i \rbrace $를 사용했을 때와 좌표계 $\lbrace q_i’ \rbrace $를 사용했을 때의 물리 법칙이 형태가 같아야 한다.</p>
-
-<p>예시를 보자. 퍼텐셜이 0인 계 안의 입자의 위치를 극좌표계 $(r, \theta)$ 또는 직교 좌표계 $(x, y)$를 사용하여 표현하는 경우를 생각해 보자. 두 좌표계는 다음 관계에 있다.</p>
-
-\[\begin{gather}
-x = f_1(r, \theta) = r \cos \theta\\
-y = f_2(r, \theta) = r \sin \theta
-\end{gather}\]
-
-<p>$f_1$과 $f_2$가 미분 가능하므로 일반 공변적 이론은 두 좌표계로 표현했을 때의 형태가 같아야 한다.</p>
-
-<p>먼저 뉴턴 역학의 경우를 보자. 뉴턴 역학의 물리 법칙은 다음과 같다.</p>
-
-\[\begin{gather}
--\frac{dV(x, y)}{dx} = m\ddot{x} \\
--\frac{dV(x, y)}{dy} = m\ddot{y}
-\end{gather}\]
-
-<p>$V(x, y) = 0$이므로 $\ddot{x} = \ddot{y} = 0$이다. 즉 입자는 등속 선형 운동을 한다. 만약 뉴턴 역학이 일반 공변적이라면 위 법칙을 $(x, y)$에서 $(r, \theta)$로 바꿔 표현해도 결과가 같아야 한다.</p>
-
-\[\begin{gather}
--\frac{dV(r, \theta)}{dr} = m\ddot{r} \\
--\frac{dV(r, \theta)}{d\theta} = m\ddot{\theta}
-\end{gather}\]
-
-<p>$V(r, \theta) = 0$이므로 $\ddot{r} = \ddot{\theta} = 0$이다. 이번에는 입자가 등속 원운동을 한다. 결과가 달라졌으므로 <strong>뉴턴 역학은 일반 공변적이지 않다.</strong></p>
-
-<p>이제 <a href="http://dimenerno.github.io/2025/02/27/euler-lagrange/">라그랑주 역학</a>의 경우를 보자. 라그랑주 역학의 물리 법칙은 다음과 같다.</p>
-
-\[\begin{gather}
-\frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
-\frac{\partial \mathcal{L}}{\partial y} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{y}}
-\end{gather}\]
-
-<p>$\mathcal{L}(x, y) = T - V = \frac{m}{2}(\dot{x}^2 + \dot{y}^2)$를 대입하면 $\ddot{x} = \ddot{y} = 0$, 즉 등속 선형 운동을 얻는다. 여기까지는 뉴턴 역학과 같다.</p>
-
-<p>이제 오일러-라그랑주 방정식의 $(x, y)$를 $(r, \theta)$로 치환해 보자.</p>
-
-\[\begin{gather}
-\frac{\partial \mathcal{L}}{\partial r} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{r}} \\
-\frac{\partial \mathcal{L}}{\partial \theta} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}}
-\end{gather}\]
-
-<p>$x = r\cos\theta, y = r\sin\theta$를 대입하여 정리하면 $\mathcal{L}(r, \theta)$는 다음과 같다.</p>
-
-\[\mathcal{L}(r, \theta) = \frac{m}{2}(\dot{r}^2 + r^2 \dot{\theta}^2)\]
-
-<blockquote>
-  <p><em>Remark.</em> 오일러-라그랑주 방정식에서는 단순히 $(x, y)$를 $(r, \theta)$로 치환했지만, 라그랑지안에서는 $x = r \cos \theta, y = r \sin \theta$ 관계식을 대입하는 이유는 라그랑지안이 <strong>실수쌍</strong>에 대한 함수가 아니라 <strong>시공간의 점</strong>에 대한 함수이기 때문이다. 일반 공변성은 무지성, 일편단률적인 좌표 변환에 대해서 식의 형태가 유지된다는 의미가 아니라, 물리계를 표현하는 함수들은 유지된 채 그것을 표현하는 좌표가 바뀌었을 때 식의 형태가 유지된다는 의미이다.</p>
-</blockquote>
-
-<p>대입하여 계산하면 다음과 같다.</p>
-
-\[\begin{gather}
-\ddot{r} = r\dot{\theta}^2 \\
-2\dot{r}\dot{\theta} + r\ddot{\theta} = 0
-\end{gather}\]
-
-<p>미분방정식이 복잡해서 알아보기 힘들지만, 위 두 미분방정식은 $\ddot{x} = \ddot{y} = 0$과 동치이다. 일례로 $\theta = \tan^{-1}t, r = \sqrt{1 + t^2}$가 방정식의 해인 것을 확인할 수 있다.</p>
-
-<p>일반적으로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 라그랑주 역학은 일반 공변성을 가진다.</p>
-</blockquote>
-
-<p>뉴턴 역학은 일반 공변성이 없지만 라그랑주 역학은 있다는 것이 신기하게 느껴질 수 있지만, 잘 생각해 보면 이것은 당연하다. 뉴턴의 제1법칙은 보통 $F = 0 \implies \ddot{x} = 0$이라는 수식으로 표현되지만 정확한 진술은 다음과 같다.</p>
-
-<blockquote>
-  <p>외력을 받지 않는 입자의 시공간 다이어그램은 선형이다.</p>
-</blockquote>
-
-<p>‘선형’이라는 표현에 주목하라. 선형성은 특정한 기하학에 의존적인 표현이다. 예를 들어 유클리드 기하학에서 ‘선형’이란 우리가 흔히 말하는 직선이지만, 구면 기하학에서 ‘선형’은 대원으로 주어진다. 그러므로 위 진술은 다음과 같이 밝혀 쓰는 것이 가장 정확하다.</p>
-
-<blockquote>
-  <p><strong>뉴턴 역학</strong>. 외력을 받지 않는 입자의 시공간 다이어그램은 유클리드 기하학의 선형이다.</p>
-</blockquote>
-
-<p>그리고 유클리드 기하학의 선형은 직교 좌표계에서 $\ddot{x} = \ddot{y} = 0$ 꼴로 주어진다. 따라서 $F = 0 \implies \ddot{x} = 0$은, 유클리드 기하학과 직교 좌표계를 전제했을 때에만 올바른 수식인 것이다.</p>
-
-<p>거꾸로 말해, 이론이 특정한 기하학에 의존하지 않는다면 그 이론은 일반 공변적이다. 라그랑주 역학은 그러한 이론의 사례이다. 라그랑주 역학의 진술은 다음과 같이 표현할 수 있다.</p>
-
-<blockquote>
-  <p><strong>라그랑주 역학</strong>. 라그랑지안의 적분을 극화시키는 경로가 입자의 운동 경로이다.</p>
-</blockquote>
-
-<p>그리고 라그랑지안은 특정 기하학에 의존적인 함수가 아닌, 그저 시공간의 점들에 대해 실숫값을 출력하는 함수이다. 따라서 위 진술은 어떠한 기하학에 대해서도 의존적이지 않으며, 라그랑주 역학은 일반 공변적이다.</p>
-
-<p>구멍 논증<sub>hole argument</sub>에 따르면 일반 공변적인 이론들은 형이상학적인 의미에서 비결정론적이다. 이에 대한 설명은 나중에 하도록 하겠다.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

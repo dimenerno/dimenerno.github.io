@@ -213,6 +213,10 @@
 <lastmod>2025-06-06T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2025/06/11/italian-game/</loc>
+<lastmod>2025-06-11T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/temp/2025-03-05-hole-argument/</loc>
 </url>
 <url>
@@ -289,6 +293,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/tags/%EC%9D%B8%EB%AC%B8%ED%95%99/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tags/%EC%B2%B4%EC%8A%A4/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>
