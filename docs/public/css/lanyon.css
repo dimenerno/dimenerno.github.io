@@ -214,7 +214,7 @@ a.sidebar-nav-item:focus {
 /* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
   position: absolute;
-  top: 0.9rem;
+  top: 0.85rem;
   left: 0.3rem;
   display: flex;
   align-items: center;
@@ -250,7 +250,6 @@ a.sidebar-nav-item:focus {
 @media (min-width: 30.1em) {
   .sidebar-toggle {
     position: fixed;
-    left: 0.4rem;
   }
 }
 
