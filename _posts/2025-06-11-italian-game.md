@@ -69,7 +69,7 @@ Nf7로 퀸과 룩을 포크하는 공격을 준비하는 수이다. 이것을 **
 
 흑의 의도는 나이트에 대한 퀸의 공격을 드러내면서 폰을 회수하는 것이다. 그러나 이것은 **초보자 경기에서 정말 많이 나오는 실수이다.** 백의 강력한 수, **6. Nxf7!!**이 있다. 이것을 **프라이드 리버 어택**이라고 부른다. 흑이 ...Kxf7으로 나이트를 잡으면 백은 7. Qf3+로 체크와 동시에 d5 나이트를 공격한다. 여기서 만약 흑이 Kg8으로 피하면 8. Bxd5가 2수 메이트이다.
 
-<img src="/public/fried-liver-attack.png" style="width: 100%; max-width: 350px; margin: 2em auto">
+<img src="/public/fried-liver.png" style="width: 100%; max-width: 350px; margin: 2em auto">
 
 
 #### 5. ...Na5
@@ -180,6 +180,8 @@ e4 폰을 지키는 수이다. 이것은 **필리도어 디펜스** (1. e4 e5 2.
 <img src="/public/blackburn-Qg5.png" style="width: 100%; max-width: 350px; margin: 2em auto">
 
 파훼법은 폰을 잡는 대신 4. Nxd4 exd4로 나이트를 교환하고 캐슬링하는 것이다. 이후 흑이 5. ...Bc5로 대응할 경우, 백에게 탁월한 수 **6. Bxf7!!**이 있다. 킹이 비숍을 잡을 경우 7. Qh5+가 흑의 어두운 비숍을 포크하기 때문에 기물 회수가 가능하다.
+
+<img src="/public/blackburn-counterattack.png" style="width: 100%; max-width: 350px; margin: 2em auto">
 
 ## 3. ...f5
 

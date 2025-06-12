@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-12T15:51:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry><title type="html">이탈리안 게임</title><link href="http://localhost:4000/2025/06/12/italian-game/" rel="alternate" type="text/html" title="이탈리안 게임" /><published>2025-06-12T00:00:00+09:00</published><updated>2025-06-12T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/12/italian-game</id><content type="html" xml:base="http://localhost:4000/2025/06/12/italian-game/"><![CDATA[<p><img src="/public/italian.png" style="width: 100%; max-width: 350px; margin: 2em auto" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-12T15:59:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry><title type="html">이탈리안 게임</title><link href="http://localhost:4000/2025/06/12/italian-game/" rel="alternate" type="text/html" title="이탈리안 게임" /><published>2025-06-12T00:00:00+09:00</published><updated>2025-06-12T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/12/italian-game</id><content type="html" xml:base="http://localhost:4000/2025/06/12/italian-game/"><![CDATA[<p><img src="/public/italian.png" style="width: 100%; max-width: 350px; margin: 2em auto" /></p>
 
 <ol>
   <li>e4 e5</li>
@@ -62,7 +62,7 @@
 
 <p>흑의 의도는 나이트에 대한 퀸의 공격을 드러내면서 폰을 회수하는 것이다. 그러나 이것은 <strong>초보자 경기에서 정말 많이 나오는 실수이다.</strong> 백의 강력한 수, <strong>6. Nxf7!!</strong>이 있다. 이것을 <strong>프라이드 리버 어택</strong>이라고 부른다. 흑이 …Kxf7으로 나이트를 잡으면 백은 7. Qf3+로 체크와 동시에 d5 나이트를 공격한다. 여기서 만약 흑이 Kg8으로 피하면 8. Bxd5가 2수 메이트이다.</p>
 
-<p><img src="/public/fried-liver-attack.png" style="width: 100%; max-width: 350px; margin: 2em auto" /></p>
+<p><img src="/public/fried-liver.png" style="width: 100%; max-width: 350px; margin: 2em auto" /></p>
 
 <h4 id="5-na5">5. …Na5</h4>
 
@@ -182,6 +182,8 @@
 <p><img src="/public/blackburn-Qg5.png" style="width: 100%; max-width: 350px; margin: 2em auto" /></p>
 
 <p>파훼법은 폰을 잡는 대신 4. Nxd4 exd4로 나이트를 교환하고 캐슬링하는 것이다. 이후 흑이 5. …Bc5로 대응할 경우, 백에게 탁월한 수 <strong>6. Bxf7!!</strong>이 있다. 킹이 비숍을 잡을 경우 7. Qh5+가 흑의 어두운 비숍을 포크하기 때문에 기물 회수가 가능하다.</p>
+
+<p><img src="/public/blackburn-counterattack.png" style="width: 100%; max-width: 350px; margin: 2em auto" /></p>
 
 <h2 id="3-f5">3. …f5</h2>
 

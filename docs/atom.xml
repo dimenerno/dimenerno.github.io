@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-06-12T15:51:19+09:00</updated>
+ <updated>2025-06-12T15:59:21+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -81,7 +81,7 @@
 
 &lt;p&gt;흑의 의도는 나이트에 대한 퀸의 공격을 드러내면서 폰을 회수하는 것이다. 그러나 이것은 &lt;strong&gt;초보자 경기에서 정말 많이 나오는 실수이다.&lt;/strong&gt; 백의 강력한 수, &lt;strong&gt;6. Nxf7!!&lt;/strong&gt;이 있다. 이것을 &lt;strong&gt;프라이드 리버 어택&lt;/strong&gt;이라고 부른다. 흑이 …Kxf7으로 나이트를 잡으면 백은 7. Qf3+로 체크와 동시에 d5 나이트를 공격한다. 여기서 만약 흑이 Kg8으로 피하면 8. Bxd5가 2수 메이트이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/fried-liver-attack.png&quot; style=&quot;width: 100%; max-width: 350px; margin: 2em auto&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/fried-liver.png&quot; style=&quot;width: 100%; max-width: 350px; margin: 2em auto&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;5-na5&quot;&gt;5. …Na5&lt;/h4&gt;
 
@@ -201,6 +201,8 @@
 &lt;p&gt;&lt;img src=&quot;/public/blackburn-Qg5.png&quot; style=&quot;width: 100%; max-width: 350px; margin: 2em auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;파훼법은 폰을 잡는 대신 4. Nxd4 exd4로 나이트를 교환하고 캐슬링하는 것이다. 이후 흑이 5. …Bc5로 대응할 경우, 백에게 탁월한 수 &lt;strong&gt;6. Bxf7!!&lt;/strong&gt;이 있다. 킹이 비숍을 잡을 경우 7. Qh5+가 흑의 어두운 비숍을 포크하기 때문에 기물 회수가 가능하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/blackburn-counterattack.png&quot; style=&quot;width: 100%; max-width: 350px; margin: 2em auto&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-f5&quot;&gt;3. …f5&lt;/h2&gt;
 
