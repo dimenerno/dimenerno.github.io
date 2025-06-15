@@ -35,7 +35,7 @@ _Remark._ 정의가능성은 [괴델의 구성가능성](https://dimenerno.githu
 
 같은 이유로 모든 쌍대 유한집합<sub>cofinite set</sub> 또한 정의가능하다.
 
-[저번 글](https://dimenerno.github.io/2025/05/08/resiliency/)에서 탄력적<sub>resilient</sub> 집합족에 대해 알아 보았다. 이제 다음을 정의하자.
+[저번 글](http://dimenerno.github.io/2025/05/09/resiliency/)에서 탄력적<sub>resilient</sub> 집합족에 대해 알아 보았다. 이제 다음을 정의하자.
 
 > **정의.** $\kappa$가 비가산 기수라고 하자. $\mathfrak{A}$가 **$\kappa$-포화<sub>$\kappa$-saturated</sub>**되었다는 것은, $\kappa$개보다 적은 $A$의 정의가능한 부분집합들의 모임이 언제나 탄력적이라는 것이다. 특히, $\mathfrak{A}$가 $\|A\|$-포화되었을 때, $\mathfrak{A}$는 **포화<sub>saturated</sub>**되었다고 한다.
 

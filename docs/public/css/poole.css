@@ -45,6 +45,24 @@ mjx-container {
   src: url("./woff2/PretendardVariable.woff2") format("woff2-variations");
 }
 
+@font-face {
+  font-family: 'Eulyoo1945';
+  src: url('./woff2/Eulyoo1945-Regular.woff2') format('woff2'),
+      url('./woff2/Eulyoo1945-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eulyoo1945';
+  src: url('./woff2/Eulyoo1945-SemiBold.woff2') format('woff2'),
+      url('./woff2/Eulyoo1945-SemiBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

@@ -331,6 +331,7 @@ a.sidebar-nav-item:focus {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  margin-bottom: 1.5em;
 }
 
 .tag {

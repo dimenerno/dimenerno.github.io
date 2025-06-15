@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-12T15:59:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry><title type="html">이탈리안 게임</title><link href="http://localhost:4000/2025/06/12/italian-game/" rel="alternate" type="text/html" title="이탈리안 게임" /><published>2025-06-12T00:00:00+09:00</published><updated>2025-06-12T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/12/italian-game</id><content type="html" xml:base="http://localhost:4000/2025/06/12/italian-game/"><![CDATA[<p><img src="/public/italian.png" style="width: 100%; max-width: 350px; margin: 2em auto" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-16T00:52:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry><title type="html">이탈리안 게임</title><link href="http://localhost:4000/2025/06/12/italian-game/" rel="alternate" type="text/html" title="이탈리안 게임" /><published>2025-06-12T00:00:00+09:00</published><updated>2025-06-12T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/12/italian-game</id><content type="html" xml:base="http://localhost:4000/2025/06/12/italian-game/"><![CDATA[<p><img src="/public/italian.png" style="width: 100%; max-width: 350px; margin: 2em auto" /></p>
 
 <ol>
   <li>e4 e5</li>
@@ -908,7 +908,7 @@
 
 <p>같은 이유로 모든 쌍대 유한집합<sub>cofinite set</sub> 또한 정의가능하다.</p>
 
-<p><a href="https://dimenerno.github.io/2025/05/08/resiliency/">저번 글</a>에서 탄력적<sub>resilient</sub> 집합족에 대해 알아 보았다. 이제 다음을 정의하자.</p>
+<p><a href="http://dimenerno.github.io/2025/05/09/resiliency/">저번 글</a>에서 탄력적<sub>resilient</sub> 집합족에 대해 알아 보았다. 이제 다음을 정의하자.</p>
 
 <blockquote>
   <p><strong>정의.</strong> $\kappa$가 비가산 기수라고 하자. $\mathfrak{A}$가 <strong>$\kappa$-포화<sub>$\kappa$-saturated</sub></strong>되었다는 것은, $\kappa$개보다 적은 $A$의 정의가능한 부분집합들의 모임이 언제나 탄력적이라는 것이다. 특히, $\mathfrak{A}$가 $|A|$-포화되었을 때, $\mathfrak{A}$는 <strong>포화<sub>saturated</sub></strong>되었다고 한다.</p>

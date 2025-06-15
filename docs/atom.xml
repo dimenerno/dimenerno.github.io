@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-06-12T15:59:21+09:00</updated>
+ <updated>2025-06-16T00:52:02+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -990,7 +990,7 @@
 
 &lt;p&gt;같은 이유로 모든 쌍대 유한집합&lt;sub&gt;cofinite set&lt;/sub&gt; 또한 정의가능하다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/05/08/resiliency/&quot;&gt;저번 글&lt;/a&gt;에서 탄력적&lt;sub&gt;resilient&lt;/sub&gt; 집합족에 대해 알아 보았다. 이제 다음을 정의하자.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://dimenerno.github.io/2025/05/09/resiliency/&quot;&gt;저번 글&lt;/a&gt;에서 탄력적&lt;sub&gt;resilient&lt;/sub&gt; 집합족에 대해 알아 보았다. 이제 다음을 정의하자.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\kappa$가 비가산 기수라고 하자. $\mathfrak{A}$가 &lt;strong&gt;$\kappa$-포화&lt;sub&gt;$\kappa$-saturated&lt;/sub&gt;&lt;/strong&gt;되었다는 것은, $\kappa$개보다 적은 $A$의 정의가능한 부분집합들의 모임이 언제나 탄력적이라는 것이다. 특히, $\mathfrak{A}$가 $|A|$-포화되었을 때, $\mathfrak{A}$는 &lt;strong&gt;포화&lt;sub&gt;saturated&lt;/sub&gt;&lt;/strong&gt;되었다고 한다.&lt;/p&gt;
