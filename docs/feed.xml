@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-16T11:16:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry><title type="html">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title><link href="http://localhost:4000/2025/06/16/kafka-blue-octavos/" rel="alternate" type="text/html" title="프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권" /><published>2025-06-16T00:00:00+09:00</published><updated>2025-06-16T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/16/kafka-blue-octavos</id><content type="html" xml:base="http://localhost:4000/2025/06/16/kafka-blue-octavos/"><![CDATA[<style>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-16T12:46:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry><title type="html">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title><link href="http://localhost:4000/2025/06/16/kafka-blue-octavos/" rel="alternate" type="text/html" title="프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권" /><published>2025-06-16T00:00:00+09:00</published><updated>2025-06-16T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/16/kafka-blue-octavos</id><content type="html" xml:base="http://localhost:4000/2025/06/16/kafka-blue-octavos/"><![CDATA[<style>
   h4 {
     font-family: 'Libre Baskerville';
   }
 </style>
 
 <blockquote>
-  <p>「여덟 권의 청색 팔절판 노트」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 카프카의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 「팔절판 노트」가 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 여전히 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도해 보았다. 아마추어 번역인 점을 고려하여 독일어 원문을 같이 수록했다. 하단의 이미지는 카프카의 「팔절판 노트」에 영감을 받아 제작된 막스 리히터의 <em>청색 노트</em> 의 앨범 커버이다.</p>
+  <p>「여덟 권의 청색 팔절판 노트<sub>Acht blaue Oktavhefte</sub>」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 카프카의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도해 보았다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다. 하단의 이미지는 카프카의 「팔절판 노트」에 영감을 받아 제작된 작곡가 막스 리히터의 <em>The Blue Notebooks</em>의 앨범 커버이다.</p>
 </blockquote>
 
 <p><img src="/public/the-blue-notebooks.png" style="max-width: 350px; width: 100%; margin: 7em auto 5em auto;" /></p>
@@ -105,7 +105,7 @@ Sie kennen das Trocadéro in Paris? In diesem Gebäude, von dessen Ausdehnung Si
 
 <p>“어찌 이리도 춥나요?” 그녀는 묻더니, 헌 펜싱 장갑처럼 생긴 그녀의 기다란 장갑을 벗어 탁자 위로 던지고는 갸우뚱한 고개로 나를 바라보며 눈을 찡긋했다. 나로서는 한 마리의 참새가 된 듯한 기분이었으니, 계단 위에서 폴짝이며 날갯짓을 연습하는데 그녀가 나의 부드럽고 솜털 같은 회색 깃털을 헝클어뜨리는 것이었다.</p>
 
-<p>“당신이 저에 대한 그리움으로 괴로워한다니 진심으로 유감이에요.” 그녀가 말했다. “이따금 당신이 안뜰에 서서 제 창문을 올려다볼 때면 당신의 피폐한 얼굴에 깃든 깊은 슬픔이 비치곤 했지요. 그래요, 제가 당신에게 적의를 품은 것은 아니랍니다. 비록 당신이 제 마음을 아직 얻지 못했어도, 그것을 쟁취하는 것 또한 불가능하진 않으니까요.”</p>
+<p>“당신이 저에 대한 그리움으로 괴로워한다니 진심으로 유감이에요.” 그녀가 말했다. “이따금 당신이 안뜰에 서서 제 창문을 올려다볼 때면 당신의 피폐한 얼굴에서 깊은 슬픔을 읽곤 했지요. 그래요, 제가 당신에게 적의를 품은 것은 아니랍니다. 비록 당신이 제 마음을 아직 얻지 못했어도, 그것을 쟁취하는 것 또한 불가능하진 않으니까요.”</p>
 
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 4em 0;"><small>
 Gestern kam eine Ohnmacht zu mir. Sie wohnt im Nachbarhaus, ich habe sie dort schon öfters abends im niedrigen Tor gebückt verschwinden sehn. Eine große Dame mit lang fließendem Kleid und breitem, mit Federn geschmücktem Hut. Eiligst kam sie rauschend durch meine Tür, wie ein Arzt, der fürchtet, zu spät zum auslöschenden Kranken gekommen zu sein. »Anton«, rief sie mit hohler und doch sich rühmender Stimme, »ich komme, ich bin da!«
@@ -124,17 +124,27 @@ Mir war, als sei ich ein Spatz, übe auf der Treppe meine Sprünge und sie zerza
 
 <h4 id="ix">ix.</h4>
 
+<p>사람은 얼마나 깊은 무관심에 빠질 수 있는가 — 그가 영원히 올바른 길을 잃어버렸다는 그토록 깊은 신념에.</p>
+
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 4em 0;"><small>
 In was für Gleichgültigkeit Menschen kommen können, in wie tiefe Überzeugung, für immer die rechte Spur verloren zu haben.
 </small></div>
 
 <h4 id="x">x.</h4>
 
+<p><strong>착오.</strong> 내가 연 것은 긴 복도 끝 위쪽에 있는 내 방의 문이 아니었다. “착오였습니다,” 라는 말과 함께 나는 다시 나가려고 했다. 그 순간, 나는 방 안쪽으로 수척하고 수염이 없는 사내를 보았다. 입을 굳개 다문 채, 그가 앉은 작은 탁자 위에는 단 하나의 석유 램프만이 놓여 있었다.</p>
+
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 4em 0;"><small>
 <i>Ein Irrtum.</i> Es war nicht meine Türe oben auf dem langen Gang, die ich geöffnet hatte. »Ein Irrtum«, sagte ich und wollte wieder hinausgehen. Da sah ich den Inwohner, einen mageren bartlosen Mann, mit festgeschlossenem Munde an einem Tischchen sitzen, auf dem nur eine Petroleumlampe stand.
 </small></div>
 
 <h4 id="xi">xi.</h4>
+
+<p>우리의 집, 외곽에 위치한 이 거대한 건물, 파괴될 수 없는 중세의 폐허가 스며든 다세대 임대주택에서, 얼음 같은 안개가 낀 금일의 겨울 아침에 이런 공고가 게시되었다.</p>
+
+<p>모든 주거인들께 알립니다.</p>
+
+<p>저는 다섯 자루의 장난감 총을 가지고 있습니다. 총은 저마다 고리에 걸린 채 내 상자에 보관되어 있습니다. 첫 번째 총은 내 것이지만 나머지는 원한다면 가져가도 좋습니다.</p>
 
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 4em 0;"><small>
 In unserem Haus, diesem ungeheuren Vorstadthaus, einer von unzerstörbaren mittelalterlichen Ruinen durchwachsenen Mietskaserne, wurde heute am nebligen eisigen Wintermorgen folgender Aufruf verbreitet:
