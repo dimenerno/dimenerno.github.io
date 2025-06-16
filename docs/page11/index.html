@@ -305,6 +305,137 @@
   
   <div class="post fade-in-section">
     <h1 class="post-title">
+      <a href="/2024/11/21/trichotomy/"> 정렬의 삼분성과 서수의 완전성 </a>
+    </h1>
+
+    <span class="post-date">21 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <h3 id="1-기본-개념">1. 기본 개념</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 다음을 만족하는 $(W, &lt;)$를 정렬 집합(well-ordered set)이라고 한다.</p>
+
+  <ol>
+    <li>$(W, &lt;)$은 전순서이다.</li>
+    <li>$W$의 임의의 부분집합은 최소 원소를 가진다.</li>
+  </ol>
+
+  <p><strong>정의.</strong> $(W, &lt;)$가 정렬 집합일 때, $a \in S$에 대해 $x &lt; a \rightarrow x \in S$인 $W$의 부분집합 $S$를 초기단(initial segment)이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $S$가 정렬 집합 $(W, &lt;)$의 초기단일 때, 어떤 $a \in W$에 대해 다음이 성립한다.</p>
+
+\[S = W[a] := \lbrace  x \in W : x &lt; a \rbrace\]
+</blockquote>
+
+<p><strong>증명.</strong> $a$를 $W \setminus S$의 최솟값으로 잡는다.</p>
+
+<h3 id="2-정렬의-삼분성">2. 정렬의 삼분성</h3>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>정렬 집합은 자신의 초기단과 동형일 수 없다.</li>
+    <li>정렬 집합의 자기동형사상은 항등사상이다.</li>
+    <li>두 정렬 집합 간 동형사상은 유일하다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><em>보조정리.</em></p>
+
+<p>$f: (W, &lt;) → (W, &lt;)$가 순서 보존이라면 $x \in W$에 대해 $x \leq f(x)$이다.</p>
+
+<p><em>보조정리의 증명.</em></p>
+
+<p>귀류법에 따라 $S = \lbrace  x \in W : x &gt; f(x) \rbrace$가 공집합이 아니라고 하자. $W$는 정렬 집합이므로 $c = \min S$가 존재한다. $c \in S$이므로 $c &gt; f(c)$이며,  $f$가 순서 보존이므로 $f(c) &gt; f(f(c))$이다. 한편 $c = \min S$이므로 $f(c) \notin S$이며, $f(f(c)) \geq f(c)$이므로 모순이다. □</p>
+
+<p><em>(1)의 증명.</em></p>
+
+<p>$f: (W, &lt;) → (W[a], &lt;)$가 동형사상이라고 하자. 포함사상 $j: W[a] → W$에 대해 $jf: (W, &lt;) → (W, &lt;)$는 순서 보존이다. 따라서 $jf(a) \geq a$이다. 하지만 $a \notin \mathrm{im}f$이므로 모순이다. □</p>
+
+<p><em>(2)의 증명.</em></p>
+
+<p>$f: (W, &lt;) → (W, &lt;)$가 동형사상이라고 하자. $f^{-1}$ 또한 동형사상이므로 $x \in W$에 대해 $x \leq f(x)$, $f(x) \leq f^{-1}(f(x)) = x$이다. 따라서 $x = f(x)$이다. □</p>
+
+<p><em>(3)의 증명.</em></p>
+
+<p>$f, g: (W_1, &lt;_1) → (W_2, &lt;_2)$가 동형사상이라고 하자. $g^{-1}f: (W_1, &lt;_1) → (W_1, &lt;_1)$은 자기동형사상이므로 (2)에 의해 항등사상이다. 따라서 $f = g$이다. ■</p>
+
+<blockquote>
+  <p><strong>정렬의 삼분성.</strong> $(W_1, &lt;_1), (W_2, &lt;_2)$가 정렬 집합일 때 다음 중 정확히 하나가 성립한다.</p>
+
+  <ol>
+    <li>$(W_1, &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>어떤 $a$에 대해 $(W_1[a], &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>어떤 $b$에 대해 $(W_1, &lt;_1) \sim (W_2[b], &lt;_2)$</li>
+  </ol>
+
+  <p>각 경우 동형사상은 유일하며, 또한 2, 3의 경우 $a, b$는 유일하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p>앞선 정리는 1, 2, 3이 mutually exclusive함과, 유일성에 대한 주장을 보증한다. 따라서 임의의 $(W_1, &lt;_1), (W_2, &lt;_2)$가 위 세 경우에 속함을 보이면 충분하다.</p>
+
+<p>다음과 같이 부분함수 $f: W_1 → W_2$를 정의한다.</p>
+
+\[f := \lbrace  (x, y) \in (W_1, W_2) : (W_1[x], &lt;_1) \sim (W_2[y], &lt;_2) \rbrace\]
+
+<p>$f$가 단사이고 순서 보존임을 쉽게 확인할 수 있다. 이제 두 가지 경우를 고려한다.</p>
+
+<p><em>Case 1.</em> $\mathrm{dom} f = W_1$</p>
+
+<p>정리의 3번 경우에 해당하여 증명이 끝난다.</p>
+
+<p><em>Case 2.</em> $\mathrm{dom} f \subsetneq W_1$</p>
+
+<p>먼저 어떤 $a \in W$에 대해 $\mathrm{dom}f = W_1[a]$임을 보인다. $x \in \mathrm{dom}f$라면 $W_1[x] \sim W_2[f(x)]$이다. 해당 동형의 동형사상을 $\phi$라고 하면 $x’ &lt; x$에 대해 $W_1[x’] = W_2[\phi(x’)]$이므로 $x’ \in \mathrm{dom}f$이다. 따라서 $\mathrm{dom} f$는 초기단이다.</p>
+
+<p>두 번째로 $\mathrm{im} f = W_2$임을 보인다. $\mathrm{dom}f = W_1[a]$라고 하자. 앞선 문단과 비슷한 논증으로 $\mathrm{im}f$ 또한 $W_2$의 초기단임을 알 수 있다. $\mathrm{im}f = W_2[b]$라면, $(a, b) \in f$이므로 $a \in \mathrm{dom}f$이며 모순이다. ■</p>
+
+<h3 id="3-서수의-완전성">3. 서수의 완전성</h3>
+
+<blockquote>
+  <p><strong>서수의 완전성.</strong> 모든 정렬 집합은 어떤 서수와 순서 동형이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $(W, &lt;)$가 정렬 집합이라고 하자. 다음과 같이 $A, S$를 정의한다.</p>
+
+\[\begin{gather}
+A = \lbrace  a \in W : W[a] \sim \alpha_a \text{ where $\alpha_a \in$Ord} \rbrace\\
+S = \lbrace  \alpha_a \in \mathrm{Ord} :  a \in A\rbrace
+\end{gather}\]
+
+<p>$S$가 서수이고 $A$가 초기단임을 쉽게 보일 수 있다. $S = \beta$, $A = W[c]$라고 하자. $f: A → S; a \mapsto \alpha_a$는 $(A, &lt;)$와 $(S, \in)$의 순서동형사상이다. 즉, $W[c] \simeq \beta$이므로 $c \in A$이며, 이는 모순이다. 따라서 $A = W \sim \beta$이다. ■</p>
+
+<h3 id="4-치환-공리">4. 치환 공리</h3>
+
+<p>위 증명에서 $S$의 존재성은 치환 공리꼴 없이 보장되지 않는다. 왜냐하면 부랄리포르티 역설에 의해 $\mathrm{Ord}$는 집합이 아니며, 이에 따라 분류 공리꼴로 $S$의 존재성을 보장할 수 없기 때문이다.</p>
+
+<p>치환 공리의 필요성을 보여주는 다른 예시로, 치환 공리꼴 없이는 $\omega + \omega$의 존재성을 보장할 수 없다. 각 $n \in \mathbb{N}$에 대해 $\omega + n$이 존재함은 짝 공리와 합집합 공리로 보일 수 있지만, $\omega + \omega := \cup_{n \in \mathbb{N}} (\omega + n)$가 존재함은 보일 수 없다. 그렇다고 임의의 집합들의 합집합을 허용하는 공리를 추가할 수는 없는데, 이는 $V$를 집합으로 만들기 때문이다.</p>
+
+<p>위 두 경우에서 우리에게 필요한 것은, “잘 정의된 일대일 대응 관계 $R(x,y)$와 집합 $X$가 주어졌을 때 $\lbrace  y : R(x, y), x \in X \rbrace$는 집합이다”라는 내용의 공리이다. 이 공리가 치환 공리이다. 치환 공리를 사용하면 $\omega = \lbrace 0, 1, 2, … \rbrace$와 관계 $R(x, y): y = \omega + x$에 대해 $\mathrm{im}R\vert_\omega = \lbrace  \omega, \omega + 1, \omega + 2, … \rbrace$가 존재하며, $\omega \cup \mathrm{im}R\vert_\omega = \omega + \omega$가 존재함을 보일 수 있다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+  <div class="post fade-in-section">
+    <h1 class="post-title">
       <a href="/2024/11/20/Rational-Real/"> 유리수와 실수의 집합론적 정의 </a>
     </h1>
 
