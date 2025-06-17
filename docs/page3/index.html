@@ -305,6 +305,194 @@
   
   <div class="post fade-in-section">
     <h1 class="post-title">
+      <a href="/2025/05/08/robinson-craig/"> 로빈슨, 크레이그, 베스의 정리 </a>
+    </h1>
+
+    <span class="post-date">08 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/모델론/'">
+        모델론
+      </div>
+      
+    </div>
+     <h3 id="초등적-병합-성질elementary-amalgamation-property">초등적 병합 성질<sub>Elementary amalgamation property</sub></h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}’$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화<sub>$\mathcal{L}$-reduct</sub>가 $\mathfrak{A}$와 초등적으로 동등<sub>elementarily equivalent</sub>하다고 하자. 이 때, $\mathcal{L}’$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">초등적 임베딩</a>이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}’$의 초등적 임베딩이다.</p>
+
+  <p><img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply" /></p>
+</blockquote>
+
+<p><strong>증명.</strong> <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이 글</a>의 표기법을 따라, 언어 $L_\mathfrak{A}$의 이론 $E(\mathfrak{A})$와 언어 $L’_\mathfrak{B}$의 이론 $E(\mathfrak{B})$를 생각하자. $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$는 언어 $\mathcal{L}’_{\mathfrak{AB}} = \mathcal{L}_\mathfrak{A} \cup \mathcal{L}’_\mathfrak{B}$의 이론이다. $T$가 모델 $\mathfrak{C}$를 가짐을 보이자.</p>
+
+<p>만약 $T$가 모델이 없다면 $T$는 모순적이다. 따라서 콤팩트성 정리에 의해 어떤 $\mathcal{L}$-논리식 $\phi$와 $\mathcal{L}’$-논리식 $\psi$가 존재하여, 적절한 $\lbrace  a_i \rbrace  \subset \mathcal{L}_\mathfrak{A}$, $\lbrace  b_j \rbrace  \subset \mathcal{L}_\mathfrak{B}$에 대해,</p>
+
+\[\lbrace  \phi(a_1, \dots, a_n), \psi(b_1, \dots, b_m) \rbrace\]
+
+<p>이 모델을 가지지 않는다. $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$이므로, $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$를 만족하도록 상수 $a_1, \dots, a_n$을 $\mathfrak{B}$의 정의역에 대응시키는 방법이 존재하지 않아야 한다. 즉,</p>
+
+\[\mathfrak{B} \not\vDash \exists x_1, \dots x_n \; \phi(x_1, \dots, x_n)\]
+
+<p>그런데 $\mathfrak{B}$의 $\mathcal{L}$-퇴화가 $\mathfrak{A}$와 초등적으로 동등하며, 위 식의 우변이 $\mathcal{L}$-문장이고, $\mathfrak{A}$가 해당 문장을 만족하므로 이는 모순이다. 따라서 $T$는 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{A})$와 $E(\mathfrak{B})$의 모델이므로, $\mathfrak{A}$와 $\mathfrak{B}$는 $\mathfrak{C}$로 자연스럽게 초등적으로 임베딩된다. ■</p>
+
+<h3 id="로빈슨-건전성-정리robinson-consistency-theorem">로빈슨 건전성 정리<sub>Robinson consistency theorem</sub></h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$라고 하자. $T$가 $\mathcal{L}$의 (의미론적으로) 완전한 이론이고, $T_1$과 $T_2$가 각각 $T$를 확장하는 건전한 $\mathcal{L}_1, \mathcal{L}_2$ 이론일 때, $T_1 \cup T_2$는 $\mathcal{L}_1 \cup \mathcal{L}_2$ 이론으로서 건전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T_1 \cup T_2$의 모델을 구축하면 정리가 보여진다.</p>
+
+<p>$T_1, T_2$가 각각 건전하므로, 모델 $\mathfrak{A}_0, \mathfrak{B}_0$를 가진다. $T = T_1 \cap T_2$가 완전하므로, $\mathcal{L}$-퇴화로서의 $\mathfrak{A}_0$와 $\mathfrak{B}_0$는 초등적으로 동등하다. 따라서 초등적 병합 성질에 의해, $\mathcal{L}$-초등적 임베딩 $f_0$와 $\mathcal{L}_2$-초등적 임베딩 $h_0$가 존재하여 다음이 성립한다.</p>
+
+<p><img src="/public/robinson-1.png" style="width: 100%; max-width: 115px; margin: 1em auto" /></p>
+
+<p>이제 $\mathfrak{B}_1$의 $\mathcal{L}$-퇴화를 생각해 보면, 이는 $\mathfrak{A}_0$와 초등적으로 동등하므로, 다시 초등적 병합 성질에 의해 $\mathcal{L}$-초등적 임베딩 $g_0$와 $\mathcal{L}_1$-초등적 임베딩 $k_0$가 존재하여 다음이 성립한다.</p>
+
+<p><img src="/public/robinson-2.png" style="width: 100%; max-width: 127px; margin: 1em auto" /></p>
+
+<p>이 과정을 반복하여 다음의 구조 유도계<sub>directed system of structures</sub>를 얻는다.</p>
+
+<p><img src="/public/robinson-3.png" style="width: 100%; max-width: 285px; margin: 1em auto" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>사상</th>
+      <th>성질</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$f, g$</td>
+      <td>$\mathcal{L}$-초등적 임베딩</td>
+    </tr>
+    <tr>
+      <td>$k$</td>
+      <td>$\mathcal{L}_1$-초등적 임베딩</td>
+    </tr>
+    <tr>
+      <td>$h$</td>
+      <td>$\mathcal{L}_2$-초등적 임베딩</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>위 유도계의 모든 모델을 $\mathcal{L}$로 퇴화시키면 $\mathcal{L}$-구조 유도계를 얻는다. 해당 유도계의 쌍대극한<sub>colimit</sub>을 $\mathfrak{C}$라고 하자. $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{A}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 회색으로 표시된 원 유도계의 일부는 모두 $\lbrace  \mathfrak{A}_i \rbrace $ 중 하나로 투사되기 때문이다. 따라서 $\mathfrak{C}$는 $\mathfrak{A}_0$를 초등적으로 임베딩하는 $\mathcal{L}_1$ 구조이다.</p>
+
+<p><img src="/public/robinson-4.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
+
+<p>같은 이유로 $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{B}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 따라서 $\mathfrak{C}$는 $\mathfrak{B}_0$를 초등적으로 임베딩하는 $\mathcal{L}_2$ 구조이다.</p>
+
+<p><img src="/public/robinson-5.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
+
+<p>즉, $\mathfrak{C}$는 $\mathfrak{A}$와 $\mathfrak{B}$를 모두 임베딩하며, 이로부터 $T_1 \cup T_2$의 모델임이 보여졌다. ■</p>
+
+<h3 id="크레이그-보간-정리craig-interpolation-theorem">크레이그 보간 정리<sub>Craig interpolation theorem</sub></h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{L}$-문장 $\phi, \psi$에 대해 $\phi \vDash \psi$라면, 어떤 $\mathcal{L}$-문장 $\theta$가 존재하여 $\phi \vDash \theta, \theta \vDash \psi$이다. 또한, $\theta$에 포함된 비논리 기호(상수, 술어, 함수)는 $\phi$와 $\psi$에 공통적으로 포함된다.</p>
+</blockquote>
+
+<p>$\theta$를 $\phi$와 $\psi$의 <strong>크레이그 보간</strong>이라고 부른다.</p>
+
+<p><strong>증명.</strong> 귀류법으로 증명한다. 크레이그 보간이 존재하지 않는다고 가정하자. 그러면 $\phi$는 모델을 가진다. 만약 $\phi$가 모델을 가지지 않는다면 $\perp$가 $\phi, \psi$의 크레이그 보간이기 때문이다. 또한 $\lnot \psi$도 모델을 가진다. 그렇지 않다면 $\top$가 크레이그 보간이기 때문이다.</p>
+
+<p>$\mathcal{L}’$을 $\phi$와 $\psi$에 공통적으로 포함되는 비논리 기호들로 이루어진 언어라고 하자. $\Gamma$를, $\phi \vDash \sigma$이거나 $\lnot \psi \vDash \sigma$인 $\mathcal{L}’$-문장 $\sigma$의 집합이라고 하자.</p>
+
+<p>$\Gamma \cup \lbrace  \phi \rbrace $는 무모순적임을 보이자. 만약 모순적이라면, 콤팩트성 정리에 의해 어떤 $\mathcal{L}’$-문장 $\sigma_1, \sigma_2$가 존재하여 $\phi \vDash \sigma_1, \lnot\psi \vDash \sigma_2$이고 $\lbrace  \sigma_1, \sigma_2, \phi \rbrace $가 모순적이다. 그런데 $\phi \vDash \sigma_1$이므로 $\phi \vDash \lnot\sigma_2$이다. 대우법에 의해 $\lnot\psi\ \vDash \sigma_2$로부터 $\lnot\sigma_2 \vDash \psi$가 따라 나온다. 즉, $\sigma_2$는 $\phi, \psi$의 크레이그 보간이다. 이는 가정에 모순된다.</p>
+
+<p>따라서 $\Gamma \cup \lbrace  \phi \rbrace $는 무모순적이며, 같은 이유로 $\Gamma \cup \lbrace  \lnot\psi \rbrace $ 또한 무모순적이다. 이제 초른의 보조정리를 적용하여, $\overline{\Gamma}$를 다음 $\mathcal{L}’$-이론들의 순서의 극대로 정의한다.</p>
+
+\[\{ \Gamma' : \Gamma \subseteq \Gamma', \Gamma' \cup \{\phi\} \text{ and } \Gamma' \cup \{\lnot \psi\} \text{ are consistent} \}\]
+
+<p>$\overline{\Gamma}$는 완전함을 보이자. 만약 $\overline{\Gamma}$가 완전하지 않다면, 어떤 $\mathcal{L}’$-문장 $\sigma$가 존재하여 $\sigma \notin \overline{\Gamma}$이고, $\overline{\Gamma} \cup \lbrace \sigma, \phi \rbrace $ 또는 $\overline{\Gamma} \cup \lbrace \sigma, \lnot \psi \rbrace $가 무모순적이다.</p>
+
+<p>전자의 경우, 콤팩트성 정리에 의해 어떤 $\overline{\Gamma}$의 문장 $\theta$가 존재하여 $\phi \vDash \theta \rightarrow \lnot \sigma$이다. $\Gamma$의 정의에 의해 $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$이다. 따라서 $\overline{\Gamma} \cup \lbrace  \sigma, \phi \rbrace $는 $\lnot\phi$를 증명한다. 이는 모순이다. 후자의 경우에도 마찬가지 모순이 발생한다. 따라서 $\overline{\Gamma}$는 완전하다.</p>
+
+<p>$\overline{\Gamma}$가 완전하고, $\overline{\Gamma} \cup \lbrace \phi \rbrace , \overline{\Gamma} \cup \lbrace \lnot\psi \rbrace $가 건전하므로, 로빈슨 건전성 정리에 의해 $\overline{\Gamma} \cup \lbrace \phi, \lnot \psi \rbrace $가 건전하다. 그런데 이는 $\phi \vDash \psi$에 모순된다. 따라서 귀류법에 의해 $\phi, \psi$는 크레이그 보간을 가진다. ■</p>
+
+<h3 id="베스-정의-가능성-정리beth-definability-theorem">베스 정의 가능성 정리<sub>Beth definability theorem</sub></h3>
+
+<p>언어 $\mathcal{L}$과, $\mathcal{L}$에 포함되어 있지 않은 술어 $P$를 생각하자. $T$가 $\mathcal{L} \cup \lbrace  P \rbrace $의 이론이라고 하자. $T$를 만족하는 $\mathcal{L}$의 구조 $\mathfrak{A}$를 $\mathcal{L} \cup \lbrace  P \rbrace $로 확장하는 방법이 유일할 때, $T$가 $P$를 <strong>암시적으로 정의<sub>implicitly define</sub></strong>한다고 한다.</p>
+
+<p>이는 다음과 같이 말할 수도 있다. $T(P’)$가 $T$에서 등장하는 모든 $P$를 $P’$으로 바꾼 $\mathcal{L} \cup \lbrace P’ \rbrace $ 이론이라고 하자. $T$가 $P$를 암시적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
+
+\[T \cup T(P') \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow P'(x_1, \dots, x_n)\]
+
+<p>반면 $T$가 $P$를 <strong>명시적으로 정의<sub>explicitly define</sub></strong>한다는 것은 다음을 만족시키는 $\mathcal{L}$-논리식 $\phi$가 존재한다는 것이다.</p>
+
+\[T \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow \phi(x_1, \dots, x_n)\]
+
+<p>예를 들어 보자. $\mathcal{L} = (0, S, +, \cdot)$의 이론 $\mathsf{PA}$에 술어 $P(x, y)$에 관한 공리를 추가한 다음의 이론을 $T$라고 하자.</p>
+
+\[T = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
+
+<p>$T(P’)$은 다음과 같다.</p>
+
+\[T(P') = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P'(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
+
+<p>$T$가 $P$를 암묵적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
+
+\[T \cup T(P') \vDash \forall x, y \big[ P(x, y) \leftrightarrow P'(x, y) \big]\]
+
+<p>이는 귀납 공리꼴로부터 자연스럽게 따라 나온다. 그런데 $P$는 다음과 같이 $T$에서 명시적으로 정의될 수도 있다.</p>
+
+\[\begin{gather}
+T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
+\text{where}\\\\
+\phi(x, y) : \forall z \big[ x + z = S(0) \rightarrow z = y \big]
+\end{gather}\]
+
+<p>이는 우연이 아니다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 언어 $\mathcal{L}$에 대해, $\mathcal{L} \cup \lbrace  P \rbrace $의 이론 $T$가 $P$를 암시적으로 정의하면, $T$는 $P$를 명시적으로 정의한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $P$가 $n$항 술어라고 하자. $\mathcal{L}$에 새로운 상수 $c_1, \dots, c_n$을 추가한 언어를 $\mathcal{L}’$이라고 하자. $T$가 $P$를 암시적으로 정의하므로,</p>
+
+\[T \cup T(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>이다. 콤팩트성 정리에 의해 어떤 $\mathcal{L} \cup \lbrace  P \rbrace $ 문장 $\psi$가 존재하여, $T \vdash \psi$이고 다음이 성립한다.</p>
+
+\[\psi \land \psi(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>함축 원리를 이용하여 이항하면 다음과 같다.</p>
+
+\[\psi \land P(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>좌변은 $\mathcal{L}’ \cup \lbrace  P \rbrace $의 문장이고, 우변은 $\mathcal{L}’ \cup \lbrace  P’ \rbrace $의 문장이다. 따라서 크레이그 보간 정리에 의해 $\mathcal{L}$-논리식 $\theta$가 존재하여 다음이 성립한다.</p>
+
+\[\begin{gather}
+\psi \land P(c_1, \dots, c_n) \vDash \theta(c_1, \dots, c_n), \\\\
+\theta(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)
+\end{gather}\]
+
+<p>다시 이항하고 $P’$을 $P$로 치환하면,</p>
+
+\[\begin{gather}
+\psi \vDash P(c_1, \dots, c_n) \rightarrow \theta(c_1, \dots, c_n), \\\\
+\psi \vDash \theta(c_1, \dots, c_n) \rightarrow P(c_1, \dots, c_n)
+\end{gather}\]
+
+<p>따라서 $\theta$는 $P$를 명시적으로 정의한다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+  <div class="post fade-in-section">
+    <h1 class="post-title">
       <a href="/2025/05/04/regular-singular/"> 정칙 기수와 특이 기수, 그리고 도달 불가능 기수 </a>
     </h1>
 
@@ -742,146 +930,6 @@
 </blockquote>
 
 <p>즉, 선택 공리를 사용하지 않더라도 a) 스콧의 트릭을 통해 $\mathrm{Card}(X)$를 정의하거나, b) 단사 사상의 유무를 통해 $|X| \leq |Y|$를 정의할 수 있지만, a)와 b)가 맞물린다는 사실을 보일 때는 선택 공리가 필요하다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-  <div class="post fade-in-section">
-    <h1 class="post-title">
-      <a href="/2025/04/18/prisoner-hat/"> 무한 죄수 모자 문제 </a>
-    </h1>
-
-    <span class="post-date">18 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <p>아마 여러분은 죄수들이 자신의 모자 색을 맞히는 내용의 퍼즐을 제법 보았을 것이다. 예시는 다음과 같다.</p>
-
-<blockquote>
-  <p>3명의 죄수 A, B, C가 일렬로 서 있다. 간부는 검은 모자 2개와 흰 모자 3개 중 세 개를 골라 각 죄수에게 씌우고는, 만약 어느 한 명이라도 자신의 모자의 색을 맞히면 모두 풀려나지만 틀릴 경우 모두 사형에 처해질 것이라고 말한다. 죄수는 자기 앞에 있는 죄수들의 모자 색은 볼 수 있지만, 자신의 모자 색이나 자기 뒤에 있는 죄수들의 모자 색은 볼 수 없다. 오랜 침묵이 흐른 후, 한 죄수가 자신의 모자 색을 정확히 맞혔다. 문제를 맞힌 죄수는 누구인가?</p>
-
-  <p><img src="/public/hat-1.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(1)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer1" class="answer" style="padding-bottom: 1em;">
-<p><strong>C가 정답을 맞힌다.</strong></p>
-<p>만약 B와 C의 모자 색이 모두 검은색이었다면 A는 자신의 모자가 흰색임을 맞혔을 것이다. 그러나 "오랜 침묵"이 흘렀으므로, A는 자신의 모자 색을 맞히지 못하는 상황이며 이는 B, C의 모자 색이 (흰, 검), (검, 흰), (흰, 흰)의 경우 중 하나임을 시사한다.</p>
-<p>이 사실을 고려했을 때, 만약 C의 모자 색이 검정색이었다면 B는 자신의 모자 색이 흰색임을 맞혔을 것이다. 그럼에도 "오랜 침묵"이 흘렀다는 것은 B 또한 자신의 모자 색을 맞히지 못하는 상황임을 의미하므로, C의 모자 색은 흰색이다.</p>
-</div>
-
-<p>조금 더 어려운 문제도 있다.</p>
-
-<blockquote>
-  <p>100명의 죄수가 일렬로 서 있다. 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 최대 몇 명의 생존을 확실히 보장할 수 있는가?</p>
-
-  <p><img src="/public/hat-2.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(8)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>힌트 보기</u>
-</div>
-
-<div id="answer8" class="answer" style="padding-bottom: 1em;">
-<p>첫 번째 죄수를 제외한 99명의 생존을 보장할 수 있다.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(2)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer2" class="answer" style="padding-bottom: 1em;">
-<p><strong>첫 번째 죄수를 제외한 99명의 생존을 보장할 수 있다.</strong></p>
-<p>첫 번째 죄수는 자신을 제외한 99명의 모자 색을 볼 수 있다. 그 중 검은색 모자가 짝수 개라면 자신의 모자 색을 검은색으로 맞히고, 홀수 개라면 흰색으로 맞힌다. 그러면 두 번째 죄수는 첫 번째 죄수가 전달한 정보와, 자기 앞에 있는 모자들 중 검은색 모자의 홀짝성을 비교함으로서 자신의 모자 색을 정확히 맞힐 수 있다. 세 번째 죄수 또한 첫 번째 죄수가 전달한 정보와, 두 번째 죄수가 자신의 모자 색을 맞혔다는 사실로부터 자신의 모자 색을 정확히 맞힐 수 있고, 이같은 식으로 99명이 모두 풀려날 수 있다.</p>
-</div>
-
-<p>이제 문제를 더 괴랄하게 만들어 보자.</p>
-
-<blockquote>
-  <p><strong>무한히 많은 죄수가 일렬로 서 있다.</strong> 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 가능한 적은 죄수가 죽도록 하는 전략은 무엇인가? <strong>단, 모든 죄수는 무한한 연산 능력을 가지며, 수학적으로 전지전능하다고 가정한다.</strong> 즉, $f$가 수학적으로 존재하는 함수일 때, 죄수들은 $f$의 함숫값을 언제나 계산할 수 있으며, 사전에 전략을 의논할 때 $f$를 사용하자고 합의할 수 있다.</p>
-
-  <p><img src="/public/hat-3.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(3)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>힌트 보기 1</u>
-</div>
-
-<div id="answer3" class="answer" style="padding-bottom: 1em;">
-<p>첫 번째 죄수를 제외한 전원의 생존을 보장할 수 있다.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(4)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>힌트 보기 2</u>
-</div>
-
-<div id="answer4" class="answer" style="padding-bottom: 1em;">
-<p>선택 공리를 사용한다.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(5)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer5" class="answer" style="padding-bottom: 1em;">
-
-<p>검은색 모자를 0, 흰색 모자를 1로 적으면 죄수들의 모자 배열은 101011... 와 같은 무한 숫자열로 표현할 수 있다. 앞에 소숫점을 찍고 이진법으로 읽으면 죄수들의 모자 배열은 0 이상 1 이하의 실수와 일대일 대응된다.</p>
-
-<p>실수 $a, b \in [0, 1]$에 대해, $a$와 $b$의 이진 전개가 차이나는 자릿수의 개수가 유한할 때 $a \sim b$라고 하자. 예를 들어,</p>
-
-$$
-0.11111\dots \sim 0.01111\dots, \; 0.10101\dots \not\sim 0.01010\dots
-$$
-
-<p>$\sim$은 동치 관계임을 쉽게 보일 수 있다. 따라서 동치류 $[0, 1]/\sim$을 취할 수 있다. 선택 공리에 의해 $[0, 1]/\sim$의 선택 함수 $\iota$가 존재한다. 죄수들이 수학적으로 전지전능하다고 가정했으므로 사전에 죄수들은 어떤 선택 함수 $\iota$를 사용할지 합의할 수 있다.</p>
-
-<p>모자 맞히기가 시작되었을 때 $n$번째 죄수는 $n$개의 모자를 제외한 모든 모자의 색을 볼 수 있다. 즉, 죄수들의 모자 배열에 대응되는 실수가 $r$일 때, $n$번째 죄수는 $r$의 소숫점 아래 $n$개 자릿수 이외의 모든 자릿수를 알고 있다. 즉, 그는 $r$이 $[0, 1]/\sim$의 어떤 동치류에 속하는지 알며, $r$이 속하는 동치류를 $[r]$이라고 했을 때 $\iota([r])$을 계산할 수 있다.</p>
-
-<p>이제 다음의 전략을 취한다. $\sim$의 정의에 의해 $r$과 $\iota([r])$은 유한한 개수의 자릿수에서만 차이가 난다. 첫 번째 죄수는 자신이 보는 모자들의 배열과 $\iota([r])$에 대응되는 모자들의 배열이 짝수만큼 차이가 나면 자신의 모자색을 검정색으로 맞히고, 홀수만큼 차이가 나면 흰색으로 맞힌다. 이제 나머지 죄수들은 100명의 죄수 문제와 같은 방식으로 자신의 모자 색을 맞힐 수 있다.</p>
-
-<p>즉, 선택 공리는 $N$명의 죄수 문제에서 $N \to \infty$를 취했을 때에도 첫 번째 죄수를 제외한 전원이 생존할 수 있다는 결론이 존속되도록 보장하는 원리이다.</p>
-
-</div>
-
-<p>위 퍼즐도 상당히 신기하지만, 다음의 퍼즐은 더 기묘하다.</p>
-
-<blockquote>
-  <p>무한히 많은 죄수가 일렬로 서 있다. 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 또한, <strong>모자가 씌워지는 순간 죄수들은 청력을 완전히 상실하여 아무런 정보를 주고받을 수 없다.</strong> 오직 유한한 수의 죄수만이 죽도록 하는 전략이 있는가? (마찬가지로 죄수는 무한한 연산 능력을 가지며 수학적으로 전지전능하다.)</p>
-
-  <p><img src="/public/hat-4.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(6)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer6" class="answer" style="padding-bottom: 1em;">
-
-<p>이전 문제와 같이 $\iota$를 $[0, 1]/\sim$의 선택 함수라고 하자. 다음의 전략을 취한다. $n$번째 죄수는 자신의 모자 색을 $\iota([r])$의 $n$번째 자릿수에 대응되는 색으로 맞힌다. 그러면 $\sim$의 정의에 의해 유한한 수의 죄수를 제외한 전원이 정답을 맞힌다.</p>
-
-</div>
-
-<p>위 퍼즐이 특히 기묘한 이유는, 청력 상실 조건에 의해 서로 다른 두 죄수가 모자를 맞히는 사건이 독립이므로, 각각의 죄수가 정답을 맞힐 확률은 $p$로 동일해야 할 듯하기 때문이다. 이 경우 총 $N$명의 죄수가 정답을 맞히는 확률은 $p^N$이 되므로, $N \to \infty$에 따라 확률은 0으로 수렴한다. 그러나 실제로는 무한히 많은 죄수들이 정답을 맞힌다.</p>
-
-<p>이 역설의 뿌리는, 임의의 죄수가 정답을 맞히는 확률이 <strong>정의되지 않는다</strong>는 데 있다. 잘 생각해 보면, 임의의 죄수가 정답을 맞히는 사건은 주어진 실수 $r \in [0, 1]$이 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>에 포함되는 사건과 동일한데, 비탈리 집합은 비가측 집합이므로 이 사건에는 확률을 정의할 수 없기 때문이다.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -1,10 +1,12 @@
 ---
 layout: post
 title: "솔 크립키, 「비트겐슈타인 규칙과 사적 언어」"
-date: 2026-06-16
+date: 2025-06-17
 tags: ["철학", "언어철학"]
 related:
 ---
+
+> 이 글은 <a href="/public/Kripke - Wittgenstein On Rules and Private Language.pdf">Kripke, Saul A. (1982). *Wittgenstein on rules and private language*</a> 를 정리한 것이다.
 
 ### 요약
 

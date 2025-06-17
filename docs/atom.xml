@@ -4,13 +4,93 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-06-16T15:53:00+09:00</updated>
+ <updated>2025-06-17T12:14:55+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>솔 크립키, 「비트겐슈타인 규칙과 사적 언어」</title>
+   <link href="http://localhost:4000/2025/06/17/kripkenstein/"/>
+   <updated>2025-06-17T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/06/17/kripkenstein</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;이 글은 &lt;a href=&quot;/public/Kripke - Wittgenstein On Rules and Private Language.pdf&quot;&gt;Kripke, Saul A. (1982). &lt;em&gt;Wittgenstein on rules and private language&lt;/em&gt;&lt;/a&gt; 를 정리한 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;요약&quot;&gt;요약&lt;/h3&gt;
+
+&lt;p&gt;크립키는 비트겐슈타인의 ⟪철학적 탐구⟫의 핵심이 소위 &lt;strong&gt;규칙 따르기에 대한 회의주의&lt;sub&gt;Skepticism about rule following&lt;/sub&gt;&lt;/strong&gt;에 있다고 주장한다. 크립키의 독해에 따르면 ⟪탐구⟫의 §1-137은 비트겐슈타인이 ⟪논고⟫의 언어관을 비판하고 극복하는 대목이다. §138-242에서는 규칙 따르기에 대한 회의주의가 전개되고, 이에 대한 “회의주의적 해답”이 제시된다. “존슨은 ‘+’ 기호로 컷셈&lt;sub&gt;quaddition&lt;/sub&gt;이 아닌 덧셈을 의미한다”와 같은 명제의 진릿값이 객관적 사실로서 결정 가능한지에 관해 의문을 던지는 회의주의 문제는 ⟪논고⟫의 언어관이 올바를 수 없음을 보이는 최종적인 논증이라는 점에서 §1-137을 확정짓는 동시에, 의미의 문제를 해명하는 이론의 가능성이 어떠한 형태로든 잔존하는가에 관한 궤멸적인 회의주의를 제기한다. 비트겐슈타인은 이에 대해 언어의 유의미함은 그 기능에 달려 있으며, 따라서 의미에 대한 논의는 개별 언어 사용자 단위에서는 공허하지만 언어 공동체 단위에서는 유효하다는 &lt;strong&gt;언어의 공적성&lt;/strong&gt;을 강조한다.&lt;/p&gt;
+
+&lt;p&gt;§243 이후는 회의주의 문제의 결론을 기타 철학적 문제에 적용하는 대목이다. 회의주의 문제의 함의 중 하나는 사적 언어&lt;sub&gt;private language&lt;/sub&gt;는 불가능하다는 것이다. 그럼에도 사적인 방식으로 작동하는 듯한 영역의 언어가 대표적으로 두 가지 있는데, 바로 수학적 언어와 심리적 언어이다. &lt;strong&gt;그러나 비트겐슈타인은 수학적 언어와 심리적 언어가 사적 언어에 해당한다는 생각이 착각이라고 역설한다.&lt;/strong&gt; 이 대목에서 우리는 비트겐슈타인 특유의 수학철학적 · 심리철학적 입장을 엿볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;크립키는 비트겐슈타인의 회의주의 논증이 콰인의 번역 불확정성 논증과 유사하다는 점을 지적하면서도, 문제의 초점이 경험적 검증이 아닌 내면적 성찰에 맞추어져 있다는 점과, 의미를 기술적 · 행동주의적인 것으로 간주하지 않고 규범적 · 심리적인 것으로 간주한다는 점에서 차이가 있음을 강조한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-크립키-비트겐슈타인-역설&quot;&gt;1. 크립키-비트겐슈타인 역설&lt;/h2&gt;
+
+&lt;h3 id=&quot;11-회의주의자의-등장&quot;&gt;1.1. 회의주의자의 등장&lt;/h3&gt;
+
+&lt;p&gt;언어 사용자가 단어의 의미를 파악하는 과정에는, 간과하기 쉽지만 실로 모순적인 측면이 있다. 바로 과거의 &lt;em&gt;유한한&lt;/em&gt; 학습 경험으로부터, 해당 단어가 사용될 수 있는 &lt;em&gt;무한한&lt;/em&gt; 사례들에 대해 올바른 추론을 할 수 있어야 한다는 것이다.&lt;/p&gt;
+
+&lt;p&gt;덧셈을 예로 들어 보자. 누군가 당신에게 ’68 + 57’의 답을 묻는다면 당신은 ‘125’라고 답할 것이다. 그런데 당신이 50보다 큰 두 수를 가지고 덧셈을 한 경우가 이번이 처음이라고 하자.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 당신 앞으로 한 회의주의자가 다가오더니, ‘125’라는 당신의 답은 틀렸으며, 당신이 내놓았어야 하는 답은 ‘5’였다고 말한다. 구체적으로, 회의주의자는 다음을 주장한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;만약 당신이 과거에 당신이 줄곧 ‘+’에 부여하던 의미를 따라 현재의 질문에 답하고자 한 것이라면, 당신은 ‘5’라고 답을 했어야 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;12-두-가지-조건&quot;&gt;1.2. 두 가지 조건&lt;/h3&gt;
+
+&lt;p&gt;이 주장에는 두 가지 주목할 점이 있다. &lt;strong&gt;첫째, 회의주의자의 주장은 가정문이다.&lt;/strong&gt; 회의주의자는 당신이 &lt;em&gt;어떤 경우에서든&lt;/em&gt; ’5’라고 답해야 한다고 주장하는 것이 아니다. 그가 주장하는 바는, &lt;em&gt;당신이 과거에 ‘+’에 부여하던 의미와 현재 ‘+’에 부여하는 의미를 일치시키고자 할 경우&lt;/em&gt; ’5’라고 답해야 한다는 것이다. &lt;strong&gt;둘째, 회의주의자의 주장은 규범적이다.&lt;/strong&gt; 회의주의자의 주장은 — 앞서 말한 조건이 만족되었을 때 — 당신은 ‘5’라고 답을 &lt;em&gt;했을 것&lt;/em&gt;이라는 주장이 아니라, ‘5’라고 답을 &lt;em&gt;했어야 한다&lt;/em&gt;는 주장이다.&lt;/p&gt;
+
+&lt;p&gt;따라서 회의주의자의 주장에 대한 답변·반박 또한 두 가지 조건을 만족해야 한다. &lt;strong&gt;첫째, 화자에 관한 어떠한 심리적·행동적 사실이, 해당 화자가 특정 기호를 특정 의미로 사용함을 구성하는지 설명해야 한다.&lt;/strong&gt; 이 설명은 회의주의자의 주장에서 가정이 무엇을 의미하는지 해명하기 위해 필요하다. &lt;strong&gt;둘째, 해당 사실이 어떠한 방식으로 화자의 언어 사용을 정당화하는지 설명해야 한다.&lt;/strong&gt; 이 설명은 회의주의자의 주장이 규범적이기 때문에 필요하다.&lt;/p&gt;
+
+&lt;p&gt;두 번째 조건의 의의가 안 와닿을 수도 있기 때문에 조금 더 설명을 해 보겠다. 가령 “내가 과거의 나와 같은 의미로 ‘+’ 기호를 사용한고자 한다면 나는 ’68 + 57’에 대해 ‘5’가 아니라 ‘125’라고 말해야 한다. 왜냐하면, 만약 과거의 나를 — 두뇌까지 포함하여 — 정확히 똑같이 복제한 사람에게 ’68 + 57’을 물어본다면, 그는 ‘125’라고 대답할 것이기 때문이다”는 정당한 답변이 아니다. 그러한 복제 기술이 실제로 가능한지와는 별개로, 해당 답변은 두 번째 조건을 만족하지 않기 때문이다. 해당 사실은 내가 언제나 ‘125’라고 대답&lt;em&gt;했을 것&lt;/em&gt;임을 보증할 뿐 내가 언제나 ‘125’라고 대답&lt;em&gt;해야만 했음&lt;/em&gt;은 전혀 보증하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;이는 &lt;strong&gt;체계적 계산 오류의 사례&lt;/strong&gt;를 통해 더 명확히 이해할 수 있다. 가령 덧셈을 처음 배우는 아이는 종종 받아올림을 까먹곤 한다. 그런 아이는 ’68 + 57’에 대해 ‘125’가 아니라 ‘115’라고 대답할 것이다. 그런데 모종의 문제로 인해 어른이 될 때까지 받아올림 실수를 교정하지 못한 사람이 있다고 하자. 그는 덧셈이 무엇인지 이해하며, 구체적인 덧셈 문제가 아니라 덧셈에 대한 성질을 질문 받으면&lt;small&gt;(가령, “결합법칙을 만족하는가?”)&lt;/small&gt; 올바르게 대답한다. 다만, 그는 그의 실수를 교정해 줄 지도자가 없는 상황에서 ’68 + 57’을 질문 받으면 &lt;em&gt;언제나&lt;/em&gt; ‘115’라고 대답한다. 이를 두고 우리는 그가 ‘+’에 덧셈의 의미를 부여하고 있으나, 그 의미에 &lt;em&gt;정당한 방식대로&lt;/em&gt; ’68 + 57’에 대답하지 못하는 것이라 주장하고 싶다. 바로 이 주장을 성립시키기 위해 두 번째 조건이 필요한 것이다. 두 번째 조건을 만족하지 못하는 의미론을 채택한다면, 우리는 그가 ‘+’에 덧셈이 아닌, “두 수의 덧셈을 받아올림을 제하고 수행하는 연산”, 혹은 “곁에 지도자가 없는 상황에서는 받아올림을 제한 덧셈을 수행하고 있는 상황에서는 지도자의 교정을 받아 덧셈을 수행하는 연산”의 의미를 부여하고 있다고 수긍해야 하기 때문이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;13-덧셈과-컷셈&quot;&gt;1.3. 덧셈과 컷셈&lt;/h3&gt;
+
+&lt;p&gt;이제 회의주의자에 대한 응답이 갖춰야 할 두 가지 조건이 명확해졌으니, 어떤 근거로 회의주의자가 이처럼 말도 안 되는 주장을 내놓는지 알아보자. 회의주의자의 요지는, 당신이 과거에 ‘+’에 부여했던 의미는 사실 덧셈(+)이 아니라 &lt;strong&gt;컷셈&lt;/strong&gt;(⨁)이었다는 것이다. 컷셈의 정의는 다음과 같다.&lt;/p&gt;
+
+\[x \oplus y =
+\begin{cases}
+x + y &amp;amp; x, y &amp;lt; 50 \\
+5 &amp;amp; \text{otherwise}
+\end{cases}\]
+
+&lt;p&gt;이에 대해 당신은, 과거부터 자신은 ‘+’를 컷셈이 아닌 덧셈의 의미를 사용했다고 즉각 반박할 것이다. 그런데 여기부터 본격적인 문제가 시작된다. &lt;strong&gt;과거에 자신이 ‘+’에 부여한 의미가 컷셈이 아닌 덧셈이었음을 어떻게 입증할 수 있는가?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;우선 문제의 가정으로 인해, 과거에 당신이 수행한 ‘+’의 계산 기록들로부터 이를 입증하는 것은 불가능하다. 과거에 당신이 수행한 ‘+’ 문제는 모두 양항이 50 미만이었으므로 덧셈으로 인한 결과인지 컷셈으로 인한 결과인지 구별할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;그럼에도 당신은 아랑곳하지 않고 이렇게 대꾸할지 모른다. “과거의 나는 ‘x + y’가 x개의 대상과 y개의 대상을 한데 모은 묶음을 세는 연산이라고 배운 바 있다. 따라서 과거의 나는 ‘+’를 컷셈의 의미로 사용하지 않았다.” 그러나 회의주의자는 이에 대해 또 한번 회의주의를 펼칠 수 있다. 요컨대 그는 과거에 당신은 ‘세다’라는 단어를 줄곧 셈&lt;sub&gt;count&lt;/sub&gt;이 아닌 &lt;em&gt;켐&lt;sub&gt;quont&lt;/sub&gt;&lt;/em&gt;으로 이해하고 있었다고 주장할 수 있다. 묶음을 켄다는 것은 묶음의 크기가 50 미만일 때는 세는 것이고, 50을 초과할 때는 5라고 대답하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;요지는, &lt;strong&gt;과거에 자신이 ‘+’에 부여한 의미가 무엇이었는지를 다른 언어적 증거를 통해 입증하려는 시도는 해당 언어적 증거 또한 비표준적인 의미가 부여되었을 가능성을 제거하지 못하므로 무한 퇴행에 빠진다&lt;/strong&gt;는 것이다.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;14-성향적-분석-검토&quot;&gt;1.4. 성향적 분석 검토&lt;/h3&gt;
+
+&lt;h3 id=&quot;15-기계주의적-환원-검토&quot;&gt;1.5. 기계주의적 환원 검토&lt;/h3&gt;
+
+&lt;h2 id=&quot;2-회의주의적-해답&quot;&gt;2. 회의주의적 해답&lt;/h2&gt;
+
+&lt;h2 id=&quot;3-사적-언어-논증&quot;&gt;3. 사적 언어 논증&lt;/h2&gt;
+
+&lt;h2 id=&quot;4&quot;&gt;4.&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;한 사람이 인생에서 덧셈을 계산하는 횟수는 유한하므로, 그러한 상한은 — 대부분의 경우 50보다는 훨씬 크겠지만 — 언제나 존재한다. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;수리논리학을 배워본 적 있는 독자라면 이를 뢰벤하임-스콜렘 정리와 연결지을 수 있을 것이다. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+ </entry>
  
  <entry>
    <title>프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title>

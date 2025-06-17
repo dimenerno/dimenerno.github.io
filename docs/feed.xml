@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-16T15:53:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry><title type="html">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title><link href="http://localhost:4000/2025/06/16/kafka-blue-octavos/" rel="alternate" type="text/html" title="프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권" /><published>2025-06-16T00:00:00+09:00</published><updated>2025-06-16T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/16/kafka-blue-octavos</id><content type="html" xml:base="http://localhost:4000/2025/06/16/kafka-blue-octavos/"><![CDATA[<style>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-17T12:14:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry><title type="html">솔 크립키, 「비트겐슈타인 규칙과 사적 언어」</title><link href="http://localhost:4000/2025/06/17/kripkenstein/" rel="alternate" type="text/html" title="솔 크립키, 「비트겐슈타인 규칙과 사적 언어」" /><published>2025-06-17T00:00:00+09:00</published><updated>2025-06-17T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/17/kripkenstein</id><content type="html" xml:base="http://localhost:4000/2025/06/17/kripkenstein/"><![CDATA[<blockquote>
+  <p>이 글은 <a href="/public/Kripke - Wittgenstein On Rules and Private Language.pdf">Kripke, Saul A. (1982). <em>Wittgenstein on rules and private language</em></a> 를 정리한 것이다.</p>
+</blockquote>
+
+<h3 id="요약">요약</h3>
+
+<p>크립키는 비트겐슈타인의 ⟪철학적 탐구⟫의 핵심이 소위 <strong>규칙 따르기에 대한 회의주의<sub>Skepticism about rule following</sub></strong>에 있다고 주장한다. 크립키의 독해에 따르면 ⟪탐구⟫의 §1-137은 비트겐슈타인이 ⟪논고⟫의 언어관을 비판하고 극복하는 대목이다. §138-242에서는 규칙 따르기에 대한 회의주의가 전개되고, 이에 대한 “회의주의적 해답”이 제시된다. “존슨은 ‘+’ 기호로 컷셈<sub>quaddition</sub>이 아닌 덧셈을 의미한다”와 같은 명제의 진릿값이 객관적 사실로서 결정 가능한지에 관해 의문을 던지는 회의주의 문제는 ⟪논고⟫의 언어관이 올바를 수 없음을 보이는 최종적인 논증이라는 점에서 §1-137을 확정짓는 동시에, 의미의 문제를 해명하는 이론의 가능성이 어떠한 형태로든 잔존하는가에 관한 궤멸적인 회의주의를 제기한다. 비트겐슈타인은 이에 대해 언어의 유의미함은 그 기능에 달려 있으며, 따라서 의미에 대한 논의는 개별 언어 사용자 단위에서는 공허하지만 언어 공동체 단위에서는 유효하다는 <strong>언어의 공적성</strong>을 강조한다.</p>
+
+<p>§243 이후는 회의주의 문제의 결론을 기타 철학적 문제에 적용하는 대목이다. 회의주의 문제의 함의 중 하나는 사적 언어<sub>private language</sub>는 불가능하다는 것이다. 그럼에도 사적인 방식으로 작동하는 듯한 영역의 언어가 대표적으로 두 가지 있는데, 바로 수학적 언어와 심리적 언어이다. <strong>그러나 비트겐슈타인은 수학적 언어와 심리적 언어가 사적 언어에 해당한다는 생각이 착각이라고 역설한다.</strong> 이 대목에서 우리는 비트겐슈타인 특유의 수학철학적 · 심리철학적 입장을 엿볼 수 있다.</p>
+
+<p>크립키는 비트겐슈타인의 회의주의 논증이 콰인의 번역 불확정성 논증과 유사하다는 점을 지적하면서도, 문제의 초점이 경험적 검증이 아닌 내면적 성찰에 맞추어져 있다는 점과, 의미를 기술적 · 행동주의적인 것으로 간주하지 않고 규범적 · 심리적인 것으로 간주한다는 점에서 차이가 있음을 강조한다.</p>
+
+<h2 id="1-크립키-비트겐슈타인-역설">1. 크립키-비트겐슈타인 역설</h2>
+
+<h3 id="11-회의주의자의-등장">1.1. 회의주의자의 등장</h3>
+
+<p>언어 사용자가 단어의 의미를 파악하는 과정에는, 간과하기 쉽지만 실로 모순적인 측면이 있다. 바로 과거의 <em>유한한</em> 학습 경험으로부터, 해당 단어가 사용될 수 있는 <em>무한한</em> 사례들에 대해 올바른 추론을 할 수 있어야 한다는 것이다.</p>
+
+<p>덧셈을 예로 들어 보자. 누군가 당신에게 ’68 + 57’의 답을 묻는다면 당신은 ‘125’라고 답할 것이다. 그런데 당신이 50보다 큰 두 수를 가지고 덧셈을 한 경우가 이번이 처음이라고 하자.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> 당신 앞으로 한 회의주의자가 다가오더니, ‘125’라는 당신의 답은 틀렸으며, 당신이 내놓았어야 하는 답은 ‘5’였다고 말한다. 구체적으로, 회의주의자는 다음을 주장한다.</p>
+
+<blockquote>
+  <p>만약 당신이 과거에 당신이 줄곧 ‘+’에 부여하던 의미를 따라 현재의 질문에 답하고자 한 것이라면, 당신은 ‘5’라고 답을 했어야 한다.</p>
+</blockquote>
+
+<h3 id="12-두-가지-조건">1.2. 두 가지 조건</h3>
+
+<p>이 주장에는 두 가지 주목할 점이 있다. <strong>첫째, 회의주의자의 주장은 가정문이다.</strong> 회의주의자는 당신이 <em>어떤 경우에서든</em> ’5’라고 답해야 한다고 주장하는 것이 아니다. 그가 주장하는 바는, <em>당신이 과거에 ‘+’에 부여하던 의미와 현재 ‘+’에 부여하는 의미를 일치시키고자 할 경우</em> ’5’라고 답해야 한다는 것이다. <strong>둘째, 회의주의자의 주장은 규범적이다.</strong> 회의주의자의 주장은 — 앞서 말한 조건이 만족되었을 때 — 당신은 ‘5’라고 답을 <em>했을 것</em>이라는 주장이 아니라, ‘5’라고 답을 <em>했어야 한다</em>는 주장이다.</p>
+
+<p>따라서 회의주의자의 주장에 대한 답변·반박 또한 두 가지 조건을 만족해야 한다. <strong>첫째, 화자에 관한 어떠한 심리적·행동적 사실이, 해당 화자가 특정 기호를 특정 의미로 사용함을 구성하는지 설명해야 한다.</strong> 이 설명은 회의주의자의 주장에서 가정이 무엇을 의미하는지 해명하기 위해 필요하다. <strong>둘째, 해당 사실이 어떠한 방식으로 화자의 언어 사용을 정당화하는지 설명해야 한다.</strong> 이 설명은 회의주의자의 주장이 규범적이기 때문에 필요하다.</p>
+
+<p>두 번째 조건의 의의가 안 와닿을 수도 있기 때문에 조금 더 설명을 해 보겠다. 가령 “내가 과거의 나와 같은 의미로 ‘+’ 기호를 사용한고자 한다면 나는 ’68 + 57’에 대해 ‘5’가 아니라 ‘125’라고 말해야 한다. 왜냐하면, 만약 과거의 나를 — 두뇌까지 포함하여 — 정확히 똑같이 복제한 사람에게 ’68 + 57’을 물어본다면, 그는 ‘125’라고 대답할 것이기 때문이다”는 정당한 답변이 아니다. 그러한 복제 기술이 실제로 가능한지와는 별개로, 해당 답변은 두 번째 조건을 만족하지 않기 때문이다. 해당 사실은 내가 언제나 ‘125’라고 대답<em>했을 것</em>임을 보증할 뿐 내가 언제나 ‘125’라고 대답<em>해야만 했음</em>은 전혀 보증하지 않는다.</p>
+
+<p>이는 <strong>체계적 계산 오류의 사례</strong>를 통해 더 명확히 이해할 수 있다. 가령 덧셈을 처음 배우는 아이는 종종 받아올림을 까먹곤 한다. 그런 아이는 ’68 + 57’에 대해 ‘125’가 아니라 ‘115’라고 대답할 것이다. 그런데 모종의 문제로 인해 어른이 될 때까지 받아올림 실수를 교정하지 못한 사람이 있다고 하자. 그는 덧셈이 무엇인지 이해하며, 구체적인 덧셈 문제가 아니라 덧셈에 대한 성질을 질문 받으면<small>(가령, “결합법칙을 만족하는가?”)</small> 올바르게 대답한다. 다만, 그는 그의 실수를 교정해 줄 지도자가 없는 상황에서 ’68 + 57’을 질문 받으면 <em>언제나</em> ‘115’라고 대답한다. 이를 두고 우리는 그가 ‘+’에 덧셈의 의미를 부여하고 있으나, 그 의미에 <em>정당한 방식대로</em> ’68 + 57’에 대답하지 못하는 것이라 주장하고 싶다. 바로 이 주장을 성립시키기 위해 두 번째 조건이 필요한 것이다. 두 번째 조건을 만족하지 못하는 의미론을 채택한다면, 우리는 그가 ‘+’에 덧셈이 아닌, “두 수의 덧셈을 받아올림을 제하고 수행하는 연산”, 혹은 “곁에 지도자가 없는 상황에서는 받아올림을 제한 덧셈을 수행하고 있는 상황에서는 지도자의 교정을 받아 덧셈을 수행하는 연산”의 의미를 부여하고 있다고 수긍해야 하기 때문이다.</p>
+
+<h3 id="13-덧셈과-컷셈">1.3. 덧셈과 컷셈</h3>
+
+<p>이제 회의주의자에 대한 응답이 갖춰야 할 두 가지 조건이 명확해졌으니, 어떤 근거로 회의주의자가 이처럼 말도 안 되는 주장을 내놓는지 알아보자. 회의주의자의 요지는, 당신이 과거에 ‘+’에 부여했던 의미는 사실 덧셈(+)이 아니라 <strong>컷셈</strong>(⨁)이었다는 것이다. 컷셈의 정의는 다음과 같다.</p>
+
+\[x \oplus y =
+\begin{cases}
+x + y &amp; x, y &lt; 50 \\
+5 &amp; \text{otherwise}
+\end{cases}\]
+
+<p>이에 대해 당신은, 과거부터 자신은 ‘+’를 컷셈이 아닌 덧셈의 의미를 사용했다고 즉각 반박할 것이다. 그런데 여기부터 본격적인 문제가 시작된다. <strong>과거에 자신이 ‘+’에 부여한 의미가 컷셈이 아닌 덧셈이었음을 어떻게 입증할 수 있는가?</strong></p>
+
+<p>우선 문제의 가정으로 인해, 과거에 당신이 수행한 ‘+’의 계산 기록들로부터 이를 입증하는 것은 불가능하다. 과거에 당신이 수행한 ‘+’ 문제는 모두 양항이 50 미만이었으므로 덧셈으로 인한 결과인지 컷셈으로 인한 결과인지 구별할 수 없다.</p>
+
+<p>그럼에도 당신은 아랑곳하지 않고 이렇게 대꾸할지 모른다. “과거의 나는 ‘x + y’가 x개의 대상과 y개의 대상을 한데 모은 묶음을 세는 연산이라고 배운 바 있다. 따라서 과거의 나는 ‘+’를 컷셈의 의미로 사용하지 않았다.” 그러나 회의주의자는 이에 대해 또 한번 회의주의를 펼칠 수 있다. 요컨대 그는 과거에 당신은 ‘세다’라는 단어를 줄곧 셈<sub>count</sub>이 아닌 <em>켐<sub>quont</sub></em>으로 이해하고 있었다고 주장할 수 있다. 묶음을 켄다는 것은 묶음의 크기가 50 미만일 때는 세는 것이고, 50을 초과할 때는 5라고 대답하는 것이다.</p>
+
+<p>요지는, <strong>과거에 자신이 ‘+’에 부여한 의미가 무엇이었는지를 다른 언어적 증거를 통해 입증하려는 시도는 해당 언어적 증거 또한 비표준적인 의미가 부여되었을 가능성을 제거하지 못하므로 무한 퇴행에 빠진다</strong>는 것이다.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
+
+<h3 id="14-성향적-분석-검토">1.4. 성향적 분석 검토</h3>
+
+<h3 id="15-기계주의적-환원-검토">1.5. 기계주의적 환원 검토</h3>
+
+<h2 id="2-회의주의적-해답">2. 회의주의적 해답</h2>
+
+<h2 id="3-사적-언어-논증">3. 사적 언어 논증</h2>
+
+<h2 id="4">4.</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>한 사람이 인생에서 덧셈을 계산하는 횟수는 유한하므로, 그러한 상한은 — 대부분의 경우 50보다는 훨씬 크겠지만 — 언제나 존재한다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>수리논리학을 배워본 적 있는 독자라면 이를 뢰벤하임-스콜렘 정리와 연결지을 수 있을 것이다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="철학" /><category term="언어철학" /><summary type="html"><![CDATA[이 글은 Kripke, Saul A. (1982). Wittgenstein on rules and private language 를 정리한 것이다.]]></summary></entry><entry><title type="html">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title><link href="http://localhost:4000/2025/06/16/kafka-blue-octavos/" rel="alternate" type="text/html" title="프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권" /><published>2025-06-16T00:00:00+09:00</published><updated>2025-06-16T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/16/kafka-blue-octavos</id><content type="html" xml:base="http://localhost:4000/2025/06/16/kafka-blue-octavos/"><![CDATA[<style>
   h4 {
     font-family: 'Libre Baskerville';
   }
@@ -1141,165 +1212,4 @@ Ich sitze zum Beispiel zu Hause, ehe ich angeln gehe, und drehe scharf zusehend 
   <p><strong>정의.</strong> 비가산 데데킨트 성질을 만족하는 집합을 <a href="https://en.wikipedia.org/wiki/Η_set"><strong>$\eta$ 집합</strong></a>이라고 한다. 특히, $\kappa = \aleph_\alpha$에 대해 비가산 데데킨트 성질을 만족하는 집합을 $\eta_\alpha$ 집합이라고 한다.</p>
 </blockquote>
 
-<p>$\eta$ 집합은 하우스도르프에 의해 제시되었다. $\eta$ 집합은 다음 글에서 알아 볼 <strong>포화<sub>saturation</sub></strong> 개념과 밀접한 관련이 있다.</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="수학" /><category term="집합론" /><summary type="html"><![CDATA[가산 조밀 무계 전순서countable dense unbounded linear order는 모두 동형임을 보인 칸토어의 앞뒤 논법back-and-forth argument에서 핵심이 되는 원리는 다음이다.]]></summary></entry><entry><title type="html">로빈슨, 크레이그, 베스의 정리</title><link href="http://localhost:4000/2025/05/08/robinson-craig/" rel="alternate" type="text/html" title="로빈슨, 크레이그, 베스의 정리" /><published>2025-05-08T00:00:00+09:00</published><updated>2025-05-08T00:00:00+09:00</updated><id>http://localhost:4000/2025/05/08/robinson-craig</id><content type="html" xml:base="http://localhost:4000/2025/05/08/robinson-craig/"><![CDATA[<h3 id="초등적-병합-성질elementary-amalgamation-property">초등적 병합 성질<sub>Elementary amalgamation property</sub></h3>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}’$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화<sub>$\mathcal{L}$-reduct</sub>가 $\mathfrak{A}$와 초등적으로 동등<sub>elementarily equivalent</sub>하다고 하자. 이 때, $\mathcal{L}’$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">초등적 임베딩</a>이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}’$의 초등적 임베딩이다.</p>
-
-  <p><img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply" /></p>
-</blockquote>
-
-<p><strong>증명.</strong> <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이 글</a>의 표기법을 따라, 언어 $L_\mathfrak{A}$의 이론 $E(\mathfrak{A})$와 언어 $L’_\mathfrak{B}$의 이론 $E(\mathfrak{B})$를 생각하자. $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$는 언어 $\mathcal{L}’_{\mathfrak{AB}} = \mathcal{L}_\mathfrak{A} \cup \mathcal{L}’_\mathfrak{B}$의 이론이다. $T$가 모델 $\mathfrak{C}$를 가짐을 보이자.</p>
-
-<p>만약 $T$가 모델이 없다면 $T$는 모순적이다. 따라서 콤팩트성 정리에 의해 어떤 $\mathcal{L}$-논리식 $\phi$와 $\mathcal{L}’$-논리식 $\psi$가 존재하여, 적절한 $\lbrace  a_i \rbrace  \subset \mathcal{L}_\mathfrak{A}$, $\lbrace  b_j \rbrace  \subset \mathcal{L}_\mathfrak{B}$에 대해,</p>
-
-\[\lbrace  \phi(a_1, \dots, a_n), \psi(b_1, \dots, b_m) \rbrace\]
-
-<p>이 모델을 가지지 않는다. $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$이므로, $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$를 만족하도록 상수 $a_1, \dots, a_n$을 $\mathfrak{B}$의 정의역에 대응시키는 방법이 존재하지 않아야 한다. 즉,</p>
-
-\[\mathfrak{B} \not\vDash \exists x_1, \dots x_n \; \phi(x_1, \dots, x_n)\]
-
-<p>그런데 $\mathfrak{B}$의 $\mathcal{L}$-퇴화가 $\mathfrak{A}$와 초등적으로 동등하며, 위 식의 우변이 $\mathcal{L}$-문장이고, $\mathfrak{A}$가 해당 문장을 만족하므로 이는 모순이다. 따라서 $T$는 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{A})$와 $E(\mathfrak{B})$의 모델이므로, $\mathfrak{A}$와 $\mathfrak{B}$는 $\mathfrak{C}$로 자연스럽게 초등적으로 임베딩된다. ■</p>
-
-<h3 id="로빈슨-건전성-정리robinson-consistency-theorem">로빈슨 건전성 정리<sub>Robinson consistency theorem</sub></h3>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$라고 하자. $T$가 $\mathcal{L}$의 (의미론적으로) 완전한 이론이고, $T_1$과 $T_2$가 각각 $T$를 확장하는 건전한 $\mathcal{L}_1, \mathcal{L}_2$ 이론일 때, $T_1 \cup T_2$는 $\mathcal{L}_1 \cup \mathcal{L}_2$ 이론으로서 건전하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $T_1 \cup T_2$의 모델을 구축하면 정리가 보여진다.</p>
-
-<p>$T_1, T_2$가 각각 건전하므로, 모델 $\mathfrak{A}_0, \mathfrak{B}_0$를 가진다. $T = T_1 \cap T_2$가 완전하므로, $\mathcal{L}$-퇴화로서의 $\mathfrak{A}_0$와 $\mathfrak{B}_0$는 초등적으로 동등하다. 따라서 초등적 병합 성질에 의해, $\mathcal{L}$-초등적 임베딩 $f_0$와 $\mathcal{L}_2$-초등적 임베딩 $h_0$가 존재하여 다음이 성립한다.</p>
-
-<p><img src="/public/robinson-1.png" style="width: 100%; max-width: 115px; margin: 1em auto" /></p>
-
-<p>이제 $\mathfrak{B}_1$의 $\mathcal{L}$-퇴화를 생각해 보면, 이는 $\mathfrak{A}_0$와 초등적으로 동등하므로, 다시 초등적 병합 성질에 의해 $\mathcal{L}$-초등적 임베딩 $g_0$와 $\mathcal{L}_1$-초등적 임베딩 $k_0$가 존재하여 다음이 성립한다.</p>
-
-<p><img src="/public/robinson-2.png" style="width: 100%; max-width: 127px; margin: 1em auto" /></p>
-
-<p>이 과정을 반복하여 다음의 구조 유도계<sub>directed system of structures</sub>를 얻는다.</p>
-
-<p><img src="/public/robinson-3.png" style="width: 100%; max-width: 285px; margin: 1em auto" /></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>사상</th>
-      <th>성질</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$f, g$</td>
-      <td>$\mathcal{L}$-초등적 임베딩</td>
-    </tr>
-    <tr>
-      <td>$k$</td>
-      <td>$\mathcal{L}_1$-초등적 임베딩</td>
-    </tr>
-    <tr>
-      <td>$h$</td>
-      <td>$\mathcal{L}_2$-초등적 임베딩</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>위 유도계의 모든 모델을 $\mathcal{L}$로 퇴화시키면 $\mathcal{L}$-구조 유도계를 얻는다. 해당 유도계의 쌍대극한<sub>colimit</sub>을 $\mathfrak{C}$라고 하자. $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{A}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 회색으로 표시된 원 유도계의 일부는 모두 $\lbrace  \mathfrak{A}_i \rbrace $ 중 하나로 투사되기 때문이다. 따라서 $\mathfrak{C}$는 $\mathfrak{A}_0$를 초등적으로 임베딩하는 $\mathcal{L}_1$ 구조이다.</p>
-
-<p><img src="/public/robinson-4.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
-
-<p>같은 이유로 $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{B}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 따라서 $\mathfrak{C}$는 $\mathfrak{B}_0$를 초등적으로 임베딩하는 $\mathcal{L}_2$ 구조이다.</p>
-
-<p><img src="/public/robinson-5.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
-
-<p>즉, $\mathfrak{C}$는 $\mathfrak{A}$와 $\mathfrak{B}$를 모두 임베딩하며, 이로부터 $T_1 \cup T_2$의 모델임이 보여졌다. ■</p>
-
-<h3 id="크레이그-보간-정리craig-interpolation-theorem">크레이그 보간 정리<sub>Craig interpolation theorem</sub></h3>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{L}$-문장 $\phi, \psi$에 대해 $\phi \vDash \psi$라면, 어떤 $\mathcal{L}$-문장 $\theta$가 존재하여 $\phi \vDash \theta, \theta \vDash \psi$이다. 또한, $\theta$에 포함된 비논리 기호(상수, 술어, 함수)는 $\phi$와 $\psi$에 공통적으로 포함된다.</p>
-</blockquote>
-
-<p>$\theta$를 $\phi$와 $\psi$의 <strong>크레이그 보간</strong>이라고 부른다.</p>
-
-<p><strong>증명.</strong> 귀류법으로 증명한다. 크레이그 보간이 존재하지 않는다고 가정하자. 그러면 $\phi$는 모델을 가진다. 만약 $\phi$가 모델을 가지지 않는다면 $\perp$가 $\phi, \psi$의 크레이그 보간이기 때문이다. 또한 $\lnot \psi$도 모델을 가진다. 그렇지 않다면 $\top$가 크레이그 보간이기 때문이다.</p>
-
-<p>$\mathcal{L}’$을 $\phi$와 $\psi$에 공통적으로 포함되는 비논리 기호들로 이루어진 언어라고 하자. $\Gamma$를, $\phi \vDash \sigma$이거나 $\lnot \psi \vDash \sigma$인 $\mathcal{L}’$-문장 $\sigma$의 집합이라고 하자.</p>
-
-<p>$\Gamma \cup \lbrace  \phi \rbrace $는 무모순적임을 보이자. 만약 모순적이라면, 콤팩트성 정리에 의해 어떤 $\mathcal{L}’$-문장 $\sigma_1, \sigma_2$가 존재하여 $\phi \vDash \sigma_1, \lnot\psi \vDash \sigma_2$이고 $\lbrace  \sigma_1, \sigma_2, \phi \rbrace $가 모순적이다. 그런데 $\phi \vDash \sigma_1$이므로 $\phi \vDash \lnot\sigma_2$이다. 대우법에 의해 $\lnot\psi\ \vDash \sigma_2$로부터 $\lnot\sigma_2 \vDash \psi$가 따라 나온다. 즉, $\sigma_2$는 $\phi, \psi$의 크레이그 보간이다. 이는 가정에 모순된다.</p>
-
-<p>따라서 $\Gamma \cup \lbrace  \phi \rbrace $는 무모순적이며, 같은 이유로 $\Gamma \cup \lbrace  \lnot\psi \rbrace $ 또한 무모순적이다. 이제 초른의 보조정리를 적용하여, $\overline{\Gamma}$를 다음 $\mathcal{L}’$-이론들의 순서의 극대로 정의한다.</p>
-
-\[\{ \Gamma' : \Gamma \subseteq \Gamma', \Gamma' \cup \{\phi\} \text{ and } \Gamma' \cup \{\lnot \psi\} \text{ are consistent} \}\]
-
-<p>$\overline{\Gamma}$는 완전함을 보이자. 만약 $\overline{\Gamma}$가 완전하지 않다면, 어떤 $\mathcal{L}’$-문장 $\sigma$가 존재하여 $\sigma \notin \overline{\Gamma}$이고, $\overline{\Gamma} \cup \lbrace \sigma, \phi \rbrace $ 또는 $\overline{\Gamma} \cup \lbrace \sigma, \lnot \psi \rbrace $가 무모순적이다.</p>
-
-<p>전자의 경우, 콤팩트성 정리에 의해 어떤 $\overline{\Gamma}$의 문장 $\theta$가 존재하여 $\phi \vDash \theta \rightarrow \lnot \sigma$이다. $\Gamma$의 정의에 의해 $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$이다. 따라서 $\overline{\Gamma} \cup \lbrace  \sigma, \phi \rbrace $는 $\lnot\phi$를 증명한다. 이는 모순이다. 후자의 경우에도 마찬가지 모순이 발생한다. 따라서 $\overline{\Gamma}$는 완전하다.</p>
-
-<p>$\overline{\Gamma}$가 완전하고, $\overline{\Gamma} \cup \lbrace \phi \rbrace , \overline{\Gamma} \cup \lbrace \lnot\psi \rbrace $가 건전하므로, 로빈슨 건전성 정리에 의해 $\overline{\Gamma} \cup \lbrace \phi, \lnot \psi \rbrace $가 건전하다. 그런데 이는 $\phi \vDash \psi$에 모순된다. 따라서 귀류법에 의해 $\phi, \psi$는 크레이그 보간을 가진다. ■</p>
-
-<h3 id="베스-정의-가능성-정리beth-definability-theorem">베스 정의 가능성 정리<sub>Beth definability theorem</sub></h3>
-
-<p>언어 $\mathcal{L}$과, $\mathcal{L}$에 포함되어 있지 않은 술어 $P$를 생각하자. $T$가 $\mathcal{L} \cup \lbrace  P \rbrace $의 이론이라고 하자. $T$를 만족하는 $\mathcal{L}$의 구조 $\mathfrak{A}$를 $\mathcal{L} \cup \lbrace  P \rbrace $로 확장하는 방법이 유일할 때, $T$가 $P$를 <strong>암시적으로 정의<sub>implicitly define</sub></strong>한다고 한다.</p>
-
-<p>이는 다음과 같이 말할 수도 있다. $T(P’)$가 $T$에서 등장하는 모든 $P$를 $P’$으로 바꾼 $\mathcal{L} \cup \lbrace P’ \rbrace $ 이론이라고 하자. $T$가 $P$를 암시적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
-
-\[T \cup T(P') \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow P'(x_1, \dots, x_n)\]
-
-<p>반면 $T$가 $P$를 <strong>명시적으로 정의<sub>explicitly define</sub></strong>한다는 것은 다음을 만족시키는 $\mathcal{L}$-논리식 $\phi$가 존재한다는 것이다.</p>
-
-\[T \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow \phi(x_1, \dots, x_n)\]
-
-<p>예를 들어 보자. $\mathcal{L} = (0, S, +, \cdot)$의 이론 $\mathsf{PA}$에 술어 $P(x, y)$에 관한 공리를 추가한 다음의 이론을 $T$라고 하자.</p>
-
-\[T = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
-
-<p>$T(P’)$은 다음과 같다.</p>
-
-\[T(P') = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P'(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
-
-<p>$T$가 $P$를 암묵적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
-
-\[T \cup T(P') \vDash \forall x, y \big[ P(x, y) \leftrightarrow P'(x, y) \big]\]
-
-<p>이는 귀납 공리꼴로부터 자연스럽게 따라 나온다. 그런데 $P$는 다음과 같이 $T$에서 명시적으로 정의될 수도 있다.</p>
-
-\[\begin{gather}
-T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
-\text{where}\\\\
-\phi(x, y) : \forall z \big[ x + z = S(0) \rightarrow z = y \big]
-\end{gather}\]
-
-<p>이는 우연이 아니다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 언어 $\mathcal{L}$에 대해, $\mathcal{L} \cup \lbrace  P \rbrace $의 이론 $T$가 $P$를 암시적으로 정의하면, $T$는 $P$를 명시적으로 정의한다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $P$가 $n$항 술어라고 하자. $\mathcal{L}$에 새로운 상수 $c_1, \dots, c_n$을 추가한 언어를 $\mathcal{L}’$이라고 하자. $T$가 $P$를 암시적으로 정의하므로,</p>
-
-\[T \cup T(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>이다. 콤팩트성 정리에 의해 어떤 $\mathcal{L} \cup \lbrace  P \rbrace $ 문장 $\psi$가 존재하여, $T \vdash \psi$이고 다음이 성립한다.</p>
-
-\[\psi \land \psi(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>함축 원리를 이용하여 이항하면 다음과 같다.</p>
-
-\[\psi \land P(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>좌변은 $\mathcal{L}’ \cup \lbrace  P \rbrace $의 문장이고, 우변은 $\mathcal{L}’ \cup \lbrace  P’ \rbrace $의 문장이다. 따라서 크레이그 보간 정리에 의해 $\mathcal{L}$-논리식 $\theta$가 존재하여 다음이 성립한다.</p>
-
-\[\begin{gather}
-\psi \land P(c_1, \dots, c_n) \vDash \theta(c_1, \dots, c_n), \\\\
-\theta(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)
-\end{gather}\]
-
-<p>다시 이항하고 $P’$을 $P$로 치환하면,</p>
-
-\[\begin{gather}
-\psi \vDash P(c_1, \dots, c_n) \rightarrow \theta(c_1, \dots, c_n), \\\\
-\psi \vDash \theta(c_1, \dots, c_n) \rightarrow P(c_1, \dots, c_n)
-\end{gather}\]
-
-<p>따라서 $\theta$는 $P$를 명시적으로 정의한다. ■</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="수학" /><category term="논리학" /><category term="모델론" /><summary type="html"><![CDATA[초등적 병합 성질Elementary amalgamation property]]></summary></entry></feed>
+<p>$\eta$ 집합은 하우스도르프에 의해 제시되었다. $\eta$ 집합은 다음 글에서 알아 볼 <strong>포화<sub>saturation</sub></strong> 개념과 밀접한 관련이 있다.</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="수학" /><category term="집합론" /><summary type="html"><![CDATA[가산 조밀 무계 전순서countable dense unbounded linear order는 모두 동형임을 보인 칸토어의 앞뒤 논법back-and-forth argument에서 핵심이 되는 원리는 다음이다.]]></summary></entry></feed>
