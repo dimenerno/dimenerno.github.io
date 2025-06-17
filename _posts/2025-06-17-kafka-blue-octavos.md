@@ -12,7 +12,7 @@ related:
   }
 </style>
 
-> 「여덟 권의 청색 팔절판 노트<sub>Acht blaue Oktavhefte</sub>」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다. 하단의 이미지는 카프카의 「팔절판 노트」에 영감을 받아 제작된 작곡가 막스 리히터의 _The Blue Notebooks_ 앨범 커버이다.
+> 「여덟 권의 청색 팔절판 노트<sub>Acht blaue Oktavhefte</sub>」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다.
 
 <img src="/public/the-blue-notebooks.png" style="max-width: 350px; width: 100%; margin: 7em auto 5em auto;">
 
@@ -138,7 +138,7 @@ In was für Gleichgültigkeit Menschen kommen können, in wie tiefe Überzeugung
 
 #### x.
 
-**착오.** 내가 연 것은 긴 복도 끝 위쪽에 있는 내 방의 문이 아니었다. "착오였습니다," 라는 말과 함께 나는 다시 나가려고 했다. 그 순간, 나는 방 안쪽으로 수척하고 수염이 없는 사내를 보았다. 입을 굳개 다문 채, 그가 앉은 작은 탁자 위에는 단 하나의 석유 램프만이 놓여 있었다.
+**착오.** 내가 연 것은 긴 복도 끝 위쪽에 있는 내 방의 문이 아니었다. "착오였습니다," 라는 말과 함께 나는 다시 나가려고 했다. 그 순간, 나는 방 안쪽으로 수척하고 수염이 없는 사내를 보았다. 입을 굳개 다문 채, 그가 앉은 작은 탁자에는 단 하나의 석유 램프만이 있었다.
 
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 4em 0;"><small>
 <i>Ein Irrtum.</i> Es war nicht meine Türe oben auf dem langen Gang, die ich geöffnet hatte. »Ein Irrtum«, sagte ich und wollte wieder hinausgehen. Da sah ich den Inwohner, einen mageren bartlosen Mann, mit festgeschlossenem Munde an einem Tischchen sitzen, auf dem nur eine Petroleumlampe stand.
@@ -154,7 +154,7 @@ In was für Gleichgültigkeit Menschen kommen können, in wie tiefe Überzeugung
 
 이것이 첫 번째 공문이었다. 우리의 집에 사는 사람들은 시간도 없고 공문을 읽거나 숙고할 의욕도 없다. 얼마 안 있어 그 종이쪼가리는 다락방에서 시작해 복도로 터져나온 더러운 물줄기에 흠뻑 젖은 채로 계단을 따라 쓸려 나가더니 그곳 밑에서 역류하는 물줄기와 싸우는 신세가 되었다. 그러나 일주일 뒤 두 번째 공문이 붙었다.
 
-세입자 여러분!
+세입자들이여!
 
 지금까지 아무도 나에게 연락하지 않았습니다. 나는 내 생계에 필수적인 일을 하지 않는 시간에는 항상 집에 머물러 있었습니다. 집을 비울 때에는 방문을 열어두어, 원하는 사람은 누구든 이름을 적을 수 있도록 책상 위에 종이를 놓아 두었습니다. 아무도 이름을 적지 않았습니다.
 
@@ -174,7 +174,7 @@ Es hat sich bisher niemand bei mir gemeldet. Ich war, soweit ich nicht meinen Le
 
 #### xii.
 
-가끔씩 나는, 내가 기계공장에서의 교대근무를 마치고 밤늦게 또는 이른 아침에 집으로 돌아올 때, 내가 저지른, 그리고 저지를, 과거와 미래의 모든 죄가 뼈마디의 통증으로 속죄되는 것은 아닌지 생각한다. 나는 내가 이 일을 견딜 수 있을 정도로 강하지 않다는 사실을 오래전부터 알고 있었으나 아무것도 바꾸지 않는다.
+가끔씩 나는, 내가 기계공장에서의 교대근무를 마치고 밤늦게 또는 이른 아침에 집으로 돌아올 때, 내가 저지른, 그리고 저지를, 과거와 미래의 모든 죄가 뼈마디의 통증으로 속죄되는 것은 아닌지 생각한다. 나는 내가 이 일을 견딜 수 있을 정도로 강하지 않다는 사실을 이미 오래전부터 알고 있다. 그러나 나는 아무것도 바꾸지 않는다.
 
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 4em 0;"><small>
 Manchmal glaube ich, alle meine vergangenen und künftigen Sünden durch die Schmerzen meiner Knochen abzubüßen, wenn ich abends oder gar morgens nach einer Nachtschicht aus der Maschinenfabrik nach Hause komme. Ich bin nicht kräftig genug zu dieser Arbeit, das weiß ich schon seit langem und doch ändere ich nichts.
@@ -207,6 +207,8 @@ Auf dem gleichen Gang wie ich wohnt ein Flickschneider. Trotz aller Vorsicht ver
 
 1917년 2월 19일.
 
+오늘은 헤르만과 도로테아, 그리고 리히터 회고록 약간을 읽었으며, 그의 사진들을 봤고, 마지막으로 하웁트만의 그리젤다에서 나오는 장면을 읽었다. 한 시간이라는 순간 안에 나는 다른 사람이 되어 있었다. 모든 풍경은 여전히 안개처럼 뿌옇지만, 이제는 안개 그림으로 변했다. 오늘 처음 신어 보는 질긴 장화 속에는 — 그 장화는 원래 군사용으로 만들어진 것이었다 — 또다른 사람이 서 있었다.
+
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 4em 0;"><small>
 19. Februar 1917.
 <div style="margin: 1em 0;"></div>
@@ -215,11 +217,17 @@ Heute gelesen Hermann und Dorothea, einiges aus Richters Lebenserinnerungen, Bil
 
 #### xvi.
 
+저는 크룸홀츠 씨 댁에 삽니다. 방은 세무청의 한 서기와 나눠 쓰지요. 그 방에서는 크룸홀츠 씨의 두 딸 — 여섯 살, 일곱 살 소녀입니다 — 또한 같은 침대에서 잡니다. 서기가 이사를 해온 첫날부터 — 저로 말하자면 이미 수년동안 크룸홀츠 씨 댁에 살고 있었습니다 — 저는 그의 첫인상에서 석연찮은 수상함을 느꼈습니다. 평균 신장 이하의 남성. 허약한 체격과, 건강하다고는 할 수 없는 폐. 후줄근한 회색 옷가지. 나이를 가늠할 수 없는 주름진 얼굴. 귀를 덮도록 넘겨진 회갈색의 긴 머리카락. 코 끝까지 내려온 안경. 그리고 작고 — 역시나 — 회색인 염소 수염.
+
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 4em 0;"><small>
 Ich wohne bei Herrn Krummholz, das Zimmer teile ich mit einem Schreiber von der Steuerbehörde. Außerdem schlafen in dem Zimmer in gemeinsamem Bett zwei Töchter des Krummholz, ein sechs- und ein siebenjähriges Mädchen. Seit dem ersten Tage, an welchem der Schreiber einzog – ich selbst wohne schon jahrelang bei Krummholz – hatte ich einen zunächst ganz unbestimmten Verdacht gegen ihn. Ein Mann unter Mittelgröße, schwach, wohl mit nicht ganz fester Lunge, grauen, ihn umschlotternden Kleidern, faltigem Gesicht unbestimmbaren Alters, graublonden, länglichen, über die Ohren gekämmten Haaren, einer weit auf der Nase vorgerückten Brille, und einem kleinen, gleichfalls ergrauenden Ziegenbart.
 </small></div>
 
 #### xvii.
+
+내가 중부 콩고에서 철도 공사에 종사하며 보냈던 삶은 즐거운 것이 아니었다.
+
+나는 내 오두막집의 차창이 쳐진 베란다에 앉아 있었다. 한쪽으로는 긴 벽 대신 극도록 촘촘한 모기장이 쳐져 있었는데, 그것은 현장 감독관 중 한 명이자 우리의 철도가 지나가는 지역의 족장에게서 얻은 것이었다. 삼베로 만든 그 그물은 튼튼하면서도 섬세하여, 유럽에서는 결코 만들 수 없을 정도였다. 그것은 내 자랑거리였고 많은 이들의 부러움을 샀다. 그 그물이 없었더라면 이렇게 저녁에 베란다에 평화롭게 앉아, 지금처럼 불을 켜고, 오래된 유럽 신문을 펼쳐 읽으며, 파이프를 힘차게 피우는 일은 결코 불가능했을 것이다.
 
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 4em 0;"><small>
 Es war kein heiteres Leben, das ich damals beim Bahnbau am mittlern Kongo führte.
@@ -229,7 +237,24 @@ Ich saß in meiner Holzhütte auf der überdeckten Veranda. Anstatt einer Längs
 
 #### xviii.
 
+나는 — 누가 impudently 이렇게 자신의 능력을 거리낌 없이 말할 수 있을까 — 한때 행복했고 지치지 않던 노(老) 낚시꾼의 손목을 갖고 있다.
+나는 이를테면 집에 앉아, 낚시하러 나가기 전에, 오른손을 똑바로 응시하며 한 번 이쪽으로, 또 한 번 저쪽으로 돌린다.
+그것만으로도 나는 다가올 낚시의 결과를, 때로는 세세한 부분까지도 시각과 촉각으로 예감할 수 있다.
+이 유연한 손목의 예지력 — 평상시에는 힘을 비축하게 하려고 금팔찌 안에 가둬 둔다 — 이 손목 덕분에 나는 내가 갈 낚시터의 물살을, 그 특정한 시각의 흐름 속에서 본다.
+강의 단면이 나에게 드러나고, 열 군데, 스무 군데, 아니 백 군데나 되는 서로 다른 지점에서 수많은 물고기들이 그 단면을 향해 밀려오는 모습이 뚜렷이 보인다.
+이제 나는 낚시를 어떻게 드리워야 할지를 안다.
+어떤 물고기들은 머리로 그 단면을 무사히 뚫고 지나가고, 나는 그들 앞에서 낚시를 흔들어 보인다. 그러면 벌써 그들은 낚싯바늘에 걸린다.
+그 짧은 운명의 순간은 집에 있는 책상 앞에서도 나를 황홀하게 만든다.
+다른 물고기들은 배까지 단면에 닿고, 그때가 진정한 찬스다.
+나는 그 중 몇몇을 붙잡지만, 다른 몇몇은 꼬리까지 단면을 빠져나가 위험 구역을 벗어나며, 이번에는 놓치고 만다. 단지 이번에만.
+진정한 낚시꾼에게는 어떤 물고기도 영원히 빠져나가지 않는다.
+
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 4em 0;"><small>
 Ich habe – wer kann noch so frei von seinen Fähigkeiten sprechen – das Handgelenk eines alten glücklichen unermüdlichen Anglers.
+<div style="margin: 1em 0;"></div>
 Ich sitze zum Beispiel zu Hause, ehe ich angeln gehe, und drehe scharf zusehend die rechte Hand, einmal hin und einmal her. Das genügt, um mir in Anblick und Gefühl das Ergebnis des künftigen Angelns oft bis in Einzelheiten zu offenbaren. Ein Ahnungsvermögen dieses gelenkigen Gelenkes, das ich in Ruhezeiten, um es Kraft sammeln zu lassen, in ein Goldarmband einschließe. Ich sehe das Wasser meines Fischplatzes in der besonderen Strömung der besonderen Stunde, ein Querschnitt des Flusses zeigt sich mir, eindeutig an Zahl und Art dringen an zehn, zwanzig, ja hundert verschiedenen Stellen Fische gegen diese Schnittfläche vor, nun weiß ich, wie die Angel zu führen ist, manche durchstoßen ungefährdet mit dem Kopf die Fläche, da lasse ich die Angel vor ihnen schwanken und schon hängen sie, die Kürze dieses Schicksalsaugenblicks entzückt mich selbst am häuslichen Tisch, andere Fische dringen bis an den Bauch vor, nun ist hohe Zeit, manche ereile ich noch, andere aber entwischen der gefährlichen Fläche selbst mit dem Schwanz und sind für diesmal mir verloren, nur für diesmal, einem wahren Angler entgeht kein Fisch.
 </small></div>
+
+---
+
+서두의 이미지는 막스 리히터, _The Blue Notebooks_ 의 앨범 커버이다.
