@@ -23,6 +23,68 @@
     }
   </style>
 
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
   <script>
     function toggleAnswer(id) {
       const answer = document.getElementById("answer" + id);
@@ -125,60 +187,93 @@
   </style>
 
   <body>
-    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-     styles, `#sidebar-checkbox` for behavior. -->
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>이데아를 여행하는 히치하이커</p>
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
   </div>
 
   <nav class="sidebar-nav">
     <a
-      class="sidebar-nav-item"
-      href="/"
-      >메인</a
-    >
-
-                
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
     <a
-      class="sidebar-nav-item active"
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item active lang-ko"
       href="/about/"
       >저에 대하여</a
     >
+    <a
+    class="sidebar-nav-item active lang-en"
+    href="/about/"
+    >About Me</a
+  >
         
     <a
-      class="sidebar-nav-item"
+      class="sidebar-nav-item lang-ko"
       href="/archive-date/"
       >날짜별로 보기</a
     >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >See by dates</a
+  >
         
     <a
-      class="sidebar-nav-item"
+      class="sidebar-nav-item lang-ko"
       href="/archive-tag/"
       >주제별로 보기</a
     >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >See by tags</a
+  >
           
     <a
-      class="sidebar-nav-item"
+      class="sidebar-nav-item lang-ko"
       href="/book/"
       >새벽의 자연학 수업</a
     >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean only)</a
+  >
           
     <a
-      class="sidebar-nav-item"
+      class="sidebar-nav-item lang-ko"
       href="/guestbook/"
       >방명록</a
     >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
         
     <a
-      class="sidebar-nav-item"
+      class="sidebar-nav-item lang-ko"
       href="/notes/"
       >복습노트 아카이브</a
     >
-                                                                                                                                      
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >BA maths notes (Korean only)</a
+  >
+                                                                                                                                              
   </nav>
 
   <div class="sidebar-item">
@@ -204,6 +299,7 @@
             margin-left: 4em;
             margin-right: 0;
             max-width: none;
+            overflow-y: hidden;
           "
         >
           <h3
@@ -219,10 +315,18 @@
             <a
               href="/"
               style="white-space: nowrap"
+              class="lang-ko"
               title="Home"
-              >디멘의 블로그</a
-            >
-            <small>이데아를 여행하는 히치하이커</small>
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
           </h3>
           <form
             id="search-form"
@@ -234,29 +338,64 @@
               type="text"
               name="q"
               id="search-input"
+              class="lang-ko"
               placeholder="검색어를 입력하세요"
             />
+            <input
+            type="text"
+            name="q"
+            id="search-input"
+            class="lang-en"
+            placeholder="Search..."
+          />
           </form>
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
         </div>
       </div>
 
       <div class="container content"><div class="page">
-  <h1 class="page-title">저에 대하여</h1>
+  <h1 class="page-title lang-ko">저에 대하여</h1>
+  <h1 class="page-title lang-en">About Me</h1>
   <p><img src="/public/profile-picture.png" alt="Profile picture" width="250px" style="margin: 0 auto;" /></p>
 
-<p>안녕하세요, 디멘(최정담)입니다. 학부 때 카이스트 수리과학과 및 전산학부를 복수전공했으며, 현재 카이스트 디지털인문사회과학부 석사 과정을 밟고 있습니다. 지도교수이신 김동우 교수님 밑에서 철학과 논리학을 공부하고 있습니다. 다만 개인적인 사정으로 지금은 휴학 중입니다.</p>
+<div class="lang-ko">
+  <p>안녕하세요, 디멘(최정담)입니다. 학부 때 카이스트 수리과학과 및 전산학부를 복수전공했으며, 현재 카이스트 디지털인문사회과학부 석사 과정을 밟고 있습니다. 지도교수이신 <a href="https://dongwookim.org">김동우 교수님</a> 밑에서 철학과 논리학을 공부하고 있습니다. 다만 개인적인 사정으로 지금은 휴학 중입니다.</p>
 
-<p>취미는 독서와 피아노입니다. 부업으로 글을 씁니다. ⟪발칙한 수학책⟫과 ⟪수학을 읽는 힘⟫의 저자이며, 현재 차기작 작업 중입니다.</p>
+  <p>취미는 독서와 피아노입니다. 부업으로 글을 씁니다. <a href="https://product.kyobobook.co.kr/detail/S000001938805">⟪발칙한 수학책⟫</a>과 <a href="https://product.kyobobook.co.kr/detail/S000215876800">⟪수학을 읽는 힘⟫</a>의 저자이며, 현재 차기작 작업 중입니다.</p>
 
-<p>몇 가지 링크를 걸어둡니다.</p>
+  <p>몇 가지 링크를 걸어둡니다.</p>
 
-<ul>
-  <li><a href="/public/Jeongdam Choi - CV.pdf">CV</a></li>
-  <li>메일: dimenerno@kaist.ac.kr</li>
-  <li><a href="https://twitter.com/dimenerno">트위터</a>: @dimenerno</li>
-  <li><a href="http://brunch.co.kr/@dimen">브런치</a>: 개인적이거나 문학에 가까운 글이 올라옵니다.</li>
-  <li><a href="http://youtube.com/@dimenerno">유튜브</a>: 언어학 및 언어철학 영상이 올라옵니다. 현재는 개인적인 사정으로 활동을 쉬고 있습니다.</li>
-</ul>
+  <ul>
+    <li><a href="/public/Jeongdam Choi - CV.pdf">CV</a></li>
+    <li>메일: dimenerno@kaist.ac.kr</li>
+    <li><a href="https://twitter.com/dimenerno">트위터</a>: @dimenerno</li>
+    <li><a href="http://brunch.co.kr/@dimen">브런치</a>: 개인적이거나 문학에 가까운 글이 올라옵니다.</li>
+    <li><a href="http://youtube.com/@dimenerno">유튜브</a>: 언어학 및 언어철학 영상이 올라옵니다. 현재는 개인적인 사정으로 활동을 쉬고 있습니다.</li>
+  </ul>
+</div>
+
+<div class="lang-en">
+  <p>Hello, I'm Dimen (Jeongdam Choi). I received a Bachelor’s degree in Mathematical Sciences with a double major in Computer Science from KAIST (Korea Advanced Institute of Science and Technology). I study philosophy and logic under the supervision of <a href="https://dongwookim.org">Prof. Dongwoo Kim</a>, although currently I'm on a leave of absence due to personal reasons.</p>
+
+  <p>My hobbies include reading and playing the piano. I also write as a side profession. I’m the author of <em><a href="https://product.kyobobook.co.kr/detail/S000001938805">A Subversive Guide to Maths</a></em> and <em><a href="https://product.kyobobook.co.kr/detail/S000215876800">How to Read Maths</a></em>, and I’m also working on my next book.</p>
+
+  <p>Here are a few links:</p>
+
+  <ul>
+    <li><a href="/public/Jeongdam Choi - CV.pdf">Curriculum Vitae</a></li>
+    <li>Mail: dimenerno@kaist.ac.kr</li>
+    <li><a href="https://twitter.com/dimenerno">Twitter</a>: @dimenerno</li>
+    <li><a href="http://brunch.co.kr/@dimen">Brunch</a>: Personal and literary-style writings. (Korean only)</li>
+    <li><a href="http://youtube.com/@dimenerno">YouTube</a>: Videos on linguistics and the philosophy of language. (Korean only)</li>
+  </ul>
+</div>
 
 </div>
 </div>
@@ -265,5 +404,6 @@
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
   </body>
 </html>

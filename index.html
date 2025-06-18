@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 메인
+title-en: Main
 ---
 
 <head>
@@ -81,18 +82,33 @@ title: 메인
 >
   <div style="margin: auto">
     <img
-      class="fade-rise-1"
+      class="fade-rise-1 lang-ko"
       src="/public/banner.png"
       style="max-width: calc(min(85vw, 350px)); margin: 0 auto"
     />
     <img
-      class="fade-rise-2"
+      class="fade-rise-2 lang-ko"
       src="/public/banner-2.png"
       style="max-width: calc(min(85vw, 400px)); margin: 1.5em auto 1em auto"
     />
-    <p class="fade-rise-3">
-      논리학, 집합론, 철학 등을 다루는 블로그입니다.<br />
-      아래에서 저의 가장 최근 글들을 읽을 수 있습니다.
+    <p class="fade-rise-3 lang-ko">
+      논리학, 철학, 수학 등을 다루는 블로그입니다.<br />
+      아래에서 저의 가장 최근 글들을 읽을 수 있습니다.<br />
+      <small>To read in English, toggle the button in the header.</small>
+    </p>
+    <img
+    class="fade-rise-1 lang-en"
+    src="/public/banner.png"
+    style="max-width: calc(min(85vw, 350px)); margin: 0 auto"
+  />
+  <img
+    class="fade-rise-2 lang-en"
+    src="/public/banner-2.png"
+    style="max-width: calc(min(85vw, 400px)); margin: 1.5em auto 1em auto"
+  />
+    <p class="fade-rise-3 lang-en">
+      A blog on logic, philosophy, mathematics, et cetra.<br />
+      You can read my most recent posts below.
     </p>
   </div>
 </div>
@@ -101,11 +117,10 @@ title: 메인
 
 <div class="posts">
   {% for post in paginator.posts %}
-  <div class="post fade-in-section">
-    <h1 class="post-title">
-      <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
-    </h1>
-
+    <div class="post fade-in-section" data-lang="{{ post.lang | default: 'ko'}}" style="display: none">
+      <h1 class="post-title">
+        <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
+      </h1>
     <span class="post-date">{{ post.date | date_to_string }}</span>
     {% if post.tags %}
     <div class="tag-container">
@@ -166,6 +181,14 @@ title: 메인
 
   // 배너 이미지 로드 후 애니메이션 트리거 스크립트
   document.addEventListener("DOMContentLoaded", () => {
+
+    const lang = localStorage.getItem("lang") || "ko";
+  document.querySelectorAll('.post[data-lang]').forEach(post => {
+    if (post.dataset.lang === lang) {
+      post.style.display = '';
+    }
+  });
+
     const bannerImages = document.querySelectorAll(
       '.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'
     ); // 애니메이션 시작을 기다릴 이미지들
@@ -212,5 +235,18 @@ title: 메인
     // 모든 이미지에 대해 complete 상태를 확인하거나 리스너를 설정한 후,
     // 이미 모든 이미지가 로드 완료 상태였을 경우를 대비해 마지막으로 체크
     checkAllImagesLoaded();
+
+
+    // Listen for language toggle changes and update post visibility dynamically
+    const langToggle = document.getElementById("lang-toggle");
+    if (langToggle) {
+      langToggle.addEventListener("change", () => {
+        const newLang = langToggle.checked ? "en" : "ko";
+        localStorage.setItem("lang", newLang);
+        document.querySelectorAll('.post[data-lang]').forEach(post => {
+          post.style.display = post.dataset.lang === newLang ? '' : 'none';
+        });
+      });
+    }
   });
 </script>

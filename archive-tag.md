@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 주제별로 보기
+title-en: See by tags
 ---
 
 {% capture tags %}

@@ -23,6 +23,68 @@
     }
   </style>
 
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
   <script>
     function toggleAnswer(id) {
       const answer = document.getElementById("answer" + id);
@@ -125,60 +187,93 @@
   </style>
 
   <body>
-    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-     styles, `#sidebar-checkbox` for behavior. -->
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>이데아를 여행하는 히치하이커</p>
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
   </div>
 
   <nav class="sidebar-nav">
     <a
-      class="sidebar-nav-item"
-      href="/"
-      >메인</a
-    >
-
-                
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
     <a
-      class="sidebar-nav-item"
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item lang-ko"
       href="/about/"
       >저에 대하여</a
     >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
         
     <a
-      class="sidebar-nav-item"
+      class="sidebar-nav-item lang-ko"
       href="/archive-date/"
       >날짜별로 보기</a
     >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >See by dates</a
+  >
         
     <a
-      class="sidebar-nav-item"
+      class="sidebar-nav-item lang-ko"
       href="/archive-tag/"
       >주제별로 보기</a
     >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >See by tags</a
+  >
           
     <a
-      class="sidebar-nav-item"
+      class="sidebar-nav-item lang-ko"
       href="/book/"
       >새벽의 자연학 수업</a
     >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean only)</a
+  >
           
     <a
-      class="sidebar-nav-item"
+      class="sidebar-nav-item lang-ko"
       href="/guestbook/"
       >방명록</a
     >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
         
     <a
-      class="sidebar-nav-item"
+      class="sidebar-nav-item lang-ko"
       href="/notes/"
       >복습노트 아카이브</a
     >
-                                                                                                                                      
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >BA maths notes (Korean only)</a
+  >
+                                                                                                                                              
   </nav>
 
   <div class="sidebar-item">
@@ -204,6 +299,7 @@
             margin-left: 4em;
             margin-right: 0;
             max-width: none;
+            overflow-y: hidden;
           "
         >
           <h3
@@ -219,10 +315,18 @@
             <a
               href="/"
               style="white-space: nowrap"
+              class="lang-ko"
               title="Home"
-              >디멘의 블로그</a
-            >
-            <small>이데아를 여행하는 히치하이커</small>
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
           </h3>
           <form
             id="search-form"
@@ -234,9 +338,25 @@
               type="text"
               name="q"
               id="search-input"
+              class="lang-ko"
               placeholder="검색어를 입력하세요"
             />
+            <input
+            type="text"
+            name="q"
+            id="search-input"
+            class="lang-en"
+            placeholder="Search..."
+          />
           </form>
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
         </div>
       </div>
 
@@ -434,5 +554,6 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
   </body>
 </html>

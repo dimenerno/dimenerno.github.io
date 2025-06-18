@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 날짜별로 보기
+title-en: See by dates
 ---
 
 {% assign postsByYearMonth = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" %}

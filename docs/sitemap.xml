@@ -217,6 +217,10 @@
 <lastmod>2025-06-17T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2025/06/18/test/</loc>
+<lastmod>2025-06-18T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/temp/2025-03-05-hole-argument/</loc>
 </url>
 <url>
@@ -296,6 +300,12 @@
 </url>
 <url>
 <loc>http://localhost:4000/tags/%EC%9D%B8%EB%AC%B8%ED%95%99/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tags/physics/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tags/relativity/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>

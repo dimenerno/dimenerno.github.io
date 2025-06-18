@@ -44,6 +44,7 @@
             margin-left: 4em;
             margin-right: 0;
             max-width: none;
+            overflow-y: hidden;
           "
         >
           <h3
@@ -59,10 +60,18 @@
             <a
               href="{{ site.baseurl }}/"
               style="white-space: nowrap"
+              class="lang-ko"
               title="Home"
-              >{{ site.title }}</a
-            >
-            <small>{{ site.tagline }}</small>
+              >{{ site.title }}</a>
+            <a
+              href="{{ site.baseurl }}/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >{{ site.title-en }}</a>
+            <small><div class="lang-ko">{{ site.tagline }}</div>
+              <div class="lang-en">{{ site.tagline-en }}</div></small>
+
           </h3>
           <form
             id="search-form"
@@ -74,9 +83,25 @@
               type="text"
               name="q"
               id="search-input"
+              class="lang-ko"
               placeholder="검색어를 입력하세요"
             />
+            <input
+            type="text"
+            name="q"
+            id="search-input"
+            class="lang-en"
+            placeholder="Search..."
+          />
           </form>
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
         </div>
       </div>
 
@@ -86,5 +111,6 @@
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     <script src="{{ site.baseurl }}/public/js/script.js"></script>
+    <script src="{{ site.baseurl }}/public/js/lang.js"></script>
   </body>
 </html>

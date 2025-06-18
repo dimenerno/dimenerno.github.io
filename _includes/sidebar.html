@@ -1,30 +1,36 @@
-<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-     styles, `#sidebar-checkbox` for behavior. -->
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>{{ site.description }}</p>
+    <p class="lang-ko">{{ site.description }}</p>
+    <p class="lang-en" style="display: none;">{{ site.description-en }}</p>
   </div>
 
   <nav class="sidebar-nav">
     <a
-      class="sidebar-nav-item{% if page.title == 'Home' %} active{% endif %}"
-      href="{{ '/' | relative_url }}"
-      >메인</a
-    >
-
-    {% comment %} The code below dynamically generates a sidebar nav of pages
-    with `layout: page` in the front-matter. See readme for usage. {% endcomment
-    %} {% assign pages_list = site.pages | sort:"url" %} {% for node in
+    class="sidebar-nav-item{% if page.title == 'Home' %} active{% endif %} lang-ko"
+    href="{{ '/' | relative_url }}"
+    >메인</a>
+    <a
+    class="sidebar-nav-item{% if page.title == 'Home' %} active{% endif %} lang-en"
+    href="{{ '/' | relative_url }}"
+    >Main</a
+  >
+    {% assign pages_list = site.pages | sort:"url" %} {% for node in
     pages_list %} {% if node.title != null %} {% if node.layout == "page" or
     node.layout == "book" %}
     <a
-      class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
+      class="sidebar-nav-item{% if page.url == node.url %} active{% endif %} lang-ko"
       href="{{ node.url | relative_url }}"
       >{{ node.title }}</a
     >
+    <a
+    class="sidebar-nav-item{% if page.url == node.url %} active{% endif %} lang-en"
+    href="{{ node.url | relative_url }}"
+    >{{ node.title-en }}</a
+  >
     {% endif %} {% endif %} {% endfor %}
   </nav>
 

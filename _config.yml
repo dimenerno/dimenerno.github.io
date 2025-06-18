@@ -1,7 +1,13 @@
 # Setup
 title:               디멘의 블로그
+title-en:            Dimen's Blog
+
 tagline:             이데아를 여행하는 히치하이커
 description:         이데아를 여행하는 히치하이커
+
+tagline-en:             Alice in Logicland
+description-en:         Alice in Logicland
+
 paginate:            5
 permalink:           pretty
 

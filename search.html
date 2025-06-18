@@ -1,10 +1,12 @@
 ---
 layout: default
 title: 검색 결과
+title-en: Search results
 permalink: /search.html
 ---
 
-<h1 style="margin-bottom: 1em">검색 결과</h1>
+<h1 class="lang-ko" style="margin-bottom: 1em">검색 결과</h1>
+<h1 class="lang-en" style="margin-bottom: 1em">Search Results</h1>
 <ul id="search-results"></ul>
 
 <script>
@@ -14,7 +16,7 @@ permalink: /search.html
     const resultsContainer = document.getElementById("search-results");
 
     if (!query) {
-      resultsContainer.innerHTML = "<li>검색어를 입력해주세요.</li>";
+      resultsContainer.innerHTML = "<li class=\"lang-ko\">검색어를 입력해주세요.</li><li class=\"lang-en\">Enter search query.</li>";
       return;
     }
 

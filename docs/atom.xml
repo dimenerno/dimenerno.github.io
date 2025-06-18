@@ -4,13 +4,22 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-06-18T17:06:16+09:00</updated>
+ <updated>2025-06-18T23:54:05+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>Bell's Spaceship: Passive v. Active Lorentz Contraction</title>
+   <link href="http://localhost:4000/2025/06/18/test/"/>
+   <updated>2025-06-18T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2025/06/18/test</id>
+   <content type="html">&lt;p&gt;Test&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title>
