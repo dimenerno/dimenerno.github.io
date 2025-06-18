@@ -1,7 +1,7 @@
 ---
 layout: book
 title: 새벽의 자연학 수업
-title-en: Twilight Wonders (Korean only)
+title-en: Twilight Wonders (Korean)
 ---
 
 ### 목차

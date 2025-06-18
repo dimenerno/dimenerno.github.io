@@ -139,22 +139,37 @@ title-en: Main
 <div class="pagination">
   {% if paginator.next_page %}
   <a
-    class="pagination-item older"
+    class="pagination-item older lang-ko"
     href="{{ paginator.next_page_path | relative_url }}"
     >이전 글</a
   >
+  <a
+  class="pagination-item older lang-en"
+  href="{{ paginator.next_page_path | relative_url }}"
+  >Previous</a
+>
   {% else %}
-  <span class="pagination-item older">이전 글</span>
+  <span class="pagination-item older lang-ko">이전 글</span>
+  <span class="pagination-item older lang-en">Previous</span>
+
   {% endif %} {% if paginator.previous_page %} {% if paginator.page == 2 %}
-  <a class="pagination-item newer" href="{{ '/' | relative_url }}">다음 글</a>
+  <a class="pagination-item newer lang-ko" href="{{ '/' | relative_url }}">다음 글</a>
+  <a class="pagination-item newer lang-en" href="{{ '/' | relative_url }}">Next</a>
+
   {% else %}
   <a
-    class="pagination-item newer"
+    class="pagination-item newer lang-ko"
     href="{{ paginator.previous_page_path | relative_url }}"
     >다음 글</a
   >
+  <a
+  class="pagination-item newer lang-en"
+  href="{{ paginator.previous_page_path | relative_url }}"
+  >Next</a
+>
   {% endif %} {% else %}
-  <span class="pagination-item newer">다음 글</span>
+  <span class="pagination-item newer lang-ko">다음 글</span>
+  <span class="pagination-item newer lang-en">Next</span>
   {% endif %}
 </div>
 

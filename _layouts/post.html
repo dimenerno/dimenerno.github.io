@@ -17,7 +17,8 @@ layout: default
 
 {% if page.related %}
   <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
-  <h3>관련 글</h3>
+  <h3 class="lang-ko">관련 글</h3>
+  <h3 class="lang-en">Related Posts</h3>
   <ul>
     {% for related_title in page.related %}
       {% assign related_post = site.posts | where: "title", related_title | first %}

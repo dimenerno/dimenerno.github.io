@@ -302,10 +302,7 @@
 <loc>http://localhost:4000/tags/%EC%9D%B8%EB%AC%B8%ED%95%99/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/tags/physics/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tags/relativity/</loc>
+<loc>http://localhost:4000/tags/mock/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>

@@ -4,7 +4,7 @@
 
   <style>
     /* 검색 입력창 */
-    #search-input {
+    .search-input {
       padding: 6px 12px;
       font-size: 15px;
       border: 1px solid #eee;
@@ -16,12 +16,12 @@
       background-color: #fefefe;
     }
 
-    #search-input::placeholder {
+    .search-input::placeholder {
       color: var(--slate);
     }
 
     /* 입력창 포커스 시 */
-    #search-input:focus {
+    .search-input:focus {
       border-color: #9ea0a3;
       background-color: white;
     }
@@ -74,7 +74,7 @@
 
           </h3>
           <form
-            id="search-form"
+            class="search-form lang-ko"
             action="/search.html"
             method="get"
             style="display: flex; justify-content: end; padding-right: 1em"
@@ -82,18 +82,24 @@
             <input
               type="text"
               name="q"
-              id="search-input"
-              class="lang-ko"
-              placeholder="검색어를 입력하세요"
+              class="search-input lang-ko"
+              placeholder="검색"
             />
-            <input
+          </form>
+
+          <form
+          class="search-form lang-en"
+          action="/search.html"
+          method="get"
+          style="display: flex; justify-content: end; padding-right: 1em"
+        >
+          <input
             type="text"
             name="q"
-            id="search-input"
-            class="lang-en"
-            placeholder="Search..."
+            class="search-input lang-en"
+            placeholder="Search"
           />
-          </form>
+        </form>
           <div class="lang-toggle-wrapper">
             <span class="lang-label">한</span>
             <label class="switch">

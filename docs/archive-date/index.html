@@ -163,7 +163,7 @@
 
   <style>
     /* 검색 입력창 */
-    #search-input {
+    .search-input {
       padding: 6px 12px;
       font-size: 15px;
       border: 1px solid #eee;
@@ -175,12 +175,12 @@
       background-color: #fefefe;
     }
 
-    #search-input::placeholder {
+    .search-input::placeholder {
       color: var(--slate);
     }
 
     /* 입력창 포커스 시 */
-    #search-input:focus {
+    .search-input:focus {
       border-color: #9ea0a3;
       background-color: white;
     }
@@ -227,7 +227,7 @@
     <a
     class="sidebar-nav-item active lang-en"
     href="/archive-date/"
-    >See by dates</a
+    >List by dates</a
   >
         
     <a
@@ -238,7 +238,7 @@
     <a
     class="sidebar-nav-item lang-en"
     href="/archive-tag/"
-    >See by tags</a
+    >List by topics</a
   >
           
     <a
@@ -249,7 +249,7 @@
     <a
     class="sidebar-nav-item lang-en"
     href="/book/"
-    >Twilight Wonders (Korean only)</a
+    >Twilight Wonders (Korean)</a
   >
           
     <a
@@ -271,9 +271,9 @@
     <a
     class="sidebar-nav-item lang-en"
     href="/notes/"
-    >BA maths notes (Korean only)</a
+    >Maths Review Notes (Korean)</a
   >
-                                                                                                                                              
+                                                                                                                                          
   </nav>
 
   <div class="sidebar-item">
@@ -329,7 +329,7 @@
 
           </h3>
           <form
-            id="search-form"
+            class="search-form lang-ko"
             action="/search.html"
             method="get"
             style="display: flex; justify-content: end; padding-right: 1em"
@@ -337,18 +337,24 @@
             <input
               type="text"
               name="q"
-              id="search-input"
-              class="lang-ko"
-              placeholder="검색어를 입력하세요"
+              class="search-input lang-ko"
+              placeholder="검색"
             />
-            <input
+          </form>
+
+          <form
+          class="search-form lang-en"
+          action="/search.html"
+          method="get"
+          style="display: flex; justify-content: end; padding-right: 1em"
+        >
+          <input
             type="text"
             name="q"
-            id="search-input"
-            class="lang-en"
-            placeholder="Search..."
+            class="search-input lang-en"
+            placeholder="Search"
           />
-          </form>
+        </form>
           <div class="lang-toggle-wrapper">
             <span class="lang-label">한</span>
             <label class="switch">
@@ -362,157 +368,314 @@
 
       <div class="container content"><div class="page">
   <h1 class="page-title lang-ko">날짜별로 보기</h1>
-  <h1 class="page-title lang-en">See by dates</h1>
+  <h1 class="page-title lang-en">List by dates</h1>
   
-<h2>June 2025</h2>
-<ul>
+<h2 style="margin-bottom: 0.6em">June 2025</h2>
+<ul class="post-list">
     
-      <li><a href="/2025/06/18/test/">Bell's Spaceship: Passive v. Active Lorentz Contraction</a></li>
+      <li class="post-item" data-lang="en">
+        <a href="/2025/06/18/test/">Mock Post</a>
+      </li>
     
-      <li><a href="/2025/06/17/kafka-blue-octavos/">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/06/17/kafka-blue-octavos/">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</a>
+      </li>
     
-      <li><a href="/2025/06/06/zizek-soft-facism/">슬라보예 지젝, ｢소프트 파시즘, 인공지능, 그리고 수치심의 몰락｣</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/06/06/zizek-soft-facism/">슬라보예 지젝, ｢소프트 파시즘, 인공지능, 그리고 수치심의 몰락｣</a>
+      </li>
     
-      <li><a href="/2025/06/02/notes-on-continuity/">왜 연속함수의 위상적 정의는 “반대”인가?</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/06/02/notes-on-continuity/">왜 연속함수의 위상적 정의는 “반대”인가?</a>
+      </li>
     
-      <li><a href="/2025/06/02/wittgenstein-conant/">논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》</a></li>
-    
-  </ul>
-
-<h2>May 2025</h2>
-<ul>
-    
-      <li><a href="/2025/05/26/quine-two-dogmas/">콰인, ⟪경험주의의 두 독단⟫</a></li>
-    
-      <li><a href="/2025/05/16/stone-space-compactness/">스톤 공간과 콤팩트성 정리</a></li>
-    
-      <li><a href="/2025/05/15/quantifier-elimination/">양화사 제거</a></li>
-    
-      <li><a href="/2025/05/13/saturation/">포화된 구조와 실수체의 완전성</a></li>
-    
-      <li><a href="/2025/05/09/resiliency/">η 집합</a></li>
-    
-      <li><a href="/2025/05/08/robinson-craig/">로빈슨, 크레이그, 베스의 정리</a></li>
-    
-      <li><a href="/2025/05/04/regular-singular/">정칙 기수와 특이 기수, 그리고 도달 불가능 기수</a></li>
-    
-      <li><a href="/2025/05/01/elementary-embedding/">준동형 사상, 임베딩, 초등적 임베딩</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/06/02/wittgenstein-conant/">논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》</a>
+      </li>
     
   </ul>
 
-<h2>April 2025</h2>
-<ul>
+<h2 style="margin-bottom: 0.6em">May 2025</h2>
+<ul class="post-list">
     
-      <li><a href="/2025/04/24/continuum-coloring/">연속체 가설과 동치인 색칠 문제</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/05/26/quine-two-dogmas/">콰인, ⟪경험주의의 두 독단⟫</a>
+      </li>
     
-      <li><a href="/2025/04/20/cardinality/">기수의 정의에 관한 노트</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/05/16/stone-space-compactness/">스톤 공간과 콤팩트성 정리</a>
+      </li>
     
-      <li><a href="/2025/04/18/prisoner-hat/">무한 죄수 모자 문제</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/05/15/quantifier-elimination/">양화사 제거</a>
+      </li>
     
-      <li><a href="/2025/04/17/los-tarski/">워시-타르스키 보존 정리</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/05/13/saturation/">포화된 구조와 실수체의 완전성</a>
+      </li>
     
-      <li><a href="/2025/04/10/completeness-theorem/">완전성 정리와 뢰벤하임-스콜렘 정리</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/05/09/resiliency/">η 집합</a>
+      </li>
     
-      <li><a href="/2025/04/04/van-kampen/">자이페르트-판 캄펀 정리에 대한 노트</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/05/08/robinson-craig/">로빈슨, 크레이그, 베스의 정리</a>
+      </li>
     
-      <li><a href="/2025/04/02/box-v-product/">범주론적 관점에서의 곱 위상·상자 위상과 직곱·직합의 차이</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/05/04/regular-singular/">정칙 기수와 특이 기수, 그리고 도달 불가능 기수</a>
+      </li>
     
-      <li><a href="/2025/04/01/modal-logic/">양상 논리</a></li>
-    
-  </ul>
-
-<h2>March 2025</h2>
-<ul>
-    
-      <li><a href="/2025/03/21/yoneda/">요네다 보조정리</a></li>
-    
-      <li><a href="/2025/03/18/quanitfying-in/">양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게</a></li>
-    
-      <li><a href="/2025/03/12/what-is-a-theory-of-truth/">참에 대한 이론이란 무엇인가?</a></li>
-    
-      <li><a href="/2025/03/10/temporal-logic/">시제 논리</a></li>
-    
-      <li><a href="/2025/03/04/tensor/">텐서곱에 관한 노트</a></li>
-    
-  </ul>
-
-<h2>February 2025</h2>
-<ul>
-    
-      <li><a href="/2025/02/27/general-covariance/">일반 공변성에 대한 노트</a></li>
-    
-      <li><a href="/2025/02/27/euler-lagrange/">오일러-라그랑주 방정식과 라그랑주 역학</a></li>
-    
-      <li><a href="/2025/02/25/lebesgue-borel/">르베그 가측 집합과 보렐 가측 집합</a></li>
-    
-      <li><a href="/2025/02/25/caratheodory/">카라테오도리 정리를 이용한 측도의 구성</a></li>
-    
-      <li><a href="/2025/02/24/algebra-measure/">대수와 측도의 정의</a></li>
-    
-      <li><a href="/2025/02/20/ramsey/">램지 수와 무한 램지 정리</a></li>
-    
-      <li><a href="/2025/02/13/spectral-theorem/">어드조인트, 정규 변환, 그리고 스펙트럼 정리</a></li>
-    
-      <li><a href="/2025/02/13/three-definitions-of-adjoint/">어드조인트에 대한 세 가지 접근</a></li>
-    
-      <li><a href="/2025/02/09/godel-lucas-penrose/">정신은 기계로 환원될 수 있는가: 괴델의 조건문과 펜로즈-루카스 논증</a></li>
-    
-      <li><a href="/2025/02/07/arithmetic-hierarchy/">산술 위계</a></li>
-    
-      <li><a href="/2025/02/05/order/">곱군과 위수에 관한 노트: 페르마 소수 정리와 윌슨의 정리</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/05/01/elementary-embedding/">준동형 사상, 임베딩, 초등적 임베딩</a>
+      </li>
     
   </ul>
 
-<h2>January 2025</h2>
-<ul>
+<h2 style="margin-bottom: 0.6em">April 2025</h2>
+<ul class="post-list">
     
-      <li><a href="/2025/01/25/beta-function/">베타 함수를 통한 페아노 산술에서의 괴델 수 정의</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/04/24/continuum-coloring/">연속체 가설과 동치인 색칠 문제</a>
+      </li>
     
-      <li><a href="/2025/01/25/los/">워시의 정리</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/04/20/cardinality/">기수의 정의에 관한 노트</a>
+      </li>
     
-      <li><a href="/2025/01/22/hypernaturals/">프레셰 필터와 비표준 자연수</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/04/18/prisoner-hat/">무한 죄수 모자 문제</a>
+      </li>
     
-      <li><a href="/2025/01/18/reference-3/">지시에 대하여 — 한정 기술구</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/04/17/los-tarski/">워시-타르스키 보존 정리</a>
+      </li>
     
-      <li><a href="/2025/01/13/reference-2/">지시에 대하여 — 특성 모델과 의도주의</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/04/10/completeness-theorem/">완전성 정리와 뢰벤하임-스콜렘 정리</a>
+      </li>
     
-      <li><a href="/2025/01/07/reference-1/">지시에 대하여 — 기술주의와 인과 이론</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/04/04/van-kampen/">자이페르트-판 캄펀 정리에 대한 노트</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/04/02/box-v-product/">범주론적 관점에서의 곱 위상·상자 위상과 직곱·직합의 차이</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/04/01/modal-logic/">양상 논리</a>
+      </li>
     
   </ul>
 
-<h2>December 2024</h2>
-<ul>
+<h2 style="margin-bottom: 0.6em">March 2025</h2>
+<ul class="post-list">
     
-      <li><a href="/2024/12/26/uncountability-of-reals/">대각선 논법 없이 실수의 비가산성 증명하기</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/03/21/yoneda/">요네다 보조정리</a>
+      </li>
     
-      <li><a href="/2024/12/25/Cantor-Bendixson/">칸토어-벤딕슨 정리</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/03/18/quanitfying-in/">양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게</a>
+      </li>
     
-      <li><a href="/2024/12/16/adjoints/">어드조인트에 대한 직관적 이해</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/03/12/what-is-a-theory-of-truth/">참에 대한 이론이란 무엇인가?</a>
+      </li>
     
-      <li><a href="/2024/12/11/VL-axiom/">V = L 공리의 무모순성</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/03/10/temporal-logic/">시제 논리</a>
+      </li>
     
-      <li><a href="/2024/12/05/transfinite-recursion/">초한귀납과 초한재귀</a></li>
-    
-      <li><a href="/2024/12/01/net/">콤팩트성과 그물</a></li>
-    
-      <li><a href="/2024/12/01/baire/">베르 범주 정리</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/03/04/tensor/">텐서곱에 관한 노트</a>
+      </li>
     
   </ul>
 
-<h2>November 2024</h2>
-<ul>
+<h2 style="margin-bottom: 0.6em">February 2025</h2>
+<ul class="post-list">
     
-      <li><a href="/2024/11/21/trichotomy/">정렬의 삼분성과 서수의 완전성</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/27/general-covariance/">일반 공변성에 대한 노트</a>
+      </li>
     
-      <li><a href="/2024/11/20/Rational-Real/">유리수와 실수의 집합론적 정의</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/27/euler-lagrange/">오일러-라그랑주 방정식과 라그랑주 역학</a>
+      </li>
     
-      <li><a href="/2024/11/19/CSB/">칸토어-슈뢰더-베른슈타인 정리</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/25/lebesgue-borel/">르베그 가측 집합과 보렐 가측 집합</a>
+      </li>
     
-      <li><a href="/2024/11/18/ZFC/">ZFC 공리의 목록</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/25/caratheodory/">카라테오도리 정리를 이용한 측도의 구성</a>
+      </li>
     
-      <li><a href="/2024/11/17/bell-rocket/">벨의 우주선 사고실험: 수동적 로렌츠 수축과 능동적 로렌츠 수축</a></li>
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/24/algebra-measure/">대수와 측도의 정의</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/20/ramsey/">램지 수와 무한 램지 정리</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/13/spectral-theorem/">어드조인트, 정규 변환, 그리고 스펙트럼 정리</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/13/three-definitions-of-adjoint/">어드조인트에 대한 세 가지 접근</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/09/godel-lucas-penrose/">정신은 기계로 환원될 수 있는가: 괴델의 조건문과 펜로즈-루카스 논증</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/07/arithmetic-hierarchy/">산술 위계</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/02/05/order/">곱군과 위수에 관한 노트: 페르마 소수 정리와 윌슨의 정리</a>
+      </li>
     
   </ul>
+
+<h2 style="margin-bottom: 0.6em">January 2025</h2>
+<ul class="post-list">
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/01/25/beta-function/">베타 함수를 통한 페아노 산술에서의 괴델 수 정의</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/01/25/los/">워시의 정리</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/01/22/hypernaturals/">프레셰 필터와 비표준 자연수</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/01/18/reference-3/">지시에 대하여 — 한정 기술구</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/01/13/reference-2/">지시에 대하여 — 특성 모델과 의도주의</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2025/01/07/reference-1/">지시에 대하여 — 기술주의와 인과 이론</a>
+      </li>
+    
+  </ul>
+
+<h2 style="margin-bottom: 0.6em">December 2024</h2>
+<ul class="post-list">
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/12/26/uncountability-of-reals/">대각선 논법 없이 실수의 비가산성 증명하기</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/12/25/Cantor-Bendixson/">칸토어-벤딕슨 정리</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/12/16/adjoints/">어드조인트에 대한 직관적 이해</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/12/11/VL-axiom/">V = L 공리의 무모순성</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/12/05/transfinite-recursion/">초한귀납과 초한재귀</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/12/01/net/">콤팩트성과 그물</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/12/01/baire/">베르 범주 정리</a>
+      </li>
+    
+  </ul>
+
+<h2 style="margin-bottom: 0.6em">November 2024</h2>
+<ul class="post-list">
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/11/21/trichotomy/">정렬의 삼분성과 서수의 완전성</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/11/20/Rational-Real/">유리수와 실수의 집합론적 정의</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/11/19/CSB/">칸토어-슈뢰더-베른슈타인 정리</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/11/18/ZFC/">ZFC 공리의 목록</a>
+      </li>
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2024/11/17/bell-rocket/">벨의 우주선 사고실험: 수동적 로렌츠 수축과 능동적 로렌츠 수축</a>
+      </li>
+    
+  </ul>
+
+<script>
+function filterPostItemsByLang(lang) {
+  document.querySelectorAll(".post-list").forEach(ul => {
+    const items = ul.querySelectorAll(".post-item");
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      const match = item.dataset.lang === lang;
+      item.style.display = match ? "" : "none";
+      if (match) visibleCount++;
+    });
+
+    // h2는 ul 바로 이전 형제
+    const heading = ul.previousElementSibling;
+    if (visibleCount === 0) {
+      ul.style.display = "none";
+      if (heading && heading.tagName === "H2") {
+        heading.style.display = "none";
+      }
+    } else {
+      ul.style.display = "";
+      if (heading && heading.tagName === "H2") {
+        heading.style.display = "";
+      }
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "ko";
+  filterPostItemsByLang(savedLang);
+
+  const toggle = document.getElementById("lang-toggle");
+  if (toggle) {
+    // 토글 UI 상태 초기화
+    toggle.checked = savedLang === "en";
+
+    // 토글 변경 시 리스트 갱신
+    toggle.addEventListener("change", () => {
+      const newLang = toggle.checked ? "en" : "ko";
+      localStorage.setItem("lang", newLang);
+      filterPostItemsByLang(newLang);
+    });
+  }
+});
+</script>
 
 
 </div>
