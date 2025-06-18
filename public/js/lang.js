@@ -6,6 +6,11 @@ function updateLanguageUI(lang) {
     document.querySelectorAll(".lang-en").forEach(el => {
       el.style.display = isEnglish ? "block" : "none";
     });
+
+    const searchInput = document.getElementById("search-input");
+    if (searchInput) {
+      searchInput.placeholder = isEnglish ? "Search" : "검색";
+    }
   
     const toggle = document.getElementById("lang-toggle");
     if (toggle) {

@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     gap: 0.4em;
+    margin-right: 0.5em;
   }
 
   .lang-label {
@@ -164,7 +165,7 @@
 
   <style>
     /* 검색 입력창 */
-    .search-input {
+    #search-input {
       padding: 6px 12px;
       font-size: 15px;
       border: 1px solid #eee;
@@ -176,14 +177,20 @@
       background-color: #fefefe;
     }
 
-    .search-input::placeholder {
+    #search-input::placeholder {
       color: var(--slate);
     }
 
     /* 입력창 포커스 시 */
-    .search-input:focus {
+    #search-input:focus {
       border-color: #9ea0a3;
       background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
     }
   </style>
 
@@ -330,7 +337,7 @@
 
           </h3>
           <form
-            class="search-form lang-ko"
+            id="search-form"
             action="/search.html"
             method="get"
             style="display: flex; justify-content: end; padding-right: 1em"
@@ -338,24 +345,11 @@
             <input
               type="text"
               name="q"
-              class="search-input lang-ko"
+              id="search-input"
               placeholder="검색"
             />
           </form>
 
-          <form
-          class="search-form lang-en"
-          action="/search.html"
-          method="get"
-          style="display: flex; justify-content: end; padding-right: 1em"
-        >
-          <input
-            type="text"
-            name="q"
-            class="search-input lang-en"
-            placeholder="Search"
-          />
-        </form>
           <div class="lang-toggle-wrapper">
             <span class="lang-label">한</span>
             <label class="switch">
