@@ -11,13 +11,8 @@ title: 저에 대하여
 
 몇 가지 링크를 걸어둡니다.
 
+- <a href="/public/Jeongdam Choi - CV.pdf">CV</a>
 - 메일: dimenerno@kaist.ac.kr
-- [트위터](https://twitter.com/dimenerno)
-- [디멘 아카이브](https://dimen.notion.site): 제가 제작한 학습 자료와 콘텐츠들을 모아둔 곳입니다.
+- [트위터](https://twitter.com/dimenerno): @dimenerno
 - [브런치](http://brunch.co.kr/@dimen): 개인적이거나 문학에 가까운 글이 올라옵니다.
-- [유튜브](http://youtube.com/@dimenerno): 언어학 영상이 올라옵니다. 채널 주제를 철학으로 점차 변경할 계획입니다만 현재는 개인적인 사정으로 채널 활동을 쉬고 있습니다.
-
-<div style="color: white;">
-윤민규 보고있나아아아아아아ㅏㅏㅏㅏ아아아아아ㅏ아ㅏㅏ아아아아아ㅏ<br>
-아아아아아ㅏㅅ암페어레지스터옴~~~
-</div>
+- [유튜브](http://youtube.com/@dimenerno): 언어학 및 언어철학 영상이 올라옵니다. 현재는 개인적인 사정으로 활동을 쉬고 있습니다.
