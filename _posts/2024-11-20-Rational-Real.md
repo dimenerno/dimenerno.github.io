@@ -10,23 +10,25 @@ tags: [수학, 집합론]
 > **칸토어의 동형성 정리.** 가산이고 양끝점이 없으며 조밀한 전순서 집합은 순서 동형에 대해 유일하다.
 
 **증명 1. (Back-and-Forth Argument)**
-![](https://velog.velcdn.com/images/dimenerno/post/888ce5aa-5181-425a-98ca-91db8396e86a/image.png)
 
-$n$번째 단계에서 $\mathrm{argmin}\_k a\_k \in A \setminus \mathrm{dom} f\_n$을 순서 동형성을 만족하게끔 $b \in B  \setminus \mathrm{im} f\_n$과 대응시키고, $\mathrm{argmin}\_{l}b\_l \in B \setminus (\mathrm{im} f\_n \cup \lbrace  b \rbrace)$
-을 순서 동형성을 만족하게끔 임의의 
+<img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;">
+
+$n$번째 단계에서 **가장 인덱스가 작은** $a\_k \in A \setminus \mathrm{dom} f\_n$을 순서 동형성을 만족하게끔 **임의의** $b \in B  \setminus \mathrm{im} f\_n$과 대응시키고, **가장 인덱스가 작은** $b\_l \in B \setminus (\mathrm{im} f\_n \cup \lbrace  b \rbrace)$
+를 순서 동형성을 만족하게끔 **임의의** 
 $a \in A \setminus (\mathrm{dom}f\_n \cup \lbrace a\_k\rbrace)$
-와 대응시킨다.
+와 대응시킨다. (그림의 파란색은 '가장 인덱스가 작은'으로 선택된 원소)
 
 **증명 2. (Only-Forth Argument)**
-![](https://velog.velcdn.com/images/dimenerno/post/1ecaf995-ba92-4708-8d0b-fb81f7c2aad1/image.png)
 
-$n$ 번째 단계에서 $\mathrm{argmin}\_k a\_k \in A \setminus \mathrm{dom} f\_n$을 순서 동형성을 만족하게끔 $b \in B \setminus  \mathrm{im}f\_n$ 중에서 *가장 인덱스가 작은* $b\_l$과 대응시킨다.
+<img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;">
+
+$n$번째 단계에서 **가장 인덱스가 작은** $a\_k \in A \setminus \mathrm{dom} f\_n$을 순서 동형성을 만족하게끔 **가장 인덱스가 작은** $b\_l \in B \setminus  \mathrm{im}f\_n$과 대응시킨다.
 
 **잘못된 증명. (Incorrect Only-Forth Argument)**
 
-$n$번째 단계에서 $\mathrm{argmin}\_k a\_k \in A \setminus \mathrm{dom} f\_n$을 순서 동형성을 만족하게끔 *임의의* $b \in B \setminus  \mathrm{im}f\_n$와 대응시킨다.
+$n$번째 단계에서 **가장 인덱스가 작은** $a\_k \in A \setminus \mathrm{dom} f\_n$을 순서 동형성을 만족하게끔 **임의의** $b \in B \setminus  \mathrm{im}f\_n$와 대응시킨다.
 
-**잘못된 이유:** $\mathrm{im} \left[ \bigcup f\_n \right]$이 $B$ 전체를 소진한다는 보장이 없다. 일례로 모든 경우 선택된 $b$의 인덱스가 짝수인 경우가 가능하다.
+<u>잘못된 이유</u>. $\mathrm{im} \left[ \bigcup f\_n \right]$이 $B$ 전체를 소진한다는 보장이 없다. 일례로 모든 경우 선택된 $b$의 인덱스가 짝수인 경우가 가능하다.
 
 ### 2. 데데킨트 절단
 
@@ -43,10 +45,11 @@ $n$번째 단계에서 $\mathrm{argmin}\_k a\_k \in A \setminus \mathrm{dom} f\_
 >
 > 4. $B$는 최소 원소를 가지지 않는다.
 
-**Remark 1.** $P$가 완비이다 ⇔ $P$는 틈을 가지지 않는다.
-**Remark 2.** $P = \mathbb{Q}$일 때 틈은 무리수 집합을, 데데킨트 절단은 실수 집합을 나타낸다.
+**Remark**
+1. $P$가 완비이다 ⇔ $P$는 틈을 가지지 않는다.
+2. $P = \mathbb{Q}$일 때 틈은 무리수 집합을, 데데킨트 절단은 실수 집합을 나타낸다.
 
-![](https://velog.velcdn.com/images/dimenerno/post/9620e89e-2363-4d11-865a-7ecb11ea26d9/image.png)
+<img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;">
 
 ### 3. 완비화 정리
 

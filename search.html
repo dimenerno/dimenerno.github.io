@@ -5,8 +5,8 @@ title-en: Search results
 permalink: /search.html
 ---
 
-<h1 class="lang-ko" style="margin-bottom: 1em">검색 결과</h1>
-<h1 class="lang-en" style="margin-bottom: 1em">Search Results</h1>
+<h1 id="search-h1-ko" class="lang-ko" style="margin-bottom: 1em">검색 결과</h1>
+<h1 id="search-h1-en" class="lang-en" style="margin-bottom: 1em">Search Results</h1>
 <ul id="search-results"></ul>
 
 <script>
@@ -31,12 +31,14 @@ permalink: /search.html
         return title.includes(query) || content.includes(query);
       });
 
-      document.querySelector(
-        "h1"
-      ).textContent = `\'${query}\' 의 검색 결과 (${results.length})`;
+      document.getElementById("search-h1-ko").textContent = `\'${query}\' 의 검색 결과 (${results.length})`;
+      document.getElementById("search-h1-en").textContent = `Search result for \'${query}\' (${results.length})`;
 
       if (results.length === 0) {
-        resultsContainer.innerHTML = "<li>검색 결과가 없습니다.</li>";
+        resultsContainer.innerHTML = "$$\\mathrm{SearchResult} = \\varnothing$$";
+        if (window.MathJax && window.MathJax.typeset) {
+  MathJax.typeset();
+}
       } else {
         resultsContainer.innerHTML = results
           .map(
@@ -55,8 +57,8 @@ permalink: /search.html
         }
       }
     } catch (e) {
-      console.error("검색 중 오류 발생:", e);
-      resultsContainer.innerHTML = "<li>검색 데이터를 불러올 수 없습니다.</li>";
+      console.error("Error:", e);
+      resultsContainer.innerHTML = "<li>Unexpected error while searching.</li>";
     }
   });
 </script>

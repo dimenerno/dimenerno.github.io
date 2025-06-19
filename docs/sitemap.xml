@@ -17,12 +17,16 @@
 <lastmod>2024-11-18T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2024/11/19/CSB-en</loc>
+<loc>http://localhost:4000/2024/11/19/CSB/en</loc>
 <lastmod>2024-11-19T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/2024/11/19/CSB</loc>
 <lastmod>2024-11-19T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2024/11/20/Rational-Real/en</loc>
+<lastmod>2024-11-20T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/2024/11/20/Rational-Real</loc>
@@ -285,7 +289,7 @@
 <loc>http://localhost:4000/tags/%EC%83%81%EB%8C%80%EB%A1%A0/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/tags/maths/</loc>
+<loc>http://localhost:4000/tags/mathematics/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/tags/set-theory/</loc>
@@ -298,9 +302,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/tags/%EC%9C%84%EC%83%81%EC%88%98%ED%95%99/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tags/physics/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/tags/mechanics/</loc>

@@ -3,7 +3,7 @@ layout: post
 title: "Bell's Spaceship Paradox: Passive and Active Lorentz Contraction"
 date: 2024-11-17
 lang: en
-tags: [physics, relativity]
+tags: [Physics, Relativity]
 ---
 
 > Spaceships A and B are connected by a thin thread and are initially at rest (with respect to a common inertial frame). They begin to accelerate simultaneously at the same rate to approach the speed of light. What happens to the thread?

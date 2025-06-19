@@ -15,7 +15,7 @@ title-en: About Me
 
   <ul>
     <li><a href="/public/Jeongdam Choi - CV.pdf">CV</a></li>
-    <li>메일: dimenerno@kaist.ac.kr</li>
+    <li><a href="mailto:dimenerno@kaist.ac.kr">메일</a>: dimenerno@kaist.ac.kr</li>
     <li><a href="https://twitter.com/dimenerno">트위터</a>: @dimenerno</li>
     <li><a href="http://brunch.co.kr/@dimen">브런치</a>: 개인적이거나 문학에 가까운 글이 올라옵니다.</li>
     <li><a href="http://youtube.com/@dimenerno">유튜브</a>: 언어학 및 언어철학 영상이 올라옵니다. 현재는 개인적인 사정으로 활동을 쉬고 있습니다.</li>
@@ -31,7 +31,7 @@ title-en: About Me
 
   <ul>
     <li><a href="/public/Jeongdam Choi - CV.pdf">Curriculum Vitae</a></li>
-    <li>Mail: dimenerno@kaist.ac.kr</li>
+    <li><a href="mailto:dimenerno@kaist.ac.kr">Mail</a>: dimenerno@kaist.ac.kr</li>
     <li><a href="https://twitter.com/dimenerno">Twitter</a>: @dimenerno</li>
     <li><a href="http://brunch.co.kr/@dimen">Brunch</a>: Personal and literary-style writings. (Korean only)</li>
     <li><a href="http://youtube.com/@dimenerno">YouTube</a>: Videos on linguistics and the philosophy of language. (Korean only)</li>

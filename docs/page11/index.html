@@ -281,7 +281,7 @@
     href="/notes/"
     >Maths Review Notes (Korean)</a
   >
-                                                                                                                                                                    
+                                                                                                                                                                
   </nav>
 
   <div class="sidebar-item">
@@ -698,24 +698,26 @@ S = \lbrace  \alpha_a \in \mathrm{Ord} :  a \in A\rbrace
   <p><strong>칸토어의 동형성 정리.</strong> 가산이고 양끝점이 없으며 조밀한 전순서 집합은 순서 동형에 대해 유일하다.</p>
 </blockquote>
 
-<p><strong>증명 1. (Back-and-Forth Argument)</strong>
-<img src="https://velog.velcdn.com/images/dimenerno/post/888ce5aa-5181-425a-98ca-91db8396e86a/image.png" alt="" /></p>
+<p><strong>증명 1. (Back-and-Forth Argument)</strong></p>
 
-<p>$n$번째 단계에서 $\mathrm{argmin}_k a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 $b \in B  \setminus \mathrm{im} f_n$과 대응시키고, $\mathrm{argmin}_{l}b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$
-을 순서 동형성을 만족하게끔 임의의 
+<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B  \setminus \mathrm{im} f_n$과 대응시키고, <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$
+를 순서 동형성을 만족하게끔 <strong>임의의</strong> 
 $a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$
-와 대응시킨다.</p>
+와 대응시킨다. (그림의 파란색은 ‘가장 인덱스가 작은’으로 선택된 원소)</p>
 
-<p><strong>증명 2. (Only-Forth Argument)</strong>
-<img src="https://velog.velcdn.com/images/dimenerno/post/1ecaf995-ba92-4708-8d0b-fb81f7c2aad1/image.png" alt="" /></p>
+<p><strong>증명 2. (Only-Forth Argument)</strong></p>
 
-<p>$n$ 번째 단계에서 $\mathrm{argmin}_k a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 $b \in B \setminus  \mathrm{im}f_n$ 중에서 <em>가장 인덱스가 작은</em> $b_l$과 대응시킨다.</p>
+<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus  \mathrm{im}f_n$과 대응시킨다.</p>
 
 <p><strong>잘못된 증명. (Incorrect Only-Forth Argument)</strong></p>
 
-<p>$n$번째 단계에서 $\mathrm{argmin}_k a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <em>임의의</em> $b \in B \setminus  \mathrm{im}f_n$와 대응시킨다.</p>
+<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B \setminus  \mathrm{im}f_n$와 대응시킨다.</p>
 
-<p><strong>잘못된 이유:</strong> $\mathrm{im} \left[ \bigcup f_n \right]$이 $B$ 전체를 소진한다는 보장이 없다. 일례로 모든 경우 선택된 $b$의 인덱스가 짝수인 경우가 가능하다.</p>
+<p><u>잘못된 이유</u>. $\mathrm{im} \left[ \bigcup f_n \right]$이 $B$ 전체를 소진한다는 보장이 없다. 일례로 모든 경우 선택된 $b$의 인덱스가 짝수인 경우가 가능하다.</p>
 
 <h3 id="2-데데킨트-절단">2. 데데킨트 절단</h3>
 
@@ -740,10 +742,13 @@ $a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$
   </ol>
 </blockquote>
 
-<p><strong>Remark 1.</strong> $P$가 완비이다 ⇔ $P$는 틈을 가지지 않는다.
-<strong>Remark 2.</strong> $P = \mathbb{Q}$일 때 틈은 무리수 집합을, 데데킨트 절단은 실수 집합을 나타낸다.</p>
+<p><strong>Remark</strong></p>
+<ol>
+  <li>$P$가 완비이다 ⇔ $P$는 틈을 가지지 않는다.</li>
+  <li>$P = \mathbb{Q}$일 때 틈은 무리수 집합을, 데데킨트 절단은 실수 집합을 나타낸다.</li>
+</ol>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/9620e89e-2363-4d11-865a-7ecb11ea26d9/image.png" alt="" /></p>
+<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
 
 <h3 id="3-완비화-정리">3. 완비화 정리</h3>
 
@@ -819,6 +824,154 @@ B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
   </div>
   <div style="margin-bottom: 6em"></div>
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/20/Rational-Real/en"> Set-theoretic Definitions of Rational and Real Numbers </a>
+      </h1>
+    <span class="post-date">20 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <h3 id="1-cantors-isomorphism-theorem">1. Cantor’s Isomorphism Theorem</h3>
+
+<blockquote>
+  <p><strong>Cantor’s Isomorphism Theorem.</strong> Any countable, dense, linear order without endpoints is unique up to order isomorphism.</p>
+</blockquote>
+
+<p><strong>Proof 1. (Back-and-Forth Argument)</strong></p>
+
+<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B  \setminus \mathrm{im} f_n$ so that order isomorphism is preserved, and then map the <strong>least-indexed</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$ to an <strong>arbitrary</strong> $a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$ so that order isomorphism is preserved. (In the diagram, blue indicates the ‘least-indexed’ chosen elements.)</p>
+
+<p><strong>Proof 2. (Only-Forth Argument)</strong></p>
+
+<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to the <strong>least-indexed</strong> $b_l \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
+
+<p><strong>Incorrect Proof. (Incorrect Only-Forth Argument)</strong></p>
+
+<p>At the $n$-th step, match the <strong>least-index</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
+
+<p><u>Why this is incorrect</u>: There is no guarantee that $\mathrm{im} \left[ \bigcup f_n \right]$ exhausts all of $B$. For example, it is possible that only $b$’s with even indices are chosen in every step.</p>
+
+<h3 id="2-dedekind-cuts">2. Dedekind Cuts</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a linearly ordered set $(P, &lt;)$, a pair of subsets $A, B$ of $P$ is called a <strong>cut</strong> if:</p>
+
+  <ol>
+    <li>$A \sqcup B = P$</li>
+    <li>For any $a \in A, b \in B$, $a &lt; b$.</li>
+  </ol>
+
+  <p>Furthermore, it is a <strong>Dedekind cut</strong> if:</p>
+
+  <ol>
+    <li>$A$ has no greatest element.</li>
+  </ol>
+
+  <p>It is called a <strong>gap</strong> if, in addition:</p>
+
+  <ol>
+    <li>$B$ has no least element.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Remark</strong></p>
+<ol>
+  <li>$P$ is complete ⇔ $P$ has no gaps.</li>
+  <li>As will be seen, for $P = \mathbb{Q}$, gaps correspond to irrational numbers while Dedekind cuts correspond to real numbers.</li>
+</ol>
+
+<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
+
+<h3 id="3-completion-theorem">3. Completion Theorem</h3>
+
+<blockquote>
+  <p><strong>Completion Theorem.</strong> If $(P, &lt;)$ is a dense linear order without endpoints, then there exists a unique (up to order isomorphism) complete linear order $(C, \prec)$ satisfying:</p>
+
+  <ol>
+    <li>$P \subseteq C$</li>
+    <li>$\prec$ coincides with $&lt;$ on $P$</li>
+    <li>$P$ is dense in $C$: for any $c_1 &lt; c_2 \in C$, there exists $p \in P$ with $c_1 &lt; p &lt; c_2$</li>
+    <li>$C$ has no endpoints.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Uniqueness Proof.</strong>
+Suppose $(C, \prec)$ and $(C^\ast, \prec^\ast)$ are complete linear orders satisfying the conditions. Define $\phi: C \to C^\ast$ as follows:</p>
+
+<ol>
+  <li>If $c \in P$, then $\phi(c)=c$</li>
+  <li>If $c \notin P$, then $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
+</ol>
+
+<p>This $\phi$ is an order isomorphism.</p>
+
+<p><strong>Existence Proof.</strong>
+Define:</p>
+
+\[\begin{gather}
+\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
+\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
+\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
+\end{gather}\]
+
+<p>Define an order on $\mathcal{D}$ by:</p>
+
+\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
+
+<p>If $(A, B) \in \mathcal{P}$, then for some $p$, $B = \lbrace  x \in P : x \geq p  \rbrace$, and we write $(A, B) = [p]$. That is,</p>
+
+\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
+
+<p>It is easy to check that $(\mathcal{P}, \prec) \sim (P, &lt;)$. Now, we show the following:</p>
+
+<p><em>Claim.</em> $\mathcal{D}$ is an extension of $\mathcal{P}$ satisfying all four conditions of the Completion Theorem.</p>
+
+<p>Conditions 1, 2, and 4 are clear. We show 3.</p>
+
+<p>Let $\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$ with $\mathfrak{d}_1 \prec \mathfrak{d}_2$, i.e., $A_1 \subset A_2$. There exists $p \in A_2 \setminus A_1$ such that $p$ is not the least element of $B$, i.e., $p \in P$. For such $p$, we have $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$. □</p>
+
+<p>Finally, we show:</p>
+
+<p><em>Claim.</em> $(\mathcal{D}, \prec)$ is complete.</p>
+
+<p>Let $\mathcal{S}$ be a nonempty, upward-bounded subset of $\mathcal{D}$. Define:</p>
+
+\[\begin{gather}
+A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
+B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
+\end{gather}\]
+
+<p>Then $(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$ and is the least upper bound of $\mathcal{S}$. ◾</p>
+
+<blockquote>
+  <p><strong>Set-theoretic Definition of the Real Numbers.</strong> A set $(R, &lt;)$ satisfying the following is unique up to order isomorphism:</p>
+
+  <ol>
+    <li>It is a complete linear order.</li>
+    <li>It has no endpoints.</li>
+    <li>It is separable; i.e., there exists $Q \subset R$ which is countable and dense in $R$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> This follows from Cantor’s Isomorphism Theorem and the Completion Theorem.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2024/11/19/CSB"> 칸토어-슈뢰더-베른슈타인 정리 </a>
@@ -848,7 +1001,7 @@ B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
 
 <p><img src="/public/csb-1.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
 
-<p>실선이 $f: X → Y$, 점선이 $g: Y → X$이다. 조건에 의해 $f, g$는 단사이다. $Z := \mathrm{Im} f$가 $Y$와 같다면 증명이 끝나므로 $Z \subsetneq Y$라고 하자.</p>
+<p>조건에 의해 단사함수 $f: X \to Y, g: Y \to X$가 존재한다. $Z := \mathrm{Im} f$가 $Y$와 같다면 증명이 끝나므로 $Z \subsetneq Y$라고 하자.</p>
 
 <p>임의의 $y \in Z \setminus Y$ (그림에서 빈 점으로 표시) 에 대해,</p>
 
@@ -903,94 +1056,6 @@ f(x) &amp; x \in D
 \end{cases}\]
 
 <p><strong>본 정리의 증명.</strong> $f: X → Y, g: Y → X$가 전사일 때 $gf[X] \subseteq g[Y] \subseteq X$이고, $| gf[X] | = | X |$이므로, 보조정리에 의해 $|g[Y]| = |Y| = |X|$이다. ◾</p>
-
-<p>잘 생각해 보면 두 증명은 사실 같다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/19/CSB-en"> 칸토어-슈뢰더-베른슈타인 정리 </a>
-      </h1>
-    <span class="post-date">19 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>정리.</strong> 두 집합 $X, Y$에 대해 $|X| \leq |Y|$, $|X| \geq |Y|$라면 $|X| = |Y|$이다.</p>
-</blockquote>
-
-<p>매우 당연해 보이지만 $\leq$가 단사함수의 존재성으로, $=$가 전단사함수의 존재성으로 정의된다는 점에서 트리키한 함수 핸들링을 요구한다.</p>
-
-<p>여담으로 “칸토어-베른슈타인 정리(위키피디아)” 또는 “슈뢰더-베른슈타인 정리(나무위키)”라고도 부르는데 “칸토어-슈뢰더 정리”라고 부르는 경우는 못 봤다. 홍대병에 취해 있다면 “칸토어-슈뢰더 정리”라고 불러보자.</p>
-
-<h3 id="첫-번째-증명">첫 번째 증명</h3>
-
-<p><img src="/public/csb-1.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
-
-<p>실선이 $f: X → Y$, 점선이 $g: Y → X$이다. 조건에 의해 $f, g$는 단사이다. $Z := \mathrm{Im} f$가 $Y$와 같다면 증명이 끝나므로 $Z \subsetneq Y$라고 하자.</p>
-
-<p>임의의 $y \in Z \setminus Y$ (그림에서 빈 점으로 표시) 에 대해,</p>
-
-<ul>
-  <li>$x_1^y = g^{-1}(y)$</li>
-  <li>$x_{n+1}^y = g(f(x_n))$</li>
-</ul>
-
-<p>와 같이 두어, $h: X \to Y$를 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$h_y(x_1^y) = y$</li>
-  <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
-</ul>
-
-<p>다음이 성립함을 확인하라.</p>
-
-\[x^y_n = x^z_m \iff y = z, n = m\]
-
-<p>따라서 다음의 함수 $h: X → Y$는 well-defined이다.</p>
-
-<p><img src="/public/csb-2.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
-
-\[h(x) = \begin{cases}
-h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
-f(x) &amp;\text{otherwise}
-\end{cases}\]
-
-<p>$h$가 전단사임을 확인하라. ◾</p>
-
-<h3 id="두-번째-증명">두 번째 증명</h3>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $A_1 \subset B \subset A$에 대해 $|A_1| \leq |B| \leq |A|$이고 $|A_1| = |A|$라면 $|A_1| = |B| = |A|$이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $f: A → A_1$가 전사라고 하자. 다음과 같이 $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace $을 정의한다.</p>
-
-\[\begin{gather}
-A_0 = A, \; A_{n+1} = f[A_n] \\
-B_0 = B, \; B_{n+1} = f[B_n] \\
-C_n = A_n \setminus B_n
-\end{gather}\]
-
-<p>$C = \bigcup C_n, D = A \setminus C$라고 하자. $f[C] \subset C, f[D] \subset D$임을 확인하라. 따라서 다음의 $g: A → B$는 전사이다.</p>
-
-\[g(x) = \begin{cases}
-f(x) &amp; x \in C\\
-x &amp; x \in D
-\end{cases}\]
-
-<p><strong>본 정리의 증명.</strong> $f: A → B, g: B → A$가 전사일 때 $|gf[A]| \leq |g[B]| \leq |A|$이므로 보조정리에 의해 $|g[B]| = |B| = |A|$이다. ◾</p>
 
 <p>잘 생각해 보면 두 증명은 사실 같다.</p>
 
