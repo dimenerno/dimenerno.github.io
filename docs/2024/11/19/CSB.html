@@ -280,7 +280,7 @@
     href="/notes/"
     >Maths Review Notes (Korean)</a
   >
-                                                                                                                                              
+                                                                                                                                                                  
   </nav>
 
   <div class="sidebar-item">
@@ -373,7 +373,7 @@
     </div>
   
   <blockquote>
-  <p><strong>정리.</strong> 두 집합 $A, B$에 대해 $|A| \leq |B|$, $|A| \geq |B|$라면 $|A| = |B|$이다.</p>
+  <p><strong>정리.</strong> 두 집합 $X, Y$에 대해 $|X| \leq |Y|$, $|X| \geq |Y|$라면 $|X| = |Y|$이다.</p>
 </blockquote>
 
 <p>매우 당연해 보이지만 $\leq$가 단사함수의 존재성으로, $=$가 전단사함수의 존재성으로 정의된다는 점에서 트리키한 함수 핸들링을 요구한다.</p>
@@ -382,26 +382,31 @@
 
 <h3 id="첫-번째-증명">첫 번째 증명</h3>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/3e3b706b-77bc-4de3-a9ea-76fa4ffd8dbe/image.png" alt="" /></p>
+<p><img src="/public/csb-1.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
 
-<p>실선이 $f: A → B$, 점선이 $g: B → A$이다. 조건에 의해 $f, g$는 단사이다. $C := \mathrm{Im} f$가 $B$와 같다면 증명이 끝나므로, $C \subsetneq B$라고 하자.</p>
+<p>실선이 $f: X → Y$, 점선이 $g: Y → X$이다. 조건에 의해 $f, g$는 단사이다. $Z := \mathrm{Im} f$가 $Y$와 같다면 증명이 끝나므로 $Z \subsetneq Y$라고 하자.</p>
 
-<p>임의의 $y \in B \setminus C$에 대해,</p>
+<p>임의의 $y \in Z \setminus Y$ (그림에서 빈 점으로 표시) 에 대해,</p>
 
 <ul>
   <li>$x_1^y = g^{-1}(y)$</li>
-  <li>
-    <p>$x_{n+1}^y = g(f(x_n))$</p>
-  </li>
+  <li>$x_{n+1}^y = g(f(x_n))$</li>
+</ul>
+
+<p>와 같이 두어, $h: X \to Y$를 다음과 같이 정의한다.</p>
+
+<ul>
   <li>$h_y(x_1^y) = y$</li>
   <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
 </ul>
 
-<p>로 정의한다(보라색). 다음이 성립함을 확인하라.</p>
+<p>다음이 성립함을 확인하라.</p>
 
 \[x^y_n = x^z_m \iff y = z, n = m\]
 
 <p>따라서 다음의 함수 $h: X → Y$는 well-defined이다.</p>
+
+<p><img src="/public/csb-2.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
 
 \[h(x) = \begin{cases}
 h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
@@ -413,7 +418,7 @@ f(x) &amp;\text{otherwise}
 <h3 id="두-번째-증명">두 번째 증명</h3>
 
 <blockquote>
-  <p><strong>보조정리.</strong> $A_1 \subset B \subset A$에 대해 $|A_1| \leq |B| \leq |A|$이고 $|A_1| = |A|$라면 $|A_1| = |B| = |A|$이다.</p>
+  <p><strong>보조정리 (기수의 샌드위치 정리).</strong> $A_1 \subset B \subset A$에 대해 $|A_1| = |A|$라면 $|A_1| = |B| = |A|$이다.</p>
 </blockquote>
 
 <p><strong>증명.</strong> $f: A → A_1$가 전사라고 하자. 다음과 같이 $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace $을 정의한다.</p>
@@ -434,7 +439,6 @@ x &amp; x \in D
 <p><strong>본 정리의 증명.</strong> $f: A → B, g: B → A$가 전사일 때 $|gf[A]| \leq |g[B]| \leq |A|$이므로 보조정리에 의해 $|g[B]| = |B| = |A|$이다. ◾</p>
 
 <p>잘 생각해 보면 두 증명은 사실 같다.</p>
-
 
 </div>
 

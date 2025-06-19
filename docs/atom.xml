@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-06-19T11:15:46+09:00</updated>
+ <updated>2025-06-19T16:22:37+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -6498,6 +6498,38 @@ for y ∈ P:
  </entry>
  
  <entry>
+   <title>굴림에 대한 두 가지 삽화</title>
+   <link href="http://localhost:4000/2024/12/11/rolling"/>
+   <updated>2024-12-11T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2024/12/11/rolling</id>
+   <content type="html">&lt;p&gt;학부 시절 고전역학 수강 때 개인 공부용으로 만든 삽화인데, 잘 정리한 듯하여 이곳에도 공유한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/rot-kr.png&quot; style=&quot;width: 100%; margin: 0 auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/rolling-on-ground.png&quot; style=&quot;width: 100%; margin: 4em auto 0em auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;굴림을 바퀴의 CM 기준으로 분석할 때 &lt;strong&gt;땅 또한 움직인다는 사실&lt;/strong&gt;에 유의하자.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Two Illustrations on Rolling</title>
+   <link href="http://localhost:4000/2024/12/11/rolling/en"/>
+   <updated>2024-12-11T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2024/12/11/rolling/rolling-en</id>
+   <content type="html">&lt;p&gt;These are illustrations I made when I studied classical mechanics in my BA. They seem to be well-made, so I decided to share them here, too.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/rot-en.png&quot; style=&quot;width: 100%; margin: 0 auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that decomposing Revolution as the sum of Rotation about CM and Rotation about Axis is a specific case of the central axis theorem.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/rolling-on-ground.png&quot; style=&quot;width: 100%; margin: 4em auto 0em auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that when analysing Rolling from CM’s frame, the ground also moves at $v = -r\omega$.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>V = L 공리의 무모순성</title>
    <link href="http://localhost:4000/2024/12/11/VL-axiom"/>
    <updated>2024-12-11T00:00:00+09:00</updated>
@@ -7299,7 +7331,7 @@ B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
    <updated>2024-11-19T00:00:00+09:00</updated>
    <id>http://localhost:4000/2024/11/19/CSB</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 두 집합 $A, B$에 대해 $|A| \leq |B|$, $|A| \geq |B|$라면 $|A| = |B|$이다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 두 집합 $X, Y$에 대해 $|X| \leq |Y|$, $|X| \geq |Y|$라면 $|X| = |Y|$이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;매우 당연해 보이지만 $\leq$가 단사함수의 존재성으로, $=$가 전단사함수의 존재성으로 정의된다는 점에서 트리키한 함수 핸들링을 요구한다.&lt;/p&gt;
@@ -7308,26 +7340,106 @@ B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
 
 &lt;h3 id=&quot;첫-번째-증명&quot;&gt;첫 번째 증명&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/3e3b706b-77bc-4de3-a9ea-76fa4ffd8dbe/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/csb-1.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;실선이 $f: A → B$, 점선이 $g: B → A$이다. 조건에 의해 $f, g$는 단사이다. $C := \mathrm{Im} f$가 $B$와 같다면 증명이 끝나므로, $C \subsetneq B$라고 하자.&lt;/p&gt;
+&lt;p&gt;실선이 $f: X → Y$, 점선이 $g: Y → X$이다. 조건에 의해 $f, g$는 단사이다. $Z := \mathrm{Im} f$가 $Y$와 같다면 증명이 끝나므로 $Z \subsetneq Y$라고 하자.&lt;/p&gt;
 
-&lt;p&gt;임의의 $y \in B \setminus C$에 대해,&lt;/p&gt;
+&lt;p&gt;임의의 $y \in Z \setminus Y$ (그림에서 빈 점으로 표시) 에 대해,&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$x_1^y = g^{-1}(y)$&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$x_{n+1}^y = g(f(x_n))$&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$x_{n+1}^y = g(f(x_n))$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;와 같이 두어, $h: X \to Y$를 다음과 같이 정의한다.&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;$h_y(x_1^y) = y$&lt;/li&gt;
   &lt;li&gt;$h_y(x_{n+1}^y) = f(x_n)$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;로 정의한다(보라색). 다음이 성립함을 확인하라.&lt;/p&gt;
+&lt;p&gt;다음이 성립함을 확인하라.&lt;/p&gt;
 
 \[x^y_n = x^z_m \iff y = z, n = m\]
 
 &lt;p&gt;따라서 다음의 함수 $h: X → Y$는 well-defined이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/csb-2.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
+
+\[h(x) = \begin{cases}
+h_y(x) &amp;amp;x = x^y_n \text{ for some } y, n \\\\
+f(x) &amp;amp;\text{otherwise}
+\end{cases}\]
+
+&lt;p&gt;$h$가 전단사임을 확인하라. ◾&lt;/p&gt;
+
+&lt;h3 id=&quot;두-번째-증명&quot;&gt;두 번째 증명&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;보조정리 (기수의 샌드위치 정리).&lt;/strong&gt; $A_1 \subset B \subset A$에 대해 $|A_1| = |A|$라면 $|A_1| = |B| = |A|$이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $f: A → A_1$가 전사라고 하자. 다음과 같이 $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace $을 정의한다.&lt;/p&gt;
+
+\[\begin{gather}
+A_0 = A, \; A_{n+1} = f[A_n] \\
+B_0 = B, \; B_{n+1} = f[B_n] \\
+C_n = A_n \setminus B_n
+\end{gather}\]
+
+&lt;p&gt;$C = \bigcup C_n, D = A \setminus C$라고 하자. $f[C] \subset C, f[D] \subset D$임을 확인하라. 따라서 다음의 $g: A → B$는 전사이다.&lt;/p&gt;
+
+\[g(x) = \begin{cases}
+f(x) &amp;amp; x \in C\\
+x &amp;amp; x \in D
+\end{cases}\]
+
+&lt;p&gt;&lt;strong&gt;본 정리의 증명.&lt;/strong&gt; $f: A → B, g: B → A$가 전사일 때 $|gf[A]| \leq |g[B]| \leq |A|$이므로 보조정리에 의해 $|g[B]| = |B| = |A|$이다. ◾&lt;/p&gt;
+
+&lt;p&gt;잘 생각해 보면 두 증명은 사실 같다.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>칸토어-슈뢰더-베른슈타인 정리</title>
+   <link href="http://localhost:4000/2024/11/19/CSB-en"/>
+   <updated>2024-11-19T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2024/11/19/CSB-en</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 두 집합 $X, Y$에 대해 $|X| \leq |Y|$, $|X| \geq |Y|$라면 $|X| = |Y|$이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;매우 당연해 보이지만 $\leq$가 단사함수의 존재성으로, $=$가 전단사함수의 존재성으로 정의된다는 점에서 트리키한 함수 핸들링을 요구한다.&lt;/p&gt;
+
+&lt;p&gt;여담으로 “칸토어-베른슈타인 정리(위키피디아)” 또는 “슈뢰더-베른슈타인 정리(나무위키)”라고도 부르는데 “칸토어-슈뢰더 정리”라고 부르는 경우는 못 봤다. 홍대병에 취해 있다면 “칸토어-슈뢰더 정리”라고 불러보자.&lt;/p&gt;
+
+&lt;h3 id=&quot;첫-번째-증명&quot;&gt;첫 번째 증명&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/csb-1.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;실선이 $f: X → Y$, 점선이 $g: Y → X$이다. 조건에 의해 $f, g$는 단사이다. $Z := \mathrm{Im} f$가 $Y$와 같다면 증명이 끝나므로 $Z \subsetneq Y$라고 하자.&lt;/p&gt;
+
+&lt;p&gt;임의의 $y \in Z \setminus Y$ (그림에서 빈 점으로 표시) 에 대해,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$x_1^y = g^{-1}(y)$&lt;/li&gt;
+  &lt;li&gt;$x_{n+1}^y = g(f(x_n))$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;와 같이 두어, $h: X \to Y$를 다음과 같이 정의한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$h_y(x_1^y) = y$&lt;/li&gt;
+  &lt;li&gt;$h_y(x_{n+1}^y) = f(x_n)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;다음이 성립함을 확인하라.&lt;/p&gt;
+
+\[x^y_n = x^z_m \iff y = z, n = m\]
+
+&lt;p&gt;따라서 다음의 함수 $h: X → Y$는 well-defined이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/csb-2.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
 \[h(x) = \begin{cases}
 h_y(x) &amp;amp;x = x^y_n \text{ for some } y, n \\\\
@@ -7360,7 +7472,6 @@ x &amp;amp; x \in D
 &lt;p&gt;&lt;strong&gt;본 정리의 증명.&lt;/strong&gt; $f: A → B, g: B → A$가 전사일 때 $|gf[A]| \leq |g[B]| \leq |A|$이므로 보조정리에 의해 $|g[B]| = |B| = |A|$이다. ◾&lt;/p&gt;
 
 &lt;p&gt;잘 생각해 보면 두 증명은 사실 같다.&lt;/p&gt;
-
 </content>
  </entry>
  
@@ -7374,64 +7485,105 @@ x &amp;amp; x \in D
     &lt;tr&gt;
       &lt;th&gt;공리명&lt;/th&gt;
       &lt;th&gt;의미&lt;/th&gt;
-      &lt;th&gt;논리식(자유변수는 $\forall$로 양화)&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;외연 공리&lt;/td&gt;
       &lt;td&gt;집합은 원소의 모임이다.&lt;/td&gt;
-      &lt;td&gt;$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;공집합 공리*&lt;/td&gt;
       &lt;td&gt;공집합이 존재한다.&lt;/td&gt;
-      &lt;td&gt;$\exists Z : z \not\in Z$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;짝 공리*&lt;/td&gt;
       &lt;td&gt;$X, Y$로부터 $Z = \lbrace  X, Y \rbrace$를 정의할 수 있다.&lt;/td&gt;
-      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;합집합 공리&lt;/td&gt;
       &lt;td&gt;$X = \lbrace  Y_i \rbrace$로부터 $Z = \bigcup Y_i$를 정의할 수 있다.&lt;/td&gt;
-      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;멱집합 공리&lt;/td&gt;
       &lt;td&gt;$X$로부터 $\mathcal{P}(X)$를 정의할 수 있다.&lt;/td&gt;
-      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;분류 공리꼴**&lt;/td&gt;
       &lt;td&gt;$X$로부터 $Y = \lbrace  y \in X : \phi(y) \rbrace$를 정의할 수 있다. ($\phi$는 1차 논리식)&lt;/td&gt;
-      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;무한 공리&lt;/td&gt;
       &lt;td&gt;모든 자연수를 포함하는 집합이 존재한다.&lt;/td&gt;
-      &lt;td&gt;$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;정칙 공리&lt;/td&gt;
       &lt;td&gt;$\in$은 정렬 순서이다.&lt;/td&gt;
-      &lt;td&gt;$\exists x \in X : \forall y \in X [ y \not\in x]$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;치환 공리꼴&lt;/td&gt;
       &lt;td&gt;$X$로부터 $f[X]$를 정의할 수 있다. ($f$는 class function)&lt;/td&gt;
-      &lt;td&gt;$\displaylines{&amp;amp;[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow \\ &amp;amp;[\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;선택 공리&lt;/td&gt;
       &lt;td&gt;집합족 $\lbrace  X_i \rbrace$에 대해 각 $X_i$의 원소를 하나씩 선택할 수 있다.&lt;/td&gt;
-      &lt;td&gt;$\displaylines{&amp;amp;\varnothing \notin X \rightarrow \\&amp;amp;\exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;공리명&lt;/th&gt;
+      &lt;th&gt;논리식(자유변수는 $\forall$로 양화)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;외연 공리&lt;/td&gt;
+      &lt;td&gt;$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;공집합 공리*&lt;/td&gt;
+      &lt;td&gt;$\exists Z : z \not\in Z$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;짝 공리*&lt;/td&gt;
+      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;합집합 공리&lt;/td&gt;
+      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;멱집합 공리&lt;/td&gt;
+      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;분류 공리꼴**&lt;/td&gt;
+      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;무한 공리&lt;/td&gt;
+      &lt;td&gt;$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;정칙 공리&lt;/td&gt;
+      &lt;td&gt;$\exists x \in X : \forall y \in X [ y \not\in x]$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;치환 공리꼴&lt;/td&gt;
+      &lt;td&gt;$\displaylines{[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow [\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;선택 공리&lt;/td&gt;
+      &lt;td&gt;$\displaylines{\varnothing \notin X \rightarrow \exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
 &lt;p&gt;&lt;strong&gt;Remarks.&lt;/strong&gt;&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;정칙 공리는 다음과 동치&lt;/li&gt;
 &lt;/ul&gt;
@@ -7439,11 +7591,8 @@ x &amp;amp; x \in D
 \[\exists x \in X : x \cap X = \varnothing\]
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;(*)로 표시된 공리는 분류 공리꼴로부터 유도할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;(**)로 표시된 공리는 치환 공리꼴로부터 유도할 수 있다.&lt;/p&gt;
+  &lt;li&gt;(*)로 표시된 공리는 분류 공리꼴로부터 유도할 수 있다.&lt;/li&gt;
+  &lt;li&gt;(**)로 표시된 공리는 치환 공리꼴로부터 유도할 수 있다.
     &lt;ul&gt;
       &lt;li&gt;분류 공리꼴의 내용은 “X가 집합이다 → f[X]가 집합이다(f는 함수)”이라는 것이다. f가 함수임을(즉, f의 정의역이 집합임을) 선결적으로 요구함에 유의하라.&lt;/li&gt;
     &lt;/ul&gt;
@@ -7451,6 +7600,7 @@ x &amp;amp; x \in D
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;공리의-필요성&quot;&gt;공리의 필요성&lt;/h3&gt;
+
 &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 다음의 정리들은 선택 공리를 필요로 한다.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -7458,13 +7608,13 @@ x &amp;amp; x \in D
     &lt;p&gt;$f: X → Y$가 전사일 때, 어떤 $X$의 부분집합 $Z$에 대해 $f\vert_Z$는 전단사이다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;$\varnothing \not\in \lbrace  X_i\rbrace$일 때  $\prod X_i \neq \varnothing$이다.&lt;/p&gt;
+    &lt;p&gt;$\varnothing \not\in \lbrace  X_i\rbrace$일 때 $\prod X_i \neq \varnothing$이다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;정렬 원리:&lt;/strong&gt; 임의의 집합에 정렬 순서를 줄 수 있다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;초른의 보조정리:&lt;/strong&gt; $(X, &amp;lt;)$의 임의의 체인이 $X$에서 상계를 가진다면, $X$는 극댓값(maximal element)을 가진다.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;초른의 보조정리:&lt;/strong&gt; $(X, &amp;lt;)$의 임의의 체인이 $X$에서 상계를 가진다면, $X$는 극댓값&lt;sub&gt;maximal element&lt;/sub&gt;을 가진다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -7475,10 +7625,158 @@ x &amp;amp; x \in D
     &lt;p&gt;$\omega + \omega$가 존재한다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;서수 완전성 정리.&lt;/strong&gt; 모든 정렬 순서는 서수와 순서 동형이다.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://dimenerno.github.io/2024/11/21/trichotomy&quot;&gt;&lt;strong&gt;서수 완전성 정리.&lt;/strong&gt;&lt;/a&gt; 모든 정렬 순서는 서수와 순서 동형이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>List of ZFC Axioms</title>
+   <link href="http://localhost:4000/2024/11/18/ZFC/en"/>
+   <updated>2024-11-18T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2024/11/18/ZFC/ZFC-en</id>
+   <content type="html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Meaning&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Extensionality&lt;/td&gt;
+      &lt;td&gt;Set is an unordered collection of elements.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Existence*&lt;/td&gt;
+      &lt;td&gt;There exists the empty set.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Pairing*&lt;/td&gt;
+      &lt;td&gt;From $X, Y$ follows $Z = \lbrace  X, Y \rbrace$.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Union&lt;/td&gt;
+      &lt;td&gt;From $X = \lbrace  Y_i \rbrace$ follows $Z = \bigcup Y_i$.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Power Set&lt;/td&gt;
+      &lt;td&gt;From $X$ follows $\mathcal{P}(X)$.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Separation Schema**&lt;/td&gt;
+      &lt;td&gt;From $X$ follows $Y = \lbrace  y \in X : \phi(y) \rbrace$, where $\phi$ is a first-order formula.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Infinity&lt;/td&gt;
+      &lt;td&gt;There exists a set containing all the natural numbers.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Regularity&lt;/td&gt;
+      &lt;td&gt;$\in$ is a well-ordering.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Replacement&lt;/td&gt;
+      &lt;td&gt;From $X$ follows $f[X]$, where $f$ is a class function definable in first-order logic.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Choice&lt;/td&gt;
+      &lt;td&gt;Every collection of nonempty sets $\lbrace  X_i \rbrace$ has a choice function.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Formula (Free variables are to be quantified by $\forall$)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Extensionality&lt;/td&gt;
+      &lt;td&gt;$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Existence*&lt;/td&gt;
+      &lt;td&gt;$\exists Z : z \not\in Z$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Pairing*&lt;/td&gt;
+      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Union&lt;/td&gt;
+      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Power Set&lt;/td&gt;
+      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Separation Schema**&lt;/td&gt;
+      &lt;td&gt;$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Infinity&lt;/td&gt;
+      &lt;td&gt;$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Regularity&lt;/td&gt;
+      &lt;td&gt;$\exists x \in X : \forall y \in X [ y \not\in x]$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Replacement&lt;/td&gt;
+      &lt;td&gt;$\displaylines{[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow [\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Choice&lt;/td&gt;
+      &lt;td&gt;$\displaylines{\varnothing \notin X \rightarrow \exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Remarks.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Regularity is equivalent to the following:&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\exists x \in X : x \cap X = \varnothing\]
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Those marked by (*) can be derived from the Separation.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Those marked by (**) can be derived from the Replacement.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;Replacement is &lt;em&gt;strictly&lt;/em&gt; stronger than Separation:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Separation can be stated as: If $X$ is a set and $f$ is a function, then $f[X]$ is a set.&lt;/li&gt;
+  &lt;li&gt;Replacement can be stated as: If $X$ is a set and $f$ is a class function, then $f[X]$ is a set.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The proof of following theorems require Choice.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If $f: X → Y$ is surjective, there exists a subset $Z$ of $X$ such that $f\vert_Z$ is bijective.&lt;/li&gt;
+  &lt;li&gt;If $\varnothing \not\in \lbrace  X_i\rbrace$, then $\prod X_i \neq \varnothing$.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Well-ordering Principle.&lt;/strong&gt; Every set can be well-ordered.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Zorn’s Lemma.&lt;/strong&gt; If every chain of $(X, &amp;lt;)$ is bounded in $X$, $X$ has a maximal element.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The proof of following theorems require Replacement.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\omega + \omega$ exists.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://dimenerno.github.io/2024/11/21/trichotomy&quot;&gt;&lt;strong&gt;Completeness of Ordinals.&lt;/strong&gt;&lt;/a&gt; Every well-ordered set is order-isomorphic to a unique ordinal.&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  
