@@ -14,7 +14,7 @@ tags: [Mathematics, Set Theory]
 
 <img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;">
 
-At the $n$-th step, map the **least-indexed** $a_k \in A \setminus \mathrm{dom} f_n$ to an **arbitrary** $b \in B  \setminus \mathrm{im} f_n$ so that order isomorphism is preserved, and then map the **least-indexed** $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$ to an **arbitrary** $a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$ so that order isomorphism is preserved. (In the diagram, blue indicates the 'least-indexed' chosen elements.)
+At the $n$-th step, map the **least-indexed** $a_k \in A \setminus \mathrm{dom} f_n$ to an **arbitrary** $b \in B  \setminus \mathrm{im} f_n$ so that order isomorphism is preserved, and then map the **least-indexed** $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$ to an **arbitrary** $a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$ so that order isomorphism is preserved. (In the diagram, blue indicates the 'least-indexed' elements.)
 
 **Proof 2. (Only-Forth Argument)**
 
@@ -44,6 +44,7 @@ At the $n$-th step, match the **least-index** $a_k \in A \setminus \mathrm{dom} 
 > 4. $B$ has no least element.
 
 **Remark**
+
 1. $P$ is complete ⇔ $P$ has no gaps.
 2. As will be seen, for $P = \mathbb{Q}$, gaps correspond to irrational numbers while Dedekind cuts correspond to real numbers.
 
@@ -91,7 +92,7 @@ $$
 
 It is easy to check that $(\mathcal{P}, \prec) \sim (P, <)$. Now, we show the following:
 
-*Claim.* $\mathcal{D}$ is an extension of $\mathcal{P}$ satisfying all four conditions of the Completion Theorem.
+_Claim._ $\mathcal{D}$ is an extension of $\mathcal{P}$ satisfying all four conditions of the Completion Theorem.
 
 Conditions 1, 2, and 4 are clear. We show 3.
 
@@ -99,14 +100,16 @@ Let $\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$ w
 
 Finally, we show:
 
-*Claim.* $(\mathcal{D}, \prec)$ is complete.
+_Claim._ $(\mathcal{D}, \prec)$ is complete.
 
 Let $\mathcal{S}$ be a nonempty, upward-bounded subset of $\mathcal{D}$. Define:
 
-$$\begin{gather}
+$$
+\begin{gather}
 A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
 B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
-\end{gather}$$
+\end{gather}
+$$
 
 Then $(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$ and is the least upper bound of $\mathcal{S}$. ◾
 

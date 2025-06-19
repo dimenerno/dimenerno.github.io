@@ -12,7 +12,7 @@
   />
 
   <title>
-     초한귀납과 초한재귀 &middot; 디멘의 블로그 
+     Trichotomy and Completeness of Ordinals &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/2024/12/05/transfinite-recursion" />
+  <link rel="canonical" href="/2024/11/21/trichotomy/en" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -361,58 +361,133 @@
       </div>
 
       <div class="container content"><div class="post">
-  <h1 class="post-title">초한귀납과 초한재귀</h1>
-  <span class="post-date">05 Dec 2024</span>
+  <h1 class="post-title">Trichotomy and Completeness of Ordinals</h1>
+  <span class="post-date">21 Nov 2024</span>
   
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
       
-      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      <div class="tag" onclick="location.href='/tags/set-theory/'" >Set Theory</div>
       
     </div>
   
-  <h3 id="1-초한귀납법">1. 초한귀납법</h3>
+  <h2 id="1-basic-concepts">1. Basic Concepts</h2>
 
 <blockquote>
-  <p><strong>정리.</strong> $P$가 서수 위에서 정의된 속성이고 임의의 $\alpha \in \mathrm{Ord}$에 대해</p>
+  <p><strong>Definition.</strong> A set $(W, &lt;)$ is called a <strong>well-ordered set</strong> if it satisfies the following conditions:</p>
 
-\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha)\]
-
-  <p>가 성립할 때, $P$는 모든 서수에 대해 참이다.</p>
+  <ol>
+    <li>$(W, &lt;)$ is a total order.</li>
+    <li>Every non-empty subset of $W$ has a least element.</li>
+  </ol>
 </blockquote>
-
-<p><em>Remark.</em> $P$의 정의역인 $\mathrm{Ord}$는 집합이 아닌 진모임(proper class)이므로 “술어” 대신 “속성”이란 표현을 사용한다.</p>
-
-<p><strong>증명.</strong> 서수가 정렬 순서라는 사실과 귀류법을 사용한다.</p>
-
-<p>$\lnot P(\lambda)$인 $\lambda$가 존재한다고 하자. $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$는 공집합이 아닌 정렬 집합이므로 최소 원소 $\alpha_0$가 존재한다. 이때 $\forall \beta &lt; \alpha_0 : P(\beta)$이므로 가정에 의해 $P(\alpha_0)$가 되어 모순이다. ■</p>
-
-<p><strong>응용.</strong> 폰 노인만 계층에서 $V_\alpha$는 추이적이다. 따라서 $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$ 대신 $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$로 정의할 수 있다.</p>
-
-<h3 id="2-초한재귀적-정의">2. 초한재귀적 정의</h3>
-
-<p><em>Motivation.</em> 자연수의 재귀적 정의를 생각해 보자. $n$개의 집합 $x_1, \dots , x_n$이 주어졌을 때 집합을 출력하는 함수 $g$가 존재한다면 다음과 같이 $f: \mathbb{N} → V$을 정의할 수 있을 것이다.</p>
-
-\[f(n) = g(f(0), \dots, f(n - 1))\]
-
-<p>문제는 $g$가 고정된 수의 매개변수만을 가질 수 있다는 것이다. 따라서 다음과 같이 $g$의 매개변수를 순서쌍으로 묶는다.</p>
-
-\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
-
-<p>이 순서쌍은 $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$과 같이 표현할 수 있다. 즉,</p>
-
-\[f(n) = g(f \upharpoonright n).\]
-
-<p>이를 서수에 대해서 일반화하면 다음과 같다.</p>
 
 <blockquote>
-  <p><strong>정리.</strong> $G: V → V$가 모임함수(class function)이라고 하자. 다음을 만족하는 모임함수 $F: \mathrm{Ord} → V$가 존재한다.</p>
-
-\[F(\alpha) = G(F \upharpoonright \alpha)\]
+  <p><strong>Definition.</strong> If $(W, &lt;)$ is a well-ordered set, a subset $S$ of $W$ such that $x &lt; a \rightarrow x \in S$ for some $a \in S$ is called an <strong>initial segment.</strong></p>
 </blockquote>
 
-<p><strong>증명.</strong> 초한귀납법을 겁나게 쓰면 된다. (불친절해서 ㅈㅅ)</p>
+<blockquote>
+  <p><strong>Theorem.</strong> If $S$ is an initial segment of a well-ordered set $(W, &lt;)$, then for some $a \in W$, the following holds:</p>
+
+\[S = W[a] := \{ x \in W : x &lt; a \}\]
+</blockquote>
+
+<p><strong>Proof.</strong> Let $a$ be the least element of $W \setminus S$.</p>
+
+<h2 id="2-trichotomy-of-order">2. Trichotomy of Order</h2>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>A well-ordered set cannot be isomorphic to its initial segment.</li>
+    <li>The only order-preserving automorphism of a well-ordered set is the identity map.</li>
+    <li>The isomorphism between two well-ordered sets is unique.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> We first prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $f: (W, &lt;) \to (W, &lt;)$ is order-preserving, then for all $x \in W$, $x \leq f(x)$.</p>
+</blockquote>
+
+<p><em>Proof of the Lemma.</em> Assume for contradiction that $S = \lbrace x \in W : x &gt; f(x) \rbrace$ is nonempty. Since $W$ is a well-ordered set, there exists a least element $c = \min S$. Since $c \in S$, we have $c &gt; f(c)$, and since $f$ is order-preserving, it follows that $f(c) &gt; f(f(c))$. On the other hand, since $c = \min S$, we have $f(c) \notin S$, and thus $f(f(c)) \geq f(c)$, leading to a contradiction. □</p>
+
+<p><strong>Proof of (1).</strong></p>
+
+<p>Assume $f: (W, &lt;) \to (W[a], &lt;)$ is an isomorphism. The inclusion map $j: W[a] \to W$ implies that $jf: (W, &lt;) \to (W, &lt;)$ is order-preserving. Therefore, $jf(a) \geq a$. However, since $a \notin \mathrm{im}f$, this leads to a contradiction. □</p>
+
+<p><strong>Proof of (2).</strong></p>
+
+<p>Assume $f: (W, &lt;) \to (W, &lt;)$ is an isomorphism. Since $f^{-1}$ is also an isomorphism, for all $x \in W$, we have $x \leq f(x)$ and $f(x) \leq f^{-1}(f(x)) = x$. Thus, $x = f(x)$. □</p>
+
+<p><strong>Proof of (3).</strong></p>
+
+<p>Assume $f, g: (W_1, &lt;_1) \to (W_2, &lt;_2)$ are isomorphisms. The composition $g^{-1}f: (W_1, &lt;_1) \to (W_1, &lt;_1)$ is an automorphism, and by (2), it must be the identity map. Therefore, $f = g$. ■</p>
+
+<blockquote>
+  <p><strong>Trichotomy of Order.</strong> For well-ordered sets $(W_1, &lt;_1)$ and $(W_2, &lt;_2)$, exactly one of the following holds:</p>
+
+  <ol>
+    <li>$(W_1, &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>For some $a$, $(W_1[a], &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>For some $b$, $(W_1, &lt;_1) \sim (W_2[b], &lt;_2)$</li>
+  </ol>
+
+  <p>In each case, the isomorphism is unique, and in cases 2 and 3, $a$ and $b$ are unique.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p>The preceding theorems guarantee that 1, 2, and 3 are mutually exclusive and establish the claim of uniqueness. Therefore, it suffices to show that any pair of well-ordered sets $(W_1, &lt;_1)$ and $(W_2, &lt;_2)$ falls into one of the three cases.</p>
+
+<p>We define a partial function $f: W_1 \to W_2$ as follows:</p>
+
+\[f := \{ (x, y) \in (W_1, W_2) : (W_1[x], &lt;_1) \sim (W_2[y], &lt;_2) \}\]
+
+<p>It can be easily verified that $f$ is injective and order-preserving. We now consider two cases.</p>
+
+<p><em>Case 1.</em> $\mathrm{dom} f = W_1$</p>
+
+<p>This corresponds to case 3 of the theorem, concluding the proof.</p>
+
+<p><em>Case 2.</em> $\mathrm{dom} f \subsetneq W_1$</p>
+
+<p>First, we show that for some $a \in W$, $\mathrm{dom}f = W_1[a]$. If $x \in \mathrm{dom}f$, then $W_1[x] \sim W_2[f(x)]$. Let $\phi$ be the isomorphism of that isomorphism. For $x’ &lt; x$, we have $W_1[x’] = W_2[\phi(x’)]$, thus $x’ \in \mathrm{dom}f$. Therefore, $\mathrm{dom} f$ is an initial segment.</p>
+
+<p>Next, we show that $\mathrm{im} f = W_2$. Assume $\mathrm{dom}f = W_1[a]$. By a similar argument as above, we can show that $\mathrm{im}f$ is also an initial segment of $W_2$. If $\mathrm{im}f = W_2[b]$, then $(a, b) \in f$, which implies $a \in \mathrm{dom}f$, leading to a contradiction. ■</p>
+
+<h2 id="3-completeness-of-ordinals">3. Completeness of Ordinals</h2>
+
+<blockquote>
+  <p><strong>Completeness of Ordinals.</strong> Every well-ordered set is order-isomorphic to some ordinal.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $(W, &lt;)$ be a well-ordered set. We define $A$ and $S$ as follows:</p>
+
+\[\begin{gather}
+A = \{ a \in W : W[a] \sim \alpha_a \text{ where } \alpha_a \in \mathrm{Ord} \}\\
+S = \{ \alpha_a \in \mathrm{Ord} : a \in A \}
+\end{gather}\]
+
+<p>It can be easily shown that $S$ is an ordinal and $A$ is an initial segment. Let $S = \beta$ and $A = W[c]$. The function $f: A \to S; a \mapsto \alpha_a$ is an order isomorphism between $(A, &lt;)$ and $(S, \in)$. Thus, $W[c] \simeq \beta$, which implies $c \in A$, leading to a contradiction. Therefore, $A = W \sim \beta$. ■</p>
+
+<h2 id="4-axiom-of-replacement">4. Axiom of Replacement</h2>
+
+<p>The existence of $S$ in the above proof cannot be guaranteed without the Axiom of Replacement. This is because, due to Burali-Forti’s paradox, $\mathrm{Ord}$ is not a set, and thus the existence of $S$ cannot be guaranteed by the Axiom of Separation (see: <a href="https://dimenerno.github.io/2024/11/18/ZFC/en">List of ZFC Axioms</a>).</p>
+
+<p>Another example demonstrating the necessity of the Axiom of Replacement is that without it, we cannot guarantee the existence of $\omega + \omega$. For each $n \in \mathbb{N}$, the existence of $\omega + n$ can be shown using the Axiom of Pairing and the Axiom of Union, but the existence of $\omega + \omega := \bigcup_{n \in \mathbb{N}} (\omega + n)$ cannot be established. However, we cannot simply add an axiom allowing the union of arbitrary sets, as this would make “the set of all sets” a set, leading to Russell’s paradox.</p>
+
+<p>In both cases, what we need is an axiom stating that “given a well-defined one-to-one correspondence $R(x,y)$ and a set $X$, the collection $\lbrace y : R(x, y), x \in X \rbrace$ is a set.” This axiom is the Axiom of Replacement. Using the Axiom of Replacement, we can show that given:</p>
+
+\[\begin{gather}
+\omega = \lbrace 0, 1, 2, ... \rbrace \\
+R(x, y): y = \omega + x,
+\end{gather}\]
+
+<p>the image $\mathrm{im}R|_\omega = \lbrace \omega, \omega + 1, \omega + 2, … \rbrace$ exists, and thus $\omega \cup \mathrm{im}R|_\omega = \omega + \omega$ exists.</p>
 
 </div>
 
