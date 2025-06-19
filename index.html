@@ -1,10 +1,7 @@
 ---
 layout: default
 title: 메인
-permalink: /
-pagination:
-  enabled: true
-  per_page: 5
+title-en: Main
 ---
 
 <head>
@@ -85,19 +82,33 @@ pagination:
 >
   <div style="margin: auto">
     <img
-      class="fade-rise-1"
+      class="fade-rise-1 lang-ko"
       src="/public/banner.png"
       style="max-width: calc(min(85vw, 350px)); margin: 0 auto"
     />
     <img
-      class="fade-rise-2"
+      class="fade-rise-2 lang-ko"
       src="/public/banner-2.png"
       style="max-width: calc(min(85vw, 400px)); margin: 1.5em auto 1em auto"
     />
-    <p class="fade-rise-3">
+    <p class="fade-rise-3 lang-ko">
       논리학, 철학, 수학 등을 다루는 블로그입니다.<br />
       아래에서 저의 가장 최근 글들을 읽을 수 있습니다.<br />
       <small>To read in English, toggle the button in the header.</small>
+    </p>
+    <img
+    class="fade-rise-1 lang-en"
+    src="/public/banner.png"
+    style="max-width: calc(min(85vw, 350px)); margin: 0 auto"
+  />
+  <img
+    class="fade-rise-2 lang-en"
+    src="/public/banner-2.png"
+    style="max-width: calc(min(85vw, 400px)); margin: 1.5em auto 1em auto"
+  />
+    <p class="fade-rise-3 lang-en">
+      A blog on logic, philosophy, mathematics, et cetra.<br />
+      You can read my most recent posts below.
     </p>
   </div>
 </div>
@@ -106,7 +117,6 @@ pagination:
 
 <div class="posts">
   {% for post in paginator.posts %}
-  {% if post.lang != "en" %}
     <div class="post fade-in-section" data-lang="{{ post.lang | default: 'ko'}}" style="display: none">
       <h1 class="post-title">
         <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
@@ -123,36 +133,43 @@ pagination:
     {% endif %} {{ post.content }}
   </div>
   <div style="margin-bottom: 6em"></div>
-  {% endif %}
   {% endfor %}
 </div>
 
 <div class="pagination">
   {% if paginator.next_page %}
   <a
-    class="pagination-item older"
+    class="pagination-item older lang-ko"
     href="{{ paginator.next_page_path | relative_url }}"
     >이전 글</a
   >
-
+  <a
+  class="pagination-item older lang-en"
+  href="{{ paginator.next_page_path | relative_url }}"
+  >Previous</a
+>
   {% else %}
-  <span class="pagination-item older">이전 글</span>
-
+  <span class="pagination-item older lang-ko">이전 글</span>
+  <span class="pagination-item older lang-en">Previous</span>
 
   {% endif %} {% if paginator.previous_page %} {% if paginator.page == 2 %}
-  <a class="pagination-item newer" href="{{ '/' | relative_url }}">다음 글</a>
-
+  <a class="pagination-item newer lang-ko" href="{{ '/' | relative_url }}">다음 글</a>
+  <a class="pagination-item newer lang-en" href="{{ '/' | relative_url }}">Next</a>
 
   {% else %}
   <a
-    class="pagination-item newer"
+    class="pagination-item newer lang-ko"
     href="{{ paginator.previous_page_path | relative_url }}"
     >다음 글</a
   >
-
+  <a
+  class="pagination-item newer lang-en"
+  href="{{ paginator.previous_page_path | relative_url }}"
+  >Next</a
+>
   {% endif %} {% else %}
-  <span class="pagination-item newer">다음 글</span>
-
+  <span class="pagination-item newer lang-ko">다음 글</span>
+  <span class="pagination-item newer lang-en">Next</span>
   {% endif %}
 </div>
 
@@ -179,6 +196,13 @@ pagination:
 
   // 배너 이미지 로드 후 애니메이션 트리거 스크립트
   document.addEventListener("DOMContentLoaded", () => {
+
+    const lang = localStorage.getItem("lang") || "ko";
+  document.querySelectorAll('.post[data-lang]').forEach(post => {
+    if (post.dataset.lang === lang) {
+      post.style.display = '';
+    }
+  });
 
     const bannerImages = document.querySelectorAll(
       '.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'
@@ -234,15 +258,9 @@ pagination:
       langToggle.addEventListener("change", () => {
         const newLang = langToggle.checked ? "en" : "ko";
         localStorage.setItem("lang", newLang);
-                  // 페이지 리디렉션
-  const isOnRoot = window.location.pathname === "/";
-  const isOnIndexEn = window.location.pathname.includes("/en");
-
-  if (newLang === "en" && isOnRoot) {
-    window.location.href = "/en";
-  } else {
-    window.location.href = "/";
-  }
+        document.querySelectorAll('.post[data-lang]').forEach(post => {
+          post.style.display = post.dataset.lang === newLang ? '' : 'none';
+        });
       });
     }
   });

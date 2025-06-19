@@ -8,16 +8,7 @@ description:         이데아를 여행하는 히치하이커
 tagline-en:             Alice in Logicland
 description-en:         Alice in Logicland
 
-pagination:
-  enabled: true
-  per_page: 5
-  sort_field: 'date'
-  sort_reverse: true
-
-collections:
-  posts:
-    output: true
-
+paginate:            5
 permalink:           pretty
 
 destination: docs
@@ -29,7 +20,7 @@ author:
 
 # Gems
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
