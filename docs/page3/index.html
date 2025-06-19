@@ -12,8 +12,7 @@
   />
 
   <title>
-     디멘의 블로그 &middot; 이데아를 여행하는 히치하이커
-    
+     메인 - page 3 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -119,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/page3/" />
+  <link rel="canonical" href="/page3/index.html" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -215,7 +214,7 @@
     href="/"
     >Main</a
   >
-               
+           
     <a
       class="sidebar-nav-item lang-ko"
       href="/about/"
@@ -259,7 +258,7 @@
     href="/book/"
     >Twilight Wonders (Korean)</a
   >
-          
+                                                      
     <a
       class="sidebar-nav-item lang-ko"
       href="/guestbook/"
@@ -270,7 +269,7 @@
     href="/guestbook/"
     >Guestbook</a
   >
-        
+            
     <a
       class="sidebar-nav-item lang-ko"
       href="/notes/"
@@ -423,607 +422,29 @@
 
 <div class="posts">
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/04/regular-singular"> 정칙 기수와 특이 기수, 그리고 도달 불가능 기수 </a>
-      </h1>
-    <span class="post-date">04 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <p>이 글에서 $\kappa$는 무한 기수이다. 또한, 기수를 초기 서수<sub>initial ordinal</sub>로 정의하는 방식을 택한다(<a href="https://dimenerno.github.io/2025/04/20/cardinality/">이 글</a>의 3번). 이에 따라 모든 기수는 서수이기도 하다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\theta$가 $\kappa$보다 작은 극한 서수라고 하자. 각 $\nu$에 대해 $\alpha_\nu &lt; \kappa$인 증가하는 서수열 $\langle \alpha_\nu : \nu &lt; \theta \rangle$에 대하여, 언제나 $\lim_{\nu \to \theta} \alpha_\nu &lt; \kappa$일 때, $\kappa$를 <strong>정칙 기수<sub>regular cardinal</sub></strong>라고 한다. 정칙 기수가 아닌 기수를 <strong>특이 기수<sub>singular cardinal</sub></strong>라고 한다.</p>
-</blockquote>
-
-<p><em>Remark.</em> $\alpha_\nu$와 $\theta$는 일반적으로 기수가 아니라 서수이다.</p>
-
-<p>예를 들어 $\aleph_0$는 정칙 기수이다. $\aleph_0$개보다 적은 개수의 — 즉, 유한한 — $\aleph_0$보다 작은 기수들 — 즉, 자연수 —  의 상한은 $\aleph_0$에 달하지 않기 때문이다.</p>
-
-<p>반면 $\aleph_\omega$는 특이 기수이다. 다음 기수열에서 각각의 기수는 $\aleph_\omega$보다 작고, 기수열의 길이 또한 $\aleph_0 &lt; \aleph_\omega$이지만, 그 상한은 $\aleph_\omega$이기 때문이다.</p>
-
-\[\aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \aleph_3 \quad \cdots\]
-
-<blockquote>
-  <p><strong>정리. (특이 기수 판별법)</strong> $\kappa$가 특이 기수일 필요충분조건은 $\kappa$가 $\kappa$개보다 적은 개수의 $\kappa$보다 작은 기수들의 합일 것이다. 즉, $|I| &lt; \kappa$, $\kappa_i &lt; \kappa \;(\forall i \in I)$에 대하여,</p>
-
-\[\sum_{i \in I} \kappa_i = \kappa\]
-</blockquote>
-
-<p><em>Remark.</em> $\kappa_i$는 일반적인 서수가 아닌 기수이다. 그리고 $\sum$은 서수 덧셈이 아니라 기수 덧셈이다.</p>
-
-<p><strong>증명.</strong></p>
-
-<p>($\Rightarrow$) $\kappa$가 특이 기수라면 어떤 서수열 $\langle \alpha_\nu : \nu &lt; \theta\rangle$이 존재하여,</p>
-
-\[\lim_{\nu \to \theta} \alpha_\nu = \sup \alpha_\nu = \bigcup_{\nu &lt; \theta}\alpha_\nu = \kappa\]
-
-<p>이다. 일반적으로 서수 $\alpha$는 자기보다 작은 서수 $\beta &lt; \alpha$들의 합집합이다. 따라서 다음이 성립한다.</p>
-
-\[\kappa = \bigcup_{\nu &lt; \theta}\alpha_\nu = \bigcup_{\nu &lt; \theta}\left( \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi \right)\]
-
-<p>$A_\nu = \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi$라고 하자. $A_\nu$는 더이상 서수가 아니지만 그건 중요하지 않다. 중요한 것은 $\lbrace  A_\nu \rbrace $가 쌍으로 서로소라는 것이다. 따라서 $\kappa_\nu = |A_\nu|$라고 하면 기수 덧셈의 정의에 의해,</p>
-
-\[\sum_{\nu &lt; \theta} \kappa_\nu = \left| \bigcup_{\nu &lt; \theta} A_\nu \right| = \kappa\]
-
-<p>이다.</p>
-
-<p>($\Leftarrow$) $\kappa = \sum_{i \in I}\kappa_i$라고 하자. $|I| = \lambda$라고 하면 기수 덧셈의 성질에 의해 $\kappa = \lambda \cdot \sup \kappa_i$이다. $\lambda &lt; \kappa$이므로, 기수 곱셈의 성질에 의해 $\kappa = \sup \kappa_i$이다. 각 $i \in I$에 대해 $\kappa_i &lt; \kappa$인데 $\sup \kappa_i = \kappa$이므로, 초한귀납법을 통해 증가하는 기수열</p>
-
-\[\langle \kappa_\nu : \kappa_\nu = \kappa_i \text{ for some } i \in I, \nu &lt; \theta\rangle\]
-
-<p>을 구축할 수 있으며, $\theta \leq \lambda$이므로 정리가 보여졌다. ■</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 어떤 $\alpha \in \mathrm{Ord}$에 대해 $\kappa = \aleph_{\alpha + 1}$일 때, $\kappa$를 <strong>계승 기수<sub>successor cardinal</sub></strong>라고 한다. 계승 기수가 아닌 기수를 <strong>극한 기수<sub>limit cardinal</sub></strong>라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> 모든 계승 기수는 정칙이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $\kappa = \aleph_{\alpha + 1}$이라고 하자. $\kappa$가 특이 기수라면, 특이 기수 판별법에 의해 $\kappa = \sum_{i \in I} \kappa_i$이며 $\kappa_i, |I| &lt; \kappa$이다. 이는 $\kappa_i , |I| \leq \aleph_\alpha$와 같다. 그런데</p>
-
-\[\sum_{i \in I} \kappa_i \leq \sum_{i \in I} \aleph_\alpha = |I| \cdot  \aleph_\alpha \leq  \aleph_\alpha \cdot \aleph_\alpha =  \aleph_\alpha &lt; \kappa\]
-
-<p>이므로 모순이다. ■</p>
-
-<p>따라서 모든 특이 기수는 극한 기수이다. 그러나 모든 극한 기수가 특이 기수인 것은 아니다. $\aleph_0$는 정칙인 극한 기수이기 때문이다. 그러나 $\aleph_0$ 이외에 정칙인 극한 기수가 존재할까?</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 비가산 정칙 극한 기수를 <strong>도달 불가능 기수<sub>inaccessible cardinal</sub></strong>라고 한다.<a href="#sub1" id="sup1"><sup>1</sup></a></p>
-</blockquote>
-
-<p>$\aleph_\alpha$가 도달 불가능 기수라고 하자. 다음의 증가 기수열의 극한은 $\aleph_\alpha$이다.</p>
-
-\[\langle \aleph_\beta : \beta &lt; \alpha \rangle : \aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \cdots \quad \to \aleph_\alpha\]
-
-<p>따라서 $\aleph_\alpha$가 정칙이기 위해서는 위 기수열의 길이인 $\alpha$가 $\aleph_\alpha$보다 작아서는 안 된다. 그런데 $\alpha \leq \aleph_\alpha$이므로, $\alpha = \aleph_\alpha$임이 따라 나온다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\aleph_\alpha$가 도달 불가능할 필요조건은 $\alpha = \aleph_\alpha$인 것이다.</p>
-</blockquote>
-
-<p>이는 $\alpha$가 무지막지하게 큰 기수임을 시사한다. 일례로 다음의 기수열 $\langle \alpha_n : n \in \omega \rangle$을 보자.</p>
-
-\[\alpha_0 = \aleph_0, \alpha_{n + 1} = \aleph_{\alpha_n}\]
-
-<p>위 기수열의 상한을 $\kappa$라고 하자. 상한의 정의에 의해 $\lambda &lt; \kappa$라면 $\alpha_n &gt; \lambda$인 $n$이 존재한다. 따라서 $\aleph_\lambda = \alpha_{n+1} &lt; \kappa$이며,</p>
-
-\[\aleph_\kappa = \sum_{\lambda &lt; \kappa} \aleph_\lambda \leq \sum_{\lambda &lt; \kappa} \kappa = \kappa\]
-
-<p>이다. 다시 말해, $\alpha = \aleph_\alpha$를 만족하는 기수는 적어도 다음에 비견되는 크기를 가진다.</p>
-
-\[\kappa = \aleph_{\aleph_{\aleph_{\aleph_{\ddots}}}}\]
-
-<p>여기서 집고 넘어갈 점이 있다. 비록 $\kappa$가 $\kappa = \aleph_\kappa$를 보이긴 했지만, $\kappa$가 도달 불가능함을 보인 것은 아니다. 오히려 $\kappa$는 특이 기수이다. 길이가 $\omega$인 기수열 $\alpha_n$의 극한이기 때문이다.</p>
-
-<p>사실 도달 불가능 기수의 존재성은 ZFC와 독립적이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 도달 불가능 기수의 존재성은 ZFC와 독립이다.</p>
-</blockquote>
-
-<p>따라서 도달 불가능 기수의 존재는 공리로서 가정해야 한다. 도달 불가능 기수의 존재를 가정하는 부류의 공리들을 <strong>큰 기수 공리<sub>large cardinal axioms</sub></strong>라고 부르며, 이와 관련된 연구는 집합론의 중요한 부분을 이룬다.</p>
-
-<hr />
-
-<p><a href="#sup1" id="sub1">1.</a> 엄밀히 말해 이는 <strong>약한 도달 불가능 기수<sub>weakly inaccessible cardinal</sub></strong>에 해당한다. $\kappa$가 <strong>강한 도달 불가능 기수<sub>strongly inaccessible cardinal</sub></strong>라는 것은 $\kappa$가 약한 도달 불가능 기수이며, 추가로 $\lambda &lt; \kappa$일 때 $2^\lambda &lt; \kappa$인 것이다. 연속체 가설을 인정할 때 약한 도달 불가능성과 강한 도달 불가능성은 동치이다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/01/elementary-embedding"> 준동형 사상, 임베딩, 초등적 임베딩 </a>
-      </h1>
-    <span class="post-date">01 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/모델론/'">
-        모델론
-      </div>
-      
-    </div>
-     <p>이 글에서는 편의를 위해 술어와 함수를 별도의 대상으로 생각하는 대신, 함수식 $f(a) = c$를 이항 술어 $F(a, c)$로 환원하는 접근을 택한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}, \mathfrak{B}$가 언어 $\mathcal{L}$의 구조라고 하자. 다음을 만족하는 사상 $f: \mathfrak{A} \to \mathfrak{B}$을 <strong>준동형 사상<sub>homomorphism</sub></strong>이라고 부른다. $R$이 $\mathcal{L}$의 관계일 때, 임의의 $a_1, \dots, a_n \in \mathfrak{A}$에 대해,</p>
-
-\[R^\mathfrak{A}(a_1, \dots, a_n) \implies R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
-
-  <p>이다.</p>
-
-  <p>추가로, 준동형사상 $f$가 단사이고 다음을 만족할 때 $f$를 <strong>임베딩<sub>embedding</sub></strong>이라고 부른다.</p>
-
-\[R^\mathfrak{A}(a_1, \dots, a_n) \iff R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
-</blockquote>
-
-<p>단사 준동형사상이라고 해서 임베딩인 것은 아니다. 일례로 하나의 이항 관계 $&lt;$를 가지는 언어 $\mathcal{L}$의 다음의 두 구조를 보자. $&lt;$를 만족시키는 대상은 화살표로 표시되었다. 즉, $b_1 &lt;^\mathfrak{B} b_2$이다.</p>
-
-<p><img src="/public/model-injective-vs-embedding.png" style="width: 100%; max-width: 500px; margin: 1.5em auto;" /></p>
-
-<p>$\mathfrak{A}$의 원소들은 $&lt;^\mathfrak{A}$를 만족시키는 경우가 없으므로 $f: a_1 \mapsto b_1, a_2 \mapsto b_2$는 자명하게 준동형사상이며, 단사이다. 그러나 $f$는 임베딩이 아니다. $f$가 임베딩이라면 $b_1 &lt;^\mathfrak{B} b_2$으로부터 $a_1 &lt;^\mathfrak{A} a_2$가 성립해야 하기 때문이다. 즉, 임베딩은 $\mathfrak{A}$의 원소들뿐 아니라 원소들 간의 관계까지 그대로 $\mathfrak{B}$에 대응시켜야 한다. 이런 면에서 임베딩은 범주론에서의 포화된 함자<sub>full functor</sub>와 비슷하다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 언어 $\mathcal{L}$의 구조라고 하자. $\mathcal{L}_\mathfrak{A}$를 $\mathcal{L}$에 $\mathfrak{A}$의 정의역 크기만큼의 상수를 추가한 언어로 정의한다.</p>
-</blockquote>
-
-<p>페아노 산술로 예를 들자면, $\mathcal{L} = (0, S, +)$이고 $\mathfrak{A}$가 산술의 표준 모형일 때, $\mathcal{L}_\mathfrak{A} = (0, 1, 2, 3, \dots, S, +)$이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-원자명제들의 집합을 $\Delta_\mathfrak{A}^+$로 적는다. 즉,</p>
-
-\[\Delta_\mathfrak{A}^+ = \{ R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
-
-  <p>추가로, $\Delta_\mathfrak{A}^+$에다 $\mathfrak{A}$가 만족시키지 않는 모든 $\mathcal{L}$-원자명제들의 부정까지 추가한 집합을 $\Delta_\mathfrak{A}$로 적는다. 즉,</p>
-
-\[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
-</blockquote>
-
-<p>$\Delta$라는 표기법은 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 관련이 있다.</p>
-
-<p>$\Delta_\mathfrak{A}^+$에 빠진 원자명제들의 부정을 추가한 것이 곧 $\Delta_\mathfrak{A}$이기 때문에, 두 집합이 내포하는 정보량은 사실상 같다. 그럼에도 두 집합을 구분하여 정의하는 것은 다음의 정리 때문이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자.</p>
-
-  <ol>
-    <li>단사 준동형사상 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
-    <li>임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
-  </ol>
-</blockquote>
-
-<p>즉, $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$를 만족할 경우 $\mathfrak{B}$가 원자명제들을 ‘과도하게’ 만족시켜서, $\mathfrak{A}$가 $\mathfrak{B}$로 임베딩되지 못할 가능성이 있다. 그러나 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$를 만족할 경우, $\mathfrak{B}$가 만족시킬 수 있는 원자명제에 한계가 걸리기 때문에 임베딩 가능성이 보장된다.</p>
-
-<p><a href="https://dimenerno.github.io/2025/04/17/los-tarski/">이전 글</a>에서 <strong>초등적 부분모델</strong>이라는 개념을 소개한 바 있다. 이로부터 다음의 개념을 정의할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $f: \mathfrak{A} \to \mathfrak{B}$가 임베딩이고, $f[\mathfrak{A}]$가 $\mathfrak{B}$의 초등적 부분모델일 때, $f$를 <strong>초등적 임베딩</strong>이라고 한다.</p>
-</blockquote>
-
-<p>초등적 임베딩과 관련된 문장 집합은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-명제들의 집합을 $E(\mathfrak{A})$로 적는다. 즉,</p>
-
-\[E(\mathfrak{A}) = \{ \phi : \mathfrak{A} \vDash \phi \}\]
-</blockquote>
-
-<p>$E(\mathfrak{A})$가 $\Delta_\mathfrak{A}$와 가장 구별되는 특징은 양화사가 있는 문장 또한 포함한다는 것이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. 초등적 임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $E(\mathfrak{A})$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</p>
-</blockquote>
-
-<p>마지막으로 다음의 문장 집합을 언급할 만하다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합을 $\mathrm{Th}(\mathfrak{A})$라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$와 $\mathfrak{B}$가 초등적으로 동등할 필요충분조건은 $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$인 것이다.</p>
-</blockquote>
-
-<p>사실 이는 초등적 동등성의 정의나 다름이 없어서 정리라고 부르기는 무색하지만, 이 글에서 소개한 나머지 정리들과 일관성을 유지하기 위해 소개하였다.</p>
-
-<p>표로 정리하면 이렇다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>정의</th>
-      <th>예시</th>
-      <th>사상</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$\Delta_\mathfrak{A}^+$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제</td>
-      <td>$0 &lt; 1$</td>
-      <td>전사 준동형</td>
-    </tr>
-    <tr>
-      <td>$\Delta_\mathfrak{A}$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제</td>
-      <td>$\lnot(1 &lt; 0)$</td>
-      <td>임베딩 (부분모델)</td>
-    </tr>
-    <tr>
-      <td>$\mathrm{Th}(\mathfrak{A})$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제</td>
-      <td>$\forall x \exists y (x &lt; y)$</td>
-      <td>초등적 동등성</td>
-    </tr>
-    <tr>
-      <td>$E(\mathfrak{A})$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제</td>
-      <td>$\not \exists x (x &lt; 0)$</td>
-      <td>초등적 임베딩 (초등적 부분모델)</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>예를 들어 $\mathfrak{A} = (\mathbb{N}, &lt;)$은 $\mathfrak{B} = (\mathbb{Z}, &lt;)$에 임베딩되지만, 초등적으로 임베딩되지는 않는다. $\mathfrak{B}$가 $E(\mathfrak{A})$의 문장인 $\not \exists x (x &lt; 0)$을 만족하지 않기 때문이다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/24/continuum-coloring"> 연속체 가설과 동치인 색칠 문제 </a>
-      </h1>
-    <span class="post-date">24 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>문제.</strong> 좌표평면을 가산 개의 색깔을 사용하여 칠했을 때, 세 꼭짓점이 같은 색깔인 직각삼각형이 언제나 존재하는가?</p>
-</blockquote>
-
-<p>예를 들어 다음의 색칠은 3개의 색깔을 사용하는데, 세 꼭짓점이 모두 같은 색인 직각삼각형을 쉽게 찾을 수 있다.</p>
-
-<p><img src="/public/color-1.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;" /></p>
-
-<p>물론 위의 경우는 단순한 경우이고, 아래와 같이 무한히 많은 색깔들이 매우 불규칙적으로 칠해져 있는 경우에도 문제의 직각삼각형이 존재하는지를 따져야 한다.</p>
-
-<p><img src="/public/color-2.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;" /></p>
-
-<p>놀랍게도 언뜻 자명해 보이는 이 문제는 연속체 가설과 동치이다.</p>
-
-<blockquote>
-  <p><strong>연속체 가설.</strong> 자연수보다 크고 실수보다 작은 무한집합은 존재하지 않는다.</p>
-</blockquote>
-
-<p>가장 작은 무한집합인 자연수의 기수를 $\aleph_0$, 자연수보다 큰 무한집합 중 가장 작은 무한집합의 기수를 $\aleph_1$이라고 정의한다. 한편 실수는 자연수의 멱집합과 크기가 같음을 쉽게 보일 수 있으며 집합 $X$의 멱집합은 크기가 $2^{|X|}$이므로, 실수의 기수는 $2^{\aleph_0}$이다. 따라서 연속체 가설의 진술은 $\aleph_1 = 2^{\aleph_0}$와 같다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 문제의 반례가 존재할 필요충분조건은 $\aleph_1 = 2^{\aleph_0}$이다.</p>
-</blockquote>
-
-<p>참고로 아래 증명은 필자가 구상한 것이기 때문에 오류가 있을 수도 있다.</p>
-
-<p><strong>증명.</strong> $\aleph_1 = 2^{\aleph_0}$라면 문제의 반례가 존재함과, 문제의 반례가 존재하면 $\aleph_1 = 2^{\aleph_0}$임을 각각 보인다.</p>
-
-<h4 id="aleph_1--2aleph_0라면-문제의-반례가-존재한다">$\aleph_1 = 2^{\aleph_0}$라면 문제의 반례가 존재한다.</h4>
-
-<p>가장 작은 비가산 서수 $\omega_1$에 대해, $\omega_1^2$은 세 꼭짓점이 같은 색인 직각삼각형이 존재하지 않도록 색칠하는 다음의 방법이 존재한다. 먼저 가산 개의 색을 정수와 일대일 대응시킨다. $\alpha &lt; \omega_1$은 가산 서수이므로, 빨간색 선분 $\lbrace  (\beta, \alpha) : 0 \leq \beta \leq \alpha \rbrace $의 모든 점을 서로 다른 가산 개의 색으로 칠할 수 있다. 이들 점을 양의 정수에 대응되는 색들로 칠한다. 한편 파란색 선분 $\lbrace  (\alpha, \beta) : 0 \leq \beta &lt; \alpha \rbrace $의 점들은 음의 정수에 대응되는 색들로 칠한다.</p>
-
-<p><img src="/public/color-3.png" style="width: 100%; max-width: 350px; margin: 1.5em auto;" /></p>
-
-<p>위와 같이 색칠했을 때 세 꼭짓점이 모두 같은 색인 직각삼각형이 없음을 쉽게 보일 수 있다.</p>
-
-<p>만약 $\aleph_1 = 2^{\aleph_0}$라면, 어떤 일대일 대응 $f: \mathbb{R} \to \omega_1$이 존재한다. 이제 평면의 색칠을 다음과 같이 정의한다. 점 $p = (x, y) \in \mathbb{R}^2$을 점 $f(p) = (f(x), f(y)) \in \omega_1^2$와 같은 색으로 칠한다. $f$가 일대일 대응이기 때문에, 만약 해당 색칠해서 점 $p_1, p_2, p_3$가 색깔이 같은 직각삼각형의 세 꼭짓점이라면 $f(p_1), f(p_2), f(p_3)$ 또한 색깔이 같은 직각삼각형의 세 꼭짓점이다. 그런데 그러한 삼각형은 $\omega_1^2$에서 존재하지 않음을 보였으므로, 평면 또한 해당 색칠에서 요구되는 직각삼각형을 가지지 않는다.</p>
-
-<h4 id="문제의-반례가-존재한다면-aleph_1--2aleph_0이다">문제의 반례가 존재한다면 $\aleph_1 = 2^{\aleph_0}$이다.</h4>
-
-<p>$2^{\aleph_0} &gt; \aleph_1$이라고 가정하고 모순을 이끌어 내자. $I$가 크기 $\aleph_1$인 실수의 부분집합이라고 하자. 평면의 부분집합 $X = I \times \mathbb{R}$을 고려하자.</p>
-
-<p>$x$축과 평행인 $X$의 직선들의 집합을 $L_0$라고 하자. $l \in L_0$에 대해, $l$을 이루는 점들 중 색깔 $c$로 칠해진 점의 개수가 $\aleph_1$ 이상일 때, $c \in \aleph_1(l)$이라고 적자. 임의의 $l \in L_0$에 대해, $|l| = \aleph_1$이므로 비둘기집의 원리에 의해 $c \in \aleph_1(l)$인 색깔 $c$가 직선마다 적어도 하나 존재함을 확인하라.</p>
-
-<p>또한 $|L_0| = 2^{\aleph_0}$이므로 비둘기집의 원리에 의해 어떤 색깔 $c_0$가 존재하여, $c_0 \in \aleph_1(l)$을 만족하는 직선 $l$의 개수가 $2^{\aleph_0}$이다. 그러한 직선들의 집합 $L_0’$을 고려하자. $L_0’$의 직선들을 지나는 수직선을 그었을 때 어느 두 교점의 색이 $c_0$라면, 세 꼭짓점의 색이 모두 $c_0$인 직각삼각형이 존재하게 된다. 따라서 임의의 수직선과 $L_0’$의 직선들이 이루는 교점 중 $c_0$로 칠해진 점은 최대 1개이다. 수직선의 개수가 총 $|I| = \aleph_1$개이므로, $L_0’$에는 총 $\aleph_1$개의 $c_0$ 점들이 존재한다.</p>
-
-<p>해당 점들을 모두 빼면 듬성듬성한 직선들의 집합이 된다. 이 집합을 $L_1$이라고 하자.</p>
-
-<p><img src="/public/color-4.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
-
-<p>두 가지 경우가 가능하다. a) $L_1$의 직선들 중 $\aleph_1$개의 점들을 가지는 직선이 $2^{\aleph_0}$개이다. b) $L_1$의 직선들 중 $\aleph_1$개의 점들을 가지는 직선이 $\aleph_1$개 이하이다.</p>
-
-<p>a의 경우, 다시 비둘기집의 원리에 의해 $c_1 \in \aleph_1(l)$을 만족하는 직선 $l \in L_1$의 개수가 $2^{\aleph_0}$인 색깔 $c_1$이 존재한다. 그러한 $L_1$의 직선들의 집합을 $L_1’$이라고 하자. 앞선 논의에 의해 $L_1’$에는 총 $\aleph_1$개의 $c_1$ 점들이 존재한다. 이 점들을 뺀 집합을 $L_2$라고 하자. 이같은 과정을 b가 될 때까지 반복한다. (색깔이 가산 개 있기 때문에 언젠가는 b에 도달함을 확인하라)</p>
-
-<p>b가 되었을 때 $L_n$은 최대 $\aleph_1$개의 점들을 가진다. 그런데 $L$이 $L_n$이 되는 과정에서 빠진 점들의 개수는 $\aleph_1 \cdot \aleph_0 = \aleph_1$을 넘지 않는다. 한편 $L$은 $2^{\aleph_0}$개의 점들을 가지고 있었기 때문에, 이는 $\aleph_1 &lt; 2^{\aleph_0}$에 모순된다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/20/cardinality"> 기수의 정의에 관한 노트 </a>
-      </h1>
-    <span class="post-date">20 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>정의.</strong> $X$에서 $Y$로 가는 단사 사상이 존재할 때, $|X| \leq |Y|$라고 적는다. 전단사 사상이 존재할 때, $|X| = |Y|$라고 적는다.</p>
-</blockquote>
-
-<p>집합론을 처음 공부하는 학생들이 흔히 하는 오해는, 위 정의의 $|\cdot|$과 $\leq$를 복소수에서의 $|\cdot|$과 $\leq$와 유사한 것으로 은연 중에 취급하는 것이다. 요컨대 복소수 $z$에 대해 $|z|$가 실수이고 $\leq$가 실수의 대소 관계이듯이, 집합 $X$에 대해 $|X|$는 집합의 크기 — 이른바 <strong>기수<sub>cardinality</sub></strong>이고, $\leq$는 기수의 대소 관계라고 생각하는 것이다.</p>
-
-<p>그러나 이는 문제의 여지가 많은 접근이다. 왜냐하면 위 정의만으로는 <strong><u>기수라는 수학적 대상</u>을 정의할 수 있다는 보장이 없기 때문이다.</strong> 우리가 정의한 것은 이항 관계에 불과하다.</p>
-
-<p>이해를 위한 예시를 들어보자. $A$가 $B$를 좋아할 때, $|A| \leq |B|$라고 적을 수 있을 것이다. 그러나 이렇게 적었다고 해서, $|A|$는 ‘$A$의 호감도’를 의미하며 $\leq$가 호감도의 대소 관계라고 해석한다면 완전히 틀린 것이다. 이와 마찬가지로 $|X| \leq |Y|$는 단사 관계의 유무로 정의되는 이항 관계일 뿐, 이 관계 자체가 기수의 개념을 시사하는 것은 아니다.</p>
-
-<p>특히 ZFC에서는 모든 것이 집합이기 때문에, 만약 기수를 정의하고 싶다면 다음의 사실을 논증해야 한다.</p>
-
-<blockquote>
-  <p><strong>정리 1.</strong> 임의의 집합 $X, Y$에 대해, 어떤 집합 $\mathrm{Card}(X), \mathrm{Card}(Y)$가 존재하여, 다음이 성립한다.</p>
-
-  <ol>
-    <li>$|X| \leq |Y|$ iff $\mathrm{Card}(X) \subseteq \mathrm{Card}(Y)$</li>
-    <li>$|X| = |Y|$ iff $\mathrm{Card}(X) = \mathrm{Card}(Y)$</li>
-  </ol>
-
-  <p>$\mathrm{Card}(X)$를 $X$의 기수라고 부른다.</p>
-</blockquote>
-
-<p>즉 ① $\mathrm{Card}(X)$를 정의해야 하고, ② 해당 정의에 대해 위 진술이 성립함을 보여야 한다.</p>
-
-<p>표현의 편의를 위해 $|X| \leq |Y|$와 $|X| = |Y|$를 “$Y$가 $X$보다 작지 않다”, ”$X$와 $Y$의 크기가 같다“라고 부르자. ①부터 살펴 보자면, 크게 네 가지 접근이 가능하다. 짤막하게 알아보자면 이렇다.</p>
-
-<ol>
-  <li>
-    <p>칸토어의 정의</p>
-
-    <ul>
-      <li>정의: $\mathrm{Card}(X)$를 $X$와 크기가 같은 집합들의 집합으로 정의한다.</li>
-      <li>장점: 정의가 가장 직관적임</li>
-      <li>단점: $\mathrm{Card}(X)$는 사실 집합이 아니라 모임<sub>class</sub>임</li>
-    </ul>
-  </li>
-  <li>
-    <p>스콧의 트릭<sub>Scott’s trick</sub></p>
-
-    <ul>
-      <li>정의: $X$와 크기가 같은 집합 중 폰 노이만 위계에서 가장 먼저 등장하는 집합의 랭크가 $V_\alpha$일 때, $\mathrm{Card}(X)$를 $V_\alpha$로 정의한다.</li>
-      <li>장점: 모임의 문제 없이 기수를 정의함</li>
-      <li>단점: 정의가 직관적이지 않고 ad-hoc적인 면모가 있음</li>
-    </ul>
-  </li>
-  <li>
-    <p>정렬 원리<sub>well-ordering theorem</sub>를 사용하여 기수를 정의하기</p>
-
-    <ul>
-      <li>정의: $X$의 정렬에 대응되는 서수<sub>ordinal</sub>들보다 작지 않은 서수 중 가장 작은 서수를 $\mathrm{Card}(X)$로 정의한다.</li>
-      <li>장점: 정의가 다소 직관적이고, 모임의 문제가 없음</li>
-      <li>단점: 선택 공리 없이는 임의의 집합에 대해 해당 집합의 정렬이 존재함을 보장할 수 없음</li>
-    </ul>
-  </li>
-  <li>
-    <p>하르토그스 수<sub>Hartogs number</sub>를 사용하여 기수를 정의하기</p>
-    <ul>
-      <li>정의: $X$의 정렬 가능한 부분집합들에 대응되는 서수들보다 큰 서수 중 가장 작은 서수를 $X$의 하르토그수 수로 정의한다.</li>
-      <li>장점: 정의가 어느 정도 직관적이고, 모임의 문제가 없으며, 선택 공리에 의존적이지 않음</li>
-      <li>단점: 다루기 불편하고 제약이 많음</li>
-    </ul>
-  </li>
-</ol>
-
-<p>현대 집합론에서는 2 또는 3을 기수의 정의로 채택한다. 두 경우 모두 정리 1이 성립함을 ZFC에서 보일 수 있다.</p>
-
-<p>흥미로운 것은, 스콧의 트릭을 사용하여 기수를 정의하면 선택 공리가 필요하지는 않지만, 스콧의 트릭으로 정의된 기수가 정리 1을 만족함을 보일 때에는 선택 공리가 필요하다는 사실이다. 왜냐하면 다음이 선택 공리와 동치이기 때문이다.</p>
-
-<blockquote>
-  <p><strong>정리 2.</strong> 임의의 집합 $X, Y$에 대해, $|X| \leq |Y|$이거나 $|Y| \leq |X|$이다.</p>
-</blockquote>
-
-<p>즉, 선택 공리를 사용하지 않더라도 a) 스콧의 트릭을 통해 $\mathrm{Card}(X)$를 정의하거나, b) 단사 사상의 유무를 통해 $|X| \leq |Y|$를 정의할 수 있지만, a)와 b)가 맞물린다는 사실을 보일 때는 선택 공리가 필요하다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/18/prisoner-hat"> 무한 죄수 모자 문제 </a>
-      </h1>
-    <span class="post-date">18 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <p>아마 여러분은 죄수들이 자신의 모자 색을 맞히는 내용의 퍼즐을 제법 보았을 것이다. 예시는 다음과 같다.</p>
-
-<blockquote>
-  <p>3명의 죄수 A, B, C가 일렬로 서 있다. 간부는 검은 모자 2개와 흰 모자 3개 중 세 개를 골라 각 죄수에게 씌우고는, 만약 어느 한 명이라도 자신의 모자의 색을 맞히면 모두 풀려나지만 틀릴 경우 모두 사형에 처해질 것이라고 말한다. 죄수는 자기 앞에 있는 죄수들의 모자 색은 볼 수 있지만, 자신의 모자 색이나 자기 뒤에 있는 죄수들의 모자 색은 볼 수 없다. 오랜 침묵이 흐른 후, 한 죄수가 자신의 모자 색을 정확히 맞혔다. 문제를 맞힌 죄수는 누구인가?</p>
-
-  <p><img src="/public/hat-1.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(1)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer1" class="answer" style="padding-bottom: 1em;">
-<p><strong>C가 정답을 맞힌다.</strong></p>
-<p>만약 B와 C의 모자 색이 모두 검은색이었다면 A는 자신의 모자가 흰색임을 맞혔을 것이다. 그러나 "오랜 침묵"이 흘렀으므로, A는 자신의 모자 색을 맞히지 못하는 상황이며 이는 B, C의 모자 색이 (흰, 검), (검, 흰), (흰, 흰)의 경우 중 하나임을 시사한다.</p>
-<p>이 사실을 고려했을 때, 만약 C의 모자 색이 검정색이었다면 B는 자신의 모자 색이 흰색임을 맞혔을 것이다. 그럼에도 "오랜 침묵"이 흘렀다는 것은 B 또한 자신의 모자 색을 맞히지 못하는 상황임을 의미하므로, C의 모자 색은 흰색이다.</p>
-</div>
-
-<p>조금 더 어려운 문제도 있다.</p>
-
-<blockquote>
-  <p>100명의 죄수가 일렬로 서 있다. 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 최대 몇 명의 생존을 확실히 보장할 수 있는가?</p>
-
-  <p><img src="/public/hat-2.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(8)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>힌트 보기</u>
-</div>
-
-<div id="answer8" class="answer" style="padding-bottom: 1em;">
-<p>첫 번째 죄수를 제외한 99명의 생존을 보장할 수 있다.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(2)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer2" class="answer" style="padding-bottom: 1em;">
-<p><strong>첫 번째 죄수를 제외한 99명의 생존을 보장할 수 있다.</strong></p>
-<p>첫 번째 죄수는 자신을 제외한 99명의 모자 색을 볼 수 있다. 그 중 검은색 모자가 짝수 개라면 자신의 모자 색을 검은색으로 맞히고, 홀수 개라면 흰색으로 맞힌다. 그러면 두 번째 죄수는 첫 번째 죄수가 전달한 정보와, 자기 앞에 있는 모자들 중 검은색 모자의 홀짝성을 비교함으로서 자신의 모자 색을 정확히 맞힐 수 있다. 세 번째 죄수 또한 첫 번째 죄수가 전달한 정보와, 두 번째 죄수가 자신의 모자 색을 맞혔다는 사실로부터 자신의 모자 색을 정확히 맞힐 수 있고, 이같은 식으로 99명이 모두 풀려날 수 있다.</p>
-</div>
-
-<p>이제 문제를 더 괴랄하게 만들어 보자.</p>
-
-<blockquote>
-  <p><strong>무한히 많은 죄수가 일렬로 서 있다.</strong> 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 가능한 적은 죄수가 죽도록 하는 전략은 무엇인가? <strong>단, 모든 죄수는 무한한 연산 능력을 가지며, 수학적으로 전지전능하다고 가정한다.</strong> 즉, $f$가 수학적으로 존재하는 함수일 때, 죄수들은 $f$의 함숫값을 언제나 계산할 수 있으며, 사전에 전략을 의논할 때 $f$를 사용하자고 합의할 수 있다.</p>
-
-  <p><img src="/public/hat-3.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(3)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>힌트 보기 1</u>
-</div>
-
-<div id="answer3" class="answer" style="padding-bottom: 1em;">
-<p>첫 번째 죄수를 제외한 전원의 생존을 보장할 수 있다.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(4)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>힌트 보기 2</u>
-</div>
-
-<div id="answer4" class="answer" style="padding-bottom: 1em;">
-<p>선택 공리를 사용한다.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(5)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer5" class="answer" style="padding-bottom: 1em;">
-
-<p>검은색 모자를 0, 흰색 모자를 1로 적으면 죄수들의 모자 배열은 101011... 와 같은 무한 숫자열로 표현할 수 있다. 앞에 소숫점을 찍고 이진법으로 읽으면 죄수들의 모자 배열은 0 이상 1 이하의 실수와 일대일 대응된다.</p>
-
-<p>실수 $a, b \in [0, 1]$에 대해, $a$와 $b$의 이진 전개가 차이나는 자릿수의 개수가 유한할 때 $a \sim b$라고 하자. 예를 들어,</p>
-
-$$
-0.11111\dots \sim 0.01111\dots, \; 0.10101\dots \not\sim 0.01010\dots
-$$
-
-<p>$\sim$은 동치 관계임을 쉽게 보일 수 있다. 따라서 동치류 $[0, 1]/\sim$을 취할 수 있다. 선택 공리에 의해 $[0, 1]/\sim$의 선택 함수 $\iota$가 존재한다. 죄수들이 수학적으로 전지전능하다고 가정했으므로 사전에 죄수들은 어떤 선택 함수 $\iota$를 사용할지 합의할 수 있다.</p>
-
-<p>모자 맞히기가 시작되었을 때 $n$번째 죄수는 $n$개의 모자를 제외한 모든 모자의 색을 볼 수 있다. 즉, 죄수들의 모자 배열에 대응되는 실수가 $r$일 때, $n$번째 죄수는 $r$의 소숫점 아래 $n$개 자릿수 이외의 모든 자릿수를 알고 있다. 즉, 그는 $r$이 $[0, 1]/\sim$의 어떤 동치류에 속하는지 알며, $r$이 속하는 동치류를 $[r]$이라고 했을 때 $\iota([r])$을 계산할 수 있다.</p>
-
-<p>이제 다음의 전략을 취한다. $\sim$의 정의에 의해 $r$과 $\iota([r])$은 유한한 개수의 자릿수에서만 차이가 난다. 첫 번째 죄수는 자신이 보는 모자들의 배열과 $\iota([r])$에 대응되는 모자들의 배열이 짝수만큼 차이가 나면 자신의 모자색을 검정색으로 맞히고, 홀수만큼 차이가 나면 흰색으로 맞힌다. 이제 나머지 죄수들은 100명의 죄수 문제와 같은 방식으로 자신의 모자 색을 맞힐 수 있다.</p>
-
-<p>즉, 선택 공리는 $N$명의 죄수 문제에서 $N \to \infty$를 취했을 때에도 첫 번째 죄수를 제외한 전원이 생존할 수 있다는 결론이 존속되도록 보장하는 원리이다.</p>
-
-</div>
-
-<p>위 퍼즐도 상당히 신기하지만, 다음의 퍼즐은 더 기묘하다.</p>
-
-<blockquote>
-  <p>무한히 많은 죄수가 일렬로 서 있다. 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 또한, <strong>모자가 씌워지는 순간 죄수들은 청력을 완전히 상실하여 아무런 정보를 주고받을 수 없다.</strong> 오직 유한한 수의 죄수만이 죽도록 하는 전략이 있는가? (마찬가지로 죄수는 무한한 연산 능력을 가지며 수학적으로 전지전능하다.)</p>
-
-  <p><img src="/public/hat-4.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(6)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer6" class="answer" style="padding-bottom: 1em;">
-
-<p>이전 문제와 같이 $\iota$를 $[0, 1]/\sim$의 선택 함수라고 하자. 다음의 전략을 취한다. $n$번째 죄수는 자신의 모자 색을 $\iota([r])$의 $n$번째 자릿수에 대응되는 색으로 맞힌다. 그러면 $\sim$의 정의에 의해 유한한 수의 죄수를 제외한 전원이 정답을 맞힌다.</p>
-
-</div>
-
-<p>위 퍼즐이 특히 기묘한 이유는, 청력 상실 조건에 의해 서로 다른 두 죄수가 모자를 맞히는 사건이 독립이므로, 각각의 죄수가 정답을 맞힐 확률은 $p$로 동일해야 할 듯하기 때문이다. 이 경우 총 $N$명의 죄수가 정답을 맞히는 확률은 $p^N$이 되므로, $N \to \infty$에 따라 확률은 0으로 수렴한다. 그러나 실제로는 무한히 많은 죄수들이 정답을 맞힌다.</p>
-
-<p>이 역설의 뿌리는, 임의의 죄수가 정답을 맞히는 확률이 <strong>정의되지 않는다</strong>는 데 있다. 잘 생각해 보면, 임의의 죄수가 정답을 맞히는 사건은 주어진 실수 $r \in [0, 1]$이 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>에 포함되는 사건과 동일한데, 비탈리 집합은 비가측 집합이므로 이 사건에는 확률을 정의할 수 없기 때문이다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
+  
+  
+  
+  
+  
   
 </div>
 
 <div class="pagination">
   
   <a
-    class="pagination-item older lang-ko"
-    href="/page4"
-    >이전 글</a
-  >
-  <a
-  class="pagination-item older lang-en"
-  href="/page4"
+  class="pagination-item older"
+  href="/page4/"
   >Previous</a
 >
     
   <a
-    class="pagination-item newer lang-ko"
-    href="/page2"
-    >다음 글</a
-  >
-  <a
   class="pagination-item newer lang-en"
-  href="/page2"
+  href="/page2/"
   >Next</a
 >
    
@@ -1052,14 +473,6 @@ $$
 
   // 배너 이미지 로드 후 애니메이션 트리거 스크립트
   document.addEventListener("DOMContentLoaded", () => {
-
-    const lang = localStorage.getItem("lang") || "ko";
-  document.querySelectorAll('.post[data-lang]').forEach(post => {
-    if (post.dataset.lang === lang) {
-      post.style.display = '';
-    }
-  });
-
     const bannerImages = document.querySelectorAll(
       '.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'
     ); // 애니메이션 시작을 기다릴 이미지들
@@ -1114,9 +527,15 @@ $$
       langToggle.addEventListener("change", () => {
         const newLang = langToggle.checked ? "en" : "ko";
         localStorage.setItem("lang", newLang);
-        document.querySelectorAll('.post[data-lang]').forEach(post => {
-          post.style.display = post.dataset.lang === newLang ? '' : 'none';
-        });
+          // 페이지 리디렉션
+  const isOnRoot = window.location.pathname === "/";
+  const isOnIndexEn = window.location.pathname.includes("/en");
+
+  if (newLang === "en") {
+    window.location.href = "/en";
+  } else {
+    window.location.href = "/";
+  }
       });
     }
   });

@@ -12,8 +12,7 @@
   />
 
   <title>
-     디멘의 블로그 &middot; 이데아를 여행하는 히치하이커
-    
+     메인 - page 2 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -119,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/page2/" />
+  <link rel="canonical" href="/page2/index.html" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -215,7 +214,7 @@
     href="/"
     >Main</a
   >
-               
+           
     <a
       class="sidebar-nav-item lang-ko"
       href="/about/"
@@ -259,7 +258,7 @@
     href="/book/"
     >Twilight Wonders (Korean)</a
   >
-          
+                                                      
     <a
       class="sidebar-nav-item lang-ko"
       href="/guestbook/"
@@ -270,7 +269,7 @@
     href="/guestbook/"
     >Guestbook</a
   >
-        
+            
     <a
       class="sidebar-nav-item lang-ko"
       href="/notes/"
@@ -423,705 +422,26 @@
 
 <div class="posts">
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/16/stone-space-compactness"> 스톤 공간과 콤팩트성 정리 </a>
-      </h1>
-    <span class="post-date">16 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <p>다음은 학부 수리논리학의 유명한 정리이다.</p>
-
-<blockquote>
-  <p><strong>콤팩트성 정리.</strong> $\mathcal{L}$의 이론 $T$에 대해, $T$의 모든 유한한 부분이론이 모델을 가진다면, $T$는 모델을 가진다.</p>
-</blockquote>
-
-<p>그런데 왜 이 정리의 이름은 콤팩트성 정리인 것일까? 잘 들여다 보면, 위 정리의 진술은 다음과 같이 적을 수 있다.</p>
-
-<blockquote>
-  <p>임의의 $\mathcal{L}$-문장들의 집합 $T$가 모델을 가지지 않는다면, 어떤 유한한 부분집합 $T’ \subset T$가 존재하여 $T’$이 모델을 가지지 않는다.</p>
-</blockquote>
-
-<p>확실히 이는 위상수학에서 콤팩트의 정의와 유사하다.</p>
-
-<blockquote>
-  <p>임의의 열린집합들의 모임 $\mathcal{C}$가 전채 공간의 덮개라면, 어떤 유한한 부분집합 $\mathcal{C}’ \subset \mathcal{C}$가 존재하여 $\mathcal{C}’$가 전체 공간을 덮는다.</p>
-</blockquote>
-
-<p>이 유사성은 단순한 관찰 이상으로 확대될 수 있다. 아이디어는 각각의 완전<sub>complete</sub>한 $\mathcal{L}$-이론을 공간의 한 점으로 본 뒤, 이들 모임에 적절한 위상을 부여하였을 때, 콤팩트성 정리가 해당 공간이 콤팩트할 필요충분조건이 되는 것이다. 먼저 다음을 정의한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathcal{L}$-구조 $\mathfrak{A}$에 대해, $\mathrm{Th}(\mathfrak{A})$를 $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합으로 정의한다.</p>
-</blockquote>
-
-<p>참고로 위 집합은 <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이전 글</a>에서 초등적 동등성을 설명하며 정의한 바 있다.</p>
-
-<p>$\mathrm{Th}(\mathfrak{A})$는 무모순적이며 형태론적으로 완전한 이론임이 자명하다. 반대로, 이론 $T$가 무모순적이며 형태론적으로 완전한 이론일 때, 괴델의 완전성 정리에 의해 $T$는 모델 $\mathfrak{A}$를 가지며, $T = \mathrm{Th}(\mathfrak{A})$이다. 따라서 $\mathrm{Th}$는 모든 무모순적이며 형태론적으로 완전한 이론을 생성한다.</p>
-
-<p>이제 위상공간의 배경이 될 공간을 정의해 보자. 먼저 언어 $\mathcal{L}$에 대해, 공간 $\mathcal{S}$를 다음과 같이 정의한다.</p>
-
-\[\mathcal{S} = \{ \mathrm{Th}(\mathfrak{A}) : \mathfrak{A}\text{ is a $\mathcal{L}$-structure } \}\]
-
-<p>앞서 말했듯이 괴델의 완전성 정리에 의해 $\mathcal{S}$는 무모순적이며 형태론적으로 완전한 이론들의 모임과 사실상 같다. 그러나 후술하겠듯이, 완전성 정리를 사용하지 않더라도 $\mathcal{S}$의 위상적 콤팩트성과 1차 논리의 콤팩트성 정리가 동치임을 보이는 것이 목적이기 때문에, 일단은 $\mathcal{S}$를 그저 $\mathrm{Th}(\mathfrak{A})$의 모임으로서 생각하는 것이 낫다.</p>
-
-<p>이제 $\mathcal{S}$의 위상 기저를 정의하자. $\mathcal{L}$-문장 $\phi$에 대해, 다음과 같이 정의한다.</p>
-
-\[U_\phi = \{ T \in \mathcal{S} : \phi \in T \}\]
-
-<p>자명하게, $U_\phi \cap U_\psi = U_{\phi \land \psi}$이다. 즉, $U_\phi$의 모임 $\mathcal{B}$는 유한 교집합에 대해 닫혀 있다. 또한 $\mathcal{B}$는 $\mathcal{S}$를 덮는다. $T \in \mathcal{S}$에 대해, $\phi \in T$라면 $T \in U_\phi$이기 때문이다. 따라서 $\mathcal{B}$는 위상 기저의 조건을 만족하며, 이에 따라 $\mathcal{B}$로 생성되는 위상을 $\mathcal{S}$에 부여하자.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{S}$는 다음의 특징을 가진다.</p>
-
-  <ol>
-    <li>하우스도르프이다.</li>
-    <li>완전 비연결 공간<sub>totally disconnected space</sub>이다. 즉, $\mathcal{S}$에서 연결된 공간은 오직 홑원소 집합뿐이다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<ol>
-  <li>$T_1, T_2 \in \mathcal{S}$에 대해, $T_1 \neq T_2$라면 어떤 문장 $\phi$가 존재하여 $\phi \in T_1, \lnot\phi \in T_2$이다. 따라서 $U_\phi, U_{\lnot \phi}$가 $T_1$과 $T_2$를 각각 분리한다.</li>
-  <li>$T_1$ 공간이 완전 비연결 공간일 충분조건은 모든 원소가 열린닫힌집합<sub>clopen</sub>인 기저를 가지는 것이다. $U_\phi^c =U_{\lnot \phi}$에 의해 $\mathcal{B}$는 이 조건을 만족한다. ■</li>
-</ol>
-
-<blockquote>
-  <p><strong>정리.</strong> 1차 논리의 콤팩트성 정리는 $\mathcal{S}$가 콤팩트 공간인 것과 동치이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $\mathcal{C} \subset \mathcal{B}$가 $\mathcal{S}$를 덮을 필요충분조건은, $\Gamma = \lbrace \lnot \phi : U_\phi \in \mathcal{C} \rbrace $가 모델을 가지지 않는 것이다.</p>
-</blockquote>
-
-<p><em>증명.</em> 만약 $\Gamma$가 모델 $\mathfrak{A}$를 가진다면 $T = \mathrm{Th}(\mathfrak{A})$가 $\mathcal{C}$에 의해 덮여지지 않는다. 한편, $\mathcal{C}$가 $\mathcal{S}$를 덮지 못한다면 어떤 구조 $\mathfrak{A}$가 존재하여 $\phi \in \Gamma$에 대해 $\phi \notin \mathfrak{A}$이고, 이는 $\mathfrak{A}$가 $\Gamma$의 모델임을 의미한다. □</p>
-
-<p>이제 본 정리를 증명하자. $\mathcal{S}$가 콤팩트할 필요충분조건은 임의의 기저 원소들로 이루어진 $\mathcal{S}$의 덮개가 유한 부분덮개를 가지는 것이다. $\mathcal{C} \subset \mathcal{B}$에 대해, $\mathcal{C}$가 $\mathcal{S}$를 덮을 필요충분조건은 (보조정리에 의해) $\Gamma$가 모델을 가지지 않는 것이다. 따라서,</p>
-
-<p>$\mathcal{S}$가 콤팩트하다</p>
-
-<p>$\Leftrightarrow$ 임의의 기저 원소들의 모임 $\mathcal{C}$가 덮개라면, 유한 부분덮개가 존재한다.</p>
-
-<p>$\Leftrightarrow$ 임의의 이론 $\Gamma$가 모델을 가지지 않는다면, 모델을 가지지 않는 유한 부분이론이 존재한다.</p>
-
-<p>$\Leftrightarrow$ 콤팩트성 정리 ■</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 완전 비연결인 콤팩트 하우스도르프 공간을 <strong>스톤 공간<sub>Stone space</sub></strong>이라고 부른다.</p>
-</blockquote>
-
-<p>1차 논리의 콤팩트성 정리에 의해, $\mathcal{S}$는 스톤 공간이다. 이와 같이 논리적 구조를 위상적으로 분석하는 접근은 <strong>스톤 이중성<sub>Stone duality</sub></strong>이라고 불리는, 현대수학의 깊은 주제와 연관이 있다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/15/quantifier-elimination"> 양화사 제거 </a>
-      </h1>
-    <span class="post-date">15 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/모델론/'">
-        모델론
-      </div>
-      
-    </div>
-     <p><a href="https://dimenerno.github.io/2025/05/08/saturation/">이전 글</a>에서, $\mathcal{L}$-구조 $\mathfrak{A}$에서 <strong>정의가능</strong>한 집합들이 무엇인지에 관해 알아 보았다. $S \subseteq A$가 $\mathfrak{A}$에서 특정 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>에 속하는 명제 $\phi$로 정의가능할 때, $S$가 그 위계에 속한다고 하자. 예를 들어 $S$가 $\Pi_1$ 문장으로 정의 가능할 때, $S \in \Pi_1$이다.</p>
-
-<p>예를 들어 표준 산술 모형 $\mathfrak{N} = (\mathbb{N}, 0, S, +)$에서 짝수의 집합은 $\Sigma_1$이다.</p>
-
-\[\{ x \in \mathbb{N} : \mathfrak{N} \vDash \exists y (y + y = x) \}\]
-
-<p>집합의 구조는 위계가 높아질수록 까다롭기 때문에, 가장 다루기 이상적인 상황은 모든 정의가능한 집합이 $\Delta_0$으로 환원되는 상황이다. 이같은 특징을 가지는 이론을 양화사 제거 가능한 이론이라고 부른다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathcal{L}$-이론 $T$가 <strong>양화사 제거<sub>quantifier elimination</sub></strong> 가능하다는 것은 임의의 $\mathcal{L}$-명제 $\phi$에 대해 어떤 $\Delta_0$ $\mathcal{L}$-명제 $\psi$가 존재하여 다음이 성립하는 것이다.</p>
-
-\[T \vdash \phi \leftrightarrow \psi\]
-
-  <p>단, $\psi$의 자유변수는 모두 $\phi$의 자유변수이다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>양화사 제거 판별법.</strong> $T$가 양화사 제거 가능할 충분조건은, $T$가 $\exists x \psi \; (\psi \in \Delta_0)$ 꼴의 명제에 대해 양화사 제거 가능한 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 먼저 임의의 $\Delta_0$ 명제 $\psi$에 대해 $\forall x \psi$가 양화사 제거 가능함을 보이자. $\forall x \psi$는 $\lnot\exists x \lnot \psi$와 동치이고, 가정에 의해 $\exists x \lnot \psi$는 어떤 양화사가 없는 명제 $\theta$와 동치이다. 따라서 $\forall x \psi$는 $\lnot \theta$와 동치이며, 양화사 제거 가능하다. 이제 양화사 개수에 대한 귀납법을 적용하면 임의의 명제에 대해 양화사 제거가 가능함이 보여진다. ■</p>
-
-<p>어떤 이론이 양화사 제거 가능할 경우 해당 이론이 완전함을 보일 수 있는 경우가 종종 있다. 일례로 다음을 보자.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 조밀 무계 전순서 이론 $T$는 양화사 제거 가능하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 먼저 다음 개념을 정의한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 유한한 변수들의 <strong>배열<sub>arrangement</sub></strong>이란, 변수들의 순서 관계의 무모순적인 논리곱을 의미한다.</p>
-</blockquote>
-
-<p>예를 들어 다음은 $\lbrace v_1, v_3, v_7, v_8 \rbrace$의 배열이다.</p>
-
-\[(v_1 &lt; v_3) \land (v_8 \land v_7) \land (v_3 = v_8)\]
-
-<p>증명의 핵심은 다음의 보조정리이다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $\mathcal{L} = (&lt;)$의 $\Delta_0$ 명제는 전순서 이론에서 모순과 동치이거나, 어떤 배열들의 논리합과 동치이다.</p>
-</blockquote>
-
-<p>보조정리를 인정하고 본 정리를 증명해 보자. 양화사 제거 판별법에 의해, $\psi \in \Delta_0$에 대해 $\exists x \psi$가 양화사 제거 가능함을 보이면 된다. 보조정리에 의해 $\psi$는 $\theta_1 \lor \cdots \lor \theta_n$과 동치이며, 각 $\theta_i$는 변수들의 배열이다. $\exists$의 분배법칙에 의해,</p>
-
-\[T \vdash \exists x \psi \leftrightarrow \Big( (\exists x \theta_1) \lor \cdots (\exists x \theta_n) \Big)\]
-
-<p>이다. 그런데 조밀 무계 전순서에서는 배열 $\theta$에 대해, $\exists x \theta$는 $\theta$의 순서 관계를 한줄로 쭉 적은 뒤, $x$를 지운 명제와 동치이다. 예를 들어 $\exists x (v_1 &lt; x) \land (x &lt; v_2)$는 $\exists x (v_1 &lt; x &lt; v_2)$로 적을 수 있고, 이는 조밀성에 의해 $v_1 &lt; v_2$와 동치이다. 한편 $\exists x (v_1 &lt; x)$는 무계성에 의해 항진이며, $v_1 = v_1$과 동치이다. 따라서 위 식의 우항은 양화사 제거 가능하며, 이에 따라 $\exists x \psi$ 또한 양화사 제거 가능하다. ■</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> $T$는 완전하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $T$가 양화사 제거 가능하므로, 표준 양화사 제거 형식에 의해, 최대 1개의 자유변수 $x$를 가지는 임의의 $\Delta_0$ 문장 $\psi \in \Delta_0$에 대해 $T \vdash \psi$이거나 $T \vdash \lnot\psi$임을 보이면 된다. 보조정리에 의해 $\psi$는 $x$의 배열과 동치이다. 그런데 가능한 $x$의 배열은 $x &lt; x$와 $x = x$, 두 가지밖에 없다. 전자의 경우 모순이므로 $T \vdash \lnot\psi$이고, 후자의 경우 항진이므로 $T \vdash \psi$이다. ■</p>
-
-<p>$T$가 양화사 제거 가능한 것과 대조적으로, 조밀 유계 전순서 이론 $T_{\mathrm{bd}}$는 양화사 제거 가능하지 않다. $a$가 $&lt;$의 최솟값일 때, $\phi \equiv \exists y (y &lt; x)$가 양화사 제거 가능하지 않기 때문이다. $T_{\mathrm{bd}}$도 전순서 이론이므로, 만약 $\phi$가 양화사 제거 가능했다면 보조정리에 의해 $\phi$는 $x &lt; x$ 또는 $x = x$와 동치여야 하는데, $\phi$는 $x = a$일 때 참이고 그 외의 경우에는 거짓이기 때문에 전자와 후자 모두에 해당하지 않는다.</p>
-
-<p>그러나 이 경우에는 양화사 제거가 가능한 $T_{\mathrm{bd}}$의 확장을 쉽게 찾을 수 있다. 먼저 언어 $\mathcal{L}$에 두 가지 새로운 상수 기호 $a$와 $b$를 추가한다. 그리고 $a$와 $b$가 각각 최솟값과 최댓값이라는 다음의 공리를 $T_{\mathrm{bd}}$에 추가한 것을 $T_{\mathrm{bd}}’$이라고 하자.</p>
-
-\[\lnot \exists (x &lt; a) \quad \lnot \exists (b &lt; x)\]
-
-<blockquote>
-  <p><strong>정리.</strong> $T_{\mathrm{bd}}’$는 양화사 제거 가능하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 연습문제</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> $T_{\mathrm{bd}}$는 완전하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $T_{\mathrm{bd}}$의 보존적 확장<sub>conservative extension</sub>인 $T_{\mathrm{bd}}’$가 완전하므로, $T_{\mathrm{bd}}$ 또한 완전하다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/13/saturation"> 포화된 구조와 실수체의 완전성 </a>
-      </h1>
-    <span class="post-date">13 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <p>$\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $A$는 $\mathfrak{A}$의 정의역이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $X \subseteq A$가 <strong>정의가능<sub>definable</sub></strong>하다는 것은, 어떤 $\mathcal{L}$-논리식 $\phi$와 자유변수 할당 $g$가 존재하여 다음이 성립한다는 것이다.</p>
-
-\[X = \{ x \in A : \mathfrak{A} \vDash \phi[g^0_x] \}\]
-
-  <p>$\phi$가 $v_0$ 이외의 자유변수를 가지지 않을 때, $X$는 $\emptyset$-정의가능하다고 한다.</p>
-</blockquote>
-
-<p><em>Remark.</em> 정의가능성은 <a href="https://dimenerno.github.io/2024/12/11/VL-axiom/">괴델의 구성가능성</a>과 같은 의미이다.</p>
-
-<p>예를 들어 $(\mathbb{R}, &lt;)$에서 $(e, 2\pi)$는 다음의 $\phi$와 $g$에 의해 정의가능하다.</p>
-
-<ul>
-  <li>$\phi \equiv (v_1 &lt; v_0 \land v_0 &lt; v_2)$</li>
-  <li>$g: v_1 \mapsto e, v_2 \mapsto 2\pi$</li>
-</ul>
-
-<p>그러나 $(e, 2\pi)$는 $\emptyset$-정의가능하지 않다. $(\mathbb{R}, &lt;)$에서 $e$와 $2\pi$를 특정할 방법이 없기 때문이다.</p>
-
-<p>한편 표준 산술 모형 $(\mathbb{N}, 0, +, S)$에서 짝수의 집합 $E$는 다음의 $\phi$에 의해 $\emptyset$-정의가능하다.</p>
-
-<ul>
-  <li>$\phi \equiv \exists y (x = y + y)$</li>
-</ul>
-
-<p>모든 유한집합은 정의가능하다. 예를 들어 $A = \lbrace a_1, a_2, a_3 \rbrace $는 다음과 같이 정의가능하다.</p>
-
-<ul>
-  <li>$\phi \equiv (v_0 = v_1) \lor (v_0 = v_2) \lor (v_0 = v_3)$</li>
-  <li>$g: v_1 \mapsto a_1, v_2 \mapsto a_2, v_3 \mapsto a_3$</li>
-</ul>
-
-<p>같은 이유로 모든 쌍대 유한집합<sub>cofinite set</sub> 또한 정의가능하다.</p>
-
-<p><a href="http://dimenerno.github.io/2025/05/09/resiliency/">저번 글</a>에서 탄력적<sub>resilient</sub> 집합족에 대해 알아 보았다. 이제 다음을 정의하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\kappa$가 비가산 기수라고 하자. $\mathfrak{A}$가 <strong>$\kappa$-포화<sub>$\kappa$-saturated</sub></strong>되었다는 것은, $\kappa$개보다 적은 $A$의 정의가능한 부분집합들의 모임이 언제나 탄력적이라는 것이다. 특히, $\mathfrak{A}$가 $|A|$-포화되었을 때, $\mathfrak{A}$는 <strong>포화<sub>saturated</sub></strong>되었다고 한다.</p>
-</blockquote>
-
-<p>따라서 $\aleph_1$-포화된 구조 $\mathfrak{A}$는, 가산 개의 $\mathfrak{A}$의 정의가능한 부분집합들의 모임이 유한 교집합 속성을 만족할 떄, 전체 교집합 또한 공집합이 아닌 구조이다. 한편 구조 $\mathfrak{A}$가 $|A|^+$-포화되는 것은 불가능하다. 다음의 집합족이 유한 교집합 속성을 만족하지만 교집합은 공집합이기 때문이다.</p>
-
-\[\Big\{ A - \{ a \} : a \in A \Big\}\]
-
-<p>포화된 구조의 중요성은 다음 정리에 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 초등적으로 동등하며 기수가 같은 두 포화된 $\mathcal{L}$-구조는 동형이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 생략. 기초적인 아이디어는 <a href="https://dimenerno.github.io/2025/05/08/resiliency/">저번 글</a>에서 본 칸토어의 앞뒤 논법을 일반화한 것이다.</p>
-
-<p>그러나 유감스럽게도 포화된 구조는 구성하기가 까다롭다. 일례로 비가산 기수 $\kappa$와, $|T| \leq \kappa$인 건전한 이론 $T$에 대해, $T$는 $\kappa^+$-포화된, 기수 $2^\kappa$의 모델을 가진다. 따라서 일반화된 연속체 가설을 인정할 시 해당 모델은 포화되어 있다. 그러나 ZFC만으로는 포화된 구조가 존재함을 증명할 수 없음이 알려져 있다.</p>
-
-<p>따라서 다음의 더 약한 조건을 가진 개념을 도입한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 <strong>특별<sub>special</sub></strong>하다는 것은, $\mathfrak{A}$가 방향 유도계 $\lbrace  \mathfrak{A}_\kappa \rbrace _{\kappa &lt; |A|}$의 쌍대 극한이라는 것이다. 여기서 $\kappa$는 무한 기수이며, 각 $\mathfrak{A}_\kappa$는 $\kappa^+$-포화되어 있다.</p>
-</blockquote>
-
-<p>모든 포화된 구조는 특별하다. 각 $\mathfrak{A}_\kappa$를 자기 자신으로 두면 되기 때문이다. 그러나 모든 특별한 구조가 포화된 것은 아니다. 따라서 특별함은 포화보다 엄격히 약한 조건이다. 그럼에도 특별한 구조는 동형성 성질을 만족한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 초등적으로 동등하며 기수가 같은 두 특별한 $\mathcal{L}$-구조는 동형이다.</p>
-</blockquote>
-
-<p>더구나 특별한 구조는 포화된 구조보다 더 구성하기 쉽다. 특히, 다음 뢰벤하임-스콜렘 정리의 특수화가 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>특별 뢰벤하임-스콜렘 정리.</strong> $T$가 언어 $\mathcal{L}$의 이론이라고 하자.</p>
-
-  <ol>
-    <li>$T$가 무한 모델을 가진다면, $T$는 임의의 기수보다 큰 기수의 특별한 모델을 가진다.</li>
-    <li>$T$가 무한 모델을 가지고, $\mathcal{L}$이 가산이라면, $T$는 기수가 $\beth_\omega$인 특별한 모델을 가진다.</li>
-  </ol>
-</blockquote>
-
-<p>이 정리의 응용으로서, 다음의 유명한 결과를 보자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> <strong>실수 닫힌 순서체 이론</strong> 또는 <strong>RCOF</strong>란 다음의 공리들로 이루어진 언어 $(0, 1, +, \cdot, &lt;)$의 이론이다. ($x^n$은 $x \underbrace{\cdot \;\cdots\; \cdot}_{n} x$를 줄인 표기법)</p>
-
-  <ol>
-    <li>순서체 공리
-      <ul>
-        <li>$\forall a, b, c : (a &lt; b) \rightarrow (a + c &lt; b + c)$</li>
-        <li>$\forall a, b : (a &gt; 0 \land b &gt; 0) \rightarrow ab &gt; 0$</li>
-        <li>체 공리</li>
-      </ul>
-    </li>
-    <li>제곱근 공리: $\forall a &gt; 0 \; \exists x : x^2 = a$</li>
-    <li>닫힘 공리꼴:
-      <ul>
-        <li>$\forall a_2, a_1, a_0 \; \exists x :x^3 + a_2x^2 + a_1x + a_0 = 0$</li>
-        <li>$\forall a_4, a_3, a_2, a_1, a_0\; \exists x : x^5 + a_4x^4 + \cdots + a_0 = 0$</li>
-        <li>…</li>
-      </ul>
-    </li>
-  </ol>
-
-  <p><strong>실수 닫힌체 이론</strong> 또는 <strong>RCF</strong>란 다음의 공리들로 이루어진 언어 $(0, 1, +, \cdot)$의 이론이다.</p>
-
-  <ol>
-    <li>체 공리</li>
-    <li>형식적 실수 공리: $\forall x : x^2 \neq -1$</li>
-    <li>제곱근 공리: $\forall a \; \exists x : x^2 = a \lor x^2 = -a$</li>
-    <li>닫힘 공리꼴</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>타르스키 정리.</strong> RCOF와 RCF는 완전하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 핵심은 다음의 보조정리이다.</p>
-
-<blockquote>
-  <p><strong>에르되시-길만-헨릭슨<sub>Erdös-Gillman-Henriksen</sub> 보조정리.</strong> 기수가 같은 두 특별한 실수 닫힌체는 동형이다.</p>
-</blockquote>
-
-<p>보조정리를 인정하고 타르스키 정리를 증명해 보자. 만약 RCF가 완전하지 않다면, RCF의 확장 $T_1$과 $T_2$가 존재하여 $T_1$의 모델과 $T_2$의 모델은 초등적으로 동등하지 않다. RCF의 모든 모델은 무한 모델이므로 (why?) 특별 뢰벤하임-스콜렘 정리에 의해 $T_1$과 $T_2$는 각각 기수가 $\beth_\omega$인 모델 $\mathfrak{A}_1, \mathfrak{A}_2$를 가진다. 그런데 보조정리에 의해 $\mathfrak{A}_1 \cong \mathfrak{A}_2$인데, 이는 $\mathfrak{A}_1 \not\equiv \mathfrak{A}_2$와 모순이다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/09/resiliency"> η 집합 </a>
-      </h1>
-    <span class="post-date">09 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <p>가산 조밀 무계 전순서<sub>countable dense unbounded linear order</sub>는 모두 동형임을 보인 칸토어의 앞뒤 논법<sub>back-and-forth argument</sub>에서 핵심이 되는 원리는 다음이다.</p>
-
-<blockquote>
-  <p><strong>가산 데데킨트 성질.</strong> $(L, &lt;)$이 전순서라고 하자. 다음은 동치이다.</p>
-
-  <ol>
-    <li>$(L, &lt;)$은 조밀하고 무계이다.</li>
-    <li>$L$의 유한 부분집합 $C, D$에 대해, $C &lt; D$일 경우 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
-  </ol>
-</blockquote>
-
-<p>여기서 $C &lt; D$는 $\forall c \in C, d \in D : c &lt; d$를 줄인 표기이다.</p>
-
-<p>유한 데데킨트 성질로부터 동형성 정리를 다음과 같이 보일 수 있다. $(A, &lt;_A), (B, &lt;_B)$가 두 가산 조밀 무계 전순서라고 하자. 가산이므로 $A, B$의 원소를 자연수로 인덱싱할 수 있다. $f: A \to B$를 다음과 같이 귀납적으로 정의한다.</p>
-
-<ol>
-  <li>$f(a_0) = b_0$로 두고, $n = 1$로 정한다.</li>
-  <li>$a_n \in \mathrm{dom} f$을 확인한다.
-    <ol>
-      <li>$a_n \in \mathrm{dom} f$라면 3으로 넘어간다.</li>
-      <li>$a_n \notin \mathrm{dom} f$라면 보조정리에 의해 $C = \lbrace  f(a_k) : k &lt; n, a_k &lt;_A a_n \rbrace , D = \lbrace  f(a_k) : k &lt; n, a_k &gt;_A a_n \rbrace $에 대해 $C &lt; y &lt; D$인 $y \in B$가 존재한다. $f(a_n) = y$로 정의한다.</li>
-    </ol>
-  </li>
-  <li>$b_n \in \mathrm{ran} f$를 확인한다.
-    <ol>
-      <li>$b_n \in \mathrm{ran} f$라면 4로 넘어간다.</li>
-      <li>$b_n \notin \mathrm{ran} f$라면, 보조정리에 의해 $C = \lbrace  f^{-1}(b_k) : k &lt; n, b_k &lt;_B b_n \rbrace , D = \lbrace  f^{-1}(b_k) : k &lt; n, b_k &gt;_B b_n \rbrace $에 대해 $C &lt; x &lt; D$인 $x \in A$가 존재한다. $f(x) = b_n$으로 정의한다.</li>
-    </ol>
-  </li>
-  <li>$n$을 $n + 1$로 갱신하고 2로 되돌아간다.</li>
-</ol>
-
-<p>위 과정의 귀납적 극한으로서 얻어지는 $f$는 $A$와 $B$의 동형 사상이다.</p>
-
-<p>그런데 위 보조정리의 다음 일반화는 일반적으로 성립하지 않는다.</p>
-
-<blockquote>
-  <p><strong>(틀린 명제)</strong> $(L, &lt;)$이 전순서라고 하자. 다음은 동치이다.</p>
-
-  <ol>
-    <li>$(L, &lt;)$은 조밀하고 무계이다.</li>
-    <li>$L$보다 작은 기수인 $L$의 부분집합 $C, D$에 대해, $C &lt; D$일 경우 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
-  </ol>
-</blockquote>
-
-<p>예를 들어 $(\mathbb{R} \setminus \lbrace  0 \rbrace , &lt;)$는 조밀하고 무계인 전순서이며, $C = (-\infty, 0) \cap \mathbb{Q}, D = (0, \infty) \cap \mathbb{Q}$일 때 $C &lt; D$이고 $|C|, |D| &lt; |\mathbb{R}|$이지만 $C &lt; y &lt; D$를 만족하는 실수 $y$는 존재하지 않는다.</p>
-
-<p>만약 위 보조정리의 일반화가 성립했다면, 다음과 같이 기수가 $\kappa &gt; \aleph_0$인 조밀 무계 전순서가 유일함을 증명할 수 있었을 것이다. 선택 공리를 가정했을 때, $A$와 $B$는 $\kappa$와 순서 동형이도록 정렬될 수 있다. 이제 서수 $\alpha &lt; \kappa$에 대해 초한귀납적으로 $f$를 정의한다.</p>
-
-<ol>
-  <li>$f(a_0) = b_0$로 두고, $\alpha = 1$로 정한다.</li>
-  <li>$a_\alpha \in \mathrm{dom} f$을 확인한다.
-    <ol>
-      <li>$a_\alpha \in \mathrm{dom} f$라면 3으로 넘어간다.</li>
-      <li>$a_\alpha \notin \mathrm{dom} f$라면 일반화된 보조정리에 의해 $C = \lbrace  f(a_\beta) : \beta &lt; \alpha, a_\beta &lt;_A a_\alpha \rbrace , D = \lbrace  f(a_\beta) : \beta &lt; \alpha, a_\beta &gt;_A a_\alpha \rbrace $에 대해 $C &lt; y &lt; D$인 $y \in B$가 존재한다. $f(a_\alpha) = y$로 정의한다.</li>
-    </ol>
-  </li>
-  <li>$b_\alpha \in \mathrm{ran} f$를 확인한다.
-    <ol>
-      <li>$b_\alpha \in \mathrm{ran} f$라면 4로 넘어간다.</li>
-      <li>$b_\alpha \notin \mathrm{ran} f$라면, 일반화된 보조정리에 의해 $C = \lbrace  f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &lt;_B b_\alpha \rbrace , D = \lbrace  f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &gt;_B b_\alpha \rbrace $에 대해 $C &lt; x &lt; D$인 $x \in A$가 존재한다. $f(x) = b_\alpha$로 정의한다.</li>
-    </ol>
-  </li>
-  <li>초한귀납적으로 $f$를 완성한다.</li>
-</ol>
-
-<p>그러나 일반화된 보조정리가 성립하지 않으므로, 칸토어의 앞뒤 논법은 비가산 조밀 무계 전순서가 유일하다는 것을 보이는 데 적용될 수 없다. 실제로 비가산 조밀 무계 전순서는 $\mathbb{R}$ 이외에도 $\lbrace 0\rbrace  \times \mathbb{R} \sqcup \lbrace 1\rbrace  \times \mathbb{Q}$에 사전식 순서를 준 순서 등 유일하지 않다.</p>
-
-<p>그렇다면 보조정리의 성질은 어느 정도까지 일반화될 수 있을까? 이 물음과 관련된 개념은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong></p>
-
-  <ol>
-    <li>집합족 $\mathcal{C}$가 <strong>유한 교집합 속성<sub>finite intersection property</sub></strong>을 가진다는 것은, $\mathcal{C}$의 집합-원소들의 유한한 교집합은 언제나 공집합이 아니라는 것이다.</li>
-    <li>집합족 $\mathcal{C}$가 <strong>탄력적<sub>resilient</sub></strong>이라는 것은, $\mathcal{D}$가 유한 교집합 속성을 가지는 $\mathcal{C}$의 부분모임일 때, $\bigcap_{D \in \mathcal{D}} D \neq \varnothing$인 것이다.</li>
-  </ol>
-</blockquote>
-
-<p>위상수학을 공부한 독자라면 이는 친숙한 개념일 것이다.</p>
-
-<blockquote>
-  <p><strong>칸토어 축소구간 정리.</strong> $K$가 콤팩트할 필요충분조건은 $K$의 모든 닫힌 집합들의 모임 $\mathcal{F}$가 탄력적인 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $(\Rightarrow)$ $\mathcal{F}$가 탄력적이지 않다고 하자. 그러면 어떤 닫힌 집합들의 모임 $\mathcal{C}$가 존재하여, $\mathcal{C}$가 유한 교집합 속성을 가지지만 $\bigcap_{C \in \mathcal{C}} C = \varnothing$이다. 드 모르간 법칙에 의해 $\bigcup_{C \in \mathcal{C}} C^c = K$이다. 즉 $\lbrace  C^c : C \in \mathcal{C} \rbrace $는 $K$의 열린 덮개이다. $K$가 콤팩트하므로 이는 유한 부분 덮개를 가진다. 그러나 이 경우 다시 드 모르간 법칙에 의해, 어떤 유한한 $\mathcal{C}’ \subset \mathcal{C}$에 대해 $\bigcap_{C \in \mathcal{C}’} C = \varnothing$이다. 이는 $\mathcal{C}$의 유한 교집합 속성에 모순된다.</p>
-
-<p>$(\Leftarrow)$ 거의 비슷한 방식으로 증명한다. ■</p>
-
-<p>이제 다음과 같이 보조정리를 일반화할 수 있다.</p>
-
-<blockquote>
-  <p><strong>비가산 데데킨트 성질.</strong> $(L, &lt;)$이 전순서이고, $\kappa$가 비가산 기수라고 하자. 다음은 동치이다.</p>
-
-  <ol>
-    <li>$(L, &lt;)$은 조밀하고 무계이다. 또한, $\kappa$개보다 적은 임의의 열린 구간 및 반직선들의 모임은 탄력적이다.</li>
-    <li>$L$의 부분집합 $C, D$에 대해, $|C|, |D| &lt; \kappa$이고 $C &lt; D$라면 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> $(\Rightarrow)$</p>
-
-<h4 id="i-d--varnothing">i. $D = \varnothing$</h4>
-
-<p>$\mathcal{C} = \lbrace  (c, \infty) : c \in C \rbrace$를 고려하자. $|\mathcal{C}| = |C| &lt; \kappa$이므로 전제에 의해 $\mathcal{C}$는 탄력적이다. $\mathcal{C}$가 유한 교집합 속성을 가지므로 $\bigcap_{c \in C} (c, \infty) = (c’, \infty)$이다. 해당 $c’$이 찾고자 하는 $y$이다.</p>
-
-<h4 id="ii-c--varnothing">ii. $C = \varnothing$</h4>
-
-<p>i.의 경우와 거의 동일하다.</p>
-
-<h4 id="iii-c-d-neq-varnothing">iii. $C, D \neq \varnothing$</h4>
-
-<p>$\mathcal{E} = \lbrace  (c, d) : c \in C, d \in D \rbrace $를 고려하자. 기수 관계식 $\lambda \cdot \epsilon = \mathrm{max}(\lambda, \epsilon)$에 의해 $|\mathcal{E}| &lt; \kappa$이며, $\mathcal{E}$는 탄력적이다. $\mathcal{E}$가 유한 교집합 속성을 가지므로 ($\because$ 가산 데데킨트 성질) $\bigcap_{c \in C, d \in D} (c, d) = (c’, d’)$이다. $(c’, d’) \neq \varnothing$이므로 $y \in (c’, d’)$가 존재하며, 이것이 우리가 찾고자 하는 $y$이다.</p>
-
-<p>$(\Leftarrow)$ $(L, &lt;)$이 조밀하고 무계임은 자명하다.</p>
-
-<p>$\mathcal{E}$가 $\kappa$개보다 적은 열린 구간 및 반직선들의 모임이라고 하자. $\mathcal{F} \subseteq \mathcal{E}$가 유한 교집합 속성을 가진다고 하자. 그렇다면 $C = \lbrace  c : (c, d) \in \mathcal{F} \text{ or } (c, \infty) \in \mathcal{F} \rbrace $, $D = \lbrace  d : (c, d) \in \mathcal{F} \text{ or } (-\infty, d) \in \mathcal{F}\rbrace $에 대하여 $C &lt; D$이다. 그렇지 않다면 어떤 $c’ \in C, d’ \in D$에 대해 $d’ &lt; c’$라는 것인데, 이 경우 $c’$을 왼쪽 끝점으로 가지는 열린 구간 $(c’, d’’) \in \mathcal{F}$와 $d’$을 오른쪽 끝점으로 가지는 열린 구간 $(c’’, d’) \in \mathcal{F}$에 대해 $(c’, d’’) \cap (c’’, d’) = \varnothing$이 되어 $\mathcal{F}$의 유한 교집합 속성에 모순되기 때문이다.</p>
-
-<p>따라서 $C &lt; D$이며, 조건에 의해 $C &lt; y &lt; D$인 $y$가 존재한다. 이로부터 $y \in \bigcap_{I \in \mathcal{F}} I$가 따라 나오며, $\mathcal{E}$가 탄력적임이 보여진다. ■</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 비가산 데데킨트 성질을 만족하는 집합을 <a href="https://en.wikipedia.org/wiki/Η_set"><strong>$\eta$ 집합</strong></a>이라고 한다. 특히, $\kappa = \aleph_\alpha$에 대해 비가산 데데킨트 성질을 만족하는 집합을 $\eta_\alpha$ 집합이라고 한다.</p>
-</blockquote>
-
-<p>$\eta$ 집합은 하우스도르프에 의해 제시되었다. $\eta$ 집합은 다음 글에서 알아 볼 <strong>포화<sub>saturation</sub></strong> 개념과 밀접한 관련이 있다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/08/robinson-craig"> 로빈슨, 크레이그, 베스의 정리 </a>
-      </h1>
-    <span class="post-date">08 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/모델론/'">
-        모델론
-      </div>
-      
-    </div>
-     <h3 id="초등적-병합-성질elementary-amalgamation-property">초등적 병합 성질<sub>Elementary amalgamation property</sub></h3>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}’$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화<sub>$\mathcal{L}$-reduct</sub>가 $\mathfrak{A}$와 초등적으로 동등<sub>elementarily equivalent</sub>하다고 하자. 이 때, $\mathcal{L}’$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">초등적 임베딩</a>이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}’$의 초등적 임베딩이다.</p>
-
-  <p><img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply" /></p>
-</blockquote>
-
-<p><strong>증명.</strong> <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이 글</a>의 표기법을 따라, 언어 $L_\mathfrak{A}$의 이론 $E(\mathfrak{A})$와 언어 $L’_\mathfrak{B}$의 이론 $E(\mathfrak{B})$를 생각하자. $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$는 언어 $\mathcal{L}’_{\mathfrak{AB}} = \mathcal{L}_\mathfrak{A} \cup \mathcal{L}’_\mathfrak{B}$의 이론이다. $T$가 모델 $\mathfrak{C}$를 가짐을 보이자.</p>
-
-<p>만약 $T$가 모델이 없다면 $T$는 모순적이다. 따라서 콤팩트성 정리에 의해 어떤 $\mathcal{L}$-논리식 $\phi$와 $\mathcal{L}’$-논리식 $\psi$가 존재하여, 적절한 $\lbrace  a_i \rbrace  \subset \mathcal{L}_\mathfrak{A}$, $\lbrace  b_j \rbrace  \subset \mathcal{L}_\mathfrak{B}$에 대해,</p>
-
-\[\lbrace  \phi(a_1, \dots, a_n), \psi(b_1, \dots, b_m) \rbrace\]
-
-<p>이 모델을 가지지 않는다. $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$이므로, $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$를 만족하도록 상수 $a_1, \dots, a_n$을 $\mathfrak{B}$의 정의역에 대응시키는 방법이 존재하지 않아야 한다. 즉,</p>
-
-\[\mathfrak{B} \not\vDash \exists x_1, \dots x_n \; \phi(x_1, \dots, x_n)\]
-
-<p>그런데 $\mathfrak{B}$의 $\mathcal{L}$-퇴화가 $\mathfrak{A}$와 초등적으로 동등하며, 위 식의 우변이 $\mathcal{L}$-문장이고, $\mathfrak{A}$가 해당 문장을 만족하므로 이는 모순이다. 따라서 $T$는 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{A})$와 $E(\mathfrak{B})$의 모델이므로, $\mathfrak{A}$와 $\mathfrak{B}$는 $\mathfrak{C}$로 자연스럽게 초등적으로 임베딩된다. ■</p>
-
-<h3 id="로빈슨-건전성-정리robinson-consistency-theorem">로빈슨 건전성 정리<sub>Robinson consistency theorem</sub></h3>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$라고 하자. $T$가 $\mathcal{L}$의 (의미론적으로) 완전한 이론이고, $T_1$과 $T_2$가 각각 $T$를 확장하는 건전한 $\mathcal{L}_1, \mathcal{L}_2$ 이론일 때, $T_1 \cup T_2$는 $\mathcal{L}_1 \cup \mathcal{L}_2$ 이론으로서 건전하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $T_1 \cup T_2$의 모델을 구축하면 정리가 보여진다.</p>
-
-<p>$T_1, T_2$가 각각 건전하므로, 모델 $\mathfrak{A}_0, \mathfrak{B}_0$를 가진다. $T = T_1 \cap T_2$가 완전하므로, $\mathcal{L}$-퇴화로서의 $\mathfrak{A}_0$와 $\mathfrak{B}_0$는 초등적으로 동등하다. 따라서 초등적 병합 성질에 의해, $\mathcal{L}$-초등적 임베딩 $f_0$와 $\mathcal{L}_2$-초등적 임베딩 $h_0$가 존재하여 다음이 성립한다.</p>
-
-<p><img src="/public/robinson-1.png" style="width: 100%; max-width: 115px; margin: 1em auto" /></p>
-
-<p>이제 $\mathfrak{B}_1$의 $\mathcal{L}$-퇴화를 생각해 보면, 이는 $\mathfrak{A}_0$와 초등적으로 동등하므로, 다시 초등적 병합 성질에 의해 $\mathcal{L}$-초등적 임베딩 $g_0$와 $\mathcal{L}_1$-초등적 임베딩 $k_0$가 존재하여 다음이 성립한다.</p>
-
-<p><img src="/public/robinson-2.png" style="width: 100%; max-width: 127px; margin: 1em auto" /></p>
-
-<p>이 과정을 반복하여 다음의 구조 유도계<sub>directed system of structures</sub>를 얻는다.</p>
-
-<p><img src="/public/robinson-3.png" style="width: 100%; max-width: 285px; margin: 1em auto" /></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>사상</th>
-      <th>성질</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$f, g$</td>
-      <td>$\mathcal{L}$-초등적 임베딩</td>
-    </tr>
-    <tr>
-      <td>$k$</td>
-      <td>$\mathcal{L}_1$-초등적 임베딩</td>
-    </tr>
-    <tr>
-      <td>$h$</td>
-      <td>$\mathcal{L}_2$-초등적 임베딩</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>위 유도계의 모든 모델을 $\mathcal{L}$로 퇴화시키면 $\mathcal{L}$-구조 유도계를 얻는다. 해당 유도계의 쌍대극한<sub>colimit</sub>을 $\mathfrak{C}$라고 하자. $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{A}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 회색으로 표시된 원 유도계의 일부는 모두 $\lbrace  \mathfrak{A}_i \rbrace $ 중 하나로 투사되기 때문이다. 따라서 $\mathfrak{C}$는 $\mathfrak{A}_0$를 초등적으로 임베딩하는 $\mathcal{L}_1$ 구조이다.</p>
-
-<p><img src="/public/robinson-4.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
-
-<p>같은 이유로 $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{B}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 따라서 $\mathfrak{C}$는 $\mathfrak{B}_0$를 초등적으로 임베딩하는 $\mathcal{L}_2$ 구조이다.</p>
-
-<p><img src="/public/robinson-5.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
-
-<p>즉, $\mathfrak{C}$는 $\mathfrak{A}$와 $\mathfrak{B}$를 모두 임베딩하며, 이로부터 $T_1 \cup T_2$의 모델임이 보여졌다. ■</p>
-
-<h3 id="크레이그-보간-정리craig-interpolation-theorem">크레이그 보간 정리<sub>Craig interpolation theorem</sub></h3>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{L}$-문장 $\phi, \psi$에 대해 $\phi \vDash \psi$라면, 어떤 $\mathcal{L}$-문장 $\theta$가 존재하여 $\phi \vDash \theta, \theta \vDash \psi$이다. 또한, $\theta$에 포함된 비논리 기호(상수, 술어, 함수)는 $\phi$와 $\psi$에 공통적으로 포함된다.</p>
-</blockquote>
-
-<p>$\theta$를 $\phi$와 $\psi$의 <strong>크레이그 보간</strong>이라고 부른다.</p>
-
-<p><strong>증명.</strong> 귀류법으로 증명한다. 크레이그 보간이 존재하지 않는다고 가정하자. 그러면 $\phi$는 모델을 가진다. 만약 $\phi$가 모델을 가지지 않는다면 $\perp$가 $\phi, \psi$의 크레이그 보간이기 때문이다. 또한 $\lnot \psi$도 모델을 가진다. 그렇지 않다면 $\top$가 크레이그 보간이기 때문이다.</p>
-
-<p>$\mathcal{L}’$을 $\phi$와 $\psi$에 공통적으로 포함되는 비논리 기호들로 이루어진 언어라고 하자. $\Gamma$를, $\phi \vDash \sigma$이거나 $\lnot \psi \vDash \sigma$인 $\mathcal{L}’$-문장 $\sigma$의 집합이라고 하자.</p>
-
-<p>$\Gamma \cup \lbrace  \phi \rbrace $는 무모순적임을 보이자. 만약 모순적이라면, 콤팩트성 정리에 의해 어떤 $\mathcal{L}’$-문장 $\sigma_1, \sigma_2$가 존재하여 $\phi \vDash \sigma_1, \lnot\psi \vDash \sigma_2$이고 $\lbrace  \sigma_1, \sigma_2, \phi \rbrace $가 모순적이다. 그런데 $\phi \vDash \sigma_1$이므로 $\phi \vDash \lnot\sigma_2$이다. 대우법에 의해 $\lnot\psi\ \vDash \sigma_2$로부터 $\lnot\sigma_2 \vDash \psi$가 따라 나온다. 즉, $\sigma_2$는 $\phi, \psi$의 크레이그 보간이다. 이는 가정에 모순된다.</p>
-
-<p>따라서 $\Gamma \cup \lbrace  \phi \rbrace $는 무모순적이며, 같은 이유로 $\Gamma \cup \lbrace  \lnot\psi \rbrace $ 또한 무모순적이다. 이제 초른의 보조정리를 적용하여, $\overline{\Gamma}$를 다음 $\mathcal{L}’$-이론들의 순서의 극대로 정의한다.</p>
-
-\[\{ \Gamma' : \Gamma \subseteq \Gamma', \Gamma' \cup \{\phi\} \text{ and } \Gamma' \cup \{\lnot \psi\} \text{ are consistent} \}\]
-
-<p>$\overline{\Gamma}$는 완전함을 보이자. 만약 $\overline{\Gamma}$가 완전하지 않다면, 어떤 $\mathcal{L}’$-문장 $\sigma$가 존재하여 $\sigma \notin \overline{\Gamma}$이고, $\overline{\Gamma} \cup \lbrace \sigma, \phi \rbrace $ 또는 $\overline{\Gamma} \cup \lbrace \sigma, \lnot \psi \rbrace $가 무모순적이다.</p>
-
-<p>전자의 경우, 콤팩트성 정리에 의해 어떤 $\overline{\Gamma}$의 문장 $\theta$가 존재하여 $\phi \vDash \theta \rightarrow \lnot \sigma$이다. $\Gamma$의 정의에 의해 $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$이다. 따라서 $\overline{\Gamma} \cup \lbrace  \sigma, \phi \rbrace $는 $\lnot\phi$를 증명한다. 이는 모순이다. 후자의 경우에도 마찬가지 모순이 발생한다. 따라서 $\overline{\Gamma}$는 완전하다.</p>
-
-<p>$\overline{\Gamma}$가 완전하고, $\overline{\Gamma} \cup \lbrace \phi \rbrace , \overline{\Gamma} \cup \lbrace \lnot\psi \rbrace $가 건전하므로, 로빈슨 건전성 정리에 의해 $\overline{\Gamma} \cup \lbrace \phi, \lnot \psi \rbrace $가 건전하다. 그런데 이는 $\phi \vDash \psi$에 모순된다. 따라서 귀류법에 의해 $\phi, \psi$는 크레이그 보간을 가진다. ■</p>
-
-<h3 id="베스-정의-가능성-정리beth-definability-theorem">베스 정의 가능성 정리<sub>Beth definability theorem</sub></h3>
-
-<p>언어 $\mathcal{L}$과, $\mathcal{L}$에 포함되어 있지 않은 술어 $P$를 생각하자. $T$가 $\mathcal{L} \cup \lbrace  P \rbrace $의 이론이라고 하자. $T$를 만족하는 $\mathcal{L}$의 구조 $\mathfrak{A}$를 $\mathcal{L} \cup \lbrace  P \rbrace $로 확장하는 방법이 유일할 때, $T$가 $P$를 <strong>암시적으로 정의<sub>implicitly define</sub></strong>한다고 한다.</p>
-
-<p>이는 다음과 같이 말할 수도 있다. $T(P’)$가 $T$에서 등장하는 모든 $P$를 $P’$으로 바꾼 $\mathcal{L} \cup \lbrace P’ \rbrace $ 이론이라고 하자. $T$가 $P$를 암시적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
-
-\[T \cup T(P') \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow P'(x_1, \dots, x_n)\]
-
-<p>반면 $T$가 $P$를 <strong>명시적으로 정의<sub>explicitly define</sub></strong>한다는 것은 다음을 만족시키는 $\mathcal{L}$-논리식 $\phi$가 존재한다는 것이다.</p>
-
-\[T \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow \phi(x_1, \dots, x_n)\]
-
-<p>예를 들어 보자. $\mathcal{L} = (0, S, +, \cdot)$의 이론 $\mathsf{PA}$에 술어 $P(x, y)$에 관한 공리를 추가한 다음의 이론을 $T$라고 하자.</p>
-
-\[T = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
-
-<p>$T(P’)$은 다음과 같다.</p>
-
-\[T(P') = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P'(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
-
-<p>$T$가 $P$를 암묵적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
-
-\[T \cup T(P') \vDash \forall x, y \big[ P(x, y) \leftrightarrow P'(x, y) \big]\]
-
-<p>이는 귀납 공리꼴로부터 자연스럽게 따라 나온다. 그런데 $P$는 다음과 같이 $T$에서 명시적으로 정의될 수도 있다.</p>
-
-\[\begin{gather}
-T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
-\text{where}\\\\
-\phi(x, y) : \forall z \big[ x + z = S(0) \rightarrow z = y \big]
-\end{gather}\]
-
-<p>이는 우연이 아니다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 언어 $\mathcal{L}$에 대해, $\mathcal{L} \cup \lbrace  P \rbrace $의 이론 $T$가 $P$를 암시적으로 정의하면, $T$는 $P$를 명시적으로 정의한다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $P$가 $n$항 술어라고 하자. $\mathcal{L}$에 새로운 상수 $c_1, \dots, c_n$을 추가한 언어를 $\mathcal{L}’$이라고 하자. $T$가 $P$를 암시적으로 정의하므로,</p>
-
-\[T \cup T(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>이다. 콤팩트성 정리에 의해 어떤 $\mathcal{L} \cup \lbrace  P \rbrace $ 문장 $\psi$가 존재하여, $T \vdash \psi$이고 다음이 성립한다.</p>
-
-\[\psi \land \psi(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>함축 원리를 이용하여 이항하면 다음과 같다.</p>
-
-\[\psi \land P(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>좌변은 $\mathcal{L}’ \cup \lbrace  P \rbrace $의 문장이고, 우변은 $\mathcal{L}’ \cup \lbrace  P’ \rbrace $의 문장이다. 따라서 크레이그 보간 정리에 의해 $\mathcal{L}$-논리식 $\theta$가 존재하여 다음이 성립한다.</p>
-
-\[\begin{gather}
-\psi \land P(c_1, \dots, c_n) \vDash \theta(c_1, \dots, c_n), \\\\
-\theta(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)
-\end{gather}\]
-
-<p>다시 이항하고 $P’$을 $P$로 치환하면,</p>
-
-\[\begin{gather}
-\psi \vDash P(c_1, \dots, c_n) \rightarrow \theta(c_1, \dots, c_n), \\\\
-\psi \vDash \theta(c_1, \dots, c_n) \rightarrow P(c_1, \dots, c_n)
-\end{gather}\]
-
-<p>따라서 $\theta$는 $P$를 명시적으로 정의한다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
+  
+  
+  
+  
+  
   
 </div>
 
 <div class="pagination">
   
   <a
-    class="pagination-item older lang-ko"
-    href="/page3"
-    >이전 글</a
-  >
-  <a
-  class="pagination-item older lang-en"
-  href="/page3"
+  class="pagination-item older"
+  href="/page3/"
   >Previous</a
 >
     
-  <a class="pagination-item newer lang-ko" href="/">다음 글</a>
   <a class="pagination-item newer lang-en" href="/">Next</a>
 
    
@@ -1150,14 +470,6 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 
   // 배너 이미지 로드 후 애니메이션 트리거 스크립트
   document.addEventListener("DOMContentLoaded", () => {
-
-    const lang = localStorage.getItem("lang") || "ko";
-  document.querySelectorAll('.post[data-lang]').forEach(post => {
-    if (post.dataset.lang === lang) {
-      post.style.display = '';
-    }
-  });
-
     const bannerImages = document.querySelectorAll(
       '.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'
     ); // 애니메이션 시작을 기다릴 이미지들
@@ -1212,9 +524,15 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
       langToggle.addEventListener("change", () => {
         const newLang = langToggle.checked ? "en" : "ko";
         localStorage.setItem("lang", newLang);
-        document.querySelectorAll('.post[data-lang]').forEach(post => {
-          post.style.display = post.dataset.lang === newLang ? '' : 'none';
-        });
+          // 페이지 리디렉션
+  const isOnRoot = window.location.pathname === "/";
+  const isOnIndexEn = window.location.pathname.includes("/en");
+
+  if (newLang === "en") {
+    window.location.href = "/en";
+  } else {
+    window.location.href = "/";
+  }
       });
     }
   });

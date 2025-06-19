@@ -1,0 +1,242 @@
+---
+layout: default
+title: Main
+permalink: /en
+pagination:
+  enabled: true
+  per_page: 5
+---
+
+<head>
+  <style>
+    .fade-rise-1 {
+      opacity: 0;
+      transform: translateY(20px);
+      /* animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.2s; */
+    }
+
+    .fade-rise-2 {
+      opacity: 0;
+      transform: translateY(20px);
+      /* animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.4s; */
+    }
+
+    .fade-rise-3 {
+      opacity: 0;
+      transform: translateY(20px);
+      /* animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.6s; */
+    }
+
+    /* 이미지가 로드된 후 추가될 클래스에 animation 속성 추가 */
+    .fade-rise-1.is-loaded {
+      animation: fadeRise 0.8s ease-out forwards 0.2s;
+    }
+    .fade-rise-2.is-loaded {
+      animation: fadeRise 0.8s ease-out forwards 0.4s;
+    }
+    .fade-rise-3.is-loaded {
+      animation: fadeRise 0.8s ease-out forwards 0.6s;
+    }
+
+    @keyframes fadeRise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
+  </style>
+</head>
+
+{% if paginator.page == 1 %}
+<div
+  style="
+    min-height: 600px;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    z-index: -1;
+    justify-content: center;
+  "
+>
+  <div style="margin: auto">
+    <img
+    class="fade-rise-1"
+    src="/public/banner.png"
+    style="max-width: calc(min(85vw, 350px)); margin: 0 auto"
+  />
+  <img
+    class="fade-rise-2"
+    src="/public/banner-2.png"
+    style="max-width: calc(min(85vw, 400px)); margin: 1.5em auto 1em auto"
+  />
+    <p class="fade-rise-3">
+      A blog on logic, philosophy, mathematics, et cetra.<br />
+      You can read my most recent posts below.
+    </p>
+  </div>
+</div>
+<div style="margin-top: calc(max(91vh, 500px))"></div>
+{% endif %}
+
+<div class="posts">
+  {% for post in paginator.posts %}
+  {% if post.lang == "en" %}
+    <div class="post fade-in-section" data-lang="{{ post.lang | default: 'ko'}}" style="display: none">
+      <h1 class="post-title">
+        <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
+      </h1>
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+    {% if post.tags %}
+    <div class="tag-container">
+      {% for tag in post.tags %}
+      <div class="tag" onclick="location.href='/tags/{{ tag | slugify }}/'">
+        {{ tag }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %} {{ post.content }}
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+  <a
+  class="pagination-item older"
+  href="{{ paginator.next_page_path | relative_url }}"
+  >Previous</a
+>
+  {% else %}
+  <span class="pagination-item older">Previous</span>
+
+  {% endif %} {% if paginator.previous_page %} {% if paginator.page == 2 %}
+  <a class="pagination-item newer lang-en" href="{{ '/' | relative_url }}">Next</a>
+
+  {% else %}
+  <a
+  class="pagination-item newer lang-en"
+  href="{{ paginator.previous_page_path | relative_url }}"
+  >Next</a
+>
+  {% endif %} {% else %}
+  <span class="pagination-item newer lang-en">Next</span>
+  {% endif %}
+</div>
+
+<script>
+  const faders = document.querySelectorAll(".fade-in-section");
+
+  const appearOptions = {
+    // threshold: 0.05,
+    // rootMargin: "0px 0px 50px 0px",
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+
+  // 배너 이미지 로드 후 애니메이션 트리거 스크립트
+  document.addEventListener("DOMContentLoaded", () => {
+    const bannerImages = document.querySelectorAll(
+      '.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'
+    ); // 애니메이션 시작을 기다릴 이미지들
+    const elementsToAnimate = document.querySelectorAll(
+      ".fade-rise-1, .fade-rise-2, .fade-rise-3"
+    ); // 애니메이션 될 요소들
+    let loadedImagesCount = 0;
+    const totalImagesToWait = bannerImages.length;
+
+    // 기다릴 이미지가 없으면 즉시 애니메이션 시작
+    if (totalImagesToWait === 0) {
+      elementsToAnimate.forEach((el) => el.classList.add("is-loaded"));
+      return;
+    }
+
+    const checkAllImagesLoaded = () => {
+      if (loadedImagesCount === totalImagesToWait) {
+        // 모든 이미지가 로드되면 애니메이션 클래스 추가
+        elementsToAnimate.forEach((el) => el.classList.add("is-loaded"));
+      }
+    };
+
+    bannerImages.forEach((img) => {
+      // 이미지가 캐시되어 이미 로드 완료된 경우
+      if (img.complete) {
+        loadedImagesCount++;
+      } else {
+        // 이미지 로드 완료 이벤트 리스너 추가
+        img.addEventListener("load", () => {
+          loadedImagesCount++;
+          checkAllImagesLoaded(); // 이미지 로드될 때마다 체크
+        });
+        // 에러 발생 시 처리 (선택 사항)
+        img.addEventListener("error", () => {
+          console.error("Failed to load image:", img.src);
+          // 에러 발생 시에도 애니메이션을 시작하려면 여기서 loadedImagesCount를 증가시키거나 다른 로직 추가
+          // 현재 로직에서는 에러 시 카운트가 증가하지 않아 모든 이미지 로드되지 않으면 애니메이션 안 시작
+          loadedImagesCount++; // 에러 발생 시에도 카운트 증가 (모든 이미지를 처리했음을 알림)
+          checkAllImagesLoaded();
+        });
+      }
+    });
+
+    // 모든 이미지에 대해 complete 상태를 확인하거나 리스너를 설정한 후,
+    // 이미 모든 이미지가 로드 완료 상태였을 경우를 대비해 마지막으로 체크
+    checkAllImagesLoaded();
+
+
+    // Listen for language toggle changes and update post visibility dynamically
+    const langToggle = document.getElementById("lang-toggle");
+    if (langToggle) {
+      langToggle.addEventListener("change", () => {
+        const newLang = langToggle.checked ? "en" : "ko";
+        localStorage.setItem("lang", newLang);
+          // 페이지 리디렉션
+  const isOnRoot = window.location.pathname === "/";
+  const isOnIndexEn = window.location.pathname.includes("/en");
+
+  if (newLang === "en") {
+    window.location.href = "/en";
+  } else {
+    window.location.href = "/";
+  }
+      });
+    }
+  });
+</script>
