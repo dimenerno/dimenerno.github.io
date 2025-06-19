@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     초한귀납과 초한재귀 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2024/12/05/transfinite-recursion" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+                                                                                                                                              
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">초한귀납과 초한재귀</h1>
+  <span class="post-date">05 Dec 2024</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+    </div>
+  
+  <h3 id="1-초한귀납법">1. 초한귀납법</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $P$가 서수 위에서 정의된 속성이고 임의의 $\alpha \in \mathrm{Ord}$에 대해</p>
+
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha)\]
+
+  <p>가 성립할 때, $P$는 모든 서수에 대해 참이다.</p>
+</blockquote>
+
+<p><em>Remark.</em> $P$의 정의역인 $\mathrm{Ord}$는 집합이 아닌 진모임(proper class)이므로 “술어” 대신 “속성”이란 표현을 사용한다.</p>
+
+<p><strong>증명.</strong> 서수가 정렬 순서라는 사실과 귀류법을 사용한다.</p>
+
+<p>$\lnot P(\lambda)$인 $\lambda$가 존재한다고 하자. $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$는 공집합이 아닌 정렬 집합이므로 최소 원소 $\alpha_0$가 존재한다. 이때 $\forall \beta &lt; \alpha_0 : P(\beta)$이므로 가정에 의해 $P(\alpha_0)$가 되어 모순이다. ■</p>
+
+<p><strong>응용.</strong> 폰 노인만 계층에서 $V_\alpha$는 추이적이다. 따라서 $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$ 대신 $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$로 정의할 수 있다.</p>
+
+<h3 id="2-초한재귀적-정의">2. 초한재귀적 정의</h3>
+
+<p><em>Motivation.</em> 자연수의 재귀적 정의를 생각해 보자. $n$개의 집합 $x_1, \dots , x_n$이 주어졌을 때 집합을 출력하는 함수 $g$가 존재한다면 다음과 같이 $f: \mathbb{N} → V$을 정의할 수 있을 것이다.</p>
+
+\[f(n) = g(f(0), \dots, f(n - 1))\]
+
+<p>문제는 $g$가 고정된 수의 매개변수만을 가질 수 있다는 것이다. 따라서 다음과 같이 $g$의 매개변수를 순서쌍으로 묶는다.</p>
+
+\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
+
+<p>이 순서쌍은 $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$과 같이 표현할 수 있다. 즉,</p>
+
+\[f(n) = g(f \upharpoonright n).\]
+
+<p>이를 서수에 대해서 일반화하면 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $G: V → V$가 모임함수(class function)이라고 하자. 다음을 만족하는 모임함수 $F: \mathrm{Ord} → V$가 존재한다.</p>
+
+\[F(\alpha) = G(F \upharpoonright \alpha)\]
+</blockquote>
+
+<p><strong>증명.</strong> 초한귀납법을 겁나게 쓰면 된다. (불친절해서 ㅈㅅ)</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     완전성 정리와 뢰벤하임-스콜렘 정리 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/04/10/completeness-theorem" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+                                                                                                                                              
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">완전성 정리와 뢰벤하임-스콜렘 정리</h1>
+  <span class="post-date">10 Apr 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'" >논리학</div>
+      
+    </div>
+  
+  <p>괴델의 완전성 정리와 뢰벤하임-스콜렘 정리는 수리논리학의 가장 기본적인 정리들이다. 그래도 기본기를 다져보는 김에, 이 정리들의 증명을 복습해 보았다. 이 글에서 $T$는 언어 $\mathcal{L}$의 1차 논리 이론으로 간주한다.</p>
+
+<h2 id="괴델의-완전성-정리">괴델의 완전성 정리</h2>
+
+<blockquote>
+  <p><strong>괴델의 완전성 정리.</strong> $T \vDash \phi$라면 $T \vdash \phi$이다.</p>
+</blockquote>
+
+<h3 id="증명">증명</h3>
+
+<p>다음의 동치인 진술을 증명한다. (연습문제: 왜 동치인가?)</p>
+
+<blockquote>
+  <p>$T$가 무모순적인<sub>consistent</sub> 이론이라면, $T$는 모델을 가진다.</p>
+</blockquote>
+
+<h4 id="1-mathcall을-스콜렘-언어-mathcall_s로-확장하기">1. $\mathcal{L}$을 스콜렘 언어 $\mathcal{L}_S$로 확장하기</h4>
+
+<p>$\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $T$에 상수 $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ ($\alpha$는 서수)를 추가한 언어를 $\mathcal{L}_S$라고 하자. 여기서 첨자 $S$는 각 상수가 <strong>스콜렘 상수<sub>Skolem constant</sub></strong>의 역할을 담당할 것임을 의미한다.</p>
+
+<h4 id="2-t를-헨킨-이론-t_h로-확장하기">2. $T$를 헨킨 이론 $T_H$로 확장하기</h4>
+
+<p>$\mathcal{L}_S$의 명제 중 하나의 자유변수를 가지는 명제들의 집합의 크기는 $\kappa$와 같으므로, 정렬 원리로부터 $\lbrace  P_\alpha \rbrace _{\alpha \in \kappa}$와 같이 나타낼 수 있다. 이로부터 다음의 문장 집합을 정의한다.</p>
+
+\[\Sigma = \{ Q_\alpha := \exists x P_\alpha \rightarrow P_\alpha(c_\lambda) \mid \alpha \in \kappa \}\]
+
+<p>여기서 $c_\lambda$는 $P_\alpha$와 $Q_\beta \; (\beta &lt; \alpha)$에 등장하지 않는 상수 중 첨자가 최소인 상수이다(그러한 상수가 존재함은 서수가 정렬이라는 사실로부터 보장된다). 이제 $T_H = T \cup \Sigma$로 정의한다. $T_H$를 <strong>헨킨 이론<sub>Henkin theory</sub></strong>이라고 하고, $Q_\alpha$를 헨킨 공리라고 한다.</p>
+
+<h4 id="3-t_h를-극대적으로-무모순적인-이론-overlinet_h로-확장하기">3. $T_H$를 극대적으로 무모순적인 이론 $\overline{T_H}$로 확장하기</h4>
+
+<blockquote>
+  <p><strong>린덴바움 보조정리.</strong> $T$가 무모순적인 이론일 때, $T$를 확장하는 극대적으로 무모순적인<sub>maximally consistent</sub> 이론 $\overline{T}$가 존재한다. 즉, $T \subseteq T’$이고 임의의 $\mathcal{L}$ 문장 $\phi$에 대해 $\phi \in \overline{T}$거나 $\lnot\phi \in \overline{T}$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T$를 확장하는 무모순적인 이론들의 모임에 $\subseteq$로 순서 관계를 준 뒤, 초른의 보조정리를 적용한다.</p>
+
+<p>$T$가 무모순적인 이론일 때 $T_H$ 또한 무모순적임을 쉽게 보일 수 있다. 따라서 린덴바움 보조정리에 의해 $T_H$를 확장하는 극대적으로 무모순적인 이론 $\overline{T_H}$가 존재한다.</p>
+
+<h4 id="4-overlinet_h의-표준적canonical-모델-정의하기">4. $\overline{T_H}$의 표준적<sub>canonical</sub> 모델 정의하기</h4>
+
+<p>$c_\alpha \sim c_\beta$를 $(c_\alpha = c_\beta) \in \overline{T_H}$일 때 성립하는 관계로 정의하자. $\overline{T_H}$가 무모순적인 이론이라는 사실로부터 $\sim$이 동치 관계임을 보일 수 있다. 따라서 상수들의 동치류 $[c_\alpha]$가 잘 정의된다. 이제 다음과 같이 $\mathcal{L}_S$의 구조 $\mathfrak{M}$을 정의한다.</p>
+
+<ol>
+  <li>상수: $c_\alpha^{\mathfrak{M}} = [c_\alpha]$</li>
+  <li>술어: $R^{\mathfrak{M}}(c_{\alpha_1}^\mathfrak{M}, \dots, c_{\alpha_n}^{\mathfrak{M}}) \iff \overline{T_H} \vdash R(c_{\alpha_1}, \dots, c_{\alpha_n}) $</li>
+  <li>함수: $f(c_\alpha^\mathfrak{M}) = c_\beta^\mathfrak{M} \iff T_H \vdash \exists x (f(c_\alpha) = x) \rightarrow f(c_\alpha) = c_\beta$</li>
+</ol>
+
+<p>$\overline{T_H}$가 극대적으로 무모순적이므로 2가 잘 정의되고, 헨킨 이론이므로 3이 잘 정의된다. 따라서 $\mathfrak{M}$이 잘 정의되며, $\mathfrak{M}$이 $\overline{T_H}$의 모델임을 쉽게 확인할 수 있다. 그리고 $\mathfrak{M}$은 $T$의 모델이기도 하므로, $T$는 모델을 가진다. ■</p>
+
+<p><strong>Remark 1.</strong> 완전성 정리의 증명은 정렬 원리와 초른의 보조정리를 사용한다는 점에서 선택 공리에 의존적이다. 쾨니히 보조정리나 의존적 선택 공리와 같이 더 약한 유형의 선택 공리로도 증명할 수 있긴 하다.</p>
+
+<p><strong>Remark 2.</strong> <strong>콤팩트성 정리</strong>가 완전성 정리의 따름정리로서 얻어진다. (연습문제)</p>
+
+<p><strong>Remark 3.</strong> 완전성 정리의 증명에서 구축하는 모델의 크기는 $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$를 넘지 않는다. 마지막 단계에서 동치류를 취하므로 $\kappa$와 같다는 보장은 없다.</p>
+
+<h2 id="뢰벤하임-스콜렘-정리">뢰벤하임-스콜렘 정리</h2>
+
+<blockquote>
+  <p><strong>뢰벤하임-스콜렘 정리.</strong> $T$가 무한 모델을 가진다고 하자. 임의의 $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$에 대해, 크기가 $\kappa$인 $T$의 모델이 존재한다.</p>
+</blockquote>
+
+<h3 id="증명-1">증명</h3>
+
+<h4 id="하향-뢰벤하임-스콜렘-정리">하향 뢰벤하임-스콜렘 정리</h4>
+
+<blockquote>
+  <p><strong>하향 뢰벤하임-스콜렘 정리.</strong> $T$는 크기가 $\mathrm{max}(\aleph_0, |\mathcal{L}|)$을 넘지 않는 모델을 가진다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> Remark 2에서 즉시 얻어진다. □</p>
+
+<h4 id="상향-뢰벤하임-스콜렘-정리">상향 뢰벤하임-스콜렘 정리</h4>
+
+<blockquote>
+  <p><strong>상향 뢰벤하임-스콜렘 정리.</strong> $T$가 무한 모델을 가진다고 하자. 임의의 무한 기수 $\kappa$에 대해, 크기가 $\kappa$ 이상인 $T$의 모델이 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathcal{L}’$을 $\mathcal{L}$에 상수 $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$를 추가한 언어로 정의하자. 다음의 $\mathcal{L}’$-문장 집합을 정의하자.</p>
+
+\[\Sigma = \{ c_\alpha \neq c_\beta : \alpha, \beta \in \kappa, \alpha \neq \beta \}\]
+
+<p>$T’ = T \cup \Sigma$라고 하자. <em>$T$가 무한 모델 $\mathfrak{M}$을 가지므로,</em> 임의의 $T’$의 유한 부분이론은 $\mathfrak{M}$에 의해 만족된다. 따라서 콤팩트성 정리에 의해 $T’$은 무모순적이며, 완전성 정리에 의해 모델을 가진다. $\Sigma$는 $T’$의 모델이 적어도 $\kappa$개의 원소를 가질 것을 요구하므로, $T’$은 크기가 $\kappa$ 이상인 모델을 가지며, 이에 따라 $T$ 또한 크기가 $\kappa$ 이상인 모델을 가진다. □</p>
+
+<h4 id="뢰벤하임-스콜렘-정리-1">뢰벤하임-스콜렘 정리</h4>
+
+<p>$\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $\mathcal{L}’$과 $T’$을 앞선 바와 같이 정의한다.</p>
+
+<p>$\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$이므로 하향 뢰벤하임-스콜렘 정리에 의해 $T’$은 크기가 $\kappa$를 넘지 않는 모델을 가진다. 그런데 상향 뢰벤하임-스콜렘 정리의 증명에서 지적했듯이 $T’$의 모든 모델은 크기가 $\kappa$ 이상이다. 따라서 $T’$은 크기가 정확히 $\kappa$인 모델을 가지며, 이에 따라 $T$ 또한 크기가 정확히 $\kappa$인 모델을 가진다. ■</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     대수와 측도의 정의 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/02/24/algebra-measure" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+                                                                                                                                              
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">대수와 측도의 정의</h1>
+  <span class="post-date">24 Feb 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/측도론/'" >측도론</div>
+      
+    </div>
+  
+  <h2 id="1-비탈리-정리">1. 비탈리 정리</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mu$가 집합 $X$ 위의 <strong>측도<sub>measure</sub></strong>라는 것은 다음을 만족한다는 것이다.</p>
+
+  <ol>
+    <li>$\mu(\varnothing) = 0$</li>
+    <li>쌍으로 서로소<sub>pairwise disjoint</sub>인 가산 집합족 $\lbrace A_n \rbrace$에 대해, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$</li>
+  </ol>
+</blockquote>
+
+<p>유감스럽게도 $X = \mathbb{R}$일 때, 측도 $\mu$는 실수의 모든 부분집합에 대해서 정의될 수 없다.</p>
+
+<blockquote>
+  <p><strong>비탈리 정리.</strong> 다음을 모두 만족하는 $\mathbb{R}$의 측도 $\mu$는 존재하지 않는다.</p>
+
+  <ol>
+    <li>항등적으로 0이 아니다.</li>
+    <li>평행이동에 대해 보존적이다. 즉, 임의의 $r \in \mathbb{R}$에 대해 $\mu(A + r) = \mu(A)$.</li>
+    <li>$\operatorname{dom} \mu = \mathcal{P}(\mathbb{R})$</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 그러한 측도 $\mu$가 존재한다고 가정하자. $\mathbb{R}$ 위에서 다음의 동치 관계를 정의하자.</p>
+
+\[x \sim y \iff x - y \in \mathbb{Q}\]
+
+<p>선택 공리에 의해 $[0, 1]/{\sim}$의 선택 함수 $\iota$가 존재한다. $V = \operatorname{im} \iota$라고 하자. $V$를 <strong>비탈리 집합<sub>Vitali set</sub></strong>이라고 부른다. 예를 들어 $V = \lbrace 0.1, \pi - 3, \sqrt{2} - 1, \dots \rbrace$이다. $\mu$는 $V$에서 정의될 수 없음을 보인다.</p>
+
+<p>$V$의 정의에 의해, $q \in \mathbb{Q}$에 대해 $V$와 $V + q$는 서로소이다. 또한 $[0, 1] \subset \bigcup_{q \in \mathbb{Q}} (V + q) \subset [-1, 3]$이다. 따라서,</p>
+
+\[1 \leq \sum_{q \in \mathbb{Q}}\mu(V + q) \leq 4.\]
+
+<p>그런데 $\mu(V + q) = \mu(V)$이므로, $\mu(V) = 0$이면 왼쪽 부등식이 성립하지 않고 $\mu(V) &gt; 0$이면 오른쪽 부등식이 성립하지 않는다. 따라서 모순이다. ■</p>
+
+<h2 id="2-sigma-대수">2. $\sigma$-대수</h2>
+
+<p>따라서 올바른 측도를 구축하기 위해서는 측도의 정의역을 적절히 제한할 필요가 있다. 이에 대수의 개념을 도입한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 집합 $X$의 <strong>대수<sub>algebra</sub></strong> $\mathcal{A}_0$는 다음을 만족하는 집합족이다.</p>
+
+  <ol>
+    <li>$\varnothing, X \in \mathcal{A}_0$</li>
+    <li>$A \in \mathcal{A}_0 \implies A^c \in \mathcal{A}_0$</li>
+    <li>$A, B \in \mathcal{A}_0 \implies A \cup B \in \mathcal{A}_0$</li>
+  </ol>
+</blockquote>
+
+<p><em>Remark.</em> 2번 공리와 드모르간의 법칙에 의해, 3번 공리는 $A \cap B \in \mathcal{A}_0$ 또한 시사한다.</p>
+
+<p>대수의 3번 정의를 가산 합집합으로 강화하면 $\sigma$-대수의 정의를 얻는다. 즉,</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 집합 $X$의 <strong>$\sigma$-대수</strong> $\mathcal{A}$는 다음을 만족하는 대수이다.</p>
+
+  <ol>
+    <li>$\lbrace  A_n \rbrace _{n \in \mathbb{N}} \subset \mathcal{A}_0 \implies \bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $\lbrace \mathcal{A}_i \rbrace_{i \in I}$가 $X$의 $\sigma$-대수들의 모임이라면 $\bigcap_{i \in I}\mathcal{A}_i$ 또한 $X$의 $\sigma$-대수이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\sigma$-대수의 정의로부터 쉽게 증명할 수 있다. 그런데 이렇게만 적으면 재미 없으니까, 조금 독특한 증명을 남긴다. <strong>워시-타르스키 정리<sub>Łoś-Tarski theorem</sub></strong>에 따르면 1차 이론이 교집합에 대해 보존적일 필요충분조건은 1차 이론의 모든 문장이 $\Pi_1$ 문장인 것이다. 그리고 $\sigma$-대수의 세 공리는 모두 $\Pi_1$ 문장이므로, $\sigma$-대수는 교집합에 대해 보존적이다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $\mathcal{C}$가 $X$의 부분집합으로 이루어진 집합족일 때, $\mathcal{C}$를 포함하는 가장 작은 $\sigma$-대수가 존재한다. 그러한 $\sigma$-대수를 $\sigma(\mathcal{C})$와 같이 적는다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is an algebra containing } \mathcal{C} \rbrace$라고 하자. $\mathcal{P}(X) \in \mathcal{S}$이므로 $\mathcal{S}$는 공집합이 아니다. $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$이다.</p>
+
+<p>대표적인 $\sigma$-대수의 예시로, 보렐 $\sigma$-대수를 살펴보자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{G}$가 $\mathbb{R}$의 열린 집합들의 집합족이라고 하자. $\sigma(\mathcal{G})$를 <strong>보렐 $\sigma$-대수<sub>Borel $\sigma$-algebra</sub></strong>라고 하며, $\mathcal{B}$와 같이 적는다.</p>
+</blockquote>
+
+<p>보렐 $\sigma$-대수는 <strong>보렐 위계<sub>Borel hierarchy</sub></strong>를 통해서 이해할 수도 있다. $\Sigma_1$을 열린 집합들의 모임, $\Pi_1$을 닫힌 집합들의 모임이라고 하자. 다음과 같이 정의한다.</p>
+
+<ul>
+  <li>$\Delta_n = \Sigma_n \cap \Pi_n$</li>
+  <li>$\Sigma_{n + 1} = \lbrace S : \exists \lbrace P_n \rbrace _{n \in \mathbb{N}} \subset \Pi_n \; S = \bigcup_{n \in \mathbb{N}} P_n \rbrace$</li>
+  <li>$\Pi_n = \lbrace P : \exists S \in \Sigma_n \; P = S^c \rbrace$</li>
+</ul>
+
+<p>즉 $\Sigma_2 = F_\sigma$, $\Pi_2 = G_\delta$이다. 합집합을 $\exists$, 교집합을 $\forall$로 생각했을 때 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 정의의 형태가 유사함에 주목하라.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{B} = \Sigma_{\omega_1} = \Pi_{\omega_1} = \Delta_{\omega_1}$</p>
+</blockquote>
+
+<p><strong>증명.</strong> 생략. 하지만 직관적으로 이해할 수 있다. $\mathcal{B}$는 가산 교집합과 가산 합집합, 그리고 여집합에 대해 닫혀 있어야 하므로 모든 가산 서수 $\alpha$에 대해 $\Sigma_\alpha, \Pi_\alpha, \Delta_\alpha \subset \mathcal{B}$이다. 이 사실로부터 초한 귀납을 취해 정리를 얻는다. ■</p>
+
+<p>어떤 집합 위의 대수와 예비측도라는 것이 주어졌을 때, 이로부터 측도를 정의하는 방법이 알려져 있다. 이 방법을 카라테오도리 방법<sub>Carathéodory method</sub>이라고 부른다. 예비측도는 구성하기가 매우 쉽기 때문에, 이 방법을 이용하면 측도를 아주 쉽게 구성할 수 있다. 카라테오도리 방법에 대해서는 <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">다음 글</a>에서 알아본다.</p>
+
+</div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3 class="lang-ko">관련 글</h3>
+  <h3 class="lang-en">Related Posts</h3>
+  <ul>
+    
+      
+      
+        <li><a href="/2025/02/25/caratheodory">카라테오도리 정리를 이용한 측도의 구성</a></li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

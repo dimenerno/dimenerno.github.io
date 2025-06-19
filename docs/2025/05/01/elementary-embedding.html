@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     준동형 사상, 임베딩, 초등적 임베딩 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/05/01/elementary-embedding" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+                                                                                                                                              
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">준동형 사상, 임베딩, 초등적 임베딩</h1>
+  <span class="post-date">01 May 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'" >논리학</div>
+      
+      <div class="tag" onclick="location.href='/tags/모델론/'" >모델론</div>
+      
+    </div>
+  
+  <p>이 글에서는 편의를 위해 술어와 함수를 별도의 대상으로 생각하는 대신, 함수식 $f(a) = c$를 이항 술어 $F(a, c)$로 환원하는 접근을 택한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}, \mathfrak{B}$가 언어 $\mathcal{L}$의 구조라고 하자. 다음을 만족하는 사상 $f: \mathfrak{A} \to \mathfrak{B}$을 <strong>준동형 사상<sub>homomorphism</sub></strong>이라고 부른다. $R$이 $\mathcal{L}$의 관계일 때, 임의의 $a_1, \dots, a_n \in \mathfrak{A}$에 대해,</p>
+
+\[R^\mathfrak{A}(a_1, \dots, a_n) \implies R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
+
+  <p>이다.</p>
+
+  <p>추가로, 준동형사상 $f$가 단사이고 다음을 만족할 때 $f$를 <strong>임베딩<sub>embedding</sub></strong>이라고 부른다.</p>
+
+\[R^\mathfrak{A}(a_1, \dots, a_n) \iff R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
+</blockquote>
+
+<p>단사 준동형사상이라고 해서 임베딩인 것은 아니다. 일례로 하나의 이항 관계 $&lt;$를 가지는 언어 $\mathcal{L}$의 다음의 두 구조를 보자. $&lt;$를 만족시키는 대상은 화살표로 표시되었다. 즉, $b_1 &lt;^\mathfrak{B} b_2$이다.</p>
+
+<p><img src="/public/model-injective-vs-embedding.png" style="width: 100%; max-width: 500px; margin: 1.5em auto;" /></p>
+
+<p>$\mathfrak{A}$의 원소들은 $&lt;^\mathfrak{A}$를 만족시키는 경우가 없으므로 $f: a_1 \mapsto b_1, a_2 \mapsto b_2$는 자명하게 준동형사상이며, 단사이다. 그러나 $f$는 임베딩이 아니다. $f$가 임베딩이라면 $b_1 &lt;^\mathfrak{B} b_2$으로부터 $a_1 &lt;^\mathfrak{A} a_2$가 성립해야 하기 때문이다. 즉, 임베딩은 $\mathfrak{A}$의 원소들뿐 아니라 원소들 간의 관계까지 그대로 $\mathfrak{B}$에 대응시켜야 한다. 이런 면에서 임베딩은 범주론에서의 포화된 함자<sub>full functor</sub>와 비슷하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 언어 $\mathcal{L}$의 구조라고 하자. $\mathcal{L}_\mathfrak{A}$를 $\mathcal{L}$에 $\mathfrak{A}$의 정의역 크기만큼의 상수를 추가한 언어로 정의한다.</p>
+</blockquote>
+
+<p>페아노 산술로 예를 들자면, $\mathcal{L} = (0, S, +)$이고 $\mathfrak{A}$가 산술의 표준 모형일 때, $\mathcal{L}_\mathfrak{A} = (0, 1, 2, 3, \dots, S, +)$이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-원자명제들의 집합을 $\Delta_\mathfrak{A}^+$로 적는다. 즉,</p>
+
+\[\Delta_\mathfrak{A}^+ = \{ R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
+
+  <p>추가로, $\Delta_\mathfrak{A}^+$에다 $\mathfrak{A}$가 만족시키지 않는 모든 $\mathcal{L}$-원자명제들의 부정까지 추가한 집합을 $\Delta_\mathfrak{A}$로 적는다. 즉,</p>
+
+\[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
+</blockquote>
+
+<p>$\Delta$라는 표기법은 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 관련이 있다.</p>
+
+<p>$\Delta_\mathfrak{A}^+$에 빠진 원자명제들의 부정을 추가한 것이 곧 $\Delta_\mathfrak{A}$이기 때문에, 두 집합이 내포하는 정보량은 사실상 같다. 그럼에도 두 집합을 구분하여 정의하는 것은 다음의 정리 때문이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자.</p>
+
+  <ol>
+    <li>단사 준동형사상 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
+    <li>임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p>즉, $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$를 만족할 경우 $\mathfrak{B}$가 원자명제들을 ‘과도하게’ 만족시켜서, $\mathfrak{A}$가 $\mathfrak{B}$로 임베딩되지 못할 가능성이 있다. 그러나 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$를 만족할 경우, $\mathfrak{B}$가 만족시킬 수 있는 원자명제에 한계가 걸리기 때문에 임베딩 가능성이 보장된다.</p>
+
+<p><a href="https://dimenerno.github.io/2025/04/17/los-tarski/">이전 글</a>에서 <strong>초등적 부분모델</strong>이라는 개념을 소개한 바 있다. 이로부터 다음의 개념을 정의할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $f: \mathfrak{A} \to \mathfrak{B}$가 임베딩이고, $f[\mathfrak{A}]$가 $\mathfrak{B}$의 초등적 부분모델일 때, $f$를 <strong>초등적 임베딩</strong>이라고 한다.</p>
+</blockquote>
+
+<p>초등적 임베딩과 관련된 문장 집합은 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-명제들의 집합을 $E(\mathfrak{A})$로 적는다. 즉,</p>
+
+\[E(\mathfrak{A}) = \{ \phi : \mathfrak{A} \vDash \phi \}\]
+</blockquote>
+
+<p>$E(\mathfrak{A})$가 $\Delta_\mathfrak{A}$와 가장 구별되는 특징은 양화사가 있는 문장 또한 포함한다는 것이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. 초등적 임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $E(\mathfrak{A})$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</p>
+</blockquote>
+
+<p>마지막으로 다음의 문장 집합을 언급할 만하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합을 $\mathrm{Th}(\mathfrak{A})$라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$와 $\mathfrak{B}$가 초등적으로 동등할 필요충분조건은 $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$인 것이다.</p>
+</blockquote>
+
+<p>사실 이는 초등적 동등성의 정의나 다름이 없어서 정리라고 부르기는 무색하지만, 이 글에서 소개한 나머지 정리들과 일관성을 유지하기 위해 소개하였다.</p>
+
+<p>표로 정리하면 이렇다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>정의</th>
+      <th>예시</th>
+      <th>사상</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$\Delta_\mathfrak{A}^+$</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제</td>
+      <td>$0 &lt; 1$</td>
+      <td>전사 준동형</td>
+    </tr>
+    <tr>
+      <td>$\Delta_\mathfrak{A}$</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제</td>
+      <td>$\lnot(1 &lt; 0)$</td>
+      <td>임베딩 (부분모델)</td>
+    </tr>
+    <tr>
+      <td>$\mathrm{Th}(\mathfrak{A})$</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제</td>
+      <td>$\forall x \exists y (x &lt; y)$</td>
+      <td>초등적 동등성</td>
+    </tr>
+    <tr>
+      <td>$E(\mathfrak{A})$</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제</td>
+      <td>$\not \exists x (x &lt; 0)$</td>
+      <td>초등적 임베딩 (초등적 부분모델)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>예를 들어 $\mathfrak{A} = (\mathbb{N}, &lt;)$은 $\mathfrak{B} = (\mathbb{Z}, &lt;)$에 임베딩되지만, 초등적으로 임베딩되지는 않는다. $\mathfrak{B}$가 $E(\mathfrak{A})$의 문장인 $\not \exists x (x &lt; 0)$을 만족하지 않기 때문이다.</p>
+
+</div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3 class="lang-ko">관련 글</h3>
+  <h3 class="lang-en">Related Posts</h3>
+  <ul>
+    
+      
+      
+        <li><a href="/2025/04/17/los-tarski">워시-타르스키 보존 정리</a></li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

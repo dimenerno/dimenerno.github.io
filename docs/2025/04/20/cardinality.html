@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     기수의 정의에 관한 노트 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/04/20/cardinality" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+                                                                                                                                              
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">기수의 정의에 관한 노트</h1>
+  <span class="post-date">20 Apr 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+    </div>
+  
+  <blockquote>
+  <p><strong>정의.</strong> $X$에서 $Y$로 가는 단사 사상이 존재할 때, $|X| \leq |Y|$라고 적는다. 전단사 사상이 존재할 때, $|X| = |Y|$라고 적는다.</p>
+</blockquote>
+
+<p>집합론을 처음 공부하는 학생들이 흔히 하는 오해는, 위 정의의 $|\cdot|$과 $\leq$를 복소수에서의 $|\cdot|$과 $\leq$와 유사한 것으로 은연 중에 취급하는 것이다. 요컨대 복소수 $z$에 대해 $|z|$가 실수이고 $\leq$가 실수의 대소 관계이듯이, 집합 $X$에 대해 $|X|$는 집합의 크기 — 이른바 <strong>기수<sub>cardinality</sub></strong>이고, $\leq$는 기수의 대소 관계라고 생각하는 것이다.</p>
+
+<p>그러나 이는 문제의 여지가 많은 접근이다. 왜냐하면 위 정의만으로는 <strong><u>기수라는 수학적 대상</u>을 정의할 수 있다는 보장이 없기 때문이다.</strong> 우리가 정의한 것은 이항 관계에 불과하다.</p>
+
+<p>이해를 위한 예시를 들어보자. $A$가 $B$를 좋아할 때, $|A| \leq |B|$라고 적을 수 있을 것이다. 그러나 이렇게 적었다고 해서, $|A|$는 ‘$A$의 호감도’를 의미하며 $\leq$가 호감도의 대소 관계라고 해석한다면 완전히 틀린 것이다. 이와 마찬가지로 $|X| \leq |Y|$는 단사 관계의 유무로 정의되는 이항 관계일 뿐, 이 관계 자체가 기수의 개념을 시사하는 것은 아니다.</p>
+
+<p>특히 ZFC에서는 모든 것이 집합이기 때문에, 만약 기수를 정의하고 싶다면 다음의 사실을 논증해야 한다.</p>
+
+<blockquote>
+  <p><strong>정리 1.</strong> 임의의 집합 $X, Y$에 대해, 어떤 집합 $\mathrm{Card}(X), \mathrm{Card}(Y)$가 존재하여, 다음이 성립한다.</p>
+
+  <ol>
+    <li>$|X| \leq |Y|$ iff $\mathrm{Card}(X) \subseteq \mathrm{Card}(Y)$</li>
+    <li>$|X| = |Y|$ iff $\mathrm{Card}(X) = \mathrm{Card}(Y)$</li>
+  </ol>
+
+  <p>$\mathrm{Card}(X)$를 $X$의 기수라고 부른다.</p>
+</blockquote>
+
+<p>즉 ① $\mathrm{Card}(X)$를 정의해야 하고, ② 해당 정의에 대해 위 진술이 성립함을 보여야 한다.</p>
+
+<p>표현의 편의를 위해 $|X| \leq |Y|$와 $|X| = |Y|$를 “$Y$가 $X$보다 작지 않다”, ”$X$와 $Y$의 크기가 같다“라고 부르자. ①부터 살펴 보자면, 크게 네 가지 접근이 가능하다. 짤막하게 알아보자면 이렇다.</p>
+
+<ol>
+  <li>
+    <p>칸토어의 정의</p>
+
+    <ul>
+      <li>정의: $\mathrm{Card}(X)$를 $X$와 크기가 같은 집합들의 집합으로 정의한다.</li>
+      <li>장점: 정의가 가장 직관적임</li>
+      <li>단점: $\mathrm{Card}(X)$는 사실 집합이 아니라 모임<sub>class</sub>임</li>
+    </ul>
+  </li>
+  <li>
+    <p>스콧의 트릭<sub>Scott’s trick</sub></p>
+
+    <ul>
+      <li>정의: $X$와 크기가 같은 집합 중 폰 노이만 위계에서 가장 먼저 등장하는 집합의 랭크가 $V_\alpha$일 때, $\mathrm{Card}(X)$를 $V_\alpha$로 정의한다.</li>
+      <li>장점: 모임의 문제 없이 기수를 정의함</li>
+      <li>단점: 정의가 직관적이지 않고 ad-hoc적인 면모가 있음</li>
+    </ul>
+  </li>
+  <li>
+    <p>정렬 원리<sub>well-ordering theorem</sub>를 사용하여 기수를 정의하기</p>
+
+    <ul>
+      <li>정의: $X$의 정렬에 대응되는 서수<sub>ordinal</sub>들보다 작지 않은 서수 중 가장 작은 서수를 $\mathrm{Card}(X)$로 정의한다.</li>
+      <li>장점: 정의가 다소 직관적이고, 모임의 문제가 없음</li>
+      <li>단점: 선택 공리 없이는 임의의 집합에 대해 해당 집합의 정렬이 존재함을 보장할 수 없음</li>
+    </ul>
+  </li>
+  <li>
+    <p>하르토그스 수<sub>Hartogs number</sub>를 사용하여 기수를 정의하기</p>
+    <ul>
+      <li>정의: $X$의 정렬 가능한 부분집합들에 대응되는 서수들보다 큰 서수 중 가장 작은 서수를 $X$의 하르토그수 수로 정의한다.</li>
+      <li>장점: 정의가 어느 정도 직관적이고, 모임의 문제가 없으며, 선택 공리에 의존적이지 않음</li>
+      <li>단점: 다루기 불편하고 제약이 많음</li>
+    </ul>
+  </li>
+</ol>
+
+<p>현대 집합론에서는 2 또는 3을 기수의 정의로 채택한다. 두 경우 모두 정리 1이 성립함을 ZFC에서 보일 수 있다.</p>
+
+<p>흥미로운 것은, 스콧의 트릭을 사용하여 기수를 정의하면 선택 공리가 필요하지는 않지만, 스콧의 트릭으로 정의된 기수가 정리 1을 만족함을 보일 때에는 선택 공리가 필요하다는 사실이다. 왜냐하면 다음이 선택 공리와 동치이기 때문이다.</p>
+
+<blockquote>
+  <p><strong>정리 2.</strong> 임의의 집합 $X, Y$에 대해, $|X| \leq |Y|$이거나 $|Y| \leq |X|$이다.</p>
+</blockquote>
+
+<p>즉, 선택 공리를 사용하지 않더라도 a) 스콧의 트릭을 통해 $\mathrm{Card}(X)$를 정의하거나, b) 단사 사상의 유무를 통해 $|X| \leq |Y|$를 정의할 수 있지만, a)와 b)가 맞물린다는 사실을 보일 때는 선택 공리가 필요하다.</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

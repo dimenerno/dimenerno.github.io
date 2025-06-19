@@ -281,7 +281,7 @@
     href="/notes/"
     >Maths Review Notes (Korean)</a
   >
-                                                                                                                                            
+                                                                                                                                                
   </nav>
 
   <div class="sidebar-item">
@@ -425,137 +425,7 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
-        <a href="/2024/11/21/trichotomy/"> 정렬의 삼분성과 서수의 완전성 </a>
-      </h1>
-    <span class="post-date">21 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <h3 id="1-기본-개념">1. 기본 개념</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 다음을 만족하는 $(W, &lt;)$를 정렬 집합(well-ordered set)이라고 한다.</p>
-
-  <ol>
-    <li>$(W, &lt;)$은 전순서이다.</li>
-    <li>$W$의 임의의 부분집합은 최소 원소를 가진다.</li>
-  </ol>
-
-  <p><strong>정의.</strong> $(W, &lt;)$가 정렬 집합일 때, $a \in S$에 대해 $x &lt; a \rightarrow x \in S$인 $W$의 부분집합 $S$를 초기단(initial segment)이라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $S$가 정렬 집합 $(W, &lt;)$의 초기단일 때, 어떤 $a \in W$에 대해 다음이 성립한다.</p>
-
-\[S = W[a] := \lbrace  x \in W : x &lt; a \rbrace\]
-</blockquote>
-
-<p><strong>증명.</strong> $a$를 $W \setminus S$의 최솟값으로 잡는다.</p>
-
-<h3 id="2-정렬의-삼분성">2. 정렬의 삼분성</h3>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-  <ol>
-    <li>정렬 집합은 자신의 초기단과 동형일 수 없다.</li>
-    <li>정렬 집합의 자기동형사상은 항등사상이다.</li>
-    <li>두 정렬 집합 간 동형사상은 유일하다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<p><em>보조정리.</em></p>
-
-<p>$f: (W, &lt;) → (W, &lt;)$가 순서 보존이라면 $x \in W$에 대해 $x \leq f(x)$이다.</p>
-
-<p><em>보조정리의 증명.</em></p>
-
-<p>귀류법에 따라 $S = \lbrace  x \in W : x &gt; f(x) \rbrace$가 공집합이 아니라고 하자. $W$는 정렬 집합이므로 $c = \min S$가 존재한다. $c \in S$이므로 $c &gt; f(c)$이며,  $f$가 순서 보존이므로 $f(c) &gt; f(f(c))$이다. 한편 $c = \min S$이므로 $f(c) \notin S$이며, $f(f(c)) \geq f(c)$이므로 모순이다. □</p>
-
-<p><em>(1)의 증명.</em></p>
-
-<p>$f: (W, &lt;) → (W[a], &lt;)$가 동형사상이라고 하자. 포함사상 $j: W[a] → W$에 대해 $jf: (W, &lt;) → (W, &lt;)$는 순서 보존이다. 따라서 $jf(a) \geq a$이다. 하지만 $a \notin \mathrm{im}f$이므로 모순이다. □</p>
-
-<p><em>(2)의 증명.</em></p>
-
-<p>$f: (W, &lt;) → (W, &lt;)$가 동형사상이라고 하자. $f^{-1}$ 또한 동형사상이므로 $x \in W$에 대해 $x \leq f(x)$, $f(x) \leq f^{-1}(f(x)) = x$이다. 따라서 $x = f(x)$이다. □</p>
-
-<p><em>(3)의 증명.</em></p>
-
-<p>$f, g: (W_1, &lt;_1) → (W_2, &lt;_2)$가 동형사상이라고 하자. $g^{-1}f: (W_1, &lt;_1) → (W_1, &lt;_1)$은 자기동형사상이므로 (2)에 의해 항등사상이다. 따라서 $f = g$이다. ■</p>
-
-<blockquote>
-  <p><strong>정렬의 삼분성.</strong> $(W_1, &lt;_1), (W_2, &lt;_2)$가 정렬 집합일 때 다음 중 정확히 하나가 성립한다.</p>
-
-  <ol>
-    <li>$(W_1, &lt;_1) \sim (W_2, &lt;_2)$</li>
-    <li>어떤 $a$에 대해 $(W_1[a], &lt;_1) \sim (W_2, &lt;_2)$</li>
-    <li>어떤 $b$에 대해 $(W_1, &lt;_1) \sim (W_2[b], &lt;_2)$</li>
-  </ol>
-
-  <p>각 경우 동형사상은 유일하며, 또한 2, 3의 경우 $a, b$는 유일하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<p>앞선 정리는 1, 2, 3이 mutually exclusive함과, 유일성에 대한 주장을 보증한다. 따라서 임의의 $(W_1, &lt;_1), (W_2, &lt;_2)$가 위 세 경우에 속함을 보이면 충분하다.</p>
-
-<p>다음과 같이 부분함수 $f: W_1 → W_2$를 정의한다.</p>
-
-\[f := \lbrace  (x, y) \in (W_1, W_2) : (W_1[x], &lt;_1) \sim (W_2[y], &lt;_2) \rbrace\]
-
-<p>$f$가 단사이고 순서 보존임을 쉽게 확인할 수 있다. 이제 두 가지 경우를 고려한다.</p>
-
-<p><em>Case 1.</em> $\mathrm{dom} f = W_1$</p>
-
-<p>정리의 3번 경우에 해당하여 증명이 끝난다.</p>
-
-<p><em>Case 2.</em> $\mathrm{dom} f \subsetneq W_1$</p>
-
-<p>먼저 어떤 $a \in W$에 대해 $\mathrm{dom}f = W_1[a]$임을 보인다. $x \in \mathrm{dom}f$라면 $W_1[x] \sim W_2[f(x)]$이다. 해당 동형의 동형사상을 $\phi$라고 하면 $x’ &lt; x$에 대해 $W_1[x’] = W_2[\phi(x’)]$이므로 $x’ \in \mathrm{dom}f$이다. 따라서 $\mathrm{dom} f$는 초기단이다.</p>
-
-<p>두 번째로 $\mathrm{im} f = W_2$임을 보인다. $\mathrm{dom}f = W_1[a]$라고 하자. 앞선 문단과 비슷한 논증으로 $\mathrm{im}f$ 또한 $W_2$의 초기단임을 알 수 있다. $\mathrm{im}f = W_2[b]$라면, $(a, b) \in f$이므로 $a \in \mathrm{dom}f$이며 모순이다. ■</p>
-
-<h3 id="3-서수의-완전성">3. 서수의 완전성</h3>
-
-<blockquote>
-  <p><strong>서수의 완전성.</strong> 모든 정렬 집합은 어떤 서수와 순서 동형이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $(W, &lt;)$가 정렬 집합이라고 하자. 다음과 같이 $A, S$를 정의한다.</p>
-
-\[\begin{gather}
-A = \lbrace  a \in W : W[a] \sim \alpha_a \text{ where $\alpha_a \in$Ord} \rbrace\\
-S = \lbrace  \alpha_a \in \mathrm{Ord} :  a \in A\rbrace
-\end{gather}\]
-
-<p>$S$가 서수이고 $A$가 초기단임을 쉽게 보일 수 있다. $S = \beta$, $A = W[c]$라고 하자. $f: A → S; a \mapsto \alpha_a$는 $(A, &lt;)$와 $(S, \in)$의 순서동형사상이다. 즉, $W[c] \simeq \beta$이므로 $c \in A$이며, 이는 모순이다. 따라서 $A = W \sim \beta$이다. ■</p>
-
-<h3 id="4-치환-공리">4. 치환 공리</h3>
-
-<p>위 증명에서 $S$의 존재성은 치환 공리꼴 없이 보장되지 않는다. 왜냐하면 부랄리포르티 역설에 의해 $\mathrm{Ord}$는 집합이 아니며, 이에 따라 분류 공리꼴로 $S$의 존재성을 보장할 수 없기 때문이다.</p>
-
-<p>치환 공리의 필요성을 보여주는 다른 예시로, 치환 공리꼴 없이는 $\omega + \omega$의 존재성을 보장할 수 없다. 각 $n \in \mathbb{N}$에 대해 $\omega + n$이 존재함은 짝 공리와 합집합 공리로 보일 수 있지만, $\omega + \omega := \cup_{n \in \mathbb{N}} (\omega + n)$가 존재함은 보일 수 없다. 그렇다고 임의의 집합들의 합집합을 허용하는 공리를 추가할 수는 없는데, 이는 $V$를 집합으로 만들기 때문이다.</p>
-
-<p>위 두 경우에서 우리에게 필요한 것은, “잘 정의된 일대일 대응 관계 $R(x,y)$와 집합 $X$가 주어졌을 때 $\lbrace  y : R(x, y), x \in X \rbrace$는 집합이다”라는 내용의 공리이다. 이 공리가 치환 공리이다. 치환 공리를 사용하면 $\omega = \lbrace 0, 1, 2, … \rbrace$와 관계 $R(x, y): y = \omega + x$에 대해 $\mathrm{im}R\vert_\omega = \lbrace  \omega, \omega + 1, \omega + 2, … \rbrace$가 존재하며, $\omega \cup \mathrm{im}R\vert_\omega = \omega + \omega$가 존재함을 보일 수 있다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/20/Rational-Real/"> 유리수와 실수의 집합론적 정의 </a>
+        <a href="/2024/11/20/Rational-Real"> 유리수와 실수의 집합론적 정의 </a>
       </h1>
     <span class="post-date">20 Nov 2024</span>
     
@@ -699,7 +569,7 @@ B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
-        <a href="/2024/11/19/CSB/"> 칸토어-슈뢰더-베른슈타인 정리 </a>
+        <a href="/2024/11/19/CSB"> 칸토어-슈뢰더-베른슈타인 정리 </a>
       </h1>
     <span class="post-date">19 Nov 2024</span>
     
@@ -783,7 +653,7 @@ x &amp; x \in D
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
-        <a href="/2024/11/18/ZFC/"> ZFC 공리의 목록 </a>
+        <a href="/2024/11/18/ZFC"> ZFC 공리의 목록 </a>
       </h1>
     <span class="post-date">18 Nov 2024</span>
     
@@ -914,7 +784,7 @@ x &amp; x \in D
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
-        <a href="/2024/11/17/bell-rocket/"> 벨의 우주선 사고실험: 수동적 로렌츠 수축과 능동적 로렌츠 수축 </a>
+        <a href="/2024/11/17/bell-rocket"> 벨의 우주선 사고실험: 수동적 로렌츠 수축과 능동적 로렌츠 수축 </a>
       </h1>
     <span class="post-date">17 Nov 2024</span>
     
@@ -939,51 +809,47 @@ x &amp; x \in D
   </ol>
 </blockquote>
 
-<p>이 문제는 드원과 베란이 1959년에 처음 고안했으나 1976년에 벨¹이 CERN의 물리학자들과 나눈 토론을 통해 유명해졌다. 벨은 로렌츠 수축을 근거로 실이 끊어진다고 주장했으나 CERN의 물리학자들 대다수는 실에 변화가 없다고 반박했으며, 한 저명한 물리학자는 벨이 상대론을 오도하고 있다고까지 말했다. 그렇다면 정답은 과연 무엇일까?</p>
+<p>이 문제는 드원과 베란이 1959년에 처음 고안했으나 1976년에 벨<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>이 CERN의 물리학자들과 나눈 토론을 통해 유명해졌다. 벨은 로렌츠 수축을 근거로 실이 끊어진다고 주장했으나 CERN의 물리학자들 대다수는 실에 변화가 없다고 반박했으며, 한 저명한 물리학자는 벨이 상대론을 오도하고 있다고까지 말했다. 그렇다면 정답은 과연 무엇일까?</p>
 
 <p>정답은 <strong>1. 끊어진다</strong> 이다.</p>
 
 <p>이 답은 일면 비직관적이다. 로렌츠 수축은 관성계에 의존적인 현상이기 때문이다. 일례로 철수에 대해 영희가 광속에 가깝게 움직인다면 영희는 수축한다. 하지만 동 상황에서 영희의 관성계를 기준으로는 철수가 광속에 가깝게 움직이므로 철수가 수축한다. 이같은 대칭성은 로렌츠 수축이 실재하는 물리적 현상이 아닌 관성계의 선택에 따른 수학적 현상임을 시사한다. 이같은 로렌츠 수축의 해석은 Rindler 1977의 글에서 볼 수 있듯이 물리학계에서 널리 퍼져있다.</p>
 
 <blockquote>
-  <p>로렌츠에 따르면 수축의 원인은 원자 구조를 밀집시키는 전기적 응집력이 [물체가 에테르를 통과함에 따라] 증가하는 데 있다… [하지만] 상대론에서 로렌츠 수축은 본질적으로 기하학적 투영 효과로서, 정지해 있는 막대기를 비스듬한 시선으로 보는 것과 유사하다.</p>
-
-  <p><span style="color: gray">In relativity the effect is essentially a geometric “projection” effect, quite analogous to looking at a stationary rod which is not parallel to the plane of the retina.²</span></p>
+  <p>로렌츠에 따르면 수축의 원인은 원자 구조를 밀집시키는 전기적 응집력이 [물체가 에테르를 통과함에 따라] 증가하는 데 있다… [하지만] 상대론에서 로렌츠 수축은 본질적으로 기하학적 투영 효과로서, 정지해 있는 막대기를 비스듬한 시선으로 보는 것과 유사하다.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
 </blockquote>
 
-<p>그러나 Rindler의 설명은 반만 맞고 반은 틀렸다. 그 이유는 로렌츠 수축에 두 가지 유형이 있기 때문이다. <strong>수동적 로렌츠 변환</strong>(passive Lorentz transformation)의 경우에는 Rindler의 주장대로 로렌츠 수축이 관성계의 선택에 따른 부수 현상에 불과하지만, <strong>능동적 로렌츠 변환</strong>(active Lorentz transformation)의 경우에는 로렌츠 수축이 전기력의 증가와 같은 실질적 물리 현상을 야기한다. 본 글에서는 두 변환의 차이가 무엇인지, 그리고 어떻게 능동적 로렌츠 변환은 전기력과 연관되는지 살펴볼 것이다.</p>
-
-<p>본론에 들어가기 앞서 해당 글의 내용은 Maudlin의 ⟪Philosophy of Physics: Space and Time⟫을 참고하여 작성되었음을 밝힌다.</p>
+<p>그러나 Rindler의 설명은 반만 맞고 반은 틀렸다. 그 이유는 로렌츠 수축에 두 가지 유형이 있기 때문이다. <strong>수동적 로렌츠 변환<sub>passive Lorentz transformation</sub></strong>의 경우에는 Rindler의 주장대로 로렌츠 수축이 관성계의 선택에 따른 부수 현상에 불과하지만, <strong>능동적 로렌츠 변환<sub>active Lorentz transformation</sub></strong>의 경우에는 로렌츠 수축이 전기력의 증가와 같은 실질적 물리 현상을 야기한다. 본 글에서는 두 변환의 차이가 무엇인지, 그리고 어떻게 능동적 로렌츠 변환은 전기력과 연관되는지 살펴볼 것이다.</p>
 
 <h3 id="1-수동적-변환">1. 수동적 변환</h3>
 
-<p>점입자 A가 빈 공간에서 관성 운동한다. A에 대해 정지해 있는 관성좌표계 $(x, t)$를 기준으로 민코프스키 다이어그램을 그리면 해당 상황은 (가)와 같이 표현할 수 있다. 반면 $(x, t)$에 대해 $0.6c$의 속도를 가지는 관성좌표계 $(x’, t’)$을 기준으로 하는 민코프스키 다이어그램은 (나) 및 (나’)와 같다.³</p>
+<p>점입자 A가 빈 공간에서 관성 운동한다. A에 대해 정지해 있는 관성좌표계 $(x, t)$를 기준으로 민코프스키 다이어그램을 그리면 해당 상황은 (a)와 같이 표현할 수 있다. 반면 $(x, t)$에 대해 $0.6c$의 속도를 가지는 관성좌표계 $(x’, t’)$을 기준으로 하는 민코프스키 다이어그램은 (b) 및 (나’)와 같다.<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup></p>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/74968d4c-9823-43ad-ba78-889f40201c84/image.png" alt="" /></p>
+<p><img src="/public/bell-1.png" style="width: 100%; margin: 0 auto;" /></p>
 
-<p>A의 운동에 좌표를 부여하는 방식은 다르지만 (가)와 (나)는 동일한 물리적 상황을 표현한다. 이와 같이 계의 물리적 속성을 보존하는 관성좌표계의 변환을 <strong>수동적 변환</strong>이라고 한다. 뉴턴 역학에서 시공간의 수동적 변환은 전단 변환<span style="font-size: 0.8em">shear transformation</span>으로 주어지지만 잘 알려져 있듯이 상대론에서는 로렌츠 변환으로 주어진다.</p>
+<p>A의 운동에 좌표를 부여하는 방식은 다르지만 (a)와 (b)는 동일한 물리적 상황을 표현한다. 이와 같이 계의 물리적 속성을 보존하는 관성좌표계의 변환을 <strong>수동적 변환</strong>이라고 한다. 뉴턴 역학에서 시공간의 수동적 변환은 전단 변환<sub>shear transformation</sub>으로 주어지지만 잘 알려져 있듯이 상대론에서는 로렌츠 변환으로 주어진다.</p>
 
 <h3 id="2-능동적-변환">2. 능동적 변환</h3>
 
-<p>이제 A의 속도에 순간적으로 $-0.6c$가 더해진 상황을 생각해 보자. $(x, t)$에 대해 속도가 더해진 후의 다이어그램은 (다)와 같다.</p>
+<p>이제 A의 속도에 순간적으로 $-0.6c$가 더해진 상황을 생각해 보자. $(x, t)$에 대해 속도가 더해진 후의 다이어그램은 (c)와 같다.</p>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/272d16ad-4f3e-4013-90c9-cd8ca82b1030/image.png" alt="" /></p>
+<p><img src="/public/bell-2.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
 
-<p>주목할 점은, (가)-(나)와는 달리 (가)-(다)는 <em>같은</em> 관성좌표계를 사용한다는 것이다. (가)-(다)의 변환은 관성좌표계의 변환이 아닌, A의 속도에 $-0.6c$가 더해졌다는 물리적 변화로 일어났다. 이처럼 물리적 변화로 인한 다이어그램의 변환을 <strong>능동적 변환</strong>이라고 한다.</p>
+<p>주목할 점은, (a)-(b)와는 달리 (a)-(c)는 <em>같은</em> 관성좌표계를 사용한다는 것이다. (a)-(c)의 변환은 관성좌표계의 변환이 아닌, A의 속도에 $-0.6c$가 더해졌다는 물리적 변화로 일어났다. 이처럼 물리적 변화로 인한 다이어그램의 변환을 <strong>능동적 변환</strong>이라고 한다.</p>
 
-<p>일면 능동적 변환(나)와 수동적 변환(다)의 차이는 관점의 차이에 지나지 않는 것으로 보인다. 실제로 고전역학에서 능동적 변환과 수동적 변환은 동일시될 수 있으며, 이것은 고전역학에서 뇌터 정리를 적용할 수 있는 조건에 다름 아니다. 하지만 상대론에서 둘의 동일시는 매우 신중한 주의를 요구한다. 왜냐하면 상대론에서는 <strong>동시성의 상대성</strong>을 고려해야 하기 때문이다.</p>
+<p>일면 능동적 변환 (b)와 수동적 변환 (c)의 차이는 관점의 차이에 지나지 않는 것으로 보인다. 실제로 고전역학에서 능동적 변환과 수동적 변환은 동일시될 수 있으며, 이것은 고전역학에서 뇌터 정리를 적용할 수 있는 조건에 다름 아니다. 하지만 상대론에서 둘의 동일시는 매우 신중한 주의를 요구한다. 왜냐하면 상대론에서는 <strong>동시성의 상대성</strong>을 고려해야 하기 때문이다.</p>
 
 <h3 id="3-동시성의-상대성">3. 동시성의 상대성</h3>
 
 <p>동시성의 상대성이 왜 중요한지 알아보기 위해 상황을 바꿔보자. 두 점입자 A, B가 빈 공간에서 서로 $c$의 거리를 유지하고 있다. 이 상황을 A에 대해 정지해 있는 관성좌표계 $(x, t)$와, A에 대해 $0.6c$로 움직이는 관성계 $(x’, t’)$으로 표현한 민코프스키 다이어그램은 각각 다음과 같다.</p>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/9d7bd171-b743-4b0a-a2d5-5f9839604b53/image.png" alt="" /></p>
+<p><img src="/public/bell-3.png" style="width: 100%; max-width: 520px; margin: 0 auto;" /></p>
 
-<p>$(x, t)$에서 $P$와 $Q$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x’, t’)$에서는 $P$와 $Q’$가 동시적이므로 A, B 거리는 $d’$이다. 민코프스키 기하학을 이용하여 계산하면 $d’ = 0.8c$ 이며 $d’ &lt; d$이다.⁴</p>
+<p>$(x, t)$에서 $P$와 $Q$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x’, t’)$에서는 $P$와 $Q’$가 동시적이므로 A, B 거리는 $d’$이다. 민코프스키 기하학을 이용하여 계산하면 $d’ = 0.8c$ 이며 $d’ &lt; d$이다.<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup></p>
 
 <p>같은 현상을 능동적 변환으로 해석해 보자. A, B가 $c$의 거리를 유지하다가 $(x, t)$에 대해 동시에 $-0.6c$의 속도가 더해졌다고 하자. 민코프스키 다이어그램은 다음과 같다. $(x’’, t’’)$은 속도가 더해진 이후의 A를 기준으로 하는 관성좌표계이다.</p>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/0061f8a1-e866-41cd-978f-ce7a3888df4d/image.png" alt="" /></p>
+<p><img src="/public/bell-4.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
 
 <p>$(x, t)$에서 $(P, Q)$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x’’, t’’)$에서는 $(P, Q’’)$가 동시적이므로 A, B의 거리는 $d’‘$이다. 마찬가지로 민코프스키 기하학을 이용하여 $d’‘$을 계산하면 $d’’ = 1.25c$ 이며 $d’’ &gt; d$이다.</p>
 
@@ -1026,7 +892,7 @@ x &amp; x \in D
   <li>효과 2: M의 강체적 특성으로 인해 M의 원자 구조가 효과 1에 저항하는 장력을 발생시킨다.</li>
 </ul>
 
-<p>효과 2로 발생하는 내부 장력을 <strong>상대론적 장력</strong>(relativistic stress)이라고 부른다. 만약 M이 충분히 강한 강체라면 상대론적 장력을 버텨내어 M의 길이는 (A, B의 관점에서) $c$로 유지된다. 그러나 가속이 너무나 급격하여 상대론적 장력이 M의 수용 범위를 벗어나면 강체는 변형되거나 파괴된다. 일례로 쿠크다스를 광속에 가깝게 가속시키면 쿠크다스는 파괴된다.</p>
+<p>효과 2로 발생하는 내부 장력을 <strong>상대론적 장력<sub>relativistic stress</sub></strong>이라고 부른다. 만약 M이 충분히 강한 강체라면 상대론적 장력을 버텨내어 M의 길이는 (A, B의 관점에서) $c$로 유지된다. 그러나 가속이 너무나 급격하여 상대론적 장력이 M의 수용 범위를 벗어나면 강체는 변형되거나 파괴된다. 일례로 쿠크다스를 광속에 가깝게 가속시키면 쿠크다스는 파괴된다.</p>
 
 <h3 id="5-결론">5. 결론</h3>
 
@@ -1068,13 +934,194 @@ x &amp; x \in D
 
 <hr />
 
-<p>¹ 벨 부등식의 벨이 맞다.</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>벨 부등식의 벨이 맞다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Rindler (1977), p. 41. Maudlin, <em>Philosophy of Physics: Space and Time</em> 에서 발췌. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>(a)와 (b)는 같은 물리적 현상을 다른 관성좌표계로 표현한 다이어그램이다. 한편, (b)와 (b’)은 — 같은 물리적 현상을 같은 관성좌표계로 표현한 — 같은 다이어그램의 다른 표현이다. (a), (b)는 같은 정육면체를 정사영과 등각 투영법으로 그린 것에, (b), (b’)은 같은 정육면체를 같은 투영법을 이용하여 위와 옆에서 그린 것에 비견할 수 있다. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>그림에서는 $d’ &gt; d$인 것으로 보이지만, 민코스프키 다이어그램의 기하학은 유클리드 기하학이 아닌 민코프스키 기하학임을 유념해야 한다. 평면지도에서는 알래스카가 아프리카와 거의 비슷한 크기이지만 실제로는 아프리카가 훨씬 더 크듯이, 민코프스키 다이어그램에서는 $d’ &gt; d$인 것으로 보이지만 실제 로렌츠 변환을 계산하면 $d’ &lt; d$이다. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
-<p>² Rindler (1977), p. 41.</p>
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/17/bell-rocket/en"> Bell's Spaceship Paradox: Passive vs. Active Lorentz Contraction </a>
+      </h1>
+    <span class="post-date">17 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/physics/'">
+        physics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/relativity/'">
+        relativity
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>Spaceships A and B are connected by a thin thread and are initially at rest (with respect to a common inertial frame). They begin to accelerate simultaneously at the same rate to approach the speed of light. What happens to the thread?</p>
 
-<p>³ (나)와 (나’)은 같은 다이어그램이다. 이 부분이 이해가 안 된다면 이 글을 읽기에 앞서 로렌츠 변환과 민코프스키 다이어그램을 복습하자!</p>
+  <ol>
+    <li>It breaks.</li>
+    <li>It loosens.</li>
+    <li>It remains unchanged.</li>
+  </ol>
+</blockquote>
 
-<p>⁴ 그림에서는 $d’ &gt; d$인 것으로 보이지만, 민코스프키 다이어그램의 기하학은 유클리드 기하학이 아닌 민코프스키 기하학임을 유념해야 한다. 평면지도에서는 알래스카가 아프리카와 거의 비슷한 크기이지만 실제로는 아프리카가 훨씬 더 크듯이, 민코프스키 다이어그램에서는 $d’ &gt; d$인 것으로 보이지만 실제 로렌츠 변환을 계산하면 $d’ &lt; d$이다.</p>
+<p>This thought experiment was originally devised by Dewan and Beran in 1959 but gained widespread attention after Bell<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> discussed it with CERN physicists in 1976. Bell argued that the thread breaks due to Lorentz contraction, while most CERN physicists disagreed, claiming the thread remains unchanged. One prominent physicist even accused Bell of misrepresenting relativity. So, who is correct?</p>
+
+<p>The answer is <strong>1. It breaks.</strong></p>
+
+<p>This may seem counterintuitive. After all, Lorentz contraction is frame-dependent. If Alice moves at near-light speed relative to Bob, Bob would observe Alice to have contracted. But in Alice’s frame, it is Bob who is moving and therefore contracts. This symmetry suggests that Lorentz contraction is a mathematical artifact arising from frame choice, hence not a physically real phenomenon. Such an interpretation is widespread in physics, e.g. Rindler’s 1977 writes:</p>
+
+<blockquote>
+  <p>According to Lorentz, the cause of contraction lies in the increased electromagnetic cohesion of atomic structures [as an object passes through the ether]… [But] in relativity, Lorentz contraction is essentially a geometric projection effect, akin to viewing a stationary rod from an angle.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
+</blockquote>
+
+<p>However, Rindler’s explanation is quite misleading. Rather, it is important to recognise that there are <em>two</em> types of Lorentz contraction. In the case of a <strong>passive Lorentz transformation</strong>, Lorentz contraction is merely an artifact of changing coordinates. But in the case of an <strong>active Lorentz transformation</strong>, the contraction corresponds to a real physical effect, such as increased electromagnetic force. This post will explore the difference between the two and show how active transformation relates to physical stress.</p>
+
+<h3 id="1-passive-transformation">1. Passive Transformation</h3>
+
+<p>Consider a point particle A moving inertially in vacuum. The Minkowski diagram, with respect to an inertial frame $(x, t)$ to which A is at rest, is shown in (a). In another inertial frame $(x’, t’)$ moving at $0.6c$ relative to $(x, t)$, the Minkowski diagram is as shown in (b) and (b’).<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup></p>
+
+<p><img src="/public/bell-1.png" style="width: 100%; margin: 0 auto;" /></p>
+
+<p>The diagrams (a) and (b) represent the same physical scenario using different coordinates. Such transformation between coordinates that preserves physical scenario is called a <strong>passive transformation</strong>. In Newtonian mechanics, this is represented in Galilean spacetime diagram as shear transformation; in relativity, it is represented in Minkowski spacetime diagram as Lorentz transformation.</p>
+
+<h3 id="2-active-transformation">2. Active Transformation</h3>
+
+<p>Now consider a scenario where A’s velocity changes by $-0.6c$. The Minkowski diagram in $(x, t)$ after this change is shown in (c).</p>
+
+<p><img src="/public/bell-2.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
+
+<p>Unlike (a)-(b), diagrams (a) and (c) use the <em>same</em> coordinates. The transformation here reflects a physical change in A’s motion, not a change in coordinates. Such a transformation is called an <strong>active transformation</strong>.</p>
+
+<p>At first glance, the difference between active and passive transformations might seem purely semantic. In classical mechanics, the two are indeed physically equivalent, and this is partly what grounds Noether’s theorem. But in relativity, the distinction becomes crucial due to the <strong>relativity of simultaneity</strong>.</p>
+
+<h3 id="3-relativity-of-simultaneity">3. Relativity of Simultaneity</h3>
+
+<p>To understand why simultaneity matters, let’s consider two particles A and B maintaining a distance $c$ apart. The Minkowski diagrams from A’s rest frame $(x, t)$ and another frame $(x’, t’)$ moving at $0.6c$ are shown below:</p>
+
+<p><img src="/public/bell-3.png" style="width: 100%; max-width: 520px; margin: 0 auto;" /></p>
+
+<p>In $(x, t)$, points $P$ and $Q$ are simultaneous, so the distance between A and B is $d$. In $(x’, t’)$, $P$ and $Q’$ are simultaneous, and the distance is $d’$. Minkowskian geometry gives $d’ = 0.8c$, so $d’ &lt; d$.<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup></p>
+
+<p>Now consider this in terms of active transformation. Suppose A and B, initially at distance $c$, are both accelerated simultaneously — with respect to $(x, t)$ — in $(x, t)$ to $-0.6c$. The resulting Minkowski diagram is:</p>
+
+<p><img src="/public/bell-4.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
+
+<p>In $(x, t)$, $P$ and $Q$ are simultaneous, so the distance remains $d$. In the new frame $(x’’, t’’)$, $P$ and $Q’’$ are simultaneous, and the distance is $d’’ = 1.25c$, hence $d’’ &gt; d$.</p>
+
+<p><em>Thus, in relativity, passive and active transformations lead to physically different consequences.</em> Passive transformations preserve distances in A’s frame but contract them in the moving frame, whereas active transformations preserve distances in the original frame but stretch them in A’s new frame.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Distance between A and B</th>
+      <th>A’s Frame</th>
+      <th>Moving Inertial Frame</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Passive Transformation</td>
+      <td>Unchanged</td>
+      <td>Contracted</td>
+    </tr>
+    <tr>
+      <td>Active Transformation (disconnected)</td>
+      <td>Expanded</td>
+      <td>Unchanged</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="4-active-transformation-of-a-rigid-body">4. Active Transformation of a Rigid Body</h3>
+
+<p>Previously, A and B were separate particles. Now suppose A and B are endpoints of a rigid rod M of length $c$.</p>
+
+<p>A rigid body resists deformation—unlike a rubber ball, a steel ball doesn’t change volume when force is applied.</p>
+
+<p>What happens when M undergoes an active transformation? Suppose M is accelerating simultaneously in $(x, t)$ to reach $0.6c$.</p>
+
+<p>If M were not rigid, A would observe its length as expanding to $1.25c$. But rigidity resists this expansion, leading to internal stresses during acceleration:</p>
+
+<ul>
+  <li>Effect 1: Due to relativity of simultaneity, B accelerates before A, stretching the rod.</li>
+  <li>Effect 2: The rod’s rigidity resists the stretching, generating internal stress.</li>
+</ul>
+
+<p>The internal force arising from Effect 2 is called <strong>relativistic stress</strong>. If M is strong enough, it resists deformation and maintains its original length. Otherwise, it deforms or breaks. For example, a chocolate bar rapidly accelerated to near-light speed would shatter.</p>
+
+<h3 id="5-conclusion">5. Conclusion</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Distance between A and B</th>
+      <th>A’s Frame</th>
+      <th>Moving Inertial Frame</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Passive Transformation</td>
+      <td>Unchanged</td>
+      <td>Contracted</td>
+    </tr>
+    <tr>
+      <td>Active Transformation (disconnected)</td>
+      <td>Expanded</td>
+      <td>Unchanged</td>
+    </tr>
+    <tr>
+      <td>Active Transformation (rigid body)</td>
+      <td>Unchanged</td>
+      <td>Contracted</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Returning to Bell’s paradox: when spaceships A and B accelerate, the “spaceship-thread-spaceship” system undergoes an active transformation. In A’s frame:</p>
+
+<ul>
+  <li>Effect 1: Distance between A and B increases (since they are not rigidly connected).</li>
+  <li>Effect 2: The thread tries to maintain its original length.</li>
+</ul>
+
+<p>Eventually, if acceleration continues, Effect 1 overwhelms Effect 2, and the thread breaks. If A and B were connected by a steel cable instead, Effect 2 would dominate, and the distance would remain constant.</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Yes, the same Bell of Bell’s inequality. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Rindler (1977), p. 41. Quoted in Maudlin, <em>Philosophy of Physics: Space and Time</em>. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Diagrams (a) and (b) show the same physical situation in different frames. Diagrams (b) and (b’) are different depictions of the same diagram. Think of them like orthographic vs. perspective drawings of the same object. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Though $d’ &gt; d$ may appear in the diagram, remember that Minkowski geometry is non-Euclidean. Just as Alaska may appear larger than Africa on a flat map, but isn’t, the Minkowski diagram can visually misrepresent distances. Calculations confirm $d’ &lt; d$. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
   <div style="margin-bottom: 6em"></div>

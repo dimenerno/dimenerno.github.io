@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     정칙 기수와 특이 기수, 그리고 도달 불가능 기수 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/05/04/regular-singular" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+                                                                                                                                              
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">정칙 기수와 특이 기수, 그리고 도달 불가능 기수</h1>
+  <span class="post-date">04 May 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+    </div>
+  
+  <p>이 글에서 $\kappa$는 무한 기수이다. 또한, 기수를 초기 서수<sub>initial ordinal</sub>로 정의하는 방식을 택한다(<a href="https://dimenerno.github.io/2025/04/20/cardinality/">이 글</a>의 3번). 이에 따라 모든 기수는 서수이기도 하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\theta$가 $\kappa$보다 작은 극한 서수라고 하자. 각 $\nu$에 대해 $\alpha_\nu &lt; \kappa$인 증가하는 서수열 $\langle \alpha_\nu : \nu &lt; \theta \rangle$에 대하여, 언제나 $\lim_{\nu \to \theta} \alpha_\nu &lt; \kappa$일 때, $\kappa$를 <strong>정칙 기수<sub>regular cardinal</sub></strong>라고 한다. 정칙 기수가 아닌 기수를 <strong>특이 기수<sub>singular cardinal</sub></strong>라고 한다.</p>
+</blockquote>
+
+<p><em>Remark.</em> $\alpha_\nu$와 $\theta$는 일반적으로 기수가 아니라 서수이다.</p>
+
+<p>예를 들어 $\aleph_0$는 정칙 기수이다. $\aleph_0$개보다 적은 개수의 — 즉, 유한한 — $\aleph_0$보다 작은 기수들 — 즉, 자연수 —  의 상한은 $\aleph_0$에 달하지 않기 때문이다.</p>
+
+<p>반면 $\aleph_\omega$는 특이 기수이다. 다음 기수열에서 각각의 기수는 $\aleph_\omega$보다 작고, 기수열의 길이 또한 $\aleph_0 &lt; \aleph_\omega$이지만, 그 상한은 $\aleph_\omega$이기 때문이다.</p>
+
+\[\aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \aleph_3 \quad \cdots\]
+
+<blockquote>
+  <p><strong>정리. (특이 기수 판별법)</strong> $\kappa$가 특이 기수일 필요충분조건은 $\kappa$가 $\kappa$개보다 적은 개수의 $\kappa$보다 작은 기수들의 합일 것이다. 즉, $|I| &lt; \kappa$, $\kappa_i &lt; \kappa \;(\forall i \in I)$에 대하여,</p>
+
+\[\sum_{i \in I} \kappa_i = \kappa\]
+</blockquote>
+
+<p><em>Remark.</em> $\kappa_i$는 일반적인 서수가 아닌 기수이다. 그리고 $\sum$은 서수 덧셈이 아니라 기수 덧셈이다.</p>
+
+<p><strong>증명.</strong></p>
+
+<p>($\Rightarrow$) $\kappa$가 특이 기수라면 어떤 서수열 $\langle \alpha_\nu : \nu &lt; \theta\rangle$이 존재하여,</p>
+
+\[\lim_{\nu \to \theta} \alpha_\nu = \sup \alpha_\nu = \bigcup_{\nu &lt; \theta}\alpha_\nu = \kappa\]
+
+<p>이다. 일반적으로 서수 $\alpha$는 자기보다 작은 서수 $\beta &lt; \alpha$들의 합집합이다. 따라서 다음이 성립한다.</p>
+
+\[\kappa = \bigcup_{\nu &lt; \theta}\alpha_\nu = \bigcup_{\nu &lt; \theta}\left( \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi \right)\]
+
+<p>$A_\nu = \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi$라고 하자. $A_\nu$는 더이상 서수가 아니지만 그건 중요하지 않다. 중요한 것은 $\lbrace  A_\nu \rbrace $가 쌍으로 서로소라는 것이다. 따라서 $\kappa_\nu = |A_\nu|$라고 하면 기수 덧셈의 정의에 의해,</p>
+
+\[\sum_{\nu &lt; \theta} \kappa_\nu = \left| \bigcup_{\nu &lt; \theta} A_\nu \right| = \kappa\]
+
+<p>이다.</p>
+
+<p>($\Leftarrow$) $\kappa = \sum_{i \in I}\kappa_i$라고 하자. $|I| = \lambda$라고 하면 기수 덧셈의 성질에 의해 $\kappa = \lambda \cdot \sup \kappa_i$이다. $\lambda &lt; \kappa$이므로, 기수 곱셈의 성질에 의해 $\kappa = \sup \kappa_i$이다. 각 $i \in I$에 대해 $\kappa_i &lt; \kappa$인데 $\sup \kappa_i = \kappa$이므로, 초한귀납법을 통해 증가하는 기수열</p>
+
+\[\langle \kappa_\nu : \kappa_\nu = \kappa_i \text{ for some } i \in I, \nu &lt; \theta\rangle\]
+
+<p>을 구축할 수 있으며, $\theta \leq \lambda$이므로 정리가 보여졌다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 어떤 $\alpha \in \mathrm{Ord}$에 대해 $\kappa = \aleph_{\alpha + 1}$일 때, $\kappa$를 <strong>계승 기수<sub>successor cardinal</sub></strong>라고 한다. 계승 기수가 아닌 기수를 <strong>극한 기수<sub>limit cardinal</sub></strong>라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 모든 계승 기수는 정칙이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\kappa = \aleph_{\alpha + 1}$이라고 하자. $\kappa$가 특이 기수라면, 특이 기수 판별법에 의해 $\kappa = \sum_{i \in I} \kappa_i$이며 $\kappa_i, |I| &lt; \kappa$이다. 이는 $\kappa_i , |I| \leq \aleph_\alpha$와 같다. 그런데</p>
+
+\[\sum_{i \in I} \kappa_i \leq \sum_{i \in I} \aleph_\alpha = |I| \cdot  \aleph_\alpha \leq  \aleph_\alpha \cdot \aleph_\alpha =  \aleph_\alpha &lt; \kappa\]
+
+<p>이므로 모순이다. ■</p>
+
+<p>따라서 모든 특이 기수는 극한 기수이다. 그러나 모든 극한 기수가 특이 기수인 것은 아니다. $\aleph_0$는 정칙인 극한 기수이기 때문이다. 그러나 $\aleph_0$ 이외에 정칙인 극한 기수가 존재할까?</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 비가산 정칙 극한 기수를 <strong>도달 불가능 기수<sub>inaccessible cardinal</sub></strong>라고 한다.<a href="#sub1" id="sup1"><sup>1</sup></a></p>
+</blockquote>
+
+<p>$\aleph_\alpha$가 도달 불가능 기수라고 하자. 다음의 증가 기수열의 극한은 $\aleph_\alpha$이다.</p>
+
+\[\langle \aleph_\beta : \beta &lt; \alpha \rangle : \aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \cdots \quad \to \aleph_\alpha\]
+
+<p>따라서 $\aleph_\alpha$가 정칙이기 위해서는 위 기수열의 길이인 $\alpha$가 $\aleph_\alpha$보다 작아서는 안 된다. 그런데 $\alpha \leq \aleph_\alpha$이므로, $\alpha = \aleph_\alpha$임이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\aleph_\alpha$가 도달 불가능할 필요조건은 $\alpha = \aleph_\alpha$인 것이다.</p>
+</blockquote>
+
+<p>이는 $\alpha$가 무지막지하게 큰 기수임을 시사한다. 일례로 다음의 기수열 $\langle \alpha_n : n \in \omega \rangle$을 보자.</p>
+
+\[\alpha_0 = \aleph_0, \alpha_{n + 1} = \aleph_{\alpha_n}\]
+
+<p>위 기수열의 상한을 $\kappa$라고 하자. 상한의 정의에 의해 $\lambda &lt; \kappa$라면 $\alpha_n &gt; \lambda$인 $n$이 존재한다. 따라서 $\aleph_\lambda = \alpha_{n+1} &lt; \kappa$이며,</p>
+
+\[\aleph_\kappa = \sum_{\lambda &lt; \kappa} \aleph_\lambda \leq \sum_{\lambda &lt; \kappa} \kappa = \kappa\]
+
+<p>이다. 다시 말해, $\alpha = \aleph_\alpha$를 만족하는 기수는 적어도 다음에 비견되는 크기를 가진다.</p>
+
+\[\kappa = \aleph_{\aleph_{\aleph_{\aleph_{\ddots}}}}\]
+
+<p>여기서 집고 넘어갈 점이 있다. 비록 $\kappa$가 $\kappa = \aleph_\kappa$를 보이긴 했지만, $\kappa$가 도달 불가능함을 보인 것은 아니다. 오히려 $\kappa$는 특이 기수이다. 길이가 $\omega$인 기수열 $\alpha_n$의 극한이기 때문이다.</p>
+
+<p>사실 도달 불가능 기수의 존재성은 ZFC와 독립적이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 도달 불가능 기수의 존재성은 ZFC와 독립이다.</p>
+</blockquote>
+
+<p>따라서 도달 불가능 기수의 존재는 공리로서 가정해야 한다. 도달 불가능 기수의 존재를 가정하는 부류의 공리들을 <strong>큰 기수 공리<sub>large cardinal axioms</sub></strong>라고 부르며, 이와 관련된 연구는 집합론의 중요한 부분을 이룬다.</p>
+
+<hr />
+
+<p><a href="#sup1" id="sub1">1.</a> 엄밀히 말해 이는 <strong>약한 도달 불가능 기수<sub>weakly inaccessible cardinal</sub></strong>에 해당한다. $\kappa$가 <strong>강한 도달 불가능 기수<sub>strongly inaccessible cardinal</sub></strong>라는 것은 $\kappa$가 약한 도달 불가능 기수이며, 추가로 $\lambda &lt; \kappa$일 때 $2^\lambda &lt; \kappa$인 것이다. 연속체 가설을 인정할 때 약한 도달 불가능성과 강한 도달 불가능성은 동치이다.</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

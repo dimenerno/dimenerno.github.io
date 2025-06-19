@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     요네다 보조정리 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/03/21/yoneda" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+                                                                                                                                              
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">요네다 보조정리</h1>
+  <span class="post-date">21 Mar 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'" >범주론</div>
+      
+    </div>
+  
+  <blockquote>
+  <p><em>Notation.</em></p>
+
+  <ol>
+    <li>$-$는 매개변수의 자릿값이다. $-$가 두 개 쓰였으면 매개변수가 두 개라는 뜻이다. 어느 매개변수가 어느 자리에 해당하는지는 맥락으로 파악한다.</li>
+    <li>$\bullet$은 $-$를 우선하는 매개변수이다. 따라서 $\hom(-, \bullet)$은 $A$를 함자 $\hom(-, A)$에 대응시키는 함자이다.</li>
+    <li>함자 $F, G$에 대해 $[F, G]$를 $F$에서 $G$로 가는 자연적 변환<sub>natural transformation</sub>들의 모임으로 정의한다.</li>
+    <li>모든 범주는 국소적으로 작은<sub>locally small</sub> 범주라고 가정한다.</li>
+  </ol>
+</blockquote>
+
+<p>요네다 보조정리<sub>Yoneda lemma</sub>는 표현가능함자<sub>representable</sub>가 다른 함자를 <em>바라볼</em> 때 <em>보이는</em> 것이 무엇인지를 알려주는 정리이다.</p>
+
+<p>예를 들어 $A \in \mathcal{A}$에 대해, 표현가능함자 $\hom_{\mathcal{A}}(-, A)$를 생각하자. 이 함자가 속하는 범주는 $[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$이다. 따라서 $\hom_{\mathcal{A}}(-, A)$가 함자 $F : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$를 <em>바라볼</em> 때 <em>보이는</em> 것은 다음 자연적 변환들의 집합이다.</p>
+
+\[[\hom_{\mathcal{A}}(-, A), F]\]
+
+<p>위 집합은 $A \in \mathcal{A}$와 $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$으로부터 정의된 집합이다. 그런데 $A, F$로부터 집합을 정의할 수 있는 또다른 자연스러운 방식이 있다. 단순히 $F$에 $A$를 취하는 것이다.</p>
+
+\[F(A)\]
+
+<p>요네다 보조정리에 따르면 두 집합은 <strong>동형<sub>isomorphic</sub></strong>이다. 게다가 그냥 동형인 것이 아니라, $A \in \mathcal{A}$와 $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$에서 자연스럽게 동형<sub>naturally isomorphic</sub>이다. 요컨대 다음 두 함자가 $[\mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}], \mathbf{Set}]$에서 동형이다.</p>
+
+\[\begin{aligned}
+\text{(i)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
+&amp;\xrightarrow{\hspace{0.15cm} \hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}} \times 1 \hspace{0.15cm}} [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}] \\
+&amp;\xrightarrow{\hom_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(-, -)} \mathbf{Set} \\\\
+\text{(ii)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
+&amp;\xrightarrow{-(-)} \mathbf{Set}
+\end{aligned}\]
+
+<blockquote>
+  <p><em>Remark.</em> $\hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}}$에 붙은 $\mathrm{op}$는 함자의 정의역을 $\mathcal{A}^\mathrm{op}$로 맞춰주기 위함이고, 실질적으로는 $\hom_{\mathcal{A}}(-, \cdot)$와 같다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 증명의 개요만 적자면, $\hat{(\;\;)} : [\hom_\mathcal{A}(-, A), F] \to F(A)$와 $\tilde{(\;\;)}: F(A) \to [\hom_\mathcal{A}(-, A), F]$를 다음과 같이 정의한다.</p>
+
+\[\hat{\alpha} = \alpha_A(1_A), \quad \tilde{x} = \theta\]
+
+<p>여기서 $\theta$는 $f : A’ \to A$를 다음과 같이 사상하는 자연적 변환이다.</p>
+
+\[\theta_{A'}: f \mapsto F(f^{\mathrm{op}})(x)\]
+
+<p>$\theta$를 위와 같이 정의하는 이유는 다음 가환 도식을 만족하게끔 만들기 위함이다. ($(-)$에 $1_A$를 대입해 확인해 보라.)</p>
+
+<p><img src="/public/yoneda-def.png" style="margin: 0 auto; width: 400px" /></p>
+
+<p>이제 임의의 $A \in \mathcal{A}, F : \mathcal{A}^\mathrm{op} \to \mathbf{Set}$에 대해 다음이 성립함을 보여아 한다.</p>
+
+<ul>
+  <li>임의의 $\alpha \in [\hom_\mathcal{A}(-, A), F]$에 대해 $\tilde{\hat{\alpha}} = \alpha$이다.</li>
+  <li>임의의 $x \in F(A)$에 대해 $\hat{\tilde{x}} = x$이다.</li>
+</ul>
+
+<p>이것은 $[\hom_\mathcal{A}(-, A), F] \cong F(A)$임을 보인다. 여기에 더해, 해당 동형이 자연적임을 보여아 한다. 자아아알 생각해 보면 이것은 임의의 $A, A’ \in \mathcal{A}$와 $F, G \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$와 $f: A’ \to A$와 $\alpha: F \Rightarrow G$에 대해 다음 도식이 가환임을 보이는 것과 같다.</p>
+
+<p><img src="/public/yoneda-naturality.png" style="margin: 0 auto; width: 470px" /></p>
+
+<p>원소 단위로 적으면,</p>
+
+<p><img src="/public/yoneda-comm.png" style="margin: 0 auto; margin-bottom: 2em; width: 400px" /></p>
+
+<p>위가 성립함은 $\theta$의 자연성으로부터 따라 나온다. ■</p>
+
+<h2 id="요네다-따름정리와-관계론적-존재론">요네다 따름정리와 관계론적 존재론</h2>
+
+<p>요네다 보조정리가 함의하는 결과 중 다음은 아주 중요하다. 필자는 이를 그냥 <strong>요네다 따름정리</strong>라고 부른다.</p>
+
+<blockquote>
+  <p><strong>요네다 따름정리.</strong> $X, Y \in \mathcal{A}$라고 하자.</p>
+
+  <ol>
+    <li>$[\hom(-, X), \hom(-, Y)] \cong \hom(X, Y)$</li>
+    <li>$X \cong Y \iff \hom(-, X) \cong \hom(-, Y)$</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> $F = \hom(-, Y)$로 둔다. ■</p>
+
+<p>요컨대 범주론에서 <strong>대상은, 그것이 받는 사상들의 집합과 다름없다.</strong> 일례로 정수 순서 범주에서 $0$은 초기 대상으로 정의할 수 있고, 더 일반적으로 $n$은 받는 사상들의 수가 $n$개인 대상으로 정의할 수 있다. 요네다 따름정리는 이처럼 대상을 그것이 다른 대상과 맺는 사상들로서 정의하는 접근이 모든<small>(엄밀히는 국소적으로 작은)</small> 범주에서 유효함을 보장한다. 필자는 이 접근을 <strong>관계론적 존재론</strong>이라고 부른다.</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

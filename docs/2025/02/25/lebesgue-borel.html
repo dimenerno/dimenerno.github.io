@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     르베그 가측 집합과 보렐 가측 집합 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/02/25/lebesgue-borel" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+                                                                                                                                              
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">르베그 가측 집합과 보렐 가측 집합</h1>
+  <span class="post-date">25 Feb 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/측도론/'" >측도론</div>
+      
+    </div>
+  
+  <h3 id="1-르베그-측도">1. 르베그 측도</h3>
+
+<p><a href="https://dimenerno.github.io/2025/02/25/caratheodory/">카라테오도리 정리</a>로부터 다음과 같이 측도 $m$을 정의할 수 있다.</p>
+
+<ol>
+  <li>
+    <p>$\mathcal{A}_0 = \lbrace \cup^n_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $는 대수임을 보인다.</p>
+  </li>
+  <li>
+    <p>$A \in \mathcal{A}_0$에 대해, $A = \sqcup^n_{k=1} (a_k, b_k]$로 표현하는 방법이 유일함을 보인다.</p>
+  </li>
+  <li>
+    <p>함수 $\rho: \mathcal{A}_0 \to [0, \infty]$를</p>
+
+\[\rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)\]
+
+    <p>와 같이 정의했을 때 $\rho$가 예비측도임을 보인다.</p>
+  </li>
+  <li>
+    <p>$\mathcal{A}_0, \rho$에 대해 카라테오도리 구축 정리를 적용하여 외측도 $m^\ast$을 얻는다.</p>
+  </li>
+  <li>
+    <p>$m^\ast$의 정의역을 $m^\ast$-가측집합으로 제한하여 측도 $m$을 얻는다.</p>
+  </li>
+</ol>
+
+<p>대수는 유한 합집합에만 닫혀 있기 때문에 1, 2, 3은 거의 자명하다. 4, 5의 증명은 <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">관련 글</a>을 참조하라.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 상술한 $m$을 <strong>르베그 측도<sub>Lebesgue measure</sub></strong>라고 부른다. 또한, $m$의 정의역에 속하는 집합을 <strong>르베그 가측<sub>Lebesgue measurable</sub></strong>이라고 부른다.</p>
+</blockquote>
+
+<p>카라테오도리 정리들로부터 다음 사실들이 어렵지 않게 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$m([a, b]) = m((a, b)) = m((a, b]) = m([a, b)) = b - a$</li>
+    <li>$A \subset \mathbb{R}$이 가산일 때, $m(A) = 0$</li>
+  </ol>
+</blockquote>
+
+<p>그리고 카라테오도리 확장 정리로 얻어지는 측도는 완비 측도<sub>complete measure</sub>이므로 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $m$은 완비 측도이다.</p>
+</blockquote>
+
+<p>또한 $\sigma(\mathcal{A}_0)$는 보렐 $\sigma$-대수 $\mathcal{B}$이므로, 다음이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 보렐 가측 집합은 르베그 가측이다.</p>
+</blockquote>
+
+<h3 id="2-르베그-가측이지만-보렐-가측이-아닌-집합">2. 르베그 가측이지만 보렐 가측이 아닌 집합</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 집합열 $\lbrace C_n \rbrace$을 다음과 같이 정의한다.</p>
+
+\[\begin{gather}
+C_0 = [0, 1]\\
+C_1 = I_0 \setminus (1/3, 2/3) \\
+C_2 = I_1 \setminus \{ (1/9, 2/9) \cup (7/9, 8/9) \} \\
+\vdots
+\end{gather}\]
+
+  <p><strong>칸토어 집합<sub>Cantor set</sub></strong> $C$를 $\cap^\infty_{n = 0}C_n$으로 정의한다.</p>
+
+  <p><img src="/public/cantor.png" width="500px" style="margin: 0 auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>칸토어 집합은 비가산이다.</li>
+    <li>칸토어 집합은 르베그 측도 0이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>
+    <p>칸토어 집합에 속하는 원소들은 삼진법으로 소숫점 전개했을 때 어느 자리에도 2가 등장하지 않는 수들이다. 그러한 수는 $2^\aleph_0$개 있으므로 비가산이다.</p>
+  </li>
+  <li>
+    <p>$m(C_n) = (2/3)^n$이므로 $m(C) = \lim_{n \to infty} (2/3)^n = 0$. ■</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><strong>정의.</strong> 칸토어 집합을 정의할 때 각 단계에서 빠지는 집합을 $J_n$이라고 하자. 즉,</p>
+
+\[\begin{gather}
+J_1 = (1/3, 2/3) \\
+J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
+\vdots
+\end{gather}\]
+
+  <p>다음과 같이 함수열을 정의한다.</p>
+
+\[\begin{gather}
+\operatorname{dom} f_1 = J_1,\; f_1(x) = \frac{1}{2} \\\\
+\operatorname{dom} f_2 = J_1 \cup J_2, \; f_2(x) = \begin{cases} 1/4 &amp; x \in (1/9, 2/9) \\ 1/2 &amp; x \in (1/3, 2/3) \\ 3/4 &amp; x \in (7/9, 8/9) \end{cases} \\\\
+\vdots
+\end{gather}\]
+
+  <p>$f: I \to I$를 다음과 같이 정의한다.</p>
+
+\[f(x) = \inf \{ f_n(y) : y \geq x, y \in \mathrm{dom} f \}\]
+
+  <p>$f$를 <strong>칸토어 함수<sub>Cantor function</sub></strong>라고 한다.</p>
+
+  <p><img src="/public/CantorEscalier.svg.png" width="300px" style="margin: 0 auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 칸토어 함수는 연속이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $f$를 칸토어 함수라고 하자. $f$는 증가함수이므로 $f$가 불연속점을 가진다면 해당 불연속은 틈 불연속<sub>gap discontinuity</sub>이며, 따라서 어떤 $\epsilon &gt; 0$와 $y_0 \in I$에 대해 $(y_0 - \epsilon, y_0 + \epsilon)$이 $\operatorname{im} f$ 밖에 속한다. 그런데 $(y_0 - \epsilon, y_0 + \epsilon)$의 원소 중에는 이진법으로 소숫점 전개했을 때 자릿수가 유한한 수가 존재한다. 해당 수는 $\operatorname{im}f$에 속하므로 모순이다. ■</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 르베그 가측이지만 보렐 가측이 아닌 함수가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><em>보조정리.</em> $f$가 증가함수라면 $f^{-1}$은 보렐 집합을 보렐 집합에 사상한다.</p>
+
+<p><em>보조정리의 증명.</em> $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $라고 하자. 열린 집합들의 모음 $\mathcal{G}$에 대해 $\mathcal{G} \subset \mathcal{A}$임이 자명하다. 또한 $\mathcal{A}$가 $\sigma$-대수임이 역함수의 성질로부터 자명하다. 따라서 $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$이다.</p>
+
+<p>$f$가 칸토어 함수라고 하고, $F$를 다음과 같이 정의하자.</p>
+
+\[F(x) =\inf \{y : f(y) \geq x \}\]
+
+<p>$F$는 엄격히 증가하는 함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■</p>
+
+</div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3 class="lang-ko">관련 글</h3>
+  <h3 class="lang-en">Related Posts</h3>
+  <ul>
+    
+      
+      
+        <li><a href="/2025/02/25/caratheodory">카라테오도리 정리를 이용한 측도의 구성</a></li>
+      
+    
+      
+      
+        <li><a href="/2025/02/24/algebra-measure">대수와 측도의 정의</a></li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>
