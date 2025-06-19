@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-06-19T16:22:37+09:00</updated>
+ <updated>2025-06-19T19:31:30+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -7376,25 +7376,27 @@ f(x) &amp;amp;\text{otherwise}
 &lt;h3 id=&quot;두-번째-증명&quot;&gt;두 번째 증명&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;보조정리 (기수의 샌드위치 정리).&lt;/strong&gt; $A_1 \subset B \subset A$에 대해 $|A_1| = |A|$라면 $|A_1| = |B| = |A|$이다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;보조정리 (기수의 샌드위치 정리).&lt;/strong&gt; $A_1 \supseteq B \supseteq A_2$에 대해 $|A_1| = |A_2|$라면 $|A_1| = |B| = |A_2|$이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $f: A → A_1$가 전사라고 하자. 다음과 같이 $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace $을 정의한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $f: A_1 → A_2$가 전단사라고 하자. $B_1 = B$로 둔다. 다음과 같이 $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace $을 정의한다.&lt;/p&gt;
 
 \[\begin{gather}
-A_0 = A, \; A_{n+1} = f[A_n] \\
-B_0 = B, \; B_{n+1} = f[B_n] \\
+A_{n+1} = f[A_n]\\
+B_{n+1} = f[B_n]\\
 C_n = A_n \setminus B_n
 \end{gather}\]
 
-&lt;p&gt;$C = \bigcup C_n, D = A \setminus C$라고 하자. $f[C] \subset C, f[D] \subset D$임을 확인하라. 따라서 다음의 $g: A → B$는 전사이다.&lt;/p&gt;
+&lt;p&gt;$C = \bigcup C_n$ (그림에서 색칠되지 않은 영역), $D = A_1 \setminus C$ (그림에서 색칠된 영역) 라고 하자. $f[C] \subset C, f[D] \subset D$임을 확인하라. 따라서 다음의 $g: B_1 → A_2$는 전단사이다. (화살표)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/csb-3.png&quot; style=&quot;width: 100%; max-width: 400px; margin: 2em auto 0 auto;&quot; /&gt;&lt;/p&gt;
 
 \[g(x) = \begin{cases}
-f(x) &amp;amp; x \in C\\
-x &amp;amp; x \in D
+x &amp;amp; x \in C\\
+f(x) &amp;amp; x \in D
 \end{cases}\]
 
-&lt;p&gt;&lt;strong&gt;본 정리의 증명.&lt;/strong&gt; $f: A → B, g: B → A$가 전사일 때 $|gf[A]| \leq |g[B]| \leq |A|$이므로 보조정리에 의해 $|g[B]| = |B| = |A|$이다. ◾&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;본 정리의 증명.&lt;/strong&gt; $f: X → Y, g: Y → X$가 전사일 때 $gf[X] \subseteq g[Y] \subseteq X$이고, $| gf[X] | = | X |$이므로, 보조정리에 의해 $|g[Y]| = |Y| = |X|$이다. ◾&lt;/p&gt;
 
 &lt;p&gt;잘 생각해 보면 두 증명은 사실 같다.&lt;/p&gt;
 </content>
@@ -7795,21 +7797,21 @@ x &amp;amp; x \in D
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;이 문제는 드원과 베란이 1959년에 처음 고안했으나 1976년에 벨&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;이 CERN의 물리학자들과 나눈 토론을 통해 유명해졌다. 벨은 로렌츠 수축을 근거로 실이 끊어진다고 주장했으나 CERN의 물리학자들 대다수는 실에 변화가 없다고 반박했으며, 한 저명한 물리학자는 벨이 상대론을 오도하고 있다고까지 말했다. 그렇다면 정답은 과연 무엇일까?&lt;/p&gt;
+&lt;p&gt;이 문제는 드원과 베란이 1959년에 처음 고안했으나 1976년에 존 스튜어트 벨이 CERN의 물리학자들과 나눈 토론을 통해 유명해졌다. 벨은 로렌츠 수축을 근거로 실이 끊어진다고 주장했으나 CERN의 물리학자들 대다수는 실에 변화가 없다고 반박했으며, 한 저명한 물리학자는 벨이 상대론을 오도하고 있다고까지 말했다. 그렇다면 정답은 과연 무엇일까?&lt;/p&gt;
 
 &lt;p&gt;정답은 &lt;strong&gt;1. 끊어진다&lt;/strong&gt; 이다.&lt;/p&gt;
 
 &lt;p&gt;이 답은 일면 비직관적이다. 로렌츠 수축은 관성계에 의존적인 현상이기 때문이다. 일례로 철수에 대해 영희가 광속에 가깝게 움직인다면 영희는 수축한다. 하지만 동 상황에서 영희의 관성계를 기준으로는 철수가 광속에 가깝게 움직이므로 철수가 수축한다. 이같은 대칭성은 로렌츠 수축이 실재하는 물리적 현상이 아닌 관성계의 선택에 따른 수학적 현상임을 시사한다. 이같은 로렌츠 수축의 해석은 Rindler 1977의 글에서 볼 수 있듯이 물리학계에서 널리 퍼져있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;로렌츠에 따르면 수축의 원인은 원자 구조를 밀집시키는 전기적 응집력이 [물체가 에테르를 통과함에 따라] 증가하는 데 있다… [하지만] 상대론에서 로렌츠 수축은 본질적으로 기하학적 투영 효과로서, 정지해 있는 막대기를 비스듬한 시선으로 보는 것과 유사하다.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  &lt;p&gt;로렌츠에 따르면 수축의 원인은 원자 구조를 밀집시키는 전기적 응집력이 [물체가 에테르를 통과함에 따라] 증가하는 데 있다… [하지만] 상대론에서 로렌츠 수축은 본질적으로 기하학적 투영 효과로서, 정지해 있는 막대기를 비스듬한 시선으로 보는 것과 유사하다.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;그러나 Rindler의 설명은 반만 맞고 반은 틀렸다. 그 이유는 로렌츠 수축에 두 가지 유형이 있기 때문이다. &lt;strong&gt;수동적 로렌츠 변환&lt;sub&gt;passive Lorentz transformation&lt;/sub&gt;&lt;/strong&gt;의 경우에는 Rindler의 주장대로 로렌츠 수축이 관성계의 선택에 따른 부수 현상에 불과하지만, &lt;strong&gt;능동적 로렌츠 변환&lt;sub&gt;active Lorentz transformation&lt;/sub&gt;&lt;/strong&gt;의 경우에는 로렌츠 수축이 전기력의 증가와 같은 실질적 물리 현상을 야기한다. 본 글에서는 두 변환의 차이가 무엇인지, 그리고 어떻게 능동적 로렌츠 변환은 전기력과 연관되는지 살펴볼 것이다.&lt;/p&gt;
 
 &lt;h3 id=&quot;1-수동적-변환&quot;&gt;1. 수동적 변환&lt;/h3&gt;
 
-&lt;p&gt;점입자 A가 빈 공간에서 관성 운동한다. A에 대해 정지해 있는 관성좌표계 $(x, t)$를 기준으로 민코프스키 다이어그램을 그리면 해당 상황은 (a)와 같이 표현할 수 있다. 반면 $(x, t)$에 대해 $0.6c$의 속도를 가지는 관성좌표계 $(x’, t’)$을 기준으로 하는 민코프스키 다이어그램은 (b) 및 (나’)와 같다.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;점입자 A가 빈 공간에서 관성 운동한다. A에 대해 정지해 있는 관성좌표계 $(x, t)$를 기준으로 민코프스키 다이어그램을 그리면 해당 상황은 (a)와 같이 표현할 수 있다. 반면 $(x, t)$에 대해 $0.6c$의 속도를 가지는 관성좌표계 $(x’, t’)$을 기준으로 하는 민코프스키 다이어그램은 (b) 및 (b’)와 같다.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/bell-1.png&quot; style=&quot;width: 100%; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
@@ -7831,13 +7833,13 @@ x &amp;amp; x \in D
 
 &lt;p&gt;&lt;img src=&quot;/public/bell-3.png&quot; style=&quot;width: 100%; max-width: 520px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;$(x, t)$에서 $P$와 $Q$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x’, t’)$에서는 $P$와 $Q’$가 동시적이므로 A, B 거리는 $d’$이다. 민코프스키 기하학을 이용하여 계산하면 $d’ = 0.8c$ 이며 $d’ &amp;lt; d$이다.&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;$(x, t)$에서 $P$와 $Q$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x’, t’)$에서는 $P$와 $Q’$가 동시적이므로 A, B 거리는 $d’$이다. 민코프스키 기하학을 이용하여 계산하면 $d’ = 0.8c$ 이며 $d’ &amp;lt; d$이다.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;같은 현상을 능동적 변환으로 해석해 보자. A, B가 $c$의 거리를 유지하다가 $(x, t)$에 대해 동시에 $-0.6c$의 속도가 더해졌다고 하자. 민코프스키 다이어그램은 다음과 같다. $(x’’, t’’)$은 속도가 더해진 이후의 A를 기준으로 하는 관성좌표계이다.&lt;/p&gt;
+&lt;p&gt;같은 현상을 능동적 변환으로 해석해 보자. A, B가 $c$의 거리를 유지하다가 $(x, t)$에 대해 동시에 $-0.6c$의 속도가 더해졌다고 하자. 민코프스키 다이어그램은 다음과 같다. $(x&apos;&apos;, t&apos;&apos;)$은 속도가 더해진 이후의 A를 기준으로 하는 관성좌표계이다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/bell-4.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;$(x, t)$에서 $(P, Q)$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x’’, t’’)$에서는 $(P, Q’’)$가 동시적이므로 A, B의 거리는 $d’‘$이다. 마찬가지로 민코프스키 기하학을 이용하여 $d’‘$을 계산하면 $d’’ = 1.25c$ 이며 $d’’ &amp;gt; d$이다.&lt;/p&gt;
+&lt;p&gt;$(x, t)$에서 $(P, Q)$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x&apos;&apos;, t&apos;&apos;)$에서는 $(P, Q&apos;&apos;)$가 동시적이므로 A, B의 거리는 $d&apos;&apos;$이다. 마찬가지로 민코프스키 기하학을 이용하여 $d&apos;&apos;$을 계산하면 $d&apos;&apos; = 1.25c$ 이며 $d&apos;&apos; &amp;gt; d$이다.&lt;/p&gt;
 
 &lt;p&gt;따라서 상대론에서는 수동적 변환과 능동적 변환 사이에 실질적인 차이가 있다. 수동적 변환은 A 관점의 거리를 유지시키고 새 관성좌표계 관점의 거리를 수축시키는 한편, 능동적 변환은 기존 관성좌표계 관점의 거리를 유지시키고 A 관점의 거리를 팽창시킨다.&lt;/p&gt;
 
@@ -7923,16 +7925,13 @@ x &amp;amp; x \in D
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;벨 부등식의 벨이 맞다. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Rindler (1977), p. 41. Maudlin, &lt;em&gt;Philosophy of Physics: Space and Time&lt;/em&gt; 에서 발췌. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;Rindler (1977), p. 41. Maudlin, &lt;em&gt;Philosophy of Physics: Space and Time&lt;/em&gt; 에서 발췌. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;(a)와 (b)는 같은 물리적 현상을 다른 관성좌표계로 표현한 다이어그램이다. 한편, (b)와 (b’)은 — 같은 물리적 현상을 같은 관성좌표계로 표현한 — 같은 다이어그램의 다른 표현이다. (a), (b)는 같은 정육면체를 정사영과 등각 투영법으로 그린 것에, (b), (b’)은 같은 정육면체를 같은 투영법을 이용하여 위와 옆에서 그린 것에 비견할 수 있다. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;(a)와 (b)는 같은 물리적 현상을 다른 관성좌표계로 표현한 다이어그램이다. 한편, (b)와 (b’)은 — 같은 물리적 현상을 같은 관성좌표계로 표현한 — 같은 다이어그램의 다른 표현이다. (a), (b)는 같은 정육면체를 정사영과 등각 투영법으로 그린 것에, (b), (b’)은 같은 정육면체를 같은 투영법을 이용하여 위와 옆에서 그린 것에 비견할 수 있다. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:4&quot;&gt;
-      &lt;p&gt;그림에서는 $d’ &amp;gt; d$인 것으로 보이지만, 민코스프키 다이어그램의 기하학은 유클리드 기하학이 아닌 민코프스키 기하학임을 유념해야 한다. 평면지도에서는 알래스카가 아프리카와 거의 비슷한 크기이지만 실제로는 아프리카가 훨씬 더 크듯이, 민코프스키 다이어그램에서는 $d’ &amp;gt; d$인 것으로 보이지만 실제 로렌츠 변환을 계산하면 $d’ &amp;lt; d$이다. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;그림에서는 $d’ &amp;gt; d$인 것으로 보이지만, 민코스프키 다이어그램의 기하학은 유클리드 기하학이 아닌 민코프스키 기하학임을 유념해야 한다. 평면지도에서는 알래스카가 아프리카와 거의 비슷한 크기이지만 실제로는 아프리카가 훨씬 더 크듯이, 민코프스키 다이어그램에서는 $d’ &amp;gt; d$인 것으로 보이지만 실제 로렌츠 변환을 계산하면 $d’ &amp;lt; d$이다. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -7940,7 +7939,7 @@ x &amp;amp; x \in D
  </entry>
  
  <entry>
-   <title>Bell's Spaceship Paradox: Passive vs. Active Lorentz Contraction</title>
+   <title>Bell's Spaceship Paradox: Passive and Active Lorentz Contraction</title>
    <link href="http://localhost:4000/2024/11/17/bell-rocket/en"/>
    <updated>2024-11-17T00:00:00+09:00</updated>
    <id>http://localhost:4000/2024/11/17/bell-rocket/bell-rocket-en</id>
@@ -7954,25 +7953,25 @@ x &amp;amp; x \in D
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;This thought experiment was originally devised by Dewan and Beran in 1959 but gained widespread attention after Bell&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; discussed it with CERN physicists in 1976. Bell argued that the thread breaks due to Lorentz contraction, while most CERN physicists disagreed, claiming the thread remains unchanged. One prominent physicist even accused Bell of misrepresenting relativity. So, who is correct?&lt;/p&gt;
+&lt;p&gt;This thought experiment was originally devised by Dewan and Beran in 1959 but gained widespread attention after John Stewart Bell discussed it with CERN physicists in 1976. Bell argued that the thread breaks due to Lorentz contraction. Most CERN physicists disagreed, claiming the thread remains unchanged. One prominent physicist even accused Bell of misrepresenting relativity. So, who is correct?&lt;/p&gt;
 
 &lt;p&gt;The answer is &lt;strong&gt;1. It breaks.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;This may seem counterintuitive. After all, Lorentz contraction is frame-dependent. If Alice moves at near-light speed relative to Bob, Bob would observe Alice to have contracted. But in Alice’s frame, it is Bob who is moving and therefore contracts. This symmetry suggests that Lorentz contraction is a mathematical artifact arising from frame choice, hence not a physically real phenomenon. Such an interpretation is widespread in physics, e.g. Rindler’s 1977 writes:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;According to Lorentz, the cause of contraction lies in the increased electromagnetic cohesion of atomic structures [as an object passes through the ether]… [But] in relativity, Lorentz contraction is essentially a geometric projection effect, akin to viewing a stationary rod from an angle.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+  &lt;p&gt;According to Lorentz, the cause of contraction lies in the increased electromagnetic cohesion of atomic structures [as an object passes through the ether]… [But] in relativity, Lorentz contraction is essentially a geometric projection effect, akin to viewing a stationary rod from an angle.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;However, Rindler’s explanation is quite misleading. Rather, it is important to recognise that there are &lt;em&gt;two&lt;/em&gt; types of Lorentz contraction. In the case of a &lt;strong&gt;passive Lorentz transformation&lt;/strong&gt;, Lorentz contraction is merely an artifact of changing coordinates. But in the case of an &lt;strong&gt;active Lorentz transformation&lt;/strong&gt;, the contraction corresponds to a real physical effect, such as increased electromagnetic force. This post will explore the difference between the two and show how active transformation relates to physical stress.&lt;/p&gt;
 
 &lt;h3 id=&quot;1-passive-transformation&quot;&gt;1. Passive Transformation&lt;/h3&gt;
 
-&lt;p&gt;Consider a point particle A moving inertially in vacuum. The Minkowski diagram, with respect to an inertial frame $(x, t)$ to which A is at rest, is shown in (a). In another inertial frame $(x’, t’)$ moving at $0.6c$ relative to $(x, t)$, the Minkowski diagram is as shown in (b) and (b’).&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Consider a point particle A moving inertially in vacuum. The Minkowski diagram, with respect to an inertial coordinates $(x, t)$ to which A is at rest, is shown in (a). In another inertial coordinates $(x’, t’)$ moving at $0.6c$ relative to $(x, t)$, the Minkowski diagram is as shown in (b) and (b’).&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/bell-1.png&quot; style=&quot;width: 100%; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The diagrams (a) and (b) represent the same physical scenario using different coordinates. Such transformation between coordinates that preserves physical scenario is called a &lt;strong&gt;passive transformation&lt;/strong&gt;. In Newtonian mechanics, this is represented in Galilean spacetime diagram as shear transformation; in relativity, it is represented in Minkowski spacetime diagram as Lorentz transformation.&lt;/p&gt;
+&lt;p&gt;The diagrams (a) and (b) represent the same physical scenario using different coordinates. Such transformation between coordinates is called a &lt;strong&gt;passive transformation&lt;/strong&gt;. In Newtonian mechanics, this is represented as shear transformation of Galilean diagram; in relativity, as Lorentz transformation of Minkowski diagram.&lt;/p&gt;
 
 &lt;h3 id=&quot;2-active-transformation&quot;&gt;2. Active Transformation&lt;/h3&gt;
 
@@ -7980,23 +7979,32 @@ x &amp;amp; x \in D
 
 &lt;p&gt;&lt;img src=&quot;/public/bell-2.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Unlike (a)-(b), diagrams (a) and (c) use the &lt;em&gt;same&lt;/em&gt; coordinates. The transformation here reflects a physical change in A’s motion, not a change in coordinates. Such a transformation is called an &lt;strong&gt;active transformation&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Unlike (a) and (b’), diagrams (a) and (c) use the &lt;em&gt;same&lt;/em&gt; coordinates. The change here reflects a physical change in A’s motion, not a change in coordinates. Such a transformation is called an &lt;strong&gt;active transformation&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;At first glance, the difference between active and passive transformations might seem purely semantic. In classical mechanics, the two are indeed physically equivalent, and this is partly what grounds Noether’s theorem. But in relativity, the distinction becomes crucial due to the &lt;strong&gt;relativity of simultaneity&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;3-relativity-of-simultaneity&quot;&gt;3. Relativity of Simultaneity&lt;/h3&gt;
 
-&lt;p&gt;To understand why simultaneity matters, let’s consider two particles A and B maintaining a distance $c$ apart. The Minkowski diagrams from A’s rest frame $(x, t)$ and another frame $(x’, t’)$ moving at $0.6c$ are shown below:&lt;/p&gt;
+&lt;p&gt;To understand why simultaneity matters, let’s consider two particles A and B maintaining a distance $d$ apart. The Minkowski diagrams based on A’s rest coordinates $(x, t)$ and another diagram based on coordinates $(x’, t’)$ moving at $0.6c$ are shown below:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/bell-3.png&quot; style=&quot;width: 100%; max-width: 520px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;In $(x, t)$, points $P$ and $Q$ are simultaneous, so the distance between A and B is $d$. In $(x’, t’)$, $P$ and $Q’$ are simultaneous, and the distance is $d’$. Minkowskian geometry gives $d’ = 0.8c$, so $d’ &amp;lt; d$.&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;In $(x, t)$, events $P$ and $Q$ are simultaneous, so the distance between A and B is $d$. But in $(x’, t’)$, $P$ and $Q’$ are simultaneous, and the distance is $d’$. To calculate $d’$ we use the Lorentz transformation formulas:&lt;/p&gt;
 
-&lt;p&gt;Now consider this in terms of active transformation. Suppose A and B, initially at distance $c$, are both accelerated simultaneously — with respect to $(x, t)$ — in $(x, t)$ to $-0.6c$. The resulting Minkowski diagram is:&lt;/p&gt;
+\[\begin{align}
+&amp;amp;t&apos; = \gamma \left( t - \frac{vx}{c^2} \right)\\
+&amp;amp;x&apos; = \gamma (x - vt)\\
+&amp;amp;y&apos; = y\\
+&amp;amp;z&apos; = z\\
+\end{align}\]
+
+&lt;p&gt;Calculation gives $d’ = 0.8d$, i.e. $d’ &amp;lt; d$.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Now let’s consider the active transformation case. Suppose A and B, initially at distance $d$, are both accelerated simultaneously, with respect to $(x, t)$, to $-0.6c$. The resulting Minkowski diagram is:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/bell-4.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;In $(x, t)$, $P$ and $Q$ are simultaneous, so the distance remains $d$. In the new frame $(x’’, t’’)$, $P$ and $Q’’$ are simultaneous, and the distance is $d’’ = 1.25c$, hence $d’’ &amp;gt; d$.&lt;/p&gt;
+&lt;p&gt;In $(x, t)$, $P$ and $Q$ are simultaneous, and their distance remains $d$. But in $(x&apos;&apos;, t&apos;&apos;)$, the coordinates to which A is at rest after the acceleration, $P$ and $Q&apos;&apos;$ are simultaneous, and the distance is $d&apos;&apos; = 1.25d$. Hence $d&apos;&apos; &amp;gt; d$.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Thus, in relativity, passive and active transformations lead to physically different consequences.&lt;/em&gt; Passive transformations preserve distances in A’s frame but contract them in the moving frame, whereas active transformations preserve distances in the original frame but stretch them in A’s new frame.&lt;/p&gt;
 
@@ -8004,8 +8012,8 @@ x &amp;amp; x \in D
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Distance between A and B&lt;/th&gt;
-      &lt;th&gt;A’s Frame&lt;/th&gt;
-      &lt;th&gt;Moving Inertial Frame&lt;/th&gt;
+      &lt;th&gt;Rest Frame of A&lt;/th&gt;
+      &lt;th&gt;Moving Frame of A&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -8015,7 +8023,7 @@ x &amp;amp; x \in D
       &lt;td&gt;Contracted&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Active Transformation (disconnected)&lt;/td&gt;
+      &lt;td&gt;Active Transformation (isolated)&lt;/td&gt;
       &lt;td&gt;Expanded&lt;/td&gt;
       &lt;td&gt;Unchanged&lt;/td&gt;
     &lt;/tr&gt;
@@ -8024,20 +8032,16 @@ x &amp;amp; x \in D
 
 &lt;h3 id=&quot;4-active-transformation-of-a-rigid-body&quot;&gt;4. Active Transformation of a Rigid Body&lt;/h3&gt;
 
-&lt;p&gt;Previously, A and B were separate particles. Now suppose A and B are endpoints of a rigid rod M of length $c$.&lt;/p&gt;
+&lt;p&gt;Up to now, A and B were isolated particles. Now suppose A and B are endpoints of a rigid rod M of length $l$.&lt;/p&gt;
 
-&lt;p&gt;A rigid body resists deformation—unlike a rubber ball, a steel ball doesn’t change volume when force is applied.&lt;/p&gt;
-
-&lt;p&gt;What happens when M undergoes an active transformation? Suppose M is accelerating simultaneously in $(x, t)$ to reach $0.6c$.&lt;/p&gt;
-
-&lt;p&gt;If M were not rigid, A would observe its length as expanding to $1.25c$. But rigidity resists this expansion, leading to internal stresses during acceleration:&lt;/p&gt;
+&lt;p&gt;Suppose that every part of M accelerates simultaneously with respect to an inertial frame $(x, t)$ to reach $0.6c$. If M were not rigid, A would observe M’s length as expanding to $1.25c$. &lt;em&gt;But rigidity resists this expansion,&lt;/em&gt; leading to an internal stress. Thus from A’s frame of reference, the rod undergoes two two effects.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Effect 1: Due to relativity of simultaneity, B accelerates before A, stretching the rod.&lt;/li&gt;
-  &lt;li&gt;Effect 2: The rod’s rigidity resists the stretching, generating internal stress.&lt;/li&gt;
+  &lt;li&gt;Effect 1: Due to &lt;em&gt;relativity of simultaneity,&lt;/em&gt; B accelerates before A, which would cause the rod to stretch.&lt;/li&gt;
+  &lt;li&gt;Effect 2: &lt;em&gt;The rod’s rigidity resists this stretching,&lt;/em&gt; generating internal stress.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The internal force arising from Effect 2 is called &lt;strong&gt;relativistic stress&lt;/strong&gt;. If M is strong enough, it resists deformation and maintains its original length. Otherwise, it deforms or breaks. For example, a chocolate bar rapidly accelerated to near-light speed would shatter.&lt;/p&gt;
+&lt;p&gt;The internal stress thus arisen is called &lt;strong&gt;relativistic stress&lt;/strong&gt;. If M is strong enough, it endures the stress and maintains its original length. Otherwise, it deforms or breaks. For example, a biscuit rapidly accelerated to near-light speed would shatter, while a rugby ball accelerated to near-light speed would visibly extend.&lt;/p&gt;
 
 &lt;h3 id=&quot;5-conclusion&quot;&gt;5. Conclusion&lt;/h3&gt;
 
@@ -8045,8 +8049,8 @@ x &amp;amp; x \in D
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Distance between A and B&lt;/th&gt;
-      &lt;th&gt;A’s Frame&lt;/th&gt;
-      &lt;th&gt;Moving Inertial Frame&lt;/th&gt;
+      &lt;th&gt;Rest Frame of A&lt;/th&gt;
+      &lt;th&gt;Moving Frame of A&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -8056,7 +8060,7 @@ x &amp;amp; x \in D
       &lt;td&gt;Contracted&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Active Transformation (disconnected)&lt;/td&gt;
+      &lt;td&gt;Active Transformation (isolated)&lt;/td&gt;
       &lt;td&gt;Expanded&lt;/td&gt;
       &lt;td&gt;Unchanged&lt;/td&gt;
     &lt;/tr&gt;
@@ -8068,30 +8072,27 @@ x &amp;amp; x \in D
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Returning to Bell’s paradox: when spaceships A and B accelerate, the “spaceship-thread-spaceship” system undergoes an active transformation. In A’s frame:&lt;/p&gt;
+&lt;p&gt;Returning to Bell’s paradox, when spaceships A and B accelerate, the “spaceship-thread-spaceship” system undergoes an active transformation. Thus in A’s frame, two effects co-occur:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Effect 1: Distance between A and B increases (since they are not rigidly connected).&lt;/li&gt;
   &lt;li&gt;Effect 2: The thread tries to maintain its original length.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Eventually, if acceleration continues, Effect 1 overwhelms Effect 2, and the thread breaks. If A and B were connected by a steel cable instead, Effect 2 would dominate, and the distance would remain constant.&lt;/p&gt;
+&lt;p&gt;Eventually, if acceleration continues, Effect 1 wins over Effect 2, and the thread breaks. If A and B were connected by a steel cable instead, Effect 2 would dominate, and the distance would remain constant.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Yes, the same Bell of Bell’s inequality. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Rindler (1977), p. 41. Quoted in Maudlin, &lt;em&gt;Philosophy of Physics: Space and Time&lt;/em&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;Rindler (1977), p. 41. Quoted in Maudlin, &lt;em&gt;Philosophy of Physics: Space and Time&lt;/em&gt;. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Diagrams (a) and (b) correspond to the same physical situation but with different coordinates, akin to rendering the same cube using different projections (e.g. orthographic v. isometric). Diagrams (b) and (b’) are the same diagram represented differently, akin to drawing the same cube using the same projection from different perspective. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;Diagrams (a) and (b) show the same physical situation in different frames. Diagrams (b) and (b’) are different depictions of the same diagram. Think of them like orthographic vs. perspective drawings of the same object. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:4&quot;&gt;
-      &lt;p&gt;Though $d’ &amp;gt; d$ may appear in the diagram, remember that Minkowski geometry is non-Euclidean. Just as Alaska may appear larger than Africa on a flat map, but isn’t, the Minkowski diagram can visually misrepresent distances. Calculations confirm $d’ &amp;lt; d$. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Though it appears to be $d’ &amp;gt; d$ in the diagram, recall that Minkowski geometry uses non-Euclidean distance. Just as Alaska may appear as large as Africa on a flat map, but isn’t, Minkowski diagrams visually misrepresent distances. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
