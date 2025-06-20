@@ -281,7 +281,7 @@
     href="/notes/"
     >Maths Review Notes (Korean)</a
   >
-                                                                                                                                                                    
+                                                                                                                                                                            
   </nav>
 
   <div class="sidebar-item">
@@ -422,6 +422,369 @@
 
 
 <div class="posts">
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/25/caratheodory"> 카라테오도리 정리를 이용한 측도의 구성 </a>
+      </h1>
+    <span class="post-date">25 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/측도론/'">
+        측도론
+      </div>
+      
+    </div>
+     <p>필자는 카라테오도리 정리<sub>Carathéodory theorem</sub>를 3가지로 구분해서 이해하는 방식을 선호하기 때문에, 이 글에서도 해당 방식을 따른다. 각각 다음과 같다.</p>
+
+<ol>
+  <li><strong>카라테오도리 구축 정리:</strong> 임의의 집합족과 양함수로부터 외측도<sub>outer measure</sub> 를 정의할 수 있다.</li>
+  <li><strong>카라테오도리 제한 정리:</strong> 외측도의 정의역을 가측 집합으로 제한한 함수는 측도가 된다.</li>
+  <li><strong>카라테오도리 확장 정리:</strong> 대수 $\mathcal{A}_0$ 위의 예비측도<sub>premeasure</sub> $\mu_0$를 확장하는 $\sigma(\mathcal{A}_0)$ 위의 측도는, 집합족을 $\mathcal{A}_0$, 양함수를 $\mu_0$로 잡은 뒤 구축 정리를 적용하여 얻은 외측도 $\mu^\ast$에, 제한 정리를 적용하여 얻은 측도가 유일하다.</li>
+</ol>
+
+<p>도식적으로, 다음과 같이 이해할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>(1)</th>
+      <th>(2)</th>
+      <th>(3)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>정의역</td>
+      <td>대수 $\mathcal{A}_0$</td>
+      <td>$\sigma$-대수 $\mathcal{A}$</td>
+      <td>멱집합 $\mathcal{P}(X)$</td>
+    </tr>
+    <tr>
+      <td>함수</td>
+      <td>예비측도 $\mu_0$</td>
+      <td>측도 $\mu$</td>
+      <td>외측도 $\mu^\ast$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>구축 정리는 (1) → (3), 제한 정리는 (3) → (2), 확장 정리는 (1) → (2)의 방향을 가진다. 하나하나 살펴 보자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X$ 위의 <strong>외측도</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$는 다음을 만족하는 함수이다.</p>
+
+  <ol>
+    <li>$\mu^\ast(\varnothing) = 0$</li>
+    <li>$A \subset B \implies \mu^\ast(A) \leq \mu^\ast(B)$</li>
+    <li>$\mu^\ast\left( \bigcup_{n \in \mathbb{N}} A_n  \right) \leq \sum_{n \in \mathbb{N}} \mu^\ast(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>카라테오도리 구축 정리.</strong> $X$의 부분집합으로 이루어진 임의의 집합족 $\mathcal{S}$와, $l(\varnothing) = 0$을 만족하는 임의의 함수 $l: \mathcal{S} \to [0, \infty]$가 주어졌을 때, 다음과 같이 정의된 $\mu^\ast$은 외측도이다.</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} l(A_n) : \{ A_n \} \subset \mathcal{S} \text{ covers }E  \right\}\]
+</blockquote>
+
+<p>즉, $\mu^\ast$은 덮개의 극한으로서 $E$의 ‘측도’ 비스무리한 것을 정의하는 함수이며, 구분구적법에서 상합<sub>upper sum</sub>과 개념적으로 비슷하다.</p>
+
+<p><strong>증명.</strong> 1과 2는 자명하다. 3을 보인다.</p>
+
+<p>$A = \bigcup A_n$이라고 하고, 임의의 $\epsilon &gt; 0$이 주어졌다고 하자. $\mu^\ast$의 정의에 의해, 각 $n$에 대해 다음을 만족하는 $A_n$의 덮개 $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$가 존재한다.</p>
+
+\[\sum l(A_{nm}) \leq \mu^*(A_n) + \epsilon/2^n\]
+
+<p>따라서,</p>
+
+\[\sum_{n, m \in \mathbb{N}} l(A_{nm}) \leq \sum \mu^*(A_n) + \epsilon.\]
+
+<p>그리고 $\bigcup \mathcal{C}_n$이 $A$를 덮으므로, $\mu^\ast$의 정의에 의해 $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$이다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. 임의의 $E$에 대해 다음을 만족하는 집합 $A$를 $\mu^\ast$에 대해 <strong>가측<sub>measurable</sub></strong>이라고 한다.</p>
+
+\[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast(N) = 0$인 $N$을 <strong>영집합<sub>null set</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<p>즉, 가측 집합은 $\mu^\ast$에 대해 임의의 집합을 ‘깔끔하게’ 분할하는 집합이다. 따라서 가측 집합으로만 이루어진 모임 위에서 $\mu^\ast$은 일반적인 측도와 같이 행동할 것으로 예측할 수 있다. 이 예측을 입증하는 것이 다음의 제한 정리이다.</p>
+
+<blockquote>
+  <p><strong>카라테오도리 제한 정리.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast$에 대해 가측인 집합들의 모임을 $\mathcal{A}$라고 할 때, 다음이 성립한다.</p>
+
+  <ol>
+    <li>$\mathcal{A}$는 $\sigma$-대수이다.</li>
+    <li>$\mu^\ast |_\mathcal{A}$는 측도이다.</li>
+    <li>$\mathcal{A}$는 $\mu^\ast$의 모든 영집합을 포함한다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><strong>1. $\mathcal{A}$는 대수이다.</strong></p>
+
+<p>여집합 닫힘은 자명하다. 유한 교집합 닫힘임을 보인다.</p>
+
+<p>$A, B$가 가측이라고 하자. $A \cap B$가 가측임을 보이기 위해 다음을 보이면 충분하다.</p>
+
+\[\mu^*(E \cap (A \cap B)) + \mu^*(E \cap (A \cap B)^c) \leq \mu^*(E) \quad \cdots \quad (*)\]
+
+<p>$A, B$가 가측이므로 다음이 성립한다.</p>
+
+\[\begin{aligned}
+\mu^*(E) &amp;= \mu^*(E \cap A) + \mu^*(E \cap A^c) \\
+&amp;= \mu^*(E \cap A \cap B) + \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B) + \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>따라서 $(\ast)$은 다음과 동치이다.</p>
+
+\[\begin{aligned}
+\mu^*(E \cap (A^c \cup B^c)) &amp;\leq \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B)  \quad \cdots \quad (**) \\ &amp;+ \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>간단한 집합론으로부터 다음을 알 수 있다.</p>
+
+\[A^c \cup B^c = (A \cap B^c) \cup (A^c \cap B) \cup (A^c \cap B^c)\]
+
+<p>따라서 $(\ast\ast)$가 성립한다. □</p>
+
+<p><strong>2. $\mathcal{A}$는 $\sigma$-대수이다.</strong></p>
+
+<p>$A_n \uparrow A$인 $\lbrace  A_n \rbrace  \subset \mathcal{A}$에 대해 $A \in \mathcal{A}$임을 보이면 충분하다. (why?)</p>
+
+<p>외측도의 정의에 의해 $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$이다. $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$이라고 하자. $\bigsqcup C_n = A$이다. 또한,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n) &amp;= \mu^*(E \cap A_n \cap C_n) + \mu^*(E \cap A_n \cap C_n^c) \\
+&amp;= \mu^*(E \cap C_n) + \mu^*(E \cap A_{n - 1}) \\
+&amp;= \cdots \\
+&amp;= \sum^n_{k = 1} \mu^*(E \cap C_k)
+\end{aligned}\]
+
+<p>이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$이다. 그런데 $\lbrace  E \cap C_n \rbrace $이 $E \cap A$를 덮으므로, $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$이다.</p>
+
+<p>따라서 임의의 $\epsilon &gt; 0$에 대해, 충분히 큰 $N$이 존재하여 $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$이다. 따라서,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n^c) &amp;= \mu^*(E) - \mu^*(E \cap A_n) \\
+&amp;\leq \mu^*(E) - \mu^*(E \cap A) + \epsilon
+\end{aligned}\]
+
+<p>이므로 다음을 얻는다.</p>
+
+\[\mu^*(E) \leq \mu^*(E \cap A_n) + \mu^*(E \cap A_n^c) \leq \mu^*(E) + \epsilon\]
+
+<p>$n \to \infty$로 보내면 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$이다. □</p>
+
+<p><strong>3. $\mu^\ast|_\mathcal{A}$는 측도이다, 4. $\mathcal{A}$는 모든 영집합을 포함한다.</strong></p>
+
+<p>Left as an exercise to the readers. (어렵지 않음) ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{A}_0$가 대수라고 하자. $\rho: \mathcal{A}_0 \to [0, \infty]$가 <strong>예비측도</strong>라는 것은 다음을 만족한다는 것이다.</p>
+
+  <ol>
+    <li>$\rho(\varnothing) = 0$</li>
+    <li>쌍으로 서로소인 가산 집합족 $\lbrace  A_n \rbrace $에 대해, $\bigcup A_n \in \mathcal{A}_0$라면 $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>카라테오도리 확장 정리.</strong> 대수 $\mathcal{A}_0$ 위의 예비측도 $\rho$에 대해, 다음과 같이 정의하자.</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
+
+  <p>이 때, 다음이 성립한다.</p>
+
+  <ol>
+    <li>$A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</li>
+    <li>$\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</li>
+    <li>$\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><strong>1. $A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</strong></p>
+
+<p>$A$가 $A$의 덮개이므로 $\mu^\ast(A) \leq \rho(A)$이다. 만약 $\mu^\ast(A) &lt; \rho(A)$라면 어떤 $A$의 덮개 $\lbrace  A_n \rbrace $이 존재하여 $\sum \rho(A_n) &lt; \rho(A)$이다. 그런데 $\rho$가 예비측도이므로 이는 모순이다. □</p>
+
+<p><strong>2. $\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</strong></p>
+
+<p>먼저 $\mathcal{A}_0$가 가측임을 보인다. 임의의 $A \in \mathcal{A}_0$에 대해 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$임을 보이면 충분하다. $\mu^\ast$의 정의에 의해, 임의의 $\epsilon &gt; 0$에 대해 어떤 $E$의 덮개 $\mathcal{C}$가 존재하여 다음이 성립한다.</p>
+
+\[\sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon\]
+
+<p>$\mathcal{A}_0$가 대수이므로, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$이다. 따라서,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A) + \mu^*(E \cap A^c) &amp;\leq \sum^\infty_{n = 1} \mu^*(A \cap C_n) + \sum^\infty_{n = 1} \mu^*(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(A \cap C_n) + \sum^\infty_{n = 1} \rho(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon
+\end{aligned}\]
+
+<p>(엄밀히 따지자면 $\sum^n_{k=1}$을 고려한 다음에 $n \to \infty$ 극한을 취해야 한다) 따라서 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$이며, $\mathcal{A}_0$는 가측이다. 카라테오도리 제한 정리에 의해 가측 집합은 $\sigma$-대수를 이루므로, $\sigma(\mathcal{A}_0)$ 또한 가측이다. □</p>
+
+<p><strong>3. $\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</strong></p>
+
+<p>먼저 $\rho &lt; \infty$를 가정하자. $\sigma(\mathcal{A}_0)$ 위에서 정의된 측도 $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치한다고 하자. 또한 $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$라고 하자. $\nu = \mu$임을 보인다.</p>
+
+<p>$E \in \sigma(\mathcal{A}_0)$라고 하자. 어떤 $E$의 덮개 $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$가 존재하여,</p>
+
+\[\sum \rho(A_n) \leq \mu(E) + \epsilon\]
+
+<p>이다. $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치하므로, $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$이다. 따라서 $\nu \leq \mu$이다.</p>
+
+<p>이제 $B_n = \bigcup^n_{k=1}A_k$로 정의하고, $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$이라고 하자. $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$이므로 $\mu(B \setminus E) \leq \epsilon$이다. $\nu$가 측도이므로,</p>
+
+\[\mu(A) = \lim \rho(B_n) = \lim \nu(B_n) = \nu(A)\]
+
+<p>따라서,</p>
+
+\[\begin{aligned}
+\mu(E) \leq \mu(B) &amp;= \mu(B \setminus E) + \mu(E) \\
+&amp;\leq \epsilon + \nu(E)
+\end{aligned}\]
+
+<p>즉 $\mu \leq \nu$이다. 따라서 $\mu = \nu$이다.</p>
+
+<p>이제 $\rho$가 $\sigma$-유한하다고 가정하자. 어떤 집합족 $\lbrace  C_n \rbrace $이 존재하여 $C_n \uparrow X$이고, $\rho(C_n) &lt; \infty$이다. 앞선 논의에 의해 $C_n$에서 $\mu$와 $\nu$는 일치한다. 따라서,</p>
+
+\[\mu(A) = \lim \mu(A \cap C_i) = \lim \nu (A \cap C_i) = \nu(A)\]
+
+<p>이므로 $\mu$와 $\nu$는 전체 공간에서 일치한다. ■</p>
+
+<p>다음 글에서는 카라테오도리 정리를 이용하여 르베그 측도를 구성한 뒤, 모든 보렐 가측 집합은 르베그 가측 집합이지만 그 역은 성립하지 않음을 보인다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/24/algebra-measure"> 대수와 측도의 정의 </a>
+      </h1>
+    <span class="post-date">24 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/측도론/'">
+        측도론
+      </div>
+      
+    </div>
+     <h2 id="1-비탈리-정리">1. 비탈리 정리</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mu$가 집합 $X$ 위의 <strong>측도<sub>measure</sub></strong>라는 것은 다음을 만족한다는 것이다.</p>
+
+  <ol>
+    <li>$\mu(\varnothing) = 0$</li>
+    <li>쌍으로 서로소<sub>pairwise disjoint</sub>인 가산 집합족 $\lbrace A_n \rbrace$에 대해, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$</li>
+  </ol>
+</blockquote>
+
+<p>유감스럽게도 $X = \mathbb{R}$일 때, 측도 $\mu$는 실수의 모든 부분집합에 대해서 정의될 수 없다.</p>
+
+<blockquote>
+  <p><strong>비탈리 정리.</strong> 다음을 모두 만족하는 $\mathbb{R}$의 측도 $\mu$는 존재하지 않는다.</p>
+
+  <ol>
+    <li>항등적으로 0이 아니다.</li>
+    <li>평행이동에 대해 보존적이다. 즉, 임의의 $r \in \mathbb{R}$에 대해 $\mu(A + r) = \mu(A)$.</li>
+    <li>$\operatorname{dom} \mu = \mathcal{P}(\mathbb{R})$</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 그러한 측도 $\mu$가 존재한다고 가정하자. $\mathbb{R}$ 위에서 다음의 동치 관계를 정의하자.</p>
+
+\[x \sim y \iff x - y \in \mathbb{Q}\]
+
+<p>선택 공리에 의해 $[0, 1]/{\sim}$의 선택 함수 $\iota$가 존재한다. $V = \operatorname{im} \iota$라고 하자. $V$를 <strong>비탈리 집합<sub>Vitali set</sub></strong>이라고 부른다. 예를 들어 $V = \lbrace 0.1, \pi - 3, \sqrt{2} - 1, \dots \rbrace$이다. $\mu$는 $V$에서 정의될 수 없음을 보인다.</p>
+
+<p>$V$의 정의에 의해, $q \in \mathbb{Q}$에 대해 $V$와 $V + q$는 서로소이다. 또한 $[0, 1] \subset \bigcup_{q \in \mathbb{Q}} (V + q) \subset [-1, 3]$이다. 따라서,</p>
+
+\[1 \leq \sum_{q \in \mathbb{Q}}\mu(V + q) \leq 4.\]
+
+<p>그런데 $\mu(V + q) = \mu(V)$이므로, $\mu(V) = 0$이면 왼쪽 부등식이 성립하지 않고 $\mu(V) &gt; 0$이면 오른쪽 부등식이 성립하지 않는다. 따라서 모순이다. ■</p>
+
+<h2 id="2-sigma-대수">2. $\sigma$-대수</h2>
+
+<p>따라서 올바른 측도를 구축하기 위해서는 측도의 정의역을 적절히 제한할 필요가 있다. 이에 대수의 개념을 도입한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 집합 $X$의 <strong>대수<sub>algebra</sub></strong> $\mathcal{A}_0$는 다음을 만족하는 집합족이다.</p>
+
+  <ol>
+    <li>$\varnothing, X \in \mathcal{A}_0$</li>
+    <li>$A \in \mathcal{A}_0 \implies A^c \in \mathcal{A}_0$</li>
+    <li>$A, B \in \mathcal{A}_0 \implies A \cup B \in \mathcal{A}_0$</li>
+  </ol>
+</blockquote>
+
+<p><em>Remark.</em> 2번 공리와 드모르간의 법칙에 의해, 3번 공리는 $A \cap B \in \mathcal{A}_0$ 또한 시사한다.</p>
+
+<p>대수의 3번 정의를 가산 합집합으로 강화하면 $\sigma$-대수의 정의를 얻는다. 즉,</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 집합 $X$의 <strong>$\sigma$-대수</strong> $\mathcal{A}$는 다음을 만족하는 대수이다.</p>
+
+  <ol>
+    <li>$\lbrace  A_n \rbrace _{n \in \mathbb{N}} \subset \mathcal{A}_0 \implies \bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $\lbrace \mathcal{A}_i \rbrace_{i \in I}$가 $X$의 $\sigma$-대수들의 모임이라면 $\bigcap_{i \in I}\mathcal{A}_i$ 또한 $X$의 $\sigma$-대수이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\sigma$-대수의 정의로부터 쉽게 증명할 수 있다. 그런데 이렇게만 적으면 재미 없으니까, 조금 독특한 증명을 남긴다. <strong>워시-타르스키 정리<sub>Łoś-Tarski theorem</sub></strong>에 따르면 1차 이론이 교집합에 대해 보존적일 필요충분조건은 1차 이론의 모든 문장이 $\Pi_1$ 문장인 것이다. 그리고 $\sigma$-대수의 세 공리는 모두 $\Pi_1$ 문장이므로, $\sigma$-대수는 교집합에 대해 보존적이다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $\mathcal{C}$가 $X$의 부분집합으로 이루어진 집합족일 때, $\mathcal{C}$를 포함하는 가장 작은 $\sigma$-대수가 존재한다. 그러한 $\sigma$-대수를 $\sigma(\mathcal{C})$와 같이 적는다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is an algebra containing } \mathcal{C} \rbrace$라고 하자. $\mathcal{P}(X) \in \mathcal{S}$이므로 $\mathcal{S}$는 공집합이 아니다. $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$이다.</p>
+
+<p>대표적인 $\sigma$-대수의 예시로, 보렐 $\sigma$-대수를 살펴보자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{G}$가 $\mathbb{R}$의 열린 집합들의 집합족이라고 하자. $\sigma(\mathcal{G})$를 <strong>보렐 $\sigma$-대수<sub>Borel $\sigma$-algebra</sub></strong>라고 하며, $\mathcal{B}$와 같이 적는다.</p>
+</blockquote>
+
+<p>보렐 $\sigma$-대수는 <strong>보렐 위계<sub>Borel hierarchy</sub></strong>를 통해서 이해할 수도 있다. $\Sigma_1$을 열린 집합들의 모임, $\Pi_1$을 닫힌 집합들의 모임이라고 하자. 다음과 같이 정의한다.</p>
+
+<ul>
+  <li>$\Delta_n = \Sigma_n \cap \Pi_n$</li>
+  <li>$\Sigma_{n + 1} = \lbrace S : \exists \lbrace P_n \rbrace _{n \in \mathbb{N}} \subset \Pi_n \; S = \bigcup_{n \in \mathbb{N}} P_n \rbrace$</li>
+  <li>$\Pi_n = \lbrace P : \exists S \in \Sigma_n \; P = S^c \rbrace$</li>
+</ul>
+
+<p>즉 $\Sigma_2 = F_\sigma$, $\Pi_2 = G_\delta$이다. 합집합을 $\exists$, 교집합을 $\forall$로 생각했을 때 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 정의의 형태가 유사함에 주목하라.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{B} = \Sigma_{\omega_1} = \Pi_{\omega_1} = \Delta_{\omega_1}$</p>
+</blockquote>
+
+<p><strong>증명.</strong> 생략. 하지만 직관적으로 이해할 수 있다. $\mathcal{B}$는 가산 교집합과 가산 합집합, 그리고 여집합에 대해 닫혀 있어야 하므로 모든 가산 서수 $\alpha$에 대해 $\Sigma_\alpha, \Pi_\alpha, \Delta_\alpha \subset \mathcal{B}$이다. 이 사실로부터 초한 귀납을 취해 정리를 얻는다. ■</p>
+
+<p>어떤 집합 위의 대수와 예비측도라는 것이 주어졌을 때, 이로부터 측도를 정의하는 방법이 알려져 있다. 이 방법을 카라테오도리 방법<sub>Carathéodory method</sub>이라고 부른다. 예비측도는 구성하기가 매우 쉽기 때문에, 이 방법을 이용하면 측도를 아주 쉽게 구성할 수 있다. 카라테오도리 방법에 대해서는 <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">다음 글</a>에서 알아본다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
@@ -987,631 +1350,6 @@ K = \{ v \in V : v \in B \}
 <p>삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta, \epsilon)$이 주어졌을 때, 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상임을 보이자.</p>
 
 <p>역으로 $\eta$가 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상이 되도록 하는 자연적 변환일 때, 어떤 $\epsilon: FG \to 1_{\mathcal{B}}$가 유일하게 존재하여 $(\eta, \epsilon)$이 삼각 항등식을 만족함을 보이자.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/09/godel-lucas-penrose"> 정신은 기계로 환원될 수 있는가: 괴델의 조건문과 펜로즈-루카스 논증 </a>
-      </h1>
-    <span class="post-date">09 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/철학/'">
-        철학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <p><img src="https://velog.velcdn.com/images/dimenerno/post/b71a00d7-efdf-4ec3-ad5c-cc32b67cf70c/image.jpeg" alt="" /></p>
-
-<blockquote>
-  <p>이 글은 <a href="/public/On the question of whether the mind can be mechanized 1.pdf">Peter Koellner, <em>On the question of whether the mind can be mechanized</em> (2018)</a>을 정리한 것이다.</p>
-</blockquote>
-
-<p><strong>초록.</strong> 처치-튜링 논제와 괴델의 불완전성 정리는 기계로 증명할 수 없는 수학적 참의 존재를 시사한다. 그러나 만약 이상적인 인간 정신은 모든 수학적 참을 증명할 수 있다면, 이상적인 인간 정신은 기계와 같지 않다는 결론이 얻어진다. 이 글에서는 이같은 방식으로 반기계주의를 입증하려는 루카스와 펜로즈의 논증을 검토하고, 이 논증을 반박하는 형식 증명을 소개한다.</p>
-
-<h2 id="서론">서론</h2>
-
-<p>다음은 논리학에서 잘 알려진 결과들이다.</p>
-
-<ul>
-  <li>
-    <p><strong>처치-튜링 논제.</strong> 이상적인 기계에 의해 <strong>계산 가능하다<sub>computable</sub></strong>는 것은 튜링 기계로 구현 가능하다는 것이다.</p>
-  </li>
-  <li>
-    <p><strong>괴델의 불완전성 정리.</strong> $F$가 특정 조건을 만족하는 형식 체계라면, 참이지만 $F$로 증명 불가능한 문장이 존재한다.</p>
-  </li>
-  <li>
-    <p><strong>형식 체계-튜링 기계 대응.</strong> $F$가 특정 조건을 만족하는 형식 체계라면, $F$로 증명 가능한 명제들을 열거하는 튜링 기계가 존재한다.</p>
-  </li>
-</ul>
-
-<p>위 세 가지 논제에 더해, 우리 인간은 형식 체계가 포착하지 못하는 수학적 참 — 이를테면 산술의 무모순성 — 또한 포착할 수 있는 것으로 보인다는 사실을 종합해 보면, 불완전성 정리는 이상적인 인간 정신이 도출할 수 있는 수학적 결과들의 외연이 이상적인 유한 기계로 도출할 수 있는 결과들의 외연을 초과함을 시사하는 것으로 보인다. 즉, 불완전성 정리는 정신이 기계로 환원될 수 없다는 반기계주의를 시사하는 것으로 보인다.</p>
-
-<p>이 글에서는 과연 이 시사 관계가 얼마나 정당화될 수 있는지 검토한다. 그 결과, 불완전성 정리는 반기계주의 <em>또는</em> 플라톤주의를 시사하긴 하지만 반기계주의를 직접적으로 시사하지는 않음을 보일 것이다.</p>
-
-<h2 id="1-괴델-조건문">1. 괴델 조건문</h2>
-
-<p>괴델은 불완전성 정리로부터, 다음 두 입장 중 <em>적어도 하나가 참</em>이라는 결론이 따라 나온다고 주장했다. 이것을 <strong>괴델 조건문<sub>Gödel’s Disjunction</sub></strong>이라고 부르자.</p>
-
-<ol>
-  <li>
-    <p><strong>반기계주의:</strong> 이상적인 인간 정신이 도출할 수 있는 수학적 결과들은 언제나 이상적인 유한 기계가 도출하는 수학적 결과들을 초과한다. 따라서 인간 정신은 기계로 환원될 수 없다.</p>
-  </li>
-  <li>
-    <p><strong>플라톤주의:</strong> 이상적인 인간 정신이 포착할 수 없는 수학적 참이 존재한다. 따라서 수학적 참은 인간 정신과 독립적으로 존재한다.</p>
-  </li>
-</ol>
-
-<p>두 입장 모두 유물론적 철학에 반한다는 점이 주목할 만하다. 괴델은 평소 철학적 논증에 유보적이었지만, 해당 논증에 관해서만큼은 “수학적으로 입증된 사실”이라고 강하게 주장했다. 우리의 첫 번째 과제는, 과연 이 논증이 “수학적으로 입증된 사실”인지를 검증하는 것이다.</p>
-
-<h3 id="11-괴델의-세-가지-주장">1.1. 괴델의 세 가지 주장</h3>
-
-<p>몇 가지 기호를 도입하자.</p>
-
-<ol>
-  <li>
-    <p>$F$는 형식 체계 $F$가 증명할 수 있는 모든 문장들의 집합이다.</p>
-  </li>
-  <li>
-    <p>$K$는 이상적인 인간 정신이 증명할 수 있는 모든 문장들의 집합이다.</p>
-  </li>
-  <li>
-    <p>$T$는 참인 문장들의 집합이다.</p>
-  </li>
-</ol>
-
-<p>이 글에 걸쳐 $K \subseteq T$를 가정할 것이다. 또한 $F$는 괴델의 불완전성 정리가 적용되는 형식 체계 — 즉, 페아노 산술(사실 이 조건은 로빈슨 산술로 약화시킬 수 있다)을 포함하는 무모순적인 체계 — 임을 전제한다.</p>
-
-<p>본론에 들어가기 앞서 괴델의 불완전성 정리를 복습해 보자.</p>
-
-<blockquote>
-  <p><strong>괴델의 불완전성 정리.</strong> $F$가 산술을 포함하는 무모순적인 수학 체계일 때, 다음이 성립한다.</p>
-
-  <ul>
-    <li><strong>제1정리.</strong> 참이지만 $F$로 증명 불가능한 명제가 존재한다.</li>
-    <li><strong>제2정리.</strong> $F$의 무모순성이 제1정리의 실례에 해당한다.</li>
-  </ul>
-</blockquote>
-
-<p>첨언하자면 전통적으로 불완전성 정리가 대상으로 하는 산술은 페아노 산술이지만, 로빈슨 산술을 비롯한 더 약한 산술 체계에서도 불완전성 정리가 성립한다.</p>
-
-<h4 id="111-첫-번째-주장">1.1.1. 첫 번째 주장</h4>
-
-<p>괴델은 먼저 다음을 주장한다.</p>
-
-<blockquote>
-  <p><strong>주장 1.</strong> $F \subseteq T \implies F \subsetneq T$</p>
-</blockquote>
-
-<p>증명은 다음과 같다. $F \subseteq T$라면 $\mathrm{Con}(F) \in T$이다. 그런데 제2불완전성 정리에 의해 $\mathrm{Con}(F) \notin F$이다. 따라서 $F \subsetneq T$이다.</p>
-
-<h4 id="112-두-번째-주장">1.1.2. 두 번째 주장</h4>
-
-<p>괴델의 두 번째 주장은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>주장 2.</strong> $K(F \subseteq T) \implies F \subsetneq K$</p>
-</blockquote>
-
-<p>증명은 다음과 같다. $K(F \subseteq T)$라면 $\mathrm{Con}(F) \in K$이다. 하지만 앞서 보았듯이 $F \subseteq T \implies \mathrm{Con}(F) \notin F$이므로 $F \subsetneq K$이다.</p>
-
-<p>그런데 만약 $F \subsetneq K$가 참이라면, 이것을 어떤 식으로 이해해야 할까? 한 가지 방식은 형식 체계의 위계를 생각하는 것이다.</p>
-
-<p>괴델은 불완전성 정리가 시사하는 증명 불가능한 문장들이, <em>절대적으로</em> 증명 불가능할 필요는 없다고 강조한다. 형식 체계 $F$에서 증명 불가능한 문장이 $F$보다 고차적인 체계에서는 증명 가능해질 수 있기 때문이다. 예를 들어 $\mathsf{PA}$가 무모순적이라면 $\mathsf{PA}$는 $\mathrm{Con}(\mathsf{PA})$를 증명하지 못하지만, 2차 페아노 산술 $\mathsf{PA}_2$는 $\mathrm{Con}(\mathsf{PA})$를 증명할 수 있음이 알려져 있다. 물론 $\mathsf{PA}_2$는 $\mathrm{Con}(\mathsf{PA}_2)$를 증명하지는 못하지만, 이것은 3차 페아노 산술에서 증명 가능하며, 이런 식의 위계가 이어진다.</p>
-
-<p>그리고 이 위계 전체는 $K$에 포섭되는 것으로 보인다. 이 관점으로 보았을 때 각각의 형식 체계는 집합과 같고, $K$는 모든 집합을 모은 것과 같다. 그리고 모든 집합의 모임이 집합일 수 없듯이, $K$는 형식 체계일 수 없다는 유비가 성립한다.</p>
-
-<h4 id="113-세-번째-주장">1.1.3. 세 번째 주장</h4>
-
-<p>그런데 이런 의문이 든다. ”주장 2“를 조건문으로 적는 대신, $K(F \subsetneq T)$가 참이라고 주장함으로써 $F \subsetneq K$를 주장할 수는 없을까?</p>
-
-<p>괴델은 불완전성 정리만으로 그런 주장에 도착할 수는 없다고 지적한다. 왜냐하면 $K$와 일치하는 형식 체계 $F^\ast$의 존재 가능성을 완전히 배제할 수는 없기 때문이다 (앞선 고차 페아노 산술과 관련된 논의는 어디까지나 유비였음에 유의하라).</p>
-
-<p>이에 대해 괴델은 다음과 같이 말한다.</p>
-
-<blockquote>
-  <p>[만약 그러한 형식 체계가 존재한다면] 인간 이성은 — 적어도 수학적인 측면에서는 — 유한한 기계와 동등하다. 그러나 그 기계는 자기 자신의 동작을 [스스로의 무모순성을 증명할 수 없다는 점에서] 완전히 이해할 수는 없다. 이 불능은 인간에게 있어 정신의 무한한 확장성으로 오인될 것이다.</p>
-</blockquote>
-
-<p>대신 괴델의 세 번째 주장은 다음과 같다. 이 주장이 괴델의 조건문이다.</p>
-
-<blockquote>
-  <p><strong>주장 3.</strong> $\forall F (F \subsetneq K) \;  \lor \; K \subsetneq T$</p>
-</blockquote>
-
-<p>증명은 다음과 같다. $F^\ast = K$인 형식 체계 $F^\ast$가 있다고 가정하자. $K \subset T$를 가정했으므로 $F^\ast \subset T$이며, 주장 1에 의해 $F^\ast \subsetneq T$이다.</p>
-
-<p>전자는 반기계주의를, 후자는 플라톤주의를 의미한다.</p>
-
-<h3 id="12-괴델-조건문의-형식화">1.2. 괴델 조건문의 형식화</h3>
-
-<p>지금까지 우리는 괴델의 세 가지 주장을 제시하고, 그에 대한 간략한 증명을 소개했다. 하지만 이 증명들은 사실 정확하지 않았다. 왜냐하면 $F, K, T$의 엄밀한 정의를 도입하지 않았을 뿐더러, 어디까지가 형식 체계 <em>내에서</em> 증명 가능한 내용이고 어디까지가 형식 체계 <em>외에서</em>만 증명 가능한 내용인지 구분하지 않았기 때문이다. 이 한계를 극복하기 위해, $F, K, T$ 및 괴델의 세 가지 주장에 대한 증명을 엄밀하게 형식화해 보도록 한다.</p>
-
-<h4 id="121-f">1.2.1. $F$</h4>
-
-<p>$F$는 가장 형식화하기 쉬운 개념이다. 특히 다음 사실들이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>형식 체계-튜링 기계 대응.</strong> $F$가 재귀적으로 공리화 가능한<sub>recursively axiomatisable</sub> 형식 체계일 때, $F$로부터 증명 가능한 명제들을 재귀적으로 열거<sub>recursively enumerate</sub>하는 튜링 기계가 존재한다.</p>
-</blockquote>
-
-<p>덧붙이자면, 우리가 관심을 가질 만한 형식 체계는 재귀적으로 공리화 가능하다.</p>
-
-<blockquote>
-  <p><strong>클레이니 술어의 재귀성.</strong> 튜링 기계의 작동은 페아노 산술 내에서 형식화될 수 있다. 구체적으로, 괴델 수가 $x$인 튜링 기계가 자연수 $y$를 입력받았을 때 괴델 수가 $z$인 작동 기록<sub>computation record</sub>으로 끝나는지를 판단하는 1차 논리 술어 $K(x, y, z)$가 존재한다.</p>
-</blockquote>
-
-<p>위 두 정리의 따름정리로 다음을 얻는다.</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> 형식 체계는 재귀적으로 열거 가능하다. 즉, ”$e$번째 형식 체계“ $F_e$를 페아노 산술에서 정의할 수 있다.</p>
-</blockquote>
-
-<p>예를 들어 $F_{123}$은 로빈슨 산술, $F_{456}$은 ZFC 등과 같은 식이다. $F_{123}(\ulcorner 1 + 1 = 2 \urcorner)$은 $1 + 1 = 2$가 로빈슨 산술에서 증명 가능하다는 것이다. 그리고 $\mathsf{PA} \vdash F_{123}(\ulcorner 1 + 1 = 2 \urcorner)$이다.</p>
-
-<h4 id="122-t">1.2.2. $T$</h4>
-
-<p>$T$의 형식적 정의로는 <strong>타르스키의 유형적 참 정의<sub>Tarski’s typed truth definition</sub></strong>가 가장 유망하다. 타르스키의 유형적 참 정의는 의미론적 정의가 아니라 형태론적 정의이지만, 현 논의의 목적으로는 적합하다. 타르스키의 정의는 다음을 비롯한 공리들로 이루어져 있다.</p>
-
-<ul>
-  <li>
-    <p>$\forall x : \mathrm{Sent}(x) \rightarrow (T(\hat{\lnot} x) \leftrightarrow \lnot T(x))$</p>
-  </li>
-  <li>
-    <p>$\forall x, y : [\mathrm{Sent}(x) \land \mathrm{Sent}(y)] \rightarrow [T(x\; \hat{\lor} \;y) \leftrightarrow T(x) \lor T(y)]$</p>
-  </li>
-</ul>
-
-<p>여기서 $\mathrm{Sent}$는 주어진 문장(의 괴델 수)가 적형식인지를 판단한다. 한편 $\hat{\quad}$은 언어와 메타언어를 구분하기 위해 도입되는데, 자세한 설명은 크게 중요하지 않기 때문에 이 정도로 줄인다.</p>
-
-<h4 id="123-k">1.2.3. $K$</h4>
-
-<p>$K$는 세 개념 중 가장 까다로운 개념이다. 완전한 의미론적 정의를 제시할 수 없음은 물론, 형태론적 정의를 제시하기에도 의문스러운 구석이 많다. 그러나 이 글의 목표는 불완전성 정리로부터 $F \subsetneq K$를 직접적으로 보일 수 없음을 논증하는 것이므로, 자비의 원칙에 따라 $K$의 외연을 최대한으로 보장하는 다음의 형태론적 정의를 제시하도록 하겠다.</p>
-
-<blockquote>
-  <p><strong>$K$의 형태론적 정의.</strong></p>
-
-  <ol>
-    <li>$\phi$가 논리적으로 참일 때, $K\phi$이다.</li>
-    <li>임의의 문장 $\phi, \psi$에 대해 $(K(\phi \rightarrow \psi) \land K\phi) \rightarrow K\psi$이다.</li>
-    <li>임의의 문장 $\phi$에 대해 $K\phi \rightarrow \phi$이다.</li>
-    <li>임의의 문장 $\phi$에 대해 $K\phi \rightarrow KK\phi$이다.</li>
-  </ol>
-</blockquote>
-
-<p>여기서 $K$는 논리 연산자이다. 때문에 $K(\phi)$ 또는 $K(\ulcorner \phi \urcorner)$가 아닌 $K\phi$와 같이 적었다. $K$가 술어가 아닌 논리 연산자로 간주되어야 하는 이유는 본 논문의 주석 29를 참고하라.</p>
-
-<h4 id="124-mathsfea와-mathsfea_t">1.2.4. $\mathsf{EA}$와 $\mathsf{EA}_T$</h4>
-
-<p>$F, K, T$에 대해 추론할 수 있는 형식 체계를 구성해 보자. 먼저 1.2.1에서 보았듯이 $F$는 이미 $\mathsf{PA}$에서 형식화 가능하므로 별다른 조치가 필요하지 않다.</p>
-
-<p>$L_{\mathsf{EA}}$를 $\mathsf{PA}$에 함수 $K$를 추가한 것으로 정의하자. $\Sigma$를 $\mathsf{PA}$의 공리들과, $K$의 형태론적 정의의 공리들의 모임이라고 하자 (단, $\mathsf{PA}$의 귀납 공리꼴을 $L_{\mathsf{PA}}$가 아닌 $L_{\mathsf{EA}}$의 문장들에 대해 취한다). $\mathsf{EA}$의 공리는 $\Sigma \cup K\Sigma$이다.</p>
-
-<p>$L_{\mathsf{EA}_T}$를 $\mathsf{EA}$에 술어 $T$를 추가한 것으로 정의하자. $\Sigma^\ast$를 $\Sigma$와, $T$의 형태론적 정의의 공리들의 모임이라고 하자 (단, $\mathsf{PA}$의 귀납 공리꼴을 $L_{\mathsf{EA}_T}$의 문장들에 대해 취한다. $\mathsf{EA}_T$의 공리는 $\Sigma^\ast \cup K\Sigma^\ast$이다.</p>
-
-<h3 id="13-괴델-조건문의-형식적-증명">1.3. 괴델 조건문의 형식적 증명</h3>
-
-<p>괴델의 세 가지 주장은 $\mathsf{EA}_T$에서 형식적으로 증명 가능함을 보인다.</p>
-
-<h4 id="131-첫-번째-주장">1.3.1. 첫 번째 주장</h4>
-
-<blockquote>
-  <p><strong>주장 1.</strong> $F \subseteq T \implies F \subsetneq T$</p>
-</blockquote>
-
-<p>이 주장은 $\mathsf{EA}_T$에서 쉽게 증명 가능하다. 괴델의 불완전성 정리의 직접적인 결과이기 때문이다.</p>
-
-<h4 id="132-두-번째-주장">1.3.2. 두 번째 주장</h4>
-
-<blockquote>
-  <p><strong>주장 2.</strong> $K(F \subseteq T) \implies F \subsetneq K$</p>
-</blockquote>
-
-<p>이 주장 또한 $\mathsf{EA}_T$에서 증명 가능하다. 사실 다음의 더 강한 결과가 증명 가능하다.</p>
-
-<blockquote>
-  <p><strong>라인하르트 제1정리.</strong> 임의의 문장 $\phi$에 대해</p>
-
-\[\mathsf{EA} \vdash K(F(\ulcorner \phi \urcorner) \rightarrow \phi)\]
-
-  <p>라면, 어떤 문장 $\psi$가 존재하여</p>
-
-\[\mathsf{EA} \vdash K\psi \land K\lnot F(\ulcorner \psi \urcorner)\]
-
-  <p>이다 (즉, $\mathsf{EA} \vdash F \subsetneq K$이다).</p>
-</blockquote>
-
-<h4 id="133-세-번째-주장">1.3.3. 세 번째 주장</h4>
-
-<blockquote>
-  <p><strong>주장 3.</strong> $\forall F (F \subsetneq K) \;  \lor \; K \subsetneq T$</p>
-</blockquote>
-
-<p>위 주장에서 $F \subsetneq K$를 풀어 쓰면 다음과 같다.</p>
-
-\[\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land K(x) \land x \notin F_e  )\]
-
-<p>그리고 $K \subsetneq T$를 풀어 쓰면 다음과 같다.</p>
-
-\[\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot  K(x) \land \lnot K(\lnot x))\]
-
-<p>그런데 여기에는 문제가 있다. 앞서 말했듯이 $K$는 술어가 아닌 논리 연산자이기 때문에 양화 맥락에 속할 수 없다. 이를테면 $\exists \phi : \lnot\phi$가 문법적으로 올바르지 않듯이 말이다. 이 문제를 회피하기 위해, $\exists x \; K(x)$라고 적는 대신 $\exists x\; T(\hat{K}x)$와 같이 적도록 한다. 따라서 주장 3의 올바른 형식화는 다음과 같다.</p>
-
-\[\begin{gather}
-\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(\hat{K}x) \land x \notin F_e  ) \\\\
-\lor\\\\
-\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot T(\hat{K}x) \land \lnot T(\hat{K}\lnot x))
-\end{gather}\]
-
-<p>위 논리식을 $\mathrm{GD}$라고 하자. 다음 정리가 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>라인하르트 제2정리.</strong> $\mathsf{EA}_T \vdash \mathrm{GD}$.</p>
-</blockquote>
-
-<p>따라서 <strong>괴델 조건문은 적절한 형식 체계 하에서 증명 가능하다.</strong></p>
-
-<h2 id="2-루카스와-펜로즈">2. 루카스와 펜로즈</h2>
-
-<h3 id="21-무모순성-판별-문제">2.1. 무모순성 판별 문제</h3>
-
-<p>루카스와 펜로즈는 $K(F \subseteq T)$임을 주장함으로써 $F \subsetneq K$를 직접적으로 보이고자 한다. 즉, 루카스와 펜로즈는 이상적인 인간 정식은 주어진 임의의 형식 체계가 모순적인지 아닌지를 판별할 능력이 있으며, 이에 따라 $\forall F \subseteq T: F \subsetneq K$라고 주장한다.</p>
-
-<p>그러나 과연 이상적인 인간 정신에게 임의의 형식 체계의 무모순성을 판별할 능력이 있는지는 매우 의문스럽다. 일례로 $R$이 리만 가설이라고 하자. $R$은 페아노 산술에서 $\Pi_1$ 명제로 형식화될 수 있다. 그리고 앞서 언급했듯이 $\mathsf{PA}$는 $\Sigma_1$-완전하기 때문에, $\mathsf{PA} + R$의 무모순성은 $R$과 동치이다. 이 예시는 형식 체계의 무모순성 판별 문제가 리만 가설 이상으로 어려운 문제인 경우도 있음을 보여준다.</p>
-
-<h3 id="22-기계주의의-상대적-무모순성">2.2. 기계주의의 상대적 무모순성</h3>
-
-<p>이 사실만으로 루카스와 펜로즈의 기획은 난관에 봉착하겠으나, 여기서 나아가 우리는 더 강력한 사실을 보일 수 있다. 그 사실이란, $K(F\subseteq T)$는 형식적으로 증명 불가능하다는 것이다. 왜냐하면 기계주의적 논제들이 $\mathsf{EA}_T$와 무모순적이기 때문이다.</p>
-
-<p>이것을 보이기에 앞서, 기계주의적 논제들을 그 강도에 따라 분류하는 것이 유용하다. 이 글에서 채택하는 라인하르트의 구분법은 다음과 같다.</p>
-
-<ul>
-  <li><strong>약한 기계주의<sub>Weak Mechanical Thesis, WMT</sub>:</strong> $\exists e \; ( K = F_e )$</li>
-  <li><strong>강한 기계주의<sub>Strong Mechanical Thesis, SMT</sub>:</strong> $K\exists e\; (K = F_e)$</li>
-  <li><strong>아주 강한 기계주의<sub>Super Strong Mechanical Thesis, SSMT</sub>:</strong> $\exists e \; K(K = F_e)$</li>
-</ul>
-
-<p>각각 풀어 설명하자면,</p>
-
-<ul>
-  <li>WMT: 이상적인 인간 정신은 <em>어떠한</em> 튜링 기계와 동등하다.</li>
-  <li>SMT: 이상적인 인간 정신은, 자신이 <em>어떠한</em> 튜링 기계와 동등함을 안다.</li>
-  <li>SSMT: 이상적인 인간 정신은, 자신이 <em>특정한</em> 튜링 기계와 동등함을 안다.</li>
-</ul>
-
-<p>다음이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>라인하르트 제3정리.</strong> $\mathsf{EA}_T + \mathsf{SSMT}$는 모순적이다.</p>
-</blockquote>
-
-<p>따라서 $\mathsf{EA}_T$의 공리를 가정하면 아주 강한 기계주의는 거짓이다. 요컨데 설령 이상적인 인간 정신과 동등한 컴퓨터가 주어지더라도, 우리는 그것이 <em>정말로</em> 인간 정신과 동등한지 알 수는 없다.</p>
-
-<p>그러나 이 사실만으로 루카스와 펜로즈의 손을 들어주기는 어렵다. 기계주의의 핵심 논제는 우리와 동등한 능력을 가지는 기계의 판별법이 아닌 우리와 동등한 능력을 가지는 기계의 존재성이기 때문이다. 그리고 이에 관해서는 다음이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>라인하르트 제4정리.</strong> $\mathsf{EA}_T + \mathsf{WMT}$는 무모순적이다.</p>
-</blockquote>
-
-<p>더 나아가 다음이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>칼슨의 정리.</strong> $\mathsf{EA}_T + \mathsf{SMT}$는 무모순적이다.</p>
-</blockquote>
-
-<p>즉 $\mathsf{EA}_T$는 이상적인 인간 정신과 동등한 기계의 존재 가능성을 열어둘 뿐 아니라, 그 사실을 인간 정신이 스스로 입증하는 가능성 또한 열어둔다. 위 사실들은 불완전성 정리만으로 반기계주의를 입증하려는 시도가 수포로 돌아갈 수밖에 없음을 보여준다.</p>
-
-<h3 id="23-괴델의-혜안">2.3. 괴델의 혜안</h3>
-
-<p>놀랍게도 괴델은 처음부터 이 모든 논의를 꿰고 있었던 것으로 보인다. 왕<sub>Wang</sub>이 남긴 괴델과의 대화 회고에 따르면,</p>
-
-<blockquote>
-  <p>불완전성 정리는 인간의 수학적 직관과 동등한 결과를 내놓는 컴퓨터의 가능성 [$\exists e\; (F_e = K)$]을 배제하지 않는다. 그러나 다음을 시사하기는 한다. 만약 그 가능성이 — 비록 다른 고려 사항으로 인해 확률은 지극히 낮지만 — 사실이라면, 우리는 그러한 컴퓨터의 설계를 알 수 없거나 [$\lnot K (F_e = K)$], 그 컴퓨터가 올바르게 작동한다는 사실을 알 수 없다 [$\lnot K (F_e \subseteq T)$].</p>
-</blockquote>
-
-<s>괴델은 신이야</s>
-
-<h2 id="3-결론">3. 결론</h2>
-
-<p>지금까지의 논의는 괴델의 조건문으로부터 반기계주의를 직접적으로 이끌어내려는 더이상의 시도를 방지하는 데 충분할 것이다. 그러나 논리학의 결과로부터 반기계주의를 논증하려는 또다른 접근 방식이 있다. 흔히 <strong>펜로즈의 새 논증</strong>이라고 불리는 이 논증은 타르스키의 유형적 참과는 구별되는, 유형 독립적 참<sub>type-free truth</sub>을 내세우는 논증이다. 해당 논증의 형식화와 그것이 시사하는 바는 본 논문의 2편에서 다루도록 한다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/07/arithmetic-hierarchy"> 산술 위계 </a>
-      </h1>
-    <span class="post-date">07 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <p><img src="/public/arithmetic-hierarchy.png" width="340px" style="margin: 2em auto;" /></p>
-
-<blockquote>
-  <p><strong>주의.</strong> 이 글은 뇌피셜로 쓰였기 때문에 엄밀하지 않고, 심지어 틀린 내용이 있을 수 있습니다.</p>
-</blockquote>
-
-<p><strong>산술 위계(arithmetical hierarchy)</strong>는 산술 — 엄밀히는 1차 페아노 산술 — 의 명제들을 양화사의 복잡도에 따라 분류한 것이다. 산술 위계는 증명 이론 및 계산 복잡도 이론의 핵심 개념이며, 기술적 집합론과도 연관이 있다.</p>
-
-<h2 id="1-delta_0-명제">1. $\Delta_0$ 명제</h2>
-
-<h3 id="11-정의">1.1. 정의</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> $\Sigma_0 = \Pi_0 = \Delta_0$는 상한이 있는 양화사만을 가지는 명제들의 집합이다.</p>
-</blockquote>
-
-<p>왜 같은 부류의 명제를 세 개의 이름으로 부르는지는 곧 명확해질 것이다. 이 글에서는 특별한 이유가 없을 때에는 세 이름 중 $\Delta_0$라는 이름을 대표로 사용하겠다.</p>
-
-<p>예를 들어 다음 네 명제들은 모두 $\Delta_0$ 명제들이다.</p>
-
-\[\begin{gather}
-\phi_1 : 0 = 1\\
-\phi_2(x) : \exists y &lt; x \; [y + y = x] \\
-\phi_3(x, y) : \exists z \leq y \;[ xz = y ] \\
-\end{gather}\]
-
-<p>$\phi_1$은 거짓인 문장이다. $\phi_2$는 $x$가 짝수일 때, $\phi_3$는 $x$가 $y$의 약수일 때 참인 명제이다.</p>
-
-<p>$\Delta_0$ 명제들은 양화사에 상한이 걸려 있기 때문에, 임의의 $x$가 주어졌을 때 $x$가 해당 명제에 부합하는지를 튜링 기계로 판단할 수 있다. 예를 들어 $x$가 $\phi_2$를 만족하는지 판단하는 튜링 기계는 다음과 같다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for y &lt; x:
-   if y + y == x:
-      return true;
-
-return false;
-</code></pre></div></div>
-
-<p>위 튜링 기계는 $x$번의 반복 이내에 정지한다. 따라서 $\Delta_0$는 또는 튜링 기계 등의 기계 장치로 <strong>결정 가능(decidable)</strong>한, 또는 <strong>재귀적인(recursive)</strong>, 또는 <strong>계산 가능(computable)</strong>한 명제들이다(세 표현은 동의어이다). 그러나 뒤에서 자세히 설명하듯이, 모든 결정 가능한 명제들이 $\Delta_0$인 것은 아니다.</p>
-
-<p>괴델의 표현가능성 정리에 따라 결정 가능한 참인 명제는 증명 가능하다. 그리고 이 글에서 $\phi$가 ‘참’이라 함은, $\mathsf{PA} \vDash \phi$가 아니라, 표준 자연수 모형 $\mathcal{N}$에 대해 $\mathcal{N} \vDash \phi$라는 의미이다. 다시 말해, 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 참인 $\Delta_0$ 문장들의 집합은 완전하다. (즉, $\phi$가 참인 $\Delta_0$ 문장이라면 $\mathsf{PA} \vdash \phi$이다.)</p>
-</blockquote>
-
-<h3 id="12-계산-이론에서의-delta_0">1.2. 계산 이론에서의 $\Delta_0$</h3>
-
-<p>프로그래밍 언어의 관점에서 보았을 때 $\Delta_0$ 문장들은 다음만을 허용하는 코드의 집합과 대응된다.</p>
-
-<ul>
-  <li>조건문</li>
-  <li>상한이 있는 반복문</li>
-  <li>덧셈과 곱셈</li>
-</ul>
-
-<p>주의할 점은, <em>상한이 없는 반복문</em>과 <em>변수 재지정</em>은 허용되지 않는다는 것이다. 예를 들어 다음의 코드는 소수 판별이 $\Delta_0$임을 입증한다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for y &lt; x:
-  for z &lt;= y:
-    if yz == x:
-      return false;
-
-return true;
-</code></pre></div></div>
-
-<p>그러나 $x^y$를 계산하는 다음의 코드는 $\Delta_0$에 해당되지 않는다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let a = 1
-for 1&lt;= z &lt;= y:
-   a = a * x
-
-return a
-</code></pre></div></div>
-
-<p>그렇다면 지수 연산은 $\Delta_0$가 아닌 것일까? 그렇지는 않다. 복잡하긴 하지만, $\Delta_0$ 명제로 지수를 표현하는 방법이 <a href="https://math.stackexchange.com/questions/5032077/how-to-express-exponentiation-with-a-delta-0-formula">있다</a>. 이 사례는 주어진 연산 또는 술어가 $\Delta_0$인지 판단하는 일이 까다로울 수 있음을 방증한다. 일례로 다음이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 팩토리얼은 $\Delta_0$이지만 테트레이션은 $\Delta_0$가 아니다.</p>
-</blockquote>
-
-<p>그러나 테트레이션은 결정 가능하다. 따라서 모든 결정 가능한 명제들이 $\Delta_0$인 것은 아니다.</p>
-
-<h2 id="2-한-단계-올라가기">2. 한 단계 올라가기</h2>
-
-<blockquote>
-  <p><strong>정의.</strong></p>
-
-\[\begin{gather}
-\Sigma_1 := \{ \exists x_1 \cdots \exists x_n \;\phi : \phi \in \Pi_0 \}\\
-\Pi_1 := \{ \forall x_1 \cdots \forall x_n \;\phi : \phi \in \Sigma_0 \}\\
-\Delta_1 := \Sigma_1 \cap \Pi_1
-\end{gather}\]
-</blockquote>
-
-<h3 id="21-sigma_1-명제">2.1. $\Sigma_1$ 명제</h3>
-
-<p>다음 명제들은 $\Sigma_1$이다.</p>
-
-\[\begin{gather}
-\phi_1(x): \exists y \; \underbrace{[y^2 + y + 1 = x]}_{\Pi_0}\\
-\phi_2(x): ∃y\; ∃z\; \underbrace{(y \text{ is prime} ∧ z \text{ is prime} ∧ x = y + z ∧ x \text{ is even})}_{\Pi_0}
-\end{gather}\]
-
-<p>$\phi_1$은 집합 $\lbrace 1, 3, 7, 13, \dots \rbrace$에서 참이다. $\phi_2$는 골드바흐의 추측으로, 모든 $x$가 이를 만족하는지는 알려져 있지 않다.</p>
-
-<p>$\Sigma_1$은 <strong>재귀적으로 열거 가능(recursively enumerable)</strong>한 집합들의 모임이다. 즉, $\phi \in \Sigma_1$이라면 다음의 튜링 기계 $M$이 존재한다.</p>
-
-<ul>
-  <li>$\phi(c)$가 참이라면 $M$이 $\phi(c)$를 결정함이 보장된다.</li>
-  <li>$\phi(c)$가 거짓이라면 $M$이 $\phi(c)$를 결정함이 보장되지 않는다.</li>
-</ul>
-
-<p>예를 들어 다음의 튜링 기계는 $\phi_2$가 재귀적으로 열거 가능함을 보여준다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for y &gt; 1:
-   for z &gt; 1:
-      if isPrime(y) &amp; isPrime(z) &amp; x = y + z &amp; isEven(x):
-         return true;
-
-return false;
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">return false</code> 문이 있기는 하지만, 반복문에서 빠져나올 <code class="language-plaintext highlighter-rouge">break</code> 문이 없으므로 <code class="language-plaintext highlighter-rouge">return false</code>는 도달 불가능하다. 즉, $\phi_2(c)$가 참이라면 위의 튜링 기계는 참을 반환하지만 거짓이라면 무한 루프에 빠진다.</p>
-
-<p>$\phi \in \Sigma_1$이 표준 자연수 모형에서 참인 문장이라면 $\mathsf{PA} \vdash \phi$이다. $\phi : \exists x \; \psi(x)$ 꼴의 명제가 표준 자연수 모형에서 참이라는 것은 어떤 $c \in \mathbb{N}$에 대해 $\psi(c)$가 참이라는 의미이며, $\psi(c)$는 참인 $\Pi_0$ 문장이므로 증명 가능하기 때문이다. 따라서 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 참인 $\Sigma_1$ 문장들의 집합은 완전하다.</p>
-</blockquote>
-
-<h3 id="22-sigma_1-setminus-delta_0-명제">2.2. $\Sigma_1 \setminus \Delta_0$ 명제</h3>
-
-<p>그런데 사실 지금까지 필자는 독자를 오도했다. 앞서 $\Sigma_1$의 예시로 나열한 명제들은 사실 $\Delta_0$로 쓸 수 있기 때문이다.</p>
-
-\[\begin{gather}
-\phi_1: \exists y&lt;x \;{[y^2 + y + 1 = x]}\\
-\phi_2(x): ∃y&lt;x\; ∃z&lt;x\; {(y \text{ is prime} ∧ z \text{ is prime} ∧ x = y + z ∧ x \text{ is even})}
-\end{gather}\]
-
-<p>그렇다면 $\Delta_0$에 속하지 않는 $\Sigma_1$ 명제는 어떻게 생겼을까? 한 가지 답은 <strong>정지 문제</strong>에서 찾을 수 있다.</p>
-
-<p>먼저 $\mathrm{HaltsIn}(x, n)$를, “괴델 수가 $x$인 튜링 기계”가 $n$회의 연산 이내에 출력값을 내놓는지를 판별하는 술어라고 하자. 이 술어는 <strong>클레이니 술어</strong>로부터 쉽게 정의할 수 있으며, 클레이니 술어는 $\Sigma_0$임이 알려져 있다. 예를 들어 3의 제곱을 2회의 연산으로 계산하는 튜링 기계의 괴델 수가 $123$이라면 $\mathrm{HaltsIn}(123, 3)$은 참이지만 $\mathrm{HaltsIn}(123, 1)$는 거짓이다.</p>
-
-<p>이제 다음 명제를 고려하자.</p>
-
-\[\phi_1(x): \exists y \;[ \mathrm{HaltsIn}(x, y) ]\]
-
-<p>위 명제가 말하는 바는, 괴델 수가 $x$인 튜링 기계가 언젠가 정지한다는 것이다. 즉, 위 명제는 정지 문제와 동치이다. 그런데 정지 문제는 결정 불가능하다. 앞서 $\Delta_0$ 명제는 모두 결정 가능함을 보았으므로, $\phi$는 $\Delta_0$에 속하지 않는 $\Sigma_1$ 명제이다.</p>
-
-<p>다른 예시로, 다음 명제를 고려하자.</p>
-
-\[\phi_2(x): \exists y \; [ \mathrm{Proves}(x, y) ]\]
-
-<p>여기서 $\mathrm{Proves}(x, y)$는 “괴델 수가 $x$인 문장의 증명”의 괴델 수가 $y$일 때 참인 술어이다. 즉, $\phi_2(x)$는 괴델 수가 $x$인 문장이 증명 가능하다는 술어이다. 그런데 이 술어는 결정 가능하지 않다. 만약 $\phi_2$가 결정 가능하다면 (PA가 무모순적이라는 가정 하에) $\phi_2(\ulcorner 0 = 1 \urcorner)$이 거짓이라는 증명이 PA에 존재하게 되어 괴델의 불완전성 정리와 상충하기 때문이다.</p>
-
-<h3 id="23-pi_1-명제">2.3. $\Pi_1$ 명제</h3>
-
-<p>$\Sigma_1$ 명제가 재귀적으로 열거 가능한 명제들의 모임이라면, $\Pi_1$ 명제는 <strong>쌍대-재귀적으로 열거 가능한(co-recursively enumerable)</strong> 명제들의 모임이다. 즉 $\Pi_1$의 문장은 거짓이라면 결정 가능하지만 참이라면 결정 가능성이 보장되지 않는다. 예를 들어 다음 두 명제는 $\Delta_0$가 아닌 $\Pi_1$ 문장이다.</p>
-
-\[\begin{gather}
-\phi_3(x): \forall y \;[ \lnot \mathrm{HaltsIn}(x, y) ] \\
-\phi_4(x): \forall y \; [ \lnot \mathrm{Proves}(x, y) ]
-\end{gather}\]
-
-<p>$\Sigma_1$의 경우와 달리, $\Pi_1$은 완전하지 않다. $\Sigma_1$ 문장의 부정이 $\Pi_1$이기 때문에, $\Pi_1$ 또한 완전하다면 $\Sigma_1 = \Pi_1=$ (결정 가능한 명제들의 모임)이 되기 때문이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 참인 $\Pi_1$ 문장들의 집합은 완전하지 않다.</p>
-</blockquote>
-
-<h3 id="24-delta_1-명제">2.4. $\Delta_1$ 명제</h3>
-
-<p>$\Delta_1$ 명제는 $\Sigma_1$과 $\Pi_1$에 모두 속한다. 따라서 $\Delta_1$은 <strong>결정 가능한</strong> 명제들의 모임이다. 앞서 본 테트레이션은 $\Delta_0$가 아닌 $\Delta_1$ 명제이다.</p>
-
-<h2 id="3-한-단계-더-올라가기">3. 한 단계 더 올라가기</h2>
-
-<blockquote>
-  <p><strong>정의.</strong></p>
-
-\[\begin{gather}
-\Sigma_2 := \{ \exists x_1 \cdots \exists x_n \;\phi : \phi \in \Pi_1 \}\\
-\Pi_2 := \{ \forall x_1 \cdots \forall x_n \;\phi : \phi \in \Sigma_1 \}\\
-\Delta_2 := \Sigma_2 \cap \Pi_2
-\end{gather}\]
-</blockquote>
-
-<p>이제 패턴이 보일 거라 생각한다. $\Sigma_2$ 명제의 예시로, 다음을 보자.</p>
-
-\[\phi_5(x) : \exists y \; [ \mathrm{DoesNotHaltOn}(x, y)]\]
-
-<p>여기서 $\mathrm{DoesNotHaltOn}(x, y)$는, “괴델 수가 $x$인 튜링 기계”에 $y$를 입력했을 때 정지하지 않으면 참인 술어이다. 앞선 논의로부터 $\mathrm{DoesNotHaltOn}$이 $\Pi_1$임을 어렵지 않게 알 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\phi_5 \notin \Pi_1$</p>
-</blockquote>
-
-<p><strong>증명.</strong> $\phi_5 \in \Pi_1$이라고 가정하자. 우리의 목표는 이 가정이 “참인 $\Pi_1$ 문장들의 집합은 완전하다”를 시사함을 보이는 것이다.</p>
-
-<p>$\psi(x)$가 임의의 $\Delta_0$ 명제라고 하자. $\theta : \forall x \;\psi(x)$는 $\Pi_1$ 문장이다. 다음의 튜링 기계 $M$을 생각하자.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ψ(x):
-   return 1;
-
-while True:
-</code></pre></div></div>
-
-<p>이 튜링 기계는 값 $x$에 대해 $\psi(x)$가 참이면 정지하고 거짓이면 정지하지 않는다. 따라서 $\theta$가 참이라는 것은 모든 $x$에 대해 $M$이 정지한다는 것과 동치이며, 이것은 $\phi_5(\ulcorner M \urcorner)$이 거짓임과 동치이다. 그리고 가정에 의해 $\phi_5 \in \Pi_1$이므로, $\phi_5(\ulcorner M \urcorner)$이 거짓이라면 $\mathsf{PA} \vdash \lnot \phi(\ulcorner M \urcorner)$이다. 즉, $\mathsf{PA} \vdash \theta$가 되어 모든 참인 $\Pi_1$ 문장은 증명 가능하게 된다. 이것은 모순이다. ■</p>
-
-<p><em>Remark.</em> 엄밀히는 위의 증명이 PA 내에서 표현 가능함을 보여야 한다.</p>
-
-<p>앞서 $\Sigma_1$ 명제는 참일 때 결정 가능하고, $\Pi_1$ 명제는 거짓일 때 결정 가능하다고 했다. 그런데 $\Sigma_2$ 문장은 $\forall$과 $\exists$가 섞여 있기 때문에, 참일 때에도, 거짓일 때에도 결정이 불가능한 문장이 있을 수 있다.</p>
-
-<h3 id="31-오라클">3.1. 오라클</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathcal{O}$가 단 한 번의 연산으로 문제 $P$의 결과를 구할 수 있을 때 $\mathcal{O}$을 $P$의 <strong>오라클</strong>이라고 한다.</p>
-</blockquote>
-
-<p>예를 들어 정지 문제의 오라클은 주어진 튜링 기계의 정지 연부를 단 한 번의 연산으로 알아낼 수 있는, 그야말로 신적인 존재다.</p>
-
-<p>산술 위계를 오르는 것은 점점 더 강한 오라클이 주어지는 것과 같다. 앞서 $\Sigma_1$ 명제의 예시로 다음을 보았다.</p>
-
-\[\phi_1(x): \exists y \;[ \mathrm{HaltsIn}(x, y) ]\]
-
-<p>그런데 만약 정지 문제 오라클 $\mathcal{O}$가 주어졌다면, $\phi_1$은 $\Delta_0$ 명제로 단순하게 표현 가능하다.</p>
-
-\[\phi_1(x) : \mathcal{O}(x)\]
-
-<p>또한 앞서 $\Sigma_2$ 명제의 예시로 다음을 보았다.</p>
-
-\[\phi_5(x) : \exists y \; [ \mathrm{DoesNotHaltOn}(x, y)]\]
-
-<p>정지 문제 오라클 $\mathcal{O}$가 주어졌다면, $\phi_5$는 $\Sigma_1$ 명제로 표현 가능하다.</p>
-
-\[\phi_5(x): \exists y \; \lnot \mathcal{O}(x|_y)\]
-
-<p>여기서 $x|_y$는 괴델 수가 $x$인 튜링 기계에 $y$를 입력한 상태의 괴델 수이다. 즉, $\Sigma_2$ 명제는 정지 문제의 오라클이 주어졌을 때 $\Sigma_1$ 명제로 환원된다. 비슷한 원리로, $\Pi_2$ 명제와 $\Delta_2$ 명제는 각각 정지 문제의 오라클이 주어졌을 때 $\Pi_1$ 명제와 $\Delta_1$ 명제로 환원된다.</p>
-
-<p>나아가 <strong>2차 오라클</strong>을 정의할 수 있다. 2차 정지 문제 오라클은, 정지 문제 오라클을 사용하는 튜링 기계들에 대한 정지 문제 오라클이다. 예를 들어 $\mathcal{O}$가 다음 코드의 정지 여부를 판단하는 데 그치는 데 반해,</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for x &gt; 0:
-   for y &gt; 0:
-      for z &gt; 0:
-         for n &gt; 2:
-            if x^n + y^n == z^n:
-               return True;
-return False;
-</code></pre></div></div>
-
-<p>$\mathcal{O}^2$은 다음 코드의 정지 여부를 판단할 수도 있다. 다음의 코드는 NP 튜링 기계의 괴델 수 $x$를 입력받았을 때, $x$와 출력이 일치하는 P 튜링 기계가 존재하면 정지하고 존재하지 않으면 정지하지 않는다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let x ∈ NP;
-for y ∈ P:
-   if !Halts(
-      let z = 0
-      while x(z) == y(z):
-         z = z + 1
-   ):
-      return 1; // x가 P에 속하는 NP일 때 정지
-</code></pre></div></div>
-
-<p>일반적으로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\Pi_n, \Sigma_n, \Delta_n$의 명제들은 $k$차 오라클이 주어졌을 때 각각 $\Pi_{n - k}, \Sigma_{n - k}, \Delta_{n - k}$의 명제들이 된다.</p>
-</blockquote>
 
   </div>
   <div style="margin-bottom: 6em"></div>

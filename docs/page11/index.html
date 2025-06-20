@@ -281,7 +281,7 @@
     href="/notes/"
     >Maths Review Notes (Korean)</a
   >
-                                                                                                                                                                    
+                                                                                                                                                                            
   </nav>
 
   <div class="sidebar-item">
@@ -422,6 +422,227 @@
 
 
 <div class="posts">
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/05/transfinite-recursion"> 초한귀납과 초한재귀 </a>
+      </h1>
+    <span class="post-date">05 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <h3 id="1-초한귀납법">1. 초한귀납법</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $P$가 서수 위에서 정의된 속성이고 임의의 $\alpha \in \mathrm{Ord}$에 대해</p>
+
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha)\]
+
+  <p>가 성립할 때, $P$는 모든 서수에 대해 참이다.</p>
+</blockquote>
+
+<p><em>Remark.</em> $P$의 정의역인 $\mathrm{Ord}$는 집합이 아닌 진모임(proper class)이므로 “술어” 대신 “속성”이란 표현을 사용한다.</p>
+
+<p><strong>증명.</strong> 서수가 정렬 순서라는 사실과 귀류법을 사용한다.</p>
+
+<p>$\lnot P(\lambda)$인 $\lambda$가 존재한다고 하자. $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$는 공집합이 아닌 정렬 집합이므로 최소 원소 $\alpha_0$가 존재한다. 이때 $\forall \beta &lt; \alpha_0 : P(\beta)$이므로 가정에 의해 $P(\alpha_0)$가 되어 모순이다. ■</p>
+
+<p><strong>응용.</strong> 폰 노인만 계층에서 $V_\alpha$는 추이적이다. 따라서 $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$ 대신 $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$로 정의할 수 있다.</p>
+
+<h3 id="2-초한재귀적-정의">2. 초한재귀적 정의</h3>
+
+<p><em>Motivation.</em> 자연수의 재귀적 정의를 생각해 보자. $n$개의 집합 $x_1, \dots , x_n$이 주어졌을 때 집합을 출력하는 함수 $g$가 존재한다면 다음과 같이 $f: \mathbb{N} → V$을 정의할 수 있을 것이다.</p>
+
+\[f(n) = g(f(0), \dots, f(n - 1))\]
+
+<p>문제는 $g$가 고정된 수의 매개변수만을 가질 수 있다는 것이다. 따라서 다음과 같이 $g$의 매개변수를 순서쌍으로 묶는다.</p>
+
+\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
+
+<p>이 순서쌍은 $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$과 같이 표현할 수 있다. 즉,</p>
+
+\[f(n) = g(f \upharpoonright n).\]
+
+<p>이를 서수에 대해서 일반화하면 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $G: V → V$가 모임함수(class function)이라고 하자. 다음을 만족하는 모임함수 $F: \mathrm{Ord} → V$가 존재한다.</p>
+
+\[F(\alpha) = G(F \upharpoonright \alpha)\]
+</blockquote>
+
+<p><strong>증명.</strong> 초한귀납법을 겁나게 쓰면 된다. (불친절해서 ㅈㅅ)</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/01/net"> 콤팩트성과 그물 </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <h3 id="콤팩트성">콤팩트성</h3>
+<blockquote>
+  <p><strong>정의.</strong> $X$가 위상공간이라고 하자.</p>
+
+  <ol>
+    <li>임의의 열린 덮개가 유한한 부분덮개를 가질 때 $X$를 <strong>콤팩트</strong>하다고 한다.</li>
+    <li>임의의 점렬 $\lbrace x_n \in X \rbrace$가 수렴하는 부분점렬을 가질 때 $X$를 <strong>점렬 콤팩트</strong>하다고 한다.</li>
+    <li>임의의 무한집합 $S \subset X$가 극점을 가질 때 $X$를 <strong>극점 콤팩트</strong>하다고 한다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>점렬 콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$S \subset X$가 극점이 없는 무한집합이라고 하자. $\overline{S} = S \cup S’ = S$이므로 $S$는 닫힌 집합이며, $X \setminus S$는 열린 집합이다. 임의의 $s \in S$에 대해, $s$가 극점이 아니므로 $U_s \cap S = \lbrace  s \rbrace$인 $s$의 근방 $U_s$가 존재한다. 따라서 다음 $X$의 열린 덮개는 유한한 부분덮개를 가지지 않는다.</li>
+</ol>
+
+\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
+
+<ol>
+  <li>$S \subset X$가 무한집합이라고 하자. $S$의 원소들을 임의로 추출하여 점렬 $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$을 만든다. $X$가 점렬 콤팩트하므로 $\lbrace  s_n \rbrace → s$이며, $s$는 $S$의 극점이다.</li>
+  <li>순서 토폴로지가 주어진 $\omega_1$은 극점 콤팩트하지만 콤팩트하지 않다.</li>
+  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, $\mathbb{N}$에는 이산 토폴로지가 주어지고 $\lbrace  0, 1\rbrace$에는 자명한 토폴로지가 주어짐.</li>
+</ol>
+
+<p><strong>Remark.</strong> 4의 올바르지 못한 “증명”</p>
+
+<blockquote>
+  <p>$X$가 극점 콤팩트하다고 하자. 점렬 $(x_n)$이 주어졌을 때, $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$이 유한집합이라면 $(x_n)$은 수렴하는 부분점렬을 자명하게 가진다. $S$가 무한집합이라면 $X$의 극점 콤팩트성에 의해 $x \in S’$가 존재한다. <strong>이제 다음 조건을 만족하는 $x$의 근방들의 가산 모임 $\mathcal{U} = \lbrace  U_n \rbrace$을 정의한다.</strong></p>
+
+  <ol>
+    <li>$n &lt; m \implies U_n \supset U_m$</li>
+    <li>$V$가 $x$의 근방일 때, $\exists U \in \mathcal{U} : U \subset V$</li>
+  </ol>
+
+  <p>이로부터 다음 두 조건을 만족하는 함수 $k: \mathbb{N} → \mathbb{N}$을 정의할 수 있다.</p>
+
+  <ol>
+    <li>$x_{k(n)} \in U_n$</li>
+    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+  </ol>
+
+  <p>2가 가능한 이유는 $k(i)$가 $i \leq n$까지 정의되었을 때 $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$가 여전히 $x$를 극점으로 가지기 때문이다. 즉, $(x_n)$은 수렴하는 부분점렬 $(x_{k(n)})$을 가진다.</p>
+</blockquote>
+
+<p>위 증명이 올바르지 않은 이유는 볼드체 부분이 일반적으로 가능하지 않기 때문이다. 대신 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 1차 가산 T₁ 공간에서 극점 콤팩트성과 점렬 콤팩트성은 동치이다.</p>
+</blockquote>
+
+<h3 id="그물과-점렬">그물과 점렬</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 전순서라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합(directed set)</strong>이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종(cofinal)</strong>이라고 한다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> $(J, \leq)$가 방향 집합이고 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물(net)</strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>정의.</strong> 그물 $(x_\alpha)$가 $x$로 수렴한다는 것은, 임의의 $x$의 근방 $U$에 대해 어떤 $\alpha \in J$가 존재하여</p>
+
+  <p>\(\alpha \leq \beta \implies x_\beta \in U\)
+인 것이다.</p>
+</blockquote>
+
+<p>일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 1차 가산 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 점렬 $(x_n)$이 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면  $f(x_n) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 위상 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 그물 $(x_\alpha)$가 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면  $f(x_\alpha) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$\mathcal{U}_x$를 $x$의 근방들의 집합이라고 하자. 역포함관계로 $\mathcal{U}_x$에 순서 $\leq$를 준다. $x \in \bar{A}$라면 임의의 $U_\alpha \in \mathcal{U}_x$에 대해 $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$인 $x_\alpha$가 존재한다. $x_\alpha → x$임을 확인하라.</li>
+</ol>
+
+<blockquote>
+  <p><strong>정의.</strong> $(x_\alpha)_{\alpha \in J}$가 그물이라고 하자. $(I, \preceq)$가 방향 집합이고, $g: (I, \preceq) → (J, \leq)$가 순서 보존이며, $\operatorname{im}g$가 공종일 때, $(x_{g(\beta)})_{\beta \in I}$를 $(x_\alpha)$의 부분그물이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 콤팩트할 필요충분조건은 임의의 그물이 수렴하는 부분그물을 가지는 것이다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> ”수렴하는 점렬이 존재한다“는 ”수렴하는 그물이 존재한다“보다 강한 조건이지만, ”임의의 점렬이 수렴하는 부분점렬을 가진다”는 “임의의 그물이 수렴하는 부분그물을 가진다”보다 강하지도, 약하지도 않은 조건임에 유의하라. 주어는 후자가 더 강하고, 술어는 전자가 더 강하다. 따라서 <strong>콤팩트성과 점렬 콤팩트성은 일반적으로 시사 관계가 없다.</strong> 구체적으로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+    <li>점렬 콤팩트 $\not\rightarrow$ 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$[0, 1]^{[0, 1]}$은 티호노프 정리에 의해 콤팩트하지만 점렬 콤팩트하지 않다.</li>
+  <li>Long line과 $\omega_1$은 점렬 콤팩트하지만 콤팩트하지 않다.</li>
+</ol>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
@@ -808,304 +1029,6 @@ R(x, y): y = \omega + x,
 \end{gather}\]
 
 <p>the image $\mathrm{im}R|_\omega = \lbrace \omega, \omega + 1, \omega + 2, … \rbrace$ exists, and thus $\omega \cup \mathrm{im}R|_\omega = \omega + \omega$ exists.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/20/Rational-Real"> 유리수와 실수의 집합론적 정의 </a>
-      </h1>
-    <span class="post-date">20 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <h3 id="1-칸토어의-동형성-정리">1. 칸토어의 동형성 정리</h3>
-
-<blockquote>
-  <p><strong>칸토어의 동형성 정리.</strong> 가산이고 양끝점이 없으며 조밀한 전순서 집합은 순서 동형에 대해 유일하다.</p>
-</blockquote>
-
-<p><strong>증명 1. (Back-and-Forth Argument)</strong></p>
-
-<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B  \setminus \mathrm{im} f_n$과 대응시키고, <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$
-를 순서 동형성을 만족하게끔 <strong>임의의</strong> 
-$a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$
-와 대응시킨다. (그림의 파란색은 ‘가장 인덱스가 작은’으로 선택된 원소)</p>
-
-<p><strong>증명 2. (Only-Forth Argument)</strong></p>
-
-<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus  \mathrm{im}f_n$과 대응시킨다.</p>
-
-<p><strong>잘못된 증명. (Incorrect Only-Forth Argument)</strong></p>
-
-<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B \setminus  \mathrm{im}f_n$와 대응시킨다.</p>
-
-<p><u>잘못된 이유</u>. $\mathrm{im} \left[ \bigcup f_n \right]$이 $B$ 전체를 소진한다는 보장이 없다. 일례로 모든 경우 선택된 $b$의 인덱스가 짝수인 경우가 가능하다.</p>
-
-<h3 id="2-데데킨트-절단">2. 데데킨트 절단</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 전순서 집합 $(P, &lt;)$에 대하여 $P$의 부분집합 $A, B$가 다음을 만족할 때 $(A, B)$를 <strong>절단</strong>이라고 한다.</p>
-
-  <ol>
-    <li>$A \sqcup B = P$</li>
-    <li>임의의 $a \in A, b \in B$에 대해 $a &lt; b$이다.</li>
-  </ol>
-
-  <p>추가로 다음을 만족할 때 <strong>데데킨트 절단</strong>이라고 한다.</p>
-
-  <ol>
-    <li>$A$는 최대 원소를 가지지 않는다.</li>
-  </ol>
-
-  <p>추가로 다음까지 만족할 때 <strong>틈</strong>이라고 한다.</p>
-
-  <ol>
-    <li>$B$는 최소 원소를 가지지 않는다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Remark</strong></p>
-<ol>
-  <li>$P$가 완비이다 ⇔ $P$는 틈을 가지지 않는다.</li>
-  <li>$P = \mathbb{Q}$일 때 틈은 무리수 집합을, 데데킨트 절단은 실수 집합을 나타낸다.</li>
-</ol>
-
-<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
-
-<h3 id="3-완비화-정리">3. 완비화 정리</h3>
-
-<blockquote>
-  <p><strong>완비화 정리.</strong> $(P, &lt;)$가 양끝점이 없는 조밀한 전순서라면 다음을 만족하는 완비 전순서 $(C, \prec)$가 순서 동형에 대해 유일하게 존재한다.</p>
-
-  <ol>
-    <li>$P \subseteq C$</li>
-    <li>$\prec$는 $P$에서 $&lt;$와 일치한다.</li>
-    <li>$P$는 $C$에서 조밀하다. 즉, $c_1 &lt; c_2 \in C$에 대해 $c_1 &lt; p &lt; c_2$를 만족하는 $p \in P$가 언제나 존재한다.</li>
-    <li>$C$는 양끝점이 없다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>유일성 증명.</strong>
-$(C, \prec)$와 $(C^\ast, \prec^\ast)$가 조건을 만족하는 완비 전순서라고 하자. 다음과 같이 정의된 $\phi: C → C^\ast$는 순서 동형 사상이다.</p>
-
-<ol>
-  <li>$c \in P$라면 $\phi(c)=c$</li>
-  <li>$c \notin P$라면 $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
-</ol>
-
-<p><strong>존재성 증명.</strong>
-다음과 같이 정의한다.</p>
-
-\[\begin{gather}
-\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
-\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
-\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
-\end{gather}\]
-
-<p>라고 하자. 다음과 같이 $\mathcal{D}$에 순서를 준다.</p>
-
-\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
-
-<p>$(A, B) \in \mathcal{P}$라면 어떤 $p$에 대해 $B = \lbrace  x \in P : x \geq p  \rbrace$이며, 이때 $(A, B) = [p]$라고 적자. 즉,</p>
-
-\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
-
-<p>$(\mathcal{P}, \prec) \sim (P, &lt;)$임을 쉽게 확인할 수 있다. 이제 다음을 보인다.</p>
-
-<p><em>Claim.</em> $\mathcal{D}$는 $\mathcal{P}$에 대해 완비화 정리의 4가지 조건을 모두 만족하는 확장이다.</p>
-
-<p>1, 2, 4는 자명하다. 3을 보인다.</p>
-
-<p>$\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$에 대해 $\mathfrak{d_1} \prec \mathfrak{d}_2$, 즉 $A_1 \subset A_2$라고 하자. $p \in A_2 \setminus A_1$이며 $p$가 $B$의 최소 원소가 아닌 $p \in P$가 존재한다. 그러한 $p$에 대해 $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$이다. □</p>
-
-<p>마지막으로 다음을 보인다.</p>
-
-<p><em>Claim.</em> $(\mathcal{D}, \prec)$는 완비이다.</p>
-
-<p>$\mathcal{S}$가 위로 유계인 $\mathcal{D}$의 공집합이 아닌 부분집합이라고 하자. 다음과 같이 정의한다.</p>
-
-\[\begin{gather}
-A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
-B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
-\end{gather}\]
-
-<p>$(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$이며, $\mathcal{S}$의 최소 상계임을 확인할 수 있다. ◾</p>
-
-<blockquote>
-  <p><strong>집합론적 실수의 정의.</strong> 다음을 만족하는 집합 $(R, &lt;)$은 순서 동형에 대해 유일하다.</p>
-
-  <ol>
-    <li>완비 전순서 집합이다.</li>
-    <li>양끝점이 없다.</li>
-    <li>분리 가능하다(separable). 즉, $Q \subset R$이 존재하여 $Q$는 가산집합이고 $R$에서 조밀하다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> 칸토어의 동형성 정리와 완비화 정리로부터 따라 나온다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/20/Rational-Real/en"> Set-theoretic Definitions of Rational and Real Numbers </a>
-      </h1>
-    <span class="post-date">20 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <h3 id="1-cantors-isomorphism-theorem">1. Cantor’s Isomorphism Theorem</h3>
-
-<blockquote>
-  <p><strong>Cantor’s Isomorphism Theorem.</strong> Any countable, dense, linear order without endpoints is unique up to order isomorphism.</p>
-</blockquote>
-
-<p><strong>Proof 1. (Back-and-Forth Argument)</strong></p>
-
-<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B  \setminus \mathrm{im} f_n$ so that order isomorphism is preserved, and then map the <strong>least-indexed</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$ to an <strong>arbitrary</strong> $a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$ so that order isomorphism is preserved. (In the diagram, blue indicates the ‘least-indexed’ elements.)</p>
-
-<p><strong>Proof 2. (Only-Forth Argument)</strong></p>
-
-<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to the <strong>least-indexed</strong> $b_l \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
-
-<p><strong>Incorrect Proof. (Incorrect Only-Forth Argument)</strong></p>
-
-<p>At the $n$-th step, match the <strong>least-index</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
-
-<p><u>Why this is incorrect</u>: There is no guarantee that $\mathrm{im} \left[ \bigcup f_n \right]$ exhausts all of $B$. For example, it is possible that only $b$’s with even indices are chosen in every step.</p>
-
-<h3 id="2-dedekind-cuts">2. Dedekind Cuts</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a linearly ordered set $(P, &lt;)$, a pair of subsets $A, B$ of $P$ is called a <strong>cut</strong> if:</p>
-
-  <ol>
-    <li>$A \sqcup B = P$</li>
-    <li>For any $a \in A, b \in B$, $a &lt; b$.</li>
-  </ol>
-
-  <p>Furthermore, it is a <strong>Dedekind cut</strong> if:</p>
-
-  <ol>
-    <li>$A$ has no greatest element.</li>
-  </ol>
-
-  <p>It is called a <strong>gap</strong> if, in addition:</p>
-
-  <ol>
-    <li>$B$ has no least element.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Remark</strong></p>
-
-<ol>
-  <li>$P$ is complete ⇔ $P$ has no gaps.</li>
-  <li>As will be seen, for $P = \mathbb{Q}$, gaps correspond to irrational numbers while Dedekind cuts correspond to real numbers.</li>
-</ol>
-
-<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
-
-<h3 id="3-completion-theorem">3. Completion Theorem</h3>
-
-<blockquote>
-  <p><strong>Completion Theorem.</strong> If $(P, &lt;)$ is a dense linear order without endpoints, then there exists a unique (up to order isomorphism) complete linear order $(C, \prec)$ satisfying:</p>
-
-  <ol>
-    <li>$P \subseteq C$</li>
-    <li>$\prec$ coincides with $&lt;$ on $P$</li>
-    <li>$P$ is dense in $C$: for any $c_1 &lt; c_2 \in C$, there exists $p \in P$ with $c_1 &lt; p &lt; c_2$</li>
-    <li>$C$ has no endpoints.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Uniqueness Proof.</strong>
-Suppose $(C, \prec)$ and $(C^\ast, \prec^\ast)$ are complete linear orders satisfying the conditions. Define $\phi: C \to C^\ast$ as follows:</p>
-
-<ol>
-  <li>If $c \in P$, then $\phi(c)=c$</li>
-  <li>If $c \notin P$, then $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
-</ol>
-
-<p>This $\phi$ is an order isomorphism.</p>
-
-<p><strong>Existence Proof.</strong>
-Define:</p>
-
-\[\begin{gather}
-\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
-\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
-\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
-\end{gather}\]
-
-<p>Define an order on $\mathcal{D}$ by:</p>
-
-\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
-
-<p>If $(A, B) \in \mathcal{P}$, then for some $p$, $B = \lbrace  x \in P : x \geq p  \rbrace$, and we write $(A, B) = [p]$. That is,</p>
-
-\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
-
-<p>It is easy to check that $(\mathcal{P}, \prec) \sim (P, &lt;)$. Now, we show the following:</p>
-
-<p><em>Claim.</em> $\mathcal{D}$ is an extension of $\mathcal{P}$ satisfying all four conditions of the Completion Theorem.</p>
-
-<p>Conditions 1, 2, and 4 are clear. We show 3.</p>
-
-<p>Let $\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$ with $\mathfrak{d}_1 \prec \mathfrak{d}_2$, i.e., $A_1 \subset A_2$. There exists $p \in A_2 \setminus A_1$ such that $p$ is not the least element of $B$, i.e., $p \in P$. For such $p$, we have $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$. □</p>
-
-<p>Finally, we show:</p>
-
-<p><em>Claim.</em> $(\mathcal{D}, \prec)$ is complete.</p>
-
-<p>Let $\mathcal{S}$ be a nonempty, upward-bounded subset of $\mathcal{D}$. Define:</p>
-
-\[\begin{gather}
-A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
-B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
-\end{gather}\]
-
-<p>Then $(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$ and is the least upper bound of $\mathcal{S}$. ◾</p>
-
-<blockquote>
-  <p><strong>Set-theoretic Definition of the Real Numbers.</strong> A set $(R, &lt;)$ satisfying the following is unique up to order isomorphism:</p>
-
-  <ol>
-    <li>It is a complete linear order.</li>
-    <li>It has no endpoints.</li>
-    <li>It is separable; i.e., there exists $Q \subset R$ which is countable and dense in $R$.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong> This follows from Cantor’s Isomorphism Theorem and the Completion Theorem.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

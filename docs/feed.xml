@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-20T08:31:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry><title type="html">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title><link href="http://localhost:4000/2025/06/17/kafka-blue-octavos" rel="alternate" type="text/html" title="프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권" /><published>2025-06-17T00:00:00+09:00</published><updated>2025-06-17T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/17/kafka-blue-octavos</id><content type="html" xml:base="http://localhost:4000/2025/06/17/kafka-blue-octavos"><![CDATA[<blockquote>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-06-20T09:12:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry><title type="html">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title><link href="http://localhost:4000/2025/06/17/kafka-blue-octavos" rel="alternate" type="text/html" title="프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권" /><published>2025-06-17T00:00:00+09:00</published><updated>2025-06-17T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/17/kafka-blue-octavos</id><content type="html" xml:base="http://localhost:4000/2025/06/17/kafka-blue-octavos"><![CDATA[<blockquote>
   <p>「여덟 권의 청색 팔절판 노트<sub>Acht blaue Oktavhefte</sub>」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다.</p>
 </blockquote>
 
@@ -561,7 +561,250 @@ Ich sitze zum Beispiel zu Hause, ehe ich angeln gehe, und drehe scharf zusehend 
 
 <p>이는 다음의 수학적 예시를 통해 이해할 수 있다. 독자 분은 $0 &lt; i$가 올바르지 않은 부등식임을 배웠을 것이다. 왜냐하면 해당 맥락에서 $&lt;$는 실수 위에서만 정의되기 관계이기 때문이다. 그리고 $&lt;$가 실수 위에서만 정의 가능한 이유는 실수, 허수, 그리고 $&lt;$가 요구하는 논리적 규칙들과 연관한다. $&lt;$의 규칙에 따르면, 양변에 0보다 큰 수를 곱하면 부등호의 방향이 유지되고, 0보다 작은 수를 곱하면 부등호의 방향이 뒤집힌다. 그런데 만약 $0 &lt; i$라면 $0 = 0 \cdot i &lt; i \cdot i = -1$이 되어 모순이고, $i &lt; 0$이라면 $-1 = i \cdot i &gt; 0 \cdot i = 0$이 되어 모순이다. 따라서 $0 &lt; i$는 의미를 결여한 부등식이다. 이는 $0 &lt; i$가 <strong>거짓</strong>임을 의미하지 않는다. $0 &lt; i$가 거짓이라면 $0 &gt; i$가 참이어야 하기 때문이다.</p>
 
-<p>참고: <a href="https://forum.owlofsogang.com/t/topic/6465">https://forum.owlofsogang.com/t/topic/6465</a></p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="철학" /><category term="논리학" /><category term="언어철학" /><summary type="html"><![CDATA[이 글은 James Conant, The Search for Logically Alien Thought: Descartes, Kant, Frege, and the Tractatus (1991)를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).]]></summary></entry><entry><title type="html">콰인, ⟪경험주의의 두 독단⟫</title><link href="http://localhost:4000/2025/05/26/quine-two-dogmas" rel="alternate" type="text/html" title="콰인, ⟪경험주의의 두 독단⟫" /><published>2025-05-26T00:00:00+09:00</published><updated>2025-05-26T00:00:00+09:00</updated><id>http://localhost:4000/2025/05/26/quine-two-dogmas</id><content type="html" xml:base="http://localhost:4000/2025/05/26/quine-two-dogmas"><![CDATA[<h2 id="개요">개요</h2>
+<p>참고: <a href="https://forum.owlofsogang.com/t/topic/6465">https://forum.owlofsogang.com/t/topic/6465</a></p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="철학" /><category term="논리학" /><category term="언어철학" /><summary type="html"><![CDATA[이 글은 James Conant, The Search for Logically Alien Thought: Descartes, Kant, Frege, and the Tractatus (1991)를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).]]></summary></entry><entry><title type="html">논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》</title><link href="http://localhost:4000/2025/06/02/wittgenstein-conant%20copy" rel="alternate" type="text/html" title="논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》" /><published>2025-06-02T00:00:00+09:00</published><updated>2025-06-02T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/02/wittgenstein-conant%20copy</id><content type="html" xml:base="http://localhost:4000/2025/06/02/wittgenstein-conant%20copy"><![CDATA[<blockquote>
+  <p>이 글은 <a href="/public/Search for Logically Alien Thought.pdf">James Conant, <em>The Search for Logically Alien Thought: Descartes, Kant, Frege, and the</em> Tractatus (1991)</a>를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).</p>
+</blockquote>
+
+<h2 id="초록">초록</h2>
+
+<p>서양 철학사의 주요 논의 중 하나는 논리 법칙의 필연성에 관한 것이다. 논리 법칙은 <em>필연적으로</em> 필연적인가, 혹은 <em>우연적으로</em> 필연적인가? 즉, 우리의 논리와는 상이한 논리 법칙을 가지는 세계, 또는 상이한 논리 법칙으로 사고하는 외계인이 가능한가?</p>
+
+<p>이에 대한 철학자들의 답변을 개괄하자면 이렇다.</p>
+
+<ul>
+  <li>
+    <p>아퀴나스는 신 또한 논리 법칙에 의거한다는 점에서 논리 법칙은 필연적으로 필연적이라고 주장했다.</p>
+  </li>
+  <li>
+    <p>그러나 데카르트는 신이 진정으로 권능하다면 신은 논리 법칙 또한 바꿀 수 있어야 하며, 이에 따라 논리 법칙은 우연적으로 필연적이라고 주장했다.</p>
+  </li>
+  <li>
+    <p>칸트는 논리 법칙을 이성적 사고의 초월적<a href="#sub1" id="sup1"><sup>1</sup></a> 조건으로서 제시함으로써 데카르트의 입장을 극복했다.</p>
+  </li>
+  <li>
+    <p>그러나 데카르트의 입장은, 논리 또한 인간 사고의 일부이므로 논리학은 심리학으로 환원된다는 심리학주의<sub>Psychologism</sub>로 살아남었다.</p>
+  </li>
+  <li>
+    <p>프레게는 칸트의 입장을 빌려 심리학주의를 신랄하게 공격했으나, 논리 법칙을 초월적 조건으로 보는 동시에 ‘자연의 가장 보편적인 법칙’으로 보는 그의 입장은 내적 긴장을 일으켰다.</p>
+  </li>
+  <li>
+    <p>비트겐슈타인은 논리 법칙이 무의미<sub>Sinnlos</sub>하다고 주장했다. 나아가, 프레게의 내적 긴장의 원인은 “논리 법칙은 필연적으로 필연적인가?”라는 질문이 의미를 결여<sub>Unsinn</sub>하기 때문이라고 진단했다.</p>
+  </li>
+</ul>
+
+<p>이러한 철학사적 흐름을 통해 저자는 비트겐슈타인의 《논고》가 형언할 수 없는 진리에 대한 저술이라는 기존의 해석에 대항하여, 《논고》에는 <em>아무런</em> 철학적 주장도 담겨 있지 않으며 이 사실을 깨닫게 하는 것이 《논고》의 최종 목표라는 “새로운 비트겐슈타인<sub>New Wittgenstein</sub>” 진영의 해석을 옹호한다.</p>
+
+<h2 id="1-아퀴나스와-데카르트-신은-논리에-종속되는가">1. 아퀴나스와 데카르트: 신은 논리에 종속되는가?</h2>
+
+<p>스콜라 철학자들에게 논리 법칙의 필연성 논의는 심각한 문제였다. 신의 권능과 논리 법칙의 필연성은 양립할 수 없는 것으로 여겨졌기 때문이다. 아퀴나스는 이 딜레마를 극복하기 위해 절대적 가능<sub>possible absolutely</sub>과 절대적 불가능<sub>impossible absolutely</sub>이라고 부를 수 있는 구별을 제시했다. 절대적 가능은 지성체가 이해할 수 있는 사태를 의미하고, 절대적 불가능은 이해조차 불가능한 사태를 의미한다. 신의 권능이 뜻하는 바는 절대적으로 가능한 모든 일 — 이를테면 지구를 평평하게 만드는 일 — 은 신에게 가능하다는 것이며, 절대적으로 불가능한 일 — 이를테면 배중률을 위배하는 일 — 은 신의 권능을 논하는 데 무관하다는 것이 아퀴나스의 주장이다.</p>
+
+<p>그러나 데카르트는 아퀴나스의 주장이 신성 모독적이라고 반박한다. 아퀴나스가 절대적 가능과 절대적 불가능을 구별할 때 근거로 삼은 “지성체”는 인간의 지성임이 암시적으로 전제되어 있다. 즉, 아퀴나스는 인간 지성의 한계 — <em>우리는</em> 빨간색인 동시에 빨간색이 아닌 사과를 상상할 수 없다 — 와 신의 권능의 한계 — 따라서 <em>신은</em> 빨간색인 동시에 빨간색이 아닌 사과를 창조할 수 없다 — 를 동일시했다. 데카르트는 이것이 인간 지성의 월권이라고 비판한다. 신은 인간이 이해할 수 없는 방식으로도 행할 수 있다. 그러한 신에게 논리 법칙은 자신의 의지대로 변경이 가능한 우연적 산물이라는 것이 데카르트의 주장이다.</p>
+
+<p>그렇다면 어째서 인간은 논리 법칙을 필연적인 것으로 인식하는가? 데카르트의 답변은, 신이 인간에게 내려 준 이성이 논리 법칙을 필연적인 것으로 이해하도록 설계되었기 때문이라는 것이다. 신이 이 세계를 특정 논리 법칙에 따라 창조했다면, 자애로운 신은 이 세계에 거주할 피조물인 인간에게 해당 논리 법칙을 필연적인 것으로 인식하는 지성을 내려 줄 것이다 (이 대목을 데카르트의 유명한 악마 논변과 대조해 보라). 즉, 데카르트에 따르면 논리 법칙의 표면적 필연성은 (신이 내려 준) 이성의 설계에서 기원한다.<a href="#sub2" id="sup2"><sup>2</sup></a> 데카르트의 주장에서 신학적인 표현들을 신경생리학적 표현들로 대체하기만 하면, 논리 법칙의 표면적 필연성은 뇌의 작동에서 기원한다는 심리학주의의 주장을 얻는다.</p>
+
+<p>그러나 데카르트주의에는 내적 모순이 있어 보인다. 데카르트는 다음의 세 명제를 동시에 주장하고자 한다.</p>
+
+<p>① 인간은 논리적으로 불가능한 사태를 이해할 수 없다.</p>
+
+<p>② 신은 논리적으로 불가능한 사태를 창조할 수 있다.</p>
+
+<p>③ 인간은 ②의 진술을 이해할 수 있으며 나아가 참인 것으로 판단할 수 있다.</p>
+
+<p>여기서 ①과 ③은 상충하는 것으로 보인다. <strong>’논리적으로 불가능한 사태’가 인간에게 이해 불가능한 개념이라면, 신이 그것을 행할 수 있다는 진술 또한 마찬가지로 이해 불가능하지 않겠는가?</strong> 마치 연속체 가설을 이해하지 못하는 사람에게는 ‘연속체 가설이 참인 수학 체계가 가능하다’라는 진술 또한 마찬가지로 이해 불가능하듯이 말이다. 이 문제에 답할 필요를 느낀 데카르트는 이해<sub>comprehend</sub>와 직관<sub>apprehend</sub>의 미묘한 구별을 제시했다. 이해가 무언가를 이성 속에서 완전히 파악하는 일이라면, 직관은 이성이 무언가에 <em>닿는</em> 일이다.</p>
+
+<blockquote>
+  <p>나는 신이 만물의 창조주이며, 불변하는 진리가 있으며, 신이 그것의 창조주임을 안다. 나는 내가 이것을 안다고 말하지, 내가 그것을 인식한다든가, 파악한다고 말하지 않는다. 왜냐하면 비록 우리의 정신은 유한하기에 신을 인식하거나 파악할 수 없지만, 신이 무한하며 전능하다는 사실은 알 수 있기 때문이다. 이것은 우리의 손이 산에 닿을 수는 있지만 우리가 두 팔로 산을 감쌀 수는 없는 것과 마찬가지이다.</p>
+</blockquote>
+
+<p>따라서 데카르트는 ③을 다음과 같이 수정할 것이다.</p>
+
+<p>③ 인간은 ②의 진술을 <em>직관할</em> 수 있으며 나아가 참인 것으로 판단할 수 있다.</p>
+
+<p>나중에 우리는 이와 같이, 엄밀히 따지자면 무의미하지만 그럼에도 유효한 진리로 통하는 명제가 있음을 단어의 미묘한 구별 — 감히 말하자면 말장난 — 을 통해 정당화하려는 시도를 비트겐슈타인의 ⟪논고⟫에 대한 전통적 해석에서 다시 마주할 것이다.</p>
+
+<h2 id="2-라이프니츠와-칸트-자유-이성-논리">2. 라이프니츠와 칸트: 자유, 이성, 논리</h2>
+
+<p>라이프니츠는 신이 논리 법칙을 임의로 창조했다는 데카르트의 주장에 반대했다. 데카르트를 반박하기 위해 라이프니츠는 “신이 행하기 때문에 선한 일인가, 선한 일이기 때문이 신이 행하는 것인가?” 라는 스콜라 철학의 논쟁을 재등장시킨다. 라이프니츠는 후자를 주장한다. 신은 선한 일이기 <em>때문에</em> 그것을 행한다. 그러나 라이프니츠에 따르면 이는 신이 ‘선’의 개념에 얽매여 있음을 시사하지 않는다. 오히려 이 사실은, 그것이 선하다는 것을 신이 <em>이해한다는</em> 것을 보여준다. 즉 ‘선’의 개념은 신의 의지를 선행하지만, 신의 이성에는 포섭된다.</p>
+
+<p><strong>라이프니츠는 신의 의지에 선행되는 ‘선’의 개념이 신의 자유에 반하기는커녕, 신의 자유가 성립하기 위한 조건임을 강조한다.</strong> 만약 신의 의지에 선행되는 원리가 전무하다면, 신은 특정 행동을 행할 어떠한 근거도 없을 것이다. (그럼에도 신이 무언가를 행한다면, 그것은 무작위적인 선택에 의한 것이라고밖에 볼 수 없다. 그러나 우리는 무작위적인 행동을 두고 자유의지에 의한 선택이라고 말하지 않는다. 이중 슬릿을 통과하는 전자들이 자유의지에 의해 통과할 슬릿을 선택한다고 말하지 않는 것과 같다. 따라서 자유의지는 무작위랑 구별되기 위한 원리를 요구한다.)</p>
+
+<p>마찬가지로 라이프니츠는 논리 법칙이 신의 이성에 포섭되어 있되 신의 의지에 선행하는 원리이자, 신의 자유가 성립하기 위한 조건이라고 주장한다. 이러한 라이프니츠의 철학은 칸트로 계승된다. 데카르트가 논리 법칙을 이성의 산출물로서 보았다면, 칸트는 데카르트의 주장을 이른바 ‘코페르니쿠스적 전회’를 통해 뒤집는다. 칸트에 따르면 논리 법칙은 이성의 산출물이 아니라 이성의 구성 조건이다. 그리고 라이프니츠적인 의미에서, 자유로운 이성이란 논리 법칙을 따르는 이성이다. <strong>논리 법칙을 따르지 않는 이성은 엄격한 의미에서 이성이라 불릴 수 없다.</strong> (이는 마치 체스의 규칙을 따르지 않는 체스는 엄격한 의미에서 체스라 불릴 수 없는 것과 같다.) 이러한 칸트의 논리철학에 대해 퍼트넘은 다음과 같이 적는다.</p>
+
+<blockquote>
+  <p>칸트의 ⟪논리학 강의⟫는 오늘날의 우리가 ‘심리학주의’라고 부르는 입장과 극단적으로 대립하는 입장을 제시하는 선구적인 — 어쩌면 최초의 — 저술이다. […] 나의 관심을 끄는 것은, 비논리적인 생각은 엄격히 말해 애초에 생각이 아니라는 [칸트의] 반복적인 주장이다.</p>
+
+  <p>확실히 논리학에는 아무런 형이상학적 가정이 없다. 규범적 의미에서의 생각, 즉 <em>참 [또는 거짓]으로 판명될 수 있는 판단</em>이 논리를 따른다는 것은 형이상학이 <em>설명해야 할</em> 무언가가 아니기 때문이다. 무언가를 설명한다는 것은 논리를 <em>전제한다</em>. 칸트에게 있어 논리는 모든 이성적 활동에 선행한다.</p>
+</blockquote>
+
+<p>특히 칸트는 논리가 심리학과 엄격히 구별되어야 함을 강조한다. 경험적 사실들에 대한 학문으로서 심리학은 이성의 판단 활동을 통해 도달하는 이론인 반면, 논리학은 그러한 이성의 활동이 가능하기 위해 전제되어야 하는 조건이기 때문이다. 따라서 논리학을 심리학으로 환원하려는 시도는 범주론적 오류이다. 여기서 칸트가 논하는 대상은 ‘인간 이성’이 아닌 이성 일반임에 주목하라.</p>
+
+<p>그러나 칸트는 라이프니츠보다 더 엄격한 논리의 경계를 긋는다. 칸트에 따르면 논리학은 오직 문장의 순수 형식에 관한 것이다. (따라서 배중률, 전건 긍정<sub>modus ponens</sub>, 대우법 등은 논리의 범주에 속하지만, 오늘날의 우리가 집합론, 모델론, 양상 논리라고 부르는 것은 속하지 않는다.) <strong>이것이 함의하는 바는, 논리학은 세계에 관해 <em>아무것도</em> 진술하는 바가 없다는 것이다.</strong> (무한 공리 — 적어도 하나의 무한집합이 존재한다는 공리 — 나 공집합 공리 — 공집합이 존재한다는 공리 — 와 같은 존재론적 진술을 포함하는 집합론과 달리, 칸트적인 의미의 논리학은 어떠한 존재론적 진술도 주장하지 않는다.)</p>
+
+<p>이처럼 논리학은 세계의 사태로부터 유리되어 있으므로, <strong>논리학의 필연성을 정당화하려는 시도나, 논리학으로부터 형이상학적 통찰을 얻으려는 시도는 초험적 비판의 대상이 된다.</strong> 그것은 영원의 불멸성에 관한 질문이나 신의 존재에 관한 질문만큼이나 이성의 한계를 벗어난 것이다. 나중에 우리는 비트겐슈타인이 칸트의 주장을 수용하면서도, 그의 주장을 더 원초적인 층위로 옮기는 것을 볼 것이다. 요컨대 칸트가 논리학에 관한 철학적 혼란의 원인을 이성이 그 한계를 넘어섰기 때문으로 진단했다면, 비트겐슈타인은 혼란의 원인이 이성이 부딪히고야 마는 <em>한계가 있다는 환상</em> 때문으로 진단한다.</p>
+
+<h2 id="3-프레게-논리적-외계인-사고실험">3. 프레게: 논리적 외계인 사고실험</h2>
+
+<p>프레게는 칸트와 마찬가지로 논리학이 이성의 산출물이 아니라 이성 — 인간 이성이 아닌 이성 일반 — 의 구성 조건임을 강조한다. 특히 프레게는 판단의 성립 요건으로서 그것이 참과 거짓의 여부를 따질 수 있는 명제일 것을 주장한다. <strong>판단의 성립 요건을 만족하지 않는 생각은 가짜 생각<sub>Scheingedanke</sub>이다.</strong> 이는 프레게가 논리 법칙으로 내세우는 — 칸트의 경우 <em>유일한</em> 논리 법칙으로 내세우는 — 배중률의 요구이다.</p>
+
+<p>이러한 입장을 바탕으로 프레게는 당대에 유행하던 심리학주의를 강하게 비판했다. <strong>프레게는 심리학주의가 원인의 질문과 정당화의 질문을 혼동한다고 비판한다.</strong> 인간의 뇌에 대한 심리적, 생리학적 연구는 우리가 어째서 논리 법칙을 절대적 참으로 <em>받아들이는지에</em> 대한 설명을 제공할 수는 있다. 그러나 그 설명이 어째서 논리 법칙이 <em>절대적으로 참인지를</em> 정당화하는 것은 아니다. 논리 법칙의 정당성은 심리학을 선행한다.</p>
+
+<p>프레게의 논변은 우리가 <em>약한 심리학주의</em> — 논리 법칙의 절대적 지위를 인정하는 한편 논리학을 심리학으로 환원하려는 입장 — 라고 부를 수 있을 입장을 성공적으로 반박한다. 그러나 <em>강한 심리학주의</em> — 논리 법칙의 절대적 지위를 인정하지 않고 오로지 심리학만으로 논리학을 환원하려는 입장 — 를 반박하는 데는 아직 부족하다. 강한 심리학주의자는 논리 법칙의 절대성에 관한 질문을 무의미한 질문, 마치 신의 존재에 관한 질문으로 치부할 수 있다.</p>
+
+<p>프레게의 논리적 외계인 사고실험은 강한 심리학주의의 생각에 근본적인 오류가 있음을 지적한다. 강한 심리학주의에 따르면 우리와 다른 뇌 구조를 가지고 있어, 우리의 논리 법칙과 모순되는 논리 법칙을 절대적인 참으로 생각하는 외계인이 가능하다. 실제로 그러한 외계인이 우리 앞에 나타났다고 생각해 보자. 이 상황에서 프레게는 다음 질문을 던진다. <strong>외계인의 논리 법칙과 우리의 논리 법칙 중 무엇이 올바른가?</strong></p>
+
+<p>이 기점에서 사고실험은 두 가지 갈림길로 나눠진다. 첫째 갈림길은 심리학주의자가 프레게의 질문을 유의미한 질문으로 인정하는 경우이다. 이 경우, 심리학주의자는 외계인의 논리 법칙과 우리의 논리 법칙 <em>둘 다를</em> 선행하여, 둘 중 어떤 법칙이 올바른지를 따질 수 있는 논리 체계가 있음을 인정하게 된다. “외계인과 우리 중 누가 올바른가?”라는 질문은 외계인-심리학에도, 인간-심리학에도 속하는 질문이 아니다. 그것은 심리학을 초월해 있으며, 이 질문의 유의미성에 대한 인정 자체가 심리학을 초월해 있는 논리를 인정하는 것이다. 이 상위 논리에 견주었을 때, 외계인의 논리는 <em>다른</em> 논리가 아니라 <em>틀린</em> 논리임이, 즉 애초에 논리가 아님이 드러난다.</p>
+
+<p>(여기서 혹자는 <em>우리의</em> 논리가 틀린 것일수도 있지 않냐고 물을지 모른다. 그러나 이 경우 외계인 사고실험 자체가, 나아가 우리의 모든 이성이 넌센스의 구렁으로 빠져버린다. 논리에 대한 회의주의는 그러한 회의주의를 품게 만든 논증 또한 비논리적인 것으로 만들어 버림으로써 철학적 탐구의 가능성을 완전히 함몰시킨다. 우리는 우리의 논리를 옳은 것으로 <em>간주할 수밖에</em> 없다. 이것은 후술할 프레게의 내적 긴장의 원인이 된다.)</p>
+
+<p>둘째 갈림길은 심리학주의자가 프레게의 질문마저 무의미한 것으로 치부하는 경우이다. 이 경우 심리학주의자는 어느 누구의 논리 법칙도 절대적으로 올바른 것은 아니라고 주장할 것이다. 외계인의 논리 법칙은 외계인에게 올바르고, 인간의 논리 법칙은 인간에게 올바르며, 그 이상 주장할 것은 없다. 그러나 프레게는 이러한 심리학주의자의 태도가 심리학주의자가 견지하고자 하는 입장 — 즉, 우리와 다른 논리 법칙으로 사고하는 외계인의 존재 가능성 — 을 불가해한 입장으로 만들어버림을 지적한다.</p>
+
+<p><strong>프레게의 지적에서 핵심적인 것은, “A와 B는 논리적으로 다르다”라는 명제가 유의미하기 위해서는 A와 B의 동일성을 판별할 수 있는 논리가 전제되어야 한다는 것이다.</strong> (이해의 편의를 위해 논리학이 아닌 위상수학으로 예를 들어 보자. 우리가 구와 도넛<a href="#sub3" id="sup3"><sup>3</sup></a>이 <em>위상수학적으로 다르다고</em> 말할 수 있는 이유는, 구와 도넛에 대해 공통적으로 유효한 위상수학적 개념 — 이를테면 구멍의 개수<a href="#sub4" id="sup4"><sup>4</sup></a> — 이 존재하여, 구와 토러스가 그 개념에 대해 차이를 보이기 때문이다.)</p>
+
+<p>마찬가지로 우리와 <em>논리적으로 다른</em> 외계인이 존재할 수 있다는 심리학주의자의 주장은 그 자체로 우리의 논리학과 외계인의 논리학의 <em>다름을 성립시키는</em> 배경 논리를 전제하며, 이 경우 우리는 다시 첫째 갈림길로 돌아가게 된다. 한편 심리학주의자가 주장하는 바가 우리와 <em>그저 다른 발화를 하는</em> 외계인의 존재라면, 여기서의 차이는 두 소의 울음소리가 다른 것, 그 이상도 이하도 아니다. 우리와 다른 논리로 사고하는 외계인이 존재한다는 심리학주의의 주장은, 실상 그 외계인은 애초에 <em>사고를 하지 않는다는 것</em> 을 드러낼 뿐이다. (소와 인간은 둘 다 소리를 내지만 오직 후자만이 사고를 한다. 빙고 머신과 계산기는 둘 다 숫자를 출력하지만 오직 후자만이 계산을 한다.)</p>
+
+<h2 id="4-프레게-논리철학의-내적-긴장">4. 프레게 논리철학의 내적 긴장</h2>
+
+<p>지금까지의 논증을 보았을 때 프레게가 내리는 결론은 “논리적 외계인은 존재할 수 없다”인 듯하다. 정말로 이것이 논증의 결론이라면, 우리의 사고는 다음의 과정을 따랐을 것이다.</p>
+
+<ol>
+  <li>우리는 논리적 외계인이라는 존재를 상정했다.</li>
+  <li>해당 존재가 가질 특징에 대해 고려했다.</li>
+  <li>이 특징들이 논리의 특성과 양립할 수 없음을 깨달았다.</li>
+  <li>따라서 우리는 논리적 외계인의 가능성을 기각한다.</li>
+</ol>
+
+<p><strong>그러나 — 적어도 프레게 본인이 제시하는 “판단의 성립 요건”에 따르면 — 여기서 우리가 겪는 것은 생각의 환영이 아닌가?</strong> 프레게의 논증을 면밀하게 들여다 보면, 그가 말하고자 하는 바는 “논리적 외계인은 이러이러한 이유로 존재할 수 없다”가 아니라 “논리적 외계인의 상정 자체가 불가해하다”는 것임을 알 수 있다. 논리적 외계인의 상정은 우리의 사고를 논리의 범위 밖으로 위치시켜버림으로써, 우리의 사고를 사고가 아닌 것으로 만들어버린다. 비유하자면 그것은 트로이 목마인 것이다.</p>
+
+<p>여기서 궁극적으로 드러나는 사실은, 논리적 외계인에 대한 사고실험 자체가 일종의 가짜 생각<sub>Scheingedanke</sub>이라는 것이다. “논리적 외계인은 가능하다”는 심리학주의의 주장은 의미를 결여한 문장이다. 그것은 “참 또는 거짓의 여부를 따질 수 있는 명제일 것”이라는 판단의 성립 요건을 만족하지 않는다. 그리고 이것이 함의하는 바는, “논리적 외계인이 불가능하다”는 <em>우리의 주장</em> 또한 의미를 결여한다는 것이다.<a href="#sub5" id="sup5"><sup>5</sup></a></p>
+
+<p>그러나 어떤 의미에서 “논리적 외계인이 불가능하다”는 문장에는 무언가 참인 진술이 있는 듯하다. 그것은 논리의 본성에 관한 어떤 진리를 드러내고 있지 않은가? 단지 우리 언어의 논리적 구조가 그 진리의 발화를 불가능하게 만드는 것이다. 전통적으로 《논고》는 이러한 맥락에서 해석되었다. 특히 해커<sub>Hacker</sub>, 기치<sub>Geach</sub> 등의 학자는 《논고》가 반구문론적 명제<sub>countersyntactic proposition</sub>를 통해 “엄밀한 의미에서는 말해질 수 없는” 진리를 “드러내 보이는” 저술이라고 해석해 왔다. 여기서 <strong>반구문론적 명제</strong>란, 언어의 자연적 구문론은 따르되 — 이를테면 주어는 서술어를 선행해야 한다 — 어느 시점에서 논리적 구문론을 위배하는 명제이다 — 이를테면 서로 다른 위계에 있는 유형론적 대상들을 같은 술어에 양화시킨다. 예를 들어 대상<sub>object</sub>과 개념<sub>concept</sub>의 구분은 엄격한 논리적 언어에서 표현될 수 있는 것이 아니다. 둘은 유형론적으로 다르기 때문이다. 대상과 개념의 구분은 ‘개념’을 대상화함으로써, 러셀의 역설과 같은 유형의 문제를 발생시킨다. 그럼에도 이 구분은 논리의 중요한 특성을 담지하는 것으로 보인다. 전통적 해석에 따르면 《논고》 또한 이러한 반구문론적 명제들 — 엄밀히 말해 무의미하지만 그럼에도 유의미한 진리를 담지하는 명제들 — 로 구성되어 있으며, “사다리를 걷어차야 한다”는 《논고》의 최종적인 메시지는 그 명제들의 반구문론적 특징을 폭로하는 대목이다.</p>
+
+<p><strong>그러나 논문의 저자는 이러한 전통적 해석을 강하게 비판한다.</strong> 전통적 해석은 데카르트의 ‘이해’와 ‘파악’의 구분과 같은, 말장난에 불과한 허황된 구분들 — “엄밀히 말해 생각”과 “생각”, “그저 무의미”와 “깊은 무의미”, “사실”과 “<em>사실</em>” — 을 통해 《논고》의 내적 긴장을 해소하는 시늉을 했을 뿐, 실질적으로 그 긴장을 해소하는 데는 완전히 실패했다. 전통적 해석은 이들 구분에 완전히 의존하고 있으면서도, 어떻게 논리적 규칙을 위배하는 문장이 “무의미”하지만 “그저 무의미”하지 않을 수 있는지, 어떻게 “생각은 결코 비논리적일 수 없다(§3.03)”는 《논고》의 구절을 인정하면서도 비논리적인 “생각”이 가능한지를 명료하게 해명하지 못한다. 따라서 논문의 저자는 전통적 해석과 단절된 새 해석을 제시한다. 그것은 소위 “새로운 비트겐슈타인”으로 일컬어지는 해석의 일환이다.</p>
+
+<p><em>2편에서 계속</em></p>
+
+<hr />
+
+<p><a href="#sup1" id="sub1">1.</a> <a href="https://namu.wiki/w/한국%20칸트%20학계%20번역어%20논쟁">이런 걸</a> 신경 쓰는 독자라면, 필자는 ‘a priori’를 ‘선험적’, ‘transzendent’를 ‘초험적’, ‘transzendental’을 ‘초월적’이라고 번역한 아카넷 칸트전집의 용어를 사용한다.</p>
+
+<p><a href="#sup2" id="sub2">2.</a> 데카르트의 주장은 묘하게 칸트적이다. 실제로 윌슨<sub>Margaret Wilson</sub>은 논리 법칙에 대한 데카르트의 입장을 칸트의 초월철학과 현대의 자연주의의 시조로 평가한다. 그러나 이후 드러나듯이, 논리 법칙에 대한 데카르트의 입장과 칸트의 입장에는 간과할 수 없는 간극이 있다.</p>
+
+<p><a href="#sup3" id="sub3">3.</a> 엄밀히는 토러스. 토러스는 도넛의 겉면이다.</p>
+
+<p><a href="#sup4" id="sub4">4.</a> 엄밀히는 1차 호몰로지 군. 구의 경우 이는 $\mathbb{Z}$이고 토러스의 경우 $\mathbb{Z} \times \mathbb{Z}$이다.</p>
+
+<p><a href="#sup5" id="sub5">5.</a> 원 논문에서는 다음과 같이 말한다.</p>
+
+<blockquote>
+  <p>If we take the sentences “illogical thought is impossible” or “we cannot think illogically” to indeed present us with <em>thoughts</em> (with senses which we can affirm the truth of), then we concede what a moment ago we wished to deny (namely, that the negation of these sentences preseunt us with a genuine content, one which is able to stand up to the demand for judgment). But if we conclude that these words (which we want to utter in response to the psychologicstic logician) do not express a thought with a sense, then aren’t <em>we</em>, if we judge psychologism to be false, equally victims of an illusion of judgment? This is the problem at the heart of the onion.</p>
+</blockquote>
+
+<p>즉, 논문의 저자는 다음의 문장이 실제로는 생각<sub>thought</sub>이 아님을 지적하고 있다.</p>
+
+<ol>
+  <li>비논리적인 생각은 불가능하다.</li>
+</ol>
+
+<p>이것을 논리식으로 옮기면 다음과 같다.</p>
+
+<ol start="2">
+  <li>$\not\exists x (I(x) \land T(x))$</li>
+</ol>
+
+<p>이제 이를 다음의 문장과 대조해 보자.</p>
+
+<ol start="3">
+  <li>초록색 생각은 불가능하다.</li>
+  <li>$\not\exists x (G(x) \land T(x))$</li>
+</ol>
+
+<p>(1)과 (3)은 형태론적으로 같은 문장이다. 그런데 (3)은 의미가 <i>있는</i> 문장으로 보인다. 그 의미란, 이 세상에 초록색이면서 생각이기도 한 대상이 없다는 것이다. 실증주의자라면 (3)이 반증 가능성 원리 또한 통과한다고 말할지 모른다. 요컨대 세상의 모든 초록색 대상 중 생각에 해당하는 것이 발견되면 (3)은 기각된다는 것이다. 또한 (3)의 논리적 표현인 (4)는 어떠한 논리적 규칙도 위배하지 않는 것으로 보인다.</p>
+
+<p>그러나 필자가 보기에 (1)과 (2)가 유의미하다는 생각은, 프레게의 표현을 빌리자면 “생각의 환영”에 사로잡힌 것이다. 이 입장을 논증하는 가장 효율적인 방법은 (4)에서 등장하는 무제약적 양화사 $\exists x$의 부당함을 피력하는 것이다. $x$의 범위는 어디까지인가? 내 앞의 사과가 $x$에 양화될 수 있다면, 사과의 꼭지 또한 $x$에 양화될 수 있는가? 무언가가 — 이를테면 나뭇잎 — 대상의 부분이 아니라 독립적인 대상으로 고려되어야 하는 기준은 무엇인가? 반대로, 무언가가 — 이를테면 나무 — 대상의 단순한 조합이 아니라 독립적인 대상으로 고려되어야 하는 기준은 무엇인가? 수학적 플라톤주의를 인정하여 ‘자연수 집합’ 또한 양화의 대상으로 고려해야 하는가? ‘신’ 또한 양화의 대상인가?</p>
+
+<p>이렇듯 무제약적 양화사는 사용자로 하여금 강한 존재론적 개입을 요구한다. 이런 난처한 상황을 피하는 한 가지 방법은 무제약적 존재 양화를 사용하는 대신 $x$를 $T$의 진리집합으로 양화시키는 것이다. 요컨대 (4)를 (5)와 같이 수정하는 것이다.</p>
+
+<ol start="5">
+  <li>$\exists x \in \mathrm{Th}\; G(x)$</li>
+</ol>
+
+<p>여기서 $\mathrm{Th}$는 생각들의 집합이다. 그런데 이렇게 적고 나면, (5)는 적형식이 <strong>아니게 된다</strong>. 문제는 $G$를 정의하는 데 있다. 우리가 무제약적 양화를 피하고자 한다면, $G$의 정의역을 정의하는 데 있어서도 무제약적 양화를 피해야 한다. 즉 a는 가능하지만 b는 불가능하다.</p>
+
+<p>    a) G: 물리적 대상 → {T, F} (O)</p>
+
+<p>    b) G: 모든 대상 → {T, F} (X)</p>
+
+<p>따라서 (5)는 적형식이 아니다. (5)는 정의역에 속하지 않는 대상을 술어에 적용하고 있으므로 논리적 규칙을 위배한 것이다. 다시 말해, (5)는 의미를 결여한 문장이다.</p>
+
+<p>이는 다음의 수학적 예시를 통해 이해할 수 있다. 독자 분은 $0 &lt; i$가 올바르지 않은 부등식임을 배웠을 것이다. 왜냐하면 해당 맥락에서 $&lt;$는 실수 위에서만 정의되기 관계이기 때문이다. 그리고 $&lt;$가 실수 위에서만 정의 가능한 이유는 실수, 허수, 그리고 $&lt;$가 요구하는 논리적 규칙들과 연관한다. $&lt;$의 규칙에 따르면, 양변에 0보다 큰 수를 곱하면 부등호의 방향이 유지되고, 0보다 작은 수를 곱하면 부등호의 방향이 뒤집힌다. 그런데 만약 $0 &lt; i$라면 $0 = 0 \cdot i &lt; i \cdot i = -1$이 되어 모순이고, $i &lt; 0$이라면 $-1 = i \cdot i &gt; 0 \cdot i = 0$이 되어 모순이다. 따라서 $0 &lt; i$는 의미를 결여한 부등식이다. 이는 $0 &lt; i$가 <strong>거짓</strong>임을 의미하지 않는다. $0 &lt; i$가 거짓이라면 $0 &gt; i$가 참이어야 하기 때문이다.</p>
+
+<p>참고: <a href="https://forum.owlofsogang.com/t/topic/6465">https://forum.owlofsogang.com/t/topic/6465</a></p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="철학" /><category term="논리학" /><category term="언어철학" /><summary type="html"><![CDATA[이 글은 James Conant, The Search for Logically Alien Thought: Descartes, Kant, Frege, and the Tractatus (1991)를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).]]></summary></entry><entry xml:lang="en"><title type="html">Why is Continuity in Topology defined ‘Backwards’?</title><link href="http://localhost:4000/2025/06/02/notes-on-continuity/en" rel="alternate" type="text/html" title="Why is Continuity in Topology defined ‘Backwards’?" /><published>2025-06-02T00:00:00+09:00</published><updated>2025-06-02T00:00:00+09:00</updated><id>http://localhost:4000/2025/06/02/notes-on-continuity/notes-on-continuity-en</id><content type="html" xml:base="http://localhost:4000/2025/06/02/notes-on-continuity/en"><![CDATA[<blockquote>
+  <p><strong>Definition.</strong> A mapping $f: X \to Y$ is said to be <strong>continuous</strong> if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.</p>
+</blockquote>
+
+<p>Students learning topology for the first time often experience confusion with this definition. Intuitively, it seems more natural to define continuity as “if $U \subseteq X$ is open, then $f[U] \subseteq V$ is also open,” but the actual definition is the inverse. The reasoning behind this intuition might roughly be as follows.</p>
+
+<h3 id="1-epsilon-delta-definition">1. Epsilon-Delta Definition</h3>
+
+<p>According to the epsilon-delta definition, a function $f: X \to Y$ is continuous if the following holds:</p>
+
+\[\forall \epsilon &gt; 0 \; \exists \delta &gt; 0 : |x - y| &lt; \delta \rightarrow |f(x) - f(y)| &lt; \epsilon\]
+
+<p>Here the antecedent contains $x, y \in X$, and the consequent contains $f(x), f(y) \in Y$. Therefore, it seems natural for the topological definition of continuity to also have $U \subseteq X$ in the antecedent and $f[U] \subseteq Y$ in the consequent.</p>
+
+<h3 id="2-intuition-about-open-sets">2. Intuition about Open Sets</h3>
+
+<p>When first learning topology, one often thinks of an open set as a “collection of points that are close to each other.” That is, if $U$ is an open set, then $x, y \in U$ implies that $x$ and $y$ are “close.” Thus, if continuous function are those that map “close points” to “close points,” it seems natural to require that they map open sets to open sets.</p>
+
+<div style="margin: 2.5em 0;">
+</div>
+
+<p><strong>However, both of these reasonings are fundamentally flawed.</strong></p>
+
+<div style="margin: 2.5em 0;">
+</div>
+
+<h3 id="3-why-the-reasoning-behind-epsilon-delta-definition-is-incorrect">3. Why the Reasoning behind “Epsilon-Delta Definition” is Incorrect</h3>
+
+<p>Judging the antecedent and consequent based solely on $\rightarrow$ can easily lead to misunderstandings. One must also consider the quantifiers. The quantifiers of the epsilon-delta definition can be read linguistically as “for any positive $\epsilon$, there exists some positive $\delta$ such that…” In other words, “if $\epsilon$ is a positive number, then there exists some positive $\delta$ such that…”</p>
+
+<p><em>Here we see that the “true” antecedent regards $\epsilon$\, not $\delta$.</em> And indeed, the space related to $\epsilon$ is not $X$, but $Y$. Therefore, it is only natural that $V \subseteq Y$ appears in the antecedent of the topological definition.</p>
+
+<h3 id="4-why-the-reasoning-behind-intuition-about-open-sets-is-incorrect">4. Why the Reasoning behind “Intuition about Open Sets” is Incorrect</h3>
+
+<p>For convenience, let us denote that $x$ and $y$ are “close” as $x \sim y$. The said reasoning is based on the following <strong>incorrect</strong> intuition.</p>
+
+<blockquote>
+  <p><strong>Incorrect Intuition about Open Sets.</strong> If $x \in U$ and $y \in U$, then $x \sim y$.</p>
+</blockquote>
+
+<p><strong>This should be corrected as follows:</strong></p>
+
+<blockquote>
+  <p><strong>Correct Intuition about Open Sets.</strong> If $x \in U$ and $x \sim y$, then $y \in U$.</p>
+</blockquote>
+
+<p>A little thought reveals that this is quite trivial. For example, the set of all real numbers $\mathbb{R}$ is an open set. But surely, that does not mean that two arbitrary real numbers are always “close”. Conversely, the set $\lbrace  0 \rbrace $ is not an open set, but when $x, y \in \lbrace  0 \rbrace $, we have $x = y$, so $x$ and $y$ are as “close” as possible. Thus, according to the “incorrect intuition,” $\lbrace 0 \rbrace $ should be an open set.</p>
+
+<p>On the other hand, with the “correct intuition,” it is evident that $\mathbb{R}$ is an open set while $\lbrace  0 \rbrace $ is not. When $x \in \mathbb{R}$, the real number $y$ that is “close” to $x$ is trivially included in $\mathbb{R}$. Meanwhile, $\lbrace  0 \rbrace $ does not include the real numbers that are “not equal to, but in the neighbourhood of” $0$, so it is not an open set.</p>
+
+<p>Furthermore, with the “correct intuition,” the reason why the topological definition of continuous functions should be “backwards” also becomes clear. Let us first note that the following intuition about continuity are indeed correct.</p>
+
+<blockquote>
+  <p><strong>Correct Intuition about Continuous Functions.</strong> If $x \sim y$, then $f(x) \sim f(y)$.</p>
+</blockquote>
+
+<p>Now let us show that this intuitive deifinition of continuity is equivalent to the topological definition of continuity.</p>
+
+<h4 id="intuitive-definition--topological-definition">Intuitive Definition =&gt; Topological Definition</h4>
+
+<p>Let $f$ be “intuitively continuous”. We need to show that for an open set $V$, the preimage $U = f^{-1}[V]$ is an open set. Let $x \in U$ and assume $x \sim y$. Since $f$ is continuous, we have $f(x) \sim f(y)$. Moreover, since $V$ is an open set and $f(x) \in V$, it follows that $f(y) \in V$. Therefore, $y \in U$. □</p>
+
+<h4 id="topological-definition--intuitive-definition">Topological Definition =&gt; Intuitive Definition</h4>
+
+<p>Let $f$ be “topologically continuous”. We need to show that if $x \sim y$, then $f(x) \sim f(y)$. Let $V$ be a set that contains only points “close” to $f(x)$. Since $V$ is an open set, if $z \in V$ and $z \sim w$, then by the definition of $V$, we have $f(x) \sim z$, <em>which implies by transitivity of $\sim$</em> that $f(x) \sim w$, hence $w \in V$. Furthermore, since $U = f^{-1}[V]$ is an open set containing $x$, it follows that $y \in U$. Therefore, $f(y) \in V$, which means $f(x) \sim f(y)$. ■</p>
+
+<p>Of course, the above discussion uses the somewhat dubious relation $\sim$, which is not rigorously defined. This may have caused some to feel uneasy in invoking the “transitivity of $\sim$”. However, I think using $\sim$ to understand open sets and continuity serves as a helpful intuition for those studying topology for the first time. Additionally, using non-standard analysis, one can rigorously define $x \sim y$ as $|x - y| = \epsilon$ — but that is a story for another time.</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="Logic" /><category term="Topology" /><summary type="html"><![CDATA[Definition. A mapping $f: X \to Y$ is said to be continuous if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.]]></summary></entry><entry><title type="html">콰인, ⟪경험주의의 두 독단⟫</title><link href="http://localhost:4000/2025/05/26/quine-two-dogmas" rel="alternate" type="text/html" title="콰인, ⟪경험주의의 두 독단⟫" /><published>2025-05-26T00:00:00+09:00</published><updated>2025-05-26T00:00:00+09:00</updated><id>http://localhost:4000/2025/05/26/quine-two-dogmas</id><content type="html" xml:base="http://localhost:4000/2025/05/26/quine-two-dogmas"><![CDATA[<h2 id="개요">개요</h2>
 
 <p>분석·종합의 구분과 검증가능성 원리는 논리실증주의를 이루는 두 기둥이다. 하지만 콰인은 ⟪경험주의의 두 독단⟫에서 분석·종합의 구분과 검증가능성 원리는 문제적이라고 지적한다. 콰인은 분석성의 정의는 자기순환적이며, 명제는 독립적으로 검증될 수 없고 오로지 믿음의 망<sub>web of beliefs</sub> 전체가 검증의 대상이 될 수 있다고 주장한다. 콰인이 ⟪두 독단⟫에서 제시하는 논증은 논리실증주의를 와해할 뿐 아니라, 의미의 개념 자체가 허구적이라는 의미 회의주의와, 극단적 전체론을 시사한다. 또한 콰인의 논증에 대한 반론을 검토한다.</p>
 
@@ -1029,289 +1272,4 @@ Ich sitze zum Beispiel zu Hause, ehe ich angeln gehe, und drehe scharf zusehend 
   <p><strong>에르되시-길만-헨릭슨<sub>Erdös-Gillman-Henriksen</sub> 보조정리.</strong> 기수가 같은 두 특별한 실수 닫힌체는 동형이다.</p>
 </blockquote>
 
-<p>보조정리를 인정하고 타르스키 정리를 증명해 보자. 만약 RCF가 완전하지 않다면, RCF의 확장 $T_1$과 $T_2$가 존재하여 $T_1$의 모델과 $T_2$의 모델은 초등적으로 동등하지 않다. RCF의 모든 모델은 무한 모델이므로 (why?) 특별 뢰벤하임-스콜렘 정리에 의해 $T_1$과 $T_2$는 각각 기수가 $\beth_\omega$인 모델 $\mathfrak{A}_1, \mathfrak{A}_2$를 가진다. 그런데 보조정리에 의해 $\mathfrak{A}_1 \cong \mathfrak{A}_2$인데, 이는 $\mathfrak{A}_1 \not\equiv \mathfrak{A}_2$와 모순이다. ■</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="수학" /><category term="집합론" /><summary type="html"><![CDATA[$\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $A$는 $\mathfrak{A}$의 정의역이다.]]></summary></entry><entry><title type="html">η 집합</title><link href="http://localhost:4000/2025/05/09/resiliency" rel="alternate" type="text/html" title="η 집합" /><published>2025-05-09T00:00:00+09:00</published><updated>2025-05-09T00:00:00+09:00</updated><id>http://localhost:4000/2025/05/09/resiliency</id><content type="html" xml:base="http://localhost:4000/2025/05/09/resiliency"><![CDATA[<p>가산 조밀 무계 전순서<sub>countable dense unbounded linear order</sub>는 모두 동형임을 보인 칸토어의 앞뒤 논법<sub>back-and-forth argument</sub>에서 핵심이 되는 원리는 다음이다.</p>
-
-<blockquote>
-  <p><strong>가산 데데킨트 성질.</strong> $(L, &lt;)$이 전순서라고 하자. 다음은 동치이다.</p>
-
-  <ol>
-    <li>$(L, &lt;)$은 조밀하고 무계이다.</li>
-    <li>$L$의 유한 부분집합 $C, D$에 대해, $C &lt; D$일 경우 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
-  </ol>
-</blockquote>
-
-<p>여기서 $C &lt; D$는 $\forall c \in C, d \in D : c &lt; d$를 줄인 표기이다.</p>
-
-<p>유한 데데킨트 성질로부터 동형성 정리를 다음과 같이 보일 수 있다. $(A, &lt;_A), (B, &lt;_B)$가 두 가산 조밀 무계 전순서라고 하자. 가산이므로 $A, B$의 원소를 자연수로 인덱싱할 수 있다. $f: A \to B$를 다음과 같이 귀납적으로 정의한다.</p>
-
-<ol>
-  <li>$f(a_0) = b_0$로 두고, $n = 1$로 정한다.</li>
-  <li>$a_n \in \mathrm{dom} f$을 확인한다.
-    <ol>
-      <li>$a_n \in \mathrm{dom} f$라면 3으로 넘어간다.</li>
-      <li>$a_n \notin \mathrm{dom} f$라면 보조정리에 의해 $C = \lbrace  f(a_k) : k &lt; n, a_k &lt;_A a_n \rbrace , D = \lbrace  f(a_k) : k &lt; n, a_k &gt;_A a_n \rbrace $에 대해 $C &lt; y &lt; D$인 $y \in B$가 존재한다. $f(a_n) = y$로 정의한다.</li>
-    </ol>
-  </li>
-  <li>$b_n \in \mathrm{ran} f$를 확인한다.
-    <ol>
-      <li>$b_n \in \mathrm{ran} f$라면 4로 넘어간다.</li>
-      <li>$b_n \notin \mathrm{ran} f$라면, 보조정리에 의해 $C = \lbrace  f^{-1}(b_k) : k &lt; n, b_k &lt;_B b_n \rbrace , D = \lbrace  f^{-1}(b_k) : k &lt; n, b_k &gt;_B b_n \rbrace $에 대해 $C &lt; x &lt; D$인 $x \in A$가 존재한다. $f(x) = b_n$으로 정의한다.</li>
-    </ol>
-  </li>
-  <li>$n$을 $n + 1$로 갱신하고 2로 되돌아간다.</li>
-</ol>
-
-<p>위 과정의 귀납적 극한으로서 얻어지는 $f$는 $A$와 $B$의 동형 사상이다.</p>
-
-<p>그런데 위 보조정리의 다음 일반화는 일반적으로 성립하지 않는다.</p>
-
-<blockquote>
-  <p><strong>(틀린 명제)</strong> $(L, &lt;)$이 전순서라고 하자. 다음은 동치이다.</p>
-
-  <ol>
-    <li>$(L, &lt;)$은 조밀하고 무계이다.</li>
-    <li>$L$보다 작은 기수인 $L$의 부분집합 $C, D$에 대해, $C &lt; D$일 경우 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
-  </ol>
-</blockquote>
-
-<p>예를 들어 $(\mathbb{R} \setminus \lbrace  0 \rbrace , &lt;)$는 조밀하고 무계인 전순서이며, $C = (-\infty, 0) \cap \mathbb{Q}, D = (0, \infty) \cap \mathbb{Q}$일 때 $C &lt; D$이고 $|C|, |D| &lt; |\mathbb{R}|$이지만 $C &lt; y &lt; D$를 만족하는 실수 $y$는 존재하지 않는다.</p>
-
-<p>만약 위 보조정리의 일반화가 성립했다면, 다음과 같이 기수가 $\kappa &gt; \aleph_0$인 조밀 무계 전순서가 유일함을 증명할 수 있었을 것이다. 선택 공리를 가정했을 때, $A$와 $B$는 $\kappa$와 순서 동형이도록 정렬될 수 있다. 이제 서수 $\alpha &lt; \kappa$에 대해 초한귀납적으로 $f$를 정의한다.</p>
-
-<ol>
-  <li>$f(a_0) = b_0$로 두고, $\alpha = 1$로 정한다.</li>
-  <li>$a_\alpha \in \mathrm{dom} f$을 확인한다.
-    <ol>
-      <li>$a_\alpha \in \mathrm{dom} f$라면 3으로 넘어간다.</li>
-      <li>$a_\alpha \notin \mathrm{dom} f$라면 일반화된 보조정리에 의해 $C = \lbrace  f(a_\beta) : \beta &lt; \alpha, a_\beta &lt;_A a_\alpha \rbrace , D = \lbrace  f(a_\beta) : \beta &lt; \alpha, a_\beta &gt;_A a_\alpha \rbrace $에 대해 $C &lt; y &lt; D$인 $y \in B$가 존재한다. $f(a_\alpha) = y$로 정의한다.</li>
-    </ol>
-  </li>
-  <li>$b_\alpha \in \mathrm{ran} f$를 확인한다.
-    <ol>
-      <li>$b_\alpha \in \mathrm{ran} f$라면 4로 넘어간다.</li>
-      <li>$b_\alpha \notin \mathrm{ran} f$라면, 일반화된 보조정리에 의해 $C = \lbrace  f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &lt;_B b_\alpha \rbrace , D = \lbrace  f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &gt;_B b_\alpha \rbrace $에 대해 $C &lt; x &lt; D$인 $x \in A$가 존재한다. $f(x) = b_\alpha$로 정의한다.</li>
-    </ol>
-  </li>
-  <li>초한귀납적으로 $f$를 완성한다.</li>
-</ol>
-
-<p>그러나 일반화된 보조정리가 성립하지 않으므로, 칸토어의 앞뒤 논법은 비가산 조밀 무계 전순서가 유일하다는 것을 보이는 데 적용될 수 없다. 실제로 비가산 조밀 무계 전순서는 $\mathbb{R}$ 이외에도 $\lbrace 0\rbrace  \times \mathbb{R} \sqcup \lbrace 1\rbrace  \times \mathbb{Q}$에 사전식 순서를 준 순서 등 유일하지 않다.</p>
-
-<p>그렇다면 보조정리의 성질은 어느 정도까지 일반화될 수 있을까? 이 물음과 관련된 개념은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong></p>
-
-  <ol>
-    <li>집합족 $\mathcal{C}$가 <strong>유한 교집합 속성<sub>finite intersection property</sub></strong>을 가진다는 것은, $\mathcal{C}$의 집합-원소들의 유한한 교집합은 언제나 공집합이 아니라는 것이다.</li>
-    <li>집합족 $\mathcal{C}$가 <strong>탄력적<sub>resilient</sub></strong>이라는 것은, $\mathcal{D}$가 유한 교집합 속성을 가지는 $\mathcal{C}$의 부분모임일 때, $\bigcap_{D \in \mathcal{D}} D \neq \varnothing$인 것이다.</li>
-  </ol>
-</blockquote>
-
-<p>위상수학을 공부한 독자라면 이는 친숙한 개념일 것이다.</p>
-
-<blockquote>
-  <p><strong>칸토어 축소구간 정리.</strong> $K$가 콤팩트할 필요충분조건은 $K$의 모든 닫힌 집합들의 모임 $\mathcal{F}$가 탄력적인 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $(\Rightarrow)$ $\mathcal{F}$가 탄력적이지 않다고 하자. 그러면 어떤 닫힌 집합들의 모임 $\mathcal{C}$가 존재하여, $\mathcal{C}$가 유한 교집합 속성을 가지지만 $\bigcap_{C \in \mathcal{C}} C = \varnothing$이다. 드 모르간 법칙에 의해 $\bigcup_{C \in \mathcal{C}} C^c = K$이다. 즉 $\lbrace  C^c : C \in \mathcal{C} \rbrace $는 $K$의 열린 덮개이다. $K$가 콤팩트하므로 이는 유한 부분 덮개를 가진다. 그러나 이 경우 다시 드 모르간 법칙에 의해, 어떤 유한한 $\mathcal{C}’ \subset \mathcal{C}$에 대해 $\bigcap_{C \in \mathcal{C}’} C = \varnothing$이다. 이는 $\mathcal{C}$의 유한 교집합 속성에 모순된다.</p>
-
-<p>$(\Leftarrow)$ 거의 비슷한 방식으로 증명한다. ■</p>
-
-<p>이제 다음과 같이 보조정리를 일반화할 수 있다.</p>
-
-<blockquote>
-  <p><strong>비가산 데데킨트 성질.</strong> $(L, &lt;)$이 전순서이고, $\kappa$가 비가산 기수라고 하자. 다음은 동치이다.</p>
-
-  <ol>
-    <li>$(L, &lt;)$은 조밀하고 무계이다. 또한, $\kappa$개보다 적은 임의의 열린 구간 및 반직선들의 모임은 탄력적이다.</li>
-    <li>$L$의 부분집합 $C, D$에 대해, $|C|, |D| &lt; \kappa$이고 $C &lt; D$라면 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> $(\Rightarrow)$</p>
-
-<h4 id="i-d--varnothing">i. $D = \varnothing$</h4>
-
-<p>$\mathcal{C} = \lbrace  (c, \infty) : c \in C \rbrace$를 고려하자. $|\mathcal{C}| = |C| &lt; \kappa$이므로 전제에 의해 $\mathcal{C}$는 탄력적이다. $\mathcal{C}$가 유한 교집합 속성을 가지므로 $\bigcap_{c \in C} (c, \infty) = (c’, \infty)$이다. 해당 $c’$이 찾고자 하는 $y$이다.</p>
-
-<h4 id="ii-c--varnothing">ii. $C = \varnothing$</h4>
-
-<p>i.의 경우와 거의 동일하다.</p>
-
-<h4 id="iii-c-d-neq-varnothing">iii. $C, D \neq \varnothing$</h4>
-
-<p>$\mathcal{E} = \lbrace  (c, d) : c \in C, d \in D \rbrace $를 고려하자. 기수 관계식 $\lambda \cdot \epsilon = \mathrm{max}(\lambda, \epsilon)$에 의해 $|\mathcal{E}| &lt; \kappa$이며, $\mathcal{E}$는 탄력적이다. $\mathcal{E}$가 유한 교집합 속성을 가지므로 ($\because$ 가산 데데킨트 성질) $\bigcap_{c \in C, d \in D} (c, d) = (c’, d’)$이다. $(c’, d’) \neq \varnothing$이므로 $y \in (c’, d’)$가 존재하며, 이것이 우리가 찾고자 하는 $y$이다.</p>
-
-<p>$(\Leftarrow)$ $(L, &lt;)$이 조밀하고 무계임은 자명하다.</p>
-
-<p>$\mathcal{E}$가 $\kappa$개보다 적은 열린 구간 및 반직선들의 모임이라고 하자. $\mathcal{F} \subseteq \mathcal{E}$가 유한 교집합 속성을 가진다고 하자. 그렇다면 $C = \lbrace  c : (c, d) \in \mathcal{F} \text{ or } (c, \infty) \in \mathcal{F} \rbrace $, $D = \lbrace  d : (c, d) \in \mathcal{F} \text{ or } (-\infty, d) \in \mathcal{F}\rbrace $에 대하여 $C &lt; D$이다. 그렇지 않다면 어떤 $c’ \in C, d’ \in D$에 대해 $d’ &lt; c’$라는 것인데, 이 경우 $c’$을 왼쪽 끝점으로 가지는 열린 구간 $(c’, d’’) \in \mathcal{F}$와 $d’$을 오른쪽 끝점으로 가지는 열린 구간 $(c’’, d’) \in \mathcal{F}$에 대해 $(c’, d’’) \cap (c’’, d’) = \varnothing$이 되어 $\mathcal{F}$의 유한 교집합 속성에 모순되기 때문이다.</p>
-
-<p>따라서 $C &lt; D$이며, 조건에 의해 $C &lt; y &lt; D$인 $y$가 존재한다. 이로부터 $y \in \bigcap_{I \in \mathcal{F}} I$가 따라 나오며, $\mathcal{E}$가 탄력적임이 보여진다. ■</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 비가산 데데킨트 성질을 만족하는 집합을 <a href="https://en.wikipedia.org/wiki/Η_set"><strong>$\eta$ 집합</strong></a>이라고 한다. 특히, $\kappa = \aleph_\alpha$에 대해 비가산 데데킨트 성질을 만족하는 집합을 $\eta_\alpha$ 집합이라고 한다.</p>
-</blockquote>
-
-<p>$\eta$ 집합은 하우스도르프에 의해 제시되었다. $\eta$ 집합은 다음 글에서 알아 볼 <strong>포화<sub>saturation</sub></strong> 개념과 밀접한 관련이 있다.</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="수학" /><category term="집합론" /><summary type="html"><![CDATA[가산 조밀 무계 전순서countable dense unbounded linear order는 모두 동형임을 보인 칸토어의 앞뒤 논법back-and-forth argument에서 핵심이 되는 원리는 다음이다.]]></summary></entry><entry><title type="html">로빈슨, 크레이그, 베스의 정리</title><link href="http://localhost:4000/2025/05/08/robinson-craig" rel="alternate" type="text/html" title="로빈슨, 크레이그, 베스의 정리" /><published>2025-05-08T00:00:00+09:00</published><updated>2025-05-08T00:00:00+09:00</updated><id>http://localhost:4000/2025/05/08/robinson-craig</id><content type="html" xml:base="http://localhost:4000/2025/05/08/robinson-craig"><![CDATA[<h3 id="초등적-병합-성질elementary-amalgamation-property">초등적 병합 성질<sub>Elementary amalgamation property</sub></h3>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}’$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화<sub>$\mathcal{L}$-reduct</sub>가 $\mathfrak{A}$와 초등적으로 동등<sub>elementarily equivalent</sub>하다고 하자. 이 때, $\mathcal{L}’$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">초등적 임베딩</a>이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}’$의 초등적 임베딩이다.</p>
-
-  <p><img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply" /></p>
-</blockquote>
-
-<p><strong>증명.</strong> <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이 글</a>의 표기법을 따라, 언어 $L_\mathfrak{A}$의 이론 $E(\mathfrak{A})$와 언어 $L’_\mathfrak{B}$의 이론 $E(\mathfrak{B})$를 생각하자. $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$는 언어 $\mathcal{L}’_{\mathfrak{AB}} = \mathcal{L}_\mathfrak{A} \cup \mathcal{L}’_\mathfrak{B}$의 이론이다. $T$가 모델 $\mathfrak{C}$를 가짐을 보이자.</p>
-
-<p>만약 $T$가 모델이 없다면 $T$는 모순적이다. 따라서 콤팩트성 정리에 의해 어떤 $\mathcal{L}$-논리식 $\phi$와 $\mathcal{L}’$-논리식 $\psi$가 존재하여, 적절한 $\lbrace  a_i \rbrace  \subset \mathcal{L}_\mathfrak{A}$, $\lbrace  b_j \rbrace  \subset \mathcal{L}_\mathfrak{B}$에 대해,</p>
-
-\[\lbrace  \phi(a_1, \dots, a_n), \psi(b_1, \dots, b_m) \rbrace\]
-
-<p>이 모델을 가지지 않는다. $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$이므로, $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$를 만족하도록 상수 $a_1, \dots, a_n$을 $\mathfrak{B}$의 정의역에 대응시키는 방법이 존재하지 않아야 한다. 즉,</p>
-
-\[\mathfrak{B} \not\vDash \exists x_1, \dots x_n \; \phi(x_1, \dots, x_n)\]
-
-<p>그런데 $\mathfrak{B}$의 $\mathcal{L}$-퇴화가 $\mathfrak{A}$와 초등적으로 동등하며, 위 식의 우변이 $\mathcal{L}$-문장이고, $\mathfrak{A}$가 해당 문장을 만족하므로 이는 모순이다. 따라서 $T$는 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{A})$와 $E(\mathfrak{B})$의 모델이므로, $\mathfrak{A}$와 $\mathfrak{B}$는 $\mathfrak{C}$로 자연스럽게 초등적으로 임베딩된다. ■</p>
-
-<h3 id="로빈슨-건전성-정리robinson-consistency-theorem">로빈슨 건전성 정리<sub>Robinson consistency theorem</sub></h3>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$라고 하자. $T$가 $\mathcal{L}$의 (의미론적으로) 완전한 이론이고, $T_1$과 $T_2$가 각각 $T$를 확장하는 건전한 $\mathcal{L}_1, \mathcal{L}_2$ 이론일 때, $T_1 \cup T_2$는 $\mathcal{L}_1 \cup \mathcal{L}_2$ 이론으로서 건전하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $T_1 \cup T_2$의 모델을 구축하면 정리가 보여진다.</p>
-
-<p>$T_1, T_2$가 각각 건전하므로, 모델 $\mathfrak{A}_0, \mathfrak{B}_0$를 가진다. $T = T_1 \cap T_2$가 완전하므로, $\mathcal{L}$-퇴화로서의 $\mathfrak{A}_0$와 $\mathfrak{B}_0$는 초등적으로 동등하다. 따라서 초등적 병합 성질에 의해, $\mathcal{L}$-초등적 임베딩 $f_0$와 $\mathcal{L}_2$-초등적 임베딩 $h_0$가 존재하여 다음이 성립한다.</p>
-
-<p><img src="/public/robinson-1.png" style="width: 100%; max-width: 115px; margin: 1em auto" /></p>
-
-<p>이제 $\mathfrak{B}_1$의 $\mathcal{L}$-퇴화를 생각해 보면, 이는 $\mathfrak{A}_0$와 초등적으로 동등하므로, 다시 초등적 병합 성질에 의해 $\mathcal{L}$-초등적 임베딩 $g_0$와 $\mathcal{L}_1$-초등적 임베딩 $k_0$가 존재하여 다음이 성립한다.</p>
-
-<p><img src="/public/robinson-2.png" style="width: 100%; max-width: 127px; margin: 1em auto" /></p>
-
-<p>이 과정을 반복하여 다음의 구조 유도계<sub>directed system of structures</sub>를 얻는다.</p>
-
-<p><img src="/public/robinson-3.png" style="width: 100%; max-width: 285px; margin: 1em auto" /></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>사상</th>
-      <th>성질</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$f, g$</td>
-      <td>$\mathcal{L}$-초등적 임베딩</td>
-    </tr>
-    <tr>
-      <td>$k$</td>
-      <td>$\mathcal{L}_1$-초등적 임베딩</td>
-    </tr>
-    <tr>
-      <td>$h$</td>
-      <td>$\mathcal{L}_2$-초등적 임베딩</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>위 유도계의 모든 모델을 $\mathcal{L}$로 퇴화시키면 $\mathcal{L}$-구조 유도계를 얻는다. 해당 유도계의 쌍대극한<sub>colimit</sub>을 $\mathfrak{C}$라고 하자. $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{A}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 회색으로 표시된 원 유도계의 일부는 모두 $\lbrace  \mathfrak{A}_i \rbrace $ 중 하나로 투사되기 때문이다. 따라서 $\mathfrak{C}$는 $\mathfrak{A}_0$를 초등적으로 임베딩하는 $\mathcal{L}_1$ 구조이다.</p>
-
-<p><img src="/public/robinson-4.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
-
-<p>같은 이유로 $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{B}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 따라서 $\mathfrak{C}$는 $\mathfrak{B}_0$를 초등적으로 임베딩하는 $\mathcal{L}_2$ 구조이다.</p>
-
-<p><img src="/public/robinson-5.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
-
-<p>즉, $\mathfrak{C}$는 $\mathfrak{A}$와 $\mathfrak{B}$를 모두 임베딩하며, 이로부터 $T_1 \cup T_2$의 모델임이 보여졌다. ■</p>
-
-<h3 id="크레이그-보간-정리craig-interpolation-theorem">크레이그 보간 정리<sub>Craig interpolation theorem</sub></h3>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{L}$-문장 $\phi, \psi$에 대해 $\phi \vDash \psi$라면, 어떤 $\mathcal{L}$-문장 $\theta$가 존재하여 $\phi \vDash \theta, \theta \vDash \psi$이다. 또한, $\theta$에 포함된 비논리 기호(상수, 술어, 함수)는 $\phi$와 $\psi$에 공통적으로 포함된다.</p>
-</blockquote>
-
-<p>$\theta$를 $\phi$와 $\psi$의 <strong>크레이그 보간</strong>이라고 부른다.</p>
-
-<p><strong>증명.</strong> 귀류법으로 증명한다. 크레이그 보간이 존재하지 않는다고 가정하자. 그러면 $\phi$는 모델을 가진다. 만약 $\phi$가 모델을 가지지 않는다면 $\perp$가 $\phi, \psi$의 크레이그 보간이기 때문이다. 또한 $\lnot \psi$도 모델을 가진다. 그렇지 않다면 $\top$가 크레이그 보간이기 때문이다.</p>
-
-<p>$\mathcal{L}’$을 $\phi$와 $\psi$에 공통적으로 포함되는 비논리 기호들로 이루어진 언어라고 하자. $\Gamma$를, $\phi \vDash \sigma$이거나 $\lnot \psi \vDash \sigma$인 $\mathcal{L}’$-문장 $\sigma$의 집합이라고 하자.</p>
-
-<p>$\Gamma \cup \lbrace  \phi \rbrace $는 무모순적임을 보이자. 만약 모순적이라면, 콤팩트성 정리에 의해 어떤 $\mathcal{L}’$-문장 $\sigma_1, \sigma_2$가 존재하여 $\phi \vDash \sigma_1, \lnot\psi \vDash \sigma_2$이고 $\lbrace  \sigma_1, \sigma_2, \phi \rbrace $가 모순적이다. 그런데 $\phi \vDash \sigma_1$이므로 $\phi \vDash \lnot\sigma_2$이다. 대우법에 의해 $\lnot\psi\ \vDash \sigma_2$로부터 $\lnot\sigma_2 \vDash \psi$가 따라 나온다. 즉, $\sigma_2$는 $\phi, \psi$의 크레이그 보간이다. 이는 가정에 모순된다.</p>
-
-<p>따라서 $\Gamma \cup \lbrace  \phi \rbrace $는 무모순적이며, 같은 이유로 $\Gamma \cup \lbrace  \lnot\psi \rbrace $ 또한 무모순적이다. 이제 초른의 보조정리를 적용하여, $\overline{\Gamma}$를 다음 $\mathcal{L}’$-이론들의 순서의 극대로 정의한다.</p>
-
-\[\{ \Gamma' : \Gamma \subseteq \Gamma', \Gamma' \cup \{\phi\} \text{ and } \Gamma' \cup \{\lnot \psi\} \text{ are consistent} \}\]
-
-<p>$\overline{\Gamma}$는 완전함을 보이자. 만약 $\overline{\Gamma}$가 완전하지 않다면, 어떤 $\mathcal{L}’$-문장 $\sigma$가 존재하여 $\sigma \notin \overline{\Gamma}$이고, $\overline{\Gamma} \cup \lbrace \sigma, \phi \rbrace $ 또는 $\overline{\Gamma} \cup \lbrace \sigma, \lnot \psi \rbrace $가 무모순적이다.</p>
-
-<p>전자의 경우, 콤팩트성 정리에 의해 어떤 $\overline{\Gamma}$의 문장 $\theta$가 존재하여 $\phi \vDash \theta \rightarrow \lnot \sigma$이다. $\Gamma$의 정의에 의해 $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$이다. 따라서 $\overline{\Gamma} \cup \lbrace  \sigma, \phi \rbrace $는 $\lnot\phi$를 증명한다. 이는 모순이다. 후자의 경우에도 마찬가지 모순이 발생한다. 따라서 $\overline{\Gamma}$는 완전하다.</p>
-
-<p>$\overline{\Gamma}$가 완전하고, $\overline{\Gamma} \cup \lbrace \phi \rbrace , \overline{\Gamma} \cup \lbrace \lnot\psi \rbrace $가 건전하므로, 로빈슨 건전성 정리에 의해 $\overline{\Gamma} \cup \lbrace \phi, \lnot \psi \rbrace $가 건전하다. 그런데 이는 $\phi \vDash \psi$에 모순된다. 따라서 귀류법에 의해 $\phi, \psi$는 크레이그 보간을 가진다. ■</p>
-
-<h3 id="베스-정의-가능성-정리beth-definability-theorem">베스 정의 가능성 정리<sub>Beth definability theorem</sub></h3>
-
-<p>언어 $\mathcal{L}$과, $\mathcal{L}$에 포함되어 있지 않은 술어 $P$를 생각하자. $T$가 $\mathcal{L} \cup \lbrace  P \rbrace $의 이론이라고 하자. $T$를 만족하는 $\mathcal{L}$의 구조 $\mathfrak{A}$를 $\mathcal{L} \cup \lbrace  P \rbrace $로 확장하는 방법이 유일할 때, $T$가 $P$를 <strong>암시적으로 정의<sub>implicitly define</sub></strong>한다고 한다.</p>
-
-<p>이는 다음과 같이 말할 수도 있다. $T(P’)$가 $T$에서 등장하는 모든 $P$를 $P’$으로 바꾼 $\mathcal{L} \cup \lbrace P’ \rbrace $ 이론이라고 하자. $T$가 $P$를 암시적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
-
-\[T \cup T(P') \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow P'(x_1, \dots, x_n)\]
-
-<p>반면 $T$가 $P$를 <strong>명시적으로 정의<sub>explicitly define</sub></strong>한다는 것은 다음을 만족시키는 $\mathcal{L}$-논리식 $\phi$가 존재한다는 것이다.</p>
-
-\[T \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow \phi(x_1, \dots, x_n)\]
-
-<p>예를 들어 보자. $\mathcal{L} = (0, S, +, \cdot)$의 이론 $\mathsf{PA}$에 술어 $P(x, y)$에 관한 공리를 추가한 다음의 이론을 $T$라고 하자.</p>
-
-\[T = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
-
-<p>$T(P’)$은 다음과 같다.</p>
-
-\[T(P') = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P'(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
-
-<p>$T$가 $P$를 암묵적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
-
-\[T \cup T(P') \vDash \forall x, y \big[ P(x, y) \leftrightarrow P'(x, y) \big]\]
-
-<p>이는 귀납 공리꼴로부터 자연스럽게 따라 나온다. 그런데 $P$는 다음과 같이 $T$에서 명시적으로 정의될 수도 있다.</p>
-
-\[\begin{gather}
-T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
-\text{where}\\\\
-\phi(x, y) : \forall z \big[ x + z = S(0) \rightarrow z = y \big]
-\end{gather}\]
-
-<p>이는 우연이 아니다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 언어 $\mathcal{L}$에 대해, $\mathcal{L} \cup \lbrace  P \rbrace $의 이론 $T$가 $P$를 암시적으로 정의하면, $T$는 $P$를 명시적으로 정의한다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $P$가 $n$항 술어라고 하자. $\mathcal{L}$에 새로운 상수 $c_1, \dots, c_n$을 추가한 언어를 $\mathcal{L}’$이라고 하자. $T$가 $P$를 암시적으로 정의하므로,</p>
-
-\[T \cup T(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>이다. 콤팩트성 정리에 의해 어떤 $\mathcal{L} \cup \lbrace  P \rbrace $ 문장 $\psi$가 존재하여, $T \vdash \psi$이고 다음이 성립한다.</p>
-
-\[\psi \land \psi(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>함축 원리를 이용하여 이항하면 다음과 같다.</p>
-
-\[\psi \land P(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>좌변은 $\mathcal{L}’ \cup \lbrace  P \rbrace $의 문장이고, 우변은 $\mathcal{L}’ \cup \lbrace  P’ \rbrace $의 문장이다. 따라서 크레이그 보간 정리에 의해 $\mathcal{L}$-논리식 $\theta$가 존재하여 다음이 성립한다.</p>
-
-\[\begin{gather}
-\psi \land P(c_1, \dots, c_n) \vDash \theta(c_1, \dots, c_n), \\\\
-\theta(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)
-\end{gather}\]
-
-<p>다시 이항하고 $P’$을 $P$로 치환하면,</p>
-
-\[\begin{gather}
-\psi \vDash P(c_1, \dots, c_n) \rightarrow \theta(c_1, \dots, c_n), \\\\
-\psi \vDash \theta(c_1, \dots, c_n) \rightarrow P(c_1, \dots, c_n)
-\end{gather}\]
-
-<p>따라서 $\theta$는 $P$를 명시적으로 정의한다. ■</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="수학" /><category term="논리학" /><category term="모델론" /><summary type="html"><![CDATA[초등적 병합 성질Elementary amalgamation property]]></summary></entry></feed>
+<p>보조정리를 인정하고 타르스키 정리를 증명해 보자. 만약 RCF가 완전하지 않다면, RCF의 확장 $T_1$과 $T_2$가 존재하여 $T_1$의 모델과 $T_2$의 모델은 초등적으로 동등하지 않다. RCF의 모든 모델은 무한 모델이므로 (why?) 특별 뢰벤하임-스콜렘 정리에 의해 $T_1$과 $T_2$는 각각 기수가 $\beth_\omega$인 모델 $\mathfrak{A}_1, \mathfrak{A}_2$를 가진다. 그런데 보조정리에 의해 $\mathfrak{A}_1 \cong \mathfrak{A}_2$인데, 이는 $\mathfrak{A}_1 \not\equiv \mathfrak{A}_2$와 모순이다. ■</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="수학" /><category term="집합론" /><summary type="html"><![CDATA[$\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $A$는 $\mathfrak{A}$의 정의역이다.]]></summary></entry></feed>
