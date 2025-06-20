@@ -281,7 +281,7 @@
     href="/notes/"
     >Maths Review Notes (Korean)</a
   >
-                                                                                                                                                                          
+                                                                                                                                                          
   </nav>
 
   <div class="sidebar-item">
@@ -1209,6 +1209,785 @@ Ich sitze zum Beispiel zu Hause, ehe ich angeln gehe, und drehe scharf zusehend 
 <p>이는 다음의 수학적 예시를 통해 이해할 수 있다. 독자 분은 $0 &lt; i$가 올바르지 않은 부등식임을 배웠을 것이다. 왜냐하면 해당 맥락에서 $&lt;$는 실수 위에서만 정의되기 관계이기 때문이다. 그리고 $&lt;$가 실수 위에서만 정의 가능한 이유는 실수, 허수, 그리고 $&lt;$가 요구하는 논리적 규칙들과 연관한다. $&lt;$의 규칙에 따르면, 양변에 0보다 큰 수를 곱하면 부등호의 방향이 유지되고, 0보다 작은 수를 곱하면 부등호의 방향이 뒤집힌다. 그런데 만약 $0 &lt; i$라면 $0 = 0 \cdot i &lt; i \cdot i = -1$이 되어 모순이고, $i &lt; 0$이라면 $-1 = i \cdot i &gt; 0 \cdot i = 0$이 되어 모순이다. 따라서 $0 &lt; i$는 의미를 결여한 부등식이다. 이는 $0 &lt; i$가 <strong>거짓</strong>임을 의미하지 않는다. $0 &lt; i$가 거짓이라면 $0 &gt; i$가 참이어야 하기 때문이다.</p>
 
 <p>참고: <a href="https://forum.owlofsogang.com/t/topic/6465">https://forum.owlofsogang.com/t/topic/6465</a></p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/26/quine-two-dogmas"> 콰인, ⟪경험주의의 두 독단⟫ </a>
+      </h1>
+    <span class="post-date">26 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/철학/'">
+        철학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/언어철학/'">
+        언어철학
+      </div>
+      
+    </div>
+     <h2 id="개요">개요</h2>
+
+<p>분석·종합의 구분과 검증가능성 원리는 논리실증주의를 이루는 두 기둥이다. 하지만 콰인은 ⟪경험주의의 두 독단⟫에서 분석·종합의 구분과 검증가능성 원리는 문제적이라고 지적한다. 콰인은 분석성의 정의는 자기순환적이며, 명제는 독립적으로 검증될 수 없고 오로지 믿음의 망<sub>web of beliefs</sub> 전체가 검증의 대상이 될 수 있다고 주장한다. 콰인이 ⟪두 독단⟫에서 제시하는 논증은 논리실증주의를 와해할 뿐 아니라, 의미의 개념 자체가 허구적이라는 의미 회의주의와, 극단적 전체론을 시사한다. 또한 콰인의 논증에 대한 반론을 검토한다.</p>
+
+<h2 id="1-분석종합에-대한-콰인의-공격">1. 분석·종합에 대한 콰인의 공격</h2>
+
+<p>콰인은 분석성을 정의하려는 기존의 시도는 모두 만족스럽지 않다고 주장한다. 그 사례로 칸트와 프레게의 정의를 검토한다.</p>
+
+<h3 id="11-칸트의-분석성-정의">1.1. 칸트의 분석성 정의</h3>
+
+<p>분석성에 대한 칸트의 첫 번째 정의는 다음과 같다.</p>
+
+<blockquote>
+  <p>“모든 a는 b이다”는 분석적이다 $\iff$ a가 b에 개념적으로 포함된다</p>
+</blockquote>
+
+<p>그러나 위 정의는 “개념적으로 포함”이라는 비유적 표현에 의존할 뿐 아니라 주어-술어 구조의 문장만 고려한다는 한계가 있다. 분석성에 대한 칸트의 두 번째 정의는 다음과 같다.</p>
+
+<blockquote>
+  <p>P는 분석적이다 $\iff$ P의 부정이 모순을 시사한다</p>
+</blockquote>
+
+<p>그러나 이 정의는 모순이 무엇인지 설명해야 한다는 한계를 가진다. 만약 모순을 “분석적으로 거짓인 명제”로 정의한다면 이것은 순환 정의에 불과하다.</p>
+
+<h3 id="12-프레게의-분석성-정의">1.2. 프레게의 분석성 정의</h3>
+
+<p>분석성에 대한 프레게의 정의는 다음과 같다.</p>
+
+<blockquote>
+  <p>P는 분석적이다 $\iff$ P는 논리 법칙이거나, 정의와 논리 법칙만으로부터 도출 가능하다</p>
+</blockquote>
+
+<p>여기서 논리 법칙이란 논리 연결사를 제외한 문장 성분들을 어떻게 해석하든지 참인 문장을 말한다. 예를 들어 $(φ → ψ) → (¬ψ → ¬φ)$는 $φ$와 $ψ$를 어떻게 해석하든지 참이므로 논리 법칙이다. 이에 따라 “모든 총각은 결혼하지 않았다”는 다음과 같이 “총각”의 정의와 논리 법칙만으로 도출 가능하므로 분석적이다.</p>
+
+<ul>
+  <li>총각(x) := ¬결혼(x) ∧ 남자(x) (총각의 정의)</li>
+  <li>∀x [ ¬결혼(x) ∧ 남자(x) → ¬결혼(x) ] (논리 법칙)</li>
+  <li>∴ ∀x [ 총각(x) → ¬결혼(x) ] (1과 2로부터 유도)</li>
+</ul>
+
+<h3 id="13-동의성에-대한-콰인의-공격">1.3. 동의성에 대한 콰인의 공격</h3>
+
+<p><strong>그러나 콰인은 어떤 단어의 정의가 무엇인지를 어떻게 알 수 있는지를 질문한다.</strong> 즉, “a와 b는 동의어이다”가 성립할 조건이 무엇인지 질문한다. 콰인은 이 질문에 대한 가능한 답을 몇 가지 검토한다. 첫 번째 시도는 다음과 같다.</p>
+
+<blockquote>
+  <p>(i) a와 b는 동의어이다 $\iff$ a와 b가 사전에 동의어로 등재되어 있다.</p>
+</blockquote>
+
+<p>그러나 위 시도는 부적절하다. 왜냐하면 사전은 이미 알려진 동의어의 기록에 불과하기 때문이다. 그러나 우리가 원하는 것은 사전 작성자들이 어떤 기준으로 두 단어를 동의어로 등재하냐이다. 두 번째 시도는 다음과 같다.</p>
+
+<blockquote>
+  <p>(ii) a와 b는 동의어이다 $\iff$ 임의의 술어 P에 대해 P(a)와 P(b)의 진릿값이 같다.</p>
+</blockquote>
+
+<p>그러나 위 시도 또한 부적절하다. a = “총각”, b = “결혼하지 않는 남성”, P(x): “x는 두 글자이다”일 때 a와 b는 동의어지만 P(a)는 참이고 P(b)는 거짓이기 때문이다.</p>
+
+<p>이에 콰인은 자비의 원칙에 따라 이 문제를 해결하기 위해 인지적 의미<sub>cognitive meaning</sub>를 도입한다. 인지적 의미란 단어의 길이나 시적 분위기, 화용론적 특징 등과 관련하지 않고 오직 그것이 지시하는 대상이나 개념에 관련하는 의미이다. 이에 따라 다음과 같이 (ii)를 수정해야 한다.</p>
+
+<blockquote>
+  <p>(iii) a와 b는 동의어이다 $\iff$ 인지적 의미에만 관련하는 임의의 술어 P에 대해 P(a)와 P(b)의 진릿값이 같다.</p>
+</blockquote>
+
+<p>그러나 위 시도 또한 부적절하다. <strong>왜냐하면 “임의의 술어”의 외연이 언어에 상대적이기 때문이다.</strong> 일례로 심장을 가진 생물을 cordate, 신장을 가진 생물을 renate라고 하자. 지금까지 보고된 생물종은 모두 심장과 신장을 둘 다 가지거나 둘 다 결여한다. 따라서 L₁이 HasHeart(x)라는 술어만 포함하는 언어라면 HasHeart(Cordate)와 HasHeart(Renate)는 둘 다 참이므로, cordate와 renate는 동의어이다. 반면 L₂가 NecessarilyHasHeart(x)라는 술어를 포함하는 언어라면 NecessarilyHasHeart(cordate)는 참이지만 NecessarilyHasHeart(renate)는 거짓이므로 둘은 동의어가 아니다.</p>
+
+<p>따라서 (iii)는 동의성을 언어에 의존적인 개념으로 만든다. (iii)가 유효한 정의이기 위해서는 “…가 필연적이다”와 같이 양상 표현하는 언어를 배경 언어로 설정해야 한다. 이에 따라 다음과 같이 (iii)를 수정해야 한다.</p>
+
+<blockquote>
+  <p>(iv) a와 b는 동의어이다 $\iff$ 양상 표현이 포함된 언어 L에 속하고 인지적 의미에만 관련하는 임의의 술어 P에 대해 P(a)와 P(b)의 진릿값이 같다.</p>
+</blockquote>
+
+<p>그러나 콰인에 따르면 위 시도 또한 부적절하다. <strong>왜냐하면 이제는 양상성의 의미를 설명해야 하기 때문이다.</strong> 즉, “a는 필연적으로 b이다”가 성립할 조건이 무엇인지 질문한다. 만약 필연성을 다음과 같이 정의하면 순환 논증에 봉착한다.</p>
+
+<blockquote>
+  <p>a는 필연적으로 b이다 $\iff$ 모든 a가 b라는 것은 분석적으로 참이다.</p>
+</blockquote>
+
+<p>그러므로 분석성에 대한 프레게의 정의는 동의성이나 필연성에 대한 정의가 제시되지 않는 한 순환적이다.</p>
+
+<h2 id="2-콰인의-공격에-대한-고찰">2. 콰인의 공격에 대한 고찰</h2>
+
+<p>콰인의 공격은 동의성을 겨냥하고 있지만, 그 함의는 훨씬 광대하다.</p>
+
+<h3 id="21-논리-회의주의">2.1. 논리 회의주의</h3>
+
+<p>첫째, 콰인의 공격은 논리 법칙에 대한 본인의 정의 또한 공격한다. 일례로 콰인에 따르면 $P(x) ∧ Q(x) → P(x)$ 가 논리 법칙인 이유는 $P, Q, x$에 무엇을 대입하든 참인 문장이 되기 때문이다. <strong>그러나 이 기준이 정합적이기 위해서는 x에 대입하는 단어가 동의적이라는 조건이 필요하다.</strong></p>
+
+<p>예를 들어 P(x): “x는 둥글다”, Q(x): “x는 딱딱하다”, 그리고 x = “배”일 때 P(x) ∧ Q(x) → P(x)는 “둥글고 딱딱한 배는 둥근 배이다”가 된다. 그러나 이 문장이 참이기 위해서는 주어부의 “배”와 술어부의 “배”가 동의어야 한다<sub>A round and hard pear is a round pear</sub>. 만약 주어부의 “배”가 과일인데, 술어부의 “배”가 선박이라면 거짓인 문장이 되기 때문이다<sub>A round and hard pear is a round ship</sub>. 따라서 논리 법칙에 대한 콰인의 정의 또한 동의성에 의존한다.</p>
+
+<h3 id="22-의미-회의주의">2.2. 의미 회의주의</h3>
+
+<p>둘째, 콰인의 공격은 언어 간 번역을 허구적인 것으로 만든다. 누군가 “That apple is red”라는 문장의 번역을 묻는다면 우리는 “저 사과는 빨갛다”라고 말할 것이다. 이것이 올바른 번역인 이유는, ‘that’, ‘apple, ‘red’, ‘is’는 각각 ‘저’, ‘사과’, ‘빨갛다’, ‘이다’와 동의적이기 때문이다. 일반적으로 다음이 성립하는 것으로 보인다.</p>
+
+<blockquote>
+  <p>$φ$의 번역은 $ψ$이다 $\iff$ $φ$는 $ψ$와 동의적이다.</p>
+</blockquote>
+
+<p>그런데 우변의 정의가 모호하다면 좌변의 정의 또한 모호한 것이 된다. <strong>결론적으로 번역의 기준이 동의성에 의존하는 한 콰인의 공격은 번역, 나아가 의미 자체가 허구적인 개념이라는 의미 회의주의를 시사한다.</strong> (번역에 대한 회의주의가 의미에 대한 회의주의로 이어지는 논증에 관해서는 곧 올라올 다른 글을 참고하라)</p>
+
+<h2 id="3-콰인의-분석종합-공격에-대한-반론">3. 콰인의 분석·종합 공격에 대한 반론</h2>
+
+<p>콰인의 공격은 다음의 구조를 가진다.</p>
+
+<blockquote>
+  <p>개념 C의 정의가 순환적이라면 C는 정당하지 않다<sub>unintelligible</sub>.</p>
+</blockquote>
+
+<p>이것을 <em>콰인의 소크라테스적 조건</em> 이라고 부르자. <strong>콰인의 소크라테스적 조건은 지나치게 강한 요구 조건이라는 반박이 가능하다.</strong> 예를 들어 “빨강”이나 “파랑”을 순환적이지 않은 방식으로 정의할 수는 없지만 그렇다고 색깔 개념들이 정당하지 않은 것은 아니다. 또한 데이빗슨 등의 논의는 언어가 학습 가능하기 위해서는 무정의 용어가 필요함을 시사한다. 따라서 언어 L의 모든 개념이 소크라테스적 조건은 만족할 경우 L은 학습 불가능하다.</p>
+
+<p>그럼에도 콰인은 모든 개념이 소크라테스적 조건을 만족할 필요는 없지만 특정 개념들은 반드시 소크라테스적 조건을 만족해야 하며, 분석성이 다름아닌 그러한 개념 중 하나라고 주장할 수 있다. 일례로 다음의 문장들을 보자.</p>
+
+<blockquote>
+  <p>모든 초록색인 것은 외연을 가진다.</p>
+</blockquote>
+
+<p>위 문장이 분석적인지의 여부는 모호하다. 콰인은 이 모호성이 “초록”이나 “외연”의 의미로부터 비롯되는 문제가 아닌, “분석적”의 의미로부터 비롯된다고 주장하며, 이것은 여타 개념과 달리 분석성은 엄밀한 정의 없이는 정당화할 수 없는 개념임을 방증한다고 주장한다.</p>
+
+<p>이에 대해 그라이스와 스트로슨은 “모든 초록색인 것은 외연을 가진다”의 분석성 여부가 모호한 이유는 분석성의 의미가 모호하기 때문이 아니라 “모든 초록색인 것”의 의미가 모호하기 때문이라고 주장한다. 요컨대 “초록색 점멸” 또한 “모든 초록색인 것”에 해당하는지가 모호하므로 문장의 분석성을 결정할 수 없다는 것이다. 오히려 분석성은 거의 모든 사람에 의해 일관적인 방식으로 사용되고 있으므로, 소크라테스적 조건이 요청될 정도로 모호한 개념이라고 볼 이유는 없다고 주장한다.</p>
+
+<h2 id="4-콰인의-논리실증주의-비판">4. 콰인의 논리실증주의 비판</h2>
+
+<h3 id="41-환원주의에-대한-비판">4.1. 환원주의에 대한 비판</h3>
+
+<p>논리실증주의에 따르면 모든 참은 분석적이거나 종합적이다. 이 중 분석적 참은 논리적 분석을 통해 검증할 수 있고, 종합적 참은 감각 자료를 통해 검증할 수 있다. 이에 따라 일반적으로 문장의 의미는 감각 자료의 논리적 복합체<sub>logical compound of sense data</sub>라는 환원주의적 논제가 얻어진다. 예를 들어 “고양이는 책상 위에 있거나 상자 안에 있다”의 의미는 “고양이”, “책상”, “상자”에 대응하는 감각 자료와 “또는”, “있다” 등의 논리적 연결사로 분석된다.</p>
+
+<p><strong>그러나 콰인은 의미론적 환원주의자는 자연 언어의 문장을 감각 자료의 논리적 복합체로 환원하는 것이 실제로 가능함을 보일 입증 책임<sub>burden of proof</sub>이 있다고 주장한다.</strong> 이에 콰인은 카르납이 ⟪세계의 논리적 구조⟫에서 감각 자료와 논리적 연결사만 가지고서 자연 언어를 구축하려고 시도한 사례를 언급하지만, 카르납의 프로젝트는 본인 스스로도 실패했다고 인정했다.</p>
+
+<p>콰인은 환원주의의 입증 책임이 해소되지 않는 한 환원주의는 정당화될 수 없다고 주장한다.</p>
+
+<h3 id="42-검증가능성에-대한-비판">4.2. 검증가능성에 대한 비판</h3>
+
+<p>논리실증주의에 따르면 문장의 의미는 그것의 검증 가능성이다. 이같은 의미의 검증주의적 이론<sub>verificationist theory of meaning</sub> 하에서 분석성은 다음과 같이 정의할 수 있다.</p>
+
+<blockquote>
+  <p>P는 분석적이다 $\iff$ P는 검증의 결과가 어떻든지 참이다</p>
+</blockquote>
+
+<p>그러나 콰인은 논리실증주의의 분석성 정의 또한 문제적이라고 주장한다. 콰인에 따르면 개별 명제를 독립적으로 떼 놓고서 검증하기란 불가능하므로, 의미의 검증주의적 이론은 개별 문장의 의미를 해명할 수 없기 때문이다.</p>
+
+<p>예를 들어 다음의 명제를 보자.</p>
+
+<blockquote>
+  <p>(i) 물은 100°C에서 끓는다</p>
+</blockquote>
+
+<p>위의 명제를 검증하는 한 가지 방법은 끓는 물에 온도계를 넣는 것이다. 그런데 끓는 물에 온도계를 넣어보니 102°C가 나왔다면 우리는 (i)를 기각해야 할까? 그렇지 않다. 우리는 (i)를 기각하는 대신 “온도계가 고장났다”, “순수한 물이 아니었다”, “기포 발생이 저해되어 과가열되었다”, “내가 온도계를 잘못 읽었다” 등 수많은 다른 명제를 대신 선택할 수 있다.</p>
+
+<p><strong>따라서 콰인은 검증의 대상이 되는 것은 언제나 믿음의 망<sub>web of beliefs</sub> 전체라는 인식론적 전체론<sub>epistemological holism</sub>을 주장한다.</strong> 위의 경우에서 검증되는 것은 “물은 100°C에서 끓는다”는 명제가 아닌, “이것은 순수한 물이고, 온도계는 정상적이고, 과가열이 일어나지 않을 것이며, 물은 100°C에서 끓으며…” 등의 믿음의 망인 것이다.</p>
+
+<h3 id="43-인식론적-전체론의-함의">4.3. 인식론적 전체론의 함의</h3>
+
+<p>콰인의 전체론은 모든 명제에 해당한다는 점에서 극단적이다. 콰인에 따르면 믿음의 망에는 분야 간 뚜렷한 경계가 없다. 따라서 수학이라고 해서 과학이나 철학에 비해 독보적인 인식론적 지위를 누리는 것은 아니다. 이것은 콰인의 자연주의로 이어진다.</p>
+
+<p>콰인에 따르면 명제 $φ$가 확실<sub>certain</sub>하다는 것은, $φ$가 어떤 경우에서도 참이라는 의미가 아니라, $φ$가 믿음의 망 깊숙한 곳에 자리잡고 있다는 의미이다. 믿음의 망에 반하는 검증 결과가 제시되었을 때 우리는 믿음의 망을 수정해야 하는데, 추후에 믿음의 망에 반하는 결과들이 나올 가능성이 최소화되도록 망을 수정하는 것이 가장 실용적이다. 실용성의 원칙에 따라 핵심부에 있는 믿음을 폐기·수정하는 것보다 주변부에 있는 믿음을 폐기·수정하는 것이 바람직하다. 따라서 핵심부에 있는 믿음은 거의 영구적으로 존속하게 되어 확실성의 지위를 획득한다. <strong>그러나 만약 핵심부에 있는 믿음 — 이를테면 논리학의 법칙들 — 을 폐기하는 것이 더욱 실용적인 상황이 닥친다면 콰인은 논리학을 폐기하는 것이 마땅하다고 본다.</strong></p>
+
+<h3 id="44-인식론적-전체론에-대한-반론">4.4. 인식론적 전체론에 대한 반론</h3>
+
+<p><strong>라이트<sub>Crispin Wright</sub>는 콰인의 전체론이 무한 퇴행에 빠지기 때문에 비정합적이라고 주장한다.</strong> 예를 들어 다음의 두 가지 요소로 구성된 믿음의 망을 고려하자.</p>
+
+<ul>
+  <li>세계에 대한 과학적 이론 $T$</li>
+  <li>논리 체계 $\mathcal{S}$</li>
+</ul>
+
+<p>추가로 $p → q$가 $T$와 $\mathcal{S}$로부터 도출 가능한 법칙에 해당한다고 가정하자. 예를 들어 $T$가 뉴턴 역학이고 $\mathcal{S}$가 1차 논리라면, $p$는 “광자는 질량이 없다”이고 $q$는 “광자는 중력의 작용을 받지 않는다”일 수 있다.</p>
+
+<p>이제 $T$와 $\mathcal{S}$에 반하여, $p$와 $¬q$를 시사하는 관찰 결과 — 이를테면 중력 렌즈 효과 — 가 나타났다고 가정하자. 콰인의 전체론을 따르면 다음 네 가지 명제는 모두 기각될 수 있는 명제의 후보이다.</p>
+
+<ol>
+  <li>$p ∧ ¬q$를 기각 (중력 렌즈 효과는 잘못 관찰되었다)</li>
+  <li>$T$를 기각 (뉴턴 역학은 틀렸다)</li>
+  <li>$\mathcal{S}$를 기각 (1차 논리는 틀렸다)</li>
+  <li>$T \vdash_\mathcal{S} p → q$를 기각 (뉴턴 역학과 1차 논리로부터 $p → q$를 도출하는 것은 틀렸다)</li>
+</ol>
+
+<p>위 4개의 후보 중 무엇을 기각할지는 실용성의 기준으로 정해진다. 일례로 실용적 고려가 다음을 시사한다고 하자.</p>
+
+<ol start="5">
+  <li>(4)를 기각하는 것이 가장 실용적이다.</li>
+</ol>
+
+<p>그러나 라이트는 (5) 또한 믿음의 망에 속한다고 지적한다. 그러므로 우리는 (4)를 기각하는 대신, (5)를 기각하기로 선택할 수 있다. 반대로 (5)를 기각하지 않기 위해서는 다음의 믿음이 추가로 요청된다.</p>
+
+<ol start="6">
+  <li>(5)를 기각하지 않는 것이 실용적이다.</li>
+</ol>
+
+<p>그런데 (6)을 기각하지 않기 위해서는 (6)을 기각하지 않는 것이라는 믿음이 추가로 요청되고, 이것은 무한 퇴행로 이어진다. 그러므로 라이트는 인식론이 무한 퇴행에 빠지지 않기 위해서는 (4)와 같은 일부 믿음을 실용주의적 고려의 범위 밖에 위치시켜야 한다고 주장한다.</p>
+
+<h2 id="참고문헌">참고문헌</h2>
+
+<p>Quine, Willard V. O. (1951). Two Dogmas of Empiricism. Philosophical Review 60 (1):20–43.</p>
+
+<p>Miller, Alexander (1998). Philosophy of Language. New York: Routledge.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/26/quine-two-dogmas/en"> Quine, Two Dogmas of Empiricism </a>
+      </h1>
+    <span class="post-date">26 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'">
+        Philosophy
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/philosophy-of-language/'">
+        Philosophy of Language
+      </div>
+      
+    </div>
+     <h2 id="overview">Overview</h2>
+
+<p>The distinction between analytic and synthetic propositions, and the verification principle, are the two pillars of logical positivism. However, in <em>Two Dogmas of Empiricism</em>, Quine argues that both the analytic-synthetic distinction and the verification principle are ungrounded. Quine argues that the definition of analyticity is circular. Furthermore, he argues that propositions cannot be verified in isolation, and that only the entire web of beliefs can stand up to verification. The arguments Quine presents in <em>Two Dogmas</em> not only undermine logical positivism but also suggest skepticism about meaning and a radical form of holism. This post also examines some objections to Quine’s arguments.</p>
+
+<h2 id="1-quines-attack-on-the-analytic-synthetic-distinction">1. Quine’s Attack on the Analytic-Synthetic Distinction</h2>
+
+<p>Quine claims that all previous attempts to define analyticity are unsatisfactory. He examines the definitions provided by Kant and Frege as examples.</p>
+
+<h3 id="11-kants-definition-of-analyticity">1.1. Kant’s Definition of Analyticity</h3>
+
+<p>Kant’s first definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>“All $a$ are $b$” is analytic $\iff$ $a$ is conceptually contained in b</p>
+</blockquote>
+
+<p>However, not only this definition relies on the metaphorical expression “conceptually contained”, but it is also limited to propositions with a subject-predicate structure. Kant’s second definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>$P$ is analytic $\iff$ $\lnot P$ implies a contradiction</p>
+</blockquote>
+
+<p>But this definition requires an explanation of what a contradiction is. If contradiction is defined as “a proposition that is analytically false,” then this is merely a circular definition.</p>
+
+<h3 id="12-freges-definition-of-analyticity">1.2. Frege’s Definition of Analyticity</h3>
+
+<p>Frege’s definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>$P$ is analytic $\iff$ $P$ is a law of logic, or is derivable solely from the definitions of terms involved and the laws of logic</p>
+</blockquote>
+
+<p>By “law of logic”, Quine understands it to be a sentence that is true regardless of how the non-logical terms are interpreted. For example, $(φ → ψ) → (¬ψ → ¬φ)$ is a law of logic because it is true no matter how $φ$ and $ψ$ are interpreted. Accordingly, “All bachelors are unmarried” is analytic as it can be derived solely from the definition of “bachelor” and laws of logic as follows:</p>
+
+<ol>
+  <li>Bachelor(x) := ¬Married(x) ∧ Male(x) (definition of bachelor)</li>
+  <li>∀x [ ¬Married(x) ∧ Male(x) → ¬Married(x) ] (law of logic)</li>
+  <li>∴ ∀x [ Bachelor(x) → ¬Married(x) ] (from 1 and 2)</li>
+</ol>
+
+<h3 id="13-quines-attack-on-synonymy">1.3. Quine’s Attack on Synonymy</h3>
+
+<p><strong>Quine challenges Frege’s definition by questioning how we can determine the definition of a word.</strong> That is, he questions under what conditions “$a$ and $b$ are <em>synonymous</em>” holds. Quine examines several possible answers to this question. The first attempt is as follows:</p>
+
+<blockquote>
+  <p>(i) $a$ and $b$ are synonymous $\iff$ $a$ and $b$ are listed as synonyms in the dictionary.</p>
+</blockquote>
+
+<p>But clearly this approach is flawed, since a dictionary merely records already known synonyms. What we want to know is the criterion by which dictionary compilers list two words as synonyms. The second attempt is as follows:</p>
+
+<blockquote>
+  <p>(ii) $a$ and $b$ are synonymous $\iff$ for any predicate $P$, $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>But this too is inadequate. For example, let $a$ = bachelor, $b$ = unmarried man, and $P(x)$: $x$ is a two-syllable word. Although $a$ and $b$ are synonymous, $P(a)$ is true while $P(b)$ is false.</p>
+
+<p>To address this, Quine introduces the notion of <strong>cognitive meaning</strong>. Cognitive meaning is related only to the referent or concept, and excludes aspects such as word length, poetic mood, etc. Thus, (ii) is revised as follows:</p>
+
+<blockquote>
+  <p>(iii) $a$ and $b$ are synonymous $\iff$ for any predicate $P$ <em>relevant only to cognitive meaning,</em> $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>However, this is also inadequate. <strong>This is because the extension of “any predicate” is language-relative.</strong> (This is partly related to Quine’s skepticism about second-order logic.) For example, let us call creatures with a heart “cordate” ($c$) and those with a kidney “renate” ($r$). All known species either have both a heart and a kidney or neither. Thus in a language $L_1$ that contains only the predicate $\mathrm{HasHeart}(x)$, both $\mathrm{HasHeart}(c)$ and $\mathrm{HasHeart}(r)$ are true, so cordate and renate are synonymous. Yet in a language $L_2$ that contains the predicate $\mathrm{NecessarilyHasHeart}(x)$, $\mathrm{NecessarilyHasHeart}(c)$ is true but $\mathrm{NecessarilyHasHeart}(r)$ is false, so they are no longer synonymous.</p>
+
+<p>Thus, (iii) makes synonymy language-dependent. Indeed, for (iii) to be valid, it seems that the assumed language must include modality. Accordingly, (iii) is revised as follows:</p>
+
+<blockquote>
+  <p>(iv) $a$ and $b$ are synonymous $\iff$ in a language $L$ with modal expressions, for any predicate $P$ relevant only to cognitive meaning, $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>However, Quine claims that even this is inadequate. <strong>For now the meaning of modality must be explained.</strong> That is, he now asks under what conditions “$a$ is necessarily $b$” holds. To define necessity as follows is to give a circular definition:</p>
+
+<blockquote>
+  <p>$a$ is necessarily $b$ $\iff$ “All a are b” is analytically true.</p>
+</blockquote>
+
+<p>Therefore, Frege’s definition of analyticity is circular unless either a valid definitions of synonymy, or necessity, is provided.</p>
+
+<h2 id="2-reflections-on-quines-attack">2. Reflections on Quine’s Attack</h2>
+
+<p>Quine’s attack targets synonymy, but its implications are much broader.</p>
+
+<h3 id="21-logical-skepticism">2.1. Logical Skepticism</h3>
+
+<p>First, Quine’s attack also undermines his own definition of laws of logic. For example, according to Quine, $P(x) ∧ Q(x) → P(x)$ is a law of logic because it is true no matter what is substituted for $P, Q, x$. <strong>However, for this criterion to be coherent, the terms substituted for x must be synonymous.</strong></p>
+
+<p>For example, let $P(x):$ $x$ is large, $Q(x):$ $x$ is wet, and $x$ = bank. Then, $P(x) ∧ Q(x) → P(x)$ becomes “A large and wet bank is a large bank.” For this sentence to be true, the two “bank”s of the subject and predicate must be synonymous<sub>A large and wet riverland is a large riverland</sub>. Otherwise, the sentence is false<sub>A large and wet riverland is a large financial establishment</sub>. Thus, Quine’s definition of law of logic also depends on synonymy.</p>
+
+<h3 id="22-semantic-skepticism">2.2. Semantic Skepticism</h3>
+
+<p>Second, Quine’s attack renders translation between languages fictitious. If someone asks for the translation of “Dieser Apfel ist rot,” we would say “This apple is red.” That this is the <em>correct</em> translation relies upon ‘dieser’, ‘Apfel’, ‘ist’, and ‘rot’ being respectively synonymous with ‘this’, ‘apple’, ‘is’, and ‘red’. Generally, the following seems to hold:</p>
+
+<blockquote>
+  <p>$φ$ is a translation of $ψ$ $\iff$ $φ$ is synonymous with $ψ$.</p>
+</blockquote>
+
+<p>Hence if the notion in the right side is ambiguous, then that in the left is also ambiguous. <strong>Consequently, Quine’s skepticism about synonymy extends to skepticism about translation, and hence to skepticism about meaning.</strong> (For an argument connecting skepticism about translation to skepticism about meaning, see forthcoming article.)</p>
+
+<h2 id="3-objections-to-quines-attack-on-the-analytic-synthetic-distinction">3. Objections to Quine’s Attack on the Analytic-Synthetic Distinction</h2>
+
+<p>Quine’s attack has the following structure:</p>
+
+<blockquote>
+  <p>If the definition of a concept $C$ is circular, then $C$ is unintelligible.</p>
+</blockquote>
+
+<p>Let us call this <em>Quine’s Socratic Condition</em>. <strong>It may be the case that Quine’s Socratic Condition is too strong of a requirement.</strong> For example, “red” or “blue” cannot be defined in a non-circular way — a person born blind cannot “make colors appear before them”, no matter how many utterances involving color words are given to them — but that does not mean that color words are unintelligible. Indeed, Davidson and others have argued that language learning requires some primitive terms — i.e. were there a language all of whose concepts satisfy the Socratic Condition, that language would be unlearnable.</p>
+
+<p>Nevertheless, Quine might argue that although not every concept should satisfy the Socratic Condition, especially those that relate to immediate sense data, certain vaguer concepts—such as analyticity—must. Consider the following sentence:</p>
+
+<blockquote>
+  <p>Everything green has an extension.</p>
+</blockquote>
+
+<p>Whether this sentence is analytic is ambiguous. Quine claims that this ambiguity arises not because of ambiguity in “green” or “extension,” but of “analytic.” This, he argues, shows that analyticity, unlike color words, cannot be legitimised without a rigorous definition.</p>
+
+<p>In response, Grice and Strawson argue that the ambiguity in whether “Everything green has an extension” is analytic arises not from “analytic,” but from “everything green.” For example, it is unclear whether a “green flash” counts as “everything green,” so the truth value of the sentence remains undetermined. On the other hand, analyticity seems to be used in a consistent way by almost every philosopher and every layman, so there is no reason to think of it so ambiguous as to require the Socratic Condition.</p>
+
+<h2 id="4-quines-critique-of-logical-positivism">4. Quine’s Critique of Logical Positivism</h2>
+
+<h3 id="41-critique-of-reductionism">4.1. Critique of Reductionism</h3>
+
+<p>According to logical positivism, every truth is either analytic or synthetic. Analytic truths can be verified through logical analysis, and synthetic truths can be verified through sense data. Thus, the meaning of a sentence is generally taken to be a logical compound of sense data. This is the reductionist thesis of positivism. For example, the meaning of “The cat is on the table or in the box” is analyzed into sense data corresponding to “cat,” “table,” “box,” and logical connectives such as “or” and “is.”</p>
+
+<p><strong>However, Quine argues that semantic reductionists bear the burden of proof to show that it is actually possible to reduce natural language sentences to logical compounds of sense data.</strong> He refers to Carnap’s attempt in <em>The Logical Structure of the World</em> to reconstruct natural language solely from sense data and logical connectives, but notes that, as Carnap himself admitted, the project failed.</p>
+
+<p>Quine claims that reductionism cannot be justified unless this burden of proof is met.</p>
+
+<h3 id="42-critique-of-verification-principle">4.2. Critique of Verification Principle</h3>
+
+<p>According to logical positivism, the meaning of a sentence is its verifiability. Under this verificationist theory of meaning, analyticity can be defined as follows:</p>
+
+<blockquote>
+  <p>P is analytic $\iff$ P is true regardless of the outcome of verification</p>
+</blockquote>
+
+<p>However, Quine argues that the logical positivist definition of analyticity is also problematic. <strong>Quine claims that it is impossible to verify individual propositions in isolation,</strong> hence the verificationist theory of meaning cannot account for the meaning of individual sentences.</p>
+
+<p>Consider the following proposition:</p>
+
+<blockquote>
+  <p>(i) Water boils at 100°C</p>
+</blockquote>
+
+<p>One way to verify this proposition is to put a thermometer in boiling water. But if the thermometer reads 102°C, should we reject (i)? Not necessarily. Instead, we might reject “the thermometer is working,” “the water is pure,” “superheating did not occur,” “I read the thermometer correctly,” and so on.</p>
+
+<p><strong>Thus, Quine argues that what is subject to verification is always the entire web of beliefs.</strong> This is his holistic epistemology. In the above case, what is being tested is not the proposition “water boils at 100°C,” but the entire web of beliefs: “this is pure water, the thermometer is working, superheating did not occur, water boils at 100°C, …” and so on.</p>
+
+<h3 id="43-implications-of-epistemological-holism">4.3. Implications of Epistemological Holism</h3>
+
+<p>Quine’s holism is radical in that it applies to all propositions. Quine claims that there is no sharp boundary between domains within the web of beliefs. Thus, mathematics does not enjoy a privileged epistemological status over science or philosophy. This leads to Quine’s naturalism.</p>
+
+<p>For Quien, that a proposition $φ$ is <em>certain</em>, does not mean that $φ$ is true in all cases — something which cannot be verified in isolation — but that $φ$ is located deep within the web of beliefs. When evidence contrary to the web of beliefs is presented, we must revise the web so as to minimise the likelihood of future contrary evidence. Hence in a pragmatic spirit, it is preferable to revise beliefs at the periphery rather than those at the core. Thus, beliefs at the core persist almost permanently and acquire the status of certainty. <strong>However, if it becomes more practical to abandon a core belief—such as a law of logic—Quine holds that it is appropriate to do so.</strong></p>
+
+<h3 id="44-objections-to-epistemological-holism">4.4. Objections to Epistemological Holism</h3>
+
+<p><strong>Crispin Wright argues that Quine’s holism is incoherent because it leads to infinite regress.</strong> Consider a web of beliefs consisting of the following two elements:</p>
+
+<ul>
+  <li>A scientific theory of the world $T$</li>
+  <li>A logical system $\mathcal{S}$</li>
+</ul>
+
+<p>Suppose that $p → q$ is a law derivable from $T$ and $\mathcal{S}$. For example, if $T$ is Newtonian mechanics and $\mathcal{S}$ is first-order logic, $p$ might be “photons have no mass” and $q$ might be “photons are not affected by gravity.”</p>
+
+<p>Now suppose that, contrary to $T$ and $\mathcal{S}$, an observation is made that supports $p$ and $¬q$—for example, gravitational lensing. According to Quine’s holism, the following four propositions are all candidates for rejection:</p>
+
+<ol>
+  <li>Reject $p ∧ ¬q$ (the gravitational lensing observation was mistaken)</li>
+  <li>Reject $T$ (Newtonian mechanics is false)</li>
+  <li>Reject $\mathcal{S}$ (first-order logic is false)</li>
+  <li>Reject $T \vdash_\mathcal{S} p → q$ (the derivation of $p → q$ from Newtonian mechanics and first-order logic is mistaken)</li>
+</ol>
+
+<p>Which of these four to reject is determined by pragmatic considerations. Suppose, for example, that pragmatism suggests the following:</p>
+
+<ol start="5">
+  <li>It is most practical to reject (4).</li>
+</ol>
+
+<p>However, Wright points out that (5) itself is part of the web of beliefs. Thus, instead of rejecting (4), we could choose to reject (5). Conversely, to avoid rejecting (5), the following belief is required:</p>
+
+<ol start="6">
+  <li>It is practical not to reject (5).</li>
+</ol>
+
+<p>But to avoid rejecting (6), we require the belief that it is practical not to reject (6), and so on, leading to infinite regress. Thus, Wright argues that to avoid infinite regress in epistemology, some beliefs—such as (4)—must be placed outside the scope of pragmatic considerations.</p>
+
+<h2 id="references">References</h2>
+
+<p>Quine, Willard V. O. (1951). Two Dogmas of Empiricism. Philosophical Review 60 (1):20–43.</p>
+
+<p>Miller, Alexander (1998). Philosophy of Language. New York: Routledge.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/16/stone-space-compactness"> 스톤 공간과 콤팩트성 정리 </a>
+      </h1>
+    <span class="post-date">16 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <p>다음은 학부 수리논리학의 유명한 정리이다.</p>
+
+<blockquote>
+  <p><strong>콤팩트성 정리.</strong> $\mathcal{L}$의 이론 $T$에 대해, $T$의 모든 유한한 부분이론이 모델을 가진다면, $T$는 모델을 가진다.</p>
+</blockquote>
+
+<p>그런데 왜 이 정리의 이름은 콤팩트성 정리인 것일까? 잘 들여다 보면, 위 정리의 진술은 다음과 같이 적을 수 있다.</p>
+
+<blockquote>
+  <p>임의의 $\mathcal{L}$-문장들의 집합 $T$가 모델을 가지지 않는다면, 어떤 유한한 부분집합 $T’ \subset T$가 존재하여 $T’$이 모델을 가지지 않는다.</p>
+</blockquote>
+
+<p>확실히 이는 위상수학에서 콤팩트의 정의와 유사하다.</p>
+
+<blockquote>
+  <p>임의의 열린집합들의 모임 $\mathcal{C}$가 전채 공간의 덮개라면, 어떤 유한한 부분집합 $\mathcal{C}’ \subset \mathcal{C}$가 존재하여 $\mathcal{C}’$가 전체 공간을 덮는다.</p>
+</blockquote>
+
+<p>이 유사성은 단순한 관찰 이상으로 확대될 수 있다. 아이디어는 각각의 완전<sub>complete</sub>한 $\mathcal{L}$-이론을 공간의 한 점으로 본 뒤, 이들 모임에 적절한 위상을 부여하였을 때, 콤팩트성 정리가 해당 공간이 콤팩트할 필요충분조건이 되는 것이다. 먼저 다음을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{L}$-구조 $\mathfrak{A}$에 대해, $\mathrm{Th}(\mathfrak{A})$를 $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합으로 정의한다.</p>
+</blockquote>
+
+<p>참고로 위 집합은 <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이전 글</a>에서 초등적 동등성을 설명하며 정의한 바 있다.</p>
+
+<p>$\mathrm{Th}(\mathfrak{A})$는 무모순적이며 형태론적으로 완전한 이론임이 자명하다. 반대로, 이론 $T$가 무모순적이며 형태론적으로 완전한 이론일 때, 괴델의 완전성 정리에 의해 $T$는 모델 $\mathfrak{A}$를 가지며, $T = \mathrm{Th}(\mathfrak{A})$이다. 따라서 $\mathrm{Th}$는 모든 무모순적이며 형태론적으로 완전한 이론을 생성한다.</p>
+
+<p>이제 위상공간의 배경이 될 공간을 정의해 보자. 먼저 언어 $\mathcal{L}$에 대해, 공간 $\mathcal{S}$를 다음과 같이 정의한다.</p>
+
+\[\mathcal{S} = \{ \mathrm{Th}(\mathfrak{A}) : \mathfrak{A}\text{ is a $\mathcal{L}$-structure } \}\]
+
+<p>앞서 말했듯이 괴델의 완전성 정리에 의해 $\mathcal{S}$는 무모순적이며 형태론적으로 완전한 이론들의 모임과 사실상 같다. 그러나 후술하겠듯이, 완전성 정리를 사용하지 않더라도 $\mathcal{S}$의 위상적 콤팩트성과 1차 논리의 콤팩트성 정리가 동치임을 보이는 것이 목적이기 때문에, 일단은 $\mathcal{S}$를 그저 $\mathrm{Th}(\mathfrak{A})$의 모임으로서 생각하는 것이 낫다.</p>
+
+<p>이제 $\mathcal{S}$의 위상 기저를 정의하자. $\mathcal{L}$-문장 $\phi$에 대해, 다음과 같이 정의한다.</p>
+
+\[U_\phi = \{ T \in \mathcal{S} : \phi \in T \}\]
+
+<p>자명하게, $U_\phi \cap U_\psi = U_{\phi \land \psi}$이다. 즉, $U_\phi$의 모임 $\mathcal{B}$는 유한 교집합에 대해 닫혀 있다. 또한 $\mathcal{B}$는 $\mathcal{S}$를 덮는다. $T \in \mathcal{S}$에 대해, $\phi \in T$라면 $T \in U_\phi$이기 때문이다. 따라서 $\mathcal{B}$는 위상 기저의 조건을 만족하며, 이에 따라 $\mathcal{B}$로 생성되는 위상을 $\mathcal{S}$에 부여하자.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{S}$는 다음의 특징을 가진다.</p>
+
+  <ol>
+    <li>하우스도르프이다.</li>
+    <li>완전 비연결 공간<sub>totally disconnected space</sub>이다. 즉, $\mathcal{S}$에서 연결된 공간은 오직 홑원소 집합뿐이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$T_1, T_2 \in \mathcal{S}$에 대해, $T_1 \neq T_2$라면 어떤 문장 $\phi$가 존재하여 $\phi \in T_1, \lnot\phi \in T_2$이다. 따라서 $U_\phi, U_{\lnot \phi}$가 $T_1$과 $T_2$를 각각 분리한다.</li>
+  <li>$T_1$ 공간이 완전 비연결 공간일 충분조건은 모든 원소가 열린닫힌집합<sub>clopen</sub>인 기저를 가지는 것이다. $U_\phi^c =U_{\lnot \phi}$에 의해 $\mathcal{B}$는 이 조건을 만족한다. ■</li>
+</ol>
+
+<blockquote>
+  <p><strong>정리.</strong> 1차 논리의 콤팩트성 정리는 $\mathcal{S}$가 콤팩트 공간인 것과 동치이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $\mathcal{C} \subset \mathcal{B}$가 $\mathcal{S}$를 덮을 필요충분조건은, $\Gamma = \lbrace \lnot \phi : U_\phi \in \mathcal{C} \rbrace $가 모델을 가지지 않는 것이다.</p>
+</blockquote>
+
+<p><em>증명.</em> 만약 $\Gamma$가 모델 $\mathfrak{A}$를 가진다면 $T = \mathrm{Th}(\mathfrak{A})$가 $\mathcal{C}$에 의해 덮여지지 않는다. 한편, $\mathcal{C}$가 $\mathcal{S}$를 덮지 못한다면 어떤 구조 $\mathfrak{A}$가 존재하여 $\phi \in \Gamma$에 대해 $\phi \notin \mathfrak{A}$이고, 이는 $\mathfrak{A}$가 $\Gamma$의 모델임을 의미한다. □</p>
+
+<p>이제 본 정리를 증명하자. $\mathcal{S}$가 콤팩트할 필요충분조건은 임의의 기저 원소들로 이루어진 $\mathcal{S}$의 덮개가 유한 부분덮개를 가지는 것이다. $\mathcal{C} \subset \mathcal{B}$에 대해, $\mathcal{C}$가 $\mathcal{S}$를 덮을 필요충분조건은 (보조정리에 의해) $\Gamma$가 모델을 가지지 않는 것이다. 따라서,</p>
+
+<p>$\mathcal{S}$가 콤팩트하다</p>
+
+<p>$\Leftrightarrow$ 임의의 기저 원소들의 모임 $\mathcal{C}$가 덮개라면, 유한 부분덮개가 존재한다.</p>
+
+<p>$\Leftrightarrow$ 임의의 이론 $\Gamma$가 모델을 가지지 않는다면, 모델을 가지지 않는 유한 부분이론이 존재한다.</p>
+
+<p>$\Leftrightarrow$ 콤팩트성 정리 ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 완전 비연결인 콤팩트 하우스도르프 공간을 <strong>스톤 공간<sub>Stone space</sub></strong>이라고 부른다.</p>
+</blockquote>
+
+<p>1차 논리의 콤팩트성 정리에 의해, $\mathcal{S}$는 스톤 공간이다. 이와 같이 논리적 구조를 위상적으로 분석하는 접근은 <strong>스톤 이중성<sub>Stone duality</sub></strong>이라고 불리는, 현대수학의 깊은 주제와 연관이 있다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/15/quantifier-elimination"> 양화사 제거 </a>
+      </h1>
+    <span class="post-date">15 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/모델론/'">
+        모델론
+      </div>
+      
+    </div>
+     <p><a href="https://dimenerno.github.io/2025/05/08/saturation/">이전 글</a>에서, $\mathcal{L}$-구조 $\mathfrak{A}$에서 <strong>정의가능</strong>한 집합들이 무엇인지에 관해 알아 보았다. $S \subseteq A$가 $\mathfrak{A}$에서 특정 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>에 속하는 명제 $\phi$로 정의가능할 때, $S$가 그 위계에 속한다고 하자. 예를 들어 $S$가 $\Pi_1$ 문장으로 정의 가능할 때, $S \in \Pi_1$이다.</p>
+
+<p>예를 들어 표준 산술 모형 $\mathfrak{N} = (\mathbb{N}, 0, S, +)$에서 짝수의 집합은 $\Sigma_1$이다.</p>
+
+\[\{ x \in \mathbb{N} : \mathfrak{N} \vDash \exists y (y + y = x) \}\]
+
+<p>집합의 구조는 위계가 높아질수록 까다롭기 때문에, 가장 다루기 이상적인 상황은 모든 정의가능한 집합이 $\Delta_0$으로 환원되는 상황이다. 이같은 특징을 가지는 이론을 양화사 제거 가능한 이론이라고 부른다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{L}$-이론 $T$가 <strong>양화사 제거<sub>quantifier elimination</sub></strong> 가능하다는 것은 임의의 $\mathcal{L}$-명제 $\phi$에 대해 어떤 $\Delta_0$ $\mathcal{L}$-명제 $\psi$가 존재하여 다음이 성립하는 것이다.</p>
+
+\[T \vdash \phi \leftrightarrow \psi\]
+
+  <p>단, $\psi$의 자유변수는 모두 $\phi$의 자유변수이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>양화사 제거 판별법.</strong> $T$가 양화사 제거 가능할 충분조건은, $T$가 $\exists x \psi \; (\psi \in \Delta_0)$ 꼴의 명제에 대해 양화사 제거 가능한 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 먼저 임의의 $\Delta_0$ 명제 $\psi$에 대해 $\forall x \psi$가 양화사 제거 가능함을 보이자. $\forall x \psi$는 $\lnot\exists x \lnot \psi$와 동치이고, 가정에 의해 $\exists x \lnot \psi$는 어떤 양화사가 없는 명제 $\theta$와 동치이다. 따라서 $\forall x \psi$는 $\lnot \theta$와 동치이며, 양화사 제거 가능하다. 이제 양화사 개수에 대한 귀납법을 적용하면 임의의 명제에 대해 양화사 제거가 가능함이 보여진다. ■</p>
+
+<p>어떤 이론이 양화사 제거 가능할 경우 해당 이론이 완전함을 보일 수 있는 경우가 종종 있다. 일례로 다음을 보자.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 조밀 무계 전순서 이론 $T$는 양화사 제거 가능하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 먼저 다음 개념을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 유한한 변수들의 <strong>배열<sub>arrangement</sub></strong>이란, 변수들의 순서 관계의 무모순적인 논리곱을 의미한다.</p>
+</blockquote>
+
+<p>예를 들어 다음은 $\lbrace v_1, v_3, v_7, v_8 \rbrace$의 배열이다.</p>
+
+\[(v_1 &lt; v_3) \land (v_8 \land v_7) \land (v_3 = v_8)\]
+
+<p>증명의 핵심은 다음의 보조정리이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $\mathcal{L} = (&lt;)$의 $\Delta_0$ 명제는 전순서 이론에서 모순과 동치이거나, 어떤 배열들의 논리합과 동치이다.</p>
+</blockquote>
+
+<p>보조정리를 인정하고 본 정리를 증명해 보자. 양화사 제거 판별법에 의해, $\psi \in \Delta_0$에 대해 $\exists x \psi$가 양화사 제거 가능함을 보이면 된다. 보조정리에 의해 $\psi$는 $\theta_1 \lor \cdots \lor \theta_n$과 동치이며, 각 $\theta_i$는 변수들의 배열이다. $\exists$의 분배법칙에 의해,</p>
+
+\[T \vdash \exists x \psi \leftrightarrow \Big( (\exists x \theta_1) \lor \cdots (\exists x \theta_n) \Big)\]
+
+<p>이다. 그런데 조밀 무계 전순서에서는 배열 $\theta$에 대해, $\exists x \theta$는 $\theta$의 순서 관계를 한줄로 쭉 적은 뒤, $x$를 지운 명제와 동치이다. 예를 들어 $\exists x (v_1 &lt; x) \land (x &lt; v_2)$는 $\exists x (v_1 &lt; x &lt; v_2)$로 적을 수 있고, 이는 조밀성에 의해 $v_1 &lt; v_2$와 동치이다. 한편 $\exists x (v_1 &lt; x)$는 무계성에 의해 항진이며, $v_1 = v_1$과 동치이다. 따라서 위 식의 우항은 양화사 제거 가능하며, 이에 따라 $\exists x \psi$ 또한 양화사 제거 가능하다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $T$는 완전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T$가 양화사 제거 가능하므로, 표준 양화사 제거 형식에 의해, 최대 1개의 자유변수 $x$를 가지는 임의의 $\Delta_0$ 문장 $\psi \in \Delta_0$에 대해 $T \vdash \psi$이거나 $T \vdash \lnot\psi$임을 보이면 된다. 보조정리에 의해 $\psi$는 $x$의 배열과 동치이다. 그런데 가능한 $x$의 배열은 $x &lt; x$와 $x = x$, 두 가지밖에 없다. 전자의 경우 모순이므로 $T \vdash \lnot\psi$이고, 후자의 경우 항진이므로 $T \vdash \psi$이다. ■</p>
+
+<p>$T$가 양화사 제거 가능한 것과 대조적으로, 조밀 유계 전순서 이론 $T_{\mathrm{bd}}$는 양화사 제거 가능하지 않다. $a$가 $&lt;$의 최솟값일 때, $\phi \equiv \exists y (y &lt; x)$가 양화사 제거 가능하지 않기 때문이다. $T_{\mathrm{bd}}$도 전순서 이론이므로, 만약 $\phi$가 양화사 제거 가능했다면 보조정리에 의해 $\phi$는 $x &lt; x$ 또는 $x = x$와 동치여야 하는데, $\phi$는 $x = a$일 때 참이고 그 외의 경우에는 거짓이기 때문에 전자와 후자 모두에 해당하지 않는다.</p>
+
+<p>그러나 이 경우에는 양화사 제거가 가능한 $T_{\mathrm{bd}}$의 확장을 쉽게 찾을 수 있다. 먼저 언어 $\mathcal{L}$에 두 가지 새로운 상수 기호 $a$와 $b$를 추가한다. 그리고 $a$와 $b$가 각각 최솟값과 최댓값이라는 다음의 공리를 $T_{\mathrm{bd}}$에 추가한 것을 $T_{\mathrm{bd}}’$이라고 하자.</p>
+
+\[\lnot \exists (x &lt; a) \quad \lnot \exists (b &lt; x)\]
+
+<blockquote>
+  <p><strong>정리.</strong> $T_{\mathrm{bd}}’$는 양화사 제거 가능하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 연습문제</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $T_{\mathrm{bd}}$는 완전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T_{\mathrm{bd}}$의 보존적 확장<sub>conservative extension</sub>인 $T_{\mathrm{bd}}’$가 완전하므로, $T_{\mathrm{bd}}$ 또한 완전하다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/13/saturation"> 포화된 구조와 실수체의 완전성 </a>
+      </h1>
+    <span class="post-date">13 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <p>$\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $A$는 $\mathfrak{A}$의 정의역이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X \subseteq A$가 <strong>정의가능<sub>definable</sub></strong>하다는 것은, 어떤 $\mathcal{L}$-논리식 $\phi$와 자유변수 할당 $g$가 존재하여 다음이 성립한다는 것이다.</p>
+
+\[X = \{ x \in A : \mathfrak{A} \vDash \phi[g^0_x] \}\]
+
+  <p>$\phi$가 $v_0$ 이외의 자유변수를 가지지 않을 때, $X$는 $\emptyset$-정의가능하다고 한다.</p>
+</blockquote>
+
+<p><em>Remark.</em> 정의가능성은 <a href="https://dimenerno.github.io/2024/12/11/VL-axiom/">괴델의 구성가능성</a>과 같은 의미이다.</p>
+
+<p>예를 들어 $(\mathbb{R}, &lt;)$에서 $(e, 2\pi)$는 다음의 $\phi$와 $g$에 의해 정의가능하다.</p>
+
+<ul>
+  <li>$\phi \equiv (v_1 &lt; v_0 \land v_0 &lt; v_2)$</li>
+  <li>$g: v_1 \mapsto e, v_2 \mapsto 2\pi$</li>
+</ul>
+
+<p>그러나 $(e, 2\pi)$는 $\emptyset$-정의가능하지 않다. $(\mathbb{R}, &lt;)$에서 $e$와 $2\pi$를 특정할 방법이 없기 때문이다.</p>
+
+<p>한편 표준 산술 모형 $(\mathbb{N}, 0, +, S)$에서 짝수의 집합 $E$는 다음의 $\phi$에 의해 $\emptyset$-정의가능하다.</p>
+
+<ul>
+  <li>$\phi \equiv \exists y (x = y + y)$</li>
+</ul>
+
+<p>모든 유한집합은 정의가능하다. 예를 들어 $A = \lbrace a_1, a_2, a_3 \rbrace $는 다음과 같이 정의가능하다.</p>
+
+<ul>
+  <li>$\phi \equiv (v_0 = v_1) \lor (v_0 = v_2) \lor (v_0 = v_3)$</li>
+  <li>$g: v_1 \mapsto a_1, v_2 \mapsto a_2, v_3 \mapsto a_3$</li>
+</ul>
+
+<p>같은 이유로 모든 쌍대 유한집합<sub>cofinite set</sub> 또한 정의가능하다.</p>
+
+<p><a href="http://dimenerno.github.io/2025/05/09/resiliency/">저번 글</a>에서 탄력적<sub>resilient</sub> 집합족에 대해 알아 보았다. 이제 다음을 정의하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\kappa$가 비가산 기수라고 하자. $\mathfrak{A}$가 <strong>$\kappa$-포화<sub>$\kappa$-saturated</sub></strong>되었다는 것은, $\kappa$개보다 적은 $A$의 정의가능한 부분집합들의 모임이 언제나 탄력적이라는 것이다. 특히, $\mathfrak{A}$가 $|A|$-포화되었을 때, $\mathfrak{A}$는 <strong>포화<sub>saturated</sub></strong>되었다고 한다.</p>
+</blockquote>
+
+<p>따라서 $\aleph_1$-포화된 구조 $\mathfrak{A}$는, 가산 개의 $\mathfrak{A}$의 정의가능한 부분집합들의 모임이 유한 교집합 속성을 만족할 떄, 전체 교집합 또한 공집합이 아닌 구조이다. 한편 구조 $\mathfrak{A}$가 $|A|^+$-포화되는 것은 불가능하다. 다음의 집합족이 유한 교집합 속성을 만족하지만 교집합은 공집합이기 때문이다.</p>
+
+\[\Big\{ A - \{ a \} : a \in A \Big\}\]
+
+<p>포화된 구조의 중요성은 다음 정리에 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 초등적으로 동등하며 기수가 같은 두 포화된 $\mathcal{L}$-구조는 동형이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 생략. 기초적인 아이디어는 <a href="https://dimenerno.github.io/2025/05/08/resiliency/">저번 글</a>에서 본 칸토어의 앞뒤 논법을 일반화한 것이다.</p>
+
+<p>그러나 유감스럽게도 포화된 구조는 구성하기가 까다롭다. 일례로 비가산 기수 $\kappa$와, $|T| \leq \kappa$인 건전한 이론 $T$에 대해, $T$는 $\kappa^+$-포화된, 기수 $2^\kappa$의 모델을 가진다. 따라서 일반화된 연속체 가설을 인정할 시 해당 모델은 포화되어 있다. 그러나 ZFC만으로는 포화된 구조가 존재함을 증명할 수 없음이 알려져 있다.</p>
+
+<p>따라서 다음의 더 약한 조건을 가진 개념을 도입한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 <strong>특별<sub>special</sub></strong>하다는 것은, $\mathfrak{A}$가 방향 유도계 $\lbrace  \mathfrak{A}_\kappa \rbrace _{\kappa &lt; |A|}$의 쌍대 극한이라는 것이다. 여기서 $\kappa$는 무한 기수이며, 각 $\mathfrak{A}_\kappa$는 $\kappa^+$-포화되어 있다.</p>
+</blockquote>
+
+<p>모든 포화된 구조는 특별하다. 각 $\mathfrak{A}_\kappa$를 자기 자신으로 두면 되기 때문이다. 그러나 모든 특별한 구조가 포화된 것은 아니다. 따라서 특별함은 포화보다 엄격히 약한 조건이다. 그럼에도 특별한 구조는 동형성 성질을 만족한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 초등적으로 동등하며 기수가 같은 두 특별한 $\mathcal{L}$-구조는 동형이다.</p>
+</blockquote>
+
+<p>더구나 특별한 구조는 포화된 구조보다 더 구성하기 쉽다. 특히, 다음 뢰벤하임-스콜렘 정리의 특수화가 알려져 있다.</p>
+
+<blockquote>
+  <p><strong>특별 뢰벤하임-스콜렘 정리.</strong> $T$가 언어 $\mathcal{L}$의 이론이라고 하자.</p>
+
+  <ol>
+    <li>$T$가 무한 모델을 가진다면, $T$는 임의의 기수보다 큰 기수의 특별한 모델을 가진다.</li>
+    <li>$T$가 무한 모델을 가지고, $\mathcal{L}$이 가산이라면, $T$는 기수가 $\beth_\omega$인 특별한 모델을 가진다.</li>
+  </ol>
+</blockquote>
+
+<p>이 정리의 응용으로서, 다음의 유명한 결과를 보자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> <strong>실수 닫힌 순서체 이론</strong> 또는 <strong>RCOF</strong>란 다음의 공리들로 이루어진 언어 $(0, 1, +, \cdot, &lt;)$의 이론이다. ($x^n$은 $x \underbrace{\cdot \;\cdots\; \cdot}_{n} x$를 줄인 표기법)</p>
+
+  <ol>
+    <li>순서체 공리
+      <ul>
+        <li>$\forall a, b, c : (a &lt; b) \rightarrow (a + c &lt; b + c)$</li>
+        <li>$\forall a, b : (a &gt; 0 \land b &gt; 0) \rightarrow ab &gt; 0$</li>
+        <li>체 공리</li>
+      </ul>
+    </li>
+    <li>제곱근 공리: $\forall a &gt; 0 \; \exists x : x^2 = a$</li>
+    <li>닫힘 공리꼴:
+      <ul>
+        <li>$\forall a_2, a_1, a_0 \; \exists x :x^3 + a_2x^2 + a_1x + a_0 = 0$</li>
+        <li>$\forall a_4, a_3, a_2, a_1, a_0\; \exists x : x^5 + a_4x^4 + \cdots + a_0 = 0$</li>
+        <li>…</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p><strong>실수 닫힌체 이론</strong> 또는 <strong>RCF</strong>란 다음의 공리들로 이루어진 언어 $(0, 1, +, \cdot)$의 이론이다.</p>
+
+  <ol>
+    <li>체 공리</li>
+    <li>형식적 실수 공리: $\forall x : x^2 \neq -1$</li>
+    <li>제곱근 공리: $\forall a \; \exists x : x^2 = a \lor x^2 = -a$</li>
+    <li>닫힘 공리꼴</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>타르스키 정리.</strong> RCOF와 RCF는 완전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 핵심은 다음의 보조정리이다.</p>
+
+<blockquote>
+  <p><strong>에르되시-길만-헨릭슨<sub>Erdös-Gillman-Henriksen</sub> 보조정리.</strong> 기수가 같은 두 특별한 실수 닫힌체는 동형이다.</p>
+</blockquote>
+
+<p>보조정리를 인정하고 타르스키 정리를 증명해 보자. 만약 RCF가 완전하지 않다면, RCF의 확장 $T_1$과 $T_2$가 존재하여 $T_1$의 모델과 $T_2$의 모델은 초등적으로 동등하지 않다. RCF의 모든 모델은 무한 모델이므로 (why?) 특별 뢰벤하임-스콜렘 정리에 의해 $T_1$과 $T_2$는 각각 기수가 $\beth_\omega$인 모델 $\mathfrak{A}_1, \mathfrak{A}_2$를 가진다. 그런데 보조정리에 의해 $\mathfrak{A}_1 \cong \mathfrak{A}_2$인데, 이는 $\mathfrak{A}_1 \not\equiv \mathfrak{A}_2$와 모순이다. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

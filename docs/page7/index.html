@@ -281,7 +281,7 @@
     href="/notes/"
     >Maths Review Notes (Korean)</a
   >
-                                                                                                                                                                            
+                                                                                                                                                            
   </nav>
 
   <div class="sidebar-item">
@@ -423,933 +423,507 @@
 
 <div class="posts">
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
+    <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/02/25/caratheodory"> 카라테오도리 정리를 이용한 측도의 구성 </a>
+        <a href="/2024/11/18/ZFC/en"> List of ZFC Axioms </a>
       </h1>
-    <span class="post-date">25 Feb 2025</span>
+    <span class="post-date">18 Nov 2024</span>
     
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
       </div>
       
-      <div class="tag" onclick="location.href='/tags/측도론/'">
-        측도론
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
       </div>
       
     </div>
-     <p>필자는 카라테오도리 정리<sub>Carathéodory theorem</sub>를 3가지로 구분해서 이해하는 방식을 선호하기 때문에, 이 글에서도 해당 방식을 따른다. 각각 다음과 같다.</p>
-
-<ol>
-  <li><strong>카라테오도리 구축 정리:</strong> 임의의 집합족과 양함수로부터 외측도<sub>outer measure</sub> 를 정의할 수 있다.</li>
-  <li><strong>카라테오도리 제한 정리:</strong> 외측도의 정의역을 가측 집합으로 제한한 함수는 측도가 된다.</li>
-  <li><strong>카라테오도리 확장 정리:</strong> 대수 $\mathcal{A}_0$ 위의 예비측도<sub>premeasure</sub> $\mu_0$를 확장하는 $\sigma(\mathcal{A}_0)$ 위의 측도는, 집합족을 $\mathcal{A}_0$, 양함수를 $\mu_0$로 잡은 뒤 구축 정리를 적용하여 얻은 외측도 $\mu^\ast$에, 제한 정리를 적용하여 얻은 측도가 유일하다.</li>
-</ol>
-
-<p>도식적으로, 다음과 같이 이해할 수 있다.</p>
-
-<table>
+     <table>
   <thead>
     <tr>
-      <th> </th>
-      <th>(1)</th>
-      <th>(2)</th>
-      <th>(3)</th>
+      <th>Name</th>
+      <th>Meaning</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>정의역</td>
-      <td>대수 $\mathcal{A}_0$</td>
-      <td>$\sigma$-대수 $\mathcal{A}$</td>
-      <td>멱집합 $\mathcal{P}(X)$</td>
+      <td>Extensionality</td>
+      <td>Set is an unordered collection of elements.</td>
     </tr>
     <tr>
-      <td>함수</td>
-      <td>예비측도 $\mu_0$</td>
-      <td>측도 $\mu$</td>
-      <td>외측도 $\mu^\ast$</td>
+      <td>Existence*</td>
+      <td>There exists the empty set.</td>
+    </tr>
+    <tr>
+      <td>Pairing*</td>
+      <td>From $X, Y$ follows $Z = \lbrace  X, Y \rbrace$.</td>
+    </tr>
+    <tr>
+      <td>Union</td>
+      <td>From $X = \lbrace  Y_i \rbrace$ follows $Z = \bigcup Y_i$.</td>
+    </tr>
+    <tr>
+      <td>Power Set</td>
+      <td>From $X$ follows $\mathcal{P}(X)$.</td>
+    </tr>
+    <tr>
+      <td>Separation Schema**</td>
+      <td>From $X$ follows $Y = \lbrace  y \in X : \phi(y) \rbrace$, where $\phi$ is a first-order formula.</td>
+    </tr>
+    <tr>
+      <td>Infinity</td>
+      <td>There exists a set containing all the natural numbers.</td>
+    </tr>
+    <tr>
+      <td>Regularity</td>
+      <td>$\in$ is a well-ordering.</td>
+    </tr>
+    <tr>
+      <td>Replacement</td>
+      <td>From $X$ follows $f[X]$, where $f$ is a class function definable in first-order logic.</td>
+    </tr>
+    <tr>
+      <td>Choice</td>
+      <td>Every collection of nonempty sets $\lbrace  X_i \rbrace$ has a choice function.</td>
     </tr>
   </tbody>
 </table>
 
-<p>구축 정리는 (1) → (3), 제한 정리는 (3) → (2), 확장 정리는 (1) → (2)의 방향을 가진다. 하나하나 살펴 보자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $X$ 위의 <strong>외측도</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$는 다음을 만족하는 함수이다.</p>
-
-  <ol>
-    <li>$\mu^\ast(\varnothing) = 0$</li>
-    <li>$A \subset B \implies \mu^\ast(A) \leq \mu^\ast(B)$</li>
-    <li>$\mu^\ast\left( \bigcup_{n \in \mathbb{N}} A_n  \right) \leq \sum_{n \in \mathbb{N}} \mu^\ast(A_n)$</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>카라테오도리 구축 정리.</strong> $X$의 부분집합으로 이루어진 임의의 집합족 $\mathcal{S}$와, $l(\varnothing) = 0$을 만족하는 임의의 함수 $l: \mathcal{S} \to [0, \infty]$가 주어졌을 때, 다음과 같이 정의된 $\mu^\ast$은 외측도이다.</p>
-
-\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} l(A_n) : \{ A_n \} \subset \mathcal{S} \text{ covers }E  \right\}\]
-</blockquote>
-
-<p>즉, $\mu^\ast$은 덮개의 극한으로서 $E$의 ‘측도’ 비스무리한 것을 정의하는 함수이며, 구분구적법에서 상합<sub>upper sum</sub>과 개념적으로 비슷하다.</p>
-
-<p><strong>증명.</strong> 1과 2는 자명하다. 3을 보인다.</p>
-
-<p>$A = \bigcup A_n$이라고 하고, 임의의 $\epsilon &gt; 0$이 주어졌다고 하자. $\mu^\ast$의 정의에 의해, 각 $n$에 대해 다음을 만족하는 $A_n$의 덮개 $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$가 존재한다.</p>
-
-\[\sum l(A_{nm}) \leq \mu^*(A_n) + \epsilon/2^n\]
-
-<p>따라서,</p>
-
-\[\sum_{n, m \in \mathbb{N}} l(A_{nm}) \leq \sum \mu^*(A_n) + \epsilon.\]
-
-<p>그리고 $\bigcup \mathcal{C}_n$이 $A$를 덮으므로, $\mu^\ast$의 정의에 의해 $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$이다. ■</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. 임의의 $E$에 대해 다음을 만족하는 집합 $A$를 $\mu^\ast$에 대해 <strong>가측<sub>measurable</sub></strong>이라고 한다.</p>
-
-\[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
-</blockquote>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast(N) = 0$인 $N$을 <strong>영집합<sub>null set</sub></strong>이라고 한다.</p>
-</blockquote>
-
-<p>즉, 가측 집합은 $\mu^\ast$에 대해 임의의 집합을 ‘깔끔하게’ 분할하는 집합이다. 따라서 가측 집합으로만 이루어진 모임 위에서 $\mu^\ast$은 일반적인 측도와 같이 행동할 것으로 예측할 수 있다. 이 예측을 입증하는 것이 다음의 제한 정리이다.</p>
-
-<blockquote>
-  <p><strong>카라테오도리 제한 정리.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast$에 대해 가측인 집합들의 모임을 $\mathcal{A}$라고 할 때, 다음이 성립한다.</p>
-
-  <ol>
-    <li>$\mathcal{A}$는 $\sigma$-대수이다.</li>
-    <li>$\mu^\ast |_\mathcal{A}$는 측도이다.</li>
-    <li>$\mathcal{A}$는 $\mu^\ast$의 모든 영집합을 포함한다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<p><strong>1. $\mathcal{A}$는 대수이다.</strong></p>
-
-<p>여집합 닫힘은 자명하다. 유한 교집합 닫힘임을 보인다.</p>
-
-<p>$A, B$가 가측이라고 하자. $A \cap B$가 가측임을 보이기 위해 다음을 보이면 충분하다.</p>
-
-\[\mu^*(E \cap (A \cap B)) + \mu^*(E \cap (A \cap B)^c) \leq \mu^*(E) \quad \cdots \quad (*)\]
-
-<p>$A, B$가 가측이므로 다음이 성립한다.</p>
-
-\[\begin{aligned}
-\mu^*(E) &amp;= \mu^*(E \cap A) + \mu^*(E \cap A^c) \\
-&amp;= \mu^*(E \cap A \cap B) + \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B) + \mu^*(E \cap A^c \cap B^c)
-\end{aligned}\]
-
-<p>따라서 $(\ast)$은 다음과 동치이다.</p>
-
-\[\begin{aligned}
-\mu^*(E \cap (A^c \cup B^c)) &amp;\leq \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B)  \quad \cdots \quad (**) \\ &amp;+ \mu^*(E \cap A^c \cap B^c)
-\end{aligned}\]
-
-<p>간단한 집합론으로부터 다음을 알 수 있다.</p>
-
-\[A^c \cup B^c = (A \cap B^c) \cup (A^c \cap B) \cup (A^c \cap B^c)\]
-
-<p>따라서 $(\ast\ast)$가 성립한다. □</p>
-
-<p><strong>2. $\mathcal{A}$는 $\sigma$-대수이다.</strong></p>
-
-<p>$A_n \uparrow A$인 $\lbrace  A_n \rbrace  \subset \mathcal{A}$에 대해 $A \in \mathcal{A}$임을 보이면 충분하다. (why?)</p>
-
-<p>외측도의 정의에 의해 $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$이다. $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$이라고 하자. $\bigsqcup C_n = A$이다. 또한,</p>
-
-\[\begin{aligned}
-\mu^*(E \cap A_n) &amp;= \mu^*(E \cap A_n \cap C_n) + \mu^*(E \cap A_n \cap C_n^c) \\
-&amp;= \mu^*(E \cap C_n) + \mu^*(E \cap A_{n - 1}) \\
-&amp;= \cdots \\
-&amp;= \sum^n_{k = 1} \mu^*(E \cap C_k)
-\end{aligned}\]
-
-<p>이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$이다. 그런데 $\lbrace  E \cap C_n \rbrace $이 $E \cap A$를 덮으므로, $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$이다.</p>
-
-<p>따라서 임의의 $\epsilon &gt; 0$에 대해, 충분히 큰 $N$이 존재하여 $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$이다. 따라서,</p>
-
-\[\begin{aligned}
-\mu^*(E \cap A_n^c) &amp;= \mu^*(E) - \mu^*(E \cap A_n) \\
-&amp;\leq \mu^*(E) - \mu^*(E \cap A) + \epsilon
-\end{aligned}\]
-
-<p>이므로 다음을 얻는다.</p>
-
-\[\mu^*(E) \leq \mu^*(E \cap A_n) + \mu^*(E \cap A_n^c) \leq \mu^*(E) + \epsilon\]
-
-<p>$n \to \infty$로 보내면 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$이다. □</p>
-
-<p><strong>3. $\mu^\ast|_\mathcal{A}$는 측도이다, 4. $\mathcal{A}$는 모든 영집합을 포함한다.</strong></p>
-
-<p>Left as an exercise to the readers. (어렵지 않음) ■</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathcal{A}_0$가 대수라고 하자. $\rho: \mathcal{A}_0 \to [0, \infty]$가 <strong>예비측도</strong>라는 것은 다음을 만족한다는 것이다.</p>
-
-  <ol>
-    <li>$\rho(\varnothing) = 0$</li>
-    <li>쌍으로 서로소인 가산 집합족 $\lbrace  A_n \rbrace $에 대해, $\bigcup A_n \in \mathcal{A}_0$라면 $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>카라테오도리 확장 정리.</strong> 대수 $\mathcal{A}_0$ 위의 예비측도 $\rho$에 대해, 다음과 같이 정의하자.</p>
-
-\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
-
-  <p>이 때, 다음이 성립한다.</p>
-
-  <ol>
-    <li>$A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</li>
-    <li>$\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</li>
-    <li>$\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<p><strong>1. $A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</strong></p>
-
-<p>$A$가 $A$의 덮개이므로 $\mu^\ast(A) \leq \rho(A)$이다. 만약 $\mu^\ast(A) &lt; \rho(A)$라면 어떤 $A$의 덮개 $\lbrace  A_n \rbrace $이 존재하여 $\sum \rho(A_n) &lt; \rho(A)$이다. 그런데 $\rho$가 예비측도이므로 이는 모순이다. □</p>
-
-<p><strong>2. $\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</strong></p>
-
-<p>먼저 $\mathcal{A}_0$가 가측임을 보인다. 임의의 $A \in \mathcal{A}_0$에 대해 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$임을 보이면 충분하다. $\mu^\ast$의 정의에 의해, 임의의 $\epsilon &gt; 0$에 대해 어떤 $E$의 덮개 $\mathcal{C}$가 존재하여 다음이 성립한다.</p>
-
-\[\sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon\]
-
-<p>$\mathcal{A}_0$가 대수이므로, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$이다. 따라서,</p>
-
-\[\begin{aligned}
-\mu^*(E \cap A) + \mu^*(E \cap A^c) &amp;\leq \sum^\infty_{n = 1} \mu^*(A \cap C_n) + \sum^\infty_{n = 1} \mu^*(A^c \cap C_n) \\
-&amp;= \sum^\infty_{n = 1} \rho(A \cap C_n) + \sum^\infty_{n = 1} \rho(A^c \cap C_n) \\
-&amp;= \sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon
-\end{aligned}\]
-
-<p>(엄밀히 따지자면 $\sum^n_{k=1}$을 고려한 다음에 $n \to \infty$ 극한을 취해야 한다) 따라서 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$이며, $\mathcal{A}_0$는 가측이다. 카라테오도리 제한 정리에 의해 가측 집합은 $\sigma$-대수를 이루므로, $\sigma(\mathcal{A}_0)$ 또한 가측이다. □</p>
-
-<p><strong>3. $\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</strong></p>
-
-<p>먼저 $\rho &lt; \infty$를 가정하자. $\sigma(\mathcal{A}_0)$ 위에서 정의된 측도 $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치한다고 하자. 또한 $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$라고 하자. $\nu = \mu$임을 보인다.</p>
-
-<p>$E \in \sigma(\mathcal{A}_0)$라고 하자. 어떤 $E$의 덮개 $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$가 존재하여,</p>
-
-\[\sum \rho(A_n) \leq \mu(E) + \epsilon\]
-
-<p>이다. $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치하므로, $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$이다. 따라서 $\nu \leq \mu$이다.</p>
-
-<p>이제 $B_n = \bigcup^n_{k=1}A_k$로 정의하고, $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$이라고 하자. $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$이므로 $\mu(B \setminus E) \leq \epsilon$이다. $\nu$가 측도이므로,</p>
-
-\[\mu(A) = \lim \rho(B_n) = \lim \nu(B_n) = \nu(A)\]
-
-<p>따라서,</p>
-
-\[\begin{aligned}
-\mu(E) \leq \mu(B) &amp;= \mu(B \setminus E) + \mu(E) \\
-&amp;\leq \epsilon + \nu(E)
-\end{aligned}\]
-
-<p>즉 $\mu \leq \nu$이다. 따라서 $\mu = \nu$이다.</p>
-
-<p>이제 $\rho$가 $\sigma$-유한하다고 가정하자. 어떤 집합족 $\lbrace  C_n \rbrace $이 존재하여 $C_n \uparrow X$이고, $\rho(C_n) &lt; \infty$이다. 앞선 논의에 의해 $C_n$에서 $\mu$와 $\nu$는 일치한다. 따라서,</p>
-
-\[\mu(A) = \lim \mu(A \cap C_i) = \lim \nu (A \cap C_i) = \nu(A)\]
-
-<p>이므로 $\mu$와 $\nu$는 전체 공간에서 일치한다. ■</p>
-
-<p>다음 글에서는 카라테오도리 정리를 이용하여 르베그 측도를 구성한 뒤, 모든 보렐 가측 집합은 르베그 가측 집합이지만 그 역은 성립하지 않음을 보인다.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Formula (Free variables are to be quantified by $\forall$)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Extensionality</td>
+      <td>$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$</td>
+    </tr>
+    <tr>
+      <td>Existence*</td>
+      <td>$\exists Z : z \not\in Z$</td>
+    </tr>
+    <tr>
+      <td>Pairing*</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$</td>
+    </tr>
+    <tr>
+      <td>Union</td>
+      <td>$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$</td>
+    </tr>
+    <tr>
+      <td>Power Set</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$</td>
+    </tr>
+    <tr>
+      <td>Separation Schema**</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$</td>
+    </tr>
+    <tr>
+      <td>Infinity</td>
+      <td>$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$</td>
+    </tr>
+    <tr>
+      <td>Regularity</td>
+      <td>$\exists x \in X : \forall y \in X [ y \not\in x]$</td>
+    </tr>
+    <tr>
+      <td>Replacement</td>
+      <td>$\displaylines{[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow [\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$</td>
+    </tr>
+    <tr>
+      <td>Choice</td>
+      <td>$\displaylines{\varnothing \notin X \rightarrow \exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Remarks.</strong></p>
+
+<ul>
+  <li>Regularity is equivalent to the following:</li>
+</ul>
+
+\[\exists x \in X : x \cap X = \varnothing\]
+
+<ul>
+  <li>
+    <p>Those marked by (*) can be derived from the Separation.</p>
+  </li>
+  <li>
+    <p>Those marked by (**) can be derived from the Replacement.</p>
+  </li>
+</ul>
+
+<p>Replacement is <em>strictly</em> stronger than Separation:</p>
+
+<ul>
+  <li>Separation can be stated as: If $X$ is a set and $f$ is a function, then $f[X]$ is a set.</li>
+  <li>Replacement can be stated as: If $X$ is a set and $f$ is a class function, then $f[X]$ is a set.</li>
+</ul>
+
+<p>The proof of following theorems require Choice.</p>
+
+<ul>
+  <li>If $f: X → Y$ is surjective, there exists a subset $Z$ of $X$ such that $f\vert_Z$ is bijective.</li>
+  <li>If $\varnothing \not\in \lbrace  X_i\rbrace$, then $\prod X_i \neq \varnothing$.</li>
+  <li><strong>Well-ordering Principle.</strong> Every set can be well-ordered.</li>
+  <li><strong>Zorn’s Lemma.</strong> If every chain of $(X, &lt;)$ is bounded in $X$, $X$ has a maximal element.</li>
+</ul>
+
+<p>The proof of following theorems require Replacement.</p>
+
+<ul>
+  <li>$\omega + \omega$ exists.</li>
+  <li><a href="http://dimenerno.github.io/2024/11/21/trichotomy"><strong>Completeness of Ordinals.</strong></a> Every well-ordered set is order-isomorphic to a unique ordinal.</li>
+</ul>
 
   </div>
   <div style="margin-bottom: 6em"></div>
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/02/24/algebra-measure"> 대수와 측도의 정의 </a>
+        <a href="/2024/11/17/bell-rocket"> 벨의 우주선 사고실험: 수동적 로렌츠 수축과 능동적 로렌츠 수축 </a>
       </h1>
-    <span class="post-date">24 Feb 2025</span>
+    <span class="post-date">17 Nov 2024</span>
     
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
+      <div class="tag" onclick="location.href='/tags/물리학/'">
+        물리학
       </div>
       
-      <div class="tag" onclick="location.href='/tags/측도론/'">
-        측도론
-      </div>
-      
-    </div>
-     <h2 id="1-비탈리-정리">1. 비탈리 정리</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mu$가 집합 $X$ 위의 <strong>측도<sub>measure</sub></strong>라는 것은 다음을 만족한다는 것이다.</p>
-
-  <ol>
-    <li>$\mu(\varnothing) = 0$</li>
-    <li>쌍으로 서로소<sub>pairwise disjoint</sub>인 가산 집합족 $\lbrace A_n \rbrace$에 대해, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$</li>
-  </ol>
-</blockquote>
-
-<p>유감스럽게도 $X = \mathbb{R}$일 때, 측도 $\mu$는 실수의 모든 부분집합에 대해서 정의될 수 없다.</p>
-
-<blockquote>
-  <p><strong>비탈리 정리.</strong> 다음을 모두 만족하는 $\mathbb{R}$의 측도 $\mu$는 존재하지 않는다.</p>
-
-  <ol>
-    <li>항등적으로 0이 아니다.</li>
-    <li>평행이동에 대해 보존적이다. 즉, 임의의 $r \in \mathbb{R}$에 대해 $\mu(A + r) = \mu(A)$.</li>
-    <li>$\operatorname{dom} \mu = \mathcal{P}(\mathbb{R})$</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> 그러한 측도 $\mu$가 존재한다고 가정하자. $\mathbb{R}$ 위에서 다음의 동치 관계를 정의하자.</p>
-
-\[x \sim y \iff x - y \in \mathbb{Q}\]
-
-<p>선택 공리에 의해 $[0, 1]/{\sim}$의 선택 함수 $\iota$가 존재한다. $V = \operatorname{im} \iota$라고 하자. $V$를 <strong>비탈리 집합<sub>Vitali set</sub></strong>이라고 부른다. 예를 들어 $V = \lbrace 0.1, \pi - 3, \sqrt{2} - 1, \dots \rbrace$이다. $\mu$는 $V$에서 정의될 수 없음을 보인다.</p>
-
-<p>$V$의 정의에 의해, $q \in \mathbb{Q}$에 대해 $V$와 $V + q$는 서로소이다. 또한 $[0, 1] \subset \bigcup_{q \in \mathbb{Q}} (V + q) \subset [-1, 3]$이다. 따라서,</p>
-
-\[1 \leq \sum_{q \in \mathbb{Q}}\mu(V + q) \leq 4.\]
-
-<p>그런데 $\mu(V + q) = \mu(V)$이므로, $\mu(V) = 0$이면 왼쪽 부등식이 성립하지 않고 $\mu(V) &gt; 0$이면 오른쪽 부등식이 성립하지 않는다. 따라서 모순이다. ■</p>
-
-<h2 id="2-sigma-대수">2. $\sigma$-대수</h2>
-
-<p>따라서 올바른 측도를 구축하기 위해서는 측도의 정의역을 적절히 제한할 필요가 있다. 이에 대수의 개념을 도입한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 집합 $X$의 <strong>대수<sub>algebra</sub></strong> $\mathcal{A}_0$는 다음을 만족하는 집합족이다.</p>
-
-  <ol>
-    <li>$\varnothing, X \in \mathcal{A}_0$</li>
-    <li>$A \in \mathcal{A}_0 \implies A^c \in \mathcal{A}_0$</li>
-    <li>$A, B \in \mathcal{A}_0 \implies A \cup B \in \mathcal{A}_0$</li>
-  </ol>
-</blockquote>
-
-<p><em>Remark.</em> 2번 공리와 드모르간의 법칙에 의해, 3번 공리는 $A \cap B \in \mathcal{A}_0$ 또한 시사한다.</p>
-
-<p>대수의 3번 정의를 가산 합집합으로 강화하면 $\sigma$-대수의 정의를 얻는다. 즉,</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 집합 $X$의 <strong>$\sigma$-대수</strong> $\mathcal{A}$는 다음을 만족하는 대수이다.</p>
-
-  <ol>
-    <li>$\lbrace  A_n \rbrace _{n \in \mathbb{N}} \subset \mathcal{A}_0 \implies \bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $\lbrace \mathcal{A}_i \rbrace_{i \in I}$가 $X$의 $\sigma$-대수들의 모임이라면 $\bigcap_{i \in I}\mathcal{A}_i$ 또한 $X$의 $\sigma$-대수이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $\sigma$-대수의 정의로부터 쉽게 증명할 수 있다. 그런데 이렇게만 적으면 재미 없으니까, 조금 독특한 증명을 남긴다. <strong>워시-타르스키 정리<sub>Łoś-Tarski theorem</sub></strong>에 따르면 1차 이론이 교집합에 대해 보존적일 필요충분조건은 1차 이론의 모든 문장이 $\Pi_1$ 문장인 것이다. 그리고 $\sigma$-대수의 세 공리는 모두 $\Pi_1$ 문장이므로, $\sigma$-대수는 교집합에 대해 보존적이다. ■</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> $\mathcal{C}$가 $X$의 부분집합으로 이루어진 집합족일 때, $\mathcal{C}$를 포함하는 가장 작은 $\sigma$-대수가 존재한다. 그러한 $\sigma$-대수를 $\sigma(\mathcal{C})$와 같이 적는다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is an algebra containing } \mathcal{C} \rbrace$라고 하자. $\mathcal{P}(X) \in \mathcal{S}$이므로 $\mathcal{S}$는 공집합이 아니다. $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$이다.</p>
-
-<p>대표적인 $\sigma$-대수의 예시로, 보렐 $\sigma$-대수를 살펴보자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathcal{G}$가 $\mathbb{R}$의 열린 집합들의 집합족이라고 하자. $\sigma(\mathcal{G})$를 <strong>보렐 $\sigma$-대수<sub>Borel $\sigma$-algebra</sub></strong>라고 하며, $\mathcal{B}$와 같이 적는다.</p>
-</blockquote>
-
-<p>보렐 $\sigma$-대수는 <strong>보렐 위계<sub>Borel hierarchy</sub></strong>를 통해서 이해할 수도 있다. $\Sigma_1$을 열린 집합들의 모임, $\Pi_1$을 닫힌 집합들의 모임이라고 하자. 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$\Delta_n = \Sigma_n \cap \Pi_n$</li>
-  <li>$\Sigma_{n + 1} = \lbrace S : \exists \lbrace P_n \rbrace _{n \in \mathbb{N}} \subset \Pi_n \; S = \bigcup_{n \in \mathbb{N}} P_n \rbrace$</li>
-  <li>$\Pi_n = \lbrace P : \exists S \in \Sigma_n \; P = S^c \rbrace$</li>
-</ul>
-
-<p>즉 $\Sigma_2 = F_\sigma$, $\Pi_2 = G_\delta$이다. 합집합을 $\exists$, 교집합을 $\forall$로 생각했을 때 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 정의의 형태가 유사함에 주목하라.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{B} = \Sigma_{\omega_1} = \Pi_{\omega_1} = \Delta_{\omega_1}$</p>
-</blockquote>
-
-<p><strong>증명.</strong> 생략. 하지만 직관적으로 이해할 수 있다. $\mathcal{B}$는 가산 교집합과 가산 합집합, 그리고 여집합에 대해 닫혀 있어야 하므로 모든 가산 서수 $\alpha$에 대해 $\Sigma_\alpha, \Pi_\alpha, \Delta_\alpha \subset \mathcal{B}$이다. 이 사실로부터 초한 귀납을 취해 정리를 얻는다. ■</p>
-
-<p>어떤 집합 위의 대수와 예비측도라는 것이 주어졌을 때, 이로부터 측도를 정의하는 방법이 알려져 있다. 이 방법을 카라테오도리 방법<sub>Carathéodory method</sub>이라고 부른다. 예비측도는 구성하기가 매우 쉽기 때문에, 이 방법을 이용하면 측도를 아주 쉽게 구성할 수 있다. 카라테오도리 방법에 대해서는 <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">다음 글</a>에서 알아본다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/20/ramsey"> 램지 수와 무한 램지 정리 </a>
-      </h1>
-    <span class="post-date">20 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/조합론/'">
-        조합론
-      </div>
-      
-    </div>
-     <p><strong>초록.</strong> 램지 수의 정의와, 램지 수가 잘 정의됨을 보장하는 램지 정리를 살펴보고, 이를 무한 그래프로 확장한다. 또한 콤팩트성 정리를 이용하여 무한 램지 정리로부터 유한 램지 정리를 도출하는 논증을 소개한다.</p>
-
-<h2 id="도입">도입</h2>
-
-<blockquote>
-  <p><strong>문제.</strong> 6개의 정점을 가지는 완전 그래프의 간선을 빨간색 또는 파란색으로 색칠할 때, 세 변의 색이 모두 같은 삼각형이 존재함을 보이시오.</p>
-</blockquote>
-
-<p>일례로 다음 그림에서는 삼각형 ACF, 그리고 삼각형 BEF가 문제의 조건을 충족한다.</p>
-
-<p><img src="/public/finite-ramsey.png" width="350px" style="margin: 0 auto;" /></p>
-
-<p><strong>풀이.</strong> 임의의 정점에서 뻗어 나오는 간선의 개수는 5개이므로, 비둘기집의 원리에 따라 그중 적어도 3개는 같은 색을 가진다. 일반성을 잃지 않고, 간선 AB, AC, AD가 모두 빨간색이라고 하자. 만약 간선 BC, CD, DB 중 어느 하나가 빨간색이라면 세 변의 색이 모두 빨간색인 삼각형이 있다. 예를 들어 BC가 빨간색이라면 삼각형 ABC가 그러하다. 한편 BC, CD, DB가 모두 파란색이라면 삼각형 BCD는 세 변의 색이 모두 파란색이다. 따라서 세 변의 색이 모두 같은 삼각형이 적어도 하나 존재한다. ■</p>
-
-<h2 id="램지-정리">램지 정리</h2>
-
-<p>위 문제의 결론은 다음과 같이 표현할 수 있다. $G$가 정점수 6 이상인 완전 그래프일 때, $G$의 간선을 빨간색이나 파란색으로 칠하면 모든 간선이 빨간색인 정점수 3 이상의 부분 완전 그래프가 존재하거나, 모든 간선이 파란색인 정점수 3 이상의 부분 완전 그래프가 존재한다.</p>
-
-<p>이 결론을 일반화하여, 다음 질문을 던질 수 있다. $r, b$가 임의의 자연수라고 하자. $G$가 정점수 $j$ 이상인 완전 그래프일 때, $G$의 간선을 빨간색이나 파란색으로 칠하면 모든 간선이 빨간색인 정점수 $r$ 이상의 부분 완전 그래프가 존재하거나, 모든 간선이 파란색인 정점수 $b$ 이상의 부분 완전 그래프가 존재함이 보장되는 자연수 $j$가 존재하는가?</p>
-
-<p>램지 정리에 따르면 답은 <strong>그렇다</strong>이다. 구체적으로, 그러한 $j$ 중 가장 작은 수를 $R(r, b)$로 정의할 때, 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>램지 정리.</strong> 임의의 자연수 $r, b$에 대해 $R(r, b)$가 존재한다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $r + b$에 대한 귀납법으로 증명한다. 다음이 성립함을 보이면 충분한다.</p>
-
-\[R(r, b) \leq R(r-1, b) + R(r, b-1)\]
-
-<p>$R(r-1, b) = i, R(r, b-1) = j$라고 하자. $G$가 정점수 $i + j$인 완전 그래프라고 하고, $G$의 간선이 빨간색 또는 파란색으로 색칠되었다고 하자. 임의의 정점 $v \in G$에 대해, $v$와 빨간색 간선으로 연결된 정점들이 이루는 부분 완전 그래프를 $R$, 파란색 간선으로 연결된 정점들이 이루는 부분 완전 그래프를 $B$라고 하자. 다음이 성립한다.</p>
-
-\[|R| + |B| + 1 = i + j\]
-
-<p>따라서 다음 중 하나가 성립해야 한다.</p>
-
-<ol>
-  <li>$|R| \geq i$</li>
-  <li>$|B| \geq j$</li>
-</ol>
-
-<p>1의 경우, $R(r-1, b) = i$이므로 $R$은 모든 간선이 빨간색인 정점수 $r-1$의 부분 완전 그래프를 가지거나, 모든 간선이 파란색인 정점수 $b$의 부분 완전 그래프를 가진다. 후자의 경우 $R(r, b)$의 조건이 충족되고, 전자의 경우 해당 그래프에 $v$를 추가한 그래프가 $R(r, b)$의 조건을 충족한다. 2의 경우도 마찬가지 논리가 성립한다. ■</p>
-
-<p>서두의 문제는 $R(3, 3) \leq 6$임을 시사한다. 그리고 정점수가 5인 그래프 중에서는 문제의 조건을 만족하지 않는 그래프가 있음이 알려져 있기 때문에, $R(3, 3) = 6$이다. 또한 다음이 자명하다.</p>
-
-<ul>
-  <li>$R(r, b) = R(b, r)$</li>
-  <li>$R(r, 2) = r$</li>
-</ul>
-
-<p>그러나 일반적인 값에 대해 램지 수를 정확히 계산하는 것은 매우 어려운 문제이다. 그래프의 정점 수에 따라 탐색해야 하는 경우의 수가 지수적 증가보다 빠르게 증가하기 때문이다. 현재 알려진 가장 빠른 램지 수 탐색 알고리즘의 시간 복잡도는 $O(c^{n^2})$이다. $R(5, 5)$의 값을 구하는 문제는 아직도 미해결 문제이며, 다만 43 이상 48 이하라는 사실이 알려져 있다. 이에 관해 다음 일화가 전해진다.</p>
-
-<blockquote>
-  <p>에르되시는 이런 이야기를 한 적이 있다. 우리보다 훨씬 진보한 외계 군단이 지구에 착륙해서는, $R(5, 5)$의 값을 계산해 내놓지 않는다면 지구를 산산조각낼 것이라 말했다고 상상해 보자. 에르되시가 주장하길, 이 경우에는 우리가 가진 모든 컴퓨터와 수학자를 모아들여서 계산을 시도해 봐야 한다. 그러나 만약 그들이 요구한 값이 $R(6, 6)$이라면, 에르되시 왈 이 경우에는 외계 군단을 무찌를 계획을 세우는 편이 낫다.¹</p>
-</blockquote>
-
-<h2 id="다수의-색에-대한-램지-정리">다수의 색에 대한 램지 정리</h2>
-
-<p>두 가지보다 많은 색을 사용하는 경우에도 램지 정리가 성립한다. 먼저 $R(n_1, n_2, \dots, n_k) = j$를, $k$가지 색을 사용하여 정점수가 $j$인 완전 그래프의 간선을 색칠했을 때 다음 중 적어도 하나가 언제나 존재하게 되는 가장 작은 $j$로 정의하자.</p>
-
-<ul>
-  <li>모든 간선이 1번째 색인 정점수 $n_1$의 부분 완전 그래프</li>
-  <li>모든 간선이 2번째 색인 정점수 $n_2$의 부분 완전 그래프</li>
-  <li>…</li>
-  <li>모든 간선이 $k$번째 색인 정점수 $n_k$의 부분 완전 그래프</li>
-</ul>
-
-<p>예를 들어 $R(3, 3, 3) = 17$임이 알려져 있다. 이는 정점수가 17 이상인 완전 그래프의 간선을 빨간색, 파란색, 또는 노란색으로 색칠하면 세 변의 색이 모두 빨간색이거나, 파란색이거나, 노란색인 삼각형이 언제나 존재한다는 의미이다.</p>
-
-<blockquote>
-  <p><strong>다수의 색에 대한 램지 정리.</strong> 임의의 자연수 $n_1, \dots, n_k$에 대해 $R(n_1, \dots, n_k)$가 존재한다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $k$에 대한 귀납법으로 증명한다. 다음이 성립함을 보이면 충분하다.</p>
-
-\[R(n_1, \dots, n_k) \leq R(n_1, \dots, n_{k-2}, R(n_{k-1}, n_k))\]
-
-<p>부등식의 우변을 $j$라고 하자. $G$가 정점수 $j$인 완전 그래프라고 하고, $G$의 간선을 $k$개의 색을 사용하여 색칠하자. 잠시 $k - 1$번째 색과 $k$번째 색을 동일시하자. 그렇다면 $j$의 정의에 의해 다음 중 적어도 하나가 $G$에 존재한다.</p>
-
-<ul>
-  <li>모든 간선이 1번째 색인 정점수 $n_1$의 부분 완전 그래프</li>
-  <li>모든 간선이 2번째 색인 정점수 $n_2$의 부분 완전 그래프</li>
-  <li>…</li>
-  <li>모든 간선이 $k-2$번째 색인 정점수 $n_{k-2}$의 부분 완전 그래프</li>
-  <li>모든 간선이 $k - 1$번째 색 = $k$번째 색인 정점수 $R(n_{k-1}, n_k)$의 부분 완전 그래프</li>
-</ul>
-
-<p>마지막 경우를 제외하고는 $R(n_1, \dots, n_k)$의 조건을 만족하므로, 마지막 경우만 고려하면 된다. 마지막 경우가 보장하는 부분 완전 그래프를 $H$라고 하자. $R(n_{k-1}, n_k)$의 정의에 의해 $H$는 다음 중 적어도 하나를 가진다.</p>
-
-<ul>
-  <li>모든 간선이 $k-1$번째 색인 정점수 $n_{k-1}$의 부분 완전 그래프</li>
-  <li>모든 간선이 $k$번째 색인 정점수 $n_k$의 부분 완전 그래프</li>
-</ul>
-
-<p>각 경우가 $R(n_1, \dots, n_k)$의 조건을 만족하므로, 모든 경우에 대해 $G$는 $R(n_1, \dots, n_k)$를 만족한다. ■</p>
-
-<h2 id="에르되시-라도-화살표">에르되시-라도 화살표</h2>
-
-<p>지금까지 우리는 간선의 색칠을 살펴 보았다. 간선은 두 정점 사이의 관계이다. 여기서 나아가, $n$개의 정점 사이의 관계를 색칠하는 상황을 떠올릴 수 있다.</p>
-
-<p>논의의 편의를 위해 몇 가지 정의를 도입하자. 먼저 집합론적 자연수의 정의를 채택하여, $n = \lbrace0, 1, \dots, n-1\rbrace$로 정의한다. 또한 다음의 표기를 도입한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $A$가 집합일 때, 다음과 같이 정의한다.</p>
-
-\[A^{(n)} = \{ S: S \subset A, |S| = n \}\]
-</blockquote>
-
-<p>즉, 자연수 $j$에 대해 $j^{(n)}$은 $_jC_n$의 각 경우를 원소로 가지는 집합이다. 예를 들어,</p>
-
-\[4^{(2)} = \bigg\{ \{ 0, 1\}, \{0, 2 \}, \{0, 3\}, \{1, 2 \}, \{1, 3\}, \{2, 3\} \bigg\}\]
-
-<p>주어진 집합을 $m$으로 <strong>분할</strong>한다는 것은, 집합의 각 원소를 $m$개의 범주 중 하나로 분류하는 것을 말한다. 예를 들어 $4^{(2)}$를 3개로 분류한 한 가지 결과는 다음과 같다.</p>
-
-\[\bigg\{ \big\{ \{0, 1\}, \{ 0, 2 \}, \{1, 2\} \big\}, \big\{ \{0, 3\}, \{2, 3 \} \big\}, \big\{ \{1, 3 \} \big\} \bigg\}\]
-
-<p>위 분할에서 $0, 1, 2$끼리 이루어진 집합은 모두 같은 범주에 속해 있다. 이것을 두고 $0, 1, 2$는 해당 분할에 대해 <strong>동질적<sub>homogeneous</sub></strong>이라고 한다.</p>
-
-<p>다음의 표기를 정의한다. 이 표기를 <strong>에르되시-라도 화살표<sub>Erdős-Rado arrow</sub></strong>라고 부른다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $j^{(n)}$을 $m$으로 분할할 때 동질적인 $k$개의 원소가 언제나 존재할 경우 다음과 같이 표기한다.</p>
-
-\[j \rightarrow (k)^n_m\]
-</blockquote>
-
-<p>서두의 문제는 $6 \rightarrow (3)^2_2$임을 시사한다. $n = 2$인 이유는 간선이 두 정점 사이의 관계이기 때문이고, $m = 2$인 이유는 색이 두 가지이기 때문이다.</p>
-
-<p>앞서 본 램지 정리에 의해 다음이 성립한다.</p>
-
-\[\forall k\; \exists j: j \to (k)^2_2\]
-
-<p>한편 다수의 색에 대한 램지 정리는 다음을 시사한다.</p>
-
-\[\forall k, m \; \exists j : j \to (k)^2_m\]
-
-<p>일반적으로 다음이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>유한 에르되시-라도 정리.</strong> 임의의 자연수 $n, m, k$에 대해, 다음을 만족하는 자연수 $j$가 존재한다.</p>
-
-\[j \rightarrow (k)^n_m\]
-</blockquote>
-
-<h2 id="무한-램지-정리">무한 램지 정리</h2>
-
-<p>흥미롭게도 램지 정리는 $k$가 무한 기수<sub>cardinal</sub>일 때에도 성립한다. 다음이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>에르되시-라도 정리.</strong> 임의의 기수 $\lambda$와 자연수 $n, m$에 대해, 다음을 만족하는 기수 $\kappa$가 존재한다.</p>
-
-\[\kappa \rightarrow (\lambda)^n_m\]
-</blockquote>
-
-<p>특히 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>무한 램지 정리.</strong> \(\aleph_0 \rightarrow (\aleph_0)^n_m\)</p>
-</blockquote>
-
-<p>즉 힐베르트 호텔의 투숙객들이 임의로 악수를 나눌 때, 서로 모두 악수를 나눈 사람들이 무한히 많거나, 서로 전혀 악수를 나누지 않은 사람들이 무한히 많다.</p>
-
-<p>위 정리에 대한 증명은 필자 뇌피셜이기 때문에 오류가 있다면 알려주길 바란다.</p>
-
-<p><strong>증명.</strong> $n = m = 2$인 경우에 대해 증명한다. $G$가 크기가 $\aleph_0$인 완전 그래프라고 하자. $G$의 간선들을 빨간색 또는 파란색으로 색칠한다. $G$의 정점 $v, w$에 대해, $\overline{vw}$가 빨간색이면 $\overline{vw} \in R$, 파란색이면 $\overline{vw} \in B$와 같이 표현하자.</p>
-
-<p>임의의 $G$의 정점 $v_0$에 대해, 다음과 같이 정의하자.</p>
-
-\[\begin{aligned}
-R_1 = \{ w \in G : \overline{v_0w} \in R \}\\
-B_1 = \{ w \in G : \overline{v_0w} \in B \}
-\end{aligned}\]
-
-<p>$R_1 \cup B_1 \cup \lbrace v_0 \rbrace = G$이므로, $R_1$과 $B_1$ 중 적어도 하나는 무한집합이다. 만약 $R_1$이 무한집합이라면 $v_0 \in R$와 같이 표기하고, $B_1$이 무한집합이라면 $v_0 \in B$와 같이 표기하자.</p>
-
-<p>$R_1$이 무한집합이라고 가정하자. 선택 공리로부터 $R_1$의 원소 $v_1$을 선택할 수 있다. 이제 다음과 같이 정의하자.</p>
-
-\[\begin{aligned}
-R_2 = \{ w \in R_1 : \overline{v_1w} \in R \}\\
-B_2 = \{ w \in R_1 : \overline{v_1w} \in B \}
-\end{aligned}\]
-
-<p>$R_2 \cup B_2 \cup \lbrace v_1\rbrace = R_1$이므로, $R_2$와 $B_2$ 중 적어도 하나는 무한집합이다. 마찬가지로 $R_2$가 무한집합이라면 $v_1 \in R$, $B_2$가 무한집합이라면 $v_1 \in B$와 같이 표기하자.</p>
-
-<p>$B_2$가 무한집합이라고 가정하자. $B_2$의 원소 $v_2$를 선택하여 다음과 같이 정의하자.</p>
-
-\[\begin{aligned}
-R_3 = \{ w \in B_2 : \overline{v_2w} \in R \}\\
-B_3 = \{ w \in B_2 : \overline{v_2w} \in B \}
-\end{aligned}\]
-
-<p>이같은 식으로 반복함으로써 다음의 정점열을 얻는다.</p>
-
-\[V = \{ v_0, v_1, v_2, v_3, \dots \}\]
-
-<p><img src="/public/infinite-ramsey.png" width="100%" style="margin: 0 auto;" /></p>
-
-<p>각 $v \in V$에 대해 $v \in R$ 또는 $v \in B$이다. $V$가 무한집합이므로, 다음 중 하나는 무한집합이다.</p>
-
-\[\begin{aligned}
-H = \{ v \in V : v \in R \} \\
-K = \{ v \in V : v \in B \}
-\end{aligned}\]
-
-<p>만약 $H$가 무한집합이라면 $H$의 정점들이 이루는 완전 그래프는 간선의 색이 모두 빨간색이다. 한편 $K$가 무한집합이라면 $K$의 정점들이 이루는 완전 그래프는 간선의 색이 모두 파란색이다. 따라서 $\aleph_0 \rightarrow (\aleph_0)^2_2$이다. ■</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> $A$가 $\mathbb{N}$의 무한 부분집합일 때, 어떤 $A$의 무한 부분집합 $B$가 존재하여 다음 중 하나가 성립한다.</p>
-
-  <ul>
-    <li>임의의 $b \in B$에 대해, $c$가 $b$보다 큰 $B$의 원소라면 $b \mid c$이다.</li>
-    <li>임의의 $b, c \in B$에 대해, $b \nmid c, c \nmid b$이다.</li>
-  </ul>
-</blockquote>
-
-<p><strong>증명.</strong> $k = A$로 잡고, $x &lt; y$에 대해 $x \mid y$라면 $\lbrace x, y \rbrace$를 1번 범주로, 그렇지 않으면 2번 범주로 분류하는 분할을 고려한 뒤 $\aleph_0 \rightarrow (\aleph_0)^2_2$임을 사용한다. ■</p>
-
-<h2 id="무한에서-유한으로">무한에서 유한으로</h2>
-
-<p>흥미롭게도 콤팩트성 정리를 사용하면 무한 램지 정리로부터 유한 램지 정리를 증명할 수 있다. 즉, 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $\aleph_0 \rightarrow (\aleph_0)^n_m$라면, 임의의 자연수 $k$에 대해 $j \to (k)^n_m$을 만족하는 자연수 $j$가 존재한다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $n = 2$일 때를 증명한다. 간선이 $m$가지 색으로 색칠된 그래프는 다음과 같이 형식화할 수 있다. 먼저 언어 $\mathcal{L} = (V, f, 1, 2, \dots, m)$의 부호수<sub>signature</sub>을 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$V$는 단항 관계이다.</li>
-  <li>$f$는 이변수 함수이다.</li>
-  <li>$1, 2, \dots, m$은 상수이다.</li>
-</ul>
-
-<p>$T$가 다음으로 이루어진 $\mathcal{L}$-이론이라고 하자.</p>
-
-<ul>
-  <li>$\psi : \lnot V(1) \land \lnot V(2) \land \lnot V(m)$</li>
-  <li>$\theta : \forall x, y \; (V(x) \land V(y) \land x \neq y) \rightarrow ( f(x, y) = 1 \lor f(x, y) = 2 \lor \cdots \lor f(x, y) = m )$</li>
-  <li>$\phi_1 : \exists x_1, x_2 \; V(x_1) \land V(x_2) \land x_1 \neq x_2$</li>
-  <li>$\phi_2 : \exists x_1, x_2, x_3 \; V(x_1) \land V(x_2) \land V(x_3) \land x_1 \neq x_2 \land x_2 \neq x_3 \neq x_1 \neq x_3$</li>
-  <li>각 $n \in \mathbb{N}$에 대해, $\phi_n$</li>
-</ul>
-
-<p>$\psi$는 $1, 2, \dots, m$이 정점이 아니라 색을 표현한다는 의미이다. $\theta$는 임의의 두 정점 간 간선이 $1$부터 $m$ 중 하나의 색을 가짐을 의미한다. 그리고 $\phi_n$은 적어도 $n$개의 정점이 존재한다는 의미이다. 임의의 $n$에 대해 $\phi_n \in T$이므로, $T$의 모델은 무한 완전 그래프이다.</p>
-
-<p>다음의 문장을 $\chi$라고 하자.</p>
-
-\[\exists x_1, x_2, \dots, x_k : f(x_1, x_2) = f(x_1, x_3) = \dots = f(x_{k-1}, x_k)\]
-
-<p>즉, $\chi$는 정점수 $k$인 동색의 부분 완전 그래프가 존재한다는 의미이다. 따라서 무한 램지 정리에 따라 다음이 성립한다.</p>
-
-\[T \vDash \psi\]
-
-<p>그리고 콤팩트성 정리에 따라 어떤 유한 부분이론 $T’ = \lbrace \psi, \chi, \phi_1, \dots, \phi_j \rbrace$가 존재하여 다음이 성립한다.</p>
-
-\[T' \vDash \psi\]
-
-<p>즉, 정점수 $j$ 이상인 모든 완전 그래프는 $\psi$를 만족한다. 다시 말해, $j \to (k)^2_m$이다. 임의의 $n$에 대해서 증명하려면 $R$을 $n$항 관계로 두면 된다. ■</p>
-
-<p>¹ Joel H. Spencer (1994), <em>Ten Lectures on the Probabilistic Method</em></p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/13/spectral-theorem"> 어드조인트, 정규 변환, 그리고 스펙트럼 정리 </a>
-      </h1>
-    <span class="post-date">13 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/대수학/'">
-        대수학
-      </div>
-      
-    </div>
-     <p>이 글에서 모든 벡터 공간은 내적 공간이라고 가정한다. 또한, 모든 변환은 선형 변환이다.</p>
-
-<h2 id="1-선형-변환의-어드조인트">1. 선형 변환의 어드조인트</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $(V, \langle \cdot \rangle_V), (W, \langle \cdot \rangle_W)$가 내적 벡터 공간이라고 하자. $T: V \to W$에 대해, $T$의 <strong>어드조인트<sub>adjoint</sub></strong> $T^\ast: W \to V$는 다음 조건을 만족하는 선형 변환이다.</p>
-
-\[\forall v \in V, w \in W : \quad \langle w, Tv \rangle_W = \langle T^\ast w, v \rangle_V\]
-</blockquote>
-
-<p><a href="https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">범주론의 어드조인트 정의</a>를 떠올려 보면 식의 형태가 비슷하다.</p>
-
-<p>이 정의를 정당화하려면 모든 $T$에 대해 어드조인트가 유일하게 존재함을 보여야 한다. 이는 리스 표현 정리<sub>Riesz representation theorem</sub>로부터 얻어진다.</p>
-
-<blockquote>
-  <p><strong>리스 표현 정리.</strong> $V$가 내적 공간이라고 하자. $\phi \in V^\ast$에 대해, 다음을 만족하는 벡터 $v$가 유일하게 존재한다.</p>
-
-\[\forall u \in V : \quad \phi(u) = \langle u, v \rangle\]
-</blockquote>
-
-<p>$V$가 유한 차원일 경우, 위 정리는 $V$의 직교 기저를 잡음으로써 쉽게 보여진다. $V$가 일반적인 힐베르트 공간일 경우에는 증명이 더 까다롭기 때문에 생략한다.</p>
-
-<p>리스 표현 정리로부터 어드조인트의 정의를 다음과 같이 정당화할 수 있다. $w \in W$가 주어졌을 때, 사상 $v \mapsto \langle w, Tv \rangle$는 $V^\ast$의 원소이다. 따라서 어떤 $u_w \in V$가 존재하여</p>
-
-\[\forall v \in V : \langle w, Tv \rangle = \langle u_w, v \rangle\]
-
-<p>이다. 이 때 사상 $w \mapsto u_w$는 선형임을 쉽게 보일 수 있다. 이 선형 사상이 우리가 구하고자 하는 어드조인트이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $T^\ast = T$인 선형 사상 $T : V \to V$를 <strong>자기 어드조인트<sub>self-adjoint</sub></strong>라고 한다.</p>
-</blockquote>
-
-<p>$T : V \to W$의 행렬 표현이 $M$일 때, 동일한 기저에서 $T^\ast$의 행렬 표현은 $M$의 켤레 전치, 즉 $M^\dagger$임을 — 다소 번거롭긴 하지만 — 어렵지 않게 보일 수 있다. 따라서 자기 어드조인트 변환의 행렬은 에르미트<sub>Hermitian</sub> 행렬이다.</p>
-
-<blockquote>
-  <p><strong>복소 자기 어드조인트 판별볍.</strong> $V$가 복소 벡터 공간일 때, $T: V \to V$가 자기 어드조인트 변환일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle \in \mathbb{R}$인 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 필요조건은 자명하므로 충분조건임을 보인다. 먼저 다음 보조정리를 증명한다.</p>
-
-<p><em>보조정리.</em> $V$가 복소 벡터 공간이라고 하자. $T : V \to V$에 대해, $T = 0$일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle = 0$인 것이다.</p>
-
-<p><em>보조정리의 증명.</em> 필요조건은 자명하므로 충분조건임을 보인다. 임의의 $u, v \in V$에 대해,</p>
-
-\[\langle T(u + v) , u + v \rangle = \langle Tu, v \rangle + \langle Tv, u \rangle = 0\]
-
-<p>이고,</p>
-
-\[\begin{aligned}
-\langle T(u + iv), u + iv \rangle &amp;= \langle T(u), iv \rangle + \langle T(iv), u \rangle \\ &amp;= -i \langle Tu, v \rangle + i \langle Tv, u \rangle = 0
-\end{aligned}\]
-
-<p>이다. 두 식을 연립하면 $\langle Tu, v \rangle = 0$을 얻는다. 이로부터 $T = 0$임을 보이기는 쉽다. □</p>
-
-<p>이제 본 정리를 보인다. $\langle Tv, v \rangle \in \mathbb{R}$이므로, $\langle Tv, v \rangle = \langle v, Tv \rangle$이다. 또한 어드조인트의 정의에 의해 $\langle Tv, v \rangle = \langle v, T^\ast v \rangle$이다. 따라서 $\langle v, (T - T^\ast)v \rangle = 0$이다. 보조정리로부터 $T = T^\ast$가 따라 나온다. ■</p>
-
-<blockquote>
-  <p><strong>자명한 자기 어드조인트 판별법.</strong> $V$가 실수 또는 복소 벡터 공간이라고 하자. 자기 어드조인트 변환 $T: V \to V$에 대해, $T = 0$일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle = 0$인 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 복소 벡터 공간인 경우에는 위의 보조정리로부터 따라 나온다. 따라서 $V$가 실수 벡터 공간인 경우에만 증명한다. 필요조건은 자명하므로 충분조건임을 보인다. 임의의 $u, v \in V$에 대해,</p>
-
-\[\begin{aligned}
-\langle T(u + v), u + v \rangle &amp;= \langle Tu, v \rangle + \langle Tv, u \rangle &amp;&amp;(\because \langle Tv, v \rangle = 0) \\
-&amp;= \langle Tu, v \rangle + \langle u, Tv \rangle &amp;&amp;(\because \mathrm{im} \langle \cdot \rangle \subset \mathbb{R}) \\
-&amp;= 2\langle Tu, v \rangle &amp;&amp;(\because T^\ast = T)
-\end{aligned}\]
-
-<p>즉 임의의 $u, v \in V$에 대해 $\langle Tu, v \rangle = 0$이므로 $T = 0$이다. ■</p>
-
-<h2 id="2-정규-선형-변환">2. 정규 선형 변환</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $T : V \to V$에 대해 $TT^\ast = T^\ast T$일 때, $T$를 <strong>정규<sub>normal</sub></strong>라고 한다.</p>
-</blockquote>
-
-<p>모든 자기 어드조인트 변환은 정규 변환이지만 그 역은 성립하지 않는다.</p>
-
-<blockquote>
-  <p><strong>정규 판별법.</strong> $V$가 실수 또는 복소 벡터 공간이라고 하자. $T: V \to V$가 정규일 필요충분조건은 임의의 $v$에 대해 $\lVert Tv \rVert = \lVert T^\ast v \rVert$인 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> “자명한 자기 어드조인트 판별법”으로부터 따라 나온다. ■</p>
-
-<blockquote>
-  <p><strong>정규 고유벡터의 켤레성.</strong> $V$가 실수 또는 복소 벡터 공간이고, $T : V \to V$가 정규라고 하자. $v$가 고윳값 $\lambda$를 가지는 $T$의 고유벡터일 때, $v$는 고윳값 $\bar{\lambda}$를 가지는 $T^\ast$의 고유벡터이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $T$가 정규일 때, $T - \lambda I$ 또한 정규임을 쉽게 보일 수 있다. 따라서,</p>
-
-\[\lVert (T - \lambda I) v \rVert = \lVert (T - \lambda I)^\ast v \rVert = \lVert (T^\ast - \bar{\lambda} I) v \rVert = 0. \quad \blacksquare\]
-
-<p>‘정규’라는 이름의 유래는 다음 정리에 있다.</p>
-
-<blockquote>
-  <p><strong>정규 고유벡터의 정규성.</strong> $T: V \to V$가 정규라고 하자. $u, v \in V$가 서로 다른 고윳값을 가지는 $T$의 고유벡터라면 $u$와 $v$는 직교한다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $u, v$의 고윳값이 $\alpha, \beta$라고 하자.</p>
-
-\[\begin{aligned}
-(\alpha - \beta)\langle u, v \rangle &amp;= \langle \alpha u, v \rangle - \langle u, \bar{\beta}v \rangle \\
-&amp;= \langle Tu, v \rangle - \langle u, T^\ast v \rangle = 0.
-\end{aligned}\]
-
-<p>$\alpha - \beta \neq 0$이므로 $\langle u, v \rangle = 0$이다. ■</p>
-
-<h2 id="3-스펙트럼-정리spectral-theorems">3. 스펙트럼 정리<sub>Spectral theorems</sub></h2>
-
-<p>‘스펙트럼’이라는 이름은, 스펙트럼 정리가 양자역학에서 원자의 스펙트럼을 설명할 때 쓰였던 것에서 유래했다는 설이 흔히 전해지지만, 이것은 사실이 아니다. 스펙트럼 정리를 사용해서 원자의 스펙트럼을 설명하기 이전에 이미 힐베르트가 ‘스펙트럼’이라는 표현을 쓴 바 있기 때문이다. 정확한 유래는 알려져 있지 않은데, 고유벡터들이 힐베르트 공간의 특성을 나타낸다는 점에서 빛의 스펙트럼과 유사하다는 이미지 때문이 아니었을까 추측해 봄직하다.</p>
-
-<blockquote>
-  <p><strong>복소 스펙트럼 정리.</strong> $V$가 복소 벡터 공간이라고 하자. $T: V \to V$가 정규일 필요충분조건은, $T$의 고유벡터들이 $V$의 직교 기저를 이루는 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> <em>TODO</em> ■</p>
-
-<blockquote>
-  <p><strong>실수 스펙트럼 정리.</strong> $V$가 실수 벡터 공간이라고 하자. $T: V \to V$가 자기 어드조인트일 필요충분조건은, $T$의 고유벡터들이 $V$의 직교 기저를 이루는 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> <em>TODO</em> ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/13/three-definitions-of-adjoint"> 어드조인트에 대한 세 가지 접근 </a>
-      </h1>
-    <span class="post-date">13 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/범주론/'">
-        범주론
+      <div class="tag" onclick="location.href='/tags/상대론/'">
+        상대론
       </div>
       
     </div>
      <blockquote>
-  <p>본문의 내용은 Tom Leinster, <em>Basic Category Theory</em>에 기반한다.</p>
-</blockquote>
-
-<p>$\mathcal{A}, \mathcal{B}$가 범주<sub>category</sub>이고, $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자<sub>functor</sub>라고 하자.</p>
-
-<h2 id="1-자연성-공리naturality-axiom를-이용한-어드조인트의-정의">1. 자연성 공리<sub>naturality axiom</sub>를 이용한 어드조인트의 정의</h2>
-
-<p>$F \dashv G$라는 것은 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 일대일대응 $\Psi_{A, B} : \mathrm{Hom}_\mathcal{A}(A, G(B)) \to \mathrm{Hom}_\mathcal{B}(F(A), B)$가 존재하여, 임의의 $p: A’ \to A, q: B \to B’$에 대해 다음 가환 도식<sub>commutative diagram</sub>을 만족한다는 것이다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="300px" style="border-radius: 8px; border: none;"></iframe>
-
-<p>편의를 위해 $f: A \to G(B)$에 대해 $\Psi_{A, B}(f) = \bar{f}$, 그리고 $g: F(A) \to B$에 대해 $\Psi_{A, B}^{-1}(g) = \bar{g}$와 같이 표기한다. 이에 따라 위의 가환 도식을 다음과 같이 표현할 수 있다.</p>
-
-\[\begin{gather}
-\overline{A \xrightarrow{f} G(B) \xrightarrow{G(q)} G(B') } = F(A) \xrightarrow{\bar{f}} B \xrightarrow{q} B' \\
-\overline{F(A') \xrightarrow{F(p)} F(A) \xrightarrow{g} B} = A' \xrightarrow{p} A \xrightarrow{\bar{g}} G(B) \\\\
-\mathrm{i.e.}\\\\
-\overline{G(q) \circ f} = q \circ \bar{f}\\
-\overline{g \circ F(p)} = \bar{g} \circ p
-\end{gather}\]
-
-<p>위 두 조건을 자연성 공리라고 부른다. 자연성 공리로부터 다음을 증명할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리 1.</strong> $\eta_A := \overline{1_{F(A)}} : A \to GF(A)$와 같이 정의된 변환 $\eta: 1_{\mathcal{A}} \to GF$는 자연적 변환<sub>natural transformation</sub>이다. 그리고 $\epsilon_B := \overline{1_{G(B)}} : FG(B) \to B$와 같이 정의된 변환 $\epsilon: FG \to 1_{\mathcal{B}}$ 또한 자연적 변환이다. $\eta$를 <strong>단원</strong><sub>unit</sub>이라고 부르고, $\epsilon$을 <strong>쌍단원</strong><sub>counit</sub>이라고 부른다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 다음 가환 도식으로부터 얻어진다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ==&amp;embed" width="100%" height="260" style="border-radius: 8px; border: none;"></iframe>
-
-<blockquote>
-  <p><strong>정리 2.</strong> $f: A \to G(B), g: F(A) \to B$에 대해 다음이 성립한다.</p>
-
-\[\begin{gather}
-\bar{f} = \epsilon_B \circ F(f) \\
-\bar{g} = G(g) \circ \eta_A
-\end{gather}\]
-</blockquote>
-
-<p><strong>증명.</strong> 다음 가환 도식으로부터 얻어진다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="200" style="border-radius: 8px; border: none;"></iframe>
-
-<h2 id="2-단원과-쌍단원을-이용한-어드조인트의-정의">2. 단원과 쌍단원을 이용한 어드조인트의 정의</h2>
-
-<p>$F \dashv G$라는 것은 어떤 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF, \epsilon: FG \to 1_{\mathcal{B}}$가 존재하여, 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 다음 가환 도식을 언제나 만족한다는 것이다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d&amp;embed" width="100%" height="220" style="border-radius: 8px; border: none;"></iframe>
-
-<p>위 두 조건을 삼각 항등식<sub>triangle identity</sub>이라고 부른다.</p>
-
-<h2 id="3-초기-대상initial-object을-이용한-어드조인트의-정의">3. 초기 대상<sub>initial object</sub>을 이용한 어드조인트의 정의</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $P: \mathcal{A} \to \mathcal{C}$, $Q: \mathcal{B} \to \mathcal{C}$가 함자일 때, <strong>콤마 범주<sub>comma category</sub></strong> $(P \Rightarrow Q)$를 다음과 같이 정의한다.</p>
-
-  <ul>
-    <li>대상: $\mathcal{C}$의 사상 $h: P(A) \to Q(B)$에 대해, 삼중쌍<sub>triplet</sub> $(A, h, B)$</li>
-    <li>사상: 다음의 가환 도식이 성립할 때, $(f, g): (A, h, B) \to (A’, h’, B’)$</li>
-  </ul>
-</blockquote>
-
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJQKEEpIl0sWzIsMCwiUChBJykiXSxbMCwxLCJRKEIpIl0sWzIsMSwiUShCJykiXSxbMCwyLCJoIiwyXSxbMSwzLCJoJyJdLFswLDEsIlAoZikiXSxbMiwzLCJRKGcpIiwyXV0=&amp;embed" width="100%" height="230" style="border-radius: 8px; border: none;"></iframe>
-
-<p>$F \dashv G$라는 것은 어떤 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF$가 존재하여, 각 $A \in \mathcal{A}$에 대해 $A$를 홑원소 범주 $\mathbf{1}$에서 $\mathcal{A}$로 가는 함자 $A: 1 \mapsto A$로 간주했을 때 $\eta_A : A \to GF(A)$가 콤마 범주 $(A \Rightarrow G)$의 초기 대상이라는 것이다.</p>
-
-<h2 id="4-동치-증명">4. 동치 증명</h2>
-
-<p>1, 2, 3의 정의는 모두 동치이다. 구체적으로 다음의 정리가 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리 3.</strong> $\mathcal{A}, \mathcal{B}$가 범주이고 $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자라고 하자. 1, 2, 3은 서로 일대일 대응된다.</p>
+  <p>우주선 A, B가 가느다란 실로 연결된 채 관성 상태에 있다가 동시에 같은 가속도로 광속에 가깝게 운동하기 시작한다. A와 B를 연결하는 실은 어떻게 되는가?</p>
 
   <ol>
-    <li>자연성 공리를 만족하는 일대일대응 $\Psi$</li>
-    <li>삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta: 1_{\mathcal{A}} \to GF, \epsilon: FG \to 1_{\mathcal{B}})$</li>
-    <li>각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상이 되도록 하는 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF$</li>
+    <li>끊어진다.</li>
+    <li>느슨해진다.</li>
+    <li>변화가 없다.</li>
   </ol>
 </blockquote>
 
-<p><strong>증명.</strong> 1과 2가 일대일 대응됨을 보이고, 2와 3이 일대일 대응됨을 보인다.</p>
+<p>이 문제는 드원과 베란이 1959년에 처음 고안했으나 1976년에 존 스튜어트 벨이 CERN의 물리학자들과 나눈 토론을 통해 유명해졌다. 벨은 로렌츠 수축을 근거로 실이 끊어진다고 주장했으나 CERN의 물리학자들 대다수는 실에 변화가 없다고 반박했으며, 한 저명한 물리학자는 벨이 상대론을 오도하고 있다고까지 말했다. 그렇다면 정답은 과연 무엇일까?</p>
 
-<h4 id="1과-2는-일대일-대응된다">1과 2는 일대일 대응된다.</h4>
+<p>정답은 <strong>1. 끊어진다</strong> 이다.</p>
 
-<p>$\Psi$가 주어졌을 때, $\eta$와 $\epsilon$을 각각 단원과 쌍단원으로 정의한다. 이때, $\eta$와 $\epsilon$이 삼각 항등식을 만족함은 정리 2로부터 쉽게 따라 나온다.</p>
+<p>이 답은 일면 비직관적이다. 로렌츠 수축은 관성계에 의존적인 현상이기 때문이다. 일례로 철수에 대해 영희가 광속에 가깝게 움직인다면 영희는 수축한다. 하지만 동 상황에서 영희의 관성계를 기준으로는 철수가 광속에 가깝게 움직이므로 철수가 수축한다. 이같은 대칭성은 로렌츠 수축이 실재하는 물리적 현상이 아닌 관성계의 선택에 따른 수학적 현상임을 시사한다. 이같은 로렌츠 수축의 해석은 Rindler 1977의 글에서 볼 수 있듯이 물리학계에서 널리 퍼져있다.</p>
 
-<p>역으로 삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta, \epsilon)$이 주어졌다고 하자. 이로부터 다음과 같이 $\Psi$를 정의한다. $f: A \to G(B), g: F(A) \to B$에 대해,</p>
+<blockquote>
+  <p>로렌츠에 따르면 수축의 원인은 원자 구조를 밀집시키는 전기적 응집력이 [물체가 에테르를 통과함에 따라] 증가하는 데 있다… [하지만] 상대론에서 로렌츠 수축은 본질적으로 기하학적 투영 효과로서, 정지해 있는 막대기를 비스듬한 시선으로 보는 것과 유사하다.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
+</blockquote>
 
-\[\begin{gather}
-\Psi_{A, B}(f) = \bar{f} = \epsilon_B \circ F(f) \\
-\Psi_{A, B}^{-1} = \bar{g} = G(g) \circ \eta_A
-\end{gather}\]
+<p>그러나 Rindler의 설명은 반만 맞고 반은 틀렸다. 그 이유는 로렌츠 수축에 두 가지 유형이 있기 때문이다. <strong>수동적 로렌츠 변환<sub>passive Lorentz transformation</sub></strong>의 경우에는 Rindler의 주장대로 로렌츠 수축이 관성계의 선택에 따른 부수 현상에 불과하지만, <strong>능동적 로렌츠 변환<sub>active Lorentz transformation</sub></strong>의 경우에는 로렌츠 수축이 전기력의 증가와 같은 실질적 물리 현상을 야기한다. 본 글에서는 두 변환의 차이가 무엇인지, 그리고 어떻게 능동적 로렌츠 변환은 전기력과 연관되는지 살펴볼 것이다.</p>
 
-<p>먼저 $\Psi_{A, B}^{-1}$이 실제로 $\Psi_{A, B}$의 역사상임을, 즉 $\bar{\bar{g}} = g, \bar{\bar{f}} = f$임을 보인다. 전자는 다음 가환 도식으로부터 얻어진다. 후자는 도식에서 $F, G$를 각각 $G, F$로 바꾼 뒤 적절히 쌍대<sub>dual</sub>을 취하면 된다.</p>
+<h3 id="1-수동적-변환">1. 수동적 변환</h3>
 
-<!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ==&amp;embed" width="100%" height="250" style="border-radius: 8px; border: none;"></iframe>
+<p>점입자 A가 빈 공간에서 관성 운동한다. A에 대해 정지해 있는 관성좌표계 $(x, t)$를 기준으로 민코프스키 다이어그램을 그리면 해당 상황은 (a)와 같이 표현할 수 있다. 반면 $(x, t)$에 대해 $0.6c$의 속도를 가지는 관성좌표계 $(x’, t’)$을 기준으로 하는 민코프스키 다이어그램은 (b) 및 (b’)와 같다.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
 
-<p>이제 $\Psi$가 자연성 공리를 만족함을 보인다. 한쪽 공리만 보이도록 한다. $f: A \to G(B), q: B \to B’$에 대해 $\overline{G(q) \circ f} = q \circ \bar{f}$임을 보인다. 먼저,</p>
+<p><img src="/public/bell-1.png" style="width: 100%; margin: 0 auto;" /></p>
 
-\[\overline{G(q) \circ f} = \epsilon_{B'} \circ FG(q) \circ F(f)\]
+<p>A의 운동에 좌표를 부여하는 방식은 다르지만 (a)와 (b)는 동일한 물리적 상황을 표현한다. 이와 같이 계의 물리적 속성을 보존하는 관성좌표계의 변환을 <strong>수동적 변환</strong>이라고 한다. 뉴턴 역학에서 시공간의 수동적 변환은 전단 변환<sub>shear transformation</sub>으로 주어지지만 잘 알려져 있듯이 상대론에서는 로렌츠 변환으로 주어진다.</p>
 
-<p>이고,</p>
+<h3 id="2-능동적-변환">2. 능동적 변환</h3>
 
-\[q \circ \bar{f} = q \circ \epsilon_B \circ F(f)\]
+<p>이제 A의 속도에 순간적으로 $-0.6c$가 더해진 상황을 생각해 보자. $(x, t)$에 대해 속도가 더해진 후의 다이어그램은 (c)와 같다.</p>
 
-<p>이므로, $\epsilon_{B’} \circ FG(q) = q \circ \epsilon_B$임을 보이면 충분하다. 이것은 자연적 변환의 정의에 다름 아니다. 따라서 $\Psi$는 자연성 공리를 만족한다.</p>
+<p><img src="/public/bell-2.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
 
-<h4 id="2와-3은-일대일-대응된다">2와 3은 일대일 대응된다.</h4>
+<p>주목할 점은, (a)-(b)와는 달리 (a)-(c)는 <em>같은</em> 관성좌표계를 사용한다는 것이다. (a)-(c)의 변환은 관성좌표계의 변환이 아닌, A의 속도에 $-0.6c$가 더해졌다는 물리적 변화로 일어났다. 이처럼 물리적 변화로 인한 다이어그램의 변환을 <strong>능동적 변환</strong>이라고 한다.</p>
 
-<p>삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta, \epsilon)$이 주어졌을 때, 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상임을 보이자.</p>
+<p>일면 능동적 변환 (b)와 수동적 변환 (c)의 차이는 관점의 차이에 지나지 않는 것으로 보인다. 실제로 고전역학에서 능동적 변환과 수동적 변환은 동일시될 수 있으며, 이것은 고전역학에서 뇌터 정리를 적용할 수 있는 조건에 다름 아니다. 하지만 상대론에서 둘의 동일시는 매우 신중한 주의를 요구한다. 왜냐하면 상대론에서는 <strong>동시성의 상대성</strong>을 고려해야 하기 때문이다.</p>
 
-<p>역으로 $\eta$가 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상이 되도록 하는 자연적 변환일 때, 어떤 $\epsilon: FG \to 1_{\mathcal{B}}$가 유일하게 존재하여 $(\eta, \epsilon)$이 삼각 항등식을 만족함을 보이자.</p>
+<h3 id="3-동시성의-상대성">3. 동시성의 상대성</h3>
+
+<p>동시성의 상대성이 왜 중요한지 알아보기 위해 상황을 바꿔보자. 두 점입자 A, B가 빈 공간에서 서로 $c$의 거리를 유지하고 있다. 이 상황을 A에 대해 정지해 있는 관성좌표계 $(x, t)$와, A에 대해 $0.6c$로 움직이는 관성계 $(x’, t’)$으로 표현한 민코프스키 다이어그램은 각각 다음과 같다.</p>
+
+<p><img src="/public/bell-3.png" style="width: 100%; max-width: 520px; margin: 0 auto;" /></p>
+
+<p>$(x, t)$에서 $P$와 $Q$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x’, t’)$에서는 $P$와 $Q’$가 동시적이므로 A, B 거리는 $d’$이다. 민코프스키 기하학을 이용하여 계산하면 $d’ = 0.8c$ 이며 $d’ &lt; d$이다.<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup></p>
+
+<p>같은 현상을 능동적 변환으로 해석해 보자. A, B가 $c$의 거리를 유지하다가 $(x, t)$에 대해 동시에 $-0.6c$의 속도가 더해졌다고 하자. 민코프스키 다이어그램은 다음과 같다. $(x'', t'')$은 속도가 더해진 이후의 A를 기준으로 하는 관성좌표계이다.</p>
+
+<p><img src="/public/bell-4.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
+
+<p>$(x, t)$에서 $(P, Q)$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x'', t'')$에서는 $(P, Q'')$가 동시적이므로 A, B의 거리는 $d''$이다. 마찬가지로 민코프스키 기하학을 이용하여 $d''$을 계산하면 $d'' = 1.25c$ 이며 $d'' &gt; d$이다.</p>
+
+<p>따라서 상대론에서는 수동적 변환과 능동적 변환 사이에 실질적인 차이가 있다. 수동적 변환은 A 관점의 거리를 유지시키고 새 관성좌표계 관점의 거리를 수축시키는 한편, 능동적 변환은 기존 관성좌표계 관점의 거리를 유지시키고 A 관점의 거리를 팽창시킨다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>A와 B의 거리</th>
+      <th>A 관점</th>
+      <th>A에 대해 움직이는 관성계 관점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>수동적 변환</td>
+      <td>유지</td>
+      <td>수축</td>
+    </tr>
+    <tr>
+      <td>능동적 변환 (A와 B가 분리되어 있을 때)</td>
+      <td>팽창</td>
+      <td>유지</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="4-강체의-능동적-변환">4. 강체의 능동적 변환</h3>
+
+<p>앞서 본 경우에는 A와 B가 분리되어 있었다. 이제 A와 B가 강체를 이루는 경우를 생각해 보자. 구체적으로 A, B가 길이가 $c$인 강철 막대기 M의 양끝점이라고 하자.</p>
+
+<p>강체의 특징은 수용 가능한 변화에 대해 원 상태를 유지하는 성질을 가지고 있다는 것이다. 예를 들어 고무공은 강체가 아니기 때문에 힘을 가하면 부피가 줄어들거나 늘어나지만, 강철공은 부피가 변하지 않는다.</p>
+
+<p>그렇다면 M이 능동적 변환에 가해졌을 때 무슨 일이 일어날 것인가? 예컨대 M이 관성좌표계 $(x, t)$에서 관성 운동하던 도중, M의 모든 부분이 “$(x, t)$에 대해 동시에” 가속하여 $0.6c$의 속도에 다다르면 M에는 무슨 일이 일어날 것인가?</p>
+
+<p>M이 강체가 아니었다면 M의 길이는 A의 관점에서 $1.25c$로 팽창했을 것이다. 그러나 M은 강체이므로 자신의 원래 길이를 유지하려고 한다. 이에 따라 M이 가속하는 동안 M의 내부에서는 두 가지 효과가 대립하며 매우 복잡한 양상이 펼쳐진다.</p>
+
+<ul>
+  <li>효과 1: 동시성의 상대성으로 인해 B가 A보다 먼저 가속하여 M의 양끝이 잡아당겨진다.</li>
+  <li>효과 2: M의 강체적 특성으로 인해 M의 원자 구조가 효과 1에 저항하는 장력을 발생시킨다.</li>
+</ul>
+
+<p>효과 2로 발생하는 내부 장력을 <strong>상대론적 장력<sub>relativistic stress</sub></strong>이라고 부른다. 만약 M이 충분히 강한 강체라면 상대론적 장력을 버텨내어 M의 길이는 (A, B의 관점에서) $c$로 유지된다. 그러나 가속이 너무나 급격하여 상대론적 장력이 M의 수용 범위를 벗어나면 강체는 변형되거나 파괴된다. 일례로 쿠크다스를 광속에 가깝게 가속시키면 쿠크다스는 파괴된다.</p>
+
+<h3 id="5-결론">5. 결론</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>A와 B의 거리</th>
+      <th>A 관점</th>
+      <th>A에 대해 움직이는 관성계 관점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>수동적 변환</td>
+      <td>유지</td>
+      <td>수축</td>
+    </tr>
+    <tr>
+      <td>능동적 변환 (A와 B가 분리되어 있을 때)</td>
+      <td>팽창</td>
+      <td>유지</td>
+    </tr>
+    <tr>
+      <td>능동적 변환 (A와 B가 강체를 이룰 때)</td>
+      <td>유지</td>
+      <td>감소</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>이제 벨의 사고실험으로 돌아가자. 두 우주선 A, B가 가속할 때 “우주선-실-우주선” 계는 능동적 변환을 겪는다. A의 관점에서 두 효과가 관측된다.</p>
+
+<ul>
+  <li>효과 1: A와 B는 분리되어 있으므로 A와 B의 거리는 팽창한다.</li>
+  <li>효과 2: 팽팽히 당겨진 실의 강체적 특성에 의해 실의 길이는 유지된다.</li>
+</ul>
+
+<p>이에 따라 가속이 일정 시간 이상 지속되면 효과 1이 효과 2를 압도하여 실은 끊어진다. 만약 A와 B가 실이 아니라 강철 케이블로 연결되어 있었다면 효과 2가 효과 1을 압도하여 A와 B는 (A 및 B의 관점에서) 일정한 거리를 유지하게 된다.</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Rindler (1977), p. 41. Maudlin, <em>Philosophy of Physics: Space and Time</em> 에서 발췌. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>(a)와 (b)는 같은 물리적 현상을 다른 관성좌표계로 표현한 다이어그램이다. 한편, (b)와 (b’)은 — 같은 물리적 현상을 같은 관성좌표계로 표현한 — 같은 다이어그램의 다른 표현이다. (a), (b)는 같은 정육면체를 정사영과 등각 투영법으로 그린 것에, (b), (b’)은 같은 정육면체를 같은 투영법을 이용하여 위와 옆에서 그린 것에 비견할 수 있다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>그림에서는 $d’ &gt; d$인 것으로 보이지만, 민코스프키 다이어그램의 기하학은 유클리드 기하학이 아닌 민코프스키 기하학임을 유념해야 한다. 평면지도에서는 알래스카가 아프리카와 거의 비슷한 크기이지만 실제로는 아프리카가 훨씬 더 크듯이, 민코프스키 다이어그램에서는 $d’ &gt; d$인 것으로 보이지만 실제 로렌츠 변환을 계산하면 $d’ &lt; d$이다. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/17/bell-rocket/en"> Bell's Spaceship Paradox: Passive and Active Lorentz Contraction </a>
+      </h1>
+    <span class="post-date">17 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/physics/'">
+        Physics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/relativity/'">
+        Relativity
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>Spaceships A and B are connected by a thin thread and are initially at rest (with respect to a common inertial frame). They begin to accelerate simultaneously at the same rate to approach the speed of light. What happens to the thread?</p>
+
+  <ol>
+    <li>It breaks.</li>
+    <li>It loosens.</li>
+    <li>It remains unchanged.</li>
+  </ol>
+</blockquote>
+
+<p>This thought experiment was originally devised by Dewan and Beran in 1959 but gained widespread attention after John Stewart Bell discussed it with CERN physicists in 1976. Bell argued that the thread breaks due to Lorentz contraction. Most CERN physicists disagreed, claiming the thread remains unchanged. One prominent physicist even accused Bell of misrepresenting relativity. So, who is correct?</p>
+
+<p>The answer is <strong>1. It breaks.</strong></p>
+
+<p>This may seem counterintuitive. After all, Lorentz contraction is frame-dependent. If Alice moves at near-light speed relative to Bob, Bob would observe Alice to have contracted. But in Alice’s frame, it is Bob who is moving and therefore contracts. This symmetry suggests that Lorentz contraction is a mathematical artifact arising from frame choice, hence not a physically real phenomenon. Such an interpretation is widespread in physics, e.g. Rindler’s 1977 writes:</p>
+
+<blockquote>
+  <p>According to Lorentz, the cause of contraction lies in the increased electromagnetic cohesion of atomic structures [as an object passes through the ether]… [But] in relativity, Lorentz contraction is essentially a geometric projection effect, akin to viewing a stationary rod from an angle.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
+</blockquote>
+
+<p>However, Rindler’s explanation is quite misleading. Rather, it is important to recognise that there are <em>two</em> types of Lorentz contraction. In the case of a <strong>passive Lorentz transformation</strong>, Lorentz contraction is merely an artifact of changing coordinates. But in the case of an <strong>active Lorentz transformation</strong>, the contraction corresponds to a real physical effect, such as increased electromagnetic force. This post will explore the difference between the two and show how active transformation relates to physical stress.</p>
+
+<h3 id="1-passive-transformation">1. Passive Transformation</h3>
+
+<p>Consider a point particle A moving inertially in vacuum. The Minkowski diagram, with respect to an inertial coordinates $(x, t)$ to which A is at rest, is shown in (a). In another inertial coordinates $(x’, t’)$ moving at $0.6c$ relative to $(x, t)$, the Minkowski diagram is as shown in (b) and (b’).<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
+
+<p><img src="/public/bell-1.png" style="width: 100%; margin: 0 auto;" /></p>
+
+<p>The diagrams (a) and (b) represent the same physical scenario using different coordinates. Such transformation between coordinates is called a <strong>passive transformation</strong>. In Newtonian mechanics, this is represented as shear transformation of Galilean diagram; in relativity, as Lorentz transformation of Minkowski diagram.</p>
+
+<h3 id="2-active-transformation">2. Active Transformation</h3>
+
+<p>Now consider a scenario where A’s velocity changes by $-0.6c$. The Minkowski diagram in $(x, t)$ after this change is shown in (c).</p>
+
+<p><img src="/public/bell-2.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
+
+<p>Unlike (a) and (b’), diagrams (a) and (c) use the <em>same</em> coordinates. The change here reflects a physical change in A’s motion, not a change in coordinates. Such a transformation is called an <strong>active transformation</strong>.</p>
+
+<p>At first glance, the difference between active and passive transformations might seem purely semantic. In classical mechanics, the two are indeed physically equivalent, and this is partly what grounds Noether’s theorem. But in relativity, the distinction becomes crucial due to the <strong>relativity of simultaneity</strong>.</p>
+
+<h3 id="3-relativity-of-simultaneity">3. Relativity of Simultaneity</h3>
+
+<p>To understand why simultaneity matters, let’s consider two particles A and B maintaining a distance $d$ apart. The Minkowski diagrams based on A’s rest coordinates $(x, t)$ and another diagram based on coordinates $(x’, t’)$ moving at $0.6c$ are shown below:</p>
+
+<p><img src="/public/bell-3.png" style="width: 100%; max-width: 520px; margin: 0 auto;" /></p>
+
+<p>In $(x, t)$, events $P$ and $Q$ are simultaneous, so the distance between A and B is $d$. But in $(x’, t’)$, $P$ and $Q’$ are simultaneous, and the distance is $d’$. To calculate $d’$ we use the Lorentz transformation formulas:</p>
+
+\[\begin{align}
+&amp;t' = \gamma \left( t - \frac{vx}{c^2} \right)\\
+&amp;x' = \gamma (x - vt)\\
+&amp;y' = y\\
+&amp;z' = z\\
+\end{align}\]
+
+<p>Calculation gives $d’ = 0.8d$, i.e. $d’ &lt; d$.<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup></p>
+
+<p>Now let’s consider the active transformation case. Suppose A and B, initially at distance $d$, are both accelerated simultaneously, with respect to $(x, t)$, to $-0.6c$. The resulting Minkowski diagram is:</p>
+
+<p><img src="/public/bell-4.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
+
+<p>In $(x, t)$, $P$ and $Q$ are simultaneous, and their distance remains $d$. But in $(x'', t'')$, the coordinates to which A is at rest after the acceleration, $P$ and $Q''$ are simultaneous, and the distance is $d'' = 1.25d$. Hence $d'' &gt; d$.</p>
+
+<p><em>Thus, in relativity, passive and active transformations lead to physically different consequences.</em> Passive transformations preserve distances in A’s frame but contract them in the moving frame, whereas active transformations preserve distances in the original frame but stretch them in A’s new frame.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Distance between A and B</th>
+      <th>Rest Frame of A</th>
+      <th>Moving Frame of A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Passive Transformation</td>
+      <td>Unchanged</td>
+      <td>Contracted</td>
+    </tr>
+    <tr>
+      <td>Active Transformation (isolated)</td>
+      <td>Expanded</td>
+      <td>Unchanged</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="4-active-transformation-of-a-rigid-body">4. Active Transformation of a Rigid Body</h3>
+
+<p>Up to now, A and B were isolated particles. Now suppose A and B are endpoints of a rigid rod M of length $l$.</p>
+
+<p>Suppose that every part of M accelerates simultaneously with respect to an inertial frame $(x, t)$ to reach $0.6c$. If M were not rigid, A would observe M’s length as expanding to $1.25c$. <em>But rigidity resists this expansion,</em> leading to an internal stress. Thus from A’s frame of reference, the rod undergoes two two effects.</p>
+
+<ul>
+  <li>Effect 1: Due to <em>relativity of simultaneity,</em> B accelerates before A, which would cause the rod to stretch.</li>
+  <li>Effect 2: <em>The rod’s rigidity resists this stretching,</em> generating internal stress.</li>
+</ul>
+
+<p>The internal stress thus arisen is called <strong>relativistic stress</strong>. If M is strong enough, it endures the stress and maintains its original length. Otherwise, it deforms or breaks. For example, a biscuit rapidly accelerated to near-light speed would shatter, while a rugby ball accelerated to near-light speed would visibly extend.</p>
+
+<h3 id="5-conclusion">5. Conclusion</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Distance between A and B</th>
+      <th>Rest Frame of A</th>
+      <th>Moving Frame of A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Passive Transformation</td>
+      <td>Unchanged</td>
+      <td>Contracted</td>
+    </tr>
+    <tr>
+      <td>Active Transformation (isolated)</td>
+      <td>Expanded</td>
+      <td>Unchanged</td>
+    </tr>
+    <tr>
+      <td>Active Transformation (rigid body)</td>
+      <td>Unchanged</td>
+      <td>Contracted</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Returning to Bell’s paradox, when spaceships A and B accelerate, the “spaceship-thread-spaceship” system undergoes an active transformation. Thus in A’s frame, two effects co-occur:</p>
+
+<ul>
+  <li>Effect 1: Distance between A and B increases (since they are not rigidly connected).</li>
+  <li>Effect 2: The thread tries to maintain its original length.</li>
+</ul>
+
+<p>Eventually, if acceleration continues, Effect 1 wins over Effect 2, and the thread breaks. If A and B were connected by a steel cable instead, Effect 2 would dominate, and the distance would remain constant.</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Rindler (1977), p. 41. Quoted in Maudlin, <em>Philosophy of Physics: Space and Time</em>. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Diagrams (a) and (b) correspond to the same physical situation but with different coordinates, akin to rendering the same cube using different projections (e.g. orthographic v. isometric). Diagrams (b) and (b’) are the same diagram represented differently, akin to drawing the same cube using the same projection from different perspective. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Though it appears to be $d’ &gt; d$ in the diagram, recall that Minkowski geometry uses non-Euclidean distance. Just as Alaska may appear as large as Africa on a flat map, but isn’t, Minkowski diagrams visually misrepresent distances. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
   <div style="margin-bottom: 6em"></div>
@@ -1358,16 +932,9 @@ K = \{ v \in V : v \in B \}
 
 <div class="pagination">
   
-  <a
-    class="pagination-item older lang-ko"
-    href="/page8"
-    >이전 글</a
-  >
-  <a
-  class="pagination-item older lang-en"
-  href="/page8"
-  >Previous</a
->
+  <span class="pagination-item older lang-ko">이전 글</span>
+  <span class="pagination-item older lang-en">Previous</span>
+
     
   <a
     class="pagination-item newer lang-ko"

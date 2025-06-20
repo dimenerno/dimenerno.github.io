@@ -281,7 +281,7 @@
     href="/notes/"
     >Maths Review Notes (Korean)</a
   >
-                                                                                                                                                                            
+                                                                                                                                                            
   </nav>
 
   <div class="sidebar-item">
@@ -425,248 +425,352 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/03/10/temporal-logic"> 시제 논리 </a>
+        <a href="/2024/12/05/transfinite-recursion"> 초한귀납과 초한재귀 </a>
       </h1>
-    <span class="post-date">10 Mar 2025</span>
+    <span class="post-date">05 Dec 2024</span>
     
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
       </div>
       
-      <div class="tag" onclick="location.href='/tags/철학/'">
-        철학
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
       </div>
       
     </div>
-     <h2 id="도입">도입</h2>
-
-<p>다음의 세 문장을 보자.</p>
-
-<ol>
-  <li>가영이는 언젠가 등교할 것이다.</li>
-  <li>나영이는 언젠가 등교할 것이다.</li>
-  <li>나영이는 가영이가 등교하기 전에 등교하지 않는다.</li>
-</ol>
-
-<p>위로부터 다음을 추론할 수 있다.</p>
-
-<p>   4. 가영이가 먼저 등교하고 나영이가 등교할 것이다.</p>
-
-<p>그러나 고전 논리는 — 적어도 표면적으로는 — 위의 추론 관계를 함의하지 않는다. 따라서 우리에게 필요한 것은 시간에 대해 추론할 수 있는 논리학, 즉 <strong>시제 논리<sub>temporal logic</sub></strong>이다.</p>
-
-<h2 id="1-고전적-시제-논리">1. 고전적 시제 논리</h2>
-
-<h3 id="11-의미론">1.1. 의미론</h3>
-
-<p>시제 논리를 정의하는 길은 두 가지가 있다. 첫째는 고전 논리에 특정 구조를 부과함으로써 시제 논리를 얻는 것이다. 이 방법을 먼저 알아보자.</p>
-
-<p>시제 논리의 부호수<sub>signature</sub>는 하나의 이항 관계 $\prec$와, 0개 이상의 일항 술어 $P, Q, \dots$로 이루어져 있다. 시제 논리의 모델은 다음과 같다. (이 모델을 <strong>크립키<sub>Kripke</sub> 모델</strong>이라고 한다)</p>
-
-\[\mathcal{T} = (T, \prec^\mathcal{T}, P^\mathcal{T}, Q^\mathcal{T}, \dots)\]
-
-<ul>
-  <li>전체<sub>universe</sub> $T$: 상정하는 모든 순간을 의미한다.</li>
-  <li>$t_1 \prec^\mathcal{T} t_2$: $t_1$이 $t_2$보다 과거라는 의미이다.</li>
-  <li>$P^\mathcal{T}(t)$: $P$가 시점 $t$에서 참이라는 의미이다.</li>
-</ul>
-
-<p>예를 들어 어제, 오늘, 그리고 내일만을 고려하는 시제 논리의 경우 $T = \lbrace  -1, 0, 1 \rbrace $로 둘 수 있다. 고전 역학은 $T = \mathbb{R}$을 간주한다.</p>
-
-<p>가영이가 등교하는 사건을 $A$, 나영이가 등교하는 사건을 $B$라고 하면 도입의 3은 다음과 같이 쓸 수 있다.</p>
-
-\[\forall t_1 \forall t_2 \; \big( A(t_1) \land B(t_2) \rightarrow t_1 \prec t_2 \big)\]
-
-<p>$\phi$가 하나의 자유변수 $x$를 가지는 문장이라고 하자. $t \in T$를 <em>현재</em>로 뒀을 때 $\phi$가 참이라는 것을, $\mathcal{T} \vDash \phi[t]$와 같이 적는다.</p>
-
-<h3 id="12-프레임">1.2. 프레임</h3>
-
-<p>집합과, 그 위에 정의된 이항 관계의 쌍 $(T, \prec)$를 <strong>프레임<sub>frame</sub></strong>이라고 부른다. $\mathbf{F}$가 프레임의 모임<sub>class</sub>이라고 하자. $(T, \prec) \in \mathbf{F}$인 임의의 모델 $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$와 임의의 $t \in T$에 대해 $\mathcal{T} \vDash \phi[t]$일 때, $\phi$가 $\mathbf{F}$에 대해 참이라고 한다.</p>
-
-<p>$\mathbf{F}$가 특정 성질을 가질 것을 요구함으로써 시간의 특징을 포착할 수 있다. 다음과 같은 성질을 요구할 수 있다.</p>
-
-<ul>
-  <li>추이성<sub>transitivity</sub>: 임의의 서로 다른 $t_1, t_2, t_3 \in T$에 대해 $t_1 \prec t_2, t_2 \prec t_3$라면 $t_1 \prec t_3$이다.</li>
-  <li>선형성<sub>linearity</sub>: 임의의 서로 다른 $t_1, t_2 \in T$에 대해 $t_1 \prec t_2$이거나 $t_2 \prec t_1$이다.</li>
-  <li>조밀성<sub>denseness</sub>: 임의의 서로 다른 $t_1, t_2 \in T$에 대해 어떤 $t_3 \in T$가 존재하여 $t_1 \prec t_3 \prec t_2$이다.</li>
-  <li>우 연장성<sub>R-extendability</sub>: 임의의 $t \in T$에 대해 어떤 $t’ \in T$가 존재하여 $t \prec t’$이다.</li>
-  <li>좌 연장성<sub>L-extendability</sub>: 임의의 $t \in T$에 대해 어떤 $t’ \in T$가 존재하여 $t’ \prec t$이다.</li>
-</ul>
-
-<p>도입의 논증은 선형 프레임에 대해 참임을 보일 수 있다.</p>
-
-<h2 id="2-독립적-시제-논리">2. 독립적 시제 논리</h2>
-
-<p>시제 논리를 정의하는 두 번째 방식은 시제 논리에 특수한 논리 기호를 도입하는 것이다. 각각 다음과 같이 읽는다.</p>
-
-<ul>
-  <li>$\mathsf{F}p$: 언젠가 $p$일 것이다<sub>Future p</sub></li>
-  <li>$\mathsf{P}p$: 언젠가 $p$였다<sub>Past p</sub></li>
-  <li>$\mathsf{G}p$: 언제나 $p$일 것이다<sub>Going to always be p</sub></li>
-  <li>$\mathsf{H}p$: 언제나 $p$였다<sub>Has always been p</sub></li>
-</ul>
-
-<p>$\mathsf{F}, \mathsf{P}, \mathsf{G}, \mathsf{H}$의 관계는 다음과 같다.</p>
-
-<ul>
-  <li>$\mathsf{F}p \equiv \lnot\mathsf{G}\lnot p$</li>
-  <li>$\mathsf{P}p \equiv \lnot\mathsf{H}\lnot p$</li>
-</ul>
-
-<p>독립적 시제 논리의 명제는 <strong>메레디스 번역<sub>Meredith translation</sub></strong>을 통해 언제나 고전적 시제 논리의 명제로 변환할 수 있다. 예를 들어 $\mathsf{G}p$는 $\forall x \succ t \; p(x)$로 번역된다. 그러나 역은 성립하지 않는다. 따라서 독립적 시제 논리는 고전적 시제 논리보다 표현력이 약하다. 그럼에도 독립적 시제 논리가 연구할 만한 주제인 이유는, 표현력을 일부 포기하는대가로 결정 가능성, 완전성 등의 좋은 성질을 얻을 수 있을 뿐더러, 양상 논리와의 연결 고리를 제공하는 등 철학적 의의 또한 크기 때문이다.</p>
-
-<p>독립적 시제 논리의 모델은 종속적 시제 논리와 마찬가지로 $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$이다. 만족 관계는 자연스럽게 정의한다. 예를 들어,</p>
-
-<ul>
-  <li>$\mathcal{T} \vDash \mathsf{F}p[t] \iff$ 어떤 $t \prec t’$에 대해, $\mathcal{T} \vDash p[t’]$</li>
-</ul>
-
-<h2 id="3-시제-공리">3. 시제 공리</h2>
-
-<p>지금까지 시제 논리의 의미론을 살펴 보았다. 이제 시제 논리의 증명을 살펴본다.</p>
-
-<h3 id="31-최소-시제-논리">3.1. 최소 시제 논리</h3>
-
-<p>최소 시제 논리 $L_0$는 다음의 공리로 이루어져 있다.</p>
-
-<ul>
-  <li>$\tau$가 명제 논리의 항진명제일 때, $\tau$</li>
-  <li>$\mathsf{G}(\phi \to \psi) \to (\mathsf{G}\phi \to \mathsf{G}\psi)$</li>
-  <li>$\mathsf{H}(\phi \to \psi) \to (\mathsf{H}\phi \to \mathsf{H}\psi)$</li>
-  <li>$\phi \to \mathsf{GP}\phi$</li>
-  <li>$\phi \to \mathsf{HF}\phi$</li>
-</ul>
-
-<p>그리고 다음의 추론 규칙으로 이루어져 있다.</p>
-
-<ul>
-  <li><strong>MP</strong> $\vdash \phi, \phi \to \psi \implies \vdash \psi$</li>
-  <li><strong>TG1:</strong> $\vdash \phi \implies \vdash \mathsf{G}\phi$</li>
-  <li><strong>TG2:</strong> $\vdash \phi \implies \vdash \mathsf{H}\phi$</li>
-</ul>
-
-<p>MP는 Modus Ponens, TG는 Temporal Generalisation의 약어이다.</p>
-
-<p>TG가 $\vdash \phi \to \mathsf{G}\phi$를 의미하지 않는다는 사실에 유의하라. TG는 <em>논리적으로 증명된 명제 $\phi$에 한해,</em> $\mathsf{G}\phi$ 또는 $\mathsf{H}\phi$를 도출할 수 있다는 의미이다. 즉, TG는 논리적 명제가 시간과 무관하다는 의미이다.</p>
+     <h3 id="1-초한귀납법">1. 초한귀납법</h3>
 
 <blockquote>
-  <p><strong>정리.</strong> $L_0$는 건전하다.</p>
+  <p><strong>정리.</strong> $P$가 서수 위에서 정의된 속성이고 임의의 $\alpha \in \mathrm{Ord}$에 대해</p>
+
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha)\]
+
+  <p>가 성립할 때, $P$는 모든 서수에 대해 참이다.</p>
 </blockquote>
 
-<p><strong>증명.</strong> 명제 논리의 건전성 정리와 거의 동일하게, 논리식의 형태에 대한 귀납법으로 증명한다.</p>
+<p><em>Remark.</em> $P$의 정의역인 $\mathrm{Ord}$는 집합이 아닌 진모임(proper class)이므로 “술어” 대신 “속성”이란 표현을 사용한다.</p>
+
+<p><strong>증명.</strong> 서수가 정렬 순서라는 사실과 귀류법을 사용한다.</p>
+
+<p>$\lnot P(\lambda)$인 $\lambda$가 존재한다고 하자. $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$는 공집합이 아닌 정렬 집합이므로 최소 원소 $\alpha_0$가 존재한다. 이때 $\forall \beta &lt; \alpha_0 : P(\beta)$이므로 가정에 의해 $P(\alpha_0)$가 되어 모순이다. ■</p>
+
+<p><strong>응용.</strong> 폰 노인만 계층에서 $V_\alpha$는 추이적이다. 따라서 $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$ 대신 $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$로 정의할 수 있다.</p>
+
+<h3 id="2-초한재귀적-정의">2. 초한재귀적 정의</h3>
+
+<p><em>Motivation.</em> 자연수의 재귀적 정의를 생각해 보자. $n$개의 집합 $x_1, \dots , x_n$이 주어졌을 때 집합을 출력하는 함수 $g$가 존재한다면 다음과 같이 $f: \mathbb{N} → V$을 정의할 수 있을 것이다.</p>
+
+\[f(n) = g(f(0), \dots, f(n - 1))\]
+
+<p>문제는 $g$가 고정된 수의 매개변수만을 가질 수 있다는 것이다. 따라서 다음과 같이 $g$의 매개변수를 순서쌍으로 묶는다.</p>
+
+\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
+
+<p>이 순서쌍은 $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$과 같이 표현할 수 있다. 즉,</p>
+
+\[f(n) = g(f \upharpoonright n).\]
+
+<p>이를 서수에 대해서 일반화하면 다음과 같다.</p>
 
 <blockquote>
-  <p><strong>정리.</strong> $L_0$에서 증명 가능성은 다음 규칙에 대해 닫혀 있다.</p>
+  <p><strong>정리.</strong> $G: V → V$가 모임함수(class function)이라고 하자. 다음을 만족하는 모임함수 $F: \mathrm{Ord} → V$가 존재한다.</p>
+
+\[F(\alpha) = G(F \upharpoonright \alpha)\]
+</blockquote>
+
+<p><strong>증명.</strong> 초한귀납법을 겁나게 쓰면 된다. (불친절해서 ㅈㅅ)</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/01/net"> 콤팩트성과 그물 </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <h3 id="콤팩트성">콤팩트성</h3>
+<blockquote>
+  <p><strong>정의.</strong> $X$가 위상공간이라고 하자.</p>
 
   <ol>
-    <li><strong>거울 규칙<sub>mirror rule</sub>:</strong> 명제 $\phi$에 등장하는 $\mathsf{G}$와 $\mathsf{H}$, $\mathsf{F}$와 $\mathsf{P}$를 서로 바꾼 명제를 거울 명제 $\bar{\phi}$라고 하자. $\vdash \phi$라면 $\vdash \bar{\phi}$이다.</li>
-    <li><strong>베커 규칙<sub>Becker’s rule</sub>:</strong> $\mathsf{T}$가 $\mathsf{G, H, F, P}$ 중 하나라고 하자. $\vdash \phi \to \psi$라면 $\vdash \mathsf{T}\phi \to \mathsf{T}\psi$이다.</li>
-    <li><strong>쌍대 규칙<sub>dual rule</sub>:</strong> 명제 $\phi$에 등장하는 $\land$와 $\lor$, $\mathsf{G}$와 $\mathsf{F}$, $\mathsf{H}$와 $\mathsf{P}$를 서로 바꾼 명제를 쌍대 명제 $\phi^\ast$라고 하자. $\vdash \phi$라면 $\vdash \phi^\ast$이다.</li>
+    <li>임의의 열린 덮개가 유한한 부분덮개를 가질 때 $X$를 <strong>콤팩트</strong>하다고 한다.</li>
+    <li>임의의 점렬 $\lbrace x_n \in X \rbrace$가 수렴하는 부분점렬을 가질 때 $X$를 <strong>점렬 콤팩트</strong>하다고 한다.</li>
+    <li>임의의 무한집합 $S \subset X$가 극점을 가질 때 $X$를 <strong>극점 콤팩트</strong>하다고 한다.</li>
   </ol>
 </blockquote>
 
-<p><strong>증명.</strong> 연습문제 (^^)</p>
-
 <blockquote>
-  <p><strong>정리.</strong> $L_0$는 모든 프레임의 모임 $\mathbf{F}_0$에 대해 완전하다.</p>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>점렬 콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+  </ol>
 </blockquote>
 
-<p><strong>증명.</strong> TODO</p>
+<p><strong>증명.</strong></p>
 
-<h3 id="32-고전역학의-시제-논리">3.2. 고전역학의 시제 논리</h3>
+<ol>
+  <li>$S \subset X$가 극점이 없는 무한집합이라고 하자. $\overline{S} = S \cup S’ = S$이므로 $S$는 닫힌 집합이며, $X \setminus S$는 열린 집합이다. 임의의 $s \in S$에 대해, $s$가 극점이 아니므로 $U_s \cap S = \lbrace  s \rbrace$인 $s$의 근방 $U_s$가 존재한다. 따라서 다음 $X$의 열린 덮개는 유한한 부분덮개를 가지지 않는다.</li>
+</ol>
 
-<p>추이성, 선형성, 조밀성, 좌우 연장성을 가지는 프레임들의 모임 $\mathbf{F}_1$을 고려하자. $\mathbf{F}_1$은 고전역학에서 상정하는 시간이다. $\mathbf{F}_1$에서 건전하고 완전한 공리계를 찾아 보자.</p>
+\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
 
-<p>고전역학의 시제 논리 $L_1$은 $L_0$에 다음 공리를 추가한 것이다.</p>
+<ol>
+  <li>$S \subset X$가 무한집합이라고 하자. $S$의 원소들을 임의로 추출하여 점렬 $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$을 만든다. $X$가 점렬 콤팩트하므로 $\lbrace  s_n \rbrace → s$이며, $s$는 $S$의 극점이다.</li>
+  <li>순서 토폴로지가 주어진 $\omega_1$은 극점 콤팩트하지만 콤팩트하지 않다.</li>
+  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, $\mathbb{N}$에는 이산 토폴로지가 주어지고 $\lbrace  0, 1\rbrace$에는 자명한 토폴로지가 주어짐.</li>
+</ol>
 
-<ul>
-  <li>$\mathsf{G} p \to \mathsf{GG}p$ (추이성)</li>
-  <li>$(\mathsf{P}p \land \mathsf{P}q) \to (\mathsf{P}(p \land \mathsf{P}q) \lor \mathsf{P}(p \land q) \lor \mathsf{P}(\mathsf{P}p \land q))$ (좌 선형성)</li>
-  <li>$(\mathsf{F}p \land \mathsf{F}q) \to (\mathsf{F}(p \land \mathsf{F}q) \lor \mathsf{F}(p \land q) \lor \mathsf{F}(\mathsf{F}p \land q))$ (우 선형성)</li>
-  <li>$\mathsf{H}p \to \mathsf{P}p$ (좌 연장성)</li>
-  <li>$\mathsf{G}p \to \mathsf{F}p$ (우 연장성)</li>
-  <li>$\mathsf{GG}p \to \mathsf{G}p$ (조밀성)</li>
-</ul>
+<p><strong>Remark.</strong> 4의 올바르지 못한 “증명”</p>
 
 <blockquote>
-  <p><strong>햄린<sub>Hamblin</sub>의 정리.</strong> $L_1$에서 시제 기호의 조합은 14가지 시제 중 하나와 동치이다. 14가지 시제는 $\mathsf{FH, H, PH, HP, P, GP}$와 $\mathsf{PG, G, FG, GF, F, HF}$, 그리고 $\mathsf{GH} = \mathsf{HG}$와 $\mathsf{FP} = \mathsf{PF}$이다.</p>
+  <p>$X$가 극점 콤팩트하다고 하자. 점렬 $(x_n)$이 주어졌을 때, $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$이 유한집합이라면 $(x_n)$은 수렴하는 부분점렬을 자명하게 가진다. $S$가 무한집합이라면 $X$의 극점 콤팩트성에 의해 $x \in S’$가 존재한다. <strong>이제 다음 조건을 만족하는 $x$의 근방들의 가산 모임 $\mathcal{U} = \lbrace  U_n \rbrace$을 정의한다.</strong></p>
+
+  <ol>
+    <li>$n &lt; m \implies U_n \supset U_m$</li>
+    <li>$V$가 $x$의 근방일 때, $\exists U \in \mathcal{U} : U \subset V$</li>
+  </ol>
+
+  <p>이로부터 다음 두 조건을 만족하는 함수 $k: \mathbb{N} → \mathbb{N}$을 정의할 수 있다.</p>
+
+  <ol>
+    <li>$x_{k(n)} \in U_n$</li>
+    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+  </ol>
+
+  <p>2가 가능한 이유는 $k(i)$가 $i \leq n$까지 정의되었을 때 $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$가 여전히 $x$를 극점으로 가지기 때문이다. 즉, $(x_n)$은 수렴하는 부분점렬 $(x_{k(n)})$을 가진다.</p>
 </blockquote>
 
-<p><strong>증명.</strong> 추이적 프레임에서 $\mathsf{PP}$와 같이 중첩된 시제는 단일 시제 $\mathsf{P}$와 동치임을 쉽게 보일 수 있다. 따라서 $\mathsf{X} \neq \mathsf{Y}$, $\mathsf{Y} \neq \mathsf{Z}$인 시제들의 조합 $\mathsf{XYZ}$은 어떤 두 시제 조합과 동치임을 보이면 된다. 거울 규칙과 쌍대 규칙에 의해 $\mathsf{Z} = \mathsf{G}$인 경우만 고려하면 된다. 한편 $\mathsf{XY}$와 $\mathsf{X’Y’}$가 서로 동치가 아니라는 것을 보이기 위해서는 함의 관계가 성립하지 않는 크립키 모델을 찾으면 된다.</p>
+<p>위 증명이 올바르지 않은 이유는 볼드체 부분이 일반적으로 가능하지 않기 때문이다. 대신 다음이 성립한다.</p>
 
 <blockquote>
-  <p><strong>정리.</strong> $L_1$은 $\mathbf{F}_1$에 대해 완전하다.</p>
+  <p><strong>정리.</strong> 1차 가산 T₁ 공간에서 극점 콤팩트성과 점렬 콤팩트성은 동치이다.</p>
 </blockquote>
 
-<h2 id="4-시제-술어-논리">4. 시제 술어 논리</h2>
-
-<p>고전 논리학에서 술어 논리는 명제 논리에 다음 공리를 추가한 것이다.</p>
-
-<ul>
-  <li>$\forall x \phi \to \phi[y/x]$ (단, $y$는 $\phi$에서 $x$에 대해 자유)</li>
-  <li>$\forall x (\phi \to \psi) \to (\phi \to \forall x \psi)$ (단, $x$는 $\phi$의 자유변수가 아님)</li>
-  <li>$x = x$</li>
-  <li>$x = y \to (\phi[x/z] \to \phi[y / z]$) (단, $x, y$는 $\phi$에서 $z$에 대해 자유)</li>
-</ul>
-
-<p>그리고 다음의 추론 규칙을 추가한다.</p>
-
-<ul>
-  <li><strong>UG<sub>Universal Generalisation</sub>:</strong> $\vdash \phi \implies \vdash \forall x \phi$</li>
-</ul>
-
-<p>시제 논리 $L_0$에 상술한 공리들과 추론 규칙을 추가한 논리 체계를 시제 술어 논리 $L_P$라고 하자.</p>
+<h3 id="그물과-점렬">그물과 점렬</h3>
 
 <blockquote>
-  <p><strong>정리.</strong> $L_P$는 다음을 증명한다.</p>
+  <p><strong>정의.</strong> $(J, \leq)$가 전순서라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합(directed set)</strong>이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종(cofinal)</strong>이라고 한다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> $(J, \leq)$가 방향 집합이고 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물(net)</strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>정의.</strong> 그물 $(x_\alpha)$가 $x$로 수렴한다는 것은, 임의의 $x$의 근방 $U$에 대해 어떤 $\alpha \in J$가 존재하여</p>
+
+  <p>\(\alpha \leq \beta \implies x_\beta \in U\)
+인 것이다.</p>
+</blockquote>
+
+<p>일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 1차 가산 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 점렬 $(x_n)$이 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면  $f(x_n) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 위상 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 그물 $(x_\alpha)$가 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면  $f(x_\alpha) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$\mathcal{U}_x$를 $x$의 근방들의 집합이라고 하자. 역포함관계로 $\mathcal{U}_x$에 순서 $\leq$를 준다. $x \in \bar{A}$라면 임의의 $U_\alpha \in \mathcal{U}_x$에 대해 $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$인 $x_\alpha$가 존재한다. $x_\alpha → x$임을 확인하라.</li>
+</ol>
+
+<blockquote>
+  <p><strong>정의.</strong> $(x_\alpha)_{\alpha \in J}$가 그물이라고 하자. $(I, \preceq)$가 방향 집합이고, $g: (I, \preceq) → (J, \leq)$가 순서 보존이며, $\operatorname{im}g$가 공종일 때, $(x_{g(\beta)})_{\beta \in I}$를 $(x_\alpha)$의 부분그물이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 콤팩트할 필요충분조건은 임의의 그물이 수렴하는 부분그물을 가지는 것이다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> ”수렴하는 점렬이 존재한다“는 ”수렴하는 그물이 존재한다“보다 강한 조건이지만, ”임의의 점렬이 수렴하는 부분점렬을 가진다”는 “임의의 그물이 수렴하는 부분그물을 가진다”보다 강하지도, 약하지도 않은 조건임에 유의하라. 주어는 후자가 더 강하고, 술어는 전자가 더 강하다. 따라서 <strong>콤팩트성과 점렬 콤팩트성은 일반적으로 시사 관계가 없다.</strong> 구체적으로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+    <li>점렬 콤팩트 $\not\rightarrow$ 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$[0, 1]^{[0, 1]}$은 티호노프 정리에 의해 콤팩트하지만 점렬 콤팩트하지 않다.</li>
+  <li>Long line과 $\omega_1$은 점렬 콤팩트하지만 콤팩트하지 않다.</li>
+</ol>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/01/baire"> 베르 범주 정리 </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <h3 id="1-베르-공간">1. 베르 공간</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $S$가 위상공간 $X$의 부분집합일 때, 다음은 동치이다.</p>
+  <ul>
+    <li>$\left( \operatorname{cl}S \right)^\circ$가 공집합이다.</li>
+    <li>$(\operatorname{cl}S)^c$가 조밀하다.</li>
+    <li>$S$는 어떠한 $X$의 열린 집합에서도 조밀하지 않다.</li>
+  </ul>
+
+  <p>이때, $S$를 <strong>희박(rare)</strong>하다고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> 희박한 닫힌 집합들의 가산 합집합 $\bigcup F_n$이 희박한 공간 $X$를 베르 공간이라고 한다.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png" alt="" /></p>
+
+<p><em>Remark.</em> TFAE:</p>
+<ul>
+  <li>$X$가 베르 공간이다.</li>
+  <li>$X$의 열린 조밀 집합들의 가산 교집합은 조밀하다.</li>
+</ul>
+
+<p><strong>예시.</strong> $\mathbb{Q}$는 베르 공간이 아니다.</p>
+<ul>
+  <li>$\lbrace  q \rbrace$는 닫힌 희박 집합이지만 $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$는 희박하지 않다.</li>
+  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$는 열린 조밀 집합이지만 $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$은 조밀하지 않다.</li>
+</ul>
+
+<h3 id="2-베르-범주-정리">2. 베르 범주 정리</h3>
+
+<blockquote>
+  <p><strong>콤팩트 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$X$가 콤팩트하다.</li>
+    <li>임의의 유한 교집합 속성을 가진 닫힌 집합들의 모임 $\mathcal{C}$에 대해 $\bigcap_{C \in \mathcal{C}} C \neq \varnothing$이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>완비 거리 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$X$가 완비 거리 공간이다.</li>
+    <li>임의의 공집합이 없는 닫힌 집합열 $C_1 \supset C_2 \supset \cdots$에 대해 $\bigcap C_n \neq \varnothing$이며, 특히 $\operatorname{diam}C_n \to 0$일 때 $\bigcap C_n$은 홑원소 집합이다.</li>
+  </ol>
+</blockquote>
+
+<p><em>Remark.</em> 2는 4를 함의한다. 이로부터 콤팩트 거리 공간은 완비임을 보일 수 있다. <strong>역은 성립하지 않는다.</strong></p>
+
+<blockquote>
+  <p><strong>정리.</strong> 완비 거리 공간과 콤팩트 하우스도르프 공간은 베르 공간이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p>$X$가 완비 거리 공간 또는 콤팩트 하우스도르프 공간이라고 하자. 희박한 닫힌 집합들의 가산 모임 $\lbrace  F_n \rbrace$이 주어졌을 때, 임의의 열린 집합 $U$에 대해 $U \not\subset \bigcup F_n$임을 보이면 된다. 이를 위해 $\forall n : x \not\in F_n$인 $x \in U$를 찾을 것이다.</p>
+
+<p>$F_1$이 희박하므로 $x_1 \in U \setminus F_1$이 존재한다. $X$는 정칙 공간이므로 $x_1 \in U_1$, $\overline{U_1} \cap F_1 = \varnothing$인 열린 집합 $U_1$이 존재한다. 귀납적으로 다음과 같이 정의할 수 있다.</p>
+
+<ul>
+  <li>$x_n \in U_n \setminus F_n$</li>
+  <li>$U_n \subset U_{n - 1}$</li>
+  <li>$\overline{U_n} \cap F_n = \varnothing$</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png" alt="" /></p>
+
+<p>칸토어 축소 정리에 의해 $x \in \bigcap \overline{U_n}$인 $x$가 존재한다.</p>
+
+<h3 id="3-베르-범주-정리의-응용">3. 베르 범주 정리의 응용</h3>
+
+<blockquote>
+  <p><strong>연속함수열의 수렴은 거의 연속이다.</strong> $\lbrace  f_n : X → (Y, d) \rbrace$가 $f$로 수렴하는 연속함수열일 때,</p>
+
+\[S = \lbrace  x \in X : f\text{ is continuous at } x \rbrace\]
+
+  <p>는 $X$에서 조밀하다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>KAIST POW2024-20.</strong> $f$가 연속함수이고,</p>
+
+\[\forall x \geq 0 : \lim_{n \to \infty} f(nx) = 0\]
+
+  <p>라면 $\lim_{x \to \infty} f(x) = 0$이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>병리적 함수의 존재성.</strong> $h : [0, 1] → \mathbb{R}$가 연속함수라고 하자. 임의의 $ε &gt; 0$에 대해 다음을 만족하는 함수 $g : [0,1] → \mathbb{R}$가 존재한다.</p>
 
   <ul>
-    <li><strong>정 바르칸<sub>direct Barcan</sub>:</strong> $\forall x \mathsf{G}\phi \to \mathsf{G}\forall x \phi$</li>
-    <li><strong>역 바르칸<sub>converse Barcan</sub>:</strong> $\mathsf{G}\forall x \phi \to \forall x \mathsf{G} \phi$</li>
-    <li><strong>동일성의 영속성<sub>permanence of identity</sub>:</strong> $x = y \to \mathsf{G}(x = y)$</li>
+    <li>$\lVert h − g\rVert &lt; ε$이다.</li>
+    <li>$g$는 전 구간에서 연속이다.</li>
+    <li>$g$는 전 구간에서 미분 불가능하다.</li>
   </ul>
 </blockquote>
 
-<p><strong>증명.</strong> 역 바르칸 명제만 증명해 보자.</p>
-
-\[\begin{aligned}
-&amp;1.  &amp;&amp;\forall x \phi \to \phi &amp;&amp;&amp;\text{Axiom} \\
-&amp;2. &amp;&amp;\mathsf{G}\forall x \phi \to \mathsf{G} \phi &amp;&amp;&amp;\text{Becker}\\
-&amp;3. &amp;&amp;\forall x (\mathsf{G}\forall x \phi \to \mathsf{G}\phi) &amp;&amp;&amp;\text{2, UG}\\
-&amp;4. &amp;&amp;\forall x (\mathsf{G}\forall x \phi \to \mathsf{G}\phi) \to (\mathsf{G}\forall x \phi \to \forall x \mathsf{G}\phi) &amp;&amp;&amp;\text{Axiom}\\
-&amp;5. &amp;&amp;\mathsf{G}\forall x \phi \to \forall x \mathsf{G} \phi \quad &amp;&amp;&amp;\text{3, 4, MP} \\
-&amp; \blacksquare
-\end{aligned}\]
-
-<p>자연 언어로 풀어 쓰자면,</p>
-
-<ul>
-  <li>정 바르칸: 현재 존재하는 모든 대상이 언제나 ____라고 하자. 그러면 임의의 미래 시점에 대해, 그때 존재하는 모든 대상은 ____이다.</li>
-  <li>역 바르칸: 임의의 미래 시점에서 대해, 그때 존재하는 모든 대상은 ____라고 하자. 그러면 현재 존재하는 모든 대상이 언제나 ____이다.</li>
-  <li>동일성의 영속성: 동일한 두 대상은 언제나 동일하다.</li>
-</ul>
-
-<p>동일성의 영속성은 시제 논리에서 상수가 고정 지시어<sub>rigid designator</sub>처럼 행동한다고 직관적으로 올바르다. 그러나 바르칸 명제는 직관적으로 틀렸다. 일례로 $\phi(x)$를 “$x$가 존재한다”로 치환해 보자.</p>
-
-<ul>
-  <li>역 바르칸: ① 임의의 미래 시점에서 대해, 그때 존재하는 모든 대상은 존재한다고 하자. ② 그러면 현재 존재하는 모든 대상이 언제나 존재한다.</li>
-</ul>
-
-<p>하지만 이 명제는 틀렸다. ①은 자명하게 성립하지만, 현재 존재하는 모든 대상이 영원히 존재할 것은 아니므로 ②는 성립하지 않기 때문이다. 따라서 역 바르칸 명제는 문제적이다.</p>
-
-<p>$L_P$가 바르칸 명제 같은 병리적 명제를 도출하는 이유는 TG가 열린 명제에 대해 유효하지 않기 때문이다(TG는 베커 규칙의 증명에 필요하다. 즉, 증명의 문제는 2단계에 있다). 앞서 말했듯이 TG는 논리적으로 참인 명제는 시간에 상관 없이 참이라는 의미이다. 그러나 열린 명제는 참도 아니고 거짓도 아니다. 열린 명제는 특정 대상에 의해 만족되거나, 만족되지 않기 때문이다.</p>
-
-<p>이 문제를 극복하기 위해 TG를 닫힌 명제에 대해서만 적용 가능하도록 제안하는 방안을 강구할 수 있으나, 제한된 시제 술어 논리는 일부 바람직한 명제를 증명하지 못함이 알려져 있다. 건전하면서도 완전한 시제 술어 논리를 만드는 작업은 아직도 해결되지 않은 문제이다.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/03/04/tensor"> 텐서곱에 관한 노트 </a>
+        <a href="/2024/11/21/trichotomy"> 정렬의 삼분성과 서수의 완전성 </a>
       </h1>
-    <span class="post-date">04 Mar 2025</span>
+    <span class="post-date">21 Nov 2024</span>
     
     <div class="tag-container">
       
@@ -674,378 +778,266 @@
         수학
       </div>
       
-      <div class="tag" onclick="location.href='/tags/대수학/'">
-        대수학
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
       </div>
       
     </div>
-     <p><strong>TL;DR.</strong> 벡터 공간의 텐서곱은 다음의 의미를 가진다.</p>
-
-<ol>
-  <li>다중 선형 사상의 선형화를 위한 정의역</li>
-  <li>다중 선형 사상의 공간</li>
-</ol>
-
-<p>엄밀히 말해 1이 $U \otimes V$에 해당하고, 2는 $U^\ast \otimes V^\ast$이다. 하지만 혼용되는 경향이 있는 듯하다.</p>
-
-<h3 id="1-도입">1. 도입</h3>
+     <h3 id="1-기본-개념">1. 기본 개념</h3>
 
 <blockquote>
-  <p><strong>정의.</strong> $U, V, W$가 체 $\mathbb{F}$ 위에서 정의된 벡터 공간이라고 하자. $b: U \times V \to W$가 <strong>쌍선형 사상<sub>bilinear map</sub></strong>이라는 것은 각 항에 대해서 $B$가 선형이라는 것이다. 즉, 임의의 $\mathbf{u}_1, \mathbf{u}_2 \in U, \mathbf{v}_1, \mathbf{v}_2 \in V$와 스칼라 $\alpha \in \mathbb{F}$에 대해 다음이 성립한다.</p>
+  <p><strong>정의.</strong> 다음을 만족하는 $(W, &lt;)$를 <strong>정렬 집합<sub>well-ordered set</sub></strong>이라고 한다.</p>
 
-\[b(\alpha \mathbf{u}_1 + \mathbf{u}_2, \mathbf{v}_1) = \alpha b(\mathbf{u}_1, \mathbf{v}_1) + b(\mathbf{u}_2, \mathbf{v}_1)\]
+  <ol>
+    <li>$(W, &lt;)$은 전순서이다.</li>
+    <li>$W$의 임의의 부분집합은 최소 원소를 가진다.</li>
+  </ol>
 
-\[b(\mathbf{u}_1, \alpha \mathbf{v}_1 + \mathbf{v}_2) = \alpha b(\mathbf{u}_1, \mathbf{v}_1) + b(\mathbf{u}_1, \mathbf{v}_2)\]
-</blockquote>
-
-<p>예를 들어 실수 벡터 공간에서의 내적 $\cdot : V \times V \to \mathbb{R}$은, $\mathbb{R}$을 1차원 벡터 공간으로 간주했을 때 쌍선형 사상이다. 비슷한 방식으로 <strong>다중 선형 사상<sub>multilinear form</sub></strong>을 정의할 수 있다. $V$가 $n$차원 벡터 공간일 때, $\mathrm{det}: V \times \dots \times V \to \mathbb{R}$은 $n$중 선형 사상이다.</p>
-
-<p>$b: U \times V \to W$가 쌍선형 사상이라고 하자. 당연하게도 $b$는 선형 사상이 아니다. $b$는 서로 다른 두 공간의 벡터를 매개변수로 받는 사상이지, 한 공간의 벡터를 매개변수로 받는 사상이 아니기 때문이다. 설령 $b$를 직합 $U \oplus V$에서 $W$로 가는 사상으로 생각하더라도, $b(\alpha(u, v)) = b((\alpha u, \alpha v)) = \alpha^2 b(u, v)$이므로 선형성을 만족하지 않는다.</p>
-
-<p>그러나 텐서곱을 이용하면 $b$를 선형 사상과 동일시할 수 있다.</p>
-
-<h3 id="2-텐서곱의-정의">2. 텐서곱의 정의</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 벡터 공간 $U, V$에 대해, <strong>텐서곱<sub>tensor product</sub></strong> $U \otimes V$를 다음 보편 성질<sub>universal property</sub>를 만족하는 벡터 공간으로 정의한다.</p>
-
-  <p><img src="/public/tensor.png" width="280px" style="margin: 0 auto; mix-blend-mode: multiply;" /></p>
-
-  <p>또한 $U \otimes V$의 원소를 <strong>텐서</strong>라고 한다.</p>
+  <p><strong>정의.</strong> $(W, &lt;)$가 정렬 집합일 때, $a \in S$에 대해 $x &lt; a \rightarrow x \in S$인 $W$의 부분집합 $S$를 <strong>초기단<sub>initial segment</sub></strong>이라고 한다.</p>
 </blockquote>
 
 <blockquote>
-  <p><strong>정리.</strong> 임의의 벡터 공간의 텐서곱은 언제나 존재하며, 동형 사상에 대해 유일하다.</p>
+  <p><strong>정리.</strong> $S$가 정렬 집합 $(W, &lt;)$의 초기단일 때, 어떤 $a \in W$에 대해 다음이 성립한다.</p>
+
+\[S = W[a] := \lbrace  x \in W : x &lt; a \rbrace\]
 </blockquote>
 
-<p><strong>증명.</strong> 유한 차원 벡터 공간에 대해서만 증명한다. $U$와 $V$의 차원이 각각 $n, m$이고, 기저가 $\lbrace  e_1, \dots, e_n\rbrace , \lbrace  f_1, \dots, f_m\rbrace$이라고 하자. $T$가 차원이 $nm$인 벡터 공간이라고 하자. 차원이 같은 벡터 공간은 모두 동형이므로, 그러한 $T$는 동형 사상에 대해 유일하다. $T$의 형식적 기저를 다음과 같이 두자.</p>
+<p><strong>증명.</strong> $a$를 $W \setminus S$의 최솟값으로 잡는다.</p>
 
-\[\mathcal{B} = \{ e_1f_1, \dots, e_1f_m, \dots, e_nf_1, \dots, e_nf_m \}\]
-
-<p>$T$가 $U$와 $V$의 텐서곱임을 보이기 위해서 임의의 쌍선형 사상 $b: U \times V \to W$를 상정한다. $b$로부터 다음의 행벡터를 정의한다.</p>
-
-\[\tilde {b} = \big[ b(e_1, f_1), \dots, b(e_1, f_m), \dots, b(e_n, f_1), \dots, b(e_n, f_m) \big]_\mathcal{B}\]
-
-<p>또한 $\otimes: V \times W \to T$를 다음과 같이 정의한다.</p>
-
-\[\otimes: (u, v) = (u_1e_1 + \dots + u_ne_n, v_1f_1 + \dots + v_mf_m) \mapsto \begin{bmatrix} u_1v_1 \\ \vdots \\ u_1v_m \\ \vdots \\ u_nv_1 \\ \vdots \\ u_nf_m \end{bmatrix}_{\mathcal{B}}\]
-
-<p>이 때 다음이 성립한다.</p>
-
-\[\begin{align}
-\tilde {b}(\otimes(u, v)) &amp;= \sum_i \sum_j (u_i v_j)b(e_i, f_j) \\
-&amp;= b\left( \sum_i   u_i e_i, \sum_j v_j f_j \right)  &amp;&amp; (\text{by bilinearity})\\
-&amp;= b(u, v) &amp;&amp; \blacksquare
-\end{align}\]
-
-<h3 id="3-텐서와-다중-선형-사상의-동일시">3. 텐서와 다중 선형 사상의 동일시</h3>
-
-<p>지금까지의 논의를 한 줄로 요약하면 다음과 같다.</p>
-
-\[\mathrm{Hom}^2(U \times V, W) \cong \mathrm{Hom}(U \otimes V, W)\]
-
-<p>여기서 $\mathrm{Hom}^2$은 쌍선형 사상의 공간을 의미한다. 특히 $W = \mathbb{F}$일 때, 쌍대 공간의 정의에 의해 다음이 성립한다.</p>
-
-\[\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong \mathrm{Hom}(U \otimes V, \mathbb{F}) \cong (U \otimes V)^*\]
-
-<p>이 관계를 이용하면 텐서곱을 쌍선형 사상의 선형화를 위한 정의역으로 보는 시각을 넘어, 쌍선형 사상의 공간 그 자체로 볼 수도 있다. 먼저 다음의 보조정리를 증명한다.</p>
+<h3 id="2-정렬의-삼분성">2. 정렬의 삼분성</h3>
 
 <blockquote>
-  <p><strong>보조정리.</strong> $(U \otimes V)^\ast = U^\ast \otimes V^\ast$</p>
-</blockquote>
+  <p><strong>정리.</strong></p>
 
-<p><strong>증명.</strong> 앞선 관계식과 쌍대 공간의 정의로 인해 다음을 보이면 충분하다.</p>
-
-\[\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong \mathrm{Hom}(U, \mathbb{F}) \otimes \mathrm{Hom}(V, \mathbb{F})\]
-
-<p>즉, $\mathrm{Hom}^2(U \times V, \mathbb{F})$가 보편 성질을 만족함을 보이면 된다. 이는 앞선 증명과 거의 동일하므로 생략한다. ■</p>
-
-<p>보조정리로부터 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong U^\ast \otimes V^\ast$</p>
+  <ol>
+    <li>정렬 집합은 자신의 초기단과 동형일 수 없다.</li>
+    <li>정렬 집합의 자기동형사상은 항등사상이다.</li>
+    <li>두 정렬 집합 간 동형사상은 유일하다.</li>
+  </ol>
 </blockquote>
 
 <p><strong>증명.</strong></p>
 
-\[\begin{align}
-U^* \otimes V^* &amp;\cong U^{***} \otimes V^{***} \\
-&amp;\cong (U^{**} \otimes V^{**})^* \\
-&amp;\cong (U \otimes V)^* \\
-&amp;\cong \mathrm{Hom}^2(U \times V, \mathbb{F})
-\end{align}\]
-
-<p>두 번째 식에서 세 번째 식으로 넘어갈 때 $V \cong V^{\ast\ast}$ 표준<sub>canonical</sub> 동일시를 사용했다. ■</p>
-
-<p>따라서 쌍대 공간의 텐서는 쌍선형 사상과 표준적으로 동일시할 수 있다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/27/general-covariance"> 일반 공변성에 대한 노트 </a>
-      </h1>
-    <span class="post-date">27 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/물리학/'">
-        물리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/역학/'">
-        역학
-      </div>
-      
-    </div>
-     <p>어떤 이론이 <strong>일반 공변적<sub>general covariant</sub></strong>이라는 것은, 물리 법칙의 형태<sub>form</sub>가 미분가능한 좌표계 변환에 대해 보존된다는 것이다. 구체적으로, 좌표계 $\lbrace q_i \rbrace $와 좌표계 $\lbrace q’_i \rbrace $가 다음 관계에 있다고 하자.</p>
-
-\[q_i' = f_i(\{ q \})\]
-
-<p>각 $i$에 대해 $f_i$가 미분 가능하다고 하자. 일반 공변적 이론이라면 좌표계 $\lbrace q_i \rbrace $를 사용했을 때와 좌표계 $\lbrace q_i’ \rbrace $를 사용했을 때의 물리 법칙이 형태가 같아야 한다.</p>
-
-<p>예시를 보자. 퍼텐셜이 0인 계 안의 입자의 위치를 극좌표계 $(r, \theta)$ 또는 직교 좌표계 $(x, y)$를 사용하여 표현하는 경우를 생각해 보자. 두 좌표계는 다음 관계에 있다.</p>
-
-\[\begin{gather}
-x = f_1(r, \theta) = r \cos \theta\\
-y = f_2(r, \theta) = r \sin \theta
-\end{gather}\]
-
-<p>$f_1$과 $f_2$가 미분 가능하므로 일반 공변적 이론은 두 좌표계로 표현했을 때의 형태가 같아야 한다.</p>
-
-<p>먼저 뉴턴 역학의 경우를 보자. 뉴턴 역학의 물리 법칙은 다음과 같다.</p>
-
-\[\begin{gather}
--\frac{dV(x, y)}{dx} = m\ddot{x} \\
--\frac{dV(x, y)}{dy} = m\ddot{y}
-\end{gather}\]
-
-<p>$V(x, y) = 0$이므로 $\ddot{x} = \ddot{y} = 0$이다. 즉 입자는 등속 선형 운동을 한다. 만약 뉴턴 역학이 일반 공변적이라면 위 법칙을 $(x, y)$에서 $(r, \theta)$로 바꿔 표현해도 결과가 같아야 한다.</p>
-
-\[\begin{gather}
--\frac{dV(r, \theta)}{dr} = m\ddot{r} \\
--\frac{dV(r, \theta)}{d\theta} = m\ddot{\theta}
-\end{gather}\]
-
-<p>$V(r, \theta) = 0$이므로 $\ddot{r} = \ddot{\theta} = 0$이다. 이번에는 입자가 등속 원운동을 한다. 결과가 달라졌으므로 <strong>뉴턴 역학은 일반 공변적이지 않다.</strong></p>
-
-<p>이제 <a href="http://dimenerno.github.io/2025/02/27/euler-lagrange/">라그랑주 역학</a>의 경우를 보자. 라그랑주 역학의 물리 법칙은 다음과 같다.</p>
-
-\[\begin{gather}
-\frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
-\frac{\partial \mathcal{L}}{\partial y} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{y}}
-\end{gather}\]
-
-<p>$\mathcal{L}(x, y) = T - V = \frac{m}{2}(\dot{x}^2 + \dot{y}^2)$를 대입하면 $\ddot{x} = \ddot{y} = 0$, 즉 등속 선형 운동을 얻는다. 여기까지는 뉴턴 역학과 같다.</p>
-
-<p>이제 오일러-라그랑주 방정식의 $(x, y)$를 $(r, \theta)$로 치환해 보자.</p>
-
-\[\begin{gather}
-\frac{\partial \mathcal{L}}{\partial r} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{r}} \\
-\frac{\partial \mathcal{L}}{\partial \theta} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}}
-\end{gather}\]
-
-<p>$x = r\cos\theta, y = r\sin\theta$를 대입하여 정리하면 $\mathcal{L}(r, \theta)$는 다음과 같다.</p>
-
-\[\mathcal{L}(r, \theta) = \frac{m}{2}(\dot{r}^2 + r^2 \dot{\theta}^2)\]
-
 <blockquote>
-  <p><em>Remark.</em> 오일러-라그랑주 방정식에서는 단순히 $(x, y)$를 $(r, \theta)$로 치환했지만, 라그랑지안에서는 $x = r \cos \theta, y = r \sin \theta$ 관계식을 대입하는 이유는 라그랑지안이 <strong>실수쌍</strong>에 대한 함수가 아니라 <strong>시공간의 점</strong>에 대한 함수이기 때문이다. 일반 공변성은 무지성, 일편단률적인 좌표 변환에 대해서 식의 형태가 유지된다는 의미가 아니라, 물리계를 표현하는 함수들은 유지된 채 그것을 표현하는 좌표가 바뀌었을 때 식의 형태가 유지된다는 의미이다.</p>
+  <p><strong>보조정리.</strong> $f: (W, &lt;) → (W, &lt;)$가 순서 보존이라면 $x \in W$에 대해 $x \leq f(x)$이다.</p>
 </blockquote>
 
-<p>대입하여 계산하면 다음과 같다.</p>
+<p><em>보조정리의 증명.</em></p>
 
-\[\begin{gather}
-\ddot{r} = r\dot{\theta}^2 \\
-2\dot{r}\dot{\theta} + r\ddot{\theta} = 0
-\end{gather}\]
+<p>귀류법에 따라 $S = \lbrace  x \in W : x &gt; f(x) \rbrace$가 공집합이 아니라고 하자. $W$는 정렬 집합이므로 $c = \min S$가 존재한다. $c \in S$이므로 $c &gt; f(c)$이며, $f$가 순서 보존이므로 $f(c) &gt; f(f(c))$이다. 한편 $c = \min S$이므로 $f(c) \notin S$이며, $f(f(c)) \geq f(c)$이므로 모순이다. □</p>
 
-<p>미분방정식이 복잡해서 알아보기 힘들지만, 위 두 미분방정식은 $\ddot{x} = \ddot{y} = 0$과 동치이다. 일례로 $\theta = \tan^{-1}t, r = \sqrt{1 + t^2}$가 방정식의 해인 것을 확인할 수 있다.</p>
+<p><strong>(1)의 증명.</strong></p>
 
-<p>일반적으로 다음이 성립한다.</p>
+<p>$f: (W, &lt;) → (W[a], &lt;)$가 동형사상이라고 하자. 포함사상 $j: W[a] → W$에 대해 $jf: (W, &lt;) → (W, &lt;)$는 순서 보존이다. 따라서 $jf(a) \geq a$이다. 하지만 $a \notin \mathrm{im}f$이므로 모순이다. □</p>
 
-<blockquote>
-  <p><strong>정리.</strong> 라그랑주 역학은 일반 공변성을 가진다.</p>
-</blockquote>
+<p><strong>(2)의 증명.</strong></p>
 
-<p>뉴턴 역학은 일반 공변성이 없지만 라그랑주 역학은 있다는 것이 신기하게 느껴질 수 있지만, 잘 생각해 보면 이것은 당연하다. 뉴턴의 제1법칙은 보통 $F = 0 \implies \ddot{x} = 0$이라는 수식으로 표현되지만 정확한 진술은 다음과 같다.</p>
+<p>$f: (W, &lt;) → (W, &lt;)$가 동형사상이라고 하자. $f^{-1}$ 또한 동형사상이므로 $x \in W$에 대해 $x \leq f(x)$, $f(x) \leq f^{-1}(f(x)) = x$이다. 따라서 $x = f(x)$이다. □</p>
 
-<blockquote>
-  <p>외력을 받지 않는 입자의 시공간 다이어그램은 선형이다.</p>
-</blockquote>
+<p><strong>(3)의 증명.</strong></p>
 
-<p>‘선형’이라는 표현에 주목하라. 선형성은 특정한 기하학에 의존적인 표현이다. 예를 들어 유클리드 기하학에서 ‘선형’이란 우리가 흔히 말하는 직선이지만, 구면 기하학에서 ‘선형’은 대원으로 주어진다. 그러므로 위 진술은 다음과 같이 밝혀 쓰는 것이 가장 정확하다.</p>
+<p>$f, g: (W_1, &lt;_1) → (W_2, &lt;_2)$가 동형사상이라고 하자. $g^{-1}f: (W_1, &lt;_1) → (W_1, &lt;_1)$은 자기동형사상이므로 (2)에 의해 항등사상이다. 따라서 $f = g$이다. ■</p>
 
 <blockquote>
-  <p><strong>뉴턴 역학</strong>. 외력을 받지 않는 입자의 시공간 다이어그램은 유클리드 기하학의 선형이다.</p>
-</blockquote>
-
-<p>그리고 유클리드 기하학의 선형은 직교 좌표계에서 $\ddot{x} = \ddot{y} = 0$ 꼴로 주어진다. 따라서 $F = 0 \implies \ddot{x} = 0$은, 유클리드 기하학과 직교 좌표계를 전제했을 때에만 올바른 수식인 것이다.</p>
-
-<p>거꾸로 말해, 이론이 특정한 기하학에 의존하지 않는다면 그 이론은 일반 공변적이다. 라그랑주 역학은 그러한 이론의 사례이다. 라그랑주 역학의 진술은 다음과 같이 표현할 수 있다.</p>
-
-<blockquote>
-  <p><strong>라그랑주 역학</strong>. 라그랑지안의 적분을 극화시키는 경로가 입자의 운동 경로이다.</p>
-</blockquote>
-
-<p>그리고 라그랑지안은 특정 기하학에 의존적인 함수가 아닌, 그저 시공간의 점들에 대해 실숫값을 출력하는 함수이다. 따라서 위 진술은 어떠한 기하학에 대해서도 의존적이지 않으며, 라그랑주 역학은 일반 공변적이다.</p>
-
-<p>구멍 논증<sub>hole argument</sub>에 따르면 일반 공변적인 이론들은 형이상학적인 의미에서 비결정론적이다. 이에 대한 설명은 나중에 하도록 하겠다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/27/euler-lagrange"> 오일러-라그랑주 방정식과 라그랑주 역학 </a>
-      </h1>
-    <span class="post-date">27 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/물리학/'">
-        물리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/역학/'">
-        역학
-      </div>
-      
-    </div>
-     <h2 id="1-도입">1. 도입</h2>
-
-<p>1차원 위에서 운동하는 입자의 운동 경로는 $x(t)$와 같이 표현할 수 있다. 입자의 위치와 속도에 의존적인 함수 $f(x, x’)$를 생각하자. 이 입자가 시간 $t_1$일 때 $x_1$에서 출발하여 시간 $t_2$일 때 $x_2$에 도착하는데, 그 과정에서 다음 값을 극화<sub>extremise</sub>하는 경로, 즉 다음 값이 극대 또는 극소가 되도록 하는 경로 $x(t)$를 찾는 것이 목표이다.</p>
-
-\[A[x] = \int^{t_2}_{t_1} f(x, \dot{x}) dt\]
-
-<p>대괄호는 $A$의 매개변수가 실수가 아닌 함수임을 의미한다. 따라서 직관적으로 생각했을 때 $A[x]$를 최소화하는 $x(t)$를 찾기 위해서는 함수에 대한 미분식을 세워야 한다.</p>
-
-\[\frac{dA[x]}{dx(t)} = 0?\]
-
-<h2 id="2-오일러-라그랑주-방정식">2. 오일러-라그랑주 방정식</h2>
-
-<p>물론 함수에 대한 미분을 우리는 정의한 적이 없다. 하지만 간단한 트릭을 통해 함수에 대한 미분을 일반적인 미분으로 환원할 수 있다. 먼저 $x_0(t)$가 우리가 찾고자 하는 경로, 즉 $A[x]$를 극화시키는 경로라고 하자. $x_0(t)$의 ‘주변’에 있는 경로는 다음과 같은 꼴이다.</p>
-
-\[x(\alpha, t) = x_0(t) + \alpha h(t)\]
-
-<p><img src="/public/euler-lagrange.png" width="400px" style="margin: 2em auto;" /></p>
-
-<p>경계 조건은 $h(t_1) = h(t_2) = 0$이다. $x_0(t)$가 $A[x]$를 극화시키므로, 충분히 작은 $\epsilon$에 대해 $A[x_0] = A[x(0, t)] \leq A[x(\epsilon, t)]$이다. 따라서,</p>
-
-\[\left. \frac{dA[x(\alpha, t)]}{d\alpha} \right\vert_{\alpha = 0} = 0\]
-
-<p>위 식을 전개하면 다음과 같다.</p>
-
-\[\begin{aligned}
-\frac{dA}{d\alpha} &amp;= \int^{t_2}_{t_1} \frac{d}{d\alpha} \Big[ f \big( x(\alpha, t), \dot{x}(\alpha, t) \big) \Big] dt \\
-&amp;= \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} + \frac{\partial f}{\partial \dot{x}}\frac{\partial \dot{x}}{\partial \alpha} \right) dt \\
-&amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \int^{t_2}_{t_1} \frac{\partial f}{\partial \dot{x}} \cdot \frac{d}{dt} \left( \frac{\partial x}{\partial \alpha} \right) dt \\
-&amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \left[ \frac{\partial f}{\partial \dot{x}} \frac{\partial x}{\partial \alpha} \right]^{t_2}_{t_1} -  \int^{t_2}_{t_1} \frac{d}{dt} \left( \frac{\partial f}{\partial \dot{x}} \right) \frac{\partial x}{\partial \alpha} dt
-\end{aligned}\]
-
-<p>3번 식에서 4번 식으로 넘어가는 데 부분적분이 쓰였다. ${\partial x}/{\partial \alpha} = h(t)$이므로, 경계 조건에 의해 4번 식의 두 번째 항은 소거된다. 따라서,</p>
-
-\[\frac{dA}{d\alpha} = \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x} - \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right) \right) \frac{\partial x}{\partial \alpha} dt = 0\]
-
-<p>임의의 $h \in C^1$에 대해 위 식이 만족되어야 하므로, $x(t)$가 $A$를 극화할 다음의 <em>필요조건</em>을 얻는다.</p>
-
-\[\frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
-
-<p>이것이 <strong>오일러-라그랑주 방정식<sub>Euler-Lagrange equation</sub></strong>이다. 값 $A$를 극화한다는 것을 $\delta A = 0$과 같이 표현하므로, 오일러-라그랑주 방정식의 결론은 다음과 같이 적을 수 있다.</p>
-
-\[\delta A = 0 \implies \frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
-
-<p>방금 우리는 일변수 함수에 대해 증명했지만, 다변수 함수에 대해서도 마찬가지 식이 성립한다. 즉, 어떤 입자(들)의 운동을 나타내는 좌표가 $\lbrace  q_i \rbrace _{i \leq n}$라고 하자. 예를 들어 2개의 입자가 3차원에서 운동하는 경우 $n = 6$이다. 이들의 운동이 $\int f(q_1, \dot{q_1}, \dots, q_n, \dot{q_n}) dt$를 극화할 필요조건은 각 $i$에 대해 다음이 성립하는 것이다.</p>
-
-\[\frac{\partial f}{\partial q_i} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{q_i}} \right)\]
-
-<!-- ## 3. 최단 강하 곡선 문제
-
-앞서 $t$를 시간, $x(t)$를 경로로 설정했지만, 다른 변수에 대해서도 오일러-라그랑주 방정식을 적용할 수 있다. 그 예시로, 최단 강하 곡선 문제를 풀어보자.
-
-<img src="public/brachistochrone.png" width="400px" style="margin: 2em auto;">
-
-에너지 보존 법칙에 의해 다음 식이 성립한다.
-
-$$
-\dot{x}^2 + \dot{y}^2 = -2gy
-$$
-
-따라서 곡선 $y(x)$를 따라 $(x\_1, y\_1)$에서 $(x\_2, y\_2)$까지 강하하는 데 걸리는 시간은 다음과 같다.
-
-$$
-\begin{aligned}
-T &= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{ds}{v} \\
-&= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{\sqrt{dx^2 + dy^2}}{\sqrt{\dot{x}^2 + \dot{y}^2}} \\
-&= \int^{x_2}_{x_1} \sqrt{-\frac{1 + y'^2}{2gy}} dx
-\end{aligned}
-$$
-
-다음과 같이 $f(y, y')$을 두자.
-
-$$
-f(y, y') = \sqrt{-\frac{1 + y'^2}{2gy}}
-$$
-
-오일러-라그랑주 방정식에 따르면 $T$가 극솟값을 가질 필요조건은 다음과 같다.
-
-$$
-\frac{\partial f}{\partial y} = \frac{d}{dx} \frac{\partial f}{\partial {y'}}
-$$
-
-위 식을 풀면 $y(x)$가 **사이클로이드** 꼴로 나타난다. 자세한 계산 과정은 연습문제로 땡처리하는 것을 양해 바란다. -->
-
-<h2 id="3-라그랑주-역학">3. 라그랑주 역학</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> 계 $S$의 입자(들)의 운동을 나타내는 좌표가 $\lbrace  q_i \rbrace _{1 \leq i \leq n}$라고 하자. $S$의 <strong>라그랑지안<sub>Lagrangian</sub></strong> $\mathcal{L}(\lbrace  q , \dot{q} \rbrace, t)$를, 다음의 값을 극화시키는 조건에 대한 방정식이 입자들의 운동 방정식과 같아지도록 하는 함수로 정의한다.</p>
-
-\[\mathcal{S} = \int^{t_2}_{t_1} \mathcal{L}(\{ q, \dot{q} \}, t) dt\]
-
-  <p>$\mathcal{S}$를 <strong>작용<sub>action</sub></strong>이라고 부른다.</p>
-</blockquote>
-
-<p>예를 들어 1차원 퍼텐셜 장 $V(x)$에 속하는 입자의 라그랑지안은 다음과 같다.</p>
-
-\[\begin{aligned}
-\mathcal{L}(x, \dot{x}) &amp;= T - V \\
-&amp;= \frac{1}{2}m\dot{x}^2 - V(x)
-\end{aligned}\]
-
-<p>위 함수가 라그랑지안이라는 것을 확인해 보자. 오일러-라그랑주 방정식을 사용하면 해당 라그랑지안에 따른 작용이 극화될 조건은 다음과 같다.</p>
-
-\[\begin{aligned}
-\delta \mathcal{S} = 0 &amp;\implies \frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
-&amp;\iff -\frac{dV}{dx} = \frac{d}{dt}(m\dot{x}) \\
-&amp;\iff -\frac{dV}{dx} = m\ddot{x}
-\end{aligned}\]
-
-<p>마지막 식은 뉴턴의 운동 방정식이다. 따라서 $\mathcal{L}$은 이 계의 라그랑지안이 맞다. 일반적으로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 다음 두 조건을 만족하는 고전역학적 계의 라그랑지안은 $\mathcal{L} = T - V$로 주어진다.</p>
+  <p><strong>정렬의 삼분성.</strong> $(W_1, &lt;_1), (W_2, &lt;_2)$가 정렬 집합일 때 다음 중 정확히 하나가 성립한다.</p>
 
   <ol>
-    <li>계의 경계 조건이 홀로노믹<sub>holonomic</sub>하다. 즉, 경계 조건이 입자들의 위치에만 의존하고 속도에 의존하지 않는다.</li>
-    <li>계에 작용하는 힘 $\mathbf{F}_i$가 퍼텐셜 함수 $U_i(\lbrace q, \dot{q} \rbrace, t)$를 가진다.</li>
+    <li>$(W_1, &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>어떤 $a$에 대해 $(W_1[a], &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>어떤 $b$에 대해 $(W_1, &lt;_1) \sim (W_2[b], &lt;_2)$</li>
+  </ol>
+
+  <p>각 경우 동형사상은 유일하며, 또한 2, 3의 경우 $a, b$는 유일하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p>앞선 정리는 1, 2, 3이 mutually exclusive함과, 유일성에 대한 주장을 보증한다. 따라서 임의의 $(W_1, &lt;_1), (W_2, &lt;_2)$가 위 세 경우에 속함을 보이면 충분하다.</p>
+
+<p>다음과 같이 부분함수 $f: W_1 → W_2$를 정의한다.</p>
+
+\[f := \lbrace  (x, y) \in (W_1, W_2) : (W_1[x], &lt;_1) \sim (W_2[y], &lt;_2) \rbrace\]
+
+<p>$f$가 단사이고 순서 보존임을 쉽게 확인할 수 있다. 이제 두 가지 경우를 고려한다.</p>
+
+<p><em>Case 1.</em> $\mathrm{dom} f = W_1$</p>
+
+<p>정리의 3번 경우에 해당하여 증명이 끝난다.</p>
+
+<p><em>Case 2.</em> $\mathrm{dom} f \subsetneq W_1$</p>
+
+<p>먼저 어떤 $a \in W$에 대해 $\mathrm{dom}f = W_1[a]$임을 보인다. $x \in \mathrm{dom}f$라면 $W_1[x] \sim W_2[f(x)]$이다. 해당 동형의 동형사상을 $\phi$라고 하면 $x’ &lt; x$에 대해 $W_1[x’] = W_2[\phi(x’)]$이므로 $x’ \in \mathrm{dom}f$이다. 따라서 $\mathrm{dom} f$는 초기단이다.</p>
+
+<p>두 번째로 $\mathrm{im} f = W_2$임을 보인다. $\mathrm{dom}f = W_1[a]$라고 하자. 앞선 문단과 비슷한 논증으로 $\mathrm{im}f$ 또한 $W_2$의 초기단임을 알 수 있다. $\mathrm{im}f = W_2[b]$라면, $(a, b) \in f$이므로 $a \in \mathrm{dom}f$이며 모순이다. ■</p>
+
+<h3 id="3-서수의-완전성">3. 서수의 완전성</h3>
+
+<blockquote>
+  <p><strong>서수의 완전성.</strong> 모든 정렬 집합은 어떤 서수와 순서 동형이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $(W, &lt;)$가 정렬 집합이라고 하자. 다음과 같이 $A, S$를 정의한다.</p>
+
+\[\begin{gather}
+A = \lbrace  a \in W : W[a] \sim \alpha_a \text{ where $\alpha_a \in$Ord} \rbrace\\
+S = \lbrace  \alpha_a \in \mathrm{Ord} :  a \in A\rbrace
+\end{gather}\]
+
+<p>$S$가 서수이고 $A$가 초기단임을 쉽게 보일 수 있다. $S = \beta$, $A = W[c]$라고 하자. $f: A → S; a \mapsto \alpha_a$는 $(A, &lt;)$와 $(S, \in)$의 순서동형사상이다. 즉, $W[c] \simeq \beta$이므로 $c \in A$이며, 이는 모순이다. 따라서 $A = W \sim \beta$이다. ■</p>
+
+<h3 id="4-치환-공리">4. 치환 공리</h3>
+
+<p>위 증명에서 $S$의 존재성은 치환 공리꼴 없이 보장되지 않는다. 왜냐하면 부랄리포르티 역설에 의해 $\mathrm{Ord}$는 집합이 아니며, 이에 따라 분류 공리꼴로 $S$의 존재성을 보장할 수 없기 때문이다.</p>
+
+<p>치환 공리의 필요성을 보여주는 다른 예시로, 치환 공리꼴 없이는 $\omega + \omega$의 존재성을 보장할 수 없다. 각 $n \in \mathbb{N}$에 대해 $\omega + n$이 존재함은 짝 공리와 합집합 공리로 보일 수 있지만, $\omega + \omega := \cup_{n \in \mathbb{N}} (\omega + n)$가 존재함은 보일 수 없다. 그렇다고 임의의 집합들의 합집합을 허용하는 공리를 추가할 수는 없는데, 이는 “모든 집합들의 집합”을 집합으로 만듦으로써 러셀의 역설을 일으키기 때문이다.</p>
+
+<p>위 두 경우에서 우리에게 필요한 것은, “잘 정의된 일대일 대응 관계 $R(x,y)$와 집합 $X$가 주어졌을 때 $\lbrace  y : R(x, y), x \in X \rbrace$는 집합이다”라는 내용의 공리이다. 이 공리가 치환 공리이다. 치환 공리를 사용하면 $\omega = \lbrace 0, 1, 2, … \rbrace$와 관계 $R(x, y): y = \omega + x$에 대해 $\mathrm{im}R\vert_\omega = \lbrace  \omega, \omega + 1, \omega + 2, … \rbrace$가 존재하며, $\omega \cup \mathrm{im}R\vert_\omega = \omega + \omega$가 존재함을 보일 수 있다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/21/trichotomy/en"> Trichotomy and Completeness of Ordinals </a>
+      </h1>
+    <span class="post-date">21 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <h2 id="1-basic-concepts">1. Basic Concepts</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> A set $(W, &lt;)$ is called a <strong>well-ordered set</strong> if it satisfies the following conditions:</p>
+
+  <ol>
+    <li>$(W, &lt;)$ is a total order.</li>
+    <li>Every non-empty subset of $W$ has a least element.</li>
   </ol>
 </blockquote>
 
-<p><strong>증명.</strong> 링크된 <a href="https://physics.stackexchange.com/questions/78138/is-there-a-proof-from-the-first-principle-that-the-lagrangian-l-t-v">SE 포스트</a>를 참조.</p>
+<blockquote>
+  <p><strong>Definition.</strong> If $(W, &lt;)$ is a well-ordered set, a subset $S$ of $W$ such that $x &lt; a \rightarrow x \in S$ for some $a \in S$ is called an <strong>initial segment.</strong></p>
+</blockquote>
 
-<p>그러나 일반적으로 계의 라그랑지안이 $T - V$로 주어지는 것은 아니다. 예를 들어 상대론적 입자의 운동 에너지는 $(\gamma - 1)m_0c^2$이지만, 올바른 라그랑지안은 $-m_0c^2/\gamma$이다.</p>
+<blockquote>
+  <p><strong>Theorem.</strong> If $S$ is an initial segment of a well-ordered set $(W, &lt;)$, then for some $a \in W$, the following holds:</p>
 
-<p>뉴턴 역학과 달리 라그랑주 역학은 매우 자유로운 좌표계 변환을 허용한다는 점에서 강점을 가진다. 뉴턴 역학과 달리 라그랑주 역학은 일반 공변성을 가지기 때문이다. 이에 대한 자세한 설명은 <a href="http://dimenerno.github.io/2025/02/27/general-covariance/">다음 글</a>에 있다.</p>
+\[S = W[a] := \{ x \in W : x &lt; a \}\]
+</blockquote>
+
+<p><strong>Proof.</strong> Let $a$ be the least element of $W \setminus S$.</p>
+
+<h2 id="2-trichotomy-of-order">2. Trichotomy of Order</h2>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>A well-ordered set cannot be isomorphic to its initial segment.</li>
+    <li>The only order-preserving automorphism of a well-ordered set is the identity map.</li>
+    <li>The isomorphism between two well-ordered sets is unique.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> We first prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $f: (W, &lt;) \to (W, &lt;)$ is order-preserving, then for all $x \in W$, $x \leq f(x)$.</p>
+</blockquote>
+
+<p><em>Proof of the Lemma.</em> Assume for contradiction that $S = \lbrace x \in W : x &gt; f(x) \rbrace$ is nonempty. Since $W$ is a well-ordered set, there exists a least element $c = \min S$. Since $c \in S$, we have $c &gt; f(c)$, and since $f$ is order-preserving, it follows that $f(c) &gt; f(f(c))$. On the other hand, since $c = \min S$, we have $f(c) \notin S$, and thus $f(f(c)) \geq f(c)$, leading to a contradiction. □</p>
+
+<p><strong>Proof of (1).</strong></p>
+
+<p>Assume $f: (W, &lt;) \to (W[a], &lt;)$ is an isomorphism. The inclusion map $j: W[a] \to W$ implies that $jf: (W, &lt;) \to (W, &lt;)$ is order-preserving. Therefore, $jf(a) \geq a$. However, since $a \notin \mathrm{im}f$, this leads to a contradiction. □</p>
+
+<p><strong>Proof of (2).</strong></p>
+
+<p>Assume $f: (W, &lt;) \to (W, &lt;)$ is an isomorphism. Since $f^{-1}$ is also an isomorphism, for all $x \in W$, we have $x \leq f(x)$ and $f(x) \leq f^{-1}(f(x)) = x$. Thus, $x = f(x)$. □</p>
+
+<p><strong>Proof of (3).</strong></p>
+
+<p>Assume $f, g: (W_1, &lt;_1) \to (W_2, &lt;_2)$ are isomorphisms. The composition $g^{-1}f: (W_1, &lt;_1) \to (W_1, &lt;_1)$ is an automorphism, and by (2), it must be the identity map. Therefore, $f = g$. ■</p>
+
+<blockquote>
+  <p><strong>Trichotomy of Order.</strong> For well-ordered sets $(W_1, &lt;_1)$ and $(W_2, &lt;_2)$, exactly one of the following holds:</p>
+
+  <ol>
+    <li>$(W_1, &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>For some $a$, $(W_1[a], &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>For some $b$, $(W_1, &lt;_1) \sim (W_2[b], &lt;_2)$</li>
+  </ol>
+
+  <p>In each case, the isomorphism is unique, and in cases 2 and 3, $a$ and $b$ are unique.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p>The preceding theorems guarantee that 1, 2, and 3 are mutually exclusive and establish the claim of uniqueness. Therefore, it suffices to show that any pair of well-ordered sets $(W_1, &lt;_1)$ and $(W_2, &lt;_2)$ falls into one of the three cases.</p>
+
+<p>We define a partial function $f: W_1 \to W_2$ as follows:</p>
+
+\[f := \{ (x, y) \in (W_1, W_2) : (W_1[x], &lt;_1) \sim (W_2[y], &lt;_2) \}\]
+
+<p>It can be easily verified that $f$ is injective and order-preserving. We now consider two cases.</p>
+
+<p><em>Case 1.</em> $\mathrm{dom} f = W_1$</p>
+
+<p>This corresponds to case 3 of the theorem, concluding the proof.</p>
+
+<p><em>Case 2.</em> $\mathrm{dom} f \subsetneq W_1$</p>
+
+<p>First, we show that for some $a \in W$, $\mathrm{dom}f = W_1[a]$. If $x \in \mathrm{dom}f$, then $W_1[x] \sim W_2[f(x)]$. Let $\phi$ be the isomorphism of that isomorphism. For $x’ &lt; x$, we have $W_1[x’] = W_2[\phi(x’)]$, thus $x’ \in \mathrm{dom}f$. Therefore, $\mathrm{dom} f$ is an initial segment.</p>
+
+<p>Next, we show that $\mathrm{im} f = W_2$. Assume $\mathrm{dom}f = W_1[a]$. By a similar argument as above, we can show that $\mathrm{im}f$ is also an initial segment of $W_2$. If $\mathrm{im}f = W_2[b]$, then $(a, b) \in f$, which implies $a \in \mathrm{dom}f$, leading to a contradiction. ■</p>
+
+<h2 id="3-completeness-of-ordinals">3. Completeness of Ordinals</h2>
+
+<blockquote>
+  <p><strong>Completeness of Ordinals.</strong> Every well-ordered set is order-isomorphic to some ordinal.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $(W, &lt;)$ be a well-ordered set. We define $A$ and $S$ as follows:</p>
+
+\[\begin{gather}
+A = \{ a \in W : W[a] \sim \alpha_a \text{ where } \alpha_a \in \mathrm{Ord} \}\\
+S = \{ \alpha_a \in \mathrm{Ord} : a \in A \}
+\end{gather}\]
+
+<p>It can be easily shown that $S$ is an ordinal and $A$ is an initial segment. Let $S = \beta$ and $A = W[c]$. The function $f: A \to S; a \mapsto \alpha_a$ is an order isomorphism between $(A, &lt;)$ and $(S, \in)$. Thus, $W[c] \simeq \beta$, which implies $c \in A$, leading to a contradiction. Therefore, $A = W \sim \beta$. ■</p>
+
+<h2 id="4-axiom-of-replacement">4. Axiom of Replacement</h2>
+
+<p>The existence of $S$ in the above proof cannot be guaranteed without the Axiom of Replacement. This is because, due to Burali-Forti’s paradox, $\mathrm{Ord}$ is not a set, and thus the existence of $S$ cannot be guaranteed by the Axiom of Separation (see: <a href="https://dimenerno.github.io/2024/11/18/ZFC/en">List of ZFC Axioms</a>).</p>
+
+<p>Another example demonstrating the necessity of the Axiom of Replacement is that without it, we cannot guarantee the existence of $\omega + \omega$. For each $n \in \mathbb{N}$, the existence of $\omega + n$ can be shown using the Axiom of Pairing and the Axiom of Union, but the existence of $\omega + \omega := \bigcup_{n \in \mathbb{N}} (\omega + n)$ cannot be established. However, we cannot simply add an axiom allowing the union of arbitrary sets, as this would make “the set of all sets” a set, leading to Russell’s paradox.</p>
+
+<p>In both cases, what we need is an axiom stating that “given a well-defined one-to-one correspondence $R(x,y)$ and a set $X$, the collection $\lbrace y : R(x, y), x \in X \rbrace$ is a set.” This axiom is the Axiom of Replacement. Using the Axiom of Replacement, we can show that given:</p>
+
+\[\begin{gather}
+\omega = \lbrace 0, 1, 2, ... \rbrace \\
+R(x, y): y = \omega + x,
+\end{gather}\]
+
+<p>the image $\mathrm{im}R|_\omega = \lbrace \omega, \omega + 1, \omega + 2, … \rbrace$ exists, and thus $\omega \cup \mathrm{im}R|_\omega = \omega + \omega$ exists.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/02/25/lebesgue-borel"> 르베그 가측 집합과 보렐 가측 집합 </a>
+        <a href="/2024/11/20/Rational-Real"> 유리수와 실수의 집합론적 정의 </a>
       </h1>
-    <span class="post-date">25 Feb 2025</span>
+    <span class="post-date">20 Nov 2024</span>
     
     <div class="tag-container">
       
@@ -1053,150 +1045,639 @@ $$
         수학
       </div>
       
-      <div class="tag" onclick="location.href='/tags/측도론/'">
-        측도론
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
       </div>
       
     </div>
-     <h3 id="1-르베그-측도">1. 르베그 측도</h3>
-
-<p><a href="https://dimenerno.github.io/2025/02/25/caratheodory/">카라테오도리 정리</a>로부터 다음과 같이 측도 $m$을 정의할 수 있다.</p>
-
-<ol>
-  <li>
-    <p>$\mathcal{A}_0 = \lbrace \cup^n_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $는 대수임을 보인다.</p>
-  </li>
-  <li>
-    <p>$A \in \mathcal{A}_0$에 대해, $A = \sqcup^n_{k=1} (a_k, b_k]$로 표현하는 방법이 유일함을 보인다.</p>
-  </li>
-  <li>
-    <p>함수 $\rho: \mathcal{A}_0 \to [0, \infty]$를</p>
-
-\[\rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)\]
-
-    <p>와 같이 정의했을 때 $\rho$가 예비측도임을 보인다.</p>
-  </li>
-  <li>
-    <p>$\mathcal{A}_0, \rho$에 대해 카라테오도리 구축 정리를 적용하여 외측도 $m^\ast$을 얻는다.</p>
-  </li>
-  <li>
-    <p>$m^\ast$의 정의역을 $m^\ast$-가측집합으로 제한하여 측도 $m$을 얻는다.</p>
-  </li>
-</ol>
-
-<p>대수는 유한 합집합에만 닫혀 있기 때문에 1, 2, 3은 거의 자명하다. 4, 5의 증명은 <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">관련 글</a>을 참조하라.</p>
+     <h3 id="1-칸토어의-동형성-정리">1. 칸토어의 동형성 정리</h3>
 
 <blockquote>
-  <p><strong>정의.</strong> 상술한 $m$을 <strong>르베그 측도<sub>Lebesgue measure</sub></strong>라고 부른다. 또한, $m$의 정의역에 속하는 집합을 <strong>르베그 가측<sub>Lebesgue measurable</sub></strong>이라고 부른다.</p>
+  <p><strong>칸토어의 동형성 정리.</strong> 가산이고 양끝점이 없으며 조밀한 전순서 집합은 순서 동형에 대해 유일하다.</p>
 </blockquote>
 
-<p>카라테오도리 정리들로부터 다음 사실들이 어렵지 않게 따라 나온다.</p>
+<p><strong>증명 1. (Back-and-Forth Argument)</strong></p>
+
+<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B  \setminus \mathrm{im} f_n$과 대응시키고, <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$
+를 순서 동형성을 만족하게끔 <strong>임의의</strong> 
+$a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$
+와 대응시킨다. (그림의 파란색은 ‘가장 인덱스가 작은’으로 선택된 원소)</p>
+
+<p><strong>증명 2. (Only-Forth Argument)</strong></p>
+
+<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus  \mathrm{im}f_n$과 대응시킨다.</p>
+
+<p><strong>잘못된 증명. (Incorrect Only-Forth Argument)</strong></p>
+
+<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B \setminus  \mathrm{im}f_n$와 대응시킨다.</p>
+
+<p><u>잘못된 이유</u>. $\mathrm{im} \left[ \bigcup f_n \right]$이 $B$ 전체를 소진한다는 보장이 없다. 일례로 모든 경우 선택된 $b$의 인덱스가 짝수인 경우가 가능하다.</p>
+
+<h3 id="2-데데킨트-절단">2. 데데킨트 절단</h3>
 
 <blockquote>
-  <p><strong>정리.</strong></p>
+  <p><strong>정의.</strong> 전순서 집합 $(P, &lt;)$에 대하여 $P$의 부분집합 $A, B$가 다음을 만족할 때 $(A, B)$를 <strong>절단</strong>이라고 한다.</p>
 
   <ol>
-    <li>$m([a, b]) = m((a, b)) = m((a, b]) = m([a, b)) = b - a$</li>
-    <li>$A \subset \mathbb{R}$이 가산일 때, $m(A) = 0$</li>
+    <li>$A \sqcup B = P$</li>
+    <li>임의의 $a \in A, b \in B$에 대해 $a &lt; b$이다.</li>
+  </ol>
+
+  <p>추가로 다음을 만족할 때 <strong>데데킨트 절단</strong>이라고 한다.</p>
+
+  <ol>
+    <li>$A$는 최대 원소를 가지지 않는다.</li>
+  </ol>
+
+  <p>추가로 다음까지 만족할 때 <strong>틈</strong>이라고 한다.</p>
+
+  <ol>
+    <li>$B$는 최소 원소를 가지지 않는다.</li>
   </ol>
 </blockquote>
 
-<p>그리고 카라테오도리 확장 정리로 얻어지는 측도는 완비 측도<sub>complete measure</sub>이므로 다음이 성립한다.</p>
+<p><strong>Remark</strong></p>
+<ol>
+  <li>$P$가 완비이다 ⇔ $P$는 틈을 가지지 않는다.</li>
+  <li>$P = \mathbb{Q}$일 때 틈은 무리수 집합을, 데데킨트 절단은 실수 집합을 나타낸다.</li>
+</ol>
+
+<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
+
+<h3 id="3-완비화-정리">3. 완비화 정리</h3>
 
 <blockquote>
-  <p><strong>정리.</strong> $m$은 완비 측도이다.</p>
-</blockquote>
-
-<p>또한 $\sigma(\mathcal{A}_0)$는 보렐 $\sigma$-대수 $\mathcal{B}$이므로, 다음이 따라 나온다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 보렐 가측 집합은 르베그 가측이다.</p>
-</blockquote>
-
-<h3 id="2-르베그-가측이지만-보렐-가측이-아닌-집합">2. 르베그 가측이지만 보렐 가측이 아닌 집합</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 집합열 $\lbrace C_n \rbrace$을 다음과 같이 정의한다.</p>
-
-\[\begin{gather}
-C_0 = [0, 1]\\
-C_1 = I_0 \setminus (1/3, 2/3) \\
-C_2 = I_1 \setminus \{ (1/9, 2/9) \cup (7/9, 8/9) \} \\
-\vdots
-\end{gather}\]
-
-  <p><strong>칸토어 집합<sub>Cantor set</sub></strong> $C$를 $\cap^\infty_{n = 0}C_n$으로 정의한다.</p>
-
-  <p><img src="/public/cantor.png" width="500px" style="margin: 0 auto;" /></p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
+  <p><strong>완비화 정리.</strong> $(P, &lt;)$가 양끝점이 없는 조밀한 전순서라면 다음을 만족하는 완비 전순서 $(C, \prec)$가 순서 동형에 대해 유일하게 존재한다.</p>
 
   <ol>
-    <li>칸토어 집합은 비가산이다.</li>
-    <li>칸토어 집합은 르베그 측도 0이다.</li>
+    <li>$P \subseteq C$</li>
+    <li>$\prec$는 $P$에서 $&lt;$와 일치한다.</li>
+    <li>$P$는 $C$에서 조밀하다. 즉, $c_1 &lt; c_2 \in C$에 대해 $c_1 &lt; p &lt; c_2$를 만족하는 $p \in P$가 언제나 존재한다.</li>
+    <li>$C$는 양끝점이 없다.</li>
   </ol>
 </blockquote>
 
-<p><strong>증명.</strong></p>
+<p><strong>유일성 증명.</strong>
+$(C, \prec)$와 $(C^\ast, \prec^\ast)$가 조건을 만족하는 완비 전순서라고 하자. 다음과 같이 정의된 $\phi: C → C^\ast$는 순서 동형 사상이다.</p>
 
 <ol>
-  <li>
-    <p>칸토어 집합에 속하는 원소들은 삼진법으로 소숫점 전개했을 때 어느 자리에도 2가 등장하지 않는 수들이다. 그러한 수는 $2^\aleph_0$개 있으므로 비가산이다.</p>
-  </li>
-  <li>
-    <p>$m(C_n) = (2/3)^n$이므로 $m(C) = \lim_{n \to infty} (2/3)^n = 0$. ■</p>
-  </li>
+  <li>$c \in P$라면 $\phi(c)=c$</li>
+  <li>$c \notin P$라면 $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
 </ol>
 
-<blockquote>
-  <p><strong>정의.</strong> 칸토어 집합을 정의할 때 각 단계에서 빠지는 집합을 $J_n$이라고 하자. 즉,</p>
+<p><strong>존재성 증명.</strong>
+다음과 같이 정의한다.</p>
 
 \[\begin{gather}
-J_1 = (1/3, 2/3) \\
-J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
-\vdots
+\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
+\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
+\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
 \end{gather}\]
 
-  <p>다음과 같이 함수열을 정의한다.</p>
+<p>라고 하자. 다음과 같이 $\mathcal{D}$에 순서를 준다.</p>
+
+\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
+
+<p>$(A, B) \in \mathcal{P}$라면 어떤 $p$에 대해 $B = \lbrace  x \in P : x \geq p  \rbrace$이며, 이때 $(A, B) = [p]$라고 적자. 즉,</p>
+
+\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
+
+<p>$(\mathcal{P}, \prec) \sim (P, &lt;)$임을 쉽게 확인할 수 있다. 이제 다음을 보인다.</p>
+
+<p><em>Claim.</em> $\mathcal{D}$는 $\mathcal{P}$에 대해 완비화 정리의 4가지 조건을 모두 만족하는 확장이다.</p>
+
+<p>1, 2, 4는 자명하다. 3을 보인다.</p>
+
+<p>$\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$에 대해 $\mathfrak{d_1} \prec \mathfrak{d}_2$, 즉 $A_1 \subset A_2$라고 하자. $p \in A_2 \setminus A_1$이며 $p$가 $B$의 최소 원소가 아닌 $p \in P$가 존재한다. 그러한 $p$에 대해 $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$이다. □</p>
+
+<p>마지막으로 다음을 보인다.</p>
+
+<p><em>Claim.</em> $(\mathcal{D}, \prec)$는 완비이다.</p>
+
+<p>$\mathcal{S}$가 위로 유계인 $\mathcal{D}$의 공집합이 아닌 부분집합이라고 하자. 다음과 같이 정의한다.</p>
 
 \[\begin{gather}
-\operatorname{dom} f_1 = J_1,\; f_1(x) = \frac{1}{2} \\\\
-\operatorname{dom} f_2 = J_1 \cup J_2, \; f_2(x) = \begin{cases} 1/4 &amp; x \in (1/9, 2/9) \\ 1/2 &amp; x \in (1/3, 2/3) \\ 3/4 &amp; x \in (7/9, 8/9) \end{cases} \\\\
-\vdots
+A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
+B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
 \end{gather}\]
 
-  <p>$f: I \to I$를 다음과 같이 정의한다.</p>
-
-\[f(x) = \inf \{ f_n(y) : y \geq x, y \in \mathrm{dom} f \}\]
-
-  <p>$f$를 <strong>칸토어 함수<sub>Cantor function</sub></strong>라고 한다.</p>
-
-  <p><img src="/public/CantorEscalier.svg.png" width="300px" style="margin: 0 auto;" /></p>
-</blockquote>
+<p>$(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$이며, $\mathcal{S}$의 최소 상계임을 확인할 수 있다. ◾</p>
 
 <blockquote>
-  <p><strong>정리.</strong> 칸토어 함수는 연속이다.</p>
+  <p><strong>집합론적 실수의 정의.</strong> 다음을 만족하는 집합 $(R, &lt;)$은 순서 동형에 대해 유일하다.</p>
+
+  <ol>
+    <li>완비 전순서 집합이다.</li>
+    <li>양끝점이 없다.</li>
+    <li>분리 가능하다(separable). 즉, $Q \subset R$이 존재하여 $Q$는 가산집합이고 $R$에서 조밀하다.</li>
+  </ol>
 </blockquote>
 
-<p><strong>증명.</strong> $f$를 칸토어 함수라고 하자. $f$는 증가함수이므로 $f$가 불연속점을 가진다면 해당 불연속은 틈 불연속<sub>gap discontinuity</sub>이며, 따라서 어떤 $\epsilon &gt; 0$와 $y_0 \in I$에 대해 $(y_0 - \epsilon, y_0 + \epsilon)$이 $\operatorname{im} f$ 밖에 속한다. 그런데 $(y_0 - \epsilon, y_0 + \epsilon)$의 원소 중에는 이진법으로 소숫점 전개했을 때 자릿수가 유한한 수가 존재한다. 해당 수는 $\operatorname{im}f$에 속하므로 모순이다. ■</p>
+<p><strong>증명.</strong> 칸토어의 동형성 정리와 완비화 정리로부터 따라 나온다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/20/Rational-Real/en"> Set-theoretic Definitions of Rational and Real Numbers </a>
+      </h1>
+    <span class="post-date">20 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <h3 id="1-cantors-isomorphism-theorem">1. Cantor’s Isomorphism Theorem</h3>
 
 <blockquote>
-  <p><strong>정리.</strong> 르베그 가측이지만 보렐 가측이 아닌 함수가 존재한다.</p>
+  <p><strong>Cantor’s Isomorphism Theorem.</strong> Any countable, dense, linear order without endpoints is unique up to order isomorphism.</p>
 </blockquote>
 
-<p><strong>증명.</strong></p>
+<p><strong>Proof 1. (Back-and-Forth Argument)</strong></p>
 
-<p><em>보조정리.</em> $f$가 증가함수라면 $f^{-1}$은 보렐 집합을 보렐 집합에 사상한다.</p>
+<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
 
-<p><em>보조정리의 증명.</em> $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $라고 하자. 열린 집합들의 모음 $\mathcal{G}$에 대해 $\mathcal{G} \subset \mathcal{A}$임이 자명하다. 또한 $\mathcal{A}$가 $\sigma$-대수임이 역함수의 성질로부터 자명하다. 따라서 $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$이다.</p>
+<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B  \setminus \mathrm{im} f_n$ so that order isomorphism is preserved, and then map the <strong>least-indexed</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$ to an <strong>arbitrary</strong> $a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$ so that order isomorphism is preserved. (In the diagram, blue indicates the ‘least-indexed’ elements.)</p>
 
-<p>$f$가 칸토어 함수라고 하고, $F$를 다음과 같이 정의하자.</p>
+<p><strong>Proof 2. (Only-Forth Argument)</strong></p>
 
-\[F(x) =\inf \{y : f(y) \geq x \}\]
+<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
 
-<p>$F$는 엄격히 증가하는 함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■</p>
+<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to the <strong>least-indexed</strong> $b_l \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
+
+<p><strong>Incorrect Proof. (Incorrect Only-Forth Argument)</strong></p>
+
+<p>At the $n$-th step, match the <strong>least-index</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
+
+<p><u>Why this is incorrect</u>: There is no guarantee that $\mathrm{im} \left[ \bigcup f_n \right]$ exhausts all of $B$. For example, it is possible that only $b$’s with even indices are chosen in every step.</p>
+
+<h3 id="2-dedekind-cuts">2. Dedekind Cuts</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a linearly ordered set $(P, &lt;)$, a pair of subsets $A, B$ of $P$ is called a <strong>cut</strong> if:</p>
+
+  <ol>
+    <li>$A \sqcup B = P$</li>
+    <li>For any $a \in A, b \in B$, $a &lt; b$.</li>
+  </ol>
+
+  <p>Furthermore, it is a <strong>Dedekind cut</strong> if:</p>
+
+  <ol>
+    <li>$A$ has no greatest element.</li>
+  </ol>
+
+  <p>It is called a <strong>gap</strong> if, in addition:</p>
+
+  <ol>
+    <li>$B$ has no least element.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Remark</strong></p>
+
+<ol>
+  <li>$P$ is complete ⇔ $P$ has no gaps.</li>
+  <li>As will be seen, for $P = \mathbb{Q}$, gaps correspond to irrational numbers while Dedekind cuts correspond to real numbers.</li>
+</ol>
+
+<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
+
+<h3 id="3-completion-theorem">3. Completion Theorem</h3>
+
+<blockquote>
+  <p><strong>Completion Theorem.</strong> If $(P, &lt;)$ is a dense linear order without endpoints, then there exists a unique (up to order isomorphism) complete linear order $(C, \prec)$ satisfying:</p>
+
+  <ol>
+    <li>$P \subseteq C$</li>
+    <li>$\prec$ coincides with $&lt;$ on $P$</li>
+    <li>$P$ is dense in $C$: for any $c_1 &lt; c_2 \in C$, there exists $p \in P$ with $c_1 &lt; p &lt; c_2$</li>
+    <li>$C$ has no endpoints.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Uniqueness Proof.</strong>
+Suppose $(C, \prec)$ and $(C^\ast, \prec^\ast)$ are complete linear orders satisfying the conditions. Define $\phi: C \to C^\ast$ as follows:</p>
+
+<ol>
+  <li>If $c \in P$, then $\phi(c)=c$</li>
+  <li>If $c \notin P$, then $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
+</ol>
+
+<p>This $\phi$ is an order isomorphism.</p>
+
+<p><strong>Existence Proof.</strong>
+Define:</p>
+
+\[\begin{gather}
+\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
+\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
+\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
+\end{gather}\]
+
+<p>Define an order on $\mathcal{D}$ by:</p>
+
+\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
+
+<p>If $(A, B) \in \mathcal{P}$, then for some $p$, $B = \lbrace  x \in P : x \geq p  \rbrace$, and we write $(A, B) = [p]$. That is,</p>
+
+\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
+
+<p>It is easy to check that $(\mathcal{P}, \prec) \sim (P, &lt;)$. Now, we show the following:</p>
+
+<p><em>Claim.</em> $\mathcal{D}$ is an extension of $\mathcal{P}$ satisfying all four conditions of the Completion Theorem.</p>
+
+<p>Conditions 1, 2, and 4 are clear. We show 3.</p>
+
+<p>Let $\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$ with $\mathfrak{d}_1 \prec \mathfrak{d}_2$, i.e., $A_1 \subset A_2$. There exists $p \in A_2 \setminus A_1$ such that $p$ is not the least element of $B$, i.e., $p \in P$. For such $p$, we have $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$. □</p>
+
+<p>Finally, we show:</p>
+
+<p><em>Claim.</em> $(\mathcal{D}, \prec)$ is complete.</p>
+
+<p>Let $\mathcal{S}$ be a nonempty, upward-bounded subset of $\mathcal{D}$. Define:</p>
+
+\[\begin{gather}
+A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
+B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
+\end{gather}\]
+
+<p>Then $(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$ and is the least upper bound of $\mathcal{S}$. ◾</p>
+
+<blockquote>
+  <p><strong>Set-theoretic Definition of the Real Numbers.</strong> A set $(R, &lt;)$ satisfying the following is unique up to order isomorphism:</p>
+
+  <ol>
+    <li>It is a complete linear order.</li>
+    <li>It has no endpoints.</li>
+    <li>It is separable; i.e., there exists $Q \subset R$ which is countable and dense in $R$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> This follows from Cantor’s Isomorphism Theorem and the Completion Theorem.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/19/CSB"> 칸토어-슈뢰더-베른슈타인 정리 </a>
+      </h1>
+    <span class="post-date">19 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>정리.</strong> 두 집합 $X, Y$에 대해 $|X| \leq |Y|$, $|X| \geq |Y|$라면 $|X| = |Y|$이다.</p>
+</blockquote>
+
+<p>매우 당연해 보이지만 $\leq$가 단사함수의 존재성으로, $=$가 전단사함수의 존재성으로 정의된다는 점에서 트리키한 함수 핸들링을 요구한다.</p>
+
+<p>여담으로 “칸토어-베른슈타인 정리(위키피디아)” 또는 “슈뢰더-베른슈타인 정리(나무위키)”라고도 부르는데 “칸토어-슈뢰더 정리”라고 부르는 경우는 못 봤다. 홍대병에 취해 있다면 “칸토어-슈뢰더 정리”라고 불러보자.</p>
+
+<h3 id="첫-번째-증명">첫 번째 증명</h3>
+
+<p><img src="/public/csb-1.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
+
+<p>조건에 의해 단사함수 $f: X \to Y, g: Y \to X$가 존재한다. $Z := \mathrm{Im} f$가 $Y$와 같다면 증명이 끝나므로 $Z \subsetneq Y$라고 하자.</p>
+
+<p>임의의 $y \in Z \setminus Y$ (그림에서 빈 점으로 표시) 에 대해,</p>
+
+<ul>
+  <li>$x_1^y = g^{-1}(y)$</li>
+  <li>$x_{n+1}^y = g(f(x_n))$</li>
+</ul>
+
+<p>와 같이 두어, $h: X \to Y$를 다음과 같이 정의한다.</p>
+
+<ul>
+  <li>$h_y(x_1^y) = y$</li>
+  <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
+</ul>
+
+<p>다음이 성립함을 확인하라.</p>
+
+\[x^y_n = x^z_m \iff y = z, n = m\]
+
+<p>따라서 다음의 함수 $h: X → Y$는 well-defined이다.</p>
+
+<p><img src="/public/csb-2.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
+
+\[h(x) = \begin{cases}
+h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
+f(x) &amp;\text{otherwise}
+\end{cases}\]
+
+<p>$h$가 전단사임을 확인하라. ◾</p>
+
+<h3 id="두-번째-증명">두 번째 증명</h3>
+
+<blockquote>
+  <p><strong>보조정리 (기수의 샌드위치 정리).</strong> $A_1 \supseteq B \supseteq A_2$에 대해 $|A_1| = |A_2|$라면 $|A_1| = |B| = |A_2|$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $f: A_1 → A_2$가 전단사라고 하자. $B_1 = B$로 둔다. 다음과 같이 $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace $을 정의한다.</p>
+
+\[\begin{gather}
+A_{n+1} = f[A_n]\\
+B_{n+1} = f[B_n]\\
+C_n = A_n \setminus B_n
+\end{gather}\]
+
+<p>$C = \bigcup C_n$ (그림에서 색칠되지 않은 영역), $D = A_1 \setminus C$ (그림에서 색칠된 영역) 라고 하자. $f[C] \subset C, f[D] \subset D$임을 확인하라. 따라서 다음의 $g: B_1 → A_2$는 전단사이다. (화살표)</p>
+
+<p><img src="/public/csb-3.png" style="width: 100%; max-width: 400px; margin: 2em auto 0 auto;" /></p>
+
+\[g(x) = \begin{cases}
+x &amp; x \in C\\
+f(x) &amp; x \in D
+\end{cases}\]
+
+<p><strong>본 정리의 증명.</strong> $f: X → Y, g: Y → X$가 전사일 때 $gf[X] \subseteq g[Y] \subseteq X$이고, $| gf[X] | = | X |$이므로, 보조정리에 의해 $|g[Y]| = |Y| = |X|$이다. ◾</p>
+
+<p>잘 생각해 보면 두 증명은 사실 같다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/19/CSB/en"> Cantor–Schröder–Bernstein Theorem </a>
+      </h1>
+    <span class="post-date">19 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>Theorem.</strong> For two sets $X, Y$, if $|X| \leq |Y|$ and $|X| \geq |Y|$, then $|X| = |Y|$.</p>
+</blockquote>
+
+<p>Although this may seem obvious, it requires some delicate function handling, since $\leq$ is defined by the existence of an injective function, while $=$ is defined by the existence of a bijective function.</p>
+
+<p>As a side note, the theorem is often called the “Cantor–Bernstein theorem” or the “Schröder–Bernstein theorem”, but I’ve never seen it called the “Cantor–Schröder theorem.” If you’re feeling a bit pretentious, it’s an open option.</p>
+
+<h3 id="first-proof">First Proof</h3>
+
+<p><img src="/public/csb-1.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
+
+<p>By assumption there exists $f: X \to Y, g: Y \to X$ injective. If $Z := \mathrm{Im} f$ equals $Y$, the proof is done, so let us assume $Z \subsetneq Y$.</p>
+
+<p>For any $y \in Z \setminus Y$ (represented as an empty dot in the diagram),</p>
+
+<ul>
+  <li>let $x_1^y = g^{-1}(y)$</li>
+  <li>let $x_{n+1}^y = g(f(x_n))$</li>
+</ul>
+
+<p>Now define a function $h: X \to Y$ as follows:</p>
+
+<ul>
+  <li>$h_y(x_1^y) = y$</li>
+  <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
+</ul>
+
+<p>Check that the following holds:</p>
+
+\[x^y_n = x^z_m \iff y = z, n = m\]
+
+<p>Thus, the function $h: X \to Y$ defined by</p>
+
+<p><img src="/public/csb-2.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
+
+\[h(x) = \begin{cases}
+h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
+f(x) &amp;\text{otherwise}
+\end{cases}\]
+
+<p>is well-defined. Verify that $h$ is bijective. ◾</p>
+
+<h3 id="second-proof">Second Proof</h3>
+
+<blockquote>
+  <p><strong>Lemma (Sandwich Theorem for Cardinals).</strong> If $A_1 \supseteq B \supseteq A_2$ and $|A_1| = |A_2|$, then $|A_1| = |B| = |A_2|$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Assume $f: A_1 \to A_2$ is bijective. Let $B_1 = B$. Define the sequences $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace$ as follows:</p>
+
+\[\begin{gather}
+A_{n+1} = f[A_n]\\
+B_{n+1} = f[B_n]\\
+C_n = A_n \setminus B_n
+\end{gather}\]
+
+<p>Let $C = \bigcup C_n$ (the unshaded region in the diagram) and $D = A_1 \setminus C$ (the shaded region). Verify that $f[C] \subset C$ and $f[D] \subset D$. Then, define $g: B_1 \to A_2$ as follows (represented as arrows in the diagram).</p>
+
+\[g(x) = \begin{cases}
+x &amp; x \in C\\
+f(x) &amp; x \in D
+\end{cases}\]
+
+<p><img src="/public/csb-3.png" style="width: 100%; max-width: 400px; margin: 2em auto 0 auto;" /></p>
+
+<p>Then $g$ is bijective.</p>
+
+<p><strong>Proof of the main theorem.</strong> Given $f: X \to Y$ and $g: Y \to X$ are injective, we have $gf[X] \subseteq g[Y] \subseteq X$ and $| gf[X] | = | X |$. By the lemma, we obtain $|g[Y]| = |Y| = |X|$. ◾</p>
+
+<p>Upon closer reflection, the two proofs are essentially the same.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/18/ZFC"> ZFC 공리의 목록 </a>
+      </h1>
+    <span class="post-date">18 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <table>
+  <thead>
+    <tr>
+      <th>공리명</th>
+      <th>의미</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>외연 공리</td>
+      <td>집합은 원소의 모임이다.</td>
+    </tr>
+    <tr>
+      <td>공집합 공리*</td>
+      <td>공집합이 존재한다.</td>
+    </tr>
+    <tr>
+      <td>짝 공리*</td>
+      <td>$X, Y$로부터 $Z = \lbrace  X, Y \rbrace$를 정의할 수 있다.</td>
+    </tr>
+    <tr>
+      <td>합집합 공리</td>
+      <td>$X = \lbrace  Y_i \rbrace$로부터 $Z = \bigcup Y_i$를 정의할 수 있다.</td>
+    </tr>
+    <tr>
+      <td>멱집합 공리</td>
+      <td>$X$로부터 $\mathcal{P}(X)$를 정의할 수 있다.</td>
+    </tr>
+    <tr>
+      <td>분류 공리꼴**</td>
+      <td>$X$로부터 $Y = \lbrace  y \in X : \phi(y) \rbrace$를 정의할 수 있다. ($\phi$는 1차 논리식)</td>
+    </tr>
+    <tr>
+      <td>무한 공리</td>
+      <td>모든 자연수를 포함하는 집합이 존재한다.</td>
+    </tr>
+    <tr>
+      <td>정칙 공리</td>
+      <td>$\in$은 정렬 순서이다.</td>
+    </tr>
+    <tr>
+      <td>치환 공리꼴</td>
+      <td>$X$로부터 $f[X]$를 정의할 수 있다. ($f$는 class function)</td>
+    </tr>
+    <tr>
+      <td>선택 공리</td>
+      <td>집합족 $\lbrace  X_i \rbrace$에 대해 각 $X_i$의 원소를 하나씩 선택할 수 있다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>공리명</th>
+      <th>논리식(자유변수는 $\forall$로 양화)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>외연 공리</td>
+      <td>$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$</td>
+    </tr>
+    <tr>
+      <td>공집합 공리*</td>
+      <td>$\exists Z : z \not\in Z$</td>
+    </tr>
+    <tr>
+      <td>짝 공리*</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$</td>
+    </tr>
+    <tr>
+      <td>합집합 공리</td>
+      <td>$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$</td>
+    </tr>
+    <tr>
+      <td>멱집합 공리</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$</td>
+    </tr>
+    <tr>
+      <td>분류 공리꼴**</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$</td>
+    </tr>
+    <tr>
+      <td>무한 공리</td>
+      <td>$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$</td>
+    </tr>
+    <tr>
+      <td>정칙 공리</td>
+      <td>$\exists x \in X : \forall y \in X [ y \not\in x]$</td>
+    </tr>
+    <tr>
+      <td>치환 공리꼴</td>
+      <td>$\displaylines{[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow [\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$</td>
+    </tr>
+    <tr>
+      <td>선택 공리</td>
+      <td>$\displaylines{\varnothing \notin X \rightarrow \exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Remarks.</strong></p>
+
+<ul>
+  <li>정칙 공리는 다음과 동치</li>
+</ul>
+
+\[\exists x \in X : x \cap X = \varnothing\]
+
+<ul>
+  <li>(*)로 표시된 공리는 분류 공리꼴로부터 유도할 수 있다.</li>
+  <li>(**)로 표시된 공리는 치환 공리꼴로부터 유도할 수 있다.
+    <ul>
+      <li>분류 공리꼴의 내용은 “X가 집합이다 → f[X]가 집합이다(f는 함수)”이라는 것이다. f가 함수임을(즉, f의 정의역이 집합임을) 선결적으로 요구함에 유의하라.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="공리의-필요성">공리의 필요성</h3>
+
+<p><strong>정리.</strong> 다음의 정리들은 선택 공리를 필요로 한다.</p>
+
+<ul>
+  <li>
+    <p>$f: X → Y$가 전사일 때, 어떤 $X$의 부분집합 $Z$에 대해 $f\vert_Z$는 전단사이다.</p>
+  </li>
+  <li>
+    <p>$\varnothing \not\in \lbrace  X_i\rbrace$일 때 $\prod X_i \neq \varnothing$이다.</p>
+  </li>
+  <li>
+    <p><strong>정렬 원리:</strong> 임의의 집합에 정렬 순서를 줄 수 있다.</p>
+  </li>
+  <li>
+    <p><strong>초른의 보조정리:</strong> $(X, &lt;)$의 임의의 체인이 $X$에서 상계를 가진다면, $X$는 극댓값<sub>maximal element</sub>을 가진다.</p>
+  </li>
+</ul>
+
+<p><strong>정리.</strong> 다음의 정리들은 치환 공리꼴을 필요로 한다.</p>
+
+<ul>
+  <li>
+    <p>$\omega + \omega$가 존재한다.</p>
+  </li>
+  <li>
+    <p><a href="http://dimenerno.github.io/2024/11/21/trichotomy"><strong>서수 완전성 정리.</strong></a> 모든 정렬 순서는 서수와 순서 동형이다.</p>
+  </li>
+</ul>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Quine, Two Dogmas of Empiricism &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/05/26/quine-two-dogmas/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+  <link rel="shortcut icon" href="">
+   -->
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml"> -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+          
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+                                                                                                                                                          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Quine, Two Dogmas of Empiricism</h1>
+  <span class="post-date">26 May 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'" >Philosophy</div>
+      
+      <div class="tag" onclick="location.href='/tags/philosophy-of-language/'" >Philosophy of Language</div>
+      
+    </div>
+  
+  <h2 id="overview">Overview</h2>
+
+<p>The distinction between analytic and synthetic propositions, and the verification principle, are the two pillars of logical positivism. However, in <em>Two Dogmas of Empiricism</em>, Quine argues that both the analytic-synthetic distinction and the verification principle are ungrounded. Quine argues that the definition of analyticity is circular. Furthermore, he argues that propositions cannot be verified in isolation, and that only the entire web of beliefs can stand up to verification. The arguments Quine presents in <em>Two Dogmas</em> not only undermine logical positivism but also suggest skepticism about meaning and a radical form of holism. This post also examines some objections to Quine’s arguments.</p>
+
+<h2 id="1-quines-attack-on-the-analytic-synthetic-distinction">1. Quine’s Attack on the Analytic-Synthetic Distinction</h2>
+
+<p>Quine claims that all previous attempts to define analyticity are unsatisfactory. He examines the definitions provided by Kant and Frege as examples.</p>
+
+<h3 id="11-kants-definition-of-analyticity">1.1. Kant’s Definition of Analyticity</h3>
+
+<p>Kant’s first definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>“All $a$ are $b$” is analytic $\iff$ $a$ is conceptually contained in b</p>
+</blockquote>
+
+<p>However, not only this definition relies on the metaphorical expression “conceptually contained”, but it is also limited to propositions with a subject-predicate structure. Kant’s second definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>$P$ is analytic $\iff$ $\lnot P$ implies a contradiction</p>
+</blockquote>
+
+<p>But this definition requires an explanation of what a contradiction is. If contradiction is defined as “a proposition that is analytically false,” then this is merely a circular definition.</p>
+
+<h3 id="12-freges-definition-of-analyticity">1.2. Frege’s Definition of Analyticity</h3>
+
+<p>Frege’s definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>$P$ is analytic $\iff$ $P$ is a law of logic, or is derivable solely from the definitions of terms involved and the laws of logic</p>
+</blockquote>
+
+<p>By “law of logic”, Quine understands it to be a sentence that is true regardless of how the non-logical terms are interpreted. For example, $(φ → ψ) → (¬ψ → ¬φ)$ is a law of logic because it is true no matter how $φ$ and $ψ$ are interpreted. Accordingly, “All bachelors are unmarried” is analytic as it can be derived solely from the definition of “bachelor” and laws of logic as follows:</p>
+
+<ol>
+  <li>Bachelor(x) := ¬Married(x) ∧ Male(x) (definition of bachelor)</li>
+  <li>∀x [ ¬Married(x) ∧ Male(x) → ¬Married(x) ] (law of logic)</li>
+  <li>∴ ∀x [ Bachelor(x) → ¬Married(x) ] (from 1 and 2)</li>
+</ol>
+
+<h3 id="13-quines-attack-on-synonymy">1.3. Quine’s Attack on Synonymy</h3>
+
+<p><strong>Quine challenges Frege’s definition by questioning how we can determine the definition of a word.</strong> That is, he questions under what conditions “$a$ and $b$ are <em>synonymous</em>” holds. Quine examines several possible answers to this question. The first attempt is as follows:</p>
+
+<blockquote>
+  <p>(i) $a$ and $b$ are synonymous $\iff$ $a$ and $b$ are listed as synonyms in the dictionary.</p>
+</blockquote>
+
+<p>But clearly this approach is flawed, since a dictionary merely records already known synonyms. What we want to know is the criterion by which dictionary compilers list two words as synonyms. The second attempt is as follows:</p>
+
+<blockquote>
+  <p>(ii) $a$ and $b$ are synonymous $\iff$ for any predicate $P$, $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>But this too is inadequate. For example, let $a$ = bachelor, $b$ = unmarried man, and $P(x)$: $x$ is a two-syllable word. Although $a$ and $b$ are synonymous, $P(a)$ is true while $P(b)$ is false.</p>
+
+<p>To address this, Quine introduces the notion of <strong>cognitive meaning</strong>. Cognitive meaning is related only to the referent or concept, and excludes aspects such as word length, poetic mood, etc. Thus, (ii) is revised as follows:</p>
+
+<blockquote>
+  <p>(iii) $a$ and $b$ are synonymous $\iff$ for any predicate $P$ <em>relevant only to cognitive meaning,</em> $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>However, this is also inadequate. <strong>This is because the extension of “any predicate” is language-relative.</strong> (This is partly related to Quine’s skepticism about second-order logic.) For example, let us call creatures with a heart “cordate” ($c$) and those with a kidney “renate” ($r$). All known species either have both a heart and a kidney or neither. Thus in a language $L_1$ that contains only the predicate $\mathrm{HasHeart}(x)$, both $\mathrm{HasHeart}(c)$ and $\mathrm{HasHeart}(r)$ are true, so cordate and renate are synonymous. Yet in a language $L_2$ that contains the predicate $\mathrm{NecessarilyHasHeart}(x)$, $\mathrm{NecessarilyHasHeart}(c)$ is true but $\mathrm{NecessarilyHasHeart}(r)$ is false, so they are no longer synonymous.</p>
+
+<p>Thus, (iii) makes synonymy language-dependent. Indeed, for (iii) to be valid, it seems that the assumed language must include modality. Accordingly, (iii) is revised as follows:</p>
+
+<blockquote>
+  <p>(iv) $a$ and $b$ are synonymous $\iff$ in a language $L$ with modal expressions, for any predicate $P$ relevant only to cognitive meaning, $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>However, Quine claims that even this is inadequate. <strong>For now the meaning of modality must be explained.</strong> That is, he now asks under what conditions “$a$ is necessarily $b$” holds. To define necessity as follows is to give a circular definition:</p>
+
+<blockquote>
+  <p>$a$ is necessarily $b$ $\iff$ “All a are b” is analytically true.</p>
+</blockquote>
+
+<p>Therefore, Frege’s definition of analyticity is circular unless either a valid definitions of synonymy, or necessity, is provided.</p>
+
+<h2 id="2-reflections-on-quines-attack">2. Reflections on Quine’s Attack</h2>
+
+<p>Quine’s attack targets synonymy, but its implications are much broader.</p>
+
+<h3 id="21-logical-skepticism">2.1. Logical Skepticism</h3>
+
+<p>First, Quine’s attack also undermines his own definition of laws of logic. For example, according to Quine, $P(x) ∧ Q(x) → P(x)$ is a law of logic because it is true no matter what is substituted for $P, Q, x$. <strong>However, for this criterion to be coherent, the terms substituted for x must be synonymous.</strong></p>
+
+<p>For example, let $P(x):$ $x$ is large, $Q(x):$ $x$ is wet, and $x$ = bank. Then, $P(x) ∧ Q(x) → P(x)$ becomes “A large and wet bank is a large bank.” For this sentence to be true, the two “bank”s of the subject and predicate must be synonymous<sub>A large and wet riverland is a large riverland</sub>. Otherwise, the sentence is false<sub>A large and wet riverland is a large financial establishment</sub>. Thus, Quine’s definition of law of logic also depends on synonymy.</p>
+
+<h3 id="22-semantic-skepticism">2.2. Semantic Skepticism</h3>
+
+<p>Second, Quine’s attack renders translation between languages fictitious. If someone asks for the translation of “Dieser Apfel ist rot,” we would say “This apple is red.” That this is the <em>correct</em> translation relies upon ‘dieser’, ‘Apfel’, ‘ist’, and ‘rot’ being respectively synonymous with ‘this’, ‘apple’, ‘is’, and ‘red’. Generally, the following seems to hold:</p>
+
+<blockquote>
+  <p>$φ$ is a translation of $ψ$ $\iff$ $φ$ is synonymous with $ψ$.</p>
+</blockquote>
+
+<p>Hence if the notion in the right side is ambiguous, then that in the left is also ambiguous. <strong>Consequently, Quine’s skepticism about synonymy extends to skepticism about translation, and hence to skepticism about meaning.</strong> (For an argument connecting skepticism about translation to skepticism about meaning, see forthcoming article.)</p>
+
+<h2 id="3-objections-to-quines-attack-on-the-analytic-synthetic-distinction">3. Objections to Quine’s Attack on the Analytic-Synthetic Distinction</h2>
+
+<p>Quine’s attack has the following structure:</p>
+
+<blockquote>
+  <p>If the definition of a concept $C$ is circular, then $C$ is unintelligible.</p>
+</blockquote>
+
+<p>Let us call this <em>Quine’s Socratic Condition</em>. <strong>It may be the case that Quine’s Socratic Condition is too strong of a requirement.</strong> For example, “red” or “blue” cannot be defined in a non-circular way — a person born blind cannot “make colors appear before them”, no matter how many utterances involving color words are given to them — but that does not mean that color words are unintelligible. Indeed, Davidson and others have argued that language learning requires some primitive terms — i.e. were there a language all of whose concepts satisfy the Socratic Condition, that language would be unlearnable.</p>
+
+<p>Nevertheless, Quine might argue that although not every concept should satisfy the Socratic Condition, especially those that relate to immediate sense data, certain vaguer concepts—such as analyticity—must. Consider the following sentence:</p>
+
+<blockquote>
+  <p>Everything green has an extension.</p>
+</blockquote>
+
+<p>Whether this sentence is analytic is ambiguous. Quine claims that this ambiguity arises not because of ambiguity in “green” or “extension,” but of “analytic.” This, he argues, shows that analyticity, unlike color words, cannot be legitimised without a rigorous definition.</p>
+
+<p>In response, Grice and Strawson argue that the ambiguity in whether “Everything green has an extension” is analytic arises not from “analytic,” but from “everything green.” For example, it is unclear whether a “green flash” counts as “everything green,” so the truth value of the sentence remains undetermined. On the other hand, analyticity seems to be used in a consistent way by almost every philosopher and every layman, so there is no reason to think of it so ambiguous as to require the Socratic Condition.</p>
+
+<h2 id="4-quines-critique-of-logical-positivism">4. Quine’s Critique of Logical Positivism</h2>
+
+<h3 id="41-critique-of-reductionism">4.1. Critique of Reductionism</h3>
+
+<p>According to logical positivism, every truth is either analytic or synthetic. Analytic truths can be verified through logical analysis, and synthetic truths can be verified through sense data. Thus, the meaning of a sentence is generally taken to be a logical compound of sense data. This is the reductionist thesis of positivism. For example, the meaning of “The cat is on the table or in the box” is analyzed into sense data corresponding to “cat,” “table,” “box,” and logical connectives such as “or” and “is.”</p>
+
+<p><strong>However, Quine argues that semantic reductionists bear the burden of proof to show that it is actually possible to reduce natural language sentences to logical compounds of sense data.</strong> He refers to Carnap’s attempt in <em>The Logical Structure of the World</em> to reconstruct natural language solely from sense data and logical connectives, but notes that, as Carnap himself admitted, the project failed.</p>
+
+<p>Quine claims that reductionism cannot be justified unless this burden of proof is met.</p>
+
+<h3 id="42-critique-of-verification-principle">4.2. Critique of Verification Principle</h3>
+
+<p>According to logical positivism, the meaning of a sentence is its verifiability. Under this verificationist theory of meaning, analyticity can be defined as follows:</p>
+
+<blockquote>
+  <p>P is analytic $\iff$ P is true regardless of the outcome of verification</p>
+</blockquote>
+
+<p>However, Quine argues that the logical positivist definition of analyticity is also problematic. <strong>Quine claims that it is impossible to verify individual propositions in isolation,</strong> hence the verificationist theory of meaning cannot account for the meaning of individual sentences.</p>
+
+<p>Consider the following proposition:</p>
+
+<blockquote>
+  <p>(i) Water boils at 100°C</p>
+</blockquote>
+
+<p>One way to verify this proposition is to put a thermometer in boiling water. But if the thermometer reads 102°C, should we reject (i)? Not necessarily. Instead, we might reject “the thermometer is working,” “the water is pure,” “superheating did not occur,” “I read the thermometer correctly,” and so on.</p>
+
+<p><strong>Thus, Quine argues that what is subject to verification is always the entire web of beliefs.</strong> This is his holistic epistemology. In the above case, what is being tested is not the proposition “water boils at 100°C,” but the entire web of beliefs: “this is pure water, the thermometer is working, superheating did not occur, water boils at 100°C, …” and so on.</p>
+
+<h3 id="43-implications-of-epistemological-holism">4.3. Implications of Epistemological Holism</h3>
+
+<p>Quine’s holism is radical in that it applies to all propositions. Quine claims that there is no sharp boundary between domains within the web of beliefs. Thus, mathematics does not enjoy a privileged epistemological status over science or philosophy. This leads to Quine’s naturalism.</p>
+
+<p>For Quien, that a proposition $φ$ is <em>certain</em>, does not mean that $φ$ is true in all cases — something which cannot be verified in isolation — but that $φ$ is located deep within the web of beliefs. When evidence contrary to the web of beliefs is presented, we must revise the web so as to minimise the likelihood of future contrary evidence. Hence in a pragmatic spirit, it is preferable to revise beliefs at the periphery rather than those at the core. Thus, beliefs at the core persist almost permanently and acquire the status of certainty. <strong>However, if it becomes more practical to abandon a core belief—such as a law of logic—Quine holds that it is appropriate to do so.</strong></p>
+
+<h3 id="44-objections-to-epistemological-holism">4.4. Objections to Epistemological Holism</h3>
+
+<p><strong>Crispin Wright argues that Quine’s holism is incoherent because it leads to infinite regress.</strong> Consider a web of beliefs consisting of the following two elements:</p>
+
+<ul>
+  <li>A scientific theory of the world $T$</li>
+  <li>A logical system $\mathcal{S}$</li>
+</ul>
+
+<p>Suppose that $p → q$ is a law derivable from $T$ and $\mathcal{S}$. For example, if $T$ is Newtonian mechanics and $\mathcal{S}$ is first-order logic, $p$ might be “photons have no mass” and $q$ might be “photons are not affected by gravity.”</p>
+
+<p>Now suppose that, contrary to $T$ and $\mathcal{S}$, an observation is made that supports $p$ and $¬q$—for example, gravitational lensing. According to Quine’s holism, the following four propositions are all candidates for rejection:</p>
+
+<ol>
+  <li>Reject $p ∧ ¬q$ (the gravitational lensing observation was mistaken)</li>
+  <li>Reject $T$ (Newtonian mechanics is false)</li>
+  <li>Reject $\mathcal{S}$ (first-order logic is false)</li>
+  <li>Reject $T \vdash_\mathcal{S} p → q$ (the derivation of $p → q$ from Newtonian mechanics and first-order logic is mistaken)</li>
+</ol>
+
+<p>Which of these four to reject is determined by pragmatic considerations. Suppose, for example, that pragmatism suggests the following:</p>
+
+<ol start="5">
+  <li>It is most practical to reject (4).</li>
+</ol>
+
+<p>However, Wright points out that (5) itself is part of the web of beliefs. Thus, instead of rejecting (4), we could choose to reject (5). Conversely, to avoid rejecting (5), the following belief is required:</p>
+
+<ol start="6">
+  <li>It is practical not to reject (5).</li>
+</ol>
+
+<p>But to avoid rejecting (6), we require the belief that it is practical not to reject (6), and so on, leading to infinite regress. Thus, Wright argues that to avoid infinite regress in epistemology, some beliefs—such as (4)—must be placed outside the scope of pragmatic considerations.</p>
+
+<h2 id="references">References</h2>
+
+<p>Quine, Willard V. O. (1951). Two Dogmas of Empiricism. Philosophical Review 60 (1):20–43.</p>
+
+<p>Miller, Alexander (1998). Philosophy of Language. New York: Routledge.</p>
+
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>
