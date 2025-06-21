@@ -2,6 +2,7 @@
 layout: page
 title: 복습노트 아카이브
 title-en: Maths Review Notes (Korean)
+date: 2024-06-06
 ---
 
 <p class="lang-ko">

@@ -2,6 +2,7 @@
 layout: book
 title: 새벽의 자연학 수업
 title-en: Twilight Wonders (Korean)
+date: 2024-05-05
 ---
 
 ### 목차

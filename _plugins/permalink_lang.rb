@@ -1,3 +1,5 @@
+# 영문 포스트의 url에 /en을 추가하는 플러그인
+
 module Jekyll
   class LangPermalinkGenerator < Generator
     priority :low

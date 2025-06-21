@@ -18,7 +18,7 @@
     href="{{ '/' | relative_url }}"
     >Main</a
   >
-    {% assign pages_list = site.pages | sort:"url" %} {% for node in
+    {% assign pages_list = site.pages | sort:"date" %} {% for node in
     pages_list %} {% if node.title != null %} {% if node.layout == "page" or
     node.layout == "book" %}
     <a

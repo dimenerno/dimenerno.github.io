@@ -286,6 +286,9 @@
 <loc>http://localhost:4000/notes/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/random/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/search.html</loc>
 </url>
 <url>

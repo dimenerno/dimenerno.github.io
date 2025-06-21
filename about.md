@@ -2,6 +2,7 @@
 layout: page
 title: 저에 대하여
 title-en: About Me
+date: 2024-01-01
 ---
 
 <img src="/public/profile-picture.png" alt="Profile picture" width="250px" style="margin: 0 auto;">

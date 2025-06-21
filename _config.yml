@@ -39,3 +39,7 @@ google_analytics_id: "G-PVGYLWF7GR"
 
 include:
   - search.json
+  - post-list.json
+
+exclude:
+  - post-list.json
