@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     V = L 공리의 무모순성 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2024/12/11/VL-axiom-en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                           
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">V = L 공리의 무모순성</h1>
+  <span class="post-date">11 Dec 2024</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+    </div>
+  
+  <h2 id="1-전체">1. 전체</h2>
+
+<h3 id="11-폰-노이만-전체">1.1. 폰 노이만 전체</h3>
+
+<p><a href="https://dimenerno.github.io/2024/12/05/transfinite-recursion/">초한귀납적으로</a> $\lbrace  V_\alpha \rbrace$를 정의하자.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$</li>
+  <li>$\lambda$가 극한 서수일 때, $V_\lambda = \bigcup_{\alpha &lt; \lambda} V_\alpha$</li>
+</ul>
+
+<p>처음 몇 개의 $V_\alpha$는 다음과 같다.</p>
+
+<ul>
+  <li>$V_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$V_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$V_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$V_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>모든 서수 $\alpha$에 대해 $V_\alpha$를 모아둔 모임을 <strong>폰 노이만 전체</strong>라고 한다.</p>
+
+\[V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha\]
+
+<p>$x \in y \in z$가 $x \in z$를 시사할 때 $z$를 <strong>추이적 집합(transitive set)</strong>이라고 한다. 이것은 $V$의 중요한 특징이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$\alpha \in \mathrm{Ord}$에 대해 $V_\alpha$는 추이적이다.</li>
+    <li>$V$는 추이적이다.</li>
+  </ol>
+</blockquote>
+
+<p>증명은 초한귀납법을 이용한다. 이에 따라 $V$를 다음과 같이 정의해도 무방하다.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = \mathcal{P}(V_\alpha)$</li>
+  <li>$\lambda$가 극한 서수일 때, $V_\lambda = \bigcup_{\alpha &lt; \lambda}V_\alpha$</li>
+</ul>
+
+<p>직관적으로 생각했을 때 $V$는 모든 집합을 포함하는 듯하다. 실제로 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $x$가 집합이라면 $x \in V$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 집합 $x$에 대해 $x$의 <strong>추이적 폐포</strong> $\bar{x}$를, $x$를 원소로 가지는 가장 작은 추이적 집합으로 정의한다(추이적 집합들의 교집합은 추이적이기 때문에 이 정의는 정당하다).</p>
+
+<p>$x \notin V$라고 가정하자. 분류 공리에 의해 $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$가 집합이며, 정초 공리에 의해 $y$의 $\in$-극소 원소 $z$가 존재한다. 만약 $w \notin V$인 $w \in z$가 존재한다면,  추이성에 의해 $w \in y$가 되어 $z$의 $\in$-극소성과 모순된다. 따라서 $z$의 모든 원소는 $V$에 있으며, 치환 공리로부터 $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$가 집합이다. 부랄리포르티 정리에 의해 $\beta = \bigcup_{\alpha \in \Omega}\alpha$가 서수이며, <strong>$z \in V_{\beta + 1}$이다.</strong> (이 부분에서 $V_{\beta + 1} = \mathcal{P}(V_\beta)$임이 필요하다) 따라서 모순이다. ■</p>
+
+<p>이에 따라 $V$는 집합이 아니다. 따라서 $V$는 모든 집합을 포함한다는 점에서 ZFC의 모델이지만, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">많은 수학자들은 모델이 집합일 것을 요구하기 때문에</a> 엄격한 의미에서의 모델은 아니다. 하지만 이 글에서는 편의를 위해 $V$를 집합론의 모델이라고 부르도록 한다. 또한 $x \in V$를 “$x$는 집합이다“의 형식적 표현으로 이해하도록 한다.</p>
+
+<h3 id="12-괴델-구성-가능-전체">1.2. 괴델 구성 가능 전체</h3>
+
+<p>먼저 다음과 같이 구성 가능성을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $u$가 집합 $S$로부터 <strong>구성 가능</strong>하다는 것은, 어떤 1차 논리 명제 $\phi(y, x_1, \dots, x_n)$와 $c_1, \dots, c_n \in S$가 존재하여 다음이 성립하는 것이다.</p>
+
+\[y \in u \iff y \in S \land \phi(y, c_1, \dots, c_n)\]
+
+  <p>단, $\phi$의 양화사의 정의역은 $S$이다.</p>
+</blockquote>
+
+<p>예를 들어 $S = \lbrace 0, 1, 2\rbrace$일 때 다음은 $u = \lbrace  1, 2 \rbrace$를 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1, x_2) := (y = x_1) \lor (y = x_2)$</li>
+  <li>$c_1 = 1, c_2 = 2$</li>
+</ul>
+
+<p>또한 $S = \mathbb{N}$일 때 다음은 $u = \lbrace 0, 3, 6, 9, \dots \rbrace$를 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1) := x_1 \mid y$</li>
+  <li>$c_1 = 3$</li>
+</ul>
+
+<p>괴델의 구성가능성은 일반적인 의미에서의 구성가능성, 즉 언어로서의 표현가능성과 다르다. 일례로 언어로 표현가능한 실수의 집합은 가산이므로, 어떤 실수는 언어로 표현이 불가능하다. 그러한 실수를 $r$이라고 하자. 이제 $S = \mathbb{R}$일 때, 다음은 $u = \lbrace  r \rbrace$을 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1) := x_1 = y$</li>
+  <li>$c_1 = r$</li>
+</ul>
+
+<p>즉, 괴델의 구성가능성은 자유변수의 초기화를 임의의 원소에 대해 허용한다는 점에서 강력하다. 그러나 자유변수의 수가 유한하다는 점에서 한계를 가진다. 이제 초한귀납적으로 $\lbrace  L_\alpha \rbrace$를 정의하자.</p>
+
+<ul>
+  <li>$L_0 = \varnothing$</li>
+  <li>$L_{\alpha + 1} = \lbrace  x : x \text{ is constructible from } L_\alpha  \rbrace$</li>
+  <li>$\lambda$가 극한 서수일 때, $L_\lambda = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+  <li>$L = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+</ul>
+
+<p>$\alpha &lt; \omega$일 때 $L_\alpha = V_\alpha$임을 쉽게 보일 수 있다. $\alpha = n$일 때, 최대 $n$개의 $\lor$ 연언으로 $x \in V_\alpha$를 구성할 수 있기 때문이다. 따라서,</p>
+
+<ul>
+  <li>$L_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$L_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$L_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$L_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>하지만 $L_{\omega + 1} \subsetneq V_{\omega + 1}$이다. $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$이므로 $V_{\omega + 1}$은 비가산인 반면, 1차 논리 문장들의 집합과  $L_\omega$는 모두 가산이므로 $L_{\omega + 1}$ 또한 가산이기 때문이다. 일반적으로 $\alpha$가 가산일 때 $L_\alpha$는 가산이다.</p>
+
+<p>그럼에도 $L$은 $V$와 많은 특징을 공유한다. 일례로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\alpha \in \mathrm{Ord}$에 대해 다음이 성립한다.</p>
+
+  <ol>
+    <li>$L_\alpha$는 추이적이다. (따라서 $L$이 추이적이다)</li>
+    <li>$\alpha \in L_{\alpha + 1} \setminus L_{\alpha}$</li>
+  </ol>
+</blockquote>
+
+<p>증명은 초한귀납법을 사용한다.</p>
+
+<p>$L$은 모든 서수를 포함하므로 부랄리포르티 정리에 의해 집합이 아님에 유의하라. 대신 $x \in L_\alpha$에 대응되는 1차 논리식 $\mathsf{IsInL}_\alpha(x)$가 존재한다. 증명은 조금 까다로운데, 괴델 수를 이용하여 명제를 산술화하면 된다. (<a href="https://math.stackexchange.com/questions/198437/a-formula-that-defines-constructible-universe">링크</a> 참조) 따라서 $x \in L$을 $\exists \alpha \in \mathrm{Ord} :\mathsf{IsInL}_\alpha(x)$를 대체하는 형식적 표현으로 이해하여 사용하도록 한다. (물론 $\alpha \in \mathrm{Ord}$ 또한 1차 논리식을 대체하는 형식적 표현으로 이해되어야 한다)</p>
+
+<h2 id="2-상대화">2. 상대화</h2>
+
+<h3 id="21-명제의-상대화">2.1. 명제의 상대화</h3>
+
+<p>1차 논리 명제는 양화사를 포함할 수 있다. 때문에 양화사의 정의역을 어떻게 설정하느냐의 따라 명제의 의미가 달라진다.</p>
+
+<p>명제 $\phi$와 집합 (또는 모임) $A$에 대해, $\phi$의 상대화 $\phi^A$를 $\phi$의 모든 양화사를 $A$로 제한한 명제로 정의한다. 약간의 서사적 표현을 곁들이자면, $\phi^A$는 $A$의 “내부”에서 이해한 $\phi$라고 할 수 있겠다. 예를 들어, $\phi : \forall x \; \exists y : y &lt; x$일 때</p>
+
+<ul>
+  <li>$\phi^\mathbb{N} : \forall x \in \mathbb{N} \; \exists y \in \mathbb{N} : y &lt; x$</li>
+  <li>$\phi^\mathbb{Z} : \forall x \in \mathbb{Z} \; \exists y \in \mathbb{Z} : y &lt; x$</li>
+</ul>
+
+<p>$T_\mathbb{Q}$가 자연수 및 정수를 특정할 수 있는 정도의 표현력을 지니는 유리수 이론이라고 하면,</p>
+
+<ul>
+  <li>$T_\mathbb{Q} \vdash \phi$</li>
+  <li>$T_\mathbb{Q} \not\vdash \phi^\mathbb{N}$</li>
+  <li>$T_\mathbb{Q} \vdash \phi^{\mathbb{Z}}$</li>
+</ul>
+
+<p>이다. 따라서 $\phi$는 자연수와 유리수를 성공적으로 구분해 내지만, 정수와 유리수는 구분해 내지 못한다. 이 관찰을 일반화하면, 이론 $T$와 집합 $A$에 대해 $T \vdash \phi \leftrightarrow \phi^A$인 $\phi$가 많으면 많을수록 $A$는 $T$의 기술에 잘 “부합한다“고 말할 수 있다.</p>
+
+<p>위 논의를 조금 일반화하여, 다음과 같이 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 이론 $T$와 집합 $A$에 대해서</p>
+
+\[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
+
+  <p>일 때, $\phi$는 $A$에 대해 <strong>절대적(absolute)</strong>이라고 한다.</p>
+</blockquote>
+
+<p>일례로 $T_\mathbb{Q}$에 대해 $\phi(x) : \exists y (y &lt; x)$는 정수에 대해 절대적이지만 자연수에 대해 절대적이지는 않다.</p>
+
+<h3 id="22-l-상대화">2.2. $L$-상대화</h3>
+
+<p>이제 우리의 목표는 $L$이 $\mathsf{ZF}$와 극대적으로 부합함을 보이는 것이다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리 1.</strong> $\phi$가 ZF의 공리라면 $\mathsf{ZF} \vdash \phi^L$이다.</p>
+</blockquote>
+
+<p>정리 1의 의미를 말로 풀어 보자면,</p>
+
+<blockquote>
+  <p>“$L$의 내부에서 보았을 때 $L$은 ZF의 모델이다”를 ZF로 증명할 수 있다.</p>
+</blockquote>
+
+<p>물론 우리는 $L \subset V$만 알고 $V = L$인지는 알지 못하기 때문에, 어떤 집합 $x$는 $L$에 속하지 않을 수도 있다. 그러나 설령 $x \in V \setminus L$인 집합 $x$가 있더라도, 그러한 $x$의 결여는 $L$의 <em>내적 정합성</em>을 깨뜨리지 않는다는 것이 정리 1의 내용이다.</p>
+
+<p>예를 들어 어떤 집합 $y, z$에 대해 $x = \lbrace  y, z \rbrace$가 $L$에 결여되어 있다고 하자. 일면 $x$의 결여는 $L$이 짝 공리 $\mathsf{Pair}$을 만족하지 않음을 시사하는 듯하다.</p>
+
+\[\mathsf{Pair} := \forall y, z \; \exists x \; \forall w: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>하지만 $L$의 내부에서 본 짝 공리는 다음과 같다.</p>
+
+\[\mathsf{Pair}^L := \forall y, z \in L \; \exists x \in L \; \forall w \in L: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>$\forall y, z$의 양화 또한 $L$로 한정됨에 주목하라. 즉, $x = \lbrace  y, z \rbrace$의 결여가 $L$에게 문제를 일으키는 경우는 $y, z \in L$일 때이다. 거꾸로 말해, $x = \lbrace  y, z \rbrace \notin L$이 $y, z \notin L$을 시사한다면 $L$은 $\mathsf{Pair}^L$을 만족한다. 이것이 “$L$이 내적 정합성을 유지하는 방식으로 집합을 결여한다”의 의미이다.</p>
+
+<p>정리 1이 성립하는 핵심 이유는 $L$과 $V$가 <strong>추이성이라는 성질을 공유</strong>하기 때문이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> 다음 술어는 ZF에서 $L$에 대해 절대적이다.</p>
+
+  <ol>
+    <li>$x \in y$</li>
+    <li>$x \subset y$</li>
+    <li>$x = \bigcup y$</li>
+    <li>$x = \lbrace  y, z \rbrace$</li>
+    <li>$\alpha \in \mathrm{Ord}$</li>
+    <li>$x$는 추이적이다.</li>
+    <li><a href="https://math.stackexchange.com/questions/404699/delta-0-formulas">$\Delta_0$ 논리식</a></li>
+  </ol>
+</blockquote>
+
+<p>또한 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 2.</strong> $\mathsf{ZF} \vdash (V = L)^L$</p>
+</blockquote>
+
+<p>여기서 $V = L$은, “모든 집합이 $L$에 속한다”를 의미한다. 따라서 일면 보기에 $(V = L)^L$은 “$L$에 속하는 모든 집합이 $L$에 속한다”라는 자명한 명제인 듯하다. 하지만 실제로 $V = L$을 논리식으로 적으면</p>
+
+\[\forall x \; \exists \alpha  : \alpha \in \mathrm{Ord} \land x \in L_\alpha\]
+
+<p>이므로 $(V = L)^L$은</p>
+
+\[\forall x \in L \; \exists \alpha \in L : (\alpha \in \mathrm{Ord})^L \land (x \in L_\alpha)^L\]
+
+<p>이다. 특히, $\alpha \in \mathrm{Ord}$와 $x \in L_\alpha$가 진정한 의미에서의 $\in$-술어가 아닌 1차 논리식의 형식적 표현이기 때문에 마찬가지로 $L$로 상대화해야 함에 유의하라. 이에 따라 $(V = L)^L$을 ZF에서 증명하기 위해서는 $\alpha \in \mathsf{Ord}$와 $x \in L_\alpha$가 절대적임을 증명해야 한다. 두 증명 모두 초한귀납법을 사용하면 가능하다.</p>
+
+<p>정리 1과 정리 2로부터 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 3.</strong> $\mathsf{ZFL} \vdash \phi \implies \mathsf{ZF} \vdash \phi^L$</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathsf{ZFL} \vdash \phi$의 증명 길이에 대한 귀납법으로 증명한다. 증명 길이가 0일 때 $\phi$는 ZFL의 공리이다. $\phi$가 ZF의 공리일 때 정리 1로부터 증명되고, $\phi$가 $V = L$일 때 정리 2로부터 증명된다.</p>
+
+<p>이제 $\phi$가 $\lbrace  \psi_1, \dots, \psi_n \rbrace$에 추론 규칙을 적용하는 것으로 증명된다고 가정하자. $\psi_k$의 증명 길이는 $\phi$보다 작으므로 귀납 가정에 의해 $\mathsf{ZF} \vdash \psi_k^L$이며,  논리 공리와 추론 규칙은 $L$에 대해 절대적임을 쉽게 보일 수 있다. 따라서 $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$가 논리적 참이라면 $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ 또한 논리적 참이며, 이에 따라 $\mathsf{ZF} \vdash \phi^L$이다. ■</p>
+
+<p>정리 3의 따름정리로서 정리 4를 얻는다.</p>
+
+<blockquote>
+  <p><strong>정리 4.</strong> ZF가 무모순적이라면 ZFL 또한 무모순적이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> ZFL이 모순적이라면 $\mathsf{ZFL} \vdash \varnothing \neq \varnothing$이며, 정리 3에 의해 $\mathsf{ZF} \vdash (\varnothing \neq \varnothing)^L \iff \mathsf{ZF} \vdash \varnothing \neq \varnothing$이다.</p>
+
+<p>따라서 <strong>V = L은 ZF와 일관적이다</strong>.</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

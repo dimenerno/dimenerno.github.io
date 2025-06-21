@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Compactness and Nets &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2024/12/01/net/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                           
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Compactness and Nets</h1>
+  <span class="post-date">01 Dec 2024</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'" >Topology</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h3 id="compactness">Compactness</h3>
+<blockquote>
+  <p><strong>Definition.</strong> Let $X$ be a topological space.</p>
+
+  <ol>
+    <li>$X$ is said to be <strong>compact</strong> if every open cover has a finite subcover.</li>
+    <li>$X$ is said to be <strong>sequentially compact</strong> if every sequence $\lbrace x_n \in X \rbrace$ has a convergent subsequence.</li>
+    <li>$X$ is said to be <strong>limit point compact</strong> if every infinite set $S \subset X$ has a limit point.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>Compact $\rightarrow$ Limit point compact</li>
+    <li>Sequentially compact $\rightarrow$ Limit point compact</li>
+    <li>Limit point compact $\not\rightarrow$ Compact</li>
+    <li>Limit point compact $\not\rightarrow$ Sequentially compact</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>Let $S \subset X$ be an infinite set with no limit points. Since $\overline{S} = S \cup S’ = S$, $S$ is a closed set and $X \setminus S$ is an open set. For any $s \in S$, since $s$ is not a limit point, there exists a neighbourhood $U_s$ of $s$ such that $U_s \cap S = \lbrace  s \rbrace$. Therefore, the following open cover of $X$ has no finite subcover:</li>
+</ol>
+
+\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
+
+<ol>
+  <li>Let $S \subset X$ be an infinite set. Arbitrarily extract elements of $S$ to form a sequence $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$. Since $X$ is sequentially compact, $\lbrace  s_n \rbrace → s$, and $s$ is a limit point of $S$.</li>
+  <li>$\omega_1$ with the order topology is limit point compact but not compact.</li>
+  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, where $\mathbb{N}$ is given the discrete topology and $\lbrace  0, 1\rbrace$ is given the trivial topology.</li>
+</ol>
+
+<p><strong>Remark.</strong> An incorrect “proof” of 4</p>
+
+<blockquote>
+  <p>Suppose $X$ is limit point compact. Given a sequence $(x_n)$, if $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$ is a finite set, then $(x_n)$ trivially has a convergent subsequence. If $S$ is an infinite set, then by the limit point compactness of $X$, there exists $x \in S’$. <strong>Now we define a countable collection of neighbourhoods of $x$, $\mathcal{U} = \lbrace  U_n \rbrace$, satisfying the following conditions:</strong></p>
+
+  <ol>
+    <li>$n &lt; m \implies U_n \supset U_m$</li>
+    <li>For any neighbourhood $V$ of $x$, $\exists U \in \mathcal{U} : U \subset V$</li>
+  </ol>
+
+  <p>From this, we can define a function $k: \mathbb{N} → \mathbb{N}$ satisfying the following two conditions:</p>
+
+  <ol>
+    <li>$x_{k(n)} \in U_n$</li>
+    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+  </ol>
+
+  <p>Condition 2 is possible because when $k(i)$ is defined for $i \leq n$, $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$ still has $x$ as a limit point. Thus, $(x_n)$ has a convergent subsequence $(x_{k(n)})$.</p>
+</blockquote>
+
+<p>The above proof is incorrect because the bold portion is not generally possible. Instead, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> In first countable T₁ spaces, limit point compactness and sequential compactness are equivalent.</p>
+</blockquote>
+
+<h3 id="nets-and-sequences">Nets and Sequences</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(J, \leq)$ be a preorder. If for any $x, y \in J$, there exists $z \in J$ such that $x, y \leq z$, then $(J, \leq)$ is called a <strong>directed set</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $K$ be a subset of $(J, \leq)$. If for any $x \in J$, there exists $y \in K$ such that $x \leq y$, then $K$ is said to be <strong>cofinal</strong>.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(J, \leq)$ be a directed set. For a topological space $X$, a function $f: J → X$ is called a <strong>net</strong>. In particular, for $\alpha \in J$, we denote $f(\alpha)$ as $x_\alpha$.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A net $(x_\alpha)$ converges to $x$ if, for any neighbourhood $U$ of $x$, there exists some $\alpha \in J$ such that</p>
+
+\[\alpha \leq \beta \implies x_\beta \in U\]
+</blockquote>
+
+<p>The convergence of nets in general topological spaces corresponds to the convergence of sequences in first countable spaces. That is,</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $X$ be a first countable space.</p>
+
+  <ol>
+    <li>For $A \subset X$, $x \in \bar{A}$ if and only if there exists a sequence $(x_n)$ converging to $x$.</li>
+    <li>For $f: X → Y$, $f$ is continuous if and only if for any sequence $(x_n)$, if $x_n → x$ then $f(x_n) → f(x)$.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $X$ be a topological space.</p>
+
+  <ol>
+    <li>For $A \subset X$, $x \in \bar{A}$ if and only if there exists a net $(x_\alpha)$ converging to $x$.</li>
+    <li>For $f: X → Y$, $f$ is continuous if and only if for any net $(x_\alpha)$, if $x_\alpha → x$ then $f(x_\alpha) → f(x)$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>Let $\mathcal{U}_x$ be the set of neighbourhoods of $x$. Give $\mathcal{U}_x$ the order $\leq$ by reverse inclusion. If $x \in \bar{A}$, then for any $U_\alpha \in \mathcal{U}_x$, there exists $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$. Verify that $x_\alpha → x$.</li>
+</ol>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(x_\alpha)_{\alpha \in J}$ be a net. If $(I, \preceq)$ is a directed set, $g: (I, \preceq) → (J, \leq)$ is order-preserving, and $\operatorname{im}g$ is cofinal, then $(x_{g(\beta)})_{\beta \in I}$ is called a subnet of $(x_\alpha)$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $X$ is compact if and only if every net has a convergent subnet.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> Note that “there exists a convergent sequence” is a stronger condition than “there exists a convergent net”, but “every sequence has a convergent subsequence” is neither stronger nor weaker than “every net has a convergent subnet”. The subject is stronger in the latter case, whilst the predicate is stronger in the former case. Therefore, <strong>compactness and sequential compactness have no implication relation in general.</strong> Specifically,</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>Compact $\not\rightarrow$ Sequentially compact</li>
+    <li>Sequentially compact $\not\rightarrow$ Compact</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>$[0, 1]^{[0, 1]}$ is compact by Tychonoff’s theorem but not sequentially compact.</li>
+  <li>The long line and $\omega_1$ are sequentially compact but not compact.</li>
+</ol>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

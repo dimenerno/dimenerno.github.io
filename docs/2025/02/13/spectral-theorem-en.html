@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     어드조인트, 정규 변환, 그리고 스펙트럼 정리 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/02/13/spectral-theorem-en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                           
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">어드조인트, 정규 변환, 그리고 스펙트럼 정리</h1>
+  <span class="post-date">13 Feb 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/대수학/'" >대수학</div>
+      
+    </div>
+  
+  <p>이 글에서 모든 벡터 공간은 내적 공간이라고 가정한다. 또한, 모든 변환은 선형 변환이다.</p>
+
+<h2 id="1-선형-변환의-어드조인트">1. 선형 변환의 어드조인트</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> $(V, \langle \cdot \rangle_V), (W, \langle \cdot \rangle_W)$가 내적 벡터 공간이라고 하자. $T: V \to W$에 대해, $T$의 <strong>어드조인트<sub>adjoint</sub></strong> $T^\ast: W \to V$는 다음 조건을 만족하는 선형 변환이다.</p>
+
+\[\forall v \in V, w \in W : \quad \langle w, Tv \rangle_W = \langle T^\ast w, v \rangle_V\]
+</blockquote>
+
+<p><a href="https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">범주론의 어드조인트 정의</a>를 떠올려 보면 식의 형태가 비슷하다.</p>
+
+<p>이 정의를 정당화하려면 모든 $T$에 대해 어드조인트가 유일하게 존재함을 보여야 한다. 이는 리스 표현 정리<sub>Riesz representation theorem</sub>로부터 얻어진다.</p>
+
+<blockquote>
+  <p><strong>리스 표현 정리.</strong> $V$가 내적 공간이라고 하자. $\phi \in V^\ast$에 대해, 다음을 만족하는 벡터 $v$가 유일하게 존재한다.</p>
+
+\[\forall u \in V : \quad \phi(u) = \langle u, v \rangle\]
+</blockquote>
+
+<p>$V$가 유한 차원일 경우, 위 정리는 $V$의 직교 기저를 잡음으로써 쉽게 보여진다. $V$가 일반적인 힐베르트 공간일 경우에는 증명이 더 까다롭기 때문에 생략한다.</p>
+
+<p>리스 표현 정리로부터 어드조인트의 정의를 다음과 같이 정당화할 수 있다. $w \in W$가 주어졌을 때, 사상 $v \mapsto \langle w, Tv \rangle$는 $V^\ast$의 원소이다. 따라서 어떤 $u_w \in V$가 존재하여</p>
+
+\[\forall v \in V : \langle w, Tv \rangle = \langle u_w, v \rangle\]
+
+<p>이다. 이 때 사상 $w \mapsto u_w$는 선형임을 쉽게 보일 수 있다. 이 선형 사상이 우리가 구하고자 하는 어드조인트이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $T^\ast = T$인 선형 사상 $T : V \to V$를 <strong>자기 어드조인트<sub>self-adjoint</sub></strong>라고 한다.</p>
+</blockquote>
+
+<p>$T : V \to W$의 행렬 표현이 $M$일 때, 동일한 기저에서 $T^\ast$의 행렬 표현은 $M$의 켤레 전치, 즉 $M^\dagger$임을 — 다소 번거롭긴 하지만 — 어렵지 않게 보일 수 있다. 따라서 자기 어드조인트 변환의 행렬은 에르미트<sub>Hermitian</sub> 행렬이다.</p>
+
+<blockquote>
+  <p><strong>복소 자기 어드조인트 판별볍.</strong> $V$가 복소 벡터 공간일 때, $T: V \to V$가 자기 어드조인트 변환일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle \in \mathbb{R}$인 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 필요조건은 자명하므로 충분조건임을 보인다. 먼저 다음 보조정리를 증명한다.</p>
+
+<p><em>보조정리.</em> $V$가 복소 벡터 공간이라고 하자. $T : V \to V$에 대해, $T = 0$일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle = 0$인 것이다.</p>
+
+<p><em>보조정리의 증명.</em> 필요조건은 자명하므로 충분조건임을 보인다. 임의의 $u, v \in V$에 대해,</p>
+
+\[\langle T(u + v) , u + v \rangle = \langle Tu, v \rangle + \langle Tv, u \rangle = 0\]
+
+<p>이고,</p>
+
+\[\begin{aligned}
+\langle T(u + iv), u + iv \rangle &amp;= \langle T(u), iv \rangle + \langle T(iv), u \rangle \\ &amp;= -i \langle Tu, v \rangle + i \langle Tv, u \rangle = 0
+\end{aligned}\]
+
+<p>이다. 두 식을 연립하면 $\langle Tu, v \rangle = 0$을 얻는다. 이로부터 $T = 0$임을 보이기는 쉽다. □</p>
+
+<p>이제 본 정리를 보인다. $\langle Tv, v \rangle \in \mathbb{R}$이므로, $\langle Tv, v \rangle = \langle v, Tv \rangle$이다. 또한 어드조인트의 정의에 의해 $\langle Tv, v \rangle = \langle v, T^\ast v \rangle$이다. 따라서 $\langle v, (T - T^\ast)v \rangle = 0$이다. 보조정리로부터 $T = T^\ast$가 따라 나온다. ■</p>
+
+<blockquote>
+  <p><strong>자명한 자기 어드조인트 판별법.</strong> $V$가 실수 또는 복소 벡터 공간이라고 하자. 자기 어드조인트 변환 $T: V \to V$에 대해, $T = 0$일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle = 0$인 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 복소 벡터 공간인 경우에는 위의 보조정리로부터 따라 나온다. 따라서 $V$가 실수 벡터 공간인 경우에만 증명한다. 필요조건은 자명하므로 충분조건임을 보인다. 임의의 $u, v \in V$에 대해,</p>
+
+\[\begin{aligned}
+\langle T(u + v), u + v \rangle &amp;= \langle Tu, v \rangle + \langle Tv, u \rangle &amp;&amp;(\because \langle Tv, v \rangle = 0) \\
+&amp;= \langle Tu, v \rangle + \langle u, Tv \rangle &amp;&amp;(\because \mathrm{im} \langle \cdot \rangle \subset \mathbb{R}) \\
+&amp;= 2\langle Tu, v \rangle &amp;&amp;(\because T^\ast = T)
+\end{aligned}\]
+
+<p>즉 임의의 $u, v \in V$에 대해 $\langle Tu, v \rangle = 0$이므로 $T = 0$이다. ■</p>
+
+<h2 id="2-정규-선형-변환">2. 정규 선형 변환</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> $T : V \to V$에 대해 $TT^\ast = T^\ast T$일 때, $T$를 <strong>정규<sub>normal</sub></strong>라고 한다.</p>
+</blockquote>
+
+<p>모든 자기 어드조인트 변환은 정규 변환이지만 그 역은 성립하지 않는다.</p>
+
+<blockquote>
+  <p><strong>정규 판별법.</strong> $V$가 실수 또는 복소 벡터 공간이라고 하자. $T: V \to V$가 정규일 필요충분조건은 임의의 $v$에 대해 $\lVert Tv \rVert = \lVert T^\ast v \rVert$인 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> “자명한 자기 어드조인트 판별법”으로부터 따라 나온다. ■</p>
+
+<blockquote>
+  <p><strong>정규 고유벡터의 켤레성.</strong> $V$가 실수 또는 복소 벡터 공간이고, $T : V \to V$가 정규라고 하자. $v$가 고윳값 $\lambda$를 가지는 $T$의 고유벡터일 때, $v$는 고윳값 $\bar{\lambda}$를 가지는 $T^\ast$의 고유벡터이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T$가 정규일 때, $T - \lambda I$ 또한 정규임을 쉽게 보일 수 있다. 따라서,</p>
+
+\[\lVert (T - \lambda I) v \rVert = \lVert (T - \lambda I)^\ast v \rVert = \lVert (T^\ast - \bar{\lambda} I) v \rVert = 0. \quad \blacksquare\]
+
+<p>‘정규’라는 이름의 유래는 다음 정리에 있다.</p>
+
+<blockquote>
+  <p><strong>정규 고유벡터의 정규성.</strong> $T: V \to V$가 정규라고 하자. $u, v \in V$가 서로 다른 고윳값을 가지는 $T$의 고유벡터라면 $u$와 $v$는 직교한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $u, v$의 고윳값이 $\alpha, \beta$라고 하자.</p>
+
+\[\begin{aligned}
+(\alpha - \beta)\langle u, v \rangle &amp;= \langle \alpha u, v \rangle - \langle u, \bar{\beta}v \rangle \\
+&amp;= \langle Tu, v \rangle - \langle u, T^\ast v \rangle = 0.
+\end{aligned}\]
+
+<p>$\alpha - \beta \neq 0$이므로 $\langle u, v \rangle = 0$이다. ■</p>
+
+<h2 id="3-스펙트럼-정리spectral-theorems">3. 스펙트럼 정리<sub>Spectral theorems</sub></h2>
+
+<p>‘스펙트럼’이라는 이름은, 스펙트럼 정리가 양자역학에서 원자의 스펙트럼을 설명할 때 쓰였던 것에서 유래했다는 설이 흔히 전해지지만, 이것은 사실이 아니다. 스펙트럼 정리를 사용해서 원자의 스펙트럼을 설명하기 이전에 이미 힐베르트가 ‘스펙트럼’이라는 표현을 쓴 바 있기 때문이다. 정확한 유래는 알려져 있지 않은데, 고유벡터들이 힐베르트 공간의 특성을 나타낸다는 점에서 빛의 스펙트럼과 유사하다는 이미지 때문이 아니었을까 추측해 봄직하다.</p>
+
+<blockquote>
+  <p><strong>복소 스펙트럼 정리.</strong> $V$가 복소 벡터 공간이라고 하자. $T: V \to V$가 정규일 필요충분조건은, $T$의 고유벡터들이 $V$의 직교 기저를 이루는 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> <em>TODO</em> ■</p>
+
+<blockquote>
+  <p><strong>실수 스펙트럼 정리.</strong> $V$가 실수 벡터 공간이라고 하자. $T: V \to V$가 자기 어드조인트일 필요충분조건은, $T$의 고유벡터들이 $V$의 직교 기저를 이루는 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> <em>TODO</em> ■</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

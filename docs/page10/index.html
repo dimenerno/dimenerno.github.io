@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     디멘의 블로그 &middot; 이데아를 여행하는 히치하이커
+    
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/page10/" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                             
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><head>
+  <style>
+    .fade-rise-1 {
+      opacity: 0;
+      transform: translateY(20px);
+      /* animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.2s; */
+    }
+
+    .fade-rise-2 {
+      opacity: 0;
+      transform: translateY(20px);
+      /* animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.4s; */
+    }
+
+    .fade-rise-3 {
+      opacity: 0;
+      transform: translateY(20px);
+      /* animation: fadeRise 0.8s ease-out forwards;
+      animation-delay: 0.6s; */
+    }
+
+    /* 이미지가 로드된 후 추가될 클래스에 animation 속성 추가 */
+    .fade-rise-1.is-loaded {
+      animation: fadeRise 0.8s ease-out forwards 0.2s;
+    }
+    .fade-rise-2.is-loaded {
+      animation: fadeRise 0.8s ease-out forwards 0.4s;
+    }
+    .fade-rise-3.is-loaded {
+      animation: fadeRise 0.8s ease-out forwards 0.6s;
+    }
+
+    @keyframes fadeRise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
+  </style>
+</head>
+
+
+
+<div class="posts">
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/11/rolling"> 굴림에 대한 두 가지 삽화 </a>
+      </h1>
+    <span class="post-date">11 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/물리학/'">
+        물리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/역학/'">
+        역학
+      </div>
+      
+    </div>
+     <p>학부 시절 고전역학 수강 때 개인 공부용으로 만든 삽화인데, 잘 정리한 듯하여 이곳에도 공유한다.</p>
+
+<p><img src="/public/rot-kr.png" style="width: 100%; margin: 0 auto" /></p>
+
+<p><img src="/public/rolling-on-ground.png" style="width: 100%; margin: 4em auto 0em auto" /></p>
+
+<p>굴림을 바퀴의 CM 기준으로 분석할 때 <strong>땅 또한 움직인다는 사실</strong>에 유의하자.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/11/rolling/en"> Two Illustrations on Rolling </a>
+      </h1>
+    <span class="post-date">11 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/physics/'">
+        Physics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/mechanics/'">
+        Mechanics
+      </div>
+      
+    </div>
+     <p>These are illustrations I made when I studied classical mechanics in my BA. They seem to be well-made, so I decided to share them here, too.</p>
+
+<p><img src="/public/rot-en.png" style="width: 100%; margin: 0 auto" /></p>
+
+<p>Note that decomposing Revolution as the sum of Rotation about CM and Rotation about Axis is a specific case of the central axis theorem.</p>
+
+<p><img src="/public/rolling-on-ground.png" style="width: 100%; margin: 4em auto 0em auto" /></p>
+
+<p>Note that when analysing Rolling from CM’s frame, the ground also moves at $v = -r\omega$.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/11/VL-axiom"> V = L 공리의 무모순성 </a>
+      </h1>
+    <span class="post-date">11 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <h2 id="1-전체">1. 전체</h2>
+
+<h3 id="11-폰-노이만-전체">1.1. 폰 노이만 전체</h3>
+
+<p><a href="https://dimenerno.github.io/2024/12/05/transfinite-recursion/">초한귀납적으로</a> $\lbrace  V_\alpha \rbrace$를 정의하자.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$</li>
+  <li>$\lambda$가 극한 서수일 때, $V_\lambda = \bigcup_{\alpha &lt; \lambda} V_\alpha$</li>
+</ul>
+
+<p>처음 몇 개의 $V_\alpha$는 다음과 같다.</p>
+
+<ul>
+  <li>$V_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$V_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$V_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$V_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>모든 서수 $\alpha$에 대해 $V_\alpha$를 모아둔 모임을 <strong>폰 노이만 전체</strong>라고 한다.</p>
+
+\[V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha\]
+
+<p>$x \in y \in z$가 $x \in z$를 시사할 때 $z$를 <strong>추이적 집합(transitive set)</strong>이라고 한다. 이것은 $V$의 중요한 특징이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$\alpha \in \mathrm{Ord}$에 대해 $V_\alpha$는 추이적이다.</li>
+    <li>$V$는 추이적이다.</li>
+  </ol>
+</blockquote>
+
+<p>증명은 초한귀납법을 이용한다. 이에 따라 $V$를 다음과 같이 정의해도 무방하다.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = \mathcal{P}(V_\alpha)$</li>
+  <li>$\lambda$가 극한 서수일 때, $V_\lambda = \bigcup_{\alpha &lt; \lambda}V_\alpha$</li>
+</ul>
+
+<p>직관적으로 생각했을 때 $V$는 모든 집합을 포함하는 듯하다. 실제로 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $x$가 집합이라면 $x \in V$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 집합 $x$에 대해 $x$의 <strong>추이적 폐포</strong> $\bar{x}$를, $x$를 원소로 가지는 가장 작은 추이적 집합으로 정의한다(추이적 집합들의 교집합은 추이적이기 때문에 이 정의는 정당하다).</p>
+
+<p>$x \notin V$라고 가정하자. 분류 공리에 의해 $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$가 집합이며, 정초 공리에 의해 $y$의 $\in$-극소 원소 $z$가 존재한다. 만약 $w \notin V$인 $w \in z$가 존재한다면,  추이성에 의해 $w \in y$가 되어 $z$의 $\in$-극소성과 모순된다. 따라서 $z$의 모든 원소는 $V$에 있으며, 치환 공리로부터 $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$가 집합이다. 부랄리포르티 정리에 의해 $\beta = \bigcup_{\alpha \in \Omega}\alpha$가 서수이며, <strong>$z \in V_{\beta + 1}$이다.</strong> (이 부분에서 $V_{\beta + 1} = \mathcal{P}(V_\beta)$임이 필요하다) 따라서 모순이다. ■</p>
+
+<p>이에 따라 $V$는 집합이 아니다. 따라서 $V$는 모든 집합을 포함한다는 점에서 ZFC의 모델이지만, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">많은 수학자들은 모델이 집합일 것을 요구하기 때문에</a> 엄격한 의미에서의 모델은 아니다. 하지만 이 글에서는 편의를 위해 $V$를 집합론의 모델이라고 부르도록 한다. 또한 $x \in V$를 “$x$는 집합이다“의 형식적 표현으로 이해하도록 한다.</p>
+
+<h3 id="12-괴델-구성-가능-전체">1.2. 괴델 구성 가능 전체</h3>
+
+<p>먼저 다음과 같이 구성 가능성을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $u$가 집합 $S$로부터 <strong>구성 가능</strong>하다는 것은, 어떤 1차 논리 명제 $\phi(y, x_1, \dots, x_n)$와 $c_1, \dots, c_n \in S$가 존재하여 다음이 성립하는 것이다.</p>
+
+\[y \in u \iff y \in S \land \phi(y, c_1, \dots, c_n)\]
+
+  <p>단, $\phi$의 양화사의 정의역은 $S$이다.</p>
+</blockquote>
+
+<p>예를 들어 $S = \lbrace 0, 1, 2\rbrace$일 때 다음은 $u = \lbrace  1, 2 \rbrace$를 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1, x_2) := (y = x_1) \lor (y = x_2)$</li>
+  <li>$c_1 = 1, c_2 = 2$</li>
+</ul>
+
+<p>또한 $S = \mathbb{N}$일 때 다음은 $u = \lbrace 0, 3, 6, 9, \dots \rbrace$를 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1) := x_1 \mid y$</li>
+  <li>$c_1 = 3$</li>
+</ul>
+
+<p>괴델의 구성가능성은 일반적인 의미에서의 구성가능성, 즉 언어로서의 표현가능성과 다르다. 일례로 언어로 표현가능한 실수의 집합은 가산이므로, 어떤 실수는 언어로 표현이 불가능하다. 그러한 실수를 $r$이라고 하자. 이제 $S = \mathbb{R}$일 때, 다음은 $u = \lbrace  r \rbrace$을 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1) := x_1 = y$</li>
+  <li>$c_1 = r$</li>
+</ul>
+
+<p>즉, 괴델의 구성가능성은 자유변수의 초기화를 임의의 원소에 대해 허용한다는 점에서 강력하다. 그러나 자유변수의 수가 유한하다는 점에서 한계를 가진다. 이제 초한귀납적으로 $\lbrace  L_\alpha \rbrace$를 정의하자.</p>
+
+<ul>
+  <li>$L_0 = \varnothing$</li>
+  <li>$L_{\alpha + 1} = \lbrace  x : x \text{ is constructible from } L_\alpha  \rbrace$</li>
+  <li>$\lambda$가 극한 서수일 때, $L_\lambda = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+  <li>$L = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+</ul>
+
+<p>$\alpha &lt; \omega$일 때 $L_\alpha = V_\alpha$임을 쉽게 보일 수 있다. $\alpha = n$일 때, 최대 $n$개의 $\lor$ 연언으로 $x \in V_\alpha$를 구성할 수 있기 때문이다. 따라서,</p>
+
+<ul>
+  <li>$L_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$L_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$L_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$L_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>하지만 $L_{\omega + 1} \subsetneq V_{\omega + 1}$이다. $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$이므로 $V_{\omega + 1}$은 비가산인 반면, 1차 논리 문장들의 집합과  $L_\omega$는 모두 가산이므로 $L_{\omega + 1}$ 또한 가산이기 때문이다. 일반적으로 $\alpha$가 가산일 때 $L_\alpha$는 가산이다.</p>
+
+<p>그럼에도 $L$은 $V$와 많은 특징을 공유한다. 일례로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\alpha \in \mathrm{Ord}$에 대해 다음이 성립한다.</p>
+
+  <ol>
+    <li>$L_\alpha$는 추이적이다. (따라서 $L$이 추이적이다)</li>
+    <li>$\alpha \in L_{\alpha + 1} \setminus L_{\alpha}$</li>
+  </ol>
+</blockquote>
+
+<p>증명은 초한귀납법을 사용한다.</p>
+
+<p>$L$은 모든 서수를 포함하므로 부랄리포르티 정리에 의해 집합이 아님에 유의하라. 대신 $x \in L_\alpha$에 대응되는 1차 논리식 $\mathsf{IsInL}_\alpha(x)$가 존재한다. 증명은 조금 까다로운데, 괴델 수를 이용하여 명제를 산술화하면 된다. (<a href="https://math.stackexchange.com/questions/198437/a-formula-that-defines-constructible-universe">링크</a> 참조) 따라서 $x \in L$을 $\exists \alpha \in \mathrm{Ord} :\mathsf{IsInL}_\alpha(x)$를 대체하는 형식적 표현으로 이해하여 사용하도록 한다. (물론 $\alpha \in \mathrm{Ord}$ 또한 1차 논리식을 대체하는 형식적 표현으로 이해되어야 한다)</p>
+
+<h2 id="2-상대화">2. 상대화</h2>
+
+<h3 id="21-명제의-상대화">2.1. 명제의 상대화</h3>
+
+<p>1차 논리 명제는 양화사를 포함할 수 있다. 때문에 양화사의 정의역을 어떻게 설정하느냐의 따라 명제의 의미가 달라진다.</p>
+
+<p>명제 $\phi$와 집합 (또는 모임) $A$에 대해, $\phi$의 상대화 $\phi^A$를 $\phi$의 모든 양화사를 $A$로 제한한 명제로 정의한다. 약간의 서사적 표현을 곁들이자면, $\phi^A$는 $A$의 “내부”에서 이해한 $\phi$라고 할 수 있겠다. 예를 들어, $\phi : \forall x \; \exists y : y &lt; x$일 때</p>
+
+<ul>
+  <li>$\phi^\mathbb{N} : \forall x \in \mathbb{N} \; \exists y \in \mathbb{N} : y &lt; x$</li>
+  <li>$\phi^\mathbb{Z} : \forall x \in \mathbb{Z} \; \exists y \in \mathbb{Z} : y &lt; x$</li>
+</ul>
+
+<p>$T_\mathbb{Q}$가 자연수 및 정수를 특정할 수 있는 정도의 표현력을 지니는 유리수 이론이라고 하면,</p>
+
+<ul>
+  <li>$T_\mathbb{Q} \vdash \phi$</li>
+  <li>$T_\mathbb{Q} \not\vdash \phi^\mathbb{N}$</li>
+  <li>$T_\mathbb{Q} \vdash \phi^{\mathbb{Z}}$</li>
+</ul>
+
+<p>이다. 따라서 $\phi$는 자연수와 유리수를 성공적으로 구분해 내지만, 정수와 유리수는 구분해 내지 못한다. 이 관찰을 일반화하면, 이론 $T$와 집합 $A$에 대해 $T \vdash \phi \leftrightarrow \phi^A$인 $\phi$가 많으면 많을수록 $A$는 $T$의 기술에 잘 “부합한다“고 말할 수 있다.</p>
+
+<p>위 논의를 조금 일반화하여, 다음과 같이 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 이론 $T$와 집합 $A$에 대해서</p>
+
+\[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
+
+  <p>일 때, $\phi$는 $A$에 대해 <strong>절대적(absolute)</strong>이라고 한다.</p>
+</blockquote>
+
+<p>일례로 $T_\mathbb{Q}$에 대해 $\phi(x) : \exists y (y &lt; x)$는 정수에 대해 절대적이지만 자연수에 대해 절대적이지는 않다.</p>
+
+<h3 id="22-l-상대화">2.2. $L$-상대화</h3>
+
+<p>이제 우리의 목표는 $L$이 $\mathsf{ZF}$와 극대적으로 부합함을 보이는 것이다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리 1.</strong> $\phi$가 ZF의 공리라면 $\mathsf{ZF} \vdash \phi^L$이다.</p>
+</blockquote>
+
+<p>정리 1의 의미를 말로 풀어 보자면,</p>
+
+<blockquote>
+  <p>“$L$의 내부에서 보았을 때 $L$은 ZF의 모델이다”를 ZF로 증명할 수 있다.</p>
+</blockquote>
+
+<p>물론 우리는 $L \subset V$만 알고 $V = L$인지는 알지 못하기 때문에, 어떤 집합 $x$는 $L$에 속하지 않을 수도 있다. 그러나 설령 $x \in V \setminus L$인 집합 $x$가 있더라도, 그러한 $x$의 결여는 $L$의 <em>내적 정합성</em>을 깨뜨리지 않는다는 것이 정리 1의 내용이다.</p>
+
+<p>예를 들어 어떤 집합 $y, z$에 대해 $x = \lbrace  y, z \rbrace$가 $L$에 결여되어 있다고 하자. 일면 $x$의 결여는 $L$이 짝 공리 $\mathsf{Pair}$을 만족하지 않음을 시사하는 듯하다.</p>
+
+\[\mathsf{Pair} := \forall y, z \; \exists x \; \forall w: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>하지만 $L$의 내부에서 본 짝 공리는 다음과 같다.</p>
+
+\[\mathsf{Pair}^L := \forall y, z \in L \; \exists x \in L \; \forall w \in L: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>$\forall y, z$의 양화 또한 $L$로 한정됨에 주목하라. 즉, $x = \lbrace  y, z \rbrace$의 결여가 $L$에게 문제를 일으키는 경우는 $y, z \in L$일 때이다. 거꾸로 말해, $x = \lbrace  y, z \rbrace \notin L$이 $y, z \notin L$을 시사한다면 $L$은 $\mathsf{Pair}^L$을 만족한다. 이것이 “$L$이 내적 정합성을 유지하는 방식으로 집합을 결여한다”의 의미이다.</p>
+
+<p>정리 1이 성립하는 핵심 이유는 $L$과 $V$가 <strong>추이성이라는 성질을 공유</strong>하기 때문이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> 다음 술어는 ZF에서 $L$에 대해 절대적이다.</p>
+
+  <ol>
+    <li>$x \in y$</li>
+    <li>$x \subset y$</li>
+    <li>$x = \bigcup y$</li>
+    <li>$x = \lbrace  y, z \rbrace$</li>
+    <li>$\alpha \in \mathrm{Ord}$</li>
+    <li>$x$는 추이적이다.</li>
+    <li><a href="https://math.stackexchange.com/questions/404699/delta-0-formulas">$\Delta_0$ 논리식</a></li>
+  </ol>
+</blockquote>
+
+<p>또한 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 2.</strong> $\mathsf{ZF} \vdash (V = L)^L$</p>
+</blockquote>
+
+<p>여기서 $V = L$은, “모든 집합이 $L$에 속한다”를 의미한다. 따라서 일면 보기에 $(V = L)^L$은 “$L$에 속하는 모든 집합이 $L$에 속한다”라는 자명한 명제인 듯하다. 하지만 실제로 $V = L$을 논리식으로 적으면</p>
+
+\[\forall x \; \exists \alpha  : \alpha \in \mathrm{Ord} \land x \in L_\alpha\]
+
+<p>이므로 $(V = L)^L$은</p>
+
+\[\forall x \in L \; \exists \alpha \in L : (\alpha \in \mathrm{Ord})^L \land (x \in L_\alpha)^L\]
+
+<p>이다. 특히, $\alpha \in \mathrm{Ord}$와 $x \in L_\alpha$가 진정한 의미에서의 $\in$-술어가 아닌 1차 논리식의 형식적 표현이기 때문에 마찬가지로 $L$로 상대화해야 함에 유의하라. 이에 따라 $(V = L)^L$을 ZF에서 증명하기 위해서는 $\alpha \in \mathsf{Ord}$와 $x \in L_\alpha$가 절대적임을 증명해야 한다. 두 증명 모두 초한귀납법을 사용하면 가능하다.</p>
+
+<p>정리 1과 정리 2로부터 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 3.</strong> $\mathsf{ZFL} \vdash \phi \implies \mathsf{ZF} \vdash \phi^L$</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathsf{ZFL} \vdash \phi$의 증명 길이에 대한 귀납법으로 증명한다. 증명 길이가 0일 때 $\phi$는 ZFL의 공리이다. $\phi$가 ZF의 공리일 때 정리 1로부터 증명되고, $\phi$가 $V = L$일 때 정리 2로부터 증명된다.</p>
+
+<p>이제 $\phi$가 $\lbrace  \psi_1, \dots, \psi_n \rbrace$에 추론 규칙을 적용하는 것으로 증명된다고 가정하자. $\psi_k$의 증명 길이는 $\phi$보다 작으므로 귀납 가정에 의해 $\mathsf{ZF} \vdash \psi_k^L$이며,  논리 공리와 추론 규칙은 $L$에 대해 절대적임을 쉽게 보일 수 있다. 따라서 $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$가 논리적 참이라면 $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ 또한 논리적 참이며, 이에 따라 $\mathsf{ZF} \vdash \phi^L$이다. ■</p>
+
+<p>정리 3의 따름정리로서 정리 4를 얻는다.</p>
+
+<blockquote>
+  <p><strong>정리 4.</strong> ZF가 무모순적이라면 ZFL 또한 무모순적이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> ZFL이 모순적이라면 $\mathsf{ZFL} \vdash \varnothing \neq \varnothing$이며, 정리 3에 의해 $\mathsf{ZF} \vdash (\varnothing \neq \varnothing)^L \iff \mathsf{ZF} \vdash \varnothing \neq \varnothing$이다.</p>
+
+<p>따라서 <strong>V = L은 ZF와 일관적이다</strong>.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/11/VL-axiom-en"> V = L 공리의 무모순성 </a>
+      </h1>
+    <span class="post-date">11 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <h2 id="1-전체">1. 전체</h2>
+
+<h3 id="11-폰-노이만-전체">1.1. 폰 노이만 전체</h3>
+
+<p><a href="https://dimenerno.github.io/2024/12/05/transfinite-recursion/">초한귀납적으로</a> $\lbrace  V_\alpha \rbrace$를 정의하자.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$</li>
+  <li>$\lambda$가 극한 서수일 때, $V_\lambda = \bigcup_{\alpha &lt; \lambda} V_\alpha$</li>
+</ul>
+
+<p>처음 몇 개의 $V_\alpha$는 다음과 같다.</p>
+
+<ul>
+  <li>$V_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$V_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$V_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$V_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>모든 서수 $\alpha$에 대해 $V_\alpha$를 모아둔 모임을 <strong>폰 노이만 전체</strong>라고 한다.</p>
+
+\[V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha\]
+
+<p>$x \in y \in z$가 $x \in z$를 시사할 때 $z$를 <strong>추이적 집합(transitive set)</strong>이라고 한다. 이것은 $V$의 중요한 특징이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$\alpha \in \mathrm{Ord}$에 대해 $V_\alpha$는 추이적이다.</li>
+    <li>$V$는 추이적이다.</li>
+  </ol>
+</blockquote>
+
+<p>증명은 초한귀납법을 이용한다. 이에 따라 $V$를 다음과 같이 정의해도 무방하다.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = \mathcal{P}(V_\alpha)$</li>
+  <li>$\lambda$가 극한 서수일 때, $V_\lambda = \bigcup_{\alpha &lt; \lambda}V_\alpha$</li>
+</ul>
+
+<p>직관적으로 생각했을 때 $V$는 모든 집합을 포함하는 듯하다. 실제로 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $x$가 집합이라면 $x \in V$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 집합 $x$에 대해 $x$의 <strong>추이적 폐포</strong> $\bar{x}$를, $x$를 원소로 가지는 가장 작은 추이적 집합으로 정의한다(추이적 집합들의 교집합은 추이적이기 때문에 이 정의는 정당하다).</p>
+
+<p>$x \notin V$라고 가정하자. 분류 공리에 의해 $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$가 집합이며, 정초 공리에 의해 $y$의 $\in$-극소 원소 $z$가 존재한다. 만약 $w \notin V$인 $w \in z$가 존재한다면,  추이성에 의해 $w \in y$가 되어 $z$의 $\in$-극소성과 모순된다. 따라서 $z$의 모든 원소는 $V$에 있으며, 치환 공리로부터 $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$가 집합이다. 부랄리포르티 정리에 의해 $\beta = \bigcup_{\alpha \in \Omega}\alpha$가 서수이며, <strong>$z \in V_{\beta + 1}$이다.</strong> (이 부분에서 $V_{\beta + 1} = \mathcal{P}(V_\beta)$임이 필요하다) 따라서 모순이다. ■</p>
+
+<p>이에 따라 $V$는 집합이 아니다. 따라서 $V$는 모든 집합을 포함한다는 점에서 ZFC의 모델이지만, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">많은 수학자들은 모델이 집합일 것을 요구하기 때문에</a> 엄격한 의미에서의 모델은 아니다. 하지만 이 글에서는 편의를 위해 $V$를 집합론의 모델이라고 부르도록 한다. 또한 $x \in V$를 “$x$는 집합이다“의 형식적 표현으로 이해하도록 한다.</p>
+
+<h3 id="12-괴델-구성-가능-전체">1.2. 괴델 구성 가능 전체</h3>
+
+<p>먼저 다음과 같이 구성 가능성을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $u$가 집합 $S$로부터 <strong>구성 가능</strong>하다는 것은, 어떤 1차 논리 명제 $\phi(y, x_1, \dots, x_n)$와 $c_1, \dots, c_n \in S$가 존재하여 다음이 성립하는 것이다.</p>
+
+\[y \in u \iff y \in S \land \phi(y, c_1, \dots, c_n)\]
+
+  <p>단, $\phi$의 양화사의 정의역은 $S$이다.</p>
+</blockquote>
+
+<p>예를 들어 $S = \lbrace 0, 1, 2\rbrace$일 때 다음은 $u = \lbrace  1, 2 \rbrace$를 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1, x_2) := (y = x_1) \lor (y = x_2)$</li>
+  <li>$c_1 = 1, c_2 = 2$</li>
+</ul>
+
+<p>또한 $S = \mathbb{N}$일 때 다음은 $u = \lbrace 0, 3, 6, 9, \dots \rbrace$를 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1) := x_1 \mid y$</li>
+  <li>$c_1 = 3$</li>
+</ul>
+
+<p>괴델의 구성가능성은 일반적인 의미에서의 구성가능성, 즉 언어로서의 표현가능성과 다르다. 일례로 언어로 표현가능한 실수의 집합은 가산이므로, 어떤 실수는 언어로 표현이 불가능하다. 그러한 실수를 $r$이라고 하자. 이제 $S = \mathbb{R}$일 때, 다음은 $u = \lbrace  r \rbrace$을 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1) := x_1 = y$</li>
+  <li>$c_1 = r$</li>
+</ul>
+
+<p>즉, 괴델의 구성가능성은 자유변수의 초기화를 임의의 원소에 대해 허용한다는 점에서 강력하다. 그러나 자유변수의 수가 유한하다는 점에서 한계를 가진다. 이제 초한귀납적으로 $\lbrace  L_\alpha \rbrace$를 정의하자.</p>
+
+<ul>
+  <li>$L_0 = \varnothing$</li>
+  <li>$L_{\alpha + 1} = \lbrace  x : x \text{ is constructible from } L_\alpha  \rbrace$</li>
+  <li>$\lambda$가 극한 서수일 때, $L_\lambda = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+  <li>$L = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+</ul>
+
+<p>$\alpha &lt; \omega$일 때 $L_\alpha = V_\alpha$임을 쉽게 보일 수 있다. $\alpha = n$일 때, 최대 $n$개의 $\lor$ 연언으로 $x \in V_\alpha$를 구성할 수 있기 때문이다. 따라서,</p>
+
+<ul>
+  <li>$L_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$L_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$L_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$L_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>하지만 $L_{\omega + 1} \subsetneq V_{\omega + 1}$이다. $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$이므로 $V_{\omega + 1}$은 비가산인 반면, 1차 논리 문장들의 집합과  $L_\omega$는 모두 가산이므로 $L_{\omega + 1}$ 또한 가산이기 때문이다. 일반적으로 $\alpha$가 가산일 때 $L_\alpha$는 가산이다.</p>
+
+<p>그럼에도 $L$은 $V$와 많은 특징을 공유한다. 일례로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\alpha \in \mathrm{Ord}$에 대해 다음이 성립한다.</p>
+
+  <ol>
+    <li>$L_\alpha$는 추이적이다. (따라서 $L$이 추이적이다)</li>
+    <li>$\alpha \in L_{\alpha + 1} \setminus L_{\alpha}$</li>
+  </ol>
+</blockquote>
+
+<p>증명은 초한귀납법을 사용한다.</p>
+
+<p>$L$은 모든 서수를 포함하므로 부랄리포르티 정리에 의해 집합이 아님에 유의하라. 대신 $x \in L_\alpha$에 대응되는 1차 논리식 $\mathsf{IsInL}_\alpha(x)$가 존재한다. 증명은 조금 까다로운데, 괴델 수를 이용하여 명제를 산술화하면 된다. (<a href="https://math.stackexchange.com/questions/198437/a-formula-that-defines-constructible-universe">링크</a> 참조) 따라서 $x \in L$을 $\exists \alpha \in \mathrm{Ord} :\mathsf{IsInL}_\alpha(x)$를 대체하는 형식적 표현으로 이해하여 사용하도록 한다. (물론 $\alpha \in \mathrm{Ord}$ 또한 1차 논리식을 대체하는 형식적 표현으로 이해되어야 한다)</p>
+
+<h2 id="2-상대화">2. 상대화</h2>
+
+<h3 id="21-명제의-상대화">2.1. 명제의 상대화</h3>
+
+<p>1차 논리 명제는 양화사를 포함할 수 있다. 때문에 양화사의 정의역을 어떻게 설정하느냐의 따라 명제의 의미가 달라진다.</p>
+
+<p>명제 $\phi$와 집합 (또는 모임) $A$에 대해, $\phi$의 상대화 $\phi^A$를 $\phi$의 모든 양화사를 $A$로 제한한 명제로 정의한다. 약간의 서사적 표현을 곁들이자면, $\phi^A$는 $A$의 “내부”에서 이해한 $\phi$라고 할 수 있겠다. 예를 들어, $\phi : \forall x \; \exists y : y &lt; x$일 때</p>
+
+<ul>
+  <li>$\phi^\mathbb{N} : \forall x \in \mathbb{N} \; \exists y \in \mathbb{N} : y &lt; x$</li>
+  <li>$\phi^\mathbb{Z} : \forall x \in \mathbb{Z} \; \exists y \in \mathbb{Z} : y &lt; x$</li>
+</ul>
+
+<p>$T_\mathbb{Q}$가 자연수 및 정수를 특정할 수 있는 정도의 표현력을 지니는 유리수 이론이라고 하면,</p>
+
+<ul>
+  <li>$T_\mathbb{Q} \vdash \phi$</li>
+  <li>$T_\mathbb{Q} \not\vdash \phi^\mathbb{N}$</li>
+  <li>$T_\mathbb{Q} \vdash \phi^{\mathbb{Z}}$</li>
+</ul>
+
+<p>이다. 따라서 $\phi$는 자연수와 유리수를 성공적으로 구분해 내지만, 정수와 유리수는 구분해 내지 못한다. 이 관찰을 일반화하면, 이론 $T$와 집합 $A$에 대해 $T \vdash \phi \leftrightarrow \phi^A$인 $\phi$가 많으면 많을수록 $A$는 $T$의 기술에 잘 “부합한다“고 말할 수 있다.</p>
+
+<p>위 논의를 조금 일반화하여, 다음과 같이 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 이론 $T$와 집합 $A$에 대해서</p>
+
+\[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
+
+  <p>일 때, $\phi$는 $A$에 대해 <strong>절대적(absolute)</strong>이라고 한다.</p>
+</blockquote>
+
+<p>일례로 $T_\mathbb{Q}$에 대해 $\phi(x) : \exists y (y &lt; x)$는 정수에 대해 절대적이지만 자연수에 대해 절대적이지는 않다.</p>
+
+<h3 id="22-l-상대화">2.2. $L$-상대화</h3>
+
+<p>이제 우리의 목표는 $L$이 $\mathsf{ZF}$와 극대적으로 부합함을 보이는 것이다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리 1.</strong> $\phi$가 ZF의 공리라면 $\mathsf{ZF} \vdash \phi^L$이다.</p>
+</blockquote>
+
+<p>정리 1의 의미를 말로 풀어 보자면,</p>
+
+<blockquote>
+  <p>“$L$의 내부에서 보았을 때 $L$은 ZF의 모델이다”를 ZF로 증명할 수 있다.</p>
+</blockquote>
+
+<p>물론 우리는 $L \subset V$만 알고 $V = L$인지는 알지 못하기 때문에, 어떤 집합 $x$는 $L$에 속하지 않을 수도 있다. 그러나 설령 $x \in V \setminus L$인 집합 $x$가 있더라도, 그러한 $x$의 결여는 $L$의 <em>내적 정합성</em>을 깨뜨리지 않는다는 것이 정리 1의 내용이다.</p>
+
+<p>예를 들어 어떤 집합 $y, z$에 대해 $x = \lbrace  y, z \rbrace$가 $L$에 결여되어 있다고 하자. 일면 $x$의 결여는 $L$이 짝 공리 $\mathsf{Pair}$을 만족하지 않음을 시사하는 듯하다.</p>
+
+\[\mathsf{Pair} := \forall y, z \; \exists x \; \forall w: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>하지만 $L$의 내부에서 본 짝 공리는 다음과 같다.</p>
+
+\[\mathsf{Pair}^L := \forall y, z \in L \; \exists x \in L \; \forall w \in L: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>$\forall y, z$의 양화 또한 $L$로 한정됨에 주목하라. 즉, $x = \lbrace  y, z \rbrace$의 결여가 $L$에게 문제를 일으키는 경우는 $y, z \in L$일 때이다. 거꾸로 말해, $x = \lbrace  y, z \rbrace \notin L$이 $y, z \notin L$을 시사한다면 $L$은 $\mathsf{Pair}^L$을 만족한다. 이것이 “$L$이 내적 정합성을 유지하는 방식으로 집합을 결여한다”의 의미이다.</p>
+
+<p>정리 1이 성립하는 핵심 이유는 $L$과 $V$가 <strong>추이성이라는 성질을 공유</strong>하기 때문이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> 다음 술어는 ZF에서 $L$에 대해 절대적이다.</p>
+
+  <ol>
+    <li>$x \in y$</li>
+    <li>$x \subset y$</li>
+    <li>$x = \bigcup y$</li>
+    <li>$x = \lbrace  y, z \rbrace$</li>
+    <li>$\alpha \in \mathrm{Ord}$</li>
+    <li>$x$는 추이적이다.</li>
+    <li><a href="https://math.stackexchange.com/questions/404699/delta-0-formulas">$\Delta_0$ 논리식</a></li>
+  </ol>
+</blockquote>
+
+<p>또한 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 2.</strong> $\mathsf{ZF} \vdash (V = L)^L$</p>
+</blockquote>
+
+<p>여기서 $V = L$은, “모든 집합이 $L$에 속한다”를 의미한다. 따라서 일면 보기에 $(V = L)^L$은 “$L$에 속하는 모든 집합이 $L$에 속한다”라는 자명한 명제인 듯하다. 하지만 실제로 $V = L$을 논리식으로 적으면</p>
+
+\[\forall x \; \exists \alpha  : \alpha \in \mathrm{Ord} \land x \in L_\alpha\]
+
+<p>이므로 $(V = L)^L$은</p>
+
+\[\forall x \in L \; \exists \alpha \in L : (\alpha \in \mathrm{Ord})^L \land (x \in L_\alpha)^L\]
+
+<p>이다. 특히, $\alpha \in \mathrm{Ord}$와 $x \in L_\alpha$가 진정한 의미에서의 $\in$-술어가 아닌 1차 논리식의 형식적 표현이기 때문에 마찬가지로 $L$로 상대화해야 함에 유의하라. 이에 따라 $(V = L)^L$을 ZF에서 증명하기 위해서는 $\alpha \in \mathsf{Ord}$와 $x \in L_\alpha$가 절대적임을 증명해야 한다. 두 증명 모두 초한귀납법을 사용하면 가능하다.</p>
+
+<p>정리 1과 정리 2로부터 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 3.</strong> $\mathsf{ZFL} \vdash \phi \implies \mathsf{ZF} \vdash \phi^L$</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathsf{ZFL} \vdash \phi$의 증명 길이에 대한 귀납법으로 증명한다. 증명 길이가 0일 때 $\phi$는 ZFL의 공리이다. $\phi$가 ZF의 공리일 때 정리 1로부터 증명되고, $\phi$가 $V = L$일 때 정리 2로부터 증명된다.</p>
+
+<p>이제 $\phi$가 $\lbrace  \psi_1, \dots, \psi_n \rbrace$에 추론 규칙을 적용하는 것으로 증명된다고 가정하자. $\psi_k$의 증명 길이는 $\phi$보다 작으므로 귀납 가정에 의해 $\mathsf{ZF} \vdash \psi_k^L$이며,  논리 공리와 추론 규칙은 $L$에 대해 절대적임을 쉽게 보일 수 있다. 따라서 $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$가 논리적 참이라면 $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ 또한 논리적 참이며, 이에 따라 $\mathsf{ZF} \vdash \phi^L$이다. ■</p>
+
+<p>정리 3의 따름정리로서 정리 4를 얻는다.</p>
+
+<blockquote>
+  <p><strong>정리 4.</strong> ZF가 무모순적이라면 ZFL 또한 무모순적이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> ZFL이 모순적이라면 $\mathsf{ZFL} \vdash \varnothing \neq \varnothing$이며, 정리 3에 의해 $\mathsf{ZF} \vdash (\varnothing \neq \varnothing)^L \iff \mathsf{ZF} \vdash \varnothing \neq \varnothing$이다.</p>
+
+<p>따라서 <strong>V = L은 ZF와 일관적이다</strong>.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/05/transfinite-recursion"> 초한귀납과 초한재귀 </a>
+      </h1>
+    <span class="post-date">05 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <h3 id="1-초한귀납법">1. 초한귀납법</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $P$가 서수 위에서 정의된 속성이고 임의의 $\alpha \in \mathrm{Ord}$에 대해</p>
+
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha)\]
+
+  <p>가 성립할 때, $P$는 모든 서수에 대해 참이다.</p>
+</blockquote>
+
+<p><em>Remark.</em> $P$의 정의역인 $\mathrm{Ord}$는 집합이 아닌 진모임(proper class)이므로 “술어” 대신 “속성”이란 표현을 사용한다.</p>
+
+<p><strong>증명.</strong> 서수가 정렬 순서라는 사실과 귀류법을 사용한다.</p>
+
+<p>$\lnot P(\lambda)$인 $\lambda$가 존재한다고 하자. $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$는 공집합이 아닌 정렬 집합이므로 최소 원소 $\alpha_0$가 존재한다. 이때 $\forall \beta &lt; \alpha_0 : P(\beta)$이므로 가정에 의해 $P(\alpha_0)$가 되어 모순이다. ■</p>
+
+<p><strong>응용.</strong> 폰 노인만 계층에서 $V_\alpha$는 추이적이다. 따라서 $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$ 대신 $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$로 정의할 수 있다.</p>
+
+<h3 id="2-초한재귀적-정의">2. 초한재귀적 정의</h3>
+
+<p><em>Motivation.</em> 자연수의 재귀적 정의를 생각해 보자. $n$개의 집합 $x_1, \dots , x_n$이 주어졌을 때 집합을 출력하는 함수 $g$가 존재한다면 다음과 같이 $f: \mathbb{N} → V$을 정의할 수 있을 것이다.</p>
+
+\[f(n) = g(f(0), \dots, f(n - 1))\]
+
+<p>문제는 $g$가 고정된 수의 매개변수만을 가질 수 있다는 것이다. 따라서 다음과 같이 $g$의 매개변수를 순서쌍으로 묶는다.</p>
+
+\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
+
+<p>이 순서쌍은 $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$과 같이 표현할 수 있다. 즉,</p>
+
+\[f(n) = g(f \upharpoonright n).\]
+
+<p>이를 서수에 대해서 일반화하면 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $G: V → V$가 모임함수(class function)이라고 하자. 다음을 만족하는 모임함수 $F: \mathrm{Ord} → V$가 존재한다.</p>
+
+\[F(\alpha) = G(F \upharpoonright \alpha)\]
+</blockquote>
+
+<p><strong>증명.</strong> 초한귀납법을 겁나게 쓰면 된다. (불친절해서 ㅈㅅ)</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/05/transfinite-recursion/en"> Transfinite Induction and Transfinite Recursion </a>
+      </h1>
+    <span class="post-date">05 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h3 id="1-transfinite-induction">1. Transfinite Induction</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $P$ be a property defined on ordinals, and suppose that for any $\alpha \in \mathrm{Ord}$,</p>
+
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha)\]
+
+  <p>holds. Then $P$ is true for all ordinals.</p>
+</blockquote>
+
+<p><em>Remark.</em> Since $\mathrm{Ord}$, the domain of $P$, is a proper class rather than a set, we use the term “property” instead of “predicate”.</p>
+
+<p><strong>Proof.</strong> We employ the fact that ordinals form a well-ordering and proceed by contradiction.</p>
+
+<p>Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha_0$. Since $\forall \beta &lt; \alpha_0 : P(\beta)$, by hypothesis we have $P(\alpha_0)$, which is a contradiction. ■</p>
+
+<p><strong>Application.</strong> In the von Neumann hierarchy, $V_\alpha$ is transitive. Therefore, instead of $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$, we may define $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$.</p>
+
+<h3 id="2-transfinite-recursive-definition">2. Transfinite Recursive Definition</h3>
+
+<p><em>Motivation.</em> Consider recursive definitions on natural numbers. Given $n$ sets $x_1, \dots , x_n$ and a function $g$ that outputs a set, we would like to define $f: \mathbb{N} → V$ as follows:</p>
+
+\[f(n) = g(f(0), \dots, f(n - 1))\]
+
+<p>The problem is that $g$ can only take a fixed number of parameters. Therefore, we group the parameters of $g$ into an ordered pair:</p>
+
+\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
+
+<p>This ordered pair can be represented as $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$. That is,</p>
+
+\[f(n) = g(f \upharpoonright n).\]
+
+<p>Generalising this to ordinals, we obtain the following:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $G: V → V$ be a class function. There exists a class function $F: \mathrm{Ord} → V$ satisfying</p>
+
+\[F(\alpha) = G(F \upharpoonright \alpha)\]
+</blockquote>
+
+<p><strong>Proof.</strong> One applies transfinite induction extensively. (My apologies for the brevity.)</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/01/net"> 콤팩트성과 그물 </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <h3 id="콤팩트성">콤팩트성</h3>
+<blockquote>
+  <p><strong>정의.</strong> $X$가 위상공간이라고 하자.</p>
+
+  <ol>
+    <li>임의의 열린 덮개가 유한한 부분덮개를 가질 때 $X$를 <strong>콤팩트</strong>하다고 한다.</li>
+    <li>임의의 점렬 $\lbrace x_n \in X \rbrace$가 수렴하는 부분점렬을 가질 때 $X$를 <strong>점렬 콤팩트</strong>하다고 한다.</li>
+    <li>임의의 무한집합 $S \subset X$가 극점을 가질 때 $X$를 <strong>극점 콤팩트</strong>하다고 한다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>점렬 콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$S \subset X$가 극점이 없는 무한집합이라고 하자. $\overline{S} = S \cup S’ = S$이므로 $S$는 닫힌 집합이며, $X \setminus S$는 열린 집합이다. 임의의 $s \in S$에 대해, $s$가 극점이 아니므로 $U_s \cap S = \lbrace  s \rbrace$인 $s$의 근방 $U_s$가 존재한다. 따라서 다음 $X$의 열린 덮개는 유한한 부분덮개를 가지지 않는다.</li>
+</ol>
+
+\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
+
+<ol>
+  <li>$S \subset X$가 무한집합이라고 하자. $S$의 원소들을 임의로 추출하여 점렬 $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$을 만든다. $X$가 점렬 콤팩트하므로 $\lbrace  s_n \rbrace → s$이며, $s$는 $S$의 극점이다.</li>
+  <li>순서 토폴로지가 주어진 $\omega_1$은 극점 콤팩트하지만 콤팩트하지 않다.</li>
+  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, $\mathbb{N}$에는 이산 토폴로지가 주어지고 $\lbrace  0, 1\rbrace$에는 자명한 토폴로지가 주어짐.</li>
+</ol>
+
+<p><strong>Remark.</strong> 4의 올바르지 못한 “증명”</p>
+
+<blockquote>
+  <p>$X$가 극점 콤팩트하다고 하자. 점렬 $(x_n)$이 주어졌을 때, $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$이 유한집합이라면 $(x_n)$은 수렴하는 부분점렬을 자명하게 가진다. $S$가 무한집합이라면 $X$의 극점 콤팩트성에 의해 $x \in S’$가 존재한다. <strong>이제 다음 조건을 만족하는 $x$의 근방들의 가산 모임 $\mathcal{U} = \lbrace  U_n \rbrace$을 정의한다.</strong></p>
+
+  <ol>
+    <li>$n &lt; m \implies U_n \supset U_m$</li>
+    <li>$V$가 $x$의 근방일 때, $\exists U \in \mathcal{U} : U \subset V$</li>
+  </ol>
+
+  <p>이로부터 다음 두 조건을 만족하는 함수 $k: \mathbb{N} → \mathbb{N}$을 정의할 수 있다.</p>
+
+  <ol>
+    <li>$x_{k(n)} \in U_n$</li>
+    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+  </ol>
+
+  <p>2가 가능한 이유는 $k(i)$가 $i \leq n$까지 정의되었을 때 $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$가 여전히 $x$를 극점으로 가지기 때문이다. 즉, $(x_n)$은 수렴하는 부분점렬 $(x_{k(n)})$을 가진다.</p>
+</blockquote>
+
+<p>위 증명이 올바르지 않은 이유는 볼드체 부분이 일반적으로 가능하지 않기 때문이다. 대신 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 1차 가산 T₁ 공간에서 극점 콤팩트성과 점렬 콤팩트성은 동치이다.</p>
+</blockquote>
+
+<h3 id="그물과-점렬">그물과 점렬</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 전순서라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합(directed set)</strong>이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종(cofinal)</strong>이라고 한다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> $(J, \leq)$가 방향 집합이고 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물(net)</strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>정의.</strong> 그물 $(x_\alpha)$가 $x$로 수렴한다는 것은, 임의의 $x$의 근방 $U$에 대해 어떤 $\alpha \in J$가 존재하여</p>
+
+  <p>\(\alpha \leq \beta \implies x_\beta \in U\)
+인 것이다.</p>
+</blockquote>
+
+<p>일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 1차 가산 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 점렬 $(x_n)$이 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면  $f(x_n) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 위상 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 그물 $(x_\alpha)$가 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면  $f(x_\alpha) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$\mathcal{U}_x$를 $x$의 근방들의 집합이라고 하자. 역포함관계로 $\mathcal{U}_x$에 순서 $\leq$를 준다. $x \in \bar{A}$라면 임의의 $U_\alpha \in \mathcal{U}_x$에 대해 $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$인 $x_\alpha$가 존재한다. $x_\alpha → x$임을 확인하라.</li>
+</ol>
+
+<blockquote>
+  <p><strong>정의.</strong> $(x_\alpha)_{\alpha \in J}$가 그물이라고 하자. $(I, \preceq)$가 방향 집합이고, $g: (I, \preceq) → (J, \leq)$가 순서 보존이며, $\operatorname{im}g$가 공종일 때, $(x_{g(\beta)})_{\beta \in I}$를 $(x_\alpha)$의 부분그물이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 콤팩트할 필요충분조건은 임의의 그물이 수렴하는 부분그물을 가지는 것이다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> ”수렴하는 점렬이 존재한다“는 ”수렴하는 그물이 존재한다“보다 강한 조건이지만, ”임의의 점렬이 수렴하는 부분점렬을 가진다”는 “임의의 그물이 수렴하는 부분그물을 가진다”보다 강하지도, 약하지도 않은 조건임에 유의하라. 주어는 후자가 더 강하고, 술어는 전자가 더 강하다. 따라서 <strong>콤팩트성과 점렬 콤팩트성은 일반적으로 시사 관계가 없다.</strong> 구체적으로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+    <li>점렬 콤팩트 $\not\rightarrow$ 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$[0, 1]^{[0, 1]}$은 티호노프 정리에 의해 콤팩트하지만 점렬 콤팩트하지 않다.</li>
+  <li>Long line과 $\omega_1$은 점렬 콤팩트하지만 콤팩트하지 않다.</li>
+</ol>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/01/net/en"> Compactness and Nets </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h3 id="compactness">Compactness</h3>
+<blockquote>
+  <p><strong>Definition.</strong> Let $X$ be a topological space.</p>
+
+  <ol>
+    <li>$X$ is said to be <strong>compact</strong> if every open cover has a finite subcover.</li>
+    <li>$X$ is said to be <strong>sequentially compact</strong> if every sequence $\lbrace x_n \in X \rbrace$ has a convergent subsequence.</li>
+    <li>$X$ is said to be <strong>limit point compact</strong> if every infinite set $S \subset X$ has a limit point.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>Compact $\rightarrow$ Limit point compact</li>
+    <li>Sequentially compact $\rightarrow$ Limit point compact</li>
+    <li>Limit point compact $\not\rightarrow$ Compact</li>
+    <li>Limit point compact $\not\rightarrow$ Sequentially compact</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>Let $S \subset X$ be an infinite set with no limit points. Since $\overline{S} = S \cup S’ = S$, $S$ is a closed set and $X \setminus S$ is an open set. For any $s \in S$, since $s$ is not a limit point, there exists a neighbourhood $U_s$ of $s$ such that $U_s \cap S = \lbrace  s \rbrace$. Therefore, the following open cover of $X$ has no finite subcover:</li>
+</ol>
+
+\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
+
+<ol>
+  <li>Let $S \subset X$ be an infinite set. Arbitrarily extract elements of $S$ to form a sequence $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$. Since $X$ is sequentially compact, $\lbrace  s_n \rbrace → s$, and $s$ is a limit point of $S$.</li>
+  <li>$\omega_1$ with the order topology is limit point compact but not compact.</li>
+  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, where $\mathbb{N}$ is given the discrete topology and $\lbrace  0, 1\rbrace$ is given the trivial topology.</li>
+</ol>
+
+<p><strong>Remark.</strong> An incorrect “proof” of 4</p>
+
+<blockquote>
+  <p>Suppose $X$ is limit point compact. Given a sequence $(x_n)$, if $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$ is a finite set, then $(x_n)$ trivially has a convergent subsequence. If $S$ is an infinite set, then by the limit point compactness of $X$, there exists $x \in S’$. <strong>Now we define a countable collection of neighbourhoods of $x$, $\mathcal{U} = \lbrace  U_n \rbrace$, satisfying the following conditions:</strong></p>
+
+  <ol>
+    <li>$n &lt; m \implies U_n \supset U_m$</li>
+    <li>For any neighbourhood $V$ of $x$, $\exists U \in \mathcal{U} : U \subset V$</li>
+  </ol>
+
+  <p>From this, we can define a function $k: \mathbb{N} → \mathbb{N}$ satisfying the following two conditions:</p>
+
+  <ol>
+    <li>$x_{k(n)} \in U_n$</li>
+    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+  </ol>
+
+  <p>Condition 2 is possible because when $k(i)$ is defined for $i \leq n$, $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$ still has $x$ as a limit point. Thus, $(x_n)$ has a convergent subsequence $(x_{k(n)})$.</p>
+</blockquote>
+
+<p>The above proof is incorrect because the bold portion is not generally possible. Instead, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> In first countable T₁ spaces, limit point compactness and sequential compactness are equivalent.</p>
+</blockquote>
+
+<h3 id="nets-and-sequences">Nets and Sequences</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(J, \leq)$ be a preorder. If for any $x, y \in J$, there exists $z \in J$ such that $x, y \leq z$, then $(J, \leq)$ is called a <strong>directed set</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $K$ be a subset of $(J, \leq)$. If for any $x \in J$, there exists $y \in K$ such that $x \leq y$, then $K$ is said to be <strong>cofinal</strong>.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(J, \leq)$ be a directed set. For a topological space $X$, a function $f: J → X$ is called a <strong>net</strong>. In particular, for $\alpha \in J$, we denote $f(\alpha)$ as $x_\alpha$.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A net $(x_\alpha)$ converges to $x$ if, for any neighbourhood $U$ of $x$, there exists some $\alpha \in J$ such that</p>
+
+\[\alpha \leq \beta \implies x_\beta \in U\]
+</blockquote>
+
+<p>The convergence of nets in general topological spaces corresponds to the convergence of sequences in first countable spaces. That is,</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $X$ be a first countable space.</p>
+
+  <ol>
+    <li>For $A \subset X$, $x \in \bar{A}$ if and only if there exists a sequence $(x_n)$ converging to $x$.</li>
+    <li>For $f: X → Y$, $f$ is continuous if and only if for any sequence $(x_n)$, if $x_n → x$ then $f(x_n) → f(x)$.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $X$ be a topological space.</p>
+
+  <ol>
+    <li>For $A \subset X$, $x \in \bar{A}$ if and only if there exists a net $(x_\alpha)$ converging to $x$.</li>
+    <li>For $f: X → Y$, $f$ is continuous if and only if for any net $(x_\alpha)$, if $x_\alpha → x$ then $f(x_\alpha) → f(x)$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>Let $\mathcal{U}_x$ be the set of neighbourhoods of $x$. Give $\mathcal{U}_x$ the order $\leq$ by reverse inclusion. If $x \in \bar{A}$, then for any $U_\alpha \in \mathcal{U}_x$, there exists $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$. Verify that $x_\alpha → x$.</li>
+</ol>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(x_\alpha)_{\alpha \in J}$ be a net. If $(I, \preceq)$ is a directed set, $g: (I, \preceq) → (J, \leq)$ is order-preserving, and $\operatorname{im}g$ is cofinal, then $(x_{g(\beta)})_{\beta \in I}$ is called a subnet of $(x_\alpha)$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $X$ is compact if and only if every net has a convergent subnet.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> Note that “there exists a convergent sequence” is a stronger condition than “there exists a convergent net”, but “every sequence has a convergent subsequence” is neither stronger nor weaker than “every net has a convergent subnet”. The subject is stronger in the latter case, whilst the predicate is stronger in the former case. Therefore, <strong>compactness and sequential compactness have no implication relation in general.</strong> Specifically,</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>Compact $\not\rightarrow$ Sequentially compact</li>
+    <li>Sequentially compact $\not\rightarrow$ Compact</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>$[0, 1]^{[0, 1]}$ is compact by Tychonoff’s theorem but not sequentially compact.</li>
+  <li>The long line and $\omega_1$ are sequentially compact but not compact.</li>
+</ol>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/01/baire"> 베르 범주 정리 </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <h3 id="1-베르-공간">1. 베르 공간</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $S$가 위상공간 $X$의 부분집합일 때, 다음은 동치이다.</p>
+  <ul>
+    <li>$\left( \operatorname{cl}S \right)^\circ$가 공집합이다.</li>
+    <li>$(\operatorname{cl}S)^c$가 조밀하다.</li>
+    <li>$S$는 어떠한 $X$의 열린 집합에서도 조밀하지 않다.</li>
+  </ul>
+
+  <p>이때, $S$를 <strong>희박(rare)</strong>하다고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> 희박한 닫힌 집합들의 가산 합집합 $\bigcup F_n$이 희박한 공간 $X$를 베르 공간이라고 한다.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png" alt="" /></p>
+
+<p><em>Remark.</em> TFAE:</p>
+<ul>
+  <li>$X$가 베르 공간이다.</li>
+  <li>$X$의 열린 조밀 집합들의 가산 교집합은 조밀하다.</li>
+</ul>
+
+<p><strong>예시.</strong> $\mathbb{Q}$는 베르 공간이 아니다.</p>
+<ul>
+  <li>$\lbrace  q \rbrace$는 닫힌 희박 집합이지만 $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$는 희박하지 않다.</li>
+  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$는 열린 조밀 집합이지만 $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$은 조밀하지 않다.</li>
+</ul>
+
+<h3 id="2-베르-범주-정리">2. 베르 범주 정리</h3>
+
+<blockquote>
+  <p><strong>콤팩트 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$X$가 콤팩트하다.</li>
+    <li>임의의 유한 교집합 속성을 가진 닫힌 집합들의 모임 $\mathcal{C}$에 대해 $\bigcap_{C \in \mathcal{C}} C \neq \varnothing$이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>완비 거리 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$X$가 완비 거리 공간이다.</li>
+    <li>임의의 공집합이 없는 닫힌 집합열 $C_1 \supset C_2 \supset \cdots$에 대해 $\bigcap C_n \neq \varnothing$이며, 특히 $\operatorname{diam}C_n \to 0$일 때 $\bigcap C_n$은 홑원소 집합이다.</li>
+  </ol>
+</blockquote>
+
+<p><em>Remark.</em> 2는 4를 함의한다. 이로부터 콤팩트 거리 공간은 완비임을 보일 수 있다. <strong>역은 성립하지 않는다.</strong></p>
+
+<blockquote>
+  <p><strong>정리.</strong> 완비 거리 공간과 콤팩트 하우스도르프 공간은 베르 공간이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p>$X$가 완비 거리 공간 또는 콤팩트 하우스도르프 공간이라고 하자. 희박한 닫힌 집합들의 가산 모임 $\lbrace  F_n \rbrace$이 주어졌을 때, 임의의 열린 집합 $U$에 대해 $U \not\subset \bigcup F_n$임을 보이면 된다. 이를 위해 $\forall n : x \not\in F_n$인 $x \in U$를 찾을 것이다.</p>
+
+<p>$F_1$이 희박하므로 $x_1 \in U \setminus F_1$이 존재한다. $X$는 정칙 공간이므로 $x_1 \in U_1$, $\overline{U_1} \cap F_1 = \varnothing$인 열린 집합 $U_1$이 존재한다. 귀납적으로 다음과 같이 정의할 수 있다.</p>
+
+<ul>
+  <li>$x_n \in U_n \setminus F_n$</li>
+  <li>$U_n \subset U_{n - 1}$</li>
+  <li>$\overline{U_n} \cap F_n = \varnothing$</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png" alt="" /></p>
+
+<p>칸토어 축소 정리에 의해 $x \in \bigcap \overline{U_n}$인 $x$가 존재한다.</p>
+
+<h3 id="3-베르-범주-정리의-응용">3. 베르 범주 정리의 응용</h3>
+
+<blockquote>
+  <p><strong>연속함수열의 수렴은 거의 연속이다.</strong> $\lbrace  f_n : X → (Y, d) \rbrace$가 $f$로 수렴하는 연속함수열일 때,</p>
+
+\[S = \lbrace  x \in X : f\text{ is continuous at } x \rbrace\]
+
+  <p>는 $X$에서 조밀하다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>KAIST POW2024-20.</strong> $f$가 연속함수이고,</p>
+
+\[\forall x \geq 0 : \lim_{n \to \infty} f(nx) = 0\]
+
+  <p>라면 $\lim_{x \to \infty} f(x) = 0$이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>병리적 함수의 존재성.</strong> $h : [0, 1] → \mathbb{R}$가 연속함수라고 하자. 임의의 $ε &gt; 0$에 대해 다음을 만족하는 함수 $g : [0,1] → \mathbb{R}$가 존재한다.</p>
+
+  <ul>
+    <li>$\lVert h − g\rVert &lt; ε$이다.</li>
+    <li>$g$는 전 구간에서 연속이다.</li>
+    <li>$g$는 전 구간에서 미분 불가능하다.</li>
+  </ul>
+</blockquote>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/01/baire/en"> The Baire Category Theorem </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h3 id="1-baire-spaces">1. Baire Spaces</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $S$ be a subset of a topological space $X$. The following are equivalent:</p>
+  <ul>
+    <li>$\left( \operatorname{cl}S \right)^\circ$ is empty.</li>
+    <li>$(\operatorname{cl}S)^c$ is dense.</li>
+    <li>$S$ is not dense in any open set of $X$.</li>
+  </ul>
+
+  <p>In this case, $S$ is said to be <strong>rare</strong> (or <strong>nowhere dense</strong>).</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> A space $X$ is called a Baire space if every countable union $\bigcup F_n$ of rare closed sets is rare.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png" alt="" /></p>
+
+<p><em>Remark.</em> TFAE:</p>
+<ul>
+  <li>$X$ is a Baire space.</li>
+  <li>Every countable intersection of open dense sets in $X$ is dense.</li>
+</ul>
+
+<p><strong>Example.</strong> $\mathbb{Q}$ is not a Baire space.</p>
+<ul>
+  <li>$\lbrace  q \rbrace$ is a closed rare set, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ is not rare.</li>
+  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$ is an open dense set, but $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$ is not dense.</li>
+</ul>
+
+<h3 id="2-the-baire-category-theorem">2. The Baire Category Theorem</h3>
+
+<blockquote>
+  <p><strong>Cantor’s Theorem on Compact Spaces.</strong> The following are equivalent:</p>
+
+  <ol>
+    <li>$X$ is compact.</li>
+    <li>For any collection $\mathcal{C}$ of closed sets with the finite intersection property, $\bigcap_{C \in \mathcal{C}} C \neq \varnothing$.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Cantor’s Theorem on Complete Metric Spaces.</strong> The following are equivalent:</p>
+
+  <ol>
+    <li>$X$ is a complete metric space.</li>
+    <li>For any non-empty decreasing sequence of closed sets $C_1 \supset C_2 \supset \cdots$, we have $\bigcap C_n \neq \varnothing$, and in particular, when $\operatorname{diam}C_n \to 0$, $\bigcap C_n$ is a singleton.</li>
+  </ol>
+</blockquote>
+
+<p><em>Remark.</em> Statement 2 implies statement 4. From this, one can show that compact metric spaces are complete. <strong>The converse does not hold.</strong></p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Complete metric spaces and compact Hausdorff spaces are Baire spaces.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p>Let $X$ be a complete metric space or a compact Hausdorff space. Given a countable collection $\lbrace  F_n \rbrace$ of rare closed sets, we shall show that for any open set $U$, we have $U \not\subset \bigcup F_n$. To this end, we shall find $x \in U$ such that $\forall n : x \not\in F_n$.</p>
+
+<p>Since $F_1$ is rare, there exists $x_1 \in U \setminus F_1$. As $X$ is a regular space, there exists an open set $U_1$ such that $x_1 \in U_1$ and $\overline{U_1} \cap F_1 = \varnothing$. Inductively, we may define:</p>
+
+<ul>
+  <li>$x_n \in U_n \setminus F_n$</li>
+  <li>$U_n \subset U_{n - 1}$</li>
+  <li>$\overline{U_n} \cap F_n = \varnothing$</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png" alt="" /></p>
+
+<p>By Cantor’s theorem, there exists $x \in \bigcap \overline{U_n}$.</p>
+
+<h3 id="3-applications-of-the-baire-category-theorem">3. Applications of the Baire Category Theorem</h3>
+
+<blockquote>
+  <p><strong>Convergence of continuous function sequences is almost continuous.</strong> Let $\lbrace  f_n : X → (Y, d) \rbrace$ be a sequence of continuous functions converging to $f$. Then</p>
+
+\[S = \lbrace  x \in X : f\text{ is continuous at } x \rbrace\]
+
+  <p>is dense in $X$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>KAIST POW2024-20.</strong> Let $f$ be a continuous function such that</p>
+
+\[\forall x \geq 0 : \lim_{n \to \infty} f(nx) = 0\]
+
+  <p>Then $\lim_{x \to \infty} f(x) = 0$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Existence of pathological functions.</strong> Let $h : [0, 1] → \mathbb{R}$ be a continuous function. For any $ε &gt; 0$, there exists a function $g : [0,1] → \mathbb{R}$ satisfying:</p>
+
+  <ul>
+    <li>$\lVert h − g\rVert &lt; ε$.</li>
+    <li>$g$ is continuous on the entire interval.</li>
+    <li>$g$ is differentiable nowhere.</li>
+  </ul>
+</blockquote>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+</div>
+
+<div class="pagination">
+  
+  <a
+    class="pagination-item older lang-ko"
+    href="/page11"
+    >이전 글</a
+  >
+  <a
+  class="pagination-item older lang-en"
+  href="/page11"
+  >Previous</a
+>
+    
+  <a
+    class="pagination-item newer lang-ko"
+    href="/page9"
+    >다음 글</a
+  >
+  <a
+  class="pagination-item newer lang-en"
+  href="/page9"
+  >Next</a
+>
+   
+</div>
+
+<script>
+  const faders = document.querySelectorAll(".fade-in-section");
+
+  const appearOptions = {
+    // threshold: 0.05,
+    // rootMargin: "0px 0px 50px 0px",
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach((fader) => {
+    appearOnScroll.observe(fader);
+  });
+
+  // 배너 이미지 로드 후 애니메이션 트리거 스크립트
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const lang = localStorage.getItem("lang") || "ko";
+  document.querySelectorAll('.post[data-lang]').forEach(post => {
+    if (post.dataset.lang === lang) {
+      post.style.display = '';
+    }
+  });
+
+    const bannerImages = document.querySelectorAll(
+      '.fade-rise-1[src="/public/banner.png"], .fade-rise-2[src="/public/banner-2.png"]'
+    ); // 애니메이션 시작을 기다릴 이미지들
+    const elementsToAnimate = document.querySelectorAll(
+      ".fade-rise-1, .fade-rise-2, .fade-rise-3"
+    ); // 애니메이션 될 요소들
+    let loadedImagesCount = 0;
+    const totalImagesToWait = bannerImages.length;
+
+    // 기다릴 이미지가 없으면 즉시 애니메이션 시작
+    if (totalImagesToWait === 0) {
+      elementsToAnimate.forEach((el) => el.classList.add("is-loaded"));
+      return;
+    }
+
+    const checkAllImagesLoaded = () => {
+      if (loadedImagesCount === totalImagesToWait) {
+        // 모든 이미지가 로드되면 애니메이션 클래스 추가
+        elementsToAnimate.forEach((el) => el.classList.add("is-loaded"));
+      }
+    };
+
+    bannerImages.forEach((img) => {
+      // 이미지가 캐시되어 이미 로드 완료된 경우
+      if (img.complete) {
+        loadedImagesCount++;
+      } else {
+        // 이미지 로드 완료 이벤트 리스너 추가
+        img.addEventListener("load", () => {
+          loadedImagesCount++;
+          checkAllImagesLoaded(); // 이미지 로드될 때마다 체크
+        });
+        // 에러 발생 시 처리 (선택 사항)
+        img.addEventListener("error", () => {
+          console.error("Failed to load image:", img.src);
+          // 에러 발생 시에도 애니메이션을 시작하려면 여기서 loadedImagesCount를 증가시키거나 다른 로직 추가
+          // 현재 로직에서는 에러 시 카운트가 증가하지 않아 모든 이미지 로드되지 않으면 애니메이션 안 시작
+          loadedImagesCount++; // 에러 발생 시에도 카운트 증가 (모든 이미지를 처리했음을 알림)
+          checkAllImagesLoaded();
+        });
+      }
+    });
+
+    // 모든 이미지에 대해 complete 상태를 확인하거나 리스너를 설정한 후,
+    // 이미 모든 이미지가 로드 완료 상태였을 경우를 대비해 마지막으로 체크
+    checkAllImagesLoaded();
+
+
+    // Listen for language toggle changes and update post visibility dynamically
+    const langToggle = document.getElementById("lang-toggle");
+    if (langToggle) {
+      langToggle.addEventListener("change", () => {
+        const newLang = langToggle.checked ? "en" : "ko";
+        localStorage.setItem("lang", newLang);
+        document.querySelectorAll('.post[data-lang]').forEach(post => {
+          post.style.display = post.dataset.lang === newLang ? '' : 'none';
+        });
+      });
+    }
+  });
+</script>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>
