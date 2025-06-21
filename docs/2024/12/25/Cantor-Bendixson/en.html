@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     The Cantor-Bendixson Theorem &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2024/12/25/Cantor-Bendixson/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                                               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">The Cantor-Bendixson Theorem</h1>
+  <span class="post-date">25 Dec 2024</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'" >Topology</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a set $P$ in a topological space $X$, we call $P$ a <strong>perfect set</strong> when $P’ = P$, where $P’$ denotes the set of accumulation points of $P$.</p>
+</blockquote>
+
+<p><em>Remark.</em> Every perfect set is a closed set, but the converse does not hold. Note that in general $S \not\subset S’$ (when $S$ has isolated points) and $S’ \not\subset S$ (when $S$ is not a closed set).</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> We call $X$ <strong>hereditarily Lindelöf</strong> when every subspace of $X$ is Lindelöf.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Weak Cantor-Bendixson Theorem.</strong> Let $X$ be a hereditarily Lindelöf space. For any closed set $F \subset X$, there exist a perfect set $P$ and a countable set $C$ such that $F = P \sqcup C$.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/d1f81be8-2878-4158-844b-96ce3d8cc418/image.png" alt="" /></p>
+
+<p><strong>Proof.</strong> We define $P$ and $C$ as follows:</p>
+
+\[P = \lbrace  x \in F : \text{For all nbd $U$ of $x$, $U \cap F$ is uncountable} \rbrace\]
+
+\[C = \lbrace  x \in F : \text{There exists a nbd $U$ of $x$ s.t. $U \cap F$ is countable} \rbrace\]
+
+<p>Note that $F = P \sqcup C$.</p>
+
+<p><em>Claim 1.</em> $C$ is an open set in $F$.</p>
+
+<p><em>Proof of Claim.</em> When $x \in C$, there exists a neighbourhood $U$ of $x$ such that $U \cap F$ is countable. That is, for any $y \in U \cap F$, $U$ is a neighbourhood of $y$ and $U \cap F$ is countable, so $y \in C$. Therefore $U \cap F \subset C$. □</p>
+
+<p><em>Claim 2.</em> $C$ is countable.</p>
+
+<p><em>Proof of Claim.</em> Consider the subspace topology on $F$. By hypothesis, this topology is Lindelöf. For any $x \in C$, we can find a neighbourhood $U_x$ of $x$ such that $U_x \cap F$ is countable. Then $\lbrace  U_x \rbrace_{x \in C}$ is an $F$-open cover of $C$, and by the Lindelöf hypothesis, $C = \bigcup_{\alpha \in J} U_\alpha$ where $J$ is countable. Since each $U_\alpha$ is countable, $C$ is countable. □</p>
+
+<p><em>Claim 3.</em> $P$ is perfect.</p>
+
+<p><em>Proof of Claim.</em> By Claim 1, $P$ is a closed set in $F$, and since $F$ is a closed set, $P$ is a closed set in $X$. Therefore $P’ \subset P$. To show the reverse inclusion, let $x \in P$. For any neighbourhood $U$ of $x$, we have that $U \cap F = (U \cap C) \sqcup (U \cap P)$ is uncountable. Since $C$ is countable, $U \cap P$ must be uncountable. Therefore $U$ has intersection with $P$ larger than $\lbrace x \rbrace$, and hence $x \in P’$. ■</p>
+
+<hr />
+
+<blockquote>
+  <p><strong>Definition.</strong> A separable complete metrisable space is called a <strong>Polish space</strong>.</p>
+</blockquote>
+
+<p>In metrisable spaces, separability, second countability, and the Lindelöf property are equivalent, so the definition can be replaced with any of these three conditions. The name ‘Polish space’ derives from the fact that the mathematicians who first studied these spaces—Sierpiński, Kuratowski, Tarski, and others—were Polish.</p>
+
+<p>When the stronger condition that $X$ is a Polish space is given, one can prove that the Cantor-Bendixson decomposition is unique.</p>
+
+<blockquote>
+  <p><strong>Strong Cantor-Bendixson Theorem.</strong> Let $X$ be a Polish space. For any closed set $F \subset X$, there exist a perfect set $P$ and a countable set $C$ such that $F = P \sqcup C$. Moreover, this decomposition is unique.</p>
+</blockquote>
+
+<p>The following also holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> A perfect set in a Polish space has cardinality $2^{\aleph_0}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> This will be treated separately in a future article on descriptive set theory.</p>
+
+<p>From this, the following conclusion follows:</p>
+
+<blockquote>
+  <p><strong>Corollary: The Continuum Hypothesis for Closed Sets of Real Numbers.</strong> A closed set of real numbers is either countable or has cardinality $2^{\aleph_0}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Since the real numbers form a Polish space, by the Cantor-Bendixson theorem every closed set decomposes as a disjoint union of a countable set and a perfect set. If the latter is empty, then the closed set is countable; otherwise it has cardinality $2^{\aleph_0}$. ■</p>
+
+<p>Cantor had hoped that from the proof of the above theorem he might be able to prove the general continuum hypothesis, but as is well known, this hope was not realised.</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

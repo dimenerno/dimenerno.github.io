@@ -2,7 +2,7 @@
 layout: post
 title: "Consistency of the V = L Axiom"
 date: 2024-12-11
-tags: [Mathematics, Set-theory]
+tags: [Mathematics, Set Theory]
 lang: en
 ---
 

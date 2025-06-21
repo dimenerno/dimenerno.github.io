@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     On Reference — Character Model and Intentionalism &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/01/13/reference-2/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                                               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">On Reference — Character Model and Intentionalism</h1>
+  <span class="post-date">13 Jan 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'" >Philosophy</div>
+      
+      <div class="tag" onclick="location.href='/tags/philosophy-of-language/'" >Philosophy of Language</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h2 id="3-indexicals">3. Indexicals</h2>
+
+<p>Indexicals refer to expressions such as ‘I’, ‘you’, ‘here’, ‘now’, ‘he’, ‘this’, and ‘that’. It is common to distinguish between <strong>pure indexicals</strong> like ‘I’, ‘you’, ‘here’, and ‘now’, whose referents are relatively clear when context is given, and <strong>impure indexicals</strong> like ‘he’, ‘this’, and ‘that’, whose referents are relatively unclear. However, not all scholars accept this distinction as meaningful.</p>
+
+<h3 id="31-pure-indexicals">3.1. Pure Indexicals</h3>
+
+<h4 id="311-does-descriptivism-adequately-explain-pure-indexicals">3.1.1. Does Descriptivism Adequately Explain Pure Indexicals?</h4>
+
+<p>At first glance, descriptivism appears to adequately explain pure indexicals by claiming that the referent of ‘I’ is determined through the descriptive content “the speaker of this utterance”. However, there are two problems with this approach.</p>
+
+<p>Firstly, it is unclear whether “the speaker of this utterance” constitutes a description. Typically, descriptions specify their corresponding objects purely through their content, and are thus called <em>descriptions</em>. In this respect, “the speaker of this utterance” is problematic as a general description.</p>
+
+<p>For instance, suppose you wake up one day to find the following note in front of you:</p>
+
+<blockquote>
+  <p>Who is <em>the former British Prime Minister who implemented Brexit</em>?</p>
+</blockquote>
+
+<p>You would answer ‘Boris Johnson’, albeit with some confusion. However, what if the question on the note were:</p>
+
+<blockquote>
+  <p>Who is <em>the speaker of this sentence</em>?</p>
+</blockquote>
+
+<p>With only this note, one cannot determine what <em>the speaker of this sentence</em> refers to. That is, <em>the speaker of this sentence</em> appeals beyond the semantic level to the <strong>pragmatic level</strong> concerning the concrete use of language.</p>
+
+<p>The second problem related to this is that if “the speaker of this utterance” is the meaning of ‘I’, it makes strange predictions regarding the use of ‘I’. For instance, when Alice and Bob both utter “I am hungry”, it seems natural to view them as making different claims. However, descriptivism predicts that Alice and Bob both made equivalent claims: “the speaker of this utterance is hungry”.</p>
+
+<h4 id="312-reichenbachs-solution-token-reflexivity">3.1.2. Reichenbach’s Solution: Token Reflexivity</h4>
+
+<p>Reichenbach attempted to bridge the gap between descriptivism and indexicals by claiming that indexicals are <strong>token reflexive</strong>. That is, if Alice uttered “I am hungry” at Gwanghwamun at 4:53 PM on 13th January 2025, then the description associated with ‘I’ in this sentence is <em>the speaker who uttered “I am hungry” at Gwanghwamun at 4:53 PM on 13th January 2025</em>.</p>
+
+<h4 id="313-kaplans-solution-character-models">3.1.3. Kaplan’s Solution: Character Models</h4>
+
+<p>Kaplan modified Reichenbach’s approach in a Millian direction. Kaplan distinguishes between two types of meaning. <strong>Content</strong> is what we have hitherto called meaning; for the Millian Kaplan, the content of a name is its referent. Meanwhile, <strong>character</strong> is a rule of use that determines what the content of an expression is in a given context.</p>
+
+<p>Since Kaplan holds that there are no co-referential names in the strict sense, names have constant character according to him. For example, the content of ‘Boris Johnsonᵢ’ is <em>produce Boris Johnsonᵢ as referent in all contexts</em>.</p>
+
+<p>In contrast, the character of pure indexicals is <em>produce this speaker</em>, <em>produce the location of this utterance</em>, and so forth. If we accept Kaplan’s position, we can explain how “I am here now” is logically necessary (the <em>character</em> of ‘I’, ‘now’, and ‘here’ ensures that this sentence is true in all contexts) but not metaphysically necessary (the sentence obtained by substituting ‘I’, ‘now’, and ‘here’ with their <em>content</em> in a given context is not necessarily true), and also resolve the case of Alice and Bob.</p>
+
+<p><em>Remark.</em> For a famous objection to Kaplan’s theory, see the <strong>answering machine paradox</strong>.</p>
+
+<h4 id="314-fusion-of-causal-theory-and-character-models">3.1.4. Fusion of Causal Theory and Character Models</h4>
+
+<p>Since both causal theory and character models are Millian theories, they can be fused to present a more sophisticated theory of names.</p>
+
+<p>As mentioned earlier, Kaplan claimed that (1) names are mental phenomena, (2) accordingly, names with multiple bearers do not exist, and therefore (3) the character of names is constant. However, viewing names as psychological phenomena is somewhat burdensome. Instead, we might modify (1), (2), and (3) as follows:</p>
+
+<ol>
+  <li>Names are linguistic phenomena.</li>
+  <li>Names with multiple bearers exist.</li>
+  <li>The character of a name produces as referent the <strong>most salient</strong> object in the current context from the set of that name’s bearers.</li>
+</ol>
+
+<p>In addition to this, we add a fourth thesis from causal theory:</p>
+
+<ol>
+  <li>The set of bearers of a name is the set of objects initially named in the causal chains associated with that name.</li>
+</ol>
+
+<p>Such a fusion of causal theory and character models is attractive but not without limitations. In particular, it does not perfectly preserve the strength of causal theory: “the principle by which the mere transmission of a name enables the recipient to refer with that name”. (Author’s note: Well, so they say, but this theory seems perfect to me~)</p>
+
+<h3 id="32-impure-indexicals">3.2. Impure Indexicals</h3>
+
+<p>The meaning of impure indexicals such as ‘he’ and ‘she’, or ‘genuine indexicals’ such as ‘this’ and ‘that’, is more unclear than that of pure indexicals. Wettstein and Alison Mount developed theories along the lines that impure indexicals refer to <strong>the most salient person/object in the relevant context</strong>.</p>
+
+<p>What then makes a particular object ‘the most salient object in the relevant context’? It seems most natural to view it as the interest of the speaker or hearer. But whose side should we take?</p>
+
+<h4 id="1-mount-principle-of-mutual-salience">1. Mount: Principle of Mutual Salience</h4>
+
+<p><strong>Claim.</strong> Mount argues that the necessary and sufficient condition for an impure indexical to refer to object $c$ is that the interests of speaker and hearer coincide and that the object commonly salient to both is A.</p>
+
+<p><strong>Problem.</strong> This view implies the counterintuitive conclusion that when the interests of speaker and hearer diverge, or when the hearer happens not to be paying attention to the speaker’s words, the reference of the indexical fails.</p>
+
+<h4 id="2-kaplan-intentionalism">2. Kaplan: Intentionalism</h4>
+
+<p><strong>Claim.</strong> Kaplan argues that the necessary and sufficient condition for an impure indexical to refer to object $c$ is that the speaker uses the indexical with a <strong>directing intention</strong> to refer to $c$.</p>
+
+<p><strong>Problem.</strong> When the speaker’s directing intention can be infinitely flexible, the <strong>Humpty Dumpty problem</strong> arises. For instance, provided the speaker has sufficient intention, the speaker could point to a photograph of Donald Trump and refer to Rudolf Carnap, which is highly counterintuitive.</p>
+
+<p>Kaplan also presents the following complex Humpty Dumpty case:</p>
+
+<blockquote>
+  <p>A philosophy teacher had hung a photograph of Rudolf Carnap behind the lectern. However, one day a mischievous student secretly replaced Carnap’s photograph with one of Donald Trump. Unaware of this fact, when students entered the classroom, the teacher pointed behind himself and said <strong>“That is one of the greatest philosophers of the 20th century”</strong>.</p>
+</blockquote>
+
+<p>In the above case, the teacher has the intention to refer to Rudolf Carnap’s photograph with the indexical ‘that’, but the hearers (the students) cannot grasp this intention. This raises the question: is the teacher’s utterance true or false?</p>
+
+<p>According to strong intentionalism, since the teacher uttered ‘that’ with the intention to refer to Carnap, ‘that’ refers to Carnap, and therefore the teacher’s utterance is true.</p>
+
+<h4 id="3-gricean-intentionalism">3. Gricean Intentionalism</h4>
+
+<p>Gail Stine provides a different solution to Kaplan’s dilemma by grafting Grice’s semantics onto intentionalism. For indexical $i$ to successfully refer to object $c$, the speaker must have three intentions: the speaker must 1) have the intention to refer to $c$ with $i$, 2) have the intention to get the hearer to identify $c$ as the referent with $i$, and 3) have the intention to get the hearer to identify $c$ as referent through the hearer’s recognition of the speaker’s intention.</p>
+
+<p>Gricean intentionalism resolves the Humpty Dumpty problem. To resolve Kaplan’s Humpty Dumpty problem, Stine presents the distinction between direct reference and indirect reference. In Kaplan’s case, the teacher has the intention to refer to Rudolf Carnap, but this intention is achieved <strong>through</strong> the intention to refer to the picture behind him. Therefore, the former is indirect reference and the latter is direct reference. Stine argues that when indirect referent and direct referent conflict, the direct referent takes priority. That is, the teacher’s statement is false.</p>
+
+<h4 id="4-reimer-style-intentionalism">4. Reimer-style Intentionalism</h4>
+
+<p>Gricean intentionalism has the limitation(?) that it cannot eliminate the Humpty Dumpty problem in cases of speakers with sufficiently strange beliefs, such as ‘a speaker who believes the other party can read their mind’.</p>
+
+<p>In response, Reimer takes a different strategy for constraining intentionalism, which can be summarised as <strong>gesture priority</strong>. Reimer’s constrained intentionalism appears to resolve many more Humpty Dumpty problems than expected with remarkable clarity.</p>
+
+</div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3 class="lang-ko">관련 글</h3>
+  <h3 class="lang-en">Related Posts</h3>
+  <ul>
+    
+      
+      
+        <li><a href="/2025/01/07/reference-1/en">On Reference — Descriptivism and Causal Theory</a></li>
+      
+    
+      
+      
+        <li><a href="/2025/01/13/reference-2/en">On Reference — Character Model and Intentionalism</a></li>
+      
+    
+      
+      
+        <li><a href="/2025/01/18/reference-3/en">On Reference — Definite Descriptions</a></li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

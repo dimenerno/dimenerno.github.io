@@ -3,7 +3,7 @@ layout: post
 title: "Notes on the Seifert-van Kampen Theorem"
 date: 2025-04-04
 lang: en
-tags: ["Mathematics", "Topology", "Category theory"]
+tags: ["Mathematics", "Topology", "Category Theory"]
 related:
 ---
 

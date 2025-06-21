@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Slavoj Žižek, 'Soft Fascism, Artificial Intelligence, and the Collapse of Shame'"
+title: "Slavoj Žižek, \"Soft Fascism, Artificial Intelligence, and Shamelessness\""
 date: 2025-06-06
 tags: ["Philosophy", "Humanities"]
 lang: en

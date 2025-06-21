@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Consistency of the V = L Axiom &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2024/12/11/VL-axiom/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                                               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Consistency of the V = L Axiom</h1>
+  <span class="post-date">11 Dec 2024</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'" >Set Theory</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h2 id="1-universe">1. Universe</h2>
+
+<h3 id="11-von-neumann-universe">1.1. Von Neumann Universe</h3>
+
+<p>We define $\lbrace  V_\alpha \rbrace$ <a href="https://dimenerno.github.io/2024/12/05/transfinite-recursion/">transfinitely recursively</a>.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$</li>
+  <li>When $\lambda$ is a limit ordinal, $V_\lambda = \bigcup_{\alpha &lt; \lambda} V_\alpha$</li>
+</ul>
+
+<p>The first few $V_\alpha$ are as follows:</p>
+
+<ul>
+  <li>$V_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$V_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$V_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$V_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>The collection of all $V_\alpha$ for every ordinal $\alpha$ is called the <strong>Von Neumann universe</strong>.</p>
+
+\[V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha\]
+
+<p>When $x \in y \in z$ implies $x \in z$, we call $z$ a <strong>transitive set</strong>. This is an important property of $V$.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>For $\alpha \in \mathrm{Ord}$, $V_\alpha$ is transitive.</li>
+    <li>$V$ is transitive.</li>
+  </ol>
+</blockquote>
+
+<p>The proof uses transfinite induction. Accordingly, we may define $V$ as follows without loss of generality:</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = \mathcal{P}(V_\alpha)$</li>
+  <li>When $\lambda$ is a limit ordinal, $V_\lambda = \bigcup_{\alpha &lt; \lambda}V_\alpha$</li>
+</ul>
+
+<p>Intuitively, $V$ appears to contain all sets. Indeed, we can prove the following:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $x$ is a set, then $x \in V$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> For a set $x$, we define the <strong>transitive closure</strong> $\bar{x}$ of $x$ as the smallest transitive set containing $x$ as an element (this definition is justified because the intersection of transitive sets is transitive).</p>
+
+<p>Assume $x \notin V$. By the axiom of separation, $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$ is a set, and by the axiom of foundation, there exists an $\in$-minimal element $z$ of $y$. If there exists $w \in z$ such that $w \notin V$, then by transitivity $w \in y$, contradicting the $\in$-minimality of $z$. Therefore, all elements of $z$ are in $V$, and by the axiom of replacement, $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$ is a set. By the Burali-Forti theorem, $\beta = \bigcup_{\alpha \in \Omega}\alpha$ is an ordinal, and <strong>$z \in V_{\beta + 1}$.</strong> (This part requires that $V_{\beta + 1} = \mathcal{P}(V_\beta)$) This yields a contradiction. ■</p>
+
+<p>Consequently, $V$ is not a set. Therefore, whilst $V$ is a model of ZFC in the sense that it contains all sets, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">many mathematicians require models to be sets</a>, so it is not a model in the strict sense. However, for convenience in this article, we shall refer to $V$ as a model of set theory. Moreover, we shall understand $x \in V$ as a formal expression for “$x$ is a set”.</p>
+
+<h3 id="12-gödel-constructible-universe">1.2. Gödel Constructible Universe</h3>
+
+<p>First, we define constructibility as follows:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> $u$ is <strong>constructible</strong> from a set $S$ if there exist some first-order logical formula $\phi(y, x_1, \dots, x_n)$ and $c_1, \dots, c_n \in S$ such that the following holds:</p>
+
+\[y \in u \iff y \in S \land \phi(y, c_1, \dots, c_n)\]
+
+  <p>where the domain of quantifiers in $\phi$ is $S$.</p>
+</blockquote>
+
+<p>For example, when $S = \lbrace 0, 1, 2\rbrace$, the following constructs $u = \lbrace  1, 2 \rbrace$:</p>
+
+<ul>
+  <li>$\phi(y, x_1, x_2) := (y = x_1) \lor (y = x_2)$</li>
+  <li>$c_1 = 1, c_2 = 2$</li>
+</ul>
+
+<p>Also, when $S = \mathbb{N}$, the following constructs $u = \lbrace 0, 3, 6, 9, \dots \rbrace$:</p>
+
+<ul>
+  <li>$\phi(y, x_1) := x_1 \mid y$</li>
+  <li>$c_1 = 3$</li>
+</ul>
+
+<p>Gödel’s constructibility differs from constructibility in the general sense, namely expressibility in language. For instance, since the set of real numbers expressible in language is countable, some real numbers cannot be expressed in language. Let such a real number be $r$. Now when $S = \mathbb{R}$, the following constructs $u = \lbrace  r \rbrace$:</p>
+
+<ul>
+  <li>$\phi(y, x_1) := x_1 = y$</li>
+  <li>$c_1 = r$</li>
+</ul>
+
+<p>That is, Gödel’s constructibility is powerful in that it allows initialisation of free variables to arbitrary elements. However, it has limitations in that the number of free variables is finite. We now define $\lbrace  L_\alpha \rbrace$ transfinitely recursively:</p>
+
+<ul>
+  <li>$L_0 = \varnothing$</li>
+  <li>$L_{\alpha + 1} = \lbrace  x : x \text{ is constructible from } L_\alpha  \rbrace$</li>
+  <li>When $\lambda$ is a limit ordinal, $L_\lambda = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+  <li>$L = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+</ul>
+
+<p>We can easily show that $L_\alpha = V_\alpha$ when $\alpha &lt; \omega$. When $\alpha = n$, we can construct $x \in V_\alpha$ with at most $n$ disjunctions $\lor$. Therefore:</p>
+
+<ul>
+  <li>$L_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$L_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$L_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$L_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>However, $L_{\omega + 1} \subsetneq V_{\omega + 1}$. Since $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$, $V_{\omega + 1}$ is uncountable, whereas since the set of first-order logical sentences and $L_\omega$ are both countable, $L_{\omega + 1}$ is also countable. In general, when $\alpha$ is countable, $L_\alpha$ is countable.</p>
+
+<p>Nevertheless, $L$ shares many properties with $V$. For instance:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For $\alpha \in \mathrm{Ord}$, the following hold:</p>
+
+  <ol>
+    <li>$L_\alpha$ is transitive. (Therefore $L$ is transitive)</li>
+    <li>$\alpha \in L_{\alpha + 1} \setminus L_{\alpha}$</li>
+  </ol>
+</blockquote>
+
+<p>The proof uses transfinite induction.</p>
+
+<p>Note that $L$ is not a set by the Burali-Forti theorem since it contains all ordinals. Instead, there exists a first-order logical formula $\mathsf{IsInL}_\alpha(x)$ corresponding to $x \in L_\alpha$. The proof is somewhat intricate and involves arithmetising propositions using Gödel numbers. (<a href="https://math.stackexchange.com/questions/198437/a-formula-that-defines-constructible-universe">See link</a>) Therefore, we shall understand $x \in L$ as a formal expression replacing $\exists \alpha \in \mathrm{Ord} :\mathsf{IsInL}_\alpha(x)$. (Of course, $\alpha \in \mathrm{Ord}$ should also be understood as a formal expression replacing a first-order logical formula)</p>
+
+<h2 id="2-relativisation">2. Relativisation</h2>
+
+<h3 id="21-relativisation-of-propositions">2.1. Relativisation of Propositions</h3>
+
+<p>First-order logical propositions may contain quantifiers. Hence, the meaning of a proposition changes depending on how the domain of quantifiers is set.</p>
+
+<p>For a proposition $\phi$ and a set (or class) $A$, we define the relativisation $\phi^A$ of $\phi$ as the proposition where all quantifiers in $\phi$ are restricted to $A$. To add a bit of narrative expression, $\phi^A$ can be said to be $\phi$ understood from “inside” $A$. For example, when $\phi : \forall x \; \exists y : y &lt; x$:</p>
+
+<ul>
+  <li>$\phi^\mathbb{N} : \forall x \in \mathbb{N} \; \exists y \in \mathbb{N} : y &lt; x$</li>
+  <li>$\phi^\mathbb{Z} : \forall x \in \mathbb{Z} \; \exists y \in \mathbb{Z} : y &lt; x$</li>
+</ul>
+
+<p>If $T_\mathbb{Q}$ is a theory of rational numbers with sufficient expressive power to characterise natural numbers and integers, then:</p>
+
+<ul>
+  <li>$T_\mathbb{Q} \vdash \phi$</li>
+  <li>$T_\mathbb{Q} \not\vdash \phi^\mathbb{N}$</li>
+  <li>$T_\mathbb{Q} \vdash \phi^{\mathbb{Z}}$</li>
+</ul>
+
+<p>Therefore, $\phi$ successfully distinguishes between natural numbers and rational numbers, but fails to distinguish between integers and rational numbers. Generalising this observation, for a theory $T$ and a set $A$, the more formulas $\phi$ such that $T \vdash \phi \leftrightarrow \phi^A$, the better $A$ “conforms” to the description of $T$.</p>
+
+<p>Generalising the above discussion slightly, we define:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a theory $T$ and a set $A$,</p>
+
+\[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
+
+  <p>when this holds, $\phi$ is said to be <strong>absolute</strong> with respect to $A$.</p>
+</blockquote>
+
+<p>For instance, with respect to $T_\mathbb{Q}$, $\phi(x) : \exists y (y &lt; x)$ is absolute with respect to integers but not absolute with respect to natural numbers.</p>
+
+<h3 id="22-l-relativisation">2.2. $L$-Relativisation</h3>
+
+<p>Our goal now is to show that $L$ conforms maximally with $\mathsf{ZF}$. That is:</p>
+
+<blockquote>
+  <p><strong>Theorem 1.</strong> If $\phi$ is an axiom of ZF, then $\mathsf{ZF} \vdash \phi^L$.</p>
+</blockquote>
+
+<p>Let us express the meaning of Theorem 1 in words:</p>
+
+<blockquote>
+  <p>“When viewed from inside $L$, $L$ is a model of ZF” can be proved in ZF.</p>
+</blockquote>
+
+<p>Of course, we only know $L \subset V$ and do not know whether $V = L$, so some set $x$ may not belong to $L$. However, even if there exists a set $x$ such that $x \in V \setminus L$, the absence of such $x$ does not break the <em>internal consistency</em> of $L$—this is the content of Theorem 1.</p>
+
+<p>For example, suppose some set $x = \lbrace  y, z \rbrace$ is absent from $L$ for some sets $y, z$. At first glance, the absence of $x$ seems to suggest that $L$ does not satisfy the pairing axiom $\mathsf{Pair}$:</p>
+
+\[\mathsf{Pair} := \forall y, z \; \exists x \; \forall w: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>However, the pairing axiom as viewed from inside $L$ is:</p>
+
+\[\mathsf{Pair}^L := \forall y, z \in L \; \exists x \in L \; \forall w \in L: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>Note that the quantification $\forall y, z$ is also restricted to $L$. That is, the absence of $x = \lbrace  y, z \rbrace$ causes problems for $L$ only when $y, z \in L$. Conversely, if $x = \lbrace  y, z \rbrace \notin L$ implies $y, z \notin L$, then $L$ satisfies $\mathsf{Pair}^L$. This is the meaning of “$L$ lacks sets in a way that maintains internal consistency”.</p>
+
+<p>The key reason Theorem 1 holds is that $L$ and $V$ <strong>share the property of transitivity</strong>.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> The following predicates are absolute with respect to $L$ in ZF:</p>
+
+  <ol>
+    <li>$x \in y$</li>
+    <li>$x \subset y$</li>
+    <li>$x = \bigcup y$</li>
+    <li>$x = \lbrace  y, z \rbrace$</li>
+    <li>$\alpha \in \mathrm{Ord}$</li>
+    <li>$x$ is transitive</li>
+    <li><a href="https://math.stackexchange.com/questions/404699/delta-0-formulas">$\Delta_0$ formulas</a></li>
+  </ol>
+</blockquote>
+
+<p>Moreover, we can prove:</p>
+
+<blockquote>
+  <p><strong>Theorem 2.</strong> $\mathsf{ZF} \vdash (V = L)^L$</p>
+</blockquote>
+
+<p>Here, $V = L$ means “every set belongs to $L$”. Therefore, at first glance, $(V = L)^L$ appears to be the trivial proposition “every set belonging to $L$ belongs to $L$”. However, when we actually write $V = L$ as a logical formula:</p>
+
+\[\forall x \; \exists \alpha  : \alpha \in \mathrm{Ord} \land x \in L_\alpha\]
+
+<p>so $(V = L)^L$ becomes:</p>
+
+\[\forall x \in L \; \exists \alpha \in L : (\alpha \in \mathrm{Ord})^L \land (x \in L_\alpha)^L\]
+
+<p>Note particularly that since $\alpha \in \mathrm{Ord}$ and $x \in L_\alpha$ are formal expressions of first-order logical formulas rather than the genuine $\in$-predicate, they must likewise be relativised to $L$. Accordingly, to prove $(V = L)^L$ in ZF, we must prove that $\alpha \in \mathsf{Ord}$ and $x \in L_\alpha$ are absolute. Both proofs are possible using transfinite induction.</p>
+
+<p>From Theorems 1 and 2, we can prove:</p>
+
+<blockquote>
+  <p><strong>Theorem 3.</strong> $\mathsf{ZFL} \vdash \phi \implies \mathsf{ZF} \vdash \phi^L$</p>
+</blockquote>
+
+<p><strong>Proof.</strong> We prove by induction on the proof length of $\mathsf{ZFL} \vdash \phi$. When the proof length is 0, $\phi$ is an axiom of ZFL. When $\phi$ is an axiom of ZF, it follows from Theorem 1, and when $\phi$ is $V = L$, it follows from Theorem 2.</p>
+
+<p>Now assume $\phi$ is proved by applying an inference rule to $\lbrace  \psi_1, \dots, \psi_n \rbrace$. The proof length of $\psi_k$ is smaller than that of $\phi$, so by the induction hypothesis $\mathsf{ZF} \vdash \psi_k^L$. We can easily show that logical axioms and inference rules are absolute with respect to $L$. Therefore, if $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$ is logically valid, then $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ is also logically valid, and consequently $\mathsf{ZF} \vdash \phi^L$. ■</p>
+
+<p>As a corollary of Theorem 3, we obtain Theorem 4:</p>
+
+<blockquote>
+  <p><strong>Theorem 4.</strong> If ZF is consistent, then ZFL is also consistent.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> If ZFL is inconsistent, then $\mathsf{ZFL} \vdash \varnothing \neq \varnothing$, and by Theorem 3, $\mathsf{ZF} \vdash (\varnothing \neq \varnothing)^L \iff \mathsf{ZF} \vdash \varnothing \neq \varnothing$.</p>
+
+<p>Therefore, <strong>V = L is consistent with ZF</strong>.</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

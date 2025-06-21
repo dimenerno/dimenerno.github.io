@@ -3,7 +3,7 @@ layout: post
 title: "On Reference — Definite Descriptions"
 date: 2025-01-18
 lang: en
-tags: [Philosophy, Philosophy Of Language]
+tags: [Philosophy, Philosophy of Language]
 related:
     - "On Reference — Descriptivism and Causal Theory"
     - "On Reference — Cluster Model and Intentionalism"

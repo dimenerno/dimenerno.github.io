@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Stone Spaces and the Compactness Theorem &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/05/16/stone-space-compactness/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                                               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Stone Spaces and the Compactness Theorem</h1>
+  <span class="post-date">16 May 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'" >Logic</div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'" >Topology</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>The following is a famous theorem from undergraduate mathematical logic.</p>
+
+<blockquote>
+  <p><strong>Compactness Theorem.</strong> For a theory $T$ in language $\mathcal{L}$, if every finite subtheory of $T$ has a model, then $T$ has a model.</p>
+</blockquote>
+
+<p>But why is this theorem called the compactness theorem? Upon closer examination, the statement of the above theorem can be written as follows:</p>
+
+<blockquote>
+  <p>If an arbitrary set of $\mathcal{L}$-sentences $T$ has no model, then there exists some finite subset $T’ \subset T$ such that $T’$ has no model.</p>
+</blockquote>
+
+<p>This is certainly similar to the definition of compactness in topology.</p>
+
+<blockquote>
+  <p>If an arbitrary collection of open sets $\mathcal{C}$ covers the entire space, then there exists some finite subset $\mathcal{C}’ \subset \mathcal{C}$ such that $\mathcal{C}’$ covers the entire space.</p>
+</blockquote>
+
+<p>This similarity can be extended beyond mere observation. The idea is to regard each complete $\mathcal{L}$-theory as a point in a space, and when we endow this collection with an appropriate topology, the compactness theorem becomes a necessary and sufficient condition for the corresponding space to be compact. First, we define the following:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For an $\mathcal{L}$-structure $\mathfrak{A}$, we define $\mathrm{Th}(\mathfrak{A})$ as the set of all $\mathcal{L}$-sentences that are true in $\mathfrak{A}$.</p>
+</blockquote>
+
+<p>Incidentally, this set was defined in a <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">previous post</a> when explaining elementary equivalence.</p>
+
+<p>It is clear that $\mathrm{Th}(\mathfrak{A})$ is a consistent and syntactically complete theory. Conversely, when a theory $T$ is consistent and syntactically complete, by Gödel’s completeness theorem, $T$ has a model $\mathfrak{A}$, and $T = \mathrm{Th}(\mathfrak{A})$. Therefore, $\mathrm{Th}$ generates all consistent and syntactically complete theories.</p>
+
+<p>Now let us define the space that will serve as the background for our topological space. First, for a language $\mathcal{L}$, we define the space $\mathcal{S}$ as follows:</p>
+
+\[\mathcal{S} = \{ \mathrm{Th}(\mathfrak{A}) : \mathfrak{A}\text{ is a $\mathcal{L}$-structure } \}\]
+
+<p>As mentioned earlier, by Gödel’s completeness theorem, $\mathcal{S}$ is essentially the same as the collection of consistent and syntactically complete theories. However, as we shall see later, since our goal is to show that the topological compactness of $\mathcal{S}$ is equivalent to the compactness theorem of first-order logic without using the completeness theorem, it is better to think of $\mathcal{S}$ simply as a collection of $\mathrm{Th}(\mathfrak{A})$ for now.</p>
+
+<p>Now let us define a topological basis for $\mathcal{S}$. For an $\mathcal{L}$-sentence $\phi$, we define:</p>
+
+\[U_\phi = \{ T \in \mathcal{S} : \phi \in T \}\]
+
+<p>Trivially, $U_\phi \cap U_\psi = U_{\phi \land \psi}$. That is, the collection $\mathcal{B}$ of $U_\phi$ is closed under finite intersections. Moreover, $\mathcal{B}$ covers $\mathcal{S}$. For $T \in \mathcal{S}$, if $\phi \in T$, then $T \in U_\phi$. Therefore, $\mathcal{B}$ satisfies the conditions for a topological basis, and we endow $\mathcal{S}$ with the topology generated by $\mathcal{B}$.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $\mathcal{S}$ has the following properties:</p>
+
+  <ol>
+    <li>It is Hausdorff.</li>
+    <li>It is a totally disconnected space. That is, the only connected subspaces in $\mathcal{S}$ are singleton sets.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>For $T_1, T_2 \in \mathcal{S}$, if $T_1 \neq T_2$, then there exists some sentence $\phi$ such that $\phi \in T_1$ and $\lnot\phi \in T_2$. Therefore, $U_\phi$ and $U_{\lnot \phi}$ separate $T_1$ and $T_2$ respectively.</li>
+  <li>A sufficient condition for a space to be totally disconnected is to have a basis where every element is clopen. Since $U_\phi^c =U_{\lnot \phi}$, $\mathcal{B}$ satisfies this condition. ■</li>
+</ol>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The compactness theorem of first-order logic is equivalent to $\mathcal{S}$ being a compact space.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> A necessary and sufficient condition for $\mathcal{C} \subset \mathcal{B}$ to cover $\mathcal{S}$ is that $\Gamma = \lbrace \lnot \phi : U_\phi \in \mathcal{C} \rbrace $ has no model.</p>
+</blockquote>
+
+<p><em>Proof.</em> If $\Gamma$ has a model $\mathfrak{A}$, then $T = \mathrm{Th}(\mathfrak{A})$ is not covered by $\mathcal{C}$. On the other hand, if $\mathcal{C}$ does not cover $\mathcal{S}$, then there exists some structure $\mathfrak{A}$ such that for $\phi \in \Gamma$, $\phi \notin \mathfrak{A}$, which means that $\mathfrak{A}$ is a model of $\Gamma$. □</p>
+
+<p>Now we prove the main theorem. A necessary and sufficient condition for $\mathcal{S}$ to be compact is that any cover of $\mathcal{S}$ consisting of basis elements has a finite subcover. For $\mathcal{C} \subset \mathcal{B}$, a necessary and sufficient condition for $\mathcal{C}$ to cover $\mathcal{S}$ is (by the lemma) that $\Gamma$ has no model. Therefore,</p>
+
+<p>$\mathcal{S}$ is compact</p>
+
+<p>$\Leftrightarrow$ If any collection of basis elements $\mathcal{C}$ is a cover, then there exists a finite subcover.</p>
+
+<p>$\Leftrightarrow$ If any theory $\Gamma$ has no model, then there exists a finite subtheory that has no model.</p>
+
+<p>$\Leftrightarrow$ Compactness theorem ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A compact Hausdorff space that is totally disconnected is called a <strong>Stone space</strong>.</p>
+</blockquote>
+
+<p>By the compactness theorem of first-order logic, $\mathcal{S}$ is a Stone space. This approach of analysing logical structures topologically is connected to a deep topic in modern mathematics called <strong>Stone duality</strong>.</p>
+
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

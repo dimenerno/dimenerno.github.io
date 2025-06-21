@@ -212,7 +212,7 @@
     href="/"
     >Main</a
   >
-                                                                                                                                                                             
+                                                                                                                                                                                                 
     <a
       class="sidebar-nav-item lang-ko"
       href="/about/"
@@ -545,116 +545,121 @@ y = f_2(r, \theta) = r \sin \theta
   </div>
   <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
+    <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/02/27/general-covariance-en"> 일반 공변성에 대한 노트 </a>
+        <a href="/2025/02/27/general-covariance/en"> Notes on General Covariance </a>
       </h1>
     <span class="post-date">27 Feb 2025</span>
     
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/물리학/'">
-        물리학
+      <div class="tag" onclick="location.href='/tags/physics/'">
+        Physics
       </div>
       
-      <div class="tag" onclick="location.href='/tags/역학/'">
-        역학
+      <div class="tag" onclick="location.href='/tags/mechanics/'">
+        Mechanics
       </div>
       
     </div>
-     <p>어떤 이론이 <strong>일반 공변적<sub>general covariant</sub></strong>이라는 것은, 물리 법칙의 형태<sub>form</sub>가 미분가능한 좌표계 변환에 대해 보존된다는 것이다. 구체적으로, 좌표계 $\lbrace q_i \rbrace $와 좌표계 $\lbrace q’_i \rbrace $가 다음 관계에 있다고 하자.</p>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>A theory is said to be <strong>general covariant</strong> when the form of physical laws is preserved under differentiable coordinate transformations. Specifically, suppose coordinate systems $\lbrace q_i \rbrace$ and $\lbrace q’_i \rbrace$ are related by:</p>
 
 \[q_i' = f_i(\{ q \})\]
 
-<p>각 $i$에 대해 $f_i$가 미분 가능하다고 하자. 일반 공변적 이론이라면 좌표계 $\lbrace q_i \rbrace $를 사용했을 때와 좌표계 $\lbrace q_i’ \rbrace $를 사용했을 때의 물리 법칙이 형태가 같아야 한다.</p>
+<p>Let each $f_i$ be differentiable for all $i$. If a theory is generally covariant, then the physical laws must have the same form when using coordinate system $\lbrace q_i \rbrace$ as when using coordinate system $\lbrace q_i’ \rbrace$.</p>
 
-<p>예시를 보자. 퍼텐셜이 0인 계 안의 입자의 위치를 극좌표계 $(r, \theta)$ 또는 직교 좌표계 $(x, y)$를 사용하여 표현하는 경우를 생각해 보자. 두 좌표계는 다음 관계에 있다.</p>
+<p>Consider an example. Suppose we describe the position of a particle in a system with zero potential using either polar coordinates $(r, \theta)$ or Cartesian coordinates $(x, y)$. The two coordinate systems are related by:</p>
 
 \[\begin{gather}
 x = f_1(r, \theta) = r \cos \theta\\
 y = f_2(r, \theta) = r \sin \theta
 \end{gather}\]
 
-<p>$f_1$과 $f_2$가 미분 가능하므로 일반 공변적 이론은 두 좌표계로 표현했을 때의 형태가 같아야 한다.</p>
+<p>Since $f_1$ and $f_2$ are differentiable, a generally covariant theory must have the same form when expressed in both coordinate systems.</p>
 
-<p>먼저 뉴턴 역학의 경우를 보자. 뉴턴 역학의 물리 법칙은 다음과 같다.</p>
+<p>First, consider the case of Newtonian mechanics. The physical laws of Newtonian mechanics are:</p>
 
 \[\begin{gather}
 -\frac{dV(x, y)}{dx} = m\ddot{x} \\
 -\frac{dV(x, y)}{dy} = m\ddot{y}
 \end{gather}\]
 
-<p>$V(x, y) = 0$이므로 $\ddot{x} = \ddot{y} = 0$이다. 즉 입자는 등속 선형 운동을 한다. 만약 뉴턴 역학이 일반 공변적이라면 위 법칙을 $(x, y)$에서 $(r, \theta)$로 바꿔 표현해도 결과가 같아야 한다.</p>
+<p>Since $V(x, y) = 0$, we have $\ddot{x} = \ddot{y} = 0$. That is, the particle undergoes uniform linear motion. If Newtonian mechanics were generally covariant, then expressing the above laws in terms of $(r, \theta)$ instead of $(x, y)$ should yield the same result.</p>
 
 \[\begin{gather}
 -\frac{dV(r, \theta)}{dr} = m\ddot{r} \\
 -\frac{dV(r, \theta)}{d\theta} = m\ddot{\theta}
 \end{gather}\]
 
-<p>$V(r, \theta) = 0$이므로 $\ddot{r} = \ddot{\theta} = 0$이다. 이번에는 입자가 등속 원운동을 한다. 결과가 달라졌으므로 <strong>뉴턴 역학은 일반 공변적이지 않다.</strong></p>
+<p>Since $V(r, \theta) = 0$, we have $\ddot{r} = \ddot{\theta} = 0$. This time, the particle undergoes uniform circular motion. Since the results differ, <strong>Newtonian mechanics is not generally covariant.</strong></p>
 
-<p>이제 <a href="http://dimenerno.github.io/2025/02/27/euler-lagrange/">라그랑주 역학</a>의 경우를 보자. 라그랑주 역학의 물리 법칙은 다음과 같다.</p>
+<p>Now consider the case of <a href="http://dimenerno.github.io/2025/02/27/euler-lagrange/">Lagrangian mechanics</a>. The physical laws of Lagrangian mechanics are:</p>
 
 \[\begin{gather}
 \frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
 \frac{\partial \mathcal{L}}{\partial y} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{y}}
 \end{gather}\]
 
-<p>$\mathcal{L}(x, y) = T - V = \frac{m}{2}(\dot{x}^2 + \dot{y}^2)$를 대입하면 $\ddot{x} = \ddot{y} = 0$, 즉 등속 선형 운동을 얻는다. 여기까지는 뉴턴 역학과 같다.</p>
+<p>Substituting $\mathcal{L}(x, y) = T - V = \frac{m}{2}(\dot{x}^2 + \dot{y}^2)$ yields $\ddot{x} = \ddot{y} = 0$, i.e., uniform linear motion. This is the same as in Newtonian mechanics thus far.</p>
 
-<p>이제 오일러-라그랑주 방정식의 $(x, y)$를 $(r, \theta)$로 치환해 보자.</p>
+<p>Now let us substitute $(r, \theta)$ for $(x, y)$ in the Euler-Lagrange equations:</p>
 
 \[\begin{gather}
 \frac{\partial \mathcal{L}}{\partial r} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{r}} \\
 \frac{\partial \mathcal{L}}{\partial \theta} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}}
 \end{gather}\]
 
-<p>$x = r\cos\theta, y = r\sin\theta$를 대입하여 정리하면 $\mathcal{L}(r, \theta)$는 다음과 같다.</p>
+<p>Substituting $x = r\cos\theta, y = r\sin\theta$ and simplifying, $\mathcal{L}(r, \theta)$ becomes:</p>
 
 \[\mathcal{L}(r, \theta) = \frac{m}{2}(\dot{r}^2 + r^2 \dot{\theta}^2)\]
 
 <blockquote>
-  <p><em>Remark.</em> 오일러-라그랑주 방정식에서는 단순히 $(x, y)$를 $(r, \theta)$로 치환했지만, 라그랑지안에서는 $x = r \cos \theta, y = r \sin \theta$ 관계식을 대입하는 이유는 라그랑지안이 <strong>실수쌍</strong>에 대한 함수가 아니라 <strong>시공간의 점</strong>에 대한 함수이기 때문이다. 일반 공변성은 무지성, 일편단률적인 좌표 변환에 대해서 식의 형태가 유지된다는 의미가 아니라, 물리계를 표현하는 함수들은 유지된 채 그것을 표현하는 좌표가 바뀌었을 때 식의 형태가 유지된다는 의미이다.</p>
+  <p><em>Remark.</em> Whilst in the Euler-Lagrange equations we simply substitute $(r, \theta)$ for $(x, y)$, in the Lagrangian we substitute the relation $x = r \cos \theta, y = r \sin \theta$ because the Lagrangian is not a function of <strong>pairs of real numbers</strong> but rather a function of <strong>points in spacetime</strong>. General covariance does not mean that the form of equations is preserved under mindless, uniform coordinate transformations, but rather that when the functions describing a physical system are maintained whilst the coordinates expressing them are changed, the form of equations is preserved.</p>
 </blockquote>
 
-<p>대입하여 계산하면 다음과 같다.</p>
+<p>Substituting and calculating yields:</p>
 
 \[\begin{gather}
 \ddot{r} = r\dot{\theta}^2 \\
 2\dot{r}\dot{\theta} + r\ddot{\theta} = 0
 \end{gather}\]
 
-<p>미분방정식이 복잡해서 알아보기 힘들지만, 위 두 미분방정식은 $\ddot{x} = \ddot{y} = 0$과 동치이다. 일례로 $\theta = \tan^{-1}t, r = \sqrt{1 + t^2}$가 방정식의 해인 것을 확인할 수 있다.</p>
+<p>Although the differential equations are complex and difficult to interpret, the above two differential equations are equivalent to $\ddot{x} = \ddot{y} = 0$. For instance, one can verify that $\theta = \tan^{-1}t, r = \sqrt{1 + t^2}$ is a solution to the equations.</p>
 
-<p>일반적으로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 라그랑주 역학은 일반 공변성을 가진다.</p>
-</blockquote>
-
-<p>뉴턴 역학은 일반 공변성이 없지만 라그랑주 역학은 있다는 것이 신기하게 느껴질 수 있지만, 잘 생각해 보면 이것은 당연하다. 뉴턴의 제1법칙은 보통 $F = 0 \implies \ddot{x} = 0$이라는 수식으로 표현되지만 정확한 진술은 다음과 같다.</p>
+<p>In general, the following holds:</p>
 
 <blockquote>
-  <p>외력을 받지 않는 입자의 시공간 다이어그램은 선형이다.</p>
+  <p><strong>Theorem.</strong> Lagrangian mechanics possesses general covariance.</p>
 </blockquote>
 
-<p>‘선형’이라는 표현에 주목하라. 선형성은 특정한 기하학에 의존적인 표현이다. 예를 들어 유클리드 기하학에서 ‘선형’이란 우리가 흔히 말하는 직선이지만, 구면 기하학에서 ‘선형’은 대원으로 주어진다. 그러므로 위 진술은 다음과 같이 밝혀 쓰는 것이 가장 정확하다.</p>
+<p>It may seem surprising that Newtonian mechanics lacks general covariance whilst Lagrangian mechanics possesses it, but upon reflection, this is quite natural. Newton’s first law is commonly expressed mathematically as $F = 0 \implies \ddot{x} = 0$, but the precise statement is:</p>
 
 <blockquote>
-  <p><strong>뉴턴 역학</strong>. 외력을 받지 않는 입자의 시공간 다이어그램은 유클리드 기하학의 선형이다.</p>
+  <p>The spacetime diagram of a particle not subject to external forces is linear.</p>
 </blockquote>
 
-<p>그리고 유클리드 기하학의 선형은 직교 좌표계에서 $\ddot{x} = \ddot{y} = 0$ 꼴로 주어진다. 따라서 $F = 0 \implies \ddot{x} = 0$은, 유클리드 기하학과 직교 좌표계를 전제했을 때에만 올바른 수식인 것이다.</p>
-
-<p>거꾸로 말해, 이론이 특정한 기하학에 의존하지 않는다면 그 이론은 일반 공변적이다. 라그랑주 역학은 그러한 이론의 사례이다. 라그랑주 역학의 진술은 다음과 같이 표현할 수 있다.</p>
+<p>Note the expression ‘linear’. Linearity is a concept dependent upon specific geometry. For example, in Euclidean geometry, ‘linear’ refers to what we commonly call a straight line, but in spherical geometry, ‘linear’ is given by great circles. Therefore, the above statement is most accurately written as:</p>
 
 <blockquote>
-  <p><strong>라그랑주 역학</strong>. 라그랑지안의 적분을 극화시키는 경로가 입자의 운동 경로이다.</p>
+  <p><strong>Newtonian mechanics</strong>. The spacetime diagram of a particle not subject to external forces is linear in Euclidean geometry.</p>
 </blockquote>
 
-<p>그리고 라그랑지안은 특정 기하학에 의존적인 함수가 아닌, 그저 시공간의 점들에 대해 실숫값을 출력하는 함수이다. 따라서 위 진술은 어떠한 기하학에 대해서도 의존적이지 않으며, 라그랑주 역학은 일반 공변적이다.</p>
+<p>Linear motion in Euclidean geometry is given by $\ddot{x} = \ddot{y} = 0$ in Cartesian coordinates. Therefore, $F = 0 \implies \ddot{x} = 0$ is a correct equation only when Euclidean geometry and Cartesian coordinates are presupposed.</p>
 
-<p>구멍 논증<sub>hole argument</sub>에 따르면 일반 공변적인 이론들은 형이상학적인 의미에서 비결정론적이다. 이에 대한 설명은 나중에 하도록 하겠다.</p>
+<p>Conversely, if a theory does not depend upon specific geometry, then that theory is generally covariant. Lagrangian mechanics is an example of such a theory. The statement of Lagrangian mechanics can be expressed as:</p>
+
+<blockquote>
+  <p><strong>Lagrangian mechanics</strong>. The path that extremises the integral of the Lagrangian is the particle’s trajectory.</p>
+</blockquote>
+
+<p>The Lagrangian is not a function dependent upon specific geometry, but merely a function that outputs real values for points in spacetime. Therefore, the above statement is not dependent upon any particular geometry, and Lagrangian mechanics is generally covariant.</p>
+
+<p>According to the hole argument, generally covariant theories are indeterministic in a metaphysical sense. An explanation of this will be provided later.</p>
+
 
   </div>
   <div style="margin-bottom: 6em"></div>
@@ -804,46 +809,50 @@ $$
   </div>
   <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
+    <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/02/27/euler-lagrange-en"> 오일러-라그랑주 방정식과 라그랑주 역학 </a>
+        <a href="/2025/02/27/euler-lagrange/en"> The Euler-Lagrange Equation and Lagrangian Mechanics </a>
       </h1>
     <span class="post-date">27 Feb 2025</span>
     
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/물리학/'">
-        물리학
+      <div class="tag" onclick="location.href='/tags/physics/'">
+        Physics
       </div>
       
-      <div class="tag" onclick="location.href='/tags/역학/'">
-        역학
+      <div class="tag" onclick="location.href='/tags/mechanics/'">
+        Mechanics
       </div>
       
     </div>
-     <h2 id="1-도입">1. 도입</h2>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
 
-<p>1차원 위에서 운동하는 입자의 운동 경로는 $x(t)$와 같이 표현할 수 있다. 입자의 위치와 속도에 의존적인 함수 $f(x, x’)$를 생각하자. 이 입자가 시간 $t_1$일 때 $x_1$에서 출발하여 시간 $t_2$일 때 $x_2$에 도착하는데, 그 과정에서 다음 값을 극화<sub>extremise</sub>하는 경로, 즉 다음 값이 극대 또는 극소가 되도록 하는 경로 $x(t)$를 찾는 것이 목표이다.</p>
+<h2 id="1-introduction">1. Introduction</h2>
+
+<p>The trajectory of a particle moving in one dimension can be expressed as $x(t)$. Consider a function $f(x, x’)$ that depends on the particle’s position and velocity. Our objective is to find the path $x(t)$ along which the particle travels from position $x_1$ at time $t_1$ to position $x_2$ at time $t_2$, such that the following quantity is extremised—that is, the path that renders this quantity either maximum or minimum:</p>
 
 \[A[x] = \int^{t_2}_{t_1} f(x, \dot{x}) dt\]
 
-<p>대괄호는 $A$의 매개변수가 실수가 아닌 함수임을 의미한다. 따라서 직관적으로 생각했을 때 $A[x]$를 최소화하는 $x(t)$를 찾기 위해서는 함수에 대한 미분식을 세워야 한다.</p>
+<p>The square brackets indicate that the parameter of $A$ is a function rather than a real number. Therefore, intuitively, to find $x(t)$ that minimises $A[x]$, we should establish a differential equation for functions.</p>
 
 \[\frac{dA[x]}{dx(t)} = 0?\]
 
-<h2 id="2-오일러-라그랑주-방정식">2. 오일러-라그랑주 방정식</h2>
+<h2 id="2-the-euler-lagrange-equation">2. The Euler-Lagrange Equation</h2>
 
-<p>물론 함수에 대한 미분을 우리는 정의한 적이 없다. 하지만 간단한 트릭을 통해 함수에 대한 미분을 일반적인 미분으로 환원할 수 있다. 먼저 $x_0(t)$가 우리가 찾고자 하는 경로, 즉 $A[x]$를 극화시키는 경로라고 하자. $x_0(t)$의 ‘주변’에 있는 경로는 다음과 같은 꼴이다.</p>
+<p>Of course, we have never defined differentiation with respect to functions. However, through a simple trick, we can reduce differentiation with respect to functions to ordinary differentiation. First, let $x_0(t)$ be the path we seek—that is, the path that extremises $A[x]$. A path in the ‘neighbourhood’ of $x_0(t)$ takes the following form:</p>
 
 \[x(\alpha, t) = x_0(t) + \alpha h(t)\]
 
 <p><img src="/public/euler-lagrange.png" width="400px" style="margin: 2em auto;" /></p>
 
-<p>경계 조건은 $h(t_1) = h(t_2) = 0$이다. $x_0(t)$가 $A[x]$를 극화시키므로, 충분히 작은 $\epsilon$에 대해 $A[x_0] = A[x(0, t)] \leq A[x(\epsilon, t)]$이다. 따라서,</p>
+<p>The boundary conditions are $h(t_1) = h(t_2) = 0$. Since $x_0(t)$ extremises $A[x]$, for sufficiently small $\epsilon$, we have $A[x_0] = A[x(0, t)] \leq A[x(\epsilon, t)]$. Therefore,</p>
 
 \[\left. \frac{dA[x(\alpha, t)]}{d\alpha} \right\vert_{\alpha = 0} = 0\]
 
-<p>위 식을 전개하면 다음과 같다.</p>
+<p>Expanding the above equation yields:</p>
 
 \[\begin{aligned}
 \frac{dA}{d\alpha} &amp;= \int^{t_2}_{t_1} \frac{d}{d\alpha} \Big[ f \big( x(\alpha, t), \dot{x}(\alpha, t) \big) \Big] dt \\
@@ -852,35 +861,35 @@ $$
 &amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \left[ \frac{\partial f}{\partial \dot{x}} \frac{\partial x}{\partial \alpha} \right]^{t_2}_{t_1} -  \int^{t_2}_{t_1} \frac{d}{dt} \left( \frac{\partial f}{\partial \dot{x}} \right) \frac{\partial x}{\partial \alpha} dt
 \end{aligned}\]
 
-<p>3번 식에서 4번 식으로 넘어가는 데 부분적분이 쓰였다. ${\partial x}/{\partial \alpha} = h(t)$이므로, 경계 조건에 의해 4번 식의 두 번째 항은 소거된다. 따라서,</p>
+<p>Integration by parts is employed in the transition from the third to the fourth equation. Since ${\partial x}/{\partial \alpha} = h(t)$, the second term in the fourth equation vanishes due to the boundary conditions. Therefore,</p>
 
 \[\frac{dA}{d\alpha} = \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x} - \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right) \right) \frac{\partial x}{\partial \alpha} dt = 0\]
 
-<p>임의의 $h \in C^1$에 대해 위 식이 만족되어야 하므로, $x(t)$가 $A$를 극화할 다음의 <em>필요조건</em>을 얻는다.</p>
+<p>Since the above equation must be satisfied for arbitrary $h \in C^1$, we obtain the following <em>necessary condition</em> for $x(t)$ to extremise $A$:</p>
 
 \[\frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
 
-<p>이것이 <strong>오일러-라그랑주 방정식<sub>Euler-Lagrange equation</sub></strong>이다. 값 $A$를 극화한다는 것을 $\delta A = 0$과 같이 표현하므로, 오일러-라그랑주 방정식의 결론은 다음과 같이 적을 수 있다.</p>
+<p>This is the <strong>Euler-Lagrange equation</strong>. Since extremising the value $A$ is expressed as $\delta A = 0$, the conclusion of the Euler-Lagrange equation can be written as follows:</p>
 
 \[\delta A = 0 \implies \frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
 
-<p>방금 우리는 일변수 함수에 대해 증명했지만, 다변수 함수에 대해서도 마찬가지 식이 성립한다. 즉, 어떤 입자(들)의 운동을 나타내는 좌표가 $\lbrace  q_i \rbrace _{i \leq n}$라고 하자. 예를 들어 2개의 입자가 3차원에서 운동하는 경우 $n = 6$이다. 이들의 운동이 $\int f(q_1, \dot{q_1}, \dots, q_n, \dot{q_n}) dt$를 극화할 필요조건은 각 $i$에 대해 다음이 성립하는 것이다.</p>
+<p>We have just proved this for functions of one variable, but the same equation holds for functions of multiple variables. That is, let the coordinates representing the motion of some particle(s) be $\lbrace  q_i \rbrace _{i \leq n}$. For example, if two particles move in three dimensions, then $n = 6$. The necessary condition for their motion to extremise $\int f(q_1, \dot{q_1}, \dots, q_n, \dot{q_n}) dt$ is that the following holds for each $i$:</p>
 
 \[\frac{\partial f}{\partial q_i} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{q_i}} \right)\]
 
-<!-- ## 3. 최단 강하 곡선 문제
+<!-- ## 3. The Brachistochrone Problem
 
-앞서 $t$를 시간, $x(t)$를 경로로 설정했지만, 다른 변수에 대해서도 오일러-라그랑주 방정식을 적용할 수 있다. 그 예시로, 최단 강하 곡선 문제를 풀어보자.
+Although we previously set $t$ as time and $x(t)$ as the path, the Euler-Lagrange equation can also be applied to other variables. As an example, let us solve the brachistochrone problem.
 
 <img src="public/brachistochrone.png" width="400px" style="margin: 2em auto;">
 
-에너지 보존 법칙에 의해 다음 식이 성립한다.
+By the law of conservation of energy, the following equation holds:
 
 $$
 \dot{x}^2 + \dot{y}^2 = -2gy
 $$
 
-따라서 곡선 $y(x)$를 따라 $(x\_1, y\_1)$에서 $(x\_2, y\_2)$까지 강하하는 데 걸리는 시간은 다음과 같다.
+Therefore, the time taken to descend from $(x_1, y_1)$ to $(x_2, y_2)$ along the curve $y(x)$ is as follows:
 
 $$
 \begin{aligned}
@@ -890,38 +899,38 @@ T &= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{ds}{v} \\
 \end{aligned}
 $$
 
-다음과 같이 $f(y, y')$을 두자.
+Let us set $f(y, y')$ as follows:
 
 $$
 f(y, y') = \sqrt{-\frac{1 + y'^2}{2gy}}
 $$
 
-오일러-라그랑주 방정식에 따르면 $T$가 극솟값을 가질 필요조건은 다음과 같다.
+According to the Euler-Lagrange equation, the necessary condition for $T$ to have a minimum value is as follows:
 
 $$
 \frac{\partial f}{\partial y} = \frac{d}{dx} \frac{\partial f}{\partial {y'}}
 $$
 
-위 식을 풀면 $y(x)$가 **사이클로이드** 꼴로 나타난다. 자세한 계산 과정은 연습문제로 땡처리하는 것을 양해 바란다. -->
+Solving the above equation yields $y(x)$ in the form of a **cycloid**. Please forgive me for leaving the detailed calculation process as an exercise. -->
 
-<h2 id="3-라그랑주-역학">3. 라그랑주 역학</h2>
+<h2 id="3-lagrangian-mechanics">3. Lagrangian Mechanics</h2>
 
 <blockquote>
-  <p><strong>정의.</strong> 계 $S$의 입자(들)의 운동을 나타내는 좌표가 $\lbrace  q_i \rbrace _{1 \leq i \leq n}$라고 하자. $S$의 <strong>라그랑지안<sub>Lagrangian</sub></strong> $\mathcal{L}(\lbrace  q , \dot{q} \rbrace, t)$를, 다음의 값을 극화시키는 조건에 대한 방정식이 입자들의 운동 방정식과 같아지도록 하는 함수로 정의한다.</p>
+  <p><strong>Definition.</strong> Let the coordinates representing the motion of the particles in system $S$ be $\lbrace  q_i \rbrace _{1 \leq i \leq n}$. The <strong>Lagrangian</strong> $\mathcal{L}(\lbrace  q , \dot{q} \rbrace, t)$ of $S$ is defined as a function such that the equation for the condition that extremises the following quantity becomes identical to the equations of motion of the particles:</p>
 
 \[\mathcal{S} = \int^{t_2}_{t_1} \mathcal{L}(\{ q, \dot{q} \}, t) dt\]
 
-  <p>$\mathcal{S}$를 <strong>작용<sub>action</sub></strong>이라고 부른다.</p>
+  <p>$\mathcal{S}$ is called the <strong>action</strong>.</p>
 </blockquote>
 
-<p>예를 들어 1차원 퍼텐셜 장 $V(x)$에 속하는 입자의 라그랑지안은 다음과 같다.</p>
+<p>For example, the Lagrangian of a particle in a one-dimensional potential field $V(x)$ is as follows:</p>
 
 \[\begin{aligned}
 \mathcal{L}(x, \dot{x}) &amp;= T - V \\
 &amp;= \frac{1}{2}m\dot{x}^2 - V(x)
 \end{aligned}\]
 
-<p>위 함수가 라그랑지안이라는 것을 확인해 보자. 오일러-라그랑주 방정식을 사용하면 해당 라그랑지안에 따른 작용이 극화될 조건은 다음과 같다.</p>
+<p>Let us verify that the above function is indeed the Lagrangian. Using the Euler-Lagrange equation, the condition for the action corresponding to this Lagrangian to be extremised is as follows:</p>
 
 \[\begin{aligned}
 \delta \mathcal{S} = 0 &amp;\implies \frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
@@ -929,22 +938,23 @@ $$
 &amp;\iff -\frac{dV}{dx} = m\ddot{x}
 \end{aligned}\]
 
-<p>마지막 식은 뉴턴의 운동 방정식이다. 따라서 $\mathcal{L}$은 이 계의 라그랑지안이 맞다. 일반적으로 다음이 성립한다.</p>
+<p>The final equation is Newton’s equation of motion. Therefore, $\mathcal{L}$ is indeed the Lagrangian of this system. In general, the following holds:</p>
 
 <blockquote>
-  <p><strong>정리.</strong> 다음 두 조건을 만족하는 고전역학적 계의 라그랑지안은 $\mathcal{L} = T - V$로 주어진다.</p>
+  <p><strong>Theorem.</strong> The Lagrangian of a classical mechanical system satisfying the following two conditions is given by $\mathcal{L} = T - V$:</p>
 
   <ol>
-    <li>계의 경계 조건이 홀로노믹<sub>holonomic</sub>하다. 즉, 경계 조건이 입자들의 위치에만 의존하고 속도에 의존하지 않는다.</li>
-    <li>계에 작용하는 힘 $\mathbf{F}_i$가 퍼텐셜 함수 $U_i(\lbrace q, \dot{q} \rbrace, t)$를 가진다.</li>
+    <li>The constraints of the system are holonomic. That is, the constraints depend only on the positions of the particles and not on their velocities.</li>
+    <li>The forces $\mathbf{F}_i$ acting on the system have potential functions $U_i(\lbrace q, \dot{q} \rbrace, t)$.</li>
   </ol>
 </blockquote>
 
-<p><strong>증명.</strong> 링크된 <a href="https://physics.stackexchange.com/questions/78138/is-there-a-proof-from-the-first-principle-that-the-lagrangian-l-t-v">SE 포스트</a>를 참조.</p>
+<p><strong>Proof.</strong> See the linked <a href="https://physics.stackexchange.com/questions/78138/is-there-a-proof-from-the-first-principle-that-the-lagrangian-l-t-v">SE post</a>.</p>
 
-<p>그러나 일반적으로 계의 라그랑지안이 $T - V$로 주어지는 것은 아니다. 예를 들어 상대론적 입자의 운동 에너지는 $(\gamma - 1)m_0c^2$이지만, 올바른 라그랑지안은 $-m_0c^2/\gamma$이다.</p>
+<p>However, in general, the Lagrangian of a system is not necessarily given by $T - V$. For instance, whilst the kinetic energy of a relativistic particle is $(\gamma - 1)m_0c^2$, the correct Lagrangian is $-m_0c^2/\gamma$.</p>
 
-<p>뉴턴 역학과 달리 라그랑주 역학은 매우 자유로운 좌표계 변환을 허용한다는 점에서 강점을 가진다. 뉴턴 역학과 달리 라그랑주 역학은 일반 공변성을 가지기 때문이다. 이에 대한 자세한 설명은 <a href="http://dimenerno.github.io/2025/02/27/general-covariance/">다음 글</a>에 있다.</p>
+<p>Unlike Newtonian mechanics, Lagrangian mechanics has the advantage of permitting very flexible coordinate transformations. This is because, unlike Newtonian mechanics, Lagrangian mechanics possesses general covariance. A detailed explanation of this can be found in the <a href="http://dimenerno.github.io/2025/02/27/general-covariance/">following article</a>.</p>
+
 
   </div>
   <div style="margin-bottom: 6em"></div>
@@ -1109,82 +1119,86 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
   </div>
   <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
+    <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/02/25/lebesgue-borel-en"> 르베그 가측 집합과 보렐 가측 집합 </a>
+        <a href="/2025/02/25/lebesgue-borel/en"> Lebesgue Measurable Sets and Borel Measurable Sets </a>
       </h1>
     <span class="post-date">25 Feb 2025</span>
     
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
       </div>
       
-      <div class="tag" onclick="location.href='/tags/측도론/'">
-        측도론
+      <div class="tag" onclick="location.href='/tags/measure-theory/'">
+        Measure Theory
       </div>
       
     </div>
-     <h3 id="1-르베그-측도">1. 르베그 측도</h3>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
 
-<p><a href="https://dimenerno.github.io/2025/02/25/caratheodory/">카라테오도리 정리</a>로부터 다음과 같이 측도 $m$을 정의할 수 있다.</p>
+<h3 id="1-lebesgue-measure">1. Lebesgue Measure</h3>
+
+<p>From <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">Carathéodory’s theorem</a>, we can define a measure $m$ as follows.</p>
 
 <ol>
   <li>
-    <p>$\mathcal{A}_0 = \lbrace \cup^n_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $는 대수임을 보인다.</p>
+    <p>Show that $\mathcal{A}_0 = \lbrace \cup^n_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $ is an algebra.</p>
   </li>
   <li>
-    <p>$A \in \mathcal{A}_0$에 대해, $A = \sqcup^n_{k=1} (a_k, b_k]$로 표현하는 방법이 유일함을 보인다.</p>
+    <p>For $A \in \mathcal{A}_0$, show that the representation $A = \sqcup^n_{k=1} (a_k, b_k]$ is unique.</p>
   </li>
   <li>
-    <p>함수 $\rho: \mathcal{A}_0 \to [0, \infty]$를</p>
+    <p>When the function $\rho: \mathcal{A}_0 \to [0, \infty]$ is defined as</p>
 
 \[\rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)\]
 
-    <p>와 같이 정의했을 때 $\rho$가 예비측도임을 보인다.</p>
+    <p>show that $\rho$ is a premeasure.</p>
   </li>
   <li>
-    <p>$\mathcal{A}_0, \rho$에 대해 카라테오도리 구축 정리를 적용하여 외측도 $m^\ast$을 얻는다.</p>
+    <p>Apply Carathéodory’s extension theorem to $\mathcal{A}_0, \rho$ to obtain the outer measure $m^\ast$.</p>
   </li>
   <li>
-    <p>$m^\ast$의 정의역을 $m^\ast$-가측집합으로 제한하여 측도 $m$을 얻는다.</p>
+    <p>Restrict the domain of $m^\ast$ to $m^\ast$-measurable sets to obtain the measure $m$.</p>
   </li>
 </ol>
 
-<p>대수는 유한 합집합에만 닫혀 있기 때문에 1, 2, 3은 거의 자명하다. 4, 5의 증명은 <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">관련 글</a>을 참조하라.</p>
+<p>Since algebras are only closed under finite unions, steps 1, 2, and 3 are almost trivial. For the proofs of steps 4 and 5, see the <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">related article</a>.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> 상술한 $m$을 <strong>르베그 측도<sub>Lebesgue measure</sub></strong>라고 부른다. 또한, $m$의 정의역에 속하는 집합을 <strong>르베그 가측<sub>Lebesgue measurable</sub></strong>이라고 부른다.</p>
+  <p><strong>Definition.</strong> The aforementioned $m$ is called the <strong>Lebesgue measure</strong>. Moreover, sets belonging to the domain of $m$ are called <strong>Lebesgue measurable</strong>.</p>
 </blockquote>
 
-<p>카라테오도리 정리들로부터 다음 사실들이 어렵지 않게 따라 나온다.</p>
+<p>The following facts follow readily from Carathéodory’s theorems.</p>
 
 <blockquote>
-  <p><strong>정리.</strong></p>
+  <p><strong>Theorem.</strong></p>
 
   <ol>
     <li>$m([a, b]) = m((a, b)) = m((a, b]) = m([a, b)) = b - a$</li>
-    <li>$A \subset \mathbb{R}$이 가산일 때, $m(A) = 0$</li>
+    <li>When $A \subset \mathbb{R}$ is countable, $m(A) = 0$</li>
   </ol>
 </blockquote>
 
-<p>그리고 카라테오도리 확장 정리로 얻어지는 측도는 완비 측도<sub>complete measure</sub>이므로 다음이 성립한다.</p>
+<p>Since the measure obtained by Carathéodory’s extension theorem is a complete measure, the following holds.</p>
 
 <blockquote>
-  <p><strong>정리.</strong> $m$은 완비 측도이다.</p>
+  <p><strong>Theorem.</strong> $m$ is a complete measure.</p>
 </blockquote>
 
-<p>또한 $\sigma(\mathcal{A}_0)$는 보렐 $\sigma$-대수 $\mathcal{B}$이므로, 다음이 따라 나온다.</p>
+<p>Furthermore, since $\sigma(\mathcal{A}_0)$ is the Borel $\sigma$-algebra $\mathcal{B}$, it follows that:</p>
 
 <blockquote>
-  <p><strong>정리.</strong> 보렐 가측 집합은 르베그 가측이다.</p>
+  <p><strong>Theorem.</strong> Borel measurable sets are Lebesgue measurable.</p>
 </blockquote>
 
-<h3 id="2-르베그-가측이지만-보렐-가측이-아닌-집합">2. 르베그 가측이지만 보렐 가측이 아닌 집합</h3>
+<h3 id="2-sets-that-are-lebesgue-measurable-but-not-borel-measurable">2. Sets That Are Lebesgue Measurable but Not Borel Measurable</h3>
 
 <blockquote>
-  <p><strong>정의.</strong> 집합열 $\lbrace C_n \rbrace$을 다음과 같이 정의한다.</p>
+  <p><strong>Definition.</strong> Define the sequence of sets $\lbrace C_n \rbrace$ as follows:</p>
 
 \[\begin{gather}
 C_0 = [0, 1]\\
@@ -1193,33 +1207,33 @@ C_2 = I_1 \setminus \{ (1/9, 2/9) \cup (7/9, 8/9) \} \\
 \vdots
 \end{gather}\]
 
-  <p><strong>칸토어 집합<sub>Cantor set</sub></strong> $C$를 $\cap^\infty_{n = 0}C_n$으로 정의한다.</p>
+  <p>The <strong>Cantor set</strong> $C$ is defined as $\cap^\infty_{n = 0}C_n$.</p>
 
   <p><img src="/public/cantor.png" width="500px" style="margin: 0 auto;" /></p>
 </blockquote>
 
 <blockquote>
-  <p><strong>정리.</strong></p>
+  <p><strong>Theorem.</strong></p>
 
   <ol>
-    <li>칸토어 집합은 비가산이다.</li>
-    <li>칸토어 집합은 르베그 측도 0이다.</li>
+    <li>The Cantor set is uncountable.</li>
+    <li>The Cantor set has Lebesgue measure 0.</li>
   </ol>
 </blockquote>
 
-<p><strong>증명.</strong></p>
+<p><strong>Proof.</strong></p>
 
 <ol>
   <li>
-    <p>칸토어 집합에 속하는 원소들은 삼진법으로 소숫점 전개했을 때 어느 자리에도 2가 등장하지 않는 수들이다. 그러한 수는 $2^\aleph_0$개 있으므로 비가산이다.</p>
+    <p>Elements belonging to the Cantor set are numbers whose ternary decimal expansion contains no digit 2 in any position. There are $2^\aleph_0$ such numbers, hence uncountable.</p>
   </li>
   <li>
-    <p>$m(C_n) = (2/3)^n$이므로 $m(C) = \lim_{n \to infty} (2/3)^n = 0$. ■</p>
+    <p>Since $m(C_n) = (2/3)^n$, we have $m(C) = \lim_{n \to infty} (2/3)^n = 0$. ■</p>
   </li>
 </ol>
 
 <blockquote>
-  <p><strong>정의.</strong> 칸토어 집합을 정의할 때 각 단계에서 빠지는 집합을 $J_n$이라고 하자. 즉,</p>
+  <p><strong>Definition.</strong> Let $J_n$ denote the sets removed at each stage in defining the Cantor set. That is,</p>
 
 \[\begin{gather}
 J_1 = (1/3, 2/3) \\
@@ -1227,7 +1241,7 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 \vdots
 \end{gather}\]
 
-  <p>다음과 같이 함수열을 정의한다.</p>
+  <p>Define the sequence of functions as follows:</p>
 
 \[\begin{gather}
 \operatorname{dom} f_1 = J_1,\; f_1(x) = \frac{1}{2} \\\\
@@ -1235,36 +1249,37 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 \vdots
 \end{gather}\]
 
-  <p>$f: I \to I$를 다음과 같이 정의한다.</p>
+  <p>Define $f: I \to I$ as follows:</p>
 
 \[f(x) = \inf \{ f_n(y) : y \geq x, y \in \mathrm{dom} f \}\]
 
-  <p>$f$를 <strong>칸토어 함수<sub>Cantor function</sub></strong>라고 한다.</p>
+  <p>$f$ is called the <strong>Cantor function</strong>.</p>
 
   <p><img src="/public/CantorEscalier.svg.png" width="300px" style="margin: 0 auto;" /></p>
 </blockquote>
 
 <blockquote>
-  <p><strong>정리.</strong> 칸토어 함수는 연속이다.</p>
+  <p><strong>Theorem.</strong> The Cantor function is continuous.</p>
 </blockquote>
 
-<p><strong>증명.</strong> $f$를 칸토어 함수라고 하자. $f$는 증가함수이므로 $f$가 불연속점을 가진다면 해당 불연속은 틈 불연속<sub>gap discontinuity</sub>이며, 따라서 어떤 $\epsilon &gt; 0$와 $y_0 \in I$에 대해 $(y_0 - \epsilon, y_0 + \epsilon)$이 $\operatorname{im} f$ 밖에 속한다. 그런데 $(y_0 - \epsilon, y_0 + \epsilon)$의 원소 중에는 이진법으로 소숫점 전개했을 때 자릿수가 유한한 수가 존재한다. 해당 수는 $\operatorname{im}f$에 속하므로 모순이다. ■</p>
+<p><strong>Proof.</strong> Let $f$ be the Cantor function. Since $f$ is an increasing function, if $f$ has discontinuities, they would be jump discontinuities. Therefore, for some $\epsilon &gt; 0$ and $y_0 \in I$, the interval $(y_0 - \epsilon, y_0 + \epsilon)$ would lie outside $\operatorname{im} f$. However, among the elements of $(y_0 - \epsilon, y_0 + \epsilon)$, there exists a number whose binary decimal expansion has finitely many digits. Such a number belongs to $\operatorname{im}f$, which is a contradiction. ■</p>
 
 <blockquote>
-  <p><strong>정리.</strong> 르베그 가측이지만 보렐 가측이 아닌 함수가 존재한다.</p>
+  <p><strong>Theorem.</strong> There exist sets that are Lebesgue measurable but not Borel measurable.</p>
 </blockquote>
 
-<p><strong>증명.</strong></p>
+<p><strong>Proof.</strong></p>
 
-<p><em>보조정리.</em> $f$가 증가함수라면 $f^{-1}$은 보렐 집합을 보렐 집합에 사상한다.</p>
+<p><em>Lemma.</em> If $f$ is an increasing function, then $f^{-1}$ maps Borel sets to Borel sets.</p>
 
-<p><em>보조정리의 증명.</em> $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $라고 하자. 열린 집합들의 모음 $\mathcal{G}$에 대해 $\mathcal{G} \subset \mathcal{A}$임이 자명하다. 또한 $\mathcal{A}$가 $\sigma$-대수임이 역함수의 성질로부터 자명하다. 따라서 $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$이다.</p>
+<p><em>Proof of lemma.</em> Let $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $. It is trivial that $\mathcal{G} \subset \mathcal{A}$ for the collection of open sets $\mathcal{G}$. Moreover, it is trivial from properties of inverse functions that $\mathcal{A}$ is a $\sigma$-algebra. Therefore, $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$.</p>
 
-<p>$f$가 칸토어 함수라고 하고, $F$를 다음과 같이 정의하자.</p>
+<p>Let $f$ be the Cantor function and define $F$ as follows:</p>
 
 \[F(x) =\inf \{y : f(y) \geq x \}\]
 
-<p>$F$는 엄격히 증가하는 함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■</p>
+<p>$F$ is a strictly increasing function with $\operatorname{im} F = C$ (where $C$ is the Cantor set). Let $V$ be a <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since $F[V]$ is contained in $C$, it has Lebesgue measure 0 and is Lebesgue measurable by the completeness of Lebesgue measure. However, $F[V]$ is not Borel measurable. If it were Borel measurable, then since $F$ is an increasing function, $F^{-1}(F[V]) = V$ would have to be measurable. ■</p>
+
 
   </div>
   <div style="margin-bottom: 6em"></div>
@@ -1515,32 +1530,36 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
   </div>
   <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
+    <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/02/25/caratheodory-en"> 카라테오도리 정리를 이용한 측도의 구성 </a>
+        <a href="/2025/02/25/caratheodory/en"> Construction of Measures via Carathéodory's Theorem </a>
       </h1>
     <span class="post-date">25 Feb 2025</span>
     
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
       </div>
       
-      <div class="tag" onclick="location.href='/tags/측도론/'">
-        측도론
+      <div class="tag" onclick="location.href='/tags/measure-theory/'">
+        Measure Theory
       </div>
       
     </div>
-     <p>필자는 카라테오도리 정리<sub>Carathéodory theorem</sub>를 3가지로 구분해서 이해하는 방식을 선호하기 때문에, 이 글에서도 해당 방식을 따른다. 각각 다음과 같다.</p>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>The author prefers to understand Carathéodory’s theorem<sub>Carathéodory theorem</sub> by dividing it into three parts, and this article follows the same approach. They are as follows:</p>
 
 <ol>
-  <li><strong>카라테오도리 구축 정리:</strong> 임의의 집합족과 양함수로부터 외측도<sub>outer measure</sub> 를 정의할 수 있다.</li>
-  <li><strong>카라테오도리 제한 정리:</strong> 외측도의 정의역을 가측 집합으로 제한한 함수는 측도가 된다.</li>
-  <li><strong>카라테오도리 확장 정리:</strong> 대수 $\mathcal{A}_0$ 위의 예비측도<sub>premeasure</sub> $\mu_0$를 확장하는 $\sigma(\mathcal{A}_0)$ 위의 측도는, 집합족을 $\mathcal{A}_0$, 양함수를 $\mu_0$로 잡은 뒤 구축 정리를 적용하여 얻은 외측도 $\mu^\ast$에, 제한 정리를 적용하여 얻은 측도가 유일하다.</li>
+  <li><strong>Carathéodory Construction Theorem:</strong> An outer measure<sub>outer measure</sub> can be defined from any collection of sets and a positive function.</li>
+  <li><strong>Carathéodory Restriction Theorem:</strong> A function obtained by restricting the domain of an outer measure to measurable sets becomes a measure.</li>
+  <li><strong>Carathéodory Extension Theorem:</strong> A measure on $\sigma(\mathcal{A}_0)$ that extends a premeasure<sub>premeasure</sub> $\mu_0$ on an algebra $\mathcal{A}_0$ is uniquely given by the measure obtained by applying the restriction theorem to the outer measure $\mu^\ast$ obtained by applying the construction theorem with the collection of sets as $\mathcal{A}_0$ and the positive function as $\mu_0$.</li>
 </ol>
 
-<p>도식적으로, 다음과 같이 이해할 수 있다.</p>
+<p>Schematically, this can be understood as follows:</p>
 
 <table>
   <thead>
@@ -1553,24 +1572,24 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
   </thead>
   <tbody>
     <tr>
-      <td>정의역</td>
-      <td>대수 $\mathcal{A}_0$</td>
-      <td>$\sigma$-대수 $\mathcal{A}$</td>
-      <td>멱집합 $\mathcal{P}(X)$</td>
+      <td>Domain</td>
+      <td>Algebra $\mathcal{A}_0$</td>
+      <td>$\sigma$-algebra $\mathcal{A}$</td>
+      <td>Power set $\mathcal{P}(X)$</td>
     </tr>
     <tr>
-      <td>함수</td>
-      <td>예비측도 $\mu_0$</td>
-      <td>측도 $\mu$</td>
-      <td>외측도 $\mu^\ast$</td>
+      <td>Function</td>
+      <td>Premeasure $\mu_0$</td>
+      <td>Measure $\mu$</td>
+      <td>Outer measure $\mu^\ast$</td>
     </tr>
   </tbody>
 </table>
 
-<p>구축 정리는 (1) → (3), 제한 정리는 (3) → (2), 확장 정리는 (1) → (2)의 방향을 가진다. 하나하나 살펴 보자.</p>
+<p>The construction theorem goes in the direction (1) → (3), the restriction theorem goes (3) → (2), and the extension theorem goes (1) → (2). Let us examine each one by one.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> $X$ 위의 <strong>외측도</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$는 다음을 만족하는 함수이다.</p>
+  <p><strong>Definition.</strong> An <strong>outer measure</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$ on $X$ is a function satisfying the following:</p>
 
   <ol>
     <li>$\mu^\ast(\varnothing) = 0$</li>
@@ -1580,81 +1599,81 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 </blockquote>
 
 <blockquote>
-  <p><strong>카라테오도리 구축 정리.</strong> $X$의 부분집합으로 이루어진 임의의 집합족 $\mathcal{S}$와, $l(\varnothing) = 0$을 만족하는 임의의 함수 $l: \mathcal{S} \to [0, \infty]$가 주어졌을 때, 다음과 같이 정의된 $\mu^\ast$은 외측도이다.</p>
+  <p><strong>Carathéodory Construction Theorem.</strong> Given any collection $\mathcal{S}$ of subsets of $X$ and any function $l: \mathcal{S} \to [0, \infty]$ satisfying $l(\varnothing) = 0$, the function $\mu^\ast$ defined as follows is an outer measure:</p>
 
 \[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} l(A_n) : \{ A_n \} \subset \mathcal{S} \text{ covers }E  \right\}\]
 </blockquote>
 
-<p>즉, $\mu^\ast$은 덮개의 극한으로서 $E$의 ‘측도’ 비스무리한 것을 정의하는 함수이며, 구분구적법에서 상합<sub>upper sum</sub>과 개념적으로 비슷하다.</p>
+<p>That is, $\mu^\ast$ is a function that defines something akin to a ‘measure’ of $E$ as an infimum over covers, and is conceptually similar to the upper sum<sub>upper sum</sub> in Riemann integration.</p>
 
-<p><strong>증명.</strong> 1과 2는 자명하다. 3을 보인다.</p>
+<p><strong>Proof.</strong> Properties 1 and 2 are trivial. We prove property 3.</p>
 
-<p>$A = \bigcup A_n$이라고 하고, 임의의 $\epsilon &gt; 0$이 주어졌다고 하자. $\mu^\ast$의 정의에 의해, 각 $n$에 대해 다음을 만족하는 $A_n$의 덮개 $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$가 존재한다.</p>
+<p>Let $A = \bigcup A_n$ and suppose an arbitrary $\epsilon &gt; 0$ is given. By the definition of $\mu^\ast$, for each $n$, there exists a cover $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$ of $A_n$ satisfying:</p>
 
 \[\sum l(A_{nm}) \leq \mu^*(A_n) + \epsilon/2^n\]
 
-<p>따라서,</p>
+<p>Therefore,</p>
 
 \[\sum_{n, m \in \mathbb{N}} l(A_{nm}) \leq \sum \mu^*(A_n) + \epsilon.\]
 
-<p>그리고 $\bigcup \mathcal{C}_n$이 $A$를 덮으므로, $\mu^\ast$의 정의에 의해 $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$이다. ■</p>
+<p>Since $\bigcup \mathcal{C}_n$ covers $A$, by the definition of $\mu^\ast$, we have $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$. ■</p>
 
 <blockquote>
-  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. 임의의 $E$에 대해 다음을 만족하는 집합 $A$를 $\mu^\ast$에 대해 <strong>가측<sub>measurable</sub></strong>이라고 한다.</p>
+  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $A$ is said to be <strong>measurable<sub>measurable</sub></strong> with respect to $\mu^\ast$ if it satisfies the following for any $E$:</p>
 
 \[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
 </blockquote>
 
 <blockquote>
-  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast(N) = 0$인 $N$을 <strong>영집합<sub>null set</sub></strong>이라고 한다.</p>
+  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $N$ with $\mu^\ast(N) = 0$ is called a <strong>null set<sub>null set</sub></strong>.</p>
 </blockquote>
 
-<p>즉, 가측 집합은 $\mu^\ast$에 대해 임의의 집합을 ‘깔끔하게’ 분할하는 집합이다. 따라서 가측 집합으로만 이루어진 모임 위에서 $\mu^\ast$은 일반적인 측도와 같이 행동할 것으로 예측할 수 있다. 이 예측을 입증하는 것이 다음의 제한 정리이다.</p>
+<p>That is, a measurable set is one that ‘cleanly’ partitions any set with respect to $\mu^\ast$. Therefore, we can expect that $\mu^\ast$ will behave like an ordinary measure on the collection consisting only of measurable sets. The following restriction theorem validates this expectation.</p>
 
 <blockquote>
-  <p><strong>카라테오도리 제한 정리.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast$에 대해 가측인 집합들의 모임을 $\mathcal{A}$라고 할 때, 다음이 성립한다.</p>
+  <p><strong>Carathéodory Restriction Theorem.</strong> Let $\mu^\ast$ be an outer measure. Let $\mathcal{A}$ be the collection of sets that are measurable with respect to $\mu^\ast$. Then the following hold:</p>
 
   <ol>
-    <li>$\mathcal{A}$는 $\sigma$-대수이다.</li>
-    <li>$\mu^\ast |_\mathcal{A}$는 측도이다.</li>
-    <li>$\mathcal{A}$는 $\mu^\ast$의 모든 영집합을 포함한다.</li>
+    <li>$\mathcal{A}$ is a $\sigma$-algebra.</li>
+    <li>$\mu^\ast |_\mathcal{A}$ is a measure.</li>
+    <li>$\mathcal{A}$ contains all null sets of $\mu^\ast$.</li>
   </ol>
 </blockquote>
 
-<p><strong>증명.</strong></p>
+<p><strong>Proof.</strong></p>
 
-<p><strong>1. $\mathcal{A}$는 대수이다.</strong></p>
+<p><strong>1. $\mathcal{A}$ is an algebra.</strong></p>
 
-<p>여집합 닫힘은 자명하다. 유한 교집합 닫힘임을 보인다.</p>
+<p>Closure under complements is trivial. We show closure under finite intersections.</p>
 
-<p>$A, B$가 가측이라고 하자. $A \cap B$가 가측임을 보이기 위해 다음을 보이면 충분하다.</p>
+<p>Suppose $A, B$ are measurable. To show that $A \cap B$ is measurable, it suffices to prove:</p>
 
 \[\mu^*(E \cap (A \cap B)) + \mu^*(E \cap (A \cap B)^c) \leq \mu^*(E) \quad \cdots \quad (*)\]
 
-<p>$A, B$가 가측이므로 다음이 성립한다.</p>
+<p>Since $A, B$ are measurable, the following holds:</p>
 
 \[\begin{aligned}
 \mu^*(E) &amp;= \mu^*(E \cap A) + \mu^*(E \cap A^c) \\
 &amp;= \mu^*(E \cap A \cap B) + \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B) + \mu^*(E \cap A^c \cap B^c)
 \end{aligned}\]
 
-<p>따라서 $(\ast)$은 다음과 동치이다.</p>
+<p>Therefore, $(\ast)$ is equivalent to:</p>
 
 \[\begin{aligned}
 \mu^*(E \cap (A^c \cup B^c)) &amp;\leq \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B)  \quad \cdots \quad (**) \\ &amp;+ \mu^*(E \cap A^c \cap B^c)
 \end{aligned}\]
 
-<p>간단한 집합론으로부터 다음을 알 수 있다.</p>
+<p>From elementary set theory, we have:</p>
 
 \[A^c \cup B^c = (A \cap B^c) \cup (A^c \cap B) \cup (A^c \cap B^c)\]
 
-<p>따라서 $(\ast\ast)$가 성립한다. □</p>
+<p>Therefore, $(\ast\ast)$ holds. □</p>
 
-<p><strong>2. $\mathcal{A}$는 $\sigma$-대수이다.</strong></p>
+<p><strong>2. $\mathcal{A}$ is a $\sigma$-algebra.</strong></p>
 
-<p>$A_n \uparrow A$인 $\lbrace  A_n \rbrace  \subset \mathcal{A}$에 대해 $A \in \mathcal{A}$임을 보이면 충분하다. (why?)</p>
+<p>It suffices to show that for $\lbrace  A_n \rbrace  \subset \mathcal{A}$ with $A_n \uparrow A$, we have $A \in \mathcal{A}$. (Why?)</p>
 
-<p>외측도의 정의에 의해 $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$이다. $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$이라고 하자. $\bigsqcup C_n = A$이다. 또한,</p>
+<p>By the definition of outer measure, $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$. Let $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$. Then $\bigsqcup C_n = A$. Moreover,</p>
 
 \[\begin{aligned}
 \mu^*(E \cap A_n) &amp;= \mu^*(E \cap A_n \cap C_n) + \mu^*(E \cap A_n \cap C_n^c) \\
@@ -1663,61 +1682,61 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 &amp;= \sum^n_{k = 1} \mu^*(E \cap C_k)
 \end{aligned}\]
 
-<p>이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$이다. 그런데 $\lbrace  E \cap C_n \rbrace $이 $E \cap A$를 덮으므로, $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$이다.</p>
+<p>Therefore, $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$. Since $\lbrace  E \cap C_n \rbrace $ covers $E \cap A$, we have $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$. Therefore, $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$.</p>
 
-<p>따라서 임의의 $\epsilon &gt; 0$에 대해, 충분히 큰 $N$이 존재하여 $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$이다. 따라서,</p>
+<p>Thus, for any $\epsilon &gt; 0$, there exists a sufficiently large $N$ such that $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$. Therefore,</p>
 
 \[\begin{aligned}
 \mu^*(E \cap A_n^c) &amp;= \mu^*(E) - \mu^*(E \cap A_n) \\
 &amp;\leq \mu^*(E) - \mu^*(E \cap A) + \epsilon
 \end{aligned}\]
 
-<p>이므로 다음을 얻는다.</p>
+<p>whence we obtain:</p>
 
 \[\mu^*(E) \leq \mu^*(E \cap A_n) + \mu^*(E \cap A_n^c) \leq \mu^*(E) + \epsilon\]
 
-<p>$n \to \infty$로 보내면 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$이다. □</p>
+<p>Letting $n \to \infty$, we get $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$. □</p>
 
-<p><strong>3. $\mu^\ast|_\mathcal{A}$는 측도이다, 4. $\mathcal{A}$는 모든 영집합을 포함한다.</strong></p>
+<p><strong>3. $\mu^\ast|_\mathcal{A}$ is a measure, 4. $\mathcal{A}$ contains all null sets.</strong></p>
 
-<p>Left as an exercise to the readers. (어렵지 않음) ■</p>
+<p>Left as an exercise to the readers. (Not difficult) ■</p>
 
 <blockquote>
-  <p><strong>정의.</strong> $\mathcal{A}_0$가 대수라고 하자. $\rho: \mathcal{A}_0 \to [0, \infty]$가 <strong>예비측도</strong>라는 것은 다음을 만족한다는 것이다.</p>
+  <p><strong>Definition.</strong> Let $\mathcal{A}_0$ be an algebra. A function $\rho: \mathcal{A}_0 \to [0, \infty]$ is called a <strong>premeasure</strong> if it satisfies the following:</p>
 
   <ol>
     <li>$\rho(\varnothing) = 0$</li>
-    <li>쌍으로 서로소인 가산 집합족 $\lbrace  A_n \rbrace $에 대해, $\bigcup A_n \in \mathcal{A}_0$라면 $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
+    <li>For any pairwise disjoint countable collection $\lbrace  A_n \rbrace $, if $\bigcup A_n \in \mathcal{A}_0$, then $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
   </ol>
 </blockquote>
 
 <blockquote>
-  <p><strong>카라테오도리 확장 정리.</strong> 대수 $\mathcal{A}_0$ 위의 예비측도 $\rho$에 대해, 다음과 같이 정의하자.</p>
+  <p><strong>Carathéodory Extension Theorem.</strong> For a premeasure $\rho$ on an algebra $\mathcal{A}_0$, define:</p>
 
 \[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
 
-  <p>이 때, 다음이 성립한다.</p>
+  <p>Then the following hold:</p>
 
   <ol>
-    <li>$A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</li>
-    <li>$\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</li>
-    <li>$\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</li>
+    <li>If $A \in \mathcal{A}_0$, then $\mu^\ast(A) = \rho(A)$.</li>
+    <li>$\sigma(\mathcal{A}_0)$ is measurable with respect to $\mu^\ast$.</li>
+    <li>If $\rho$ is $\sigma$-finite, then $\mu^\ast|_{\sigma(\mathcal{A}_0)}$ is the unique measure that extends $\rho$ to $\sigma(\mathcal{A}_0)$.</li>
   </ol>
 </blockquote>
 
-<p><strong>증명.</strong></p>
+<p><strong>Proof.</strong></p>
 
-<p><strong>1. $A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</strong></p>
+<p><strong>1. If $A \in \mathcal{A}_0$, then $\mu^\ast(A) = \rho(A)$.</strong></p>
 
-<p>$A$가 $A$의 덮개이므로 $\mu^\ast(A) \leq \rho(A)$이다. 만약 $\mu^\ast(A) &lt; \rho(A)$라면 어떤 $A$의 덮개 $\lbrace  A_n \rbrace $이 존재하여 $\sum \rho(A_n) &lt; \rho(A)$이다. 그런데 $\rho$가 예비측도이므로 이는 모순이다. □</p>
+<p>Since $A$ is a cover of $A$, we have $\mu^\ast(A) \leq \rho(A)$. If $\mu^\ast(A) &lt; \rho(A)$, then there exists some cover $\lbrace  A_n \rbrace $ of $A$ such that $\sum \rho(A_n) &lt; \rho(A)$. However, since $\rho$ is a premeasure, this is a contradiction. □</p>
 
-<p><strong>2. $\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</strong></p>
+<p><strong>2. $\sigma(\mathcal{A}_0)$ is measurable with respect to $\mu^\ast$.</strong></p>
 
-<p>먼저 $\mathcal{A}_0$가 가측임을 보인다. 임의의 $A \in \mathcal{A}_0$에 대해 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$임을 보이면 충분하다. $\mu^\ast$의 정의에 의해, 임의의 $\epsilon &gt; 0$에 대해 어떤 $E$의 덮개 $\mathcal{C}$가 존재하여 다음이 성립한다.</p>
+<p>First, we show that $\mathcal{A}_0$ is measurable. For any $A \in \mathcal{A}_0$, it suffices to show $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$. By the definition of $\mu^\ast$, for any $\epsilon &gt; 0$, there exists some cover $\mathcal{C}$ of $E$ such that:</p>
 
 \[\sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon\]
 
-<p>$\mathcal{A}_0$가 대수이므로, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$이다. 따라서,</p>
+<p>Since $\mathcal{A}_0$ is an algebra, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$. Therefore,</p>
 
 \[\begin{aligned}
 \mu^*(E \cap A) + \mu^*(E \cap A^c) &amp;\leq \sum^\infty_{n = 1} \mu^*(A \cap C_n) + \sum^\infty_{n = 1} \mu^*(A^c \cap C_n) \\
@@ -1725,38 +1744,39 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 &amp;= \sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon
 \end{aligned}\]
 
-<p>(엄밀히 따지자면 $\sum^n_{k=1}$을 고려한 다음에 $n \to \infty$ 극한을 취해야 한다) 따라서 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$이며, $\mathcal{A}_0$는 가측이다. 카라테오도리 제한 정리에 의해 가측 집합은 $\sigma$-대수를 이루므로, $\sigma(\mathcal{A}_0)$ 또한 가측이다. □</p>
+<p>(Strictly speaking, one should consider $\sum^n_{k=1}$ and then take the limit $n \to \infty$) Therefore, $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$, and $\mathcal{A}_0$ is measurable. By the Carathéodory restriction theorem, measurable sets form a $\sigma$-algebra, so $\sigma(\mathcal{A}_0)$ is also measurable. □</p>
 
-<p><strong>3. $\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</strong></p>
+<p><strong>3. If $\rho$ is $\sigma$-finite, then $\mu^\ast|_{\sigma(\mathcal{A}_0)}$ is the unique measure that extends $\rho$ to $\sigma(\mathcal{A}_0)$.</strong></p>
 
-<p>먼저 $\rho &lt; \infty$를 가정하자. $\sigma(\mathcal{A}_0)$ 위에서 정의된 측도 $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치한다고 하자. 또한 $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$라고 하자. $\nu = \mu$임을 보인다.</p>
+<p>First, assume $\rho &lt; \infty$. Suppose a measure $\nu$ defined on $\sigma(\mathcal{A}_0)$ agrees with $\rho$ on $\mathcal{A}_0$. Let $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$. We show $\nu = \mu$.</p>
 
-<p>$E \in \sigma(\mathcal{A}_0)$라고 하자. 어떤 $E$의 덮개 $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$가 존재하여,</p>
+<p>Let $E \in \sigma(\mathcal{A}_0)$. There exists some cover $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$ of $E$ such that:</p>
 
 \[\sum \rho(A_n) \leq \mu(E) + \epsilon\]
 
-<p>이다. $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치하므로, $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$이다. 따라서 $\nu \leq \mu$이다.</p>
+<p>Since $\nu$ agrees with $\rho$ on $\mathcal{A}_0$, we have $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$. Therefore, $\nu \leq \mu$.</p>
 
-<p>이제 $B_n = \bigcup^n_{k=1}A_k$로 정의하고, $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$이라고 하자. $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$이므로 $\mu(B \setminus E) \leq \epsilon$이다. $\nu$가 측도이므로,</p>
+<p>Now define $B_n = \bigcup^n_{k=1}A_k$ and let $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$. Since $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$, we have $\mu(B \setminus E) \leq \epsilon$. Since $\nu$ is a measure,</p>
 
 \[\mu(A) = \lim \rho(B_n) = \lim \nu(B_n) = \nu(A)\]
 
-<p>따라서,</p>
+<p>Therefore,</p>
 
 \[\begin{aligned}
 \mu(E) \leq \mu(B) &amp;= \mu(B \setminus E) + \mu(E) \\
 &amp;\leq \epsilon + \nu(E)
 \end{aligned}\]
 
-<p>즉 $\mu \leq \nu$이다. 따라서 $\mu = \nu$이다.</p>
+<p>That is, $\mu \leq \nu$. Therefore, $\mu = \nu$.</p>
 
-<p>이제 $\rho$가 $\sigma$-유한하다고 가정하자. 어떤 집합족 $\lbrace  C_n \rbrace $이 존재하여 $C_n \uparrow X$이고, $\rho(C_n) &lt; \infty$이다. 앞선 논의에 의해 $C_n$에서 $\mu$와 $\nu$는 일치한다. 따라서,</p>
+<p>Now assume $\rho$ is $\sigma$-finite. There exists a collection $\lbrace  C_n \rbrace $ such that $C_n \uparrow X$ and $\rho(C_n) &lt; \infty$. By the preceding argument, $\mu$ and $\nu$ agree on $C_n$. Therefore,</p>
 
 \[\mu(A) = \lim \mu(A \cap C_i) = \lim \nu (A \cap C_i) = \nu(A)\]
 
-<p>이므로 $\mu$와 $\nu$는 전체 공간에서 일치한다. ■</p>
+<p>so $\mu$ and $\nu$ agree on the entire space. ■</p>
 
-<p>다음 글에서는 카라테오도리 정리를 이용하여 르베그 측도를 구성한 뒤, 모든 보렐 가측 집합은 르베그 가측 집합이지만 그 역은 성립하지 않음을 보인다.</p>
+<p>In the next article, we shall construct Lebesgue measure using Carathéodory’s theorem, and then show that whilst every Borel measurable set is Lebesgue measurable, the converse does not hold.</p>
+
 
   </div>
   <div style="margin-bottom: 6em"></div>
@@ -1878,64 +1898,68 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
   </div>
   <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
+    <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/02/24/algebra-measure-en"> 대수와 측도의 정의 </a>
+        <a href="/2025/02/24/algebra-measure/en"> Definitions of Algebra and Measure </a>
       </h1>
     <span class="post-date">24 Feb 2025</span>
     
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
       </div>
       
-      <div class="tag" onclick="location.href='/tags/측도론/'">
-        측도론
+      <div class="tag" onclick="location.href='/tags/measure-theory/'">
+        Measure Theory
       </div>
       
     </div>
-     <h2 id="1-비탈리-정리">1. 비탈리 정리</h2>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h2 id="1-vitalis-theorem">1. Vitali’s Theorem</h2>
 
 <blockquote>
-  <p><strong>정의.</strong> $\mu$가 집합 $X$ 위의 <strong>측도<sub>measure</sub></strong>라는 것은 다음을 만족한다는 것이다.</p>
+  <p><strong>Definition.</strong> A <strong>measure</strong> $\mu$ on a set $X$ is said to satisfy the following conditions:</p>
 
   <ol>
     <li>$\mu(\varnothing) = 0$</li>
-    <li>쌍으로 서로소<sub>pairwise disjoint</sub>인 가산 집합족 $\lbrace A_n \rbrace$에 대해, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$</li>
+    <li>For any countable collection of pairwise disjoint sets $\lbrace A_n \rbrace$, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$</li>
   </ol>
 </blockquote>
 
-<p>유감스럽게도 $X = \mathbb{R}$일 때, 측도 $\mu$는 실수의 모든 부분집합에 대해서 정의될 수 없다.</p>
+<p>Unfortunately, when $X = \mathbb{R}$, a measure $\mu$ cannot be defined on all subsets of the real numbers.</p>
 
 <blockquote>
-  <p><strong>비탈리 정리.</strong> 다음을 모두 만족하는 $\mathbb{R}$의 측도 $\mu$는 존재하지 않는다.</p>
+  <p><strong>Vitali’s Theorem.</strong> There does not exist a measure $\mu$ on $\mathbb{R}$ that satisfies all of the following conditions:</p>
 
   <ol>
-    <li>항등적으로 0이 아니다.</li>
-    <li>평행이동에 대해 보존적이다. 즉, 임의의 $r \in \mathbb{R}$에 대해 $\mu(A + r) = \mu(A)$.</li>
+    <li>It is not identically zero.</li>
+    <li>It is invariant under translation. That is, for any $r \in \mathbb{R}$, $\mu(A + r) = \mu(A)$.</li>
     <li>$\operatorname{dom} \mu = \mathcal{P}(\mathbb{R})$</li>
   </ol>
 </blockquote>
 
-<p><strong>증명.</strong> 그러한 측도 $\mu$가 존재한다고 가정하자. $\mathbb{R}$ 위에서 다음의 동치 관계를 정의하자.</p>
+<p><strong>Proof.</strong> Suppose such a measure $\mu$ exists. Define the following equivalence relation on $\mathbb{R}$:</p>
 
 \[x \sim y \iff x - y \in \mathbb{Q}\]
 
-<p>선택 공리에 의해 $[0, 1]/{\sim}$의 선택 함수 $\iota$가 존재한다. $V = \operatorname{im} \iota$라고 하자. $V$를 <strong>비탈리 집합<sub>Vitali set</sub></strong>이라고 부른다. 예를 들어 $V = \lbrace 0.1, \pi - 3, \sqrt{2} - 1, \dots \rbrace$이다. $\mu$는 $V$에서 정의될 수 없음을 보인다.</p>
+<p>By the axiom of choice, there exists a choice function $\iota$ for $[0, 1]/{\sim}$. Let $V = \operatorname{im} \iota$. We call $V$ a <strong>Vitali set</strong>. For example, $V = \lbrace 0.1, \pi - 3, \sqrt{2} - 1, \dots \rbrace$. We shall show that $\mu$ cannot be defined on $V$.</p>
 
-<p>$V$의 정의에 의해, $q \in \mathbb{Q}$에 대해 $V$와 $V + q$는 서로소이다. 또한 $[0, 1] \subset \bigcup_{q \in \mathbb{Q}} (V + q) \subset [-1, 3]$이다. 따라서,</p>
+<p>By the definition of $V$, for $q \in \mathbb{Q}$, $V$ and $V + q$ are disjoint. Moreover, $[0, 1] \subset \bigcup_{q \in \mathbb{Q}} (V + q) \subset [-1, 3]$. Therefore,</p>
 
 \[1 \leq \sum_{q \in \mathbb{Q}}\mu(V + q) \leq 4.\]
 
-<p>그런데 $\mu(V + q) = \mu(V)$이므로, $\mu(V) = 0$이면 왼쪽 부등식이 성립하지 않고 $\mu(V) &gt; 0$이면 오른쪽 부등식이 성립하지 않는다. 따라서 모순이다. ■</p>
+<p>However, since $\mu(V + q) = \mu(V)$, if $\mu(V) = 0$, then the left inequality fails, and if $\mu(V) &gt; 0$, then the right inequality fails. This is a contradiction. ■</p>
 
-<h2 id="2-sigma-대수">2. $\sigma$-대수</h2>
+<h2 id="2-sigma-algebra">2. $\sigma$-algebra</h2>
 
-<p>따라서 올바른 측도를 구축하기 위해서는 측도의 정의역을 적절히 제한할 필요가 있다. 이에 대수의 개념을 도입한다.</p>
+<p>Therefore, to construct a proper measure, it is necessary to appropriately restrict the domain of the measure. To this end, we introduce the concept of an algebra.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> 집합 $X$의 <strong>대수<sub>algebra</sub></strong> $\mathcal{A}_0$는 다음을 만족하는 집합족이다.</p>
+  <p><strong>Definition.</strong> An <strong>algebra</strong> $\mathcal{A}_0$ on a set $X$ is a collection of sets satisfying the following conditions:</p>
 
   <ol>
     <li>$\varnothing, X \in \mathcal{A}_0$</li>
@@ -1944,12 +1968,12 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
   </ol>
 </blockquote>
 
-<p><em>Remark.</em> 2번 공리와 드모르간의 법칙에 의해, 3번 공리는 $A \cap B \in \mathcal{A}_0$ 또한 시사한다.</p>
+<p><em>Remark.</em> By axiom 2 and De Morgan’s laws, axiom 3 also implies that $A \cap B \in \mathcal{A}_0$.</p>
 
-<p>대수의 3번 정의를 가산 합집합으로 강화하면 $\sigma$-대수의 정의를 얻는다. 즉,</p>
+<p>Strengthening the third condition of an algebra to countable unions yields the definition of a $\sigma$-algebra. That is,</p>
 
 <blockquote>
-  <p><strong>정의.</strong> 집합 $X$의 <strong>$\sigma$-대수</strong> $\mathcal{A}$는 다음을 만족하는 대수이다.</p>
+  <p><strong>Definition.</strong> A <strong>$\sigma$-algebra</strong> $\mathcal{A}$ on a set $X$ is an algebra satisfying the following condition:</p>
 
   <ol>
     <li>$\lbrace  A_n \rbrace _{n \in \mathbb{N}} \subset \mathcal{A}_0 \implies \bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$</li>
@@ -1957,24 +1981,24 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 </blockquote>
 
 <blockquote>
-  <p><strong>정리.</strong> $\lbrace \mathcal{A}_i \rbrace_{i \in I}$가 $X$의 $\sigma$-대수들의 모임이라면 $\bigcap_{i \in I}\mathcal{A}_i$ 또한 $X$의 $\sigma$-대수이다.</p>
+  <p><strong>Theorem.</strong> If $\lbrace \mathcal{A}_i \rbrace_{i \in I}$ is a collection of $\sigma$-algebras on $X$, then $\bigcap_{i \in I}\mathcal{A}_i$ is also a $\sigma$-algebra on $X$.</p>
 </blockquote>
 
-<p><strong>증명.</strong> $\sigma$-대수의 정의로부터 쉽게 증명할 수 있다. 그런데 이렇게만 적으면 재미 없으니까, 조금 독특한 증명을 남긴다. <strong>워시-타르스키 정리<sub>Łoś-Tarski theorem</sub></strong>에 따르면 1차 이론이 교집합에 대해 보존적일 필요충분조건은 1차 이론의 모든 문장이 $\Pi_1$ 문장인 것이다. 그리고 $\sigma$-대수의 세 공리는 모두 $\Pi_1$ 문장이므로, $\sigma$-대수는 교집합에 대해 보존적이다. ■</p>
+<p><strong>Proof.</strong> This can be proved easily from the definition of a $\sigma$-algebra. However, to make this more interesting, we provide a slightly unconventional proof. By the <strong>Łoś-Tarski theorem</strong>, a first-order theory is preserved under intersections if and only if every sentence of the first-order theory is a $\Pi_1$ sentence. Since all three axioms of a $\sigma$-algebra are $\Pi_1$ sentences, $\sigma$-algebras are preserved under intersections. ■</p>
 
 <blockquote>
-  <p><strong>따름정리.</strong> $\mathcal{C}$가 $X$의 부분집합으로 이루어진 집합족일 때, $\mathcal{C}$를 포함하는 가장 작은 $\sigma$-대수가 존재한다. 그러한 $\sigma$-대수를 $\sigma(\mathcal{C})$와 같이 적는다.</p>
+  <p><strong>Corollary.</strong> When $\mathcal{C}$ is a collection of subsets of $X$, there exists a smallest $\sigma$-algebra containing $\mathcal{C}$. Such a $\sigma$-algebra is denoted $\sigma(\mathcal{C})$.</p>
 </blockquote>
 
-<p><strong>증명.</strong> $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is an algebra containing } \mathcal{C} \rbrace$라고 하자. $\mathcal{P}(X) \in \mathcal{S}$이므로 $\mathcal{S}$는 공집합이 아니다. $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$이다.</p>
+<p><strong>Proof.</strong> Let $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is an algebra containing } \mathcal{C} \rbrace$. Since $\mathcal{P}(X) \in \mathcal{S}$, $\mathcal{S}$ is non-empty. Then $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$.</p>
 
-<p>대표적인 $\sigma$-대수의 예시로, 보렐 $\sigma$-대수를 살펴보자.</p>
+<p>As a representative example of a $\sigma$-algebra, let us examine the Borel $\sigma$-algebra.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> $\mathcal{G}$가 $\mathbb{R}$의 열린 집합들의 집합족이라고 하자. $\sigma(\mathcal{G})$를 <strong>보렐 $\sigma$-대수<sub>Borel $\sigma$-algebra</sub></strong>라고 하며, $\mathcal{B}$와 같이 적는다.</p>
+  <p><strong>Definition.</strong> Let $\mathcal{G}$ be the collection of open sets in $\mathbb{R}$. We call $\sigma(\mathcal{G})$ the <strong>Borel $\sigma$-algebra</strong> and denote it by $\mathcal{B}$.</p>
 </blockquote>
 
-<p>보렐 $\sigma$-대수는 <strong>보렐 위계<sub>Borel hierarchy</sub></strong>를 통해서 이해할 수도 있다. $\Sigma_1$을 열린 집합들의 모임, $\Pi_1$을 닫힌 집합들의 모임이라고 하자. 다음과 같이 정의한다.</p>
+<p>The Borel $\sigma$-algebra can also be understood through the <strong>Borel hierarchy</strong>. Let $\Sigma_1$ be the collection of open sets and $\Pi_1$ be the collection of closed sets. We define:</p>
 
 <ul>
   <li>$\Delta_n = \Sigma_n \cap \Pi_n$</li>
@@ -1982,15 +2006,16 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
   <li>$\Pi_n = \lbrace P : \exists S \in \Sigma_n \; P = S^c \rbrace$</li>
 </ul>
 
-<p>즉 $\Sigma_2 = F_\sigma$, $\Pi_2 = G_\delta$이다. 합집합을 $\exists$, 교집합을 $\forall$로 생각했을 때 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 정의의 형태가 유사함에 주목하라.</p>
+<p>That is, $\Sigma_2 = F_\sigma$ and $\Pi_2 = G_\delta$. Note that when we think of union as $\exists$ and intersection as $\forall$, the form of the definition is similar to the <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">arithmetic hierarchy</a>.</p>
 
 <blockquote>
-  <p><strong>정리.</strong> $\mathcal{B} = \Sigma_{\omega_1} = \Pi_{\omega_1} = \Delta_{\omega_1}$</p>
+  <p><strong>Theorem.</strong> $\mathcal{B} = \Sigma_{\omega_1} = \Pi_{\omega_1} = \Delta_{\omega_1}$</p>
 </blockquote>
 
-<p><strong>증명.</strong> 생략. 하지만 직관적으로 이해할 수 있다. $\mathcal{B}$는 가산 교집합과 가산 합집합, 그리고 여집합에 대해 닫혀 있어야 하므로 모든 가산 서수 $\alpha$에 대해 $\Sigma_\alpha, \Pi_\alpha, \Delta_\alpha \subset \mathcal{B}$이다. 이 사실로부터 초한 귀납을 취해 정리를 얻는다. ■</p>
+<p><strong>Proof.</strong> Omitted. However, this can be understood intuitively. Since $\mathcal{B}$ must be closed under countable intersections, countable unions, and complements, we have $\Sigma_\alpha, \Pi_\alpha, \Delta_\alpha \subset \mathcal{B}$ for all countable ordinals $\alpha$. From this fact, we obtain the theorem by transfinite induction. ■</p>
 
-<p>어떤 집합 위의 대수와 예비측도라는 것이 주어졌을 때, 이로부터 측도를 정의하는 방법이 알려져 있다. 이 방법을 카라테오도리 방법<sub>Carathéodory method</sub>이라고 부른다. 예비측도는 구성하기가 매우 쉽기 때문에, 이 방법을 이용하면 측도를 아주 쉽게 구성할 수 있다. 카라테오도리 방법에 대해서는 <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">다음 글</a>에서 알아본다.</p>
+<p>There is a known method for defining a measure from an algebra and a premeasure on some set. This method is called the <strong>Carathéodory method</strong>. Since premeasures are very easy to construct, using this method allows us to construct measures very easily. The Carathéodory method will be discussed in the <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">next post</a>.</p>
+
 
   </div>
   <div style="margin-bottom: 6em"></div>

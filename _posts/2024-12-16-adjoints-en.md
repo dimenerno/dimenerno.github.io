@@ -2,7 +2,7 @@
 layout: post
 title: "An Intuitive Understanding of Adjoints"
 date: 2024-12-16
-tags: [Mathematics, Category-theory]
+tags: [Mathematics, Category Theory]
 lang: en
 ---
 

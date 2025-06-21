@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     The Difference Between Product and Box Topologies, and Direct Product and Direct Sum from a Categorical Perspective &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/04/02/box-v-product/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                                               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">The Difference Between Product and Box Topologies, and Direct Product and Direct Sum from a Categorical Perspective</h1>
+  <span class="post-date">02 Apr 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'" >Category Theory</div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'" >Topology</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h2 id="product-topology-and-box-topology">Product Topology and Box Topology</h2>
+
+<p>The section on product topology and box topology in undergraduate topology presents a significant challenge for many students. Whilst the box topology appears far more intuitive at first glance, textbooks teach that the product topology is the more natural concept to work with than the box topology.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a collection of topological spaces $\lbrace  X_i \rbrace _{i \in I}$, the <strong>box topological space</strong> $\prod X_i$ is the topological space generated by the following basis:</p>
+
+\[\left\{ \prod U_i : U_i \text{ is open in } X_i \right\}\]
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a collection of topological spaces $\lbrace  X_i \rbrace _{i \in I}$, the <strong>product topological space</strong> $\prod X_i$ is the topological space generated by the following basis:</p>
+
+\[\left\{ \prod U_i : U_i \text{ is open in } X_i,\;  U_i \neq X_i \text{ for only finitely many } i\right\}\]
+</blockquote>
+
+<p>For instance, the neighbourhoods of $(1, 1, 1, \dots)$ in $\mathbb{R}^\omega$ are as follows:</p>
+
+<p><img src="/public/box-product.png" style="width: 550px; margin: 2em auto;" /></p>
+
+<p>Why is the product topology considered more natural than the box topology? The reason is related to how products of objects are defined in category theory.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $X, Y$ be objects in category $\mathcal{A}$. For $P \in \mathcal{A}$ and morphisms $\pi_X : P \to X$, $\pi_Y : P \to Y$, we call $P$ the <strong>product</strong> of $X, Y$ and write $P = X \times Y$ when the following condition is satisfied:</p>
+
+  <ul>
+    <li>For any $A \in \mathcal{A}$ and morphisms $f: A \to X$, $g: A \to Y$, there exists a unique morphism $i: A \to P$ such that the following diagram commutes:</li>
+  </ul>
+
+  <p><img src="/public/categorical-product.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<p>The above definition naturally generalises to products of three or more, or infinitely many objects. Readers familiar with the concept of limits will recognise that the product can be understood as the limit of a discrete category. Alternatively, the product can be understood as the <em>smallest</em> category that fully encodes the information of the given objects.</p>
+
+<p>In the category of sets, the product coincides with the Cartesian product. In particular, $\pi_X, \pi_Y$ are given by $(x, y) \mapsto x$ and $(x, y) \mapsto y$ respectively.</p>
+
+<p><strong>In the category of topological spaces, the product is the product topology, not the box topology.</strong> This is guaranteed by the following theorem:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The smallest topology on $\prod_{i \in I}X_i$ such that the projection functions $\pi_k : \prod_{i \in I}X_i \to X_k$ are continuous for each $k \in I$ is the product topology.</p>
+</blockquote>
+
+<p>Whilst the box topology also has the property that each projection function is continuous, the box topology is a <em>larger</em> topology than the product topology. Therefore, the box topology is not the categorical product.</p>
+
+<p>Let us examine a counterexample showing that the box topology is not a product. Consider $\mathbb{R}^\omega$ with the box topology. If the box topology were the categorical product, then for any continuous functions $f_k: \mathbb{R} \to \mathbb{R}$, there would exist a continuous function $i : \mathbb{R} \to \mathbb{R}^\omega$ such that $\pi_k \circ i = f_k$. If $f_k: x \mapsto kx$, then $i$ would be $x \mapsto (x, 2x, 3x, \dots)$. In the box topology, $U = (0, 1)^\omega$ is an open set, so if $i$ were continuous, then $i^{-1}(U)$ would be an open set. However, $i^{-1}(U) = \lbrace 0 \rbrace $, so the box topology does not satisfy the property of a product.</p>
+
+<h2 id="direct-product-and-direct-sum">Direct Product and Direct Sum</h2>
+
+<p>The difference between the box topology and product topology lies in whether the entire space or only finitely many indices are non-trivial. A similar difference can be found in algebra.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a collection of vector spaces $\lbrace  V_i \rbrace _{i \in I}$, the <strong>direct product</strong> $\prod V_i$ is defined as follows:</p>
+
+\[\prod V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i \right\}\]
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a collection of vector spaces $\lbrace  V_i \rbrace _{i \in I}$, the <strong>direct sum</strong> $\bigoplus V_i$ is defined as follows:</p>
+
+\[\bigoplus V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i,\; v_i \neq 0 \text{ for only finitely many }i \right\}\]
+</blockquote>
+
+<p>Vector operations are defined term-wise. The same definitions of direct product and direct sum can be applied to groups as well, not just vector spaces.</p>
+
+<p>From the similarity between the definitions of direct product and box topology, and direct sum and product topology, one might think that the direct sum corresponds to the categorical product, but <strong>this is not the case.</strong> In algebra, <strong>the direct product corresponds to the categorical product.</strong> The direct sum does not generally satisfy the conditions of a categorical product.</p>
+
+<p>Consider the following example: Let us examine the direct sum $\mathbb{R}^\omega$ of one-dimensional real spaces $\mathbb{R}$. If the direct sum were the categorical product, then for any linear maps $f_k: \mathbb{R} \to \mathbb{R}$, there would exist a continuous function $i : \mathbb{R} \to \mathbb{R}^\omega$ such that $\pi_k \circ i = f_k$. If $f_k: x \mapsto x$, then $i$ would be $x \mapsto (x, x, x, \dots)$. However, $i(1) = (1, 1, 1, \dots) \notin \mathbb{R}^\omega$, so the direct sum does not satisfy the property of a product.</p>
+
+<p>Instead, the direct sum corresponds to the <strong>categorical sum</strong>. The categorical sum is also called a <strong>coproduct</strong> because it is the dual of the product.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $X, Y$ be objects in category $\mathcal{A}$. For $S \in \mathcal{A}$ and morphisms $\sigma_X : X \to S$, $\sigma_Y : Y \to S$, we call $S$ the <strong>sum</strong> of $X, Y$ and write $S = X + Y$ when the following condition is satisfied:</p>
+
+  <ul>
+    <li>For any $A \in \mathcal{A}$ and morphisms $f: X \to A$, $g: Y \to A$, there exists a unique morphism $i: S \to A$ such that the following diagram commutes:</li>
+  </ul>
+
+  <p><img src="/public/categorical-sum.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<p>Let us revisit the earlier example. Consider the direct sum $\bigoplus_\omega \mathbb{R}$. The morphism $\sigma_k: \mathbb{R} \to \bigoplus_\omega \mathbb{R}$ is given by:</p>
+
+\[x \mapsto (0, \dots, 0, x, 0, \dots) \quad \text{($x$ is at the $k$th index)}\]
+
+<p>Let $A = \mathbb{R}$ and consider the identity morphism $f_k : \mathbb{R} \to \mathbb{R}$. If $\bigoplus_\omega \mathbb{R}$ is the categorical sum, then there must exist a continuous function $i : \bigoplus_\omega \mathbb{R} \to \mathbb{R}$ such that $i \circ \sigma_k = f_k$. Indeed, this exists as follows:</p>
+
+\[i: (x_i)_{i \in \omega} \mapsto \sum_{i \in \omega} x_i\]
+
+<p>Note that $i$ is well-defined because elements of $\bigoplus_\omega \mathbb{R}$ have only finitely many non-trivial terms. Conversely, this example shows that the direct product $\mathbb{R}^\omega$ is not the categorical sum. In the case of the direct product, $i$ is not well-defined. This can be seen by substituting $(1, 1, 1, \dots)$ into $i$.</p>
+
+<p>For groups, the operations corresponding to categorical products and categorical sums differ slightly depending on whether we consider the general category of groups or the category of abelian groups. I shall leave this as a brief note.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Algebraic Definition</th>
+      <th>Categorical Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Free Product</td>
+      <td>Set of formal words + concatenation operation</td>
+      <td>Sum in $\mathbf{Grp}$</td>
+    </tr>
+    <tr>
+      <td>Direct Sum</td>
+      <td>Set of tuples with finitely many non-trivial terms + term-wise operation</td>
+      <td>Sum in $\mathbf{Ab}$</td>
+    </tr>
+    <tr>
+      <td>Direct Product</td>
+      <td>Set of tuples + term-wise operation</td>
+      <td>Product in $\mathbf{Grp}$</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

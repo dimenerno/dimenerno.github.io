@@ -2,7 +2,7 @@
 layout: post
 title: "On Reference — Character Model and Intentionalism"
 date: 2025-01-13
-tags: [Philosophy, Philosophy Of Language]
+tags: [Philosophy, Philosophy of Language]
 lang: en
 related:
     - "On Reference — Descriptivism and Causal Theory"

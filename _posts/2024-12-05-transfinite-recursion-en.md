@@ -2,7 +2,7 @@
 layout: post
 title: "Transfinite Induction and Transfinite Recursion"
 date: 2024-12-05
-tags: [Mathematics, Set theory]
+tags: [Mathematics, Set Theory]
 lang: en
 ---
 

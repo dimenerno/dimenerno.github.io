@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Can the Mind Be Reduced to a Machine: Gödel's Disjunction and the Penrose-Lucas Argument &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/02/09/godel-lucas-penrose/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                                               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Can the Mind Be Reduced to a Machine: Gödel's Disjunction and the Penrose-Lucas Argument</h1>
+  <span class="post-date">09 Feb 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'" >Philosophy</div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'" >Logic</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/b71a00d7-efdf-4ec3-ad5c-cc32b67cf70c/image.jpeg" alt="" /></p>
+
+<blockquote>
+  <p>This article is a summary of <a href="/public/On the question of whether the mind can be mechanized 1.pdf">Peter Koellner, <em>On the question of whether the mind can be mechanized</em> (2018)</a>.</p>
+</blockquote>
+
+<p><strong>Abstract.</strong> The Church-Turing thesis and Gödel’s incompleteness theorems suggest the existence of mathematical truths that cannot be proved mechanically. However, if an ideal human mind can prove all mathematical truths, then the conclusion follows that the ideal human mind is not equivalent to a machine. This article examines the arguments of Lucas and Penrose, who attempt to establish anti-mechanism in such a manner, and introduces formal proofs that refute these arguments.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The following are well-known results in logic:</p>
+
+<ul>
+  <li>
+    <p><strong>Church-Turing Thesis.</strong> To be <strong>computable</strong> by an ideal machine is to be implementable by a Turing machine.</p>
+  </li>
+  <li>
+    <p><strong>Gödel’s Incompleteness Theorem.</strong> If $F$ is a formal system satisfying certain conditions, then there exists a sentence that is true but unprovable in $F$.</p>
+  </li>
+  <li>
+    <p><strong>Formal System-Turing Machine Correspondence.</strong> If $F$ is a formal system satisfying certain conditions, then there exists a Turing machine that enumerates the propositions provable in $F$.</p>
+  </li>
+</ul>
+
+<p>Combining these three theses with the fact that we humans appear to be capable of grasping mathematical truths not captured by formal systems—such as the consistency of arithmetic—the incompleteness theorem appears to suggest that the extension of mathematical results derivable by an ideal human mind exceeds the extension of results derivable by an ideal finite machine. That is, the incompleteness theorem appears to suggest anti-mechanism: that the mind cannot be reduced to a machine.</p>
+
+<p>In this article, we examine how far this suggestion can be justified. As a result, we shall show that whilst the incompleteness theorem suggests anti-mechanism <em>or</em> Platonism, it does not directly suggest anti-mechanism.</p>
+
+<h2 id="1-gödels-disjunction">1. Gödel’s Disjunction</h2>
+
+<p>Gödel argued that from the incompleteness theorem, it follows that <em>at least one</em> of the following two positions is true. We shall call this <strong>Gödel’s Disjunction</strong>.</p>
+
+<ol>
+  <li>
+    <p><strong>Anti-mechanism:</strong> The mathematical results derivable by an ideal human mind always exceed the mathematical results derivable by an ideal finite machine. Therefore, the human mind cannot be reduced to a machine.</p>
+  </li>
+  <li>
+    <p><strong>Platonism:</strong> There exist mathematical truths that cannot be grasped by an ideal human mind. Therefore, mathematical truth exists independently of the human mind.</p>
+  </li>
+</ol>
+
+<p>It is noteworthy that both positions are contrary to materialist philosophy. Whilst Gödel was generally reserved about philosophical arguments, he argued strongly that this particular argument was a “mathematically established fact”. Our first task is to verify whether this argument is indeed a “mathematically established fact”.</p>
+
+<h3 id="11-gödels-three-claims">1.1. Gödel’s Three Claims</h3>
+
+<p>Let us introduce some notation.</p>
+
+<ol>
+  <li>
+    <p>$F$ is the set of all sentences that the formal system $F$ can prove.</p>
+  </li>
+  <li>
+    <p>$K$ is the set of all sentences that an ideal human mind can prove.</p>
+  </li>
+  <li>
+    <p>$T$ is the set of true sentences.</p>
+  </li>
+</ol>
+
+<p>Throughout this article, we shall assume $K \subseteq T$. We also presuppose that $F$ is a formal system to which Gödel’s incompleteness theorem applies—that is, a consistent system containing Peano arithmetic (in fact, this condition can be weakened to Robinson arithmetic).</p>
+
+<p>Before proceeding to the main discussion, let us review Gödel’s incompleteness theorem.</p>
+
+<blockquote>
+  <p><strong>Gödel’s Incompleteness Theorem.</strong> When $F$ is a consistent mathematical system containing arithmetic, the following holds:</p>
+
+  <ul>
+    <li><strong>First Theorem.</strong> There exists a proposition that is true but unprovable in $F$.</li>
+    <li><strong>Second Theorem.</strong> The consistency of $F$ is an instance of the First Theorem.</li>
+  </ul>
+</blockquote>
+
+<p>Incidentally, whilst the incompleteness theorem traditionally targets Peano arithmetic, the incompleteness theorem also holds for weaker arithmetic systems, including Robinson arithmetic.</p>
+
+<h4 id="111-first-claim">1.1.1. First Claim</h4>
+
+<p>Gödel first claims the following:</p>
+
+<blockquote>
+  <p><strong>Claim 1.</strong> $F \subseteq T \implies F \subsetneq T$</p>
+</blockquote>
+
+<p>The proof is as follows. If $F \subseteq T$, then $\mathrm{Con}(F) \in T$. However, by the Second Incompleteness Theorem, $\mathrm{Con}(F) \notin F$. Therefore, $F \subsetneq T$.</p>
+
+<h4 id="112-second-claim">1.1.2. Second Claim</h4>
+
+<p>Gödel’s second claim is as follows:</p>
+
+<blockquote>
+  <p><strong>Claim 2.</strong> $K(F \subseteq T) \implies F \subsetneq K$</p>
+</blockquote>
+
+<p>The proof is as follows. If $K(F \subseteq T)$, then $\mathrm{Con}(F) \in K$. However, as we have seen, $F \subseteq T \implies \mathrm{Con}(F) \notin F$, so $F \subsetneq K$.</p>
+
+<p>But if $F \subsetneq K$ is true, how should we understand this? One approach is to consider a hierarchy of formal systems.</p>
+
+<p>Gödel emphasises that the unprovable sentences suggested by the incompleteness theorem need not be <em>absolutely</em> unprovable. This is because sentences unprovable in formal system $F$ may become provable in systems of higher order than $F$. For example, if $\mathsf{PA}$ is consistent, then whilst $\mathsf{PA}$ cannot prove $\mathrm{Con}(\mathsf{PA})$, it is known that second-order Peano arithmetic $\mathsf{PA}_2$ can prove $\mathrm{Con}(\mathsf{PA})$. Of course, $\mathsf{PA}_2$ cannot prove $\mathrm{Con}(\mathsf{PA}_2)$, but this is provable in third-order Peano arithmetic, and such a hierarchy continues.</p>
+
+<p>This entire hierarchy appears to be subsumed under $K$. From this perspective, each formal system is like a set, and $K$ is like the collection of all sets. And just as the collection of all sets cannot be a set, an analogy holds that $K$ cannot be a formal system.</p>
+
+<h4 id="113-third-claim">1.1.3. Third Claim</h4>
+
+<p>However, one might wonder: instead of writing “Claim 2” as a conditional, could we not claim $F \subsetneq K$ by asserting that $K(F \subsetneq T)$ is true?</p>
+
+<p>Gödel points out that the incompleteness theorem alone cannot lead to such a claim. This is because the possibility of the existence of a formal system $F^*$ that coincides with $K$ cannot be completely ruled out (note that the previous discussion regarding higher-order Peano arithmetic was merely an analogy).</p>
+
+<p>Regarding this, Gödel says:</p>
+
+<blockquote>
+  <p>[If such a formal system exists] human reason—at least in its mathematical aspect—is equivalent to a finite machine. However, that machine cannot completely understand its own operation [in the sense that it cannot prove its own consistency]. This inability would be mistaken by humans as the infinite extensibility of the mind.</p>
+</blockquote>
+
+<p>Instead, Gödel’s third claim is as follows. This claim is Gödel’s disjunction.</p>
+
+<blockquote>
+  <p><strong>Claim 3.</strong> $\forall F (F \subsetneq K) \;  \lor \; K \subsetneq T$</p>
+</blockquote>
+
+<p>The proof is as follows. Suppose there is a formal system $F^<em>$ such that $F^</em> = K$. Since we have assumed $K \subset T$, we have $F^* \subset T$, and by Claim 1, $F^* \subsetneq T$.</p>
+
+<p>The former signifies anti-mechanism, whilst the latter signifies Platonism.</p>
+
+<h3 id="12-formalisation-of-gödels-disjunction">1.2. Formalisation of Gödel’s Disjunction</h3>
+
+<p>So far, we have presented Gödel’s three claims and introduced brief proofs thereof. However, these proofs were not actually precise. This is because we did not introduce rigorous definitions of $F, K, T$, nor did we distinguish between what content can be proved <em>within</em> a formal system and what content can only be proved <em>outside</em> a formal system. To overcome this limitation, let us rigorously formalise $F, K, T$ and the proofs of Gödel’s three claims.</p>
+
+<h4 id="121-f">1.2.1. $F$</h4>
+
+<p>$F$ is the easiest concept to formalise. In particular, the following facts are known:</p>
+
+<blockquote>
+  <p><strong>Formal System-Turing Machine Correspondence.</strong> When $F$ is a recursively axiomatisable formal system, there exists a Turing machine that recursively enumerates the propositions provable from $F$.</p>
+</blockquote>
+
+<p>Additionally, the formal systems of interest to us are recursively axiomatisable.</p>
+
+<blockquote>
+  <p><strong>Recursiveness of Kleene Predicates.</strong> The operation of Turing machines can be formalised within Peano arithmetic. Specifically, there exists a first-order logical predicate $K(x, y, z)$ that determines whether a Turing machine with Gödel number $x$, when given natural number $y$ as input, terminates with a computation record with Gödel number $z$.</p>
+</blockquote>
+
+<p>As a corollary of the above two theorems, we obtain:</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> Formal systems are recursively enumerable. That is, the “$e$-th formal system” $F_e$ can be defined in Peano arithmetic.</p>
+</blockquote>
+
+<p>For example, $F_{123}$ might be Robinson arithmetic, $F_{456}$ might be ZFC, and so forth. $F_{123}(\ulcorner 1 + 1 = 2 \urcorner)$ means that $1 + 1 = 2$ is provable in Robinson arithmetic. And $\mathsf{PA} \vdash F_{123}(\ulcorner 1 + 1 = 2 \urcorner)$.</p>
+
+<h4 id="122-t">1.2.2. $T$</h4>
+
+<p>The most promising formal definition of $T$ is <strong>Tarski’s typed truth definition</strong>. Whilst Tarski’s typed truth definition is a syntactic rather than semantic definition, it is suitable for the purposes of the present discussion. Tarski’s definition consists of axioms including the following:</p>
+
+<ul>
+  <li>
+    <p>$\forall x : \mathrm{Sent}(x) \rightarrow (T(\hat{\lnot} x) \leftrightarrow \lnot T(x))$</p>
+  </li>
+  <li>
+    <p>$\forall x, y : [\mathrm{Sent}(x) \land \mathrm{Sent}(y)] \rightarrow [T(x\; \hat{\lor} \;y) \leftrightarrow T(x) \lor T(y)]$</p>
+  </li>
+</ul>
+
+<p>Here, $\mathrm{Sent}$ determines whether a given sentence (or its Gödel number) is well-formed. Meanwhile, $\hat{\quad}$ is introduced to distinguish between language and meta-language; a detailed explanation is not particularly important, so we shall leave it at this.</p>
+
+<h4 id="123-k">1.2.3. $K$</h4>
+
+<p>$K$ is the most challenging of the three concepts. Not only can we not provide a complete semantic definition, but there are also questionable aspects to providing a syntactic definition. However, since the goal of this article is to demonstrate that $F \subsetneq K$ cannot be directly shown from the incompleteness theorem, according to the principle of charity, we shall present the following syntactic definition that maximally guarantees the extension of $K$.</p>
+
+<blockquote>
+  <p><strong>Syntactic Definition of $K$.</strong></p>
+
+  <ol>
+    <li>When $\phi$ is logically true, $K\phi$.</li>
+    <li>For arbitrary sentences $\phi, \psi$: $(K(\phi \rightarrow \psi) \land K\phi) \rightarrow K\psi$.</li>
+    <li>For arbitrary sentence $\phi$: $K\phi \rightarrow \phi$.</li>
+    <li>For arbitrary sentence $\phi$: $K\phi \rightarrow KK\phi$.</li>
+  </ol>
+</blockquote>
+
+<p>Here, $K$ is a logical operator. Therefore, we write $K\phi$ rather than $K(\phi)$ or $K(\ulcorner \phi \urcorner)$. For the reason why $K$ should be regarded as a logical operator rather than a predicate, see footnote 29 of the original paper.</p>
+
+<h4 id="124-mathsfea-and-mathsfea_t">1.2.4. $\mathsf{EA}$ and $\mathsf{EA}_T$</h4>
+
+<p>Let us construct a formal system capable of reasoning about $F, K, T$. Firstly, as we saw in 1.2.1, $F$ is already formalisable in $\mathsf{PA}$, so no special measures are required.</p>
+
+<p>Let $L_{\mathsf{EA}}$ be defined as $\mathsf{PA}$ with the function $K$ added. Let $\Sigma$ be the collection of axioms of $\mathsf{PA}$ and the axioms of the syntactic definition of $K$ (where the induction schema of $\mathsf{PA}$ is taken over sentences of $L_{\mathsf{EA}}$ rather than $L_{\mathsf{PA}}$). The axioms of $\mathsf{EA}$ are $\Sigma \cup K\Sigma$.</p>
+
+<p>Let $L_{\mathsf{EA}<em>T}$ be defined as $\mathsf{EA}$ with the predicate $T$ added. Let $\Sigma^*$ be the collection of $\Sigma$ and the axioms of the syntactic definition of $T$ (where the induction schema of $\mathsf{PA}$ is taken over sentences of $L</em>{\mathsf{EA}_T}$). The axioms of $\mathsf{EA}_T$ are $\Sigma^* \cup K\Sigma^*$.</p>
+
+<h3 id="13-formal-proof-of-gödels-disjunction">1.3. Formal Proof of Gödel’s Disjunction</h3>
+
+<p>We show that Gödel’s three claims are formally provable in $\mathsf{EA}_T$.</p>
+
+<h4 id="131-first-claim">1.3.1. First Claim</h4>
+
+<blockquote>
+  <p><strong>Claim 1.</strong> $F \subseteq T \implies F \subsetneq T$</p>
+</blockquote>
+
+<p>This claim is easily provable in $\mathsf{EA}_T$. This is because it is a direct consequence of Gödel’s incompleteness theorem.</p>
+
+<h4 id="132-second-claim">1.3.2. Second Claim</h4>
+
+<blockquote>
+  <p><strong>Claim 2.</strong> $K(F \subseteq T) \implies F \subsetneq K$</p>
+</blockquote>
+
+<p>This claim is also provable in $\mathsf{EA}_T$. In fact, the following stronger result is provable:</p>
+
+<blockquote>
+  <p><strong>Reinhardt’s First Theorem.</strong> For arbitrary sentence $\phi$, if</p>
+
+\[\mathsf{EA} \vdash K(F(\ulcorner \phi \urcorner) \rightarrow \phi)\]
+
+  <p>then there exists some sentence $\psi$ such that</p>
+
+\[\mathsf{EA} \vdash K\psi \land K\lnot F(\ulcorner \psi \urcorner)\]
+
+  <p>(that is, $\mathsf{EA} \vdash F \subsetneq K$).</p>
+</blockquote>
+
+<h4 id="133-third-claim">1.3.3. Third Claim</h4>
+
+<blockquote>
+  <p><strong>Claim 3.</strong> $\forall F (F \subsetneq K) \;  \lor \; K \subsetneq T$</p>
+</blockquote>
+
+<p>Expanding $F \subsetneq K$ in the above claim gives:</p>
+
+\[\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land K(x) \land x \notin F_e  )\]
+
+<p>And expanding $K \subsetneq T$ gives:</p>
+
+\[\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot  K(x) \land \lnot K(\lnot x))\]
+
+<p>However, there is a problem here. As mentioned earlier, since $K$ is a logical operator rather than a predicate, it cannot be placed within a quantified context. Just as $\exists \phi : \lnot\phi$ is not grammatically correct. To circumvent this problem, instead of writing $\exists x \; K(x)$, we write $\exists x\; T(\hat{K}x)$. Therefore, the correct formalisation of Claim 3 is as follows:</p>
+
+\[\begin{gather}
+\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(\hat{K}x) \land x \notin F_e  ) \\\\
+\lor\\\\
+\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot T(\hat{K}x) \land \lnot T(\hat{K}\lnot x))
+\end{gather}\]
+
+<p>Let us call the above formula $\mathrm{GD}$. The following theorem is known:</p>
+
+<blockquote>
+  <p><strong>Reinhardt’s Second Theorem.</strong> $\mathsf{EA}_T \vdash \mathrm{GD}$.</p>
+</blockquote>
+
+<p>Therefore, <strong>Gödel’s disjunction is provable under an appropriate formal system.</strong></p>
+
+<h2 id="2-lucas-and-penrose">2. Lucas and Penrose</h2>
+
+<h3 id="21-the-consistency-decision-problem">2.1. The Consistency Decision Problem</h3>
+
+<p>Lucas and Penrose attempt to directly show $F \subsetneq K$ by claiming $K(F \subseteq T)$. That is, Lucas and Penrose argue that the ideal human mind has the ability to determine whether any given formal system is consistent or not, and accordingly claim $\forall F \subseteq T: F \subsetneq K$.</p>
+
+<p>However, it is highly questionable whether the ideal human mind has the ability to determine the consistency of arbitrary formal systems. For instance, let $R$ be the Riemann hypothesis. $R$ can be formalised as a $\Pi_1$ proposition in Peano arithmetic. And as mentioned earlier, since $\mathsf{PA}$ is $\Sigma_1$-complete, the consistency of $\mathsf{PA} + R$ is equivalent to $R$. This example shows that there are cases where the consistency decision problem for formal systems is at least as difficult as the Riemann hypothesis.</p>
+
+<h3 id="22-relative-consistency-of-mechanism">2.2. Relative Consistency of Mechanism</h3>
+
+<p>This fact alone would put Lucas and Penrose’s project in difficulty, but we can go further and show a more powerful fact. That fact is that $K(F\subseteq T)$ is formally unprovable. This is because mechanistic theses are consistent with $\mathsf{EA}_T$.</p>
+
+<p>Before showing this, it is useful to classify mechanistic theses according to their strength. Reinhardt’s classification adopted in this article is as follows:</p>
+
+<ul>
+  <li><strong>Weak Mechanical Thesis (WMT):</strong> $\exists e \; ( K = F_e )$</li>
+  <li><strong>Strong Mechanical Thesis (SMT):</strong> $K\exists e\; (K = F_e)$</li>
+  <li><strong>Super Strong Mechanical Thesis (SSMT):</strong> $\exists e \; K(K = F_e)$</li>
+</ul>
+
+<p>To explain each:</p>
+
+<ul>
+  <li>WMT: The ideal human mind is equivalent to <em>some</em> Turing machine.</li>
+  <li>SMT: The ideal human mind knows that it is equivalent to <em>some</em> Turing machine.</li>
+  <li>SSMT: The ideal human mind knows that it is equivalent to a <em>specific</em> Turing machine.</li>
+</ul>
+
+<p>The following is known:</p>
+
+<blockquote>
+  <p><strong>Reinhardt’s Third Theorem.</strong> $\mathsf{EA}_T + \mathsf{SSMT}$ is inconsistent.</p>
+</blockquote>
+
+<p>Therefore, assuming the axioms of $\mathsf{EA}<em>T$, the super strong mechanical thesis is false. In short, even if a computer equivalent to the ideal human mind were given, we could not know whether it is _truly</em> equivalent to the human mind.</p>
+
+<p>However, this fact alone is insufficient to support Lucas and Penrose. This is because the core thesis of mechanism is not the method of identifying machines with capabilities equivalent to ours, but the existence of machines with capabilities equivalent to ours. Regarding this, the following is known:</p>
+
+<blockquote>
+  <p><strong>Reinhardt’s Fourth Theorem.</strong> $\mathsf{EA}_T + \mathsf{WMT}$ is consistent.</p>
+</blockquote>
+
+<p>Furthermore, the following is known:</p>
+
+<blockquote>
+  <p><strong>Carlson’s Theorem.</strong> $\mathsf{EA}_T + \mathsf{SMT}$ is consistent.</p>
+</blockquote>
+
+<p>That is, $\mathsf{EA}_T$ not only leaves open the possibility of the existence of a machine equivalent to the ideal human mind, but also leaves open the possibility that the human mind can prove this fact itself. These facts show that attempts to establish anti-mechanism solely through the incompleteness theorem are bound to fail.</p>
+
+<h3 id="23-gödels-insight">2.3. Gödel’s Insight</h3>
+
+<p>Remarkably, Gödel appears to have understood all of this discussion from the beginning. According to Wang’s recollections of conversations with Gödel:</p>
+
+<blockquote>
+  <p>The incompleteness theorem does not rule out the possibility of a computer that produces results equivalent to human mathematical intuition [$\exists e\; (F_e = K)$]. However, it does suggest the following: if that possibility—though the probability is extremely low due to other considerations—is true, then either we cannot know the design of such a computer [$\lnot K (F_e = K)$], or we cannot know that the computer operates correctly [$\lnot K (F_e \subseteq T)$].</p>
+</blockquote>
+
+<s>Gödel is a god</s>
+
+<h2 id="3-conclusion">3. Conclusion</h2>
+
+<p>The discussion thus far should be sufficient to prevent further attempts to directly derive anti-mechanism from Gödel’s disjunction. However, there is another approach to arguing for anti-mechanism from logical results. This argument, commonly called <strong>Penrose’s new argument</strong>, is an argument that puts forward type-free truth, as distinguished from Tarski’s typed truth. The formalisation of this argument and its implications will be addressed in Part 2 of this paper.</p>
+
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

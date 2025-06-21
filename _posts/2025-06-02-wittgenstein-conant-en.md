@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "Are Logically Alien Beings Possible? Descartes, Kant, Frege, and the Tractus Logico-Philosophicus"
+title: "Are Logically Alien Beings Possible? Descartes, Kant, Frege, and the Tractus"
 date: 2025-06-02
-tags: ["Philosophy", "Logic", "Philosophy Of Language"]
+tags: ["Philosophy", "Logic", "Philosophy of Language"]
 related:
 lang: en
 ---
 
 > This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
-> This article is a summary of <a href="/public/Search for Logically Alien Thought.pdf">James Conant, _The Search for Logically Alien Thought: Descartes, Kant, Frege, and the_ Tractatus (1991)</a>. Content in parentheses represents the author's supplementary remarks (i.e., speculation).
+> This article is a summary of <a href="/public/Search for Logically Alien Thought.pdf">James Conant, _The Search for Logically Alien Thought: Descartes, Kant, Frege, and the_ Tractatus (1991)</a>. THe post includes the author's supplementary remarks.
 
 ## Abstract
 
@@ -116,9 +116,9 @@ _Continued in Part 2_
 
 ---
 
-<a href="#sup1" id="sub1">1.</a> For readers who are concerned with [such matters](https://namu.wiki/w/한국%20칸트%20학계%20번역어%20논쟁), the author uses the terminology of the Acanet Kant Complete Works, which translates 'a priori' as '선험적', 'transzendent' as '초험적', and 'transzendental' as '초월적'.
+<a href="#sup1" id="sub1">1.</a> Note that in Kantian philosophy, 'transcendent' means "beyond the limits of experience," while 'transcendental' means "related to the preconditions of rational judgment."
 
-<a href="#sup2" id="sub2">2.</a> Descartes's claim is strangely Kantian. Indeed, Wilson<sub>Margaret Wilson</sub> evaluates Descartes's position on logical laws as the progenitor of Kant's transcendental philosophy and modern naturalism. However, as will become apparent later, there is an unbridgeable gap between Descartes's position on logical laws and Kant's position.
+<a href="#sup2" id="sub2">2.</a> Descartes's claim is strangely Kantian. Indeed, Margaret Wilson evaluates Descartes's position on logical laws as the progenitor of Kant's transcendental philosophy and modern naturalism. However, as will become apparent later, there is an unbridgeable gap between Descartes's position on logical laws and Kant's position.
 
 <a href="#sup3" id="sub3">3.</a> Strictly speaking, a torus. A torus is the surface of a doughnut.
 
@@ -128,7 +128,7 @@ _Continued in Part 2_
 
 > If we take the sentences "illogical thought is impossible" or "we cannot think illogically" to indeed present us with _thoughts_ (with senses which we can affirm the truth of), then we concede what a moment ago we wished to deny (namely, that the negation of these sentences present us with a genuine content, one which is able to stand up to the demand for judgment). But if we conclude that these words (which we want to utter in response to the psychologistic logician) do not express a thought with a sense, then aren't _we_, if we judge psychologism to be false, equally victims of an illusion of judgment? This is the problem at the heart of the onion.
 
-That is, the author of the paper is pointing out that the following sentence is not actually a thought<sub>thought</sub>:
+That is, the author of the paper is pointing out that the following sentence is not actually a thought:
 
 1. Illogical thought is impossible.
 
@@ -165,5 +165,5 @@ Therefore (5) is ill-formed. (5) violates logical rules by applying a predicate 
 
 This can be understood through the following mathematical example. You will have learnt that $0 < i$ is an incorrect inequality because in that context $<$ is a relation defined only over real numbers. And the reason $<$ can only be defined over real numbers relates to real numbers, imaginary numbers, and the logical rules required by $<$. According to the rules of $<$, multiplying both sides by a number greater than 0 maintains the direction of the inequality, whilst multiplying by a number less than 0 reverses the direction of the inequality. But if $0 < i$, then $0 = 0 \cdot i < i \cdot i = -1$, which is contradictory, and if $i < 0$, then $-1 = i \cdot i > 0 \cdot i = 0$, which is contradictory. Therefore $0 < i$ is an inequality that lacks sense. This does not mean that $0 < i$ is **false**, because if $0 < i$ were false, then $0 > i$ would have to be true.
 
-Reference: [https://forum.owlofsogang.com/t/topic/6465](https://forum.owlofsogang.com/t/topic/6465)
+See also the discussion in: [https://forum.owlofsogang.com/t/topic/6465](https://forum.owlofsogang.com/t/topic/6465)
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Definitions of Algebra and Measure"
 date: 2025-02-24
-tags: [Mathematics, Measure-theory]
+tags: [Mathematics, Measure Theory]
 lang: en
 related:
   - "Construction of Measures Using Carathéodory's Theorem"

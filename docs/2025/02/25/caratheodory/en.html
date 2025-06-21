@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Construction of Measures via Carathéodory's Theorem &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/02/25/caratheodory/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                                               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Construction of Measures via Carathéodory's Theorem</h1>
+  <span class="post-date">25 Feb 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/measure-theory/'" >Measure Theory</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>The author prefers to understand Carathéodory’s theorem<sub>Carathéodory theorem</sub> by dividing it into three parts, and this article follows the same approach. They are as follows:</p>
+
+<ol>
+  <li><strong>Carathéodory Construction Theorem:</strong> An outer measure<sub>outer measure</sub> can be defined from any collection of sets and a positive function.</li>
+  <li><strong>Carathéodory Restriction Theorem:</strong> A function obtained by restricting the domain of an outer measure to measurable sets becomes a measure.</li>
+  <li><strong>Carathéodory Extension Theorem:</strong> A measure on $\sigma(\mathcal{A}_0)$ that extends a premeasure<sub>premeasure</sub> $\mu_0$ on an algebra $\mathcal{A}_0$ is uniquely given by the measure obtained by applying the restriction theorem to the outer measure $\mu^\ast$ obtained by applying the construction theorem with the collection of sets as $\mathcal{A}_0$ and the positive function as $\mu_0$.</li>
+</ol>
+
+<p>Schematically, this can be understood as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>(1)</th>
+      <th>(2)</th>
+      <th>(3)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Domain</td>
+      <td>Algebra $\mathcal{A}_0$</td>
+      <td>$\sigma$-algebra $\mathcal{A}$</td>
+      <td>Power set $\mathcal{P}(X)$</td>
+    </tr>
+    <tr>
+      <td>Function</td>
+      <td>Premeasure $\mu_0$</td>
+      <td>Measure $\mu$</td>
+      <td>Outer measure $\mu^\ast$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The construction theorem goes in the direction (1) → (3), the restriction theorem goes (3) → (2), and the extension theorem goes (1) → (2). Let us examine each one by one.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> An <strong>outer measure</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$ on $X$ is a function satisfying the following:</p>
+
+  <ol>
+    <li>$\mu^\ast(\varnothing) = 0$</li>
+    <li>$A \subset B \implies \mu^\ast(A) \leq \mu^\ast(B)$</li>
+    <li>$\mu^\ast\left( \bigcup_{n \in \mathbb{N}} A_n  \right) \leq \sum_{n \in \mathbb{N}} \mu^\ast(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Carathéodory Construction Theorem.</strong> Given any collection $\mathcal{S}$ of subsets of $X$ and any function $l: \mathcal{S} \to [0, \infty]$ satisfying $l(\varnothing) = 0$, the function $\mu^\ast$ defined as follows is an outer measure:</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} l(A_n) : \{ A_n \} \subset \mathcal{S} \text{ covers }E  \right\}\]
+</blockquote>
+
+<p>That is, $\mu^\ast$ is a function that defines something akin to a ‘measure’ of $E$ as an infimum over covers, and is conceptually similar to the upper sum<sub>upper sum</sub> in Riemann integration.</p>
+
+<p><strong>Proof.</strong> Properties 1 and 2 are trivial. We prove property 3.</p>
+
+<p>Let $A = \bigcup A_n$ and suppose an arbitrary $\epsilon &gt; 0$ is given. By the definition of $\mu^\ast$, for each $n$, there exists a cover $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$ of $A_n$ satisfying:</p>
+
+\[\sum l(A_{nm}) \leq \mu^*(A_n) + \epsilon/2^n\]
+
+<p>Therefore,</p>
+
+\[\sum_{n, m \in \mathbb{N}} l(A_{nm}) \leq \sum \mu^*(A_n) + \epsilon.\]
+
+<p>Since $\bigcup \mathcal{C}_n$ covers $A$, by the definition of $\mu^\ast$, we have $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$. ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $A$ is said to be <strong>measurable<sub>measurable</sub></strong> with respect to $\mu^\ast$ if it satisfies the following for any $E$:</p>
+
+\[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $N$ with $\mu^\ast(N) = 0$ is called a <strong>null set<sub>null set</sub></strong>.</p>
+</blockquote>
+
+<p>That is, a measurable set is one that ‘cleanly’ partitions any set with respect to $\mu^\ast$. Therefore, we can expect that $\mu^\ast$ will behave like an ordinary measure on the collection consisting only of measurable sets. The following restriction theorem validates this expectation.</p>
+
+<blockquote>
+  <p><strong>Carathéodory Restriction Theorem.</strong> Let $\mu^\ast$ be an outer measure. Let $\mathcal{A}$ be the collection of sets that are measurable with respect to $\mu^\ast$. Then the following hold:</p>
+
+  <ol>
+    <li>$\mathcal{A}$ is a $\sigma$-algebra.</li>
+    <li>$\mu^\ast |_\mathcal{A}$ is a measure.</li>
+    <li>$\mathcal{A}$ contains all null sets of $\mu^\ast$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p><strong>1. $\mathcal{A}$ is an algebra.</strong></p>
+
+<p>Closure under complements is trivial. We show closure under finite intersections.</p>
+
+<p>Suppose $A, B$ are measurable. To show that $A \cap B$ is measurable, it suffices to prove:</p>
+
+\[\mu^*(E \cap (A \cap B)) + \mu^*(E \cap (A \cap B)^c) \leq \mu^*(E) \quad \cdots \quad (*)\]
+
+<p>Since $A, B$ are measurable, the following holds:</p>
+
+\[\begin{aligned}
+\mu^*(E) &amp;= \mu^*(E \cap A) + \mu^*(E \cap A^c) \\
+&amp;= \mu^*(E \cap A \cap B) + \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B) + \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>Therefore, $(\ast)$ is equivalent to:</p>
+
+\[\begin{aligned}
+\mu^*(E \cap (A^c \cup B^c)) &amp;\leq \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B)  \quad \cdots \quad (**) \\ &amp;+ \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>From elementary set theory, we have:</p>
+
+\[A^c \cup B^c = (A \cap B^c) \cup (A^c \cap B) \cup (A^c \cap B^c)\]
+
+<p>Therefore, $(\ast\ast)$ holds. □</p>
+
+<p><strong>2. $\mathcal{A}$ is a $\sigma$-algebra.</strong></p>
+
+<p>It suffices to show that for $\lbrace  A_n \rbrace  \subset \mathcal{A}$ with $A_n \uparrow A$, we have $A \in \mathcal{A}$. (Why?)</p>
+
+<p>By the definition of outer measure, $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$. Let $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$. Then $\bigsqcup C_n = A$. Moreover,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n) &amp;= \mu^*(E \cap A_n \cap C_n) + \mu^*(E \cap A_n \cap C_n^c) \\
+&amp;= \mu^*(E \cap C_n) + \mu^*(E \cap A_{n - 1}) \\
+&amp;= \cdots \\
+&amp;= \sum^n_{k = 1} \mu^*(E \cap C_k)
+\end{aligned}\]
+
+<p>Therefore, $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$. Since $\lbrace  E \cap C_n \rbrace $ covers $E \cap A$, we have $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$. Therefore, $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$.</p>
+
+<p>Thus, for any $\epsilon &gt; 0$, there exists a sufficiently large $N$ such that $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$. Therefore,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n^c) &amp;= \mu^*(E) - \mu^*(E \cap A_n) \\
+&amp;\leq \mu^*(E) - \mu^*(E \cap A) + \epsilon
+\end{aligned}\]
+
+<p>whence we obtain:</p>
+
+\[\mu^*(E) \leq \mu^*(E \cap A_n) + \mu^*(E \cap A_n^c) \leq \mu^*(E) + \epsilon\]
+
+<p>Letting $n \to \infty$, we get $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$. □</p>
+
+<p><strong>3. $\mu^\ast|_\mathcal{A}$ is a measure, 4. $\mathcal{A}$ contains all null sets.</strong></p>
+
+<p>Left as an exercise to the readers. (Not difficult) ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathcal{A}_0$ be an algebra. A function $\rho: \mathcal{A}_0 \to [0, \infty]$ is called a <strong>premeasure</strong> if it satisfies the following:</p>
+
+  <ol>
+    <li>$\rho(\varnothing) = 0$</li>
+    <li>For any pairwise disjoint countable collection $\lbrace  A_n \rbrace $, if $\bigcup A_n \in \mathcal{A}_0$, then $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Carathéodory Extension Theorem.</strong> For a premeasure $\rho$ on an algebra $\mathcal{A}_0$, define:</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
+
+  <p>Then the following hold:</p>
+
+  <ol>
+    <li>If $A \in \mathcal{A}_0$, then $\mu^\ast(A) = \rho(A)$.</li>
+    <li>$\sigma(\mathcal{A}_0)$ is measurable with respect to $\mu^\ast$.</li>
+    <li>If $\rho$ is $\sigma$-finite, then $\mu^\ast|_{\sigma(\mathcal{A}_0)}$ is the unique measure that extends $\rho$ to $\sigma(\mathcal{A}_0)$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p><strong>1. If $A \in \mathcal{A}_0$, then $\mu^\ast(A) = \rho(A)$.</strong></p>
+
+<p>Since $A$ is a cover of $A$, we have $\mu^\ast(A) \leq \rho(A)$. If $\mu^\ast(A) &lt; \rho(A)$, then there exists some cover $\lbrace  A_n \rbrace $ of $A$ such that $\sum \rho(A_n) &lt; \rho(A)$. However, since $\rho$ is a premeasure, this is a contradiction. □</p>
+
+<p><strong>2. $\sigma(\mathcal{A}_0)$ is measurable with respect to $\mu^\ast$.</strong></p>
+
+<p>First, we show that $\mathcal{A}_0$ is measurable. For any $A \in \mathcal{A}_0$, it suffices to show $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$. By the definition of $\mu^\ast$, for any $\epsilon &gt; 0$, there exists some cover $\mathcal{C}$ of $E$ such that:</p>
+
+\[\sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon\]
+
+<p>Since $\mathcal{A}_0$ is an algebra, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$. Therefore,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A) + \mu^*(E \cap A^c) &amp;\leq \sum^\infty_{n = 1} \mu^*(A \cap C_n) + \sum^\infty_{n = 1} \mu^*(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(A \cap C_n) + \sum^\infty_{n = 1} \rho(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon
+\end{aligned}\]
+
+<p>(Strictly speaking, one should consider $\sum^n_{k=1}$ and then take the limit $n \to \infty$) Therefore, $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$, and $\mathcal{A}_0$ is measurable. By the Carathéodory restriction theorem, measurable sets form a $\sigma$-algebra, so $\sigma(\mathcal{A}_0)$ is also measurable. □</p>
+
+<p><strong>3. If $\rho$ is $\sigma$-finite, then $\mu^\ast|_{\sigma(\mathcal{A}_0)}$ is the unique measure that extends $\rho$ to $\sigma(\mathcal{A}_0)$.</strong></p>
+
+<p>First, assume $\rho &lt; \infty$. Suppose a measure $\nu$ defined on $\sigma(\mathcal{A}_0)$ agrees with $\rho$ on $\mathcal{A}_0$. Let $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$. We show $\nu = \mu$.</p>
+
+<p>Let $E \in \sigma(\mathcal{A}_0)$. There exists some cover $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$ of $E$ such that:</p>
+
+\[\sum \rho(A_n) \leq \mu(E) + \epsilon\]
+
+<p>Since $\nu$ agrees with $\rho$ on $\mathcal{A}_0$, we have $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$. Therefore, $\nu \leq \mu$.</p>
+
+<p>Now define $B_n = \bigcup^n_{k=1}A_k$ and let $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$. Since $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$, we have $\mu(B \setminus E) \leq \epsilon$. Since $\nu$ is a measure,</p>
+
+\[\mu(A) = \lim \rho(B_n) = \lim \nu(B_n) = \nu(A)\]
+
+<p>Therefore,</p>
+
+\[\begin{aligned}
+\mu(E) \leq \mu(B) &amp;= \mu(B \setminus E) + \mu(E) \\
+&amp;\leq \epsilon + \nu(E)
+\end{aligned}\]
+
+<p>That is, $\mu \leq \nu$. Therefore, $\mu = \nu$.</p>
+
+<p>Now assume $\rho$ is $\sigma$-finite. There exists a collection $\lbrace  C_n \rbrace $ such that $C_n \uparrow X$ and $\rho(C_n) &lt; \infty$. By the preceding argument, $\mu$ and $\nu$ agree on $C_n$. Therefore,</p>
+
+\[\mu(A) = \lim \mu(A \cap C_i) = \lim \nu (A \cap C_i) = \nu(A)\]
+
+<p>so $\mu$ and $\nu$ agree on the entire space. ■</p>
+
+<p>In the next article, we shall construct Lebesgue measure using Carathéodory’s theorem, and then show that whilst every Borel measurable set is Lebesgue measurable, the converse does not hold.</p>
+
+
+</div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3 class="lang-ko">관련 글</h3>
+  <h3 class="lang-en">Related Posts</h3>
+  <ul>
+    
+      
+      
+        <li>Definition of Algebras and Measures (Post not found)</li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

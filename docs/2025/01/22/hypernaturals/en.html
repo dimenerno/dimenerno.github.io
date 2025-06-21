@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Fréchet Filters and Nonstandard Natural Numbers &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/01/22/hypernaturals/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                                               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Fréchet Filters and Nonstandard Natural Numbers</h1>
+  <span class="post-date">22 Jan 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'" >Logic</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>According to the Löwenheim-Skolem theorem, there exist models that are elementarily equivalent to the standard arithmetic model but structurally nonisomorphic. In other words, there exist number systems that satisfy all first-order logical statements satisfied by the natural numbers, yet are not the natural numbers themselves.</p>
+
+<p>In this article (series), we construct the <strong>hypernaturals</strong>, a representative nonstandard model of arithmetic, using <strong>ultraproducts</strong>, and prove <strong>Łoś’s theorem</strong>, which guarantees that this model is elementarily equivalent to the standard arithmetic model.</p>
+
+<h2 id="1-overview">1. Overview</h2>
+
+<p>By the compactness theorem, we know that first-order logic cannot distinguish between the finite and the infinite. Therefore, we might reasonably expect to be able to define a model that is first-order logically indistinguishable from the natural numbers by appropriately employing infinity.</p>
+
+<p>Accordingly, let us define the hypernaturals $[0], [1], [2], \dots$ as follows:</p>
+
+\[\begin{aligned}
+[0] &amp;= (0, 0, 0, 0, 0, \dots) \\
+[1] &amp;= (1, 1, 1, 1, 1, \dots) \\
+[2] &amp;= (2, 2, 2, 2, 2, \dots)
+\end{aligned}\]
+
+<p>However, upon reflection, requiring all entries to be 0 in order to regard something as $[0]$ is excessively stringent. For instance, it would be natural to regard the tuple $(1, 1, 0, 0, 0, \dots)$, where only the first two entries are 1 and all remaining entries are 0, as $[0]$ as well. Therefore, let us consider any tuple as $[n]$ if all but finitely many entries equal $n$. That is,</p>
+
+\[[n] = \lbrace (x_1, x_2, x_3, \dots) \in \mathbb{N}^\omega : \lbrace i \in \mathbb{N}: x_i \neq n \rbrace \text{ is finite} \rbrace\]
+
+<p>However, this now gives rise to the following problem. Should the following tuple be considered as $[0]$ or as $[1]$?</p>
+
+\[(0, 1, 0, 1, 0, 1, \dots)\]
+
+<p>To resolve this ambiguity, we shall arbitrarily adopt either the set of even numbers or the set of odd numbers. If we adopt the set of even numbers, the above tuple becomes $[0]$ (assuming indices begin from 0), whilst if we adopt the set of odd numbers, it becomes $[1]$.</p>
+
+<p>However, this adoption process requires careful consideration. If the set of multiples of 6 is adopted, then the set of multiples of 3 must also be adopted for logical consistency, since tuples satisfying the latter trivially satisfy the former. Moreover, since the set of multiples of 3 is adopted, the set of numbers that are <em>not</em> multiples of 3 must be rejected. The result of this process of adoption and rejection for all subsets of the natural numbers will correspond to a structure called an <strong>ultrafilter</strong>. Given an appropriate ultrafilter, we can map any tuple to a hypernatural based upon it, and this entire process is called an <strong>ultraproduct</strong>.</p>
+
+<h2 id="2-definition-of-ultrafilters">2. Definition of Ultrafilters</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $X$ be a set. A collection $\mathcal{F}$ of subsets of $X$ is called a <strong>filter</strong> on $X$ if it satisfies the following:</p>
+
+  <ol>
+    <li>$X \in \mathcal{F}$</li>
+    <li>$\varnothing \not\in \mathcal{F}$</li>
+    <li>Upward closure: $A \in \mathcal{F}, A \subset B \implies B \in \mathcal{F}$</li>
+    <li>Finite intersection closure: $A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
+  </ol>
+</blockquote>
+
+<p>Intuitively, a filter is a “collection of large sets”. From this perspective, axioms 1 and 2 express the trivial principle that the whole set is large and the empty set is small. Axiom 3 expresses the principle that a set containing a large set is large, whilst axiom 4 expresses the principle that finite intersections of large sets remain large.</p>
+
+<p>As an aside, filters are used not only in ultraproducts but also in converting models of fuzzy logic into models of classical logic. In this context, filters become “collections of true statements” rather than “collections of large sets”. Moreover, the conversion from fuzzy logic to classical logic is also one way of understanding Cohen’s forcing method.</p>
+
+<p>Filters can be understood more intuitively through <strong>Hasse diagrams</strong>. The shaded region represents a filter on $X = \lbrace 0, 1, 2 \rbrace$. If we understand the Hasse diagram as a flow of water from $\varnothing$ to $X$, the region where ink spreads when dropped at a particular point forms a filter.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/86ac1e36-13fe-46fb-a9cc-b6749d1c5a69/image.png" width="400px" style="margin: 20px auto 30px auto;" /></p>
+
+<p>By axioms 2 and 4, if $A \in \mathcal{F}$, then $A^c := X \setminus A \notin \mathcal{F}$. Strengthening this fact by requiring that for <em>every</em> subset of $X$, either the set or its complement is in the filter, we obtain the definition of an <strong>ultrafilter</strong>.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A filter $\mathcal{F}$ on $X$ is an ultrafilter if it satisfies:</p>
+
+\[\forall A \in \mathcal{P}(X) : A \in \mathcal{F} \lor A^c \in \mathcal{F}\]
+</blockquote>
+
+<p>The filter in the previous diagram is an ultrafilter. Note that an ultrafilter occupies exactly half of the Hasse diagram.</p>
+
+<h2 id="3-ultrafilters-on-infinite-sets">3. Ultrafilters on Infinite Sets</h2>
+
+<p>A filter with a least element is called a principal filter, whilst a filter that is not principal is called a free filter. All filters we have seen so far are principal filters, which perfectly match the image of “the region where ink dropped at a specific point spreads”.</p>
+
+<p>Unlike principal filters, free filters are difficult to grasp intuitively, due to the following theorem:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Every filter on a finite set is principal.</p>
+</blockquote>
+
+<p><em>Proof.</em> Suppose $A_0 \in \mathcal{F}$ is not a minimal element. Then there exists some $B \in \mathcal{F}$ such that $A_1 = A_0 \cap B \subsetneq A$. That is, $|A_1| &lt; |A_0 |$. If $A_1$ is a minimal element, the proof is complete; otherwise, we repeat the same process. Since the given set has finite cardinality, this process cannot continue indefinitely and must terminate at a minimal element. ■</p>
+
+<p>This theorem can also be understood as follows: a free filter is one that contains an infinitely descending chain of subsets within it (and thus cannot reach a minimal element through finite intersections alone) but never reaches the empty set. Accordingly, only filters on infinite sets can be free filters.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/3769cca8-52df-4faa-af87-4225e588e89d/image.png" alt="" /></p>
+
+<p>Let us examine a concrete example.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $X$ be an infinite set. A subset $A \subset X$ is <strong>cofinite</strong> if $X \setminus A$ is a finite set.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathcal{F}$ be the collection of all cofinite subsets of $\mathbb{N}$. Then $\mathcal{F}$ is a free filter.</p>
+</blockquote>
+
+<p>The proof is left as an exercise. The $\mathcal{F}$ in the above theorem is called the <strong>Fréchet filter</strong>. For instance, the set of numbers greater than 10, $\lbrace 11, 12, 13, 14, \dots \rbrace$, is an element of $\mathcal{F}$, but the set of even numbers is not an element of $\mathcal{F}$.</p>
+
+<p>The Fréchet filter is not an ultrafilter. However, it can be extended to an ultrafilter by the following theorem:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Every filter can be extended to an ultrafilter.</p>
+</blockquote>
+
+<p><em>Proof.</em> Let $\Omega$ be the collection of all filters on $X$, ordered by inclusion. Under this ordering, the union of filters forming a chain is itself a filter, as can be shown without difficulty. Therefore, by Zorn’s lemma, $\Omega$ has a maximal element $\mathcal{U}$. If $\mathcal{U}$ is not an ultrafilter, then there exists some $A_0 \subset X$ such that $A_0, A_0^c \notin U$. Define $\mathcal{V}$ as follows:</p>
+
+\[\mathcal{V} = \mathcal{U} \cup \lbrace A \subset X : A_0 \subset A \rbrace \cup \lbrace A_0 \cap U : U \in \mathcal{U} \rbrace\]
+
+<p>One can verify that $\mathcal{V}$ is a filter. This contradicts the maximality of $\mathcal{U}$. Therefore, $\mathcal{U}$ is an ultrafilter. ■</p>
+
+<p>Hence, the set of natural numbers possesses a free ultrafilter extending from the Fréchet filter. Let us call this filter the <strong>Fréchet ultrafilter</strong>.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/30387200-2e80-4a74-82a2-b696ffe7e1cd/image.png" alt="" /></p>
+
+<h2 id="4-the-hypernaturals">4. The Hypernaturals</h2>
+
+<p>To summarise our discussion thus far, free ultrafilters, including the Fréchet ultrafilter, possess the following properties:</p>
+
+<ol>
+  <li>They contain all cofinite sets as elements.</li>
+  <li>They do not contain finite sets as elements.</li>
+  <li>For $A \subset \mathbb{N}$, either $A$ is an element of the filter or $A^c$ is an element of the filter.</li>
+</ol>
+
+<p>Thanks to these three properties, the Fréchet ultrafilter is perfectly suited to resolving the ambiguity problem we encountered when outlining the basic idea of ultraproducts in the introduction. We can now define the hypernaturals as follows:</p>
+
+<p>Let $\mathcal{U}$ be a free ultrafilter. Define the following equivalence relation on $\mathbb{N}^\omega$:</p>
+
+\[(n_0, n_1, n_2, \dots) \sim (m_0, m_1, m_2, \dots) \iff \lbrace i \in \mathbb{N} : n_i = m_i \rbrace \in \mathcal{U}\]
+
+<p>It is not difficult to verify that this is indeed an equivalence relation. Therefore, we can take equivalence classes as follows:</p>
+
+\[\mathbb{N}^* := \mathbb{N}^\omega/\sim\]
+
+<p>We call $\mathbb{N}^*$ the <strong>hypernaturals</strong>. The reason we wrote hypernaturals as $[n]$ in the introduction is that the definition of hypernaturals consists of equivalence classes. What remains is to define operations and predicate relations on the hypernaturals.</p>
+
+<p>Addition of hypernaturals is defined naturally as follows:</p>
+
+\[(n_0, n_1, \dots) + (m_0, m_1, \dots) = (n_0 + m_0, n_1 + m_1, \dots)\]
+
+<p>There is one subtle issue here. Since the definition of hypernaturals involves equivalence classes, we must show that the result of the above addition is unaffected regardless of which representative of an equivalence class we choose. That is, for</p>
+
+\[\begin{gather}
+(n_0, n_1, \dots), (n_0', n_1',  \dots) \in [n]\\
+(m_0, m_1,  \dots), (m_0', m_1', \dots) \in [m]
+\end{gather}\]
+
+<p>we must show that</p>
+
+\[(n_0, n_1, \dots) + (m_0, m_1,  \dots), (n_0', n_1', \dots) + (m_0', m_1', \dots) \in [n + m]\]
+
+<p>Fortunately, this is not difficult to establish.</p>
+
+<p>Multiplication and successor can be defined similarly. Meanwhile, binary relations such as $&lt;$ are defined as follows:</p>
+
+\[(n_0, n_1, n_2, \dots) &lt; (m_0, m_1, m_2, \dots) \iff \lbrace i \in \mathbb{N} : n_i &lt; m_i \rbrace \in \mathcal{U}\]
+
+<p>This definition can be naturally generalised to ternary and quaternary relations.</p>
+
+<p>We have thus defined the hypernaturals. In the next article, we shall examine various nonstandard features of the hypernaturals and Łoś’s theorem, which shows that despite such nonstandardness, the hypernaturals and natural numbers cannot be distinguished by first-order logic.</p>
+
+
+</div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3 class="lang-ko">관련 글</h3>
+  <h3 class="lang-en">Related Posts</h3>
+  <ul>
+    
+      
+      
+        <li><a href="/2025/01/22/hypernaturals/en">Fréchet Filters and Nonstandard Natural Numbers</a></li>
+      
+    
+      
+      
+        <li><a href="/2025/01/25/los/en">Łoś's Theorem</a></li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

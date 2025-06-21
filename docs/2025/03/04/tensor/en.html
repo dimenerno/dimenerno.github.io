@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Notes on Tensor Products &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/03/04/tensor/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+                                                                                                                                                                                               
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+                      
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Notes on Tensor Products</h1>
+  <span class="post-date">04 Mar 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/algebra/'" >Algebra</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p><strong>TL;DR.</strong> The tensor product of vector spaces has the following significance:</p>
+
+<ol>
+  <li>A domain for the linearisation of multilinear maps</li>
+  <li>A space of multilinear maps</li>
+</ol>
+
+<p>Strictly speaking, 1 corresponds to $U \otimes V$, whilst 2 corresponds to $U^\ast \otimes V^\ast$. However, these appear to be used interchangeably.</p>
+
+<h3 id="1-introduction">1. Introduction</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $U, V, W$ be vector spaces defined over a field $\mathbb{F}$. A map $b: U \times V \to W$ is called a <strong>bilinear map</strong> if $B$ is linear in each argument. That is, for any $\mathbf{u}_1, \mathbf{u}_2 \in U, \mathbf{v}_1, \mathbf{v}_2 \in V$ and scalar $\alpha \in \mathbb{F}$, the following hold:</p>
+
+\[b(\alpha \mathbf{u}_1 + \mathbf{u}_2, \mathbf{v}_1) = \alpha b(\mathbf{u}_1, \mathbf{v}_1) + b(\mathbf{u}_2, \mathbf{v}_1)\]
+
+\[b(\mathbf{u}_1, \alpha \mathbf{v}_1 + \mathbf{v}_2) = \alpha b(\mathbf{u}_1, \mathbf{v}_1) + b(\mathbf{u}_1, \mathbf{v}_2)\]
+</blockquote>
+
+<p>For example, the inner product $\cdot : V \times V \to \mathbb{R}$ in real vector spaces is a bilinear map when $\mathbb{R}$ is regarded as a one-dimensional vector space. Similarly, one can define <strong>multilinear forms</strong>. When $V$ is an $n$-dimensional vector space, $\mathrm{det}: V \times \dots \times V \to \mathbb{R}$ is an $n$-multilinear map.</p>
+
+<p>Let $b: U \times V \to W$ be a bilinear map. Naturally, $b$ is not a linear map. This is because $b$ takes vectors from two different spaces as arguments, rather than vectors from a single space. Even if we consider $b$ as a map from the direct sum $U \oplus V$ to $W$, we have $b(\alpha(u, v)) = b((\alpha u, \alpha v)) = \alpha^2 b(u, v)$, which does not satisfy linearity.</p>
+
+<p>However, using tensor products, we can identify $b$ with a linear map.</p>
+
+<h3 id="2-definition-of-tensor-products">2. Definition of Tensor Products</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> For vector spaces $U, V$, the <strong>tensor product</strong> $U \otimes V$ is defined as the vector space satisfying the following universal property:</p>
+
+  <p><img src="/public/tensor.png" width="280px" style="margin: 0 auto; mix-blend-mode: multiply;" /></p>
+
+  <p>Elements of $U \otimes V$ are called <strong>tensors</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The tensor product of any vector spaces always exists and is unique up to isomorphism.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> We prove this only for finite-dimensional vector spaces. Suppose $U$ and $V$ have dimensions $n$ and $m$ respectively, with bases $\lbrace  e_1, \dots, e_n\rbrace$ and $\lbrace  f_1, \dots, f_m\rbrace$. Let $T$ be a vector space of dimension $nm$. Since vector spaces of the same dimension are isomorphic, such a $T$ is unique up to isomorphism. Let the formal basis of $T$ be:</p>
+
+\[\mathcal{B} = \{ e_1f_1, \dots, e_1f_m, \dots, e_nf_1, \dots, e_nf_m \}\]
+
+<p>To show that $T$ is the tensor product of $U$ and $V$, consider an arbitrary bilinear map $b: U \times V \to W$. From $b$, define the following row vector:</p>
+
+\[\tilde {b} = \big[ b(e_1, f_1), \dots, b(e_1, f_m), \dots, b(e_n, f_1), \dots, b(e_n, f_m) \big]_\mathcal{B}\]
+
+<p>Also define $\otimes: V \times W \to T$ as follows:</p>
+
+\[\otimes: (u, v) = (u_1e_1 + \dots + u_ne_n, v_1f_1 + \dots + v_mf_m) \mapsto \begin{bmatrix} u_1v_1 \\ \vdots \\ u_1v_m \\ \vdots \\ u_nv_1 \\ \vdots \\ u_nf_m \end{bmatrix}_{\mathcal{B}}\]
+
+<p>Then the following holds:</p>
+
+\[\begin{align}
+\tilde {b}(\otimes(u, v)) &amp;= \sum_i \sum_j (u_i v_j)b(e_i, f_j) \\
+&amp;= b\left( \sum_i   u_i e_i, \sum_j v_j f_j \right)  &amp;&amp; (\text{by bilinearity})\\
+&amp;= b(u, v) &amp;&amp; \blacksquare
+\end{align}\]
+
+<h3 id="3-identification-of-tensors-with-multilinear-maps">3. Identification of Tensors with Multilinear Maps</h3>
+
+<p>The discussion thus far can be summarised in one line:</p>
+
+\[\mathrm{Hom}^2(U \times V, W) \cong \mathrm{Hom}(U \otimes V, W)\]
+
+<p>Here $\mathrm{Hom}^2$ denotes the space of bilinear maps. In particular, when $W = \mathbb{F}$, by the definition of dual spaces, the following holds:</p>
+
+\[\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong \mathrm{Hom}(U \otimes V, \mathbb{F}) \cong (U \otimes V)^*\]
+
+<p>Using this relationship, we can view tensor products not merely as domains for the linearisation of bilinear maps, but as spaces of bilinear maps themselves. First, we prove the following lemma.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> $(U \otimes V)^\ast = U^\ast \otimes V^\ast$</p>
+</blockquote>
+
+<p><strong>Proof.</strong> By the previous relationship and the definition of dual spaces, it suffices to show:</p>
+
+\[\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong \mathrm{Hom}(U, \mathbb{F}) \otimes \mathrm{Hom}(V, \mathbb{F})\]
+
+<p>That is, we need to show that $\mathrm{Hom}^2(U \times V, \mathbb{F})$ satisfies the universal property. This is almost identical to the previous proof, so we omit it. ■</p>
+
+<p>From the lemma, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong U^\ast \otimes V^\ast$</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+\[\begin{align}
+U^* \otimes V^* &amp;\cong U^{***} \otimes V^{***} \\
+&amp;\cong (U^{**} \otimes V^{**})^* \\
+&amp;\cong (U \otimes V)^* \\
+&amp;\cong \mathrm{Hom}^2(U \times V, \mathbb{F})
+\end{align}\]
+
+<p>In going from the second to the third expression, we used the canonical identification $V \cong V^{\ast\ast}$. ■</p>
+
+<p>Therefore, tensors in dual spaces can be canonically identified with bilinear maps.</p>
+
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>
