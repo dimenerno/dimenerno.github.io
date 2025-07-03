@@ -212,7 +212,7 @@
     href="/"
     >Main</a
   >
-                                                                                                                                                                                                 
+                                                                                                                                                                                                     
     <a
       class="sidebar-nav-item lang-ko"
       href="/about/"
@@ -430,6 +430,221 @@
 
 
 <div class="posts">
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/16/adjoints"> 어드조인트에 대한 직관적 이해 </a>
+      </h1>
+    <span class="post-date">16 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'">
+        범주론
+      </div>
+      
+    </div>
+     <p>카테고리 이론의 핵심 개념 중 하나는 어드조인트(adjoint)이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{A}, \mathcal{B}$가 카테고리이고, $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자(functor)라고 하자. $F$가 $G$의 <strong>좌 어드조인트(left adjoint)</strong>라는 것은 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 $\mathcal{B}(F(A), B)$와 $\mathcal{A}(A, G(B))$가 자연스럽게 일대일 대응될 수 있다는 것이다. 즉,</p>
+
+\[\begin{gather}
+(F(A) \xrightarrow{g} B) \quad \mapsto \quad (A \xrightarrow{\bar{g}} G(B))\\
+(A \xrightarrow{f} G(B)) \quad \mapsto \quad (F(A) \xrightarrow{\bar{f}} B)
+\end{gather}\]
+
+  <p>또한 $G$를 $F$의 <strong>우 어드조인트(right adjoint)</strong>라고 한다. 기호로 $F \dashv G$로 표기한다.</p>
+</blockquote>
+
+<p>필자는 이 정의를 형식적인 수준에서만 이해하고 있었는데, 최근 어드조인트를 직관적으로 이해하는 몇 가지 방식을 발견했다.</p>
+
+<h3 id="1-형-변환으로서의-어드조인트">1. 형 변환으로서의 어드조인트</h3>
+
+<p>좌 어드조인트는 프로그래밍에서 다운캐스팅 형 변환에, 우 어드조인트는 업캐스팅 형 변환에 비견할 수 있다.</p>
+
+<p>예를 들어 $\mathbf{Z}$가 정수를 원소로 가지고, $x \leq y$일 때 그리고 오직 그 경우에만 $x \to y$ 사상이 유일하게 존재하는 카테고리라고 하자. 또한 $\mathbf{Z}^2$가 정수쌍을 원소로 가지고, $\mathbf{x} \preceq \mathbf{y}$일 때 그리고 오직 그 경우에만 $\mathbf{x} \to \mathbf{y}$ 사상이 유일하게 존재하는 카테고리라고 하자(여기서 $\preceq$는 사전식 순서이다).</p>
+
+<p>$F: \mathbf{Z} \to \mathbf{Z}^2, G: \mathbf{Z}^2 \to \mathbf{Z}$가 각각 $F(x) = (x, 0), G(x, y) = x$라면 자연스러운 방식으로 함자가 된다. 또한 $F \dashv G$이다. $x \in \mathbf{Z}, y \in \mathbf{Z}^2$에 대해 $F(x) \leq y$라면 $x \leq G(y)$이고, 그 역도 성립하기 때문이다.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/8040c20d-c1bc-4d92-bd45-256f48b79d75/image.png" alt="" /></p>
+
+<p>위의 논의를 코드로 표현하면 다음과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Z</span> <span class="o">{</span>
+	<span class="kt">int</span> <span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Z2</span> <span class="kd">extends</span> <span class="no">Z</span> <span class="o">{</span>
+	<span class="c1">// int x;</span>
+	<span class="kt">int</span> <span class="n">y</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="no">Z2</span> <span class="nf">F</span><span class="o">(</span><span class="no">Z</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="k">new</span> <span class="nf">Z2</span><span class="o">(</span><span class="n">z</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="no">Z</span> <span class="nf">G</span><span class="o">(</span><span class="no">Z2</span> <span class="n">z2</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="k">new</span> <span class="nf">Z</span><span class="o">(</span><span class="n">z2</span><span class="o">.</span><span class="na">x</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이 코드에서 $F$는 실질적으로 다운캐스팅, $G$는 업캐스팅에 해당함에 주목하라.</p>
+
+<h3 id="2-근사로서의-어드조인트">2. 근사로서의 어드조인트</h3>
+
+<p>$F \dashv G$일 때 $F, G$는 $\mathcal{A}$과 $\mathcal{B}$의 원소들을 서로 근사하는 방법으로 생각할 수 있다. 특히 좌 어드조인트는 ‘좌측에서 우측으로‘의 근사이고, 우 어드조인트는 ‘우측에서 좌측으로’의 근사이다.</p>
+
+<p>예를 들어 $\mathbf{Z}$가 정수를 원소로 가지고, $x \leq y$일 때 그리고 오직 그 경우에만 $x \to y$ 사상이 유일하게 존재하는 카테고리라고 하자. 또한 $\mathbf{R}$이 실수를 원소로 가지고, $x \leq y$일 때 그리고 오직 그 경우에만 $x \to y$ 사상이 유일하게 존재하는 카테고리라고 하자. 이때 $\lceil \cdot \rceil, \lfloor \cdot \rfloor$는 표준적인 방식으로 함자 $\mathbf{R} → \mathbf{Z}$가 되고, 포함 사상 $\iota$는 함자 $\mathbf{Z} → \mathbf{R}$이 된다. 또한 $\lceil \cdot \rceil \dashv \iota \dashv \lfloor \cdot \rfloor$임을 확인할 수 있다.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/e26ee728-09b0-4280-ac4c-511f89cef615/image.png" alt="" /></p>
+
+<p>즉 $\lceil \cdot \rceil$는 $r$을 $r \leq \lceil r \rceil$로 ‘좌측에서 우측으로 끌어올리는’ 변환이고, $\lfloor \cdot \rfloor$은 $r$을 $\lfloor r \rfloor \leq r$로 ‘우측에서 좌측으로 잡아당기는’ 변환이다.</p>
+
+<p>또한 $I, T$가 각각 $\mathcal{A}$의 초기 대상(initial object) 및 종단 대상(terminal object)라고 하자. 즉, 임의의 $A \in \mathcal{A}$에 대해</p>
+
+<ul>
+  <li>사상 $I \to A$가 유일하게 존재한다.</li>
+  <li>사상 $A \to T$가 유일하게 존재한다.</li>
+</ul>
+
+<p>일례로 $\mathbf{Set}$에서 공집합은 초기 대상이고 홑원소 집합은 종단 대상이다.</p>
+
+<p>홑원소 카테고리 $\mathcal{U}$에 대해 함자 $F: \mathcal{A} \to \mathcal{U}$가 유일하게 존재한다. $G_I, G_T: \mathcal{U} \to \mathcal{A}$가 각각 상이 $I, T$인 함자라고 하자. 이때 앞선 경우와 비슷한 원리로 $G_T \dashv F \dashv G_I$가 됨을 확인하라. (종단 대상은 가장 “오른쪽”에 있는 대상이므로 $G_T$는 “왼쪽에서 오른쪽으로”의 근사이며, 초기 대상은 가장 “왼쪽”에 있는 대상이므로 $G_I$는 “오른쪽에서 왼쪽으로”의 근사이다.)</p>
+
+<h3 id="3-구축과-파괴로서의-어드조인트">3. 구축과 파괴로서의 어드조인트</h3>
+
+<p>좌 어드조인트는 구축을, 우 어드조인트는 파괴를 의미한다. 따라서 일반적으로 자유함자(free functor)는 좌 어드조인트, 망각함자(forgetful functor)는 우 어드조인트이다.</p>
+
+<p>일례로 군의 카테고리를 $\mathbf{Grp}$, 모노이드의 카테고리를 $\mathbf{Mon}$이라 하자. $F$를 자유함자, $U$를 망각함자라고 하자. 그리고 $R: \mathbf{Mon} → \mathbf{Grp}$를 다음과 같이 정의한다.</p>
+
+<ul>
+  <li>$R(M) = \lbrace  m \in M : \exists m^{-1} \in M \rbrace$</li>
+  <li>$R(f): m \mapsto f(m)$</li>
+</ul>
+
+<p>이 때, 다음 다이어그램이 성립하여 $F \dashv U \dashv R$이다.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/1640d6b4-bd6a-4098-9fe8-e9a7ab164041/image.png" alt="" /></p>
+
+<p>$R$이 $U$보다 더 파괴적이기 때문에 $U \dashv R$인 것으로 이해할 수 있다.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/16/adjoints/en"> An Intuitive Understanding of Adjoints </a>
+      </h1>
+    <span class="post-date">16 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'">
+        Category Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>One of the central concepts in category theory is that of an adjoint.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathcal{A}, \mathcal{B}$ be categories, and let $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$ be functors. We say that $F$ is a <strong>left adjoint</strong> to $G$ if for any $A \in \mathcal{A}, B \in \mathcal{B}$, there exists a natural bijection between $\mathcal{B}(F(A), B)$ and $\mathcal{A}(A, G(B))$. That is,</p>
+
+\[\begin{gather}
+(F(A) \xrightarrow{g} B) \quad \mapsto \quad (A \xrightarrow{\bar{g}} G(B))\\
+(A \xrightarrow{f} G(B)) \quad \mapsto \quad (F(A) \xrightarrow{\bar{f}} B)
+\end{gather}\]
+
+  <p>We also call $G$ the <strong>right adjoint</strong> to $F$. This is denoted symbolically as $F \dashv G$.</p>
+</blockquote>
+
+<p>The author previously understood this definition only at a formal level, but has recently discovered several ways to understand adjoints intuitively.</p>
+
+<h3 id="1-adjoints-as-type-conversions">1. Adjoints as Type Conversions</h3>
+
+<p>Left adjoints can be likened to downcasting type conversions in programming, whilst right adjoints correspond to upcasting type conversions.</p>
+
+<p>For instance, let $\mathbf{Z}$ be a category whose objects are integers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. Similarly, let $\mathbf{Z}^2$ be a category whose objects are pairs of integers, with a unique morphism $\mathbf{x} \to \mathbf{y}$ existing if and only if $\mathbf{x} \preceq \mathbf{y}$ (where $\preceq$ denotes the lexicographic order).</p>
+
+<p>If $F: \mathbf{Z} \to \mathbf{Z}^2, G: \mathbf{Z}^2 \to \mathbf{Z}$ are defined by $F(x) = (x, 0)$ and $G(x, y) = x$ respectively, then they naturally become functors. Moreover, $F \dashv G$. This is because for $x \in \mathbf{Z}, y \in \mathbf{Z}^2$, we have $F(x) \leq y$ if and only if $x \leq G(y)$.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/8040c20d-c1bc-4d92-bd45-256f48b79d75/image.png" alt="" /></p>
+
+<p>The above discussion can be expressed in code as follows:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Z</span> <span class="o">{</span>
+	<span class="kt">int</span> <span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Z2</span> <span class="kd">extends</span> <span class="no">Z</span> <span class="o">{</span>
+	<span class="c1">// int x;</span>
+	<span class="kt">int</span> <span class="n">y</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="no">Z2</span> <span class="nf">F</span><span class="o">(</span><span class="no">Z</span> <span class="n">z</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="k">new</span> <span class="nf">Z2</span><span class="o">(</span><span class="n">z</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="no">Z</span> <span class="nf">G</span><span class="o">(</span><span class="no">Z2</span> <span class="n">z2</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="k">new</span> <span class="nf">Z</span><span class="o">(</span><span class="n">z2</span><span class="o">.</span><span class="na">x</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Note that in this code, $F$ essentially corresponds to downcasting, whilst $G$ corresponds to upcasting.</p>
+
+<h3 id="2-adjoints-as-approximations">2. Adjoints as Approximations</h3>
+
+<p>When $F \dashv G$, the functors $F$ and $G$ can be thought of as methods for approximating objects in $\mathcal{A}$ and $\mathcal{B}$ with respect to each other. In particular, the left adjoint represents approximation ‘from left to right’, whilst the right adjoint represents approximation ‘from right to left’.</p>
+
+<p>For example, let $\mathbf{Z}$ be a category whose objects are integers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. Similarly, let $\mathbf{R}$ be a category whose objects are real numbers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. Then $\lceil \cdot \rceil, \lfloor \cdot \rfloor$ become functors $\mathbf{R} → \mathbf{Z}$ in the standard manner, and the inclusion map $\iota$ becomes a functor $\mathbf{Z} → \mathbf{R}$. Moreover, one can verify that $\lceil \cdot \rceil \dashv \iota \dashv \lfloor \cdot \rfloor$.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/e26ee728-09b0-4280-ac4c-511f89cef615/image.png" alt="" /></p>
+
+<p>That is, $\lceil \cdot \rceil$ is a transformation that ‘lifts from left to right’ by mapping $r$ to $\lceil r \rceil$ with $r \leq \lceil r \rceil$, whilst $\lfloor \cdot \rfloor$ is a transformation that ‘pulls from right to left’ by mapping $r$ to $\lfloor r \rfloor$ with $\lfloor r \rfloor \leq r$.</p>
+
+<p>Furthermore, let $I$ and $T$ be the initial object and terminal object of $\mathcal{A}$ respectively. That is, for any $A \in \mathcal{A}$:</p>
+
+<ul>
+  <li>There exists a unique morphism $I \to A$.</li>
+  <li>There exists a unique morphism $A \to T$.</li>
+</ul>
+
+<p>For instance, in $\mathbf{Set}$, the empty set is the initial object and any singleton set is a terminal object.</p>
+
+<p>For the singleton category $\mathcal{U}$, there exists a unique functor $F: \mathcal{A} \to \mathcal{U}$. Let $G_I, G_T: \mathcal{U} \to \mathcal{A}$ be functors with images $I$ and $T$ respectively. Then by a similar principle to the previous case, one can verify that $G_T \dashv F \dashv G_I$. (Since the terminal object is the ‘rightmost’ object, $G_T$ represents approximation ‘from left to right’, whilst since the initial object is the ‘leftmost’ object, $G_I$ represents approximation ‘from right to left’.)</p>
+
+<h3 id="3-adjoints-as-construction-and-destruction">3. Adjoints as Construction and Destruction</h3>
+
+<p>Left adjoints signify construction, whilst right adjoints signify destruction. Therefore, free functors are generally left adjoints, whilst forgetful functors are right adjoints.</p>
+
+<p>For instance, let $\mathbf{Grp}$ be the category of groups and $\mathbf{Mon}$ be the category of monoids. Let $F$ be the free functor and $U$ be the forgetful functor. Define $R: \mathbf{Mon} → \mathbf{Grp}$ as follows:</p>
+
+<ul>
+  <li>$R(M) = \lbrace  m \in M : \exists m^{-1} \in M \rbrace$</li>
+  <li>$R(f): m \mapsto f(m)$</li>
+</ul>
+
+<p>Then the following diagram holds, yielding $F \dashv U \dashv R$.</p>
+
+<p><img src="https://velog.velcdn.com/images/dimenerno/post/1640d6b4-bd6a-4098-9fe8-e9a7ab164041/image.png" alt="" /></p>
+
+<p>One can understand that $U \dashv R$ because $R$ is more destructive than $U$.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
@@ -1452,254 +1667,6 @@
   <li>$[0, 1]^{[0, 1]}$ is compact by Tychonoff’s theorem but not sequentially compact.</li>
   <li>The long line and $\omega_1$ are sequentially compact but not compact.</li>
 </ol>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/12/01/baire"> 베르 범주 정리 </a>
-      </h1>
-    <span class="post-date">01 Dec 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <h3 id="1-베르-공간">1. 베르 공간</h3>
-
-<blockquote>
-  <p><strong>정리.</strong> $S$가 위상공간 $X$의 부분집합일 때, 다음은 동치이다.</p>
-  <ul>
-    <li>$\left( \operatorname{cl}S \right)^\circ$가 공집합이다.</li>
-    <li>$(\operatorname{cl}S)^c$가 조밀하다.</li>
-    <li>$S$는 어떠한 $X$의 열린 집합에서도 조밀하지 않다.</li>
-  </ul>
-
-  <p>이때, $S$를 <strong>희박(rare)</strong>하다고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정의.</strong> 희박한 닫힌 집합들의 가산 합집합 $\bigcup F_n$이 희박한 공간 $X$를 베르 공간이라고 한다.</p>
-</blockquote>
-
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png" alt="" /></p>
-
-<p><em>Remark.</em> TFAE:</p>
-<ul>
-  <li>$X$가 베르 공간이다.</li>
-  <li>$X$의 열린 조밀 집합들의 가산 교집합은 조밀하다.</li>
-</ul>
-
-<p><strong>예시.</strong> $\mathbb{Q}$는 베르 공간이 아니다.</p>
-<ul>
-  <li>$\lbrace  q \rbrace$는 닫힌 희박 집합이지만 $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$는 희박하지 않다.</li>
-  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$는 열린 조밀 집합이지만 $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$은 조밀하지 않다.</li>
-</ul>
-
-<h3 id="2-베르-범주-정리">2. 베르 범주 정리</h3>
-
-<blockquote>
-  <p><strong>콤팩트 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
-
-  <ol>
-    <li>$X$가 콤팩트하다.</li>
-    <li>임의의 유한 교집합 속성을 가진 닫힌 집합들의 모임 $\mathcal{C}$에 대해 $\bigcap_{C \in \mathcal{C}} C \neq \varnothing$이다.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>완비 거리 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
-
-  <ol>
-    <li>$X$가 완비 거리 공간이다.</li>
-    <li>임의의 공집합이 없는 닫힌 집합열 $C_1 \supset C_2 \supset \cdots$에 대해 $\bigcap C_n \neq \varnothing$이며, 특히 $\operatorname{diam}C_n \to 0$일 때 $\bigcap C_n$은 홑원소 집합이다.</li>
-  </ol>
-</blockquote>
-
-<p><em>Remark.</em> 2는 4를 함의한다. 이로부터 콤팩트 거리 공간은 완비임을 보일 수 있다. <strong>역은 성립하지 않는다.</strong></p>
-
-<blockquote>
-  <p><strong>정리.</strong> 완비 거리 공간과 콤팩트 하우스도르프 공간은 베르 공간이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<p>$X$가 완비 거리 공간 또는 콤팩트 하우스도르프 공간이라고 하자. 희박한 닫힌 집합들의 가산 모임 $\lbrace  F_n \rbrace$이 주어졌을 때, 임의의 열린 집합 $U$에 대해 $U \not\subset \bigcup F_n$임을 보이면 된다. 이를 위해 $\forall n : x \not\in F_n$인 $x \in U$를 찾을 것이다.</p>
-
-<p>$F_1$이 희박하므로 $x_1 \in U \setminus F_1$이 존재한다. $X$는 정칙 공간이므로 $x_1 \in U_1$, $\overline{U_1} \cap F_1 = \varnothing$인 열린 집합 $U_1$이 존재한다. 귀납적으로 다음과 같이 정의할 수 있다.</p>
-
-<ul>
-  <li>$x_n \in U_n \setminus F_n$</li>
-  <li>$U_n \subset U_{n - 1}$</li>
-  <li>$\overline{U_n} \cap F_n = \varnothing$</li>
-</ul>
-
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png" alt="" /></p>
-
-<p>칸토어 축소 정리에 의해 $x \in \bigcap \overline{U_n}$인 $x$가 존재한다.</p>
-
-<h3 id="3-베르-범주-정리의-응용">3. 베르 범주 정리의 응용</h3>
-
-<blockquote>
-  <p><strong>연속함수열의 수렴은 거의 연속이다.</strong> $\lbrace  f_n : X → (Y, d) \rbrace$가 $f$로 수렴하는 연속함수열일 때,</p>
-
-\[S = \lbrace  x \in X : f\text{ is continuous at } x \rbrace\]
-
-  <p>는 $X$에서 조밀하다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>KAIST POW2024-20.</strong> $f$가 연속함수이고,</p>
-
-\[\forall x \geq 0 : \lim_{n \to \infty} f(nx) = 0\]
-
-  <p>라면 $\lim_{x \to \infty} f(x) = 0$이다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>병리적 함수의 존재성.</strong> $h : [0, 1] → \mathbb{R}$가 연속함수라고 하자. 임의의 $ε &gt; 0$에 대해 다음을 만족하는 함수 $g : [0,1] → \mathbb{R}$가 존재한다.</p>
-
-  <ul>
-    <li>$\lVert h − g\rVert &lt; ε$이다.</li>
-    <li>$g$는 전 구간에서 연속이다.</li>
-    <li>$g$는 전 구간에서 미분 불가능하다.</li>
-  </ul>
-</blockquote>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/12/01/baire/en"> The Baire Category Theorem </a>
-      </h1>
-    <span class="post-date">01 Dec 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h3 id="1-baire-spaces">1. Baire Spaces</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $S$ be a subset of a topological space $X$. The following are equivalent:</p>
-  <ul>
-    <li>$\left( \operatorname{cl}S \right)^\circ$ is empty.</li>
-    <li>$(\operatorname{cl}S)^c$ is dense.</li>
-    <li>$S$ is not dense in any open set of $X$.</li>
-  </ul>
-
-  <p>In this case, $S$ is said to be <strong>rare</strong> (or <strong>nowhere dense</strong>).</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> A space $X$ is called a Baire space if every countable union $\bigcup F_n$ of rare closed sets is rare.</p>
-</blockquote>
-
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png" alt="" /></p>
-
-<p><em>Remark.</em> TFAE:</p>
-<ul>
-  <li>$X$ is a Baire space.</li>
-  <li>Every countable intersection of open dense sets in $X$ is dense.</li>
-</ul>
-
-<p><strong>Example.</strong> $\mathbb{Q}$ is not a Baire space.</p>
-<ul>
-  <li>$\lbrace  q \rbrace$ is a closed rare set, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ is not rare.</li>
-  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$ is an open dense set, but $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$ is not dense.</li>
-</ul>
-
-<h3 id="2-the-baire-category-theorem">2. The Baire Category Theorem</h3>
-
-<blockquote>
-  <p><strong>Cantor’s Theorem on Compact Spaces.</strong> The following are equivalent:</p>
-
-  <ol>
-    <li>$X$ is compact.</li>
-    <li>For any collection $\mathcal{C}$ of closed sets with the finite intersection property, $\bigcap_{C \in \mathcal{C}} C \neq \varnothing$.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>Cantor’s Theorem on Complete Metric Spaces.</strong> The following are equivalent:</p>
-
-  <ol>
-    <li>$X$ is a complete metric space.</li>
-    <li>For any non-empty decreasing sequence of closed sets $C_1 \supset C_2 \supset \cdots$, we have $\bigcap C_n \neq \varnothing$, and in particular, when $\operatorname{diam}C_n \to 0$, $\bigcap C_n$ is a singleton.</li>
-  </ol>
-</blockquote>
-
-<p><em>Remark.</em> Statement 2 implies statement 4. From this, one can show that compact metric spaces are complete. <strong>The converse does not hold.</strong></p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Complete metric spaces and compact Hausdorff spaces are Baire spaces.</p>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<p>Let $X$ be a complete metric space or a compact Hausdorff space. Given a countable collection $\lbrace  F_n \rbrace$ of rare closed sets, we shall show that for any open set $U$, we have $U \not\subset \bigcup F_n$. To this end, we shall find $x \in U$ such that $\forall n : x \not\in F_n$.</p>
-
-<p>Since $F_1$ is rare, there exists $x_1 \in U \setminus F_1$. As $X$ is a regular space, there exists an open set $U_1$ such that $x_1 \in U_1$ and $\overline{U_1} \cap F_1 = \varnothing$. Inductively, we may define:</p>
-
-<ul>
-  <li>$x_n \in U_n \setminus F_n$</li>
-  <li>$U_n \subset U_{n - 1}$</li>
-  <li>$\overline{U_n} \cap F_n = \varnothing$</li>
-</ul>
-
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png" alt="" /></p>
-
-<p>By Cantor’s theorem, there exists $x \in \bigcap \overline{U_n}$.</p>
-
-<h3 id="3-applications-of-the-baire-category-theorem">3. Applications of the Baire Category Theorem</h3>
-
-<blockquote>
-  <p><strong>Convergence of continuous function sequences is almost continuous.</strong> Let $\lbrace  f_n : X → (Y, d) \rbrace$ be a sequence of continuous functions converging to $f$. Then</p>
-
-\[S = \lbrace  x \in X : f\text{ is continuous at } x \rbrace\]
-
-  <p>is dense in $X$.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>KAIST POW2024-20.</strong> Let $f$ be a continuous function such that</p>
-
-\[\forall x \geq 0 : \lim_{n \to \infty} f(nx) = 0\]
-
-  <p>Then $\lim_{x \to \infty} f(x) = 0$.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Existence of pathological functions.</strong> Let $h : [0, 1] → \mathbb{R}$ be a continuous function. For any $ε &gt; 0$, there exists a function $g : [0,1] → \mathbb{R}$ satisfying:</p>
-
-  <ul>
-    <li>$\lVert h − g\rVert &lt; ε$.</li>
-    <li>$g$ is continuous on the entire interval.</li>
-    <li>$g$ is differentiable nowhere.</li>
-  </ul>
-</blockquote>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>
