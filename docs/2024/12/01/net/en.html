@@ -385,6 +385,7 @@
 </blockquote>
 
 <h3 id="compactness">Compactness</h3>
+
 <blockquote>
   <p><strong>Definition.</strong> Let $X$ be a topological space.</p>
 
@@ -405,6 +406,8 @@
     <li>Limit point compact $\not\rightarrow$ Sequentially compact</li>
   </ol>
 </blockquote>
+
+<p><img src="/public/three-compactness.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
 
 <p><strong>Proof.</strong></p>
 
@@ -440,7 +443,11 @@
   <p>Condition 2 is possible because when $k(i)$ is defined for $i \leq n$, $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$ still has $x$ as a limit point. Thus, $(x_n)$ has a convergent subsequence $(x_{k(n)})$.</p>
 </blockquote>
 
-<p>The above proof is incorrect because the bold portion is not generally possible. Instead, the following holds:</p>
+<p>The above proof is incorrect because the bold portion is not generally possible. Consider, for instance, a topological space where $x \in S’$ has uncountably many neighbourhoods which form uncountably infinite distinct classes of containment chain. Hence, in the diagram below, the same-coloured sets contain one or the other properly, but distinct-coloured sets do not, although they need not be strictly disjoint either. Such a space may be limit point compact yet not be sequentially compact, for there is no guaranteed way to enumerate the points of $S$ into a series such that whichever open set one chooses, for a large enough index, all points after that index is included in that open set. (Exercise: Convince yourself that this is not the case if the open sets can be arranged to form only finite distinct classes of chain, or countably infinite distinct classes of chain.)</p>
+
+<p><img src="/public/limit-vs-sequential.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
+
+<p>Instead, the following holds:</p>
 
 <blockquote>
   <p><strong>Theorem.</strong> In first countable T₁ spaces, limit point compactness and sequential compactness are equivalent.</p>
@@ -456,13 +463,15 @@
   <p><strong>Definition.</strong> Let $K$ be a subset of $(J, \leq)$. If for any $x \in J$, there exists $y \in K$ such that $x \leq y$, then $K$ is said to be <strong>cofinal</strong>.</p>
 </blockquote>
 
-<p><strong>Remark.</strong> If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.</p>
+<p><strong>Remark 1.</strong> If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.</p>
+
+<p><strong>Remark 2.</strong> As will be shown, cofinality is related with the generalisation of convergence.</p>
 
 <blockquote>
   <p><strong>Definition.</strong> Let $(J, \leq)$ be a directed set. For a topological space $X$, a function $f: J → X$ is called a <strong>net</strong>. In particular, for $\alpha \in J$, we denote $f(\alpha)$ as $x_\alpha$.</p>
 </blockquote>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png" alt="" /></p>
+<p><img src="/public/directed-set-net.png" style="width: 100%; max-width: 600px; margin: 0 auto" /></p>
 
 <blockquote>
   <p><strong>Definition.</strong> A net $(x_\alpha)$ converges to $x$ if, for any neighbourhood $U$ of $x$, there exists some $\alpha \in J$ such that</p>

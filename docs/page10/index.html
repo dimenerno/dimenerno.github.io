@@ -1368,6 +1368,7 @@
       
     </div>
      <h3 id="콤팩트성">콤팩트성</h3>
+
 <blockquote>
   <p><strong>정의.</strong> $X$가 위상공간이라고 하자.</p>
 
@@ -1388,6 +1389,8 @@
     <li>극점 콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
   </ol>
 </blockquote>
+
+<p><img src="/public/three-compactness.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
 
 <p><strong>증명.</strong></p>
 
@@ -1439,19 +1442,22 @@
   <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종(cofinal)</strong>이라고 한다.</p>
 </blockquote>
 
-<p><strong>Remark.</strong> $(J, \leq)$가 방향 집합이고 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
+<p><strong>Remark 1.</strong> $(J, \leq)$가 방향 집합이고 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
+
+<p><strong>Remark 2.</strong> 이후 드러나듯이, 공종성은 수렴의 일반화와 관련되는 조건이다.</p>
 
 <blockquote>
   <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물(net)</strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
 </blockquote>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png" alt="" /></p>
+<p><img src="/public/directed-set-net.png" style="width: 100%; max-width: 600px; margin: 0 auto" /></p>
 
 <blockquote>
   <p><strong>정의.</strong> 그물 $(x_\alpha)$가 $x$로 수렴한다는 것은, 임의의 $x$의 근방 $U$에 대해 어떤 $\alpha \in J$가 존재하여</p>
 
-  <p>\(\alpha \leq \beta \implies x_\beta \in U\)
-인 것이다.</p>
+\[\alpha \leq \beta \implies x_\beta \in U\]
+
+  <p>인 것이다.</p>
 </blockquote>
 
 <p>일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,</p>
@@ -1461,7 +1467,7 @@
 
   <ol>
     <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 점렬 $(x_n)$이 존재하는 것이다.</li>
-    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면  $f(x_n) → f(x)$인 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면 $f(x_n) → f(x)$인 것이다.</li>
   </ol>
 </blockquote>
 
@@ -1470,7 +1476,7 @@
 
   <ol>
     <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 그물 $(x_\alpha)$가 존재하는 것이다.</li>
-    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면  $f(x_\alpha) → f(x)$인 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면 $f(x_\alpha) → f(x)$인 것이다.</li>
   </ol>
 </blockquote>
 
@@ -1531,6 +1537,7 @@
 </blockquote>
 
 <h3 id="compactness">Compactness</h3>
+
 <blockquote>
   <p><strong>Definition.</strong> Let $X$ be a topological space.</p>
 
@@ -1551,6 +1558,8 @@
     <li>Limit point compact $\not\rightarrow$ Sequentially compact</li>
   </ol>
 </blockquote>
+
+<p><img src="/public/three-compactness.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
 
 <p><strong>Proof.</strong></p>
 
@@ -1586,7 +1595,11 @@
   <p>Condition 2 is possible because when $k(i)$ is defined for $i \leq n$, $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$ still has $x$ as a limit point. Thus, $(x_n)$ has a convergent subsequence $(x_{k(n)})$.</p>
 </blockquote>
 
-<p>The above proof is incorrect because the bold portion is not generally possible. Instead, the following holds:</p>
+<p>The above proof is incorrect because the bold portion is not generally possible. Consider, for instance, a topological space where $x \in S’$ has uncountably many neighbourhoods which form uncountably infinite distinct classes of containment chain. Hence, in the diagram below, the same-coloured sets contain one or the other properly, but distinct-coloured sets do not, although they need not be strictly disjoint either. Such a space may be limit point compact yet not be sequentially compact, for there is no guaranteed way to enumerate the points of $S$ into a series such that whichever open set one chooses, for a large enough index, all points after that index is included in that open set. (Exercise: Convince yourself that this is not the case if the open sets can be arranged to form only finite distinct classes of chain, or countably infinite distinct classes of chain.)</p>
+
+<p><img src="/public/limit-vs-sequential.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
+
+<p>Instead, the following holds:</p>
 
 <blockquote>
   <p><strong>Theorem.</strong> In first countable T₁ spaces, limit point compactness and sequential compactness are equivalent.</p>
@@ -1602,13 +1615,15 @@
   <p><strong>Definition.</strong> Let $K$ be a subset of $(J, \leq)$. If for any $x \in J$, there exists $y \in K$ such that $x \leq y$, then $K$ is said to be <strong>cofinal</strong>.</p>
 </blockquote>
 
-<p><strong>Remark.</strong> If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.</p>
+<p><strong>Remark 1.</strong> If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.</p>
+
+<p><strong>Remark 2.</strong> As will be shown, cofinality is related with the generalisation of convergence.</p>
 
 <blockquote>
   <p><strong>Definition.</strong> Let $(J, \leq)$ be a directed set. For a topological space $X$, a function $f: J → X$ is called a <strong>net</strong>. In particular, for $\alpha \in J$, we denote $f(\alpha)$ as $x_\alpha$.</p>
 </blockquote>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png" alt="" /></p>
+<p><img src="/public/directed-set-net.png" style="width: 100%; max-width: 600px; margin: 0 auto" /></p>
 
 <blockquote>
   <p><strong>Definition.</strong> A net $(x_\alpha)$ converges to $x$ if, for any neighbourhood $U$ of $x$, there exists some $\alpha \in J$ such that</p>

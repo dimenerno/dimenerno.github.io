@@ -452,6 +452,7 @@
 
 <blockquote>
   <p><strong>정리.</strong> $S$가 위상공간 $X$의 부분집합일 때, 다음은 동치이다.</p>
+
   <ul>
     <li>$\left( \operatorname{cl}S \right)^\circ$가 공집합이다.</li>
     <li>$(\operatorname{cl}S)^c$가 조밀하다.</li>
@@ -465,15 +466,12 @@
   <p><strong>정의.</strong> 희박한 닫힌 집합들의 가산 합집합 $\bigcup F_n$이 희박한 공간 $X$를 베르 공간이라고 한다.</p>
 </blockquote>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png" alt="" /></p>
+<p><img src="/public/baire.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
 
-<p><em>Remark.</em> TFAE:</p>
-<ul>
-  <li>$X$가 베르 공간이다.</li>
-  <li>$X$의 열린 조밀 집합들의 가산 교집합은 조밀하다.</li>
-</ul>
+<p><em>Remark.</em> $X$가 베르 공간이다 iff $X$의 열린 조밀 집합들의 가산 교집합은 조밀하다.</p>
 
 <p><strong>예시.</strong> $\mathbb{Q}$는 베르 공간이 아니다.</p>
+
 <ul>
   <li>$\lbrace  q \rbrace$는 닫힌 희박 집합이지만 $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$는 희박하지 않다.</li>
   <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$는 열린 조밀 집합이지만 $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$은 조밀하지 않다.</li>
@@ -491,12 +489,11 @@
 </blockquote>
 
 <blockquote>
-  <p><strong>완비 거리 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
-
-  <ol>
-    <li>$X$가 완비 거리 공간이다.</li>
-    <li>임의의 공집합이 없는 닫힌 집합열 $C_1 \supset C_2 \supset \cdots$에 대해 $\bigcap C_n \neq \varnothing$이며, 특히 $\operatorname{diam}C_n \to 0$일 때 $\bigcap C_n$은 홑원소 집합이다.</li>
-  </ol>
+<p><strong>완비 거리 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+<ol start="3">
+  <li>$X$가 완비 거리 공간이다.</li>
+  <li>임의의 공집합이 없는 닫힌 집합열 $C_1 \supset C_2 \supset \cdots$에 대해 $\bigcap C_n \neq \varnothing$이며, 특히 $\operatorname{diam}C_n \to 0$일 때 $\bigcap C_n$은 홑원소 집합이다.</li>
+</ol>
 </blockquote>
 
 <p><em>Remark.</em> 2는 4를 함의한다. 이로부터 콤팩트 거리 공간은 완비임을 보일 수 있다. <strong>역은 성립하지 않는다.</strong></p>
@@ -517,7 +514,7 @@
   <li>$\overline{U_n} \cap F_n = \varnothing$</li>
 </ul>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png" alt="" /></p>
+<p><img src="/public/baire-category-proof.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
 
 <p>칸토어 축소 정리에 의해 $x \in \bigcap \overline{U_n}$인 $x$가 존재한다.</p>
 
@@ -549,7 +546,6 @@
   </ul>
 </blockquote>
 
-
   </div>
   <div style="margin-bottom: 6em"></div>
   
@@ -570,39 +566,33 @@
       </div>
       
     </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h3 id="1-baire-spaces">1. Baire Spaces</h3>
+     <h3 id="1-baire-spaces">1. Baire Spaces</h3>
 
 <blockquote>
   <p><strong>Theorem.</strong> Let $S$ be a subset of a topological space $X$. The following are equivalent:</p>
+
   <ul>
     <li>$\left( \operatorname{cl}S \right)^\circ$ is empty.</li>
     <li>$(\operatorname{cl}S)^c$ is dense.</li>
     <li>$S$ is not dense in any open set of $X$.</li>
   </ul>
 
-  <p>In this case, $S$ is said to be <strong>rare</strong> (or <strong>nowhere dense</strong>).</p>
+  <p>Such a set $S$ is said to be <strong>rare</strong> (or <strong>nowhere dense</strong>).</p>
 </blockquote>
 
 <blockquote>
-  <p><strong>Definition.</strong> A space $X$ is called a Baire space if every countable union $\bigcup F_n$ of rare closed sets is rare.</p>
+  <p><strong>Definition.</strong> A space $X$ is called a <strong>Baire space</strong> if every <em>countable</em> union $\bigcup F_n$ of rare closed sets is rare.</p>
 </blockquote>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png" alt="" /></p>
+<p><img src="/public/baire.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
 
-<p><em>Remark.</em> TFAE:</p>
-<ul>
-  <li>$X$ is a Baire space.</li>
-  <li>Every countable intersection of open dense sets in $X$ is dense.</li>
-</ul>
+<p><em>Remark.</em> $X$ is a Baire space iff every countable intersection of open dense sets in $X$ is dense.</p>
 
 <p><strong>Example.</strong> $\mathbb{Q}$ is not a Baire space.</p>
+
 <ul>
-  <li>$\lbrace  q \rbrace$ is a closed rare set, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ is not rare.</li>
-  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$ is an open dense set, but $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$ is not dense.</li>
+  <li>$\lbrace  q \rbrace$ is a rare closed set, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ is not rare.</li>
+  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$ is a dense open set, but $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$ is not dense.</li>
 </ul>
 
 <h3 id="2-the-baire-category-theorem">2. The Baire Category Theorem</h3>
@@ -617,12 +607,11 @@
 </blockquote>
 
 <blockquote>
-  <p><strong>Cantor’s Theorem on Complete Metric Spaces.</strong> The following are equivalent:</p>
-
-  <ol>
-    <li>$X$ is a complete metric space.</li>
-    <li>For any non-empty decreasing sequence of closed sets $C_1 \supset C_2 \supset \cdots$, we have $\bigcap C_n \neq \varnothing$, and in particular, when $\operatorname{diam}C_n \to 0$, $\bigcap C_n$ is a singleton.</li>
-  </ol>
+<p><strong>Cantor's Theorem on Complete Metric Spaces.</strong> The following are equivalent:</p>
+<ol start="3">
+  <li>$X$ is a complete metric space.</li>
+  <li>For any nonempty sequence of closed sets $C_1 \supseteq C_2 \supseteq \cdots$, we have $\bigcap C_n \neq \varnothing$, and in particular, when $\operatorname{diam}C_n \to 0$, $\bigcap C_n$ is a singleton.</li>
+</ol>
 </blockquote>
 
 <p><em>Remark.</em> Statement 2 implies statement 4. From this, one can show that compact metric spaces are complete. <strong>The converse does not hold.</strong></p>
@@ -635,7 +624,7 @@
 
 <p>Let $X$ be a complete metric space or a compact Hausdorff space. Given a countable collection $\lbrace  F_n \rbrace$ of rare closed sets, we shall show that for any open set $U$, we have $U \not\subset \bigcup F_n$. To this end, we shall find $x \in U$ such that $\forall n : x \not\in F_n$.</p>
 
-<p>Since $F_1$ is rare, there exists $x_1 \in U \setminus F_1$. As $X$ is a regular space, there exists an open set $U_1$ such that $x_1 \in U_1$ and $\overline{U_1} \cap F_1 = \varnothing$. Inductively, we may define:</p>
+<p>Since $F_1$ is rare, there exists $x_1 \in U \setminus F_1$. As $X$ is a regular space, there exists an open set $U_1$ such that $x_1 \in U_1$ and $\overline{U_1} \cap F_1 = \varnothing$. Inductively, we define:</p>
 
 <ul>
   <li>$x_n \in U_n \setminus F_n$</li>
@@ -643,7 +632,7 @@
   <li>$\overline{U_n} \cap F_n = \varnothing$</li>
 </ul>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png" alt="" /></p>
+<p><img src="/public/baire-category-proof.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
 
 <p>By Cantor’s theorem, there exists $x \in \bigcap \overline{U_n}$.</p>
 
@@ -674,7 +663,6 @@
     <li>$g$ is differentiable nowhere.</li>
   </ul>
 </blockquote>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-07-03T23:36:17+09:00</updated>
+ <updated>2025-07-04T08:05:31+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -14205,6 +14205,7 @@ for y ∈ P:
    <updated>2024-12-01T00:00:00+09:00</updated>
    <id>http://localhost:4000/2024/12/01/net</id>
    <content type="html">&lt;h3 id=&quot;콤팩트성&quot;&gt;콤팩트성&lt;/h3&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X$가 위상공간이라고 하자.&lt;/p&gt;
 
@@ -14225,6 +14226,8 @@ for y ∈ P:
     &lt;li&gt;극점 콤팩트 $\not\rightarrow$ 점렬 콤팩트&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/three-compactness.png&quot; style=&quot;width: 100%; max-width: 550px; margin: 2em auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt;&lt;/p&gt;
 
@@ -14276,19 +14279,22 @@ for y ∈ P:
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 &lt;strong&gt;공종(cofinal)&lt;/strong&gt;이라고 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; $(J, \leq)$가 방향 집합이고 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark 1.&lt;/strong&gt; $(J, \leq)$가 방향 집합이고 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark 2.&lt;/strong&gt; 이후 드러나듯이, 공종성은 수렴의 일반화와 관련되는 조건이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 &lt;strong&gt;그물(net)&lt;/strong&gt;이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/directed-set-net.png&quot; style=&quot;width: 100%; max-width: 600px; margin: 0 auto&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 그물 $(x_\alpha)$가 $x$로 수렴한다는 것은, 임의의 $x$의 근방 $U$에 대해 어떤 $\alpha \in J$가 존재하여&lt;/p&gt;
 
-  &lt;p&gt;\(\alpha \leq \beta \implies x_\beta \in U\)
-인 것이다.&lt;/p&gt;
+\[\alpha \leq \beta \implies x_\beta \in U\]
+
+  &lt;p&gt;인 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,&lt;/p&gt;
@@ -14298,7 +14304,7 @@ for y ∈ P:
 
   &lt;ol&gt;
     &lt;li&gt;$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 점렬 $(x_n)$이 존재하는 것이다.&lt;/li&gt;
-    &lt;li&gt;$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면  $f(x_n) → f(x)$인 것이다.&lt;/li&gt;
+    &lt;li&gt;$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면 $f(x_n) → f(x)$인 것이다.&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
@@ -14307,7 +14313,7 @@ for y ∈ P:
 
   &lt;ol&gt;
     &lt;li&gt;$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 그물 $(x_\alpha)$가 존재하는 것이다.&lt;/li&gt;
-    &lt;li&gt;$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면  $f(x_\alpha) → f(x)$인 것이다.&lt;/li&gt;
+    &lt;li&gt;$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면 $f(x_\alpha) → f(x)$인 것이다.&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
@@ -14355,6 +14361,7 @@ for y ∈ P:
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;compactness&quot;&gt;Compactness&lt;/h3&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $X$ be a topological space.&lt;/p&gt;
 
@@ -14375,6 +14382,8 @@ for y ∈ P:
     &lt;li&gt;Limit point compact $\not\rightarrow$ Sequentially compact&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/three-compactness.png&quot; style=&quot;width: 100%; max-width: 550px; margin: 2em auto&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt;&lt;/p&gt;
 
@@ -14410,7 +14419,11 @@ for y ∈ P:
   &lt;p&gt;Condition 2 is possible because when $k(i)$ is defined for $i \leq n$, $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$ still has $x$ as a limit point. Thus, $(x_n)$ has a convergent subsequence $(x_{k(n)})$.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;The above proof is incorrect because the bold portion is not generally possible. Instead, the following holds:&lt;/p&gt;
+&lt;p&gt;The above proof is incorrect because the bold portion is not generally possible. Consider, for instance, a topological space where $x \in S’$ has uncountably many neighbourhoods which form uncountably infinite distinct classes of containment chain. Hence, in the diagram below, the same-coloured sets contain one or the other properly, but distinct-coloured sets do not, although they need not be strictly disjoint either. Such a space may be limit point compact yet not be sequentially compact, for there is no guaranteed way to enumerate the points of $S$ into a series such that whichever open set one chooses, for a large enough index, all points after that index is included in that open set. (Exercise: Convince yourself that this is not the case if the open sets can be arranged to form only finite distinct classes of chain, or countably infinite distinct classes of chain.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/limit-vs-sequential.png&quot; style=&quot;width: 100%; max-width: 550px; margin: 2em auto&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Instead, the following holds:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; In first countable T₁ spaces, limit point compactness and sequential compactness are equivalent.&lt;/p&gt;
@@ -14426,13 +14439,15 @@ for y ∈ P:
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $K$ be a subset of $(J, \leq)$. If for any $x \in J$, there exists $y \in K$ such that $x \leq y$, then $K$ is said to be &lt;strong&gt;cofinal&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark 1.&lt;/strong&gt; If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark 2.&lt;/strong&gt; As will be shown, cofinality is related with the generalisation of convergence.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $(J, \leq)$ be a directed set. For a topological space $X$, a function $f: J → X$ is called a &lt;strong&gt;net&lt;/strong&gt;. In particular, for $\alpha \in J$, we denote $f(\alpha)$ as $x_\alpha$.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/9012f74b-245b-413c-8df4-f6ae30ebf7b3/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/directed-set-net.png&quot; style=&quot;width: 100%; max-width: 600px; margin: 0 auto&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A net $(x_\alpha)$ converges to $x$ if, for any neighbourhood $U$ of $x$, there exists some $\alpha \in J$ such that&lt;/p&gt;
@@ -14503,6 +14518,7 @@ for y ∈ P:
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $S$가 위상공간 $X$의 부분집합일 때, 다음은 동치이다.&lt;/p&gt;
+
   &lt;ul&gt;
     &lt;li&gt;$\left( \operatorname{cl}S \right)^\circ$가 공집합이다.&lt;/li&gt;
     &lt;li&gt;$(\operatorname{cl}S)^c$가 조밀하다.&lt;/li&gt;
@@ -14516,15 +14532,12 @@ for y ∈ P:
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 희박한 닫힌 집합들의 가산 합집합 $\bigcup F_n$이 희박한 공간 $X$를 베르 공간이라고 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/baire.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; TFAE:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$X$가 베르 공간이다.&lt;/li&gt;
-  &lt;li&gt;$X$의 열린 조밀 집합들의 가산 교집합은 조밀하다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; $X$가 베르 공간이다 iff $X$의 열린 조밀 집합들의 가산 교집합은 조밀하다.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;예시.&lt;/strong&gt; $\mathbb{Q}$는 베르 공간이 아니다.&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;$\lbrace  q \rbrace$는 닫힌 희박 집합이지만 $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$는 희박하지 않다.&lt;/li&gt;
   &lt;li&gt;$\mathbb{Q} \setminus \lbrace  q \rbrace$는 열린 조밀 집합이지만 $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$은 조밀하지 않다.&lt;/li&gt;
@@ -14542,12 +14555,11 @@ for y ∈ P:
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;완비 거리 공간에서의 칸토어 축소 정리.&lt;/strong&gt; 다음은 동치이다.&lt;/p&gt;
-
-  &lt;ol&gt;
-    &lt;li&gt;$X$가 완비 거리 공간이다.&lt;/li&gt;
-    &lt;li&gt;임의의 공집합이 없는 닫힌 집합열 $C_1 \supset C_2 \supset \cdots$에 대해 $\bigcap C_n \neq \varnothing$이며, 특히 $\operatorname{diam}C_n \to 0$일 때 $\bigcap C_n$은 홑원소 집합이다.&lt;/li&gt;
-  &lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;완비 거리 공간에서의 칸토어 축소 정리.&lt;/strong&gt; 다음은 동치이다.&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+  &lt;li&gt;$X$가 완비 거리 공간이다.&lt;/li&gt;
+  &lt;li&gt;임의의 공집합이 없는 닫힌 집합열 $C_1 \supset C_2 \supset \cdots$에 대해 $\bigcap C_n \neq \varnothing$이며, 특히 $\operatorname{diam}C_n \to 0$일 때 $\bigcap C_n$은 홑원소 집합이다.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; 2는 4를 함의한다. 이로부터 콤팩트 거리 공간은 완비임을 보일 수 있다. &lt;strong&gt;역은 성립하지 않는다.&lt;/strong&gt;&lt;/p&gt;
@@ -14568,7 +14580,7 @@ for y ∈ P:
   &lt;li&gt;$\overline{U_n} \cap F_n = \varnothing$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/baire-category-proof.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;칸토어 축소 정리에 의해 $x \in \bigcap \overline{U_n}$인 $x$가 존재한다.&lt;/p&gt;
 
@@ -14599,7 +14611,6 @@ for y ∈ P:
     &lt;li&gt;$g$는 전 구간에서 미분 불가능하다.&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
-
 </content>
  </entry>
  
@@ -14608,39 +14619,33 @@ for y ∈ P:
    <link href="http://localhost:4000/2024/12/01/baire/en"/>
    <updated>2024-12-01T00:00:00+09:00</updated>
    <id>http://localhost:4000/2024/12/01/baire/baire-en</id>
-   <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;1-baire-spaces&quot;&gt;1. Baire Spaces&lt;/h3&gt;
+   <content type="html">&lt;h3 id=&quot;1-baire-spaces&quot;&gt;1. Baire Spaces&lt;/h3&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $S$ be a subset of a topological space $X$. The following are equivalent:&lt;/p&gt;
+
   &lt;ul&gt;
     &lt;li&gt;$\left( \operatorname{cl}S \right)^\circ$ is empty.&lt;/li&gt;
     &lt;li&gt;$(\operatorname{cl}S)^c$ is dense.&lt;/li&gt;
     &lt;li&gt;$S$ is not dense in any open set of $X$.&lt;/li&gt;
   &lt;/ul&gt;
 
-  &lt;p&gt;In this case, $S$ is said to be &lt;strong&gt;rare&lt;/strong&gt; (or &lt;strong&gt;nowhere dense&lt;/strong&gt;).&lt;/p&gt;
+  &lt;p&gt;Such a set $S$ is said to be &lt;strong&gt;rare&lt;/strong&gt; (or &lt;strong&gt;nowhere dense&lt;/strong&gt;).&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A space $X$ is called a Baire space if every countable union $\bigcup F_n$ of rare closed sets is rare.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A space $X$ is called a &lt;strong&gt;Baire space&lt;/strong&gt; if every &lt;em&gt;countable&lt;/em&gt; union $\bigcup F_n$ of rare closed sets is rare.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/5dbd4fb6-2c14-446a-a20c-d74a7a78bdab/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/baire.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; TFAE:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$X$ is a Baire space.&lt;/li&gt;
-  &lt;li&gt;Every countable intersection of open dense sets in $X$ is dense.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; $X$ is a Baire space iff every countable intersection of open dense sets in $X$ is dense.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Example.&lt;/strong&gt; $\mathbb{Q}$ is not a Baire space.&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;$\lbrace  q \rbrace$ is a closed rare set, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ is not rare.&lt;/li&gt;
-  &lt;li&gt;$\mathbb{Q} \setminus \lbrace  q \rbrace$ is an open dense set, but $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$ is not dense.&lt;/li&gt;
+  &lt;li&gt;$\lbrace  q \rbrace$ is a rare closed set, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ is not rare.&lt;/li&gt;
+  &lt;li&gt;$\mathbb{Q} \setminus \lbrace  q \rbrace$ is a dense open set, but $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$ is not dense.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;2-the-baire-category-theorem&quot;&gt;2. The Baire Category Theorem&lt;/h3&gt;
@@ -14655,12 +14660,11 @@ for y ∈ P:
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Cantor’s Theorem on Complete Metric Spaces.&lt;/strong&gt; The following are equivalent:&lt;/p&gt;
-
-  &lt;ol&gt;
-    &lt;li&gt;$X$ is a complete metric space.&lt;/li&gt;
-    &lt;li&gt;For any non-empty decreasing sequence of closed sets $C_1 \supset C_2 \supset \cdots$, we have $\bigcap C_n \neq \varnothing$, and in particular, when $\operatorname{diam}C_n \to 0$, $\bigcap C_n$ is a singleton.&lt;/li&gt;
-  &lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Cantor&apos;s Theorem on Complete Metric Spaces.&lt;/strong&gt; The following are equivalent:&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+  &lt;li&gt;$X$ is a complete metric space.&lt;/li&gt;
+  &lt;li&gt;For any nonempty sequence of closed sets $C_1 \supseteq C_2 \supseteq \cdots$, we have $\bigcap C_n \neq \varnothing$, and in particular, when $\operatorname{diam}C_n \to 0$, $\bigcap C_n$ is a singleton.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; Statement 2 implies statement 4. From this, one can show that compact metric spaces are complete. &lt;strong&gt;The converse does not hold.&lt;/strong&gt;&lt;/p&gt;
@@ -14673,7 +14677,7 @@ for y ∈ P:
 
 &lt;p&gt;Let $X$ be a complete metric space or a compact Hausdorff space. Given a countable collection $\lbrace  F_n \rbrace$ of rare closed sets, we shall show that for any open set $U$, we have $U \not\subset \bigcup F_n$. To this end, we shall find $x \in U$ such that $\forall n : x \not\in F_n$.&lt;/p&gt;
 
-&lt;p&gt;Since $F_1$ is rare, there exists $x_1 \in U \setminus F_1$. As $X$ is a regular space, there exists an open set $U_1$ such that $x_1 \in U_1$ and $\overline{U_1} \cap F_1 = \varnothing$. Inductively, we may define:&lt;/p&gt;
+&lt;p&gt;Since $F_1$ is rare, there exists $x_1 \in U \setminus F_1$. As $X$ is a regular space, there exists an open set $U_1$ such that $x_1 \in U_1$ and $\overline{U_1} \cap F_1 = \varnothing$. Inductively, we define:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$x_n \in U_n \setminus F_n$&lt;/li&gt;
@@ -14681,7 +14685,7 @@ for y ∈ P:
   &lt;li&gt;$\overline{U_n} \cap F_n = \varnothing$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/d818ecc4-bc0a-4d81-844d-046d20f47ad5/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/baire-category-proof.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;By Cantor’s theorem, there exists $x \in \bigcap \overline{U_n}$.&lt;/p&gt;
 
@@ -14712,7 +14716,6 @@ for y ∈ P:
     &lt;li&gt;$g$ is differentiable nowhere.&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
-
 </content>
  </entry>
  
