@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2025-07-04T08:05:31+09:00</updated>
+ <updated>2025-07-04T08:27:38+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
@@ -87,7 +87,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;p&gt;그러나 회의주의자는 이에 대해 또 한번 회의주의를 펼칠 수 있다. 요컨대 그는 과거에 앨리스는 ‘모아 세다’라는 단어를 줄곧 셈&lt;sub&gt;count&lt;/sub&gt;이 아닌 &lt;em&gt;켐&lt;sub&gt;quont&lt;/sub&gt;&lt;/em&gt;으로 이해하고 있었다고 주장할 수 있다. 묶음을 켄다는 것은 묶음의 크기가 50 미만일 때는 세는 것이고 50을 초과할 때는 5라고 대답하는 것이다.&lt;/p&gt;
 
-&lt;p&gt;요지는, &lt;strong&gt;‘+’에 부여한 의미가 무엇인지를 다른 언어적 증거를 통해 입증하려는 시도는 해당  증거 또한 비표준적인 의미가 부여되었을 가능성을 제거하지 못하므로 무한 퇴행에 빠진다&lt;/strong&gt;는 것이다.&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;요지는, &lt;strong&gt;‘+’에 부여한 의미가 무엇인지를 다른 언어적 증거를 통해 입증하려는 시도는 해당 증거 또한 비표준적인 의미가 부여되었을 가능성을 제거하지 못하므로 무한 퇴행에 빠진다&lt;/strong&gt;는 것이다.&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;22-성향적-분석dispositional-analysis&quot;&gt;2.2. 성향적 분석&lt;sub&gt;dispositional analysis&lt;/sub&gt;&lt;/h3&gt;
 
@@ -143,6 +143,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;주장 1.&lt;/strong&gt; 만약 앨리스가 과거에 ‘+’에 부여하던 의미와 현재 ‘+’에 부여하는 의미가 일치한다면,&lt;/p&gt;
+
   &lt;ol&gt;
     &lt;li&gt;앨리스는 ‘5’라고 답해야 하는 것이 아니라,&lt;/li&gt;
     &lt;li&gt;앨리스는 ‘125’라고 답해야 한다.&lt;/li&gt;
@@ -153,6 +154,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;주장 1.1.&lt;/strong&gt; 만약 ‘+’에 대한 과거 앨리스의 문답 성향이 ‘+’에 대한 현재 앨리스의 문답 성향과 일치한다면,&lt;/p&gt;
+
   &lt;ol&gt;
     &lt;li&gt;앨리스는 ‘5’라고 답해야 하는 것이 아니라,&lt;/li&gt;
     &lt;li&gt;앨리스는 ‘125’라고 답해야 한다.&lt;/li&gt;
@@ -163,6 +165,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;주장 1.2.&lt;/strong&gt; 만약 ‘+’에 대한 현재 앨리스의 문답 성향이 두 수가 주어졌을 때 그 합을 말하는 것이라면,&lt;/p&gt;
+
   &lt;ol&gt;
     &lt;li&gt;앨리스는 ‘5’라고 답해야 하는 것이 아니라,&lt;/li&gt;
     &lt;li&gt;앨리스는 ‘125’라고 답해야 한다.&lt;/li&gt;
@@ -175,6 +178,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;주장 2.&lt;/strong&gt; 만약 앨리스가 과거에 ‘+’에 부여하던 의미와 현재 ‘+’에 부여하는 의미가 일치한다면,&lt;/p&gt;
+
   &lt;ol&gt;
     &lt;li&gt;앨리스는 ‘5’라고 답할 것이 아니라,&lt;/li&gt;
     &lt;li&gt;앨리스는 ‘125’라고 답할 것이다.&lt;/li&gt;
@@ -187,6 +191,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;주장 3.&lt;/strong&gt; 만약 앨리스가 과거에 ‘+’에 부여하던 의미와 현재 ‘+’에 부여하는 의미를 &lt;em&gt;일치시키고자 한다면,&lt;/em&gt;&lt;/p&gt;
+
   &lt;ol&gt;
     &lt;li&gt;앨리스는 ‘5’라고 답해야 하는 것이 아니라,&lt;/li&gt;
     &lt;li&gt;앨리스는 ‘125’라고 답해야 한다.&lt;/li&gt;
@@ -197,6 +202,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;주장 3.1.&lt;/strong&gt; 만약 ‘+’에 대한 현재 앨리스의 문답 성향이 두 수가 주어졌을 때 그 합을 말하는 것이 &lt;em&gt;되고자 한다면,&lt;/em&gt;&lt;/p&gt;
+
   &lt;ol&gt;
     &lt;li&gt;앨리스는 ‘5’라고 답해야 하는 것이 아니라,&lt;/li&gt;
     &lt;li&gt;앨리스는 ‘125’라고 답해야 한다.&lt;/li&gt;
@@ -225,6 +231,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;주장 4.&lt;/strong&gt; 만약 앨리스가 과거에 ‘어두컴컴한 방과 창밖으로 떨어지는 물방울 소리’에 형성하던 믿음과 현재 동 상황에 형성하는 믿음을 &lt;em&gt;일치시키고자 한다면,&lt;/em&gt;&lt;/p&gt;
+
   &lt;ol&gt;
     &lt;li&gt;앨리스는 지팡이를 챙겨야 하는 것이 아니라,&lt;/li&gt;
     &lt;li&gt;앨리스는 우산을 챙겨야 한다.&lt;/li&gt;
@@ -233,6 +240,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;주장 4.1.&lt;/strong&gt; 만약 ‘어두컴컴한 방과 창밖으로 떨어지는 물방울 소리’에 대해 앨리스가 보였을 자극-반응 대응과, 동 상황에 대한 현재 앨리스의 자극-반응 대응을 &lt;em&gt;일치시키고자 한다면,&lt;/em&gt;&lt;/p&gt;
+
   &lt;ol&gt;
     &lt;li&gt;앨리스는 지팡이를 챙기는 것이 아니라,&lt;/li&gt;
     &lt;li&gt;앨리스는 우산을 챙겨야 한다.&lt;/li&gt;
@@ -241,6 +249,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;주장 4.2.&lt;/strong&gt; 만약 ‘어두컴컴한 방과 창밖으로 떨어지는 물방울 소리’에 대한 앨리스의 자극-반응 대응이 외출을 나가는 상황에 대하여 우산을 챙기는 것이 &lt;em&gt;되고자 한다면&lt;/em&gt;,&lt;/p&gt;
+
   &lt;ol&gt;
     &lt;li&gt;앨리스는 지팡이를 챙기는 것이 아니라,&lt;/li&gt;
     &lt;li&gt;앨리스는 우산을 챙겨야 한다.&lt;/li&gt;
@@ -301,7 +310,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Semantic_satiation&quot;&gt;같은 단어를 수십 번 말하다 보면 마치 단어에서 의미가 빠져나가고 껍질만 남은 것처럼 ‘낯설게’ 느껴지는 현상&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;’배’를 운송수단을 떠올리며 말할 떄와 과일을 떠올리며 말할 때의 차이 (이것을 &lt;a href=&quot;https://en.wikipedia.org/wiki/Necker_cube&quot;&gt;네커 큐브&lt;/a&gt; 착시와 비교해 보라)&lt;/li&gt;
+  &lt;li&gt;’배’를 운송수단을 떠올리며 말할 때와 과일을 떠올리며 말할 때의 차이 (이것을 &lt;a href=&quot;https://en.wikipedia.org/wiki/Necker_cube&quot;&gt;네커 큐브&lt;/a&gt; 착시와 비교해 보라)&lt;/li&gt;
   &lt;li&gt;심리철학의 철학적 좀비와 유사한, &lt;em&gt;의미론적 좀비&lt;/em&gt; — 발화 기록만으로는 일반적인 언어 사용자와 구별되지 않으나 내면에 어떠한 의미론도 가지고 있지 않은 화자&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -2404,7 +2413,7 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\kappa$가 비가산 기수라고 하자. $\mathfrak{A}$가 &lt;strong&gt;$\kappa$-포화&lt;sub&gt;$\kappa$-saturated&lt;/sub&gt;&lt;/strong&gt;되었다는 것은, $\kappa$개보다 적은 $A$의 정의가능한 부분집합들의 모임이 언제나 탄력적이라는 것이다. 특히, $\mathfrak{A}$가 $|A|$-포화되었을 때, $\mathfrak{A}$는 &lt;strong&gt;포화&lt;sub&gt;saturated&lt;/sub&gt;&lt;/strong&gt;되었다고 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;따라서 $\aleph_1$-포화된 구조 $\mathfrak{A}$는, 가산 개의 $\mathfrak{A}$의 정의가능한 부분집합들의 모임이 유한 교집합 속성을 만족할 떄, 전체 교집합 또한 공집합이 아닌 구조이다. 한편 구조 $\mathfrak{A}$가 $|A|^+$-포화되는 것은 불가능하다. 다음의 집합족이 유한 교집합 속성을 만족하지만 교집합은 공집합이기 때문이다.&lt;/p&gt;
+&lt;p&gt;따라서 $\aleph_1$-포화된 구조 $\mathfrak{A}$는, 가산 개의 $\mathfrak{A}$의 정의가능한 부분집합들의 모임이 유한 교집합 속성을 만족할 때, 전체 교집합 또한 공집합이 아닌 구조이다. 한편 구조 $\mathfrak{A}$가 $|A|^+$-포화되는 것은 불가능하다. 다음의 집합족이 유한 교집합 속성을 만족하지만 교집합은 공집합이기 때문이다.&lt;/p&gt;
 
 \[\Big\{ A - \{ a \} : a \in A \Big\}\]
 
@@ -14426,8 +14435,10 @@ for y ∈ P:
 &lt;p&gt;Instead, the following holds:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; In first countable T₁ spaces, limit point compactness and sequential compactness are equivalent.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; In first countable $T_1$ spaces, limit point compactness and sequential compactness are equivalent.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;Note that $T_1$-ness is also required, for we need to&lt;/p&gt;
 
 &lt;h3 id=&quot;nets-and-sequences&quot;&gt;Nets and Sequences&lt;/h3&gt;
 

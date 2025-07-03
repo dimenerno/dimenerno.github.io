@@ -6,7 +6,9 @@ permalink: /search.html
 ---
 
 <h1 id="search-h1-ko" class="lang-ko" style="margin-bottom: 1em">검색 결과</h1>
-<h1 id="search-h1-en" class="lang-en" style="margin-bottom: 1em">Search Results</h1>
+<h1 id="search-h1-en" class="lang-en" style="margin-bottom: 1em">
+  Search Results
+</h1>
 <ul id="search-results"></ul>
 
 <script>
@@ -14,35 +16,50 @@ permalink: /search.html
     const params = new URLSearchParams(window.location.search);
     const query = (params.get("q") || "").toLowerCase().trim();
     const resultsContainer = document.getElementById("search-results");
+    const h1_ko = document.getElementById("search-h1-ko");
+    const h1_en = document.getElementById("search-h1-en");
 
     if (!query) {
-      resultsContainer.innerHTML = "<li class=\"lang-ko\">검색어를 입력해주세요.</li><li class=\"lang-en\">Enter search query.</li>";
+      resultsContainer.innerHTML =
+        '<li class="lang-ko">검색어를 입력해주세요.</li><li class="lang-en">Enter search query.</li>';
       return;
     }
 
+    let data = [];
     try {
       const res = await fetch("/search.json");
-      const data = await res.json();
+      data = await res.json();
+    } catch (e) {
+      console.error("Error loading search.json:", e);
+      resultsContainer.innerHTML = "<li>Unexpected error while searching.</li>";
+      return;
+    }
 
-      // 필터링
+    function renderResultsForLang(lang) {
       const results = data.filter((entry) => {
+        if (entry.lang !== lang) return false;
         const title = (entry.title || "").toLowerCase();
         const content = (entry.content || "").toLowerCase();
         return title.includes(query) || content.includes(query);
       });
 
-      document.getElementById("search-h1-ko").textContent = `\'${query}\' 의 검색 결과 (${results.length})`;
-      document.getElementById("search-h1-en").textContent = `Search result for \'${query}\' (${results.length})`;
+      h1_ko.textContent = `'${query}' 의 검색 결과 (${
+        lang === "ko" ? results.length : 0
+      })`;
+      h1_en.textContent = `Search result for '${query}' (${
+        lang === "en" ? results.length : 0
+      })`;
 
       if (results.length === 0) {
-        resultsContainer.innerHTML = "$$\\mathrm{SearchResult} = \\varnothing$$";
-        if (window.MathJax && window.MathJax.typeset) {
-  MathJax.typeset();
-}
-      } else {
-        resultsContainer.innerHTML = results
-          .map(
-            (entry) => `
+        resultsContainer.innerHTML =
+          "$$\\mathrm{SearchResult} = \\varnothing$$";
+        if (window.MathJax && window.MathJax.typeset) MathJax.typeset();
+        return;
+      }
+
+      resultsContainer.innerHTML = results
+        .map(
+          (entry) => `
           <li style="margin-bottom: 1.5em;">
             <a href="${entry.url}">
               <strong>${entry.title}</strong>
@@ -50,15 +67,22 @@ permalink: /search.html
             <small>${entry.content.slice(0, 100)}...</small>
           </li>
         `
-          )
-          .join("");
-        if (window.MathJax && window.MathJax.typeset) {
-          MathJax.typeset();
-        }
-      }
-    } catch (e) {
-      console.error("Error:", e);
-      resultsContainer.innerHTML = "<li>Unexpected error while searching.</li>";
+        )
+        .join("");
+      if (window.MathJax && window.MathJax.typeset) MathJax.typeset();
+    }
+
+    const initialLang = localStorage.getItem("lang") || "ko";
+    renderResultsForLang(initialLang);
+
+    // 🟢 언어 토글 변경 시 결과 다시 렌더링
+    const langToggle = document.getElementById("lang-toggle");
+    if (langToggle) {
+      langToggle.addEventListener("change", () => {
+        const newLang = langToggle.checked ? "en" : "ko";
+        localStorage.setItem("lang", newLang);
+        renderResultsForLang(newLang);
+      });
     }
   });
 </script>
