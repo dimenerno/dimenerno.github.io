@@ -1,341 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dimenerno.github.io/" rel="alternate" type="text/html" /><updated>2025-07-04T20:41:48+09:00</updated><id>https://dimenerno.github.io/feed.xml</id><title type="html">디멘의 블로그</title><subtitle>이데아를 여행하는 히치하이커</subtitle><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><entry xml:lang="en"><title type="html">The Kripke-Wittgenstein Paradox</title><link href="https://dimenerno.github.io/2025/07/03/kripkenstein/en" rel="alternate" type="text/html" title="The Kripke-Wittgenstein Paradox" /><published>2025-07-03T00:00:00+09:00</published><updated>2025-07-03T00:00:00+09:00</updated><id>https://dimenerno.github.io/2025/07/03/kripkenstein/kripkenstein-en</id><content type="html" xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein/en"><![CDATA[<blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p>Please note that section “2.2. Dispositional Analysis” contains considerable additional commentary by the author that is independent from Kripke’s original paper.</p>
-</blockquote>
-
-<h3 id="overview">Overview</h3>
-
-<p>Kripke argues that the core of Wittgenstein’s <em>Philosophical Investigations</em> lies in what is known as <strong>scepticism about rule following</strong>.</p>
-
-<p>According to Kripke’s reading, §1-137 of the <em>Investigations</em> is where Wittgenstein criticises and overcomes the linguistic view of the <em>Tractatus</em>. In §138-242, scepticism about rule following is presented. The sceptical argument, which questions whether there exists a state of affairs corresponding to propositions such as “Alice means addition by ‘+’”, not only confirms §1-137 by showing that the linguistic view of the <em>Tractatus</em> cannot be correct, but also seems to suggest the devastating conclusion that no theory whatsoever that elucidates the problem of meaning is possible.</p>
-
-<p>According to Kripke, Wittgenstein provides a “sceptical solution” to this. That is, whilst accepting the sceptic’s conclusion—that there is no state of affairs corresponding to “Alice means addition by ‘+’“—he elucidates how it can be used meaningfully, unlike propositions such as “green thoughts sleep”. This solution emphasises the <strong>publicity of language</strong>—that the meaning of language is inseparable from its function within a community, and therefore discussions of meaning are vacuous at the level of individual language users but valid at the level of linguistic communities.</p>
-
-<p>From §243 onwards applies the “sceptical solution” to other philosophical problems. One implication of the sceptical solution is the impossibility of private language. Nevertheless, there are two representative areas of language that appear to operate in a private manner: mathematical language and psychological language. <strong>However, Wittgenstein argues that the idea that mathematical and psychological languages constitute private languages is a misconception.</strong> In this section, we can glimpse Wittgenstein’s distinctive positions in the philosophy of mathematics and psychology.</p>
-
-<h2 id="1-the-kripke-wittgenstein-paradox">1. The Kripke-Wittgenstein Paradox</h2>
-
-<p>The conclusion of the Kripke-Wittgenstein paradox is as follows:</p>
-
-<blockquote>
-  <p>Propositions of the form “Speaker $A$ means meaning $m$ by symbol $s$”<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> have no corresponding state of affairs. That is, such propositions lack truth values.</p>
-</blockquote>
-
-<p>Therefore, for instance, the proposition “Alice means addition by ‘+’” is as incomprehensible as the proposition “Alice’s thoughts are green”.</p>
-
-<h3 id="11-the-appearance-of-the-sceptic">1.1. The Appearance of the Sceptic</h3>
-
-<p>Why then do Kripke and Wittgenstein make such an extreme claim? The core of the argument lies in an easily overlooked but genuinely contradictory aspect hidden in the process by which language users grasp the meaning of words: from <em>finite</em> past learning experiences, one must be able to make correct inferences about the <em>infinite</em> cases in which that word could be used.</p>
-
-<p>For example, suppose Alice has never performed addition of two numbers both exceeding 50. Even so, if someone asked Alice ‘68 + 57’, she would readily answer ‘125’. But at this point, a sceptic approaches Alice and claims that her answer ‘125’ is wrong, and that the answer Alice should have given was ‘5’. Specifically, the sceptic claims the following:</p>
-
-<blockquote>
-  <p>If the meaning Alice assigned to ‘+’ in the past matches the meaning she assigns to ‘+’ in the present, then Alice should have answered ‘5’.</p>
-</blockquote>
-
-<p>Because—at least according to the sceptic—the meaning Alice assigned to ‘+’ in the past was actually not addition (+) but <strong>quaddition</strong> (⨁). The definition of quaddition is as follows:</p>
-
-\[x \oplus y =
-\begin{cases}
-x + y &amp; x, y &lt; 50 \\
-5 &amp; \text{otherwise}
-\end{cases}\]
-
-<p>Alice would immediately object that she has used ‘+’ to mean addition, not quaddition, since the past. But here begins the real problem. <strong>How can it be proved that the meaning Alice assigned to ‘+’ in the past was addition rather than quaddition?</strong> Due to the assumption of the problem, it is impossible to prove this from the records of ‘+’ calculations that Alice performed in the past.</p>
-
-<p>The expression ‘proof’ that has just appeared might make this problem seem epistemological (“How can we know that Alice means addition by ‘+’?”). However, what Kripke asks is whether even an omniscient observer who could see into Alice’s mind could know whether Alice means addition by ‘+’, or whether she means some non-standard operation that agrees with addition in sufficiently many cases. <strong>In this respect, the scepticism Kripke presents is ontological.</strong> The point of the problem is whether there is a state of affairs corresponding to “Alice means addition rather than quaddition”. This is revealed by the fact that Kripke goes on to examine attempts to resolve scepticism through counterfactual conditionals or possible worlds—though he concludes that these attempts also fail.</p>
-
-<h3 id="12-two-conditions">1.2. Two Conditions</h3>
-
-<p>There are two noteworthy points about the sceptic’s claim. <strong>Firstly, the sceptic’s claim is conditional.</strong> The sceptic is not claiming that Alice should answer ‘5’ <em>in any case</em>. What he claims is that if the meaning Alice assigned to ‘+’ in the past <em>matches</em> the meaning she assigns to ‘+’ in the present, then she should answer ‘5’. <strong>Secondly, the sceptic’s claim is normative.</strong> The sceptic’s claim is not that—when the aforementioned condition is satisfied—Alice <em>will</em> answer ‘5’, but that she <em>should</em> answer ‘5’.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> In other words, the sceptic claims that if Alice had answered ‘5’ to ‘68 + 57’, that answer <em>would have been justified</em>.</p>
-
-<p>Therefore, any refutation of the sceptic’s claim must also have two characteristics. <strong>Firstly, it must explain what fact about a speaker constitutes that speaker’s use of a particular symbol with a particular meaning.</strong> This explanation is necessary to elucidate what the antecedent means in the sceptic’s claim.<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup> <strong>Secondly, it must explain how that fact justifies the speaker’s use of language.</strong> This explanation is necessary because the sceptic’s conclusion is normative.</p>
-
-<p>The significance of the second condition may not be immediately apparent, so let me elaborate. Suppose some mad scientist approached the sceptic and said:</p>
-
-<blockquote>
-  <p>Actually, I once scanned Alice at the atomic level in the past. So after hearing your claim, I asked Alice-2, whom I created by copying that scan, ‘68 + 57’, and Alice-2 answered ‘125’. Therefore, past Alice did not mean quaddition by ‘+’.</p>
-</blockquote>
-
-<p>However, the mad scientist’s experiment is insufficient to refute the sceptic’s claim. This is because the mad scientist’s experiment does not satisfy the second condition. The result of that experiment only guarantees that Alice <em>would have</em> always answered ‘125’, but does not guarantee that Alice <em>should have</em> always answered ‘125’.</p>
-
-<p>This can be understood more clearly through <strong>cases of systematic computational error</strong>. For instance, children learning addition often forget to carry. Such a child would answer ‘115’ rather than ‘125’ to ‘68 + 57’. Now suppose there is someone called Johnson who, due to some problem, has failed to correct his carrying mistakes even as an adult. Johnson understands what addition is, and when asked about properties of addition rather than specific addition problems—such as “Does it satisfy the associative law?”—he answers correctly. However, in situations where Johnson has no instructor to correct his mistakes, he would <em>always</em> have answered ‘115’ to ‘68 + 57’, and will continue to do so in future. We would want to claim that Johnson assigns the meaning of addition to ‘+’, but fails to answer ‘68 + 57’ in a <em>justified manner</em> according to that meaning. It is precisely to make this claim possible that the second condition is needed. If we adopt a semantics that fails to satisfy the second condition, we would have to accept that Johnson assigns to ‘+’ the meaning of <strong>baddition</strong>—an operation that performs addition without carrying—or <strong>maddition</strong>—an operation that performs baddition when no instructor is present and performs addition with the instructor’s correction when one is present.<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup></p>
-
-<h2 id="2-examination-of-refutations-of-scepticism">2. Examination of Refutations of Scepticism</h2>
-
-<h3 id="21-linguistic-elucidation">2.1. Linguistic Elucidation</h3>
-
-<p>The first answer Alice might give upon hearing the sceptic’s claim would probably be this: “In the past, I have assigned to ‘x + y’ the meaning of the operation of counting x objects and y objects together. Therefore, I did not use ‘+’ to mean quaddition in the past.”</p>
-
-<p>However, the sceptic can deploy scepticism once again against this. In short, he can claim that in the past Alice consistently understood the word ‘count’ not as count but as <em>quount</em>. To quount a collection is to count it when the collection’s size is less than 50 and to answer 5 when it exceeds 50.</p>
-
-<p>The point is that <strong>attempts to prove what meaning was assigned to ‘+’ through other linguistic evidence fall into infinite regress, as such evidence cannot eliminate the possibility that non-standard meanings were assigned to it as well</strong>.<sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup></p>
-
-<h3 id="22-dispositional-analysis">2.2. Dispositional Analysis</h3>
-
-<p>In philosophy of mind, <strong>dispositional analysis</strong> is the way behaviourism explains psychological states, with the core as follows:</p>
-
-<blockquote>
-  <p><strong>Dispositional analysis of psychological states.</strong> For subject $A$ to be in psychological state $\mathfrak{m}$ in the past, present, or future means that if stimulus $s$ had been given / is given / will be given to $A$, then $A$ would have shown / will show / will show response $b = f_\mathfrak{m}(s)$. That is, psychological state ($\mathfrak{m}$) is reduced to stimulus-response correspondence ($f_\mathfrak{m}$).</p>
-</blockquote>
-
-<p>For example, suppose Alice, having just awakened from a light sleep, formed the belief “it is raining now” upon hearing the dim room and the sound of water drops from outside the window. According to dispositional analysis, the meaning of “Alice believes ‘it is raining now’” is nothing different from the following (countless) stimulus-response correspondences:</p>
-
-<ul>
-  <li>If a friend calls to go eat together, -&gt; she will bring an umbrella.</li>
-  <li>If a neighbour contacts her saying her laundry is hanging outside, -&gt; she will rush to collect the laundry.</li>
-  <li>If an outdoor schedule is planned for tomorrow, -&gt; she will check tomorrow’s weather, etc…</li>
-</ul>
-
-<p>If phenomena significantly deviating from these stimulus-response correspondences are observed, the dispositional analyst would revise their view of Alice’s belief. For instance, if Alice went out but brought sunglasses instead of an umbrella, they would judge that Alice has the belief “the sun is shining brightly” rather than the belief “it is raining”.</p>
-
-<p>Two characteristics of dispositional analysis to note from the explanation so far:</p>
-
-<ol>
-  <li><strong>It uses counterfactual conditionals.</strong> Even if Alice does not go out in the past, present, or future, “if Alice <em>had gone out</em> / <em>goes out</em> / <em>will go out</em>, she would have brought / will bring / will bring an umbrella” forms part of the dispositional analysis of the belief she had / has / will have.</li>
-  <li><strong>It is descriptive.</strong> Because dispositional analysis is based on behaviourism, it consists of descriptive propositions such as “if Alice goes out, she <em>will</em> bring an umbrella” rather than normative propositions such as “if Alice goes out, she <em>should</em> bring an umbrella”. According to dispositional analysis, if Alice goes out but brings sunglasses instead of an umbrella, she does not have the belief that it is raining but is <em>failing</em> to act <em>justifiably</em> according to it; rather, she simply does not have the belief that it is raining in the first place.</li>
-</ol>
-
-<p>Kripke reports that some philosophers who discussed the rule-following paradox with him in private attempted to resolve the paradox through dispositional analysis by relying on the first characteristic of dispositional analysis. This approach claims the following:</p>
-
-<blockquote>
-  <p><strong>Dispositional analysis of meaning.</strong> For speaker $A$ to mean meaning $\mathfrak{m}$ by symbol $s$ in the past, present, or future means that if sentence $\phi$ containing $s$ had been given / is given / will be given to $A$, then $A$ would have answered / will answer / will answer with sentence $\psi = f_\mathfrak{m}(\phi)$. That is, meaning ($\mathfrak{m}$) is reduced to question-answer correspondence ($f_\mathfrak{m}$).</p>
-</blockquote>
-
-<p>According to this analysis, for Alice to mean addition by ‘+’ in the past, present, or future means that when x + y had been asked / is asked / will be asked of Alice, $A$ would have answered / will answer / will answer with the sum of x and y. The train of thought of a philosopher attempting to overcome scepticism through such counterfactual conditionals would roughly be as follows:</p>
-
-<ol>
-  <li>The sceptic points out that there has been no state of affairs, and will be none in future, that distinguishes whether past Alice meant addition by ‘+’ or meant some non-standard operation that agrees with addition in sufficiently many cases but is not addition.</li>
-  <li>The reason 1 can be claimed is that the number of ‘+’ operations Alice has performed and will perform is finite.</li>
-  <li>However, if we use counterfactual conditionals such as “if ‘x + y’ <em>had been asked</em> of past Alice, I <em>would have answered</em> the sum of x and y” or “if ‘x + y’ <em>is asked</em> of future Alice, I <em>will answer</em> the sum of x and y”, we can overcome the finiteness of 2.</li>
-  <li>Accordingly, if we accept the fact that counterfactual conditionals have objective truth values—through possible world ontology, etc.—the dispositional analysis of meaning objectively determines the operation that Alice means by ‘+’.</li>
-</ol>
-
-<p>This argument satisfies the first condition that any refutation of the sceptic must have—it must explain <em>what fact</em> about a speaker constitutes that speaker’s use of a particular symbol with a particular meaning. That fact is the counterfactual conditional. <strong>However, Kripke points out that dispositional analysis is insufficient to resolve the paradox because it fails to satisfy the second condition—it must explain how that fact <em>justifies</em> the speaker’s use of language.</strong> This is because, as noted earlier, dispositional analysis is essentially descriptive. To quote Kripke:</p>
-
-<blockquote>
-  <p>Well and good, I know that ‘125’ is the response I am disposed to give (I am actually giving it!), and maybe it is helpful to be told — <strong>as a matter of brute fact</strong> — that I <em>would have given</em> the same response in the past. <strong>How does any of this indicate that — now <em>or</em> in the past — ‘125’ was an answer <em>justified</em> in terms of instructions I gave myself, rather than a mere jack-in-the-box unjustified and arbitrary response?</strong></p>
-
-  <p>(Italics in original, emphasis mine)</p>
-</blockquote>
-
-<p>What Kripke points out can be understood step by step as follows. Recalling, any claim against the sceptic must have the following form:</p>
-
-<blockquote>
-  <p><strong>Claim 1.</strong> If the meaning Alice assigned to ‘+’ in the past matches the meaning she assigns to ‘+’ in the present, then</p>
-  <ol>
-    <li>Alice should not answer ‘5’, but rather</li>
-    <li>Alice should answer ‘125’.</li>
-  </ol>
-</blockquote>
-
-<p>According to dispositional analysis, the above claim is synonymous with the following:</p>
-
-<blockquote>
-  <p><strong>Claim 1.1.</strong> If Alice’s past question-answer disposition regarding ‘+’ matches Alice’s present question-answer disposition regarding ‘+’, then</p>
-  <ol>
-    <li>Alice should not answer ‘5’, but rather</li>
-    <li>Alice should answer ‘125’.</li>
-  </ol>
-</blockquote>
-
-<p>“As a matter of brute fact”, suppose Alice’s past question-answer disposition regarding ‘+’ was to state the sum when given two numbers. Substituting this fact above:</p>
-
-<blockquote>
-  <p><strong>Claim 1.2.</strong> If Alice’s present question-answer disposition regarding ‘+’ is to state the sum when given two numbers, then</p>
-  <ol>
-    <li>Alice should not answer ‘5’, but rather</li>
-    <li>Alice should answer ‘125’.</li>
-  </ol>
-</blockquote>
-
-<p>However, even though Claim 1 has been restated as Claim 1.2, there is still no basis for establishing this. If the predicates in 1 and 2 were “<em>will answer</em>”, the claim would hold, but what is required is “<em>should answer</em>”. This is not a fact that can be known from question-answer dispositions alone.</p>
-
-<p>Then could we not set the predicates in 1 and 2 as “<em>will answer</em>” from the beginning? That is, claiming the following to the sceptic:</p>
-
-<blockquote>
-  <p><strong>Claim 2.</strong> If the meaning Alice assigned to ‘+’ in the past matches the meaning she assigns to ‘+’ in the present, then</p>
-  <ol>
-    <li>Alice will not answer ‘5’, but rather</li>
-    <li>Alice will answer ‘125’.</li>
-  </ol>
-</blockquote>
-
-<p>This cannot be done. As explained in detail earlier in the “case of systematic computational error”, the fact that Alice did not answer ‘125’ to ‘68 + 57’ does not immediately suggest that Alice did not mean addition by ‘+’. We sometimes make mistakes in performing addition, but such mistakes do not mean that we used ‘+’ to mean something other than addition each time we made them. Rather, the very fact that I can make <strong>mistakes</strong> in performing ‘+’ operations suggests that it is not the computational results I produce that determine the meaning I assign to ‘+’, but conversely, the meaning I assign to ‘+’ that precedes and determines the result I <em>should produce</em>.</p>
-
-<p>Nevertheless, to explain the normativity of meaning through dispositional analysis, one would seemingly have to reinterpret the sceptic’s challenge as follows:</p>
-
-<blockquote>
-  <p><strong>Claim 3.</strong> If Alice <em>wants to make</em> the meaning she assigned to ‘+’ in the past match the meaning she assigns to ‘+’ in the present,</p>
-  <ol>
-    <li>Alice should not answer ‘5’, but rather</li>
-    <li>Alice should answer ‘125’.</li>
-  </ol>
-</blockquote>
-
-<p>This leads to the following statement:</p>
-
-<blockquote>
-  <p><strong>Claim 3.1.</strong> If Alice’s present question-answer disposition regarding ‘+’ <em>wants to be</em> to state the sum when given two numbers,</p>
-  <ol>
-    <li>Alice should not answer ‘5’, but rather</li>
-    <li>Alice should answer ‘125’.</li>
-  </ol>
-</blockquote>
-
-<p>Certainly, Claim 3.1 appears more plausible than Claims 1.1 and 1.2. However, in my view, Claim 3.1 still has problems.</p>
-
-<p><strong>The first problem is that even if Claim 3 holds, it does not suggest Claim 1.</strong> Let $p$ and $q$ be as follows:</p>
-
-<ul>
-  <li>$p:$ The meaning Alice assigned to ‘+’ in the past matches the meaning she assigns to ‘+’ in the present.</li>
-  <li>$q:$ Alice answers ‘125’.</li>
-</ul>
-
-<p>In this case, Claim 1 and Claim 3 are respectively as follows ($W$ means “wants to” and $\Box$ means “should”):</p>
-
-<ul>
-  <li>Claim 1. $p \rightarrow \Box q$</li>
-  <li>Claim 3. $Wp \rightarrow \Box q$</li>
-</ul>
-
-<p>However, since $p$ does not suggest $Wp$ (something I do not want can happen to me) and $Wp$ does not suggest $p$ either (something I want may not happen to me), there is no logical relationship between Claim 1 and Claim 3. Specifically, for the former case, there is the situation where a rebellious student who resolved to use ‘+’ to mean multiplication answers ‘125’ to ‘68 + 57’ out of habit, making his resolution meaningless. For the latter case, there is the case of a student who wants to use the ‘+’ symbol to mean addition but has not yet fully mastered the concept of addition.</p>
-
-<p><strong>The second problem is that Claim 3 falls into infinite regress in the first place.</strong> For convenience of explanation, let me return to the case of psychological states. Converting the current problem to one about psychological states would be as follows: Alice can go out carrying something other than an umbrella despite having the belief that it is raining outside. For instance, consider a situation where Alice hurriedly prepared to go out and grabbed something from the umbrella stand before leaving the house, but what she grabbed was not an umbrella but a walking stick. According to existing dispositional analysis, in this case Alice did not have the belief that it was raining in the first place, which is a counter-intuitive conclusion. In response, the dispositional analyst might instead put forward the following claims:</p>
-
-<blockquote>
-  <p><strong>Claim 4.</strong> If Alice <em>wants to make</em> the belief she formed in the past regarding ‘a dim room and the sound of water drops falling outside the window’ match the belief she forms in the present regarding the same situation,</p>
-  <ol>
-    <li>Alice should not bring a walking stick, but rather</li>
-    <li>Alice should bring an umbrella.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>Claim 4.1.</strong> If Alice <em>wants to make</em> the stimulus-response correspondence Alice would have shown regarding ‘a dim room and the sound of water drops falling outside the window’ match Alice’s present stimulus-response correspondence regarding the same situation,</p>
-  <ol>
-    <li>Alice should not bring a walking stick, but rather</li>
-    <li>Alice should bring an umbrella.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>Claim 4.2.</strong> If Alice’s stimulus-response correspondence regarding ‘a dim room and the sound of water drops falling outside the window’ <em>wants to be</em> to bring an umbrella in situations of going out,</p>
-  <ol>
-    <li>Alice should not bring a walking stick, but rather</li>
-    <li>Alice should bring an umbrella.</li>
-  </ol>
-</blockquote>
-
-<p>As mentioned earlier, Claim 4 is of the form $Wp \rightarrow \Box q$, so it has no logical relationship with $p \rightarrow \Box q$ in the first place, but even setting aside that problem, the seemingly plausible Claim 4.2 has an essential problem. The reason we attempt dispositional analysis in the first place is to translate statements about psychological states into behaviourist expressions. However, Claim 4.2 has merely changed a statement about one specific psychological state—the belief that it is raining outside—into a statement about another psychological state—the <em>intention to show</em> the response of bringing an umbrella in situations of going out. Now we must explain what ‘being in a state of wanting to show the response of bringing an umbrella in situations of going out’ means through dispositional analysis, which ultimately falls into infinite regress.</p>
-
-<p>For the same reason, Claim 3 also falls into infinite regress. Recalling the earlier discussion, one necessary condition that any refutation of the sceptic’s claim must satisfy is to “explain what fact about a speaker constitutes that speaker’s use of a particular symbol with a particular meaning”. However, Claim 3.1 provides the answer “the intention to make question-answer dispositions match in a particular way” to this problem. The sceptic can then ask in return, “What fact about a speaker constitutes that speaker’s having the intention to make question-answer dispositions regarding the ‘+’ symbol match in a particular way—for instance, the question-answer disposition corresponding to addition rather than quaddition?”</p>
-
-<p>In conclusion, attempts to solve the problem of meaning through dispositional analysis fail to explain the normativity of meaning. Attempts to force dispositional analysis to fit so as to explain normativity not only deviate from what the problem requires but also fall into the fallacy of infinite regress.</p>
-
-<h3 id="23-mechanistic-approach">2.3. Mechanistic Approach</h3>
-
-<p>Then, instead of relying on abstract explanations like linguistic elucidation or dispositional analysis, could we not respond to the sceptic by designing and presenting a concrete machine corresponding to the operation that ‘+’ means? For instance, creating a mechanical calculator or designing a full adder with logic circuits. However, Kripke argues that this attempt is also inappropriate for three main reasons.</p>
-
-<p><strong>Firstly, the method of using the machine remains a problem requiring elucidation.</strong> Taking Turing machines as an example, we would interpret the binary sequences output by the Turing machine in binary notation to read the results. However, the sceptic can claim that the correct way to interpret this machine is in <em>quinary notation</em>, and according to quinary notation, the Turing machine is outputting quaddition, not addition.</p>
-
-<p><strong>Secondly, actual machines can only receive finite inputs.</strong> In that sense, actual machines do not become more ‘capable’ entities than Alice. If instead of implementing an actual machine we present the algorithm of the machine, this returns us to “2.1. Linguistic Elucidation”.</p>
-
-<p><strong>Thirdly, machines can malfunction.</strong> Someone might drop the machine causing gears to fall out, or wires might melt from overuse. Therefore, we cannot transfer the responsibility of meaning elucidation entirely to the machine and claim “this machine <em>always</em> calculates the operation I mean”. Nor can we claim “this machine <em>always calculates the operation I mean unless it malfunctions</em>”. To make such a claim, we would need to provide criteria for judging whether the machine is operating normally or malfunctioning, and those criteria would ultimately depend on what <em>intention</em> we wish to use this machine for (could not some eccentric designer create a machine that calculates addition through the falling out of gears and the melting of wires?). Therefore, the moment we use the expression <em>unless it malfunctions</em>, the speaker’s intention, not the machine, takes precedence.</p>
-
-<h3 id="24-occams-razor">2.4. Occam’s Razor</h3>
-
-<p>Kripke also considers the following claim:</p>
-
-<blockquote>
-  <p><strong>Occamist semantics.</strong> When two hypotheses “Speaker $A$ means meaning $\mathfrak{m}_1$ by symbol $s$” and “Speaker $A$ means meaning $\mathfrak{m}_2$ by symbol $s$” are in an underdetermined state, we should preferentially accept the hypothesis of the simpler of $\mathfrak{m}_1$ and $\mathfrak{m}_2$.</p>
-</blockquote>
-
-<p>For example, consider the following two hypotheses:</p>
-
-<p>    H1. Past Alice meant addition by ‘+’.</p>
-
-<p>    H2. Past Alice meant quaddition by ‘+’.</p>
-
-<p>Since both terms in Alice’s past ‘+’ operation records are 50 or below, H1 and H2 are in an underdetermined state. What Occamist semantics claims is that in this case we should preferentially accept the H1 hypothesis. This is because addition is a simpler operation than quaddition.</p>
-
-<p>However, Kripke only briefly mentions and passes over this claim, because it is self-evident that it is inappropriate for refuting scepticism. This is not only because the predicate ‘simple’ is subjective, difficult to define, or because quaddition might be simpler than addition for Martians—though these reasons are also very legitimate. The more essential reason is that the conclusion of the sceptical argument is not “it is undetermined which of H1 and H2 is true”, but “it is undetermined <em>what state of affairs</em> the truth of either H1 or H2 <em>corresponds to</em>”. According to the sceptical argument, we are in a situation where we are not even certain whether H1 and H2 represent different states of affairs. If the states of affairs that hypotheses represent are so unclear, we cannot even <em>apply</em> Occam’s razor before considering whether its application is justified.</p>
-
-<h3 id="25-psychologism">2.5. Psychologism</h3>
-
-<p>A more important objection that Kripke considers is psychologism.</p>
-
-<blockquote>
-  <p><strong>Psychologistic semantics.</strong> For speaker $A$ to mean $\mathfrak{m}$ by symbol $s$ means that a distinctive<sub>queer</sub> psychological experience $p_\mathfrak{m}$ corresponding to $\mathfrak{m}$ has formed in the speaker’s mind.</p>
-</blockquote>
-
-<p>Here, “distinctive psychological experience” can be thought of as similar to qualia. In short, just as “seeing red” is a distinctive experience that cannot be reduced to other predicates or experiences, so too is “meaning addition by ‘+’” such a distinctive experience.</p>
-
-<p>Kripke does not deny the possibility that such distinctive experiences exist.<sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">6</a></sup> However, Kripke points out that psychologistic semantics also fails to resolve the sceptical argument. The problem once again lies in condition 2 of “1.2. Two Conditions”.</p>
-
-<p>As a simple example, suppose Alice feels pain in her forehead every time she uses the ‘+’ symbol. This fact satisfies condition 1 of “1.2. Two Conditions”. That is, for the meaning Alice assigned to ‘+’ in the past to be the same as the meaning she assigns in the present means that the past pain Alice felt when using the ‘+’ symbol is qualitatively the same as the present pain. However, how could that pain possibly inform Alice that she should answer ‘125’ to ‘68 + 57’?</p>
-
-<p>Kripke connects this discussion to a more general empiricist refutation. According to empiricism, for me to mean ‘triangle’ is for me to conjure up an impression of a triangle in my mind. But how does this impression of a triangle inform me of the rule for using the word ‘triangle’? For instance, even if the impression that comes to my mind is an acute triangle, I can legitimately point to an obtuse triangle and call it a triangle. Conversely, I cannot point to a triangular prism with a base exactly the same shape as the impression in my mind and call it a triangle. In short, even when some impression is presented in the mind, how that impression should be <em>interpreted</em> remains shrouded in mystery.</p>
-
-<p>Nevertheless, Kripke emphasises that we should not swing to the opposite extreme and conclude that psychological experiences or feelings are completely irrelevant to problems of meaning. Kripke mentions the following cases derived from discussions in the <em>Philosophical Investigations</em>:</p>
-
-<ul>
-  <li><a href="https://en.wikipedia.org/wiki/Semantic_satiation">The phenomenon where saying the same word dozens of times makes it feel ‘strange’, as if the meaning has drained out of the word leaving only a shell</a></li>
-  <li>The difference between saying ‘bat’ whilst thinking of the animal versus thinking of the sports equipment (compare this to <a href="https://en.wikipedia.org/wiki/Necker_cube">Necker cube</a> illusion)</li>
-  <li><em>Semantic zombies</em>—similar to philosophical zombies in philosophy of mind—speakers who cannot be distinguished from ordinary language users by their utterance records alone but have no internal semantics whatsoever</li>
-</ul>
-
-<p>Kripke acknowledges that the above cases are problems that need to be elucidated, but unfortunately passes over them due to space constraints.</p>
-
-<h3 id="26-platonism">2.6. Platonism</h3>
-
-<p>Finally, the objection Kripke considers is Platonism.</p>
-
-<blockquote>
-  <p><strong>Platonistic semantics.</strong> For speaker $A$ to mean $\mathfrak{m}$ by symbol $s$ means that the speaker is directed towards the Platonic object $\pi_\mathfrak{m}$ corresponding to meaning $\mathfrak{m}$.</p>
-</blockquote>
-
-<p>Therefore, for Alice to mean addition by ‘+’ is for Alice to establish some relationship with Platonic addition.</p>
-
-<p>This would have been the answer Frege might have given to the sceptic. According to Frege, symbols appear to speakers as particular senses<sub>sense, <em>Sinn</em></sub>, and sense uniquely determines reference. Here, both sense and reference are Platonic objects.</p>
-
-<blockquote>
-  <p>Frege’s philosophy of language: Symbol -&gt; Speaker -&gt; Sense -&gt; Reference</p>
-</blockquote>
-
-<p>However, Kripke rejects Platonism with almost the same logic as before. Platonism not only fails to explain how finite humans can relate to infinite sets like addition, but consequently raises the problem of how to determine whether the Platonic object Alice is directed towards is the addition set or the quaddition set.</p>
-
-<div style="margin: 2em 0">$$\cdot \quad \cdot \quad \cdot$$</div>
-
-<p>We have thus examined the Kripke-Wittgenstein paradox and the main objections and counter-objections to it. Ultimately, Kripke concludes that direct refutation of the sceptical argument is impossible. Therefore, the discussion now moves to elucidating why, if indeed the conclusion of the sceptical argument is correct that “Alice means addition by ‘+’” lacks a corresponding state of affairs no less than “Alice’s thoughts are green”, the former can be used meaningfully in linguistic life unlike the latter. This is closely related to Kripke’s reading of Wittgenstein’s private language argument, which shall be examined in detail in the next article.</p>
-
-<hr />
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1">
-      <p>Following Fregean theory, propositions that lack corresponding states of affairs, i.e., propositions that lack truth values, are not propositions in the true sense, so the expression “arrangements of symbols that appear to be propositions but are not propositions” would be more accurate. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2">
-      <p>If the sceptic’s claim had been the former, it would have been immediately refuted by the fact that Alice said ‘125’ rather than ‘5’, just as the claim “heavier balls fall faster” was immediately refuted by the Tower of Pisa experiment. (The fact that the Tower of Pisa experiment was never actually conducted is now well known, but it serves as a good example.) <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3">
-      <p>Returning to the Tower of Pisa example, this would be explaining what fact constitutes ‘a heavier ball’, which could be explained as “the side that tilts when hung on a balance”. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:4">
-      <p>Of course, in this case the ‘+’ he performs does not satisfy the associative law (for example, he would answer 21 to “(10 + 7) + (10 + 4)” but 31 to “(10 + (7 + 4)) + 10”), so we would have to claim that he is fundamentally unable to assign a consistent meaning to ‘+’. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:5">
-      <p>Readers who have studied mathematical logic will be able to connect this to the Löwenheim-Skolem theorem. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:6">
-      <p>Kripke does call the existence of experiences distinctive to meaning “dubious”. By contrast, in the <em>Philosophical Investigations</em>, he devotes considerable space to denying the existence of such experiences. Wittgenstein urges us to compare the case of pretending to read a foreign language one does not know with the case of reading that foreign language unconsciously after sufficient learning, emphasising that there is no special ‘feeling’ in either the former or the latter case. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="Philosophy" /><category term="Philosophy of Language" /><summary type="html"><![CDATA[This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.]]></summary></entry><entry><title type="html">크립키-비트겐슈타인 역설</title><link href="https://dimenerno.github.io/2025/07/03/kripkenstein" rel="alternate" type="text/html" title="크립키-비트겐슈타인 역설" /><published>2025-07-03T00:00:00+09:00</published><updated>2025-07-03T00:00:00+09:00</updated><id>https://dimenerno.github.io/2025/07/03/kripkenstein</id><content type="html" xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein"><![CDATA[<blockquote>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>디멘의 블로그</title>
+    <description>이데아를 여행하는 히치하이커</description>
+    <link>https://dimenerno.github.io</link>
+    <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>크립키-비트겐슈타인 역설</title>
+        <link>https://dimenerno.github.io/2025/07/03/kripkenstein</link>
+        <guid>https://dimenerno.github.io/2025/07/03/kripkenstein</guid>
+        <pubDate>Thu, 03 Jul 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein">
+          <![CDATA[
+            <blockquote>
   <p>“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.</p>
 </blockquote>
 
@@ -679,7 +362,380 @@ x + y &amp; x, y &lt; 50 \\\
       <p>크립키는 의미에 특유한 경험의 존재가 “미심쩍다<sub>dubious</sub>”고 하기는 한다. 반면 ⟪철학적 논고⟫에서 긴 지면을 할애하며 그러한 경험의 존재를 부정한다. 비트슈타인은 외국어를 알지 못하지만 읽는 척을 하는 경우와, 충분한 학습 이후 해당 외국어를 무의식적으로 읽는 경우를 비교해 볼 것을 중용하며, 전자의 경우나 후자의 경우나 어떤 특별한 ‘느낌’이 있지는 않음을 강조한다. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="철학" /><category term="언어철학" /><summary type="html"><![CDATA[“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.]]></summary></entry><entry><title type="html">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title><link href="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos" rel="alternate" type="text/html" title="프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권" /><published>2025-06-17T00:00:00+09:00</published><updated>2025-06-17T00:00:00+09:00</updated><id>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos</id><content type="html" xml:base="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos"><![CDATA[<blockquote>
+</div>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>The Kripke-Wittgenstein Paradox</title>
+        <link>https://dimenerno.github.io/2025/07/03/kripkenstein/en</link>
+        <guid>https://dimenerno.github.io/2025/07/03/kripkenstein/en</guid>
+        <pubDate>Thu, 03 Jul 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein/en">
+          <![CDATA[
+            <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p>Please note that section “2.2. Dispositional Analysis” contains considerable additional commentary by the author that is independent from Kripke’s original paper.</p>
+</blockquote>
+
+<h3 id="overview">Overview</h3>
+
+<p>Kripke argues that the core of Wittgenstein’s <em>Philosophical Investigations</em> lies in what is known as <strong>scepticism about rule following</strong>.</p>
+
+<p>According to Kripke’s reading, §1-137 of the <em>Investigations</em> is where Wittgenstein criticises and overcomes the linguistic view of the <em>Tractatus</em>. In §138-242, scepticism about rule following is presented. The sceptical argument, which questions whether there exists a state of affairs corresponding to propositions such as “Alice means addition by ‘+’”, not only confirms §1-137 by showing that the linguistic view of the <em>Tractatus</em> cannot be correct, but also seems to suggest the devastating conclusion that no theory whatsoever that elucidates the problem of meaning is possible.</p>
+
+<p>According to Kripke, Wittgenstein provides a “sceptical solution” to this. That is, whilst accepting the sceptic’s conclusion—that there is no state of affairs corresponding to “Alice means addition by ‘+’“—he elucidates how it can be used meaningfully, unlike propositions such as “green thoughts sleep”. This solution emphasises the <strong>publicity of language</strong>—that the meaning of language is inseparable from its function within a community, and therefore discussions of meaning are vacuous at the level of individual language users but valid at the level of linguistic communities.</p>
+
+<p>From §243 onwards applies the “sceptical solution” to other philosophical problems. One implication of the sceptical solution is the impossibility of private language. Nevertheless, there are two representative areas of language that appear to operate in a private manner: mathematical language and psychological language. <strong>However, Wittgenstein argues that the idea that mathematical and psychological languages constitute private languages is a misconception.</strong> In this section, we can glimpse Wittgenstein’s distinctive positions in the philosophy of mathematics and psychology.</p>
+
+<h2 id="1-the-kripke-wittgenstein-paradox">1. The Kripke-Wittgenstein Paradox</h2>
+
+<p>The conclusion of the Kripke-Wittgenstein paradox is as follows:</p>
+
+<blockquote>
+  <p>Propositions of the form “Speaker $A$ means meaning $m$ by symbol $s$”<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> have no corresponding state of affairs. That is, such propositions lack truth values.</p>
+</blockquote>
+
+<p>Therefore, for instance, the proposition “Alice means addition by ‘+’” is as incomprehensible as the proposition “Alice’s thoughts are green”.</p>
+
+<h3 id="11-the-appearance-of-the-sceptic">1.1. The Appearance of the Sceptic</h3>
+
+<p>Why then do Kripke and Wittgenstein make such an extreme claim? The core of the argument lies in an easily overlooked but genuinely contradictory aspect hidden in the process by which language users grasp the meaning of words: from <em>finite</em> past learning experiences, one must be able to make correct inferences about the <em>infinite</em> cases in which that word could be used.</p>
+
+<p>For example, suppose Alice has never performed addition of two numbers both exceeding 50. Even so, if someone asked Alice ‘68 + 57’, she would readily answer ‘125’. But at this point, a sceptic approaches Alice and claims that her answer ‘125’ is wrong, and that the answer Alice should have given was ‘5’. Specifically, the sceptic claims the following:</p>
+
+<blockquote>
+  <p>If the meaning Alice assigned to ‘+’ in the past matches the meaning she assigns to ‘+’ in the present, then Alice should have answered ‘5’.</p>
+</blockquote>
+
+<p>Because—at least according to the sceptic—the meaning Alice assigned to ‘+’ in the past was actually not addition (+) but <strong>quaddition</strong> (⨁). The definition of quaddition is as follows:</p>
+
+\[x \oplus y =
+\begin{cases}
+x + y &amp; x, y &lt; 50 \\
+5 &amp; \text{otherwise}
+\end{cases}\]
+
+<p>Alice would immediately object that she has used ‘+’ to mean addition, not quaddition, since the past. But here begins the real problem. <strong>How can it be proved that the meaning Alice assigned to ‘+’ in the past was addition rather than quaddition?</strong> Due to the assumption of the problem, it is impossible to prove this from the records of ‘+’ calculations that Alice performed in the past.</p>
+
+<p>The expression ‘proof’ that has just appeared might make this problem seem epistemological (“How can we know that Alice means addition by ‘+’?”). However, what Kripke asks is whether even an omniscient observer who could see into Alice’s mind could know whether Alice means addition by ‘+’, or whether she means some non-standard operation that agrees with addition in sufficiently many cases. <strong>In this respect, the scepticism Kripke presents is ontological.</strong> The point of the problem is whether there is a state of affairs corresponding to “Alice means addition rather than quaddition”. This is revealed by the fact that Kripke goes on to examine attempts to resolve scepticism through counterfactual conditionals or possible worlds—though he concludes that these attempts also fail.</p>
+
+<h3 id="12-two-conditions">1.2. Two Conditions</h3>
+
+<p>There are two noteworthy points about the sceptic’s claim. <strong>Firstly, the sceptic’s claim is conditional.</strong> The sceptic is not claiming that Alice should answer ‘5’ <em>in any case</em>. What he claims is that if the meaning Alice assigned to ‘+’ in the past <em>matches</em> the meaning she assigns to ‘+’ in the present, then she should answer ‘5’. <strong>Secondly, the sceptic’s claim is normative.</strong> The sceptic’s claim is not that—when the aforementioned condition is satisfied—Alice <em>will</em> answer ‘5’, but that she <em>should</em> answer ‘5’.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> In other words, the sceptic claims that if Alice had answered ‘5’ to ‘68 + 57’, that answer <em>would have been justified</em>.</p>
+
+<p>Therefore, any refutation of the sceptic’s claim must also have two characteristics. <strong>Firstly, it must explain what fact about a speaker constitutes that speaker’s use of a particular symbol with a particular meaning.</strong> This explanation is necessary to elucidate what the antecedent means in the sceptic’s claim.<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup> <strong>Secondly, it must explain how that fact justifies the speaker’s use of language.</strong> This explanation is necessary because the sceptic’s conclusion is normative.</p>
+
+<p>The significance of the second condition may not be immediately apparent, so let me elaborate. Suppose some mad scientist approached the sceptic and said:</p>
+
+<blockquote>
+  <p>Actually, I once scanned Alice at the atomic level in the past. So after hearing your claim, I asked Alice-2, whom I created by copying that scan, ‘68 + 57’, and Alice-2 answered ‘125’. Therefore, past Alice did not mean quaddition by ‘+’.</p>
+</blockquote>
+
+<p>However, the mad scientist’s experiment is insufficient to refute the sceptic’s claim. This is because the mad scientist’s experiment does not satisfy the second condition. The result of that experiment only guarantees that Alice <em>would have</em> always answered ‘125’, but does not guarantee that Alice <em>should have</em> always answered ‘125’.</p>
+
+<p>This can be understood more clearly through <strong>cases of systematic computational error</strong>. For instance, children learning addition often forget to carry. Such a child would answer ‘115’ rather than ‘125’ to ‘68 + 57’. Now suppose there is someone called Johnson who, due to some problem, has failed to correct his carrying mistakes even as an adult. Johnson understands what addition is, and when asked about properties of addition rather than specific addition problems—such as “Does it satisfy the associative law?”—he answers correctly. However, in situations where Johnson has no instructor to correct his mistakes, he would <em>always</em> have answered ‘115’ to ‘68 + 57’, and will continue to do so in future. We would want to claim that Johnson assigns the meaning of addition to ‘+’, but fails to answer ‘68 + 57’ in a <em>justified manner</em> according to that meaning. It is precisely to make this claim possible that the second condition is needed. If we adopt a semantics that fails to satisfy the second condition, we would have to accept that Johnson assigns to ‘+’ the meaning of <strong>baddition</strong>—an operation that performs addition without carrying—or <strong>maddition</strong>—an operation that performs baddition when no instructor is present and performs addition with the instructor’s correction when one is present.<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup></p>
+
+<h2 id="2-examination-of-refutations-of-scepticism">2. Examination of Refutations of Scepticism</h2>
+
+<h3 id="21-linguistic-elucidation">2.1. Linguistic Elucidation</h3>
+
+<p>The first answer Alice might give upon hearing the sceptic’s claim would probably be this: “In the past, I have assigned to ‘x + y’ the meaning of the operation of counting x objects and y objects together. Therefore, I did not use ‘+’ to mean quaddition in the past.”</p>
+
+<p>However, the sceptic can deploy scepticism once again against this. In short, he can claim that in the past Alice consistently understood the word ‘count’ not as count but as <em>quount</em>. To quount a collection is to count it when the collection’s size is less than 50 and to answer 5 when it exceeds 50.</p>
+
+<p>The point is that <strong>attempts to prove what meaning was assigned to ‘+’ through other linguistic evidence fall into infinite regress, as such evidence cannot eliminate the possibility that non-standard meanings were assigned to it as well</strong>.<sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup></p>
+
+<h3 id="22-dispositional-analysis">2.2. Dispositional Analysis</h3>
+
+<p>In philosophy of mind, <strong>dispositional analysis</strong> is the way behaviourism explains psychological states, with the core as follows:</p>
+
+<blockquote>
+  <p><strong>Dispositional analysis of psychological states.</strong> For subject $A$ to be in psychological state $\mathfrak{m}$ in the past, present, or future means that if stimulus $s$ had been given / is given / will be given to $A$, then $A$ would have shown / will show / will show response $b = f_\mathfrak{m}(s)$. That is, psychological state ($\mathfrak{m}$) is reduced to stimulus-response correspondence ($f_\mathfrak{m}$).</p>
+</blockquote>
+
+<p>For example, suppose Alice, having just awakened from a light sleep, formed the belief “it is raining now” upon hearing the dim room and the sound of water drops from outside the window. According to dispositional analysis, the meaning of “Alice believes ‘it is raining now’” is nothing different from the following (countless) stimulus-response correspondences:</p>
+
+<ul>
+  <li>If a friend calls to go eat together, -&gt; she will bring an umbrella.</li>
+  <li>If a neighbour contacts her saying her laundry is hanging outside, -&gt; she will rush to collect the laundry.</li>
+  <li>If an outdoor schedule is planned for tomorrow, -&gt; she will check tomorrow’s weather, etc…</li>
+</ul>
+
+<p>If phenomena significantly deviating from these stimulus-response correspondences are observed, the dispositional analyst would revise their view of Alice’s belief. For instance, if Alice went out but brought sunglasses instead of an umbrella, they would judge that Alice has the belief “the sun is shining brightly” rather than the belief “it is raining”.</p>
+
+<p>Two characteristics of dispositional analysis to note from the explanation so far:</p>
+
+<ol>
+  <li><strong>It uses counterfactual conditionals.</strong> Even if Alice does not go out in the past, present, or future, “if Alice <em>had gone out</em> / <em>goes out</em> / <em>will go out</em>, she would have brought / will bring / will bring an umbrella” forms part of the dispositional analysis of the belief she had / has / will have.</li>
+  <li><strong>It is descriptive.</strong> Because dispositional analysis is based on behaviourism, it consists of descriptive propositions such as “if Alice goes out, she <em>will</em> bring an umbrella” rather than normative propositions such as “if Alice goes out, she <em>should</em> bring an umbrella”. According to dispositional analysis, if Alice goes out but brings sunglasses instead of an umbrella, she does not have the belief that it is raining but is <em>failing</em> to act <em>justifiably</em> according to it; rather, she simply does not have the belief that it is raining in the first place.</li>
+</ol>
+
+<p>Kripke reports that some philosophers who discussed the rule-following paradox with him in private attempted to resolve the paradox through dispositional analysis by relying on the first characteristic of dispositional analysis. This approach claims the following:</p>
+
+<blockquote>
+  <p><strong>Dispositional analysis of meaning.</strong> For speaker $A$ to mean meaning $\mathfrak{m}$ by symbol $s$ in the past, present, or future means that if sentence $\phi$ containing $s$ had been given / is given / will be given to $A$, then $A$ would have answered / will answer / will answer with sentence $\psi = f_\mathfrak{m}(\phi)$. That is, meaning ($\mathfrak{m}$) is reduced to question-answer correspondence ($f_\mathfrak{m}$).</p>
+</blockquote>
+
+<p>According to this analysis, for Alice to mean addition by ‘+’ in the past, present, or future means that when x + y had been asked / is asked / will be asked of Alice, $A$ would have answered / will answer / will answer with the sum of x and y. The train of thought of a philosopher attempting to overcome scepticism through such counterfactual conditionals would roughly be as follows:</p>
+
+<ol>
+  <li>The sceptic points out that there has been no state of affairs, and will be none in future, that distinguishes whether past Alice meant addition by ‘+’ or meant some non-standard operation that agrees with addition in sufficiently many cases but is not addition.</li>
+  <li>The reason 1 can be claimed is that the number of ‘+’ operations Alice has performed and will perform is finite.</li>
+  <li>However, if we use counterfactual conditionals such as “if ‘x + y’ <em>had been asked</em> of past Alice, I <em>would have answered</em> the sum of x and y” or “if ‘x + y’ <em>is asked</em> of future Alice, I <em>will answer</em> the sum of x and y”, we can overcome the finiteness of 2.</li>
+  <li>Accordingly, if we accept the fact that counterfactual conditionals have objective truth values—through possible world ontology, etc.—the dispositional analysis of meaning objectively determines the operation that Alice means by ‘+’.</li>
+</ol>
+
+<p>This argument satisfies the first condition that any refutation of the sceptic must have—it must explain <em>what fact</em> about a speaker constitutes that speaker’s use of a particular symbol with a particular meaning. That fact is the counterfactual conditional. <strong>However, Kripke points out that dispositional analysis is insufficient to resolve the paradox because it fails to satisfy the second condition—it must explain how that fact <em>justifies</em> the speaker’s use of language.</strong> This is because, as noted earlier, dispositional analysis is essentially descriptive. To quote Kripke:</p>
+
+<blockquote>
+  <p>Well and good, I know that ‘125’ is the response I am disposed to give (I am actually giving it!), and maybe it is helpful to be told — <strong>as a matter of brute fact</strong> — that I <em>would have given</em> the same response in the past. <strong>How does any of this indicate that — now <em>or</em> in the past — ‘125’ was an answer <em>justified</em> in terms of instructions I gave myself, rather than a mere jack-in-the-box unjustified and arbitrary response?</strong></p>
+
+  <p>(Italics in original, emphasis mine)</p>
+</blockquote>
+
+<p>What Kripke points out can be understood step by step as follows. Recalling, any claim against the sceptic must have the following form:</p>
+
+<blockquote>
+  <p><strong>Claim 1.</strong> If the meaning Alice assigned to ‘+’ in the past matches the meaning she assigns to ‘+’ in the present, then</p>
+  <ol>
+    <li>Alice should not answer ‘5’, but rather</li>
+    <li>Alice should answer ‘125’.</li>
+  </ol>
+</blockquote>
+
+<p>According to dispositional analysis, the above claim is synonymous with the following:</p>
+
+<blockquote>
+  <p><strong>Claim 1.1.</strong> If Alice’s past question-answer disposition regarding ‘+’ matches Alice’s present question-answer disposition regarding ‘+’, then</p>
+  <ol>
+    <li>Alice should not answer ‘5’, but rather</li>
+    <li>Alice should answer ‘125’.</li>
+  </ol>
+</blockquote>
+
+<p>“As a matter of brute fact”, suppose Alice’s past question-answer disposition regarding ‘+’ was to state the sum when given two numbers. Substituting this fact above:</p>
+
+<blockquote>
+  <p><strong>Claim 1.2.</strong> If Alice’s present question-answer disposition regarding ‘+’ is to state the sum when given two numbers, then</p>
+  <ol>
+    <li>Alice should not answer ‘5’, but rather</li>
+    <li>Alice should answer ‘125’.</li>
+  </ol>
+</blockquote>
+
+<p>However, even though Claim 1 has been restated as Claim 1.2, there is still no basis for establishing this. If the predicates in 1 and 2 were “<em>will answer</em>”, the claim would hold, but what is required is “<em>should answer</em>”. This is not a fact that can be known from question-answer dispositions alone.</p>
+
+<p>Then could we not set the predicates in 1 and 2 as “<em>will answer</em>” from the beginning? That is, claiming the following to the sceptic:</p>
+
+<blockquote>
+  <p><strong>Claim 2.</strong> If the meaning Alice assigned to ‘+’ in the past matches the meaning she assigns to ‘+’ in the present, then</p>
+  <ol>
+    <li>Alice will not answer ‘5’, but rather</li>
+    <li>Alice will answer ‘125’.</li>
+  </ol>
+</blockquote>
+
+<p>This cannot be done. As explained in detail earlier in the “case of systematic computational error”, the fact that Alice did not answer ‘125’ to ‘68 + 57’ does not immediately suggest that Alice did not mean addition by ‘+’. We sometimes make mistakes in performing addition, but such mistakes do not mean that we used ‘+’ to mean something other than addition each time we made them. Rather, the very fact that I can make <strong>mistakes</strong> in performing ‘+’ operations suggests that it is not the computational results I produce that determine the meaning I assign to ‘+’, but conversely, the meaning I assign to ‘+’ that precedes and determines the result I <em>should produce</em>.</p>
+
+<p>Nevertheless, to explain the normativity of meaning through dispositional analysis, one would seemingly have to reinterpret the sceptic’s challenge as follows:</p>
+
+<blockquote>
+  <p><strong>Claim 3.</strong> If Alice <em>wants to make</em> the meaning she assigned to ‘+’ in the past match the meaning she assigns to ‘+’ in the present,</p>
+  <ol>
+    <li>Alice should not answer ‘5’, but rather</li>
+    <li>Alice should answer ‘125’.</li>
+  </ol>
+</blockquote>
+
+<p>This leads to the following statement:</p>
+
+<blockquote>
+  <p><strong>Claim 3.1.</strong> If Alice’s present question-answer disposition regarding ‘+’ <em>wants to be</em> to state the sum when given two numbers,</p>
+  <ol>
+    <li>Alice should not answer ‘5’, but rather</li>
+    <li>Alice should answer ‘125’.</li>
+  </ol>
+</blockquote>
+
+<p>Certainly, Claim 3.1 appears more plausible than Claims 1.1 and 1.2. However, in my view, Claim 3.1 still has problems.</p>
+
+<p><strong>The first problem is that even if Claim 3 holds, it does not suggest Claim 1.</strong> Let $p$ and $q$ be as follows:</p>
+
+<ul>
+  <li>$p:$ The meaning Alice assigned to ‘+’ in the past matches the meaning she assigns to ‘+’ in the present.</li>
+  <li>$q:$ Alice answers ‘125’.</li>
+</ul>
+
+<p>In this case, Claim 1 and Claim 3 are respectively as follows ($W$ means “wants to” and $\Box$ means “should”):</p>
+
+<ul>
+  <li>Claim 1. $p \rightarrow \Box q$</li>
+  <li>Claim 3. $Wp \rightarrow \Box q$</li>
+</ul>
+
+<p>However, since $p$ does not suggest $Wp$ (something I do not want can happen to me) and $Wp$ does not suggest $p$ either (something I want may not happen to me), there is no logical relationship between Claim 1 and Claim 3. Specifically, for the former case, there is the situation where a rebellious student who resolved to use ‘+’ to mean multiplication answers ‘125’ to ‘68 + 57’ out of habit, making his resolution meaningless. For the latter case, there is the case of a student who wants to use the ‘+’ symbol to mean addition but has not yet fully mastered the concept of addition.</p>
+
+<p><strong>The second problem is that Claim 3 falls into infinite regress in the first place.</strong> For convenience of explanation, let me return to the case of psychological states. Converting the current problem to one about psychological states would be as follows: Alice can go out carrying something other than an umbrella despite having the belief that it is raining outside. For instance, consider a situation where Alice hurriedly prepared to go out and grabbed something from the umbrella stand before leaving the house, but what she grabbed was not an umbrella but a walking stick. According to existing dispositional analysis, in this case Alice did not have the belief that it was raining in the first place, which is a counter-intuitive conclusion. In response, the dispositional analyst might instead put forward the following claims:</p>
+
+<blockquote>
+  <p><strong>Claim 4.</strong> If Alice <em>wants to make</em> the belief she formed in the past regarding ‘a dim room and the sound of water drops falling outside the window’ match the belief she forms in the present regarding the same situation,</p>
+  <ol>
+    <li>Alice should not bring a walking stick, but rather</li>
+    <li>Alice should bring an umbrella.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Claim 4.1.</strong> If Alice <em>wants to make</em> the stimulus-response correspondence Alice would have shown regarding ‘a dim room and the sound of water drops falling outside the window’ match Alice’s present stimulus-response correspondence regarding the same situation,</p>
+  <ol>
+    <li>Alice should not bring a walking stick, but rather</li>
+    <li>Alice should bring an umbrella.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Claim 4.2.</strong> If Alice’s stimulus-response correspondence regarding ‘a dim room and the sound of water drops falling outside the window’ <em>wants to be</em> to bring an umbrella in situations of going out,</p>
+  <ol>
+    <li>Alice should not bring a walking stick, but rather</li>
+    <li>Alice should bring an umbrella.</li>
+  </ol>
+</blockquote>
+
+<p>As mentioned earlier, Claim 4 is of the form $Wp \rightarrow \Box q$, so it has no logical relationship with $p \rightarrow \Box q$ in the first place, but even setting aside that problem, the seemingly plausible Claim 4.2 has an essential problem. The reason we attempt dispositional analysis in the first place is to translate statements about psychological states into behaviourist expressions. However, Claim 4.2 has merely changed a statement about one specific psychological state—the belief that it is raining outside—into a statement about another psychological state—the <em>intention to show</em> the response of bringing an umbrella in situations of going out. Now we must explain what ‘being in a state of wanting to show the response of bringing an umbrella in situations of going out’ means through dispositional analysis, which ultimately falls into infinite regress.</p>
+
+<p>For the same reason, Claim 3 also falls into infinite regress. Recalling the earlier discussion, one necessary condition that any refutation of the sceptic’s claim must satisfy is to “explain what fact about a speaker constitutes that speaker’s use of a particular symbol with a particular meaning”. However, Claim 3.1 provides the answer “the intention to make question-answer dispositions match in a particular way” to this problem. The sceptic can then ask in return, “What fact about a speaker constitutes that speaker’s having the intention to make question-answer dispositions regarding the ‘+’ symbol match in a particular way—for instance, the question-answer disposition corresponding to addition rather than quaddition?”</p>
+
+<p>In conclusion, attempts to solve the problem of meaning through dispositional analysis fail to explain the normativity of meaning. Attempts to force dispositional analysis to fit so as to explain normativity not only deviate from what the problem requires but also fall into the fallacy of infinite regress.</p>
+
+<h3 id="23-mechanistic-approach">2.3. Mechanistic Approach</h3>
+
+<p>Then, instead of relying on abstract explanations like linguistic elucidation or dispositional analysis, could we not respond to the sceptic by designing and presenting a concrete machine corresponding to the operation that ‘+’ means? For instance, creating a mechanical calculator or designing a full adder with logic circuits. However, Kripke argues that this attempt is also inappropriate for three main reasons.</p>
+
+<p><strong>Firstly, the method of using the machine remains a problem requiring elucidation.</strong> Taking Turing machines as an example, we would interpret the binary sequences output by the Turing machine in binary notation to read the results. However, the sceptic can claim that the correct way to interpret this machine is in <em>quinary notation</em>, and according to quinary notation, the Turing machine is outputting quaddition, not addition.</p>
+
+<p><strong>Secondly, actual machines can only receive finite inputs.</strong> In that sense, actual machines do not become more ‘capable’ entities than Alice. If instead of implementing an actual machine we present the algorithm of the machine, this returns us to “2.1. Linguistic Elucidation”.</p>
+
+<p><strong>Thirdly, machines can malfunction.</strong> Someone might drop the machine causing gears to fall out, or wires might melt from overuse. Therefore, we cannot transfer the responsibility of meaning elucidation entirely to the machine and claim “this machine <em>always</em> calculates the operation I mean”. Nor can we claim “this machine <em>always calculates the operation I mean unless it malfunctions</em>”. To make such a claim, we would need to provide criteria for judging whether the machine is operating normally or malfunctioning, and those criteria would ultimately depend on what <em>intention</em> we wish to use this machine for (could not some eccentric designer create a machine that calculates addition through the falling out of gears and the melting of wires?). Therefore, the moment we use the expression <em>unless it malfunctions</em>, the speaker’s intention, not the machine, takes precedence.</p>
+
+<h3 id="24-occams-razor">2.4. Occam’s Razor</h3>
+
+<p>Kripke also considers the following claim:</p>
+
+<blockquote>
+  <p><strong>Occamist semantics.</strong> When two hypotheses “Speaker $A$ means meaning $\mathfrak{m}_1$ by symbol $s$” and “Speaker $A$ means meaning $\mathfrak{m}_2$ by symbol $s$” are in an underdetermined state, we should preferentially accept the hypothesis of the simpler of $\mathfrak{m}_1$ and $\mathfrak{m}_2$.</p>
+</blockquote>
+
+<p>For example, consider the following two hypotheses:</p>
+
+<p>    H1. Past Alice meant addition by ‘+’.</p>
+
+<p>    H2. Past Alice meant quaddition by ‘+’.</p>
+
+<p>Since both terms in Alice’s past ‘+’ operation records are 50 or below, H1 and H2 are in an underdetermined state. What Occamist semantics claims is that in this case we should preferentially accept the H1 hypothesis. This is because addition is a simpler operation than quaddition.</p>
+
+<p>However, Kripke only briefly mentions and passes over this claim, because it is self-evident that it is inappropriate for refuting scepticism. This is not only because the predicate ‘simple’ is subjective, difficult to define, or because quaddition might be simpler than addition for Martians—though these reasons are also very legitimate. The more essential reason is that the conclusion of the sceptical argument is not “it is undetermined which of H1 and H2 is true”, but “it is undetermined <em>what state of affairs</em> the truth of either H1 or H2 <em>corresponds to</em>”. According to the sceptical argument, we are in a situation where we are not even certain whether H1 and H2 represent different states of affairs. If the states of affairs that hypotheses represent are so unclear, we cannot even <em>apply</em> Occam’s razor before considering whether its application is justified.</p>
+
+<h3 id="25-psychologism">2.5. Psychologism</h3>
+
+<p>A more important objection that Kripke considers is psychologism.</p>
+
+<blockquote>
+  <p><strong>Psychologistic semantics.</strong> For speaker $A$ to mean $\mathfrak{m}$ by symbol $s$ means that a distinctive<sub>queer</sub> psychological experience $p_\mathfrak{m}$ corresponding to $\mathfrak{m}$ has formed in the speaker’s mind.</p>
+</blockquote>
+
+<p>Here, “distinctive psychological experience” can be thought of as similar to qualia. In short, just as “seeing red” is a distinctive experience that cannot be reduced to other predicates or experiences, so too is “meaning addition by ‘+’” such a distinctive experience.</p>
+
+<p>Kripke does not deny the possibility that such distinctive experiences exist.<sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">6</a></sup> However, Kripke points out that psychologistic semantics also fails to resolve the sceptical argument. The problem once again lies in condition 2 of “1.2. Two Conditions”.</p>
+
+<p>As a simple example, suppose Alice feels pain in her forehead every time she uses the ‘+’ symbol. This fact satisfies condition 1 of “1.2. Two Conditions”. That is, for the meaning Alice assigned to ‘+’ in the past to be the same as the meaning she assigns in the present means that the past pain Alice felt when using the ‘+’ symbol is qualitatively the same as the present pain. However, how could that pain possibly inform Alice that she should answer ‘125’ to ‘68 + 57’?</p>
+
+<p>Kripke connects this discussion to a more general empiricist refutation. According to empiricism, for me to mean ‘triangle’ is for me to conjure up an impression of a triangle in my mind. But how does this impression of a triangle inform me of the rule for using the word ‘triangle’? For instance, even if the impression that comes to my mind is an acute triangle, I can legitimately point to an obtuse triangle and call it a triangle. Conversely, I cannot point to a triangular prism with a base exactly the same shape as the impression in my mind and call it a triangle. In short, even when some impression is presented in the mind, how that impression should be <em>interpreted</em> remains shrouded in mystery.</p>
+
+<p>Nevertheless, Kripke emphasises that we should not swing to the opposite extreme and conclude that psychological experiences or feelings are completely irrelevant to problems of meaning. Kripke mentions the following cases derived from discussions in the <em>Philosophical Investigations</em>:</p>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Semantic_satiation">The phenomenon where saying the same word dozens of times makes it feel ‘strange’, as if the meaning has drained out of the word leaving only a shell</a></li>
+  <li>The difference between saying ‘bat’ whilst thinking of the animal versus thinking of the sports equipment (compare this to <a href="https://en.wikipedia.org/wiki/Necker_cube">Necker cube</a> illusion)</li>
+  <li><em>Semantic zombies</em>—similar to philosophical zombies in philosophy of mind—speakers who cannot be distinguished from ordinary language users by their utterance records alone but have no internal semantics whatsoever</li>
+</ul>
+
+<p>Kripke acknowledges that the above cases are problems that need to be elucidated, but unfortunately passes over them due to space constraints.</p>
+
+<h3 id="26-platonism">2.6. Platonism</h3>
+
+<p>Finally, the objection Kripke considers is Platonism.</p>
+
+<blockquote>
+  <p><strong>Platonistic semantics.</strong> For speaker $A$ to mean $\mathfrak{m}$ by symbol $s$ means that the speaker is directed towards the Platonic object $\pi_\mathfrak{m}$ corresponding to meaning $\mathfrak{m}$.</p>
+</blockquote>
+
+<p>Therefore, for Alice to mean addition by ‘+’ is for Alice to establish some relationship with Platonic addition.</p>
+
+<p>This would have been the answer Frege might have given to the sceptic. According to Frege, symbols appear to speakers as particular senses<sub>sense, <em>Sinn</em></sub>, and sense uniquely determines reference. Here, both sense and reference are Platonic objects.</p>
+
+<blockquote>
+  <p>Frege’s philosophy of language: Symbol -&gt; Speaker -&gt; Sense -&gt; Reference</p>
+</blockquote>
+
+<p>However, Kripke rejects Platonism with almost the same logic as before. Platonism not only fails to explain how finite humans can relate to infinite sets like addition, but consequently raises the problem of how to determine whether the Platonic object Alice is directed towards is the addition set or the quaddition set.</p>
+
+<div style="margin: 2em 0">$$\cdot \quad \cdot \quad \cdot$$</div>
+
+<p>We have thus examined the Kripke-Wittgenstein paradox and the main objections and counter-objections to it. Ultimately, Kripke concludes that direct refutation of the sceptical argument is impossible. Therefore, the discussion now moves to elucidating why, if indeed the conclusion of the sceptical argument is correct that “Alice means addition by ‘+’” lacks a corresponding state of affairs no less than “Alice’s thoughts are green”, the former can be used meaningfully in linguistic life unlike the latter. This is closely related to Kripke’s reading of Wittgenstein’s private language argument, which shall be examined in detail in the next article.</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Following Fregean theory, propositions that lack corresponding states of affairs, i.e., propositions that lack truth values, are not propositions in the true sense, so the expression “arrangements of symbols that appear to be propositions but are not propositions” would be more accurate. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>If the sceptic’s claim had been the former, it would have been immediately refuted by the fact that Alice said ‘125’ rather than ‘5’, just as the claim “heavier balls fall faster” was immediately refuted by the Tower of Pisa experiment. (The fact that the Tower of Pisa experiment was never actually conducted is now well known, but it serves as a good example.) <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Returning to the Tower of Pisa example, this would be explaining what fact constitutes ‘a heavier ball’, which could be explained as “the side that tilts when hung on a balance”. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Of course, in this case the ‘+’ he performs does not satisfy the associative law (for example, he would answer 21 to “(10 + 7) + (10 + 4)” but 31 to “(10 + (7 + 4)) + 10”), so we would have to claim that he is fundamentally unable to assign a consistent meaning to ‘+’. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>Readers who have studied mathematical logic will be able to connect this to the Löwenheim-Skolem theorem. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>Kripke does call the existence of experiences distinctive to meaning “dubious”. By contrast, in the <em>Philosophical Investigations</em>, he devotes considerable space to denying the existence of such experiences. Wittgenstein urges us to compare the case of pretending to read a foreign language one does not know with the case of reading that foreign language unconsciously after sufficient learning, emphasising that there is no special ‘feeling’ in either the former or the latter case. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title>
+        <link>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos</link>
+        <guid>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos</guid>
+        <pubDate>Tue, 17 Jun 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;「여덟 권의 청색 팔절판 노트&lt;sub&gt;Acht blaue Oktavhefte&lt;/sub&gt;」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos">
+          <![CDATA[
+            <blockquote>
   <p>「여덟 권의 청색 팔절판 노트<sub>Acht blaue Oktavhefte</sub>」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다.</p>
 </blockquote>
 
@@ -919,7 +975,23 @@ Ich sitze zum Beispiel zu Hause, ehe ich angeln gehe, und drehe scharf zusehend 
 
 <hr />
 
-<p>서두의 이미지는 막스 리히터, <em>The Blue Notebooks</em> 의 앨범 커버이다.</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="인문학" /><summary type="html"><![CDATA[「여덟 권의 청색 팔절판 노트Acht blaue Oktavhefte」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다.]]></summary></entry><entry xml:lang="en"><title type="html">Franz Kafka, The Blue Octavo Notebooks, Volume 1</title><link href="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en" rel="alternate" type="text/html" title="Franz Kafka, The Blue Octavo Notebooks, Volume 1" /><published>2025-06-17T00:00:00+09:00</published><updated>2025-06-17T00:00:00+09:00</updated><id>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/kafka-blue-octavos-en</id><content type="html" xml:base="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en"><![CDATA[<p><img src="/public/the-blue-notebooks.png" style="max-width: 350px; width: 100%; margin: 7em auto 5em auto;" /></p>
+<p>서두의 이미지는 막스 리히터, <em>The Blue Notebooks</em> 의 앨범 커버이다.</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Franz Kafka, The Blue Octavo Notebooks, Volume 1</title>
+        <link>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en</link>
+        <guid>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en</guid>
+        <pubDate>Tue, 17 Jun 2025 00:00:00 +0900</pubDate>
+        <description>&lt;p&gt;&lt;img src=&quot;/public/the-blue-notebooks.png&quot; style=&quot;max-width: 350px; width: 100%; margin: 7em auto 5em auto;&quot; /&gt;&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en">
+          <![CDATA[
+            <p><img src="/public/the-blue-notebooks.png" style="max-width: 350px; width: 100%; margin: 7em auto 5em auto;" /></p>
 
 <p>This post is originally a Korean translation of Kafka’s <em>The Blue Octavo Notebooks</em>. Given that there already exists an English translation of the work, I won’t go through the hassle of translating into English again. However, I present the following passage, which I particularly admire.</p>
 
@@ -930,7 +1002,25 @@ Everyone carries a room about inside him. This fact can even be proved by means 
 <div style="font-family: Libre Baskerville; margin: 1.5em 0 0 1em;"><small>
 Jeder Mensch trägt ein Zimmer in sich. Diese Tatsache kann man sogar durch das Gehör nachprüfen. Wenn einer schnell geht und man hinhorcht, etwa in der Nacht, wenn alles ringsherum still ist, 
 so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiegels.
-</small></div>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="Humanities" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">슬라보예 지젝, ｢소프트 파시즘, 인공지능, 그리고 수치심의 몰락｣</title><link href="https://dimenerno.github.io/2025/06/06/zizek-soft-facism" rel="alternate" type="text/html" title="슬라보예 지젝, ｢소프트 파시즘, 인공지능, 그리고 수치심의 몰락｣" /><published>2025-06-06T00:00:00+09:00</published><updated>2025-06-06T00:00:00+09:00</updated><id>https://dimenerno.github.io/2025/06/06/zizek-soft-facism</id><content type="html" xml:base="https://dimenerno.github.io/2025/06/06/zizek-soft-facism"><![CDATA[<blockquote>
+</small></div>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>슬라보예 지젝, ｢소프트 파시즘, 인공지능, 그리고 수치심의 몰락｣</title>
+        <link>https://dimenerno.github.io/2025/06/06/zizek-soft-facism</link>
+        <guid>https://dimenerno.github.io/2025/06/06/zizek-soft-facism</guid>
+        <pubDate>Fri, 06 Jun 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;본 글은 2024년 11월 26일에 이루어진 &lt;a href=&quot;https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx&quot;&gt;슬라보예 지젝의 옥스포드 강연&lt;/a&gt;을 번역한 것이다. 주석은 역자 주이다. 또한 섹션의 구분도 역자가 독자의 편의를 위해 넣은 것이다. 매끄러운 흐름을 위해 내용을 덧대거나 빼는 수준의 의역과 문장 재배치를 한 부분이 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/06/06/zizek-soft-facism">
+          <![CDATA[
+            <blockquote>
   <p>본 글은 2024년 11월 26일에 이루어진 <a href="https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx">슬라보예 지젝의 옥스포드 강연</a>을 번역한 것이다. 주석은 역자 주이다. 또한 섹션의 구분도 역자가 독자의 편의를 위해 넣은 것이다. 매끄러운 흐름을 위해 내용을 덧대거나 빼는 수준의 의역과 문장 재배치를 한 부분이 있다.</p>
 </blockquote>
 
@@ -1010,11 +1100,45 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
       <p>도착증은 무의식적 긍정성의 발현으로서 자유, 방임, 행동, 능동성 등을 아우르는 개념인 한편, 히스테리아는 무의식적 부정성의 발현으로서 억압, 제약, 금지, 수동성 등을 아우르는 개념이다. 지젝은 본 강연에서 이데올리기와 자본주의가 기형적으로 융합된 “소프트 파시즘”, 인공지능, 그리고 “뻔뻔함의 폭증”을 긍정성의 맹목적인 발현, 즉 도착증이라는 범주 아래에 포섭시키는 것으로 보인다. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="철학" /><category term="인문학" /><summary type="html"><![CDATA[본 글은 2024년 11월 26일에 이루어진 슬라보예 지젝의 옥스포드 강연을 번역한 것이다. 주석은 역자 주이다. 또한 섹션의 구분도 역자가 독자의 편의를 위해 넣은 것이다. 매끄러운 흐름을 위해 내용을 덧대거나 빼는 수준의 의역과 문장 재배치를 한 부분이 있다.]]></summary></entry><entry xml:lang="en"><title type="html">Slavoj Žižek, “Soft Fascism, Artificial Intelligence, and Shamelessness”</title><link href="https://dimenerno.github.io/2025/06/06/zizek-soft-facism/en" rel="alternate" type="text/html" title="Slavoj Žižek, “Soft Fascism, Artificial Intelligence, and Shamelessness”" /><published>2025-06-06T00:00:00+09:00</published><updated>2025-06-06T00:00:00+09:00</updated><id>https://dimenerno.github.io/2025/06/06/zizek-soft-facism/zizek-soft-facism-en</id><content type="html" xml:base="https://dimenerno.github.io/2025/06/06/zizek-soft-facism/en"><![CDATA[<p>This post is originally a Korean translation of <a href="https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx">Slavoj Žižek’s Oxford lecture</a>, so there is no separate English version. However, the following personal observation from the original post is reproduced here.</p>
+</div>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Slavoj Žižek, "Soft Fascism, Artificial Intelligence, and Shamelessness"</title>
+        <link>https://dimenerno.github.io/2025/06/06/zizek-soft-facism/en</link>
+        <guid>https://dimenerno.github.io/2025/06/06/zizek-soft-facism/en</guid>
+        <pubDate>Fri, 06 Jun 2025 00:00:00 +0900</pubDate>
+        <description>&lt;p&gt;This post is originally a Korean translation of &lt;a href=&quot;https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx&quot;&gt;Slavoj Žižek’s Oxford lecture&lt;/a&gt;, so there is no separate English version. However, the following personal observation from the original post is reproduced here.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/06/06/zizek-soft-facism/en">
+          <![CDATA[
+            <p>This post is originally a Korean translation of <a href="https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx">Slavoj Žižek’s Oxford lecture</a>, so there is no separate English version. However, the following personal observation from the original post is reproduced here.</p>
 
 <blockquote>
   <p>Psychoanalytically, <strong>Perversion</strong> is a manifestation of subconscious positivity whilst <strong>hysteria</strong> is a manifestation of subconscious negativity. <strong>Positivity</strong> encompasses concepts such as freedom, laissez-faire, liveliness, and activity, while <strong>negativity</strong> encompasses concepts such as repression, constraint, prohibition, and passivity. In this lecture, Žižek appears to subsume “soft fascism” — the pathological fusion of ideology and capitalism, — artificial intelligence, and the rise of Shamelessness under the category of perversion, namely the uncontrolled manifestation of positivity.</p>
-</blockquote>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="Philosophy" /><category term="Humanities" /><summary type="html"><![CDATA[This post is originally a Korean translation of Slavoj Žižek’s Oxford lecture, so there is no separate English version. However, the following personal observation from the original post is reproduced here.]]></summary></entry><entry><title type="html">왜 연속함수의 위상적 정의는 “반대”인가?</title><link href="https://dimenerno.github.io/2025/06/02/notes-on-continuity" rel="alternate" type="text/html" title="왜 연속함수의 위상적 정의는 “반대”인가?" /><published>2025-06-02T00:00:00+09:00</published><updated>2025-06-02T00:00:00+09:00</updated><id>https://dimenerno.github.io/2025/06/02/notes-on-continuity</id><content type="html" xml:base="https://dimenerno.github.io/2025/06/02/notes-on-continuity"><![CDATA[<blockquote>
+</blockquote>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>왜 연속함수의 위상적 정의는 “반대”인가?</title>
+        <link>https://dimenerno.github.io/2025/06/02/notes-on-continuity</link>
+        <guid>https://dimenerno.github.io/2025/06/02/notes-on-continuity</guid>
+        <pubDate>Mon, 02 Jun 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 두 위상공간 $X, Y$에 대해 사상 $f: X \to Y$가 &lt;strong&gt;연속&lt;/strong&gt;이라는 것은, $V \subseteq Y$가 열린 집합이라면 $f^{-1}[V] \subseteq X$ 또한 열린 집합이라는 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/06/02/notes-on-continuity">
+          <![CDATA[
+            <blockquote>
   <p><strong>정의.</strong> 두 위상공간 $X, Y$에 대해 사상 $f: X \to Y$가 <strong>연속</strong>이라는 것은, $V \subseteq Y$가 열린 집합이라면 $f^{-1}[V] \subseteq X$ 또한 열린 집합이라는 것이다.</p>
 </blockquote>
 
@@ -1080,7 +1204,109 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
 
 <p>$f$가 “위상적으로 연속”일 때, $x \sim y$라면 $f(x) \sim f(y)$임을 보이자. $V$가 $f(x)$와 “가까운” 점들만을 포함하는 집합이라고 하자. $V$는 열린 집합이다. 왜냐하면 $z \in V$이고 $z \sim w$일 때, $V$의 정의에 의해 $f(x) \sim z$이므로 ~추이성에 의해~ $f(x) \sim w$, 즉 $w \in V$이기 때문이다. 그리고 $U = f^{-1}[V]$가 $x$를 포함하는 열린 집합이므로 $y \in U$이다. 따라서 $f(y) \in V$, 즉 $f(x) \sim f(y)$이다. ■</p>
 
-<p>물론 위의 논의는 엄밀하게 정의되지 않은 관계 $\sim$을 사용하기 때문에 조금 석연찮기는 하다. 그러나 필자는 $\sim$을 사용하여 열린 집합과 연속성을 이해하는 것이 위상수학을 처음 공부하는 데 있어 유용한 길잡이가 되어준다고 생각한다. 덧붙이자면, 비표준 해석학을 사용하면 $x \sim y$를 $|x - y| = \epsilon$으로 엄밀하게 정의할 수 있다. 이에 관해서는 나중에 기회가 되면 이야기해 보겠다.</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="논리학" /><category term="위상수학" /><summary type="html"><![CDATA[정의. 두 위상공간 $X, Y$에 대해 사상 $f: X \to Y$가 연속이라는 것은, $V \subseteq Y$가 열린 집합이라면 $f^{-1}[V] \subseteq X$ 또한 열린 집합이라는 것이다.]]></summary></entry><entry><title type="html">논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》</title><link href="https://dimenerno.github.io/2025/06/02/wittgenstein-conant" rel="alternate" type="text/html" title="논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》" /><published>2025-06-02T00:00:00+09:00</published><updated>2025-06-02T00:00:00+09:00</updated><id>https://dimenerno.github.io/2025/06/02/wittgenstein-conant</id><content type="html" xml:base="https://dimenerno.github.io/2025/06/02/wittgenstein-conant"><![CDATA[<blockquote>
+<p>물론 위의 논의는 엄밀하게 정의되지 않은 관계 $\sim$을 사용하기 때문에 조금 석연찮기는 하다. 그러나 필자는 $\sim$을 사용하여 열린 집합과 연속성을 이해하는 것이 위상수학을 처음 공부하는 데 있어 유용한 길잡이가 되어준다고 생각한다. 덧붙이자면, 비표준 해석학을 사용하면 $x \sim y$를 $|x - y| = \epsilon$으로 엄밀하게 정의할 수 있다. 이에 관해서는 나중에 기회가 되면 이야기해 보겠다.</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Why is Continuity in Topology defined 'Backwards'?</title>
+        <link>https://dimenerno.github.io/2025/06/02/notes-on-continuity/en</link>
+        <guid>https://dimenerno.github.io/2025/06/02/notes-on-continuity/en</guid>
+        <pubDate>Mon, 02 Jun 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A mapping $f: X \to Y$ is said to be &lt;strong&gt;continuous&lt;/strong&gt; if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/06/02/notes-on-continuity/en">
+          <![CDATA[
+            <blockquote>
+  <p><strong>Definition.</strong> A mapping $f: X \to Y$ is said to be <strong>continuous</strong> if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.</p>
+</blockquote>
+
+<p>Students learning topology for the first time often experience confusion with this definition. Intuitively, it seems more natural to define continuity as “if $U \subseteq X$ is open, then $f[U] \subseteq V$ is also open,” but the actual definition is the inverse. The reasoning behind this intuition might roughly be as follows.</p>
+
+<h3 id="1-epsilon-delta-definition">1. Epsilon-Delta Definition</h3>
+
+<p>According to the epsilon-delta definition, a function $f: X \to Y$ is continuous if the following holds:</p>
+
+\[\forall \epsilon &gt; 0 \; \exists \delta &gt; 0 : |x - y| &lt; \delta \rightarrow |f(x) - f(y)| &lt; \epsilon\]
+
+<p>Here the antecedent contains $x, y \in X$, and the consequent contains $f(x), f(y) \in Y$. Therefore, it seems natural for the topological definition of continuity to also have $U \subseteq X$ in the antecedent and $f[U] \subseteq Y$ in the consequent.</p>
+
+<h3 id="2-intuition-about-open-sets">2. Intuition about Open Sets</h3>
+
+<p>When first learning topology, one often thinks of an open set as a “collection of points that are close to each other.” That is, if $U$ is an open set, then $x, y \in U$ implies that $x$ and $y$ are “close.” Thus, if continuous function are those that map “close points” to “close points,” it seems natural to require that they map open sets to open sets.</p>
+
+<div style="margin: 2.5em 0;">
+</div>
+
+<p><strong>However, both of these reasonings are fundamentally flawed.</strong></p>
+
+<div style="margin: 2.5em 0;">
+</div>
+
+<h3 id="3-why-the-reasoning-behind-epsilon-delta-definition-is-incorrect">3. Why the Reasoning behind “Epsilon-Delta Definition” is Incorrect</h3>
+
+<p>Judging the antecedent and consequent based solely on $\rightarrow$ can easily lead to misunderstandings. One must also consider the quantifiers. The quantifiers of the epsilon-delta definition can be read linguistically as “for any positive $\epsilon$, there exists some positive $\delta$ such that…” In other words, “if $\epsilon$ is a positive number, then there exists some positive $\delta$ such that…”</p>
+
+<p><em>Here we see that the “true” antecedent regards $\epsilon$\, not $\delta$.</em> And indeed, the space related to $\epsilon$ is not $X$, but $Y$. Therefore, it is only natural that $V \subseteq Y$ appears in the antecedent of the topological definition.</p>
+
+<h3 id="4-why-the-reasoning-behind-intuition-about-open-sets-is-incorrect">4. Why the Reasoning behind “Intuition about Open Sets” is Incorrect</h3>
+
+<p>For convenience, let us denote that $x$ and $y$ are “close” as $x \sim y$. The said reasoning is based on the following <strong>incorrect</strong> intuition.</p>
+
+<blockquote>
+  <p><strong>Incorrect Intuition about Open Sets.</strong> If $x \in U$ and $y \in U$, then $x \sim y$.</p>
+</blockquote>
+
+<p><strong>This should be corrected as follows:</strong></p>
+
+<blockquote>
+  <p><strong>Correct Intuition about Open Sets.</strong> If $x \in U$ and $x \sim y$, then $y \in U$.</p>
+</blockquote>
+
+<p>A little thought reveals that this is quite trivial. For example, the set of all real numbers $\mathbb{R}$ is an open set. But surely, that does not mean that two arbitrary real numbers are always “close”. Conversely, the set $\lbrace  0 \rbrace $ is not an open set, but when $x, y \in \lbrace  0 \rbrace $, we have $x = y$, so $x$ and $y$ are as “close” as possible. Thus, according to the “incorrect intuition,” $\lbrace 0 \rbrace $ should be an open set.</p>
+
+<p>On the other hand, with the “correct intuition,” it is evident that $\mathbb{R}$ is an open set while $\lbrace  0 \rbrace $ is not. When $x \in \mathbb{R}$, the real number $y$ that is “close” to $x$ is trivially included in $\mathbb{R}$. Meanwhile, $\lbrace  0 \rbrace $ does not include the real numbers that are “not equal to, but in the neighbourhood of” $0$, so it is not an open set.</p>
+
+<p>Furthermore, with the “correct intuition,” the reason why the topological definition of continuous functions should be “backwards” also becomes clear. Let us first note that the following intuition about continuity are indeed correct.</p>
+
+<blockquote>
+  <p><strong>Correct Intuition about Continuous Functions.</strong> If $x \sim y$, then $f(x) \sim f(y)$.</p>
+</blockquote>
+
+<p>Now let us show that this intuitive deifinition of continuity is equivalent to the topological definition of continuity.</p>
+
+<h4 id="intuitive-definition--topological-definition">Intuitive Definition =&gt; Topological Definition</h4>
+
+<p>Let $f$ be “intuitively continuous”. We need to show that for an open set $V$, the preimage $U = f^{-1}[V]$ is an open set. Let $x \in U$ and assume $x \sim y$. Since $f$ is continuous, we have $f(x) \sim f(y)$. Moreover, since $V$ is an open set and $f(x) \in V$, it follows that $f(y) \in V$. Therefore, $y \in U$. □</p>
+
+<h4 id="topological-definition--intuitive-definition">Topological Definition =&gt; Intuitive Definition</h4>
+
+<p>Let $f$ be “topologically continuous”. We need to show that if $x \sim y$, then $f(x) \sim f(y)$. Let $V$ be a set that contains only points “close” to $f(x)$. Since $V$ is an open set, if $z \in V$ and $z \sim w$, then by the definition of $V$, we have $f(x) \sim z$, <em>which implies by transitivity of $\sim$</em> that $f(x) \sim w$, hence $w \in V$. Furthermore, since $U = f^{-1}[V]$ is an open set containing $x$, it follows that $y \in U$. Therefore, $f(y) \in V$, which means $f(x) \sim f(y)$. ■</p>
+
+<p>Of course, the above discussion uses the somewhat dubious relation $\sim$, which is not rigorously defined. This may have caused some to feel uneasy in invoking the “transitivity of $\sim$”. However, I think using $\sim$ to understand open sets and continuity serves as a helpful intuition for those studying topology for the first time. Additionally, using non-standard analysis, one can rigorously define $x \sim y$ as $|x - y| = \epsilon$ — but that is a story for another time.</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》</title>
+        <link>https://dimenerno.github.io/2025/06/02/wittgenstein-conant</link>
+        <guid>https://dimenerno.github.io/2025/06/02/wittgenstein-conant</guid>
+        <pubDate>Mon, 02 Jun 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;이 글은 &lt;a href=&quot;/public/Search for Logically Alien Thought.pdf&quot;&gt;James Conant, &lt;em&gt;The Search for Logically Alien Thought: Descartes, Kant, Frege, and the&lt;/em&gt; Tractatus (1991)&lt;/a&gt;를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/06/02/wittgenstein-conant">
+          <![CDATA[
+            <blockquote>
   <p>이 글은 <a href="/public/Search for Logically Alien Thought.pdf">James Conant, <em>The Search for Logically Alien Thought: Descartes, Kant, Frege, and the</em> Tractatus (1991)</a>를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).</p>
 </blockquote>
 
@@ -1257,7 +1483,25 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
 
 <p>이는 다음의 수학적 예시를 통해 이해할 수 있다. 독자 분은 $0 &lt; i$가 올바르지 않은 부등식임을 배웠을 것이다. 왜냐하면 해당 맥락에서 $&lt;$는 실수 위에서만 정의되기 관계이기 때문이다. 그리고 $&lt;$가 실수 위에서만 정의 가능한 이유는 실수, 허수, 그리고 $&lt;$가 요구하는 논리적 규칙들과 연관한다. $&lt;$의 규칙에 따르면, 양변에 0보다 큰 수를 곱하면 부등호의 방향이 유지되고, 0보다 작은 수를 곱하면 부등호의 방향이 뒤집힌다. 그런데 만약 $0 &lt; i$라면 $0 = 0 \cdot i &lt; i \cdot i = -1$이 되어 모순이고, $i &lt; 0$이라면 $-1 = i \cdot i &gt; 0 \cdot i = 0$이 되어 모순이다. 따라서 $0 &lt; i$는 의미를 결여한 부등식이다. 이는 $0 &lt; i$가 <strong>거짓</strong>임을 의미하지 않는다. $0 &lt; i$가 거짓이라면 $0 &gt; i$가 참이어야 하기 때문이다.</p>
 
-<p>참고: <a href="https://forum.owlofsogang.com/t/topic/6465">https://forum.owlofsogang.com/t/topic/6465</a></p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="철학" /><category term="논리학" /><category term="언어철학" /><summary type="html"><![CDATA[이 글은 James Conant, The Search for Logically Alien Thought: Descartes, Kant, Frege, and the Tractatus (1991)를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).]]></summary></entry><entry xml:lang="en"><title type="html">Are Logically Alien Beings Possible? Descartes, Kant, Frege, and the Tractus</title><link href="https://dimenerno.github.io/2025/06/02/wittgenstein-conant/en" rel="alternate" type="text/html" title="Are Logically Alien Beings Possible? Descartes, Kant, Frege, and the Tractus" /><published>2025-06-02T00:00:00+09:00</published><updated>2025-06-02T00:00:00+09:00</updated><id>https://dimenerno.github.io/2025/06/02/wittgenstein-conant/wittgenstein-conant-en</id><content type="html" xml:base="https://dimenerno.github.io/2025/06/02/wittgenstein-conant/en"><![CDATA[<blockquote>
+<p>참고: <a href="https://forum.owlofsogang.com/t/topic/6465">https://forum.owlofsogang.com/t/topic/6465</a></p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Are Logically Alien Beings Possible? Descartes, Kant, Frege, and the Tractus</title>
+        <link>https://dimenerno.github.io/2025/06/02/wittgenstein-conant/en</link>
+        <guid>https://dimenerno.github.io/2025/06/02/wittgenstein-conant/en</guid>
+        <pubDate>Mon, 02 Jun 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/06/02/wittgenstein-conant/en">
+          <![CDATA[
+            <blockquote>
   <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
 </blockquote>
 
@@ -1438,70 +1682,12 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
 
 <p>This can be understood through the following mathematical example. You will have learnt that $0 &lt; i$ is an incorrect inequality because in that context $&lt;$ is a relation defined only over real numbers. And the reason $&lt;$ can only be defined over real numbers relates to real numbers, imaginary numbers, and the logical rules required by $&lt;$. According to the rules of $&lt;$, multiplying both sides by a number greater than 0 maintains the direction of the inequality, whilst multiplying by a number less than 0 reverses the direction of the inequality. But if $0 &lt; i$, then $0 = 0 \cdot i &lt; i \cdot i = -1$, which is contradictory, and if $i &lt; 0$, then $-1 = i \cdot i &gt; 0 \cdot i = 0$, which is contradictory. Therefore $0 &lt; i$ is an inequality that lacks sense. This does not mean that $0 &lt; i$ is <strong>false</strong>, because if $0 &lt; i$ were false, then $0 &gt; i$ would have to be true.</p>
 
-<p>See also the discussion in: <a href="https://forum.owlofsogang.com/t/topic/6465">https://forum.owlofsogang.com/t/topic/6465</a></p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="Philosophy" /><category term="Logic" /><category term="Philosophy of Language" /><summary type="html"><![CDATA[This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.]]></summary></entry><entry xml:lang="en"><title type="html">Why is Continuity in Topology defined ‘Backwards’?</title><link href="https://dimenerno.github.io/2025/06/02/notes-on-continuity/en" rel="alternate" type="text/html" title="Why is Continuity in Topology defined ‘Backwards’?" /><published>2025-06-02T00:00:00+09:00</published><updated>2025-06-02T00:00:00+09:00</updated><id>https://dimenerno.github.io/2025/06/02/notes-on-continuity/notes-on-continuity-en</id><content type="html" xml:base="https://dimenerno.github.io/2025/06/02/notes-on-continuity/en"><![CDATA[<blockquote>
-  <p><strong>Definition.</strong> A mapping $f: X \to Y$ is said to be <strong>continuous</strong> if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.</p>
-</blockquote>
+<p>See also the discussion in: <a href="https://forum.owlofsogang.com/t/topic/6465">https://forum.owlofsogang.com/t/topic/6465</a></p>
 
-<p>Students learning topology for the first time often experience confusion with this definition. Intuitively, it seems more natural to define continuity as “if $U \subseteq X$ is open, then $f[U] \subseteq V$ is also open,” but the actual definition is the inverse. The reasoning behind this intuition might roughly be as follows.</p>
 
-<h3 id="1-epsilon-delta-definition">1. Epsilon-Delta Definition</h3>
-
-<p>According to the epsilon-delta definition, a function $f: X \to Y$ is continuous if the following holds:</p>
-
-\[\forall \epsilon &gt; 0 \; \exists \delta &gt; 0 : |x - y| &lt; \delta \rightarrow |f(x) - f(y)| &lt; \epsilon\]
-
-<p>Here the antecedent contains $x, y \in X$, and the consequent contains $f(x), f(y) \in Y$. Therefore, it seems natural for the topological definition of continuity to also have $U \subseteq X$ in the antecedent and $f[U] \subseteq Y$ in the consequent.</p>
-
-<h3 id="2-intuition-about-open-sets">2. Intuition about Open Sets</h3>
-
-<p>When first learning topology, one often thinks of an open set as a “collection of points that are close to each other.” That is, if $U$ is an open set, then $x, y \in U$ implies that $x$ and $y$ are “close.” Thus, if continuous function are those that map “close points” to “close points,” it seems natural to require that they map open sets to open sets.</p>
-
-<div style="margin: 2.5em 0;">
-</div>
-
-<p><strong>However, both of these reasonings are fundamentally flawed.</strong></p>
-
-<div style="margin: 2.5em 0;">
-</div>
-
-<h3 id="3-why-the-reasoning-behind-epsilon-delta-definition-is-incorrect">3. Why the Reasoning behind “Epsilon-Delta Definition” is Incorrect</h3>
-
-<p>Judging the antecedent and consequent based solely on $\rightarrow$ can easily lead to misunderstandings. One must also consider the quantifiers. The quantifiers of the epsilon-delta definition can be read linguistically as “for any positive $\epsilon$, there exists some positive $\delta$ such that…” In other words, “if $\epsilon$ is a positive number, then there exists some positive $\delta$ such that…”</p>
-
-<p><em>Here we see that the “true” antecedent regards $\epsilon$\, not $\delta$.</em> And indeed, the space related to $\epsilon$ is not $X$, but $Y$. Therefore, it is only natural that $V \subseteq Y$ appears in the antecedent of the topological definition.</p>
-
-<h3 id="4-why-the-reasoning-behind-intuition-about-open-sets-is-incorrect">4. Why the Reasoning behind “Intuition about Open Sets” is Incorrect</h3>
-
-<p>For convenience, let us denote that $x$ and $y$ are “close” as $x \sim y$. The said reasoning is based on the following <strong>incorrect</strong> intuition.</p>
-
-<blockquote>
-  <p><strong>Incorrect Intuition about Open Sets.</strong> If $x \in U$ and $y \in U$, then $x \sim y$.</p>
-</blockquote>
-
-<p><strong>This should be corrected as follows:</strong></p>
-
-<blockquote>
-  <p><strong>Correct Intuition about Open Sets.</strong> If $x \in U$ and $x \sim y$, then $y \in U$.</p>
-</blockquote>
-
-<p>A little thought reveals that this is quite trivial. For example, the set of all real numbers $\mathbb{R}$ is an open set. But surely, that does not mean that two arbitrary real numbers are always “close”. Conversely, the set $\lbrace  0 \rbrace $ is not an open set, but when $x, y \in \lbrace  0 \rbrace $, we have $x = y$, so $x$ and $y$ are as “close” as possible. Thus, according to the “incorrect intuition,” $\lbrace 0 \rbrace $ should be an open set.</p>
-
-<p>On the other hand, with the “correct intuition,” it is evident that $\mathbb{R}$ is an open set while $\lbrace  0 \rbrace $ is not. When $x \in \mathbb{R}$, the real number $y$ that is “close” to $x$ is trivially included in $\mathbb{R}$. Meanwhile, $\lbrace  0 \rbrace $ does not include the real numbers that are “not equal to, but in the neighbourhood of” $0$, so it is not an open set.</p>
-
-<p>Furthermore, with the “correct intuition,” the reason why the topological definition of continuous functions should be “backwards” also becomes clear. Let us first note that the following intuition about continuity are indeed correct.</p>
-
-<blockquote>
-  <p><strong>Correct Intuition about Continuous Functions.</strong> If $x \sim y$, then $f(x) \sim f(y)$.</p>
-</blockquote>
-
-<p>Now let us show that this intuitive deifinition of continuity is equivalent to the topological definition of continuity.</p>
-
-<h4 id="intuitive-definition--topological-definition">Intuitive Definition =&gt; Topological Definition</h4>
-
-<p>Let $f$ be “intuitively continuous”. We need to show that for an open set $V$, the preimage $U = f^{-1}[V]$ is an open set. Let $x \in U$ and assume $x \sim y$. Since $f$ is continuous, we have $f(x) \sim f(y)$. Moreover, since $V$ is an open set and $f(x) \in V$, it follows that $f(y) \in V$. Therefore, $y \in U$. □</p>
-
-<h4 id="topological-definition--intuitive-definition">Topological Definition =&gt; Intuitive Definition</h4>
-
-<p>Let $f$ be “topologically continuous”. We need to show that if $x \sim y$, then $f(x) \sim f(y)$. Let $V$ be a set that contains only points “close” to $f(x)$. Since $V$ is an open set, if $z \in V$ and $z \sim w$, then by the definition of $V$, we have $f(x) \sim z$, <em>which implies by transitivity of $\sim$</em> that $f(x) \sim w$, hence $w \in V$. Furthermore, since $U = f^{-1}[V]$ is an open set containing $x$, it follows that $y \in U$. Therefore, $f(y) \in V$, which means $f(x) \sim f(y)$. ■</p>
-
-<p>Of course, the above discussion uses the somewhat dubious relation $\sim$, which is not rigorously defined. This may have caused some to feel uneasy in invoking the “transitivity of $\sim$”. However, I think using $\sim$ to understand open sets and continuity serves as a helpful intuition for those studying topology for the first time. Additionally, using non-standard analysis, one can rigorously define $x \sim y$ as $|x - y| = \epsilon$ — but that is a story for another time.</p>]]></content><author><name>최정담</name><email>dimenerno@kaist.ac.kr</email></author><category term="Logic" /><category term="Topology" /><summary type="html"><![CDATA[Definition. A mapping $f: X \to Y$ is said to be continuous if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.]]></summary></entry></feed>
+          ]]>
+        </content:encoded>
+      </item>
+    
+  </channel>
+</rss>
