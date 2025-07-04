@@ -387,8 +387,8 @@
 
   <ol>
     <li>임의의 열린 덮개가 유한한 부분덮개를 가질 때 $X$를 <strong>콤팩트</strong>하다고 한다.</li>
-    <li>임의의 점렬 $\lbrace x_n \in X \rbrace$가 수렴하는 부분점렬을 가질 때 $X$를 <strong>점렬 콤팩트</strong>하다고 한다.</li>
-    <li>임의의 무한집합 $S \subset X$가 극점을 가질 때 $X$를 <strong>극점 콤팩트</strong>하다고 한다.</li>
+    <li>임의의 점렬 $\lbrace x_n \in X \rbrace$가 수렴하는 부분점렬을 가질 때 $X$를 <strong>점렬 콤팩트<sub>sequentially compact</sub></strong>하다고 한다.</li>
+    <li>임의의 무한집합 $S \subset X$가 극점을 가질 때 $X$를 <strong>극점 콤팩트<sub>limit point compact</sub></strong>하다고 한다.</li>
   </ol>
 </blockquote>
 
@@ -429,11 +429,12 @@
     <li>$V$가 $x$의 근방일 때, $\exists U \in \mathcal{U} : U \subset V$</li>
   </ol>
 
-  <p>이로부터 다음 두 조건을 만족하는 함수 $k: \mathbb{N} → \mathbb{N}$을 정의할 수 있다.</p>
+  <p>이로부터 다음 조건을 만족하는 함수 $k: \mathbb{N} → \mathbb{N}$을 정의할 수 있다.</p>
 
   <ol>
     <li>$x_{k(n)} \in U_n$</li>
     <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+    <li>$n \neq m \implies x_{k(n)} \neq x_{k(m)}$</li>
   </ol>
 
   <p>2가 가능한 이유는 $k(i)$가 $i \leq n$까지 정의되었을 때 $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$가 여전히 $x$를 극점으로 가지기 때문이다. 즉, $(x_n)$은 수렴하는 부분점렬 $(x_{k(n)})$을 가진다.</p>
@@ -442,25 +443,27 @@
 <p>위 증명이 올바르지 않은 이유는 볼드체 부분이 일반적으로 가능하지 않기 때문이다. 대신 다음이 성립한다.</p>
 
 <blockquote>
-  <p><strong>정리.</strong> 1차 가산 T₁ 공간에서 극점 콤팩트성과 점렬 콤팩트성은 동치이다.</p>
+  <p><strong>정리.</strong> 1차 가산 $T_1$ 공간에서 극점 콤팩트성과 점렬 콤팩트성은 동치이다.</p>
 </blockquote>
+
+<p>$T_1$은 조건 3을 일반적으로 성립시키는 데 필요하다.</p>
 
 <h3 id="그물과-점렬">그물과 점렬</h3>
 
 <blockquote>
-  <p><strong>정의.</strong> $(J, \leq)$가 전순서라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합(directed set)</strong>이라고 한다.</p>
+  <p><strong>정의.</strong> $(J, \leq)$가 부분순서라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합<sub>directed set</sub></strong>이라고 한다.</p>
 </blockquote>
 
 <blockquote>
-  <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종(cofinal)</strong>이라고 한다.</p>
+  <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종<sub>cofinal</sub></strong>이라고 한다.</p>
 </blockquote>
 
-<p><strong>Remark 1.</strong> $(J, \leq)$가 방향 집합이고 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
+<p><strong>Remark 1.</strong> $(J, \leq)$가 방향 집합이면 $J$는 $J$에서 자명하게 공종이다. 한편 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
 
-<p><strong>Remark 2.</strong> 이후 드러나듯이, 공종성은 수렴의 일반화와 관련되는 조건이다.</p>
+<p><strong>Remark 2.</strong> 이후 드러나듯이, 방향성은 수렴의 일반화와 관련되는 조건이다.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물(net)</strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
+  <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물<sub>net</sub></strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
 </blockquote>
 
 <p><img src="/public/directed-set-net.png" style="width: 100%; max-width: 600px; margin: 0 auto" /></p>
@@ -472,6 +475,8 @@
 
   <p>인 것이다.</p>
 </blockquote>
+
+<p>방향성에 의해, 특정한 $\alpha \in J$에 대해 $\alpha \leq \beta$인 $\beta$들만 고려해도 $\mathrm{im} f$ 전체를 포섭할 수 있음을 유의하라. 즉, 임의의 $x_\gamma$에 대해 $\alpha, \gamma \leq \beta$인 $\beta$가 존재한다. 달리 말해, 그물이 $x$로 수렴한다는 것은 임의의 $x$의 근방 $U$가 주어졌을 때, 그물의 어느 원소에서 시작하든 간에 위로 충분히 올라가다 보면 어느 지점부터 이후의 모든 원소가 $U$에 속한다는 것이다.</p>
 
 <p>일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,</p>
 
