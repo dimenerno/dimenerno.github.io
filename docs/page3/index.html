@@ -212,7 +212,7 @@
     href="/"
     >Main</a
   >
-                                                                                                                                                                                                     
+                                                                                                                                                                                                         
     <a
       class="sidebar-nav-item lang-ko"
       href="/about/"
@@ -430,6 +430,156 @@
 
 
 <div class="posts">
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/09/resiliency/en"> η Sets </a>
+      </h1>
+    <span class="post-date">09 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>The key principle in Cantor’s back-and-forth argument, which demonstrates that all countable dense unbounded linear orders are isomorphic, is the following.</p>
+
+<blockquote>
+  <p><strong>Countable Dedekind Property.</strong> Let $(L, &lt;)$ be a linear order. The following are equivalent:</p>
+
+  <ol>
+    <li>$(L, &lt;)$ is dense and unbounded.</li>
+    <li>For finite subsets $C, D$ of $L$, if $C &lt; D$ then there exists $y \in L$ such that $C &lt; y &lt; D$.</li>
+  </ol>
+</blockquote>
+
+<p>Here $C &lt; D$ is shorthand notation for $\forall c \in C, d \in D : c &lt; d$.</p>
+
+<p>From the finite Dedekind property, the isomorphism theorem can be proved as follows. Let $(A, &lt;_A), (B, &lt;_B)$ be two countable dense unbounded linear orders. Since they are countable, the elements of $A, B$ can be indexed by natural numbers. Define $f: A \to B$ inductively as follows:</p>
+
+<ol>
+  <li>Set $f(a_0) = b_0$ and let $n = 1$.</li>
+  <li>Check whether $a_n \in \mathrm{dom} f$.
+    <ol>
+      <li>If $a_n \in \mathrm{dom} f$, proceed to step 3.</li>
+      <li>If $a_n \notin \mathrm{dom} f$, by the lemma there exists $y \in B$ such that $C &lt; y &lt; D$ for $C = \lbrace f(a_k) : k &lt; n, a_k &lt;_A a_n \rbrace$ and $D = \lbrace f(a_k) : k &lt; n, a_k &gt;_A a_n \rbrace$. Define $f(a_n) = y$.</li>
+    </ol>
+  </li>
+  <li>Check whether $b_n \in \mathrm{ran} f$.
+    <ol>
+      <li>If $b_n \in \mathrm{ran} f$, proceed to step 4.</li>
+      <li>If $b_n \notin \mathrm{ran} f$, by the lemma there exists $x \in A$ such that $C &lt; x &lt; D$ for $C = \lbrace f^{-1}(b_k) : k &lt; n, b_k &lt;_B b_n \rbrace$ and $D = \lbrace f^{-1}(b_k) : k &lt; n, b_k &gt;_B b_n \rbrace$. Define $f(x) = b_n$.</li>
+    </ol>
+  </li>
+  <li>Update $n$ to $n + 1$ and return to step 2.</li>
+</ol>
+
+<p>The function $f$ obtained as the inductive limit of the above process is an isomorphism between $A$ and $B$.</p>
+
+<p>However, the following generalisation of the above lemma does not hold in general.</p>
+
+<blockquote>
+  <p><strong>(False Statement)</strong> Let $(L, &lt;)$ be a linear order. The following are equivalent:</p>
+
+  <ol>
+    <li>$(L, &lt;)$ is dense and unbounded.</li>
+    <li>For subsets $C, D$ of $L$ with cardinality less than that of $L$, if $C &lt; D$ then there exists $y \in L$ such that $C &lt; y &lt; D$.</li>
+  </ol>
+</blockquote>
+
+<p>For example, $(\mathbb{R} \setminus \lbrace 0 \rbrace, &lt;)$ is a dense unbounded linear order, and when $C = (-\infty, 0) \cap \mathbb{Q}$ and $D = (0, \infty) \cap \mathbb{Q}$, we have $C &lt; D$ and $|C|, |D| &lt; |\mathbb{R}|$, but there exists no real number $y$ satisfying $C &lt; y &lt; D$.</p>
+
+<p>If the generalisation of the above lemma held, one could prove the uniqueness of dense unbounded linear orders of cardinality $\kappa &gt; \aleph_0$ as follows. Assuming the axiom of choice, $A$ and $B$ can be well-ordered to be order-isomorphic to $\kappa$. Now define $f$ by transfinite induction for ordinals $\alpha &lt; \kappa$.</p>
+
+<ol>
+  <li>Set $f(a_0) = b_0$ and let $\alpha = 1$.</li>
+  <li>Check whether $a_\alpha \in \mathrm{dom} f$.
+    <ol>
+      <li>If $a_\alpha \in \mathrm{dom} f$, proceed to step 3.</li>
+      <li>If $a_\alpha \notin \mathrm{dom} f$, by the generalised lemma there exists $y \in B$ such that $C &lt; y &lt; D$ for $C = \lbrace f(a_\beta) : \beta &lt; \alpha, a_\beta &lt;<em>A a</em>\alpha \rbrace$ and $D = \lbrace f(a_\beta) : \beta &lt; \alpha, a_\beta &gt;<em>A a</em>\alpha \rbrace$. Define $f(a_\alpha) = y$.</li>
+    </ol>
+  </li>
+  <li>Check whether $b_\alpha \in \mathrm{ran} f$.
+    <ol>
+      <li>If $b_\alpha \in \mathrm{ran} f$, proceed to step 4.</li>
+      <li>If $b_\alpha \notin \mathrm{ran} f$, by the generalised lemma there exists $x \in A$ such that $C &lt; x &lt; D$ for $C = \lbrace f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &lt;<em>B b</em>\alpha \rbrace$ and $D = \lbrace f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &gt;<em>B b</em>\alpha \rbrace$. Define $f(x) = b_\alpha$.</li>
+    </ol>
+  </li>
+  <li>Complete $f$ by transfinite induction.</li>
+</ol>
+
+<p>However, since the generalised lemma does not hold, Cantor’s back-and-forth argument cannot be applied to show that uncountable dense unbounded linear orders are unique. Indeed, uncountable dense unbounded linear orders are not unique—besides $\mathbb{R}$, there are others such as the lexicographic order on $\lbrace 0\rbrace \times \mathbb{R} \sqcup \lbrace 1\rbrace \times \mathbb{Q}$.</p>
+
+<p>To what extent can the property of the lemma be generalised? The concept related to this question is as follows.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong></p>
+
+  <ol>
+    <li>A family of sets $\mathcal{C}$ has the <strong>finite intersection property</strong> if the finite intersection of set-elements from $\mathcal{C}$ is always non-empty.</li>
+    <li>A family of sets $\mathcal{C}$ is <strong>resilient</strong> if, whenever $\mathcal{D}$ is a subfamily of $\mathcal{C}$ with the finite intersection property, we have $\bigcap_{D \in \mathcal{D}} D \neq \varnothing$.</li>
+  </ol>
+</blockquote>
+
+<p>Readers familiar with topology will recognise this as a familiar concept.</p>
+
+<blockquote>
+  <p><strong>Cantor’s Nested Interval Theorem.</strong> $K$ is compact if and only if every collection $\mathcal{F}$ of closed subsets of $K$ is resilient.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> $(\Rightarrow)$ Suppose $\mathcal{F}$ is not resilient. Then there exists a collection $\mathcal{C}$ of closed sets such that $\mathcal{C}$ has the finite intersection property but $\bigcap_{C \in \mathcal{C}} C = \varnothing$. By De Morgan’s laws, $\bigcup_{C \in \mathcal{C}} C^c = K$. That is, $\lbrace C^c : C \in \mathcal{C} \rbrace$ is an open cover of $K$. Since $K$ is compact, this has a finite subcover. However, in this case, again by De Morgan’s laws, for some finite $\mathcal{C}’ \subset \mathcal{C}$ we have $\bigcap_{C \in \mathcal{C}’} C = \varnothing$. This contradicts the finite intersection property of $\mathcal{C}$.</p>
+
+<p>$(\Leftarrow)$ The proof follows in almost exactly the same manner. ■</p>
+
+<p>We can now generalise the lemma as follows.</p>
+
+<blockquote>
+  <p><strong>Uncountable Dedekind Property.</strong> Let $(L, &lt;)$ be a linear order and let $\kappa$ be an uncountable cardinal. The following are equivalent:</p>
+
+  <ol>
+    <li>$(L, &lt;)$ is dense and unbounded. Moreover, any collection of fewer than $\kappa$ open intervals and half-lines is resilient.</li>
+    <li>For subsets $C, D$ of $L$, if $|C|, |D| &lt; \kappa$ and $C &lt; D$, then there exists $y \in L$ such that $C &lt; y &lt; D$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> $(\Rightarrow)$</p>
+
+<h4 id="i-d--varnothing">i. $D = \varnothing$</h4>
+
+<p>Consider $\mathcal{C} = \lbrace (c, \infty) : c \in C \rbrace$. Since $|\mathcal{C}| = |C| &lt; \kappa$, by the premise $\mathcal{C}$ is resilient. Since $\mathcal{C}$ has the finite intersection property, $\bigcap_{c \in C} (c, \infty) = (c’, \infty)$. This $c’$ is the desired $y$.</p>
+
+<h4 id="ii-c--varnothing">ii. $C = \varnothing$</h4>
+
+<p>Almost identical to case i.</p>
+
+<h4 id="iii-c-d-neq-varnothing">iii. $C, D \neq \varnothing$</h4>
+
+<p>Consider $\mathcal{E} = \lbrace (c, d) : c \in C, d \in D \rbrace$. By the cardinal arithmetic $\lambda \cdot \epsilon = \mathrm{max}(\lambda, \epsilon)$, we have $|\mathcal{E}| &lt; \kappa$, and $\mathcal{E}$ is resilient. Since $\mathcal{E}$ has the finite intersection property ($\because$ countable Dedekind property), $\bigcap_{c \in C, d \in D} (c, d) = (c’, d’)$. Since $(c’, d’) \neq \varnothing$, there exists $y \in (c’, d’)$, which is the desired $y$.</p>
+
+<p>$(\Leftarrow)$ That $(L, &lt;)$ is dense and unbounded is trivial.</p>
+
+<p>Let $\mathcal{E}$ be a collection of fewer than $\kappa$ open intervals and half-lines. Suppose $\mathcal{F} \subseteq \mathcal{E}$ has the finite intersection property. Then for $C = \lbrace c : (c, d) \in \mathcal{F} \text{ or } (c, \infty) \in \mathcal{F} \rbrace$ and $D = \lbrace d : (c, d) \in \mathcal{F} \text{ or } (-\infty, d) \in \mathcal{F}\rbrace$, we have $C &lt; D$. Otherwise, for some $c’ \in C, d’ \in D$ we would have $d’ &lt; c’$, in which case for an open interval $(c’, d’’) \in \mathcal{F}$ with left endpoint $c’$ and an open interval $(c’’, d’) \in \mathcal{F}$ with right endpoint $d’$, we would have $(c’, d’’) \cap (c’’, d’) = \varnothing$, contradicting the finite intersection property of $\mathcal{F}$.</p>
+
+<p>Therefore $C &lt; D$, and by the condition there exists $y$ such that $C &lt; y &lt; D$. From this it follows that $y \in \bigcap_{I \in \mathcal{F}} I$, showing that $\mathcal{E}$ is resilient. ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A set satisfying the uncountable Dedekind property is called an <a href="https://en.wikipedia.org/wiki/Η_set"><strong>$\eta$ set</strong></a>. In particular, a set satisfying the uncountable Dedekind property for $\kappa = \aleph_\alpha$ is called an $\eta_\alpha$ set.</p>
+</blockquote>
+
+<p>$\eta$ sets were introduced by Hausdorff. $\eta$ sets are closely related to the concept of <strong>saturation</strong>, which we shall explore in the following article.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
@@ -1598,106 +1748,6 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 </blockquote>
 
 <p>즉, 선택 공리를 사용하지 않더라도 a) 스콧의 트릭을 통해 $\mathrm{Card}(X)$를 정의하거나, b) 단사 사상의 유무를 통해 $|X| \leq |Y|$를 정의할 수 있지만, a)와 b)가 맞물린다는 사실을 보일 때는 선택 공리가 필요하다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/20/cardinality/en"> Notes on the Definition of Cardinality </a>
-      </h1>
-    <span class="post-date">20 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> When there exists an injective mapping from $X$ to $Y$, we write $|X| \leq |Y|$. When there exists a bijective mapping, we write $|X| = |Y|$.</p>
-</blockquote>
-
-<p>A common misunderstanding amongst students first studying set theory is to implicitly treat the $|\cdot|$ and $\leq$ in the above definition as analogous to $|\cdot|$ and $\leq$ for complex numbers. In other words, just as $|z|$ is a real number for a complex number $z$ and $\leq$ is the ordering relation on real numbers, they think that $|X|$ for a set $X$ is the size of the set—the so-called <strong>cardinality</strong>—and $\leq$ is the ordering relation on cardinalities.</p>
-
-<p>However, this is a problematic approach. This is because <strong><u>there is no guarantee that we can define cardinality as a mathematical object</u> using only the definition above.</strong> What we have defined is merely a binary relation.</p>
-
-<p>Let us consider an example for understanding. When $A$ likes $B$, we might write $|A| \leq |B|$. However, if we interpret this notation to mean that $|A|$ represents ‘$A$’s affection level’ and $\leq$ is the ordering relation on affection levels, this would be completely incorrect. Similarly, $|X| \leq |Y|$ is merely a binary relation defined by the existence of an injective mapping; the relation itself does not suggest the concept of cardinality.</p>
-
-<p>In particular, since everything is a set in ZFC, if we wish to define cardinality, we must prove the following fact.</p>
-
-<blockquote>
-  <p><strong>Theorem 1.</strong> For any sets $X, Y$, there exist sets $\mathrm{Card}(X), \mathrm{Card}(Y)$ such that the following holds:</p>
-
-  <ol>
-    <li>$|X| \leq |Y|$ iff $\mathrm{Card}(X) \subseteq \mathrm{Card}(Y)$</li>
-    <li>$|X| = |Y|$ iff $\mathrm{Card}(X) = \mathrm{Card}(Y)$</li>
-  </ol>
-
-  <p>We call $\mathrm{Card}(X)$ the cardinality of $X$.</p>
-</blockquote>
-
-<p>That is, we must ① define $\mathrm{Card}(X)$, and ② show that the above statement holds for this definition.</p>
-
-<p>For convenience of expression, let us refer to $|X| \leq |Y|$ and $|X| = |Y|$ as “$Y$ is not smaller than $X$” and “$X$ and $Y$ have the same size”, respectively. Regarding ①, there are broadly four possible approaches. Let us briefly examine them:</p>
-
-<ol>
-  <li>
-    <p>Cantor’s definition</p>
-
-    <ul>
-      <li>Definition: Define $\mathrm{Card}(X)$ as the collection of all sets having the same size as $X$.</li>
-      <li>Advantage: The definition is most intuitive</li>
-      <li>Disadvantage: $\mathrm{Card}(X)$ is actually a class, not a set</li>
-    </ul>
-  </li>
-  <li>
-    <p>Scott’s trick</p>
-
-    <ul>
-      <li>Definition: When the rank of the first set to appear in the von Neumann hierarchy amongst sets having the same size as $X$ is $V_\alpha$, define $\mathrm{Card}(X)$ as $V_\alpha$.</li>
-      <li>Advantage: Defines cardinality without the class problem</li>
-      <li>Disadvantage: The definition is not intuitive and has ad-hoc aspects</li>
-    </ul>
-  </li>
-  <li>
-    <p>Defining cardinality using the well-ordering theorem</p>
-
-    <ul>
-      <li>Definition: Define $\mathrm{Card}(X)$ as the smallest ordinal that is not smaller than the ordinals corresponding to well-orderings of $X$.</li>
-      <li>Advantage: The definition is somewhat intuitive and avoids the class problem</li>
-      <li>Disadvantage: Without the axiom of choice, we cannot guarantee the existence of a well-ordering for arbitrary sets</li>
-    </ul>
-  </li>
-  <li>
-    <p>Defining cardinality using Hartogs numbers</p>
-    <ul>
-      <li>Definition: Define the Hartogs number of $X$ as the smallest ordinal greater than the ordinals corresponding to well-orderable subsets of $X$.</li>
-      <li>Advantage: The definition is reasonably intuitive, avoids the class problem, and is not dependent on the axiom of choice</li>
-      <li>Disadvantage: Inconvenient to handle and has many limitations</li>
-    </ul>
-  </li>
-</ol>
-
-<p>In modern set theory, either 2 or 3 is adopted as the definition of cardinality. In both cases, one can prove that Theorem 1 holds in ZFC.</p>
-
-<p>What is interesting is that whilst the axiom of choice is not required to define cardinality using Scott’s trick, the axiom of choice is needed to prove that cardinality defined by Scott’s trick satisfies Theorem 1. This is because the following is equivalent to the axiom of choice:</p>
-
-<blockquote>
-  <p><strong>Theorem 2.</strong> For any sets $X, Y$, either $|X| \leq |Y|$ or $|Y| \leq |X|$.</p>
-</blockquote>
-
-<p>That is, even without using the axiom of choice, we can a) define $\mathrm{Card}(X)$ through Scott’s trick, or b) define $|X| \leq |Y|$ through the existence of injective mappings, but the axiom of choice is required to prove that a) and b) mesh together.</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -212,7 +212,7 @@
     href="/"
     >Main</a
   >
-                                                                                                                                                                                                     
+                                                                                                                                                                                                         
     <a
       class="sidebar-nav-item lang-ko"
       href="/about/"
@@ -430,6 +430,257 @@
 
 
 <div class="posts">
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/25/caratheodory/en"> Construction of Measures via Carathéodory's Theorem </a>
+      </h1>
+    <span class="post-date">25 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/measure-theory/'">
+        Measure Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>The author prefers to understand Carathéodory’s theorem<sub>Carathéodory theorem</sub> by dividing it into three parts, and this article follows the same approach. They are as follows:</p>
+
+<ol>
+  <li><strong>Carathéodory Construction Theorem:</strong> An outer measure<sub>outer measure</sub> can be defined from any collection of sets and a positive function.</li>
+  <li><strong>Carathéodory Restriction Theorem:</strong> A function obtained by restricting the domain of an outer measure to measurable sets becomes a measure.</li>
+  <li><strong>Carathéodory Extension Theorem:</strong> A measure on $\sigma(\mathcal{A}_0)$ that extends a premeasure<sub>premeasure</sub> $\mu_0$ on an algebra $\mathcal{A}_0$ is uniquely given by the measure obtained by applying the restriction theorem to the outer measure $\mu^\ast$ obtained by applying the construction theorem with the collection of sets as $\mathcal{A}_0$ and the positive function as $\mu_0$.</li>
+</ol>
+
+<p>Schematically, this can be understood as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>(1)</th>
+      <th>(2)</th>
+      <th>(3)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Domain</td>
+      <td>Algebra $\mathcal{A}_0$</td>
+      <td>$\sigma$-algebra $\mathcal{A}$</td>
+      <td>Power set $\mathcal{P}(X)$</td>
+    </tr>
+    <tr>
+      <td>Function</td>
+      <td>Premeasure $\mu_0$</td>
+      <td>Measure $\mu$</td>
+      <td>Outer measure $\mu^\ast$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The construction theorem goes in the direction (1) → (3), the restriction theorem goes (3) → (2), and the extension theorem goes (1) → (2). Let us examine each one by one.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> An <strong>outer measure</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$ on $X$ is a function satisfying the following:</p>
+
+  <ol>
+    <li>$\mu^\ast(\varnothing) = 0$</li>
+    <li>$A \subset B \implies \mu^\ast(A) \leq \mu^\ast(B)$</li>
+    <li>$\mu^\ast\left( \bigcup_{n \in \mathbb{N}} A_n  \right) \leq \sum_{n \in \mathbb{N}} \mu^\ast(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Carathéodory Construction Theorem.</strong> Given any collection $\mathcal{S}$ of subsets of $X$ and any function $l: \mathcal{S} \to [0, \infty]$ satisfying $l(\varnothing) = 0$, the function $\mu^\ast$ defined as follows is an outer measure:</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} l(A_n) : \{ A_n \} \subset \mathcal{S} \text{ covers }E  \right\}\]
+</blockquote>
+
+<p>That is, $\mu^\ast$ is a function that defines something akin to a ‘measure’ of $E$ as an infimum over covers, and is conceptually similar to the upper sum<sub>upper sum</sub> in Riemann integration.</p>
+
+<p><strong>Proof.</strong> Properties 1 and 2 are trivial. We prove property 3.</p>
+
+<p>Let $A = \bigcup A_n$ and suppose an arbitrary $\epsilon &gt; 0$ is given. By the definition of $\mu^\ast$, for each $n$, there exists a cover $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$ of $A_n$ satisfying:</p>
+
+\[\sum l(A_{nm}) \leq \mu^*(A_n) + \epsilon/2^n\]
+
+<p>Therefore,</p>
+
+\[\sum_{n, m \in \mathbb{N}} l(A_{nm}) \leq \sum \mu^*(A_n) + \epsilon.\]
+
+<p>Since $\bigcup \mathcal{C}_n$ covers $A$, by the definition of $\mu^\ast$, we have $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$. ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $A$ is said to be <strong>measurable<sub>measurable</sub></strong> with respect to $\mu^\ast$ if it satisfies the following for any $E$:</p>
+
+\[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $N$ with $\mu^\ast(N) = 0$ is called a <strong>null set<sub>null set</sub></strong>.</p>
+</blockquote>
+
+<p>That is, a measurable set is one that ‘cleanly’ partitions any set with respect to $\mu^\ast$. Therefore, we can expect that $\mu^\ast$ will behave like an ordinary measure on the collection consisting only of measurable sets. The following restriction theorem validates this expectation.</p>
+
+<blockquote>
+  <p><strong>Carathéodory Restriction Theorem.</strong> Let $\mu^\ast$ be an outer measure. Let $\mathcal{A}$ be the collection of sets that are measurable with respect to $\mu^\ast$. Then the following hold:</p>
+
+  <ol>
+    <li>$\mathcal{A}$ is a $\sigma$-algebra.</li>
+    <li>$\mu^\ast |_\mathcal{A}$ is a measure.</li>
+    <li>$\mathcal{A}$ contains all null sets of $\mu^\ast$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p><strong>1. $\mathcal{A}$ is an algebra.</strong></p>
+
+<p>Closure under complements is trivial. We show closure under finite intersections.</p>
+
+<p>Suppose $A, B$ are measurable. To show that $A \cap B$ is measurable, it suffices to prove:</p>
+
+\[\mu^*(E \cap (A \cap B)) + \mu^*(E \cap (A \cap B)^c) \leq \mu^*(E) \quad \cdots \quad (*)\]
+
+<p>Since $A, B$ are measurable, the following holds:</p>
+
+\[\begin{aligned}
+\mu^*(E) &amp;= \mu^*(E \cap A) + \mu^*(E \cap A^c) \\
+&amp;= \mu^*(E \cap A \cap B) + \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B) + \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>Therefore, $(\ast)$ is equivalent to:</p>
+
+\[\begin{aligned}
+\mu^*(E \cap (A^c \cup B^c)) &amp;\leq \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B)  \quad \cdots \quad (**) \\ &amp;+ \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>From elementary set theory, we have:</p>
+
+\[A^c \cup B^c = (A \cap B^c) \cup (A^c \cap B) \cup (A^c \cap B^c)\]
+
+<p>Therefore, $(\ast\ast)$ holds. □</p>
+
+<p><strong>2. $\mathcal{A}$ is a $\sigma$-algebra.</strong></p>
+
+<p>It suffices to show that for $\lbrace  A_n \rbrace  \subset \mathcal{A}$ with $A_n \uparrow A$, we have $A \in \mathcal{A}$. (Why?)</p>
+
+<p>By the definition of outer measure, $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$. Let $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$. Then $\bigsqcup C_n = A$. Moreover,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n) &amp;= \mu^*(E \cap A_n \cap C_n) + \mu^*(E \cap A_n \cap C_n^c) \\
+&amp;= \mu^*(E \cap C_n) + \mu^*(E \cap A_{n - 1}) \\
+&amp;= \cdots \\
+&amp;= \sum^n_{k = 1} \mu^*(E \cap C_k)
+\end{aligned}\]
+
+<p>Therefore, $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$. Since $\lbrace  E \cap C_n \rbrace $ covers $E \cap A$, we have $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$. Therefore, $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$.</p>
+
+<p>Thus, for any $\epsilon &gt; 0$, there exists a sufficiently large $N$ such that $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$. Therefore,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n^c) &amp;= \mu^*(E) - \mu^*(E \cap A_n) \\
+&amp;\leq \mu^*(E) - \mu^*(E \cap A) + \epsilon
+\end{aligned}\]
+
+<p>whence we obtain:</p>
+
+\[\mu^*(E) \leq \mu^*(E \cap A_n) + \mu^*(E \cap A_n^c) \leq \mu^*(E) + \epsilon\]
+
+<p>Letting $n \to \infty$, we get $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$. □</p>
+
+<p><strong>3. $\mu^\ast|_\mathcal{A}$ is a measure, 4. $\mathcal{A}$ contains all null sets.</strong></p>
+
+<p>Left as an exercise to the readers. (Not difficult) ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathcal{A}_0$ be an algebra. A function $\rho: \mathcal{A}_0 \to [0, \infty]$ is called a <strong>premeasure</strong> if it satisfies the following:</p>
+
+  <ol>
+    <li>$\rho(\varnothing) = 0$</li>
+    <li>For any pairwise disjoint countable collection $\lbrace  A_n \rbrace $, if $\bigcup A_n \in \mathcal{A}_0$, then $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Carathéodory Extension Theorem.</strong> For a premeasure $\rho$ on an algebra $\mathcal{A}_0$, define:</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
+
+  <p>Then the following hold:</p>
+
+  <ol>
+    <li>If $A \in \mathcal{A}_0$, then $\mu^\ast(A) = \rho(A)$.</li>
+    <li>$\sigma(\mathcal{A}_0)$ is measurable with respect to $\mu^\ast$.</li>
+    <li>If $\rho$ is $\sigma$-finite, then $\mu^\ast|_{\sigma(\mathcal{A}_0)}$ is the unique measure that extends $\rho$ to $\sigma(\mathcal{A}_0)$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p><strong>1. If $A \in \mathcal{A}_0$, then $\mu^\ast(A) = \rho(A)$.</strong></p>
+
+<p>Since $A$ is a cover of $A$, we have $\mu^\ast(A) \leq \rho(A)$. If $\mu^\ast(A) &lt; \rho(A)$, then there exists some cover $\lbrace  A_n \rbrace $ of $A$ such that $\sum \rho(A_n) &lt; \rho(A)$. However, since $\rho$ is a premeasure, this is a contradiction. □</p>
+
+<p><strong>2. $\sigma(\mathcal{A}_0)$ is measurable with respect to $\mu^\ast$.</strong></p>
+
+<p>First, we show that $\mathcal{A}_0$ is measurable. For any $A \in \mathcal{A}_0$, it suffices to show $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$. By the definition of $\mu^\ast$, for any $\epsilon &gt; 0$, there exists some cover $\mathcal{C}$ of $E$ such that:</p>
+
+\[\sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon\]
+
+<p>Since $\mathcal{A}_0$ is an algebra, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$. Therefore,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A) + \mu^*(E \cap A^c) &amp;\leq \sum^\infty_{n = 1} \mu^*(A \cap C_n) + \sum^\infty_{n = 1} \mu^*(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(A \cap C_n) + \sum^\infty_{n = 1} \rho(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon
+\end{aligned}\]
+
+<p>(Strictly speaking, one should consider $\sum^n_{k=1}$ and then take the limit $n \to \infty$) Therefore, $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$, and $\mathcal{A}_0$ is measurable. By the Carathéodory restriction theorem, measurable sets form a $\sigma$-algebra, so $\sigma(\mathcal{A}_0)$ is also measurable. □</p>
+
+<p><strong>3. If $\rho$ is $\sigma$-finite, then $\mu^\ast|_{\sigma(\mathcal{A}_0)}$ is the unique measure that extends $\rho$ to $\sigma(\mathcal{A}_0)$.</strong></p>
+
+<p>First, assume $\rho &lt; \infty$. Suppose a measure $\nu$ defined on $\sigma(\mathcal{A}_0)$ agrees with $\rho$ on $\mathcal{A}_0$. Let $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$. We show $\nu = \mu$.</p>
+
+<p>Let $E \in \sigma(\mathcal{A}_0)$. There exists some cover $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$ of $E$ such that:</p>
+
+\[\sum \rho(A_n) \leq \mu(E) + \epsilon\]
+
+<p>Since $\nu$ agrees with $\rho$ on $\mathcal{A}_0$, we have $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$. Therefore, $\nu \leq \mu$.</p>
+
+<p>Now define $B_n = \bigcup^n_{k=1}A_k$ and let $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$. Since $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$, we have $\mu(B \setminus E) \leq \epsilon$. Since $\nu$ is a measure,</p>
+
+\[\mu(A) = \lim \rho(B_n) = \lim \nu(B_n) = \nu(A)\]
+
+<p>Therefore,</p>
+
+\[\begin{aligned}
+\mu(E) \leq \mu(B) &amp;= \mu(B \setminus E) + \mu(E) \\
+&amp;\leq \epsilon + \nu(E)
+\end{aligned}\]
+
+<p>That is, $\mu \leq \nu$. Therefore, $\mu = \nu$.</p>
+
+<p>Now assume $\rho$ is $\sigma$-finite. There exists a collection $\lbrace  C_n \rbrace $ such that $C_n \uparrow X$ and $\rho(C_n) &lt; \infty$. By the preceding argument, $\mu$ and $\nu$ agree on $C_n$. Therefore,</p>
+
+\[\mu(A) = \lim \mu(A \cap C_i) = \lim \nu (A \cap C_i) = \nu(A)\]
+
+<p>so $\mu$ and $\nu$ agree on the entire space. ■</p>
+
+<p>In the next article, we shall construct Lebesgue measure using Carathéodory’s theorem, and then show that whilst every Borel measurable set is Lebesgue measurable, the converse does not hold.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
@@ -2173,349 +2424,6 @@ K = \{ v \in V : v \in B \}
 <h2 id="3-결론">3. 결론</h2>
 
 <p>지금까지의 논의는 괴델의 조건문으로부터 반기계주의를 직접적으로 이끌어내려는 더이상의 시도를 방지하는 데 충분할 것이다. 그러나 논리학의 결과로부터 반기계주의를 논증하려는 또다른 접근 방식이 있다. 흔히 <strong>펜로즈의 새 논증</strong>이라고 불리는 이 논증은 타르스키의 유형적 참과는 구별되는, 유형 독립적 참<sub>type-free truth</sub>을 내세우는 논증이다. 해당 논증의 형식화와 그것이 시사하는 바는 본 논문의 2편에서 다루도록 한다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/09/godel-lucas-penrose/en"> Can the Mind Be Reduced to a Machine: Gödel's Disjunction and the Penrose-Lucas Argument </a>
-      </h1>
-    <span class="post-date">09 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/philosophy/'">
-        Philosophy
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/b71a00d7-efdf-4ec3-ad5c-cc32b67cf70c/image.jpeg" alt="" /></p>
-
-<blockquote>
-  <p>This article is a summary of <a href="/public/On the question of whether the mind can be mechanized 1.pdf">Peter Koellner, <em>On the question of whether the mind can be mechanized</em> (2018)</a>.</p>
-</blockquote>
-
-<p><strong>Abstract.</strong> The Church-Turing thesis and Gödel’s incompleteness theorems suggest the existence of mathematical truths that cannot be proved mechanically. However, if an ideal human mind can prove all mathematical truths, then the conclusion follows that the ideal human mind is not equivalent to a machine. This article examines the arguments of Lucas and Penrose, who attempt to establish anti-mechanism in such a manner, and introduces formal proofs that refute these arguments.</p>
-
-<h2 id="introduction">Introduction</h2>
-
-<p>The following are well-known results in logic:</p>
-
-<ul>
-  <li>
-    <p><strong>Church-Turing Thesis.</strong> To be <strong>computable</strong> by an ideal machine is to be implementable by a Turing machine.</p>
-  </li>
-  <li>
-    <p><strong>Gödel’s Incompleteness Theorem.</strong> If $F$ is a formal system satisfying certain conditions, then there exists a sentence that is true but unprovable in $F$.</p>
-  </li>
-  <li>
-    <p><strong>Formal System-Turing Machine Correspondence.</strong> If $F$ is a formal system satisfying certain conditions, then there exists a Turing machine that enumerates the propositions provable in $F$.</p>
-  </li>
-</ul>
-
-<p>Combining these three theses with the fact that we humans appear to be capable of grasping mathematical truths not captured by formal systems—such as the consistency of arithmetic—the incompleteness theorem appears to suggest that the extension of mathematical results derivable by an ideal human mind exceeds the extension of results derivable by an ideal finite machine. That is, the incompleteness theorem appears to suggest anti-mechanism: that the mind cannot be reduced to a machine.</p>
-
-<p>In this article, we examine how far this suggestion can be justified. As a result, we shall show that whilst the incompleteness theorem suggests anti-mechanism <em>or</em> Platonism, it does not directly suggest anti-mechanism.</p>
-
-<h2 id="1-gödels-disjunction">1. Gödel’s Disjunction</h2>
-
-<p>Gödel argued that from the incompleteness theorem, it follows that <em>at least one</em> of the following two positions is true. We shall call this <strong>Gödel’s Disjunction</strong>.</p>
-
-<ol>
-  <li>
-    <p><strong>Anti-mechanism:</strong> The mathematical results derivable by an ideal human mind always exceed the mathematical results derivable by an ideal finite machine. Therefore, the human mind cannot be reduced to a machine.</p>
-  </li>
-  <li>
-    <p><strong>Platonism:</strong> There exist mathematical truths that cannot be grasped by an ideal human mind. Therefore, mathematical truth exists independently of the human mind.</p>
-  </li>
-</ol>
-
-<p>It is noteworthy that both positions are contrary to materialist philosophy. Whilst Gödel was generally reserved about philosophical arguments, he argued strongly that this particular argument was a “mathematically established fact”. Our first task is to verify whether this argument is indeed a “mathematically established fact”.</p>
-
-<h3 id="11-gödels-three-claims">1.1. Gödel’s Three Claims</h3>
-
-<p>Let us introduce some notation.</p>
-
-<ol>
-  <li>
-    <p>$F$ is the set of all sentences that the formal system $F$ can prove.</p>
-  </li>
-  <li>
-    <p>$K$ is the set of all sentences that an ideal human mind can prove.</p>
-  </li>
-  <li>
-    <p>$T$ is the set of true sentences.</p>
-  </li>
-</ol>
-
-<p>Throughout this article, we shall assume $K \subseteq T$. We also presuppose that $F$ is a formal system to which Gödel’s incompleteness theorem applies—that is, a consistent system containing Peano arithmetic (in fact, this condition can be weakened to Robinson arithmetic).</p>
-
-<p>Before proceeding to the main discussion, let us review Gödel’s incompleteness theorem.</p>
-
-<blockquote>
-  <p><strong>Gödel’s Incompleteness Theorem.</strong> When $F$ is a consistent mathematical system containing arithmetic, the following holds:</p>
-
-  <ul>
-    <li><strong>First Theorem.</strong> There exists a proposition that is true but unprovable in $F$.</li>
-    <li><strong>Second Theorem.</strong> The consistency of $F$ is an instance of the First Theorem.</li>
-  </ul>
-</blockquote>
-
-<p>Incidentally, whilst the incompleteness theorem traditionally targets Peano arithmetic, the incompleteness theorem also holds for weaker arithmetic systems, including Robinson arithmetic.</p>
-
-<h4 id="111-first-claim">1.1.1. First Claim</h4>
-
-<p>Gödel first claims the following:</p>
-
-<blockquote>
-  <p><strong>Claim 1.</strong> $F \subseteq T \implies F \subsetneq T$</p>
-</blockquote>
-
-<p>The proof is as follows. If $F \subseteq T$, then $\mathrm{Con}(F) \in T$. However, by the Second Incompleteness Theorem, $\mathrm{Con}(F) \notin F$. Therefore, $F \subsetneq T$.</p>
-
-<h4 id="112-second-claim">1.1.2. Second Claim</h4>
-
-<p>Gödel’s second claim is as follows:</p>
-
-<blockquote>
-  <p><strong>Claim 2.</strong> $K(F \subseteq T) \implies F \subsetneq K$</p>
-</blockquote>
-
-<p>The proof is as follows. If $K(F \subseteq T)$, then $\mathrm{Con}(F) \in K$. However, as we have seen, $F \subseteq T \implies \mathrm{Con}(F) \notin F$, so $F \subsetneq K$.</p>
-
-<p>But if $F \subsetneq K$ is true, how should we understand this? One approach is to consider a hierarchy of formal systems.</p>
-
-<p>Gödel emphasises that the unprovable sentences suggested by the incompleteness theorem need not be <em>absolutely</em> unprovable. This is because sentences unprovable in formal system $F$ may become provable in systems of higher order than $F$. For example, if $\mathsf{PA}$ is consistent, then whilst $\mathsf{PA}$ cannot prove $\mathrm{Con}(\mathsf{PA})$, it is known that second-order Peano arithmetic $\mathsf{PA}_2$ can prove $\mathrm{Con}(\mathsf{PA})$. Of course, $\mathsf{PA}_2$ cannot prove $\mathrm{Con}(\mathsf{PA}_2)$, but this is provable in third-order Peano arithmetic, and such a hierarchy continues.</p>
-
-<p>This entire hierarchy appears to be subsumed under $K$. From this perspective, each formal system is like a set, and $K$ is like the collection of all sets. And just as the collection of all sets cannot be a set, an analogy holds that $K$ cannot be a formal system.</p>
-
-<h4 id="113-third-claim">1.1.3. Third Claim</h4>
-
-<p>However, one might wonder: instead of writing “Claim 2” as a conditional, could we not claim $F \subsetneq K$ by asserting that $K(F \subsetneq T)$ is true?</p>
-
-<p>Gödel points out that the incompleteness theorem alone cannot lead to such a claim. This is because the possibility of the existence of a formal system $F^*$ that coincides with $K$ cannot be completely ruled out (note that the previous discussion regarding higher-order Peano arithmetic was merely an analogy).</p>
-
-<p>Regarding this, Gödel says:</p>
-
-<blockquote>
-  <p>[If such a formal system exists] human reason—at least in its mathematical aspect—is equivalent to a finite machine. However, that machine cannot completely understand its own operation [in the sense that it cannot prove its own consistency]. This inability would be mistaken by humans as the infinite extensibility of the mind.</p>
-</blockquote>
-
-<p>Instead, Gödel’s third claim is as follows. This claim is Gödel’s disjunction.</p>
-
-<blockquote>
-  <p><strong>Claim 3.</strong> $\forall F (F \subsetneq K) \;  \lor \; K \subsetneq T$</p>
-</blockquote>
-
-<p>The proof is as follows. Suppose there is a formal system $F^<em>$ such that $F^</em> = K$. Since we have assumed $K \subset T$, we have $F^* \subset T$, and by Claim 1, $F^* \subsetneq T$.</p>
-
-<p>The former signifies anti-mechanism, whilst the latter signifies Platonism.</p>
-
-<h3 id="12-formalisation-of-gödels-disjunction">1.2. Formalisation of Gödel’s Disjunction</h3>
-
-<p>So far, we have presented Gödel’s three claims and introduced brief proofs thereof. However, these proofs were not actually precise. This is because we did not introduce rigorous definitions of $F, K, T$, nor did we distinguish between what content can be proved <em>within</em> a formal system and what content can only be proved <em>outside</em> a formal system. To overcome this limitation, let us rigorously formalise $F, K, T$ and the proofs of Gödel’s three claims.</p>
-
-<h4 id="121-f">1.2.1. $F$</h4>
-
-<p>$F$ is the easiest concept to formalise. In particular, the following facts are known:</p>
-
-<blockquote>
-  <p><strong>Formal System-Turing Machine Correspondence.</strong> When $F$ is a recursively axiomatisable formal system, there exists a Turing machine that recursively enumerates the propositions provable from $F$.</p>
-</blockquote>
-
-<p>Additionally, the formal systems of interest to us are recursively axiomatisable.</p>
-
-<blockquote>
-  <p><strong>Recursiveness of Kleene Predicates.</strong> The operation of Turing machines can be formalised within Peano arithmetic. Specifically, there exists a first-order logical predicate $K(x, y, z)$ that determines whether a Turing machine with Gödel number $x$, when given natural number $y$ as input, terminates with a computation record with Gödel number $z$.</p>
-</blockquote>
-
-<p>As a corollary of the above two theorems, we obtain:</p>
-
-<blockquote>
-  <p><strong>Corollary.</strong> Formal systems are recursively enumerable. That is, the “$e$-th formal system” $F_e$ can be defined in Peano arithmetic.</p>
-</blockquote>
-
-<p>For example, $F_{123}$ might be Robinson arithmetic, $F_{456}$ might be ZFC, and so forth. $F_{123}(\ulcorner 1 + 1 = 2 \urcorner)$ means that $1 + 1 = 2$ is provable in Robinson arithmetic. And $\mathsf{PA} \vdash F_{123}(\ulcorner 1 + 1 = 2 \urcorner)$.</p>
-
-<h4 id="122-t">1.2.2. $T$</h4>
-
-<p>The most promising formal definition of $T$ is <strong>Tarski’s typed truth definition</strong>. Whilst Tarski’s typed truth definition is a syntactic rather than semantic definition, it is suitable for the purposes of the present discussion. Tarski’s definition consists of axioms including the following:</p>
-
-<ul>
-  <li>
-    <p>$\forall x : \mathrm{Sent}(x) \rightarrow (T(\hat{\lnot} x) \leftrightarrow \lnot T(x))$</p>
-  </li>
-  <li>
-    <p>$\forall x, y : [\mathrm{Sent}(x) \land \mathrm{Sent}(y)] \rightarrow [T(x\; \hat{\lor} \;y) \leftrightarrow T(x) \lor T(y)]$</p>
-  </li>
-</ul>
-
-<p>Here, $\mathrm{Sent}$ determines whether a given sentence (or its Gödel number) is well-formed. Meanwhile, $\hat{\quad}$ is introduced to distinguish between language and meta-language; a detailed explanation is not particularly important, so we shall leave it at this.</p>
-
-<h4 id="123-k">1.2.3. $K$</h4>
-
-<p>$K$ is the most challenging of the three concepts. Not only can we not provide a complete semantic definition, but there are also questionable aspects to providing a syntactic definition. However, since the goal of this article is to demonstrate that $F \subsetneq K$ cannot be directly shown from the incompleteness theorem, according to the principle of charity, we shall present the following syntactic definition that maximally guarantees the extension of $K$.</p>
-
-<blockquote>
-  <p><strong>Syntactic Definition of $K$.</strong></p>
-
-  <ol>
-    <li>When $\phi$ is logically true, $K\phi$.</li>
-    <li>For arbitrary sentences $\phi, \psi$: $(K(\phi \rightarrow \psi) \land K\phi) \rightarrow K\psi$.</li>
-    <li>For arbitrary sentence $\phi$: $K\phi \rightarrow \phi$.</li>
-    <li>For arbitrary sentence $\phi$: $K\phi \rightarrow KK\phi$.</li>
-  </ol>
-</blockquote>
-
-<p>Here, $K$ is a logical operator. Therefore, we write $K\phi$ rather than $K(\phi)$ or $K(\ulcorner \phi \urcorner)$. For the reason why $K$ should be regarded as a logical operator rather than a predicate, see footnote 29 of the original paper.</p>
-
-<h4 id="124-mathsfea-and-mathsfea_t">1.2.4. $\mathsf{EA}$ and $\mathsf{EA}_T$</h4>
-
-<p>Let us construct a formal system capable of reasoning about $F, K, T$. Firstly, as we saw in 1.2.1, $F$ is already formalisable in $\mathsf{PA}$, so no special measures are required.</p>
-
-<p>Let $L_{\mathsf{EA}}$ be defined as $\mathsf{PA}$ with the function $K$ added. Let $\Sigma$ be the collection of axioms of $\mathsf{PA}$ and the axioms of the syntactic definition of $K$ (where the induction schema of $\mathsf{PA}$ is taken over sentences of $L_{\mathsf{EA}}$ rather than $L_{\mathsf{PA}}$). The axioms of $\mathsf{EA}$ are $\Sigma \cup K\Sigma$.</p>
-
-<p>Let $L_{\mathsf{EA}<em>T}$ be defined as $\mathsf{EA}$ with the predicate $T$ added. Let $\Sigma^*$ be the collection of $\Sigma$ and the axioms of the syntactic definition of $T$ (where the induction schema of $\mathsf{PA}$ is taken over sentences of $L</em>{\mathsf{EA}_T}$). The axioms of $\mathsf{EA}_T$ are $\Sigma^* \cup K\Sigma^*$.</p>
-
-<h3 id="13-formal-proof-of-gödels-disjunction">1.3. Formal Proof of Gödel’s Disjunction</h3>
-
-<p>We show that Gödel’s three claims are formally provable in $\mathsf{EA}_T$.</p>
-
-<h4 id="131-first-claim">1.3.1. First Claim</h4>
-
-<blockquote>
-  <p><strong>Claim 1.</strong> $F \subseteq T \implies F \subsetneq T$</p>
-</blockquote>
-
-<p>This claim is easily provable in $\mathsf{EA}_T$. This is because it is a direct consequence of Gödel’s incompleteness theorem.</p>
-
-<h4 id="132-second-claim">1.3.2. Second Claim</h4>
-
-<blockquote>
-  <p><strong>Claim 2.</strong> $K(F \subseteq T) \implies F \subsetneq K$</p>
-</blockquote>
-
-<p>This claim is also provable in $\mathsf{EA}_T$. In fact, the following stronger result is provable:</p>
-
-<blockquote>
-  <p><strong>Reinhardt’s First Theorem.</strong> For arbitrary sentence $\phi$, if</p>
-
-\[\mathsf{EA} \vdash K(F(\ulcorner \phi \urcorner) \rightarrow \phi)\]
-
-  <p>then there exists some sentence $\psi$ such that</p>
-
-\[\mathsf{EA} \vdash K\psi \land K\lnot F(\ulcorner \psi \urcorner)\]
-
-  <p>(that is, $\mathsf{EA} \vdash F \subsetneq K$).</p>
-</blockquote>
-
-<h4 id="133-third-claim">1.3.3. Third Claim</h4>
-
-<blockquote>
-  <p><strong>Claim 3.</strong> $\forall F (F \subsetneq K) \;  \lor \; K \subsetneq T$</p>
-</blockquote>
-
-<p>Expanding $F \subsetneq K$ in the above claim gives:</p>
-
-\[\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land K(x) \land x \notin F_e  )\]
-
-<p>And expanding $K \subsetneq T$ gives:</p>
-
-\[\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot  K(x) \land \lnot K(\lnot x))\]
-
-<p>However, there is a problem here. As mentioned earlier, since $K$ is a logical operator rather than a predicate, it cannot be placed within a quantified context. Just as $\exists \phi : \lnot\phi$ is not grammatically correct. To circumvent this problem, instead of writing $\exists x \; K(x)$, we write $\exists x\; T(\hat{K}x)$. Therefore, the correct formalisation of Claim 3 is as follows:</p>
-
-\[\begin{gather}
-\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(\hat{K}x) \land x \notin F_e  ) \\\\
-\lor\\\\
-\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot T(\hat{K}x) \land \lnot T(\hat{K}\lnot x))
-\end{gather}\]
-
-<p>Let us call the above formula $\mathrm{GD}$. The following theorem is known:</p>
-
-<blockquote>
-  <p><strong>Reinhardt’s Second Theorem.</strong> $\mathsf{EA}_T \vdash \mathrm{GD}$.</p>
-</blockquote>
-
-<p>Therefore, <strong>Gödel’s disjunction is provable under an appropriate formal system.</strong></p>
-
-<h2 id="2-lucas-and-penrose">2. Lucas and Penrose</h2>
-
-<h3 id="21-the-consistency-decision-problem">2.1. The Consistency Decision Problem</h3>
-
-<p>Lucas and Penrose attempt to directly show $F \subsetneq K$ by claiming $K(F \subseteq T)$. That is, Lucas and Penrose argue that the ideal human mind has the ability to determine whether any given formal system is consistent or not, and accordingly claim $\forall F \subseteq T: F \subsetneq K$.</p>
-
-<p>However, it is highly questionable whether the ideal human mind has the ability to determine the consistency of arbitrary formal systems. For instance, let $R$ be the Riemann hypothesis. $R$ can be formalised as a $\Pi_1$ proposition in Peano arithmetic. And as mentioned earlier, since $\mathsf{PA}$ is $\Sigma_1$-complete, the consistency of $\mathsf{PA} + R$ is equivalent to $R$. This example shows that there are cases where the consistency decision problem for formal systems is at least as difficult as the Riemann hypothesis.</p>
-
-<h3 id="22-relative-consistency-of-mechanism">2.2. Relative Consistency of Mechanism</h3>
-
-<p>This fact alone would put Lucas and Penrose’s project in difficulty, but we can go further and show a more powerful fact. That fact is that $K(F\subseteq T)$ is formally unprovable. This is because mechanistic theses are consistent with $\mathsf{EA}_T$.</p>
-
-<p>Before showing this, it is useful to classify mechanistic theses according to their strength. Reinhardt’s classification adopted in this article is as follows:</p>
-
-<ul>
-  <li><strong>Weak Mechanical Thesis (WMT):</strong> $\exists e \; ( K = F_e )$</li>
-  <li><strong>Strong Mechanical Thesis (SMT):</strong> $K\exists e\; (K = F_e)$</li>
-  <li><strong>Super Strong Mechanical Thesis (SSMT):</strong> $\exists e \; K(K = F_e)$</li>
-</ul>
-
-<p>To explain each:</p>
-
-<ul>
-  <li>WMT: The ideal human mind is equivalent to <em>some</em> Turing machine.</li>
-  <li>SMT: The ideal human mind knows that it is equivalent to <em>some</em> Turing machine.</li>
-  <li>SSMT: The ideal human mind knows that it is equivalent to a <em>specific</em> Turing machine.</li>
-</ul>
-
-<p>The following is known:</p>
-
-<blockquote>
-  <p><strong>Reinhardt’s Third Theorem.</strong> $\mathsf{EA}_T + \mathsf{SSMT}$ is inconsistent.</p>
-</blockquote>
-
-<p>Therefore, assuming the axioms of $\mathsf{EA}<em>T$, the super strong mechanical thesis is false. In short, even if a computer equivalent to the ideal human mind were given, we could not know whether it is _truly</em> equivalent to the human mind.</p>
-
-<p>However, this fact alone is insufficient to support Lucas and Penrose. This is because the core thesis of mechanism is not the method of identifying machines with capabilities equivalent to ours, but the existence of machines with capabilities equivalent to ours. Regarding this, the following is known:</p>
-
-<blockquote>
-  <p><strong>Reinhardt’s Fourth Theorem.</strong> $\mathsf{EA}_T + \mathsf{WMT}$ is consistent.</p>
-</blockquote>
-
-<p>Furthermore, the following is known:</p>
-
-<blockquote>
-  <p><strong>Carlson’s Theorem.</strong> $\mathsf{EA}_T + \mathsf{SMT}$ is consistent.</p>
-</blockquote>
-
-<p>That is, $\mathsf{EA}_T$ not only leaves open the possibility of the existence of a machine equivalent to the ideal human mind, but also leaves open the possibility that the human mind can prove this fact itself. These facts show that attempts to establish anti-mechanism solely through the incompleteness theorem are bound to fail.</p>
-
-<h3 id="23-gödels-insight">2.3. Gödel’s Insight</h3>
-
-<p>Remarkably, Gödel appears to have understood all of this discussion from the beginning. According to Wang’s recollections of conversations with Gödel:</p>
-
-<blockquote>
-  <p>The incompleteness theorem does not rule out the possibility of a computer that produces results equivalent to human mathematical intuition [$\exists e\; (F_e = K)$]. However, it does suggest the following: if that possibility—though the probability is extremely low due to other considerations—is true, then either we cannot know the design of such a computer [$\lnot K (F_e = K)$], or we cannot know that the computer operates correctly [$\lnot K (F_e \subseteq T)$].</p>
-</blockquote>
-
-<s>Gödel is a god</s>
-
-<h2 id="3-conclusion">3. Conclusion</h2>
-
-<p>The discussion thus far should be sufficient to prevent further attempts to directly derive anti-mechanism from Gödel’s disjunction. However, there is another approach to arguing for anti-mechanism from logical results. This argument, commonly called <strong>Penrose’s new argument</strong>, is an argument that puts forward type-free truth, as distinguished from Tarski’s typed truth. The formalisation of this argument and its implications will be addressed in Part 2 of this paper.</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

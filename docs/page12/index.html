@@ -212,7 +212,7 @@
     href="/"
     >Main</a
   >
-                                                                                                                                                                                                     
+                                                                                                                                                                                                         
     <a
       class="sidebar-nav-item lang-ko"
       href="/about/"
@@ -430,6 +430,168 @@
 
 
 <div class="posts">
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/18/ZFC/en"> List of ZFC Axioms </a>
+      </h1>
+    <span class="post-date">18 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Extensionality</td>
+      <td>Set is an unordered collection of elements.</td>
+    </tr>
+    <tr>
+      <td>Existence*</td>
+      <td>There exists the empty set.</td>
+    </tr>
+    <tr>
+      <td>Pairing*</td>
+      <td>From $X, Y$ follows $Z = \lbrace  X, Y \rbrace$.</td>
+    </tr>
+    <tr>
+      <td>Union</td>
+      <td>From $X = \lbrace  Y_i \rbrace$ follows $Z = \bigcup Y_i$.</td>
+    </tr>
+    <tr>
+      <td>Power Set</td>
+      <td>From $X$ follows $\mathcal{P}(X)$.</td>
+    </tr>
+    <tr>
+      <td>Separation Schema**</td>
+      <td>From $X$ follows $Y = \lbrace  y \in X : \phi(y) \rbrace$, where $\phi$ is a first-order formula.</td>
+    </tr>
+    <tr>
+      <td>Infinity</td>
+      <td>There exists a set containing all the natural numbers.</td>
+    </tr>
+    <tr>
+      <td>Regularity</td>
+      <td>$\in$ is a well-ordering.</td>
+    </tr>
+    <tr>
+      <td>Replacement</td>
+      <td>From $X$ follows $f[X]$, where $f$ is a class function definable in first-order logic.</td>
+    </tr>
+    <tr>
+      <td>Choice</td>
+      <td>Every collection of nonempty sets $\lbrace  X_i \rbrace$ has a choice function.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Formula (Free variables are to be quantified by $\forall$)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Extensionality</td>
+      <td>$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$</td>
+    </tr>
+    <tr>
+      <td>Existence*</td>
+      <td>$\exists Z : z \not\in Z$</td>
+    </tr>
+    <tr>
+      <td>Pairing*</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$</td>
+    </tr>
+    <tr>
+      <td>Union</td>
+      <td>$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$</td>
+    </tr>
+    <tr>
+      <td>Power Set</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$</td>
+    </tr>
+    <tr>
+      <td>Separation Schema**</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$</td>
+    </tr>
+    <tr>
+      <td>Infinity</td>
+      <td>$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$</td>
+    </tr>
+    <tr>
+      <td>Regularity</td>
+      <td>$\exists x \in X : \forall y \in X [ y \not\in x]$</td>
+    </tr>
+    <tr>
+      <td>Replacement</td>
+      <td>$\displaylines{[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow [\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$</td>
+    </tr>
+    <tr>
+      <td>Choice</td>
+      <td>$\displaylines{\varnothing \notin X \rightarrow \exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Remarks.</strong></p>
+
+<ul>
+  <li>Regularity is equivalent to the following:</li>
+</ul>
+
+\[\exists x \in X : x \cap X = \varnothing\]
+
+<ul>
+  <li>
+    <p>Those marked by (*) can be derived from the Separation.</p>
+  </li>
+  <li>
+    <p>Those marked by (**) can be derived from the Replacement.</p>
+  </li>
+</ul>
+
+<p>Replacement is <em>strictly</em> stronger than Separation:</p>
+
+<ul>
+  <li>Separation can be stated as: If $X$ is a set and $f$ is a function, then $f[X]$ is a set.</li>
+  <li>Replacement can be stated as: If $X$ is a set and $f$ is a class function, then $f[X]$ is a set.</li>
+</ul>
+
+<p>The proof of following theorems require Choice.</p>
+
+<ul>
+  <li>If $f: X → Y$ is surjective, there exists a subset $Z$ of $X$ such that $f\vert_Z$ is bijective.</li>
+  <li>If $\varnothing \not\in \lbrace  X_i\rbrace$, then $\prod X_i \neq \varnothing$.</li>
+  <li><strong>Well-ordering Principle.</strong> Every set can be well-ordered.</li>
+  <li><strong>Zorn’s Lemma.</strong> If every chain of $(X, &lt;)$ is bounded in $X$, $X$ has a maximal element.</li>
+</ul>
+
+<p>The proof of following theorems require Replacement.</p>
+
+<ul>
+  <li>$\omega + \omega$ exists.</li>
+  <li><a href="http://dimenerno.github.io/2024/11/21/trichotomy"><strong>Completeness of Ordinals.</strong></a> Every well-ordered set is order-isomorphic to a unique ordinal.</li>
+</ul>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
