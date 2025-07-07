@@ -21,23 +21,23 @@ $(\mathbb{Q}, \leq)$는 위 세 조건을 모두 만족하고, $(\mathbb{R}, \le
 
 ### 2. 콤팩트성을 이용한 증명
 
-![](https://velog.velcdn.com/images/dimenerno/post/433e72e3-822b-42a1-98dc-18fd2e260561/image.png)
+<img src="/public/uncountability-wo-diagnal.png" style="width: 100%; max-width: 600px; margin: 2em auto;">
 
 $X$가 고립점이 없는 콤팩트한 하우스도르프 공간이라고 하자. 또한 $X \neq \varnothing$이라고 하자.
 
 *Claim 1.* $U \neq \varnothing$가 $X$의 열린 집합이라고 하자. $x \in X$에 대해 $x \notin \bar{V}$이면서 $V \subset U$인 열린 집합 $V$가 존재한다.
 
-*Proof of Claim 1.* $x \neq y$이며 $y \in U$가 존재한다. 왜냐하면 $x \in U$인 경우 $X$가 고립점을 가지지 않으므로 존재하고, $x \notin U$인 경우 $U$가 공집합이 아니기 때문에 존재하기 때문이다. $X$가 하우스도르프이므로 $x, y$를 근방 $V\_x, V\_y$로 분리할 수 있다. $V = V\_y \cap U$가 얻고자 하는 집합이다 (Fig 1의 색칠된 부분). □
+*Proof of Claim 1.* $x \neq y$이며 $y \in U$가 존재한다. 왜냐하면 $x \in U$인 경우 $X$가 고립점을 가지지 않으므로 존재하고, $x \notin U$인 경우 $U$가 공집합이 아니기 때문에 존재하기 때문이다. $X$가 하우스도르프이므로 $x, y$를 근방 $V\_x, V\_y$로 분리할 수 있다. $V = V\_y \cap U$가 얻고자 하는 집합이다 (Fig 1에서 짙게 색칠된 영역). □
 
 *Claim 2.* $X$는 비가산이다.
 
 *Proof of Claim 2.* $X$가 가산이라고 하자. $X$의 원소들을 $\lbrace  x\_n \rbrace\_{n \in \mathbb{Z}^+}$와 같이 나열한다. $V\_0 = X$라고 하자. Claim 1에 의해 각 $n$에 대해 $x\_n \notin \bar{V\_n}$인 열린 집합 $V\_n$이고 $V\_n \subset V\_{n-1}$인 열린 집합 $V\_n$이 존재한다 (Fig 2). $X$가 콤팩트하므로 유한 교집합 성질에 의해
 
 $$
-V = \bigcap_{n \in \mathbb{Z}^+} \bar{V}_n \neq \varnothing
+K = \bigcap_{n \in \mathbb{Z}^+} \bar{V}_n \neq \varnothing
 $$
 
-이다. 하지만 $x\_n \in V$라면 $x\_n \in \bar{V}\_n$이 되어 모순이다. 따라서 $X$는 비가산이다. □
+이다. 하지만 $x\_n \in K$라면 $x\_n \in \bar{V}\_n$이 되어 모순이다. 따라서 $X$는 비가산이다. □
 
 *Claim 3.* $\mathbb{R}$은 비가산이다.
 
