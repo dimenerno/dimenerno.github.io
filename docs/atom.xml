@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-07-07T12:46:20+09:00</updated>
+ <updated>2025-07-07T13:07:10+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -13611,64 +13611,32 @@ for y ∈ P:
    <link href="https://dimenerno.github.io/2024/12/16/adjoints"/>
    <updated>2024-12-16T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2024/12/16/adjoints</id>
-   <content type="html">&lt;p&gt;카테고리 이론의 핵심 개념 중 하나는 어드조인트(adjoint)이다.&lt;/p&gt;
+   <content type="html">&lt;p&gt;카테고리 이론의 핵심 개념 중 하나는 어드조인트&lt;sub&gt;adjoint&lt;/sub&gt;이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathcal{A}, \mathcal{B}$가 카테고리이고, $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자(functor)라고 하자. $F$가 $G$의 &lt;strong&gt;좌 어드조인트(left adjoint)&lt;/strong&gt;라는 것은 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 $\mathcal{B}(F(A), B)$와 $\mathcal{A}(A, G(B))$가 자연스럽게 일대일 대응될 수 있다는 것이다. 즉,&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathcal{A}, \mathcal{B}$가 카테고리이고, $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자&lt;sub&gt;functor&lt;/sub&gt;라고 하자. $F$가 $G$의 &lt;strong&gt;좌 어드조인트&lt;sub&gt;left adjoint&lt;/sub&gt;&lt;/strong&gt;라는 것은 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 $\mathcal{B}(F(A), B)$와 $\mathcal{A}(A, G(B))$가 자연스럽게 일대일 대응될 수 있다는 것이다. 즉,&lt;/p&gt;
 
 \[\begin{gather}
 (F(A) \xrightarrow{g} B) \quad \mapsto \quad (A \xrightarrow{\bar{g}} G(B))\\
 (A \xrightarrow{f} G(B)) \quad \mapsto \quad (F(A) \xrightarrow{\bar{f}} B)
 \end{gather}\]
 
-  &lt;p&gt;또한 $G$를 $F$의 &lt;strong&gt;우 어드조인트(right adjoint)&lt;/strong&gt;라고 한다. 기호로 $F \dashv G$로 표기한다.&lt;/p&gt;
+  &lt;p&gt;또한 $G$를 $F$의 &lt;strong&gt;우 어드조인트&lt;sub&gt;right adjoint&lt;/sub&gt;&lt;/strong&gt;라고 한다. 기호로 $F \dashv G$로 표기한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;필자는 이 정의를 형식적인 수준에서만 이해하고 있었는데, 최근 어드조인트를 직관적으로 이해하는 몇 가지 방식을 발견했다.&lt;/p&gt;
+&lt;p&gt;이 정의는 다소 추상적으로 느껴질 수 있지만, 이해를 돕는 몇 가지 직관이 있다.&lt;/p&gt;
 
-&lt;h3 id=&quot;1-형-변환으로서의-어드조인트&quot;&gt;1. 형 변환으로서의 어드조인트&lt;/h3&gt;
-
-&lt;p&gt;좌 어드조인트는 프로그래밍에서 다운캐스팅 형 변환에, 우 어드조인트는 업캐스팅 형 변환에 비견할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;예를 들어 $\mathbf{Z}$가 정수를 원소로 가지고, $x \leq y$일 때 그리고 오직 그 경우에만 $x \to y$ 사상이 유일하게 존재하는 카테고리라고 하자. 또한 $\mathbf{Z}^2$가 정수쌍을 원소로 가지고, $\mathbf{x} \preceq \mathbf{y}$일 때 그리고 오직 그 경우에만 $\mathbf{x} \to \mathbf{y}$ 사상이 유일하게 존재하는 카테고리라고 하자(여기서 $\preceq$는 사전식 순서이다).&lt;/p&gt;
-
-&lt;p&gt;$F: \mathbf{Z} \to \mathbf{Z}^2, G: \mathbf{Z}^2 \to \mathbf{Z}$가 각각 $F(x) = (x, 0), G(x, y) = x$라면 자연스러운 방식으로 함자가 된다. 또한 $F \dashv G$이다. $x \in \mathbf{Z}, y \in \mathbf{Z}^2$에 대해 $F(x) \leq y$라면 $x \leq G(y)$이고, 그 역도 성립하기 때문이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/8040c20d-c1bc-4d92-bd45-256f48b79d75/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위의 논의를 코드로 표현하면 다음과 같다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Z2&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// int x;&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;Z2&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Z2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Z2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이 코드에서 $F$는 실질적으로 다운캐스팅, $G$는 업캐스팅에 해당함에 주목하라.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-근사로서의-어드조인트&quot;&gt;2. 근사로서의 어드조인트&lt;/h3&gt;
+&lt;h3 id=&quot;1-근사로서의-어드조인트&quot;&gt;1. 근사로서의 어드조인트&lt;/h3&gt;
 
 &lt;p&gt;$F \dashv G$일 때 $F, G$는 $\mathcal{A}$과 $\mathcal{B}$의 원소들을 서로 근사하는 방법으로 생각할 수 있다. 특히 좌 어드조인트는 ‘좌측에서 우측으로‘의 근사이고, 우 어드조인트는 ‘우측에서 좌측으로’의 근사이다.&lt;/p&gt;
 
 &lt;p&gt;예를 들어 $\mathbf{Z}$가 정수를 원소로 가지고, $x \leq y$일 때 그리고 오직 그 경우에만 $x \to y$ 사상이 유일하게 존재하는 카테고리라고 하자. 또한 $\mathbf{R}$이 실수를 원소로 가지고, $x \leq y$일 때 그리고 오직 그 경우에만 $x \to y$ 사상이 유일하게 존재하는 카테고리라고 하자. 이때 $\lceil \cdot \rceil, \lfloor \cdot \rfloor$는 표준적인 방식으로 함자 $\mathbf{R} → \mathbf{Z}$가 되고, 포함 사상 $\iota$는 함자 $\mathbf{Z} → \mathbf{R}$이 된다. 또한 $\lceil \cdot \rceil \dashv \iota \dashv \lfloor \cdot \rfloor$임을 확인할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/e26ee728-09b0-4280-ac4c-511f89cef615/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/adjoint-int-2.png&quot; style=&quot;width: 100%; max-width: 180px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;즉 $\lceil \cdot \rceil$는 $r$을 $r \leq \lceil r \rceil$로 ‘좌측에서 우측으로 끌어올리는’ 변환이고, $\lfloor \cdot \rfloor$은 $r$을 $\lfloor r \rfloor \leq r$로 ‘우측에서 좌측으로 잡아당기는’ 변환이다.&lt;/p&gt;
 
-&lt;p&gt;또한 $I, T$가 각각 $\mathcal{A}$의 초기 대상(initial object) 및 종단 대상(terminal object)라고 하자. 즉, 임의의 $A \in \mathcal{A}$에 대해&lt;/p&gt;
+&lt;p&gt;또한 $I, T$가 각각 $\mathcal{A}$의 초기 대상&lt;sub&gt;initial object&lt;/sub&gt; 및 종단 대상&lt;sub&gt;terminal object&lt;/sub&gt;라고 하자. 즉, 임의의 $A \in \mathcal{A}$에 대해&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;사상 $I \to A$가 유일하게 존재한다.&lt;/li&gt;
@@ -13679,9 +13647,9 @@ for y ∈ P:
 
 &lt;p&gt;홑원소 카테고리 $\mathcal{U}$에 대해 함자 $F: \mathcal{A} \to \mathcal{U}$가 유일하게 존재한다. $G_I, G_T: \mathcal{U} \to \mathcal{A}$가 각각 상이 $I, T$인 함자라고 하자. 이때 앞선 경우와 비슷한 원리로 $G_T \dashv F \dashv G_I$가 됨을 확인하라. (종단 대상은 가장 “오른쪽”에 있는 대상이므로 $G_T$는 “왼쪽에서 오른쪽으로”의 근사이며, 초기 대상은 가장 “왼쪽”에 있는 대상이므로 $G_I$는 “오른쪽에서 왼쪽으로”의 근사이다.)&lt;/p&gt;
 
-&lt;h3 id=&quot;3-구축과-파괴로서의-어드조인트&quot;&gt;3. 구축과 파괴로서의 어드조인트&lt;/h3&gt;
+&lt;h3 id=&quot;2-구축과-파괴로서의-어드조인트&quot;&gt;2. 구축과 파괴로서의 어드조인트&lt;/h3&gt;
 
-&lt;p&gt;좌 어드조인트는 구축을, 우 어드조인트는 파괴를 의미한다. 따라서 일반적으로 자유함자(free functor)는 좌 어드조인트, 망각함자(forgetful functor)는 우 어드조인트이다.&lt;/p&gt;
+&lt;p&gt;좌 어드조인트는 구축을, 우 어드조인트는 파괴를 의미한다. 따라서 일반적으로 자유함자&lt;sub&gt;free functor&lt;/sub&gt;는 좌 어드조인트, 망각함자&lt;sub&gt;forgetful functor&lt;/sub&gt;는 우 어드조인트이다.&lt;/p&gt;
 
 &lt;p&gt;일례로 군의 카테고리를 $\mathbf{Grp}$, 모노이드의 카테고리를 $\mathbf{Mon}$이라 하자. $F$를 자유함자, $U$를 망각함자라고 하자. 그리고 $R: \mathbf{Mon} → \mathbf{Grp}$를 다음과 같이 정의한다.&lt;/p&gt;
 
@@ -13692,10 +13660,9 @@ for y ∈ P:
 
 &lt;p&gt;이 때, 다음 다이어그램이 성립하여 $F \dashv U \dashv R$이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/1640d6b4-bd6a-4098-9fe8-e9a7ab164041/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/adjoint-int-3.png&quot; style=&quot;width: 100%; max-width: 170px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;$R$이 $U$보다 더 파괴적이기 때문에 $U \dashv R$인 것으로 이해할 수 있다.&lt;/p&gt;
-
 </content>
  </entry>
  
@@ -13704,66 +13671,30 @@ for y ∈ P:
    <link href="https://dimenerno.github.io/2024/12/16/adjoints/en"/>
    <updated>2024-12-16T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2024/12/16/adjoints/adjoints-en</id>
-   <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;One of the central concepts in category theory is that of an adjoint.&lt;/p&gt;
+   <content type="html">&lt;p&gt;One of the central concepts in category theory is that of an adjoint.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $\mathcal{A}, \mathcal{B}$ be categories, and let $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$ be functors. We say that $F$ is a &lt;strong&gt;left adjoint&lt;/strong&gt; to $G$ if for any $A \in \mathcal{A}, B \in \mathcal{B}$, there exists a natural bijection between $\mathcal{B}(F(A), B)$ and $\mathcal{A}(A, G(B))$. That is,&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $\mathcal{A}, \mathcal{B}$ be categories, and let $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$ be functors. We say that $F$ is a &lt;strong&gt;left adjoint&lt;/strong&gt; to $G$, written as $F \dashv G$, if for any $A \in \mathcal{A}, B \in \mathcal{B}$, there exists a natural correspondence between $\hom_\mathcal{B}(F(A), B)$ and $\hom_\mathcal{A}(A, G(B))$. That is,&lt;/p&gt;
 
 \[\begin{gather}
 (F(A) \xrightarrow{g} B) \quad \mapsto \quad (A \xrightarrow{\bar{g}} G(B))\\
 (A \xrightarrow{f} G(B)) \quad \mapsto \quad (F(A) \xrightarrow{\bar{f}} B)
 \end{gather}\]
 
-  &lt;p&gt;We also call $G$ the &lt;strong&gt;right adjoint&lt;/strong&gt; to $F$. This is denoted symbolically as $F \dashv G$.&lt;/p&gt;
+  &lt;p&gt;We also call $G$ the &lt;strong&gt;right adjoint&lt;/strong&gt; to $F$.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;The author previously understood this definition only at a formal level, but has recently discovered several ways to understand adjoints intuitively.&lt;/p&gt;
+&lt;p&gt;This may feel very abstract, but there is a couple of examples that could be of assist in grasping the definition.&lt;/p&gt;
 
-&lt;h3 id=&quot;1-adjoints-as-type-conversions&quot;&gt;1. Adjoints as Type Conversions&lt;/h3&gt;
+&lt;h3 id=&quot;1-adjoints-as-approximations&quot;&gt;1. Adjoints as Approximations&lt;/h3&gt;
 
-&lt;p&gt;Left adjoints can be likened to downcasting type conversions in programming, whilst right adjoints correspond to upcasting type conversions.&lt;/p&gt;
+&lt;p&gt;When $F \dashv G$, the functors $F$ and $G$ can be thought of as approximating objects in $\mathcal{A}$ and $\mathcal{B}$ with respect to each other. In particular, the left adjoint represents approximation ‘from left to right’, whilst the right adjoint represents approximation ‘from right to left’.&lt;/p&gt;
 
-&lt;p&gt;For instance, let $\mathbf{Z}$ be a category whose objects are integers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. Similarly, let $\mathbf{Z}^2$ be a category whose objects are pairs of integers, with a unique morphism $\mathbf{x} \to \mathbf{y}$ existing if and only if $\mathbf{x} \preceq \mathbf{y}$ (where $\preceq$ denotes the lexicographic order).&lt;/p&gt;
+&lt;p&gt;For example, let $\mathbf{Z}$ be a category whose objects are integers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. Similarly, let $\mathbf{R}$ be a category whose objects are real numbers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. We may think of $\lceil \cdot \rceil, \lfloor \cdot \rfloor$ as functors $\mathbf{R} → \mathbf{Z}$, and the inclusion map $\iota$ as a functor $\mathbf{Z} → \mathbf{R}$. It then follows that $\lceil \cdot \rceil \dashv \iota \dashv \lfloor \cdot \rfloor$.&lt;/p&gt;
 
-&lt;p&gt;If $F: \mathbf{Z} \to \mathbf{Z}^2, G: \mathbf{Z}^2 \to \mathbf{Z}$ are defined by $F(x) = (x, 0)$ and $G(x, y) = x$ respectively, then they naturally become functors. Moreover, $F \dashv G$. This is because for $x \in \mathbf{Z}, y \in \mathbf{Z}^2$, we have $F(x) \leq y$ if and only if $x \leq G(y)$.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/adjoint-int-2.png&quot; style=&quot;width: 100%; max-width: 180px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/8040c20d-c1bc-4d92-bd45-256f48b79d75/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The above discussion can be expressed in code as follows:&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Z2&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// int x;&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;Z2&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Z2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Z2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note that in this code, $F$ essentially corresponds to downcasting, whilst $G$ corresponds to upcasting.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-adjoints-as-approximations&quot;&gt;2. Adjoints as Approximations&lt;/h3&gt;
-
-&lt;p&gt;When $F \dashv G$, the functors $F$ and $G$ can be thought of as methods for approximating objects in $\mathcal{A}$ and $\mathcal{B}$ with respect to each other. In particular, the left adjoint represents approximation ‘from left to right’, whilst the right adjoint represents approximation ‘from right to left’.&lt;/p&gt;
-
-&lt;p&gt;For example, let $\mathbf{Z}$ be a category whose objects are integers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. Similarly, let $\mathbf{R}$ be a category whose objects are real numbers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. Then $\lceil \cdot \rceil, \lfloor \cdot \rfloor$ become functors $\mathbf{R} → \mathbf{Z}$ in the standard manner, and the inclusion map $\iota$ becomes a functor $\mathbf{Z} → \mathbf{R}$. Moreover, one can verify that $\lceil \cdot \rceil \dashv \iota \dashv \lfloor \cdot \rfloor$.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/e26ee728-09b0-4280-ac4c-511f89cef615/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;That is, $\lceil \cdot \rceil$ is a transformation that ‘lifts from left to right’ by mapping $r$ to $\lceil r \rceil$ with $r \leq \lceil r \rceil$, whilst $\lfloor \cdot \rfloor$ is a transformation that ‘pulls from right to left’ by mapping $r$ to $\lfloor r \rfloor$ with $\lfloor r \rfloor \leq r$.&lt;/p&gt;
+&lt;p&gt;That is, $\lceil \cdot \rceil$ is a transformation that ‘lifts [a number] from left to right’ by mapping $r$ to $\lceil r \rceil$ with $r \leq \lceil r \rceil$, whilst $\lfloor \cdot \rfloor$ is a transformation that ‘pulls [a number] from right to left’ by mapping $r$ to $\lfloor r \rfloor$ with $\lfloor r \rfloor \leq r$.&lt;/p&gt;
 
 &lt;p&gt;Furthermore, let $I$ and $T$ be the initial object and terminal object of $\mathcal{A}$ respectively. That is, for any $A \in \mathcal{A}$:&lt;/p&gt;
 
@@ -13774,11 +13705,11 @@ for y ∈ P:
 
 &lt;p&gt;For instance, in $\mathbf{Set}$, the empty set is the initial object and any singleton set is a terminal object.&lt;/p&gt;
 
-&lt;p&gt;For the singleton category $\mathcal{U}$, there exists a unique functor $F: \mathcal{A} \to \mathcal{U}$. Let $G_I, G_T: \mathcal{U} \to \mathcal{A}$ be functors with images $I$ and $T$ respectively. Then by a similar principle to the previous case, one can verify that $G_T \dashv F \dashv G_I$. (Since the terminal object is the ‘rightmost’ object, $G_T$ represents approximation ‘from left to right’, whilst since the initial object is the ‘leftmost’ object, $G_I$ represents approximation ‘from right to left’.)&lt;/p&gt;
+&lt;p&gt;For the singleton category $\mathcal{S}$, there exists a unique functor $F: \mathcal{A} \to \mathcal{S}$ that maps every object of $\mathcal{A}$ to the single object of $\mathcal{S}$. Let $G_I, G_T: \mathcal{S} \to \mathcal{A}$ be functors that maps the single object of $\mathcal{S}$ to $I$ and $T$, respectively. It then follows that $G_T \dashv F \dashv G_I$. (Since the terminal object is the ‘rightmost’ object, $G_T$ represents approximation ‘from left to right’, whilst since the initial object is the ‘leftmost’ object, $G_I$ represents approximation ‘from right to left’.)&lt;/p&gt;
 
-&lt;h3 id=&quot;3-adjoints-as-construction-and-destruction&quot;&gt;3. Adjoints as Construction and Destruction&lt;/h3&gt;
+&lt;h3 id=&quot;2-adjoints-as-construction-and-destruction&quot;&gt;2. Adjoints as Construction and Destruction&lt;/h3&gt;
 
-&lt;p&gt;Left adjoints signify construction, whilst right adjoints signify destruction. Therefore, free functors are generally left adjoints, whilst forgetful functors are right adjoints.&lt;/p&gt;
+&lt;p&gt;Left adjoints are associated with construction, whilst right adjoints are associated with destruction. Therefore, free functors are generally left adjoints, whilst forgetful functors are right adjoints.&lt;/p&gt;
 
 &lt;p&gt;For instance, let $\mathbf{Grp}$ be the category of groups and $\mathbf{Mon}$ be the category of monoids. Let $F$ be the free functor and $U$ be the forgetful functor. Define $R: \mathbf{Mon} → \mathbf{Grp}$ as follows:&lt;/p&gt;
 
@@ -13789,9 +13720,9 @@ for y ∈ P:
 
 &lt;p&gt;Then the following diagram holds, yielding $F \dashv U \dashv R$.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/1640d6b4-bd6a-4098-9fe8-e9a7ab164041/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/adjoint-int-3.png&quot; style=&quot;width: 100%; max-width: 170px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;One can understand that $U \dashv R$ because $R$ is more destructive than $U$.&lt;/p&gt;
+&lt;p&gt;One can understand $U \dashv R$ as expressing that $R$ is more destructive than $U$.&lt;/p&gt;
 </content>
  </entry>
  
