@@ -3,20 +3,20 @@
   <channel>
     <title>디멘의 블로그</title>
     <description>이데아를 여행하는 히치하이커</description>
-    <link>http://localhost:4000</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://dimenerno.github.io</link>
+    <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>크립키-비트겐슈타인 역설</title>
-        <link>http://localhost:4000/2025/07/03/kripkenstein</link>
-        <guid>http://localhost:4000/2025/07/03/kripkenstein</guid>
+        <link>https://dimenerno.github.io/2025/07/03/kripkenstein</link>
+        <guid>https://dimenerno.github.io/2025/07/03/kripkenstein</guid>
         <pubDate>Thu, 03 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="http://localhost:4000/2025/07/03/kripkenstein">
+          xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein">
           <![CDATA[
             <blockquote>
   <p>“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.</p>
@@ -370,15 +370,15 @@ x + y &amp; x, y &lt; 50 \\\
     
       <item>
         <title>The Kripke-Wittgenstein Paradox</title>
-        <link>http://localhost:4000/2025/07/03/kripkenstein/en</link>
-        <guid>http://localhost:4000/2025/07/03/kripkenstein/en</guid>
+        <link>https://dimenerno.github.io/2025/07/03/kripkenstein/en</link>
+        <guid>https://dimenerno.github.io/2025/07/03/kripkenstein/en</guid>
         <pubDate>Thu, 03 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="http://localhost:4000/2025/07/03/kripkenstein/en">
+          xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein/en">
           <![CDATA[
             <blockquote>
   <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
@@ -725,15 +725,15 @@ x + y &amp; x, y &lt; 50 \\
     
       <item>
         <title>프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title>
-        <link>http://localhost:4000/2025/06/17/kafka-blue-octavos</link>
-        <guid>http://localhost:4000/2025/06/17/kafka-blue-octavos</guid>
+        <link>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos</link>
+        <guid>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos</guid>
         <pubDate>Tue, 17 Jun 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;「여덟 권의 청색 팔절판 노트&lt;sub&gt;Acht blaue Oktavhefte&lt;/sub&gt;」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="http://localhost:4000/2025/06/17/kafka-blue-octavos">
+          xml:base="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos">
           <![CDATA[
             <blockquote>
   <p>「여덟 권의 청색 팔절판 노트<sub>Acht blaue Oktavhefte</sub>」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다.</p>
@@ -983,13 +983,13 @@ Ich sitze zum Beispiel zu Hause, ehe ich angeln gehe, und drehe scharf zusehend 
     
       <item>
         <title>Franz Kafka, The Blue Octavo Notebooks, Volume 1</title>
-        <link>http://localhost:4000/2025/06/17/kafka-blue-octavos/en</link>
-        <guid>http://localhost:4000/2025/06/17/kafka-blue-octavos/en</guid>
+        <link>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en</link>
+        <guid>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en</guid>
         <pubDate>Tue, 17 Jun 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;&lt;img src=&quot;/public/the-blue-notebooks.png&quot; style=&quot;max-width: 350px; width: 100%; margin: 7em auto 5em auto;&quot; /&gt;&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="http://localhost:4000/2025/06/17/kafka-blue-octavos/en">
+          xml:base="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en">
           <![CDATA[
             <p><img src="/public/the-blue-notebooks.png" style="max-width: 350px; width: 100%; margin: 7em auto 5em auto;" /></p>
 
@@ -1010,13 +1010,13 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
     
       <item>
         <title>이탈리안 게임</title>
-        <link>http://localhost:4000/2025/06/12/italian-game</link>
-        <guid>http://localhost:4000/2025/06/12/italian-game</guid>
+        <link>https://dimenerno.github.io/2025/06/12/italian-game</link>
+        <guid>https://dimenerno.github.io/2025/06/12/italian-game</guid>
         <pubDate>Thu, 12 Jun 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;&lt;img src=&quot;/public/italian.png&quot; style=&quot;width: 100%; max-width: 350px; margin: 2em auto&quot; /&gt;&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="http://localhost:4000/2025/06/12/italian-game">
+          xml:base="https://dimenerno.github.io/2025/06/12/italian-game">
           <![CDATA[
             <p><img src="/public/italian.png" style="width: 100%; max-width: 350px; margin: 2em auto" /></p>
 
@@ -1231,15 +1231,15 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
     
       <item>
         <title>슬라보예 지젝, ｢소프트 파시즘, 인공지능, 그리고 수치심의 몰락｣</title>
-        <link>http://localhost:4000/2025/06/06/zizek-soft-facism</link>
-        <guid>http://localhost:4000/2025/06/06/zizek-soft-facism</guid>
+        <link>https://dimenerno.github.io/2025/06/06/zizek-soft-facism</link>
+        <guid>https://dimenerno.github.io/2025/06/06/zizek-soft-facism</guid>
         <pubDate>Fri, 06 Jun 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;본 글은 2024년 11월 26일에 이루어진 &lt;a href=&quot;https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx&quot;&gt;슬라보예 지젝의 옥스포드 강연&lt;/a&gt;을 번역한 것이다. 주석은 역자 주이다. 또한 섹션의 구분도 역자가 독자의 편의를 위해 넣은 것이다. 매끄러운 흐름을 위해 내용을 덧대거나 빼는 수준의 의역과 문장 재배치를 한 부분이 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="http://localhost:4000/2025/06/06/zizek-soft-facism">
+          xml:base="https://dimenerno.github.io/2025/06/06/zizek-soft-facism">
           <![CDATA[
             <blockquote>
   <p>본 글은 2024년 11월 26일에 이루어진 <a href="https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx">슬라보예 지젝의 옥스포드 강연</a>을 번역한 것이다. 주석은 역자 주이다. 또한 섹션의 구분도 역자가 독자의 편의를 위해 넣은 것이다. 매끄러운 흐름을 위해 내용을 덧대거나 빼는 수준의 의역과 문장 재배치를 한 부분이 있다.</p>
@@ -1329,13 +1329,13 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
     
       <item>
         <title>Slavoj Žižek, "Soft Fascism, Artificial Intelligence, and Shamelessness"</title>
-        <link>http://localhost:4000/2025/06/06/zizek-soft-facism/en</link>
-        <guid>http://localhost:4000/2025/06/06/zizek-soft-facism/en</guid>
+        <link>https://dimenerno.github.io/2025/06/06/zizek-soft-facism/en</link>
+        <guid>https://dimenerno.github.io/2025/06/06/zizek-soft-facism/en</guid>
         <pubDate>Fri, 06 Jun 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;This post is originally a Korean translation of &lt;a href=&quot;https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx&quot;&gt;Slavoj Žižek’s Oxford lecture&lt;/a&gt;, so there is no separate English version. However, the following personal observation from the original post is reproduced here.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="http://localhost:4000/2025/06/06/zizek-soft-facism/en">
+          xml:base="https://dimenerno.github.io/2025/06/06/zizek-soft-facism/en">
           <![CDATA[
             <p>This post is originally a Korean translation of <a href="https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx">Slavoj Žižek’s Oxford lecture</a>, so there is no separate English version. However, the following personal observation from the original post is reproduced here.</p>
 
@@ -1349,15 +1349,15 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
     
       <item>
         <title>왜 연속함수의 위상적 정의는 “반대”인가?</title>
-        <link>http://localhost:4000/2025/06/02/notes-on-continuity</link>
-        <guid>http://localhost:4000/2025/06/02/notes-on-continuity</guid>
+        <link>https://dimenerno.github.io/2025/06/02/notes-on-continuity</link>
+        <guid>https://dimenerno.github.io/2025/06/02/notes-on-continuity</guid>
         <pubDate>Mon, 02 Jun 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 두 위상공간 $X, Y$에 대해 사상 $f: X \to Y$가 &lt;strong&gt;연속&lt;/strong&gt;이라는 것은, $V \subseteq Y$가 열린 집합이라면 $f^{-1}[V] \subseteq X$ 또한 열린 집합이라는 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="http://localhost:4000/2025/06/02/notes-on-continuity">
+          xml:base="https://dimenerno.github.io/2025/06/02/notes-on-continuity">
           <![CDATA[
             <blockquote>
   <p><strong>정의.</strong> 두 위상공간 $X, Y$에 대해 사상 $f: X \to Y$가 <strong>연속</strong>이라는 것은, $V \subseteq Y$가 열린 집합이라면 $f^{-1}[V] \subseteq X$ 또한 열린 집합이라는 것이다.</p>
@@ -1433,15 +1433,15 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
     
       <item>
         <title>Why is Continuity in Topology defined 'Backwards'?</title>
-        <link>http://localhost:4000/2025/06/02/notes-on-continuity/en</link>
-        <guid>http://localhost:4000/2025/06/02/notes-on-continuity/en</guid>
+        <link>https://dimenerno.github.io/2025/06/02/notes-on-continuity/en</link>
+        <guid>https://dimenerno.github.io/2025/06/02/notes-on-continuity/en</guid>
         <pubDate>Mon, 02 Jun 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A mapping $f: X \to Y$ is said to be &lt;strong&gt;continuous&lt;/strong&gt; if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="http://localhost:4000/2025/06/02/notes-on-continuity/en">
+          xml:base="https://dimenerno.github.io/2025/06/02/notes-on-continuity/en">
           <![CDATA[
             <blockquote>
   <p><strong>Definition.</strong> A mapping $f: X \to Y$ is said to be <strong>continuous</strong> if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.</p>
@@ -1517,15 +1517,15 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
     
       <item>
         <title>논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》</title>
-        <link>http://localhost:4000/2025/06/02/wittgenstein-conant</link>
-        <guid>http://localhost:4000/2025/06/02/wittgenstein-conant</guid>
+        <link>https://dimenerno.github.io/2025/06/02/wittgenstein-conant</link>
+        <guid>https://dimenerno.github.io/2025/06/02/wittgenstein-conant</guid>
         <pubDate>Mon, 02 Jun 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;이 글은 &lt;a href=&quot;/public/Search for Logically Alien Thought.pdf&quot;&gt;James Conant, &lt;em&gt;The Search for Logically Alien Thought: Descartes, Kant, Frege, and the&lt;/em&gt; Tractatus (1991)&lt;/a&gt;를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="http://localhost:4000/2025/06/02/wittgenstein-conant">
+          xml:base="https://dimenerno.github.io/2025/06/02/wittgenstein-conant">
           <![CDATA[
             <blockquote>
   <p>이 글은 <a href="/public/Search for Logically Alien Thought.pdf">James Conant, <em>The Search for Logically Alien Thought: Descartes, Kant, Frege, and the</em> Tractatus (1991)</a>를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).</p>
