@@ -380,7 +380,11 @@
       
     </div>
   
-  <h2 id="1-전체">1. 전체</h2>
+  <blockquote>
+  <p>영문 버전의 글이 더 정확하고 설명이 풍부하니 참고하시길 바랍니다.</p>
+</blockquote>
+
+<h2 id="1-전체">1. 전체</h2>
 
 <h3 id="11-폰-노이만-전체">1.1. 폰 노이만 전체</h3>
 
@@ -405,7 +409,7 @@
 
 \[V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha\]
 
-<p>$x \in y \in z$가 $x \in z$를 시사할 때 $z$를 <strong>추이적 집합(transitive set)</strong>이라고 한다. 이것은 $V$의 중요한 특징이다.</p>
+<p>$x \in y \in z$가 $x \in z$를 시사할 때 $z$를 <strong>추이적 집합<sub>transitive set</sub></strong>이라고 한다. 이것은 $V$의 중요한 특징이다.</p>
 
 <blockquote>
   <p><strong>정리.</strong></p>
@@ -432,7 +436,7 @@
 
 <p><strong>증명.</strong> 집합 $x$에 대해 $x$의 <strong>추이적 폐포</strong> $\bar{x}$를, $x$를 원소로 가지는 가장 작은 추이적 집합으로 정의한다(추이적 집합들의 교집합은 추이적이기 때문에 이 정의는 정당하다).</p>
 
-<p>$x \notin V$라고 가정하자. 분류 공리에 의해 $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$가 집합이며, 정초 공리에 의해 $y$의 $\in$-극소 원소 $z$가 존재한다. 만약 $w \notin V$인 $w \in z$가 존재한다면,  추이성에 의해 $w \in y$가 되어 $z$의 $\in$-극소성과 모순된다. 따라서 $z$의 모든 원소는 $V$에 있으며, 치환 공리로부터 $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$가 집합이다. 부랄리포르티 정리에 의해 $\beta = \bigcup_{\alpha \in \Omega}\alpha$가 서수이며, <strong>$z \in V_{\beta + 1}$이다.</strong> (이 부분에서 $V_{\beta + 1} = \mathcal{P}(V_\beta)$임이 필요하다) 따라서 모순이다. ■</p>
+<p>$x \notin V$라고 가정하자. 분류 공리에 의해 $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$가 집합이며, 정초 공리에 의해 $y$의 $\in$-극소 원소 $z$가 존재한다. 만약 $w \notin V$인 $w \in z$가 존재한다면, 추이성에 의해 $w \in y$가 되어 $z$의 $\in$-극소성과 모순된다. 따라서 $z$의 모든 원소는 $V$에 있으며, 치환 공리로부터 $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$가 집합이다. $\beta = \bigcup_{\alpha \in \Omega}\alpha$라고 하자. $\beta$는 서수이며, $z \in V_{\beta + 1}$이다. (이 부분에서 $V_{\beta + 1} = \mathcal{P}(V_\beta)$임이 필요하다) 따라서 모순이다. ■</p>
 
 <p>이에 따라 $V$는 집합이 아니다. 따라서 $V$는 모든 집합을 포함한다는 점에서 ZFC의 모델이지만, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">많은 수학자들은 모델이 집합일 것을 요구하기 때문에</a> 엄격한 의미에서의 모델은 아니다. 하지만 이 글에서는 편의를 위해 $V$를 집합론의 모델이라고 부르도록 한다. 또한 $x \in V$를 “$x$는 집합이다“의 형식적 표현으로 이해하도록 한다.</p>
 
@@ -487,7 +491,7 @@
   <li>$L_\omega = \mathsf{HF}$</li>
 </ul>
 
-<p>하지만 $L_{\omega + 1} \subsetneq V_{\omega + 1}$이다. $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$이므로 $V_{\omega + 1}$은 비가산인 반면, 1차 논리 문장들의 집합과  $L_\omega$는 모두 가산이므로 $L_{\omega + 1}$ 또한 가산이기 때문이다. 일반적으로 $\alpha$가 가산일 때 $L_\alpha$는 가산이다.</p>
+<p>하지만 $L_{\omega + 1} \subsetneq V_{\omega + 1}$이다. $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$이므로 $V_{\omega + 1}$은 비가산인 반면, 1차 논리 문장들의 집합과 $L_\omega$는 모두 가산이므로 $L_{\omega + 1}$ 또한 가산이기 때문이다. 일반적으로 $\alpha$가 가산일 때 $L_\alpha$는 가산이다.</p>
 
 <p>그럼에도 $L$은 $V$와 많은 특징을 공유한다. 일례로,</p>
 
@@ -534,7 +538,7 @@
 
 \[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
 
-  <p>일 때, $\phi$는 $A$에 대해 <strong>절대적(absolute)</strong>이라고 한다.</p>
+  <p>일 때, $\phi$는 $A$에 대해 <strong>절대적<sub>absolute</sub></strong>이라고 한다.</p>
 </blockquote>
 
 <p>일례로 $T_\mathbb{Q}$에 대해 $\phi(x) : \exists y (y &lt; x)$는 정수에 대해 절대적이지만 자연수에 대해 절대적이지는 않다.</p>
@@ -605,7 +609,7 @@
 
 <p><strong>증명.</strong> $\mathsf{ZFL} \vdash \phi$의 증명 길이에 대한 귀납법으로 증명한다. 증명 길이가 0일 때 $\phi$는 ZFL의 공리이다. $\phi$가 ZF의 공리일 때 정리 1로부터 증명되고, $\phi$가 $V = L$일 때 정리 2로부터 증명된다.</p>
 
-<p>이제 $\phi$가 $\lbrace  \psi_1, \dots, \psi_n \rbrace$에 추론 규칙을 적용하는 것으로 증명된다고 가정하자. $\psi_k$의 증명 길이는 $\phi$보다 작으므로 귀납 가정에 의해 $\mathsf{ZF} \vdash \psi_k^L$이며,  논리 공리와 추론 규칙은 $L$에 대해 절대적임을 쉽게 보일 수 있다. 따라서 $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$가 논리적 참이라면 $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ 또한 논리적 참이며, 이에 따라 $\mathsf{ZF} \vdash \phi^L$이다. ■</p>
+<p>이제 $\phi$가 $\lbrace  \psi_1, \dots, \psi_n \rbrace$에 추론 규칙을 적용하는 것으로 증명된다고 가정하자. $\psi_k$의 증명 길이는 $\phi$보다 작으므로 귀납 가정에 의해 $\mathsf{ZF} \vdash \psi_k^L$이며, 논리 공리와 추론 규칙은 $L$에 대해 절대적임을 쉽게 보일 수 있다. 따라서 $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$가 논리적 참이라면 $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ 또한 논리적 참이며, 이에 따라 $\mathsf{ZF} \vdash \phi^L$이다. ■</p>
 
 <p>정리 3의 따름정리로서 정리 4를 얻는다.</p>
 

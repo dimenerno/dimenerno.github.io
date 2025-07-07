@@ -380,27 +380,21 @@
       
     </div>
   
-  <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h3 id="1-transfinite-induction">1. Transfinite Induction</h3>
+  <h3 id="1-transfinite-induction">1. Transfinite Induction</h3>
 
 <blockquote>
   <p><strong>Theorem.</strong> Let $P$ be a property defined on ordinals, and suppose that for any $\alpha \in \mathrm{Ord}$,</p>
 
-\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha)\]
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha).\]
 
-  <p>holds. Then $P$ is true for all ordinals.</p>
+  <p>Then $P$ is true for all ordinals.</p>
 </blockquote>
 
 <p><em>Remark.</em> Since $\mathrm{Ord}$, the domain of $P$, is a proper class rather than a set, we use the term “property” instead of “predicate”.</p>
 
-<p><strong>Proof.</strong> We employ the fact that ordinals form a well-ordering and proceed by contradiction.</p>
+<p><strong>Proof.</strong> Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha_0$. Since $\forall \beta &lt; \alpha_0 : P(\beta)$, by hypothesis we have $P(\alpha_0)$, which is a contradiction. ■</p>
 
-<p>Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha_0$. Since $\forall \beta &lt; \alpha_0 : P(\beta)$, by hypothesis we have $P(\alpha_0)$, which is a contradiction. ■</p>
-
-<p><strong>Application.</strong> In the von Neumann hierarchy, $V_\alpha$ is transitive. Therefore, instead of $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$, we may define $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$.</p>
+<p><strong>Application.</strong> Show that the von Neumann hierarchy may be defined as $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$ instead of $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$.</p>
 
 <h3 id="2-transfinite-recursive-definition">2. Transfinite Recursive Definition</h3>
 
@@ -424,7 +418,7 @@
 \[F(\alpha) = G(F \upharpoonright \alpha)\]
 </blockquote>
 
-<p><strong>Proof.</strong> One applies transfinite induction extensively. (My apologies for the brevity.)</p>
+<p><strong>Proof.</strong> Apply transfinite induction extensively. (Sorry for the brevity, lol.) It is worth remarking that the proof does not depend on the axiom of choice, for the well-orderedness of ordinals is provable from ZF. Note, however, that the proof that every well-ordered set is order isomorophic to an ordinal <em>does</em> require AC.</p>
 
 </div>
 

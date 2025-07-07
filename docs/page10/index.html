@@ -813,7 +813,11 @@
       </div>
       
     </div>
-     <h2 id="1-전체">1. 전체</h2>
+     <blockquote>
+  <p>영문 버전의 글이 더 정확하고 설명이 풍부하니 참고하시길 바랍니다.</p>
+</blockquote>
+
+<h2 id="1-전체">1. 전체</h2>
 
 <h3 id="11-폰-노이만-전체">1.1. 폰 노이만 전체</h3>
 
@@ -838,7 +842,7 @@
 
 \[V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha\]
 
-<p>$x \in y \in z$가 $x \in z$를 시사할 때 $z$를 <strong>추이적 집합(transitive set)</strong>이라고 한다. 이것은 $V$의 중요한 특징이다.</p>
+<p>$x \in y \in z$가 $x \in z$를 시사할 때 $z$를 <strong>추이적 집합<sub>transitive set</sub></strong>이라고 한다. 이것은 $V$의 중요한 특징이다.</p>
 
 <blockquote>
   <p><strong>정리.</strong></p>
@@ -865,7 +869,7 @@
 
 <p><strong>증명.</strong> 집합 $x$에 대해 $x$의 <strong>추이적 폐포</strong> $\bar{x}$를, $x$를 원소로 가지는 가장 작은 추이적 집합으로 정의한다(추이적 집합들의 교집합은 추이적이기 때문에 이 정의는 정당하다).</p>
 
-<p>$x \notin V$라고 가정하자. 분류 공리에 의해 $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$가 집합이며, 정초 공리에 의해 $y$의 $\in$-극소 원소 $z$가 존재한다. 만약 $w \notin V$인 $w \in z$가 존재한다면,  추이성에 의해 $w \in y$가 되어 $z$의 $\in$-극소성과 모순된다. 따라서 $z$의 모든 원소는 $V$에 있으며, 치환 공리로부터 $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$가 집합이다. 부랄리포르티 정리에 의해 $\beta = \bigcup_{\alpha \in \Omega}\alpha$가 서수이며, <strong>$z \in V_{\beta + 1}$이다.</strong> (이 부분에서 $V_{\beta + 1} = \mathcal{P}(V_\beta)$임이 필요하다) 따라서 모순이다. ■</p>
+<p>$x \notin V$라고 가정하자. 분류 공리에 의해 $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$가 집합이며, 정초 공리에 의해 $y$의 $\in$-극소 원소 $z$가 존재한다. 만약 $w \notin V$인 $w \in z$가 존재한다면, 추이성에 의해 $w \in y$가 되어 $z$의 $\in$-극소성과 모순된다. 따라서 $z$의 모든 원소는 $V$에 있으며, 치환 공리로부터 $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$가 집합이다. $\beta = \bigcup_{\alpha \in \Omega}\alpha$라고 하자. $\beta$는 서수이며, $z \in V_{\beta + 1}$이다. (이 부분에서 $V_{\beta + 1} = \mathcal{P}(V_\beta)$임이 필요하다) 따라서 모순이다. ■</p>
 
 <p>이에 따라 $V$는 집합이 아니다. 따라서 $V$는 모든 집합을 포함한다는 점에서 ZFC의 모델이지만, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">많은 수학자들은 모델이 집합일 것을 요구하기 때문에</a> 엄격한 의미에서의 모델은 아니다. 하지만 이 글에서는 편의를 위해 $V$를 집합론의 모델이라고 부르도록 한다. 또한 $x \in V$를 “$x$는 집합이다“의 형식적 표현으로 이해하도록 한다.</p>
 
@@ -920,7 +924,7 @@
   <li>$L_\omega = \mathsf{HF}$</li>
 </ul>
 
-<p>하지만 $L_{\omega + 1} \subsetneq V_{\omega + 1}$이다. $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$이므로 $V_{\omega + 1}$은 비가산인 반면, 1차 논리 문장들의 집합과  $L_\omega$는 모두 가산이므로 $L_{\omega + 1}$ 또한 가산이기 때문이다. 일반적으로 $\alpha$가 가산일 때 $L_\alpha$는 가산이다.</p>
+<p>하지만 $L_{\omega + 1} \subsetneq V_{\omega + 1}$이다. $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$이므로 $V_{\omega + 1}$은 비가산인 반면, 1차 논리 문장들의 집합과 $L_\omega$는 모두 가산이므로 $L_{\omega + 1}$ 또한 가산이기 때문이다. 일반적으로 $\alpha$가 가산일 때 $L_\alpha$는 가산이다.</p>
 
 <p>그럼에도 $L$은 $V$와 많은 특징을 공유한다. 일례로,</p>
 
@@ -967,7 +971,7 @@
 
 \[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
 
-  <p>일 때, $\phi$는 $A$에 대해 <strong>절대적(absolute)</strong>이라고 한다.</p>
+  <p>일 때, $\phi$는 $A$에 대해 <strong>절대적<sub>absolute</sub></strong>이라고 한다.</p>
 </blockquote>
 
 <p>일례로 $T_\mathbb{Q}$에 대해 $\phi(x) : \exists y (y &lt; x)$는 정수에 대해 절대적이지만 자연수에 대해 절대적이지는 않다.</p>
@@ -1038,7 +1042,7 @@
 
 <p><strong>증명.</strong> $\mathsf{ZFL} \vdash \phi$의 증명 길이에 대한 귀납법으로 증명한다. 증명 길이가 0일 때 $\phi$는 ZFL의 공리이다. $\phi$가 ZF의 공리일 때 정리 1로부터 증명되고, $\phi$가 $V = L$일 때 정리 2로부터 증명된다.</p>
 
-<p>이제 $\phi$가 $\lbrace  \psi_1, \dots, \psi_n \rbrace$에 추론 규칙을 적용하는 것으로 증명된다고 가정하자. $\psi_k$의 증명 길이는 $\phi$보다 작으므로 귀납 가정에 의해 $\mathsf{ZF} \vdash \psi_k^L$이며,  논리 공리와 추론 규칙은 $L$에 대해 절대적임을 쉽게 보일 수 있다. 따라서 $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$가 논리적 참이라면 $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ 또한 논리적 참이며, 이에 따라 $\mathsf{ZF} \vdash \phi^L$이다. ■</p>
+<p>이제 $\phi$가 $\lbrace  \psi_1, \dots, \psi_n \rbrace$에 추론 규칙을 적용하는 것으로 증명된다고 가정하자. $\psi_k$의 증명 길이는 $\phi$보다 작으므로 귀납 가정에 의해 $\mathsf{ZF} \vdash \psi_k^L$이며, 논리 공리와 추론 규칙은 $L$에 대해 절대적임을 쉽게 보일 수 있다. 따라서 $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$가 논리적 참이라면 $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ 또한 논리적 참이며, 이에 따라 $\mathsf{ZF} \vdash \phi^L$이다. ■</p>
 
 <p>정리 3의 따름정리로서 정리 4를 얻는다.</p>
 
@@ -1070,15 +1074,11 @@
       </div>
       
     </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h2 id="1-universe">1. Universe</h2>
+     <h2 id="1-universe">1. Universe</h2>
 
 <h3 id="11-von-neumann-universe">1.1. Von Neumann Universe</h3>
 
-<p>We define $\lbrace  V_\alpha \rbrace$ <a href="https://dimenerno.github.io/2024/12/05/transfinite-recursion/">transfinitely recursively</a>.</p>
+<p>We define $\lbrace  V_\alpha \rbrace$ using <a href="https://dimenerno.github.io/2024/12/05/transfinite-recursion/">transfinite recursion</a>.</p>
 
 <ul>
   <li>$V_0 = \varnothing$</li>
@@ -1110,7 +1110,9 @@
   </ol>
 </blockquote>
 
-<p>The proof uses transfinite induction. Accordingly, we may define $V$ as follows without loss of generality:</p>
+<p><strong>Proof.</strong> By transfinite induction.</p>
+
+<p>Accordingly, we can also define $V$ as follows:</p>
 
 <ul>
   <li>$V_0 = \varnothing$</li>
@@ -1124,46 +1126,48 @@
   <p><strong>Theorem.</strong> If $x$ is a set, then $x \in V$.</p>
 </blockquote>
 
-<p><strong>Proof.</strong> For a set $x$, we define the <strong>transitive closure</strong> $\bar{x}$ of $x$ as the smallest transitive set containing $x$ as an element (this definition is justified because the intersection of transitive sets is transitive).</p>
+<p><strong>Proof.</strong> For a set $x$, we define the <strong>transitive closure</strong> $\bar{x}$ of $x$ as the smallest transitive set containing $x$ as an element. Note that this is well-defined as the intersection of transitive sets is transitive.</p>
 
-<p>Assume $x \notin V$. By the axiom of separation, $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$ is a set, and by the axiom of foundation, there exists an $\in$-minimal element $z$ of $y$. If there exists $w \in z$ such that $w \notin V$, then by transitivity $w \in y$, contradicting the $\in$-minimality of $z$. Therefore, all elements of $z$ are in $V$, and by the axiom of replacement, $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$ is a set. By the Burali-Forti theorem, $\beta = \bigcup_{\alpha \in \Omega}\alpha$ is an ordinal, and <strong>$z \in V_{\beta + 1}$.</strong> (This part requires that $V_{\beta + 1} = \mathcal{P}(V_\beta)$) This yields a contradiction. ■</p>
+<p>Assume $x \notin V$. By the axiom of separation, $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$ is a set, and by the axiom of foundation, there exists an $\in$-minimal element $z$ of $y$. If there exists $w \in z$ such that $w \notin V$, then by transitivity $w \in y$, contradicting the $\in$-minimality of $z$. Therefore, all elements of $z$ are in $V$, and by the axiom of replacement, $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$ is a set. Let $\beta = \bigcup_{\alpha \in \Omega}\alpha$. Then $\beta$ is an ordinal, and $z \in V_{\beta + 1}$. (This is where the definition of von Neumann universe $V_{\beta + 1} = \mathcal{P}(V_\beta)$ is invoked.) This yields a contradiction. ■</p>
 
-<p>Consequently, $V$ is not a set. Therefore, whilst $V$ is a model of ZFC in the sense that it contains all sets, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">many mathematicians require models to be sets</a>, so it is not a model in the strict sense. However, for convenience in this article, we shall refer to $V$ as a model of set theory. Moreover, we shall understand $x \in V$ as a formal expression for “$x$ is a set”.</p>
+<p>Consequently, $V$ is not a set. Therefore, whilst $V$ is a model of ZFC in the sense that it contains all sets, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">many mathematicians require models to be sets</a>, so it is not a model in the strict sense. (This explains why our proof that $V$ is a ‘model’ of ZFC does not contradict Gödel’s incompleteness theorems; within ZFC, $V$ is not recognised as a valid set-theoretic object.) However, for convenience, in this article, we shall refer to $V$ as a model of set theory. Moreover, we shall understand $x \in V$ as a formal expression for “$x$ is a set”.</p>
 
 <h3 id="12-gödel-constructible-universe">1.2. Gödel Constructible Universe</h3>
 
-<p>First, we define constructibility as follows:</p>
+<p>First, we define <a href="https://dimenerno.github.io/2025/05/13/saturation">constructibility</a> as follows:</p>
 
 <blockquote>
-  <p><strong>Definition.</strong> $u$ is <strong>constructible</strong> from a set $S$ if there exist some first-order logical formula $\phi(y, x_1, \dots, x_n)$ and $c_1, \dots, c_n \in S$ such that the following holds:</p>
+  <p><strong>Definition.</strong> Let $\mathfrak{A}$ be an $\mathcal{L}$-structure and let $A$ be the underlying domain of $\mathfrak{A}$. $u$ is <strong>constructible</strong> from $\mathfrak{A}$ if there exist some $\mathcal{L}$-formula $\phi(y, x_1, \dots, x_n)$ and $a_1, \dots, a_n \in A$ such that the following holds:</p>
 
-\[y \in u \iff y \in S \land \phi(y, c_1, \dots, c_n)\]
-
-  <p>where the domain of quantifiers in $\phi$ is $S$.</p>
+\[y \in u \iff y \in A \land \mathfrak{A} \vDash \phi(y, a_1, \dots, a_n)\]
 </blockquote>
 
-<p>For example, when $S = \lbrace 0, 1, 2\rbrace$, the following constructs $u = \lbrace  1, 2 \rbrace$:</p>
+<p>Sometimes we abuse the notation and say that $u$ is constructible from $A$.</p>
+
+<p>For example, with respect to the standard model of arithmetics, the following constructs $u = \lbrace  1, 2 \rbrace$:</p>
 
 <ul>
-  <li>$\phi(y, x_1, x_2) := (y = x_1) \lor (y = x_2)$</li>
-  <li>$c_1 = 1, c_2 = 2$</li>
+  <li>$\phi(y, x_1, x_2) : (y = x_1) \lor (y = x_2)$</li>
+  <li>$a_1 = 1, a_2 = 2$</li>
 </ul>
 
-<p>Also, when $S = \mathbb{N}$, the following constructs $u = \lbrace 0, 3, 6, 9, \dots \rbrace$:</p>
+<p>The following constructs $u = \lbrace 2, 5, 10, 17, \dots \rbrace$:</p>
 
 <ul>
-  <li>$\phi(y, x_1) := x_1 \mid y$</li>
-  <li>$c_1 = 3$</li>
+  <li>$\phi(y, x_1) : \exists z (z \cdot z + x_1 = y)$</li>
+  <li>$a_1 = 1$</li>
 </ul>
 
-<p>Gödel’s constructibility differs from constructibility in the general sense, namely expressibility in language. For instance, since the set of real numbers expressible in language is countable, some real numbers cannot be expressed in language. Let such a real number be $r$. Now when $S = \mathbb{R}$, the following constructs $u = \lbrace  r \rbrace$:</p>
+<p>Gödel’s constructibility differs from constructibility in the general sense, namely expressibility in language. For instance, since the set of real numbers expressible in language is countable, some real numbers cannot be expressed in language. Let such a real number be $r$. With respect to the standard model of real numbers, the following “constructs” $u = \lbrace  r \rbrace$:</p>
 
 <ul>
-  <li>$\phi(y, x_1) := x_1 = y$</li>
-  <li>$c_1 = r$</li>
+  <li>$\phi(y, x_1) : x_1 = y$</li>
+  <li>$a_1 = r$</li>
 </ul>
 
-<p>That is, Gödel’s constructibility is powerful in that it allows initialisation of free variables to arbitrary elements. However, it has limitations in that the number of free variables is finite. We now define $\lbrace  L_\alpha \rbrace$ transfinitely recursively:</p>
+<p>That is, Gödel’s constructibility is more versatile than linguistic constructibility in that it allows initialisation of free variables to arbitrary elements. Nonetheless, it is constrained to have only finite number of free variables.</p>
+
+<p>We now define $\lbrace  L_\alpha \rbrace$ using transfinite recursion:</p>
 
 <ul>
   <li>$L_0 = \varnothing$</li>
@@ -1172,7 +1176,7 @@
   <li>$L = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
 </ul>
 
-<p>We can easily show that $L_\alpha = V_\alpha$ when $\alpha &lt; \omega$. When $\alpha = n$, we can construct $x \in V_\alpha$ with at most $n$ disjunctions $\lor$. Therefore:</p>
+<p>We can easily show that $L_\alpha = V_\alpha$ when $\alpha &lt; \omega$. Specifically, when $\alpha = n$, we can construct $x \in V_\alpha$ with at most $n$ disjunctions. Therefore:</p>
 
 <ul>
   <li>$L_1 = \lbrace  \varnothing \rbrace$</li>
@@ -1181,7 +1185,7 @@
   <li>$L_\omega = \mathsf{HF}$</li>
 </ul>
 
-<p>However, $L_{\omega + 1} \subsetneq V_{\omega + 1}$. Since $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$, $V_{\omega + 1}$ is uncountable, whereas since the set of first-order logical sentences and $L_\omega$ are both countable, $L_{\omega + 1}$ is also countable. In general, when $\alpha$ is countable, $L_\alpha$ is countable.</p>
+<p>However, $L_{\omega + 1} \subsetneq V_{\omega + 1}$. This is because although $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$ is uncountable, since the set of first-order logical sentences and $L_\omega$ are both countable, $L_{\omega + 1}$ is countable. In general, when $\alpha$ is countable, $L_\alpha$ is countable.</p>
 
 <p>Nevertheless, $L$ shares many properties with $V$. For instance:</p>
 
@@ -1194,62 +1198,77 @@
   </ol>
 </blockquote>
 
-<p>The proof uses transfinite induction.</p>
+<p><strong>Proof.</strong> By transfinite induction.</p>
 
-<p>Note that $L$ is not a set by the Burali-Forti theorem since it contains all ordinals. Instead, there exists a first-order logical formula $\mathsf{IsInL}_\alpha(x)$ corresponding to $x \in L_\alpha$. The proof is somewhat intricate and involves arithmetising propositions using Gödel numbers. (<a href="https://math.stackexchange.com/questions/198437/a-formula-that-defines-constructible-universe">See link</a>) Therefore, we shall understand $x \in L$ as a formal expression replacing $\exists \alpha \in \mathrm{Ord} :\mathsf{IsInL}_\alpha(x)$. (Of course, $\alpha \in \mathrm{Ord}$ should also be understood as a formal expression replacing a first-order logical formula)</p>
+<p>Note that $L$ is not a set since it contains all ordinals. However, there exists a first-order formula $\mathsf{IsInL}_\alpha(x)$ that expresses $x \in L_\alpha$. The proof is intricate and involves arithmetising propositions using Gödel numbers. (<a href="https://math.stackexchange.com/questions/198437/a-formula-that-defines-constructible-universe">See link</a>) At any rate, this means that we may understand $x \in L$ as a formal expression expressing $\exists \alpha \in \mathrm{Ord} :\mathsf{IsInL}_\alpha(x)$. The two will be co-extensional for models of ZF.</p>
 
 <h2 id="2-relativisation">2. Relativisation</h2>
 
-<h3 id="21-relativisation-of-propositions">2.1. Relativisation of Propositions</h3>
-
-<p>First-order logical propositions may contain quantifiers. Hence, the meaning of a proposition changes depending on how the domain of quantifiers is set.</p>
-
-<p>For a proposition $\phi$ and a set (or class) $A$, we define the relativisation $\phi^A$ of $\phi$ as the proposition where all quantifiers in $\phi$ are restricted to $A$. To add a bit of narrative expression, $\phi^A$ can be said to be $\phi$ understood from “inside” $A$. For example, when $\phi : \forall x \; \exists y : y &lt; x$:</p>
-
-<ul>
-  <li>$\phi^\mathbb{N} : \forall x \in \mathbb{N} \; \exists y \in \mathbb{N} : y &lt; x$</li>
-  <li>$\phi^\mathbb{Z} : \forall x \in \mathbb{Z} \; \exists y \in \mathbb{Z} : y &lt; x$</li>
-</ul>
-
-<p>If $T_\mathbb{Q}$ is a theory of rational numbers with sufficient expressive power to characterise natural numbers and integers, then:</p>
-
-<ul>
-  <li>$T_\mathbb{Q} \vdash \phi$</li>
-  <li>$T_\mathbb{Q} \not\vdash \phi^\mathbb{N}$</li>
-  <li>$T_\mathbb{Q} \vdash \phi^{\mathbb{Z}}$</li>
-</ul>
-
-<p>Therefore, $\phi$ successfully distinguishes between natural numbers and rational numbers, but fails to distinguish between integers and rational numbers. Generalising this observation, for a theory $T$ and a set $A$, the more formulas $\phi$ such that $T \vdash \phi \leftrightarrow \phi^A$, the better $A$ “conforms” to the description of $T$.</p>
-
-<p>Generalising the above discussion slightly, we define:</p>
+<h3 id="21-relativisation-of-formulas">2.1. Relativisation of Formulas</h3>
 
 <blockquote>
-  <p><strong>Definition.</strong> For a theory $T$ and a set $A$,</p>
-
-\[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
-
-  <p>when this holds, $\phi$ is said to be <strong>absolute</strong> with respect to $A$.</p>
+  <p><strong>Definition.</strong> Let $T$ be an $\mathcal{L}$-theory and $\psi$ an $\mathcal{L}$-formula. We define the <strong>relativisation</strong> $\phi^\psi$, read as the relativisaion of $\phi$ respect to $\psi$, as the formula where all quantifiers in $\phi$ are restricted to satisfy $\psi$.</p>
 </blockquote>
 
-<p>For instance, with respect to $T_\mathbb{Q}$, $\phi(x) : \exists y (y &lt; x)$ is absolute with respect to integers but not absolute with respect to natural numbers.</p>
+<p>Using $\mathsf{PA}$ as an example, if $\psi(x) : \exists z(z + z = x)$ and $\phi(x) : \exists z(z \cdot z = x)$, then:</p>
+
+\[\phi^\psi(x) : \exists z (\psi(z) \land z \cdot z = x)\]
+
+<p>Semantically, $\phi(x)$ expresses “$x$ is a perfect square” while $\phi^\psi(x)$ expresses “$x$ is a square of an even number”.</p>
+
+<p>When it is clear that what $\psi(x)$ is supposed to express is $x \in S$, then we abuse the notation and write $\phi^S$ instead of $\phi^\psi$. Hence in the case of the previous example, we may write $\phi^E$ instead, where $E$ is the set of even numbers. That is,</p>
+
+\[\phi^E(x) : \exists z \in E (z \cdot z = x)\]
+
+<p>To use a bit of metaphoric expression, $\phi^S$ is how $\phi$ is “seen from” $S$.</p>
+
+<p>For example, let $o(x)$ be the first-order formula expressing “$x$ is an ordinal”. Specifically, it is defined as:</p>
+
+\[o(x) : \mathrm{tr}(x) \land \forall y \in x \; \mathrm{tr}(y)\]
+
+<p>where $\mathrm{tr}(x) : \forall y \in x \; \forall z \in y (z \in x)$ expresses “$x$ is transitive”. By the abuse of notation, we may write $\phi^{\mathrm{Ord}}$ instead of $\phi^o$. $\phi^{\mathrm{Ord}}$ is how $\phi$ is “seen from” the class of all ordinals. Define:</p>
+
+<ul>
+  <li>$\phi_1 : \forall x \exists y \forall z (z \subset x \rightarrow z \in y)$</li>
+  <li>$\phi_2 : \forall x \forall y \exists z (z = x \cup y)$</li>
+</ul>
+
+<p>That is, $\phi_1$ expresses closure under power set operation and $\phi_2$ expresses closure under set union. We have:</p>
+
+<ul>
+  <li>$\mathsf{ZFC} \not\vdash \phi_1^\mathrm{Ord}$</li>
+  <li>$\mathsf{ZFC} \vdash \phi_2^\mathrm{Ord}$,</li>
+</ul>
+
+<p>since the set of ordinals is closed under union but not under power set. Put in another way, $\phi_1$ successfully distinguishes the class of all sets — what ZFC tries to describe — and the class of ordinals, while $\phi_2$ cannot. Generalising this observation, for a theory $T$ and a set $A$, the more formulas $\phi$ such that $T \vdash \phi \leftrightarrow \phi^A$, the better $A$ “conforms” to the description of $T$.</p>
+
+<p>This leads us to the following definition.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For an $\mathcal{L}$-theory $T$ and a set $A$, $\phi$ is said to be <strong>absolute</strong> with respect to $A$ if for every $\mathcal{L}$-formula $\phi$,</p>
+
+\[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
+</blockquote>
+
+<p>Note that the definition simply becomes $T \vdash \phi^A$ when $\phi$ has no free variables, and it is given that $T \vdash \phi$.</p>
 
 <h3 id="22-l-relativisation">2.2. $L$-Relativisation</h3>
 
-<p>Our goal now is to show that $L$ conforms maximally with $\mathsf{ZF}$. That is:</p>
+<p>Our goal now is to show that the axioms of ZF are absoulte with respect to $L$. That is:</p>
 
 <blockquote>
   <p><strong>Theorem 1.</strong> If $\phi$ is an axiom of ZF, then $\mathsf{ZF} \vdash \phi^L$.</p>
 </blockquote>
 
-<p>Let us express the meaning of Theorem 1 in words:</p>
+<p>That is to say,</p>
 
 <blockquote>
-  <p>“When viewed from inside $L$, $L$ is a model of ZF” can be proved in ZF.</p>
+  <p>“When <em>seen from</em> $L$, $L$ is a model of ZF” can be proved in ZF.</p>
 </blockquote>
 
-<p>Of course, we only know $L \subset V$ and do not know whether $V = L$, so some set $x$ may not belong to $L$. However, even if there exists a set $x$ such that $x \in V \setminus L$, the absence of such $x$ does not break the <em>internal consistency</em> of $L$—this is the content of Theorem 1.</p>
+<p>Of course, we only know that $L \subset V$ and do not know whether $V = L$, which leaves open the possibility of some set $x$ not belonging to $L$. Yet according to Theorem 1 states is that, even if there exists such a set $x$, its abscence does not break the <em>internal consistency</em> of $L$.</p>
 
-<p>For example, suppose some set $x = \lbrace  y, z \rbrace$ is absent from $L$ for some sets $y, z$. At first glance, the absence of $x$ seems to suggest that $L$ does not satisfy the pairing axiom $\mathsf{Pair}$:</p>
+<p>For example, suppose some set $x = \lbrace  y, z \rbrace$ is absent from $L$. At first glance, the absence of $x$ seems to suggest that $L$ does not satisfy the pairing axiom $\mathsf{Pair}$:</p>
 
 \[\mathsf{Pair} := \forall y, z \; \exists x \; \forall w: w \in x \leftrightarrow (w = y \lor w = z)\]
 
@@ -1257,9 +1276,9 @@
 
 \[\mathsf{Pair}^L := \forall y, z \in L \; \exists x \in L \; \forall w \in L: w \in x \leftrightarrow (w = y \lor w = z)\]
 
-<p>Note that the quantification $\forall y, z$ is also restricted to $L$. That is, the absence of $x = \lbrace  y, z \rbrace$ causes problems for $L$ only when $y, z \in L$. Conversely, if $x = \lbrace  y, z \rbrace \notin L$ implies $y, z \notin L$, then $L$ satisfies $\mathsf{Pair}^L$. This is the meaning of “$L$ lacks sets in a way that maintains internal consistency”.</p>
+<p>Note that the quantification $\forall y, z$ is also restricted to $L$. That is, the absence of $x = \lbrace  y, z \rbrace$ causes problems in $L$ <em>only when</em> $y, z \in L$. Conversely, if $x = \lbrace  y, z \rbrace \notin L$ implies $y, z \notin L$, then $L$ satisfies $\mathsf{Pair}^L$. This is, $L$ lacks sets only in a way that maintains internal consistency.</p>
 
-<p>The key reason Theorem 1 holds is that $L$ and $V$ <strong>share the property of transitivity</strong>.</p>
+<p>Although we do not give the full proof, we highlight that the key reason Theorem 1 holds is that $L$, like $V$, is a transitivie class of sets, which leads to the following lemma.</p>
 
 <blockquote>
   <p><strong>Lemma.</strong> The following predicates are absolute with respect to $L$ in ZF:</p>
@@ -1275,21 +1294,21 @@
   </ol>
 </blockquote>
 
-<p>Moreover, we can prove:</p>
+<p>From this lemma, it is not too difficult to prove Theorem 1. Moreover, we can prove:</p>
 
 <blockquote>
   <p><strong>Theorem 2.</strong> $\mathsf{ZF} \vdash (V = L)^L$</p>
 </blockquote>
 
-<p>Here, $V = L$ means “every set belongs to $L$”. Therefore, at first glance, $(V = L)^L$ appears to be the trivial proposition “every set belonging to $L$ belongs to $L$”. However, when we actually write $V = L$ as a logical formula:</p>
+<p>Here, $V = L$ is a formal expression standing for $\forall x (x \in L)$. At first glance it may seem that $(V = L)^L$ is thus the trivial proposition $\forall x \in L (x \in L)$. However, when we actually expand $V = L$ as a first-order formula, we have:</p>
 
-\[\forall x \; \exists \alpha  : \alpha \in \mathrm{Ord} \land x \in L_\alpha\]
+\[\forall x \; \exists \alpha  \; (\alpha \in \mathrm{Ord} \land x \in L_\alpha)\]
 
 <p>so $(V = L)^L$ becomes:</p>
 
-\[\forall x \in L \; \exists \alpha \in L : (\alpha \in \mathrm{Ord})^L \land (x \in L_\alpha)^L\]
+\[\forall x \in L \; \exists \alpha \in L \; (\alpha \in \mathrm{Ord})^L \land (x \in L_\alpha)^L\]
 
-<p>Note particularly that since $\alpha \in \mathrm{Ord}$ and $x \in L_\alpha$ are formal expressions of first-order logical formulas rather than the genuine $\in$-predicate, they must likewise be relativised to $L$. Accordingly, to prove $(V = L)^L$ in ZF, we must prove that $\alpha \in \mathsf{Ord}$ and $x \in L_\alpha$ are absolute. Both proofs are possible using transfinite induction.</p>
+<p>Note particularly that since $\alpha \in \mathrm{Ord}$ and $x \in L_\alpha$ are formal expressions of first-order formulas rather than a genuine $\in$-relation, they must likewise be relativised to $L$. Thus, to prove $(V = L)^L$ in ZF, <em>we must prove that $\alpha \in \mathrm{Ord}$ and $x \in L_\alpha$ are also absolute</em>. The former follows from the previous lemma, and the latter also “almost” follows from the lemma, except that $x \in L_\alpha$ is a $\Sigma_1$-sentence, so slightly more argument is required to secure its absoluteness.</p>
 
 <p>From Theorems 1 and 2, we can prove:</p>
 
@@ -1299,7 +1318,11 @@
 
 <p><strong>Proof.</strong> We prove by induction on the proof length of $\mathsf{ZFL} \vdash \phi$. When the proof length is 0, $\phi$ is an axiom of ZFL. When $\phi$ is an axiom of ZF, it follows from Theorem 1, and when $\phi$ is $V = L$, it follows from Theorem 2.</p>
 
-<p>Now assume $\phi$ is proved by applying an inference rule to $\lbrace  \psi_1, \dots, \psi_n \rbrace$. The proof length of $\psi_k$ is smaller than that of $\phi$, so by the induction hypothesis $\mathsf{ZF} \vdash \psi_k^L$. We can easily show that logical axioms and inference rules are absolute with respect to $L$. Therefore, if $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$ is logically valid, then $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ is also logically valid, and consequently $\mathsf{ZF} \vdash \phi^L$. ■</p>
+<p>Now assume $\phi$ is proved by applying an inference rule to $\lbrace  \psi_1, \dots, \psi_n \rbrace$. The proof length of $\psi_k$ is smaller than that of $\phi$, so by the induction hypothesis $\mathsf{ZF} \vdash \psi_k^L$. We can easily show that logical axioms and inference rules are absolute with respect to $L$. Using modus ponens as an example, this means that:</p>
+
+\[\mathsf{ZF} \vdash ((\phi \land \phi \rightarrow \psi) \rightarrow \psi)^L\]
+
+<p>Therefore, if $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$ is logically valid, then $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ is also logically valid, and consequently $\mathsf{ZF} \vdash \phi^L$. ■</p>
 
 <p>As a corollary of Theorem 3, we obtain Theorem 4:</p>
 
@@ -1307,7 +1330,7 @@
   <p><strong>Theorem 4.</strong> If ZF is consistent, then ZFL is also consistent.</p>
 </blockquote>
 
-<p><strong>Proof.</strong> If ZFL is inconsistent, then $\mathsf{ZFL} \vdash \varnothing \neq \varnothing$, and by Theorem 3, $\mathsf{ZF} \vdash (\varnothing \neq \varnothing)^L \iff \mathsf{ZF} \vdash \varnothing \neq \varnothing$.</p>
+<p><strong>Proof.</strong> If ZFL is inconsistent, then $\mathsf{ZFL} \vdash \varnothing \neq \varnothing$, and by Theorem 3, $\mathsf{ZF} \vdash (\varnothing \neq \varnothing)^L \iff \mathsf{ZF} \vdash \varnothing \neq \varnothing$, which contradicts the consistency of ZF. ■</p>
 
 <p>Therefore, <strong>V = L is consistent with ZF</strong>.</p>
 
@@ -1341,7 +1364,7 @@
   <p>가 성립할 때, $P$는 모든 서수에 대해 참이다.</p>
 </blockquote>
 
-<p><em>Remark.</em> $P$의 정의역인 $\mathrm{Ord}$는 집합이 아닌 진모임(proper class)이므로 “술어” 대신 “속성”이란 표현을 사용한다.</p>
+<p><em>Remark.</em> $P$의 정의역인 $\mathrm{Ord}$는 집합이 아닌 진모임<sub>proper class</sub>이므로 “술어” 대신 “속성”이란 표현을 사용한다.</p>
 
 <p><strong>증명.</strong> 서수가 정렬 순서라는 사실과 귀류법을 사용한다.</p>
 
@@ -1393,27 +1416,21 @@
       </div>
       
     </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h3 id="1-transfinite-induction">1. Transfinite Induction</h3>
+     <h3 id="1-transfinite-induction">1. Transfinite Induction</h3>
 
 <blockquote>
   <p><strong>Theorem.</strong> Let $P$ be a property defined on ordinals, and suppose that for any $\alpha \in \mathrm{Ord}$,</p>
 
-\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha)\]
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha).\]
 
-  <p>holds. Then $P$ is true for all ordinals.</p>
+  <p>Then $P$ is true for all ordinals.</p>
 </blockquote>
 
 <p><em>Remark.</em> Since $\mathrm{Ord}$, the domain of $P$, is a proper class rather than a set, we use the term “property” instead of “predicate”.</p>
 
-<p><strong>Proof.</strong> We employ the fact that ordinals form a well-ordering and proceed by contradiction.</p>
+<p><strong>Proof.</strong> Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha_0$. Since $\forall \beta &lt; \alpha_0 : P(\beta)$, by hypothesis we have $P(\alpha_0)$, which is a contradiction. ■</p>
 
-<p>Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha_0$. Since $\forall \beta &lt; \alpha_0 : P(\beta)$, by hypothesis we have $P(\alpha_0)$, which is a contradiction. ■</p>
-
-<p><strong>Application.</strong> In the von Neumann hierarchy, $V_\alpha$ is transitive. Therefore, instead of $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$, we may define $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$.</p>
+<p><strong>Application.</strong> Show that the von Neumann hierarchy may be defined as $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$ instead of $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$.</p>
 
 <h3 id="2-transfinite-recursive-definition">2. Transfinite Recursive Definition</h3>
 
@@ -1437,7 +1454,7 @@
 \[F(\alpha) = G(F \upharpoonright \alpha)\]
 </blockquote>
 
-<p><strong>Proof.</strong> One applies transfinite induction extensively. (My apologies for the brevity.)</p>
+<p><strong>Proof.</strong> Apply transfinite induction extensively. (Sorry for the brevity, lol.) It is worth remarking that the proof does not depend on the axiom of choice, for the well-orderedness of ordinals is provable from ZF. Note, however, that the proof that every well-ordered set is order isomorophic to an ordinal <em>does</em> require AC.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
@@ -1530,7 +1547,7 @@
 <h3 id="그물과-점렬">그물과 점렬</h3>
 
 <blockquote>
-  <p><strong>정의.</strong> $(J, \leq)$가 부분순서라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합<sub>directed set</sub></strong>이라고 한다.</p>
+  <p><strong>정의.</strong> $(J, \leq)$가 원순서<sub>preorder</sub>라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합<sub>directed set</sub></strong>이라고 한다.</p>
 </blockquote>
 
 <blockquote>

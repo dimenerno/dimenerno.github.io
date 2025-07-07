@@ -6,29 +6,25 @@ tags: [Mathematics, Set Theory]
 lang: en
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
-
 ### 1. Transfinite Induction
 
 > **Theorem.** Let $P$ be a property defined on ordinals, and suppose that for any $\alpha \in \mathrm{Ord}$,
 >
 > $$
-> [ \forall \beta < \alpha : P(\beta)] → P(\alpha)
+> [ \forall \beta < \alpha : P(\beta)] → P(\alpha).
 > $$
 >
-> holds. Then $P$ is true for all ordinals.
+> Then $P$ is true for all ordinals.
 
-*Remark.* Since $\mathrm{Ord}$, the domain of $P$, is a proper class rather than a set, we use the term "property" instead of "predicate".
+_Remark._ Since $\mathrm{Ord}$, the domain of $P$, is a proper class rather than a set, we use the term "property" instead of "predicate".
 
-**Proof.** We employ the fact that ordinals form a well-ordering and proceed by contradiction.
+**Proof.** Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha\_0$. Since $\forall \beta < \alpha\_0 : P(\beta)$, by hypothesis we have $P(\alpha\_0)$, which is a contradiction. ■
 
-Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha\_0$. Since $\forall \beta < \alpha\_0 : P(\beta)$, by hypothesis we have $P(\alpha\_0)$, which is a contradiction. ■
-
-**Application.** In the von Neumann hierarchy, $V\_\alpha$ is transitive. Therefore, instead of $V\_{\alpha + 1} = V\_\alpha \cup \mathcal{P}(V\_\alpha)$, we may define $V\_{\alpha + 1} = \mathcal{P}(V\_\alpha)$.
+**Application.** Show that the von Neumann hierarchy may be defined as $V\_{\alpha + 1} = \mathcal{P}(V\_\alpha)$ instead of $V\_{\alpha + 1} = V\_\alpha \cup \mathcal{P}(V\_\alpha)$.
 
 ### 2. Transfinite Recursive Definition
 
-*Motivation.* Consider recursive definitions on natural numbers. Given $n$ sets $x\_1, \dots , x\_n$ and a function $g$ that outputs a set, we would like to define $f: \mathbb{N} → V$ as follows:
+_Motivation._ Consider recursive definitions on natural numbers. Given $n$ sets $x\_1, \dots , x\_n$ and a function $g$ that outputs a set, we would like to define $f: \mathbb{N} → V$ as follows:
 
 $$
 f(n) = g(f(0), \dots, f(n - 1))
@@ -54,4 +50,4 @@ Generalising this to ordinals, we obtain the following:
 > F(\alpha) = G(F \upharpoonright \alpha)
 > $$
 
-**Proof.** One applies transfinite induction extensively. (My apologies for the brevity.)
+**Proof.** Apply transfinite induction extensively. (Sorry for the brevity, lol.) It is worth remarking that the proof does not depend on the axiom of choice, for the well-orderedness of ordinals is provable from ZF. Note, however, that the proof that every well-ordered set is order isomorophic to an ordinal _does_ require AC.
