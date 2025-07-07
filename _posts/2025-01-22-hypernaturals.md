@@ -4,7 +4,6 @@ title: "프레셰 필터와 비표준 자연수"
 date: 2025-01-22
 tags: [수학, 논리학]
 related:
-  - "프레셰 필터와 비표준 자연수"
   - "워시의 정리"
 ---
 
@@ -57,7 +56,7 @@ $$
 
 하세 다이어그램<sub>Hasse diagram</sub>을 통해 필터를 더 직관적으로 이해할 수 있다. 색칠된 영역은 $X = \lbrace 0, 1, 2 \rbrace$의 필터이다. 하세 다이어그램을 $\varnothing$에서 $X$로 가는 물줄기의 흐름으로 이해하면, 특정 지점에 잉크를 떨어뜨렸을 때 그 잉크가 퍼져 나가는 영역은 필터를 이룬다.
 
-<img src="https://velog.velcdn.com/images/dimenerno/post/86ac1e36-13fe-46fb-a9cc-b6749d1c5a69/image.png" width="400px" style="margin: 20px auto 30px auto;">
+<img src="/public/hyper-1.png" style="width: 100%; max-width: 300px; margin: 2em auto;">
 
 2번 공리와 4번 공리에 의해, $A \in \mathcal{F}$라면 $A^c := X \setminus A \notin \mathcal{F}$이다. 이 사실을 강화하여, $X$의 _모든_ 부분집합에 대해 그 집합 또는 여집합이 필터에 있을 것을 요구하면 초필터의 정의를 얻는다.
 
@@ -83,7 +82,7 @@ _Proof._ $A_0 \in \mathcal{F}$가 최소 원소가 아니라고 하자. 그러�
 
 위 정리는 이렇게 이해할 수도 있다. 자유 필터는 그 내부에 무한히 이어지지만 (따라서 유한 교집합만으로 최소 원소에 도달할 수 없다) 공집합에 도달하지는 않는 부분집합의 체인을 가지는 필터이다. 이에 따라 무한집합 위의 필터만이 자유 필터가 될 수 있다.
 
-![](https://velog.velcdn.com/images/dimenerno/post/3769cca8-52df-4faa-af87-4225e588e89d/image.png)
+<img src="/public/hyper-2.png" style="width: 100%; max-width: 300px; margin: 2em auto;">
 
 그 실례를 살펴보자.
 
@@ -107,7 +106,7 @@ $\mathcal{V}$는 필터임을 확인할 수 있다. 이것은 $\mathcal{U}$의 �
 
 따라서 자연수 집합은 프레셰 필터로부터 확장되는 자유 초필터를 가진다. 이 필터를 **프레셰 초필터**라고 부르자.
 
-![](https://velog.velcdn.com/images/dimenerno/post/30387200-2e80-4a74-82a2-b696ffe7e1cd/image.png)
+<img src="/public/hyper-3.png" style="width: 100%; max-width: 450px; margin: 2em auto;">
 
 ## 4. 초자연수
 

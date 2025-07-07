@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-07-07T15:57:27+09:00</updated>
+ <updated>2025-07-08T00:04:35+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -11964,44 +11964,40 @@ for y ∈ P:
    <link href="https://dimenerno.github.io/2025/01/25/los/en"/>
    <updated>2025-01-25T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/01/25/los/los-en</id>
-   <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This content continues from the &lt;a href=&quot;https://dimenerno.github.io/2025/01/22/hypernaturals/&quot;&gt;previous article&lt;/a&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;This post continues from the &lt;a href=&quot;https://dimenerno.github.io/2025/01/22/hypernaturals/&quot;&gt;previous post&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;5-nonstandard-characteristics-of-hypernatural-numbers&quot;&gt;5. Nonstandard Characteristics of Hypernatural Numbers&lt;/h2&gt;
 
-&lt;p&gt;Thus far, the hypernatural numbers we have examined have been those corresponding to standard natural numbers, such as $[0], [1], [2], \dots$. We shall now examine hypernatural numbers that diverge from the standard natural numbers.&lt;/p&gt;
+&lt;p&gt;The hypernatural numbers we have examined so far — $[0], [1], [2], \dots$ — correspond to standard natural numbers. We shall now examine some bizarre hypernatural numbers.&lt;/p&gt;
 
 &lt;p&gt;Consider the following hypernatural number $\mathfrak{n}$:&lt;/p&gt;
 
-\[(1, 2, 3, 4, \dots) \in \mathfrak{n}\]
+\[\mathfrak{n} = [(1, 2, 3, 4, \dots)]\]
 
-&lt;p&gt;Note that we express this as a membership relation rather than equality, as the definition of hypernatural numbers involves equivalence classes. Recalling the definition of inequality in hypernatural numbers, we observe that for any natural number $n$, we have $[n] &amp;lt; \mathfrak{n}$. That is, $\mathfrak{n}$ is a hypernatural number greater than all natural numbers. Therefore, the following holds in the hypernatural numbers:&lt;/p&gt;
+&lt;p&gt;Recalling how binary relation is defined for hypernaturals, for any natural number $n$, we have $[n] &amp;lt; \mathfrak{n}$. That is, $\mathfrak{n}$ is a hypernatural number greater than all natural numbers. That is, the following holds for hypernaturals:&lt;/p&gt;
 
 \[\phi_1 : \exists x \; ( \lbrace y : y &amp;lt; x \rbrace \text{ is infinite } )\]
 
-&lt;p&gt;This proposition does not hold in the natural numbers.&lt;/p&gt;
+&lt;p&gt;This sentence does not hold in the natural numbers.&lt;/p&gt;
 
 &lt;p&gt;Now consider the following hypernatural number $\mathfrak{m}$:&lt;/p&gt;
 
-\[(1, 2!, 3!, 4!, \dots) \in \mathfrak{m}\]
+\[\mathfrak{m} = [(1, 2!, 3!, 4!, \dots)]\]
 
-&lt;p&gt;For any standard natural number $n$, $\mathfrak{m}$ is divisible by $[n]$. That is, $\mathfrak{m}$ has every natural number as a divisor. Therefore, the following holds in the hypernatural numbers:&lt;/p&gt;
+&lt;p&gt;For any standard natural number $n$, $\mathfrak{m}$ is divisible by $[n]$. That is, $\mathfrak{m}$ has every natural number as a divisor. Therefore, the following holds for hypernaturals:&lt;/p&gt;
 
 \[\phi_2 : \exists x \; (\lbrace y : y \mid x \rbrace \text{ is infinite })\]
 
-&lt;p&gt;This proposition also does not hold in the natural numbers.&lt;/p&gt;
+&lt;p&gt;Again, this sentence does not hold in the natural numbers.&lt;/p&gt;
 
-&lt;p&gt;However, there appears to be something peculiar here. In the introduction to the previous article, I stated that the natural numbers and hypernatural numbers are logically indistinguishable. Yet $\phi_1$ and $\phi_2$ are true in $\mathbb{N}^*$ but false in $\mathbb{N}$, suggesting that they are logically distinguishable. Have I been misleading?&lt;/p&gt;
+&lt;p&gt;This may seem to contradict the promise delivered in the previous essay. There, I stated that the natural numbers and hypernatural numbers are logically indistinguishable. Yet $\phi_1$ and $\phi_2$, both of which seem to be a cogent logical formula, are true in $\mathbb{N}^*$ but false in $\mathbb{N}$. Have I been misleading?&lt;/p&gt;
 
-&lt;p&gt;Not at all. The key to resolving this apparent paradox lies in the fact that $\phi_1$ and $\phi_2$ are sentences that cannot be expressed in first-order logic. By the compactness theorem, “… is finite” cannot be expressed in first-order logic.&lt;/p&gt;
+&lt;p&gt;Of course not. The key to this apparent paradox lies in the fact that $\phi_1$ and $\phi_2$ &lt;em&gt;cannot&lt;/em&gt; be expressed in first-order logic. By the compactness theorem, “… is finite” is inexpressible in first-order logic.&lt;/p&gt;
 
-&lt;p&gt;The precise meaning of the statement that $\mathbb{N}^*$ and $\mathbb{N}$ are logically indistinguishable is as follows:&lt;/p&gt;
+&lt;p&gt;For a more precise statement, let us define the following:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Two models $\mathcal{M}_1$ and $\mathcal{M}_2$ of a language $\mathcal{L}$ are &lt;strong&gt;elementarily equivalent&lt;/strong&gt; if for any (first-order logic) sentence $\phi$,&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Two $\mathcal{L}$-models $\mathcal{M}_1$ and $\mathcal{M}_2$ of a language $\mathcal{L}$ are &lt;strong&gt;elementarily equivalent&lt;/strong&gt; if for any $\mathcal{L}$-sentence $\phi$,&lt;/p&gt;
 
 \[\mathcal{M_1} \vDash \phi \iff \mathcal{M}_2 \vDash \phi\]
 &lt;/blockquote&gt;
@@ -12010,7 +12006,7 @@ for y ∈ P:
   &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; $\mathbb{N}$ and $\mathbb{N}^*$ are elementarily equivalent.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;This theorem is a special case of Łoś’s theorem. Before introducing Łoś’s theorem, let us first examine the concept of generalised ultraproducts.&lt;/p&gt;
+&lt;p&gt;This theorem is a special case of Łoś’s theorem. But before we state Łoś’s theorem, let us first rigorously define ultraproducts.&lt;/p&gt;
 
 &lt;h2 id=&quot;6-ultraproducts&quot;&gt;6. Ultraproducts&lt;/h2&gt;
 
@@ -12031,16 +12027,16 @@ for y ∈ P:
 
   &lt;p&gt;This definition generalises naturally to $n$-ary functions.&lt;/p&gt;
 
-  &lt;h4 id=&quot;predicates-on-the-ultraproduct&quot;&gt;Predicates on the Ultraproduct&lt;/h4&gt;
+  &lt;h4 id=&quot;relations-on-the-ultraproduct&quot;&gt;Relations on the Ultraproduct&lt;/h4&gt;
 
-  &lt;p&gt;Let $P(x, y)$ be a predicate in $\mathcal{L}$. For two elements $\mathfrak{a} = [(a_i)_{i\in I}]$ and $\mathfrak{b} = [(b_i)_{i\in I}]$ of $\mathcal{M}^*$, we define:&lt;/p&gt;
+  &lt;p&gt;Let $P(x, y)$ be a relation in $\mathcal{L}$. For two elements $\mathfrak{a} = [(a_i)_{i\in I}]$ and $\mathfrak{b} = [(b_i)_{i\in I}]$ of $\mathcal{M}^*$, we define:&lt;/p&gt;
 
 \[\mathcal{M}^* \vDash P(\mathfrak{a}, \mathfrak{b}) \iff \lbrace i \in I : \mathcal{M}_i \vDash P(a_i, b_i) \rbrace \in \mathcal{U}\]
 
   &lt;p&gt;This definition generalises naturally to $n$-ary predicates.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;When defining operations and predicates on the ultraproduct, one must show that the results of operations and predicates are the same regardless of which element is chosen as a representative in the equivalence class. This follows readily from the intersection property of $\mathcal{U}$, so we leave it as an exercise.&lt;/p&gt;
+&lt;p&gt;When defining operations and relation on the ultraproduct, one needs to show that the definition is irrelevant to which element is chosen as a representative for each equivalence class. This follows readily from the intersection property of $\mathcal{U}$, so we leave it as an exercise.&lt;/p&gt;
 
 &lt;p&gt;We can now redefine the hypernatural numbers as the ultraproduct arising when $I, \mathcal{U}, \mathcal{L}, \mathcal{M}_i$ are respectively:&lt;/p&gt;
 
@@ -12159,7 +12155,7 @@ for y ∈ P:
 
 &lt;p&gt;하세 다이어그램&lt;sub&gt;Hasse diagram&lt;/sub&gt;을 통해 필터를 더 직관적으로 이해할 수 있다. 색칠된 영역은 $X = \lbrace 0, 1, 2 \rbrace$의 필터이다. 하세 다이어그램을 $\varnothing$에서 $X$로 가는 물줄기의 흐름으로 이해하면, 특정 지점에 잉크를 떨어뜨렸을 때 그 잉크가 퍼져 나가는 영역은 필터를 이룬다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/86ac1e36-13fe-46fb-a9cc-b6749d1c5a69/image.png&quot; width=&quot;400px&quot; style=&quot;margin: 20px auto 30px auto;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/hyper-1.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;2번 공리와 4번 공리에 의해, $A \in \mathcal{F}$라면 $A^c := X \setminus A \notin \mathcal{F}$이다. 이 사실을 강화하여, $X$의 &lt;em&gt;모든&lt;/em&gt; 부분집합에 대해 그 집합 또는 여집합이 필터에 있을 것을 요구하면 초필터의 정의를 얻는다.&lt;/p&gt;
 
@@ -12189,7 +12185,7 @@ for y ∈ P:
 
 &lt;p&gt;위 정리는 이렇게 이해할 수도 있다. 자유 필터는 그 내부에 무한히 이어지지만 (따라서 유한 교집합만으로 최소 원소에 도달할 수 없다) 공집합에 도달하지는 않는 부분집합의 체인을 가지는 필터이다. 이에 따라 무한집합 위의 필터만이 자유 필터가 될 수 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/3769cca8-52df-4faa-af87-4225e588e89d/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/hyper-2.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;그 실례를 살펴보자.&lt;/p&gt;
 
@@ -12217,7 +12213,7 @@ for y ∈ P:
 
 &lt;p&gt;따라서 자연수 집합은 프레셰 필터로부터 확장되는 자유 초필터를 가진다. 이 필터를 &lt;strong&gt;프레셰 초필터&lt;/strong&gt;라고 부르자.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/30387200-2e80-4a74-82a2-b696ffe7e1cd/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/hyper-3.png&quot; style=&quot;width: 100%; max-width: 450px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-초자연수&quot;&gt;4. 초자연수&lt;/h2&gt;
 
@@ -12273,19 +12269,15 @@ for y ∈ P:
    <link href="https://dimenerno.github.io/2025/01/22/hypernaturals/en"/>
    <updated>2025-01-22T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/01/22/hypernaturals/hypernaturals-en</id>
-   <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
-&lt;/blockquote&gt;
+   <content type="html">&lt;p&gt;Löwenheim-Skolem theorem states that there exist models that are elementarily equivalent yet nonisomorphic to the standard model of arithmetics. In other words, there exist number systems that satisfy all first-order sentences of arithmetics, yet are not “the” natural numbers.&lt;/p&gt;
 
-&lt;p&gt;According to the Löwenheim-Skolem theorem, there exist models that are elementarily equivalent to the standard arithmetic model but structurally nonisomorphic. In other words, there exist number systems that satisfy all first-order logical statements satisfied by the natural numbers, yet are not the natural numbers themselves.&lt;/p&gt;
-
-&lt;p&gt;In this article (series), we construct the &lt;strong&gt;hypernaturals&lt;/strong&gt;, a representative nonstandard model of arithmetic, using &lt;strong&gt;ultraproducts&lt;/strong&gt;, and prove &lt;strong&gt;Łoś’s theorem&lt;/strong&gt;, which guarantees that this model is elementarily equivalent to the standard arithmetic model.&lt;/p&gt;
+&lt;p&gt;In this article, we construct the &lt;strong&gt;hypernaturals&lt;/strong&gt;, a representative nonstandard model of arithmetic, using &lt;strong&gt;ultraproducts&lt;/strong&gt;, and prove &lt;strong&gt;Łoś’s theorem&lt;/strong&gt;, which states that this model is elementarily equivalent to the standard model of arithmetics.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-overview&quot;&gt;1. Overview&lt;/h2&gt;
 
-&lt;p&gt;By the compactness theorem, we know that first-order logic cannot distinguish between the finite and the infinite. Therefore, we might reasonably expect to be able to define a model that is first-order logically indistinguishable from the natural numbers by appropriately employing infinity.&lt;/p&gt;
+&lt;p&gt;By the compactness theorem, we know that first-order logic cannot distinguish between the finite and the infinite. Therefore, we might reasonably expect to be able to define a model that is indistinguishable from the standard model with respect to every first-order formula by a clever use of infinity.&lt;/p&gt;
 
-&lt;p&gt;Accordingly, let us define the hypernaturals $[0], [1], [2], \dots$ as follows:&lt;/p&gt;
+&lt;p&gt;To this end, we may tro to define the hypernaturals $[0], [1], [2], \dots$ as follows:&lt;/p&gt;
 
 \[\begin{aligned}
 [0] &amp;amp;= (0, 0, 0, 0, 0, \dots) \\
@@ -12293,7 +12285,7 @@ for y ∈ P:
 [2] &amp;amp;= (2, 2, 2, 2, 2, \dots)
 \end{aligned}\]
 
-&lt;p&gt;However, upon reflection, requiring all entries to be 0 in order to regard something as $[0]$ is excessively stringent. For instance, it would be natural to regard the tuple $(1, 1, 0, 0, 0, \dots)$, where only the first two entries are 1 and all remaining entries are 0, as $[0]$ as well. Therefore, let us consider any tuple as $[n]$ if all but finitely many entries equal $n$. That is,&lt;/p&gt;
+&lt;p&gt;This definition makes sense, but upon reflection, requiring all entries to be 0 in order to regard it as $[0]$ is excessively stringent. For instance, it would be natural to regard the tuple $(1, 1, 0, 0, 0, \dots)$, where the only the first two entries are nonzero, as $[0]$ as well. Therefore, let us consider a tuple as $[n]$ if all but finitely many entries equal $n$. That is,&lt;/p&gt;
 
 \[[n] = \lbrace (x_1, x_2, x_3, \dots) \in \mathbb{N}^\omega : \lbrace i \in \mathbb{N}: x_i \neq n \rbrace \text{ is finite} \rbrace\]
 
@@ -12301,9 +12293,9 @@ for y ∈ P:
 
 \[(0, 1, 0, 1, 0, 1, \dots)\]
 
-&lt;p&gt;To resolve this ambiguity, we shall arbitrarily adopt either the set of even numbers or the set of odd numbers. If we adopt the set of even numbers, the above tuple becomes $[0]$ (assuming indices begin from 0), whilst if we adopt the set of odd numbers, it becomes $[1]$.&lt;/p&gt;
+&lt;p&gt;To resolve this ambiguity, we shall arbitrarily choose one among the set of even numbers and the set of odd numbers. If we choose the even numbers, the above tuple becomes $[0]$ (indices begin at 0), whilst if we choose the odd numbers it becomes $[1]$.&lt;/p&gt;
 
-&lt;p&gt;However, this adoption process requires careful consideration. If the set of multiples of 6 is adopted, then the set of multiples of 3 must also be adopted for logical consistency, since tuples satisfying the latter trivially satisfy the former. Moreover, since the set of multiples of 3 is adopted, the set of numbers that are &lt;em&gt;not&lt;/em&gt; multiples of 3 must be rejected. The result of this process of adoption and rejection for all subsets of the natural numbers will correspond to a structure called an &lt;strong&gt;ultrafilter&lt;/strong&gt;. Given an appropriate ultrafilter, we can map any tuple to a hypernatural based upon it, and this entire process is called an &lt;strong&gt;ultraproduct&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This “choosing” requires some intricacy. For example, if the set of multiples of 6 is chosen, then the set of multiples of 3 must also be chosen for consistency, since tuples satisfying the latter trivially satisfy the former. Moreover, since the set of multiples of 3 is chosen, the set of numbers that are &lt;em&gt;not&lt;/em&gt; multiples of 3 must be rejected. The end result of this process of choosing and rejecing for all subsets of the natural numbers will give rise to a structure called an &lt;strong&gt;ultrafilter&lt;/strong&gt;. Given an appropriate ultrafilter, we can map any tuple to a hypernatural, and this entire process is called an &lt;strong&gt;ultraproduct&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;2-definition-of-ultrafilters&quot;&gt;2. Definition of Ultrafilters&lt;/h2&gt;
 
@@ -12320,11 +12312,11 @@ for y ∈ P:
 
 &lt;p&gt;Intuitively, a filter is a “collection of large sets”. From this perspective, axioms 1 and 2 express the trivial principle that the whole set is large and the empty set is small. Axiom 3 expresses the principle that a set containing a large set is large, whilst axiom 4 expresses the principle that finite intersections of large sets remain large.&lt;/p&gt;
 
-&lt;p&gt;As an aside, filters are used not only in ultraproducts but also in converting models of fuzzy logic into models of classical logic. In this context, filters become “collections of true statements” rather than “collections of large sets”. Moreover, the conversion from fuzzy logic to classical logic is also one way of understanding Cohen’s forcing method.&lt;/p&gt;
+&lt;p&gt;As a side note, filters are used not only in ultraproducts but also in converting models of fuzzy logic into models of classical logic. In this context, filters become “collections of true statements” rather than “collections of large sets”. And indeed, the conversion from fuzzy logic to classical logic is also one way of understanding Cohen’s forcing method.&lt;/p&gt;
 
-&lt;p&gt;Filters can be understood more intuitively through &lt;strong&gt;Hasse diagrams&lt;/strong&gt;. The shaded region represents a filter on $X = \lbrace 0, 1, 2 \rbrace$. If we understand the Hasse diagram as a flow of water from $\varnothing$ to $X$, the region where ink spreads when dropped at a particular point forms a filter.&lt;/p&gt;
+&lt;p&gt;Filters can be understood more intuitively through &lt;strong&gt;Hasse diagrams&lt;/strong&gt;. The shaded region represents a filter on $X = \lbrace 0, 1, 2 \rbrace$. If we understand the Hasse diagram as representing a stream of water from $\varnothing$ to $X$, the region an ink dropped at a particular point spreads over forms a filter.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/86ac1e36-13fe-46fb-a9cc-b6749d1c5a69/image.png&quot; width=&quot;400px&quot; style=&quot;margin: 20px auto 30px auto;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/hyper-1.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;By axioms 2 and 4, if $A \in \mathcal{F}$, then $A^c := X \setminus A \notin \mathcal{F}$. Strengthening this fact by requiring that for &lt;em&gt;every&lt;/em&gt; subset of $X$, either the set or its complement is in the filter, we obtain the definition of an &lt;strong&gt;ultrafilter&lt;/strong&gt;.&lt;/p&gt;
 
@@ -12338,9 +12330,18 @@ for y ∈ P:
 
 &lt;h2 id=&quot;3-ultrafilters-on-infinite-sets&quot;&gt;3. Ultrafilters on Infinite Sets&lt;/h2&gt;
 
-&lt;p&gt;A filter with a least element is called a principal filter, whilst a filter that is not principal is called a free filter. All filters we have seen so far are principal filters, which perfectly match the image of “the region where ink dropped at a specific point spreads”.&lt;/p&gt;
+&lt;p&gt;A filter with the least element is called a &lt;strong&gt;principal filter&lt;/strong&gt;, whilst a filter that is not principal is called a &lt;strong&gt;free filter&lt;/strong&gt;. All filters we have seen so far are principal filters, which perfectly match the image of “the region an ink dropped at a particular point spreads over”.&lt;/p&gt;
 
-&lt;p&gt;Unlike principal filters, free filters are difficult to grasp intuitively, due to the following theorem:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Exercise.&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;Show that the least element of a principal filter is a singleton.&lt;/li&gt;
+    &lt;li&gt;Show that “a filter with a minimal element” is an equivalent definition of the principal filter.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Unlike principal filters, free filters are difficult to visualise intuitively, due to the following theorem:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Every filter on a finite set is principal.&lt;/p&gt;
@@ -12348,29 +12349,29 @@ for y ∈ P:
 
 &lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Suppose $A_0 \in \mathcal{F}$ is not a minimal element. Then there exists some $B \in \mathcal{F}$ such that $A_1 = A_0 \cap B \subsetneq A$. That is, $|A_1| &amp;lt; |A_0 |$. If $A_1$ is a minimal element, the proof is complete; otherwise, we repeat the same process. Since the given set has finite cardinality, this process cannot continue indefinitely and must terminate at a minimal element. ■&lt;/p&gt;
 
-&lt;p&gt;This theorem can also be understood as follows: a free filter is one that contains an infinitely descending chain of subsets within it (and thus cannot reach a minimal element through finite intersections alone) but never reaches the empty set. Accordingly, only filters on infinite sets can be free filters.&lt;/p&gt;
+&lt;p&gt;This theorem can also be understood as follows: a free filter is one that contains an infinitely descending chain of subsets within it. It thus does not reach a minimal element nor the empty set through finite intersections. Hence, only filters on infinite sets can be free.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/3769cca8-52df-4faa-af87-4225e588e89d/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/hyper-2.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Let us examine a concrete example.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $X$ be an infinite set. A subset $A \subset X$ is &lt;strong&gt;cofinite&lt;/strong&gt; if $X \setminus A$ is a finite set.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $X$ be an infinite set. A subset $A \subset X$ is &lt;strong&gt;cofinite&lt;/strong&gt; if $X \setminus A$ is finite.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $\mathcal{F}$ be the collection of all cofinite subsets of $\mathbb{N}$. Then $\mathcal{F}$ is a free filter.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;The proof is left as an exercise. The $\mathcal{F}$ in the above theorem is called the &lt;strong&gt;Fréchet filter&lt;/strong&gt;. For instance, the set of numbers greater than 10, $\lbrace 11, 12, 13, 14, \dots \rbrace$, is an element of $\mathcal{F}$, but the set of even numbers is not an element of $\mathcal{F}$.&lt;/p&gt;
+&lt;p&gt;The proof is left as an exercise. The $\mathcal{F}$ in the above theorem is called the &lt;strong&gt;Fréchet filter&lt;/strong&gt;. For instance, the set of numbers greater than 10 is an element of $\mathcal{F}$, but the set of even numbers is not.&lt;/p&gt;
 
-&lt;p&gt;The Fréchet filter is not an ultrafilter. However, it can be extended to an ultrafilter by the following theorem:&lt;/p&gt;
+&lt;p&gt;Fréchet filter is not an ultrafilter. However, it can be extended to an ultrafilter by the following theorem:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Every filter can be extended to an ultrafilter.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Let $\Omega$ be the collection of all filters on $X$, ordered by inclusion. Under this ordering, the union of filters forming a chain is itself a filter, as can be shown without difficulty. Therefore, by Zorn’s lemma, $\Omega$ has a maximal element $\mathcal{U}$. If $\mathcal{U}$ is not an ultrafilter, then there exists some $A_0 \subset X$ such that $A_0, A_0^c \notin U$. Define $\mathcal{V}$ as follows:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Let $\Omega$ be the collection of all filters on $X$, ordered by inclusion. Under this ordering, the union of filters forming a chain is itself a filter, as can be shown without much difficulty. Therefore, by Zorn’s lemma, $\Omega$ has a maximal element $\mathcal{U}$. We now claim that $\mathcal{U}$ is an ultrafilter. Assuming otherwise, there exists some $A_0 \subset X$ such that $A_0, A_0^c \notin U$. Define $\mathcal{V}$ as follows:&lt;/p&gt;
 
 \[\mathcal{V} = \mathcal{U} \cup \lbrace A \subset X : A_0 \subset A \rbrace \cup \lbrace A_0 \cap U : U \in \mathcal{U} \rbrace\]
 
@@ -12378,7 +12379,7 @@ for y ∈ P:
 
 &lt;p&gt;Hence, the set of natural numbers possesses a free ultrafilter extending from the Fréchet filter. Let us call this filter the &lt;strong&gt;Fréchet ultrafilter&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/30387200-2e80-4a74-82a2-b696ffe7e1cd/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/hyper-3.png&quot; style=&quot;width: 100%; max-width: 450px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-the-hypernaturals&quot;&gt;4. The Hypernaturals&lt;/h2&gt;
 
@@ -12390,43 +12391,42 @@ for y ∈ P:
   &lt;li&gt;For $A \subset \mathbb{N}$, either $A$ is an element of the filter or $A^c$ is an element of the filter.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Thanks to these three properties, the Fréchet ultrafilter is perfectly suited to resolving the ambiguity problem we encountered when outlining the basic idea of ultraproducts in the introduction. We can now define the hypernaturals as follows:&lt;/p&gt;
+&lt;p&gt;These three properties make the Fréchet ultrafilter perfectly suited for resolving the ambiguity problem we encountered when outlining the basic idea of ultraproducts in the introduction. We can now define the hypernaturals as follows.&lt;/p&gt;
 
 &lt;p&gt;Let $\mathcal{U}$ be a free ultrafilter. Define the following equivalence relation on $\mathbb{N}^\omega$:&lt;/p&gt;
 
 \[(n_0, n_1, n_2, \dots) \sim (m_0, m_1, m_2, \dots) \iff \lbrace i \in \mathbb{N} : n_i = m_i \rbrace \in \mathcal{U}\]
 
-&lt;p&gt;It is not difficult to verify that this is indeed an equivalence relation. Therefore, we can take equivalence classes as follows:&lt;/p&gt;
+&lt;p&gt;It is not difficult to verify that this is indeed an equivalence relation. Therefore, we can take equivalence classes:&lt;/p&gt;
 
 \[\mathbb{N}^* := \mathbb{N}^\omega/\sim\]
 
-&lt;p&gt;We call $\mathbb{N}^*$ the &lt;strong&gt;hypernaturals&lt;/strong&gt;. The reason we wrote hypernaturals as $[n]$ in the introduction is that the definition of hypernaturals consists of equivalence classes. What remains is to define operations and predicate relations on the hypernaturals.&lt;/p&gt;
+&lt;p&gt;We call $\mathbb{N}^*$ the &lt;strong&gt;hypernaturals&lt;/strong&gt;. This reveals why the hypernaturals were written as $[n]$ in the introduction — a hypernatural number is an equivalence class. Indeed, it would have more accurate to write $[n]$ ans $[(n, n, n, \dots)]$, but let us allow ourselves some abuse of notation.&lt;/p&gt;
 
-&lt;p&gt;Addition of hypernaturals is defined naturally as follows:&lt;/p&gt;
+&lt;p&gt;What remains now is to define operations and  relations on the hypernaturals. Addition of hypernaturals is defined naturally as follows:&lt;/p&gt;
 
-\[(n_0, n_1, \dots) + (m_0, m_1, \dots) = (n_0 + m_0, n_1 + m_1, \dots)\]
+\[[(n_0, n_1, \dots)] + [(m_0, m_1, \dots)] = [(n_0 + m_0, n_1 + m_1, \dots)]\]
 
-&lt;p&gt;There is one subtle issue here. Since the definition of hypernaturals involves equivalence classes, we must show that the result of the above addition is unaffected regardless of which representative of an equivalence class we choose. That is, for&lt;/p&gt;
+&lt;p&gt;There is one subtle issue here. Since hypernaturals are equivalence classes, we need to show that the above operation is well-defined regardless of which representative of an equivalence class we choose. That is, for&lt;/p&gt;
 
 \[\begin{gather}
 (n_0, n_1, \dots), (n_0&apos;, n_1&apos;,  \dots) \in [n]\\
-(m_0, m_1,  \dots), (m_0&apos;, m_1&apos;, \dots) \in [m]
+(m_0, m_1,  \dots), (m_0&apos;, m_1&apos;, \dots) \in [m],
 \end{gather}\]
 
-&lt;p&gt;we must show that&lt;/p&gt;
+&lt;p&gt;we need to show that&lt;/p&gt;
 
 \[(n_0, n_1, \dots) + (m_0, m_1,  \dots), (n_0&apos;, n_1&apos;, \dots) + (m_0&apos;, m_1&apos;, \dots) \in [n + m]\]
 
-&lt;p&gt;Fortunately, this is not difficult to establish.&lt;/p&gt;
+&lt;p&gt;Fortunately, this is not too difficult to establish and is left as an exercise.&lt;/p&gt;
 
-&lt;p&gt;Multiplication and successor can be defined similarly. Meanwhile, binary relations such as $&amp;lt;$ are defined as follows:&lt;/p&gt;
+&lt;p&gt;Multiplication and successor can be defined similarly. Binary relations such as $&amp;lt;$ are defined as follows:&lt;/p&gt;
 
 \[(n_0, n_1, n_2, \dots) &amp;lt; (m_0, m_1, m_2, \dots) \iff \lbrace i \in \mathbb{N} : n_i &amp;lt; m_i \rbrace \in \mathcal{U}\]
 
 &lt;p&gt;This definition can be naturally generalised to ternary and quaternary relations.&lt;/p&gt;
 
 &lt;p&gt;We have thus defined the hypernaturals. In the next article, we shall examine various nonstandard features of the hypernaturals and Łoś’s theorem, which shows that despite such nonstandardness, the hypernaturals and natural numbers cannot be distinguished by first-order logic.&lt;/p&gt;
-
 </content>
  </entry>
  

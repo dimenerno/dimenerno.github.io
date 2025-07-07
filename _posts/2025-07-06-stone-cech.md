@@ -14,9 +14,9 @@ related:
 >
 > <img src="/public/stone-cech-1.png" style="width: 100%; max-width: 140px; mix-blend-mode: multiply; margin: 0 auto 0.5em auto;">
 
-한점 콤팩트화가 국소적으로 콤팩트한 공간에서만 가능한 것과 달리, 스톤-체흐 콤팩트화는 _모든_ 위상공간에서 가능하다. 따라서 스톤-체흐 콤팩트화는 일반 위상공간의 범주 $\mathbf{Top}$를 콤팩트 하우스도르프 공간의 범주 $\mathbf{CHaus}$로 보내는 함자이다. 구체적으로,
+한점 콤팩트화가 국소적으로 콤팩트한 공간에서만 가능한 것과 달리, 스톤-체흐 콤팩트화는 _모든_ 위상공간에서 가능하다. 뿐만 아니라 스톤-체흐 콤팩트화는 일반 위상공간의 범주 $\mathbf{Top}$를 콤팩트 하우스도르프 공간의 범주 $\mathbf{CHaus}$로 보내는 함자이다. 즉 다음과 같이 스톤-체흐 콤팩트화를 정의할 수도 있다.
 
-> **정의.** 망각함자<sub>forgetful functor</sub> $U: \mathbf{CHaus} \to \mathbf{Top}$의 좌 어드조인트  $\beta: \mathbf{Top} \to \mathbf{CHaus}$에 대해, $\beta X \in \mathbf{CHaus}$를 $X$의 스톤-체흐 콤팩트화라고 한다.
+> **정의.** 망각함자<sub>forgetful functor</sub> $U: \mathbf{CHaus} \to \mathbf{Top}$의 우 어드조인트  $\beta: \mathbf{Top} \to \mathbf{CHaus}$에 대해, $\beta X \in \mathbf{CHaus}$를 $X$의 스톤-체흐 콤팩트화라고 한다.
 
 [예전 글](http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/)에서 다룬 동치성으로 인해 이는 처음의 정의와 동치이다.
 
@@ -26,7 +26,7 @@ $\beta$의 존재성 증명은 크게 세 단계로 구성된다. 첫째, 임의
 
 **증명.**
 
-#### 1. $\beta X$의 구성
+#### 1. $\beta X$의 정의
 
 집합 $C$를 다음과 같이 정의하자.
 
@@ -45,8 +45,8 @@ $$
 | 이름        | 정의                                     | 풀어쓰기                                   |
 |-----------|----------------------------------------|----------------------------------------|
 | $C$       | $\lbrace  f \mid f : X \to^\ast [0, 1] \rbrace $           | $X \to^\ast [0, 1]$                    |
-| $\beta X$ | $[0, 1]^C$                             | $(X \to^\ast [0, 1]) \to [0, 1]$              |
-| $e$       | $x \mapsto (f \mapsto f(x))$ | $X \to ((X \to^\ast [0, 1]) \to [0, 1])$ |
+| $\beta X$ | $[0, 1]^C$                             | $X \to^\ast [0, 1] \to [0, 1]$              |
+| $e$       | $x \mapsto (f \mapsto f(x))$ | $X \to X \to^\ast [0, 1] \to [0, 1]$ |
 
 **이제 $e$가 연속임을 보이자.** $[0, 1]$은 거리 위상이므로, $\beta X = [0, 1]^C$의 토폴로지는 균등 노름<sub>uniform norm</sub>으로 생성된 것으로 간주할 수 있다. 따라서 임의의 $f : C \to [0, 1]$에 대해,
 
