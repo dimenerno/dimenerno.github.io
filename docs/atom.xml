@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-07-07T13:07:10+09:00</updated>
+ <updated>2025-07-07T15:57:27+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -13106,17 +13106,17 @@ for y ∈ P:
 
 &lt;h2 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h2&gt;
 
-&lt;p&gt;In “That is Venus” and “The last Queen of England is Elizabeth II”, the expressions ‘that’, ‘Venus’, ‘the last Queen of England’, and ‘Elizabeth II’ are expressions that &lt;strong&gt;refer&lt;/strong&gt; to exactly one object in this world by specifying it. However, the specific principles by which these expressions come to refer to particular objects are filled with philosophical puzzles.&lt;/p&gt;
+&lt;p&gt;In “That is Venus” and “The last Queen of England is Elizabeth II”, the expressions ‘that’, ‘Venus’, ‘the last Queen of England’, and ‘Elizabeth II’ are expressions that &lt;strong&gt;refer&lt;/strong&gt; to exactly one object in this world by specifying it. However, the specific principles by which these expressions come to refer to particular objects are shrouded with philosophical puzzles.&lt;/p&gt;
 
 &lt;p&gt;This article addresses six questions:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;The subject of reference:&lt;/strong&gt; Is it the speaker or the word?&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;The meaning of referring expressions:&lt;/strong&gt; Is it a description, the referent, or something else?&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;The mechanism of reference:&lt;/strong&gt; How do referring expressions become connected to specific persons/objects?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The subject of referring:&lt;/strong&gt; Is reference done by the speaker via their intention, or by the word via its meaning?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The meaning of referring expressions:&lt;/strong&gt; Is it a (defininte) description, the referent, or something else?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The mechanism of reference:&lt;/strong&gt; What grounds the correspondence between referring expressions and referred objects?&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;The scope of theories of reference:&lt;/strong&gt; Do all referring expressions share a common mechanism?&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;The privacy of reference:&lt;/strong&gt; To what extent does reference depend on the speaker’s private features (e.g., psychological states)?&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;The significance of theories of reference:&lt;/strong&gt; Does the referential relation actually exist? Is it philosophically significant?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The privacy of reference:&lt;/strong&gt; To what extent does reference depend on the speaker’s private states (e.g. intentions to refer)?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The significance of theories of reference:&lt;/strong&gt; Does the reference relation actually exist? Is it philosophically significant?&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;This article examines four theories: &lt;strong&gt;descriptivism, causal theory, character model, and intentionalism&lt;/strong&gt;, and briefly discusses &lt;strong&gt;referential scepticism&lt;/strong&gt;.&lt;/p&gt;
@@ -13133,60 +13133,60 @@ for y ∈ P:
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;Subject&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Subject&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt;Speaker&lt;/td&gt;
       &lt;td&gt;Referring expression&lt;/td&gt;
       &lt;td&gt;Pluralistic&lt;/td&gt;
       &lt;td&gt;Speaker&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Meaning&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Meaning&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt;Descriptive content&lt;/td&gt;
       &lt;td&gt;Referent&lt;/td&gt;
       &lt;td&gt;Character and content&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Mechanism&lt;/td&gt;
-      &lt;td&gt;Words are associated with specific descriptive content and refer to objects that satisfy it.&lt;/td&gt;
-      &lt;td&gt;Words are associated with causal chains that trace back to the referent’s dubbing ceremony.&lt;/td&gt;
-      &lt;td&gt;Words are associated with conventional referential rules (character) and refer to objects (content).&lt;/td&gt;
-      &lt;td&gt;Words are associated with intentions to refer to specific objects.&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Mechanism&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;Words are associated with specific descriptive content and refer to objects that satisfy them.&lt;/td&gt;
+      &lt;td&gt;Words are associated with causal chains that trace back to the referent’s initial baptism.&lt;/td&gt;
+      &lt;td&gt;Words are associated with conventional referential rules (character) to refer its referent (content).&lt;/td&gt;
+      &lt;td&gt;Words are epiphenomenal to the speaker’s intention to refer to a specific objects.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Scope&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Scope&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt;Broad&lt;/td&gt;
       &lt;td&gt;Narrow (names)&lt;/td&gt;
       &lt;td&gt;Moderate&lt;/td&gt;
       &lt;td&gt;Broad&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Privacy&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Privacy&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt;Strong privacy&lt;/td&gt;
       &lt;td&gt;Weak privacy&lt;/td&gt;
       &lt;td&gt;Moderate privacy&lt;/td&gt;
       &lt;td&gt;Strong~moderate privacy&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Scholars&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Scholars&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt;(Frege), Russell, Strawson, Reichenbach&lt;/td&gt;
       &lt;td&gt;Mill, Kripke, Kaplan&lt;/td&gt;
       &lt;td&gt;Kaplan&lt;/td&gt;
       &lt;td&gt;Kaplan, Grice, Reimer&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Strengths&lt;/td&gt;
-      &lt;td&gt;Explains Frege’s puzzle&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Strengths&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;Solves Frege’s puzzle&lt;/td&gt;
       &lt;td&gt;Solves Kripke’s arguments&lt;/td&gt;
-      &lt;td&gt;Elucidates the principles of pure indexicals&lt;/td&gt;
-      &lt;td&gt;Elucidates the principles of impure indexicals&lt;/td&gt;
+      &lt;td&gt;Explains how pure indexicals work&lt;/td&gt;
+      &lt;td&gt;Explains how impure indexicals work&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Weaknesses&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Weaknesses&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt;Kripke’s modal and semantic arguments&lt;/td&gt;
       &lt;td&gt;Problems with names having multiple bearers&lt;/td&gt;
       &lt;td&gt;Speaker-hearer dilemma arises with impure indexicals&lt;/td&gt;
-      &lt;td&gt;The Humpty Dumpty problem&lt;/td&gt;
+      &lt;td&gt;Humpty Dumpty problem&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -13200,10 +13200,9 @@ for y ∈ P:
 
   &lt;ol&gt;
     &lt;li&gt;A proper name $n$ is associated with specific &lt;strong&gt;descriptive content&lt;/strong&gt; $P$.&lt;/li&gt;
-    &lt;li&gt;$n$ is associated with $P$ because the &lt;strong&gt;speaker&lt;/strong&gt; mentally associates $n$ with $P$.&lt;/li&gt;
+    &lt;li&gt;$n$ is associated with $P$ because the &lt;strong&gt;speaker&lt;/strong&gt; privately (mentally) associates $n$ with $P$.&lt;/li&gt;
     &lt;li&gt;When there exists a &lt;strong&gt;unique&lt;/strong&gt; object $c$ that satisfies $P$, $n$ refers to $c$.&lt;/li&gt;
-    &lt;li&gt;The &lt;strong&gt;meaning&lt;/strong&gt; of $n$ and the referent of $n$ are distinct, with the former determining the latter.&lt;/li&gt;
-    &lt;li&gt;The meaning of $n$ is $P$.&lt;/li&gt;
+    &lt;li&gt;The &lt;strong&gt;meaning&lt;/strong&gt; of $n$ ($P$) and the referent of $n$ ($c$) are distinct, with the former determining the latter.&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
@@ -13216,13 +13215,13 @@ for y ∈ P:
     &lt;p&gt;Whilst it is standard to understand descriptive content as descriptions, scholars such as Searle argue that descriptive content need not be linguistically specifiable but may also be based on perception.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Descriptive content has the characteristic that the object satisfying it remains invariant. As we shall see, this is why descriptivism fails to adequately explain indexicals.&lt;/p&gt;
+    &lt;p&gt;The satisfaction relation of descriptive content is speaker-independent. As we shall see, this spells problem in explaining indexicals.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The meaning of $n$ is &lt;a href=&quot;https://velog.io/@dimenerno/De-Re%EC%97%90-%EB%8C%80%ED%95%9C-%EC%BD%B0%EC%9D%B8%EC%9D%98-%EA%B3%B5%EA%B2%A9&quot;&gt;de dicto&lt;/a&gt;. As we shall see, this is why descriptivism faces modal objections.&lt;/p&gt;
+    &lt;p&gt;Furthermore, the satisfaction relation is &lt;em&gt;de dicto&lt;/em&gt;. As we shall see, this spells problem in dealing with modality.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Theses 1, 3, 4, and 5 provide a &lt;strong&gt;semantics&lt;/strong&gt; for names—that is, a theory explaining what the codomain of the meaning function $M$ having names as its domain is—whilst thesis 2 provides a &lt;strong&gt;metasemantics&lt;/strong&gt; for names—that is, a theory explaining how the mapping $n \mapsto M(n)$ is defined for each name $n$.&lt;/p&gt;
+    &lt;p&gt;Theses 1, 3, 4 provide a &lt;strong&gt;semantics&lt;/strong&gt; for names — a theory specifing the domain (names) and codomain (descriptive content) of the meaning function $M$ — while thesis 2 provides a &lt;strong&gt;metasemantics&lt;/strong&gt; for names — a theory explaining how the map $n \mapsto M(n)$ is defined for each name $n$.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -13244,9 +13243,9 @@ for y ∈ P:
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Statement 1 is true but not a priori. Statement 2 is not nonsense. In case 3, Fred’s belief is consistent.&lt;/p&gt;
+&lt;p&gt;Let us first make some remarks. Statement 1 is true but not a priori. Statement 2 is not incomprehensible. Fred’s belief expressed in Statement 3 is not inconsistent.&lt;/p&gt;
 
-&lt;p&gt;If the meaning of a name were its referent, then 1 should be a priori according to the law of self-identity, 2 should be nonsense as it is a sentence lacking a referent (meaning), and in case 3, Fred’s belief should be inconsistent since Mark Twain and Samuel Clemens have the same meaning. However, descriptivism provides adequate explanations for all three examples by distinguishing between the meaning and referent of names.&lt;/p&gt;
+&lt;p&gt;If the meaning of a name were its referent, then 1 would be a priori by the law of self-identity, 2 would be nonsense as it has as its subject an expression lacking a referent, and in case 3, Fred’s belief would be inconsistent since Mark Twain and Samuel Clemens share the same referent. On the other hand, descriptivism provides adequate explanations for all three statements by distinguishing between the meaning and referent of names.&lt;/p&gt;
 
 &lt;h4 id=&quot;objection-1-the-modal-argument&quot;&gt;Objection 1. The Modal Argument&lt;/h4&gt;
 
@@ -13264,15 +13263,13 @@ for y ∈ P:
 
 &lt;p&gt;But 2 is false. Therefore, the meaning of a name is not descriptive content.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; Since the meaning of the name is descriptive content (dicto) rather than the object (re), the inference 1 → 2 is a &lt;a href=&quot;https://velog.io/@dimenerno/De-Re%EC%97%90-%EB%8C%80%ED%95%9C-%EC%BD%B0%EC%9D%B8%EC%9D%98-%EA%B3%B5%EA%B2%A9&quot;&gt;De Dicto substitution&lt;/a&gt;. In the case of De Re substitution, 1 becomes 3.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; Since the meaning of the name is &lt;em&gt;de dicto&lt;/em&gt;, the inference from 1 to 2 is a &lt;em&gt;de dicto&lt;/em&gt; substitution. In the case of &lt;em&gt;de re&lt;/em&gt; substitution, 1 becomes 3.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;3. When the former British Prime Minister who implemented Brexit is $c$, the following might have been the case: $c$ did not implement Brexit.&lt;/p&gt;
+  &lt;p&gt;3. Let $c$ be &lt;em&gt;that person&lt;/em&gt; who is the former British Prime Minister who implemented Brexit. Then the following might have been the case: $c$ did not implement Brexit.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Unlike 2, there is no problem in regarding 3 as true.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; To deal with the modal argument, descriptivists can modify theses 3 and 4 and reject thesis 5.&lt;/p&gt;
+&lt;p&gt;Unlike 2, there is no problem in regarding 3 as true. Hence, to deal with the modal argument, descriptivists may attempt to modify theses 3 and 4.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -13332,9 +13329,9 @@ for y ∈ P:
   &lt;p&gt;&lt;strong&gt;Causal Theory&lt;/strong&gt;.&lt;/p&gt;
 
   &lt;ol&gt;
-    &lt;li&gt;There is a &lt;strong&gt;dubbing ceremony&lt;/strong&gt;, an event in which object $c$ is first called by name $n$.&lt;/li&gt;
-    &lt;li&gt;Starting with those who participated in the dubbing ceremony, speakers who refer to $c$ with $n$ transmit this usage to other speakers through communication. Such transmission of usage forms a &lt;strong&gt;causal chain&lt;/strong&gt; of the name.&lt;/li&gt;
-    &lt;li&gt;The meaning (referent) of name $n$ is the object named in the dubbing ceremony that occurred at the starting point of $n$’s causal chain.&lt;/li&gt;
+    &lt;li&gt;There is an &lt;strong&gt;initial baptism&lt;/strong&gt;, an event in which object $c$ is first called by name $n$.&lt;/li&gt;
+    &lt;li&gt;Starting with those who participated in the initial baptism, speakers who refer to $c$ with $n$ transmit this usage to other speakers through communication. Such transmission of usage forms a &lt;strong&gt;causal chain&lt;/strong&gt; of the name.&lt;/li&gt;
+    &lt;li&gt;The meaning (referent) of name $n$ is the object named in the initial baptism that occurred at the starting point of $n$’s causal chain.&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
@@ -13344,17 +13341,17 @@ for y ∈ P:
 
 &lt;p&gt;In cases of names with multiple bearers, such as the earlier ‘Boris Johnson’ example, the authority to determine reference seems to lie with the speaker. This fact poses no problem for classical descriptivism. However, this&lt;/p&gt;
 
-&lt;p&gt;앞선 ‘보리스 존슨‘의 사례와 같이 다수의 담지자가 있는 이름의 경우, 지시의 결정권은 화자에게 있는 듯하다. 이 사실은 고전적 기술주의의 경우 문제가 되지 않는다. 그러나 스트로슨주의와 인과 이론에게 이 문제는 골칫거리이다.&lt;/p&gt;
+&lt;p&gt;In cases of names with multiple bearers, such as the earlier ‘Boris Johnson’ example, the authority to determine reference seems to lie with the speaker. This fact poses no problem for classical descriptivism. However, this spells trouble for Strawsonian and causal theories.&lt;/p&gt;
 
-&lt;p&gt;스트로슨주의의 경우 이름 $n$의 지시체는 전문가 집단에 의해 유일하게 결정되므로 최대 1개의 지시체만을 가질 수 있다. 그러나 다수의 담지자가 있는 이름이 분명 가능하므로, 스트로슨주의는 이름을 더 세분화해서 생각해야 한다. 즉, 문자적으로 동등하지만($\ulcorner n_1 \urcorner = \ulcorner n_2 \urcorner$) 의미론적으로 다른($n_1 \mapsto c_1, n_2 \mapsto c_2, c_1 \neq c_2$) 이름들이 가능하다고 보는 것이다. 그러나 이 경우, 화자가 $\ulcorner n_i \urcorner$를 발화할 때 $i$를 결정하는 원리가 무엇이냐는 문제가 생긴다. &lt;em&gt;해당 원리가 화자의 내면 기술구일 수는 없는데, $\ulcorner n_i \urcorner$을 사용하여 $c_1$ 또는 $c_2$를 지시할 수 있으나 $c_1$과 $c_2$를 구별해 내는 데 충분한 지시적 내용을 갖추지 못한 화자를 떠올릴 수 있기 때문이다.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In the case of Strawson’s theory, the referent of a name $n$ is uniquely determined by a group of experts, so it can have at most one referent. However, since names with multiple bearers are clearly possible, Strawson’s theory must consider names in a more nuanced way. That is, it must acknowledge the possibility of names that are literally equivalent ($\ulcorner n_1 \urcorner = \ulcorner n_2 \urcorner$) but semantically different ($n_1 \mapsto c_1, n_2 \mapsto c_2, c_1 \neq c_2$). However, this raises the question of what principle determines $i$ when the speaker utters $\ulcorner n_i \urcorner$. &lt;em&gt;This principle cannot be the speaker’s internal description, as one can imagine a speaker who can refer to either $c_1$ or $c_2$ using $\ulcorner n_i \urcorner$, but lacks sufficient descriptive content to distinguish between $c_1$ and $c_2$.&lt;/em&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;필자는 이탤릭체 내용을 받아들이지 못했다. 그런 경우가 정말로 있나?&lt;/p&gt;
+  &lt;p&gt;I cannot accept the italicised content. Are there really such cases?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;밀주의에도 비슷한 문제가 발생한다. 이 문제를 극복하기 위해 캐플런은 이름을 &lt;strong&gt;심리 현상&lt;/strong&gt;으로 간주한다. 즉, 이름 $n$은 문자적 내용 $\ulcorner n \urcorner$과, $\ulcorner n \urcorner$으로 $c$를 지시하려는 의도가 얽힌 심리 현상이며, 인과적 사슬을 통해 전달되는 것은 이 심리 현상이다. 이에 따르면 다수의 담지자를 가지는 이름은 $n_1 = (\ulcorner n \urcorner, c_1), n_2 = (\ulcorner n \urcorner, c_2)$과 같이 구별되는 이름이며, $n_1$과 $n_2$를 성공적으로 습득한 화자는 자신의 의도에 따라 $n_1$ 또는 $n_2$를 선택하여 사용할 수 있다.&lt;/p&gt;
+&lt;p&gt;A similar problem arises in Millianism. To overcome this issue, Kaplan considers names as &lt;strong&gt;psychological phenomena&lt;/strong&gt;. That is, a name $n$ is a psychological phenomenon intertwined with the literal content $\ulcorner n \urcorner$ and the intention to refer to $c$ using $\ulcorner n \urcorner$, and what is transmitted through the causal chain is this psychological phenomenon. According to this view, names with multiple bearers are distinguished as $n_1 = (\ulcorner n \urcorner, c_1), n_2 = (\ulcorner n \urcorner, c_2)$, and a speaker who has successfully acquired $n_1$ and $n_2$ can choose to use either $n_1$ or $n_2$ according to their intention.&lt;/p&gt;
 
-&lt;p&gt;캐플런과 구별되는 또 하나의 노선은 다수의 담지자 문제를 인과 이론과 지표사 이론의 혼합으로 해결하려는 시도이다. 이 노선은 르카나티, 펠처, 래인스버리 등에 의해 채택되었으며, 다음 글에서 살펴 볼 지표사 이론에 대한 이해를 요구한다.&lt;/p&gt;
+&lt;p&gt;Another approach that differs from Kaplan’s is the attempt to resolve the problem of multiple bearers through a combination of causal theory and indexical theory. This approach has been adopted by Lucanati, Pelcher, and Rainsbury, and requires an understanding of the indexical theory that will be examined in the following text.&lt;/p&gt;
 </content>
  </entry>
  
@@ -13453,25 +13450,27 @@ for y ∈ P:
  </entry>
  
  <entry>
-   <title>칸토어-벤딕슨 정리</title>
+   <title>칸토어-벤딕슨 정리와 폴란드 공간</title>
    <link href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson"/>
    <updated>2024-12-25T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2024/12/25/Cantor-Bendixson</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 위상공간 $X$의 집합 $P$에 대해 $P’ = P$일 때 $P$를 &lt;strong&gt;완벽한 집합(perfect set)&lt;/strong&gt;이라고 한다. ($P’$은 $P$의 집적점들의 집합)&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 위상공간 $X$의 집합 $P$에 대해 $P’ = P$일 때 $P$를 &lt;strong&gt;완벽한 집합&lt;sub&gt;perfect set&lt;/sub&gt;&lt;/strong&gt;이라고 한다. ($P’$은 $P$의 집적점들의 집합)&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; 모든 완벽한 집합은 닫힌 집합이지만, 역은 성립하지 않는다. 일반적으로 $S \not\subset S’$ ($S$가 고립점을 가짐), $S’ \not\subset S$ ($S$가 닫힌 집합이 아님) 임에 유의하라.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; 모든 완벽한 집합은 닫힌 집합이지만, 역은 성립하지 않는다. 일반적으로 $S \not\subset S’$ ($S$가 고립점을 가짐), $S’ \not\subset S$ ($S$가 닫힌 집합이 아님) 임에 유의하라. 뒤집어 말해, 완벽한 집합은 고립점이 없는 닫힌 집합이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X$의 임의의 부분공간이 린델뢰프일 때 $X$를 &lt;strong&gt;세습적 린델뢰프(hereditarily Lindelöf)&lt;/strong&gt;라고 한다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X$의 임의의 부분공간이 린델뢰프일 때 $X$를 &lt;strong&gt;세습적 린델뢰프&lt;sub&gt;hereditarily Lindelöf&lt;/sub&gt;&lt;/strong&gt;라고 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;약한 칸토어-벤딕슨 정리.&lt;/strong&gt; $X$가 세습적 린델뢰프 공간이라고 하자. $F \subset X$가 닫힌 집합일 때 어떤 완벽한 집합 $P$와 가산집합 $C$가 존재하여 $F = P \sqcup C$이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/d1f81be8-2878-4158-844b-96ce3d8cc418/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/cantor-bendixson.png&quot; style=&quot;width: 100%; max-width: 600px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;완벽한 집합은 고립점이 없는 닫힌 집합이므로, 위 정리는 “닫힌 집합은 최대 가산 개의 고립점을 가진다”로 재진술할 수 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 다음과 같이 $P, C$를 정의한다.&lt;/p&gt;
 
@@ -13493,13 +13492,11 @@ for y ∈ P:
 
 &lt;p&gt;&lt;em&gt;Proof of Claim.&lt;/em&gt; Claim 1에 의해 $P$는 $F$에서 닫힌 집합이며, $F$가 닫힌 집합이므로 $P$는 $X$에서 닫힌 집합이다. 따라서 $P’ \subset P$이다. 역을 보이기 위해 $x \in P$라고 하자. 임의의 $x$의 근방 $U$에 대해 $U \cap F = (U \cap C) \sqcup (U \cap P)$가 비가산이다. $C$가 가산이므로, $U \cap P$가 비가산이어야 한다. 따라서 $U$는 $P$와 $\lbrace x \rbrace$보다 큰 교집합을 가지며, $x \in P’$이다. ■&lt;/p&gt;
 
-&lt;hr /&gt;
-
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 분리 가능한(separable) 완비 거리화 가능 공간을 &lt;strong&gt;폴란드 공간(Polish space)&lt;/strong&gt;이라고 한다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 분리 가능한&lt;sub&gt;separable&lt;/sub&gt; 완비 거리화 가능 공간을 &lt;strong&gt;폴란드 공간&lt;sub&gt;Polish space&lt;/sub&gt;&lt;/strong&gt;이라고 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;거리화 가능 공간에서 분리 가능성, 2차 가산, 그리고 린델뢰프는 동치이므로 해당 세 가지 조건 중 하나로 정의를 대체할 수 있다. ‘폴란드 공간’이라는 이름은 해당 공간을 처음으로 연구한 학자들인 시에르핀스키, 쿠라토프스키, 타르스키 등이 폴란드인들이었기 때문에 기인했다.&lt;/p&gt;
+&lt;p&gt;거리화 가능 공간에서 분리 가능성, 2차 가산, 그리고 린델뢰프는 동치이므로 해당 세 가지 조건 중 하나로 정의를 대체할 수 있다. ‘폴란드 공간’이라는 이름은 해당 공간을 처음으로 연구한 학자들인 시에르핀스키, 쿠라토프스키, 타르스키 등이 폴란드인들인 데에서 유래했다.&lt;/p&gt;
 
 &lt;p&gt;$X$가 폴란드 공간이라는 더 강한 조건이 주어지면 칸토어-벤딕슨 분해가 유일함을 증명할 수 있다.&lt;/p&gt;
 
@@ -13528,7 +13525,7 @@ for y ∈ P:
  </entry>
  
  <entry>
-   <title>The Cantor-Bendixson Theorem</title>
+   <title>The Cantor-Bendixson Theorem and Polish Space</title>
    <link href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson/en"/>
    <updated>2024-12-25T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2024/12/25/Cantor-Bendixson/Cantor-Bendixson-en</id>
@@ -13537,20 +13534,22 @@ for y ∈ P:
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; For a set $P$ in a topological space $X$, we call $P$ a &lt;strong&gt;perfect set&lt;/strong&gt; when $P’ = P$, where $P’$ denotes the set of accumulation points of $P$.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A set $P$ in a topological space $X$ is &lt;strong&gt;perfect&lt;/strong&gt; when $P’ = P$. Here, $P’$ denotes the set of limit points of $P$.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; Every perfect set is a closed set, but the converse does not hold. Note that in general $S \not\subset S’$ (when $S$ has isolated points) and $S’ \not\subset S$ (when $S$ is not a closed set).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; Every perfect set is a closed set, but the converse does not hold. Recall that in general $S \not\subset S’$ (when $S$ has isolated points) and $S’ \not\subset S$ (when $S$ is not a closed set). It follows that &lt;em&gt;a perfect set is a closed set with no isolated points.&lt;/em&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; We call $X$ &lt;strong&gt;hereditarily Lindelöf&lt;/strong&gt; when every subspace of $X$ is Lindelöf.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A topological space $X$ is &lt;strong&gt;hereditarily Lindelöf&lt;/strong&gt; when every subspace of $X$ is Lindelöf.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Weak Cantor-Bendixson Theorem.&lt;/strong&gt; Let $X$ be a hereditarily Lindelöf space. For any closed set $F \subset X$, there exist a perfect set $P$ and a countable set $C$ such that $F = P \sqcup C$.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/d1f81be8-2878-4158-844b-96ce3d8cc418/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/cantor-bendixson.png&quot; style=&quot;width: 100%; max-width: 600px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Since a perfect space is a closed space with no isolated points, the above theorem can be restated as: A closed subspace of a hereditarily Lindelöf space has at most countable isolated points.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; We define $P$ and $C$ as follows:&lt;/p&gt;
 
@@ -13560,7 +13559,7 @@ for y ∈ P:
 
 &lt;p&gt;Note that $F = P \sqcup C$.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Claim 1.&lt;/em&gt; $C$ is an open set in $F$.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Claim 1.&lt;/em&gt; $C$ is open in $F$.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Proof of Claim.&lt;/em&gt; When $x \in C$, there exists a neighbourhood $U$ of $x$ such that $U \cap F$ is countable. That is, for any $y \in U \cap F$, $U$ is a neighbourhood of $y$ and $U \cap F$ is countable, so $y \in C$. Therefore $U \cap F \subset C$. □&lt;/p&gt;
 
@@ -13572,13 +13571,11 @@ for y ∈ P:
 
 &lt;p&gt;&lt;em&gt;Proof of Claim.&lt;/em&gt; By Claim 1, $P$ is a closed set in $F$, and since $F$ is a closed set, $P$ is a closed set in $X$. Therefore $P’ \subset P$. To show the reverse inclusion, let $x \in P$. For any neighbourhood $U$ of $x$, we have that $U \cap F = (U \cap C) \sqcup (U \cap P)$ is uncountable. Since $C$ is countable, $U \cap P$ must be uncountable. Therefore $U$ has intersection with $P$ larger than $\lbrace x \rbrace$, and hence $x \in P’$. ■&lt;/p&gt;
 
-&lt;hr /&gt;
-
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A separable complete metrisable space is called a &lt;strong&gt;Polish space&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;In metrisable spaces, separability, second countability, and the Lindelöf property are equivalent, so the definition can be replaced with any of these three conditions. The name ‘Polish space’ derives from the fact that the mathematicians who first studied these spaces—Sierpiński, Kuratowski, Tarski, and others—were Polish.&lt;/p&gt;
+&lt;p&gt;In metrisable spaces, separability, second countability, and the Lindelöf property are equivalent, so the definition can be replaced with any of these three conditions. The name ‘Polish space’ derives from the fact that the mathematicians who first studied these spaces — Sierpiński, Kuratowski, Tarski — were Polish.&lt;/p&gt;
 
 &lt;p&gt;When the stronger condition that $X$ is a Polish space is given, one can prove that the Cantor-Bendixson decomposition is unique.&lt;/p&gt;
 

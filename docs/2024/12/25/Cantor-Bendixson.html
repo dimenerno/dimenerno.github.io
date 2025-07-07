@@ -12,7 +12,7 @@
   />
 
   <title>
-     칸토어-벤딕슨 정리 &middot; 디멘의 블로그 
+     칸토어-벤딕슨 정리와 폴란드 공간 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -369,7 +369,7 @@
       </div>
 
       <div class="container content"><div class="post">
-  <h1 class="post-title">칸토어-벤딕슨 정리</h1>
+  <h1 class="post-title">칸토어-벤딕슨 정리와 폴란드 공간</h1>
   <span class="post-date">25 Dec 2024</span>
   
     <div class="tag-container">
@@ -381,20 +381,22 @@
     </div>
   
   <blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$의 집합 $P$에 대해 $P’ = P$일 때 $P$를 <strong>완벽한 집합(perfect set)</strong>이라고 한다. ($P’$은 $P$의 집적점들의 집합)</p>
+  <p><strong>정의.</strong> 위상공간 $X$의 집합 $P$에 대해 $P’ = P$일 때 $P$를 <strong>완벽한 집합<sub>perfect set</sub></strong>이라고 한다. ($P’$은 $P$의 집적점들의 집합)</p>
 </blockquote>
 
-<p><em>Remark.</em> 모든 완벽한 집합은 닫힌 집합이지만, 역은 성립하지 않는다. 일반적으로 $S \not\subset S’$ ($S$가 고립점을 가짐), $S’ \not\subset S$ ($S$가 닫힌 집합이 아님) 임에 유의하라.</p>
+<p><em>Remark.</em> 모든 완벽한 집합은 닫힌 집합이지만, 역은 성립하지 않는다. 일반적으로 $S \not\subset S’$ ($S$가 고립점을 가짐), $S’ \not\subset S$ ($S$가 닫힌 집합이 아님) 임에 유의하라. 뒤집어 말해, 완벽한 집합은 고립점이 없는 닫힌 집합이다.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> $X$의 임의의 부분공간이 린델뢰프일 때 $X$를 <strong>세습적 린델뢰프(hereditarily Lindelöf)</strong>라고 한다.</p>
+  <p><strong>정의.</strong> $X$의 임의의 부분공간이 린델뢰프일 때 $X$를 <strong>세습적 린델뢰프<sub>hereditarily Lindelöf</sub></strong>라고 한다.</p>
 </blockquote>
 
 <blockquote>
   <p><strong>약한 칸토어-벤딕슨 정리.</strong> $X$가 세습적 린델뢰프 공간이라고 하자. $F \subset X$가 닫힌 집합일 때 어떤 완벽한 집합 $P$와 가산집합 $C$가 존재하여 $F = P \sqcup C$이다.</p>
 </blockquote>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/d1f81be8-2878-4158-844b-96ce3d8cc418/image.png" alt="" /></p>
+<p><img src="/public/cantor-bendixson.png" style="width: 100%; max-width: 600px; margin: 2em auto;" /></p>
+
+<p>완벽한 집합은 고립점이 없는 닫힌 집합이므로, 위 정리는 “닫힌 집합은 최대 가산 개의 고립점을 가진다”로 재진술할 수 있다.</p>
 
 <p><strong>증명.</strong> 다음과 같이 $P, C$를 정의한다.</p>
 
@@ -416,13 +418,11 @@
 
 <p><em>Proof of Claim.</em> Claim 1에 의해 $P$는 $F$에서 닫힌 집합이며, $F$가 닫힌 집합이므로 $P$는 $X$에서 닫힌 집합이다. 따라서 $P’ \subset P$이다. 역을 보이기 위해 $x \in P$라고 하자. 임의의 $x$의 근방 $U$에 대해 $U \cap F = (U \cap C) \sqcup (U \cap P)$가 비가산이다. $C$가 가산이므로, $U \cap P$가 비가산이어야 한다. 따라서 $U$는 $P$와 $\lbrace x \rbrace$보다 큰 교집합을 가지며, $x \in P’$이다. ■</p>
 
-<hr />
-
 <blockquote>
-  <p><strong>정의.</strong> 분리 가능한(separable) 완비 거리화 가능 공간을 <strong>폴란드 공간(Polish space)</strong>이라고 한다.</p>
+  <p><strong>정의.</strong> 분리 가능한<sub>separable</sub> 완비 거리화 가능 공간을 <strong>폴란드 공간<sub>Polish space</sub></strong>이라고 한다.</p>
 </blockquote>
 
-<p>거리화 가능 공간에서 분리 가능성, 2차 가산, 그리고 린델뢰프는 동치이므로 해당 세 가지 조건 중 하나로 정의를 대체할 수 있다. ‘폴란드 공간’이라는 이름은 해당 공간을 처음으로 연구한 학자들인 시에르핀스키, 쿠라토프스키, 타르스키 등이 폴란드인들이었기 때문에 기인했다.</p>
+<p>거리화 가능 공간에서 분리 가능성, 2차 가산, 그리고 린델뢰프는 동치이므로 해당 세 가지 조건 중 하나로 정의를 대체할 수 있다. ‘폴란드 공간’이라는 이름은 해당 공간을 처음으로 연구한 학자들인 시에르핀스키, 쿠라토프스키, 타르스키 등이 폴란드인들인 데에서 유래했다.</p>
 
 <p>$X$가 폴란드 공간이라는 더 강한 조건이 주어지면 칸토어-벤딕슨 분해가 유일함을 증명할 수 있다.</p>
 

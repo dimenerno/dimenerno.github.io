@@ -433,7 +433,7 @@
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2024/12/25/Cantor-Bendixson/en"> The Cantor-Bendixson Theorem </a>
+        <a href="/2024/12/25/Cantor-Bendixson/en"> The Cantor-Bendixson Theorem and Polish Space </a>
       </h1>
     <span class="post-date">25 Dec 2024</span>
     
@@ -453,20 +453,22 @@
 </blockquote>
 
 <blockquote>
-  <p><strong>Definition.</strong> For a set $P$ in a topological space $X$, we call $P$ a <strong>perfect set</strong> when $P’ = P$, where $P’$ denotes the set of accumulation points of $P$.</p>
+  <p><strong>Definition.</strong> A set $P$ in a topological space $X$ is <strong>perfect</strong> when $P’ = P$. Here, $P’$ denotes the set of limit points of $P$.</p>
 </blockquote>
 
-<p><em>Remark.</em> Every perfect set is a closed set, but the converse does not hold. Note that in general $S \not\subset S’$ (when $S$ has isolated points) and $S’ \not\subset S$ (when $S$ is not a closed set).</p>
+<p><em>Remark.</em> Every perfect set is a closed set, but the converse does not hold. Recall that in general $S \not\subset S’$ (when $S$ has isolated points) and $S’ \not\subset S$ (when $S$ is not a closed set). It follows that <em>a perfect set is a closed set with no isolated points.</em></p>
 
 <blockquote>
-  <p><strong>Definition.</strong> We call $X$ <strong>hereditarily Lindelöf</strong> when every subspace of $X$ is Lindelöf.</p>
+  <p><strong>Definition.</strong> A topological space $X$ is <strong>hereditarily Lindelöf</strong> when every subspace of $X$ is Lindelöf.</p>
 </blockquote>
 
 <blockquote>
   <p><strong>Weak Cantor-Bendixson Theorem.</strong> Let $X$ be a hereditarily Lindelöf space. For any closed set $F \subset X$, there exist a perfect set $P$ and a countable set $C$ such that $F = P \sqcup C$.</p>
 </blockquote>
 
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/d1f81be8-2878-4158-844b-96ce3d8cc418/image.png" alt="" /></p>
+<p><img src="/public/cantor-bendixson.png" style="width: 100%; max-width: 600px; margin: 2em auto;" /></p>
+
+<p>Since a perfect space is a closed space with no isolated points, the above theorem can be restated as: A closed subspace of a hereditarily Lindelöf space has at most countable isolated points.</p>
 
 <p><strong>Proof.</strong> We define $P$ and $C$ as follows:</p>
 
@@ -476,7 +478,7 @@
 
 <p>Note that $F = P \sqcup C$.</p>
 
-<p><em>Claim 1.</em> $C$ is an open set in $F$.</p>
+<p><em>Claim 1.</em> $C$ is open in $F$.</p>
 
 <p><em>Proof of Claim.</em> When $x \in C$, there exists a neighbourhood $U$ of $x$ such that $U \cap F$ is countable. That is, for any $y \in U \cap F$, $U$ is a neighbourhood of $y$ and $U \cap F$ is countable, so $y \in C$. Therefore $U \cap F \subset C$. □</p>
 
@@ -488,13 +490,11 @@
 
 <p><em>Proof of Claim.</em> By Claim 1, $P$ is a closed set in $F$, and since $F$ is a closed set, $P$ is a closed set in $X$. Therefore $P’ \subset P$. To show the reverse inclusion, let $x \in P$. For any neighbourhood $U$ of $x$, we have that $U \cap F = (U \cap C) \sqcup (U \cap P)$ is uncountable. Since $C$ is countable, $U \cap P$ must be uncountable. Therefore $U$ has intersection with $P$ larger than $\lbrace x \rbrace$, and hence $x \in P’$. ■</p>
 
-<hr />
-
 <blockquote>
   <p><strong>Definition.</strong> A separable complete metrisable space is called a <strong>Polish space</strong>.</p>
 </blockquote>
 
-<p>In metrisable spaces, separability, second countability, and the Lindelöf property are equivalent, so the definition can be replaced with any of these three conditions. The name ‘Polish space’ derives from the fact that the mathematicians who first studied these spaces—Sierpiński, Kuratowski, Tarski, and others—were Polish.</p>
+<p>In metrisable spaces, separability, second countability, and the Lindelöf property are equivalent, so the definition can be replaced with any of these three conditions. The name ‘Polish space’ derives from the fact that the mathematicians who first studied these spaces — Sierpiński, Kuratowski, Tarski — were Polish.</p>
 
 <p>When the stronger condition that $X$ is a Polish space is given, one can prove that the Cantor-Bendixson decomposition is unique.</p>
 
