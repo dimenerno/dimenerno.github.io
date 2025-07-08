@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: 인문학 &middot; 디멘의 블로그 
+     Urysohn Lemma &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/%EC%9D%B8%EB%AC%B8%ED%95%99/" />
+  <link rel="canonical" href="/2025/07/08/urysohn/en" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -211,7 +211,7 @@
     href="/"
     >Main</a
   >
-                                                                                                                                                                                                         
+                                                                                                                                                                                                       
     <a
       class="sidebar-nav-item lang-ko"
       href="/about/"
@@ -368,24 +368,88 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Urysohn Lemma</h1>
+  <span class="post-date">08 Jul 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'" >Topology</div>
+      
+    </div>
+  
+  <blockquote>
+  <p><strong>Urysohn Lemma.</strong> Let $X$ be a normal space. If $A$ and $B$ are disjoint closed sets in $X$, then there exists a continuous function $f: X \to [0, 1]$ such that $f[A] = \lbrace  0 \rbrace$ and $f[B] = \lbrace 1 \rbrace$.</p>
 
+  <p><img src="/public/urysohn-1.png" style="width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
+</blockquote>
 
-<h1>인문학</h1>
+<p>The separation axioms, e.g. normality, separate points from closed sets in the <em>given</em> space. The significance of the Urysohn Lemma lies in the fact that, in the case of the normal space, two closed sets can be further separated in a <em>nice</em> space. Specifically, with respect to an appropriate continuous map defined on the normal space to $[0, 1]$, two closed sets can be separated in $[0, 1]$. And the myriad “nice” properties of $[0, 1]$ — being a compact Hausdorff metric space, and a space which we are very familiar with and can visualise easily — suggest the remarkable potential of the Urysohn lemma.</p>
+
+<h4 id="proof">Proof</h4>
+
+<p>Let us denote $Q = [0, 1] \cap \mathbb{Q}$ (actually it suffices for $Q$ to be a countable dense subset of $[0, 1]$). Since $Q$ is countable, there exists an enumeration of the elements of $Q$. For instance, consider the lexicographic enumeration of the numerators and denominators, $\prec$.</p>
+
+\[0 \prec 1 \prec 1/2 \prec 1/3 \prec 2/3 \prec 1/4 \prec 1/5 \prec 2/5 \prec \cdots\]
+
+<p>Let us now define the collection $\lbrace  U_q \rbrace _{q \in Q}$. First, let $U_1 = X \setminus B$ (since $B$ is a closed set, $U_1$ is an open set). By normality, there exists an open set $U_0$ such that $A \subset U_0$ and $\overline{U_0} \subset U_1$. The remaining $U_q$ are recursively defined in the following manner. For any $p \prec q$,</p>
 
 <ul>
-           
-  <li>
-    <a href="/2025/06/17/kafka-blue-octavos">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</a>
-  </li>
-        
-  <li>
-    <a href="/2025/06/06/zizek-soft-facism">슬라보예 지젝, ｢소프트 파시즘, 인공지능, 그리고 수치심의 몰락｣</a>
-  </li>
-                                                                                                                                                                                                                         
+  <li>If $p &lt; q$, then $\overline{U_p} \subset U_q$.</li>
+  <li>If $q &lt; p$, then $\overline{U_q} \subset U_p$.</li>
 </ul>
+
+<p>By normality, these conditions can be satisfied, allowing us to fully define the collection $\lbrace  U_q \rbrace _{q \in Q}$.</p>
+
+<p><img src="/public/urysohn-2.png" style="width: 100%; max-width: 400px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
+
+<p>Now, let us define the function $f: X \to [0, 1]$ as follows.</p>
+
+\[f(x) = \begin{cases}
+\sup_{&lt;}\{q \in Q : x \notin U_q \} &amp; x \notin U_0 \\
+0 &amp; x \in U_0
+\end{cases}\]
+
+<p>The notation $\sup_&lt;$ indicates that we are taking the supremum with respect to $&lt;$ rather than $\prec$. From the definition, it follows that $f[A] = 0$ and $f[B] = 1$.</p>
+
+<p>To complete the proof, we must show that $f$ is continuous. Since $\lbrace  B_\epsilon(q) \cap [0, 1] : q \in Q, \epsilon \in \mathbb{Q}_{&gt;0} \rbrace$ forms a basis for the topology on $[0, 1]$, it suffices to show that for any $q \in Q$ and postivie rational $\epsilon$ smaller than a certain supremum, the set $S_{q, \epsilon} = f^{-1}(B_\epsilon(q) \cap [0, 1])$ is an open set. Indeed,</p>
+
+<ul>
+  <li>If $0 &lt; q &lt; 1$, then $S_{q, \epsilon} = (X \setminus \overline{U_{q-\epsilon}}) \cap U_{q + \epsilon}$, which is an open set.</li>
+  <li>If $q = 0$, then $S_{0, \epsilon} = U_\epsilon$, which is an open set.</li>
+  <li>If $q = 1$, then $S_{1, \epsilon} = X \setminus \overline{U_{1 - \epsilon}}$, which is an open set.</li>
+</ul>
+
+<p>Thus, $f$ is continuous. ■</p>
+
+<h4 id="remarks">Remarks</h4>
+
+<ul>
+  <li>
+    <p>The converse of the Urysohn lemma trivially holds. That is, for any closed sets $A, B \subset X$, if there exists a continuous function $f: X \to [0, 1]$ that separates $A$ and $B$, then the sets $U = f^{-1}[0, 1/2)$ and $V = f^{-1}(1/2, 1]$ are disjoint open sets that separate $A$ and $B$, implying that $X$ is normal. In simple terms, <strong>in normal spaces, the Urysohn separation property and the separation axiom are equivalent.</strong></p>
+  </li>
+  <li>
+    <p>This does not hold in regular spaces. Specifically, given any closed set $F$ and point $a$ in a regular space $X$, it is not always the case that there exists a continuous function $f: X \to [0, 1]$ satisfying $f(a) = 0$ and $f[F] = \lbrace 1 \rbrace$. A regular space that is Urysohn separable is called a <strong>Tychonoff space</strong> or a <strong>completely regular space</strong>, which is a strictly stronger condition than regularity.</p>
+  </li>
+  <li>
+    <p>The reason the proof of the Urysohn Lemma does not go through for regular spaces is that constructing the collection $\lbrace  U_q \rbrace $ satisfying $p &lt; q \implies \overline{U_p} \subset U_q$ requires the normality axiom.</p>
+  </li>
+</ul>
+
 </div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

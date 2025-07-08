@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: 인문학 &middot; 디멘의 블로그 
+     우리손 보조정리 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/%EC%9D%B8%EB%AC%B8%ED%95%99/" />
+  <link rel="canonical" href="/2025/07/08/urysohn" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -211,7 +211,7 @@
     href="/"
     >Main</a
   >
-                                                                                                                                                                                                         
+                                                                                                                                                                                                       
     <a
       class="sidebar-nav-item lang-ko"
       href="/about/"
@@ -368,24 +368,88 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">우리손 보조정리</h1>
+  <span class="post-date">08 Jul 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'" >위상수학</div>
+      
+    </div>
+  
+  <blockquote>
+  <p><strong>우리손 보조정리<sub>Urysohn Lemma</sub>.</strong> $X$가 정규<sub>normal</sub> 공간이라고 하자. $A, B$가 서로소인 $X$의 닫힌집합일 때, 어떤 연속함수 $f: X \to [0, 1]$이 존재하여 $f[A] = \lbrace  0 \rbrace$, $f[B] = \lbrace 1 \rbrace$이다.</p>
 
+  <p><img src="/public/urysohn-1.png" style="width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
+</blockquote>
 
-<h1>인문학</h1>
+<p>정규성을 비롯한 분리 공리는 <em>해당 공간에서</em> 점과 닫힌집합을 분리한다. 우리손 보조정리의 의의는, 정규성 분리 공리의 경우 두 닫힌집합은 <em>좋은 공간에서도</em> 분리 가능하다는 것이다. 구체적으로, 정규공간을 적절한 연속함수로 사상시켰을 때 두 닫힌집합은 $[0, 1]$에서 분리 가능하다. 그리고 $[0, 1]$의 여러 좋은 성질은 — 콤팩트 하우스도르프 거리 공간일 뿐 아니라 우리에게 굉장히 익숙한 공간이라 논증하기도 쉽다 — 우리손 보조정리의 굉장한 잠재력을 암시한다.</p>
+
+<h4 id="증명">증명</h4>
+
+<p>$Q = [0, 1] \cap \mathbb{Q}$라고 하자 (사실 $[0, 1]$의 가산 조밀 집합이기만 하면 된다). $Q$가 가산이므로 $Q$의 원소를 열거<sub>enumerate</sub>하는 방법이 존재한다. 일례로 분모-분자의 사전식 열거 $\prec$를 고려하자.</p>
+
+\[0 \prec 1 \prec 1/2 \prec 1/3 \prec 2/3 \prec 1/4 \prec 1/5 \prec 2/5 \prec \cdots\]
+
+<p>이제 다음과 같이 $\lbrace  U_q \rbrace _{q \in Q}$를 정의하자. 먼저 $U_1 = X \setminus B$이다 ($B$가 닫힌집합이므로 $U_1$은 열린집합이다). 정규성에 의해 $A \subset U_0$이면서 $\overline{U_0} \subset U_1$인 $U_0$가 존재한다. 나머지 $U_q$는 열거 순서에 따라 다음과 같이 정의한다. $p \prec q$인 임의의 $p$에 대해,</p>
 
 <ul>
-           
-  <li>
-    <a href="/2025/06/17/kafka-blue-octavos">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</a>
-  </li>
-        
-  <li>
-    <a href="/2025/06/06/zizek-soft-facism">슬라보예 지젝, ｢소프트 파시즘, 인공지능, 그리고 수치심의 몰락｣</a>
-  </li>
-                                                                                                                                                                                                                         
+  <li>$p &lt; q \implies \overline{U_p} \subset U_q$</li>
+  <li>$q &lt; p \implies \overline{U_q} \subset U_p$</li>
 </ul>
+
+<p>정규성에 의해 위 조건을 만족하며 $\lbrace  U_q \rbrace _{q \in Q}$를 완전히 정의할 수 있다.</p>
+
+<p><img src="/public/urysohn-2.png" style="width: 100%; max-width: 400px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
+
+<p>이제 다음과 같이 함수 $f: X \to [0, 1]$을 정의하자.</p>
+
+\[f(x) = \begin{cases}
+\sup_{&lt;}\{q \in Q : x \notin U_q \} &amp; x \notin U_0 \\
+0 &amp; x \in U_0
+\end{cases}\]
+
+<p>$\sup_&lt;$라는 표기는 $\prec$가 아닌 $&lt;$에 대해 상한을 취함을 의미한다. 정의로부터 $f[A] = 0, f[B] = 1$가 따라 나온다.</p>
+
+<p>이제 $f$가 연속임을 보이면 정리가 증명된다. $\lbrace  B_\epsilon(q) \cap [0, 1] : q \in Q, \epsilon \in \mathbb{Q}_{&gt;0} \rbrace $가 $[0, 1]$의 위상 기저이므로, 임의의 $q \in Q$와 특정 상한보다 작은 양의 유리수 $\epsilon$에 대해 $S_{q, \epsilon} = f^{-1}(B_\epsilon(q) \cap [0, 1])$가 열린집합임을 보이면 충분하다.</p>
+
+<ul>
+  <li>$0 &lt; q &lt; 1$인 경우, $S_{q, \epsilon} = (X \setminus \overline{U_{q-\epsilon}}) \cap U_{q + \epsilon}$이므로 열린집합이다.</li>
+  <li>$q = 0$인 경우, $S_{0, \epsilon} = U_\epsilon$이므로 열린집합이다.</li>
+  <li>$q = 1$인 경우, $S_{1, \epsilon} = X \setminus \overline{U_{1 - \epsilon}}$이므로 열린집합이다.</li>
+</ul>
+
+<p>따라서 $f$는 연속이다. ■</p>
+
+<h4 id="고찰">고찰</h4>
+
+<ul>
+  <li>
+    <p>우리손 보조정리의 역은 자명히 성립한다. 즉, 임의의 닫힌집합 $A, B \subset X$에 대해 어떤 연속인 $f: X \to [0, 1]$가 $A, B$를 분리한다면, $U = f^{-1}[0, 1/2)$, $V = f^{-1}(1/2, 1]$는 $A, B$를 분리하는 서로소 열린집합이므로 $X$는 정규이다. 간단히 말해, <strong>정규공간에서는 우리손 분리가능성과 분리 공리가 동치이다.</strong></p>
+  </li>
+  <li>
+    <p>정칙<sub>regular</sub> 공간에서는 이가 성립하지 않는다. 즉, 정칙 공간 $X$에서 임의의 닫힌집합 $F$와 점 $a$가 주어졌을 때, $f(a) = 0$, $f[F] = \lbrace 1 \rbrace$을 만족하는 연속인 $f: X \to [0, 1]$이 언제나 존재하는 것은 아니다. 우리손 분리가능한 정칙 공간을 <strong>티호노프<sub>Tychonoff</sub> 공간</strong> 또는 <strong>완전 정칙<sub>completely regular</sub> 공간</strong>이라고 하며, 정칙보다 엄격히 강한 조건이다.</p>
+  </li>
+  <li>
+    <p>우리손 보조정리의 증명이 정칙 공간에 대해 유효하지 않은 이유는 $p &lt; q \implies \overline{U_p} \subset U_q$를 만족하는 ${ U_q }$를 구성할 때 정규 공리가 필요하기 때문이다.</p>
+  </li>
+</ul>
+
 </div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

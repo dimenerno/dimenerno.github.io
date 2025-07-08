@@ -433,6 +433,515 @@
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/03/12/what-is-a-theory-of-truth/en"> What is a Theory of Truth? </a>
+      </h1>
+    <span class="post-date">12 Mar 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'">
+        Philosophy
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/philosophy-of-language/'">
+        Philosophy of Language
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p>This article is a summary of <a href="/public/What is a Theory of Truth.pdf">Scott Soames, <em>What is a Theory of Truth?</em> (1984)</a>.</p>
+</blockquote>
+
+<h3 id="abstract">Abstract</h3>
+
+<p>Field argued through modal objections that Tarski’s definition of truth fails to elucidate the meaning of truth. In response, Field proposed a project to define truth from causal theory. However, this paper argues that Field’s project also fails because it faces the same modal objections. Instead, the author proposes a redefinition of language that enables Tarski’s definition of truth to elucidate what truth is for each language.</p>
+
+<h2 id="1-what-does-tarskis-theory-attempt">1. What Does Tarski’s Theory Attempt?</h2>
+
+<h3 id="three-purposes-of-theories-of-truth">Three Purposes of Theories of Truth</h3>
+
+<p>The philosophical significance of Tarski’s theory of truth, unlike its indubitable mathematical significance, has been the subject of ongoing debate. One reason for the continuing controversy is that scholars disagree about what the purpose of a theory of truth should be. The main positions are as follows:</p>
+
+<ol>
+  <li>To explain what ‘truth’ means.</li>
+  <li>To reduce ‘truth’ to other predicates and logical relations.</li>
+  <li>To accept ‘truth’ as a primitive concept and develop philosophical positions from it.</li>
+</ol>
+
+<p>A theory attempting 1 must consider cases where the truth predicate applies to propositions rather than sentences, such as ‘Church’s theorem is true’ or ‘John 1:14 is true’. Since Tarski’s theory of truth applies only to formal sentences, it does not correspond to 1.</p>
+
+<p>Moreover, his theory does not correspond to 3 either. Tarski expressed his position that his theory of truth is completely unrelated to epistemology as follows:</p>
+
+<blockquote>
+  <p>The semantic definition of truth does not impose any constraints on the conditions under which the sentence “snow is white” is accepted. It only imposes the constraint that when accepting or rejecting the sentence “snow is white”, one must likewise accept or reject “‘snow is white’ is true”. Therefore, we can accept the semantic definition of truth without any modification to existing epistemological attitudes. We can remain naive realists, or remain critical realists, idealists, empiricists, or metaphysicians.</p>
+</blockquote>
+
+<h3 id="semantic-ascent">Semantic Ascent</h3>
+
+<p>Nevertheless, Tarski’s truth predicate can assist in the articulation of philosophical positions through what Quine called <strong>semantic ascent</strong>. For example, suppose we wish to generalise inferences of the following form:</p>
+
+<ul>
+  <li>Snow is white $\to$ (The sky is blue $\to$ Snow is white)</li>
+  <li>The Earth rotates $\to$ (The sun is cold $\to$ The Earth rotates)</li>
+  <li>…</li>
+</ul>
+
+<p>The natural generalisation is as follows:</p>
+
+<ul>
+  <li>For any sentences $p, q$: ($p$ is true $\to$ ($q$ is true $\to$ $p$ is true))</li>
+</ul>
+
+<p>In this formalisation, the truth predicate is indispensable for generalising each enumerated case. One might object that the dependence on the truth predicate can be eliminated as follows:</p>
+
+<ul>
+  <li>For any sentences $p, q$: $p \to (q \to p)$</li>
+</ul>
+
+<p>However, the above sentence is not syntactically correct. Unless we rely on second-order logic, which is fraught with philosophical problems, $p, q$ must be sentences rather than propositions. The sentences here are sentences in the mathematical logical sense, i.e., not propositions without free variables, but sentences in the philosophical sense, i.e., strings of symbols. To use the language of mathematical logic precisely, $p, q$ are Gödel numbers of sentences. In short, it is 2 rather than 1.</p>
+
+<ol>
+  <li>$p =$ Snow is white, $q = $ The sky is blue</li>
+  <li>$p =$ “Snow is white”, $q = $ “The sky is blue”</li>
+</ol>
+
+<p>However, since $\to$ is a logical operator, propositions rather than sentences must appear on both sides<small>(in the language of mathematical logic, sentences rather than Gödel numbers must appear)</small>. Therefore, $p$ must be made into the proposition <em>$p$ is true</em>. Formally, this is written as follows:</p>
+
+<ul>
+  <li>$\forall p, q \in \mathbb{N} \;\; T(\ulcorner p \;\dot{\to}\; (q \;\dot{\to}\; p) \urcorner)$</li>
+</ul>
+
+<p>Thanks to such semantic ascent, several philosophical positions can be articulated. For example, realism can be formulated as follows:</p>
+
+<blockquote>
+  <p>There exists some sentence $s$ such that $s$ is true, but it is impossible for human cognition to find sufficient grounds for $s$.</p>
+</blockquote>
+
+<p>Because the truth predicate frequently appears in the articulation of philosophical positions, some philosophers believed that ‘truth’ is a philosophically profound concept. However, as Tarski and Quine already pointed out, this is merely for expressive convenience, and the definition of truth itself is unrelated to other philosophical positions.</p>
+
+<h3 id="physicalism-and-reduction">Physicalism and Reduction</h3>
+
+<p>Tarski’s theory of truth corresponds to 2, and his philosophical background played a role here. Tarski was a moderate physicalist. The meaning of ‘moderate’ is that he understood the terminus of reduction to include not only physics but also logic and set theory. He wanted a definition of truth compatible with his physicalism, and therefore rejected the approach of accepting truth as a primitive concept and listing axioms about its characteristics. Instead, he reduced truth to set theory by inductively defining a certain set, then showing both ① that a predicate having that set as its truth set entails all T-schemas, and ② that the set satisfying that inductive definition is unique.</p>
+
+<p>In modern times, Tarski’s theory of truth has become the subject of philosophical criticism. The author of this paper argues that this is unjust criticism. The main thrust of the criticism is that his theory lacks the conditions that a theory of truth should properly possess, but these conditions are in fact unjust or incoherent.</p>
+
+<h2 id="2-fields-criticism">2. Field’s Criticism</h2>
+
+<h3 id="two-stages-of-tarskian-definition">Two Stages of Tarskian Definition</h3>
+
+<p>Field distinguishes Tarski’s definition of truth into two stages. The first is <strong>primitive denotation</strong>. In this stage, one defines what it means for a name $n$ to <em>denote</em> an object $o$ in language $L$, and for a predicate $P$ to <em>hold</em> of an object $o$. This definition consists of the following:</p>
+
+<ul>
+  <li>Name $n$ denotes object $o$ in $L$ $\iff$ one of the following holds:
+    <ul>
+      <li>$n = \text{‘apple’}, o = $ apple</li>
+      <li>$n = \text{‘banana’}, o = $ banana</li>
+      <li>$n = \text{‘coconut’}, o = $ coconut</li>
+      <li>…</li>
+    </ul>
+  </li>
+  <li>Predicate $P$ holds of object $o$ in $L$ $\iff$ one of the following holds:
+    <ul>
+      <li>$P = \text{‘Round’}, o = $ apple, coconut, …</li>
+      <li>$P = \text{‘Long’}, o = $ banana, …</li>
+      <li>…</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The second stage is the <strong>recursive definition of truth</strong>. This definition is as follows:</p>
+
+<ul>
+  <li>Sentence $S$ is true in $L$ $\iff$ $S \in K$</li>
+</ul>
+
+<p>where $K$ is the unique set satisfying the following:</p>
+
+<ol>
+  <li>When there exists an object $o$ such that $n$ denotes $o$ and $P$ holds of $o$, then $\ulcorner Pn \urcorner \in K$</li>
+  <li>When $A \in K$ or $B \in K$, then $\ulcorner A \lor B \urcorner \in K$</li>
+  <li>When $A \notin K$, then $\ulcorner \lnot A \urcorner \in K$</li>
+</ol>
+
+<h4 id="modal-objections-and-fields-project">Modal Objections and Field’s Project</h4>
+
+<p>Field argues that <strong>primitive denotation fails to elucidate the meaning of ‘$n$ denotes $o$’</strong>. According to Field, the denotation relation depends on the psychology of language users. Therefore, it was possible for ‘apple’ to denote banana rather than apple. However, in Tarski’s primitive denotation, since ‘apple’ is coupled with apple <em>within the necessary and sufficient condition</em> for $n$ to denote $o$, it is necessary that ‘apple’ denotes apple. In short, the problem is that the definition of denotation is hardcoded.</p>
+
+<p>Therefore, Field seeks to overcome Tarski’s limitations by presenting a physicalist reduction of denotation. Field’s project is to present a physico-causal theory of denotation based on Kripke’s theory, thereby providing a theory that derives the correct definition of truth for <em>any speaker’s language</em> $L$.</p>
+
+<h4 id="problems-with-fields-project">Problems with Field’s Project</h4>
+
+<p>However, Field’s project has problems. The first problem is the issue raised by the denotation of abstract objects that appear to lack causal efficacy.</p>
+
+<p>However, a more serious second problem is that, following Field’s objection, not only does primitive denotation fail to elucidate the meaning of denotation, but <strong>the recursive definition of truth also fails to elucidate the meaning of truth</strong>. This is because rules related to logical operators are hardcoded in the recursive definition of truth. Therefore, the modal objection is equally valid. For instance, whilst it is clearly contingent that $\lor$ means disjunction, according to the recursive definition, “$T(\ulcorner A \lor B \urcorner) \Leftrightarrow T(\ulcorner A \urcorner)$ or $T(\ulcorner B \urcorner)$” is necessary.</p>
+
+<p>Therefore, Field must also present physicalist reductions of 3, 4, 5, … as well as 1 and 2.</p>
+
+<ol>
+  <li>Name $n$ denotes object $o$.</li>
+  <li>Predicate $P$ holds of object $o$.</li>
+  <li>Sentence $A$ is the negation of sentence $B$.</li>
+  <li>Sentence $A$ is the disjunction of sentences $B, C$.</li>
+  <li>Sentence $A$ existentially quantifies variable $u$ in sentence $B$. (…)</li>
+</ol>
+
+<p>However, it is unclear how 3, 4, 5, … can be reduced without circular dependence on truth. The author argues that attempts at this work so far have not been successful. As an example, he mentions Quine’s attempt to reduce truth-functional operators to collective acceptance or rejection by the linguistic community, which is problematic for reasons given in <a href="/public/Quine on Alternative Logics.pdf">Alan Berger, <em>Quine on ‘Alternative Logics’ and Verdict Tables</em> (1980)</a>. (I haven’t read this yet, but it’s probably a modal problem.)</p>
+
+<blockquote>
+  <p><strong>Addition.</strong> Burgess points out in <em>Truth</em> that Field’s project’s dependence on Kripke’s theory is also problematic. This is because Kripke’s theory is not a theory of reference. Kripke’s theory is about how the initial act of using name $n$ to refer to object $o$ continues to form the semantics of names; in his theory, reference is a primitive concept. Kripke himself strongly objected to the popular opinion that his theory is reductionist about reference.</p>
+</blockquote>
+
+<h2 id="3-the-relationship-between-meaning-and-truth">3. The Relationship Between Meaning and Truth</h2>
+
+<p>Most philosophers of language acknowledge that meaning and truth are in a mutually suggestive relationship. For instance, they acknowledge the following:</p>
+
+<ul>
+  <li>If sentence $S$ means $p$ in language $L$, then the necessary and sufficient condition for $S$ to be true in $L$ is $p$.</li>
+</ul>
+
+<p>Therefore, some philosophers expected that Tarski’s theory of truth could be extended to a theory of meaning. However, the modal objection also shows that Tarski’s theory of truth cannot be connected to a theory of meaning. For example, Tarski’s truth predicate defined for Peano arithmetic suggests 1 but not 2. Rather, Tarski’s definition suggests 3.</p>
+
+<ol>
+  <li>$T(\ulcorner 1 \;\dot{+}\; 1 = 2 \urcorner) \Leftrightarrow 1 + 1 = 2$</li>
+  <li>If the meaning of $\dot{+}$ were multiplication, then $T(\ulcorner 1 \;\dot{+}\; 1 = 2 \urcorner) \Leftrightarrow 1 \times 1 = 2$</li>
+  <li>If the meaning of $\dot{+}$ were multiplication, then $T(\ulcorner 1 \;\dot{+}\; 1 = 2 \urcorner) \Leftrightarrow 1 + 1 = 2$</li>
+</ol>
+
+<p>Of course, since Tarski requires that the definition of truth be materially adequate, he would argue that if the meaning of $\dot{+}$ were actually multiplication, then $T$ suggesting $T(\ulcorner 1 \;\dot{+}\; 1 = 2 \urcorner) \Leftrightarrow 1 + 1 = 2$ would not be a correct definition of truth. That is, Tarski claims the following: ($\square p$ means that $p$ is necessary.)</p>
+
+<p>   a.  $\square($ $T$ is a truth predicate $\to$ ( sentence $S$ means $\phi$ $\to$ $\;T(S) \Leftrightarrow \phi$ ) $)$</p>
+
+<p>However, the approach of deriving a theory of meaning from a theory of truth depends on the following proposition:</p>
+
+<p>   b.  $T$ is a truth predicate $\to$ $\square($ sentence $S$ means $\phi$ $\to$ $\;T(S) \Leftrightarrow \phi$ $)$</p>
+
+<p>a and b are different propositions. Tarski’s theory guarantees a but not b.</p>
+
+<h2 id="4-newly-defining-theory-of-truth">4. Newly Defining ‘Theory of Truth’</h2>
+
+<h3 id="meaning-as-an-essential-property-of-language">Meaning as an Essential Property of Language</h3>
+
+<p>The criticism of Tarski’s definition of truth examined so far presupposes that the objects denoted by names in language $L$ must be contingent, i.e., that semantics is dependent on the speakers of $L$. However, instead of viewing language in this way, the author proposes to view information about what names denote as also part of the language.</p>
+
+<p>For instance, in first-order logic, language $L$ can be regarded as a triple $\langle S_L, D_L, F_L \rangle$<small>(the language spoken of here is quite different from the language of model theory. The language here has not only syntax but also semantics)</small>. The meaning of each is as follows:</p>
+
+<ul>
+  <li>$S_L$: The set of well-formed formulae</li>
+  <li>$D_L$: The set of denotable objects</li>
+  <li>$F_L$: An interpretation function that maps each name to an object</li>
+</ul>
+
+<p>When language is defined in this way, Tarski’s definition of truth produces a materially adequate truth predicate $T_L$ for <em>any</em> language $L$. Moreover, since $F_L$ is merely a set of tuples, it does not depart from Tarski’s physicalist line. In short, <strong>the author argues that by regarding the semantics of a language as an essential property of that language, Tarski’s definition of truth can be elevated to a general definition of truth.</strong> Therefore, there is no case where name $n$ in language $L$ denoted an object other than the object $o$ it denotes. The community of language users is not the agent that gives semantics to language, but the agent that chooses which language to use. And the problem of determining the language used by a community is a matter of pragmatics, not semantics.</p>
+
+<h3 id="type-and-token">Type and Token</h3>
+
+<p>Field’s physicalist background led him to focus on utterances rather than sentences. Field argues that Tarski only provided a definition of truth for sentences, but failed to provide a definition of truth for utterances. If Tarski had heard this objection, he would have said that this work should be divided into two stages as follows:</p>
+
+<ol>
+  <li>Through what principle does utterance $u$ in language $L$ become an utterance of sentence $s$?</li>
+  <li>What does it mean for sentence $s$ to be true in language $L$?</li>
+</ol>
+
+<p>Therefore, Tarski’s definition is a <strong>type definition</strong>. In contrast, Field seeks to answer the following question:</p>
+
+<ul>
+  <li>What does it mean for token $t$ to be true in language $L$?</li>
+</ul>
+
+<p>Here, a token might be graphite marks on paper, chalk marks on a blackboard, or speech sounds. That is, what Field seeks is a <strong>token definition</strong>. However, it is questionable whether a token definition of truth is possible. Field himself attempted to reach a token definition by modifying Tarski’s definition as follows:</p>
+
+<ul>
+  <li>A token of $\ulcorner \lnot e \urcorner$ is true $\Leftrightarrow$ the token of $e$ contained in that token is not true.</li>
+</ul>
+
+<p>However, as mentioned earlier, the above definition hardcodes the meaning of $\lnot$ as negation, so it faces the same modal objection. Therefore, the above definition should be modified as follows:</p>
+
+<ul>
+  <li>A token of proposition $A$ that is the negation of proposition $B$ is true $\Leftrightarrow$ some token of $B$ is false</li>
+</ul>
+
+<p>But even if ‘…is the negation of’ can be reduced physicalistically, it is unclear how to specify the relevant token of $B$ in a given context. For example, consider the following sentence:</p>
+
+<blockquote>
+  <p>Trump’s claim about climate crisis is wrong.</p>
+</blockquote>
+
+<p>It is unclear which of the numerous utterance tokens Trump has made regarding climate crisis should be the object of negation in the above sentence. The token of $B$ might not even exist. For example, consider the following sentence:</p>
+
+<blockquote>
+  <p>If Trump were to give a lecture on ethics, most of the content would be wrong.</p>
+</blockquote>
+
+<p>To my knowledge, Trump has never given a lecture on ethics, so the token that is the object of negation in the above sentence does not exist. However, it seems perfectly reasonable to claim that the above sentence is true. This reveals the difficulties faced by a token definition of truth. From this, the author argues that we should accept Tarski’s type definition of truth for now, and regard whether the pragmatic relationship between language, expression, speaker, and utterance can be reduced to physicalism as a separate issue.</p>
+
+<h3 id="the-problem-of-pragmatics">The Problem of Pragmatics</h3>
+
+<p>Although the author has attributed the relationship between language and speaker to the realm of pragmatics, this does not mean that this problem is unimportant. This is because there are various philosophical considerations regarding the relationship between language and speaker. For instance, Quine argues that the statement “speaker $A$ uses language $L$” cannot be reduced physicalistically<small>(the gavagai argument)</small>. According to the author, Quine’s position can be seen as accepting Tarski’s definition of truth whilst rejecting the physicalist reduction of the relationship between language and speaker.</p>
+
+<h3 id="the-problem-of-truth-conditional-semantics">The Problem of Truth-Conditional Semantics</h3>
+
+<p>Finally, the author argues that attempts to derive a theory of meaning from the concept of truth, particularly theories that the acquisition of the concept of truth is a prerequisite for semantic competence, cannot all succeed. Although not explained in detail, it is probably the following problem. Attempts to derive a theory of meaning from the concept of</p>
+
+<p>하지만 $\leftrightarrow$를 고전 논리의 동치 관계로 이해하든, 양상 논리의 필연적 동치 관계로 이해하든 간에 2는 성립하지 않는다. 예를 들어 다음은 필연적으로 성립한다.</p>
+
+<ul>
+  <li>$1 + 1 = 2 \leftrightarrow $ 페르마의 마지막 정리</li>
+</ul>
+
+<p>그러나 $1 + 1 = 2$의 의미가 페르마의 마지막 정리인 것은 아니다.</p>
+
+<h2 id="5-결론">5. 결론</h2>
+
+<p>결론적으로 논문의 저자는 참에 대한 이론이 의미에 대한 이론과 직결되어 있어야 한다는 요구는 부당하다고 주장함으로써 타르스키의 참 정의와, 그것이 함의하는 참에 대한 축소주의<sub>deflationism</sub>를 옹호한다. 이것이 참에 대한 이론이 불필요함을 의미하지는 않는다. 크립키의 참 이론은 타르스키의 참 이론을 실질적으로 발전시켰다. 그러나 그 발전은 이미 우리에게 익숙한 참의 성질들을 T-스키마로써 정확히 해명하고, 올바르게 설계된 형태론으로 거짓말쟁이 역설과 같은 모순을 회피하는 데 있다. 참에 대한 이론으로부터 이 이상을 기대하는 것은 바람직하지 않다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/03/10/temporal-logic"> 시제 논리 </a>
+      </h1>
+    <span class="post-date">10 Mar 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/철학/'">
+        철학
+      </div>
+      
+    </div>
+     <h2 id="도입">도입</h2>
+
+<p>다음의 세 문장을 보자.</p>
+
+<ol>
+  <li>가영이는 언젠가 등교할 것이다.</li>
+  <li>나영이는 언젠가 등교할 것이다.</li>
+  <li>나영이는 가영이가 등교하기 전에 등교하지 않는다.</li>
+</ol>
+
+<p>위로부터 다음을 추론할 수 있다.</p>
+
+<p>   4. 가영이가 먼저 등교하고 나영이가 등교할 것이다.</p>
+
+<p>그러나 고전 논리는 — 적어도 표면적으로는 — 위의 추론 관계를 함의하지 않는다. 따라서 우리에게 필요한 것은 시간에 대해 추론할 수 있는 논리학, 즉 <strong>시제 논리<sub>temporal logic</sub></strong>이다.</p>
+
+<h2 id="1-고전적-시제-논리">1. 고전적 시제 논리</h2>
+
+<h3 id="11-의미론">1.1. 의미론</h3>
+
+<p>시제 논리를 정의하는 길은 두 가지가 있다. 첫째는 고전 논리에 특정 구조를 부과함으로써 시제 논리를 얻는 것이다. 이 방법을 먼저 알아보자.</p>
+
+<p>시제 논리의 부호수<sub>signature</sub>는 하나의 이항 관계 $\prec$와, 0개 이상의 일항 술어 $P, Q, \dots$로 이루어져 있다. 시제 논리의 모델은 다음과 같다. (이 모델을 <strong>크립키<sub>Kripke</sub> 모델</strong>이라고 한다)</p>
+
+\[\mathcal{T} = (T, \prec^\mathcal{T}, P^\mathcal{T}, Q^\mathcal{T}, \dots)\]
+
+<ul>
+  <li>전체<sub>universe</sub> $T$: 상정하는 모든 순간을 의미한다.</li>
+  <li>$t_1 \prec^\mathcal{T} t_2$: $t_1$이 $t_2$보다 과거라는 의미이다.</li>
+  <li>$P^\mathcal{T}(t)$: $P$가 시점 $t$에서 참이라는 의미이다.</li>
+</ul>
+
+<p>예를 들어 어제, 오늘, 그리고 내일만을 고려하는 시제 논리의 경우 $T = \lbrace  -1, 0, 1 \rbrace $로 둘 수 있다. 고전 역학은 $T = \mathbb{R}$을 간주한다.</p>
+
+<p>가영이가 등교하는 사건을 $A$, 나영이가 등교하는 사건을 $B$라고 하면 도입의 3은 다음과 같이 쓸 수 있다.</p>
+
+\[\forall t_1 \forall t_2 \; \big( A(t_1) \land B(t_2) \rightarrow t_1 \prec t_2 \big)\]
+
+<p>$\phi$가 하나의 자유변수 $x$를 가지는 문장이라고 하자. $t \in T$를 <em>현재</em>로 뒀을 때 $\phi$가 참이라는 것을, $\mathcal{T} \vDash \phi[t]$와 같이 적는다.</p>
+
+<h3 id="12-프레임">1.2. 프레임</h3>
+
+<p>집합과, 그 위에 정의된 이항 관계의 쌍 $(T, \prec)$를 <strong>프레임<sub>frame</sub></strong>이라고 부른다. $\mathbf{F}$가 프레임의 모임<sub>class</sub>이라고 하자. $(T, \prec) \in \mathbf{F}$인 임의의 모델 $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$와 임의의 $t \in T$에 대해 $\mathcal{T} \vDash \phi[t]$일 때, $\phi$가 $\mathbf{F}$에 대해 참이라고 한다.</p>
+
+<p>$\mathbf{F}$가 특정 성질을 가질 것을 요구함으로써 시간의 특징을 포착할 수 있다. 다음과 같은 성질을 요구할 수 있다.</p>
+
+<ul>
+  <li>추이성<sub>transitivity</sub>: 임의의 서로 다른 $t_1, t_2, t_3 \in T$에 대해 $t_1 \prec t_2, t_2 \prec t_3$라면 $t_1 \prec t_3$이다.</li>
+  <li>선형성<sub>linearity</sub>: 임의의 서로 다른 $t_1, t_2 \in T$에 대해 $t_1 \prec t_2$이거나 $t_2 \prec t_1$이다.</li>
+  <li>조밀성<sub>denseness</sub>: 임의의 서로 다른 $t_1, t_2 \in T$에 대해 어떤 $t_3 \in T$가 존재하여 $t_1 \prec t_3 \prec t_2$이다.</li>
+  <li>우 연장성<sub>R-extendability</sub>: 임의의 $t \in T$에 대해 어떤 $t’ \in T$가 존재하여 $t \prec t’$이다.</li>
+  <li>좌 연장성<sub>L-extendability</sub>: 임의의 $t \in T$에 대해 어떤 $t’ \in T$가 존재하여 $t’ \prec t$이다.</li>
+</ul>
+
+<p>도입의 논증은 선형 프레임에 대해 참임을 보일 수 있다.</p>
+
+<h2 id="2-독립적-시제-논리">2. 독립적 시제 논리</h2>
+
+<p>시제 논리를 정의하는 두 번째 방식은 시제 논리에 특수한 논리 기호를 도입하는 것이다. 각각 다음과 같이 읽는다.</p>
+
+<ul>
+  <li>$\mathsf{F}p$: 언젠가 $p$일 것이다<sub>Future p</sub></li>
+  <li>$\mathsf{P}p$: 언젠가 $p$였다<sub>Past p</sub></li>
+  <li>$\mathsf{G}p$: 언제나 $p$일 것이다<sub>Going to always be p</sub></li>
+  <li>$\mathsf{H}p$: 언제나 $p$였다<sub>Has always been p</sub></li>
+</ul>
+
+<p>$\mathsf{F}, \mathsf{P}, \mathsf{G}, \mathsf{H}$의 관계는 다음과 같다.</p>
+
+<ul>
+  <li>$\mathsf{F}p \equiv \lnot\mathsf{G}\lnot p$</li>
+  <li>$\mathsf{P}p \equiv \lnot\mathsf{H}\lnot p$</li>
+</ul>
+
+<p>독립적 시제 논리의 명제는 <strong>메레디스 번역<sub>Meredith translation</sub></strong>을 통해 언제나 고전적 시제 논리의 명제로 변환할 수 있다. 예를 들어 $\mathsf{G}p$는 $\forall x \succ t \; p(x)$로 번역된다. 그러나 역은 성립하지 않는다. 따라서 독립적 시제 논리는 고전적 시제 논리보다 표현력이 약하다. 그럼에도 독립적 시제 논리가 연구할 만한 주제인 이유는, 표현력을 일부 포기하는대가로 결정 가능성, 완전성 등의 좋은 성질을 얻을 수 있을 뿐더러, 양상 논리와의 연결 고리를 제공하는 등 철학적 의의 또한 크기 때문이다.</p>
+
+<p>독립적 시제 논리의 모델은 종속적 시제 논리와 마찬가지로 $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$이다. 만족 관계는 자연스럽게 정의한다. 예를 들어,</p>
+
+<ul>
+  <li>$\mathcal{T} \vDash \mathsf{F}p[t] \iff$ 어떤 $t \prec t’$에 대해, $\mathcal{T} \vDash p[t’]$</li>
+</ul>
+
+<h2 id="3-시제-공리">3. 시제 공리</h2>
+
+<p>지금까지 시제 논리의 의미론을 살펴 보았다. 이제 시제 논리의 증명을 살펴본다.</p>
+
+<h3 id="31-최소-시제-논리">3.1. 최소 시제 논리</h3>
+
+<p>최소 시제 논리 $L_0$는 다음의 공리로 이루어져 있다.</p>
+
+<ul>
+  <li>$\tau$가 명제 논리의 항진명제일 때, $\tau$</li>
+  <li>$\mathsf{G}(\phi \to \psi) \to (\mathsf{G}\phi \to \mathsf{G}\psi)$</li>
+  <li>$\mathsf{H}(\phi \to \psi) \to (\mathsf{H}\phi \to \mathsf{H}\psi)$</li>
+  <li>$\phi \to \mathsf{GP}\phi$</li>
+  <li>$\phi \to \mathsf{HF}\phi$</li>
+</ul>
+
+<p>그리고 다음의 추론 규칙으로 이루어져 있다.</p>
+
+<ul>
+  <li><strong>MP</strong> $\vdash \phi, \phi \to \psi \implies \vdash \psi$</li>
+  <li><strong>TG1:</strong> $\vdash \phi \implies \vdash \mathsf{G}\phi$</li>
+  <li><strong>TG2:</strong> $\vdash \phi \implies \vdash \mathsf{H}\phi$</li>
+</ul>
+
+<p>MP는 Modus Ponens, TG는 Temporal Generalisation의 약어이다.</p>
+
+<p>TG가 $\vdash \phi \to \mathsf{G}\phi$를 의미하지 않는다는 사실에 유의하라. TG는 <em>논리적으로 증명된 명제 $\phi$에 한해,</em> $\mathsf{G}\phi$ 또는 $\mathsf{H}\phi$를 도출할 수 있다는 의미이다. 즉, TG는 논리적 명제가 시간과 무관하다는 의미이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $L_0$는 건전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 명제 논리의 건전성 정리와 거의 동일하게, 논리식의 형태에 대한 귀납법으로 증명한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $L_0$에서 증명 가능성은 다음 규칙에 대해 닫혀 있다.</p>
+
+  <ol>
+    <li><strong>거울 규칙<sub>mirror rule</sub>:</strong> 명제 $\phi$에 등장하는 $\mathsf{G}$와 $\mathsf{H}$, $\mathsf{F}$와 $\mathsf{P}$를 서로 바꾼 명제를 거울 명제 $\bar{\phi}$라고 하자. $\vdash \phi$라면 $\vdash \bar{\phi}$이다.</li>
+    <li><strong>베커 규칙<sub>Becker’s rule</sub>:</strong> $\mathsf{T}$가 $\mathsf{G, H, F, P}$ 중 하나라고 하자. $\vdash \phi \to \psi$라면 $\vdash \mathsf{T}\phi \to \mathsf{T}\psi$이다.</li>
+    <li><strong>쌍대 규칙<sub>dual rule</sub>:</strong> 명제 $\phi$에 등장하는 $\land$와 $\lor$, $\mathsf{G}$와 $\mathsf{F}$, $\mathsf{H}$와 $\mathsf{P}$를 서로 바꾼 명제를 쌍대 명제 $\phi^\ast$라고 하자. $\vdash \phi$라면 $\vdash \phi^\ast$이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 연습문제 (^^)</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $L_0$는 모든 프레임의 모임 $\mathbf{F}_0$에 대해 완전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> TODO</p>
+
+<h3 id="32-고전역학의-시제-논리">3.2. 고전역학의 시제 논리</h3>
+
+<p>추이성, 선형성, 조밀성, 좌우 연장성을 가지는 프레임들의 모임 $\mathbf{F}_1$을 고려하자. $\mathbf{F}_1$은 고전역학에서 상정하는 시간이다. $\mathbf{F}_1$에서 건전하고 완전한 공리계를 찾아 보자.</p>
+
+<p>고전역학의 시제 논리 $L_1$은 $L_0$에 다음 공리를 추가한 것이다.</p>
+
+<ul>
+  <li>$\mathsf{G} p \to \mathsf{GG}p$ (추이성)</li>
+  <li>$(\mathsf{P}p \land \mathsf{P}q) \to (\mathsf{P}(p \land \mathsf{P}q) \lor \mathsf{P}(p \land q) \lor \mathsf{P}(\mathsf{P}p \land q))$ (좌 선형성)</li>
+  <li>$(\mathsf{F}p \land \mathsf{F}q) \to (\mathsf{F}(p \land \mathsf{F}q) \lor \mathsf{F}(p \land q) \lor \mathsf{F}(\mathsf{F}p \land q))$ (우 선형성)</li>
+  <li>$\mathsf{H}p \to \mathsf{P}p$ (좌 연장성)</li>
+  <li>$\mathsf{G}p \to \mathsf{F}p$ (우 연장성)</li>
+  <li>$\mathsf{GG}p \to \mathsf{G}p$ (조밀성)</li>
+</ul>
+
+<blockquote>
+  <p><strong>햄린<sub>Hamblin</sub>의 정리.</strong> $L_1$에서 시제 기호의 조합은 14가지 시제 중 하나와 동치이다. 14가지 시제는 $\mathsf{FH, H, PH, HP, P, GP}$와 $\mathsf{PG, G, FG, GF, F, HF}$, 그리고 $\mathsf{GH} = \mathsf{HG}$와 $\mathsf{FP} = \mathsf{PF}$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 추이적 프레임에서 $\mathsf{PP}$와 같이 중첩된 시제는 단일 시제 $\mathsf{P}$와 동치임을 쉽게 보일 수 있다. 따라서 $\mathsf{X} \neq \mathsf{Y}$, $\mathsf{Y} \neq \mathsf{Z}$인 시제들의 조합 $\mathsf{XYZ}$은 어떤 두 시제 조합과 동치임을 보이면 된다. 거울 규칙과 쌍대 규칙에 의해 $\mathsf{Z} = \mathsf{G}$인 경우만 고려하면 된다. 한편 $\mathsf{XY}$와 $\mathsf{X’Y’}$가 서로 동치가 아니라는 것을 보이기 위해서는 함의 관계가 성립하지 않는 크립키 모델을 찾으면 된다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $L_1$은 $\mathbf{F}_1$에 대해 완전하다.</p>
+</blockquote>
+
+<h2 id="4-시제-술어-논리">4. 시제 술어 논리</h2>
+
+<p>고전 논리학에서 술어 논리는 명제 논리에 다음 공리를 추가한 것이다.</p>
+
+<ul>
+  <li>$\forall x \phi \to \phi[y/x]$ (단, $y$는 $\phi$에서 $x$에 대해 자유)</li>
+  <li>$\forall x (\phi \to \psi) \to (\phi \to \forall x \psi)$ (단, $x$는 $\phi$의 자유변수가 아님)</li>
+  <li>$x = x$</li>
+  <li>$x = y \to (\phi[x/z] \to \phi[y / z]$) (단, $x, y$는 $\phi$에서 $z$에 대해 자유)</li>
+</ul>
+
+<p>그리고 다음의 추론 규칙을 추가한다.</p>
+
+<ul>
+  <li><strong>UG<sub>Universal Generalisation</sub>:</strong> $\vdash \phi \implies \vdash \forall x \phi$</li>
+</ul>
+
+<p>시제 논리 $L_0$에 상술한 공리들과 추론 규칙을 추가한 논리 체계를 시제 술어 논리 $L_P$라고 하자.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $L_P$는 다음을 증명한다.</p>
+
+  <ul>
+    <li><strong>정 바르칸<sub>direct Barcan</sub>:</strong> $\forall x \mathsf{G}\phi \to \mathsf{G}\forall x \phi$</li>
+    <li><strong>역 바르칸<sub>converse Barcan</sub>:</strong> $\mathsf{G}\forall x \phi \to \forall x \mathsf{G} \phi$</li>
+    <li><strong>동일성의 영속성<sub>permanence of identity</sub>:</strong> $x = y \to \mathsf{G}(x = y)$</li>
+  </ul>
+</blockquote>
+
+<p><strong>증명.</strong> 역 바르칸 명제만 증명해 보자.</p>
+
+\[\begin{aligned}
+&amp;1.  &amp;&amp;\forall x \phi \to \phi &amp;&amp;&amp;\text{Axiom} \\
+&amp;2. &amp;&amp;\mathsf{G}\forall x \phi \to \mathsf{G} \phi &amp;&amp;&amp;\text{Becker}\\
+&amp;3. &amp;&amp;\forall x (\mathsf{G}\forall x \phi \to \mathsf{G}\phi) &amp;&amp;&amp;\text{2, UG}\\
+&amp;4. &amp;&amp;\forall x (\mathsf{G}\forall x \phi \to \mathsf{G}\phi) \to (\mathsf{G}\forall x \phi \to \forall x \mathsf{G}\phi) &amp;&amp;&amp;\text{Axiom}\\
+&amp;5. &amp;&amp;\mathsf{G}\forall x \phi \to \forall x \mathsf{G} \phi \quad &amp;&amp;&amp;\text{3, 4, MP} \\
+&amp; \blacksquare
+\end{aligned}\]
+
+<p>자연 언어로 풀어 쓰자면,</p>
+
+<ul>
+  <li>정 바르칸: 현재 존재하는 모든 대상이 언제나 ____라고 하자. 그러면 임의의 미래 시점에 대해, 그때 존재하는 모든 대상은 ____이다.</li>
+  <li>역 바르칸: 임의의 미래 시점에서 대해, 그때 존재하는 모든 대상은 ____라고 하자. 그러면 현재 존재하는 모든 대상이 언제나 ____이다.</li>
+  <li>동일성의 영속성: 동일한 두 대상은 언제나 동일하다.</li>
+</ul>
+
+<p>동일성의 영속성은 시제 논리에서 상수가 고정 지시어<sub>rigid designator</sub>처럼 행동한다고 직관적으로 올바르다. 그러나 바르칸 명제는 직관적으로 틀렸다. 일례로 $\phi(x)$를 “$x$가 존재한다”로 치환해 보자.</p>
+
+<ul>
+  <li>역 바르칸: ① 임의의 미래 시점에서 대해, 그때 존재하는 모든 대상은 존재한다고 하자. ② 그러면 현재 존재하는 모든 대상이 언제나 존재한다.</li>
+</ul>
+
+<p>하지만 이 명제는 틀렸다. ①은 자명하게 성립하지만, 현재 존재하는 모든 대상이 영원히 존재할 것은 아니므로 ②는 성립하지 않기 때문이다. 따라서 역 바르칸 명제는 문제적이다.</p>
+
+<p>$L_P$가 바르칸 명제 같은 병리적 명제를 도출하는 이유는 TG가 열린 명제에 대해 유효하지 않기 때문이다(TG는 베커 규칙의 증명에 필요하다. 즉, 증명의 문제는 2단계에 있다). 앞서 말했듯이 TG는 논리적으로 참인 명제는 시간에 상관 없이 참이라는 의미이다. 그러나 열린 명제는 참도 아니고 거짓도 아니다. 열린 명제는 특정 대상에 의해 만족되거나, 만족되지 않기 때문이다.</p>
+
+<p>이 문제를 극복하기 위해 TG를 닫힌 명제에 대해서만 적용 가능하도록 제안하는 방안을 강구할 수 있으나, 제한된 시제 술어 논리는 일부 바람직한 명제를 증명하지 못함이 알려져 있다. 건전하면서도 완전한 시제 술어 논리를 만드는 작업은 아직도 해결되지 않은 문제이다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/03/10/temporal-logic/en"> Temporal Logic </a>
       </h1>
     <span class="post-date">10 Mar 2025</span>
@@ -1604,417 +2113,6 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 \[F(x) =\inf \{y : f(y) \geq x \}\]
 
 <p>$F$는 엄격히 증가하는 함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/25/lebesgue-borel/en"> Lebesgue Measurable Sets and Borel Measurable Sets </a>
-      </h1>
-    <span class="post-date">25 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/measure-theory/'">
-        Measure Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h3 id="1-lebesgue-measure">1. Lebesgue Measure</h3>
-
-<p>From <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">Carathéodory’s theorem</a>, we can define a measure $m$ as follows.</p>
-
-<ol>
-  <li>
-    <p>Show that $\mathcal{A}_0 = \lbrace \cup^n_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $ is an algebra.</p>
-  </li>
-  <li>
-    <p>For $A \in \mathcal{A}_0$, show that the representation $A = \sqcup^n_{k=1} (a_k, b_k]$ is unique.</p>
-  </li>
-  <li>
-    <p>When the function $\rho: \mathcal{A}_0 \to [0, \infty]$ is defined as</p>
-
-\[\rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)\]
-
-    <p>show that $\rho$ is a premeasure.</p>
-  </li>
-  <li>
-    <p>Apply Carathéodory’s extension theorem to $\mathcal{A}_0, \rho$ to obtain the outer measure $m^\ast$.</p>
-  </li>
-  <li>
-    <p>Restrict the domain of $m^\ast$ to $m^\ast$-measurable sets to obtain the measure $m$.</p>
-  </li>
-</ol>
-
-<p>Since algebras are only closed under finite unions, steps 1, 2, and 3 are almost trivial. For the proofs of steps 4 and 5, see the <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">related article</a>.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> The aforementioned $m$ is called the <strong>Lebesgue measure</strong>. Moreover, sets belonging to the domain of $m$ are called <strong>Lebesgue measurable</strong>.</p>
-</blockquote>
-
-<p>The following facts follow readily from Carathéodory’s theorems.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-  <ol>
-    <li>$m([a, b]) = m((a, b)) = m((a, b]) = m([a, b)) = b - a$</li>
-    <li>When $A \subset \mathbb{R}$ is countable, $m(A) = 0$</li>
-  </ol>
-</blockquote>
-
-<p>Since the measure obtained by Carathéodory’s extension theorem is a complete measure, the following holds.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $m$ is a complete measure.</p>
-</blockquote>
-
-<p>Furthermore, since $\sigma(\mathcal{A}_0)$ is the Borel $\sigma$-algebra $\mathcal{B}$, it follows that:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Borel measurable sets are Lebesgue measurable.</p>
-</blockquote>
-
-<h3 id="2-sets-that-are-lebesgue-measurable-but-not-borel-measurable">2. Sets That Are Lebesgue Measurable but Not Borel Measurable</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> Define the sequence of sets $\lbrace C_n \rbrace$ as follows:</p>
-
-\[\begin{gather}
-C_0 = [0, 1]\\
-C_1 = I_0 \setminus (1/3, 2/3) \\
-C_2 = I_1 \setminus \{ (1/9, 2/9) \cup (7/9, 8/9) \} \\
-\vdots
-\end{gather}\]
-
-  <p>The <strong>Cantor set</strong> $C$ is defined as $\cap^\infty_{n = 0}C_n$.</p>
-
-  <p><img src="/public/cantor.png" width="500px" style="margin: 0 auto;" /></p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-  <ol>
-    <li>The Cantor set is uncountable.</li>
-    <li>The Cantor set has Lebesgue measure 0.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<ol>
-  <li>
-    <p>Elements belonging to the Cantor set are numbers whose ternary decimal expansion contains no digit 2 in any position. There are $2^\aleph_0$ such numbers, hence uncountable.</p>
-  </li>
-  <li>
-    <p>Since $m(C_n) = (2/3)^n$, we have $m(C) = \lim_{n \to infty} (2/3)^n = 0$. ■</p>
-  </li>
-</ol>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $J_n$ denote the sets removed at each stage in defining the Cantor set. That is,</p>
-
-\[\begin{gather}
-J_1 = (1/3, 2/3) \\
-J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
-\vdots
-\end{gather}\]
-
-  <p>Define the sequence of functions as follows:</p>
-
-\[\begin{gather}
-\operatorname{dom} f_1 = J_1,\; f_1(x) = \frac{1}{2} \\\\
-\operatorname{dom} f_2 = J_1 \cup J_2, \; f_2(x) = \begin{cases} 1/4 &amp; x \in (1/9, 2/9) \\ 1/2 &amp; x \in (1/3, 2/3) \\ 3/4 &amp; x \in (7/9, 8/9) \end{cases} \\\\
-\vdots
-\end{gather}\]
-
-  <p>Define $f: I \to I$ as follows:</p>
-
-\[f(x) = \inf \{ f_n(y) : y \geq x, y \in \mathrm{dom} f \}\]
-
-  <p>$f$ is called the <strong>Cantor function</strong>.</p>
-
-  <p><img src="/public/CantorEscalier.svg.png" width="300px" style="margin: 0 auto;" /></p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> The Cantor function is continuous.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Let $f$ be the Cantor function. Since $f$ is an increasing function, if $f$ has discontinuities, they would be jump discontinuities. Therefore, for some $\epsilon &gt; 0$ and $y_0 \in I$, the interval $(y_0 - \epsilon, y_0 + \epsilon)$ would lie outside $\operatorname{im} f$. However, among the elements of $(y_0 - \epsilon, y_0 + \epsilon)$, there exists a number whose binary decimal expansion has finitely many digits. Such a number belongs to $\operatorname{im}f$, which is a contradiction. ■</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> There exist sets that are Lebesgue measurable but not Borel measurable.</p>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<p><em>Lemma.</em> If $f$ is an increasing function, then $f^{-1}$ maps Borel sets to Borel sets.</p>
-
-<p><em>Proof of lemma.</em> Let $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $. It is trivial that $\mathcal{G} \subset \mathcal{A}$ for the collection of open sets $\mathcal{G}$. Moreover, it is trivial from properties of inverse functions that $\mathcal{A}$ is a $\sigma$-algebra. Therefore, $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$.</p>
-
-<p>Let $f$ be the Cantor function and define $F$ as follows:</p>
-
-\[F(x) =\inf \{y : f(y) \geq x \}\]
-
-<p>$F$ is a strictly increasing function with $\operatorname{im} F = C$ (where $C$ is the Cantor set). Let $V$ be a <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since $F[V]$ is contained in $C$, it has Lebesgue measure 0 and is Lebesgue measurable by the completeness of Lebesgue measure. However, $F[V]$ is not Borel measurable. If it were Borel measurable, then since $F$ is an increasing function, $F^{-1}(F[V]) = V$ would have to be measurable. ■</p>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/25/caratheodory"> 카라테오도리 정리를 이용한 측도의 구성 </a>
-      </h1>
-    <span class="post-date">25 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/측도론/'">
-        측도론
-      </div>
-      
-    </div>
-     <p>필자는 카라테오도리 정리<sub>Carathéodory theorem</sub>를 3가지로 구분해서 이해하는 방식을 선호하기 때문에, 이 글에서도 해당 방식을 따른다. 각각 다음과 같다.</p>
-
-<ol>
-  <li><strong>카라테오도리 구축 정리:</strong> 임의의 집합족과 양함수로부터 외측도<sub>outer measure</sub> 를 정의할 수 있다.</li>
-  <li><strong>카라테오도리 제한 정리:</strong> 외측도의 정의역을 가측 집합으로 제한한 함수는 측도가 된다.</li>
-  <li><strong>카라테오도리 확장 정리:</strong> 대수 $\mathcal{A}_0$ 위의 예비측도<sub>premeasure</sub> $\mu_0$를 확장하는 $\sigma(\mathcal{A}_0)$ 위의 측도는, 집합족을 $\mathcal{A}_0$, 양함수를 $\mu_0$로 잡은 뒤 구축 정리를 적용하여 얻은 외측도 $\mu^\ast$에, 제한 정리를 적용하여 얻은 측도가 유일하다.</li>
-</ol>
-
-<p>도식적으로, 다음과 같이 이해할 수 있다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>(1)</th>
-      <th>(2)</th>
-      <th>(3)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>정의역</td>
-      <td>대수 $\mathcal{A}_0$</td>
-      <td>$\sigma$-대수 $\mathcal{A}$</td>
-      <td>멱집합 $\mathcal{P}(X)$</td>
-    </tr>
-    <tr>
-      <td>함수</td>
-      <td>예비측도 $\mu_0$</td>
-      <td>측도 $\mu$</td>
-      <td>외측도 $\mu^\ast$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>구축 정리는 (1) → (3), 제한 정리는 (3) → (2), 확장 정리는 (1) → (2)의 방향을 가진다. 하나하나 살펴 보자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $X$ 위의 <strong>외측도</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$는 다음을 만족하는 함수이다.</p>
-
-  <ol>
-    <li>$\mu^\ast(\varnothing) = 0$</li>
-    <li>$A \subset B \implies \mu^\ast(A) \leq \mu^\ast(B)$</li>
-    <li>$\mu^\ast\left( \bigcup_{n \in \mathbb{N}} A_n  \right) \leq \sum_{n \in \mathbb{N}} \mu^\ast(A_n)$</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>카라테오도리 구축 정리.</strong> $X$의 부분집합으로 이루어진 임의의 집합족 $\mathcal{S}$와, $l(\varnothing) = 0$을 만족하는 임의의 함수 $l: \mathcal{S} \to [0, \infty]$가 주어졌을 때, 다음과 같이 정의된 $\mu^\ast$은 외측도이다.</p>
-
-\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} l(A_n) : \{ A_n \} \subset \mathcal{S} \text{ covers }E  \right\}\]
-</blockquote>
-
-<p>즉, $\mu^\ast$은 덮개의 극한으로서 $E$의 ‘측도’ 비스무리한 것을 정의하는 함수이며, 구분구적법에서 상합<sub>upper sum</sub>과 개념적으로 비슷하다.</p>
-
-<p><strong>증명.</strong> 1과 2는 자명하다. 3을 보인다.</p>
-
-<p>$A = \bigcup A_n$이라고 하고, 임의의 $\epsilon &gt; 0$이 주어졌다고 하자. $\mu^\ast$의 정의에 의해, 각 $n$에 대해 다음을 만족하는 $A_n$의 덮개 $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$가 존재한다.</p>
-
-\[\sum l(A_{nm}) \leq \mu^*(A_n) + \epsilon/2^n\]
-
-<p>따라서,</p>
-
-\[\sum_{n, m \in \mathbb{N}} l(A_{nm}) \leq \sum \mu^*(A_n) + \epsilon.\]
-
-<p>그리고 $\bigcup \mathcal{C}_n$이 $A$를 덮으므로, $\mu^\ast$의 정의에 의해 $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$이다. ■</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. 임의의 $E$에 대해 다음을 만족하는 집합 $A$를 $\mu^\ast$에 대해 <strong>가측<sub>measurable</sub></strong>이라고 한다.</p>
-
-\[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
-</blockquote>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast(N) = 0$인 $N$을 <strong>영집합<sub>null set</sub></strong>이라고 한다.</p>
-</blockquote>
-
-<p>즉, 가측 집합은 $\mu^\ast$에 대해 임의의 집합을 ‘깔끔하게’ 분할하는 집합이다. 따라서 가측 집합으로만 이루어진 모임 위에서 $\mu^\ast$은 일반적인 측도와 같이 행동할 것으로 예측할 수 있다. 이 예측을 입증하는 것이 다음의 제한 정리이다.</p>
-
-<blockquote>
-  <p><strong>카라테오도리 제한 정리.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast$에 대해 가측인 집합들의 모임을 $\mathcal{A}$라고 할 때, 다음이 성립한다.</p>
-
-  <ol>
-    <li>$\mathcal{A}$는 $\sigma$-대수이다.</li>
-    <li>$\mu^\ast |_\mathcal{A}$는 측도이다.</li>
-    <li>$\mathcal{A}$는 $\mu^\ast$의 모든 영집합을 포함한다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<p><strong>1. $\mathcal{A}$는 대수이다.</strong></p>
-
-<p>여집합 닫힘은 자명하다. 유한 교집합 닫힘임을 보인다.</p>
-
-<p>$A, B$가 가측이라고 하자. $A \cap B$가 가측임을 보이기 위해 다음을 보이면 충분하다.</p>
-
-\[\mu^*(E \cap (A \cap B)) + \mu^*(E \cap (A \cap B)^c) \leq \mu^*(E) \quad \cdots \quad (*)\]
-
-<p>$A, B$가 가측이므로 다음이 성립한다.</p>
-
-\[\begin{aligned}
-\mu^*(E) &amp;= \mu^*(E \cap A) + \mu^*(E \cap A^c) \\
-&amp;= \mu^*(E \cap A \cap B) + \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B) + \mu^*(E \cap A^c \cap B^c)
-\end{aligned}\]
-
-<p>따라서 $(\ast)$은 다음과 동치이다.</p>
-
-\[\begin{aligned}
-\mu^*(E \cap (A^c \cup B^c)) &amp;\leq \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B)  \quad \cdots \quad (**) \\ &amp;+ \mu^*(E \cap A^c \cap B^c)
-\end{aligned}\]
-
-<p>간단한 집합론으로부터 다음을 알 수 있다.</p>
-
-\[A^c \cup B^c = (A \cap B^c) \cup (A^c \cap B) \cup (A^c \cap B^c)\]
-
-<p>따라서 $(\ast\ast)$가 성립한다. □</p>
-
-<p><strong>2. $\mathcal{A}$는 $\sigma$-대수이다.</strong></p>
-
-<p>$A_n \uparrow A$인 $\lbrace  A_n \rbrace  \subset \mathcal{A}$에 대해 $A \in \mathcal{A}$임을 보이면 충분하다. (why?)</p>
-
-<p>외측도의 정의에 의해 $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$이다. $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$이라고 하자. $\bigsqcup C_n = A$이다. 또한,</p>
-
-\[\begin{aligned}
-\mu^*(E \cap A_n) &amp;= \mu^*(E \cap A_n \cap C_n) + \mu^*(E \cap A_n \cap C_n^c) \\
-&amp;= \mu^*(E \cap C_n) + \mu^*(E \cap A_{n - 1}) \\
-&amp;= \cdots \\
-&amp;= \sum^n_{k = 1} \mu^*(E \cap C_k)
-\end{aligned}\]
-
-<p>이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$이다. 그런데 $\lbrace  E \cap C_n \rbrace $이 $E \cap A$를 덮으므로, $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$이다.</p>
-
-<p>따라서 임의의 $\epsilon &gt; 0$에 대해, 충분히 큰 $N$이 존재하여 $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$이다. 따라서,</p>
-
-\[\begin{aligned}
-\mu^*(E \cap A_n^c) &amp;= \mu^*(E) - \mu^*(E \cap A_n) \\
-&amp;\leq \mu^*(E) - \mu^*(E \cap A) + \epsilon
-\end{aligned}\]
-
-<p>이므로 다음을 얻는다.</p>
-
-\[\mu^*(E) \leq \mu^*(E \cap A_n) + \mu^*(E \cap A_n^c) \leq \mu^*(E) + \epsilon\]
-
-<p>$n \to \infty$로 보내면 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$이다. □</p>
-
-<p><strong>3. $\mu^\ast|_\mathcal{A}$는 측도이다, 4. $\mathcal{A}$는 모든 영집합을 포함한다.</strong></p>
-
-<p>Left as an exercise to the readers. (어렵지 않음) ■</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathcal{A}_0$가 대수라고 하자. $\rho: \mathcal{A}_0 \to [0, \infty]$가 <strong>예비측도</strong>라는 것은 다음을 만족한다는 것이다.</p>
-
-  <ol>
-    <li>$\rho(\varnothing) = 0$</li>
-    <li>쌍으로 서로소인 가산 집합족 $\lbrace  A_n \rbrace $에 대해, $\bigcup A_n \in \mathcal{A}_0$라면 $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>카라테오도리 확장 정리.</strong> 대수 $\mathcal{A}_0$ 위의 예비측도 $\rho$에 대해, 다음과 같이 정의하자.</p>
-
-\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
-
-  <p>이 때, 다음이 성립한다.</p>
-
-  <ol>
-    <li>$A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</li>
-    <li>$\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</li>
-    <li>$\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<p><strong>1. $A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</strong></p>
-
-<p>$A$가 $A$의 덮개이므로 $\mu^\ast(A) \leq \rho(A)$이다. 만약 $\mu^\ast(A) &lt; \rho(A)$라면 어떤 $A$의 덮개 $\lbrace  A_n \rbrace $이 존재하여 $\sum \rho(A_n) &lt; \rho(A)$이다. 그런데 $\rho$가 예비측도이므로 이는 모순이다. □</p>
-
-<p><strong>2. $\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</strong></p>
-
-<p>먼저 $\mathcal{A}_0$가 가측임을 보인다. 임의의 $A \in \mathcal{A}_0$에 대해 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$임을 보이면 충분하다. $\mu^\ast$의 정의에 의해, 임의의 $\epsilon &gt; 0$에 대해 어떤 $E$의 덮개 $\mathcal{C}$가 존재하여 다음이 성립한다.</p>
-
-\[\sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon\]
-
-<p>$\mathcal{A}_0$가 대수이므로, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$이다. 따라서,</p>
-
-\[\begin{aligned}
-\mu^*(E \cap A) + \mu^*(E \cap A^c) &amp;\leq \sum^\infty_{n = 1} \mu^*(A \cap C_n) + \sum^\infty_{n = 1} \mu^*(A^c \cap C_n) \\
-&amp;= \sum^\infty_{n = 1} \rho(A \cap C_n) + \sum^\infty_{n = 1} \rho(A^c \cap C_n) \\
-&amp;= \sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon
-\end{aligned}\]
-
-<p>(엄밀히 따지자면 $\sum^n_{k=1}$을 고려한 다음에 $n \to \infty$ 극한을 취해야 한다) 따라서 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$이며, $\mathcal{A}_0$는 가측이다. 카라테오도리 제한 정리에 의해 가측 집합은 $\sigma$-대수를 이루므로, $\sigma(\mathcal{A}_0)$ 또한 가측이다. □</p>
-
-<p><strong>3. $\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</strong></p>
-
-<p>먼저 $\rho &lt; \infty$를 가정하자. $\sigma(\mathcal{A}_0)$ 위에서 정의된 측도 $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치한다고 하자. 또한 $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$라고 하자. $\nu = \mu$임을 보인다.</p>
-
-<p>$E \in \sigma(\mathcal{A}_0)$라고 하자. 어떤 $E$의 덮개 $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$가 존재하여,</p>
-
-\[\sum \rho(A_n) \leq \mu(E) + \epsilon\]
-
-<p>이다. $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치하므로, $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$이다. 따라서 $\nu \leq \mu$이다.</p>
-
-<p>이제 $B_n = \bigcup^n_{k=1}A_k$로 정의하고, $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$이라고 하자. $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$이므로 $\mu(B \setminus E) \leq \epsilon$이다. $\nu$가 측도이므로,</p>
-
-\[\mu(A) = \lim \rho(B_n) = \lim \nu(B_n) = \nu(A)\]
-
-<p>따라서,</p>
-
-\[\begin{aligned}
-\mu(E) \leq \mu(B) &amp;= \mu(B \setminus E) + \mu(E) \\
-&amp;\leq \epsilon + \nu(E)
-\end{aligned}\]
-
-<p>즉 $\mu \leq \nu$이다. 따라서 $\mu = \nu$이다.</p>
-
-<p>이제 $\rho$가 $\sigma$-유한하다고 가정하자. 어떤 집합족 $\lbrace  C_n \rbrace $이 존재하여 $C_n \uparrow X$이고, $\rho(C_n) &lt; \infty$이다. 앞선 논의에 의해 $C_n$에서 $\mu$와 $\nu$는 일치한다. 따라서,</p>
-
-\[\mu(A) = \lim \mu(A \cap C_i) = \lim \nu (A \cap C_i) = \nu(A)\]
-
-<p>이므로 $\mu$와 $\nu$는 전체 공간에서 일치한다. ■</p>
-
-<p>다음 글에서는 카라테오도리 정리를 이용하여 르베그 측도를 구성한 뒤, 모든 보렐 가측 집합은 르베그 가측 집합이지만 그 역은 성립하지 않음을 보인다.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

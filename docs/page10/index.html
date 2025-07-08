@@ -433,6 +433,154 @@
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
+        <a href="/2024/12/26/uncountability-of-reals/en"> Proving the Uncountability of Real Numbers Without the Diagonal Argument </a>
+      </h1>
+    <span class="post-date">26 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>Theorem.</strong> $\mathbb{R}$ is uncountable. That is, there exists no surjective function from $\mathbb{N}$ to $\mathbb{R}$.</p>
+</blockquote>
+
+<p>This is a theorem that any sophomore student would have encountered at least once. The most widely known proof is Cantor’s diagonal argument. However, there are methods to prove this theorem without the diagonal argument. These utilise the order-theoretic and topological properties of $\mathbb{R}$, respectively.</p>
+
+<h3 id="1-proof-using-the-isomorphism-theorem">1. Proof Using the Isomorphism Theorem</h3>
+
+<p><a href="https://dimenerno.github.io/2024/11/20/Rational-Real/">Cantor’s isomorphism theorem</a> states that all totally ordered sets $(S, \leq)$ satisfying the following conditions are order isomorphic:</p>
+
+<ol>
+  <li>$S$ is countable.</li>
+  <li>$S$ is dense. That is, for $x, y \in S$ with $x &lt; y$, there exists $z \in S$ such that $x &lt; z &lt; y$.</li>
+  <li>$S$ has neither an upper bound nor a lower bound.</li>
+</ol>
+
+<p>$(\mathbb{Q}, \leq)$ satisfies all three conditions above, whilst $(\mathbb{R}, \leq)$ satisfies conditions 2 and 3. Therefore, if $\mathbb{R}$ were countable, then $(\mathbb{R}, \leq)$ would be order isomorphic to $(\mathbb{Q}, \leq)$. However, the former is complete while the latter is not, so $\mathbb{R}$ is uncountable. ■</p>
+
+<h3 id="2-proof-using-compactness">2. Proof Using Compactness</h3>
+
+<p><img src="/public/uncountability-wo-diagnal.png" style="width: 100%; max-width: 600px; margin: 2em auto;" /></p>
+
+<p>Let $X$ be a compact Hausdorff space with no isolated points. Also assume that $X \neq \varnothing$.</p>
+
+<p><em>Claim 1.</em> Let $U \neq \varnothing$ be an open subset of $X$. For $x \in X$, there exists an open set $V$ such that $x \notin \bar{V}$ and $V \subset U$.</p>
+
+<p><em>Proof of Claim 1.</em> There exists $y \in U$ where $x \neq y$. This is because if $x \in U$, then since $X$ has no isolated points such a $y$ must exist, and if $x \notin U$, then such a $y$ exists because $U$ is non-empty. Since $X$ is Hausdorff, we can separate $x$ and $y$ by neighbourhoods $V_x$ and $V_y$. Then $V = V_y \cap U$ is the desired set (the dark shaded region in Fig 1). □</p>
+
+<p><em>Claim 2.</em> $X$ is uncountable.</p>
+
+<p><em>Proof of Claim 2.</em> Suppose $X$ is countable. Enumerate the elements of $X$ as ${x_n}<em>{n \in \mathbb{Z}^+}$. Let $V_0 = X$. By Claim 1, for each $n$ there exists an open set $V_n$ such that $x_n \notin \bar{V_n}$ and $V_n \subset V</em>{n-1}$ (Fig 2). Since $X$ is compact, by the finite intersection property we have</p>
+
+\[K = \bigcap_{n \in \mathbb{Z}^+} \bar{V}_n \neq \varnothing.\]
+
+<p>However, if $x_n \in K$, then $x_n \in \bar{V}_n$, which is a contradiction. Therefore, $X$ is uncountable. □</p>
+
+<p><em>Claim 3.</em> $\mathbb{R}$ is uncountable.</p>
+
+<p><em>Proof of Claim 3.</em> $[0, 1]$ is a compact Hausdorff space with no isolated points. Therefore, it is uncountable. Consequently, $\mathbb{R}$ is uncountable. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/25/Cantor-Bendixson"> 칸토어-벤딕슨 정리와 폴란드 공간 </a>
+      </h1>
+    <span class="post-date">25 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$의 집합 $P$에 대해 $P’ = P$일 때 $P$를 <strong>완벽한 집합<sub>perfect set</sub></strong>이라고 한다. ($P’$은 $P$의 집적점들의 집합)</p>
+</blockquote>
+
+<p><em>Remark.</em> 모든 완벽한 집합은 닫힌 집합이지만, 역은 성립하지 않는다. 일반적으로 $S \not\subset S’$ ($S$가 고립점을 가짐), $S’ \not\subset S$ ($S$가 닫힌 집합이 아님) 임에 유의하라. 뒤집어 말해, 완벽한 집합은 고립점이 없는 닫힌 집합이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X$의 임의의 부분공간이 린델뢰프일 때 $X$를 <strong>세습적 린델뢰프<sub>hereditarily Lindelöf</sub></strong>라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>약한 칸토어-벤딕슨 정리.</strong> $X$가 세습적 린델뢰프 공간이라고 하자. $F \subset X$가 닫힌 집합일 때 어떤 완벽한 집합 $P$와 가산집합 $C$가 존재하여 $F = P \sqcup C$이다.</p>
+</blockquote>
+
+<p><img src="/public/cantor-bendixson.png" style="width: 100%; max-width: 600px; margin: 2em auto;" /></p>
+
+<p>완벽한 집합은 고립점이 없는 닫힌 집합이므로, 위 정리는 “닫힌 집합은 최대 가산 개의 고립점을 가진다”로 재진술할 수 있다.</p>
+
+<p><strong>증명.</strong> 다음과 같이 $P, C$를 정의한다.</p>
+
+\[P = \lbrace  x \in F : \text{For all nbd $U$ of $x$, $U \cap F$ is uncountable} \rbrace\]
+
+\[C = \lbrace  x \in F : \text{There exists a nbd $U$ of $x$ s.t. $U \cap F$ is countable} \rbrace\]
+
+<p>$F = P \sqcup C$임에 주목하라.</p>
+
+<p><em>Claim 1.</em> $C$는 $F$에서 열린 집합이다.</p>
+
+<p><em>Proof of Claim.</em> $x \in C$일 때 어떤 $x$의 근방 $U$가 존재하여 $U \cap F$가 가산이다. 즉, 임의의 $y \in U \cap F$에 대해 $U$는 $y$의 근방이고 $U \cap F$가 가산이므로 $y \in C$이다. 따라서 $U \cap F \subset C$이다. □</p>
+
+<p><em>Claim 2.</em> $C$는 가산이다.</p>
+
+<p><em>Proof of Claim.</em> $F$의 부분공간 토폴로지를 생각하자. 가정에 의해 이 토폴로지는 린델뢰프이다. 임의의 $x \in C$에 대해 $U_x \cap F$가 가산인 $x$의 근방 $U_x$를 찾을 수 있다. 그러면 $\lbrace  U_x \rbrace_{x \in C}$는 $C$의 $F$-열린 덮개이며, 린델뢰프 가정에 의해 $C = \bigcup_{\alpha \in J} U_\alpha$ ($J$는 가산)이다. $U_\alpha$가 가산이므로 $C$는 가산이다. □</p>
+
+<p><em>Claim 3.</em> $P$는 완벽하다.</p>
+
+<p><em>Proof of Claim.</em> Claim 1에 의해 $P$는 $F$에서 닫힌 집합이며, $F$가 닫힌 집합이므로 $P$는 $X$에서 닫힌 집합이다. 따라서 $P’ \subset P$이다. 역을 보이기 위해 $x \in P$라고 하자. 임의의 $x$의 근방 $U$에 대해 $U \cap F = (U \cap C) \sqcup (U \cap P)$가 비가산이다. $C$가 가산이므로, $U \cap P$가 비가산이어야 한다. 따라서 $U$는 $P$와 $\lbrace x \rbrace$보다 큰 교집합을 가지며, $x \in P’$이다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 분리 가능한<sub>separable</sub> 완비 거리화 가능 공간을 <strong>폴란드 공간<sub>Polish space</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<p>거리화 가능 공간에서 분리 가능성, 2차 가산, 그리고 린델뢰프는 동치이므로 해당 세 가지 조건 중 하나로 정의를 대체할 수 있다. ‘폴란드 공간’이라는 이름은 해당 공간을 처음으로 연구한 학자들인 시에르핀스키, 쿠라토프스키, 타르스키 등이 폴란드인들인 데에서 유래했다.</p>
+
+<p>$X$가 폴란드 공간이라는 더 강한 조건이 주어지면 칸토어-벤딕슨 분해가 유일함을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>강한 칸토어-벤딕슨 정리.</strong> $X$가 폴란드 공간이라고 하자. $F \subset X$가 닫힌 집합일 때 어떤 완벽한 집합 $P$와 가산집합 $C$가 존재하여 $F = P \sqcup C$이다. 또한, 해당 분해는 유일하다.</p>
+</blockquote>
+
+<p>또한 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 폴란드 공간의 완벽한 집합은 $2^{\aleph_0}$의 크기를 가진다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 추후 기술적 집합론에 대한 글에서 따로 다룰 예정.</p>
+
+<p>이로부터 다음의 결론이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>따름정리: 실수의 닫힌집합에서의 연속체 가설.</strong> 실수의 닫힌집합은 가산이거나 $2^{\aleph_0}$의 크기를 가진다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 실수는 폴란드 공간이므로 칸토어-벤딕슨 정리에 의해 모든 닫힌집합이 가산집합과 완벽한 집합의 서로소 합으로 분해된다. 후자가 공집합일 경우 해당 닫힌집합은 가산이며, 그렇지 않을 경우 $2^{\aleph_0}$이다. ■</p>
+
+<p>칸토어는 위 정리의 증명으로부터 일반적인 연속체 가설을 증명할 수 있으리라는 희망을 품었지만 잘 알려져 있다시피 그 희망은 실현되지 못했다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
         <a href="/2024/12/25/Cantor-Bendixson/en"> The Cantor-Bendixson Theorem and Polish Space </a>
       </h1>
     <span class="post-date">25 Dec 2024</span>
@@ -1326,236 +1474,6 @@
 </blockquote>
 
 <p><strong>증명.</strong> 초한귀납법을 겁나게 쓰면 된다. (불친절해서 ㅈㅅ)</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/12/05/transfinite-recursion/en"> Transfinite Induction and Transfinite Recursion </a>
-      </h1>
-    <span class="post-date">05 Dec 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <h3 id="1-transfinite-induction">1. Transfinite Induction</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $P$ be a property defined on ordinals, and suppose that for any $\alpha \in \mathrm{Ord}$,</p>
-
-\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha).\]
-
-  <p>Then $P$ is true for all ordinals.</p>
-</blockquote>
-
-<p><em>Remark.</em> Since $\mathrm{Ord}$, the domain of $P$, is a proper class rather than a set, we use the term “property” instead of “predicate”.</p>
-
-<p><strong>Proof.</strong> Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha_0$. Since $\forall \beta &lt; \alpha_0 : P(\beta)$, by hypothesis we have $P(\alpha_0)$, which is a contradiction. ■</p>
-
-<p><strong>Application.</strong> Show that the von Neumann hierarchy may be defined as $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$ instead of $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$.</p>
-
-<h3 id="2-transfinite-recursive-definition">2. Transfinite Recursive Definition</h3>
-
-<p><em>Motivation.</em> Consider recursive definitions on natural numbers. Given $n$ sets $x_1, \dots , x_n$ and a function $g$ that outputs a set, we would like to define $f: \mathbb{N} → V$ as follows:</p>
-
-\[f(n) = g(f(0), \dots, f(n - 1))\]
-
-<p>The problem is that $g$ can only take a fixed number of parameters. Therefore, we group the parameters of $g$ into an ordered pair:</p>
-
-\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
-
-<p>This ordered pair can be represented as $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$. That is,</p>
-
-\[f(n) = g(f \upharpoonright n).\]
-
-<p>Generalising this to ordinals, we obtain the following:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $G: V → V$ be a class function. There exists a class function $F: \mathrm{Ord} → V$ satisfying</p>
-
-\[F(\alpha) = G(F \upharpoonright \alpha)\]
-</blockquote>
-
-<p><strong>Proof.</strong> Apply transfinite induction extensively. (Sorry for the brevity, lol.) It is worth remarking that the proof does not depend on the axiom of choice, for the well-orderedness of ordinals is provable from ZF. Note, however, that the proof that every well-ordered set is order isomorophic to an ordinal <em>does</em> require AC.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/12/01/net"> 콤팩트성과 그물 </a>
-      </h1>
-    <span class="post-date">01 Dec 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <h3 id="콤팩트성">콤팩트성</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> $X$가 위상공간이라고 하자.</p>
-
-  <ol>
-    <li>임의의 열린 덮개가 유한한 부분덮개를 가질 때 $X$를 <strong>콤팩트</strong>하다고 한다.</li>
-    <li>임의의 점렬 $\lbrace x_n \in X \rbrace$가 수렴하는 부분점렬을 가질 때 $X$를 <strong>점렬 콤팩트<sub>sequentially compact</sub></strong>하다고 한다.</li>
-    <li>임의의 무한집합 $S \subset X$가 극점을 가질 때 $X$를 <strong>극점 콤팩트<sub>limit point compact</sub></strong>하다고 한다.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-  <ol>
-    <li>콤팩트 $\rightarrow$ 극점 콤팩트</li>
-    <li>점렬 콤팩트 $\rightarrow$ 극점 콤팩트</li>
-    <li>극점 콤팩트 $\not\rightarrow$ 콤팩트</li>
-    <li>극점 콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
-  </ol>
-</blockquote>
-
-<p><img src="/public/three-compactness.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
-
-<p><strong>증명.</strong></p>
-
-<ol>
-  <li>$S \subset X$가 극점이 없는 무한집합이라고 하자. $\overline{S} = S \cup S’ = S$이므로 $S$는 닫힌 집합이며, $X \setminus S$는 열린 집합이다. 임의의 $s \in S$에 대해, $s$가 극점이 아니므로 $U_s \cap S = \lbrace  s \rbrace$인 $s$의 근방 $U_s$가 존재한다. 따라서 다음 $X$의 열린 덮개는 유한한 부분덮개를 가지지 않는다.</li>
-</ol>
-
-\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
-
-<ol>
-  <li>$S \subset X$가 무한집합이라고 하자. $S$의 원소들을 임의로 추출하여 점렬 $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$을 만든다. $X$가 점렬 콤팩트하므로 $\lbrace  s_n \rbrace → s$이며, $s$는 $S$의 극점이다.</li>
-  <li>순서 토폴로지가 주어진 $\omega_1$은 극점 콤팩트하지만 콤팩트하지 않다.</li>
-  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, $\mathbb{N}$에는 이산 토폴로지가 주어지고 $\lbrace  0, 1\rbrace$에는 자명한 토폴로지가 주어짐.</li>
-</ol>
-
-<p><strong>Remark.</strong> 4의 올바르지 못한 “증명”</p>
-
-<blockquote>
-  <p>$X$가 극점 콤팩트하다고 하자. 점렬 $(x_n)$이 주어졌을 때, $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$이 유한집합이라면 $(x_n)$은 수렴하는 부분점렬을 자명하게 가진다. $S$가 무한집합이라면 $X$의 극점 콤팩트성에 의해 $x \in S’$가 존재한다. <strong>이제 다음 조건을 만족하는 $x$의 근방들의 가산 모임 $\mathcal{U} = \lbrace  U_n \rbrace$을 정의한다.</strong></p>
-
-  <ol>
-    <li>$n &lt; m \implies U_n \supset U_m$</li>
-    <li>$V$가 $x$의 근방일 때, $\exists U \in \mathcal{U} : U \subset V$</li>
-  </ol>
-
-  <p>이로부터 다음 조건을 만족하는 함수 $k: \mathbb{N} → \mathbb{N}$을 정의할 수 있다.</p>
-
-  <ol>
-    <li>$x_{k(n)} \in U_n$</li>
-    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
-    <li>$n \neq m \implies x_{k(n)} \neq x_{k(m)}$</li>
-  </ol>
-
-  <p>2가 가능한 이유는 $k(i)$가 $i \leq n$까지 정의되었을 때 $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$가 여전히 $x$를 극점으로 가지기 때문이다. 즉, $(x_n)$은 수렴하는 부분점렬 $(x_{k(n)})$을 가진다.</p>
-</blockquote>
-
-<p>위 증명이 올바르지 않은 이유는 볼드체 부분이 일반적으로 가능하지 않기 때문이다. 대신 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 1차 가산 $T_1$ 공간에서 극점 콤팩트성과 점렬 콤팩트성은 동치이다.</p>
-</blockquote>
-
-<p>$T_1$은 조건 3을 일반적으로 성립시키는 데 필요하다.</p>
-
-<h3 id="그물과-점렬">그물과 점렬</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> $(J, \leq)$가 원순서<sub>preorder</sub>라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합<sub>directed set</sub></strong>이라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종<sub>cofinal</sub></strong>이라고 한다.</p>
-</blockquote>
-
-<p><strong>Remark 1.</strong> $(J, \leq)$가 방향 집합이면 $J$는 $J$에서 자명하게 공종이다. 한편 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
-
-<p><strong>Remark 2.</strong> 이후 드러나듯이, 방향성은 수렴의 일반화와 관련되는 조건이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물<sub>net</sub></strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
-</blockquote>
-
-<p><img src="/public/directed-set-net.png" style="width: 100%; max-width: 600px; margin: 0 auto" /></p>
-
-<blockquote>
-  <p><strong>정의.</strong> 그물 $(x_\alpha)$가 $x$로 수렴한다는 것은, 임의의 $x$의 근방 $U$에 대해 어떤 $\alpha \in J$가 존재하여</p>
-
-\[\alpha \leq \beta \implies x_\beta \in U\]
-
-  <p>인 것이다.</p>
-</blockquote>
-
-<p>방향성에 의해, 특정한 $\alpha \in J$에 대해 $\alpha \leq \beta$인 $\beta$들만 고려해도 $\mathrm{im} f$ 전체를 포섭할 수 있음을 유의하라. 즉, 임의의 $x_\gamma$에 대해 $\alpha, \gamma \leq \beta$인 $\beta$가 존재한다. 달리 말해, 그물이 $x$로 수렴한다는 것은 임의의 $x$의 근방 $U$가 주어졌을 때, 그물의 어느 원소에서 시작하든 간에 위로 충분히 올라가다 보면 어느 지점부터 이후의 모든 원소가 $U$에 속한다는 것이다.</p>
-
-<p>일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $X$가 1차 가산 공간이라고 하자.</p>
-
-  <ol>
-    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 점렬 $(x_n)$이 존재하는 것이다.</li>
-    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면 $f(x_n) → f(x)$인 것이다.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $X$가 위상 공간이라고 하자.</p>
-
-  <ol>
-    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 그물 $(x_\alpha)$가 존재하는 것이다.</li>
-    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면 $f(x_\alpha) → f(x)$인 것이다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<ol>
-  <li>$\mathcal{U}_x$를 $x$의 근방들의 집합이라고 하자. 역포함관계로 $\mathcal{U}_x$에 순서 $\leq$를 준다. $x \in \bar{A}$라면 임의의 $U_\alpha \in \mathcal{U}_x$에 대해 $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$인 $x_\alpha$가 존재한다. $x_\alpha → x$임을 확인하라.</li>
-</ol>
-
-<blockquote>
-  <p><strong>정의.</strong> $(x_\alpha)_{\alpha \in J}$가 그물이라고 하자. $(I, \preceq)$가 방향 집합이고, $g: (I, \preceq) → (J, \leq)$가 순서 보존이며, $\operatorname{im}g$가 공종일 때, $(x_{g(\beta)})_{\beta \in I}$를 $(x_\alpha)$의 부분그물이라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $X$가 콤팩트할 필요충분조건은 임의의 그물이 수렴하는 부분그물을 가지는 것이다.</p>
-</blockquote>
-
-<p><strong>Remark.</strong> ”수렴하는 점렬이 존재한다“는 ”수렴하는 그물이 존재한다“보다 강한 조건이지만, ”임의의 점렬이 수렴하는 부분점렬을 가진다”는 “임의의 그물이 수렴하는 부분그물을 가진다”보다 강하지도, 약하지도 않은 조건임에 유의하라. 주어는 후자가 더 강하고, 술어는 전자가 더 강하다. 따라서 <strong>콤팩트성과 점렬 콤팩트성은 일반적으로 시사 관계가 없다.</strong> 구체적으로,</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-  <ol>
-    <li>콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
-    <li>점렬 콤팩트 $\not\rightarrow$ 콤팩트</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<ol>
-  <li>$[0, 1]^{[0, 1]}$은 티호노프 정리에 의해 콤팩트하지만 점렬 콤팩트하지 않다.</li>
-  <li>Long line과 $\omega_1$은 점렬 콤팩트하지만 콤팩트하지 않다.</li>
-</ol>
 
   </div>
   <div style="margin-bottom: 6em"></div>
