@@ -431,163 +431,6 @@
 
 <div class="posts">
   
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/01/25/los/en"> Łoś's Theorem </a>
-      </h1>
-    <span class="post-date">25 Jan 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <p>This post continues from the <a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">previous post</a>.</p>
-
-<h2 id="5-nonstandard-characteristics-of-hypernatural-numbers">5. Nonstandard Characteristics of Hypernatural Numbers</h2>
-
-<p>The hypernatural numbers we have examined so far — $[0], [1], [2], \dots$ — correspond to standard natural numbers. We shall now examine some bizarre hypernatural numbers.</p>
-
-<p>Consider the following hypernatural number $\mathfrak{n}$:</p>
-
-\[\mathfrak{n} = [(1, 2, 3, 4, \dots)]\]
-
-<p>Recalling how binary relation is defined for hypernaturals, for any natural number $n$, we have $[n] &lt; \mathfrak{n}$. That is, $\mathfrak{n}$ is a hypernatural number greater than all natural numbers. That is, the following holds for hypernaturals:</p>
-
-\[\phi_1 : \exists x \; ( \lbrace y : y &lt; x \rbrace \text{ is infinite } )\]
-
-<p>This sentence does not hold in the natural numbers.</p>
-
-<p>Now consider the following hypernatural number $\mathfrak{m}$:</p>
-
-\[\mathfrak{m} = [(1, 2!, 3!, 4!, \dots)]\]
-
-<p>For any standard natural number $n$, $\mathfrak{m}$ is divisible by $[n]$. That is, $\mathfrak{m}$ has every natural number as a divisor. Therefore, the following holds for hypernaturals:</p>
-
-\[\phi_2 : \exists x \; (\lbrace y : y \mid x \rbrace \text{ is infinite })\]
-
-<p>Again, this sentence does not hold in the natural numbers.</p>
-
-<p>This may seem to contradict the promise delivered in the previous essay. There, I stated that the natural numbers and hypernatural numbers are logically indistinguishable. Yet $\phi_1$ and $\phi_2$, both of which seem to be a cogent logical formula, are true in $\mathbb{N}^*$ but false in $\mathbb{N}$. Have I been misleading?</p>
-
-<p>Of course not. The key to this apparent paradox lies in the fact that $\phi_1$ and $\phi_2$ <em>cannot</em> be expressed in first-order logic. By the compactness theorem, “… is finite” is inexpressible in first-order logic.</p>
-
-<p>For a more precise statement, let us define the following:</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Two $\mathcal{L}$-models $\mathcal{M}_1$ and $\mathcal{M}_2$ of a language $\mathcal{L}$ are <strong>elementarily equivalent</strong> if for any $\mathcal{L}$-sentence $\phi$,</p>
-
-\[\mathcal{M_1} \vDash \phi \iff \mathcal{M}_2 \vDash \phi\]
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $\mathbb{N}$ and $\mathbb{N}^*$ are elementarily equivalent.</p>
-</blockquote>
-
-<p>This theorem is a special case of Łoś’s theorem. But before we state Łoś’s theorem, let us first rigorously define ultraproducts.</p>
-
-<h2 id="6-ultraproducts">6. Ultraproducts</h2>
-
-<p>Let a set $I$ and a free ultrafilter $\mathcal{U}$ on $I$ be given. Furthermore, let models $\lbrace \mathcal{M}_i \rbrace_{i \in I}$ of a language $\mathcal{L}$ be given. We define the <strong>ultraproduct</strong> $\mathcal{M}^* = \prod \mathcal{M}_i / \mathcal{U}$ as follows:</p>
-
-<blockquote>
-  <h4 id="elements-of-the-ultraproduct">Elements of the Ultraproduct</h4>
-
-  <p>The elements of $\mathcal{M}^*$ are equivalence classes of $\lbrace (a_i)_{i\in I} : a_i \in \mathcal{M}_i \rbrace$ under the relation $\sim$, where $\sim$ is defined as:</p>
-
-\[(a_i)_{i\in I} \sim (b_i)_{i \in I} \iff \lbrace i \in I : a_i = b_i \rbrace \in \mathcal{U}\]
-
-  <h4 id="operations-on-the-ultraproduct">Operations on the Ultraproduct</h4>
-
-  <p>Let $f(x)$ be a function in $\mathcal{L}$. For an element $\mathfrak{a} = [(a_i)_{i\in I}]$ of $\mathcal{M}^*$, we define:</p>
-
-\[f(\mathfrak{a}) = [(f(a_i))_{i \in I}]\]
-
-  <p>This definition generalises naturally to $n$-ary functions.</p>
-
-  <h4 id="relations-on-the-ultraproduct">Relations on the Ultraproduct</h4>
-
-  <p>Let $P(x, y)$ be a relation in $\mathcal{L}$. For two elements $\mathfrak{a} = [(a_i)_{i\in I}]$ and $\mathfrak{b} = [(b_i)_{i\in I}]$ of $\mathcal{M}^*$, we define:</p>
-
-\[\mathcal{M}^* \vDash P(\mathfrak{a}, \mathfrak{b}) \iff \lbrace i \in I : \mathcal{M}_i \vDash P(a_i, b_i) \rbrace \in \mathcal{U}\]
-
-  <p>This definition generalises naturally to $n$-ary predicates.</p>
-</blockquote>
-
-<p>When defining operations and relation on the ultraproduct, one needs to show that the definition is irrelevant to which element is chosen as a representative for each equivalence class. This follows readily from the intersection property of $\mathcal{U}$, so we leave it as an exercise.</p>
-
-<p>We can now redefine the hypernatural numbers as the ultraproduct arising when $I, \mathcal{U}, \mathcal{L}, \mathcal{M}_i$ are respectively:</p>
-
-<ul>
-  <li>$I = \mathbb{N}$</li>
-  <li>$\mathcal{U} =$ Fréchet ultrafilter</li>
-  <li>$\mathcal{L} = (0, S, &lt;)$</li>
-  <li>$\mathcal{M}_i = \mathbb{N}$</li>
-</ul>
-
-<p>Similarly, we can define the <strong>hyperreal numbers</strong>:</p>
-
-<ul>
-  <li>$I = \mathbb{N}$</li>
-  <li>$\mathcal{U} =$ Fréchet ultrafilter</li>
-  <li>$\mathcal{L} = (0, 1, +, ⋅, &lt;)$</li>
-  <li>$\mathcal{M}_i = \mathbb{R}$</li>
-</ul>
-
-<h2 id="7-łośs-theorem">7. Łoś’s Theorem</h2>
-
-<blockquote>
-  <p><strong>Łoś’s Theorem.</strong> Given an ultraproduct $\mathcal{M}^* = \prod \mathcal{M}_i / \mathcal{U}$, for any $\mathcal{L}$-sentence $\phi$, the following holds:</p>
-
-\[\mathcal{M}^* \vDash \phi \iff \lbrace i \in I : \mathcal{M}_i \vDash \phi \rbrace \in \mathcal{U}\]
-</blockquote>
-
-<p><em>Proof.</em> We prove this by structural induction on $\phi$.</p>
-
-<h4 id="1-phi-is-an-atomic-proposition">1. $\phi$ is an atomic proposition</h4>
-
-<p>This follows trivially from the definition of predicates on ultraproducts.</p>
-
-<h4 id="2-phi--psi-land-theta">2. $\phi := \psi \land \theta$</h4>
-
-\[\begin{aligned}
-&amp;\mathcal{M}^* ⊨ φ\\
-&amp;\iff \mathcal{M}^* ⊨ ψ \land \mathcal{M}^* ⊨ θ\\
-&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ \rbrace ∈ \mathcal{U} \land \lbrace i ∈ I \mid \mathcal{M}_i ⊨ θ \rbrace ∈ \mathcal{U} &amp;&amp;(*)
-\\
-&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ \rbrace \cap \lbrace i ∈ I \mid \mathcal{M}_i ⊨ θ \rbrace ∈ \mathcal{U} &amp;&amp;(**) \\
-&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ \land \mathcal{M}_i ⊨ θ \rbrace ∈ \mathcal{U}\\
-&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ∧θ \rbrace ∈ \mathcal{U}\\
-&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ φ \rbrace ∈ \mathcal{U}
-\end{aligned}\]
-
-<p>$(*)$ holds by the inductive hypothesis, and $(**)$ holds by the intersection closure property of $\mathcal{U}$.</p>
-
-<h4 id="3-phi--lnot-psi">3. $\phi := \lnot \psi$</h4>
-
-<p>This can be proved by a similar method to case 2, using the inductive hypothesis and the ultrafilter property of $\mathcal{U}$ ($A \in \mathcal{U} \lor A^c \in \mathcal{U}$).</p>
-
-<h4 id="4-phi--exists-x-psi">4. $\phi := \exists x\; \psi$</h4>
-
-<p>This can be proved by a similar method to case 2, though the inductive hypothesis alone suffices.</p>
-
-<p>Since every proposition can be constructed from cases 1, 2, 3, and 4, the theorem is proved by induction. ■</p>
-
-<blockquote>
-  <p><strong>Corollary.</strong> $\mathbb{N}$ and $\mathbb{N}^*$ are elementarily equivalent.</p>
-</blockquote>
-
-<p><em>Proof.</em> By Łoś’s theorem, the necessary and sufficient condition for $\mathbb{N}^* \vDash \phi$ is that $\lbrace i \in \mathbb{N} : \mathbb{N}^\ast_i \vDash \phi \rbrace \in \mathcal{U}$. However, since $\mathbb{N}^*_i = \mathbb{N}$, the necessary and sufficient condition reduces to $\mathbb{N} \vDash \phi$. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/01/22/hypernaturals"> 프레셰 필터와 비표준 자연수 </a>
@@ -2000,6 +1843,66 @@
 <p><em>Claim 3.</em> $\mathbb{R}$은 비가산이다.</p>
 
 <p><em>Proof of Claim 3.</em> $[0, 1]$은 고립점을 가지지 않는 콤팩트 하우스도르프 공간이다. 따라서 비가산이다. 이에 따라 $\mathbb{R}$은 비가산이다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/26/uncountability-of-reals/en"> Proving the Uncountability of Real Numbers Without the Diagonal Argument </a>
+      </h1>
+    <span class="post-date">26 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>Theorem.</strong> $\mathbb{R}$ is uncountable. That is, there exists no surjective function from $\mathbb{N}$ to $\mathbb{R}$.</p>
+</blockquote>
+
+<p>This is a theorem that any sophomore student would have encountered at least once. The most widely known proof is Cantor’s diagonal argument. However, there are methods to prove this theorem without the diagonal argument. These utilise the order-theoretic and topological properties of $\mathbb{R}$, respectively.</p>
+
+<h3 id="1-proof-using-the-isomorphism-theorem">1. Proof Using the Isomorphism Theorem</h3>
+
+<p><a href="https://dimenerno.github.io/2024/11/20/Rational-Real/">Cantor’s isomorphism theorem</a> states that all totally ordered sets $(S, \leq)$ satisfying the following conditions are order isomorphic:</p>
+
+<ol>
+  <li>$S$ is countable.</li>
+  <li>$S$ is dense. That is, for $x, y \in S$ with $x &lt; y$, there exists $z \in S$ such that $x &lt; z &lt; y$.</li>
+  <li>$S$ has neither an upper bound nor a lower bound.</li>
+</ol>
+
+<p>$(\mathbb{Q}, \leq)$ satisfies all three conditions above, whilst $(\mathbb{R}, \leq)$ satisfies conditions 2 and 3. Therefore, if $\mathbb{R}$ were countable, then $(\mathbb{R}, \leq)$ would be order isomorphic to $(\mathbb{Q}, \leq)$. However, the former is complete while the latter is not, so $\mathbb{R}$ is uncountable. ■</p>
+
+<h3 id="2-proof-using-compactness">2. Proof Using Compactness</h3>
+
+<p><img src="/public/uncountability-wo-diagnal.png" style="width: 100%; max-width: 600px; margin: 2em auto;" /></p>
+
+<p>Let $X$ be a compact Hausdorff space with no isolated points. Also assume that $X \neq \varnothing$.</p>
+
+<p><em>Claim 1.</em> Let $U \neq \varnothing$ be an open subset of $X$. For $x \in X$, there exists an open set $V$ such that $x \notin \bar{V}$ and $V \subset U$.</p>
+
+<p><em>Proof of Claim 1.</em> There exists $y \in U$ where $x \neq y$. This is because if $x \in U$, then since $X$ has no isolated points such a $y$ must exist, and if $x \notin U$, then such a $y$ exists because $U$ is non-empty. Since $X$ is Hausdorff, we can separate $x$ and $y$ by neighbourhoods $V_x$ and $V_y$. Then $V = V_y \cap U$ is the desired set (the dark shaded region in Fig 1). □</p>
+
+<p><em>Claim 2.</em> $X$ is uncountable.</p>
+
+<p><em>Proof of Claim 2.</em> Suppose $X$ is countable. Enumerate the elements of $X$ as ${x_n}<em>{n \in \mathbb{Z}^+}$. Let $V_0 = X$. By Claim 1, for each $n$ there exists an open set $V_n$ such that $x_n \notin \bar{V_n}$ and $V_n \subset V</em>{n-1}$ (Fig 2). Since $X$ is compact, by the finite intersection property we have</p>
+
+\[K = \bigcap_{n \in \mathbb{Z}^+} \bar{V}_n \neq \varnothing.\]
+
+<p>However, if $x_n \in K$, then $x_n \in \bar{V}_n$, which is a contradiction. Therefore, $X$ is uncountable. □</p>
+
+<p><em>Claim 3.</em> $\mathbb{R}$ is uncountable.</p>
+
+<p><em>Proof of Claim 3.</em> $[0, 1]$ is a compact Hausdorff space with no isolated points. Therefore, it is uncountable. Consequently, $\mathbb{R}$ is uncountable. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

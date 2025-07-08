@@ -42,5 +42,5 @@ def process_markdown(filename):
 
 if __name__ == "__main__":
     # filename = input("수정 파일: ")
-    filename = "2025-07-08-urysohn-en"
+    filename = "2025-07-08-urysohn"
     process_markdown(filename)

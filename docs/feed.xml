@@ -7,82 +7,6 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>우리손 보조정리</title>
-        <link>https://dimenerno.github.io/2025/07/08/urysohn</link>
-        <guid>https://dimenerno.github.io/2025/07/08/urysohn</guid>
-        <pubDate>Tue, 08 Jul 2025 00:00:00 +0900</pubDate>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;우리손 보조정리&lt;sub&gt;Urysohn Lemma&lt;/sub&gt;.&lt;/strong&gt; $X$가 정규&lt;sub&gt;normal&lt;/sub&gt; 공간이라고 하자. $A, B$가 서로소인 $X$의 닫힌집합일 때, 어떤 연속함수 $f: X \to [0, 1]$이 존재하여 $f[A] = \lbrace  0 \rbrace$, $f[B] = \lbrace 1 \rbrace$이다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;img src=&quot;/public/urysohn-1.png&quot; style=&quot;width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;&quot; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/08/urysohn">
-          <![CDATA[
-            <blockquote>
-  <p><strong>우리손 보조정리<sub>Urysohn Lemma</sub>.</strong> $X$가 정규<sub>normal</sub> 공간이라고 하자. $A, B$가 서로소인 $X$의 닫힌집합일 때, 어떤 연속함수 $f: X \to [0, 1]$이 존재하여 $f[A] = \lbrace  0 \rbrace$, $f[B] = \lbrace 1 \rbrace$이다.</p>
-
-  <p><img src="/public/urysohn-1.png" style="width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-</blockquote>
-
-<p>정규성을 비롯한 분리 공리는 <em>해당 공간에서</em> 점과 닫힌집합을 분리한다. 우리손 보조정리의 의의는, 정규성 분리 공리의 경우 두 닫힌집합은 <em>좋은 공간에서도</em> 분리 가능하다는 것이다. 구체적으로, 정규공간을 적절한 연속함수로 사상시켰을 때 두 닫힌집합은 $[0, 1]$에서 분리 가능하다. 그리고 $[0, 1]$의 여러 좋은 성질은 — 콤팩트 하우스도르프 거리 공간일 뿐 아니라 우리에게 굉장히 익숙한 공간이라 논증하기도 쉽다 — 우리손 보조정리의 굉장한 잠재력을 암시한다.</p>
-
-<h4 id="증명">증명</h4>
-
-<p>$Q = [0, 1] \cap \mathbb{Q}$라고 하자 (사실 $[0, 1]$의 가산 조밀 집합이기만 하면 된다). $Q$가 가산이므로 $Q$의 원소를 열거<sub>enumerate</sub>하는 방법이 존재한다. 일례로 분모-분자의 사전식 열거 $\prec$를 고려하자.</p>
-
-\[0 \prec 1 \prec 1/2 \prec 1/3 \prec 2/3 \prec 1/4 \prec 1/5 \prec 2/5 \prec \cdots\]
-
-<p>이제 다음과 같이 $\lbrace  U_q \rbrace _{q \in Q}$를 정의하자. 먼저 $U_1 = X \setminus B$이다 ($B$가 닫힌집합이므로 $U_1$은 열린집합이다). 정규성에 의해 $A \subset U_0$이면서 $\overline{U_0} \subset U_1$인 $U_0$가 존재한다. 나머지 $U_q$는 열거 순서에 따라 다음과 같이 정의한다. $p \prec q$인 임의의 $p$에 대해,</p>
-
-<ul>
-  <li>$p &lt; q \implies \overline{U_p} \subset U_q$</li>
-  <li>$q &lt; p \implies \overline{U_q} \subset U_p$</li>
-</ul>
-
-<p>정규성에 의해 위 조건을 만족하며 $\lbrace  U_q \rbrace _{q \in Q}$를 완전히 정의할 수 있다.</p>
-
-<p><img src="/public/urysohn-2.png" style="width: 100%; max-width: 400px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<p>이제 다음과 같이 함수 $f: X \to [0, 1]$을 정의하자.</p>
-
-\[f(x) = \begin{cases}
-\sup_{&lt;}\{q \in Q : x \notin U_q \} &amp; x \notin U_0 \\
-0 &amp; x \in U_0
-\end{cases}\]
-
-<p>$\sup_&lt;$라는 표기는 $\prec$가 아닌 $&lt;$에 대해 상한을 취함을 의미한다. 정의로부터 $f[A] = 0, f[B] = 1$가 따라 나온다.</p>
-
-<p>이제 $f$가 연속임을 보이면 정리가 증명된다. $\lbrace  B_\epsilon(q) \cap [0, 1] : q \in Q, \epsilon \in \mathbb{Q}_{&gt;0} \rbrace $가 $[0, 1]$의 위상 기저이므로, 임의의 $q \in Q$와 특정 상한보다 작은 양의 유리수 $\epsilon$에 대해 $S_{q, \epsilon} = f^{-1}(B_\epsilon(q) \cap [0, 1])$가 열린집합임을 보이면 충분하다.</p>
-
-<ul>
-  <li>$0 &lt; q &lt; 1$인 경우, $S_{q, \epsilon} = (X \setminus \overline{U_{q-\epsilon}}) \cap U_{q + \epsilon}$이므로 열린집합이다.</li>
-  <li>$q = 0$인 경우, $S_{0, \epsilon} = U_\epsilon$이므로 열린집합이다.</li>
-  <li>$q = 1$인 경우, $S_{1, \epsilon} = X \setminus \overline{U_{1 - \epsilon}}$이므로 열린집합이다.</li>
-</ul>
-
-<p>따라서 $f$는 연속이다. ■</p>
-
-<h4 id="고찰">고찰</h4>
-
-<ul>
-  <li>
-    <p>우리손 보조정리의 역은 자명히 성립한다. 즉, 임의의 닫힌집합 $A, B \subset X$에 대해 어떤 연속인 $f: X \to [0, 1]$가 $A, B$를 분리한다면, $U = f^{-1}[0, 1/2)$, $V = f^{-1}(1/2, 1]$는 $A, B$를 분리하는 서로소 열린집합이므로 $X$는 정규이다. 간단히 말해, <strong>정규공간에서는 우리손 분리가능성과 분리 공리가 동치이다.</strong></p>
-  </li>
-  <li>
-    <p>정칙<sub>regular</sub> 공간에서는 이가 성립하지 않는다. 즉, 정칙 공간 $X$에서 임의의 닫힌집합 $F$와 점 $a$가 주어졌을 때, $f(a) = 0$, $f[F] = \lbrace 1 \rbrace$을 만족하는 연속인 $f: X \to [0, 1]$이 언제나 존재하는 것은 아니다. 우리손 분리가능한 정칙 공간을 <strong>티호노프<sub>Tychonoff</sub> 공간</strong> 또는 <strong>완전 정칙<sub>completely regular</sub> 공간</strong>이라고 하며, 정칙보다 엄격히 강한 조건이다.</p>
-  </li>
-  <li>
-    <p>우리손 보조정리의 증명이 정칙 공간에 대해 유효하지 않은 이유는 $p &lt; q \implies \overline{U_p} \subset U_q$를 만족하는 ${ U_q }$를 구성할 때 정규 공리가 필요하기 때문이다.</p>
-  </li>
-</ul>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
         <title>Urysohn Lemma</title>
         <link>https://dimenerno.github.io/2025/07/08/urysohn/en</link>
         <guid>https://dimenerno.github.io/2025/07/08/urysohn/en</guid>
@@ -1578,6 +1502,90 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
 <p>$f$가 “위상적으로 연속”일 때, $x \sim y$라면 $f(x) \sim f(y)$임을 보이자. $V$가 $f(x)$와 “가까운” 점들만을 포함하는 집합이라고 하자. $V$는 열린 집합이다. 왜냐하면 $z \in V$이고 $z \sim w$일 때, $V$의 정의에 의해 $f(x) \sim z$이므로 ~추이성에 의해~ $f(x) \sim w$, 즉 $w \in V$이기 때문이다. 그리고 $U = f^{-1}[V]$가 $x$를 포함하는 열린 집합이므로 $y \in U$이다. 따라서 $f(y) \in V$, 즉 $f(x) \sim f(y)$이다. ■</p>
 
 <p>물론 위의 논의는 엄밀하게 정의되지 않은 관계 $\sim$을 사용하기 때문에 조금 석연찮기는 하다. 그러나 필자는 $\sim$을 사용하여 열린 집합과 연속성을 이해하는 것이 위상수학을 처음 공부하는 데 있어 유용한 길잡이가 되어준다고 생각한다. 덧붙이자면, 비표준 해석학을 사용하면 $x \sim y$를 $|x - y| = \epsilon$으로 엄밀하게 정의할 수 있다. 이에 관해서는 나중에 기회가 되면 이야기해 보겠다.</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Why is Continuity in Topology defined 'Backwards'?</title>
+        <link>https://dimenerno.github.io/2025/06/02/notes-on-continuity/en</link>
+        <guid>https://dimenerno.github.io/2025/06/02/notes-on-continuity/en</guid>
+        <pubDate>Mon, 02 Jun 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A mapping $f: X \to Y$ is said to be &lt;strong&gt;continuous&lt;/strong&gt; if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/06/02/notes-on-continuity/en">
+          <![CDATA[
+            <blockquote>
+  <p><strong>Definition.</strong> A mapping $f: X \to Y$ is said to be <strong>continuous</strong> if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.</p>
+</blockquote>
+
+<p>Students learning topology for the first time often experience confusion with this definition. Intuitively, it seems more natural to define continuity as “if $U \subseteq X$ is open, then $f[U] \subseteq V$ is also open,” but the actual definition is the inverse. The reasoning behind this intuition might roughly be as follows.</p>
+
+<h3 id="1-epsilon-delta-definition">1. Epsilon-Delta Definition</h3>
+
+<p>According to the epsilon-delta definition, a function $f: X \to Y$ is continuous if the following holds:</p>
+
+\[\forall \epsilon &gt; 0 \; \exists \delta &gt; 0 : |x - y| &lt; \delta \rightarrow |f(x) - f(y)| &lt; \epsilon\]
+
+<p>Here the antecedent contains $x, y \in X$, and the consequent contains $f(x), f(y) \in Y$. Therefore, it seems natural for the topological definition of continuity to also have $U \subseteq X$ in the antecedent and $f[U] \subseteq Y$ in the consequent.</p>
+
+<h3 id="2-intuition-about-open-sets">2. Intuition about Open Sets</h3>
+
+<p>When first learning topology, one often thinks of an open set as a “collection of points that are close to each other.” That is, if $U$ is an open set, then $x, y \in U$ implies that $x$ and $y$ are “close.” Thus, if continuous function are those that map “close points” to “close points,” it seems natural to require that they map open sets to open sets.</p>
+
+<div style="margin: 2.5em 0;">
+</div>
+
+<p><strong>However, both of these reasonings are fundamentally flawed.</strong></p>
+
+<div style="margin: 2.5em 0;">
+</div>
+
+<h3 id="3-why-the-reasoning-behind-epsilon-delta-definition-is-incorrect">3. Why the Reasoning behind “Epsilon-Delta Definition” is Incorrect</h3>
+
+<p>Judging the antecedent and consequent based solely on $\rightarrow$ can easily lead to misunderstandings. One must also consider the quantifiers. The quantifiers of the epsilon-delta definition can be read linguistically as “for any positive $\epsilon$, there exists some positive $\delta$ such that…” In other words, “if $\epsilon$ is a positive number, then there exists some positive $\delta$ such that…”</p>
+
+<p><em>Here we see that the “true” antecedent regards $\epsilon$\, not $\delta$.</em> And indeed, the space related to $\epsilon$ is not $X$, but $Y$. Therefore, it is only natural that $V \subseteq Y$ appears in the antecedent of the topological definition.</p>
+
+<h3 id="4-why-the-reasoning-behind-intuition-about-open-sets-is-incorrect">4. Why the Reasoning behind “Intuition about Open Sets” is Incorrect</h3>
+
+<p>For convenience, let us denote that $x$ and $y$ are “close” as $x \sim y$. The said reasoning is based on the following <strong>incorrect</strong> intuition.</p>
+
+<blockquote>
+  <p><strong>Incorrect Intuition about Open Sets.</strong> If $x \in U$ and $y \in U$, then $x \sim y$.</p>
+</blockquote>
+
+<p><strong>This should be corrected as follows:</strong></p>
+
+<blockquote>
+  <p><strong>Correct Intuition about Open Sets.</strong> If $x \in U$ and $x \sim y$, then $y \in U$.</p>
+</blockquote>
+
+<p>A little thought reveals that this is quite trivial. For example, the set of all real numbers $\mathbb{R}$ is an open set. But surely, that does not mean that two arbitrary real numbers are always “close”. Conversely, the set $\lbrace  0 \rbrace $ is not an open set, but when $x, y \in \lbrace  0 \rbrace $, we have $x = y$, so $x$ and $y$ are as “close” as possible. Thus, according to the “incorrect intuition,” $\lbrace 0 \rbrace $ should be an open set.</p>
+
+<p>On the other hand, with the “correct intuition,” it is evident that $\mathbb{R}$ is an open set while $\lbrace  0 \rbrace $ is not. When $x \in \mathbb{R}$, the real number $y$ that is “close” to $x$ is trivially included in $\mathbb{R}$. Meanwhile, $\lbrace  0 \rbrace $ does not include the real numbers that are “not equal to, but in the neighbourhood of” $0$, so it is not an open set.</p>
+
+<p>Furthermore, with the “correct intuition,” the reason why the topological definition of continuous functions should be “backwards” also becomes clear. Let us first note that the following intuition about continuity are indeed correct.</p>
+
+<blockquote>
+  <p><strong>Correct Intuition about Continuous Functions.</strong> If $x \sim y$, then $f(x) \sim f(y)$.</p>
+</blockquote>
+
+<p>Now let us show that this intuitive deifinition of continuity is equivalent to the topological definition of continuity.</p>
+
+<h4 id="intuitive-definition--topological-definition">Intuitive Definition =&gt; Topological Definition</h4>
+
+<p>Let $f$ be “intuitively continuous”. We need to show that for an open set $V$, the preimage $U = f^{-1}[V]$ is an open set. Let $x \in U$ and assume $x \sim y$. Since $f$ is continuous, we have $f(x) \sim f(y)$. Moreover, since $V$ is an open set and $f(x) \in V$, it follows that $f(y) \in V$. Therefore, $y \in U$. □</p>
+
+<h4 id="topological-definition--intuitive-definition">Topological Definition =&gt; Intuitive Definition</h4>
+
+<p>Let $f$ be “topologically continuous”. We need to show that if $x \sim y$, then $f(x) \sim f(y)$. Let $V$ be a set that contains only points “close” to $f(x)$. Since $V$ is an open set, if $z \in V$ and $z \sim w$, then by the definition of $V$, we have $f(x) \sim z$, <em>which implies by transitivity of $\sim$</em> that $f(x) \sim w$, hence $w \in V$. Furthermore, since $U = f^{-1}[V]$ is an open set containing $x$, it follows that $y \in U$. Therefore, $f(y) \in V$, which means $f(x) \sim f(y)$. ■</p>
+
+<p>Of course, the above discussion uses the somewhat dubious relation $\sim$, which is not rigorously defined. This may have caused some to feel uneasy in invoking the “transitivity of $\sim$”. However, I think using $\sim$ to understand open sets and continuity serves as a helpful intuition for those studying topology for the first time. Additionally, using non-standard analysis, one can rigorously define $x \sim y$ as $|x - y| = \epsilon$ — but that is a story for another time.</p>
 
           ]]>
         </content:encoded>

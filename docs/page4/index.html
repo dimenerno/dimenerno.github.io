@@ -431,86 +431,6 @@
 
 <div class="posts">
   
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/24/continuum-coloring/en"> A Colouring Problem Equivalent to the Continuum Hypothesis </a>
-      </h1>
-    <span class="post-date">24 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Problem.</strong> When the coordinate plane is coloured using countably many colours, does there always exist a right triangle whose three vertices are of the same colour?</p>
-</blockquote>
-
-<p>For instance, the following colouring uses 3 colours, and one can easily find a right triangle whose three vertices are all of the same colour.</p>
-
-<p><img src="/public/color-1.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;" /></p>
-
-<p>Of course, the above case is a simple one, and we must consider whether the required right triangle exists even when infinitely many colours are applied in a highly irregular manner, as shown below.</p>
-
-<p><img src="/public/color-2.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;" /></p>
-
-<p>Remarkably, this problem, which appears trivial at first glance, is equivalent to the continuum hypothesis.</p>
-
-<blockquote>
-  <p><strong>Continuum Hypothesis.</strong> There exists no infinite set whose cardinality is greater than that of the natural numbers but smaller than that of the real numbers.</p>
-</blockquote>
-
-<p>We define $\aleph_0$ as the cardinality of the smallest infinite set, namely the natural numbers, and $\aleph_1$ as the cardinality of the smallest infinite set larger than the natural numbers. Meanwhile, the real numbers can easily be shown to have the same cardinality as the power set of the natural numbers, and since the power set of a set $X$ has cardinality $2^{|X|}$, the cardinality of the real numbers is $2^{\aleph_0}$. Therefore, the statement of the continuum hypothesis is equivalent to $\aleph_1 = 2^{\aleph_0}$.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> A counterexample to the problem exists if and only if $\aleph_1 = 2^{\aleph_0}$.</p>
-</blockquote>
-
-<p>Note that the following proof is conceived by the author and may contain errors.</p>
-
-<p><strong>Proof.</strong> We shall show that if $\aleph_1 = 2^{\aleph_0}$, then a counterexample to the problem exists, and conversely, if a counterexample to the problem exists, then $\aleph_1 = 2^{\aleph_0}$.</p>
-
-<h4 id="if-aleph_1--2aleph_0-then-a-counterexample-to-the-problem-exists">If $\aleph_1 = 2^{\aleph_0}$, then a counterexample to the problem exists.</h4>
-
-<p>For the smallest uncountable ordinal $\omega_1$, there exists a method of colouring $\omega_1^2$ such that no right triangle with three vertices of the same colour exists. First, we establish a one-to-one correspondence between countably many colours and the integers. Since $\alpha &lt; \omega_1$ is a countable ordinal, we can colour all points of the red segment $\lbrace  (\beta, \alpha) : 0 \leq \beta \leq \alpha \rbrace $ with countably many distinct colours. We colour these points with colours corresponding to positive integers. Meanwhile, the points of the blue segment $\lbrace  (\alpha, \beta) : 0 \leq \beta &lt; \alpha \rbrace $ are coloured with colours corresponding to negative integers.</p>
-
-<p><img src="/public/color-3.png" style="width: 100%; max-width: 350px; margin: 1.5em auto;" /></p>
-
-<p>It can easily be shown that with this colouring, there exists no right triangle whose three vertices are all of the same colour.</p>
-
-<p>If $\aleph_1 = 2^{\aleph_0}$, then there exists a one-to-one correspondence $f: \mathbb{R} \to \omega_1$. We now define a colouring of the plane as follows. A point $p = (x, y) \in \mathbb{R}^2$ is coloured with the same colour as the point $f(p) = (f(x), f(y)) \in \omega_1^2$. Since $f$ is a one-to-one correspondence, if points $p_1, p_2, p_3$ form the three vertices of a right triangle of the same colour under this colouring, then $f(p_1), f(p_2), f(p_3)$ also form the three vertices of a right triangle of the same colour. However, since we have shown that no such triangle exists in $\omega_1^2$, the plane also lacks the required right triangle under this colouring.</p>
-
-<h4 id="if-a-counterexample-to-the-problem-exists-then-aleph_1--2aleph_0">If a counterexample to the problem exists, then $\aleph_1 = 2^{\aleph_0}$.</h4>
-
-<p>Suppose $2^{\aleph_0} &gt; \aleph_1$ and derive a contradiction. Let $I$ be a subset of the real numbers with cardinality $\aleph_1$. Consider the subset $X = I \times \mathbb{R}$ of the plane.</p>
-
-<p>Let $L_0$ denote the set of lines in $X$ parallel to the $x$-axis. For $l \in L_0$, we write $c \in \aleph_1(l)$ when the number of points in $l$ coloured with colour $c$ is at least $\aleph_1$. For any $l \in L_0$, since $|l| = \aleph_1$, verify that by the pigeonhole principle, there exists at least one colour $c$ such that $c \in \aleph_1(l)$ for each line.</p>
-
-<p>Moreover, since $|L_0| = 2^{\aleph_0}$, by the pigeonhole principle there exists some colour $c_0$ such that the number of lines $l$ satisfying $c_0 \in \aleph_1(l)$ is $2^{\aleph_0}$. Consider the set $L_0’$ of such lines. When vertical lines are drawn through the lines in $L_0’$, if any two intersection points have colour $c_0$, then there exists a right triangle whose three vertices are all of colour $c_0$. Therefore, amongst the intersection points of any vertical line with the lines in $L_0’$, at most one point is coloured $c_0$. Since there are $|I| = \aleph_1$ vertical lines in total, there exist $\aleph_1$ points of colour $c_0$ in $L_0’$.</p>
-
-<p>Removing all these points yields a sparse set of lines. Let this set be $L_1$.</p>
-
-<p><img src="/public/color-4.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
-
-<p>Two cases are possible: a) There are $2^{\aleph_0}$ lines in $L_1$ that contain $\aleph_1$ points. b) There are at most $\aleph_1$ lines in $L_1$ that contain $\aleph_1$ points.</p>
-
-<p>In case a), again by the pigeonhole principle, there exists a colour $c_1$ such that the number of lines $l \in L_1$ satisfying $c_1 \in \aleph_1(l)$ is $2^{\aleph_0}$. Let $L_1’$ denote the set of such lines in $L_1$. By the previous argument, there exist $\aleph_1$ points of colour $c_1$ in $L_1’$. Let $L_2$ denote the set obtained by removing these points. Repeat this process until case b) is reached. (Verify that case b) is eventually reached since there are countably many colours.)</p>
-
-<p>When case b) is reached, $L_n$ contains at most $\aleph_1$ points. However, the number of points removed in the process from $L$ to $L_n$ does not exceed $\aleph_1 \cdot \aleph_0 = \aleph_1$. Meanwhile, since $L$ originally contained $2^{\aleph_0}$ points, this contradicts $\aleph_1 &lt; 2^{\aleph_0}$. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/04/20/cardinality"> 기수의 정의에 관한 노트 </a>
@@ -1656,6 +1576,51 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 </div>
 
 <p>$\mathbf{Grp}$의 초기 대상은 자명군<sub>trivial group</sub>이며, 범주론적 합은 자유곱이다. 이에 따라 $U \cap V$가 단순 연결 공간일 때, $\pi_1(X)$는 $\pi_1(U)$와 $\pi_1(V)$의 자유곱이라는 결론을 얻는다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/04/van-kampen/en"> Notes on the Seifert-van Kampen Theorem </a>
+      </h1>
+    <span class="post-date">04 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'">
+        Category Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>Consider an open cover $U, V$ of a topological space $X$. In the category of topological spaces $\mathbf{Top}$, the limit of the following pushout diagram is $X$.</p>
+
+<p><img src="/public/seifert-1.png" style="margin: 1.5em auto 2em auto; width: 250px" /></p>
+
+<p>The Seifert-van Kampen theorem states that when $U, V$ are path connected and $x_0 \in U \cap V$, the above limit is preserved under the functor $\pi_1(-, x_0): \mathbf{Top} \to \mathbf{Grp}$.</p>
+
+<p><img src="/public/seifert-2.png" style="margin: 2em auto; width: 300px" /></p>
+
+<p>However, the limit of a pushout is the colimit of the left diagram. If the object corresponding to $I$ is an initial object, then the morphisms $I \to J, J \to K$ are uniquely determined, so the colimit of the left diagram is essentially the same as the colimit of the right diagram, which corresponds to the <a href="https://dimenerno.github.io/2025/04/02/box-v-product/">categorical sum</a>.</p>
+
+<div style="display: grid; margin: 0 auto; width: 400px; grid-template-columns: 1fr 1fr; gap: 3em; align-items: center;">
+  <img src="/public/pushout-diag.png" style="width: 200px; margin: 1em 0 2em 0;" />
+  <img src="/public/product-diag.png" style="width: 200px; margin: 1em 0 2em 0;" />
+</div>
+
+<p>The initial object in $\mathbf{Grp}$ is the trivial group, and the categorical sum is the free product. Accordingly, when $U \cap V$ is a simply connected space, we obtain the conclusion that $\pi_1(X)$ is the free product of $\pi_1(U)$ and $\pi_1(V)$.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

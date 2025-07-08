@@ -431,66 +431,6 @@
 
 <div class="posts">
   
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/12/26/uncountability-of-reals/en"> Proving the Uncountability of Real Numbers Without the Diagonal Argument </a>
-      </h1>
-    <span class="post-date">26 Dec 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>Theorem.</strong> $\mathbb{R}$ is uncountable. That is, there exists no surjective function from $\mathbb{N}$ to $\mathbb{R}$.</p>
-</blockquote>
-
-<p>This is a theorem that any sophomore student would have encountered at least once. The most widely known proof is Cantor’s diagonal argument. However, there are methods to prove this theorem without the diagonal argument. These utilise the order-theoretic and topological properties of $\mathbb{R}$, respectively.</p>
-
-<h3 id="1-proof-using-the-isomorphism-theorem">1. Proof Using the Isomorphism Theorem</h3>
-
-<p><a href="https://dimenerno.github.io/2024/11/20/Rational-Real/">Cantor’s isomorphism theorem</a> states that all totally ordered sets $(S, \leq)$ satisfying the following conditions are order isomorphic:</p>
-
-<ol>
-  <li>$S$ is countable.</li>
-  <li>$S$ is dense. That is, for $x, y \in S$ with $x &lt; y$, there exists $z \in S$ such that $x &lt; z &lt; y$.</li>
-  <li>$S$ has neither an upper bound nor a lower bound.</li>
-</ol>
-
-<p>$(\mathbb{Q}, \leq)$ satisfies all three conditions above, whilst $(\mathbb{R}, \leq)$ satisfies conditions 2 and 3. Therefore, if $\mathbb{R}$ were countable, then $(\mathbb{R}, \leq)$ would be order isomorphic to $(\mathbb{Q}, \leq)$. However, the former is complete while the latter is not, so $\mathbb{R}$ is uncountable. ■</p>
-
-<h3 id="2-proof-using-compactness">2. Proof Using Compactness</h3>
-
-<p><img src="/public/uncountability-wo-diagnal.png" style="width: 100%; max-width: 600px; margin: 2em auto;" /></p>
-
-<p>Let $X$ be a compact Hausdorff space with no isolated points. Also assume that $X \neq \varnothing$.</p>
-
-<p><em>Claim 1.</em> Let $U \neq \varnothing$ be an open subset of $X$. For $x \in X$, there exists an open set $V$ such that $x \notin \bar{V}$ and $V \subset U$.</p>
-
-<p><em>Proof of Claim 1.</em> There exists $y \in U$ where $x \neq y$. This is because if $x \in U$, then since $X$ has no isolated points such a $y$ must exist, and if $x \notin U$, then such a $y$ exists because $U$ is non-empty. Since $X$ is Hausdorff, we can separate $x$ and $y$ by neighbourhoods $V_x$ and $V_y$. Then $V = V_y \cap U$ is the desired set (the dark shaded region in Fig 1). □</p>
-
-<p><em>Claim 2.</em> $X$ is uncountable.</p>
-
-<p><em>Proof of Claim 2.</em> Suppose $X$ is countable. Enumerate the elements of $X$ as ${x_n}<em>{n \in \mathbb{Z}^+}$. Let $V_0 = X$. By Claim 1, for each $n$ there exists an open set $V_n$ such that $x_n \notin \bar{V_n}$ and $V_n \subset V</em>{n-1}$ (Fig 2). Since $X$ is compact, by the finite intersection property we have</p>
-
-\[K = \bigcap_{n \in \mathbb{Z}^+} \bar{V}_n \neq \varnothing.\]
-
-<p>However, if $x_n \in K$, then $x_n \in \bar{V}_n$, which is a contradiction. Therefore, $X$ is uncountable. □</p>
-
-<p><em>Claim 3.</em> $\mathbb{R}$ is uncountable.</p>
-
-<p><em>Proof of Claim 3.</em> $[0, 1]$ is a compact Hausdorff space with no isolated points. Therefore, it is uncountable. Consequently, $\mathbb{R}$ is uncountable. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2024/12/25/Cantor-Bendixson"> 칸토어-벤딕슨 정리와 폴란드 공간 </a>
@@ -1474,6 +1414,66 @@
 </blockquote>
 
 <p><strong>증명.</strong> 초한귀납법을 겁나게 쓰면 된다. (불친절해서 ㅈㅅ)</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/05/transfinite-recursion/en"> Transfinite Induction and Transfinite Recursion </a>
+      </h1>
+    <span class="post-date">05 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <h3 id="1-transfinite-induction">1. Transfinite Induction</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $P$ be a property defined on ordinals, and suppose that for any $\alpha \in \mathrm{Ord}$,</p>
+
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha).\]
+
+  <p>Then $P$ is true for all ordinals.</p>
+</blockquote>
+
+<p><em>Remark.</em> Since $\mathrm{Ord}$, the domain of $P$, is a proper class rather than a set, we use the term “property” instead of “predicate”.</p>
+
+<p><strong>Proof.</strong> Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha_0$. Since $\forall \beta &lt; \alpha_0 : P(\beta)$, by hypothesis we have $P(\alpha_0)$, which is a contradiction. ■</p>
+
+<p><strong>Application.</strong> Show that the von Neumann hierarchy may be defined as $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$ instead of $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$.</p>
+
+<h3 id="2-transfinite-recursive-definition">2. Transfinite Recursive Definition</h3>
+
+<p><em>Motivation.</em> Consider recursive definitions on natural numbers. Given $n$ sets $x_1, \dots , x_n$ and a function $g$ that outputs a set, we would like to define $f: \mathbb{N} → V$ as follows:</p>
+
+\[f(n) = g(f(0), \dots, f(n - 1))\]
+
+<p>The problem is that $g$ can only take a fixed number of parameters. Therefore, we group the parameters of $g$ into an ordered pair:</p>
+
+\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
+
+<p>This ordered pair can be represented as $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$. That is,</p>
+
+\[f(n) = g(f \upharpoonright n).\]
+
+<p>Generalising this to ordinals, we obtain the following:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $G: V → V$ be a class function. There exists a class function $F: \mathrm{Ord} → V$ satisfying</p>
+
+\[F(\alpha) = G(F \upharpoonright \alpha)\]
+</blockquote>
+
+<p><strong>Proof.</strong> Apply transfinite induction extensively. (Sorry for the brevity, lol.) It is worth remarking that the proof does not depend on the axiom of choice, for the well-orderedness of ordinals is provable from ZF. Note, however, that the proof that every well-ordered set is order isomorophic to an ordinal <em>does</em> require AC.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

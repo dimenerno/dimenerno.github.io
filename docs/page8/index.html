@@ -431,151 +431,6 @@
 
 <div class="posts">
   
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/13/three-definitions-of-adjoint/en"> Three Approaches to Adjoints </a>
-      </h1>
-    <span class="post-date">13 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/category-theory/'">
-        Category Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p>The content of this text is based on Tom Leinster, <em>Basic Category Theory</em>.</p>
-</blockquote>
-
-<p>Let $\mathcal{A}, \mathcal{B}$ be categories and $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$ be functors.</p>
-
-<h2 id="1-definition-of-adjoint-using-the-naturality-axiom">1. Definition of Adjoint Using the Naturality Axiom</h2>
-
-<p>$F \dashv G$ means that for any $A \in \mathcal{A}, B \in \mathcal{B}$, there exists a bijection $\Psi_{A, B} : \mathrm{Hom}_\mathcal{A}(A, G(B)) \to \mathrm{Hom}_\mathcal{B}(F(A), B)$ such that for any $p: A’ \to A, q: B \to B’$, the following commutative diagram is satisfied.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="300px" style="border-radius: 8px; border: none;"></iframe>
-
-<p>For convenience, we denote $\Psi_{A, B}(f) = \bar{f}$ for $f: A \to G(B)$, and $\Psi_{A, B}^{-1}(g) = \bar{g}$ for $g: F(A) \to B$. Accordingly, the above commutative diagram can be expressed as follows:</p>
-
-\[\begin{gather}
-\overline{A \xrightarrow{f} G(B) \xrightarrow{G(q)} G(B') } = F(A) \xrightarrow{\bar{f}} B \xrightarrow{q} B' \\
-\overline{F(A') \xrightarrow{F(p)} F(A) \xrightarrow{g} B} = A' \xrightarrow{p} A \xrightarrow{\bar{g}} G(B) \\\\
-\mathrm{i.e.}\\\\
-\overline{G(q) \circ f} = q \circ \bar{f}\\
-\overline{g \circ F(p)} = \bar{g} \circ p
-\end{gather}\]
-
-<p>The above two conditions are called the naturality axioms. From the naturality axioms, we can prove the following:</p>
-
-<blockquote>
-  <p><strong>Theorem 1.</strong> The transformation $\eta: 1_{\mathcal{A}} \to GF$ defined by $\eta_A := \overline{1_{F(A)}} : A \to GF(A)$ is a natural transformation. Moreover, the transformation $\epsilon: FG \to 1_{\mathcal{B}}$ defined by $\epsilon_B := \overline{1_{G(B)}} : FG(B) \to B$ is also a natural transformation. We call $\eta$ the <strong>unit</strong> and $\epsilon$ the <strong>counit</strong>.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> This follows from the following commutative diagram.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ==&amp;embed" width="100%" height="260" style="border-radius: 8px; border: none;"></iframe>
-
-<blockquote>
-  <p><strong>Theorem 2.</strong> For $f: A \to G(B), g: F(A) \to B$, the following holds:</p>
-
-\[\begin{gather}
-\bar{f} = \epsilon_B \circ F(f) \\
-\bar{g} = G(g) \circ \eta_A
-\end{gather}\]
-</blockquote>
-
-<p><strong>Proof.</strong> This follows from the following commutative diagram.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="200" style="border-radius: 8px; border: none;"></iframe>
-
-<h2 id="2-definition-of-adjoint-using-unit-and-counit">2. Definition of Adjoint Using Unit and Counit</h2>
-
-<p>$F \dashv G$ means that there exist natural transformations $\eta: 1_{\mathcal{A}} \to GF$ and $\epsilon: FG \to 1_{\mathcal{B}}$ such that for any $A \in \mathcal{A}, B \in \mathcal{B}$, the following commutative diagrams are always satisfied:</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d&amp;embed" width="100%" height="220" style="border-radius: 8px; border: none;"></iframe>
-
-<p>The above two conditions are called the triangle identities.</p>
-
-<h2 id="3-definition-of-adjoint-using-initial-objects">3. Definition of Adjoint Using Initial Objects</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $P: \mathcal{A} \to \mathcal{C}$ and $Q: \mathcal{B} \to \mathcal{C}$ are functors, we define the <strong>comma category</strong> $(P \Rightarrow Q)$ as follows:</p>
-
-  <ul>
-    <li>Objects: For a morphism $h: P(A) \to Q(B)$ in $\mathcal{C}$, the triplet $(A, h, B)$</li>
-    <li>Morphisms: When the following commutative diagram holds, $(f, g): (A, h, B) \to (A’, h’, B’)$</li>
-  </ul>
-</blockquote>
-
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJQKEEpIl0sWzIsMCwiUChBJykiXSxbMCwxLCJRKEIpIl0sWzIsMSwiUShCJykiXSxbMCwyLCJoIiwyXSxbMSwzLCJoJyJdLFswLDEsIlAoZikiXSxbMiwzLCJRKGcpIiwyXV0=&amp;embed" width="100%" height="230" style="border-radius: 8px; border: none;"></iframe>
-
-<p>$F \dashv G$ means that there exists a natural transformation $\eta: 1_{\mathcal{A}} \to GF$ such that for each $A \in \mathcal{A}$, when we regard $A$ as a functor $A: 1 \mapsto A$ from the singleton category $\mathbf{1}$ to $\mathcal{A}$, $\eta_A : A \to GF(A)$ is an initial object in the comma category $(A \Rightarrow G)$.</p>
-
-<h2 id="4-proof-of-equivalence">4. Proof of Equivalence</h2>
-
-<p>The definitions 1, 2, and 3 are all equivalent. Specifically, the following theorem holds:</p>
-
-<blockquote>
-  <p><strong>Theorem 3.</strong> Let $\mathcal{A}, \mathcal{B}$ be categories and $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$ be functors. Then 1, 2, and 3 are in one-to-one correspondence.</p>
-
-  <ol>
-    <li>A bijection $\Psi$ satisfying the naturality axioms</li>
-    <li>A pair of natural transformations $(\eta: 1_{\mathcal{A}} \to GF, \epsilon: FG \to 1_{\mathcal{B}})$ satisfying the triangle identities</li>
-    <li>A natural transformation $\eta: 1_{\mathcal{A}} \to GF$ such that for each $A \in \mathcal{A}$, $\eta_A : A \to GF(A)$ is an initial object in $(A \Rightarrow G)$</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong> We show that 1 and 2 are in one-to-one correspondence, and that 2 and 3 are in one-to-one correspondence.</p>
-
-<h4 id="1-and-2-are-in-one-to-one-correspondence">1 and 2 are in one-to-one correspondence.</h4>
-
-<p>Given $\Psi$, we define $\eta$ and $\epsilon$ as the unit and counit respectively. That $\eta$ and $\epsilon$ satisfy the triangle identities follows easily from Theorem 2.</p>
-
-<p>Conversely, suppose we are given a pair of natural transformations $(\eta, \epsilon)$ satisfying the triangle identities. From this, we define $\Psi$ as follows. For $f: A \to G(B), g: F(A) \to B$:</p>
-
-\[\begin{gather}
-\Psi_{A, B}(f) = \bar{f} = \epsilon_B \circ F(f) \\
-\Psi_{A, B}^{-1} = \bar{g} = G(g) \circ \eta_A
-\end{gather}\]
-
-<p>First, we show that $\Psi_{A, B}^{-1}$ is indeed the inverse of $\Psi_{A, B}$, i.e., that $\bar{\bar{g}} = g, \bar{\bar{f}} = f$. The former follows from the following commutative diagram. The latter can be obtained by replacing $F, G$ with $G, F$ respectively in the diagram and then taking the appropriate dual.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ==&amp;embed" width="100%" height="250" style="border-radius: 8px; border: none;"></iframe>
-
-<p>Now we show that $\Psi$ satisfies the naturality axioms. We shall prove only one axiom. For $f: A \to G(B), q: B \to B’$, we show that $\overline{G(q) \circ f} = q \circ \bar{f}$. First,</p>
-
-\[\overline{G(q) \circ f} = \epsilon_{B'} \circ FG(q) \circ F(f)\]
-
-<p>and</p>
-
-\[q \circ \bar{f} = q \circ \epsilon_B \circ F(f)\]
-
-<p>Therefore, it suffices to show that $\epsilon_{B’} \circ FG(q) = q \circ \epsilon_B$. This is nothing other than the definition of a natural transformation. Hence $\Psi$ satisfies the naturality axioms.</p>
-
-<h4 id="2-and-3-are-in-one-to-one-correspondence">2 and 3 are in one-to-one correspondence.</h4>
-
-<p>Given a pair of natural transformations $(\eta, \epsilon)$ satisfying the triangle identities, let us show that for each $A \in \mathcal{A}$, $\eta_A : A \to GF(A)$ is an initial object in $(A \Rightarrow G)$.</p>
-
-<p>Conversely, when $\eta$ is a natural transformation such that for each $A \in \mathcal{A}$, $\eta_A : A \to GF(A)$ is an initial object in $(A \Rightarrow G)$, let us show that there exists a unique $\epsilon: FG \to 1_{\mathcal{B}}$ such that $(\eta, \epsilon)$ satisfies the triangle identities.</p>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/02/09/godel-lucas-penrose"> 정신은 기계로 환원될 수 있는가: 괴델의 조건문과 펜로즈-루카스 논증 </a>
@@ -2455,6 +2310,163 @@ for y ∈ P:
 </blockquote>
 
 <p><em>Proof.</em> 워시의 정리에 의해 $\mathbb{N}^* \vDash \phi$일 필요충분조건은 $\lbrace i \in \mathbb{N} : \mathbb{N}^\ast_i \vDash \phi \rbrace \in \mathcal{U}$인 것이다. 그런데 $\mathbb{N}^*_i = \mathbb{N}$이므로, 필요충분조건은 $\mathbb{N} \vDash \phi$로 환원된다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/01/25/los/en"> Łoś's Theorem </a>
+      </h1>
+    <span class="post-date">25 Jan 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+    </div>
+     <p>This post continues from the <a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">previous post</a>.</p>
+
+<h2 id="5-nonstandard-characteristics-of-hypernatural-numbers">5. Nonstandard Characteristics of Hypernatural Numbers</h2>
+
+<p>The hypernatural numbers we have examined so far — $[0], [1], [2], \dots$ — correspond to standard natural numbers. We shall now examine some bizarre hypernatural numbers.</p>
+
+<p>Consider the following hypernatural number $\mathfrak{n}$:</p>
+
+\[\mathfrak{n} = [(1, 2, 3, 4, \dots)]\]
+
+<p>Recalling how binary relation is defined for hypernaturals, for any natural number $n$, we have $[n] &lt; \mathfrak{n}$. That is, $\mathfrak{n}$ is a hypernatural number greater than all natural numbers. That is, the following holds for hypernaturals:</p>
+
+\[\phi_1 : \exists x \; ( \lbrace y : y &lt; x \rbrace \text{ is infinite } )\]
+
+<p>This sentence does not hold in the natural numbers.</p>
+
+<p>Now consider the following hypernatural number $\mathfrak{m}$:</p>
+
+\[\mathfrak{m} = [(1, 2!, 3!, 4!, \dots)]\]
+
+<p>For any standard natural number $n$, $\mathfrak{m}$ is divisible by $[n]$. That is, $\mathfrak{m}$ has every natural number as a divisor. Therefore, the following holds for hypernaturals:</p>
+
+\[\phi_2 : \exists x \; (\lbrace y : y \mid x \rbrace \text{ is infinite })\]
+
+<p>Again, this sentence does not hold in the natural numbers.</p>
+
+<p>This may seem to contradict the promise delivered in the previous essay. There, I stated that the natural numbers and hypernatural numbers are logically indistinguishable. Yet $\phi_1$ and $\phi_2$, both of which seem to be a cogent logical formula, are true in $\mathbb{N}^*$ but false in $\mathbb{N}$. Have I been misleading?</p>
+
+<p>Of course not. The key to this apparent paradox lies in the fact that $\phi_1$ and $\phi_2$ <em>cannot</em> be expressed in first-order logic. By the compactness theorem, “… is finite” is inexpressible in first-order logic.</p>
+
+<p>For a more precise statement, let us define the following:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Two $\mathcal{L}$-models $\mathcal{M}_1$ and $\mathcal{M}_2$ of a language $\mathcal{L}$ are <strong>elementarily equivalent</strong> if for any $\mathcal{L}$-sentence $\phi$,</p>
+
+\[\mathcal{M_1} \vDash \phi \iff \mathcal{M}_2 \vDash \phi\]
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $\mathbb{N}$ and $\mathbb{N}^*$ are elementarily equivalent.</p>
+</blockquote>
+
+<p>This theorem is a special case of Łoś’s theorem. But before we state Łoś’s theorem, let us first rigorously define ultraproducts.</p>
+
+<h2 id="6-ultraproducts">6. Ultraproducts</h2>
+
+<p>Let a set $I$ and a free ultrafilter $\mathcal{U}$ on $I$ be given. Furthermore, let models $\lbrace \mathcal{M}_i \rbrace_{i \in I}$ of a language $\mathcal{L}$ be given. We define the <strong>ultraproduct</strong> $\mathcal{M}^* = \prod \mathcal{M}_i / \mathcal{U}$ as follows:</p>
+
+<blockquote>
+  <h4 id="elements-of-the-ultraproduct">Elements of the Ultraproduct</h4>
+
+  <p>The elements of $\mathcal{M}^*$ are equivalence classes of $\lbrace (a_i)_{i\in I} : a_i \in \mathcal{M}_i \rbrace$ under the relation $\sim$, where $\sim$ is defined as:</p>
+
+\[(a_i)_{i\in I} \sim (b_i)_{i \in I} \iff \lbrace i \in I : a_i = b_i \rbrace \in \mathcal{U}\]
+
+  <h4 id="operations-on-the-ultraproduct">Operations on the Ultraproduct</h4>
+
+  <p>Let $f(x)$ be a function in $\mathcal{L}$. For an element $\mathfrak{a} = [(a_i)_{i\in I}]$ of $\mathcal{M}^*$, we define:</p>
+
+\[f(\mathfrak{a}) = [(f(a_i))_{i \in I}]\]
+
+  <p>This definition generalises naturally to $n$-ary functions.</p>
+
+  <h4 id="relations-on-the-ultraproduct">Relations on the Ultraproduct</h4>
+
+  <p>Let $P(x, y)$ be a relation in $\mathcal{L}$. For two elements $\mathfrak{a} = [(a_i)_{i\in I}]$ and $\mathfrak{b} = [(b_i)_{i\in I}]$ of $\mathcal{M}^*$, we define:</p>
+
+\[\mathcal{M}^* \vDash P(\mathfrak{a}, \mathfrak{b}) \iff \lbrace i \in I : \mathcal{M}_i \vDash P(a_i, b_i) \rbrace \in \mathcal{U}\]
+
+  <p>This definition generalises naturally to $n$-ary predicates.</p>
+</blockquote>
+
+<p>When defining operations and relation on the ultraproduct, one needs to show that the definition is irrelevant to which element is chosen as a representative for each equivalence class. This follows readily from the intersection property of $\mathcal{U}$, so we leave it as an exercise.</p>
+
+<p>We can now redefine the hypernatural numbers as the ultraproduct arising when $I, \mathcal{U}, \mathcal{L}, \mathcal{M}_i$ are respectively:</p>
+
+<ul>
+  <li>$I = \mathbb{N}$</li>
+  <li>$\mathcal{U} =$ Fréchet ultrafilter</li>
+  <li>$\mathcal{L} = (0, S, &lt;)$</li>
+  <li>$\mathcal{M}_i = \mathbb{N}$</li>
+</ul>
+
+<p>Similarly, we can define the <strong>hyperreal numbers</strong>:</p>
+
+<ul>
+  <li>$I = \mathbb{N}$</li>
+  <li>$\mathcal{U} =$ Fréchet ultrafilter</li>
+  <li>$\mathcal{L} = (0, 1, +, ⋅, &lt;)$</li>
+  <li>$\mathcal{M}_i = \mathbb{R}$</li>
+</ul>
+
+<h2 id="7-łośs-theorem">7. Łoś’s Theorem</h2>
+
+<blockquote>
+  <p><strong>Łoś’s Theorem.</strong> Given an ultraproduct $\mathcal{M}^* = \prod \mathcal{M}_i / \mathcal{U}$, for any $\mathcal{L}$-sentence $\phi$, the following holds:</p>
+
+\[\mathcal{M}^* \vDash \phi \iff \lbrace i \in I : \mathcal{M}_i \vDash \phi \rbrace \in \mathcal{U}\]
+</blockquote>
+
+<p><em>Proof.</em> We prove this by structural induction on $\phi$.</p>
+
+<h4 id="1-phi-is-an-atomic-proposition">1. $\phi$ is an atomic proposition</h4>
+
+<p>This follows trivially from the definition of predicates on ultraproducts.</p>
+
+<h4 id="2-phi--psi-land-theta">2. $\phi := \psi \land \theta$</h4>
+
+\[\begin{aligned}
+&amp;\mathcal{M}^* ⊨ φ\\
+&amp;\iff \mathcal{M}^* ⊨ ψ \land \mathcal{M}^* ⊨ θ\\
+&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ \rbrace ∈ \mathcal{U} \land \lbrace i ∈ I \mid \mathcal{M}_i ⊨ θ \rbrace ∈ \mathcal{U} &amp;&amp;(*)
+\\
+&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ \rbrace \cap \lbrace i ∈ I \mid \mathcal{M}_i ⊨ θ \rbrace ∈ \mathcal{U} &amp;&amp;(**) \\
+&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ \land \mathcal{M}_i ⊨ θ \rbrace ∈ \mathcal{U}\\
+&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ∧θ \rbrace ∈ \mathcal{U}\\
+&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ φ \rbrace ∈ \mathcal{U}
+\end{aligned}\]
+
+<p>$(*)$ holds by the inductive hypothesis, and $(**)$ holds by the intersection closure property of $\mathcal{U}$.</p>
+
+<h4 id="3-phi--lnot-psi">3. $\phi := \lnot \psi$</h4>
+
+<p>This can be proved by a similar method to case 2, using the inductive hypothesis and the ultrafilter property of $\mathcal{U}$ ($A \in \mathcal{U} \lor A^c \in \mathcal{U}$).</p>
+
+<h4 id="4-phi--exists-x-psi">4. $\phi := \exists x\; \psi$</h4>
+
+<p>This can be proved by a similar method to case 2, though the inductive hypothesis alone suffices.</p>
+
+<p>Since every proposition can be constructed from cases 1, 2, 3, and 4, the theorem is proved by induction. ■</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> $\mathbb{N}$ and $\mathbb{N}^*$ are elementarily equivalent.</p>
+</blockquote>
+
+<p><em>Proof.</em> By Łoś’s theorem, the necessary and sufficient condition for $\mathbb{N}^* \vDash \phi$ is that $\lbrace i \in \mathbb{N} : \mathbb{N}^\ast_i \vDash \phi \rbrace \in \mathcal{U}$. However, since $\mathbb{N}^*_i = \mathbb{N}$, the necessary and sufficient condition reduces to $\mathbb{N} \vDash \phi$. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
