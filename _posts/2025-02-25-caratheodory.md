@@ -152,7 +152,7 @@ Left as an exercise to the readers. (어렵지 않음) ■
 > \mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}
 > $$
 >
-> 이 때, 다음이 성립한다.
+> 이때, 다음이 성립한다.
 >
 > 1. $A \in \mathcal{A}\_0$라면 $\mu^\ast(A) = \rho(A)$이다.
 > 2. $\sigma(\mathcal{A}\_0)$는 $\mu^\ast$에 대해 가측이다.

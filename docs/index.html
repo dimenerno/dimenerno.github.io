@@ -482,11 +482,163 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/07/09/urysohn"> 우리손 보조정리와 우리손 거리화 정리 </a>
+      </h1>
+    <span class="post-date">09 Jul 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <h2 id="우리손-보조정리">우리손 보조정리</h2>
+
+<blockquote>
+  <p><strong>우리손 보조정리<sub>Urysohn Lemma</sub>.</strong> $X$가 정규<sub>normal</sub> 공간이라고 하자. $A, B$가 서로소인 $X$의 닫힌집합일 때, 어떤 연속함수 $f: X \to [0, 1]$이 존재하여 $f[A] = \lbrace  0 \rbrace$, $f[B] = \lbrace 1 \rbrace$이다.</p>
+
+  <p><img src="/public/urysohn-1.png" style="width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
+</blockquote>
+
+<p>정규성을 비롯한 분리 공리는 <em>해당 공간에서</em> 점과 닫힌집합을 분리한다. 우리손 보조정리의 의의는, 정규성 분리 공리의 경우 두 닫힌집합은 <em>좋은 공간에서도</em> 분리 가능하다는 것이다. 구체적으로, 정규공간을 적절한 연속함수로 사상시켰을 때 두 닫힌집합은 $[0, 1]$에서 분리 가능하다. 그리고 $[0, 1]$의 여러 좋은 성질은 — 콤팩트 하우스도르프 거리 공간일 뿐 아니라 우리에게 굉장히 익숙한 공간이라 논증하기도 쉽다 — 우리손 보조정리의 굉장한 잠재력을 암시한다.</p>
+
+<h4 id="증명">증명</h4>
+
+<p>$Q = [0, 1] \cap \mathbb{Q}$라고 하자 (사실 $[0, 1]$의 가산 조밀 집합이기만 하면 된다). $Q$가 가산이므로 $Q$의 원소를 열거<sub>enumerate</sub>하는 방법이 존재한다. 일례로 분모-분자의 사전식 열거 $\prec$를 고려하자.</p>
+
+\[0 \prec 1 \prec 1/2 \prec 1/3 \prec 2/3 \prec 1/4 \prec 1/5 \prec 2/5 \prec \cdots\]
+
+<p>이제 다음과 같이 $\lbrace  U_q \rbrace _{q \in Q}$를 정의하자. 먼저 $U_1 = X \setminus B$이다 ($B$가 닫힌집합이므로 $U_1$은 열린집합이다). 정규성에 의해 $A \subset U_0$이면서 $\overline{U_0} \subset U_1$인 $U_0$가 존재한다. 나머지 $U_q$는 열거 순서에 따라 다음과 같이 정의한다. $p \prec q$인 임의의 $p$에 대해,</p>
+
+<ul>
+  <li>$p &lt; q \implies \overline{U_p} \subset U_q$</li>
+  <li>$q &lt; p \implies \overline{U_q} \subset U_p$</li>
+</ul>
+
+<p>정규성에 의해 위 조건을 만족하며 $\lbrace  U_q \rbrace _{q \in Q}$를 완전히 정의할 수 있다.</p>
+
+<p><img src="/public/urysohn-2.png" style="width: 100%; max-width: 400px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
+
+<p>이제 다음과 같이 함수 $f: X \to [0, 1]$을 정의하자.</p>
+
+\[f(x) = \begin{cases}
+\sup_{&lt;}\{q \in Q : x \notin U_q \} &amp; x \notin U_0 \\
+0 &amp; x \in U_0
+\end{cases}\]
+
+<p>$\sup_&lt;$라는 표기는 $\prec$가 아닌 $&lt;$에 대해 상한을 취함을 의미한다. 정의로부터 $f[A] = 0, f[B] = 1$가 따라 나온다.</p>
+
+<p>이제 $f$가 연속임을 보이면 정리가 증명된다. $\lbrace  B_\epsilon(q) \cap [0, 1] : q \in Q, \epsilon \in \mathbb{Q}_{&gt;0} \rbrace $가 $[0, 1]$의 위상 기저이므로, 임의의 $q \in Q$와 특정 상한보다 작은 양의 유리수 $\epsilon$에 대해 $S_{q, \epsilon} = f^{-1}(B_\epsilon(q) \cap [0, 1])$가 열린집합임을 보이면 충분하다.</p>
+
+<ul>
+  <li>$0 &lt; q &lt; 1$인 경우, $S_{q, \epsilon} = (X \setminus \overline{U_{q-\epsilon}}) \cap U_{q + \epsilon}$이므로 열린집합이다.</li>
+  <li>$q = 0$인 경우, $S_{0, \epsilon} = U_\epsilon$이므로 열린집합이다.</li>
+  <li>$q = 1$인 경우, $S_{1, \epsilon} = X \setminus \overline{U_{1 - \epsilon}}$이므로 열린집합이다.</li>
+</ul>
+
+<p>따라서 $f$는 연속이다. ■</p>
+
+<h4 id="고찰">고찰</h4>
+
+<ul>
+  <li>
+    <p>우리손 보조정리의 역은 자명히 성립한다. 즉, 임의의 닫힌집합 $A, B \subset X$에 대해 어떤 연속인 $f: X \to [0, 1]$가 $A, B$를 분리한다면, $U = f^{-1}[0, 1/2)$, $V = f^{-1}(1/2, 1]$는 $A, B$를 분리하는 서로소 열린집합이므로 $X$는 정규이다. 간단히 말해, <strong>정규공간에서는 우리손 분리가능성과 분리 공리가 동치이다.</strong></p>
+  </li>
+  <li>
+    <p>정칙<sub>regular</sub> 공간에서는 이가 성립하지 않는다. 즉, 정칙 공간 $X$에서 임의의 닫힌집합 $F$와 점 $a$가 주어졌을 때, $f(a) = 0$, $f[F] = \lbrace 1 \rbrace$을 만족하는 연속인 $f: X \to [0, 1]$이 언제나 존재하는 것은 아니다. 우리손 분리가능한 정칙 공간을 <strong>티호노프<sub>Tychonoff</sub> 공간</strong> 또는 <strong>완전 정칙<sub>completely regular</sub> 공간</strong>이라고 하며, 정칙보다 엄격히 강한 조건이다.</p>
+  </li>
+  <li>
+    <p>우리손 보조정리의 증명이 정칙 공간에 대해 유효하지 않은 이유는 $p &lt; q \implies \overline{U_p} \subset U_q$를 만족하는 $\lbrace U_q \rbrace $를 구성할 때 정규 공리가 필요하기 때문이다.</p>
+  </li>
+</ul>
+
+<h2 id="우리손-거리화-정리">우리손 거리화 정리</h2>
+
+<p>우리손 보조정리의 응용으로서, 우리손 거리화 정리를 증명하자.</p>
+
+<blockquote>
+  <p><strong>우리손 거리화 정리<sub>Urysohn metrisation theorem</sub>.</strong> 2차 가산인 정규 공간은 거리화 가능하다.</p>
+</blockquote>
+
+<p>그런데 2차 가산인 정칙 공간은 정규 공간임이 알려져 있으므로 위 정리의 진술은 “2차 가산인 정칙 공간은 거리화 가능하다”와 같이 자연스럽게 강화할 수 있다.</p>
+
+<p>따라서 공간들 간의 시사 관계는 다음과 같다. <strong>화살표의 길이가 길수록 요구되는 조건이 강해진다.</strong> $T_2 \to T_4$는 $T_3 \to T_4$보다 엄격히 어려운 시사 관계이며, 이것은 전자에서 요구되는 콤팩트성이 후자에서 요구되는 린델뢰프보다 엄격히 강한 조건인 데에서 드러난다. 마찬가지로 $T_3 \to \mathrm{Met}$는 $T_3 \to T_4$보다 엄격히 어려운 시사 관계이며, 전자에서 요구되는 2차 가산성은 후자에서 요구되는 린델뢰프보다 엄격히 강한 조건이다. 그러나 $T_2 \to T_4$와 $T_3 \to \mathrm{Met}$는 어느 한쪽이 엄격히 어려운 시사 관계가 아니다 (두 화살표의 길이는 엇비슷하다). 이것은 콤팩트성과 2차 가산성이 일반적으로 서로를 시사하지 않는다는 점에서 드러난다.</p>
+
+<p><img src="/public/urysohn-3.png" style="width: 100%; max-width: 240px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
+
+<h4 id="증명-1">증명</h4>
+
+<p>$X$가 2차 가산인 정규 공간이라고 하자. 다음의 보조정리를 증명한다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $X$를 $[0, 1]$에 사상시키는 연속함수의 가산족 $\mathcal{F}$가 존재하여, 임의의 $x_0 \in X$와 그 근방 $U$에 대해, $f(x_0) &gt; 0$이고 $f[X \setminus U] = \lbrace  0 \rbrace $인 $f \in \mathcal{F}$가 존재한다.</p>
+</blockquote>
+
+<p>$x_0$와 $U$가 주어졌을 때 그러한 $f$가 존재함은 우리손 보조정리로부터 알 수 있다. 우리가 해야할 일은 이를 가산 함수족으로 줄이는 것이다. $\mathcal{B} = \lbrace  B_n \rbrace $이 $X$의 가산인 위상기저라고 하자. $B_m \subset B_n$일 때, 우리손 보조정리로부터 $f_{nm}: X \to [0, 1]$을 다음을 만족하는 연속함수로 정의하자.</p>
+
+<ul>
+  <li>$f_{nm}[\overline{B_m}] = 1$</li>
+  <li>$f_{nm}[X \setminus B_n] = 0$</li>
+</ul>
+
+<p>$\mathcal{F} = \lbrace  f_{nm} \rbrace $으로 정의하자. 임의의 $x_0$와 그 근방 $U$가 주어졌을 때, 위상기저의 정의에 의해 $x_0 \in B_n \subset U$인 $B_n$이 존재한다. 또한 정규성에 의해 $x \in \overline{V} \subset B_n$인 열린집합 $V$가 존재한다. 다시 위상기저의 정의에 의해 $x \in B_m \subset V$인 $B_m$이 존재한다. 이때 $f_{nm} \in \mathcal{F}$가 보조정리의 조건을 만족하는 함수이다. □</p>
+
+<p>이제 본 정리를 증명하자. 아이디어는 $X$를 $[0, 1]^\omega$에 임베딩하는 것이다. $[0, 1]^\omega$에 곱 위상이 주어지면 거리 공간임이 알려져 있으므로 $X$는 거리 공간의 부분공간과 동형인 공간으로서 거리화 가능함이 보여진다.</p>
+
+<p>$\mathcal{F} = \lbrace  f_n \mid n \in \omega \rbrace $가 보조정리로서 주어지는 가산 함수족이라고 하자. 다음과 같이 $F: X \to [0, 1]^\omega$를 정의한다.</p>
+
+\[F: x \mapsto (f_1(x), f_2(x), f_3(x), \dots)\]
+
+<p>$F$가 임베딩을 보이자. 즉, $F$가 연속이고, 단사이며, 정의역과 치역의 동형사상임을 보여야 한다.</p>
+
+<p>각 $f_n$은 연속이므로 곱 위상의 성질(<a href="https://dimenerno.github.io/2025/04/02/box-v-product">정의이기도 하다</a>)에 의해 $F$는 연속이다. $F$가 단사임은 $X$가 하우스도르프라는 사실에서 따라 나온다. 따라서 다음을 보이면 충분하다.</p>
+
+<blockquote>
+  <p>$U \subset X$가 열린집합일 때, $F[U]$는 $\mathrm{im} F$에서 열린집합이다.</p>
+</blockquote>
+
+<p>임의의 $y_0 \in F[U]$에 대해 $y_0 \in V \subset F[U]$이며 $\mathrm{im} F$에서 열린 $V$가 존재함을 보이자. $F[U]$의 정의에 의해 어떤 $x_0 \in X$가 존재하여 $F(x_0) = y_0$이다. $x_0$와 $U$에 대해 보조정리를 만족하는 함수가 $f_n \in \mathcal{F}$라고 하자. $f_n(x_0) = 1$이므로 $(y_0)_n = 1$이다. 따라서 $W = \pi_n^{-1}(0, 1] \subset [0, 1]^\omega$와 같이 정의하면 $W$는 $y_0$를 원소로 가지는 $[0, 1]^\omega$에서 열린집합이다.</p>
+
+<p>$W \cap \mathrm{im} F \subset F[U]$임을 보이자. 임의의 $w \in W$는 $F(x_1) = w$와 같이 쓸 수 있다. 추가로 $w \in \mathrm{im} F$라면 $f_n(x_1) = 1$이다. 그런데 $f_n$은 $U$ 외부에서는 $0$이므로, $x_1 \in U$이다. 따라서 $w \in F[U]$이다. 따라서 $W \cap \mathrm{im} F$는 $F[U]$에 포함되며 $y_0$를 원소로 가지는 $\mathrm{im} F$의 열린집합이다. 따라서 $F[U]$는 $\mathrm{im} F$에서 열린집합이다. ■</p>
+
+<h4 id="고찰-1">고찰</h4>
+
+<ul>
+  <li>
+    <p>우리손 거리화 정리는 <strong>나가타-스미로느프 거리화 정리<sub>Nagata-Smirnov metrisation theorem</sub></strong>로 강화할 수 있다. 진술은 다음과 같다.</p>
+
+    <blockquote>
+      <p>$X$가 거리화 가능할 필요충분조건은 $X$가 정칙이며 가산-국소적으로 유한한<sub>countably locally finite</sub> 위상기저를 가지는 공간인 것이다.</p>
+    </blockquote>
+
+    <p>위상공간 $X$의 부분집합들로 이루어진 집합족 $\mathcal{A}$가 <strong>국소적으로 유한</strong>하다는 것은, 임의의 $x \in X$에 대해 어떤 근방 $U$가 존재하여 $U$가 $\mathcal{A}$의 오직 유한한 개수의 집합과만 교집합을 가진다는 것이다. 위상기저 $\mathcal{B}$가 <strong>가산-국소적으로 유한</strong>하다는 것은, 각각의 $\mathcal{B}_n$이 국소적으로 유한이도록 $\mathcal{B} = \bigcup_{n \in \omega}\mathcal{B}_n$와 같이 적을 수 있다는 것이다.</p>
+  </li>
+  <li>
+    <p>우리손 거리화 정리의 증명을 살짝 변형하면 다음 사실을 발견할 수 있다.</p>
+
+    <blockquote>
+      <p><strong>정리.</strong> $T_1$ 공간인 $X$에 대해, $\lbrace f_{\alpha} \rbrace _{\alpha \in J} $가 다음 조건을 만족하는 연속함수 $f_\alpha : X \to [0, 1]$의 모임이라고 하자: 임의의 $x_0 \in X$에 대해 어떤 근방 $U$가 존재하여 $f_\alpha(x_0) = 1$이고 $f_\alpha[X \setminus U] = \lbrace  0 \rbrace $이다. 이때, $F(x) = (f_\alpha(x))_{\alpha \in J}$는 $X$를 $[0, 1]^J$로 임베딩하는 사상이다.</p>
+    </blockquote>
+
+    <p>$T_1$ 조건을 생략하면 $F$는 단사가 아닐 수 있음을 확인하라. 위 정리는 스톤-체흐 콤팩트화<sub>Stone-Čech compactification</sub>를 증명하는 데 사용된다.</p>
+  </li>
+</ul>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/07/08/urysohn/en"> Urysohn Lemma </a>
+        <a href="/2025/07/09/urysohn/en"> The Urysohn Lemma and Urysohn Metrisation Theorem </a>
       </h1>
-    <span class="post-date">08 Jul 2025</span>
+    <span class="post-date">09 Jul 2025</span>
     
     <div class="tag-container">
       
@@ -554,6 +706,78 @@
   </li>
   <li>
     <p>The reason the proof of the Urysohn Lemma does not go through for regular spaces is that constructing the collection $\lbrace  U_q \rbrace $ satisfying $p &lt; q \implies \overline{U_p} \subset U_q$ requires the normality axiom.</p>
+  </li>
+</ul>
+
+<h3 id="urysohn-metrisation-theorem">Urysohn Metrisation Theorem</h3>
+
+<p>As an application of the Urysohn Lemma, let us prove the Urysohn Metrisation Theorem.</p>
+
+<blockquote>
+  <p><strong>Urysohn Metrisation Theorem.</strong> A second countable normal space is metrizable.</p>
+</blockquote>
+
+<p>Recall that a second countable regular space is a normal space. Hence the statement of the above theorem can be strengthened to “A second countable regular space is metrisable.”</p>
+
+<p>Thus, the implications between spaces can be summarised as follows. Note that <strong>the longer the arrow, the stronger the required condition.</strong> The implication $T_2 \to T_4$ is strictly more difficult than $T_3 \to T_4$, and this is evidenced by the fact that the former requires a condition — compactness — strictly stronger than the latter — Lindelöf. Similarly, $T_3 \to \mathrm{Met}$ is strictly more difficult than $T_3 \to T_4$, as the second countability required in the former is strictly stronger than the Lindelöf property. However, neither $T_2 \to T_4$ nor $T_3 \to \mathrm{Met}$ is strictly more difficult than the other (the lengths of both arrows are similar). This is again evidenced by the fact that compactness and second countability do not generally imply each other.</p>
+
+<p><img src="/public/urysohn-3.png" style="width: 100%; max-width: 240px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
+
+<h4 id="proof-1">Proof</h4>
+
+<p>Let $X$ be a second countable normal space. We will prove the following lemma.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> There exists a countable collection of continuous functions $\mathcal{F}$ mapping $X$ to $[0, 1]$ such that for any point $x_0 \in X$ and its neighbourhood $U$, there exists a function $f \in \mathcal{F}$ satisfying $f(x_0) &gt; 0$ and $f[X \setminus U] = \lbrace  0 \rbrace$.</p>
+</blockquote>
+
+<p>Given $x_0$ and $U$, the existence of such an $f$ follows from the Urysohn Lemma. Our task is to reduce this to a countable collection of functions. Let $\mathcal{B} = \lbrace  B_n \rbrace $ be a countable basis for the topology on $X$. When $B_m \subset B_n$, we define a continuous function $f_{nm}: X \to [0, 1]$ satisfying the following conditions according to the Urysohn Lemma:</p>
+
+<ul>
+  <li>$f_{nm}[\overline{B_m}] = 1$</li>
+  <li>$f_{nm}[X \setminus B_n] = 0$</li>
+</ul>
+
+<p>Let $\mathcal{F} = \lbrace  f_{nm} \rbrace $. Given any point $x_0$ and its neighbourhood $U$, by the definition of a basis, there exists a basis element $B_n$ such that $x_0 \in B_n \subset U$. Furthermore, by normality, there exists an open set $V$ such that $x \in \overline{V} \subset B_n$. Again, by the definition of a basis, there exists a basis element $B_m$ such that $x \in B_m \subset V$. Hence $f_{nm} \in \mathcal{F}$ satisfies the conditions of the lemma. □</p>
+
+<p>Now, let us prove the main theorem. The idea is to embed $X$ into $[0, 1]^\omega$, as $[0, 1]^\omega$ equipped with metric topology is known to be a metric space. It then follows that $X$ is metrisable, being a space homeomorphic to a subspace of a metric space.</p>
+
+<p>Let $\mathcal{F} = \lbrace  f_n \mid n \in \omega \rbrace $ be the countable collection of functions given by the lemma. We define the mapping $F: X \to [0, 1]^\omega$ as follows:</p>
+
+\[F: x \mapsto (f_1(x), f_2(x), f_3(x), \dots)\]
+
+<p>We will show that $F$ is an embedding. That is, we need to demonstrate that $F$ is continuous, injective, and a homeomorphism between the domain and the image.</p>
+
+<p>Since each $f_n$ is continuous, by the properties of the product topology, $F$ is continuous (side note: one can regard this as the <a href="https://dimenerno.github.io/2025/04/02/box-v-product">definition</a> of the product toplogy). The injectivity of $F$ follows from the fact that $X$ is Hausdorff. Therefore, it suffices to show the following:</p>
+
+<blockquote>
+  <p>If $U \subset X$ is an open set, then $F[U]$ is open in $\mathrm{im} F$.</p>
+</blockquote>
+
+<p>Let us show that for any $y_0 \in F[U]$, there exists a set $V \subset F[U]$ open in $\mathrm{im} F$ that contains $y_0$. By the definition of $F[U]$, there exists some $x_0 \in X$ such that $F(x_0) = y_0$. Let $f_n \in \mathcal{F}$ be a function satisfying the conditions of the lemma for $x_0$ and $U$. Since $f_n(x_0) = 1$, it follows that $(y_0)_n = 1$. Therefore, $W = \pi_n^{-1}(0, 1] \subset [0, 1]^\omega$ is a set containing $y_0$ that is open in $[0, 1]^\omega$.</p>
+
+<p>Now, we need to show that $W \cap \mathrm{im} F \subset F[U]$. For any $w \in W$, we can write $F(x_1) = w$. Additionally, if $w \in \mathrm{im} F$, then $f_n(x_1) = 1$. However, since $f_n$ vanishes outside of $U$, it follows that $x_1 \in U$. Thus, $w \in F[U]$, i.e. $W \cap \mathrm{im} F$ is contained in $F[U]$ and is an open set in $\mathrm{im} F$ containing $y_0$. Hence, $F[U]$ is an open set in $\mathrm{im} F$. ■</p>
+
+<h4 id="remarks-1">Remarks</h4>
+
+<ul>
+  <li>
+    <p>The Urysohn Metrisation Theorem can be strengthened to the <strong>Nagata-Smirnov Metrisation Theorem</strong>. The statement is as follows:</p>
+
+    <blockquote>
+      <p>A space $X$ is metrizable if and only if $X$ is regular and has a countably locally finite topology basis.</p>
+    </blockquote>
+
+    <p>A collection of subsets $\mathcal{A}$ of a topological space $X$ is said to be <strong>locally finite</strong> if for any point $x \in X$, there exists a neighbourhood $U$ such that $U$ intersects only finitely many sets from $\mathcal{A}$. A topological basis $\mathcal{B}$ is said to be <strong>countably locally finite</strong> if it can be expressed as $\mathcal{B} = \bigcup_{n \in \omega}\mathcal{B}_n$ where each $\mathcal{B}_n$ is locally finite.</p>
+  </li>
+  <li>
+    <p>A slight modification of the proof of the Urysohn Metrisation Theorem leads to the following result.</p>
+
+    <blockquote>
+      <p><strong>Theorem.</strong> Let $X$ be a $T_1$ space, and let $\lbrace f_{\alpha} \rbrace_{\alpha \in J}$ be a collection of continuous functions $f_\alpha : X \to [0, 1]$ satisfying the following condition: for any point $x_0 \in X$, there exists a neighbourhood $U$ such that $f_\alpha(x_0) = 1$ and $f_\alpha[X \setminus U] = \lbrace  0 \rbrace$. Then, the mapping $F(x) = (f_\alpha(x))_{\alpha \in J}$ embeds $X$ into $[0, 1]^J$.</p>
+    </blockquote>
+
+    <p>Omitting the $T_1$ condition may result in $F$ not being injective. This theorem is used to prove the Stone-Čech compactification.</p>
   </li>
 </ul>
 
@@ -2007,94 +2231,6 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
 <p>$f$가 “위상적으로 연속”일 때, $x \sim y$라면 $f(x) \sim f(y)$임을 보이자. $V$가 $f(x)$와 “가까운” 점들만을 포함하는 집합이라고 하자. $V$는 열린 집합이다. 왜냐하면 $z \in V$이고 $z \sim w$일 때, $V$의 정의에 의해 $f(x) \sim z$이므로 ~추이성에 의해~ $f(x) \sim w$, 즉 $w \in V$이기 때문이다. 그리고 $U = f^{-1}[V]$가 $x$를 포함하는 열린 집합이므로 $y \in U$이다. 따라서 $f(y) \in V$, 즉 $f(x) \sim f(y)$이다. ■</p>
 
 <p>물론 위의 논의는 엄밀하게 정의되지 않은 관계 $\sim$을 사용하기 때문에 조금 석연찮기는 하다. 그러나 필자는 $\sim$을 사용하여 열린 집합과 연속성을 이해하는 것이 위상수학을 처음 공부하는 데 있어 유용한 길잡이가 되어준다고 생각한다. 덧붙이자면, 비표준 해석학을 사용하면 $x \sim y$를 $|x - y| = \epsilon$으로 엄밀하게 정의할 수 있다. 이에 관해서는 나중에 기회가 되면 이야기해 보겠다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/06/02/notes-on-continuity/en"> Why is Continuity in Topology defined 'Backwards'? </a>
-      </h1>
-    <span class="post-date">02 Jun 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>Definition.</strong> A mapping $f: X \to Y$ is said to be <strong>continuous</strong> if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.</p>
-</blockquote>
-
-<p>Students learning topology for the first time often experience confusion with this definition. Intuitively, it seems more natural to define continuity as “if $U \subseteq X$ is open, then $f[U] \subseteq V$ is also open,” but the actual definition is the inverse. The reasoning behind this intuition might roughly be as follows.</p>
-
-<h3 id="1-epsilon-delta-definition">1. Epsilon-Delta Definition</h3>
-
-<p>According to the epsilon-delta definition, a function $f: X \to Y$ is continuous if the following holds:</p>
-
-\[\forall \epsilon &gt; 0 \; \exists \delta &gt; 0 : |x - y| &lt; \delta \rightarrow |f(x) - f(y)| &lt; \epsilon\]
-
-<p>Here the antecedent contains $x, y \in X$, and the consequent contains $f(x), f(y) \in Y$. Therefore, it seems natural for the topological definition of continuity to also have $U \subseteq X$ in the antecedent and $f[U] \subseteq Y$ in the consequent.</p>
-
-<h3 id="2-intuition-about-open-sets">2. Intuition about Open Sets</h3>
-
-<p>When first learning topology, one often thinks of an open set as a “collection of points that are close to each other.” That is, if $U$ is an open set, then $x, y \in U$ implies that $x$ and $y$ are “close.” Thus, if continuous function are those that map “close points” to “close points,” it seems natural to require that they map open sets to open sets.</p>
-
-<div style="margin: 2.5em 0;">
-</div>
-
-<p><strong>However, both of these reasonings are fundamentally flawed.</strong></p>
-
-<div style="margin: 2.5em 0;">
-</div>
-
-<h3 id="3-why-the-reasoning-behind-epsilon-delta-definition-is-incorrect">3. Why the Reasoning behind “Epsilon-Delta Definition” is Incorrect</h3>
-
-<p>Judging the antecedent and consequent based solely on $\rightarrow$ can easily lead to misunderstandings. One must also consider the quantifiers. The quantifiers of the epsilon-delta definition can be read linguistically as “for any positive $\epsilon$, there exists some positive $\delta$ such that…” In other words, “if $\epsilon$ is a positive number, then there exists some positive $\delta$ such that…”</p>
-
-<p><em>Here we see that the “true” antecedent regards $\epsilon$\, not $\delta$.</em> And indeed, the space related to $\epsilon$ is not $X$, but $Y$. Therefore, it is only natural that $V \subseteq Y$ appears in the antecedent of the topological definition.</p>
-
-<h3 id="4-why-the-reasoning-behind-intuition-about-open-sets-is-incorrect">4. Why the Reasoning behind “Intuition about Open Sets” is Incorrect</h3>
-
-<p>For convenience, let us denote that $x$ and $y$ are “close” as $x \sim y$. The said reasoning is based on the following <strong>incorrect</strong> intuition.</p>
-
-<blockquote>
-  <p><strong>Incorrect Intuition about Open Sets.</strong> If $x \in U$ and $y \in U$, then $x \sim y$.</p>
-</blockquote>
-
-<p><strong>This should be corrected as follows:</strong></p>
-
-<blockquote>
-  <p><strong>Correct Intuition about Open Sets.</strong> If $x \in U$ and $x \sim y$, then $y \in U$.</p>
-</blockquote>
-
-<p>A little thought reveals that this is quite trivial. For example, the set of all real numbers $\mathbb{R}$ is an open set. But surely, that does not mean that two arbitrary real numbers are always “close”. Conversely, the set $\lbrace  0 \rbrace $ is not an open set, but when $x, y \in \lbrace  0 \rbrace $, we have $x = y$, so $x$ and $y$ are as “close” as possible. Thus, according to the “incorrect intuition,” $\lbrace 0 \rbrace $ should be an open set.</p>
-
-<p>On the other hand, with the “correct intuition,” it is evident that $\mathbb{R}$ is an open set while $\lbrace  0 \rbrace $ is not. When $x \in \mathbb{R}$, the real number $y$ that is “close” to $x$ is trivially included in $\mathbb{R}$. Meanwhile, $\lbrace  0 \rbrace $ does not include the real numbers that are “not equal to, but in the neighbourhood of” $0$, so it is not an open set.</p>
-
-<p>Furthermore, with the “correct intuition,” the reason why the topological definition of continuous functions should be “backwards” also becomes clear. Let us first note that the following intuition about continuity are indeed correct.</p>
-
-<blockquote>
-  <p><strong>Correct Intuition about Continuous Functions.</strong> If $x \sim y$, then $f(x) \sim f(y)$.</p>
-</blockquote>
-
-<p>Now let us show that this intuitive deifinition of continuity is equivalent to the topological definition of continuity.</p>
-
-<h4 id="intuitive-definition--topological-definition">Intuitive Definition =&gt; Topological Definition</h4>
-
-<p>Let $f$ be “intuitively continuous”. We need to show that for an open set $V$, the preimage $U = f^{-1}[V]$ is an open set. Let $x \in U$ and assume $x \sim y$. Since $f$ is continuous, we have $f(x) \sim f(y)$. Moreover, since $V$ is an open set and $f(x) \in V$, it follows that $f(y) \in V$. Therefore, $y \in U$. □</p>
-
-<h4 id="topological-definition--intuitive-definition">Topological Definition =&gt; Intuitive Definition</h4>
-
-<p>Let $f$ be “topologically continuous”. We need to show that if $x \sim y$, then $f(x) \sim f(y)$. Let $V$ be a set that contains only points “close” to $f(x)$. Since $V$ is an open set, if $z \in V$ and $z \sim w$, then by the definition of $V$, we have $f(x) \sim z$, <em>which implies by transitivity of $\sim$</em> that $f(x) \sim w$, hence $w \in V$. Furthermore, since $U = f^{-1}[V]$ is an open set containing $x$, it follows that $y \in U$. Therefore, $f(y) \in V$, which means $f(x) \sim f(y)$. ■</p>
-
-<p>Of course, the above discussion uses the somewhat dubious relation $\sim$, which is not rigorously defined. This may have caused some to feel uneasy in invoking the “transitivity of $\sim$”. However, I think using $\sim$ to understand open sets and continuity serves as a helpful intuition for those studying topology for the first time. Additionally, using non-standard analysis, one can rigorously define $x \sim y$ as $|x - y| = \epsilon$ — but that is a story for another time.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

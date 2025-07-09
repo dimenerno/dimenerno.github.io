@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-07-08T16:00:22+09:00</updated>
+ <updated>2025-07-09T09:12:14+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -13,10 +13,149 @@
 
  
  <entry>
-   <title>Urysohn Lemma</title>
-   <link href="https://dimenerno.github.io/2025/07/08/urysohn/en"/>
-   <updated>2025-07-08T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/08/urysohn/urysohn-en</id>
+   <title>우리손 보조정리와 우리손 거리화 정리</title>
+   <link href="https://dimenerno.github.io/2025/07/09/urysohn"/>
+   <updated>2025-07-09T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/07/09/urysohn</id>
+   <content type="html">&lt;h2 id=&quot;우리손-보조정리&quot;&gt;우리손 보조정리&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;우리손 보조정리&lt;sub&gt;Urysohn Lemma&lt;/sub&gt;.&lt;/strong&gt; $X$가 정규&lt;sub&gt;normal&lt;/sub&gt; 공간이라고 하자. $A, B$가 서로소인 $X$의 닫힌집합일 때, 어떤 연속함수 $f: X \to [0, 1]$이 존재하여 $f[A] = \lbrace  0 \rbrace$, $f[B] = \lbrace 1 \rbrace$이다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;/public/urysohn-1.png&quot; style=&quot;width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;정규성을 비롯한 분리 공리는 &lt;em&gt;해당 공간에서&lt;/em&gt; 점과 닫힌집합을 분리한다. 우리손 보조정리의 의의는, 정규성 분리 공리의 경우 두 닫힌집합은 &lt;em&gt;좋은 공간에서도&lt;/em&gt; 분리 가능하다는 것이다. 구체적으로, 정규공간을 적절한 연속함수로 사상시켰을 때 두 닫힌집합은 $[0, 1]$에서 분리 가능하다. 그리고 $[0, 1]$의 여러 좋은 성질은 — 콤팩트 하우스도르프 거리 공간일 뿐 아니라 우리에게 굉장히 익숙한 공간이라 논증하기도 쉽다 — 우리손 보조정리의 굉장한 잠재력을 암시한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;증명&quot;&gt;증명&lt;/h4&gt;
+
+&lt;p&gt;$Q = [0, 1] \cap \mathbb{Q}$라고 하자 (사실 $[0, 1]$의 가산 조밀 집합이기만 하면 된다). $Q$가 가산이므로 $Q$의 원소를 열거&lt;sub&gt;enumerate&lt;/sub&gt;하는 방법이 존재한다. 일례로 분모-분자의 사전식 열거 $\prec$를 고려하자.&lt;/p&gt;
+
+\[0 \prec 1 \prec 1/2 \prec 1/3 \prec 2/3 \prec 1/4 \prec 1/5 \prec 2/5 \prec \cdots\]
+
+&lt;p&gt;이제 다음과 같이 $\lbrace  U_q \rbrace _{q \in Q}$를 정의하자. 먼저 $U_1 = X \setminus B$이다 ($B$가 닫힌집합이므로 $U_1$은 열린집합이다). 정규성에 의해 $A \subset U_0$이면서 $\overline{U_0} \subset U_1$인 $U_0$가 존재한다. 나머지 $U_q$는 열거 순서에 따라 다음과 같이 정의한다. $p \prec q$인 임의의 $p$에 대해,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$p &amp;lt; q \implies \overline{U_p} \subset U_q$&lt;/li&gt;
+  &lt;li&gt;$q &amp;lt; p \implies \overline{U_q} \subset U_p$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;정규성에 의해 위 조건을 만족하며 $\lbrace  U_q \rbrace _{q \in Q}$를 완전히 정의할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/urysohn-2.png&quot; style=&quot;width: 100%; max-width: 400px; mix-blend-mode: multiply; margin: 2em auto 1em auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 다음과 같이 함수 $f: X \to [0, 1]$을 정의하자.&lt;/p&gt;
+
+\[f(x) = \begin{cases}
+\sup_{&amp;lt;}\{q \in Q : x \notin U_q \} &amp;amp; x \notin U_0 \\
+0 &amp;amp; x \in U_0
+\end{cases}\]
+
+&lt;p&gt;$\sup_&amp;lt;$라는 표기는 $\prec$가 아닌 $&amp;lt;$에 대해 상한을 취함을 의미한다. 정의로부터 $f[A] = 0, f[B] = 1$가 따라 나온다.&lt;/p&gt;
+
+&lt;p&gt;이제 $f$가 연속임을 보이면 정리가 증명된다. $\lbrace  B_\epsilon(q) \cap [0, 1] : q \in Q, \epsilon \in \mathbb{Q}_{&amp;gt;0} \rbrace $가 $[0, 1]$의 위상 기저이므로, 임의의 $q \in Q$와 특정 상한보다 작은 양의 유리수 $\epsilon$에 대해 $S_{q, \epsilon} = f^{-1}(B_\epsilon(q) \cap [0, 1])$가 열린집합임을 보이면 충분하다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$0 &amp;lt; q &amp;lt; 1$인 경우, $S_{q, \epsilon} = (X \setminus \overline{U_{q-\epsilon}}) \cap U_{q + \epsilon}$이므로 열린집합이다.&lt;/li&gt;
+  &lt;li&gt;$q = 0$인 경우, $S_{0, \epsilon} = U_\epsilon$이므로 열린집합이다.&lt;/li&gt;
+  &lt;li&gt;$q = 1$인 경우, $S_{1, \epsilon} = X \setminus \overline{U_{1 - \epsilon}}$이므로 열린집합이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;따라서 $f$는 연속이다. ■&lt;/p&gt;
+
+&lt;h4 id=&quot;고찰&quot;&gt;고찰&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;우리손 보조정리의 역은 자명히 성립한다. 즉, 임의의 닫힌집합 $A, B \subset X$에 대해 어떤 연속인 $f: X \to [0, 1]$가 $A, B$를 분리한다면, $U = f^{-1}[0, 1/2)$, $V = f^{-1}(1/2, 1]$는 $A, B$를 분리하는 서로소 열린집합이므로 $X$는 정규이다. 간단히 말해, &lt;strong&gt;정규공간에서는 우리손 분리가능성과 분리 공리가 동치이다.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;정칙&lt;sub&gt;regular&lt;/sub&gt; 공간에서는 이가 성립하지 않는다. 즉, 정칙 공간 $X$에서 임의의 닫힌집합 $F$와 점 $a$가 주어졌을 때, $f(a) = 0$, $f[F] = \lbrace 1 \rbrace$을 만족하는 연속인 $f: X \to [0, 1]$이 언제나 존재하는 것은 아니다. 우리손 분리가능한 정칙 공간을 &lt;strong&gt;티호노프&lt;sub&gt;Tychonoff&lt;/sub&gt; 공간&lt;/strong&gt; 또는 &lt;strong&gt;완전 정칙&lt;sub&gt;completely regular&lt;/sub&gt; 공간&lt;/strong&gt;이라고 하며, 정칙보다 엄격히 강한 조건이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;우리손 보조정리의 증명이 정칙 공간에 대해 유효하지 않은 이유는 $p &amp;lt; q \implies \overline{U_p} \subset U_q$를 만족하는 $\lbrace U_q \rbrace $를 구성할 때 정규 공리가 필요하기 때문이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;우리손-거리화-정리&quot;&gt;우리손 거리화 정리&lt;/h2&gt;
+
+&lt;p&gt;우리손 보조정리의 응용으로서, 우리손 거리화 정리를 증명하자.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;우리손 거리화 정리&lt;sub&gt;Urysohn metrisation theorem&lt;/sub&gt;.&lt;/strong&gt; 2차 가산인 정규 공간은 거리화 가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그런데 2차 가산인 정칙 공간은 정규 공간임이 알려져 있으므로 위 정리의 진술은 “2차 가산인 정칙 공간은 거리화 가능하다”와 같이 자연스럽게 강화할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;따라서 공간들 간의 시사 관계는 다음과 같다. &lt;strong&gt;화살표의 길이가 길수록 요구되는 조건이 강해진다.&lt;/strong&gt; $T_2 \to T_4$는 $T_3 \to T_4$보다 엄격히 어려운 시사 관계이며, 이것은 전자에서 요구되는 콤팩트성이 후자에서 요구되는 린델뢰프보다 엄격히 강한 조건인 데에서 드러난다. 마찬가지로 $T_3 \to \mathrm{Met}$는 $T_3 \to T_4$보다 엄격히 어려운 시사 관계이며, 전자에서 요구되는 2차 가산성은 후자에서 요구되는 린델뢰프보다 엄격히 강한 조건이다. 그러나 $T_2 \to T_4$와 $T_3 \to \mathrm{Met}$는 어느 한쪽이 엄격히 어려운 시사 관계가 아니다 (두 화살표의 길이는 엇비슷하다). 이것은 콤팩트성과 2차 가산성이 일반적으로 서로를 시사하지 않는다는 점에서 드러난다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/urysohn-3.png&quot; style=&quot;width: 100%; max-width: 240px; mix-blend-mode: multiply; margin: 2em auto 1em auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;증명-1&quot;&gt;증명&lt;/h4&gt;
+
+&lt;p&gt;$X$가 2차 가산인 정규 공간이라고 하자. 다음의 보조정리를 증명한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;보조정리.&lt;/strong&gt; $X$를 $[0, 1]$에 사상시키는 연속함수의 가산족 $\mathcal{F}$가 존재하여, 임의의 $x_0 \in X$와 그 근방 $U$에 대해, $f(x_0) &amp;gt; 0$이고 $f[X \setminus U] = \lbrace  0 \rbrace $인 $f \in \mathcal{F}$가 존재한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;$x_0$와 $U$가 주어졌을 때 그러한 $f$가 존재함은 우리손 보조정리로부터 알 수 있다. 우리가 해야할 일은 이를 가산 함수족으로 줄이는 것이다. $\mathcal{B} = \lbrace  B_n \rbrace $이 $X$의 가산인 위상기저라고 하자. $B_m \subset B_n$일 때, 우리손 보조정리로부터 $f_{nm}: X \to [0, 1]$을 다음을 만족하는 연속함수로 정의하자.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$f_{nm}[\overline{B_m}] = 1$&lt;/li&gt;
+  &lt;li&gt;$f_{nm}[X \setminus B_n] = 0$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;$\mathcal{F} = \lbrace  f_{nm} \rbrace $으로 정의하자. 임의의 $x_0$와 그 근방 $U$가 주어졌을 때, 위상기저의 정의에 의해 $x_0 \in B_n \subset U$인 $B_n$이 존재한다. 또한 정규성에 의해 $x \in \overline{V} \subset B_n$인 열린집합 $V$가 존재한다. 다시 위상기저의 정의에 의해 $x \in B_m \subset V$인 $B_m$이 존재한다. 이때 $f_{nm} \in \mathcal{F}$가 보조정리의 조건을 만족하는 함수이다. □&lt;/p&gt;
+
+&lt;p&gt;이제 본 정리를 증명하자. 아이디어는 $X$를 $[0, 1]^\omega$에 임베딩하는 것이다. $[0, 1]^\omega$에 곱 위상이 주어지면 거리 공간임이 알려져 있으므로 $X$는 거리 공간의 부분공간과 동형인 공간으로서 거리화 가능함이 보여진다.&lt;/p&gt;
+
+&lt;p&gt;$\mathcal{F} = \lbrace  f_n \mid n \in \omega \rbrace $가 보조정리로서 주어지는 가산 함수족이라고 하자. 다음과 같이 $F: X \to [0, 1]^\omega$를 정의한다.&lt;/p&gt;
+
+\[F: x \mapsto (f_1(x), f_2(x), f_3(x), \dots)\]
+
+&lt;p&gt;$F$가 임베딩을 보이자. 즉, $F$가 연속이고, 단사이며, 정의역과 치역의 동형사상임을 보여야 한다.&lt;/p&gt;
+
+&lt;p&gt;각 $f_n$은 연속이므로 곱 위상의 성질(&lt;a href=&quot;https://dimenerno.github.io/2025/04/02/box-v-product&quot;&gt;정의이기도 하다&lt;/a&gt;)에 의해 $F$는 연속이다. $F$가 단사임은 $X$가 하우스도르프라는 사실에서 따라 나온다. 따라서 다음을 보이면 충분하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$U \subset X$가 열린집합일 때, $F[U]$는 $\mathrm{im} F$에서 열린집합이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;임의의 $y_0 \in F[U]$에 대해 $y_0 \in V \subset F[U]$이며 $\mathrm{im} F$에서 열린 $V$가 존재함을 보이자. $F[U]$의 정의에 의해 어떤 $x_0 \in X$가 존재하여 $F(x_0) = y_0$이다. $x_0$와 $U$에 대해 보조정리를 만족하는 함수가 $f_n \in \mathcal{F}$라고 하자. $f_n(x_0) = 1$이므로 $(y_0)_n = 1$이다. 따라서 $W = \pi_n^{-1}(0, 1] \subset [0, 1]^\omega$와 같이 정의하면 $W$는 $y_0$를 원소로 가지는 $[0, 1]^\omega$에서 열린집합이다.&lt;/p&gt;
+
+&lt;p&gt;$W \cap \mathrm{im} F \subset F[U]$임을 보이자. 임의의 $w \in W$는 $F(x_1) = w$와 같이 쓸 수 있다. 추가로 $w \in \mathrm{im} F$라면 $f_n(x_1) = 1$이다. 그런데 $f_n$은 $U$ 외부에서는 $0$이므로, $x_1 \in U$이다. 따라서 $w \in F[U]$이다. 따라서 $W \cap \mathrm{im} F$는 $F[U]$에 포함되며 $y_0$를 원소로 가지는 $\mathrm{im} F$의 열린집합이다. 따라서 $F[U]$는 $\mathrm{im} F$에서 열린집합이다. ■&lt;/p&gt;
+
+&lt;h4 id=&quot;고찰-1&quot;&gt;고찰&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;우리손 거리화 정리는 &lt;strong&gt;나가타-스미로느프 거리화 정리&lt;sub&gt;Nagata-Smirnov metrisation theorem&lt;/sub&gt;&lt;/strong&gt;로 강화할 수 있다. 진술은 다음과 같다.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;$X$가 거리화 가능할 필요충분조건은 $X$가 정칙이며 가산-국소적으로 유한한&lt;sub&gt;countably locally finite&lt;/sub&gt; 위상기저를 가지는 공간인 것이다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;위상공간 $X$의 부분집합들로 이루어진 집합족 $\mathcal{A}$가 &lt;strong&gt;국소적으로 유한&lt;/strong&gt;하다는 것은, 임의의 $x \in X$에 대해 어떤 근방 $U$가 존재하여 $U$가 $\mathcal{A}$의 오직 유한한 개수의 집합과만 교집합을 가진다는 것이다. 위상기저 $\mathcal{B}$가 &lt;strong&gt;가산-국소적으로 유한&lt;/strong&gt;하다는 것은, 각각의 $\mathcal{B}_n$이 국소적으로 유한이도록 $\mathcal{B} = \bigcup_{n \in \omega}\mathcal{B}_n$와 같이 적을 수 있다는 것이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;우리손 거리화 정리의 증명을 살짝 변형하면 다음 사실을 발견할 수 있다.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $T_1$ 공간인 $X$에 대해, $\lbrace f_{\alpha} \rbrace _{\alpha \in J} $가 다음 조건을 만족하는 연속함수 $f_\alpha : X \to [0, 1]$의 모임이라고 하자: 임의의 $x_0 \in X$에 대해 어떤 근방 $U$가 존재하여 $f_\alpha(x_0) = 1$이고 $f_\alpha[X \setminus U] = \lbrace  0 \rbrace $이다. 이때, $F(x) = (f_\alpha(x))_{\alpha \in J}$는 $X$를 $[0, 1]^J$로 임베딩하는 사상이다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;$T_1$ 조건을 생략하면 $F$는 단사가 아닐 수 있음을 확인하라. 위 정리는 스톤-체흐 콤팩트화&lt;sub&gt;Stone-Čech compactification&lt;/sub&gt;를 증명하는 데 사용된다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The Urysohn Lemma and Urysohn Metrisation Theorem</title>
+   <link href="https://dimenerno.github.io/2025/07/09/urysohn/en"/>
+   <updated>2025-07-09T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/07/09/urysohn/urysohn-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Urysohn Lemma.&lt;/strong&gt; Let $X$ be a normal space. If $A$ and $B$ are disjoint closed sets in $X$, then there exists a continuous function $f: X \to [0, 1]$ such that $f[A] = \lbrace  0 \rbrace$ and $f[B] = \lbrace 1 \rbrace$.&lt;/p&gt;
 
@@ -72,6 +211,78 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;The reason the proof of the Urysohn Lemma does not go through for regular spaces is that constructing the collection $\lbrace  U_q \rbrace $ satisfying $p &amp;lt; q \implies \overline{U_p} \subset U_q$ requires the normality axiom.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;urysohn-metrisation-theorem&quot;&gt;Urysohn Metrisation Theorem&lt;/h3&gt;
+
+&lt;p&gt;As an application of the Urysohn Lemma, let us prove the Urysohn Metrisation Theorem.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Urysohn Metrisation Theorem.&lt;/strong&gt; A second countable normal space is metrizable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Recall that a second countable regular space is a normal space. Hence the statement of the above theorem can be strengthened to “A second countable regular space is metrisable.”&lt;/p&gt;
+
+&lt;p&gt;Thus, the implications between spaces can be summarised as follows. Note that &lt;strong&gt;the longer the arrow, the stronger the required condition.&lt;/strong&gt; The implication $T_2 \to T_4$ is strictly more difficult than $T_3 \to T_4$, and this is evidenced by the fact that the former requires a condition — compactness — strictly stronger than the latter — Lindelöf. Similarly, $T_3 \to \mathrm{Met}$ is strictly more difficult than $T_3 \to T_4$, as the second countability required in the former is strictly stronger than the Lindelöf property. However, neither $T_2 \to T_4$ nor $T_3 \to \mathrm{Met}$ is strictly more difficult than the other (the lengths of both arrows are similar). This is again evidenced by the fact that compactness and second countability do not generally imply each other.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/urysohn-3.png&quot; style=&quot;width: 100%; max-width: 240px; mix-blend-mode: multiply; margin: 2em auto 1em auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;proof-1&quot;&gt;Proof&lt;/h4&gt;
+
+&lt;p&gt;Let $X$ be a second countable normal space. We will prove the following lemma.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Lemma.&lt;/strong&gt; There exists a countable collection of continuous functions $\mathcal{F}$ mapping $X$ to $[0, 1]$ such that for any point $x_0 \in X$ and its neighbourhood $U$, there exists a function $f \in \mathcal{F}$ satisfying $f(x_0) &amp;gt; 0$ and $f[X \setminus U] = \lbrace  0 \rbrace$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Given $x_0$ and $U$, the existence of such an $f$ follows from the Urysohn Lemma. Our task is to reduce this to a countable collection of functions. Let $\mathcal{B} = \lbrace  B_n \rbrace $ be a countable basis for the topology on $X$. When $B_m \subset B_n$, we define a continuous function $f_{nm}: X \to [0, 1]$ satisfying the following conditions according to the Urysohn Lemma:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$f_{nm}[\overline{B_m}] = 1$&lt;/li&gt;
+  &lt;li&gt;$f_{nm}[X \setminus B_n] = 0$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let $\mathcal{F} = \lbrace  f_{nm} \rbrace $. Given any point $x_0$ and its neighbourhood $U$, by the definition of a basis, there exists a basis element $B_n$ such that $x_0 \in B_n \subset U$. Furthermore, by normality, there exists an open set $V$ such that $x \in \overline{V} \subset B_n$. Again, by the definition of a basis, there exists a basis element $B_m$ such that $x \in B_m \subset V$. Hence $f_{nm} \in \mathcal{F}$ satisfies the conditions of the lemma. □&lt;/p&gt;
+
+&lt;p&gt;Now, let us prove the main theorem. The idea is to embed $X$ into $[0, 1]^\omega$, as $[0, 1]^\omega$ equipped with metric topology is known to be a metric space. It then follows that $X$ is metrisable, being a space homeomorphic to a subspace of a metric space.&lt;/p&gt;
+
+&lt;p&gt;Let $\mathcal{F} = \lbrace  f_n \mid n \in \omega \rbrace $ be the countable collection of functions given by the lemma. We define the mapping $F: X \to [0, 1]^\omega$ as follows:&lt;/p&gt;
+
+\[F: x \mapsto (f_1(x), f_2(x), f_3(x), \dots)\]
+
+&lt;p&gt;We will show that $F$ is an embedding. That is, we need to demonstrate that $F$ is continuous, injective, and a homeomorphism between the domain and the image.&lt;/p&gt;
+
+&lt;p&gt;Since each $f_n$ is continuous, by the properties of the product topology, $F$ is continuous (side note: one can regard this as the &lt;a href=&quot;https://dimenerno.github.io/2025/04/02/box-v-product&quot;&gt;definition&lt;/a&gt; of the product toplogy). The injectivity of $F$ follows from the fact that $X$ is Hausdorff. Therefore, it suffices to show the following:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If $U \subset X$ is an open set, then $F[U]$ is open in $\mathrm{im} F$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let us show that for any $y_0 \in F[U]$, there exists a set $V \subset F[U]$ open in $\mathrm{im} F$ that contains $y_0$. By the definition of $F[U]$, there exists some $x_0 \in X$ such that $F(x_0) = y_0$. Let $f_n \in \mathcal{F}$ be a function satisfying the conditions of the lemma for $x_0$ and $U$. Since $f_n(x_0) = 1$, it follows that $(y_0)_n = 1$. Therefore, $W = \pi_n^{-1}(0, 1] \subset [0, 1]^\omega$ is a set containing $y_0$ that is open in $[0, 1]^\omega$.&lt;/p&gt;
+
+&lt;p&gt;Now, we need to show that $W \cap \mathrm{im} F \subset F[U]$. For any $w \in W$, we can write $F(x_1) = w$. Additionally, if $w \in \mathrm{im} F$, then $f_n(x_1) = 1$. However, since $f_n$ vanishes outside of $U$, it follows that $x_1 \in U$. Thus, $w \in F[U]$, i.e. $W \cap \mathrm{im} F$ is contained in $F[U]$ and is an open set in $\mathrm{im} F$ containing $y_0$. Hence, $F[U]$ is an open set in $\mathrm{im} F$. ■&lt;/p&gt;
+
+&lt;h4 id=&quot;remarks-1&quot;&gt;Remarks&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Urysohn Metrisation Theorem can be strengthened to the &lt;strong&gt;Nagata-Smirnov Metrisation Theorem&lt;/strong&gt;. The statement is as follows:&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;A space $X$ is metrizable if and only if $X$ is regular and has a countably locally finite topology basis.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;A collection of subsets $\mathcal{A}$ of a topological space $X$ is said to be &lt;strong&gt;locally finite&lt;/strong&gt; if for any point $x \in X$, there exists a neighbourhood $U$ such that $U$ intersects only finitely many sets from $\mathcal{A}$. A topological basis $\mathcal{B}$ is said to be &lt;strong&gt;countably locally finite&lt;/strong&gt; if it can be expressed as $\mathcal{B} = \bigcup_{n \in \omega}\mathcal{B}_n$ where each $\mathcal{B}_n$ is locally finite.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A slight modification of the proof of the Urysohn Metrisation Theorem leads to the following result.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $X$ be a $T_1$ space, and let $\lbrace f_{\alpha} \rbrace_{\alpha \in J}$ be a collection of continuous functions $f_\alpha : X \to [0, 1]$ satisfying the following condition: for any point $x_0 \in X$, there exists a neighbourhood $U$ such that $f_\alpha(x_0) = 1$ and $f_\alpha[X \setminus U] = \lbrace  0 \rbrace$. Then, the mapping $F(x) = (f_\alpha(x))_{\alpha \in J}$ embeds $X$ into $[0, 1]^J$.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;Omitting the $T_1$ condition may result in $F$ not being injective. This theorem is used to prove the Stone-Čech compactification.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </content>
@@ -3190,7 +3401,7 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
    <content type="html">&lt;h3 id=&quot;초등적-병합-성질elementary-amalgamation-property&quot;&gt;초등적 병합 성질&lt;sub&gt;Elementary amalgamation property&lt;/sub&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}’$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화&lt;sub&gt;$\mathcal{L}$-reduct&lt;/sub&gt;가 $\mathfrak{A}$와 초등적으로 동등&lt;sub&gt;elementarily equivalent&lt;/sub&gt;하다고 하자. 이 때, $\mathcal{L}’$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 &lt;a href=&quot;https://dimenerno.github.io/2025/05/01/elementary-embedding/&quot;&gt;초등적 임베딩&lt;/a&gt;이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}’$의 초등적 임베딩이다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}’$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화&lt;sub&gt;$\mathcal{L}$-reduct&lt;/sub&gt;가 $\mathfrak{A}$와 초등적으로 동등&lt;sub&gt;elementarily equivalent&lt;/sub&gt;하다고 하자. 이때, $\mathcal{L}’$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 &lt;a href=&quot;https://dimenerno.github.io/2025/05/01/elementary-embedding/&quot;&gt;초등적 임베딩&lt;/a&gt;이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}’$의 초등적 임베딩이다.&lt;/p&gt;
 
   &lt;p&gt;&lt;img src=&quot;/public/elementary-amalgamation-2.png&quot; style=&quot;width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7561,7 +7772,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 
 \[\otimes: (u, v) = (u_1e_1 + \dots + u_ne_n, v_1f_1 + \dots + v_mf_m) \mapsto \begin{bmatrix} u_1v_1 \\ \vdots \\ u_1v_m \\ \vdots \\ u_nv_1 \\ \vdots \\ u_nf_m \end{bmatrix}_{\mathcal{B}}\]
 
-&lt;p&gt;이 때 다음이 성립한다.&lt;/p&gt;
+&lt;p&gt;이때 다음이 성립한다.&lt;/p&gt;
 
 \[\begin{align}
 \tilde {b}(\otimes(u, v)) &amp;amp;= \sum_i \sum_j (u_i v_j)b(e_i, f_j) \\
@@ -8668,7 +8879,7 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 
 \[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
 
-  &lt;p&gt;이 때, 다음이 성립한다.&lt;/p&gt;
+  &lt;p&gt;이때, 다음이 성립한다.&lt;/p&gt;
 
   &lt;ol&gt;
     &lt;li&gt;$A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.&lt;/li&gt;
@@ -9774,7 +9985,7 @@ K = \{ v \in V : v \in B \}
 
 \[\forall v \in V : \langle w, Tv \rangle = \langle u_w, v \rangle\]
 
-&lt;p&gt;이다. 이 때 사상 $w \mapsto u_w$는 선형임을 쉽게 보일 수 있다. 이 선형 사상이 우리가 구하고자 하는 어드조인트이다.&lt;/p&gt;
+&lt;p&gt;이다. 이때 사상 $w \mapsto u_w$는 선형임을 쉽게 보일 수 있다. 이 선형 사상이 우리가 구하고자 하는 어드조인트이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $T^\ast = T$인 선형 사상 $T : V \to V$를 &lt;strong&gt;자기 어드조인트&lt;sub&gt;self-adjoint&lt;/sub&gt;&lt;/strong&gt;라고 한다.&lt;/p&gt;
@@ -13720,7 +13931,7 @@ for y ∈ P:
   &lt;li&gt;$R(f): m \mapsto f(m)$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;이 때, 다음 다이어그램이 성립하여 $F \dashv U \dashv R$이다.&lt;/p&gt;
+&lt;p&gt;이때, 다음 다이어그램이 성립하여 $F \dashv U \dashv R$이다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/adjoint-int-3.png&quot; style=&quot;width: 100%; max-width: 170px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 

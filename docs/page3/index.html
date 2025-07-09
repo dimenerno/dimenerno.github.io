@@ -431,6 +431,155 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/13/saturation/en"> Saturated Structures and the Completeness of Real Closed Fields </a>
+      </h1>
+    <span class="post-date">13 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>Let $\mathfrak{A}$ be an $\mathcal{L}$-structure. Let $A$ be the domain of $\mathfrak{A}$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A subset $X \subseteq A$ is said to be <strong>definable</strong> if there exist some $\mathcal{L}$-formula $\phi$ and free variable assignment $g$ such that the following holds:</p>
+
+\[X = \{ x \in A : \mathfrak{A} \vDash \phi[g^0_x] \}\]
+
+  <p>When $\phi$ has no free variables other than $v_0$, we say that $X$ is $\emptyset$-definable.</p>
+</blockquote>
+
+<p><em>Remark.</em> Definability has the same meaning as <a href="https://dimenerno.github.io/2024/12/11/VL-axiom/">Gödel’s constructibility</a>.</p>
+
+<p>For example, in $(\mathbb{R}, &lt;)$, the interval $(e, 2\pi)$ is definable by the following $\phi$ and $g$:</p>
+
+<ul>
+  <li>$\phi \equiv (v_1 &lt; v_0 \land v_0 &lt; v_2)$</li>
+  <li>$g: v_1 \mapsto e, v_2 \mapsto 2\pi$</li>
+</ul>
+
+<p>However, $(e, 2\pi)$ is not $\emptyset$-definable, as there is no way to specify $e$ and $2\pi$ in $(\mathbb{R}, &lt;)$.</p>
+
+<p>On the other hand, in the standard arithmetic model $(\mathbb{N}, 0, +, S)$, the set of even numbers $E$ is $\emptyset$-definable by the following $\phi$:</p>
+
+<ul>
+  <li>$\phi \equiv \exists y (x = y + y)$</li>
+</ul>
+
+<p>All finite sets are definable. For instance, $A = \lbrace a_1, a_2, a_3 \rbrace $ is definable as follows:</p>
+
+<ul>
+  <li>$\phi \equiv (v_0 = v_1) \lor (v_0 = v_2) \lor (v_0 = v_3)$</li>
+  <li>$g: v_1 \mapsto a_1, v_2 \mapsto a_2, v_3 \mapsto a_3$</li>
+</ul>
+
+<p>For the same reason, all cofinite sets are also definable.</p>
+
+<p>In <a href="http://dimenerno.github.io/2025/05/09/resiliency/">the previous post</a>, we examined resilient families of sets. We now define the following:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\kappa$ be an uncountable cardinal. We say that $\mathfrak{A}$ is <strong>$\kappa$-saturated</strong> if every collection of fewer than $\kappa$ definable subsets of $A$ is resilient. In particular, when $\mathfrak{A}$ is $|A|$-saturated, we say that $\mathfrak{A}$ is <strong>saturated</strong>.</p>
+</blockquote>
+
+<p>Therefore, an $\aleph_1$-saturated structure $\mathfrak{A}$ is one in which, whenever a countable collection of definable subsets of $\mathfrak{A}$ satisfies the finite intersection property, their total intersection is also non-empty. Meanwhile, it is impossible for a structure $\mathfrak{A}$ to be $|A|^+$-saturated, since the following family of sets satisfies the finite intersection property but has empty intersection:</p>
+
+\[\Big\{ A - \{ a \} : a \in A \Big\}\]
+
+<p>The importance of saturated structures lies in the following theorem:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Two elementarily equivalent saturated $\mathcal{L}$-structures of the same cardinality are isomorphic.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Omitted. The basic idea is a generalisation of <a href="https://dimenerno.github.io/2025/05/08/resiliency/">Cantor’s back-and-forth argument</a> seen in the previous post.</p>
+
+<p>Unfortunately, saturated structures are difficult to construct. For instance, for an uncountable cardinal $\kappa$ and a consistent theory $T$ with $|T| \leq \kappa$, the theory $T$ has a $\kappa^+$-saturated model of cardinality $2^\kappa$. Therefore, under the generalised continuum hypothesis, such a model is saturated. However, it is known that ZFC alone cannot prove the existence of saturated structures.</p>
+
+<p>We therefore introduce the following concept with a weaker condition:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> We say that $\mathfrak{A}$ is <strong>special</strong> if $\mathfrak{A}$ is the direct limit of a directed system $\lbrace  \mathfrak{A}_\kappa \rbrace _{\kappa &lt; |A|}$, where $\kappa$ is an infinite cardinal and each $\mathfrak{A}_\kappa$ is $\kappa^+$-saturated.</p>
+</blockquote>
+
+<p>Every saturated structure is special, as we can take each $\mathfrak{A}_\kappa$ to be itself. However, not every special structure is saturated. Therefore, being special is a strictly weaker condition than being saturated. Nevertheless, special structures satisfy the isomorphism property:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Two elementarily equivalent special $\mathcal{L}$-structures of the same cardinality are isomorphic.</p>
+</blockquote>
+
+<p>Moreover, special structures are easier to construct than saturated structures. In particular, the following specialisation of the Löwenheim-Skolem theorem is known:</p>
+
+<blockquote>
+  <p><strong>Special Löwenheim-Skolem Theorem.</strong> Let $T$ be a theory in language $\mathcal{L}$.</p>
+
+  <ol>
+    <li>If $T$ has an infinite model, then $T$ has a special model of cardinality greater than any given cardinal.</li>
+    <li>If $T$ has an infinite model and $\mathcal{L}$ is countable, then $T$ has a special model of cardinality $\beth_\omega$.</li>
+  </ol>
+</blockquote>
+
+<p>As an application of this theorem, we consider the following famous result:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> The <strong>theory of real closed ordered fields</strong> or <strong>RCOF</strong> is a theory in the language $(0, 1, +, \cdot, &lt;)$ consisting of the following axioms: ($x^n$ is an abbreviation for $x \underbrace{\cdot \;\cdots\; \cdot}_{n} x$)</p>
+
+  <ol>
+    <li>Ordered field axioms
+      <ul>
+        <li>$\forall a, b, c : (a &lt; b) \rightarrow (a + c &lt; b + c)$</li>
+        <li>$\forall a, b : (a &gt; 0 \land b &gt; 0) \rightarrow ab &gt; 0$</li>
+        <li>Field axioms</li>
+      </ul>
+    </li>
+    <li>Square root axiom: $\forall a &gt; 0 \; \exists x : x^2 = a$</li>
+    <li>Closure axiom schemas:
+      <ul>
+        <li>$\forall a_2, a_1, a_0 \; \exists x :x^3 + a_2x^2 + a_1x + a_0 = 0$</li>
+        <li>$\forall a_4, a_3, a_2, a_1, a_0\; \exists x : x^5 + a_4x^4 + \cdots + a_0 = 0$</li>
+        <li>…</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>The <strong>theory of real closed fields</strong> or <strong>RCF</strong> is a theory in the language $(0, 1, +, \cdot)$ consisting of the following axioms:</p>
+
+  <ol>
+    <li>Field axioms</li>
+    <li>Formally real axiom: $\forall x : x^2 \neq -1$</li>
+    <li>Square root axiom: $\forall a \; \exists x : x^2 = a \lor x^2 = -a$</li>
+    <li>Closure axiom schemas</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Tarski’s Theorem.</strong> RCOF and RCF are complete.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> The key is the following lemma:</p>
+
+<blockquote>
+  <p><strong>Erdős-Gillman-Henriksen Lemma.</strong> Two special real closed fields of the same cardinality are isomorphic.</p>
+</blockquote>
+
+<p>Assuming the lemma, we prove Tarski’s theorem. If RCF were not complete, there would exist extensions $T_1$ and $T_2$ of RCF such that models of $T_1$ and models of $T_2$ are not elementarily equivalent. Since all models of RCF are infinite models (why?), by the special Löwenheim-Skolem theorem, $T_1$ and $T_2$ each have models $\mathfrak{A}_1, \mathfrak{A}_2$ of cardinality $\beth_\omega$. However, by the lemma, $\mathfrak{A}_1 \cong \mathfrak{A}_2$, which contradicts $\mathfrak{A}_1 \not\equiv \mathfrak{A}_2$. ■</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/05/09/resiliency"> η 집합 </a>
@@ -751,7 +900,7 @@
      <h3 id="초등적-병합-성질elementary-amalgamation-property">초등적 병합 성질<sub>Elementary amalgamation property</sub></h3>
 
 <blockquote>
-  <p><strong>정리.</strong> $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}’$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화<sub>$\mathcal{L}$-reduct</sub>가 $\mathfrak{A}$와 초등적으로 동등<sub>elementarily equivalent</sub>하다고 하자. 이 때, $\mathcal{L}’$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">초등적 임베딩</a>이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}’$의 초등적 임베딩이다.</p>
+  <p><strong>정리.</strong> $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}’$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화<sub>$\mathcal{L}$-reduct</sub>가 $\mathfrak{A}$와 초등적으로 동등<sub>elementarily equivalent</sub>하다고 하자. 이때, $\mathcal{L}’$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">초등적 임베딩</a>이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}’$의 초등적 임베딩이다.</p>
 
   <p><img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply" /></p>
 </blockquote>
@@ -1719,86 +1868,6 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 <p>a의 경우, 다시 비둘기집의 원리에 의해 $c_1 \in \aleph_1(l)$을 만족하는 직선 $l \in L_1$의 개수가 $2^{\aleph_0}$인 색깔 $c_1$이 존재한다. 그러한 $L_1$의 직선들의 집합을 $L_1’$이라고 하자. 앞선 논의에 의해 $L_1’$에는 총 $\aleph_1$개의 $c_1$ 점들이 존재한다. 이 점들을 뺀 집합을 $L_2$라고 하자. 이같은 과정을 b가 될 때까지 반복한다. (색깔이 가산 개 있기 때문에 언젠가는 b에 도달함을 확인하라)</p>
 
 <p>b가 되었을 때 $L_n$은 최대 $\aleph_1$개의 점들을 가진다. 그런데 $L$이 $L_n$이 되는 과정에서 빠진 점들의 개수는 $\aleph_1 \cdot \aleph_0 = \aleph_1$을 넘지 않는다. 한편 $L$은 $2^{\aleph_0}$개의 점들을 가지고 있었기 때문에, 이는 $\aleph_1 &lt; 2^{\aleph_0}$에 모순된다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/24/continuum-coloring/en"> A Colouring Problem Equivalent to the Continuum Hypothesis </a>
-      </h1>
-    <span class="post-date">24 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Problem.</strong> When the coordinate plane is coloured using countably many colours, does there always exist a right triangle whose three vertices are of the same colour?</p>
-</blockquote>
-
-<p>For instance, the following colouring uses 3 colours, and one can easily find a right triangle whose three vertices are all of the same colour.</p>
-
-<p><img src="/public/color-1.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;" /></p>
-
-<p>Of course, the above case is a simple one, and we must consider whether the required right triangle exists even when infinitely many colours are applied in a highly irregular manner, as shown below.</p>
-
-<p><img src="/public/color-2.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;" /></p>
-
-<p>Remarkably, this problem, which appears trivial at first glance, is equivalent to the continuum hypothesis.</p>
-
-<blockquote>
-  <p><strong>Continuum Hypothesis.</strong> There exists no infinite set whose cardinality is greater than that of the natural numbers but smaller than that of the real numbers.</p>
-</blockquote>
-
-<p>We define $\aleph_0$ as the cardinality of the smallest infinite set, namely the natural numbers, and $\aleph_1$ as the cardinality of the smallest infinite set larger than the natural numbers. Meanwhile, the real numbers can easily be shown to have the same cardinality as the power set of the natural numbers, and since the power set of a set $X$ has cardinality $2^{|X|}$, the cardinality of the real numbers is $2^{\aleph_0}$. Therefore, the statement of the continuum hypothesis is equivalent to $\aleph_1 = 2^{\aleph_0}$.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> A counterexample to the problem exists if and only if $\aleph_1 = 2^{\aleph_0}$.</p>
-</blockquote>
-
-<p>Note that the following proof is conceived by the author and may contain errors.</p>
-
-<p><strong>Proof.</strong> We shall show that if $\aleph_1 = 2^{\aleph_0}$, then a counterexample to the problem exists, and conversely, if a counterexample to the problem exists, then $\aleph_1 = 2^{\aleph_0}$.</p>
-
-<h4 id="if-aleph_1--2aleph_0-then-a-counterexample-to-the-problem-exists">If $\aleph_1 = 2^{\aleph_0}$, then a counterexample to the problem exists.</h4>
-
-<p>For the smallest uncountable ordinal $\omega_1$, there exists a method of colouring $\omega_1^2$ such that no right triangle with three vertices of the same colour exists. First, we establish a one-to-one correspondence between countably many colours and the integers. Since $\alpha &lt; \omega_1$ is a countable ordinal, we can colour all points of the red segment $\lbrace  (\beta, \alpha) : 0 \leq \beta \leq \alpha \rbrace $ with countably many distinct colours. We colour these points with colours corresponding to positive integers. Meanwhile, the points of the blue segment $\lbrace  (\alpha, \beta) : 0 \leq \beta &lt; \alpha \rbrace $ are coloured with colours corresponding to negative integers.</p>
-
-<p><img src="/public/color-3.png" style="width: 100%; max-width: 350px; margin: 1.5em auto;" /></p>
-
-<p>It can easily be shown that with this colouring, there exists no right triangle whose three vertices are all of the same colour.</p>
-
-<p>If $\aleph_1 = 2^{\aleph_0}$, then there exists a one-to-one correspondence $f: \mathbb{R} \to \omega_1$. We now define a colouring of the plane as follows. A point $p = (x, y) \in \mathbb{R}^2$ is coloured with the same colour as the point $f(p) = (f(x), f(y)) \in \omega_1^2$. Since $f$ is a one-to-one correspondence, if points $p_1, p_2, p_3$ form the three vertices of a right triangle of the same colour under this colouring, then $f(p_1), f(p_2), f(p_3)$ also form the three vertices of a right triangle of the same colour. However, since we have shown that no such triangle exists in $\omega_1^2$, the plane also lacks the required right triangle under this colouring.</p>
-
-<h4 id="if-a-counterexample-to-the-problem-exists-then-aleph_1--2aleph_0">If a counterexample to the problem exists, then $\aleph_1 = 2^{\aleph_0}$.</h4>
-
-<p>Suppose $2^{\aleph_0} &gt; \aleph_1$ and derive a contradiction. Let $I$ be a subset of the real numbers with cardinality $\aleph_1$. Consider the subset $X = I \times \mathbb{R}$ of the plane.</p>
-
-<p>Let $L_0$ denote the set of lines in $X$ parallel to the $x$-axis. For $l \in L_0$, we write $c \in \aleph_1(l)$ when the number of points in $l$ coloured with colour $c$ is at least $\aleph_1$. For any $l \in L_0$, since $|l| = \aleph_1$, verify that by the pigeonhole principle, there exists at least one colour $c$ such that $c \in \aleph_1(l)$ for each line.</p>
-
-<p>Moreover, since $|L_0| = 2^{\aleph_0}$, by the pigeonhole principle there exists some colour $c_0$ such that the number of lines $l$ satisfying $c_0 \in \aleph_1(l)$ is $2^{\aleph_0}$. Consider the set $L_0’$ of such lines. When vertical lines are drawn through the lines in $L_0’$, if any two intersection points have colour $c_0$, then there exists a right triangle whose three vertices are all of colour $c_0$. Therefore, amongst the intersection points of any vertical line with the lines in $L_0’$, at most one point is coloured $c_0$. Since there are $|I| = \aleph_1$ vertical lines in total, there exist $\aleph_1$ points of colour $c_0$ in $L_0’$.</p>
-
-<p>Removing all these points yields a sparse set of lines. Let this set be $L_1$.</p>
-
-<p><img src="/public/color-4.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
-
-<p>Two cases are possible: a) There are $2^{\aleph_0}$ lines in $L_1$ that contain $\aleph_1$ points. b) There are at most $\aleph_1$ lines in $L_1$ that contain $\aleph_1$ points.</p>
-
-<p>In case a), again by the pigeonhole principle, there exists a colour $c_1$ such that the number of lines $l \in L_1$ satisfying $c_1 \in \aleph_1(l)$ is $2^{\aleph_0}$. Let $L_1’$ denote the set of such lines in $L_1$. By the previous argument, there exist $\aleph_1$ points of colour $c_1$ in $L_1’$. Let $L_2$ denote the set obtained by removing these points. Repeat this process until case b) is reached. (Verify that case b) is eventually reached since there are countably many colours.)</p>
-
-<p>When case b) is reached, $L_n$ contains at most $\aleph_1$ points. However, the number of points removed in the process from $L$ to $L_n$ does not exceed $\aleph_1 \cdot \aleph_0 = \aleph_1$. Meanwhile, since $L$ originally contained $2^{\aleph_0}$ points, this contradicts $\aleph_1 &lt; 2^{\aleph_0}$. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

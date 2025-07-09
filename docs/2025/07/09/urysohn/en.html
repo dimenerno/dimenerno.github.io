@@ -12,7 +12,7 @@
   />
 
   <title>
-     Urysohn Lemma &middot; 디멘의 블로그 
+     The Urysohn Lemma and Urysohn Metrisation Theorem &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/2025/07/08/urysohn/en" />
+  <link rel="canonical" href="/2025/07/09/urysohn/en" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -369,8 +369,8 @@
       </div>
 
       <div class="container content"><div class="post">
-  <h1 class="post-title">Urysohn Lemma</h1>
-  <span class="post-date">08 Jul 2025</span>
+  <h1 class="post-title">The Urysohn Lemma and Urysohn Metrisation Theorem</h1>
+  <span class="post-date">09 Jul 2025</span>
   
     <div class="tag-container">
       
@@ -435,6 +435,78 @@
   </li>
   <li>
     <p>The reason the proof of the Urysohn Lemma does not go through for regular spaces is that constructing the collection $\lbrace  U_q \rbrace $ satisfying $p &lt; q \implies \overline{U_p} \subset U_q$ requires the normality axiom.</p>
+  </li>
+</ul>
+
+<h3 id="urysohn-metrisation-theorem">Urysohn Metrisation Theorem</h3>
+
+<p>As an application of the Urysohn Lemma, let us prove the Urysohn Metrisation Theorem.</p>
+
+<blockquote>
+  <p><strong>Urysohn Metrisation Theorem.</strong> A second countable normal space is metrizable.</p>
+</blockquote>
+
+<p>Recall that a second countable regular space is a normal space. Hence the statement of the above theorem can be strengthened to “A second countable regular space is metrisable.”</p>
+
+<p>Thus, the implications between spaces can be summarised as follows. Note that <strong>the longer the arrow, the stronger the required condition.</strong> The implication $T_2 \to T_4$ is strictly more difficult than $T_3 \to T_4$, and this is evidenced by the fact that the former requires a condition — compactness — strictly stronger than the latter — Lindelöf. Similarly, $T_3 \to \mathrm{Met}$ is strictly more difficult than $T_3 \to T_4$, as the second countability required in the former is strictly stronger than the Lindelöf property. However, neither $T_2 \to T_4$ nor $T_3 \to \mathrm{Met}$ is strictly more difficult than the other (the lengths of both arrows are similar). This is again evidenced by the fact that compactness and second countability do not generally imply each other.</p>
+
+<p><img src="/public/urysohn-3.png" style="width: 100%; max-width: 240px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
+
+<h4 id="proof-1">Proof</h4>
+
+<p>Let $X$ be a second countable normal space. We will prove the following lemma.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> There exists a countable collection of continuous functions $\mathcal{F}$ mapping $X$ to $[0, 1]$ such that for any point $x_0 \in X$ and its neighbourhood $U$, there exists a function $f \in \mathcal{F}$ satisfying $f(x_0) &gt; 0$ and $f[X \setminus U] = \lbrace  0 \rbrace$.</p>
+</blockquote>
+
+<p>Given $x_0$ and $U$, the existence of such an $f$ follows from the Urysohn Lemma. Our task is to reduce this to a countable collection of functions. Let $\mathcal{B} = \lbrace  B_n \rbrace $ be a countable basis for the topology on $X$. When $B_m \subset B_n$, we define a continuous function $f_{nm}: X \to [0, 1]$ satisfying the following conditions according to the Urysohn Lemma:</p>
+
+<ul>
+  <li>$f_{nm}[\overline{B_m}] = 1$</li>
+  <li>$f_{nm}[X \setminus B_n] = 0$</li>
+</ul>
+
+<p>Let $\mathcal{F} = \lbrace  f_{nm} \rbrace $. Given any point $x_0$ and its neighbourhood $U$, by the definition of a basis, there exists a basis element $B_n$ such that $x_0 \in B_n \subset U$. Furthermore, by normality, there exists an open set $V$ such that $x \in \overline{V} \subset B_n$. Again, by the definition of a basis, there exists a basis element $B_m$ such that $x \in B_m \subset V$. Hence $f_{nm} \in \mathcal{F}$ satisfies the conditions of the lemma. □</p>
+
+<p>Now, let us prove the main theorem. The idea is to embed $X$ into $[0, 1]^\omega$, as $[0, 1]^\omega$ equipped with metric topology is known to be a metric space. It then follows that $X$ is metrisable, being a space homeomorphic to a subspace of a metric space.</p>
+
+<p>Let $\mathcal{F} = \lbrace  f_n \mid n \in \omega \rbrace $ be the countable collection of functions given by the lemma. We define the mapping $F: X \to [0, 1]^\omega$ as follows:</p>
+
+\[F: x \mapsto (f_1(x), f_2(x), f_3(x), \dots)\]
+
+<p>We will show that $F$ is an embedding. That is, we need to demonstrate that $F$ is continuous, injective, and a homeomorphism between the domain and the image.</p>
+
+<p>Since each $f_n$ is continuous, by the properties of the product topology, $F$ is continuous (side note: one can regard this as the <a href="https://dimenerno.github.io/2025/04/02/box-v-product">definition</a> of the product toplogy). The injectivity of $F$ follows from the fact that $X$ is Hausdorff. Therefore, it suffices to show the following:</p>
+
+<blockquote>
+  <p>If $U \subset X$ is an open set, then $F[U]$ is open in $\mathrm{im} F$.</p>
+</blockquote>
+
+<p>Let us show that for any $y_0 \in F[U]$, there exists a set $V \subset F[U]$ open in $\mathrm{im} F$ that contains $y_0$. By the definition of $F[U]$, there exists some $x_0 \in X$ such that $F(x_0) = y_0$. Let $f_n \in \mathcal{F}$ be a function satisfying the conditions of the lemma for $x_0$ and $U$. Since $f_n(x_0) = 1$, it follows that $(y_0)_n = 1$. Therefore, $W = \pi_n^{-1}(0, 1] \subset [0, 1]^\omega$ is a set containing $y_0$ that is open in $[0, 1]^\omega$.</p>
+
+<p>Now, we need to show that $W \cap \mathrm{im} F \subset F[U]$. For any $w \in W$, we can write $F(x_1) = w$. Additionally, if $w \in \mathrm{im} F$, then $f_n(x_1) = 1$. However, since $f_n$ vanishes outside of $U$, it follows that $x_1 \in U$. Thus, $w \in F[U]$, i.e. $W \cap \mathrm{im} F$ is contained in $F[U]$ and is an open set in $\mathrm{im} F$ containing $y_0$. Hence, $F[U]$ is an open set in $\mathrm{im} F$. ■</p>
+
+<h4 id="remarks-1">Remarks</h4>
+
+<ul>
+  <li>
+    <p>The Urysohn Metrisation Theorem can be strengthened to the <strong>Nagata-Smirnov Metrisation Theorem</strong>. The statement is as follows:</p>
+
+    <blockquote>
+      <p>A space $X$ is metrizable if and only if $X$ is regular and has a countably locally finite topology basis.</p>
+    </blockquote>
+
+    <p>A collection of subsets $\mathcal{A}$ of a topological space $X$ is said to be <strong>locally finite</strong> if for any point $x \in X$, there exists a neighbourhood $U$ such that $U$ intersects only finitely many sets from $\mathcal{A}$. A topological basis $\mathcal{B}$ is said to be <strong>countably locally finite</strong> if it can be expressed as $\mathcal{B} = \bigcup_{n \in \omega}\mathcal{B}_n$ where each $\mathcal{B}_n$ is locally finite.</p>
+  </li>
+  <li>
+    <p>A slight modification of the proof of the Urysohn Metrisation Theorem leads to the following result.</p>
+
+    <blockquote>
+      <p><strong>Theorem.</strong> Let $X$ be a $T_1$ space, and let $\lbrace f_{\alpha} \rbrace_{\alpha \in J}$ be a collection of continuous functions $f_\alpha : X \to [0, 1]$ satisfying the following condition: for any point $x_0 \in X$, there exists a neighbourhood $U$ such that $f_\alpha(x_0) = 1$ and $f_\alpha[X \setminus U] = \lbrace  0 \rbrace$. Then, the mapping $F(x) = (f_\alpha(x))_{\alpha \in J}$ embeds $X$ into $[0, 1]^J$.</p>
+    </blockquote>
+
+    <p>Omitting the $T_1$ condition may result in $F$ not being injective. This theorem is used to prove the Stone-Čech compactification.</p>
   </li>
 </ul>
 

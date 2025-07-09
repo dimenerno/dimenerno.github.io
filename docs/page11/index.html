@@ -431,6 +431,66 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/05/transfinite-recursion/en"> Transfinite Induction and Transfinite Recursion </a>
+      </h1>
+    <span class="post-date">05 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <h3 id="1-transfinite-induction">1. Transfinite Induction</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $P$ be a property defined on ordinals, and suppose that for any $\alpha \in \mathrm{Ord}$,</p>
+
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha).\]
+
+  <p>Then $P$ is true for all ordinals.</p>
+</blockquote>
+
+<p><em>Remark.</em> Since $\mathrm{Ord}$, the domain of $P$, is a proper class rather than a set, we use the term “property” instead of “predicate”.</p>
+
+<p><strong>Proof.</strong> Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha_0$. Since $\forall \beta &lt; \alpha_0 : P(\beta)$, by hypothesis we have $P(\alpha_0)$, which is a contradiction. ■</p>
+
+<p><strong>Application.</strong> Show that the von Neumann hierarchy may be defined as $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$ instead of $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$.</p>
+
+<h3 id="2-transfinite-recursive-definition">2. Transfinite Recursive Definition</h3>
+
+<p><em>Motivation.</em> Consider recursive definitions on natural numbers. Given $n$ sets $x_1, \dots , x_n$ and a function $g$ that outputs a set, we would like to define $f: \mathbb{N} → V$ as follows:</p>
+
+\[f(n) = g(f(0), \dots, f(n - 1))\]
+
+<p>The problem is that $g$ can only take a fixed number of parameters. Therefore, we group the parameters of $g$ into an ordered pair:</p>
+
+\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
+
+<p>This ordered pair can be represented as $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$. That is,</p>
+
+\[f(n) = g(f \upharpoonright n).\]
+
+<p>Generalising this to ordinals, we obtain the following:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $G: V → V$ be a class function. There exists a class function $F: \mathrm{Ord} → V$ satisfying</p>
+
+\[F(\alpha) = G(F \upharpoonright \alpha)\]
+</blockquote>
+
+<p><strong>Proof.</strong> Apply transfinite induction extensively. (Sorry for the brevity, lol.) It is worth remarking that the proof does not depend on the axiom of choice, for the well-orderedness of ordinals is provable from ZF. Note, however, that the proof that every well-ordered set is order isomorophic to an ordinal <em>does</em> require AC.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2024/12/01/net"> 콤팩트성과 그물 </a>
@@ -1658,98 +1718,6 @@ f(x) &amp; x \in D
 <p><strong>본 정리의 증명.</strong> $f: X → Y, g: Y → X$가 전사일 때 $gf[X] \subseteq g[Y] \subseteq X$이고, $| gf[X] | = | X |$이므로, 보조정리에 의해 $|g[Y]| = |Y| = |X|$이다. ◾</p>
 
 <p>잘 생각해 보면 두 증명은 사실 같다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/19/CSB/en"> Cantor–Schröder–Bernstein Theorem </a>
-      </h1>
-    <span class="post-date">19 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>Theorem.</strong> For two sets $X, Y$, if $|X| \leq |Y|$ and $|X| \geq |Y|$, then $|X| = |Y|$.</p>
-</blockquote>
-
-<p>Although this may seem obvious, it requires some delicate function handling, since $\leq$ is defined by the existence of an injective function, while $=$ is defined by the existence of a bijective function.</p>
-
-<p>As a side note, the theorem is often called the “Cantor–Bernstein theorem” or the “Schröder–Bernstein theorem”, but I’ve never seen it called the “Cantor–Schröder theorem.” If you’re feeling a bit pretentious, it’s an open option.</p>
-
-<h3 id="first-proof">First Proof</h3>
-
-<p><img src="/public/csb-1.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
-
-<p>By assumption there exists $f: X \to Y, g: Y \to X$ injective. If $Z := \mathrm{Im} f$ equals $Y$, the proof is done, so let us assume $Z \subsetneq Y$.</p>
-
-<p>For any $y \in Z \setminus Y$ (represented as an empty dot in the diagram),</p>
-
-<ul>
-  <li>let $x_1^y = g^{-1}(y)$</li>
-  <li>let $x_{n+1}^y = g(f(x_n))$</li>
-</ul>
-
-<p>Now define a function $h: X \to Y$ as follows:</p>
-
-<ul>
-  <li>$h_y(x_1^y) = y$</li>
-  <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
-</ul>
-
-<p>Check that the following holds:</p>
-
-\[x^y_n = x^z_m \iff y = z, n = m\]
-
-<p>Thus, the function $h: X \to Y$ defined by</p>
-
-<p><img src="/public/csb-2.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
-
-\[h(x) = \begin{cases}
-h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
-f(x) &amp;\text{otherwise}
-\end{cases}\]
-
-<p>is well-defined. Verify that $h$ is bijective. ◾</p>
-
-<h3 id="second-proof">Second Proof</h3>
-
-<blockquote>
-  <p><strong>Lemma (Sandwich Theorem for Cardinals).</strong> If $A_1 \supseteq B \supseteq A_2$ and $|A_1| = |A_2|$, then $|A_1| = |B| = |A_2|$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Assume $f: A_1 \to A_2$ is bijective. Let $B_1 = B$. Define the sequences $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace$ as follows:</p>
-
-\[\begin{gather}
-A_{n+1} = f[A_n]\\
-B_{n+1} = f[B_n]\\
-C_n = A_n \setminus B_n
-\end{gather}\]
-
-<p>Let $C = \bigcup C_n$ (the unshaded region in the diagram) and $D = A_1 \setminus C$ (the shaded region). Verify that $f[C] \subset C$ and $f[D] \subset D$. Then, define $g: B_1 \to A_2$ as follows (represented as arrows in the diagram).</p>
-
-\[g(x) = \begin{cases}
-x &amp; x \in C\\
-f(x) &amp; x \in D
-\end{cases}\]
-
-<p><img src="/public/csb-3.png" style="width: 100%; max-width: 400px; margin: 2em auto 0 auto;" /></p>
-
-<p>Then $g$ is bijective.</p>
-
-<p><strong>Proof of the main theorem.</strong> Given $f: X \to Y$ and $g: Y \to X$ are injective, we have $gf[X] \subseteq g[Y] \subseteq X$ and $| gf[X] | = | X |$. By the lemma, we obtain $|g[Y]| = |Y| = |X|$. ◾</p>
-
-<p>Upon closer reflection, the two proofs are essentially the same.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

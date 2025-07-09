@@ -8,7 +8,7 @@ related:
 
 ### 초등적 병합 성질<sub>Elementary amalgamation property</sub>
 
-> **정리.** $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}'$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화<sub>$\mathcal{L}$-reduct</sub>가 $\mathfrak{A}$와 초등적으로 동등<sub>elementarily equivalent</sub>하다고 하자. 이 때, $\mathcal{L}'$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 [초등적 임베딩](https://dimenerno.github.io/2025/05/01/elementary-embedding/)이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}'$의 초등적 임베딩이다.
+> **정리.** $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}'$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화<sub>$\mathcal{L}$-reduct</sub>가 $\mathfrak{A}$와 초등적으로 동등<sub>elementarily equivalent</sub>하다고 하자. 이때, $\mathcal{L}'$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 [초등적 임베딩](https://dimenerno.github.io/2025/05/01/elementary-embedding/)이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}'$의 초등적 임베딩이다.
 >
 > <img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply">
 
