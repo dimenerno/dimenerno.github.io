@@ -36,7 +36,7 @@ related:
 
 한점 콤팩트화가 국소적으로 콤팩트한 공간에서만 가능한 것과 달리, 정리 2에서 드러나듯이 스톤-체흐 콤팩트화는 _모든_ 위상공간에서 가능하다. 덕분에 스톤-체흐 콤팩트화는 일반 위상공간의 범주 $\mathbf{Top}$를 콤팩트 하우스도르프 공간의 범주 $\mathbf{CHaus}$로 보내는 **함자**로서 간주될 수 있다. 실제로 다음이 성립한다.
 
-> **정리 3.** 망각함자<sub>forgetful functor</sub> $U: \mathbf{CHaus} \to \mathbf{Top}$는 우 어드조인트 $\beta: \mathbf{Top} \to \mathbf{CHaus}$를 가진다. 또한 $X \in \mathbf{Top}$에 대해 $\beta X$는 $X$의 스톤-체흐 콤팩트화에 해당한다.
+> **정리 3.** 망각함자<sub>forgetful functor</sub> $U: \mathbf{CHaus} \to \mathbf{Top}$는 좌 어드조인트 $\beta: \mathbf{Top} \to \mathbf{CHaus}$를 가진다. 또한 $X \in \mathbf{Top}$에 대해 $\beta X$는 $X$의 스톤-체흐 콤팩트화에 해당한다.
 
 [예전 글](http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/)에서 다룬 동치성으로 인해 이는 처음의 정의와 동치이다.
 
@@ -113,4 +113,4 @@ $$
 \end{align*}
 $$
 
-따라서 $\beta : \mathbf{Top} \to \mathbf{CHaus}$는 함자이며, 특히 $U: \mathbf{CHaus} \to \mathbf{Top}$의 좌 어드조인트이다. 이로부터 임의의 $X$에 대해, 보편 조건을 만족하는 $(e, \beta X)$는 콤마 카테고리 $(A \Rightarrow U)$의 초기 대상이므로 동형성에 대해 유일함이 따라 나온다. (자세한 설명은 [이 글](http://localhost:4000/2025/02/13/three-definitions-of-adjoint/)을 참조) ■
+따라서 $\beta : \mathbf{Top} \to \mathbf{CHaus}$는 함자이며, 특히 $U: \mathbf{CHaus} \to \mathbf{Top}$의 좌 어드조인트이다. 이로부터 임의의 $X$에 대해, 보편 조건을 만족하는 $(e, \beta X)$는 콤마 카테고리 $(A \Rightarrow U)$의 초기 대상이므로 동형성에 대해 유일함이 따라 나온다. (자세한 설명은 [이 글](http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/)을 참조) ■

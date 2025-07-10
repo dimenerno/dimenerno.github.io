@@ -39,7 +39,7 @@ The difference is that $e$ is just a continuous function rather than an embeddin
 
 Unlike one-point compactifications, which are only possible for locally compact spaces, the Stone-Čech compactification is possible for _all_ topological spaces. Consequently, the Stone-Čech compactification can be regarded as a **functor** that maps the category of general topological spaces $\mathbf{Top}$ to the category of compact Hausdorff spaces $\mathbf{CHaus}$. Indeed, the following holds.
 
-> **Theorem 3.** The forgetful functor $U: \mathbf{CHaus} \to \mathbf{Top}$ has a right adjoint $\beta: \mathbf{Top} \to \mathbf{CHaus}$.
+> **Theorem 3.** The forgetful functor $U: \mathbf{CHaus} \to \mathbf{Top}$ has a left adjoint $\beta: \mathbf{Top} \to \mathbf{CHaus}$.
 
 Due to the equivalence discussed in a [previous post](http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/), this may well be taken as the _definition_ of Stone-Čech compactification.
 
@@ -116,4 +116,4 @@ $$
 \end{align*}
 $$
 
-Thus, $\beta : \mathbf{Top} \to \mathbf{CHaus}$ is a functor, and in particular, it is the left adjoint to $U: \mathbf{CHaus} \to \mathbf{Top}$. It follows that for any $X$, the pair $(e, \beta X)$ that satisfies the universal condition is the initial object in the comma category $(A \Rightarrow U)$, which implies uniqueness up to isomorphism. (For further details, refer to [this post](http://localhost:4000/2025/02/13/three-definitions-of-adjoint/)) ■
+Thus, $\beta : \mathbf{Top} \to \mathbf{CHaus}$ is a functor, and in particular, it is the left adjoint to $U: \mathbf{CHaus} \to \mathbf{Top}$. It follows that for any $X$, the pair $(e, \beta X)$ that satisfies the universal condition is the initial object in the comma category $(A \Rightarrow U)$, which implies uniqueness up to isomorphism. (For further details, refer to [this post](http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/)) ■
