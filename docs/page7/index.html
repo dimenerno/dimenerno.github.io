@@ -433,6 +433,316 @@
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/02/27/euler-lagrange/en"> The Euler-Lagrange Equation and Lagrangian Mechanics </a>
+      </h1>
+    <span class="post-date">27 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/physics/'">
+        Physics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/mechanics/'">
+        Mechanics
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h2 id="1-introduction">1. Introduction</h2>
+
+<p>The trajectory of a particle moving in one dimension can be expressed as $x(t)$. Consider a function $f(x, x’)$ that depends on the particle’s position and velocity. Our objective is to find the path $x(t)$ along which the particle travels from position $x_1$ at time $t_1$ to position $x_2$ at time $t_2$, such that the following quantity is extremised—that is, the path that renders this quantity either maximum or minimum:</p>
+
+\[A[x] = \int^{t_2}_{t_1} f(x, \dot{x}) dt\]
+
+<p>The square brackets indicate that the parameter of $A$ is a function rather than a real number. Therefore, intuitively, to find $x(t)$ that minimises $A[x]$, we should establish a differential equation for functions.</p>
+
+\[\frac{dA[x]}{dx(t)} = 0?\]
+
+<h2 id="2-the-euler-lagrange-equation">2. The Euler-Lagrange Equation</h2>
+
+<p>Of course, we have never defined differentiation with respect to functions. However, through a simple trick, we can reduce differentiation with respect to functions to ordinary differentiation. First, let $x_0(t)$ be the path we seek—that is, the path that extremises $A[x]$. A path in the ‘neighbourhood’ of $x_0(t)$ takes the following form:</p>
+
+\[x(\alpha, t) = x_0(t) + \alpha h(t)\]
+
+<p><img src="/public/euler-lagrange.png" width="400px" style="margin: 2em auto;" /></p>
+
+<p>The boundary conditions are $h(t_1) = h(t_2) = 0$. Since $x_0(t)$ extremises $A[x]$, for sufficiently small $\epsilon$, we have $A[x_0] = A[x(0, t)] \leq A[x(\epsilon, t)]$. Therefore,</p>
+
+\[\left. \frac{dA[x(\alpha, t)]}{d\alpha} \right\vert_{\alpha = 0} = 0\]
+
+<p>Expanding the above equation yields:</p>
+
+\[\begin{aligned}
+\frac{dA}{d\alpha} &amp;= \int^{t_2}_{t_1} \frac{d}{d\alpha} \Big[ f \big( x(\alpha, t), \dot{x}(\alpha, t) \big) \Big] dt \\
+&amp;= \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} + \frac{\partial f}{\partial \dot{x}}\frac{\partial \dot{x}}{\partial \alpha} \right) dt \\
+&amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \int^{t_2}_{t_1} \frac{\partial f}{\partial \dot{x}} \cdot \frac{d}{dt} \left( \frac{\partial x}{\partial \alpha} \right) dt \\
+&amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \left[ \frac{\partial f}{\partial \dot{x}} \frac{\partial x}{\partial \alpha} \right]^{t_2}_{t_1} -  \int^{t_2}_{t_1} \frac{d}{dt} \left( \frac{\partial f}{\partial \dot{x}} \right) \frac{\partial x}{\partial \alpha} dt
+\end{aligned}\]
+
+<p>Integration by parts is employed in the transition from the third to the fourth equation. Since ${\partial x}/{\partial \alpha} = h(t)$, the second term in the fourth equation vanishes due to the boundary conditions. Therefore,</p>
+
+\[\frac{dA}{d\alpha} = \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x} - \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right) \right) \frac{\partial x}{\partial \alpha} dt = 0\]
+
+<p>Since the above equation must be satisfied for arbitrary $h \in C^1$, we obtain the following <em>necessary condition</em> for $x(t)$ to extremise $A$:</p>
+
+\[\frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
+
+<p>This is the <strong>Euler-Lagrange equation</strong>. Since extremising the value $A$ is expressed as $\delta A = 0$, the conclusion of the Euler-Lagrange equation can be written as follows:</p>
+
+\[\delta A = 0 \implies \frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
+
+<p>We have just proved this for functions of one variable, but the same equation holds for functions of multiple variables. That is, let the coordinates representing the motion of some particle(s) be $\lbrace  q_i \rbrace _{i \leq n}$. For example, if two particles move in three dimensions, then $n = 6$. The necessary condition for their motion to extremise $\int f(q_1, \dot{q_1}, \dots, q_n, \dot{q_n}) dt$ is that the following holds for each $i$:</p>
+
+\[\frac{\partial f}{\partial q_i} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{q_i}} \right)\]
+
+<!-- ## 3. The Brachistochrone Problem
+
+Although we previously set $t$ as time and $x(t)$ as the path, the Euler-Lagrange equation can also be applied to other variables. As an example, let us solve the brachistochrone problem.
+
+<img src="public/brachistochrone.png" width="400px" style="margin: 2em auto;">
+
+By the law of conservation of energy, the following equation holds:
+
+$$
+\dot{x}^2 + \dot{y}^2 = -2gy
+$$
+
+Therefore, the time taken to descend from $(x_1, y_1)$ to $(x_2, y_2)$ along the curve $y(x)$ is as follows:
+
+$$
+\begin{aligned}
+T &= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{ds}{v} \\
+&= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{\sqrt{dx^2 + dy^2}}{\sqrt{\dot{x}^2 + \dot{y}^2}} \\
+&= \int^{x_2}_{x_1} \sqrt{-\frac{1 + y'^2}{2gy}} dx
+\end{aligned}
+$$
+
+Let us set $f(y, y')$ as follows:
+
+$$
+f(y, y') = \sqrt{-\frac{1 + y'^2}{2gy}}
+$$
+
+According to the Euler-Lagrange equation, the necessary condition for $T$ to have a minimum value is as follows:
+
+$$
+\frac{\partial f}{\partial y} = \frac{d}{dx} \frac{\partial f}{\partial {y'}}
+$$
+
+Solving the above equation yields $y(x)$ in the form of a **cycloid**. Please forgive me for leaving the detailed calculation process as an exercise. -->
+
+<h2 id="3-lagrangian-mechanics">3. Lagrangian Mechanics</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let the coordinates representing the motion of the particles in system $S$ be $\lbrace  q_i \rbrace _{1 \leq i \leq n}$. The <strong>Lagrangian</strong> $\mathcal{L}(\lbrace  q , \dot{q} \rbrace, t)$ of $S$ is defined as a function such that the equation for the condition that extremises the following quantity becomes identical to the equations of motion of the particles:</p>
+
+\[\mathcal{S} = \int^{t_2}_{t_1} \mathcal{L}(\{ q, \dot{q} \}, t) dt\]
+
+  <p>$\mathcal{S}$ is called the <strong>action</strong>.</p>
+</blockquote>
+
+<p>For example, the Lagrangian of a particle in a one-dimensional potential field $V(x)$ is as follows:</p>
+
+\[\begin{aligned}
+\mathcal{L}(x, \dot{x}) &amp;= T - V \\
+&amp;= \frac{1}{2}m\dot{x}^2 - V(x)
+\end{aligned}\]
+
+<p>Let us verify that the above function is indeed the Lagrangian. Using the Euler-Lagrange equation, the condition for the action corresponding to this Lagrangian to be extremised is as follows:</p>
+
+\[\begin{aligned}
+\delta \mathcal{S} = 0 &amp;\implies \frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
+&amp;\iff -\frac{dV}{dx} = \frac{d}{dt}(m\dot{x}) \\
+&amp;\iff -\frac{dV}{dx} = m\ddot{x}
+\end{aligned}\]
+
+<p>The final equation is Newton’s equation of motion. Therefore, $\mathcal{L}$ is indeed the Lagrangian of this system. In general, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The Lagrangian of a classical mechanical system satisfying the following two conditions is given by $\mathcal{L} = T - V$:</p>
+
+  <ol>
+    <li>The constraints of the system are holonomic. That is, the constraints depend only on the positions of the particles and not on their velocities.</li>
+    <li>The forces $\mathbf{F}_i$ acting on the system have potential functions $U_i(\lbrace q, \dot{q} \rbrace, t)$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> See the linked <a href="https://physics.stackexchange.com/questions/78138/is-there-a-proof-from-the-first-principle-that-the-lagrangian-l-t-v">SE post</a>.</p>
+
+<p>However, in general, the Lagrangian of a system is not necessarily given by $T - V$. For instance, whilst the kinetic energy of a relativistic particle is $(\gamma - 1)m_0c^2$, the correct Lagrangian is $-m_0c^2/\gamma$.</p>
+
+<p>Unlike Newtonian mechanics, Lagrangian mechanics has the advantage of permitting very flexible coordinate transformations. This is because, unlike Newtonian mechanics, Lagrangian mechanics possesses general covariance. A detailed explanation of this can be found in the <a href="http://dimenerno.github.io/2025/02/27/general-covariance/">following article</a>.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/25/lebesgue-borel"> 르베그 가측 집합과 보렐 가측 집합 </a>
+      </h1>
+    <span class="post-date">25 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/측도론/'">
+        측도론
+      </div>
+      
+    </div>
+     <h3 id="1-르베그-측도">1. 르베그 측도</h3>
+
+<p><a href="https://dimenerno.github.io/2025/02/25/caratheodory/">카라테오도리 정리</a>로부터 다음과 같이 측도 $m$을 정의할 수 있다.</p>
+
+<ol>
+  <li>
+    <p>$\mathcal{A}_0 = \lbrace \cup^n_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $는 대수임을 보인다.</p>
+  </li>
+  <li>
+    <p>$A \in \mathcal{A}_0$에 대해, $A = \sqcup^n_{k=1} (a_k, b_k]$로 표현하는 방법이 유일함을 보인다.</p>
+  </li>
+  <li>
+    <p>함수 $\rho: \mathcal{A}_0 \to [0, \infty]$를</p>
+
+\[\rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)\]
+
+    <p>와 같이 정의했을 때 $\rho$가 예비측도임을 보인다.</p>
+  </li>
+  <li>
+    <p>$\mathcal{A}_0, \rho$에 대해 카라테오도리 구축 정리를 적용하여 외측도 $m^\ast$을 얻는다.</p>
+  </li>
+  <li>
+    <p>$m^\ast$의 정의역을 $m^\ast$-가측집합으로 제한하여 측도 $m$을 얻는다.</p>
+  </li>
+</ol>
+
+<p>대수는 유한 합집합에만 닫혀 있기 때문에 1, 2, 3은 거의 자명하다. 4, 5의 증명은 <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">관련 글</a>을 참조하라.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 상술한 $m$을 <strong>르베그 측도<sub>Lebesgue measure</sub></strong>라고 부른다. 또한, $m$의 정의역에 속하는 집합을 <strong>르베그 가측<sub>Lebesgue measurable</sub></strong>이라고 부른다.</p>
+</blockquote>
+
+<p>카라테오도리 정리들로부터 다음 사실들이 어렵지 않게 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$m([a, b]) = m((a, b)) = m((a, b]) = m([a, b)) = b - a$</li>
+    <li>$A \subset \mathbb{R}$이 가산일 때, $m(A) = 0$</li>
+  </ol>
+</blockquote>
+
+<p>그리고 카라테오도리 확장 정리로 얻어지는 측도는 완비 측도<sub>complete measure</sub>이므로 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $m$은 완비 측도이다.</p>
+</blockquote>
+
+<p>또한 $\sigma(\mathcal{A}_0)$는 보렐 $\sigma$-대수 $\mathcal{B}$이므로, 다음이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 보렐 가측 집합은 르베그 가측이다.</p>
+</blockquote>
+
+<h3 id="2-르베그-가측이지만-보렐-가측이-아닌-집합">2. 르베그 가측이지만 보렐 가측이 아닌 집합</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 집합열 $\lbrace C_n \rbrace$을 다음과 같이 정의한다.</p>
+
+\[\begin{gather}
+C_0 = [0, 1]\\
+C_1 = I_0 \setminus (1/3, 2/3) \\
+C_2 = I_1 \setminus \{ (1/9, 2/9) \cup (7/9, 8/9) \} \\
+\vdots
+\end{gather}\]
+
+  <p><strong>칸토어 집합<sub>Cantor set</sub></strong> $C$를 $\cap^\infty_{n = 0}C_n$으로 정의한다.</p>
+
+  <p><img src="/public/cantor.png" width="500px" style="margin: 0 auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>칸토어 집합은 비가산이다.</li>
+    <li>칸토어 집합은 르베그 측도 0이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>
+    <p>칸토어 집합에 속하는 원소들은 삼진법으로 소숫점 전개했을 때 어느 자리에도 2가 등장하지 않는 수들이다. 그러한 수는 $2^\aleph_0$개 있으므로 비가산이다.</p>
+  </li>
+  <li>
+    <p>$m(C_n) = (2/3)^n$이므로 $m(C) = \lim_{n \to infty} (2/3)^n = 0$. ■</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><strong>정의.</strong> 칸토어 집합을 정의할 때 각 단계에서 빠지는 집합을 $J_n$이라고 하자. 즉,</p>
+
+\[\begin{gather}
+J_1 = (1/3, 2/3) \\
+J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
+\vdots
+\end{gather}\]
+
+  <p>다음과 같이 함수열을 정의한다.</p>
+
+\[\begin{gather}
+\operatorname{dom} f_1 = J_1,\; f_1(x) = \frac{1}{2} \\\\
+\operatorname{dom} f_2 = J_1 \cup J_2, \; f_2(x) = \begin{cases} 1/4 &amp; x \in (1/9, 2/9) \\ 1/2 &amp; x \in (1/3, 2/3) \\ 3/4 &amp; x \in (7/9, 8/9) \end{cases} \\\\
+\vdots
+\end{gather}\]
+
+  <p>$f: I \to I$를 다음과 같이 정의한다.</p>
+
+\[f(x) = \inf \{ f_n(y) : y \geq x, y \in \mathrm{dom} f \}\]
+
+  <p>$f$를 <strong>칸토어 함수<sub>Cantor function</sub></strong>라고 한다.</p>
+
+  <p><img src="/public/CantorEscalier.svg.png" width="300px" style="margin: 0 auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 칸토어 함수는 연속이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $f$를 칸토어 함수라고 하자. $f$는 증가함수이므로 $f$가 불연속점을 가진다면 해당 불연속은 틈 불연속<sub>gap discontinuity</sub>이며, 따라서 어떤 $\epsilon &gt; 0$와 $y_0 \in I$에 대해 $(y_0 - \epsilon, y_0 + \epsilon)$이 $\operatorname{im} f$ 밖에 속한다. 그런데 $(y_0 - \epsilon, y_0 + \epsilon)$의 원소 중에는 이진법으로 소숫점 전개했을 때 자릿수가 유한한 수가 존재한다. 해당 수는 $\operatorname{im}f$에 속하므로 모순이다. ■</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 르베그 가측이지만 보렐 가측이 아닌 함수가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><em>보조정리.</em> $f$가 증가함수라면 $f^{-1}$은 보렐 집합을 보렐 집합에 사상한다.</p>
+
+<p><em>보조정리의 증명.</em> $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $라고 하자. 열린 집합들의 모음 $\mathcal{G}$에 대해 $\mathcal{G} \subset \mathcal{A}$임이 자명하다. 또한 $\mathcal{A}$가 $\sigma$-대수임이 역함수의 성질로부터 자명하다. 따라서 $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$이다.</p>
+
+<p>$f$가 칸토어 함수라고 하고, $F$를 다음과 같이 정의하자.</p>
+
+\[F(x) =\inf \{y : f(y) \geq x \}\]
+
+<p>$F$는 엄격히 증가하는 함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/02/25/lebesgue-borel/en"> Lebesgue Measurable Sets and Borel Measurable Sets </a>
       </h1>
     <span class="post-date">25 Feb 2025</span>
@@ -2065,293 +2375,6 @@ K = \{ v \in V : v \in B \}
 </blockquote>
 
 <p><strong>증명.</strong> <em>TODO</em> ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/13/spectral-theorem/en"> Adjoints, Normal Transformations, and the Spectral Theorem </a>
-      </h1>
-    <span class="post-date">13 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/algebra/'">
-        Algebra
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>In this article, we assume that all vector spaces are inner product spaces. Furthermore, all transformations are linear transformations.</p>
-
-<h2 id="1-adjoints-of-linear-transformations">1. Adjoints of Linear Transformations</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $(V, \langle \cdot \rangle_V), (W, \langle \cdot \rangle_W)$ be inner product vector spaces. For $T: V \to W$, the <strong>adjoint</strong> $T^\ast: W \to V$ of $T$ is the linear transformation satisfying the following condition:</p>
-
-\[\forall v \in V, w \in W : \quad \langle w, Tv \rangle_W = \langle T^\ast w, v \rangle_V\]
-</blockquote>
-
-<p>If one recalls the <a href="https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">definition of adjoints in category theory</a>, the form of this equation is similar.</p>
-
-<p>To justify this definition, we must show that the adjoint exists uniquely for every $T$. This follows from the Riesz representation theorem.</p>
-
-<blockquote>
-  <p><strong>Riesz Representation Theorem.</strong> Let $V$ be an inner product space. For $\phi \in V^\ast$, there exists a unique vector $v$ satisfying:</p>
-
-\[\forall u \in V : \quad \phi(u) = \langle u, v \rangle\]
-</blockquote>
-
-<p>When $V$ is finite-dimensional, the above theorem is easily shown by choosing an orthogonal basis for $V$. When $V$ is a general Hilbert space, the proof is more involved and shall be omitted.</p>
-
-<p>From the Riesz representation theorem, we can justify the definition of the adjoint as follows. Given $w \in W$, the mapping $v \mapsto \langle w, Tv \rangle$ is an element of $V^\ast$. Therefore, there exists some $u_w \in V$ such that</p>
-
-\[\forall v \in V : \langle w, Tv \rangle = \langle u_w, v \rangle\]
-
-<p>At this point, one can easily show that the mapping $w \mapsto u_w$ is linear. This linear mapping is the adjoint we seek.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> A linear mapping $T : V \to V$ satisfying $T^\ast = T$ is called <strong>self-adjoint</strong>.</p>
-</blockquote>
-
-<p>When the matrix representation of $T : V \to W$ is $M$, the matrix representation of $T^\ast$ in the same basis is the conjugate transpose of $M$, namely $M^\dagger$ — this can be shown, albeit somewhat tediously, without much difficulty. Therefore, the matrix of a self-adjoint transformation is a Hermitian matrix.</p>
-
-<blockquote>
-  <p><strong>Complex Self-Adjoint Criterion.</strong> When $V$ is a complex vector space, $T: V \to V$ is self-adjoint if and only if $\langle Tv, v \rangle \in \mathbb{R}$ for any $v \in V$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> The necessary condition is trivial, so we prove the sufficient condition. First, we establish the following lemma.</p>
-
-<p><em>Lemma.</em> Let $V$ be a complex vector space. For $T : V \to V$, $T = 0$ if and only if $\langle Tv, v \rangle = 0$ for any $v \in V$.</p>
-
-<p><em>Proof of the lemma.</em> The necessary condition is trivial, so we prove the sufficient condition. For any $u, v \in V$,</p>
-
-\[\langle T(u + v) , u + v \rangle = \langle Tu, v \rangle + \langle Tv, u \rangle = 0\]
-
-<p>and</p>
-
-\[\begin{aligned}
-\langle T(u + iv), u + iv \rangle &amp;= \langle T(u), iv \rangle + \langle T(iv), u \rangle \\ &amp;= -i \langle Tu, v \rangle + i \langle Tv, u \rangle = 0
-\end{aligned}\]
-
-<p>Solving these two equations simultaneously yields $\langle Tu, v \rangle = 0$. From this, it is easy to show that $T = 0$. □</p>
-
-<p>We now prove the main theorem. Since $\langle Tv, v \rangle \in \mathbb{R}$, we have $\langle Tv, v \rangle = \langle v, Tv \rangle$. Also, by the definition of the adjoint, $\langle Tv, v \rangle = \langle v, T^\ast v \rangle$. Therefore, $\langle v, (T - T^\ast)v \rangle = 0$. From the lemma, it follows that $T = T^\ast$. ■</p>
-
-<blockquote>
-  <p><strong>Trivial Self-Adjoint Criterion.</strong> Let $V$ be a real or complex vector space. For a self-adjoint transformation $T: V \to V$, $T = 0$ if and only if $\langle Tv, v \rangle = 0$ for any $v \in V$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> For complex vector spaces, this follows from the lemma above. Therefore, we prove only the case when $V$ is a real vector space. The necessary condition is trivial, so we prove the sufficient condition. For any $u, v \in V$,</p>
-
-\[\begin{aligned}
-\langle T(u + v), u + v \rangle &amp;= \langle Tu, v \rangle + \langle Tv, u \rangle &amp;&amp;(\because \langle Tv, v \rangle = 0) \\
-&amp;= \langle Tu, v \rangle + \langle u, Tv \rangle &amp;&amp;(\because \mathrm{im} \langle \cdot \rangle \subset \mathbb{R}) \\
-&amp;= 2\langle Tu, v \rangle &amp;&amp;(\because T^\ast = T)
-\end{aligned}\]
-
-<p>That is, $\langle Tu, v \rangle = 0$ for any $u, v \in V$, so $T = 0$. ■</p>
-
-<h2 id="2-normal-linear-transformations">2. Normal Linear Transformations</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> For $T : V \to V$, when $TT^\ast = T^\ast T$, we call $T$ <strong>normal</strong>.</p>
-</blockquote>
-
-<p>Every self-adjoint transformation is normal, but the converse does not hold.</p>
-
-<blockquote>
-  <p><strong>Normal Criterion.</strong> Let $V$ be a real or complex vector space. $T: V \to V$ is normal if and only if $\lVert Tv \rVert = \lVert T^\ast v \rVert$ for any $v$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> This follows from the “Trivial Self-Adjoint Criterion”. ■</p>
-
-<blockquote>
-  <p><strong>Conjugacy of Normal Eigenvectors.</strong> Let $V$ be a real or complex vector space, and let $T : V \to V$ be normal. When $v$ is an eigenvector of $T$ with eigenvalue $\lambda$, then $v$ is an eigenvector of $T^\ast$ with eigenvalue $\bar{\lambda}$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> When $T$ is normal, $T - \lambda I$ is also easily shown to be normal. Therefore,</p>
-
-\[\lVert (T - \lambda I) v \rVert = \lVert (T - \lambda I)^\ast v \rVert = \lVert (T^\ast - \bar{\lambda} I) v \rVert = 0. \quad \blacksquare\]
-
-<p>The origin of the name ‘normal’ lies in the following theorem.</p>
-
-<blockquote>
-  <p><strong>Normality of Normal Eigenvectors.</strong> Let $T: V \to V$ be normal. If $u, v \in V$ are eigenvectors of $T$ with distinct eigenvalues, then $u$ and $v$ are orthogonal.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Let the eigenvalues of $u, v$ be $\alpha, \beta$ respectively.</p>
-
-\[\begin{aligned}
-(\alpha - \beta)\langle u, v \rangle &amp;= \langle \alpha u, v \rangle - \langle u, \bar{\beta}v \rangle \\
-&amp;= \langle Tu, v \rangle - \langle u, T^\ast v \rangle = 0.
-\end{aligned}\]
-
-<p>Since $\alpha - \beta \neq 0$, we have $\langle u, v \rangle = 0$. ■</p>
-
-<h2 id="3-spectral-theorems">3. Spectral Theorems</h2>
-
-<p>Whilst it is commonly claimed that the name ‘spectral’ derives from the spectral theorem being used to explain atomic spectra in quantum mechanics, this is not factual. Hilbert had already used the term ‘spectrum’ before the spectral theorem was employed to explain atomic spectra. The precise origin is unknown, but one might conjecture that it arose from the imagery that eigenvectors characterise the properties of Hilbert spaces, similar to how light spectra characterise light.</p>
-
-<blockquote>
-  <p><strong>Complex Spectral Theorem.</strong> Let $V$ be a complex vector space. $T: V \to V$ is normal if and only if the eigenvectors of $T$ form an orthogonal basis for $V$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> <em>TODO</em> ■</p>
-
-<blockquote>
-  <p><strong>Real Spectral Theorem.</strong> Let $V$ be a real vector space. $T: V \to V$ is self-adjoint if and only if the eigenvectors of $T$ form an orthogonal basis for $V$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> <em>TODO</em> ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/13/three-definitions-of-adjoint"> 어드조인트에 대한 세 가지 접근 </a>
-      </h1>
-    <span class="post-date">13 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/범주론/'">
-        범주론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>본문의 내용은 Tom Leinster, <em>Basic Category Theory</em>에 기반한다.</p>
-</blockquote>
-
-<p>$\mathcal{A}, \mathcal{B}$가 범주<sub>category</sub>이고, $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자<sub>functor</sub>라고 하자.</p>
-
-<h2 id="1-자연성-공리naturality-axiom를-이용한-어드조인트의-정의">1. 자연성 공리<sub>naturality axiom</sub>를 이용한 어드조인트의 정의</h2>
-
-<p>$F \dashv G$라는 것은 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 일대일대응 $\Psi_{A, B} : \mathrm{Hom}_\mathcal{A}(A, G(B)) \to \mathrm{Hom}_\mathcal{B}(F(A), B)$가 존재하여, 임의의 $p: A’ \to A, q: B \to B’$에 대해 다음 가환 도식<sub>commutative diagram</sub>을 만족한다는 것이다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="300px" style="border-radius: 8px; border: none;"></iframe>
-
-<p>편의를 위해 $f: A \to G(B)$에 대해 $\Psi_{A, B}(f) = \bar{f}$, 그리고 $g: F(A) \to B$에 대해 $\Psi_{A, B}^{-1}(g) = \bar{g}$와 같이 표기한다. 이에 따라 위의 가환 도식을 다음과 같이 표현할 수 있다.</p>
-
-\[\begin{gather}
-\overline{A \xrightarrow{f} G(B) \xrightarrow{G(q)} G(B') } = F(A) \xrightarrow{\bar{f}} B \xrightarrow{q} B' \\
-\overline{F(A') \xrightarrow{F(p)} F(A) \xrightarrow{g} B} = A' \xrightarrow{p} A \xrightarrow{\bar{g}} G(B) \\\\
-\mathrm{i.e.}\\\\
-\overline{G(q) \circ f} = q \circ \bar{f}\\
-\overline{g \circ F(p)} = \bar{g} \circ p
-\end{gather}\]
-
-<p>위 두 조건을 자연성 공리라고 부른다. 자연성 공리로부터 다음을 증명할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리 1.</strong> $\eta_A := \overline{1_{F(A)}} : A \to GF(A)$와 같이 정의된 변환 $\eta: 1_{\mathcal{A}} \to GF$는 자연적 변환<sub>natural transformation</sub>이다. 그리고 $\epsilon_B := \overline{1_{G(B)}} : FG(B) \to B$와 같이 정의된 변환 $\epsilon: FG \to 1_{\mathcal{B}}$ 또한 자연적 변환이다. $\eta$를 <strong>단원</strong><sub>unit</sub>이라고 부르고, $\epsilon$을 <strong>쌍단원</strong><sub>counit</sub>이라고 부른다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 다음 가환 도식으로부터 얻어진다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ==&amp;embed" width="100%" height="260" style="border-radius: 8px; border: none;"></iframe>
-
-<blockquote>
-  <p><strong>정리 2.</strong> $f: A \to G(B), g: F(A) \to B$에 대해 다음이 성립한다.</p>
-
-\[\begin{gather}
-\bar{f} = \epsilon_B \circ F(f) \\
-\bar{g} = G(g) \circ \eta_A
-\end{gather}\]
-</blockquote>
-
-<p><strong>증명.</strong> 다음 가환 도식으로부터 얻어진다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="200" style="border-radius: 8px; border: none;"></iframe>
-
-<h2 id="2-단원과-쌍단원을-이용한-어드조인트의-정의">2. 단원과 쌍단원을 이용한 어드조인트의 정의</h2>
-
-<p>$F \dashv G$라는 것은 어떤 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF, \epsilon: FG \to 1_{\mathcal{B}}$가 존재하여, 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 다음 가환 도식을 언제나 만족한다는 것이다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d&amp;embed" width="100%" height="220" style="border-radius: 8px; border: none;"></iframe>
-
-<p>위 두 조건을 삼각 항등식<sub>triangle identity</sub>이라고 부른다.</p>
-
-<h2 id="3-초기-대상initial-object을-이용한-어드조인트의-정의">3. 초기 대상<sub>initial object</sub>을 이용한 어드조인트의 정의</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $P: \mathcal{A} \to \mathcal{C}$, $Q: \mathcal{B} \to \mathcal{C}$가 함자일 때, <strong>콤마 범주<sub>comma category</sub></strong> $(P \Rightarrow Q)$를 다음과 같이 정의한다.</p>
-
-  <ul>
-    <li>대상: $\mathcal{C}$의 사상 $h: P(A) \to Q(B)$에 대해, 삼중쌍<sub>triplet</sub> $(A, h, B)$</li>
-    <li>사상: 다음의 가환 도식이 성립할 때, $(f, g): (A, h, B) \to (A’, h’, B’)$</li>
-  </ul>
-</blockquote>
-
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJQKEEpIl0sWzIsMCwiUChBJykiXSxbMCwxLCJRKEIpIl0sWzIsMSwiUShCJykiXSxbMCwyLCJoIiwyXSxbMSwzLCJoJyJdLFswLDEsIlAoZikiXSxbMiwzLCJRKGcpIiwyXV0=&amp;embed" width="100%" height="230" style="border-radius: 8px; border: none;"></iframe>
-
-<p>$F \dashv G$라는 것은 어떤 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF$가 존재하여, 각 $A \in \mathcal{A}$에 대해 $A$를 홑원소 범주 $\mathbf{1}$에서 $\mathcal{A}$로 가는 함자 $A: 1 \mapsto A$로 간주했을 때 $\eta_A : A \to GF(A)$가 콤마 범주 $(A \Rightarrow G)$의 초기 대상이라는 것이다.</p>
-
-<h2 id="4-동치-증명">4. 동치 증명</h2>
-
-<p>1, 2, 3의 정의는 모두 동치이다. 구체적으로 다음의 정리가 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리 3.</strong> $\mathcal{A}, \mathcal{B}$가 범주이고 $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자라고 하자. 1, 2, 3은 서로 일대일 대응된다.</p>
-
-  <ol>
-    <li>자연성 공리를 만족하는 일대일대응 $\Psi$</li>
-    <li>삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta: 1_{\mathcal{A}} \to GF, \epsilon: FG \to 1_{\mathcal{B}})$</li>
-    <li>각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상이 되도록 하는 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF$</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> 1과 2가 일대일 대응됨을 보이고, 2와 3이 일대일 대응됨을 보인다.</p>
-
-<h4 id="1과-2는-일대일-대응된다">1과 2는 일대일 대응된다.</h4>
-
-<p>$\Psi$가 주어졌을 때, $\eta$와 $\epsilon$을 각각 단원과 쌍단원으로 정의한다. 이때, $\eta$와 $\epsilon$이 삼각 항등식을 만족함은 정리 2로부터 쉽게 따라 나온다.</p>
-
-<p>역으로 삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta, \epsilon)$이 주어졌다고 하자. 이로부터 다음과 같이 $\Psi$를 정의한다. $f: A \to G(B), g: F(A) \to B$에 대해,</p>
-
-\[\begin{gather}
-\Psi_{A, B}(f) = \bar{f} = \epsilon_B \circ F(f) \\
-\Psi_{A, B}^{-1} = \bar{g} = G(g) \circ \eta_A
-\end{gather}\]
-
-<p>먼저 $\Psi_{A, B}^{-1}$이 실제로 $\Psi_{A, B}$의 역사상임을, 즉 $\bar{\bar{g}} = g, \bar{\bar{f}} = f$임을 보인다. 전자는 다음 가환 도식으로부터 얻어진다. 후자는 도식에서 $F, G$를 각각 $G, F$로 바꾼 뒤 적절히 쌍대<sub>dual</sub>을 취하면 된다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ==&amp;embed" width="100%" height="250" style="border-radius: 8px; border: none;"></iframe>
-
-<p>이제 $\Psi$가 자연성 공리를 만족함을 보인다. 한쪽 공리만 보이도록 한다. $f: A \to G(B), q: B \to B’$에 대해 $\overline{G(q) \circ f} = q \circ \bar{f}$임을 보인다. 먼저,</p>
-
-\[\overline{G(q) \circ f} = \epsilon_{B'} \circ FG(q) \circ F(f)\]
-
-<p>이고,</p>
-
-\[q \circ \bar{f} = q \circ \epsilon_B \circ F(f)\]
-
-<p>이므로, $\epsilon_{B’} \circ FG(q) = q \circ \epsilon_B$임을 보이면 충분하다. 이것은 자연적 변환의 정의에 다름 아니다. 따라서 $\Psi$는 자연성 공리를 만족한다.</p>
-
-<h4 id="2와-3은-일대일-대응된다">2와 3은 일대일 대응된다.</h4>
-
-<p>삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta, \epsilon)$이 주어졌을 때, 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상임을 보이자.</p>
-
-<p>역으로 $\eta$가 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상이 되도록 하는 자연적 변환일 때, 어떤 $\epsilon: FG \to 1_{\mathcal{B}}$가 유일하게 존재하여 $(\eta, \epsilon)$이 삼각 항등식을 만족함을 보이자.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

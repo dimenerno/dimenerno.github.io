@@ -433,6 +433,293 @@
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/02/13/spectral-theorem/en"> Adjoints, Normal Transformations, and the Spectral Theorem </a>
+      </h1>
+    <span class="post-date">13 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/algebra/'">
+        Algebra
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>In this article, we assume that all vector spaces are inner product spaces. Furthermore, all transformations are linear transformations.</p>
+
+<h2 id="1-adjoints-of-linear-transformations">1. Adjoints of Linear Transformations</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(V, \langle \cdot \rangle_V), (W, \langle \cdot \rangle_W)$ be inner product vector spaces. For $T: V \to W$, the <strong>adjoint</strong> $T^\ast: W \to V$ of $T$ is the linear transformation satisfying the following condition:</p>
+
+\[\forall v \in V, w \in W : \quad \langle w, Tv \rangle_W = \langle T^\ast w, v \rangle_V\]
+</blockquote>
+
+<p>If one recalls the <a href="https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">definition of adjoints in category theory</a>, the form of this equation is similar.</p>
+
+<p>To justify this definition, we must show that the adjoint exists uniquely for every $T$. This follows from the Riesz representation theorem.</p>
+
+<blockquote>
+  <p><strong>Riesz Representation Theorem.</strong> Let $V$ be an inner product space. For $\phi \in V^\ast$, there exists a unique vector $v$ satisfying:</p>
+
+\[\forall u \in V : \quad \phi(u) = \langle u, v \rangle\]
+</blockquote>
+
+<p>When $V$ is finite-dimensional, the above theorem is easily shown by choosing an orthogonal basis for $V$. When $V$ is a general Hilbert space, the proof is more involved and shall be omitted.</p>
+
+<p>From the Riesz representation theorem, we can justify the definition of the adjoint as follows. Given $w \in W$, the mapping $v \mapsto \langle w, Tv \rangle$ is an element of $V^\ast$. Therefore, there exists some $u_w \in V$ such that</p>
+
+\[\forall v \in V : \langle w, Tv \rangle = \langle u_w, v \rangle\]
+
+<p>At this point, one can easily show that the mapping $w \mapsto u_w$ is linear. This linear mapping is the adjoint we seek.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A linear mapping $T : V \to V$ satisfying $T^\ast = T$ is called <strong>self-adjoint</strong>.</p>
+</blockquote>
+
+<p>When the matrix representation of $T : V \to W$ is $M$, the matrix representation of $T^\ast$ in the same basis is the conjugate transpose of $M$, namely $M^\dagger$ — this can be shown, albeit somewhat tediously, without much difficulty. Therefore, the matrix of a self-adjoint transformation is a Hermitian matrix.</p>
+
+<blockquote>
+  <p><strong>Complex Self-Adjoint Criterion.</strong> When $V$ is a complex vector space, $T: V \to V$ is self-adjoint if and only if $\langle Tv, v \rangle \in \mathbb{R}$ for any $v \in V$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> The necessary condition is trivial, so we prove the sufficient condition. First, we establish the following lemma.</p>
+
+<p><em>Lemma.</em> Let $V$ be a complex vector space. For $T : V \to V$, $T = 0$ if and only if $\langle Tv, v \rangle = 0$ for any $v \in V$.</p>
+
+<p><em>Proof of the lemma.</em> The necessary condition is trivial, so we prove the sufficient condition. For any $u, v \in V$,</p>
+
+\[\langle T(u + v) , u + v \rangle = \langle Tu, v \rangle + \langle Tv, u \rangle = 0\]
+
+<p>and</p>
+
+\[\begin{aligned}
+\langle T(u + iv), u + iv \rangle &amp;= \langle T(u), iv \rangle + \langle T(iv), u \rangle \\ &amp;= -i \langle Tu, v \rangle + i \langle Tv, u \rangle = 0
+\end{aligned}\]
+
+<p>Solving these two equations simultaneously yields $\langle Tu, v \rangle = 0$. From this, it is easy to show that $T = 0$. □</p>
+
+<p>We now prove the main theorem. Since $\langle Tv, v \rangle \in \mathbb{R}$, we have $\langle Tv, v \rangle = \langle v, Tv \rangle$. Also, by the definition of the adjoint, $\langle Tv, v \rangle = \langle v, T^\ast v \rangle$. Therefore, $\langle v, (T - T^\ast)v \rangle = 0$. From the lemma, it follows that $T = T^\ast$. ■</p>
+
+<blockquote>
+  <p><strong>Trivial Self-Adjoint Criterion.</strong> Let $V$ be a real or complex vector space. For a self-adjoint transformation $T: V \to V$, $T = 0$ if and only if $\langle Tv, v \rangle = 0$ for any $v \in V$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> For complex vector spaces, this follows from the lemma above. Therefore, we prove only the case when $V$ is a real vector space. The necessary condition is trivial, so we prove the sufficient condition. For any $u, v \in V$,</p>
+
+\[\begin{aligned}
+\langle T(u + v), u + v \rangle &amp;= \langle Tu, v \rangle + \langle Tv, u \rangle &amp;&amp;(\because \langle Tv, v \rangle = 0) \\
+&amp;= \langle Tu, v \rangle + \langle u, Tv \rangle &amp;&amp;(\because \mathrm{im} \langle \cdot \rangle \subset \mathbb{R}) \\
+&amp;= 2\langle Tu, v \rangle &amp;&amp;(\because T^\ast = T)
+\end{aligned}\]
+
+<p>That is, $\langle Tu, v \rangle = 0$ for any $u, v \in V$, so $T = 0$. ■</p>
+
+<h2 id="2-normal-linear-transformations">2. Normal Linear Transformations</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> For $T : V \to V$, when $TT^\ast = T^\ast T$, we call $T$ <strong>normal</strong>.</p>
+</blockquote>
+
+<p>Every self-adjoint transformation is normal, but the converse does not hold.</p>
+
+<blockquote>
+  <p><strong>Normal Criterion.</strong> Let $V$ be a real or complex vector space. $T: V \to V$ is normal if and only if $\lVert Tv \rVert = \lVert T^\ast v \rVert$ for any $v$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> This follows from the “Trivial Self-Adjoint Criterion”. ■</p>
+
+<blockquote>
+  <p><strong>Conjugacy of Normal Eigenvectors.</strong> Let $V$ be a real or complex vector space, and let $T : V \to V$ be normal. When $v$ is an eigenvector of $T$ with eigenvalue $\lambda$, then $v$ is an eigenvector of $T^\ast$ with eigenvalue $\bar{\lambda}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> When $T$ is normal, $T - \lambda I$ is also easily shown to be normal. Therefore,</p>
+
+\[\lVert (T - \lambda I) v \rVert = \lVert (T - \lambda I)^\ast v \rVert = \lVert (T^\ast - \bar{\lambda} I) v \rVert = 0. \quad \blacksquare\]
+
+<p>The origin of the name ‘normal’ lies in the following theorem.</p>
+
+<blockquote>
+  <p><strong>Normality of Normal Eigenvectors.</strong> Let $T: V \to V$ be normal. If $u, v \in V$ are eigenvectors of $T$ with distinct eigenvalues, then $u$ and $v$ are orthogonal.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let the eigenvalues of $u, v$ be $\alpha, \beta$ respectively.</p>
+
+\[\begin{aligned}
+(\alpha - \beta)\langle u, v \rangle &amp;= \langle \alpha u, v \rangle - \langle u, \bar{\beta}v \rangle \\
+&amp;= \langle Tu, v \rangle - \langle u, T^\ast v \rangle = 0.
+\end{aligned}\]
+
+<p>Since $\alpha - \beta \neq 0$, we have $\langle u, v \rangle = 0$. ■</p>
+
+<h2 id="3-spectral-theorems">3. Spectral Theorems</h2>
+
+<p>Whilst it is commonly claimed that the name ‘spectral’ derives from the spectral theorem being used to explain atomic spectra in quantum mechanics, this is not factual. Hilbert had already used the term ‘spectrum’ before the spectral theorem was employed to explain atomic spectra. The precise origin is unknown, but one might conjecture that it arose from the imagery that eigenvectors characterise the properties of Hilbert spaces, similar to how light spectra characterise light.</p>
+
+<blockquote>
+  <p><strong>Complex Spectral Theorem.</strong> Let $V$ be a complex vector space. $T: V \to V$ is normal if and only if the eigenvectors of $T$ form an orthogonal basis for $V$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> <em>TODO</em> ■</p>
+
+<blockquote>
+  <p><strong>Real Spectral Theorem.</strong> Let $V$ be a real vector space. $T: V \to V$ is self-adjoint if and only if the eigenvectors of $T$ form an orthogonal basis for $V$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> <em>TODO</em> ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/13/three-definitions-of-adjoint"> 어드조인트에 대한 세 가지 접근 </a>
+      </h1>
+    <span class="post-date">13 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'">
+        범주론
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>본문의 내용은 Tom Leinster, <em>Basic Category Theory</em>에 기반한다.</p>
+</blockquote>
+
+<p>$\mathcal{A}, \mathcal{B}$가 범주<sub>category</sub>이고, $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자<sub>functor</sub>라고 하자.</p>
+
+<h2 id="1-자연성-공리naturality-axiom를-이용한-어드조인트의-정의">1. 자연성 공리<sub>naturality axiom</sub>를 이용한 어드조인트의 정의</h2>
+
+<p>$F \dashv G$라는 것은 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 일대일대응 $\Psi_{A, B} : \mathrm{Hom}_\mathcal{A}(A, G(B)) \to \mathrm{Hom}_\mathcal{B}(F(A), B)$가 존재하여, 임의의 $p: A’ \to A, q: B \to B’$에 대해 다음 가환 도식<sub>commutative diagram</sub>을 만족한다는 것이다.</p>
+
+<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="300px" style="border-radius: 8px; border: none;"></iframe>
+
+<p>편의를 위해 $f: A \to G(B)$에 대해 $\Psi_{A, B}(f) = \bar{f}$, 그리고 $g: F(A) \to B$에 대해 $\Psi_{A, B}^{-1}(g) = \bar{g}$와 같이 표기한다. 이에 따라 위의 가환 도식을 다음과 같이 표현할 수 있다.</p>
+
+\[\begin{gather}
+\overline{A \xrightarrow{f} G(B) \xrightarrow{G(q)} G(B') } = F(A) \xrightarrow{\bar{f}} B \xrightarrow{q} B' \\
+\overline{F(A') \xrightarrow{F(p)} F(A) \xrightarrow{g} B} = A' \xrightarrow{p} A \xrightarrow{\bar{g}} G(B) \\\\
+\mathrm{i.e.}\\\\
+\overline{G(q) \circ f} = q \circ \bar{f}\\
+\overline{g \circ F(p)} = \bar{g} \circ p
+\end{gather}\]
+
+<p>위 두 조건을 자연성 공리라고 부른다. 자연성 공리로부터 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 1.</strong> $\eta_A := \overline{1_{F(A)}} : A \to GF(A)$와 같이 정의된 변환 $\eta: 1_{\mathcal{A}} \to GF$는 자연적 변환<sub>natural transformation</sub>이다. 그리고 $\epsilon_B := \overline{1_{G(B)}} : FG(B) \to B$와 같이 정의된 변환 $\epsilon: FG \to 1_{\mathcal{B}}$ 또한 자연적 변환이다. $\eta$를 <strong>단원</strong><sub>unit</sub>이라고 부르고, $\epsilon$을 <strong>쌍단원</strong><sub>counit</sub>이라고 부른다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 다음 가환 도식으로부터 얻어진다.</p>
+
+<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ== -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ==&amp;embed" width="100%" height="260" style="border-radius: 8px; border: none;"></iframe>
+
+<blockquote>
+  <p><strong>정리 2.</strong> $f: A \to G(B), g: F(A) \to B$에 대해 다음이 성립한다.</p>
+
+\[\begin{gather}
+\bar{f} = \epsilon_B \circ F(f) \\
+\bar{g} = G(g) \circ \eta_A
+\end{gather}\]
+</blockquote>
+
+<p><strong>증명.</strong> 다음 가환 도식으로부터 얻어진다.</p>
+
+<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="200" style="border-radius: 8px; border: none;"></iframe>
+
+<h2 id="2-단원과-쌍단원을-이용한-어드조인트의-정의">2. 단원과 쌍단원을 이용한 어드조인트의 정의</h2>
+
+<p>$F \dashv G$라는 것은 어떤 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF, \epsilon: FG \to 1_{\mathcal{B}}$가 존재하여, 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 다음 가환 도식을 언제나 만족한다는 것이다.</p>
+
+<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d&amp;embed" width="100%" height="220" style="border-radius: 8px; border: none;"></iframe>
+
+<p>위 두 조건을 삼각 항등식<sub>triangle identity</sub>이라고 부른다.</p>
+
+<h2 id="3-초기-대상initial-object을-이용한-어드조인트의-정의">3. 초기 대상<sub>initial object</sub>을 이용한 어드조인트의 정의</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> $P: \mathcal{A} \to \mathcal{C}$, $Q: \mathcal{B} \to \mathcal{C}$가 함자일 때, <strong>콤마 범주<sub>comma category</sub></strong> $(P \Rightarrow Q)$를 다음과 같이 정의한다.</p>
+
+  <ul>
+    <li>대상: $\mathcal{C}$의 사상 $h: P(A) \to Q(B)$에 대해, 삼중쌍<sub>triplet</sub> $(A, h, B)$</li>
+    <li>사상: 다음의 가환 도식이 성립할 때, $(f, g): (A, h, B) \to (A’, h’, B’)$</li>
+  </ul>
+</blockquote>
+
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJQKEEpIl0sWzIsMCwiUChBJykiXSxbMCwxLCJRKEIpIl0sWzIsMSwiUShCJykiXSxbMCwyLCJoIiwyXSxbMSwzLCJoJyJdLFswLDEsIlAoZikiXSxbMiwzLCJRKGcpIiwyXV0=&amp;embed" width="100%" height="230" style="border-radius: 8px; border: none;"></iframe>
+
+<p>$F \dashv G$라는 것은 어떤 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF$가 존재하여, 각 $A \in \mathcal{A}$에 대해 $A$를 홑원소 범주 $\mathbf{1}$에서 $\mathcal{A}$로 가는 함자 $A: 1 \mapsto A$로 간주했을 때 $\eta_A : A \to GF(A)$가 콤마 범주 $(A \Rightarrow G)$의 초기 대상이라는 것이다.</p>
+
+<h2 id="4-동치-증명">4. 동치 증명</h2>
+
+<p>1, 2, 3의 정의는 모두 동치이다. 구체적으로 다음의 정리가 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리 3.</strong> $\mathcal{A}, \mathcal{B}$가 범주이고 $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자라고 하자. 1, 2, 3은 서로 일대일 대응된다.</p>
+
+  <ol>
+    <li>자연성 공리를 만족하는 일대일대응 $\Psi$</li>
+    <li>삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta: 1_{\mathcal{A}} \to GF, \epsilon: FG \to 1_{\mathcal{B}})$</li>
+    <li>각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상이 되도록 하는 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF$</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 1과 2가 일대일 대응됨을 보이고, 2와 3이 일대일 대응됨을 보인다.</p>
+
+<h4 id="1과-2는-일대일-대응된다">1과 2는 일대일 대응된다.</h4>
+
+<p>$\Psi$가 주어졌을 때, $\eta$와 $\epsilon$을 각각 단원과 쌍단원으로 정의한다. 이때, $\eta$와 $\epsilon$이 삼각 항등식을 만족함은 정리 2로부터 쉽게 따라 나온다.</p>
+
+<p>역으로 삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta, \epsilon)$이 주어졌다고 하자. 이로부터 다음과 같이 $\Psi$를 정의한다. $f: A \to G(B), g: F(A) \to B$에 대해,</p>
+
+\[\begin{gather}
+\Psi_{A, B}(f) = \bar{f} = \epsilon_B \circ F(f) \\
+\Psi_{A, B}^{-1} = \bar{g} = G(g) \circ \eta_A
+\end{gather}\]
+
+<p>먼저 $\Psi_{A, B}^{-1}$이 실제로 $\Psi_{A, B}$의 역사상임을, 즉 $\bar{\bar{g}} = g, \bar{\bar{f}} = f$임을 보인다. 전자는 다음 가환 도식으로부터 얻어진다. 후자는 도식에서 $F, G$를 각각 $G, F$로 바꾼 뒤 적절히 쌍대<sub>dual</sub>을 취하면 된다.</p>
+
+<!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ== -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ==&amp;embed" width="100%" height="250" style="border-radius: 8px; border: none;"></iframe>
+
+<p>이제 $\Psi$가 자연성 공리를 만족함을 보인다. 한쪽 공리만 보이도록 한다. $f: A \to G(B), q: B \to B’$에 대해 $\overline{G(q) \circ f} = q \circ \bar{f}$임을 보인다. 먼저,</p>
+
+\[\overline{G(q) \circ f} = \epsilon_{B'} \circ FG(q) \circ F(f)\]
+
+<p>이고,</p>
+
+\[q \circ \bar{f} = q \circ \epsilon_B \circ F(f)\]
+
+<p>이므로, $\epsilon_{B’} \circ FG(q) = q \circ \epsilon_B$임을 보이면 충분하다. 이것은 자연적 변환의 정의에 다름 아니다. 따라서 $\Psi$는 자연성 공리를 만족한다.</p>
+
+<h4 id="2와-3은-일대일-대응된다">2와 3은 일대일 대응된다.</h4>
+
+<p>삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta, \epsilon)$이 주어졌을 때, 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상임을 보이자.</p>
+
+<p>역으로 $\eta$가 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상이 되도록 하는 자연적 변환일 때, 어떤 $\epsilon: FG \to 1_{\mathcal{B}}$가 유일하게 존재하여 $(\eta, \epsilon)$이 삼각 항등식을 만족함을 보이자.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/02/13/three-definitions-of-adjoint/en"> Three Approaches to Adjoints </a>
       </h1>
     <span class="post-date">13 Feb 2025</span>
@@ -2141,320 +2428,6 @@ for y ∈ P:
 </blockquote>
 
 <p>이런 이유로 지금까지의 과정을 <strong>베타 암호화(Beta coding)</strong>라고 부른다. 괴델은 베타 암호화를 이용하여 지수 연산과 소인수분해를 PA에서 성공적으로 정의했으며, 이로부터 괴델 수와 비롯된 여러 술어를 PA에서 형식화할 수 있었다. 제목에서 드러나다시피 원래 이 글의 목표는 이 과정을 모두 개괄하는 것이었으나 때늦게 찾아온 필자의 귀찮음 이슈와, 글을 여기까지 읽은 독자라면 이후 내용은 어렵지 않게 유추 가능하리라는 생각으로 이만 줄인다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/01/25/beta-function/en"> Defining Gödel Numbers in Peano Arithmetic via the Beta Function </a>
-      </h1>
-    <span class="post-date">25 Jan 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p><strong>Abstract.</strong> First-order Peano arithmetic does not permit quantification over predicates, hence it requires separate axioms for addition and multiplication. However, additional operations such as exponentiation and factorial—provided that tuples can be defined in Peano arithmetic—are definable without separate axioms. Since tuples are definable in Peano arithmetic through beta encoding, Peano arithmetic can formalise exponentiation, factorial, prime factorisation, and ultimately Gödel numbers.</p>
-
-<h2 id="1-introduction">1. Introduction</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> <strong>Peano arithmetic (PA)</strong> is a theory with signature $(0, S, +, \cdot)$, where the axioms are as follows:</p>
-
-  <ol>
-    <li>$\forall x : S(x) \neq 0$</li>
-    <li>$\forall x, y : S(x) = S(y) \rightarrow x = y$</li>
-    <li>$\forall x : x + 0 = x$</li>
-    <li>$\forall x, y : x + S(y) = S(x + y)$</li>
-    <li>$\forall x, y : x \cdot 0 = 0$</li>
-    <li>$\forall x, y : x \cdot S(y) = (x \cdot y) + x$</li>
-  </ol>
-
-  <p>Additionally, it has the following induction axiom schema. For any first-order formula $\phi(x)$:</p>
-
-  <p> 7. $\big[ \phi(0) \land \forall x \; [ \phi(x) \rightarrow \phi(S(x)) ] \big] \rightarrow \forall x \;\phi(x)$</p>
-</blockquote>
-
-<p>For convenience, we define $&lt;, -, \bmod$ as follows:</p>
-
-\[\begin{aligned}
-&amp;x &lt; y : &amp;&amp;\exists z \neq 0\; [x + z = y]\\
-&amp;x - y = z : &amp;&amp;x = y + z \\
-&amp;x \bmod y = z: &amp;&amp; (z &lt; y) \land \exists q \;[ qy + z = x ]
-\end{aligned}\]
-
-<p>Historically, the Peano arithmetic first presented by Dedekind was a second-order logic theory, hence it had an induction <em>axiom</em> rather than an induction <em>axiom schema</em>. Moreover, it lacked axioms 3 through 7.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> <strong>Second-order Peano arithmetic</strong> is a theory with signature $(0, S)$, where the axioms are as follows:</p>
-
-  <ol>
-    <li>$\forall x : S(x) \neq 0$</li>
-    <li>$\forall x, y : S(x) = S(y) \rightarrow x = y$</li>
-    <li>$\forall \phi \bigg[ \big[ \phi(0) \land \forall x \; [ \phi(x) \rightarrow \phi(S(x)) ] \big] \rightarrow \forall x \;\phi(x)\bigg]$</li>
-  </ol>
-</blockquote>
-
-<p>The reason the remaining axioms are unnecessary is that second-order logic permits quantification over predicates, enabling addition and multiplication to be defined using second-order formulae alone. For instance, $w = u + v$ is equivalent to the following formula:</p>
-
-\[\forall \phi \bigg[ \forall x, y, z \big[ \phi(x, 0, x) \land (\phi(x, S(y), z) \rightarrow \phi(x, y, S(z)) \big] \rightarrow \phi(u, v, w) \bigg]\]
-
-<p>However, since second-order logic was found to have numerous mathematical and philosophical shortcomings, the first-order Peano arithmetic introduced at the beginning became the standard choice. The implications of this choice are, firstly, that the induction axiom becomes an induction axiom schema, and secondly, that addition and multiplication must be defined through separate axioms.</p>
-
-<p>This raises the question: are there no other operations besides addition and multiplication that need separate definition? For example, can operations such as exponentiation, prime factorisation, and factorial be defined without additional axioms? Furthermore, can Gödel numbering techniques, which map arbitrary formulae to natural numbers, be defined using Peano arithmetic alone?</p>
-
-<h2 id="2-tuples">2. Tuples</h2>
-
-<p>The insight that answers this question is that if <strong>tuples</strong> can be defined in Peano arithmetic, then numerous other operations become definable. Here, a tuple refers to a finite sequence of natural numbers such as $(1, 4, 2)$.</p>
-
-<p>For instance, suppose the following predicates and functions are defined:</p>
-
-<ul>
-  <li>$\mathrm{Tup}(\tau):$ $\tau$ is a tuple.</li>
-  <li>$\mathrm{At}(\tau, i):$ When $\tau$ is a tuple, returns the $i$-th natural number of $\tau$.</li>
-  <li>$\mathrm{Len}(\tau):$ Returns the length of $\tau$.</li>
-</ul>
-
-<p>For convenience, let us write $\mathrm{At}(\tau, i)$ as $\tau[i]$. For example, if $\tau = (1, 4, 2)$, then the following holds (assuming indexing starts from 0):</p>
-
-\[\mathrm{Tup}(\tau) \; \land \;  \mathrm{Len}(\tau) = 3 \;\land\; \tau[1] = 4\]
-
-<p>Using tuples, we can define $z = x^y$ as follows:</p>
-
-\[\forall \tau \bigg[ \big[ \mathrm{Tup}(\tau)\; \land \; \tau[0] = 1 \;\land \forall i &lt; y (\tau[i + 1] = \tau[i] \cdot x) \big] \rightarrow \tau[y] = z \bigg]\]
-
-<h2 id="3-beta-encoding">3. Beta Encoding</h2>
-
-<p>Can tuples be defined using only addition, multiplication, and first-order formulae? The answer is <strong>“yes”</strong>. As might be expected, it was Gödel who first proved this result. Let us first recall the following theorem:</p>
-
-<blockquote>
-  <p><strong>Chinese Remainder Theorem.</strong> Let $(n_1, \dots, n_k)$ be pairwise coprime. For any $(r_1, \dots, r_k)$ with $0 \leq r_i &lt; n_i$, there always exists a number $x$ satisfying:</p>
-
-\[x \bmod n_i = r_i\]
-</blockquote>
-
-<p>Gödel’s idea was to think of the number $x$ from the Chinese Remainder Theorem as a code for the tuple $(r_1, \dots, r_k)$. However, there is a problem here. To decode $(r_1, \dots, r_k)$ from $x$, we need $(n_1, \dots, n_k)$ to be given, which again requires a tuple.</p>
-
-<p>To solve this problem, Gödel produced the following lemma:</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> $n!+ 1, 2n! + 1, \dots, n \cdot n! + 1$ are pairwise coprime.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> For $1 \leq a &lt; b \leq n$, let $u = an! + 1, v = bn! + 1$. By the Euclidean algorithm,</p>
-
-\[\mathrm{gcd}(u, v) = \mathrm{gcd}(u, v - u) = \mathrm{gcd}(an! + 1, (b - a)n!)\]
-
-<p>The set of all divisors of $(b - a)n!$ is $\lbrace  1, 2, \dots, n\rbrace $. Since none of these elements divides $an! + 1$, we have $\mathrm{gcd}(an! + 1, (b - a)n!) = \mathrm{gcd}(u, v) = 1$. □</p>
-
-<p>We can now define tuples as <strong>ordered pairs</strong>.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> We represent the tuple $(r_1, \dots, r_k)$ as an ordered pair $\langle a, b \rangle$ as follows:</p>
-
-  <ul>
-    <li>$b = n! \quad \text{where} \quad n = \max(r_1, \dots, r_k, k)$</li>
-    <li>$a \bmod (kb + 1) = r_k$</li>
-  </ul>
-
-  <p>where $a$ is chosen to be the smallest natural number satisfying the second condition.</p>
-</blockquote>
-
-<p>Meanwhile, tuples can be represented as natural numbers through Cantor pairing.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong></p>
-
-\[\langle a, b \rangle = \frac{(a + b)(a + b + 1)}{2} + b\]
-</blockquote>
-
-<p>Thus we can encode a tuple $\tau$ as a natural number $n$. Conversely, given $n$, we can decode $\tau$ using only addition, multiplication, and the modulo operation. Since the modulo operation is easily definable from addition, multiplication, and first-order logic, our goal is achieved.</p>
-
-<p>Historically, Gödel’s theorem was as follows:</p>
-
-<blockquote>
-  <p><strong>$\beta$-function Lemma.</strong> For any sequence of natural numbers $(n_1, \dots, n_k)$, there exist natural numbers $a, b$ such that $\beta(a, b, i) = n_i$ for $1 \leq i \leq k$, where $\beta$ is the function defined as follows:</p>
-
-\[\beta(x, y, i) = x \bmod (iy + 1)\]
-</blockquote>
-
-<p>For this reason, the entire process is called <strong>beta encoding</strong>. Gödel used beta encoding to successfully define exponentiation and prime factorisation in PA, enabling the formalisation of Gödel numbers and various related predicates in PA. As indicated by the title, the original goal of this article was to provide an overview of this entire process. However, due to the author’s tardily arriving laziness and the belief that readers who have come this far can easily infer the subsequent content, I shall conclude here.</p>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/01/25/los"> 워시의 정리 </a>
-      </h1>
-    <span class="post-date">25 Jan 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <p><a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">이전 글</a>에서 이어지는 내용이다.</p>
-
-<h2 id="5-초자연수의-비표준적-특징">5. 초자연수의 비표준적 특징</h2>
-
-<p>지금까지 우리가 살펴본 초자연수는 $[0], [1], [2], \dots$와 같이 표준 자연수와 상응하는 것들이었다. 이제 표준 자연수와는 괴리가 있는 초자연수들을 살펴 보자.</p>
-
-<p>다음의 초자연수 $\mathfrak{n}$을 보자.</p>
-
-\[(1, 2, 3, 4, \dots) \in \mathfrak{n}\]
-
-<p>초자연수의 정의가 동치류이기 때문에 등호가 아닌 포함 관계로 표현함에 유의하라. 초자연수에서 부등호의 정의를 상기하면, 자연수 $n$에 대해 $[n] &lt; \mathfrak{n}$임을 알 수 있다. 즉, $\mathfrak{n}$은 모든 자연수보다 큰 초자연수이다. 따라서 초자연수에서는 다음이 성립한다.</p>
-
-\[\phi_1 : \exists x \; ( \lbrace y : y &lt; x \rbrace \text{ is infinite } )\]
-
-<p>위 명제는 자연수에서는 성립하지 않는다.</p>
-
-<p>이번에는 다음의 초자연수 $\mathfrak{m}$을 보자.</p>
-
-\[(1, 2!, 3!, 4!, \dots) \in \mathfrak{m}\]
-
-<p>표준 자연수 $n$에 대해 $\mathfrak{m}$은 $[n]$으로 나누어떨어진다. 즉, $\mathfrak{m}$은 모든 자연수를 약수로 가진다. 따라서 초자연수에서는 다음이 성립한다.</p>
-
-\[\phi_2 : \exists x \; (\lbrace y : y \mid x \rbrace \text{ is infinite })\]
-
-<p>위 명제 또한 자연수에서는 성립하지 않는다.</p>
-
-<p>그런데 이상한 점이 있다. 저번 글의 서론에서 필자는 자연수와 초자연수가 논리적으로 구분 불가능하다고 했다. 그러나 $\phi_1$과 $\phi_2$는 $\mathbb{N}^*$에서는 참이지만 $\mathbb{N}$에서는 거짓이므로, 둘은 논리적으로 구분 가능한 것으로 보인다. 필자가 거짓말을 한 것일까?</p>
-
-<p>그렇지 않다. 이 표면적인 역설을 해결하는 실마리는, $\phi_1$과 $\phi_2$가 1차 논리로 표현 <em>불가능한</em> 문장이라는 사실이다. 콤팩트성 정리에 의해 “…가 유한하다”는 1차 논리로 표현 불가능하기 때문이다.</p>
-
-<p>$\mathbb{N}^*$과 $\mathbb{N}$이 논리적으로 구분 불가능하다는 말의 엄밀한 의미는 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 언어 $\mathcal{L}$의 모형 $\mathcal{M}_1$과 $\mathcal{M}_2$가 <strong>초등적으로 동등(elementarily equivalent)</strong>하다는 것은 임의의 (1차 논리) 문장 $\phi$에 대해</p>
-
-\[\mathcal{M_1} \vDash \phi \iff \mathcal{M}_2 \vDash \phi\]
-
-  <p>가 성립하는 것이다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathbb{N}$과 $\mathbb{N}^*$은 초등적으로 동등하다.</p>
-</blockquote>
-
-<p>위 정리는 워시의 정리의 특수한 결과이다. 워시의 정리를 소개하기 앞서, 일반화된 초곱의 개념을 먼저 살펴보자.</p>
-
-<h2 id="6-초곱">6. 초곱</h2>
-
-<p>집합 $I$와, $I$ 위의 자유 초필터 $\mathcal{U}$가 주어졌다고 하자. 또한, 언어 $\mathcal{L}$의 모형 $\lbrace \mathcal{M}_i \rbrace_{i \in I}$가 주어졌다고 하자. 이때, <strong>초곱(ultraproduct)</strong> $\mathcal{M}^* = \prod \mathcal{M}_i / \mathcal{U}$를 다음과 같이 정의한다.</p>
-
-<blockquote>
-  <h4 id="초곱의-원소">초곱의 원소</h4>
-
-  <p>$\mathcal{M}^*$의 원소는 $\lbrace (a_i)_{i\in I} : a_i \in \mathcal{M}_i \rbrace$가 $\sim$에 대해 이루는 동치류이다. 여기서 $\sim$은 다음과 같이 정의된다.</p>
-
-\[(a_i)_{i\in I} \sim (b_i)_{i \in I} \iff \lbrace i \in I : a_i = b_i \rbrace \in \mathcal{U}\]
-
-  <h4 id="초곱-위의-연산">초곱 위의 연산</h4>
-
-  <p>$f(x)$가 $\mathcal{L}$의 함수라고 하자. $\mathcal{M}^*$의 원소 $\mathfrak{a} = [(a_i)_{i\in I}]$에 대해 다음과 같이 정의한다.</p>
-
-\[f(\mathfrak{a}) = [(f(a_i))_{i \in I}]\]
-
-  <p>위 정의는 자연스러운 방식으로 $n$항 함수로 일반화된다.</p>
-
-  <h4 id="초곱-위의-술어">초곱 위의 술어</h4>
-
-  <p>$P(x, y)$가 $\mathcal{L}$의 술어라고 하자. $\mathcal{M}^*$의 두 원소 $\mathfrak{a} = [(a_i)_{i\in I}]$와 $\mathfrak{b} = [(b_i)_{i\in I}]$에 대해 다음과 같이 정의한다.</p>
-
-\[\mathcal{M}^* \vDash P(\mathfrak{a}, \mathfrak{b}) \iff \lbrace i \in I : \mathcal{M}_i \vDash P(a_i, b_i) \rbrace \in \mathcal{U}\]
-
-  <p>위 정의는 자연스러운 방식으로 $n$항 술어로 일반화된다.</p>
-</blockquote>
-
-<p>초곱 위의 연산과 술어를 정의할 때, 연산과 술어의 결과가 동치류에서 어떤 원소를 대표자로 선택하든 상관없이 같음을 보여야 한다. 이것은 $\mathcal{U}$의 교집합 속성으로부터 어렵지 않게 얻어진다.</p>
-
-<blockquote>
-  <p><strong>연습문제.</strong> 주 초필터로 취한 초곱은 원소가 유한함을 보이시오. (이것은 우리가 초자연수를 정의할 때 프레셰 필터와 같은 자유 초필터를 사용해야 하는 이유이다)</p>
-</blockquote>
-
-<p>이로써 우리는 초자연수를, $I, \mathcal{U}, \mathcal{L}, \mathcal{M}_i$가 각각 다음과 같을 때 도출되는 초곱으로 재정의할 수 있다.</p>
-
-<ul>
-  <li>$I = \mathbb{N}$</li>
-  <li>$\mathcal{U} =$ 프레셰 초필터</li>
-  <li>$\mathcal{L} = (0, S, &lt;)$</li>
-  <li>$\mathcal{M}_i = \mathbb{N}$</li>
-</ul>
-
-<p>비슷한 방식으로 <strong>초실수<sub>hyperreals</sub></strong>를 정의할 수 있다.</p>
-
-<ul>
-  <li>$I = \mathbb{N}$</li>
-  <li>$\mathcal{U} =$ 프레셰 초필터</li>
-  <li>$\mathcal{L} = (0, 1, +, ⋅, &lt;)$</li>
-  <li>$\mathcal{M}_i = \mathbb{R}$</li>
-</ul>
-
-<h2 id="7-워시의-정리">7. 워시의 정리</h2>
-
-<blockquote>
-  <p><strong>워시<sub>Łoś</sub>의 정리.</strong> 초곱 $\mathcal{M}^* = \prod \mathcal{M}_i / \mathcal{U}$가 주어졌을 때, 임의의 $\mathcal{L}$-문장 $\phi$에 대해 다음이 성립한다.</p>
-
-\[\mathcal{M}^* \vDash \phi \iff \lbrace i \in I : \mathcal{M}_i \vDash \phi \rbrace \in \mathcal{U}\]
-</blockquote>
-
-<p><em>Proof.</em> $\phi$에 대한 구조적 귀납법으로 증명한다.</p>
-
-<h4 id="1-phi가-원자-명제이다">1. $\phi$가 원자 명제이다</h4>
-
-<p>“초곱 위의 술어” 정의에 의해 자명하게 성립한다.</p>
-
-<h4 id="2-phi--psi-land-theta">2. $\phi := \psi \land \theta$</h4>
-
-\[\begin{aligned}
-&amp;\mathcal{M}^* ⊨ φ\\
-&amp;\iff \mathcal{M}^* ⊨ ψ \land \mathcal{M}^* ⊨ θ\\
-&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ \rbrace ∈ \mathcal{U} \land \lbrace i ∈ I \mid \mathcal{M}_i ⊨ θ \rbrace ∈ \mathcal{U} &amp;&amp;(*)
-\\
-&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ \rbrace \cap \lbrace i ∈ I \mid \mathcal{M}_i ⊨ θ \rbrace ∈ \mathcal{U} &amp;&amp;(**) \\
-&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ \land \mathcal{M}_i ⊨ θ \rbrace ∈ \mathcal{U}\\
-&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ ψ∧θ \rbrace ∈ \mathcal{U}\\
-&amp;\iff \lbrace i ∈ I \mid \mathcal{M}_i ⊨ φ \rbrace ∈ \mathcal{U}
-\end{aligned}\]
-
-<p>$(*)$는 귀납 가정에 의해 성립하고, $(**)$는 $\mathcal{U}$의 교집합 닫힘 속성으로 성립한다.</p>
-
-<h4 id="3-phi--lnot-psi">3. $\phi := \lnot \psi$</h4>
-
-<p>2와 비슷한 방법으로 하면 된다. 단, 귀납 가정과 $\mathcal{U}$의 초필터 속성($A \in \mathcal{U} \lor A^c \in \mathcal{U}$)를 사용한다.</p>
-
-<h4 id="4-phi--exists-x-psi">4. $\phi := \exists x\; \psi$</h4>
-
-<p>2와 비슷한 방법으로 하면 된다. 단, 귀납 가정만 사용해도 충분하다.</p>
-
-<p>모든 명제는 1, 2, 3, 4로 구성할 수 있으므로 귀납법에 의해 정리가 증명되었다. ■</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> $\mathbb{N}$과 $\mathbb{N}^*$은 초등적으로 동등하다.</p>
-</blockquote>
-
-<p><em>Proof.</em> 워시의 정리에 의해 $\mathbb{N}^* \vDash \phi$일 필요충분조건은 $\lbrace i \in \mathbb{N} : \mathbb{N}^\ast_i \vDash \phi \rbrace \in \mathcal{U}$인 것이다. 그런데 $\mathbb{N}^*_i = \mathbb{N}$이므로, 필요충분조건은 $\mathbb{N} \vDash \phi$로 환원된다. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
