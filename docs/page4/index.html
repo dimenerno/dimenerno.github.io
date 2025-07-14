@@ -431,154 +431,6 @@
 
 <div class="posts">
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/01/elementary-embedding"> 준동형 사상, 임베딩, 초등적 임베딩 </a>
-      </h1>
-    <span class="post-date">01 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/모델론/'">
-        모델론
-      </div>
-      
-    </div>
-     <p>이 글에서는 편의를 위해 술어와 함수를 별도의 대상으로 생각하는 대신, 함수식 $f(a) = c$를 이항 술어 $F(a, c)$로 환원하는 접근을 택한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}, \mathfrak{B}$가 언어 $\mathcal{L}$의 구조라고 하자. 다음을 만족하는 사상 $f: \mathfrak{A} \to \mathfrak{B}$을 <strong>준동형 사상<sub>homomorphism</sub></strong>이라고 부른다. $R$이 $\mathcal{L}$의 관계일 때, 임의의 $a_1, \dots, a_n \in \mathfrak{A}$에 대해,</p>
-
-\[R^\mathfrak{A}(a_1, \dots, a_n) \implies R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
-
-  <p>이다.</p>
-
-  <p>추가로, 준동형사상 $f$가 단사이고 다음을 만족할 때 $f$를 <strong>임베딩<sub>embedding</sub></strong>이라고 부른다.</p>
-
-\[R^\mathfrak{A}(a_1, \dots, a_n) \iff R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
-</blockquote>
-
-<p>단사 준동형사상이라고 해서 임베딩인 것은 아니다. 일례로 하나의 이항 관계 $&lt;$를 가지는 언어 $\mathcal{L}$의 다음의 두 구조를 보자. $&lt;$를 만족시키는 대상은 화살표로 표시되었다. 즉, $b_1 &lt;^\mathfrak{B} b_2$이다.</p>
-
-<p><img src="/public/model-injective-vs-embedding.png" style="width: 100%; max-width: 500px; margin: 1.5em auto;" /></p>
-
-<p>$\mathfrak{A}$의 원소들은 $&lt;^\mathfrak{A}$를 만족시키는 경우가 없으므로 $f: a_1 \mapsto b_1, a_2 \mapsto b_2$는 자명하게 준동형사상이며, 단사이다. 그러나 $f$는 임베딩이 아니다. $f$가 임베딩이라면 $b_1 &lt;^\mathfrak{B} b_2$으로부터 $a_1 &lt;^\mathfrak{A} a_2$가 성립해야 하기 때문이다. 즉, 임베딩은 $\mathfrak{A}$의 원소들뿐 아니라 원소들 간의 관계까지 그대로 $\mathfrak{B}$에 대응시켜야 한다. 이런 면에서 임베딩은 범주론에서의 포화된 함자<sub>full functor</sub>와 비슷하다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 언어 $\mathcal{L}$의 구조라고 하자. $\mathcal{L}_\mathfrak{A}$를 $\mathcal{L}$에 $\mathfrak{A}$의 정의역 크기만큼의 상수를 추가한 언어로 정의한다.</p>
-</blockquote>
-
-<p>페아노 산술로 예를 들자면, $\mathcal{L} = (0, S, +)$이고 $\mathfrak{A}$가 산술의 표준 모형일 때, $\mathcal{L}_\mathfrak{A} = (0, 1, 2, 3, \dots, S, +)$이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-원자명제들의 집합을 $\Delta_\mathfrak{A}^+$로 적는다. 즉,</p>
-
-\[\Delta_\mathfrak{A}^+ = \{ R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
-
-  <p>추가로, $\Delta_\mathfrak{A}^+$에다 $\mathfrak{A}$가 만족시키지 않는 모든 $\mathcal{L}$-원자명제들의 부정까지 추가한 집합을 $\Delta_\mathfrak{A}$로 적는다. 즉,</p>
-
-\[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
-</blockquote>
-
-<p>$\Delta$라는 표기법은 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 관련이 있다.</p>
-
-<p>$\Delta_\mathfrak{A}^+$에 빠진 원자명제들의 부정을 추가한 것이 곧 $\Delta_\mathfrak{A}$이기 때문에, 두 집합이 내포하는 정보량은 사실상 같다. 그럼에도 두 집합을 구분하여 정의하는 것은 다음의 정리 때문이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자.</p>
-
-  <ol>
-    <li>단사 준동형사상 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
-    <li>임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
-  </ol>
-</blockquote>
-
-<p>즉, $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$를 만족할 경우 $\mathfrak{B}$가 원자명제들을 ‘과도하게’ 만족시켜서, $\mathfrak{A}$가 $\mathfrak{B}$로 임베딩되지 못할 가능성이 있다. 그러나 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$를 만족할 경우, $\mathfrak{B}$가 만족시킬 수 있는 원자명제에 한계가 걸리기 때문에 임베딩 가능성이 보장된다.</p>
-
-<p><a href="https://dimenerno.github.io/2025/04/17/los-tarski/">이전 글</a>에서 <strong>초등적 부분모델</strong>이라는 개념을 소개한 바 있다. 이로부터 다음의 개념을 정의할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $f: \mathfrak{A} \to \mathfrak{B}$가 임베딩이고, $f[\mathfrak{A}]$가 $\mathfrak{B}$의 초등적 부분모델일 때, $f$를 <strong>초등적 임베딩</strong>이라고 한다.</p>
-</blockquote>
-
-<p>초등적 임베딩과 관련된 문장 집합은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-명제들의 집합을 $E(\mathfrak{A})$로 적는다. 즉,</p>
-
-\[E(\mathfrak{A}) = \{ \phi : \mathfrak{A} \vDash \phi \}\]
-</blockquote>
-
-<p>$E(\mathfrak{A})$가 $\Delta_\mathfrak{A}$와 가장 구별되는 특징은 양화사가 있는 문장 또한 포함한다는 것이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. 초등적 임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $E(\mathfrak{A})$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</p>
-</blockquote>
-
-<p>마지막으로 다음의 문장 집합을 언급할 만하다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합을 $\mathrm{Th}(\mathfrak{A})$라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$와 $\mathfrak{B}$가 초등적으로 동등할 필요충분조건은 $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$인 것이다.</p>
-</blockquote>
-
-<p>사실 이는 초등적 동등성의 정의나 다름이 없어서 정리라고 부르기는 무색하지만, 이 글에서 소개한 나머지 정리들과 일관성을 유지하기 위해 소개하였다.</p>
-
-<p>표로 정리하면 이렇다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>정의</th>
-      <th>예시</th>
-      <th>사상</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$\Delta_\mathfrak{A}^+$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제</td>
-      <td>$0 &lt; 1$</td>
-      <td>전사 준동형</td>
-    </tr>
-    <tr>
-      <td>$\Delta_\mathfrak{A}$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제</td>
-      <td>$\lnot(1 &lt; 0)$</td>
-      <td>임베딩 (부분모델)</td>
-    </tr>
-    <tr>
-      <td>$\mathrm{Th}(\mathfrak{A})$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제</td>
-      <td>$\forall x \exists y (x &lt; y)$</td>
-      <td>초등적 동등성</td>
-    </tr>
-    <tr>
-      <td>$E(\mathfrak{A})$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제</td>
-      <td>$\not \exists x (x &lt; 0)$</td>
-      <td>초등적 임베딩 (초등적 부분모델)</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>예를 들어 $\mathfrak{A} = (\mathbb{N}, &lt;)$은 $\mathfrak{B} = (\mathbb{Z}, &lt;)$에 임베딩되지만, 초등적으로 임베딩되지는 않는다. $\mathfrak{B}$가 $E(\mathfrak{A})$의 문장인 $\not \exists x (x &lt; 0)$을 만족하지 않기 때문이다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
         <a href="/2025/05/01/elementary-embedding/en"> Homomorphisms, Embeddings, and Elementary Embeddings </a>
@@ -1765,6 +1617,116 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
   <li>$\forall x, y : (x \cdot x^{-1}) \cdot y = y \cdot (x \cdot x^{-1}) = y$</li>
 </ul>
 
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/10/completeness-theorem"> 완전성 정리와 뢰벤하임-스콜렘 정리 </a>
+      </h1>
+    <span class="post-date">10 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+    </div>
+     <p>괴델의 완전성 정리와 뢰벤하임-스콜렘 정리는 수리논리학의 가장 기본적인 정리들이다. 그래도 기본기를 다져보는 김에, 이 정리들의 증명을 복습해 보았다. 이 글에서 $T$는 언어 $\mathcal{L}$의 1차 논리 이론으로 간주한다.</p>
+
+<h2 id="괴델의-완전성-정리">괴델의 완전성 정리</h2>
+
+<blockquote>
+  <p><strong>괴델의 완전성 정리.</strong> $T \vDash \phi$라면 $T \vdash \phi$이다.</p>
+</blockquote>
+
+<h3 id="증명">증명</h3>
+
+<p>다음의 동치인 진술을 증명한다. (연습문제: 왜 동치인가?)</p>
+
+<blockquote>
+  <p>$T$가 무모순적인<sub>consistent</sub> 이론이라면, $T$는 모델을 가진다.</p>
+</blockquote>
+
+<h4 id="1-mathcall을-스콜렘-언어-mathcall_s로-확장하기">1. $\mathcal{L}$을 스콜렘 언어 $\mathcal{L}_S$로 확장하기</h4>
+
+<p>$\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $T$에 상수 $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ ($\alpha$는 서수)를 추가한 언어를 $\mathcal{L}_S$라고 하자. 여기서 첨자 $S$는 각 상수가 <strong>스콜렘 상수<sub>Skolem constant</sub></strong>의 역할을 담당할 것임을 의미한다.</p>
+
+<h4 id="2-t를-헨킨-이론-t_h로-확장하기">2. $T$를 헨킨 이론 $T_H$로 확장하기</h4>
+
+<p>$\mathcal{L}_S$의 명제 중 하나의 자유변수를 가지는 명제들의 집합의 크기는 $\kappa$와 같으므로, 정렬 원리로부터 $\lbrace  P_\alpha \rbrace _{\alpha \in \kappa}$와 같이 나타낼 수 있다. 이로부터 다음의 문장 집합을 정의한다.</p>
+
+\[\Sigma = \{ Q_\alpha := \exists x P_\alpha \rightarrow P_\alpha(c_\lambda) \mid \alpha \in \kappa \}\]
+
+<p>여기서 $c_\lambda$는 $P_\alpha$와 $Q_\beta \; (\beta &lt; \alpha)$에 등장하지 않는 상수 중 첨자가 최소인 상수이다(그러한 상수가 존재함은 서수가 정렬이라는 사실로부터 보장된다). 이제 $T_H = T \cup \Sigma$로 정의한다. $T_H$를 <strong>헨킨 이론<sub>Henkin theory</sub></strong>이라고 하고, $Q_\alpha$를 헨킨 공리라고 한다.</p>
+
+<h4 id="3-t_h를-극대적으로-무모순적인-이론-overlinet_h로-확장하기">3. $T_H$를 극대적으로 무모순적인 이론 $\overline{T_H}$로 확장하기</h4>
+
+<blockquote>
+  <p><strong>린덴바움 보조정리.</strong> $T$가 무모순적인 이론일 때, $T$를 확장하는 극대적으로 무모순적인<sub>maximally consistent</sub> 이론 $\overline{T}$가 존재한다. 즉, $T \subseteq T’$이고 임의의 $\mathcal{L}$ 문장 $\phi$에 대해 $\phi \in \overline{T}$거나 $\lnot\phi \in \overline{T}$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T$를 확장하는 무모순적인 이론들의 모임에 $\subseteq$로 순서 관계를 준 뒤, 초른의 보조정리를 적용한다.</p>
+
+<p>$T$가 무모순적인 이론일 때 $T_H$ 또한 무모순적임을 쉽게 보일 수 있다. 따라서 린덴바움 보조정리에 의해 $T_H$를 확장하는 극대적으로 무모순적인 이론 $\overline{T_H}$가 존재한다.</p>
+
+<h4 id="4-overlinet_h의-표준적canonical-모델-정의하기">4. $\overline{T_H}$의 표준적<sub>canonical</sub> 모델 정의하기</h4>
+
+<p>$c_\alpha \sim c_\beta$를 $(c_\alpha = c_\beta) \in \overline{T_H}$일 때 성립하는 관계로 정의하자. $\overline{T_H}$가 무모순적인 이론이라는 사실로부터 $\sim$이 동치 관계임을 보일 수 있다. 따라서 상수들의 동치류 $[c_\alpha]$가 잘 정의된다. 이제 다음과 같이 $\mathcal{L}_S$의 구조 $\mathfrak{M}$을 정의한다.</p>
+
+<ol>
+  <li>상수: $c_\alpha^{\mathfrak{M}} = [c_\alpha]$</li>
+  <li>술어: $R^{\mathfrak{M}}(c_{\alpha_1}^\mathfrak{M}, \dots, c_{\alpha_n}^{\mathfrak{M}}) \iff \overline{T_H} \vdash R(c_{\alpha_1}, \dots, c_{\alpha_n}) $</li>
+  <li>함수: $f(c_\alpha^\mathfrak{M}) = c_\beta^\mathfrak{M} \iff T_H \vdash \exists x (f(c_\alpha) = x) \rightarrow f(c_\alpha) = c_\beta$</li>
+</ol>
+
+<p>$\overline{T_H}$가 극대적으로 무모순적이므로 2가 잘 정의되고, 헨킨 이론이므로 3이 잘 정의된다. 따라서 $\mathfrak{M}$이 잘 정의되며, $\mathfrak{M}$이 $\overline{T_H}$의 모델임을 쉽게 확인할 수 있다. 그리고 $\mathfrak{M}$은 $T$의 모델이기도 하므로, $T$는 모델을 가진다. ■</p>
+
+<p><strong>Remark 1.</strong> 완전성 정리의 증명은 정렬 원리와 초른의 보조정리를 사용한다는 점에서 선택 공리에 의존적이다. 쾨니히 보조정리나 의존적 선택 공리와 같이 더 약한 유형의 선택 공리로도 증명할 수 있긴 하다.</p>
+
+<p><strong>Remark 2.</strong> <strong>콤팩트성 정리</strong>가 완전성 정리의 따름정리로서 얻어진다. (연습문제)</p>
+
+<p><strong>Remark 3.</strong> 완전성 정리의 증명에서 구축하는 모델의 크기는 $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$를 넘지 않는다. 마지막 단계에서 동치류를 취하므로 $\kappa$와 같다는 보장은 없다.</p>
+
+<h2 id="뢰벤하임-스콜렘-정리">뢰벤하임-스콜렘 정리</h2>
+
+<blockquote>
+  <p><strong>뢰벤하임-스콜렘 정리.</strong> $T$가 무한 모델을 가진다고 하자. 임의의 $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$에 대해, 크기가 $\kappa$인 $T$의 모델이 존재한다.</p>
+</blockquote>
+
+<h3 id="증명-1">증명</h3>
+
+<h4 id="하향-뢰벤하임-스콜렘-정리">하향 뢰벤하임-스콜렘 정리</h4>
+
+<blockquote>
+  <p><strong>하향 뢰벤하임-스콜렘 정리.</strong> $T$는 크기가 $\mathrm{max}(\aleph_0, |\mathcal{L}|)$을 넘지 않는 모델을 가진다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> Remark 2에서 즉시 얻어진다. □</p>
+
+<h4 id="상향-뢰벤하임-스콜렘-정리">상향 뢰벤하임-스콜렘 정리</h4>
+
+<blockquote>
+  <p><strong>상향 뢰벤하임-스콜렘 정리.</strong> $T$가 무한 모델을 가진다고 하자. 임의의 무한 기수 $\kappa$에 대해, 크기가 $\kappa$ 이상인 $T$의 모델이 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathcal{L}’$을 $\mathcal{L}$에 상수 $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$를 추가한 언어로 정의하자. 다음의 $\mathcal{L}’$-문장 집합을 정의하자.</p>
+
+\[\Sigma = \{ c_\alpha \neq c_\beta : \alpha, \beta \in \kappa, \alpha \neq \beta \}\]
+
+<p>$T’ = T \cup \Sigma$라고 하자. <em>$T$가 무한 모델 $\mathfrak{M}$을 가지므로,</em> 임의의 $T’$의 유한 부분이론은 $\mathfrak{M}$에 의해 만족된다. 따라서 콤팩트성 정리에 의해 $T’$은 무모순적이며, 완전성 정리에 의해 모델을 가진다. $\Sigma$는 $T’$의 모델이 적어도 $\kappa$개의 원소를 가질 것을 요구하므로, $T’$은 크기가 $\kappa$ 이상인 모델을 가지며, 이에 따라 $T$ 또한 크기가 $\kappa$ 이상인 모델을 가진다. □</p>
+
+<h4 id="뢰벤하임-스콜렘-정리-1">뢰벤하임-스콜렘 정리</h4>
+
+<p>$\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $\mathcal{L}’$과 $T’$을 앞선 바와 같이 정의한다.</p>
+
+<p>$\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$이므로 하향 뢰벤하임-스콜렘 정리에 의해 $T’$은 크기가 $\kappa$를 넘지 않는 모델을 가진다. 그런데 상향 뢰벤하임-스콜렘 정리의 증명에서 지적했듯이 $T’$의 모든 모델은 크기가 $\kappa$ 이상이다. 따라서 $T’$은 크기가 정확히 $\kappa$인 모델을 가지며, 이에 따라 $T$ 또한 크기가 정확히 $\kappa$인 모델을 가진다. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

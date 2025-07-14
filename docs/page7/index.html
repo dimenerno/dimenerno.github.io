@@ -431,151 +431,6 @@
 
 <div class="posts">
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/27/euler-lagrange"> 오일러-라그랑주 방정식과 라그랑주 역학 </a>
-      </h1>
-    <span class="post-date">27 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/물리학/'">
-        물리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/역학/'">
-        역학
-      </div>
-      
-    </div>
-     <h2 id="1-도입">1. 도입</h2>
-
-<p>1차원 위에서 운동하는 입자의 운동 경로는 $x(t)$와 같이 표현할 수 있다. 입자의 위치와 속도에 의존적인 함수 $f(x, x’)$를 생각하자. 이 입자가 시간 $t_1$일 때 $x_1$에서 출발하여 시간 $t_2$일 때 $x_2$에 도착하는데, 그 과정에서 다음 값을 극화<sub>extremise</sub>하는 경로, 즉 다음 값이 극대 또는 극소가 되도록 하는 경로 $x(t)$를 찾는 것이 목표이다.</p>
-
-\[A[x] = \int^{t_2}_{t_1} f(x, \dot{x}) dt\]
-
-<p>대괄호는 $A$의 매개변수가 실수가 아닌 함수임을 의미한다. 따라서 직관적으로 생각했을 때 $A[x]$를 최소화하는 $x(t)$를 찾기 위해서는 함수에 대한 미분식을 세워야 한다.</p>
-
-\[\frac{dA[x]}{dx(t)} = 0?\]
-
-<h2 id="2-오일러-라그랑주-방정식">2. 오일러-라그랑주 방정식</h2>
-
-<p>물론 함수에 대한 미분을 우리는 정의한 적이 없다. 하지만 간단한 트릭을 통해 함수에 대한 미분을 일반적인 미분으로 환원할 수 있다. 먼저 $x_0(t)$가 우리가 찾고자 하는 경로, 즉 $A[x]$를 극화시키는 경로라고 하자. $x_0(t)$의 ‘주변’에 있는 경로는 다음과 같은 꼴이다.</p>
-
-\[x(\alpha, t) = x_0(t) + \alpha h(t)\]
-
-<p><img src="/public/euler-lagrange.png" width="400px" style="margin: 2em auto;" /></p>
-
-<p>경계 조건은 $h(t_1) = h(t_2) = 0$이다. $x_0(t)$가 $A[x]$를 극화시키므로, 충분히 작은 $\epsilon$에 대해 $A[x_0] = A[x(0, t)] \leq A[x(\epsilon, t)]$이다. 따라서,</p>
-
-\[\left. \frac{dA[x(\alpha, t)]}{d\alpha} \right\vert_{\alpha = 0} = 0\]
-
-<p>위 식을 전개하면 다음과 같다.</p>
-
-\[\begin{aligned}
-\frac{dA}{d\alpha} &amp;= \int^{t_2}_{t_1} \frac{d}{d\alpha} \Big[ f \big( x(\alpha, t), \dot{x}(\alpha, t) \big) \Big] dt \\
-&amp;= \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} + \frac{\partial f}{\partial \dot{x}}\frac{\partial \dot{x}}{\partial \alpha} \right) dt \\
-&amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \int^{t_2}_{t_1} \frac{\partial f}{\partial \dot{x}} \cdot \frac{d}{dt} \left( \frac{\partial x}{\partial \alpha} \right) dt \\
-&amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \left[ \frac{\partial f}{\partial \dot{x}} \frac{\partial x}{\partial \alpha} \right]^{t_2}_{t_1} -  \int^{t_2}_{t_1} \frac{d}{dt} \left( \frac{\partial f}{\partial \dot{x}} \right) \frac{\partial x}{\partial \alpha} dt
-\end{aligned}\]
-
-<p>3번 식에서 4번 식으로 넘어가는 데 부분적분이 쓰였다. ${\partial x}/{\partial \alpha} = h(t)$이므로, 경계 조건에 의해 4번 식의 두 번째 항은 소거된다. 따라서,</p>
-
-\[\frac{dA}{d\alpha} = \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x} - \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right) \right) \frac{\partial x}{\partial \alpha} dt = 0\]
-
-<p>임의의 $h \in C^1$에 대해 위 식이 만족되어야 하므로, $x(t)$가 $A$를 극화할 다음의 <em>필요조건</em>을 얻는다.</p>
-
-\[\frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
-
-<p>이것이 <strong>오일러-라그랑주 방정식<sub>Euler-Lagrange equation</sub></strong>이다. 값 $A$를 극화한다는 것을 $\delta A = 0$과 같이 표현하므로, 오일러-라그랑주 방정식의 결론은 다음과 같이 적을 수 있다.</p>
-
-\[\delta A = 0 \implies \frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
-
-<p>방금 우리는 일변수 함수에 대해 증명했지만, 다변수 함수에 대해서도 마찬가지 식이 성립한다. 즉, 어떤 입자(들)의 운동을 나타내는 좌표가 $\lbrace  q_i \rbrace _{i \leq n}$라고 하자. 예를 들어 2개의 입자가 3차원에서 운동하는 경우 $n = 6$이다. 이들의 운동이 $\int f(q_1, \dot{q_1}, \dots, q_n, \dot{q_n}) dt$를 극화할 필요조건은 각 $i$에 대해 다음이 성립하는 것이다.</p>
-
-\[\frac{\partial f}{\partial q_i} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{q_i}} \right)\]
-
-<!-- ## 3. 최단 강하 곡선 문제
-
-앞서 $t$를 시간, $x(t)$를 경로로 설정했지만, 다른 변수에 대해서도 오일러-라그랑주 방정식을 적용할 수 있다. 그 예시로, 최단 강하 곡선 문제를 풀어보자.
-
-<img src="public/brachistochrone.png" width="400px" style="margin: 2em auto;">
-
-에너지 보존 법칙에 의해 다음 식이 성립한다.
-
-$$
-\dot{x}^2 + \dot{y}^2 = -2gy
-$$
-
-따라서 곡선 $y(x)$를 따라 $(x\_1, y\_1)$에서 $(x\_2, y\_2)$까지 강하하는 데 걸리는 시간은 다음과 같다.
-
-$$
-\begin{aligned}
-T &= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{ds}{v} \\
-&= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{\sqrt{dx^2 + dy^2}}{\sqrt{\dot{x}^2 + \dot{y}^2}} \\
-&= \int^{x_2}_{x_1} \sqrt{-\frac{1 + y'^2}{2gy}} dx
-\end{aligned}
-$$
-
-다음과 같이 $f(y, y')$을 두자.
-
-$$
-f(y, y') = \sqrt{-\frac{1 + y'^2}{2gy}}
-$$
-
-오일러-라그랑주 방정식에 따르면 $T$가 극솟값을 가질 필요조건은 다음과 같다.
-
-$$
-\frac{\partial f}{\partial y} = \frac{d}{dx} \frac{\partial f}{\partial {y'}}
-$$
-
-위 식을 풀면 $y(x)$가 **사이클로이드** 꼴로 나타난다. 자세한 계산 과정은 연습문제로 땡처리하는 것을 양해 바란다. -->
-
-<h2 id="3-라그랑주-역학">3. 라그랑주 역학</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> 계 $S$의 입자(들)의 운동을 나타내는 좌표가 $\lbrace  q_i \rbrace _{1 \leq i \leq n}$라고 하자. $S$의 <strong>라그랑지안<sub>Lagrangian</sub></strong> $\mathcal{L}(\lbrace  q , \dot{q} \rbrace, t)$를, 다음의 값을 극화시키는 조건에 대한 방정식이 입자들의 운동 방정식과 같아지도록 하는 함수로 정의한다.</p>
-
-\[\mathcal{S} = \int^{t_2}_{t_1} \mathcal{L}(\{ q, \dot{q} \}, t) dt\]
-
-  <p>$\mathcal{S}$를 <strong>작용<sub>action</sub></strong>이라고 부른다.</p>
-</blockquote>
-
-<p>예를 들어 1차원 퍼텐셜 장 $V(x)$에 속하는 입자의 라그랑지안은 다음과 같다.</p>
-
-\[\begin{aligned}
-\mathcal{L}(x, \dot{x}) &amp;= T - V \\
-&amp;= \frac{1}{2}m\dot{x}^2 - V(x)
-\end{aligned}\]
-
-<p>위 함수가 라그랑지안이라는 것을 확인해 보자. 오일러-라그랑주 방정식을 사용하면 해당 라그랑지안에 따른 작용이 극화될 조건은 다음과 같다.</p>
-
-\[\begin{aligned}
-\delta \mathcal{S} = 0 &amp;\implies \frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
-&amp;\iff -\frac{dV}{dx} = \frac{d}{dt}(m\dot{x}) \\
-&amp;\iff -\frac{dV}{dx} = m\ddot{x}
-\end{aligned}\]
-
-<p>마지막 식은 뉴턴의 운동 방정식이다. 따라서 $\mathcal{L}$은 이 계의 라그랑지안이 맞다. 일반적으로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 다음 두 조건을 만족하는 고전역학적 계의 라그랑지안은 $\mathcal{L} = T - V$로 주어진다.</p>
-
-  <ol>
-    <li>계의 경계 조건이 홀로노믹<sub>holonomic</sub>하다. 즉, 경계 조건이 입자들의 위치에만 의존하고 속도에 의존하지 않는다.</li>
-    <li>계에 작용하는 힘 $\mathbf{F}_i$가 퍼텐셜 함수 $U_i(\lbrace q, \dot{q} \rbrace, t)$를 가진다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> 링크된 <a href="https://physics.stackexchange.com/questions/78138/is-there-a-proof-from-the-first-principle-that-the-lagrangian-l-t-v">SE 포스트</a>를 참조.</p>
-
-<p>그러나 일반적으로 계의 라그랑지안이 $T - V$로 주어지는 것은 아니다. 예를 들어 상대론적 입자의 운동 에너지는 $(\gamma - 1)m_0c^2$이지만, 올바른 라그랑지안은 $-m_0c^2/\gamma$이다.</p>
-
-<p>뉴턴 역학과 달리 라그랑주 역학은 매우 자유로운 좌표계 변환을 허용한다는 점에서 강점을 가진다. 뉴턴 역학과 달리 라그랑주 역학은 일반 공변성을 가지기 때문이다. 이에 대한 자세한 설명은 <a href="http://dimenerno.github.io/2025/02/27/general-covariance/">다음 글</a>에 있다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
         <a href="/2025/02/27/euler-lagrange/en"> The Euler-Lagrange Equation and Lagrangian Mechanics </a>
@@ -2377,6 +2232,149 @@ K = \{ v \in V : v \in B \}
 <p>That is, every complete graph with $j$ or more vertices satisfies $\chi$. In other words, $j \to (k)^2_m$. To prove for arbitrary $n$, one can take $R$ as an $n$-ary relation. ■</p>
 
 <p>¹ Joel H. Spencer (1994), <em>Ten Lectures on the Probabilistic Method</em></p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/13/spectral-theorem"> 어드조인트, 정규 변환, 그리고 스펙트럼 정리 </a>
+      </h1>
+    <span class="post-date">13 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/대수학/'">
+        대수학
+      </div>
+      
+    </div>
+     <p>이 글에서 모든 벡터 공간은 내적 공간이라고 가정한다. 또한, 모든 변환은 선형 변환이다.</p>
+
+<h2 id="1-선형-변환의-어드조인트">1. 선형 변환의 어드조인트</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> $(V, \langle \cdot \rangle_V), (W, \langle \cdot \rangle_W)$가 내적 벡터 공간이라고 하자. $T: V \to W$에 대해, $T$의 <strong>어드조인트<sub>adjoint</sub></strong> $T^\ast: W \to V$는 다음 조건을 만족하는 선형 변환이다.</p>
+
+\[\forall v \in V, w \in W : \quad \langle w, Tv \rangle_W = \langle T^\ast w, v \rangle_V\]
+</blockquote>
+
+<p><a href="https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">범주론의 어드조인트 정의</a>를 떠올려 보면 식의 형태가 비슷하다.</p>
+
+<p>이 정의를 정당화하려면 모든 $T$에 대해 어드조인트가 유일하게 존재함을 보여야 한다. 이는 리스 표현 정리<sub>Riesz representation theorem</sub>로부터 얻어진다.</p>
+
+<blockquote>
+  <p><strong>리스 표현 정리.</strong> $V$가 내적 공간이라고 하자. $\phi \in V^\ast$에 대해, 다음을 만족하는 벡터 $v$가 유일하게 존재한다.</p>
+
+\[\forall u \in V : \quad \phi(u) = \langle u, v \rangle\]
+</blockquote>
+
+<p>$V$가 유한 차원일 경우, 위 정리는 $V$의 직교 기저를 잡음으로써 쉽게 보여진다. $V$가 일반적인 힐베르트 공간일 경우에는 증명이 더 까다롭기 때문에 생략한다.</p>
+
+<p>리스 표현 정리로부터 어드조인트의 정의를 다음과 같이 정당화할 수 있다. $w \in W$가 주어졌을 때, 사상 $v \mapsto \langle w, Tv \rangle$는 $V^\ast$의 원소이다. 따라서 어떤 $u_w \in V$가 존재하여</p>
+
+\[\forall v \in V : \langle w, Tv \rangle = \langle u_w, v \rangle\]
+
+<p>이다. 이때 사상 $w \mapsto u_w$는 선형임을 쉽게 보일 수 있다. 이 선형 사상이 우리가 구하고자 하는 어드조인트이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $T^\ast = T$인 선형 사상 $T : V \to V$를 <strong>자기 어드조인트<sub>self-adjoint</sub></strong>라고 한다.</p>
+</blockquote>
+
+<p>$T : V \to W$의 행렬 표현이 $M$일 때, 동일한 기저에서 $T^\ast$의 행렬 표현은 $M$의 켤레 전치, 즉 $M^\dagger$임을 — 다소 번거롭긴 하지만 — 어렵지 않게 보일 수 있다. 따라서 자기 어드조인트 변환의 행렬은 에르미트<sub>Hermitian</sub> 행렬이다.</p>
+
+<blockquote>
+  <p><strong>복소 자기 어드조인트 판별볍.</strong> $V$가 복소 벡터 공간일 때, $T: V \to V$가 자기 어드조인트 변환일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle \in \mathbb{R}$인 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 필요조건은 자명하므로 충분조건임을 보인다. 먼저 다음 보조정리를 증명한다.</p>
+
+<p><em>보조정리.</em> $V$가 복소 벡터 공간이라고 하자. $T : V \to V$에 대해, $T = 0$일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle = 0$인 것이다.</p>
+
+<p><em>보조정리의 증명.</em> 필요조건은 자명하므로 충분조건임을 보인다. 임의의 $u, v \in V$에 대해,</p>
+
+\[\langle T(u + v) , u + v \rangle = \langle Tu, v \rangle + \langle Tv, u \rangle = 0\]
+
+<p>이고,</p>
+
+\[\begin{aligned}
+\langle T(u + iv), u + iv \rangle &amp;= \langle T(u), iv \rangle + \langle T(iv), u \rangle \\ &amp;= -i \langle Tu, v \rangle + i \langle Tv, u \rangle = 0
+\end{aligned}\]
+
+<p>이다. 두 식을 연립하면 $\langle Tu, v \rangle = 0$을 얻는다. 이로부터 $T = 0$임을 보이기는 쉽다. □</p>
+
+<p>이제 본 정리를 보인다. $\langle Tv, v \rangle \in \mathbb{R}$이므로, $\langle Tv, v \rangle = \langle v, Tv \rangle$이다. 또한 어드조인트의 정의에 의해 $\langle Tv, v \rangle = \langle v, T^\ast v \rangle$이다. 따라서 $\langle v, (T - T^\ast)v \rangle = 0$이다. 보조정리로부터 $T = T^\ast$가 따라 나온다. ■</p>
+
+<blockquote>
+  <p><strong>자명한 자기 어드조인트 판별법.</strong> $V$가 실수 또는 복소 벡터 공간이라고 하자. 자기 어드조인트 변환 $T: V \to V$에 대해, $T = 0$일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle = 0$인 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 복소 벡터 공간인 경우에는 위의 보조정리로부터 따라 나온다. 따라서 $V$가 실수 벡터 공간인 경우에만 증명한다. 필요조건은 자명하므로 충분조건임을 보인다. 임의의 $u, v \in V$에 대해,</p>
+
+\[\begin{aligned}
+\langle T(u + v), u + v \rangle &amp;= \langle Tu, v \rangle + \langle Tv, u \rangle &amp;&amp;(\because \langle Tv, v \rangle = 0) \\
+&amp;= \langle Tu, v \rangle + \langle u, Tv \rangle &amp;&amp;(\because \mathrm{im} \langle \cdot \rangle \subset \mathbb{R}) \\
+&amp;= 2\langle Tu, v \rangle &amp;&amp;(\because T^\ast = T)
+\end{aligned}\]
+
+<p>즉 임의의 $u, v \in V$에 대해 $\langle Tu, v \rangle = 0$이므로 $T = 0$이다. ■</p>
+
+<h2 id="2-정규-선형-변환">2. 정규 선형 변환</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> $T : V \to V$에 대해 $TT^\ast = T^\ast T$일 때, $T$를 <strong>정규<sub>normal</sub></strong>라고 한다.</p>
+</blockquote>
+
+<p>모든 자기 어드조인트 변환은 정규 변환이지만 그 역은 성립하지 않는다.</p>
+
+<blockquote>
+  <p><strong>정규 판별법.</strong> $V$가 실수 또는 복소 벡터 공간이라고 하자. $T: V \to V$가 정규일 필요충분조건은 임의의 $v$에 대해 $\lVert Tv \rVert = \lVert T^\ast v \rVert$인 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> “자명한 자기 어드조인트 판별법”으로부터 따라 나온다. ■</p>
+
+<blockquote>
+  <p><strong>정규 고유벡터의 켤레성.</strong> $V$가 실수 또는 복소 벡터 공간이고, $T : V \to V$가 정규라고 하자. $v$가 고윳값 $\lambda$를 가지는 $T$의 고유벡터일 때, $v$는 고윳값 $\bar{\lambda}$를 가지는 $T^\ast$의 고유벡터이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T$가 정규일 때, $T - \lambda I$ 또한 정규임을 쉽게 보일 수 있다. 따라서,</p>
+
+\[\lVert (T - \lambda I) v \rVert = \lVert (T - \lambda I)^\ast v \rVert = \lVert (T^\ast - \bar{\lambda} I) v \rVert = 0. \quad \blacksquare\]
+
+<p>‘정규’라는 이름의 유래는 다음 정리에 있다.</p>
+
+<blockquote>
+  <p><strong>정규 고유벡터의 정규성.</strong> $T: V \to V$가 정규라고 하자. $u, v \in V$가 서로 다른 고윳값을 가지는 $T$의 고유벡터라면 $u$와 $v$는 직교한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $u, v$의 고윳값이 $\alpha, \beta$라고 하자.</p>
+
+\[\begin{aligned}
+(\alpha - \beta)\langle u, v \rangle &amp;= \langle \alpha u, v \rangle - \langle u, \bar{\beta}v \rangle \\
+&amp;= \langle Tu, v \rangle - \langle u, T^\ast v \rangle = 0.
+\end{aligned}\]
+
+<p>$\alpha - \beta \neq 0$이므로 $\langle u, v \rangle = 0$이다. ■</p>
+
+<h2 id="3-스펙트럼-정리spectral-theorems">3. 스펙트럼 정리<sub>Spectral theorems</sub></h2>
+
+<p>‘스펙트럼’이라는 이름은, 스펙트럼 정리가 양자역학에서 원자의 스펙트럼을 설명할 때 쓰였던 것에서 유래했다는 설이 흔히 전해지지만, 이것은 사실이 아니다. 스펙트럼 정리를 사용해서 원자의 스펙트럼을 설명하기 이전에 이미 힐베르트가 ‘스펙트럼’이라는 표현을 쓴 바 있기 때문이다. 정확한 유래는 알려져 있지 않은데, 고유벡터들이 힐베르트 공간의 특성을 나타낸다는 점에서 빛의 스펙트럼과 유사하다는 이미지 때문이 아니었을까 추측해 봄직하다.</p>
+
+<blockquote>
+  <p><strong>복소 스펙트럼 정리.</strong> $V$가 복소 벡터 공간이라고 하자. $T: V \to V$가 정규일 필요충분조건은, $T$의 고유벡터들이 $V$의 직교 기저를 이루는 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> <em>TODO</em> ■</p>
+
+<blockquote>
+  <p><strong>실수 스펙트럼 정리.</strong> $V$가 실수 벡터 공간이라고 하자. $T: V \to V$가 자기 어드조인트일 필요충분조건은, $T$의 고유벡터들이 $V$의 직교 기저를 이루는 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> <em>TODO</em> ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -28,17 +28,17 @@ Let $X$ be a compact Hausdorff space with no isolated points. Also assume that $
 
 *Claim 1.* Let $U \neq \varnothing$ be an open subset of $X$. For $x \in X$, there exists an open set $V$ such that $x \notin \bar{V}$ and $V \subset U$.
 
-*Proof of Claim 1.* There exists $y \in U$ where $x \neq y$. This is because if $x \in U$, then since $X$ has no isolated points such a $y$ must exist, and if $x \notin U$, then such a $y$ exists because $U$ is non-empty. Since $X$ is Hausdorff, we can separate $x$ and $y$ by neighbourhoods $V_x$ and $V_y$. Then $V = V_y \cap U$ is the desired set (the dark shaded region in Fig 1). □
+*Proof of Claim 1.* There exists $y \in U$ where $x \neq y$. This is because if $x \in U$, then since $X$ has no isolated points such a $y$ must exist, and if $x \notin U$, then such a $y$ exists because $U$ is non-empty. Since $X$ is Hausdorff, we can separate $x$ and $y$ by neighbourhoods $V\_x$ and $V\_y$. Then $V = V\_y \cap U$ is the desired set (the dark shaded region in Fig 1). □
 
 *Claim 2.* $X$ is uncountable.
 
-*Proof of Claim 2.* Suppose $X$ is countable. Enumerate the elements of $X$ as $\{x_n\}_{n \in \mathbb{Z}^+}$. Let $V_0 = X$. By Claim 1, for each $n$ there exists an open set $V_n$ such that $x_n \notin \bar{V_n}$ and $V_n \subset V_{n-1}$ (Fig 2). Since $X$ is compact, by the finite intersection property we have
+*Proof of Claim 2.* Suppose $X$ is countable. Enumerate the elements of $X$ as $\lbrace x\_n\rbrace \_{n \in \mathbb{Z}^+}$. Let $V\_0 = X$. By Claim 1, for each $n$ there exists an open set $V\_n$ such that $x\_n \notin \bar{V\_n}$ and $V\_n \subset V\_{n-1}$ (Fig 2). Since $X$ is compact, by the finite intersection property we have
 
 $$
 K = \bigcap_{n \in \mathbb{Z}^+} \bar{V}_n \neq \varnothing.
 $$
 
-However, if $x_n \in K$, then $x_n \in \bar{V}_n$, which is a contradiction. Therefore, $X$ is uncountable. □
+However, if $x\_n \in K$, then $x\_n \in \bar{V}\_n$, which is a contradiction. Therefore, $X$ is uncountable. □
 
 *Claim 3.* $\mathbb{R}$ is uncountable.
 

@@ -4,43 +4,13 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-07-14T11:15:53+09:00</updated>
+ <updated>2025-07-14T13:08:21+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
- 
- <entry>
-   <title>초필터를 사용한 스톤-체흐 콤팩트화</title>
-   <link href="https://dimenerno.github.io/2025/07/12/discrete-stone-space"/>
-   <updated>2025-07-12T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/12/discrete-stone-space</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/07/10/stone-cech&quot;&gt;이전 글&lt;/a&gt;에서 $X$의 스톤-체흐 콤팩트화 $\beta X$를, $[0, 1]^C$에서 $X$의 폐포를 취한 것으로 구성했었다. 그런데 $X$가 이산 공간&lt;sub&gt;discrete space&lt;/sub&gt;인 경우 초필터&lt;sub&gt;ultrafilter&lt;/sub&gt;를 사용하여 $\beta X$를 구성할 수도 있다. 이에 앞서, 몇 가지 개념을 복습하자.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X$가 &lt;strong&gt;이산 공간&lt;/strong&gt;이라는 것은, $X$의 모든 부분집합이 열린집합이라는 것이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathcal{F}$가 집합 $S$의 &lt;strong&gt;필터&lt;/strong&gt;라는 것은, $\mathcal{F}$가 다음을 만족하는 $S$의 부분집합족이라는 것이다.&lt;/p&gt;
-
-  &lt;ol&gt;
-    &lt;li&gt;$S \in \mathcal{F}$&lt;/li&gt;
-    &lt;li&gt;$\varnothing \notin \mathcal{F}$&lt;/li&gt;
-    &lt;li&gt;$A \in \mathcal{F}, A \subset B \implies B \mathcal{F}$&lt;/li&gt;
-    &lt;li&gt;$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathcal{F}$가 집합 $S$의 &lt;strong&gt;초필터&lt;/strong&gt;라는 것은, $\mathcal{F}$가 필터이며 추가로 다음을 만족한다는 것이다.&lt;/p&gt;
-
-\[\forall A \subset S : A \in \mathcal{F} \lor S \setminus A \in \mathcal{F}\]
-&lt;/blockquote&gt;
-</content>
- </entry>
  
  <entry>
    <title>스톤-체흐 콤팩트화</title>
@@ -13998,7 +13968,7 @@ for y ∈ P:
 
 &lt;p&gt;&lt;em&gt;Claim 2.&lt;/em&gt; $X$ is uncountable.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Proof of Claim 2.&lt;/em&gt; Suppose $X$ is countable. Enumerate the elements of $X$ as ${x_n}&lt;em&gt;{n \in \mathbb{Z}^+}$. Let $V_0 = X$. By Claim 1, for each $n$ there exists an open set $V_n$ such that $x_n \notin \bar{V_n}$ and $V_n \subset V&lt;/em&gt;{n-1}$ (Fig 2). Since $X$ is compact, by the finite intersection property we have&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Proof of Claim 2.&lt;/em&gt; Suppose $X$ is countable. Enumerate the elements of $X$ as $\lbrace x_n\rbrace _{n \in \mathbb{Z}^+}$. Let $V_0 = X$. By Claim 1, for each $n$ there exists an open set $V_n$ such that $x_n \notin \bar{V_n}$ and $V_n \subset V_{n-1}$ (Fig 2). Since $X$ is compact, by the finite intersection property we have&lt;/p&gt;
 
 \[K = \bigcap_{n \in \mathbb{Z}^+} \bar{V}_n \neq \varnothing.\]
 
