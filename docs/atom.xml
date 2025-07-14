@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-07-14T10:54:01+09:00</updated>
+ <updated>2025-07-14T10:57:43+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -915,7 +915,7 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
    <updated>2025-07-03T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/07/03/kripkenstein/kripkenstein-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;Please note that section “2.2. Dispositional Analysis” contains considerable additional commentary by the author that is independent from Kripke’s original paper.&lt;/p&gt;
+  &lt;p&gt;Disclaimer: Section “2.2. Dispositional Analysis” contains considerable commentary by myself that Kripke himself might have found illegitimate or irrelevant (although I expect it not to be likely).&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;overview&quot;&gt;Overview&lt;/h3&gt;
@@ -962,9 +962,9 @@ x + y &amp;amp; x, y &amp;lt; 50 \\
 
 &lt;h3 id=&quot;12-two-conditions&quot;&gt;1.2. Two Conditions&lt;/h3&gt;
 
-&lt;p&gt;There are two noteworthy points about the sceptic’s claim. &lt;strong&gt;Firstly, the sceptic’s claim is conditional.&lt;/strong&gt; The sceptic is not claiming that Alice should answer ‘5’ &lt;em&gt;in any case&lt;/em&gt;. What he claims is that if the meaning Alice assigned to ‘+’ in the past &lt;em&gt;matches&lt;/em&gt; the meaning she assigns to ‘+’ in the present, then she should answer ‘5’. &lt;strong&gt;Secondly, the sceptic’s claim is normative.&lt;/strong&gt; The sceptic’s claim is not that — when the aforementioned condition is satisfied — Alice &lt;em&gt;will&lt;/em&gt; answer ‘5’, but that she &lt;em&gt;should&lt;/em&gt; answer ‘5’.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; In other words, the sceptic claims that had Alice answered ‘5’ to ‘68 + 57’, that answer &lt;em&gt;would have been justified&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;There are two noteworthy points about the sceptic’s claim. &lt;strong&gt;First, the sceptic’s claim is conditional.&lt;/strong&gt; The sceptic is not claiming that Alice should answer ‘5’ &lt;em&gt;in any case&lt;/em&gt;. What he claims is that if the meaning Alice assigned to ‘+’ in the past &lt;em&gt;matches&lt;/em&gt; the meaning she assigns to ‘+’ in the present, then she should answer ‘5’. &lt;strong&gt;Second, the sceptic’s claim is normative.&lt;/strong&gt; The sceptic’s claim is not that — when the aforementioned condition is satisfied — Alice &lt;em&gt;will&lt;/em&gt; answer ‘5’, but that she &lt;em&gt;should&lt;/em&gt; answer ‘5’.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; In other words, the sceptic claims that had Alice answered ‘5’ to ‘68 + 57’, that answer &lt;em&gt;would have been justified&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Therefore, any refutation of the sceptic’s claim must also satisfy two conditions. &lt;strong&gt;Firstly, it must explain what fact about a speaker constitutes that speaker’s use of a particular symbol with a particular meaning.&lt;/strong&gt; This explanation is necessary to elucidate what the antecedent means in the sceptic’s claim.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;strong&gt;Secondly, it must explain how that fact justifies the speaker’s use of language.&lt;/strong&gt; This explanation is necessary because the sceptic’s conclusion is normative.&lt;/p&gt;
+&lt;p&gt;Therefore, any refutation of the sceptic’s claim must also satisfy two conditions. &lt;strong&gt;First, it must explain what fact about a speaker constitutes that speaker’s use of a particular symbol with a particular meaning.&lt;/strong&gt; This explanation is necessary to elucidate what the antecedent means in the sceptic’s claim.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;strong&gt;Second, it must explain how that fact justifies the speaker’s use of language.&lt;/strong&gt; This explanation is necessary because the sceptic’s conclusion is normative.&lt;/p&gt;
 
 &lt;p&gt;The significance of the second condition may not be immediately apparent, so let me elaborate. Suppose some mad scientist approached the sceptic and said:&lt;/p&gt;
 

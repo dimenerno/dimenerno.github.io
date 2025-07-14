@@ -7,7 +7,7 @@ lang: en
 related:
 ---
 
-> Please note that section "2.2. Dispositional Analysis" contains considerable additional commentary by the author that is independent from Kripke's original paper.
+> Disclaimer: Section "2.2. Dispositional Analysis" contains considerable commentary by myself that Kripke himself might have found illegitimate or irrelevant (although I expect it not to be likely).
 
 ### Overview
 
