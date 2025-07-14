@@ -380,14 +380,10 @@
       
     </div>
   
-  <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h2 id="1-vitalis-theorem">1. Vitali’s Theorem</h2>
+  <h2 id="1-vitalis-theorem">1. Vitali’s Theorem</h2>
 
 <blockquote>
-  <p><strong>Definition.</strong> A <strong>measure</strong> $\mu$ on a set $X$ is said to satisfy the following conditions:</p>
+  <p><strong>Definition.</strong> A <strong>measure</strong> $\mu$ on a set $X$ satisfies the following conditions:</p>
 
   <ol>
     <li>$\mu(\varnothing) = 0$</li>
@@ -395,7 +391,7 @@
   </ol>
 </blockquote>
 
-<p>Unfortunately, when $X = \mathbb{R}$, a measure $\mu$ cannot be defined on all subsets of the real numbers.</p>
+<p>Unfortunately, when $X = \mathbb{R}$, the domain of measure cannot range over all subsets of the real numbers.</p>
 
 <blockquote>
   <p><strong>Vitali’s Theorem.</strong> There does not exist a measure $\mu$ on $\mathbb{R}$ that satisfies all of the following conditions:</p>
@@ -449,13 +445,13 @@
   <p><strong>Theorem.</strong> If $\lbrace \mathcal{A}_i \rbrace_{i \in I}$ is a collection of $\sigma$-algebras on $X$, then $\bigcap_{i \in I}\mathcal{A}_i$ is also a $\sigma$-algebra on $X$.</p>
 </blockquote>
 
-<p><strong>Proof.</strong> This can be proved easily from the definition of a $\sigma$-algebra. However, to make this more interesting, we provide a slightly unconventional proof. By the <strong>Łoś-Tarski theorem</strong>, a first-order theory is preserved under intersections if and only if every sentence of the first-order theory is a $\Pi_1$ sentence. Since all three axioms of a $\sigma$-algebra are $\Pi_1$ sentences, $\sigma$-algebras are preserved under intersections. ■</p>
+<p><strong>Proof.</strong> This can be proved easily from the definition of a $\sigma$-algebra. However, to spice things up, we provide a slightly unconventional proof. By the <strong>Łoś-Tarski theorem</strong>, a first-order theory is preserved under intersections if and only if every sentence of the first-order theory is a $\Pi_1$ sentence. Since all three axioms of a $\sigma$-algebra are $\Pi_1$ sentences, $\sigma$-algebras are preserved under intersections. ■</p>
 
 <blockquote>
-  <p><strong>Corollary.</strong> When $\mathcal{C}$ is a collection of subsets of $X$, there exists a smallest $\sigma$-algebra containing $\mathcal{C}$. Such a $\sigma$-algebra is denoted $\sigma(\mathcal{C})$.</p>
+  <p><strong>Corollary.</strong> Let $\mathcal{C}$ be a collection of subsets of $X$. There exists the smallest $\sigma$-algebra containing $\mathcal{C}$. Such $\sigma$-algebra is denoted $\sigma(\mathcal{C})$.</p>
 </blockquote>
 
-<p><strong>Proof.</strong> Let $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is an algebra containing } \mathcal{C} \rbrace$. Since $\mathcal{P}(X) \in \mathcal{S}$, $\mathcal{S}$ is non-empty. Then $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$.</p>
+<p><strong>Proof.</strong> Let $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is a $\sigma$-algebra containing } \mathcal{C} \rbrace$. Since $\mathcal{P}(X) \in \mathcal{S}$, $\mathcal{S}$ is non-empty. Then $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$.</p>
 
 <p>As a representative example of a $\sigma$-algebra, let us examine the Borel $\sigma$-algebra.</p>
 
@@ -481,7 +477,6 @@
 
 <p>There is a known method for defining a measure from an algebra and a premeasure on some set. This method is called the <strong>Carathéodory method</strong>. Since premeasures are very easy to construct, using this method allows us to construct measures very easily. The Carathéodory method will be discussed in the <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">next post</a>.</p>
 
-
 </div>
 
 
@@ -492,7 +487,7 @@
     
       
       
-        <li>Construction of Measures Using Carathéodory's Theorem (Post not found)</li>
+        <li><a href="/2025/02/25/caratheodory/en">Construction of Measures via Carathéodory's Theorem</a></li>
       
     
   </ul>

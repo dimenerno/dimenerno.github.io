@@ -5,33 +5,31 @@ date: 2025-02-25
 tags: [Mathematics, Measure Theory]
 lang: en
 related:
-  - "Construction of Measures Using Carathéodory's Theorem"
-  - "Definition of Algebras and Measures"
+  - "Construction of Measures via Carathéodory's Theorem"
+  - "Definitions of Algebra and Measure"
 ---
-
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 ### 1. Lebesgue Measure
 
-From [Carathéodory's theorem](https://dimenerno.github.io/2025/02/25/caratheodory/), we can define a measure $m$ as follows.
+From [Carathéodory's theorem](https://dimenerno.github.io/2025/02/25/caratheodory/), we can define a measure $m$ on $\mathbb{R}$ as follows.
 
 1. Show that $\mathcal{A}\_0 = \lbrace \cup^n\_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $ is an algebra.
 
 2. For $A \in \mathcal{A}\_0$, show that the representation $A = \sqcup^n\_{k=1} (a\_k, b\_k]$ is unique.
 
-3. When the function $\rho: \mathcal{A}\_0 \to [0, \infty]$ is defined as
+3. Define $\rho: \mathcal{A}\_0 \to [0, \infty]$ as:
 
    $$
    \rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)
    $$
 
-   show that $\rho$ is a premeasure.
+   Show that $\rho$ is a premeasure.
 
 4. Apply Carathéodory's extension theorem to $\mathcal{A}\_0, \rho$ to obtain the outer measure $m^\ast$.
 
-5. Restrict the domain of $m^\ast$ to $m^\ast$-measurable sets to obtain the measure $m$.
+5. Restrict the domain of $m^\ast$ to $m^\ast$-measurable sets to obtain $m$.
 
-Since algebras are only closed under finite unions, steps 1, 2, and 3 are almost trivial. For the proofs of steps 4 and 5, see the [related article](https://dimenerno.github.io/2025/02/25/caratheodory/).
+Since algebras are only closed under finite unions, steps 1, 2, and 3 are almost trivial. For the proofs of steps 4 and 5, see the [related post](https://dimenerno.github.io/2025/02/25/caratheodory/).
 
 > **Definition.** The aforementioned $m$ is called the **Lebesgue measure**. Moreover, sets belonging to the domain of $m$ are called **Lebesgue measurable**.
 
@@ -114,9 +112,9 @@ Furthermore, since $\sigma(\mathcal{A}\_0)$ is the Borel $\sigma$-algebra $\math
 
 **Proof.**
 
-_Lemma._ If $f$ is an increasing function, then $f^{-1}$ maps Borel sets to Borel sets.
+_Lemma._ If $f: I \to I$ is an increasing function, then $f^{-1}$ maps Borel sets to Borel sets.
 
-_Proof of lemma._ Let $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $. It is trivial that $\mathcal{G} \subset \mathcal{A}$ for the collection of open sets $\mathcal{G}$. Moreover, it is trivial from properties of inverse functions that $\mathcal{A}$ is a $\sigma$-algebra. Therefore, $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$.
+_Proof of lemma._ Let $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $. It is trivial that $\mathcal{G} \subset \mathcal{A}$, where $\mathcal{G}$ is the collection of open sets of $I$. Moreover, it is trivial from properties of inverse functions that $\mathcal{A}$ is a $\sigma$-algebra. Therefore, $\mathcal{A} \supseteq \sigma(\mathcal{G}) = \mathcal{B}$.
 
 Let $f$ be the Cantor function and define $F$ as follows:
 
@@ -124,5 +122,4 @@ $$
 F(x) =\inf \{y : f(y) \geq x \}
 $$
 
-$F$ is a strictly increasing function with $\operatorname{im} F = C$ (where $C$ is the Cantor set). Let $V$ be a [Vitali set](https://dimenerno.github.io/2025/02/24/algebra-measure/). Since $F[V]$ is contained in $C$, it has Lebesgue measure 0 and is Lebesgue measurable by the completeness of Lebesgue measure. However, $F[V]$ is not Borel measurable. If it were Borel measurable, then since $F$ is an increasing function, $F^{-1}(F[V]) = V$ would have to be measurable. ■
-
+$F$ is a strictly increasing function with $\operatorname{im} F = C$ (where $C$ is the Cantor set). Let $V$ be the [Vitali set](https://dimenerno.github.io/2025/02/24/algebra-measure/). Since $F[V]$ is contained in $C$, it is a null set and thus, is Lebesgue measurable by the completeness of Lebesgue measure. However, $F[V]$ is not Borel measurable. If it were Borel measurable, then since $F$ is strictly increasing (hence injective), $F^{-1}(F[V]) = V$ would have to be measurable. ■

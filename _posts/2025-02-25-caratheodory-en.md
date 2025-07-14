@@ -5,23 +5,21 @@ date: 2025-02-25
 lang: en
 tags: [Mathematics, Measure Theory]
 related:
-  - "Definition of Algebras and Measures"
+  - "Definitions of Algebra and Measure"
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+I prefer to approach Carathéodory's theorem by dividing it into three subtheorems. They are as follows:
 
-The author prefers to understand Carathéodory's theorem<sub>Carathéodory theorem</sub> by dividing it into three parts, and this article follows the same approach. They are as follows:
-
-1. **Carathéodory Construction Theorem:** An outer measure<sub>outer measure</sub> can be defined from any collection of sets and a positive function.
-2. **Carathéodory Restriction Theorem:** A function obtained by restricting the domain of an outer measure to measurable sets becomes a measure.
-3. **Carathéodory Extension Theorem:** A measure on $\sigma(\mathcal{A}\_0)$ that extends a premeasure<sub>premeasure</sub> $\mu\_0$ on an algebra $\mathcal{A}\_0$ is uniquely given by the measure obtained by applying the restriction theorem to the outer measure $\mu^\ast$ obtained by applying the construction theorem with the collection of sets as $\mathcal{A}\_0$ and the positive function as $\mu\_0$.
+1. **Carathéodory Construction Theorem:** Any collection of sets and a positive function define an outer measure.
+2. **Carathéodory Restriction Theorem:** Restricting the domain of an outer measure to measurable sets yields a measure.
+3. **Carathéodory Extension Theorem:** There exists a unique extension of premeasure $\mu\_0$ on an algebra $\mathcal{A}\_0$ to a measure $\mu$ on the $\sigma$-algebra $\sigma(\mathcal{A}\_0)$. Furthermore, $\mu$ is the measure obtained by applying the construction theorem with the collection of sets as $\mathcal{A}\_0$ and the positive function as $\mu\_0$, and then applying the restriction theorem.
 
 Schematically, this can be understood as follows:
 
-|        | (1)                   | (2)                         | (3)                     |
-| ------ | --------------------- | --------------------------- | ----------------------- |
-| Domain | Algebra $\mathcal{A}\_0$ | $\sigma$-algebra $\mathcal{A}$ | Power set $\mathcal{P}(X)$ |
-| Function   | Premeasure $\mu\_0$     | Measure $\mu$                  | Outer measure $\mu^\ast$       |
+|          | (1)                      | (2)                            | (3)                        |
+| -------- | ------------------------ | ------------------------------ | -------------------------- |
+| Domain   | Algebra $\mathcal{A}\_0$ | $\sigma$-algebra $\mathcal{A}$ | Power set $\mathcal{P}(X)$ |
+| Function | Premeasure $\mu\_0$      | Measure $\mu$                  | Outer measure $\mu^\ast$   |
 
 The construction theorem goes in the direction (1) → (3), the restriction theorem goes (3) → (2), and the extension theorem goes (1) → (2). Let us examine each one by one.
 
@@ -55,11 +53,11 @@ $$
 
 Since $\bigcup \mathcal{C}\_n$ covers $A$, by the definition of $\mu^\ast$, we have $\mu^\ast(A) \leq \sum\_{n, m \in \mathbb{N}} l(A\_{nm})$. ■
 
-> **Definition.** Let $\mu^\ast$ be an outer measure. A set $A$ is said to be **measurable<sub>measurable</sub>** with respect to $\mu^\ast$ if it satisfies the following for any $E$:
+> **Definition.** Let $\mu^\ast$ be an outer measure. A set $A$ is said to be **measurable** with respect to $\mu^\ast$ if it satisfies the following for any $E$:
 >
 > $$\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)$$
 
-> **Definition.** Let $\mu^\ast$ be an outer measure. A set $N$ with $\mu^\ast(N) = 0$ is called a **null set<sub>null set</sub>**.
+> **Definition.** Let $\mu^\ast$ be an outer measure. A set $N$ with $\mu^\ast(N) = 0$ is called a **null set**.
 
 That is, a measurable set is one that 'cleanly' partitions any set with respect to $\mu^\ast$. Therefore, we can expect that $\mu^\ast$ will behave like an ordinary measure on the collection consisting only of measurable sets. The following restriction theorem validates this expectation.
 
@@ -225,4 +223,3 @@ $$
 so $\mu$ and $\nu$ agree on the entire space. ■
 
 In the next article, we shall construct Lebesgue measure using Carathéodory's theorem, and then show that whilst every Borel measurable set is Lebesgue measurable, the converse does not hold.
-

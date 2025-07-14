@@ -380,13 +380,9 @@
       
     </div>
   
-  <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
+  <h3 id="1-lebesgue-measure">1. Lebesgue Measure</h3>
 
-<h3 id="1-lebesgue-measure">1. Lebesgue Measure</h3>
-
-<p>From <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">Carathéodory’s theorem</a>, we can define a measure $m$ as follows.</p>
+<p>From <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">Carathéodory’s theorem</a>, we can define a measure $m$ on $\mathbb{R}$ as follows.</p>
 
 <ol>
   <li>
@@ -396,21 +392,21 @@
     <p>For $A \in \mathcal{A}_0$, show that the representation $A = \sqcup^n_{k=1} (a_k, b_k]$ is unique.</p>
   </li>
   <li>
-    <p>When the function $\rho: \mathcal{A}_0 \to [0, \infty]$ is defined as</p>
+    <p>Define $\rho: \mathcal{A}_0 \to [0, \infty]$ as:</p>
 
 \[\rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)\]
 
-    <p>show that $\rho$ is a premeasure.</p>
+    <p>Show that $\rho$ is a premeasure.</p>
   </li>
   <li>
     <p>Apply Carathéodory’s extension theorem to $\mathcal{A}_0, \rho$ to obtain the outer measure $m^\ast$.</p>
   </li>
   <li>
-    <p>Restrict the domain of $m^\ast$ to $m^\ast$-measurable sets to obtain the measure $m$.</p>
+    <p>Restrict the domain of $m^\ast$ to $m^\ast$-measurable sets to obtain $m$.</p>
   </li>
 </ol>
 
-<p>Since algebras are only closed under finite unions, steps 1, 2, and 3 are almost trivial. For the proofs of steps 4 and 5, see the <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">related article</a>.</p>
+<p>Since algebras are only closed under finite unions, steps 1, 2, and 3 are almost trivial. For the proofs of steps 4 and 5, see the <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">related post</a>.</p>
 
 <blockquote>
   <p><strong>Definition.</strong> The aforementioned $m$ is called the <strong>Lebesgue measure</strong>. Moreover, sets belonging to the domain of $m$ are called <strong>Lebesgue measurable</strong>.</p>
@@ -514,16 +510,15 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 
 <p><strong>Proof.</strong></p>
 
-<p><em>Lemma.</em> If $f$ is an increasing function, then $f^{-1}$ maps Borel sets to Borel sets.</p>
+<p><em>Lemma.</em> If $f: I \to I$ is an increasing function, then $f^{-1}$ maps Borel sets to Borel sets.</p>
 
-<p><em>Proof of lemma.</em> Let $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $. It is trivial that $\mathcal{G} \subset \mathcal{A}$ for the collection of open sets $\mathcal{G}$. Moreover, it is trivial from properties of inverse functions that $\mathcal{A}$ is a $\sigma$-algebra. Therefore, $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$.</p>
+<p><em>Proof of lemma.</em> Let $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $. It is trivial that $\mathcal{G} \subset \mathcal{A}$, where $\mathcal{G}$ is the collection of open sets of $I$. Moreover, it is trivial from properties of inverse functions that $\mathcal{A}$ is a $\sigma$-algebra. Therefore, $\mathcal{A} \supseteq \sigma(\mathcal{G}) = \mathcal{B}$.</p>
 
 <p>Let $f$ be the Cantor function and define $F$ as follows:</p>
 
 \[F(x) =\inf \{y : f(y) \geq x \}\]
 
-<p>$F$ is a strictly increasing function with $\operatorname{im} F = C$ (where $C$ is the Cantor set). Let $V$ be a <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since $F[V]$ is contained in $C$, it has Lebesgue measure 0 and is Lebesgue measurable by the completeness of Lebesgue measure. However, $F[V]$ is not Borel measurable. If it were Borel measurable, then since $F$ is an increasing function, $F^{-1}(F[V]) = V$ would have to be measurable. ■</p>
-
+<p>$F$ is a strictly increasing function with $\operatorname{im} F = C$ (where $C$ is the Cantor set). Let $V$ be the <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since $F[V]$ is contained in $C$, it is a null set and thus, is Lebesgue measurable by the completeness of Lebesgue measure. However, $F[V]$ is not Borel measurable. If it were Borel measurable, then since $F$ is strictly increasing (hence injective), $F^{-1}(F[V]) = V$ would have to be measurable. ■</p>
 
 </div>
 
@@ -535,12 +530,12 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
     
       
       
-        <li>Construction of Measures Using Carathéodory's Theorem (Post not found)</li>
+        <li><a href="/2025/02/25/caratheodory/en">Construction of Measures via Carathéodory's Theorem</a></li>
       
     
       
       
-        <li>Definition of Algebras and Measures (Post not found)</li>
+        <li><a href="/2025/02/24/algebra-measure/en">Definitions of Algebra and Measure</a></li>
       
     
   </ul>

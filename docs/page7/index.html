@@ -758,13 +758,9 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
       </div>
       
     </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
+     <h3 id="1-lebesgue-measure">1. Lebesgue Measure</h3>
 
-<h3 id="1-lebesgue-measure">1. Lebesgue Measure</h3>
-
-<p>From <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">Carathéodory’s theorem</a>, we can define a measure $m$ as follows.</p>
+<p>From <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">Carathéodory’s theorem</a>, we can define a measure $m$ on $\mathbb{R}$ as follows.</p>
 
 <ol>
   <li>
@@ -774,21 +770,21 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
     <p>For $A \in \mathcal{A}_0$, show that the representation $A = \sqcup^n_{k=1} (a_k, b_k]$ is unique.</p>
   </li>
   <li>
-    <p>When the function $\rho: \mathcal{A}_0 \to [0, \infty]$ is defined as</p>
+    <p>Define $\rho: \mathcal{A}_0 \to [0, \infty]$ as:</p>
 
 \[\rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)\]
 
-    <p>show that $\rho$ is a premeasure.</p>
+    <p>Show that $\rho$ is a premeasure.</p>
   </li>
   <li>
     <p>Apply Carathéodory’s extension theorem to $\mathcal{A}_0, \rho$ to obtain the outer measure $m^\ast$.</p>
   </li>
   <li>
-    <p>Restrict the domain of $m^\ast$ to $m^\ast$-measurable sets to obtain the measure $m$.</p>
+    <p>Restrict the domain of $m^\ast$ to $m^\ast$-measurable sets to obtain $m$.</p>
   </li>
 </ol>
 
-<p>Since algebras are only closed under finite unions, steps 1, 2, and 3 are almost trivial. For the proofs of steps 4 and 5, see the <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">related article</a>.</p>
+<p>Since algebras are only closed under finite unions, steps 1, 2, and 3 are almost trivial. For the proofs of steps 4 and 5, see the <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">related post</a>.</p>
 
 <blockquote>
   <p><strong>Definition.</strong> The aforementioned $m$ is called the <strong>Lebesgue measure</strong>. Moreover, sets belonging to the domain of $m$ are called <strong>Lebesgue measurable</strong>.</p>
@@ -892,16 +888,15 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 
 <p><strong>Proof.</strong></p>
 
-<p><em>Lemma.</em> If $f$ is an increasing function, then $f^{-1}$ maps Borel sets to Borel sets.</p>
+<p><em>Lemma.</em> If $f: I \to I$ is an increasing function, then $f^{-1}$ maps Borel sets to Borel sets.</p>
 
-<p><em>Proof of lemma.</em> Let $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $. It is trivial that $\mathcal{G} \subset \mathcal{A}$ for the collection of open sets $\mathcal{G}$. Moreover, it is trivial from properties of inverse functions that $\mathcal{A}$ is a $\sigma$-algebra. Therefore, $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$.</p>
+<p><em>Proof of lemma.</em> Let $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $. It is trivial that $\mathcal{G} \subset \mathcal{A}$, where $\mathcal{G}$ is the collection of open sets of $I$. Moreover, it is trivial from properties of inverse functions that $\mathcal{A}$ is a $\sigma$-algebra. Therefore, $\mathcal{A} \supseteq \sigma(\mathcal{G}) = \mathcal{B}$.</p>
 
 <p>Let $f$ be the Cantor function and define $F$ as follows:</p>
 
 \[F(x) =\inf \{y : f(y) \geq x \}\]
 
-<p>$F$ is a strictly increasing function with $\operatorname{im} F = C$ (where $C$ is the Cantor set). Let $V$ be a <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since $F[V]$ is contained in $C$, it has Lebesgue measure 0 and is Lebesgue measurable by the completeness of Lebesgue measure. However, $F[V]$ is not Borel measurable. If it were Borel measurable, then since $F$ is an increasing function, $F^{-1}(F[V]) = V$ would have to be measurable. ■</p>
-
+<p>$F$ is a strictly increasing function with $\operatorname{im} F = C$ (where $C$ is the Cantor set). Let $V$ be the <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since $F[V]$ is contained in $C$, it is a null set and thus, is Lebesgue measurable by the completeness of Lebesgue measure. However, $F[V]$ is not Borel measurable. If it were Borel measurable, then since $F$ is strictly increasing (hence injective), $F^{-1}(F[V]) = V$ would have to be measurable. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
@@ -1169,16 +1164,12 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
       </div>
       
     </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>The author prefers to understand Carathéodory’s theorem<sub>Carathéodory theorem</sub> by dividing it into three parts, and this article follows the same approach. They are as follows:</p>
+     <p>I prefer to approach Carathéodory’s theorem by dividing it into three subtheorems. They are as follows:</p>
 
 <ol>
-  <li><strong>Carathéodory Construction Theorem:</strong> An outer measure<sub>outer measure</sub> can be defined from any collection of sets and a positive function.</li>
-  <li><strong>Carathéodory Restriction Theorem:</strong> A function obtained by restricting the domain of an outer measure to measurable sets becomes a measure.</li>
-  <li><strong>Carathéodory Extension Theorem:</strong> A measure on $\sigma(\mathcal{A}_0)$ that extends a premeasure<sub>premeasure</sub> $\mu_0$ on an algebra $\mathcal{A}_0$ is uniquely given by the measure obtained by applying the restriction theorem to the outer measure $\mu^\ast$ obtained by applying the construction theorem with the collection of sets as $\mathcal{A}_0$ and the positive function as $\mu_0$.</li>
+  <li><strong>Carathéodory Construction Theorem:</strong> Any collection of sets and a positive function define an outer measure.</li>
+  <li><strong>Carathéodory Restriction Theorem:</strong> Restricting the domain of an outer measure to measurable sets yields a measure.</li>
+  <li><strong>Carathéodory Extension Theorem:</strong> There exists a unique extension of premeasure $\mu_0$ on an algebra $\mathcal{A}_0$ to a measure $\mu$ on the $\sigma$-algebra $\sigma(\mathcal{A}_0)$. Furthermore, $\mu$ is the measure obtained by applying the construction theorem with the collection of sets as $\mathcal{A}_0$ and the positive function as $\mu_0$, and then applying the restriction theorem.</li>
 </ol>
 
 <p>Schematically, this can be understood as follows:</p>
@@ -1241,13 +1232,13 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 <p>Since $\bigcup \mathcal{C}_n$ covers $A$, by the definition of $\mu^\ast$, we have $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$. ■</p>
 
 <blockquote>
-  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $A$ is said to be <strong>measurable<sub>measurable</sub></strong> with respect to $\mu^\ast$ if it satisfies the following for any $E$:</p>
+  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $A$ is said to be <strong>measurable</strong> with respect to $\mu^\ast$ if it satisfies the following for any $E$:</p>
 
 \[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
 </blockquote>
 
 <blockquote>
-  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $N$ with $\mu^\ast(N) = 0$ is called a <strong>null set<sub>null set</sub></strong>.</p>
+  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $N$ with $\mu^\ast(N) = 0$ is called a <strong>null set</strong>.</p>
 </blockquote>
 
 <p>That is, a measurable set is one that ‘cleanly’ partitions any set with respect to $\mu^\ast$. Therefore, we can expect that $\mu^\ast$ will behave like an ordinary measure on the collection consisting only of measurable sets. The following restriction theorem validates this expectation.</p>
@@ -1399,7 +1390,6 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 
 <p>In the next article, we shall construct Lebesgue measure using Carathéodory’s theorem, and then show that whilst every Borel measurable set is Lebesgue measurable, the converse does not hold.</p>
 
-
   </div>
   <div style="margin-bottom: 6em"></div>
   
@@ -1537,14 +1527,10 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
       </div>
       
     </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h2 id="1-vitalis-theorem">1. Vitali’s Theorem</h2>
+     <h2 id="1-vitalis-theorem">1. Vitali’s Theorem</h2>
 
 <blockquote>
-  <p><strong>Definition.</strong> A <strong>measure</strong> $\mu$ on a set $X$ is said to satisfy the following conditions:</p>
+  <p><strong>Definition.</strong> A <strong>measure</strong> $\mu$ on a set $X$ satisfies the following conditions:</p>
 
   <ol>
     <li>$\mu(\varnothing) = 0$</li>
@@ -1552,7 +1538,7 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
   </ol>
 </blockquote>
 
-<p>Unfortunately, when $X = \mathbb{R}$, a measure $\mu$ cannot be defined on all subsets of the real numbers.</p>
+<p>Unfortunately, when $X = \mathbb{R}$, the domain of measure cannot range over all subsets of the real numbers.</p>
 
 <blockquote>
   <p><strong>Vitali’s Theorem.</strong> There does not exist a measure $\mu$ on $\mathbb{R}$ that satisfies all of the following conditions:</p>
@@ -1606,13 +1592,13 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
   <p><strong>Theorem.</strong> If $\lbrace \mathcal{A}_i \rbrace_{i \in I}$ is a collection of $\sigma$-algebras on $X$, then $\bigcap_{i \in I}\mathcal{A}_i$ is also a $\sigma$-algebra on $X$.</p>
 </blockquote>
 
-<p><strong>Proof.</strong> This can be proved easily from the definition of a $\sigma$-algebra. However, to make this more interesting, we provide a slightly unconventional proof. By the <strong>Łoś-Tarski theorem</strong>, a first-order theory is preserved under intersections if and only if every sentence of the first-order theory is a $\Pi_1$ sentence. Since all three axioms of a $\sigma$-algebra are $\Pi_1$ sentences, $\sigma$-algebras are preserved under intersections. ■</p>
+<p><strong>Proof.</strong> This can be proved easily from the definition of a $\sigma$-algebra. However, to spice things up, we provide a slightly unconventional proof. By the <strong>Łoś-Tarski theorem</strong>, a first-order theory is preserved under intersections if and only if every sentence of the first-order theory is a $\Pi_1$ sentence. Since all three axioms of a $\sigma$-algebra are $\Pi_1$ sentences, $\sigma$-algebras are preserved under intersections. ■</p>
 
 <blockquote>
-  <p><strong>Corollary.</strong> When $\mathcal{C}$ is a collection of subsets of $X$, there exists a smallest $\sigma$-algebra containing $\mathcal{C}$. Such a $\sigma$-algebra is denoted $\sigma(\mathcal{C})$.</p>
+  <p><strong>Corollary.</strong> Let $\mathcal{C}$ be a collection of subsets of $X$. There exists the smallest $\sigma$-algebra containing $\mathcal{C}$. Such $\sigma$-algebra is denoted $\sigma(\mathcal{C})$.</p>
 </blockquote>
 
-<p><strong>Proof.</strong> Let $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is an algebra containing } \mathcal{C} \rbrace$. Since $\mathcal{P}(X) \in \mathcal{S}$, $\mathcal{S}$ is non-empty. Then $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$.</p>
+<p><strong>Proof.</strong> Let $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is a $\sigma$-algebra containing } \mathcal{C} \rbrace$. Since $\mathcal{P}(X) \in \mathcal{S}$, $\mathcal{S}$ is non-empty. Then $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$.</p>
 
 <p>As a representative example of a $\sigma$-algebra, let us examine the Borel $\sigma$-algebra.</p>
 
@@ -1637,7 +1623,6 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 <p><strong>Proof.</strong> Omitted. However, this can be understood intuitively. Since $\mathcal{B}$ must be closed under countable intersections, countable unions, and complements, we have $\Sigma_\alpha, \Pi_\alpha, \Delta_\alpha \subset \mathcal{B}$ for all countable ordinals $\alpha$. From this fact, we obtain the theorem by transfinite induction. ■</p>
 
 <p>There is a known method for defining a measure from an algebra and a premeasure on some set. This method is called the <strong>Carathéodory method</strong>. Since premeasures are very easy to construct, using this method allows us to construct measures very easily. The Carathéodory method will be discussed in the <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">next post</a>.</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -5,19 +5,17 @@ date: 2025-02-24
 tags: [Mathematics, Measure Theory]
 lang: en
 related:
-  - "Construction of Measures Using Carathéodory's Theorem"
+  - "Construction of Measures via Carathéodory's Theorem"
 ---
-
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 ## 1. Vitali's Theorem
 
-> **Definition.** A **measure** $\mu$ on a set $X$ is said to satisfy the following conditions:
+> **Definition.** A **measure** $\mu$ on a set $X$ satisfies the following conditions:
 >
 > 1. $\mu(\varnothing) = 0$
 > 2. For any countable collection of pairwise disjoint sets $\lbrace A\_n \rbrace$, $\mu\left( \bigcup A\_n \right) = \sum \mu(A\_n)$
 
-Unfortunately, when $X = \mathbb{R}$, a measure $\mu$ cannot be defined on all subsets of the real numbers.
+Unfortunately, when $X = \mathbb{R}$, the domain of measure cannot range over all subsets of the real numbers.
 
 > **Vitali's Theorem.** There does not exist a measure $\mu$ on $\mathbb{R}$ that satisfies all of the following conditions:
 >
@@ -61,11 +59,11 @@ Strengthening the third condition of an algebra to countable unions yields the d
 
 > **Theorem.** If $\lbrace \mathcal{A}\_i \rbrace\_{i \in I}$ is a collection of $\sigma$-algebras on $X$, then $\bigcap\_{i \in I}\mathcal{A}\_i$ is also a $\sigma$-algebra on $X$.
 
-**Proof.** This can be proved easily from the definition of a $\sigma$-algebra. However, to make this more interesting, we provide a slightly unconventional proof. By the **Łoś-Tarski theorem**, a first-order theory is preserved under intersections if and only if every sentence of the first-order theory is a $\Pi\_1$ sentence. Since all three axioms of a $\sigma$-algebra are $\Pi\_1$ sentences, $\sigma$-algebras are preserved under intersections. ■
+**Proof.** This can be proved easily from the definition of a $\sigma$-algebra. However, to spice things up, we provide a slightly unconventional proof. By the **Łoś-Tarski theorem**, a first-order theory is preserved under intersections if and only if every sentence of the first-order theory is a $\Pi\_1$ sentence. Since all three axioms of a $\sigma$-algebra are $\Pi\_1$ sentences, $\sigma$-algebras are preserved under intersections. ■
 
-> **Corollary.** When $\mathcal{C}$ is a collection of subsets of $X$, there exists a smallest $\sigma$-algebra containing $\mathcal{C}$. Such a $\sigma$-algebra is denoted $\sigma(\mathcal{C})$.
+> **Corollary.** Let $\mathcal{C}$ be a collection of subsets of $X$. There exists the smallest $\sigma$-algebra containing $\mathcal{C}$. Such $\sigma$-algebra is denoted $\sigma(\mathcal{C})$.
 
-**Proof.** Let $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is an algebra containing } \mathcal{C} \rbrace$. Since $\mathcal{P}(X) \in \mathcal{S}$, $\mathcal{S}$ is non-empty. Then $\sigma(\mathcal{C}) = \bigcap\_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$.
+**Proof.** Let $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is a $\sigma$-algebra containing } \mathcal{C} \rbrace$. Since $\mathcal{P}(X) \in \mathcal{S}$, $\mathcal{S}$ is non-empty. Then $\sigma(\mathcal{C}) = \bigcap\_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$.
 
 As a representative example of a $\sigma$-algebra, let us examine the Borel $\sigma$-algebra.
 
@@ -84,4 +82,3 @@ That is, $\Sigma\_2 = F\_\sigma$ and $\Pi\_2 = G\_\delta$. Note that when we thi
 **Proof.** Omitted. However, this can be understood intuitively. Since $\mathcal{B}$ must be closed under countable intersections, countable unions, and complements, we have $\Sigma\_\alpha, \Pi\_\alpha, \Delta\_\alpha \subset \mathcal{B}$ for all countable ordinals $\alpha$. From this fact, we obtain the theorem by transfinite induction. ■
 
 There is a known method for defining a measure from an algebra and a premeasure on some set. This method is called the **Carathéodory method**. Since premeasures are very easy to construct, using this method allows us to construct measures very easily. The Carathéodory method will be discussed in the [next post](http://dimenerno.github.io/2025/02/25/caratheodory/).
-

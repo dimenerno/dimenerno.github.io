@@ -448,11 +448,7 @@
       </div>
       
     </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p><strong>Abstract.</strong> First-order Peano arithmetic does not permit quantification over predicates, hence it requires separate axioms for addition and multiplication. However, additional operations such as exponentiation and factorial—provided that tuples can be defined in Peano arithmetic—are definable without separate axioms. Since tuples are definable in Peano arithmetic through beta encoding, Peano arithmetic can formalise exponentiation, factorial, prime factorisation, and ultimately Gödel numbers.</p>
+     <p><strong>Summary.</strong> First-order Peano arithmetic does not permit quantification over predicates, hence it requires separate axioms to define addition and multiplication. However, further operations such as exponentiation and factorial are definable without separate axioms, provided that tuples can be defined in Peano arithmetic. And since tuples are definable in Peano arithmetic through beta encoding, Peano arithmetic can formalise exponentiation, factorial, prime factorisation, and ultimately Gödel numbering.</p>
 
 <h2 id="1-introduction">1. Introduction</h2>
 
@@ -481,7 +477,7 @@
 &amp;x \bmod y = z: &amp;&amp; (z &lt; y) \land \exists q \;[ qy + z = x ]
 \end{aligned}\]
 
-<p>Historically, the Peano arithmetic first presented by Dedekind was a second-order logic theory, hence it had an induction <em>axiom</em> rather than an induction <em>axiom schema</em>. Moreover, it lacked axioms 3 through 7.</p>
+<p>Historically, the Peano arithmetic first presented by Dedekind was a second-order logic theory, hence it had an induction <em>axiom</em> rather than induction <em>axiom schema</em>.</p>
 
 <blockquote>
   <p><strong>Definition.</strong> <strong>Second-order Peano arithmetic</strong> is a theory with signature $(0, S)$, where the axioms are as follows:</p>
@@ -493,13 +489,13 @@
   </ol>
 </blockquote>
 
-<p>The reason the remaining axioms are unnecessary is that second-order logic permits quantification over predicates, enabling addition and multiplication to be defined using second-order formulae alone. For instance, $w = u + v$ is equivalent to the following formula:</p>
+<p>Note that second-order formalisation omits axioms 3-6. The reason they are unnecessary is that second-order logic permits quantification over predicates, enabling addition and multiplication to be defined using second-order formulae alone. For instance, $w = u + v$ is equivalent to the following formula:</p>
 
 \[\forall \phi \bigg[ \forall x, y, z \big[ \phi(x, 0, x) \land (\phi(x, S(y), z) \rightarrow \phi(x, y, S(z)) \big] \rightarrow \phi(u, v, w) \bigg]\]
 
-<p>However, since second-order logic was found to have numerous mathematical and philosophical shortcomings, the first-order Peano arithmetic introduced at the beginning became the standard choice. The implications of this choice are, firstly, that the induction axiom becomes an induction axiom schema, and secondly, that addition and multiplication must be defined through separate axioms.</p>
+<p>However, since second-order logic was found to have numerous mathematical and philosophical shortcomings, the first-order Peano arithmetic introduced at the beginning became the standard norm. The implications of the transition from second to first are, firstly, that the induction axiom becomes an axiom schema, and secondly, that addition and multiplication must be defined through separate axioms.</p>
 
-<p>This raises the question: are there no other operations besides addition and multiplication that need separate definition? For example, can operations such as exponentiation, prime factorisation, and factorial be defined without additional axioms? Furthermore, can Gödel numbering techniques, which map arbitrary formulae to natural numbers, be defined using Peano arithmetic alone?</p>
+<p>This raises the question: are there no other operations besides addition and multiplication that need separate definition? For example, can operations such as exponentiation, prime factorisation, and factorial be defined without additional axioms? Furthermore, can Gödel numbering, which maps formulae to natural numbers one-to-one, be defined using Peano arithmetic alone?</p>
 
 <h2 id="2-tuples">2. Tuples</h2>
 
@@ -509,11 +505,11 @@
 
 <ul>
   <li>$\mathrm{Tup}(\tau):$ $\tau$ is a tuple.</li>
-  <li>$\mathrm{At}(\tau, i):$ When $\tau$ is a tuple, returns the $i$-th natural number of $\tau$.</li>
+  <li>$\mathrm{At}(\tau, i):$ When $\tau$ is a tuple, returns the $i$-th index of $\tau$.</li>
   <li>$\mathrm{Len}(\tau):$ Returns the length of $\tau$.</li>
 </ul>
 
-<p>For convenience, let us write $\mathrm{At}(\tau, i)$ as $\tau[i]$. For example, if $\tau = (1, 4, 2)$, then the following holds (assuming indexing starts from 0):</p>
+<p>For convenience, let us write $\mathrm{At}(\tau, i)$ as $\tau[i]$. For example, if $\tau = (1, 4, 2)$, then the following holds (assuming the index starts from 0):</p>
 
 \[\mathrm{Tup}(\tau) \; \land \;  \mathrm{Len}(\tau) = 3 \;\land\; \tau[1] = 4\]
 
@@ -523,7 +519,7 @@
 
 <h2 id="3-beta-encoding">3. Beta Encoding</h2>
 
-<p>Can tuples be defined using only addition, multiplication, and first-order formulae? The answer is <strong>“yes”</strong>. As might be expected, it was Gödel who first proved this result. Let us first recall the following theorem:</p>
+<p>Can tuples be defined using only addition, multiplication, and first-order formulae? The answer is <strong>yes</strong>. As might be expected, it was Gödel who first proved this result. Let us first recall the following theorem:</p>
 
 <blockquote>
   <p><strong>Chinese Remainder Theorem.</strong> Let $(n_1, \dots, n_k)$ be pairwise coprime. For any $(r_1, \dots, r_k)$ with $0 \leq r_i &lt; n_i$, there always exists a number $x$ satisfying:</p>
@@ -531,7 +527,7 @@
 \[x \bmod n_i = r_i\]
 </blockquote>
 
-<p>Gödel’s idea was to think of the number $x$ from the Chinese Remainder Theorem as a code for the tuple $(r_1, \dots, r_k)$. However, there is a problem here. To decode $(r_1, \dots, r_k)$ from $x$, we need $(n_1, \dots, n_k)$ to be given, which again requires a tuple.</p>
+<p>Gödel’s idea was to think of the number $x$ from the Chinese Remainder Theorem as a code for the tuple $(r_1, \dots, r_k)$. However, there is a problem here. To decode $(r_1, \dots, r_k)$ from $x$, we need $(n_1, \dots, n_k)$ to be given, which itself is a tuple.</p>
 
 <p>To solve this problem, Gödel produced the following lemma:</p>
 
@@ -545,7 +541,7 @@
 
 <p>The set of all divisors of $(b - a)n!$ is $\lbrace  1, 2, \dots, n\rbrace $. Since none of these elements divides $an! + 1$, we have $\mathrm{gcd}(an! + 1, (b - a)n!) = \mathrm{gcd}(u, v) = 1$. □</p>
 
-<p>We can now define tuples as <strong>ordered pairs</strong>.</p>
+<p>With this lemma, instead of individually specifying $n$ pairwise coprime numbers, we can simply let $n$ be an arbitrary number, and from it, $n$ pairwise coprime numbers $n! + 1, 2n! + 1, \dots, n \cdot n! + 1$ can be chosen canonically. We can now define tuples as an <strong>ordered pair</strong>.</p>
 
 <blockquote>
   <p><strong>Definition.</strong> We represent the tuple $(r_1, \dots, r_k)$ as an ordered pair $\langle a, b \rangle$ as follows:</p>
@@ -558,7 +554,11 @@
   <p>where $a$ is chosen to be the smallest natural number satisfying the second condition.</p>
 </blockquote>
 
-<p>Meanwhile, tuples can be represented as natural numbers through Cantor pairing.</p>
+<p>Meanwhile, tuples can be represented as natural numbers through a well-defined injection from $\mathbb{N}^2$ to $\mathbb{N}$. The following is an example:</p>
+
+\[\pi(a, b) = \frac{(a + b)(a + b + 1)}{2} + b\]
+
+<p>Check that $b$ is injective. Hence we can define as follows:</p>
 
 <blockquote>
   <p><strong>Definition.</strong></p>
@@ -566,7 +566,7 @@
 \[\langle a, b \rangle = \frac{(a + b)(a + b + 1)}{2} + b\]
 </blockquote>
 
-<p>Thus we can encode a tuple $\tau$ as a natural number $n$. Conversely, given $n$, we can decode $\tau$ using only addition, multiplication, and the modulo operation. Since the modulo operation is easily definable from addition, multiplication, and first-order logic, our goal is achieved.</p>
+<p>This establishes that we can encode a tuple $\tau$ as a natural number $n$. Conversely, given $n$, we can decode $\tau$ using only addition, multiplication, and the modulo operation. Since the modulo operation is easily definable from addition, multiplication, and first-order logic, our goal is achieved.</p>
 
 <p>Historically, Gödel’s theorem was as follows:</p>
 
@@ -576,8 +576,7 @@
 \[\beta(x, y, i) = x \bmod (iy + 1)\]
 </blockquote>
 
-<p>For this reason, the entire process is called <strong>beta encoding</strong>. Gödel used beta encoding to successfully define exponentiation and prime factorisation in PA, enabling the formalisation of Gödel numbers and various related predicates in PA. As indicated by the title, the original goal of this article was to provide an overview of this entire process. However, due to the author’s tardily arriving laziness and the belief that readers who have come this far can easily infer the subsequent content, I shall conclude here.</p>
-
+<p>For this reason, the entire process is called <strong>beta encoding</strong>. Gödel used beta encoding to successfully define exponentiation and prime factorisation in PA, enabling the formalisation of Gödel numbers and various related predicates in PA. As indicated by the title, the original goal of this article was to provide an overview of this entire process. However, due to the author’s tardily arising laziness and the belief that readers who have come this far can easily infer the subsequent content, let me finish off here.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
