@@ -961,14 +961,14 @@ x + y &amp; x, y &lt; 50 \\\
         <guid>https://dimenerno.github.io/2025/07/03/kripkenstein/en</guid>
         <pubDate>Thu, 03 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;Disclaimer: Section “2.2. Dispositional Analysis” contains considerable commentary by myself that Kripke himself might have found illegitimate or irrelevant (although I expect it not to be likely).&lt;/p&gt;
+  &lt;p&gt;Disclaimer: Section “2.2. Dispositional Analysis” contains some commentary by myself indepedent from Kripke.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
           xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein/en">
           <![CDATA[
             <blockquote>
-  <p>Disclaimer: Section “2.2. Dispositional Analysis” contains considerable commentary by myself that Kripke himself might have found illegitimate or irrelevant (although I expect it not to be likely).</p>
+  <p>Disclaimer: Section “2.2. Dispositional Analysis” contains some commentary by myself indepedent from Kripke.</p>
 </blockquote>
 
 <h3 id="overview">Overview</h3>
@@ -1237,7 +1237,7 @@ x + y &amp; x, y &lt; 50 \\
 <p>Kripke also considers the following claim:</p>
 
 <blockquote>
-  <p><strong>Occamist semantics.</strong> When two hypotheses “Speaker $A$ means meaning $\mathfrak{m}_1$ by symbol $s$” and “Speaker $A$ means meaning $\mathfrak{m}_2$ by symbol $s$” are in an underdetermined state, we should preferentially accept the hypothesis of the simpler of $\mathfrak{m}_1$ and $\mathfrak{m}_2$.</p>
+  <p><strong>Occamist semantics.</strong> When two hypotheses “$A$ means $\mathfrak{m}_1$ by $s$” and “$A$ means $\mathfrak{m}_2$ by $s$” are in an underdetermined state, we should accept the hypothesis of the simpler of $\mathfrak{m}_1$ and $\mathfrak{m}_2$.</p>
 </blockquote>
 
 <p>For example, consider the following two hypotheses:</p>
@@ -1255,12 +1255,12 @@ x + y &amp; x, y &lt; 50 \\
 <p>A more important objection that Kripke considers is psychologism.</p>
 
 <blockquote>
-  <p><strong>Psychologistic semantics.</strong> For speaker $A$ to mean $\mathfrak{m}$ by symbol $s$ means that a distinctive<sub>queer</sub> psychological experience $p_\mathfrak{m}$ corresponding to $\mathfrak{m}$ has formed in the speaker’s mind.</p>
+  <p><strong>Psychologistic semantics.</strong> $A$ means $\mathfrak{m}$ by symbol $s$ if and only if, $A$ experiences a <em>queer</em> psychological experience $p_\mathfrak{m}$ corresponding to $\mathfrak{m}$.</p>
 </blockquote>
 
-<p>Here, “distinctive psychological experience” can be thought of as similar to qualia. In short, just as “seeing red” is a distinctive experience that cannot be reduced to other predicates or experiences, so too is “meaning addition by ‘+’” such a distinctive experience.</p>
+<p>Here, “quuer psychological experience” can be thought of as similar to qualia. In short, just as “seeing red” is a distinctive experience that cannot be reduced to other predicates or experiences, so too is “meaning addition by ‘+’” such a distinctive experience.</p>
 
-<p>Kripke does not deny the possibility that such distinctive experiences exist.<sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">6</a></sup> However, Kripke points out that psychologism also fails to resolve the sceptical argument. The problem once again lies in normativity condition laid out in “1.2. Two Conditions”.</p>
+<p>Kripke does not deny the possibility that such queer experiences may exist.<sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">6</a></sup> However, Kripke points out that psychologism also fails to resolve the sceptical argument. The problem once again lies in normativity condition laid out in “1.2. Two Conditions”.</p>
 
 <p>As a simple example, suppose Alice feels pain in her forehead every time she uses the ‘+’ symbol. This fact satisfies condition 1 of “1.2. Two Conditions”. That is, Alice means addition by ‘+’ if and only if her use of ‘+’ induces pain in her forehead. However, how could such pain possibly inform — let alone provide justification for — Alice that she should answer ‘125’ to ‘68 + 57’?</p>
 
@@ -1303,7 +1303,7 @@ x + y &amp; x, y &lt; 50 \\
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1">
-      <p>Following Fregean theory, propositions that lack corresponding states of affairs, i.e., propositions that lack truth values, are not propositions in the true sense, so the expression “arrangements of symbols that appear to be propositions but are not propositions” would be more accurate. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>Following Fregean theory, propositions that lack corresponding states of affairs, i.e., propositions that lack truth values, are not even propositions in the strict sense, so Fregean readers should substitute for the expression “arrangements of symbols that appear to be propositions but are not propositions”. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:2">
       <p>If the sceptic’s claim had been the former, it would have been immediately refuted by the fact that Alice said ‘125’ rather than ‘5’, just as the claim “heavier balls fall faster” was immediately refuted by the Tower of Pisa experiment. (The fact that the Tower of Pisa experiment was never actually conducted is now well known, but it serves as a good example.) <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
@@ -1312,13 +1312,13 @@ x + y &amp; x, y &lt; 50 \\
       <p>Returning to the Tower of Pisa example, this would be explaining what fact constitutes ‘a heavier ball’, which could be explained as “the side that tilts when hung on a balance”. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>Of course, in this case the ‘+’ he performs does not satisfy the associative law (for example, he would answer 21 to “(10 + 7) + (10 + 4)” but 31 to “(10 + (7 + 4)) + 10”), so we would have to claim that he is fundamentally unable to assign a consistent meaning to ‘+’. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>Of course, in this case the ‘+’ he performs does not satisfy the associative law (for example, he would answer 21 to “(10 + 7) + (10 + 4)” but 31 to “(10 + (7 + 4)) + 10”), so we would have to claim that he is unable to assign a consistent meaning to ‘+’. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:5">
       <p>Readers who have studied mathematical logic will be able to connect this to the Löwenheim-Skolem theorem. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:6">
-      <p>Kripke does call the existence of experiences distinctive to meaning “dubious”. By contrast, in the <em>Philosophical Investigations</em>, he devotes considerable space to denying the existence of such experiences. Wittgenstein urges us to compare the case of pretending to read a foreign language one does not know with the case of reading that foreign language unconsciously after sufficient learning, emphasising that there is no special ‘feeling’ in either the former or the latter case. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>Kripke does note that the existence of experiences distinctive to meaning is “dubious”. In this context, Wittgenstein is more forceful than Kripke in that Wittgenstein devotes considerable space in the <em>Philosophical Investigations</em> to deny the existence of such experiences. Wittgenstein urges us to compare the case of pretending to read a foreign language one does not know, with the case of reading that foreign language unconsciously after sufficient learning, emphasising that there is no special ‘feeling’ in either the former or the latter case. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

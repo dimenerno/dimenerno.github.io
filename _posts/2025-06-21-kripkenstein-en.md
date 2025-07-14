@@ -7,7 +7,7 @@ lang: en
 related:
 ---
 
-> Disclaimer: Section "2.2. Dispositional Analysis" contains considerable commentary by myself that Kripke himself might have found illegitimate or irrelevant (although I expect it not to be likely).
+> Disclaimer: Section "2.2. Dispositional Analysis" contains some commentary by myself indepedent from Kripke.
 
 ### Overview
 
@@ -210,7 +210,7 @@ Then, instead of relying on abstract explanations like linguistic regress or dis
 
 Kripke also considers the following claim:
 
-> **Occamist semantics.** When two hypotheses "Speaker $A$ means meaning $\mathfrak{m}\_1$ by symbol $s$" and "Speaker $A$ means meaning $\mathfrak{m}\_2$ by symbol $s$" are in an underdetermined state, we should preferentially accept the hypothesis of the simpler of $\mathfrak{m}\_1$ and $\mathfrak{m}\_2$.
+> **Occamist semantics.** When two hypotheses "$A$ means $\mathfrak{m}\_1$ by $s$" and "$A$ means $\mathfrak{m}\_2$ by $s$" are in an underdetermined state, we should accept the hypothesis of the simpler of $\mathfrak{m}\_1$ and $\mathfrak{m}\_2$.
 
 For example, consider the following two hypotheses:
 
@@ -226,11 +226,11 @@ However, Kripke only briefly mentions and passes over this claim, because it is 
 
 A more important objection that Kripke considers is psychologism.
 
-> **Psychologistic semantics.** For speaker $A$ to mean $\mathfrak{m}$ by symbol $s$ means that a distinctive<sub>queer</sub> psychological experience $p_\mathfrak{m}$ corresponding to $\mathfrak{m}$ has formed in the speaker's mind.
+> **Psychologistic semantics.** $A$ means $\mathfrak{m}$ by symbol $s$ if and only if, $A$ experiences a _queer_ psychological experience $p_\mathfrak{m}$ corresponding to $\mathfrak{m}$.
 
-Here, "distinctive psychological experience" can be thought of as similar to qualia. In short, just as "seeing red" is a distinctive experience that cannot be reduced to other predicates or experiences, so too is "meaning addition by '+'" such a distinctive experience.
+Here, "quuer psychological experience" can be thought of as similar to qualia. In short, just as "seeing red" is a distinctive experience that cannot be reduced to other predicates or experiences, so too is "meaning addition by '+'" such a distinctive experience.
 
-Kripke does not deny the possibility that such distinctive experiences exist.[^6] However, Kripke points out that psychologism also fails to resolve the sceptical argument. The problem once again lies in normativity condition laid out in "1.2. Two Conditions".
+Kripke does not deny the possibility that such queer experiences may exist.[^6] However, Kripke points out that psychologism also fails to resolve the sceptical argument. The problem once again lies in normativity condition laid out in "1.2. Two Conditions".
 
 As a simple example, suppose Alice feels pain in her forehead every time she uses the '+' symbol. This fact satisfies condition 1 of "1.2. Two Conditions". That is, Alice means addition by '+' if and only if her use of '+' induces pain in her forehead. However, how could such pain possibly inform — let alone provide justification for — Alice that she should answer '125' to '68 + 57'?
 
@@ -264,9 +264,9 @@ We have thus examined the Kripke-Wittgenstein paradox and the main objections an
 
 ---
 
-[^1]: Following Fregean theory, propositions that lack corresponding states of affairs, i.e., propositions that lack truth values, are not propositions in the true sense, so the expression "arrangements of symbols that appear to be propositions but are not propositions" would be more accurate.
+[^1]: Following Fregean theory, propositions that lack corresponding states of affairs, i.e., propositions that lack truth values, are not even propositions in the strict sense, so Fregean readers should substitute for the expression "arrangements of symbols that appear to be propositions but are not propositions".
 [^2]: If the sceptic's claim had been the former, it would have been immediately refuted by the fact that Alice said '125' rather than '5', just as the claim "heavier balls fall faster" was immediately refuted by the Tower of Pisa experiment. (The fact that the Tower of Pisa experiment was never actually conducted is now well known, but it serves as a good example.)
 [^3]: Returning to the Tower of Pisa example, this would be explaining what fact constitutes 'a heavier ball', which could be explained as "the side that tilts when hung on a balance".
-[^4]: Of course, in this case the '+' he performs does not satisfy the associative law (for example, he would answer 21 to "(10 + 7) + (10 + 4)" but 31 to "(10 + (7 + 4)) + 10"), so we would have to claim that he is fundamentally unable to assign a consistent meaning to '+'.
+[^4]: Of course, in this case the '+' he performs does not satisfy the associative law (for example, he would answer 21 to "(10 + 7) + (10 + 4)" but 31 to "(10 + (7 + 4)) + 10"), so we would have to claim that he is unable to assign a consistent meaning to '+'.
 [^5]: Readers who have studied mathematical logic will be able to connect this to the Löwenheim-Skolem theorem.
-[^6]: Kripke does call the existence of experiences distinctive to meaning "dubious". By contrast, in the _Philosophical Investigations_, he devotes considerable space to denying the existence of such experiences. Wittgenstein urges us to compare the case of pretending to read a foreign language one does not know with the case of reading that foreign language unconsciously after sufficient learning, emphasising that there is no special 'feeling' in either the former or the latter case.
+[^6]: Kripke does note that the existence of experiences distinctive to meaning is "dubious". In this context, Wittgenstein is more forceful than Kripke in that Wittgenstein devotes considerable space in the _Philosophical Investigations_ to deny the existence of such experiences. Wittgenstein urges us to compare the case of pretending to read a foreign language one does not know, with the case of reading that foreign language unconsciously after sufficient learning, emphasising that there is no special 'feeling' in either the former or the latter case.
