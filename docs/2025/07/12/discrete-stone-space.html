@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: 측도론 &middot; 디멘의 블로그 
+     초필터를 사용한 스톤-체흐 콤팩트화 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/%EC%B8%A1%EB%8F%84%EB%A1%A0/" />
+  <link rel="canonical" href="/2025/07/12/discrete-stone-space" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -211,7 +211,7 @@
     href="/"
     >Main</a
   >
-                                                                                                                                                                                                         
+                                                                                                                                                                                                       
     <a
       class="sidebar-nav-item lang-ko"
       href="/about/"
@@ -368,28 +368,66 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
-
-
-<h1>측도론</h1>
-
-<ul>
-                                                                                                                               
-  <li>
-    <a href="/2025/02/25/lebesgue-borel">르베그 가측 집합과 보렐 가측 집합</a>
-  </li>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">초필터를 사용한 스톤-체흐 콤팩트화</h1>
+  <span class="post-date">12 Jul 2025</span>
+  
+    <div class="tag-container">
       
-  <li>
-    <a href="/2025/02/25/caratheodory">카라테오도리 정리를 이용한 측도의 구성</a>
-  </li>
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
       
-  <li>
-    <a href="/2025/02/24/algebra-measure">대수와 측도의 정의</a>
-  </li>
-                                                                                                         
-</ul>
+      <div class="tag" onclick="location.href='/tags/위상수학/'" >위상수학</div>
+      
+    </div>
+  
+  <p><a href="https://dimenerno.github.io/2025/07/10/stone-cech">이전 글</a>에서 $X$의 스톤-체흐 콤팩트화 $\beta X$를, $[0, 1]^C$에서 $X$의 폐포를 취한 것으로 구성했었다. 그런데 $X$가 이산 공간<sub>discrete space</sub>인 경우 초필터<sub>ultrafilter</sub>를 사용하여 $\beta X$를 구성할 수도 있다. 이에 앞서, 몇 가지 개념을 복습하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X$가 <strong>이산 공간</strong>이라는 것은, $X$의 모든 부분집합이 열린집합이라는 것이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{F}$가 집합 $S$의 <strong>필터</strong>라는 것은, $\mathcal{F}$가 다음을 만족하는 $S$의 부분집합족이라는 것이다.</p>
+
+  <ol>
+    <li>$S \in \mathcal{F}$</li>
+    <li>$\varnothing \notin \mathcal{F}$</li>
+    <li>$A \in \mathcal{F}, A \subset B \implies B \mathcal{F}$</li>
+    <li>$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{F}$가 집합 $S$의 <strong>초필터</strong>라는 것은, $\mathcal{F}$가 필터이며 추가로 다음을 만족한다는 것이다.</p>
+
+\[\forall A \subset S : A \in \mathcal{F} \lor S \setminus A \in \mathcal{F}\]
+</blockquote>
+
 </div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3 class="lang-ko">관련 글</h3>
+  <h3 class="lang-en">Related Posts</h3>
+  <ul>
+    
+      
+      
+        <li><a href="/2025/07/10/stone-cech">스톤-체흐 콤팩트화</a></li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

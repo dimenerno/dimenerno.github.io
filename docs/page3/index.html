@@ -431,6 +431,104 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/15/quantifier-elimination"> 양화사 제거 </a>
+      </h1>
+    <span class="post-date">15 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/모델론/'">
+        모델론
+      </div>
+      
+    </div>
+     <p><a href="https://dimenerno.github.io/2025/05/08/saturation/">이전 글</a>에서, $\mathcal{L}$-구조 $\mathfrak{A}$에서 <strong>정의가능</strong>한 집합들이 무엇인지에 관해 알아 보았다. $S \subseteq A$가 $\mathfrak{A}$에서 특정 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>에 속하는 명제 $\phi$로 정의가능할 때, $S$가 그 위계에 속한다고 하자. 예를 들어 $S$가 $\Pi_1$ 문장으로 정의 가능할 때, $S \in \Pi_1$이다.</p>
+
+<p>예를 들어 표준 산술 모형 $\mathfrak{N} = (\mathbb{N}, 0, S, +)$에서 짝수의 집합은 $\Sigma_1$이다.</p>
+
+\[\{ x \in \mathbb{N} : \mathfrak{N} \vDash \exists y (y + y = x) \}\]
+
+<p>집합의 구조는 위계가 높아질수록 까다롭기 때문에, 가장 다루기 이상적인 상황은 모든 정의가능한 집합이 $\Delta_0$으로 환원되는 상황이다. 이같은 특징을 가지는 이론을 양화사 제거 가능한 이론이라고 부른다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{L}$-이론 $T$가 <strong>양화사 제거<sub>quantifier elimination</sub></strong> 가능하다는 것은 임의의 $\mathcal{L}$-명제 $\phi$에 대해 어떤 $\Delta_0$ $\mathcal{L}$-명제 $\psi$가 존재하여 다음이 성립하는 것이다.</p>
+
+\[T \vdash \phi \leftrightarrow \psi\]
+
+  <p>단, $\psi$의 자유변수는 모두 $\phi$의 자유변수이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>양화사 제거 판별법.</strong> $T$가 양화사 제거 가능할 충분조건은, $T$가 $\exists x \psi \; (\psi \in \Delta_0)$ 꼴의 명제에 대해 양화사 제거 가능한 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 먼저 임의의 $\Delta_0$ 명제 $\psi$에 대해 $\forall x \psi$가 양화사 제거 가능함을 보이자. $\forall x \psi$는 $\lnot\exists x \lnot \psi$와 동치이고, 가정에 의해 $\exists x \lnot \psi$는 어떤 양화사가 없는 명제 $\theta$와 동치이다. 따라서 $\forall x \psi$는 $\lnot \theta$와 동치이며, 양화사 제거 가능하다. 이제 양화사 개수에 대한 귀납법을 적용하면 임의의 명제에 대해 양화사 제거가 가능함이 보여진다. ■</p>
+
+<p>어떤 이론이 양화사 제거 가능할 경우 해당 이론이 완전함을 보일 수 있는 경우가 종종 있다. 일례로 다음을 보자.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 조밀 무계 전순서 이론 $T$는 양화사 제거 가능하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 먼저 다음 개념을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 유한한 변수들의 <strong>배열<sub>arrangement</sub></strong>이란, 변수들의 순서 관계의 무모순적인 논리곱을 의미한다.</p>
+</blockquote>
+
+<p>예를 들어 다음은 $\lbrace v_1, v_3, v_7, v_8 \rbrace$의 배열이다.</p>
+
+\[(v_1 &lt; v_3) \land (v_8 \land v_7) \land (v_3 = v_8)\]
+
+<p>증명의 핵심은 다음의 보조정리이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $\mathcal{L} = (&lt;)$의 $\Delta_0$ 명제는 전순서 이론에서 모순과 동치이거나, 어떤 배열들의 논리합과 동치이다.</p>
+</blockquote>
+
+<p>보조정리를 인정하고 본 정리를 증명해 보자. 양화사 제거 판별법에 의해, $\psi \in \Delta_0$에 대해 $\exists x \psi$가 양화사 제거 가능함을 보이면 된다. 보조정리에 의해 $\psi$는 $\theta_1 \lor \cdots \lor \theta_n$과 동치이며, 각 $\theta_i$는 변수들의 배열이다. $\exists$의 분배법칙에 의해,</p>
+
+\[T \vdash \exists x \psi \leftrightarrow \Big( (\exists x \theta_1) \lor \cdots (\exists x \theta_n) \Big)\]
+
+<p>이다. 그런데 조밀 무계 전순서에서는 배열 $\theta$에 대해, $\exists x \theta$는 $\theta$의 순서 관계를 한줄로 쭉 적은 뒤, $x$를 지운 명제와 동치이다. 예를 들어 $\exists x (v_1 &lt; x) \land (x &lt; v_2)$는 $\exists x (v_1 &lt; x &lt; v_2)$로 적을 수 있고, 이는 조밀성에 의해 $v_1 &lt; v_2$와 동치이다. 한편 $\exists x (v_1 &lt; x)$는 무계성에 의해 항진이며, $v_1 = v_1$과 동치이다. 따라서 위 식의 우항은 양화사 제거 가능하며, 이에 따라 $\exists x \psi$ 또한 양화사 제거 가능하다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $T$는 완전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T$가 양화사 제거 가능하므로, 표준 양화사 제거 형식에 의해, 최대 1개의 자유변수 $x$를 가지는 임의의 $\Delta_0$ 문장 $\psi \in \Delta_0$에 대해 $T \vdash \psi$이거나 $T \vdash \lnot\psi$임을 보이면 된다. 보조정리에 의해 $\psi$는 $x$의 배열과 동치이다. 그런데 가능한 $x$의 배열은 $x &lt; x$와 $x = x$, 두 가지밖에 없다. 전자의 경우 모순이므로 $T \vdash \lnot\psi$이고, 후자의 경우 항진이므로 $T \vdash \psi$이다. ■</p>
+
+<p>$T$가 양화사 제거 가능한 것과 대조적으로, 조밀 유계 전순서 이론 $T_{\mathrm{bd}}$는 양화사 제거 가능하지 않다. $a$가 $&lt;$의 최솟값일 때, $\phi \equiv \exists y (y &lt; x)$가 양화사 제거 가능하지 않기 때문이다. $T_{\mathrm{bd}}$도 전순서 이론이므로, 만약 $\phi$가 양화사 제거 가능했다면 보조정리에 의해 $\phi$는 $x &lt; x$ 또는 $x = x$와 동치여야 하는데, $\phi$는 $x = a$일 때 참이고 그 외의 경우에는 거짓이기 때문에 전자와 후자 모두에 해당하지 않는다.</p>
+
+<p>그러나 이 경우에는 양화사 제거가 가능한 $T_{\mathrm{bd}}$의 확장을 쉽게 찾을 수 있다. 먼저 언어 $\mathcal{L}$에 두 가지 새로운 상수 기호 $a$와 $b$를 추가한다. 그리고 $a$와 $b$가 각각 최솟값과 최댓값이라는 다음의 공리를 $T_{\mathrm{bd}}$에 추가한 것을 $T_{\mathrm{bd}}’$이라고 하자.</p>
+
+\[\lnot \exists (x &lt; a) \quad \lnot \exists (b &lt; x)\]
+
+<blockquote>
+  <p><strong>정리.</strong> $T_{\mathrm{bd}}’$는 양화사 제거 가능하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 연습문제</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $T_{\mathrm{bd}}$는 완전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T_{\mathrm{bd}}$의 보존적 확장<sub>conservative extension</sub>인 $T_{\mathrm{bd}}’$가 완전하므로, $T_{\mathrm{bd}}$ 또한 완전하다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
         <a href="/2025/05/15/quantifier-elimination/en"> Quantifier Elimination </a>
@@ -1740,154 +1838,6 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 <hr />
 
 <p><a href="#sup1" id="sub1">1.</a> Strictly speaking, this corresponds to a <strong>weakly inaccessible cardinal</strong>. A cardinal $\kappa$ is called <strong>strongly inaccessible</strong> if it is weakly inaccessible and additionally satisfies $2^\lambda &lt; \kappa$ whenever $\lambda &lt; \kappa$. Under the continuum hypothesis, weak and strong inaccessibility are equivalent.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/01/elementary-embedding"> 준동형 사상, 임베딩, 초등적 임베딩 </a>
-      </h1>
-    <span class="post-date">01 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/모델론/'">
-        모델론
-      </div>
-      
-    </div>
-     <p>이 글에서는 편의를 위해 술어와 함수를 별도의 대상으로 생각하는 대신, 함수식 $f(a) = c$를 이항 술어 $F(a, c)$로 환원하는 접근을 택한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}, \mathfrak{B}$가 언어 $\mathcal{L}$의 구조라고 하자. 다음을 만족하는 사상 $f: \mathfrak{A} \to \mathfrak{B}$을 <strong>준동형 사상<sub>homomorphism</sub></strong>이라고 부른다. $R$이 $\mathcal{L}$의 관계일 때, 임의의 $a_1, \dots, a_n \in \mathfrak{A}$에 대해,</p>
-
-\[R^\mathfrak{A}(a_1, \dots, a_n) \implies R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
-
-  <p>이다.</p>
-
-  <p>추가로, 준동형사상 $f$가 단사이고 다음을 만족할 때 $f$를 <strong>임베딩<sub>embedding</sub></strong>이라고 부른다.</p>
-
-\[R^\mathfrak{A}(a_1, \dots, a_n) \iff R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
-</blockquote>
-
-<p>단사 준동형사상이라고 해서 임베딩인 것은 아니다. 일례로 하나의 이항 관계 $&lt;$를 가지는 언어 $\mathcal{L}$의 다음의 두 구조를 보자. $&lt;$를 만족시키는 대상은 화살표로 표시되었다. 즉, $b_1 &lt;^\mathfrak{B} b_2$이다.</p>
-
-<p><img src="/public/model-injective-vs-embedding.png" style="width: 100%; max-width: 500px; margin: 1.5em auto;" /></p>
-
-<p>$\mathfrak{A}$의 원소들은 $&lt;^\mathfrak{A}$를 만족시키는 경우가 없으므로 $f: a_1 \mapsto b_1, a_2 \mapsto b_2$는 자명하게 준동형사상이며, 단사이다. 그러나 $f$는 임베딩이 아니다. $f$가 임베딩이라면 $b_1 &lt;^\mathfrak{B} b_2$으로부터 $a_1 &lt;^\mathfrak{A} a_2$가 성립해야 하기 때문이다. 즉, 임베딩은 $\mathfrak{A}$의 원소들뿐 아니라 원소들 간의 관계까지 그대로 $\mathfrak{B}$에 대응시켜야 한다. 이런 면에서 임베딩은 범주론에서의 포화된 함자<sub>full functor</sub>와 비슷하다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 언어 $\mathcal{L}$의 구조라고 하자. $\mathcal{L}_\mathfrak{A}$를 $\mathcal{L}$에 $\mathfrak{A}$의 정의역 크기만큼의 상수를 추가한 언어로 정의한다.</p>
-</blockquote>
-
-<p>페아노 산술로 예를 들자면, $\mathcal{L} = (0, S, +)$이고 $\mathfrak{A}$가 산술의 표준 모형일 때, $\mathcal{L}_\mathfrak{A} = (0, 1, 2, 3, \dots, S, +)$이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-원자명제들의 집합을 $\Delta_\mathfrak{A}^+$로 적는다. 즉,</p>
-
-\[\Delta_\mathfrak{A}^+ = \{ R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
-
-  <p>추가로, $\Delta_\mathfrak{A}^+$에다 $\mathfrak{A}$가 만족시키지 않는 모든 $\mathcal{L}$-원자명제들의 부정까지 추가한 집합을 $\Delta_\mathfrak{A}$로 적는다. 즉,</p>
-
-\[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
-</blockquote>
-
-<p>$\Delta$라는 표기법은 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 관련이 있다.</p>
-
-<p>$\Delta_\mathfrak{A}^+$에 빠진 원자명제들의 부정을 추가한 것이 곧 $\Delta_\mathfrak{A}$이기 때문에, 두 집합이 내포하는 정보량은 사실상 같다. 그럼에도 두 집합을 구분하여 정의하는 것은 다음의 정리 때문이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자.</p>
-
-  <ol>
-    <li>단사 준동형사상 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
-    <li>임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
-  </ol>
-</blockquote>
-
-<p>즉, $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$를 만족할 경우 $\mathfrak{B}$가 원자명제들을 ‘과도하게’ 만족시켜서, $\mathfrak{A}$가 $\mathfrak{B}$로 임베딩되지 못할 가능성이 있다. 그러나 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$를 만족할 경우, $\mathfrak{B}$가 만족시킬 수 있는 원자명제에 한계가 걸리기 때문에 임베딩 가능성이 보장된다.</p>
-
-<p><a href="https://dimenerno.github.io/2025/04/17/los-tarski/">이전 글</a>에서 <strong>초등적 부분모델</strong>이라는 개념을 소개한 바 있다. 이로부터 다음의 개념을 정의할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $f: \mathfrak{A} \to \mathfrak{B}$가 임베딩이고, $f[\mathfrak{A}]$가 $\mathfrak{B}$의 초등적 부분모델일 때, $f$를 <strong>초등적 임베딩</strong>이라고 한다.</p>
-</blockquote>
-
-<p>초등적 임베딩과 관련된 문장 집합은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-명제들의 집합을 $E(\mathfrak{A})$로 적는다. 즉,</p>
-
-\[E(\mathfrak{A}) = \{ \phi : \mathfrak{A} \vDash \phi \}\]
-</blockquote>
-
-<p>$E(\mathfrak{A})$가 $\Delta_\mathfrak{A}$와 가장 구별되는 특징은 양화사가 있는 문장 또한 포함한다는 것이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. 초등적 임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $E(\mathfrak{A})$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</p>
-</blockquote>
-
-<p>마지막으로 다음의 문장 집합을 언급할 만하다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합을 $\mathrm{Th}(\mathfrak{A})$라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$와 $\mathfrak{B}$가 초등적으로 동등할 필요충분조건은 $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$인 것이다.</p>
-</blockquote>
-
-<p>사실 이는 초등적 동등성의 정의나 다름이 없어서 정리라고 부르기는 무색하지만, 이 글에서 소개한 나머지 정리들과 일관성을 유지하기 위해 소개하였다.</p>
-
-<p>표로 정리하면 이렇다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>정의</th>
-      <th>예시</th>
-      <th>사상</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$\Delta_\mathfrak{A}^+$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제</td>
-      <td>$0 &lt; 1$</td>
-      <td>전사 준동형</td>
-    </tr>
-    <tr>
-      <td>$\Delta_\mathfrak{A}$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제</td>
-      <td>$\lnot(1 &lt; 0)$</td>
-      <td>임베딩 (부분모델)</td>
-    </tr>
-    <tr>
-      <td>$\mathrm{Th}(\mathfrak{A})$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제</td>
-      <td>$\forall x \exists y (x &lt; y)$</td>
-      <td>초등적 동등성</td>
-    </tr>
-    <tr>
-      <td>$E(\mathfrak{A})$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제</td>
-      <td>$\not \exists x (x &lt; 0)$</td>
-      <td>초등적 임베딩 (초등적 부분모델)</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>예를 들어 $\mathfrak{A} = (\mathbb{N}, &lt;)$은 $\mathfrak{B} = (\mathbb{Z}, &lt;)$에 임베딩되지만, 초등적으로 임베딩되지는 않는다. $\mathfrak{B}$가 $E(\mathfrak{A})$의 문장인 $\not \exists x (x &lt; 0)$을 만족하지 않기 때문이다.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
