@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-07-18T14:50:37+09:00</updated>
+ <updated>2025-07-18T17:27:32+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>불 대수 구조의 아이디얼과 필터</title>
-   <link href="https://dimenerno.github.io/2025/07/17/boolean-algebra"/>
-   <updated>2025-07-17T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/17/boolean-algebra</id>
+   <link href="https://dimenerno.github.io/2025/07/18/boolean-algebra"/>
+   <updated>2025-07-18T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/07/18/boolean-algebra</id>
    <content type="html">&lt;h2 id=&quot;불-대수&quot;&gt;불 대수&lt;/h2&gt;
 
 &lt;p&gt;불 대수&lt;sub&gt;boolean algebra&lt;/sub&gt;는 거짓을 의미하는 $0$과 참을 의미하는 $1$ 위에서 정의되는 $\lor, \land, \lnot$ 등의 논리 연산으로 이루어진 대수이다.&lt;/p&gt;
@@ -246,9 +246,9 @@ x \lor y = x + y + xy \\
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $I$가 불 대수 구조 $A$의 아이디얼이라고 하자. $I$가 &lt;strong&gt;소 아이디얼&lt;/strong&gt;이라는 것은, 임의의 $a, b \in A$에 대해, $a \land b \in I$라면 $a \in I$이거나 $b \in I$라는 것이다. $I$가 &lt;strong&gt;극대 아이디얼&lt;/strong&gt;이라는 것은, $J$가 $I$를 엄격히 포함하는 아이디얼일 때, $J = A$라는 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;이들 개념 또한 불 환의 소 아이디얼과 극대 아이디얼에 정확히 상응한다. 앞서 본 아이디얼의 예시는 소 아이디얼이면서 극대 아이디얼임을 확인하라.&lt;/p&gt;
+&lt;p&gt;이들 개념 또한 불 환의 소 아이디얼과 극대 아이디얼에 정확히 상응한다. 앞서 본 아이디얼의 예시는 소 아이디얼인 동시에 극대 아이디얼임을 확인하라. 곧 드러나듯이, 이는 우연이 아니다.&lt;/p&gt;
 
-&lt;p&gt;이제 몇 가지 사실을 관찰해 보자. $I \subset A$가 아이디얼이라고 하자.&lt;/p&gt;
+&lt;p&gt;몇 가지 사실을 관찰해 보자. $I \subset A$가 아이디얼이라고 하자.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -326,7 +326,7 @@ x \lor y = x + y + xy \\
 
 &lt;p&gt;일반적인 불 대수 구조는, 우리에게 익숙한 불 대수와는 달리, 각각의 원소가 참 또는 거짓으로 이분화되지 않는다. $p$는 $p \land q$에 비해 $1$(참)로부터 같거나 더 가까운 “거리”만큼 떨어져 있지만, 그 자체로는 $0$도 아니고 $1$도 아니다.&lt;/p&gt;
 
-&lt;p&gt;그러나 불 대수 구조 $A$의 초필터, 또는 소 아이디얼이 주어졌을 때, 해당 필터(아이디얼)에 속하는 여부에 따라 $A$의 원소들을 “참” 또는 “거짓”으로 이분화할 수 있다. 앞서 본 아이디얼의 예시(왼쪽)과 필터의 예시(오른쪽)을 다시 보자. 왼쪽은 소 아이디얼이고, 오른쪽은 초필터이다.&lt;/p&gt;
+&lt;p&gt;그러나 불 대수 구조 $A$의 초필터, 또는 소 아이디얼이 주어졌을 때, 해당 필터(아이디얼)에 속하는 여부에 따라 $A$의 원소들을 “참” 또는 “거짓”으로 이분화할 수 있다. 앞서 본 아이디얼의 예시(왼쪽)와 필터의 예시(오른쪽)을 다시 보자. 왼쪽은 소 아이디얼이고, 오른쪽은 초필터이다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/boolalg-4.png&quot; style=&quot;width: 100%; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
