@@ -431,6 +431,267 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/11/VL-axiom"> V = L 공리의 무모순성 </a>
+      </h1>
+    <span class="post-date">11 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>영문 버전의 글이 더 정확하고 설명이 풍부하니 참고하시길 바랍니다.</p>
+</blockquote>
+
+<h2 id="1-전체">1. 전체</h2>
+
+<h3 id="11-폰-노이만-전체">1.1. 폰 노이만 전체</h3>
+
+<p><a href="https://dimenerno.github.io/2024/12/05/transfinite-recursion/">초한귀납적으로</a> $\lbrace  V_\alpha \rbrace$를 정의하자.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$</li>
+  <li>$\lambda$가 극한 서수일 때, $V_\lambda = \bigcup_{\alpha &lt; \lambda} V_\alpha$</li>
+</ul>
+
+<p>처음 몇 개의 $V_\alpha$는 다음과 같다.</p>
+
+<ul>
+  <li>$V_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$V_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$V_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$V_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>모든 서수 $\alpha$에 대해 $V_\alpha$를 모아둔 모임을 <strong>폰 노이만 전체</strong>라고 한다.</p>
+
+\[V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha\]
+
+<p>$x \in y \in z$가 $x \in z$를 시사할 때 $z$를 <strong>추이적 집합<sub>transitive set</sub></strong>이라고 한다. 이것은 $V$의 중요한 특징이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$\alpha \in \mathrm{Ord}$에 대해 $V_\alpha$는 추이적이다.</li>
+    <li>$V$는 추이적이다.</li>
+  </ol>
+</blockquote>
+
+<p>증명은 초한귀납법을 이용한다. 이에 따라 $V$를 다음과 같이 정의해도 무방하다.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = \mathcal{P}(V_\alpha)$</li>
+  <li>$\lambda$가 극한 서수일 때, $V_\lambda = \bigcup_{\alpha &lt; \lambda}V_\alpha$</li>
+</ul>
+
+<p>직관적으로 생각했을 때 $V$는 모든 집합을 포함하는 듯하다. 실제로 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $x$가 집합이라면 $x \in V$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 집합 $x$에 대해 $x$의 <strong>추이적 폐포</strong> $\bar{x}$를, $x$를 원소로 가지는 가장 작은 추이적 집합으로 정의한다(추이적 집합들의 교집합은 추이적이기 때문에 이 정의는 정당하다).</p>
+
+<p>$x \notin V$라고 가정하자. 분류 공리에 의해 $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$가 집합이며, 정초 공리에 의해 $y$의 $\in$-극소 원소 $z$가 존재한다. 만약 $w \notin V$인 $w \in z$가 존재한다면, 추이성에 의해 $w \in y$가 되어 $z$의 $\in$-극소성과 모순된다. 따라서 $z$의 모든 원소는 $V$에 있으며, 치환 공리로부터 $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$가 집합이다. $\beta = \bigcup_{\alpha \in \Omega}\alpha$라고 하자. $\beta$는 서수이며, $z \in V_{\beta + 1}$이다. (이 부분에서 $V_{\beta + 1} = \mathcal{P}(V_\beta)$임이 필요하다) 따라서 모순이다. ■</p>
+
+<p>이에 따라 $V$는 집합이 아니다. 따라서 $V$는 모든 집합을 포함한다는 점에서 ZFC의 모델이지만, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">많은 수학자들은 모델이 집합일 것을 요구하기 때문에</a> 엄격한 의미에서의 모델은 아니다. 하지만 이 글에서는 편의를 위해 $V$를 집합론의 모델이라고 부르도록 한다. 또한 $x \in V$를 “$x$는 집합이다“의 형식적 표현으로 이해하도록 한다.</p>
+
+<h3 id="12-괴델-구성-가능-전체">1.2. 괴델 구성 가능 전체</h3>
+
+<p>먼저 다음과 같이 구성 가능성을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $u$가 집합 $S$로부터 <strong>구성 가능</strong>하다는 것은, 어떤 1차 논리 명제 $\phi(y, x_1, \dots, x_n)$와 $c_1, \dots, c_n \in S$가 존재하여 다음이 성립하는 것이다.</p>
+
+\[y \in u \iff y \in S \land \phi(y, c_1, \dots, c_n)\]
+
+  <p>단, $\phi$의 양화사의 정의역은 $S$이다.</p>
+</blockquote>
+
+<p>예를 들어 $S = \lbrace 0, 1, 2\rbrace$일 때 다음은 $u = \lbrace  1, 2 \rbrace$를 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1, x_2) := (y = x_1) \lor (y = x_2)$</li>
+  <li>$c_1 = 1, c_2 = 2$</li>
+</ul>
+
+<p>또한 $S = \mathbb{N}$일 때 다음은 $u = \lbrace 0, 3, 6, 9, \dots \rbrace$를 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1) := x_1 \mid y$</li>
+  <li>$c_1 = 3$</li>
+</ul>
+
+<p>괴델의 구성가능성은 일반적인 의미에서의 구성가능성, 즉 언어로서의 표현가능성과 다르다. 일례로 언어로 표현가능한 실수의 집합은 가산이므로, 어떤 실수는 언어로 표현이 불가능하다. 그러한 실수를 $r$이라고 하자. 이제 $S = \mathbb{R}$일 때, 다음은 $u = \lbrace  r \rbrace$을 구성한다.</p>
+
+<ul>
+  <li>$\phi(y, x_1) := x_1 = y$</li>
+  <li>$c_1 = r$</li>
+</ul>
+
+<p>즉, 괴델의 구성가능성은 자유변수의 초기화를 임의의 원소에 대해 허용한다는 점에서 강력하다. 그러나 자유변수의 수가 유한하다는 점에서 한계를 가진다. 이제 초한귀납적으로 $\lbrace  L_\alpha \rbrace$를 정의하자.</p>
+
+<ul>
+  <li>$L_0 = \varnothing$</li>
+  <li>$L_{\alpha + 1} = \lbrace  x : x \text{ is constructible from } L_\alpha  \rbrace$</li>
+  <li>$\lambda$가 극한 서수일 때, $L_\lambda = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+  <li>$L = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+</ul>
+
+<p>$\alpha &lt; \omega$일 때 $L_\alpha = V_\alpha$임을 쉽게 보일 수 있다. $\alpha = n$일 때, 최대 $n$개의 $\lor$ 연언으로 $x \in V_\alpha$를 구성할 수 있기 때문이다. 따라서,</p>
+
+<ul>
+  <li>$L_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$L_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$L_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$L_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>하지만 $L_{\omega + 1} \subsetneq V_{\omega + 1}$이다. $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$이므로 $V_{\omega + 1}$은 비가산인 반면, 1차 논리 문장들의 집합과 $L_\omega$는 모두 가산이므로 $L_{\omega + 1}$ 또한 가산이기 때문이다. 일반적으로 $\alpha$가 가산일 때 $L_\alpha$는 가산이다.</p>
+
+<p>그럼에도 $L$은 $V$와 많은 특징을 공유한다. 일례로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\alpha \in \mathrm{Ord}$에 대해 다음이 성립한다.</p>
+
+  <ol>
+    <li>$L_\alpha$는 추이적이다. (따라서 $L$이 추이적이다)</li>
+    <li>$\alpha \in L_{\alpha + 1} \setminus L_{\alpha}$</li>
+  </ol>
+</blockquote>
+
+<p>증명은 초한귀납법을 사용한다.</p>
+
+<p>$L$은 모든 서수를 포함하므로 부랄리포르티 정리에 의해 집합이 아님에 유의하라. 대신 $x \in L_\alpha$에 대응되는 1차 논리식 $\mathsf{IsInL}_\alpha(x)$가 존재한다. 증명은 조금 까다로운데, 괴델 수를 이용하여 명제를 산술화하면 된다. (<a href="https://math.stackexchange.com/questions/198437/a-formula-that-defines-constructible-universe">링크</a> 참조) 따라서 $x \in L$을 $\exists \alpha \in \mathrm{Ord} :\mathsf{IsInL}_\alpha(x)$를 대체하는 형식적 표현으로 이해하여 사용하도록 한다. (물론 $\alpha \in \mathrm{Ord}$ 또한 1차 논리식을 대체하는 형식적 표현으로 이해되어야 한다)</p>
+
+<h2 id="2-상대화">2. 상대화</h2>
+
+<h3 id="21-명제의-상대화">2.1. 명제의 상대화</h3>
+
+<p>1차 논리 명제는 양화사를 포함할 수 있다. 때문에 양화사의 정의역을 어떻게 설정하느냐의 따라 명제의 의미가 달라진다.</p>
+
+<p>명제 $\phi$와 집합 (또는 모임) $A$에 대해, $\phi$의 상대화 $\phi^A$를 $\phi$의 모든 양화사를 $A$로 제한한 명제로 정의한다. 약간의 서사적 표현을 곁들이자면, $\phi^A$는 $A$의 “내부”에서 이해한 $\phi$라고 할 수 있겠다. 예를 들어, $\phi : \forall x \; \exists y : y &lt; x$일 때</p>
+
+<ul>
+  <li>$\phi^\mathbb{N} : \forall x \in \mathbb{N} \; \exists y \in \mathbb{N} : y &lt; x$</li>
+  <li>$\phi^\mathbb{Z} : \forall x \in \mathbb{Z} \; \exists y \in \mathbb{Z} : y &lt; x$</li>
+</ul>
+
+<p>$T_\mathbb{Q}$가 자연수 및 정수를 특정할 수 있는 정도의 표현력을 지니는 유리수 이론이라고 하면,</p>
+
+<ul>
+  <li>$T_\mathbb{Q} \vdash \phi$</li>
+  <li>$T_\mathbb{Q} \not\vdash \phi^\mathbb{N}$</li>
+  <li>$T_\mathbb{Q} \vdash \phi^{\mathbb{Z}}$</li>
+</ul>
+
+<p>이다. 따라서 $\phi$는 자연수와 유리수를 성공적으로 구분해 내지만, 정수와 유리수는 구분해 내지 못한다. 이 관찰을 일반화하면, 이론 $T$와 집합 $A$에 대해 $T \vdash \phi \leftrightarrow \phi^A$인 $\phi$가 많으면 많을수록 $A$는 $T$의 기술에 잘 “부합한다“고 말할 수 있다.</p>
+
+<p>위 논의를 조금 일반화하여, 다음과 같이 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 이론 $T$와 집합 $A$에 대해서</p>
+
+\[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
+
+  <p>일 때, $\phi$는 $A$에 대해 <strong>절대적<sub>absolute</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<p>일례로 $T_\mathbb{Q}$에 대해 $\phi(x) : \exists y (y &lt; x)$는 정수에 대해 절대적이지만 자연수에 대해 절대적이지는 않다.</p>
+
+<h3 id="22-l-상대화">2.2. $L$-상대화</h3>
+
+<p>이제 우리의 목표는 $L$이 $\mathsf{ZF}$와 극대적으로 부합함을 보이는 것이다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리 1.</strong> $\phi$가 ZF의 공리라면 $\mathsf{ZF} \vdash \phi^L$이다.</p>
+</blockquote>
+
+<p>정리 1의 의미를 말로 풀어 보자면,</p>
+
+<blockquote>
+  <p>“$L$의 내부에서 보았을 때 $L$은 ZF의 모델이다”를 ZF로 증명할 수 있다.</p>
+</blockquote>
+
+<p>물론 우리는 $L \subset V$만 알고 $V = L$인지는 알지 못하기 때문에, 어떤 집합 $x$는 $L$에 속하지 않을 수도 있다. 그러나 설령 $x \in V \setminus L$인 집합 $x$가 있더라도, 그러한 $x$의 결여는 $L$의 <em>내적 정합성</em>을 깨뜨리지 않는다는 것이 정리 1의 내용이다.</p>
+
+<p>예를 들어 어떤 집합 $y, z$에 대해 $x = \lbrace  y, z \rbrace$가 $L$에 결여되어 있다고 하자. 일면 $x$의 결여는 $L$이 짝 공리 $\mathsf{Pair}$을 만족하지 않음을 시사하는 듯하다.</p>
+
+\[\mathsf{Pair} := \forall y, z \; \exists x \; \forall w: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>하지만 $L$의 내부에서 본 짝 공리는 다음과 같다.</p>
+
+\[\mathsf{Pair}^L := \forall y, z \in L \; \exists x \in L \; \forall w \in L: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>$\forall y, z$의 양화 또한 $L$로 한정됨에 주목하라. 즉, $x = \lbrace  y, z \rbrace$의 결여가 $L$에게 문제를 일으키는 경우는 $y, z \in L$일 때이다. 거꾸로 말해, $x = \lbrace  y, z \rbrace \notin L$이 $y, z \notin L$을 시사한다면 $L$은 $\mathsf{Pair}^L$을 만족한다. 이것이 “$L$이 내적 정합성을 유지하는 방식으로 집합을 결여한다”의 의미이다.</p>
+
+<p>정리 1이 성립하는 핵심 이유는 $L$과 $V$가 <strong>추이성이라는 성질을 공유</strong>하기 때문이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> 다음 술어는 ZF에서 $L$에 대해 절대적이다.</p>
+
+  <ol>
+    <li>$x \in y$</li>
+    <li>$x \subset y$</li>
+    <li>$x = \bigcup y$</li>
+    <li>$x = \lbrace  y, z \rbrace$</li>
+    <li>$\alpha \in \mathrm{Ord}$</li>
+    <li>$x$는 추이적이다.</li>
+    <li><a href="https://math.stackexchange.com/questions/404699/delta-0-formulas">$\Delta_0$ 논리식</a></li>
+  </ol>
+</blockquote>
+
+<p>또한 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 2.</strong> $\mathsf{ZF} \vdash (V = L)^L$</p>
+</blockquote>
+
+<p>여기서 $V = L$은, “모든 집합이 $L$에 속한다”를 의미한다. 따라서 일면 보기에 $(V = L)^L$은 “$L$에 속하는 모든 집합이 $L$에 속한다”라는 자명한 명제인 듯하다. 하지만 실제로 $V = L$을 논리식으로 적으면</p>
+
+\[\forall x \; \exists \alpha  : \alpha \in \mathrm{Ord} \land x \in L_\alpha\]
+
+<p>이므로 $(V = L)^L$은</p>
+
+\[\forall x \in L \; \exists \alpha \in L : (\alpha \in \mathrm{Ord})^L \land (x \in L_\alpha)^L\]
+
+<p>이다. 특히, $\alpha \in \mathrm{Ord}$와 $x \in L_\alpha$가 진정한 의미에서의 $\in$-술어가 아닌 1차 논리식의 형식적 표현이기 때문에 마찬가지로 $L$로 상대화해야 함에 유의하라. 이에 따라 $(V = L)^L$을 ZF에서 증명하기 위해서는 $\alpha \in \mathsf{Ord}$와 $x \in L_\alpha$가 절대적임을 증명해야 한다. 두 증명 모두 초한귀납법을 사용하면 가능하다.</p>
+
+<p>정리 1과 정리 2로부터 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 3.</strong> $\mathsf{ZFL} \vdash \phi \implies \mathsf{ZF} \vdash \phi^L$</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathsf{ZFL} \vdash \phi$의 증명 길이에 대한 귀납법으로 증명한다. 증명 길이가 0일 때 $\phi$는 ZFL의 공리이다. $\phi$가 ZF의 공리일 때 정리 1로부터 증명되고, $\phi$가 $V = L$일 때 정리 2로부터 증명된다.</p>
+
+<p>이제 $\phi$가 $\lbrace  \psi_1, \dots, \psi_n \rbrace$에 추론 규칙을 적용하는 것으로 증명된다고 가정하자. $\psi_k$의 증명 길이는 $\phi$보다 작으므로 귀납 가정에 의해 $\mathsf{ZF} \vdash \psi_k^L$이며, 논리 공리와 추론 규칙은 $L$에 대해 절대적임을 쉽게 보일 수 있다. 따라서 $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$가 논리적 참이라면 $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ 또한 논리적 참이며, 이에 따라 $\mathsf{ZF} \vdash \phi^L$이다. ■</p>
+
+<p>정리 3의 따름정리로서 정리 4를 얻는다.</p>
+
+<blockquote>
+  <p><strong>정리 4.</strong> ZF가 무모순적이라면 ZFL 또한 무모순적이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> ZFL이 모순적이라면 $\mathsf{ZFL} \vdash \varnothing \neq \varnothing$이며, 정리 3에 의해 $\mathsf{ZF} \vdash (\varnothing \neq \varnothing)^L \iff \mathsf{ZF} \vdash \varnothing \neq \varnothing$이다.</p>
+
+<p>따라서 <strong>V = L은 ZF와 일관적이다</strong>.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
         <a href="/2024/12/11/VL-axiom/en"> Consistency of the V = L Axiom </a>
@@ -1672,155 +1933,6 @@ R(x, y): y = \omega + x,
 \end{gather}\]
 
 <p>the image $\mathrm{im}R|_\omega = \lbrace \omega, \omega + 1, \omega + 2, … \rbrace$ exists, and thus $\omega \cup \mathrm{im}R|_\omega = \omega + \omega$ exists.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/20/Rational-Real"> 유리수와 실수의 집합론적 정의 </a>
-      </h1>
-    <span class="post-date">20 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <h3 id="1-칸토어의-동형성-정리">1. 칸토어의 동형성 정리</h3>
-
-<blockquote>
-  <p><strong>칸토어의 동형성 정리.</strong> 가산이고 양끝점이 없으며 조밀한 전순서 집합은 순서 동형에 대해 유일하다.</p>
-</blockquote>
-
-<p><strong>증명 1. (Back-and-Forth Argument)</strong></p>
-
-<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B  \setminus \mathrm{im} f_n$과 대응시키고, <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$
-를 순서 동형성을 만족하게끔 <strong>임의의</strong> 
-$a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$
-와 대응시킨다. (그림의 파란색은 ‘가장 인덱스가 작은’으로 선택된 원소)</p>
-
-<p><strong>증명 2. (Only-Forth Argument)</strong></p>
-
-<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus  \mathrm{im}f_n$과 대응시킨다.</p>
-
-<p><strong>잘못된 증명. (Incorrect Only-Forth Argument)</strong></p>
-
-<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B \setminus  \mathrm{im}f_n$와 대응시킨다.</p>
-
-<p><u>잘못된 이유</u>. $\mathrm{im} \left[ \bigcup f_n \right]$이 $B$ 전체를 소진한다는 보장이 없다. 일례로 모든 경우 선택된 $b$의 인덱스가 짝수인 경우가 가능하다.</p>
-
-<h3 id="2-데데킨트-절단">2. 데데킨트 절단</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 전순서 집합 $(P, &lt;)$에 대하여 $P$의 부분집합 $A, B$가 다음을 만족할 때 $(A, B)$를 <strong>절단</strong>이라고 한다.</p>
-
-  <ol>
-    <li>$A \sqcup B = P$</li>
-    <li>임의의 $a \in A, b \in B$에 대해 $a &lt; b$이다.</li>
-  </ol>
-
-  <p>추가로 다음을 만족할 때 <strong>데데킨트 절단</strong>이라고 한다.</p>
-
-  <ol>
-    <li>$A$는 최대 원소를 가지지 않는다.</li>
-  </ol>
-
-  <p>추가로 다음까지 만족할 때 <strong>틈</strong>이라고 한다.</p>
-
-  <ol>
-    <li>$B$는 최소 원소를 가지지 않는다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Remark</strong></p>
-<ol>
-  <li>$P$가 완비이다 ⇔ $P$는 틈을 가지지 않는다.</li>
-  <li>$P = \mathbb{Q}$일 때 틈은 무리수 집합을, 데데킨트 절단은 실수 집합을 나타낸다.</li>
-</ol>
-
-<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
-
-<h3 id="3-완비화-정리">3. 완비화 정리</h3>
-
-<blockquote>
-  <p><strong>완비화 정리.</strong> $(P, &lt;)$가 양끝점이 없는 조밀한 전순서라면 다음을 만족하는 완비 전순서 $(C, \prec)$가 순서 동형에 대해 유일하게 존재한다.</p>
-
-  <ol>
-    <li>$P \subseteq C$</li>
-    <li>$\prec$는 $P$에서 $&lt;$와 일치한다.</li>
-    <li>$P$는 $C$에서 조밀하다. 즉, $c_1 &lt; c_2 \in C$에 대해 $c_1 &lt; p &lt; c_2$를 만족하는 $p \in P$가 언제나 존재한다.</li>
-    <li>$C$는 양끝점이 없다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>유일성 증명.</strong>
-$(C, \prec)$와 $(C^\ast, \prec^\ast)$가 조건을 만족하는 완비 전순서라고 하자. 다음과 같이 정의된 $\phi: C → C^\ast$는 순서 동형 사상이다.</p>
-
-<ol>
-  <li>$c \in P$라면 $\phi(c)=c$</li>
-  <li>$c \notin P$라면 $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
-</ol>
-
-<p><strong>존재성 증명.</strong>
-다음과 같이 정의한다.</p>
-
-\[\begin{gather}
-\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
-\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
-\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
-\end{gather}\]
-
-<p>라고 하자. 다음과 같이 $\mathcal{D}$에 순서를 준다.</p>
-
-\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
-
-<p>$(A, B) \in \mathcal{P}$라면 어떤 $p$에 대해 $B = \lbrace  x \in P : x \geq p  \rbrace$이며, 이때 $(A, B) = [p]$라고 적자. 즉,</p>
-
-\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
-
-<p>$(\mathcal{P}, \prec) \sim (P, &lt;)$임을 쉽게 확인할 수 있다. 이제 다음을 보인다.</p>
-
-<p><em>Claim.</em> $\mathcal{D}$는 $\mathcal{P}$에 대해 완비화 정리의 4가지 조건을 모두 만족하는 확장이다.</p>
-
-<p>1, 2, 4는 자명하다. 3을 보인다.</p>
-
-<p>$\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$에 대해 $\mathfrak{d_1} \prec \mathfrak{d}_2$, 즉 $A_1 \subset A_2$라고 하자. $p \in A_2 \setminus A_1$이며 $p$가 $B$의 최소 원소가 아닌 $p \in P$가 존재한다. 그러한 $p$에 대해 $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$이다. □</p>
-
-<p>마지막으로 다음을 보인다.</p>
-
-<p><em>Claim.</em> $(\mathcal{D}, \prec)$는 완비이다.</p>
-
-<p>$\mathcal{S}$가 위로 유계인 $\mathcal{D}$의 공집합이 아닌 부분집합이라고 하자. 다음과 같이 정의한다.</p>
-
-\[\begin{gather}
-A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
-B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
-\end{gather}\]
-
-<p>$(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$이며, $\mathcal{S}$의 최소 상계임을 확인할 수 있다. ◾</p>
-
-<blockquote>
-  <p><strong>집합론적 실수의 정의.</strong> 다음을 만족하는 집합 $(R, &lt;)$은 순서 동형에 대해 유일하다.</p>
-
-  <ol>
-    <li>완비 전순서 집합이다.</li>
-    <li>양끝점이 없다.</li>
-    <li>분리 가능하다(separable). 즉, $Q \subset R$이 존재하여 $Q$는 가산집합이고 $R$에서 조밀하다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> 칸토어의 동형성 정리와 완비화 정리로부터 따라 나온다.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

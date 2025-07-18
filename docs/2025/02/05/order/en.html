@@ -380,11 +380,7 @@
       
     </div>
   
-  <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h3 id="remarks">Remarks</h3>
+  <h3 id="remarks">Remarks</h3>
 
 <table>
   <thead>
@@ -408,7 +404,7 @@
 <ul>
   <li>For a prime $p$, if information about $p - 1$ is given, consider the multiplicative group $(\mathbb{Z}/p\mathbb{Z})^\times$ of order $p - 1$.</li>
   <li>The multiplicative group of a finite field is cyclic.</li>
-  <li>For a cyclic multiplicative group $G$, $nm \mid |G|$ is equivalent to the existence of an element $x$ such that $x^{nm} = 1$ but $x^n, x^m \neq 1$.</li>
+  <li>For a <em>cyclic</em> multiplicative group $G$, $nm \mid |G|$ is equivalent to the existence of an element $x$ such that $x^{nm} = 1$ but $x^n, x^m \neq 1$.</li>
   <li>Order is different from period. In general, <strong>(period) = (order) + 1</strong>.</li>
 </ul>
 
@@ -422,7 +418,7 @@
 
 <p>(⇒) Trivial.</p>
 
-<p>(⇐) Let $G = (\mathbb{Z}/p\mathbb{Z})^\times$. By the condition, $4 \mid |G|$. Therefore, there exists an element $n$ such that $n^4 = 1$ but $n^2 \neq 1$. That is, $n^2 = -1$. Hence, $p \mid n^2 + 1$. Now, considering in $\mathbb{Z}[i]$, we have $p \mid (n + i)(n - i)$. If $p$ were irreducible in $\mathbb{Z}[i]$, then $p \mid n + i$ or $p \mid n - i$, but both are impossible. Therefore, $p$ is not irreducible, and by conjugacy,</p>
+<p>(⇐) Let $G = (\mathbb{Z}/p\mathbb{Z})^\times$. By the condition, $4 \mid |G|$. Therefore, there exists an element $n$ such that $n^4 = 1$ but $n^2 \neq 1$. That is, $n^2 = -1$. Hence, $p \mid n^2 + 1$. Now, considering in $\mathbb{Z}[i]$, we have $p \mid (n + i)(n - i)$. If $p$ were irreducible in $\mathbb{Z}[i]$, then $p \mid n + i$ or $p \mid n - i$ (note that the fact that $\mathbb{Z}[i]$ is UFD is used here) but both are impossible. Therefore, $p$ is not irreducible, and by conjugacy,</p>
 
 \[p = (a + bi)(a - bi) = a^2 + b^2\]
 
@@ -439,7 +435,6 @@
 <p>(⇒) Let $G = (\mathbb{Z}/p\mathbb{Z})^\times$. The product of all elements of $G$ is $(p - 1)!$. Except for $\pm 1$, which are the roots of $x^2 = 1$, all other elements of $G$ do not have themselves as their inverse. Therefore, $(p - 1)! \equiv -1$.</p>
 
 <p>(⇐) Let $N = (p - 1)! + 1$. By the condition, $p \mid N$. If $p$ were not prime, then for some prime $q &lt; p$, we would have $q \mid N$. However, $N \equiv 1 \pmod{q}$, which is a contradiction. ■</p>
-
 
 </div>
 

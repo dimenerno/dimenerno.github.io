@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "초필터를 사용한 스톤-체흐 콤팩트화"
-date: 2025-07-15
+date: 2026-07-15
 tags: ["수학", "위상수학"]
 related:
   - "스톤-체흐 콤팩트화"
@@ -11,6 +11,8 @@ related:
 
 > **정의.** $X$가 **이산 공간**이라는 것은, $X$의 모든 부분집합이 열린집합이라는 것이다.
 
+**Remark.** 이는 $X$의 홑원소 집합들이 열린집합임과 동치이다.
+
 > **정의.** $\mathcal{F}$가 집합 $S$의 **필터**라는 것은, $\mathcal{F}$가 다음을 만족하는 $S$의 부분집합족이라는 것이다.
 >
 > 1. $S \in \mathcal{F}$
@@ -18,8 +20,10 @@ related:
 > 3. $A \in \mathcal{F}, A \subset B \implies B \mathcal{F}$
 > 4. $A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$
 
-> **정의.** $\mathcal{F}$가 집합 $S$의 **초필터**라는 것은, $\mathcal{F}$가 필터이며 추가로 다음을 만족한다는 것이다.
+> **정의.** $\mathcal{F}$가 집합 $S$의 [**초필터**](https://dimenerno.github.io/2025/01/22/hypernaturals)라는 것은, $\mathcal{F}$가 필터이며 추가로 다음을 만족한다는 것이다.
 >
 > $$
 > \forall A \subset S : A \in \mathcal{F} \lor S \setminus A \in \mathcal{F}
 > $$
+
+초필

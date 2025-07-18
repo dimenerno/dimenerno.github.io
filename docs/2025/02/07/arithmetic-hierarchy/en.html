@@ -400,9 +400,9 @@
   <p><strong>Definition.</strong> $\Sigma_0 = \Pi_0 = \Delta_0$ is the set of propositions containing only bounded quantifiers.</p>
 </blockquote>
 
-<p>Why the same class of propositions is referred to by three names will become clear shortly. In this article, unless there is a specific reason otherwise, we shall use $\Delta_0$ as the representative name amongst the three.</p>
+<p>Why the same class of propositions is referred to by three names will become clear shortly. In this article, unless there is a specific reason otherwise, we shall use $\Delta_0$ as the representative name among the three.</p>
 
-<p>For example, the following four propositions are all $\Delta_0$ propositions.</p>
+<p>For example, the following four propositions are all $\Delta_0$.</p>
 
 \[\begin{gather}
 \phi_1 : 0 = 1\\
@@ -421,9 +421,11 @@
 return false;
 </code></pre></div></div>
 
-<p>The above Turing machine halts within $x$ iterations. Therefore, $\Delta_0$ propositions are <strong>decidable</strong>, <strong>recursive</strong>, or <strong>computable</strong> by mechanical devices such as Turing machines (the three expressions are synonymous). However, as we shall explain in detail later, not all decidable propositions are $\Delta_0$.</p>
+<p>The above Turing machine halts within $x$ iterations. Therefore, $\Delta_0$ propositions are <strong>decidable</strong>, <strong>recursive</strong>, or <strong>computable</strong> (the three expressions are synonymous). However, as we shall explain in detail later, not all decidable propositions are $\Delta_0$.</p>
 
-<p>According to Gödel’s representability theorem, decidable true propositions are provable. In this article, when we say that $\phi$ is ‘true’, we mean $\mathcal{N} \vDash \phi$ for the standard natural number model $\mathcal{N}$, rather than $\mathsf{PA} \vDash \phi$. In other words, the following holds:</p>
+<p>According to Gödel’s representability theorem, decidable true propositions are provable. In this article, when we say that $\phi$ is ‘true’, we mean $\mathcal{N} \vDash \phi$ for the standard model of arithmetics $\mathcal{N}$, rather than $\mathsf{PA} \vDash \phi$.</p>
+
+<p>The following holds:</p>
 
 <blockquote>
   <p><strong>Theorem.</strong> The set of true $\Delta_0$ sentences is complete. (That is, if $\phi$ is a true $\Delta_0$ sentence, then $\mathsf{PA} \vdash \phi$.)</p>
@@ -487,7 +489,7 @@ return a
 \phi_2(x): ∃y\; ∃z\; \underbrace{(y \text{ is prime} ∧ z \text{ is prime} ∧ x = y + z ∧ x \text{ is even})}_{\Pi_0}
 \end{gather}\]
 
-<p>$\phi_1$ is true in the set ${1, 3, 7, 13, \ldots}$. $\phi_2$ is Goldbach’s conjecture; it is not known whether all $x$ satisfy this.</p>
+<p>$\phi_1$ is true in the set $\lbrace 1, 3, 7, 13, \ldots\rbrace $. $\phi_2$ is Goldbach’s conjecture; it is not known whether all $x$ satisfy this.</p>
 
 <p>$\Sigma_1$ is the collection of <strong>recursively enumerable</strong> sets. That is, if $\phi \in \Sigma_1$, then there exists a Turing machine $M$ such that:</p>
 
@@ -508,7 +510,7 @@ return false;
 
 <p>Although there is a <code class="language-plaintext highlighter-rouge">return false</code> statement, since there is no <code class="language-plaintext highlighter-rouge">break</code> statement to exit the loop, <code class="language-plaintext highlighter-rouge">return false</code> is unreachable. That is, if $\phi_2(c)$ is true, the above Turing machine returns true, but if it is false, it falls into an infinite loop.</p>
 
-<p>If $\phi \in \Sigma_1$ is a sentence that is true in the standard natural number model, then $\mathsf{PA} \vdash \phi$. A proposition of the form $\phi : \exists x \; \psi(x)$ being true in the standard natural number model means that $\psi(c)$ is true for some $c \in \mathbb{N}$, and since $\psi(c)$ is a true $\Pi_0$ sentence, it is provable. Therefore, the following holds:</p>
+<p>If $\phi \in \Sigma_1$ is a sentence that is true in the standard model of arithmetics, then $\mathsf{PA} \vdash \phi$. A proposition of the form $\phi : \exists x \; \psi(x)$ being true in the standard model of arithmetics means that $\psi(c)$ is true for some $c \in \mathbb{N}$, and since $\psi(c)$ is a true $\Pi_0$ sentence, it is provable. Therefore, the following holds:</p>
 
 <blockquote>
   <p><strong>Theorem.</strong> The set of true $\Sigma_1$ sentences is complete.</p>
@@ -523,7 +525,7 @@ return false;
 \phi_2(x): ∃y&lt;x\; ∃z&lt;x\; {(y \text{ is prime} ∧ z \text{ is prime} ∧ x = y + z ∧ x \text{ is even})}
 \end{gather}\]
 
-<p>So what do $\Sigma_1$ propositions that do not belong to $\Delta_0$ look like? One answer can be found in the <strong>halting problem</strong>.</p>
+<p>So what do propositions that strictly belong to $\Sigma_1$ look like? One answer can be found in the <strong>halting problem</strong>.</p>
 
 <p>First, let $\mathrm{HaltsIn}(x, n)$ be a predicate that determines whether “the Turing machine with Gödel number $x$” produces an output within $n$ operations. This predicate can be easily defined from the <strong>Kleene predicate</strong>, and the Kleene predicate is known to be $\Sigma_0$. For example, if the Gödel number of a Turing machine that computes the square of 3 in 2 operations is $123$, then $\mathrm{HaltsIn}(123, 3)$ is true but $\mathrm{HaltsIn}(123, 1)$ is false.</p>
 
@@ -541,7 +543,7 @@ return false;
 
 <h3 id="23-pi_1-propositions">2.3. $\Pi_1$ Propositions</h3>
 
-<p>If $\Sigma_1$ propositions are the collection of recursively enumerable propositions, then $\Pi_1$ propositions are the collection of <strong>co-recursively enumerable</strong> propositions. That is, a $\Pi_1$ sentence is decidable if false, but decidability is not guaranteed if true. For example, the following two propositions are $\Pi_1$ sentences that are not $\Delta_0$:</p>
+<p>If $\Sigma_1$ propositions are the collection of recursively enumerable propositions, then $\Pi_1$ propositions are the collection of <strong>co-recursively enumerable</strong> propositions. That is, a $\Pi_1$ sentence is decidable if false, but not necessarily decidable if true. For example, the following two propositions are $\Pi_1$ sentences that are not $\Delta_0$:</p>
 
 \[\begin{gather}
 \phi_3(x): \forall y \;[ \lnot \mathrm{HaltsIn}(x, y) ] \\
@@ -570,7 +572,7 @@ return false;
 \end{gather}\]
 </blockquote>
 
-<p>I believe the pattern should now be visible. As an example of a $\Sigma_2$ proposition, consider the following:</p>
+<p>I believe the pattern should now be clear. As an example of a $\Sigma_2$ proposition, consider the following:</p>
 
 \[\phi_5(x) : \exists y \; [ \mathrm{DoesNotHaltOn}(x, y)]\]
 
@@ -620,14 +622,7 @@ while True:
 
 \[\phi_5(x): \exists y \; \lnot \mathcal{O}(x|_y)\]
 
-<table>
-  <tbody>
-    <tr>
-      <td>Here, $x</td>
-      <td>_y$ is the Gödel number of the state where input $y$ is given to the Turing machine with Gödel number $x$. That is, $\Sigma_2$ propositions reduce to $\Sigma_1$ propositions when given an oracle for the halting problem. By similar principles, $\Pi_2$ and $\Delta_2$ propositions reduce to $\Pi_1$ and $\Delta_1$ propositions, respectively, when given an oracle for the halting problem.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Here, $x|_y$ is the Gödel number of the state where input $y$ is given to the Turing machine with Gödel number $x$. That is, $\Sigma_2$ propositions reduce to $\Sigma_1$ propositions when given an oracle for the halting problem. By similar principles, $\Pi_2$ and $\Delta_2$ propositions reduce to $\Pi_1$ and $\Delta_1$ propositions, respectively, when given an oracle for the halting problem.</p>
 
 <p>Furthermore, we can define <strong>second-order oracles</strong>. A second-order halting problem oracle is a halting problem oracle for Turing machines that use halting problem oracles. For example, whilst $\mathcal{O}$ is limited to determining whether the following code halts:</p>
 
