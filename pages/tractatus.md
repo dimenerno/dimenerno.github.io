@@ -140,7 +140,7 @@ Wieweit meine Bestrebungen mit denen anderer Philosophen zusammenfallen, will ic
 
 <p>
 <small>
-
+나의 노력이 다른 철학자들의 그것과 어느 정도 일치하는지, 나는 판단하고 싶지 않다. 
 </small>
 </p>
 
