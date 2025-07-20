@@ -12,7 +12,7 @@
   />
 
   <title>
-     랜덤 포스트 &middot; 디멘의 블로그 
+     복습노트 아카이브 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/random/" />
+  <link rel="canonical" href="/pages/notes/" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -214,81 +214,92 @@
                                                                                                                                                                                                        
     <a
       class="sidebar-nav-item lang-ko"
-      href="/about/"
+      href="/pages/about/"
       >저에 대하여</a
     >
     <a
     class="sidebar-nav-item lang-en"
-    href="/about/"
+    href="/pages/about/"
     >About Me</a
   >
         
     <a
       class="sidebar-nav-item lang-ko"
-      href="/archive-date/"
+      href="/pages/archive-date/"
       >날짜별로 보기</a
     >
     <a
     class="sidebar-nav-item lang-en"
-    href="/archive-date/"
+    href="/pages/archive-date/"
     >List by dates</a
   >
         
     <a
       class="sidebar-nav-item lang-ko"
-      href="/archive-tag/"
+      href="/pages/archive-tag/"
       >주제별로 보기</a
     >
     <a
     class="sidebar-nav-item lang-en"
-    href="/archive-tag/"
+    href="/pages/archive-tag/"
     >List by topics</a
   >
         
     <a
-      class="sidebar-nav-item active lang-ko"
-      href="/random/"
+      class="sidebar-nav-item lang-ko"
+      href="/pages/random/"
       >랜덤 포스트</a
     >
     <a
-    class="sidebar-nav-item active lang-en"
-    href="/random/"
+    class="sidebar-nav-item lang-en"
+    href="/pages/random/"
     >Go to a random post</a
   >
         
     <a
       class="sidebar-nav-item lang-ko"
-      href="/book/"
+      href="/pages/book/"
       >새벽의 자연학 수업</a
     >
     <a
     class="sidebar-nav-item lang-en"
-    href="/book/"
+    href="/pages/book/"
     >Twilight Wonders (Korean)</a
   >
         
     <a
-      class="sidebar-nav-item lang-ko"
-      href="/notes/"
+      class="sidebar-nav-item active lang-ko"
+      href="/pages/notes/"
       >복습노트 아카이브</a
     >
     <a
-    class="sidebar-nav-item lang-en"
-    href="/notes/"
+    class="sidebar-nav-item active lang-en"
+    href="/pages/notes/"
     >Maths Review Notes (Korean)</a
   >
         
     <a
       class="sidebar-nav-item lang-ko"
-      href="/guestbook/"
+      href="/pages/guestbook/"
       >방명록</a
     >
     <a
     class="sidebar-nav-item lang-en"
-    href="/guestbook/"
+    href="/pages/guestbook/"
     >Guestbook</a
   >
-                  
+                
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/pages/tractatus/"
+      >⟪논리철학논고⟫ 읽기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/pages/tractatus/"
+    >Reading Tractatus</a
+  >
+          
   </nav>
 
   <div class="sidebar-item">
@@ -369,56 +380,37 @@
       </div>
 
       <div class="container content"><div class="page">
-  <h1 class="page-title lang-ko">랜덤 포스트</h1>
-  <h1 class="page-title lang-en">Go to a random post</h1>
-  <style>
-  .fade-in {
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out forwards;
-  }
+  <h1 class="page-title lang-ko">복습노트 아카이브</h1>
+  <h1 class="page-title lang-en">Maths Review Notes (Korean)</h1>
+  <p class="lang-ko">
+제가 정리한 학부 수학 과목들의 복습 노트입니다. 개인적인 열람 용도로 만든 것이기에 정리가 다소 불친절하며, 일부 노트는 도중에 끊깁니다. 그럼에도 누군가에게는 도움이 될 수 있지 않을까 하는 생각에 공유합니다.
+</p>
 
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-</style>
+<p class="lang-en">
+These are my review notes for undergraduate mathematics courses. They were originally created for personal reference, so the organization is somewhat unpolished, and some are even incomplete. Nevertheless, I’m sharing them in the prospect that they might be helpful to someone. Please understand that it is only provided in Korean.
+</p>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const postElement = document.querySelector(".content");
-    if (postElement) {
-      postElement.innerHTML = "";
-    }
+<ul class="lang-ko">
+  <li><a href="/public/논리학 및 언어철학 복습노트.pdf">논리학 및 언어철학 복습노트</a></li>
+  <li><a href="/public/군론 복습노트.pdf">군론 복습노트</a></li>
+  <li><a href="/public/일반위상 복습노트.pdf">일반위상 복습노트</a></li>
+  <li><a href="/public/대수위상 복습노트.pdf">대수위상 복습노트</a></li>
+  <li><a href="/public/선형대수학 복습노트.pdf">선형대수학 복습노트</a></li>
+  <li><a href="/public/측도론 복습노트.pdf">측도론 복습노트</a> (미완성)</li>
+  <li><a href="/public/체론 복습노트.pdf">체론 복습노트</a> (미완성)</li>
+  <li><a href="/public/범주론 복습노트.pdf">범주론 복습노트</a> (미완성)</li>
+</ul>
 
-    const lang = localStorage.getItem("lang") || "ko";
-
-    fetch("/search.json")
-      .then(res => res.json())
-      .then(posts => {
-        const filtered = posts.filter(post => {
-          const isEnglish = post.url.includes("/en") || post.title.match(/[a-zA-Z]/);
-          return lang === "en" ? isEnglish : !isEnglish;
-        });
-
-        if (filtered.length === 0) {
-          document.body.innerHTML = "<h2>해당 언어로 된 포스트가 없습니다.</h2>";
-          return;
-        }
-
-        const randomPost = filtered[Math.floor(Math.random() * filtered.length)];
-        window.location.href = randomPost.url;
-      })
-      .catch(err => {
-        document.body.innerHTML = "<h2>search.json 로드 실패</h2>";
-        console.error(err);
-      });
-  });
-</script>
-
-<noscript>
-  No Javascript support exception
-</noscript>
+<ul class="lang-en">
+  <li><a href="/public/논리학 및 언어철학 복습노트.pdf">Logic and Philosophy of Language Notes</a></li>
+  <li><a href="/public/군론 복습노트.pdf">Group Theory Notes</a></li>
+  <li><a href="/public/일반위상 복습노트.pdf">General Topology Notes</a></li>
+  <li><a href="/public/대수위상 복습노트.pdf">Algebraic Topology Notes</a></li>
+  <li><a href="/public/선형대수학 복습노트.pdf">Linear Algebra Notes</a></li>
+  <li><a href="/public/측도론 복습노트.pdf">Measure Theory Notes</a> (incomplete)</li>
+  <li><a href="/public/체론 복습노트.pdf">Field Theory Notes</a> (incomplete)</li>
+  <li><a href="/public/범주론 복습노트.pdf">Category Theory Notes</a> (incomplete)</li>
+</ul>
 
 </div>
 </div>
