@@ -300,7 +300,7 @@
     href="/pages/tractatus/"
     >Reading Tractatus</a
   >
-          
+              
   </nav>
 
   <div class="sidebar-item">
@@ -441,6 +441,315 @@
 
 
 <div class="posts">
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/20/ramsey/en"> Ramsey Numbers and the Infinite Ramsey Theorem </a>
+      </h1>
+    <span class="post-date">20 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/combinatorics/'">
+        Combinatorics
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p><strong>Abstract.</strong> We examine the definition of Ramsey numbers and the Ramsey theorem that ensures Ramsey numbers are well-defined, extending this to infinite graphs. We also introduce an argument that derives the finite Ramsey theorem from the infinite Ramsey theorem using the compactness theorem.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<blockquote>
+  <p><strong>Problem.</strong> When the edges of a complete graph with 6 vertices are coloured red or blue, show that there exists a triangle whose three edges are all the same colour.</p>
+</blockquote>
+
+<p>For instance, in the following diagram, triangles ACF and BEF satisfy the problem’s conditions.</p>
+
+<p><img src="/public/finite-ramsey.png" width="350px" style="margin: 0 auto;" /></p>
+
+<p><strong>Solution.</strong> The number of edges emanating from any vertex is 5, so by the pigeonhole principle, at least 3 of them have the same colour. Without loss of generality, suppose edges AB, AC, and AD are all red. If any one of edges BC, CD, or DB is red, then there exists a triangle with all three edges red. For example, if BC is red, then triangle ABC satisfies this condition. On the other hand, if BC, CD, and DB are all blue, then triangle BCD has all three edges blue. Therefore, there exists at least one triangle with all three edges the same colour. ■</p>
+
+<h2 id="ramsey-theorem">Ramsey Theorem</h2>
+
+<p>The conclusion of the above problem can be expressed as follows: When $G$ is a complete graph with 6 or more vertices, if the edges of $G$ are coloured red or blue, then either there exists a complete subgraph with 3 or more vertices whose edges are all red, or there exists a complete subgraph with 3 or more vertices whose edges are all blue.</p>
+
+<p>Generalising this conclusion, we can pose the following question: Let $r$ and $b$ be arbitrary natural numbers. Does there exist a natural number $j$ such that when $G$ is a complete graph with $j$ or more vertices and the edges of $G$ are coloured red or blue, it is guaranteed that either there exists a complete subgraph with $r$ or more vertices whose edges are all red, or there exists a complete subgraph with $b$ or more vertices whose edges are all blue?</p>
+
+<p>According to the Ramsey theorem, the answer is <strong>yes</strong>. Specifically, when the smallest such $j$ is defined as $R(r, b)$, the following holds:</p>
+
+<blockquote>
+  <p><strong>Ramsey Theorem.</strong> For any natural numbers $r$ and $b$, $R(r, b)$ exists.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> We prove by induction on $r + b$. It suffices to show that the following holds:</p>
+
+\[R(r, b) \leq R(r-1, b) + R(r, b-1)\]
+
+<p>Let $R(r-1, b) = i$ and $R(r, b-1) = j$. Suppose $G$ is a complete graph with $i + j$ vertices, and the edges of $G$ are coloured red or blue. For any vertex $v \in G$, let $R$ be the complete subgraph formed by vertices connected to $v$ by red edges, and let $B$ be the complete subgraph formed by vertices connected by blue edges. The following holds:</p>
+
+\[|R| + |B| + 1 = i + j\]
+
+<p>Therefore, one of the following must hold:</p>
+
+<ol>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$</td>
+          <td>R</td>
+          <td>\geq i$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$</td>
+          <td>B</td>
+          <td>\geq j$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<p>In case 1, since $R(r-1, b) = i$, $R$ either has a complete subgraph with $r-1$ vertices whose edges are all red, or has a complete subgraph with $b$ vertices whose edges are all blue. In the latter case, the condition for $R(r, b)$ is satisfied, and in the former case, the graph obtained by adding $v$ to that subgraph satisfies the condition for $R(r, b)$. The same logic applies to case 2. ■</p>
+
+<p>The problem at the beginning suggests that $R(3, 3) \leq 6$. Since it is known that there exist graphs with 5 vertices that do not satisfy the problem’s conditions, we have $R(3, 3) = 6$. The following are also trivial:</p>
+
+<ul>
+  <li>$R(r, b) = R(b, r)$</li>
+  <li>$R(r, 2) = r$</li>
+</ul>
+
+<p>However, calculating Ramsey numbers exactly for general values is an extremely difficult problem. This is because the number of cases to be explored increases faster than exponentially with the number of vertices in the graph. The time complexity of the currently known fastest Ramsey number search algorithm is $O(c^{n^2})$. The problem of finding the value of $R(5, 5)$ remains unsolved, though it is known to be between 43 and 48 inclusive. The following anecdote is told regarding this:</p>
+
+<blockquote>
+  <p>Erdős once told this story. Imagine that a much more advanced alien force lands on Earth and says that unless we calculate the value of $R(5, 5)$, they will blow the Earth to pieces. Erdős claimed that in this case, we should gather all our computers and mathematicians to attempt the calculation. However, if they demanded the value of $R(6, 6)$, Erdős said it would be better to devise a plan to defeat the alien force.¹</p>
+</blockquote>
+
+<h2 id="ramsey-theorem-for-multiple-colours">Ramsey Theorem for Multiple Colours</h2>
+
+<p>The Ramsey theorem also holds when more than two colours are used. First, let us define $R(n_1, n_2, \ldots, n_k) = j$ as the smallest $j$ such that when the edges of a complete graph with $j$ vertices are coloured using $k$ colours, at least one of the following always exists:</p>
+
+<ul>
+  <li>A complete subgraph with $n_1$ vertices whose edges are all the 1st colour</li>
+  <li>A complete subgraph with $n_2$ vertices whose edges are all the 2nd colour</li>
+  <li>…</li>
+  <li>A complete subgraph with $n_k$ vertices whose edges are all the $k$th colour</li>
+</ul>
+
+<p>For example, it is known that $R(3, 3, 3) = 17$. This means that when the edges of a complete graph with 17 or more vertices are coloured red, blue, or yellow, there always exists a triangle whose three edges are all red, all blue, or all yellow.</p>
+
+<blockquote>
+  <p><strong>Ramsey Theorem for Multiple Colours.</strong> For any natural numbers $n_1, \ldots, n_k$, $R(n_1, \ldots, n_k)$ exists.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> We prove by induction on $k$. It suffices to show that the following holds:</p>
+
+\[R(n_1, \ldots, n_k) \leq R(n_1, \ldots, n_{k-2}, R(n_{k-1}, n_k))\]
+
+<p>Let $j$ be the right-hand side of the inequality. Suppose $G$ is a complete graph with $j$ vertices, and colour the edges of $G$ using $k$ colours. Temporarily identify the $(k-1)$th colour with the $k$th colour. Then, by the definition of $j$, at least one of the following exists in $G$:</p>
+
+<ul>
+  <li>A complete subgraph with $n_1$ vertices whose edges are all the 1st colour</li>
+  <li>A complete subgraph with $n_2$ vertices whose edges are all the 2nd colour</li>
+  <li>…</li>
+  <li>A complete subgraph with $n_{k-2}$ vertices whose edges are all the $(k-2)$th colour</li>
+  <li>A complete subgraph with $R(n_{k-1}, n_k)$ vertices whose edges are all the $(k-1)$th colour = $k$th colour</li>
+</ul>
+
+<p>Except for the last case, the condition for $R(n_1, \ldots, n_k)$ is satisfied, so we need only consider the last case. Let $H$ be the complete subgraph guaranteed by the last case. By the definition of $R(n_{k-1}, n_k)$, $H$ has at least one of the following:</p>
+
+<ul>
+  <li>A complete subgraph with $n_{k-1}$ vertices whose edges are all the $(k-1)$th colour</li>
+  <li>A complete subgraph with $n_k$ vertices whose edges are all the $k$th colour</li>
+</ul>
+
+<p>Since each case satisfies the condition for $R(n_1, \ldots, n_k)$, in all cases $G$ satisfies $R(n_1, \ldots, n_k)$. ■</p>
+
+<h2 id="erdős-rado-arrow">Erdős-Rado Arrow</h2>
+
+<p>So far, we have examined the colouring of edges. Edges are relationships between two vertices. Going further, we can consider situations where relationships among $n$ vertices are coloured.</p>
+
+<p>For convenience of discussion, let us introduce several definitions. First, we adopt the set-theoretic definition of natural numbers, defining $n = {0, 1, \ldots, n-1}$. We also introduce the following notation:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> When $A$ is a set, we define:</p>
+
+\[A^{(n)} = \{ S: S \subset A, |S| = n \}\]
+</blockquote>
+
+<p>That is, for a natural number $j$, $j^{(n)}$ is a set whose elements are each case of $_jC_n$. For example,</p>
+
+\[4^{(2)} = \left\{ \{ 0, 1\}, \{0, 2 \}, \{0, 3\}, \{1, 2 \}, \{1, 3\}, \{2, 3\} \right\}\]
+
+<p>To <strong>partition</strong> a given set into $m$ parts means to classify each element of the set into one of $m$ categories. For example, one result of partitioning $4^{(2)}$ into 3 parts is:</p>
+
+\[\left\{ \left\{ \{0, 1\}, \{ 0, 2 \}, \{1, 2\} \right\}, \left\{ \{0, 3\}, \{2, 3 \} \right\}, \left\{ \{1, 3 \} \right\} \right\}\]
+
+<p>In the above partition, the sets formed by 0, 1, and 2 all belong to the same category. We say that 0, 1, and 2 are <strong>homogeneous</strong> with respect to this partition.</p>
+
+<p>We define the following notation, called the <strong>Erdős-Rado arrow</strong>:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> If there always exist $k$ homogeneous elements when $j^{(n)}$ is partitioned into $m$ parts, we write:</p>
+
+\[j \rightarrow (k)^n_m\]
+</blockquote>
+
+<p>The problem at the beginning suggests that $6 \rightarrow (3)^2_2$. The reason $n = 2$ is that edges are relationships between two vertices, and $m = 2$ because there are two colours.</p>
+
+<p>By the Ramsey theorem we saw earlier, the following holds:</p>
+
+\[\forall k\; \exists j: j \to (k)^2_2\]
+
+<p>Meanwhile, the Ramsey theorem for multiple colours suggests:</p>
+
+\[\forall k, m \; \exists j : j \to (k)^2_m\]
+
+<p>In general, the following is known:</p>
+
+<blockquote>
+  <p><strong>Finite Erdős-Rado Theorem.</strong> For any natural numbers $n$, $m$, and $k$, there exists a natural number $j$ such that:</p>
+
+\[j \rightarrow (k)^n_m\]
+</blockquote>
+
+<h2 id="infinite-ramsey-theorem">Infinite Ramsey Theorem</h2>
+
+<p>Interestingly, the Ramsey theorem also holds when $k$ is an infinite cardinal. The following is known:</p>
+
+<blockquote>
+  <p><strong>Erdős-Rado Theorem.</strong> For any cardinal $\lambda$ and natural numbers $n$ and $m$, there exists a cardinal $\kappa$ such that:</p>
+
+\[\kappa \rightarrow (\lambda)^n_m\]
+</blockquote>
+
+<p>In particular, the following holds:</p>
+
+<blockquote>
+  <p><strong>Infinite Ramsey Theorem.</strong> \(\aleph_0 \rightarrow (\aleph_0)^n_m\)</p>
+</blockquote>
+
+<p>That is, when guests at Hilbert’s hotel arbitrarily shake hands, either there are infinitely many people who all shake hands with each other, or there are infinitely many people who never shake hands with each other.</p>
+
+<p>The proof of the above theorem is the author’s own conjecture, so please let me know if there are any errors.</p>
+
+<p><strong>Proof.</strong> We prove for the case $n = m = 2$. Suppose $G$ is a complete graph of size $\aleph_0$. Colour the edges of $G$ red or blue. For vertices $v$ and $w$ of $G$, if $\overline{vw}$ is red, we write $\overline{vw} \in R$; if blue, we write $\overline{vw} \in B$.</p>
+
+<p>For any vertex $v_0$ of $G$, define:</p>
+
+\[\begin{aligned}
+R_1 = \{ w \in G : \overline{v_0w} \in R \}\\
+B_1 = \{ w \in G : \overline{v_0w} \in B \}
+\end{aligned}\]
+
+<p>Since $R_1 \cup B_1 \cup {v_0} = G$, at least one of $R_1$ and $B_1$ is an infinite set. If $R_1$ is infinite, we write $v_0 \in R$; if $B_1$ is infinite, we write $v_0 \in B$.</p>
+
+<p>Suppose $R_1$ is infinite. By the axiom of choice, we can select an element $v_1$ of $R_1$. Now define:</p>
+
+\[\begin{aligned}
+R_2 = \{ w \in R_1 : \overline{v_1w} \in R \}\\
+B_2 = \{ w \in R_1 : \overline{v_1w} \in B \}
+\end{aligned}\]
+
+<p>Since $R_2 \cup B_2 \cup {v_1} = R_1$, at least one of $R_2$ and $B_2$ is infinite. Similarly, if $R_2$ is infinite, we write $v_1 \in R$; if $B_2$ is infinite, we write $v_1 \in B$.</p>
+
+<p>Suppose $B_2$ is infinite. Select an element $v_2$ of $B_2$ and define:</p>
+
+\[\begin{aligned}
+R_3 = \{ w \in B_2 : \overline{v_2w} \in R \}\\
+B_3 = \{ w \in B_2 : \overline{v_2w} \in B \}
+\end{aligned}\]
+
+<p>By repeating in this manner, we obtain the following sequence of vertices:</p>
+
+\[V = \{ v_0, v_1, v_2, v_3, \ldots \}\]
+
+<p><img src="/public/infinite-ramsey.png" width="100%" style="margin: 0 auto;" /></p>
+
+<p>For each $v \in V$, either $v \in R$ or $v \in B$. Since $V$ is infinite, one of the following is infinite:</p>
+
+\[\begin{aligned}
+H = \{ v \in V : v \in R \} \\
+K = \{ v \in V : v \in B \}
+\end{aligned}\]
+
+<p>If $H$ is infinite, then the complete graph formed by the vertices of $H$ has all edges red. On the other hand, if $K$ is infinite, then the complete graph formed by the vertices of $K$ has all edges blue. Therefore, $\aleph_0 \rightarrow (\aleph_0)^2_2$. ■</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> When $A$ is an infinite subset of $\mathbb{N}$, there exists an infinite subset $B$ of $A$ such that one of the following holds:</p>
+
+  <ul>
+    <li>For any $b \in B$, if $c$ is an element of $B$ greater than $b$, then $b \mid c$.</li>
+    <li>For any $b, c \in B$, $b \nmid c$ and $c \nmid b$.</li>
+  </ul>
+</blockquote>
+
+<p><strong>Proof.</strong> Take $k = A$, and consider a partition where for $x &lt; y$, if $x \mid y$, then ${x, y}$ is classified into category 1; otherwise, into category 2. Then use the fact that $\aleph_0 \rightarrow (\aleph_0)^2_2$. ■</p>
+
+<h2 id="from-infinite-to-finite">From Infinite to Finite</h2>
+
+<p>Interestingly, using the compactness theorem, one can prove the finite Ramsey theorem from the infinite Ramsey theorem. That is, the following holds:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $\aleph_0 \rightarrow (\aleph_0)^n_m$, then for any natural number $k$, there exists a natural number $j$ such that $j \to (k)^n_m$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> We prove for the case $n = 2$. A graph whose edges are coloured with $m$ colours can be formalised as follows. First, define the signature of language $\mathcal{L} = (V, f, 1, 2, \ldots, m)$ as:</p>
+
+<ul>
+  <li>$V$ is a unary relation.</li>
+  <li>$f$ is a binary function.</li>
+  <li>$1, 2, \ldots, m$ are constants.</li>
+</ul>
+
+<p>Let $T$ be an $\mathcal{L}$-theory consisting of:</p>
+
+<ul>
+  <li>$\psi : \lnot V(1) \land \lnot V(2) \land \lnot V(m)$</li>
+  <li>$\theta : \forall x, y \; (V(x) \land V(y) \land x \neq y) \rightarrow ( f(x, y) = 1 \lor f(x, y) = 2 \lor \cdots \lor f(x, y) = m )$</li>
+  <li>$\phi_1 : \exists x_1, x_2 \; V(x_1) \land V(x_2) \land x_1 \neq x_2$</li>
+  <li>$\phi_2 : \exists x_1, x_2, x_3 \; V(x_1) \land V(x_2) \land V(x_3) \land x_1 \neq x_2 \land x_2 \neq x_3 \land x_1 \neq x_3$</li>
+  <li>For each $n \in \mathbb{N}$, $\phi_n$</li>
+</ul>
+
+<p>$\psi$ means that $1, 2, \ldots, m$ represent colours, not vertices. $\theta$ means that any edge between two vertices has one of the colours from $1$ to $m$. And $\phi_n$ means that at least $n$ vertices exist. Since $\phi_n \in T$ for any $n$, models of $T$ are infinite complete graphs.</p>
+
+<p>Let the following sentence be $\chi$:</p>
+
+\[\exists x_1, x_2, \ldots, x_k : f(x_1, x_2) = f(x_1, x_3) = \ldots = f(x_{k-1}, x_k)\]
+
+<p>That is, $\chi$ means that there exists a monochromatic complete subgraph with $k$ vertices. Therefore, according to the infinite Ramsey theorem, the following holds:</p>
+
+\[T \vDash \chi\]
+
+<p>And by the compactness theorem, there exists some finite sub-theory $T’ = {\psi, \theta, \phi_1, \ldots, \phi_j}$ such that:</p>
+
+\[T' \vDash \chi\]
+
+<p>That is, every complete graph with $j$ or more vertices satisfies $\chi$. In other words, $j \to (k)^2_m$. To prove for arbitrary $n$, one can take $R$ as an $n$-ary relation. ■</p>
+
+<p>¹ Joel H. Spencer (1994), <em>Ten Lectures on the Probabilistic Method</em></p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
@@ -2350,82 +2659,6 @@ for y ∈ P:
 <p>(⇒) $G = (\mathbb{Z}/p\mathbb{Z})^\times$라고 하자. $G$의 원소를 모두 곱한 값은 $(p - 1)!$이다. $x^2 = 1$의 근인 $\pm 1$을 제외한 $G$의 모든 원소는 자기 자신을 역원으로 가지지 않는다. 따라서 $(p - 1)! \equiv -1$이다.</p>
 
 <p>(⇐) $N = (p - 1)! + 1$이라고 하자. 조건에 의해 $p \mid N$이다. 만약 $p$가 소수가 아니라면 어떤 소수 $q &lt; p$에 대해 $q \mid N$이다. 그러나 $N \bmod q = 1$이므로 모순이다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/05/order/en"> Notes on Multiplicative Groups and Order: Fermat's Theorem on Primes and Wilson's Theorem </a>
-      </h1>
-    <span class="post-date">05 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/algebra/'">
-        Algebra
-      </div>
-      
-    </div>
-     <h3 id="remarks">Remarks</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th><strong>Multiplicative Group</strong></th>
-      <th><strong>Additive Group</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1 is the identity element</td>
-      <td>0 is the identity element</td>
-    </tr>
-    <tr>
-      <td>When the order of $x$ is $r$, $x^r = 1$</td>
-      <td>When the order of $x$ is $r$, $rx = 0$</td>
-    </tr>
-  </tbody>
-</table>
-
-<ul>
-  <li>For a prime $p$, if information about $p - 1$ is given, consider the multiplicative group $(\mathbb{Z}/p\mathbb{Z})^\times$ of order $p - 1$.</li>
-  <li>The multiplicative group of a finite field is cyclic.</li>
-  <li>For a <em>cyclic</em> multiplicative group $G$, $nm \mid |G|$ is equivalent to the existence of an element $x$ such that $x^{nm} = 1$ but $x^n, x^m \neq 1$.</li>
-  <li>Order is different from period. In general, <strong>(period) = (order) + 1</strong>.</li>
-</ul>
-
-<h3 id="fermats-theorem-on-primes">Fermat’s Theorem on Primes</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> A prime $p$ can be expressed in the form $p = a^2 + b^2$ for two integers $a, b$ if and only if $p \equiv 1 \pmod{4}$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<p>(⇒) Trivial.</p>
-
-<p>(⇐) Let $G = (\mathbb{Z}/p\mathbb{Z})^\times$. By the condition, $4 \mid |G|$. Therefore, there exists an element $n$ such that $n^4 = 1$ but $n^2 \neq 1$. That is, $n^2 = -1$. Hence, $p \mid n^2 + 1$. Now, considering in $\mathbb{Z}[i]$, we have $p \mid (n + i)(n - i)$. If $p$ were irreducible in $\mathbb{Z}[i]$, then $p \mid n + i$ or $p \mid n - i$ (note that the fact that $\mathbb{Z}[i]$ is UFD is used here) but both are impossible. Therefore, $p$ is not irreducible, and by conjugacy,</p>
-
-\[p = (a + bi)(a - bi) = a^2 + b^2\]
-
-<p>■</p>
-
-<h3 id="wilsons-theorem">Wilson’s Theorem</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $p$ is prime if and only if $(p - 1)! \equiv -1 \pmod{p}$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<p>(⇒) Let $G = (\mathbb{Z}/p\mathbb{Z})^\times$. The product of all elements of $G$ is $(p - 1)!$. Except for $\pm 1$, which are the roots of $x^2 = 1$, all other elements of $G$ do not have themselves as their inverse. Therefore, $(p - 1)! \equiv -1$.</p>
-
-<p>(⇐) Let $N = (p - 1)! + 1$. By the condition, $p \mid N$. If $p$ were not prime, then for some prime $q &lt; p$, we would have $q \mid N$. However, $N \equiv 1 \pmod{q}$, which is a contradiction. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
