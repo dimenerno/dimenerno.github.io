@@ -113,4 +113,4 @@ $$
 \end{align*}
 $$
 
-따라서 $\beta : \mathbf{Top} \to \mathbf{CHaus}$는 함자이며, 특히 $U: \mathbf{CHaus} \to \mathbf{Top}$의 좌 어드조인트이다. 이로부터 임의의 $X$에 대해, 보편 조건을 만족하는 $(e, \beta X)$는 콤마 카테고리 $(A \Rightarrow U)$의 초기 대상이므로 동형성에 대해 유일함이 따라 나온다. (자세한 설명은 [이 글](http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/)을 참조) ■
+따라서 $\beta : \mathbf{Top} \to \mathbf{CHaus}$는 함자이며, 특히 $U: \mathbf{CHaus} \to \mathbf{Top}$의 좌 어드조인트이다. 이로부터 임의의 $X$에 대해, 보편 조건을 만족하는 $(e, \beta X)$는 콤마 카테고리 $(A \Rightarrow U)$의 초기 대상이므로 동형성에 대해 유일함이 따라 나온다. (자세한 설명은 [이 글](http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint)을 참조) ■

@@ -3,18 +3,18 @@
   <channel>
     <title>디멘의 블로그</title>
     <description>이데아를 여행하는 히치하이커</description>
-    <link>https://dimenerno.github.io</link>
-    <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>사적 언어는 가능한가?</title>
-        <link>https://dimenerno.github.io/2025/07/21/private-language</link>
-        <guid>https://dimenerno.github.io/2025/07/21/private-language</guid>
+        <link>http://localhost:4000/2025/07/21/private-language</link>
+        <guid>http://localhost:4000/2025/07/21/private-language</guid>
         <pubDate>Mon, 21 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/07/03/kripkenstein&quot;&gt;이전 글&lt;/a&gt;에서 크립키-비트겐슈타인 역설을 다루었다. 요약하자면, 크립키-비트겐슈타인 역설은 특정 단어가 사용될 수 있는 무한한 사례를 아우르는 규범적 사실이 없다는 고찰에 착안한다. 이로부터 크립키-비트겐슈타인이 내리는 결론은 다음과 같다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/21/private-language">
+          xml:base="http://localhost:4000/2025/07/21/private-language">
           <![CDATA[
             <p><a href="https://dimenerno.github.io/2025/07/03/kripkenstein">이전 글</a>에서 크립키-비트겐슈타인 역설을 다루었다. 요약하자면, 크립키-비트겐슈타인 역설은 특정 단어가 사용될 수 있는 무한한 사례를 아우르는 규범적 사실이 없다는 고찰에 착안한다. 이로부터 크립키-비트겐슈타인이 내리는 결론은 다음과 같다.</p>
 
@@ -276,13 +276,13 @@
     
       <item>
         <title>불 대수 구조의 아이디얼과 필터</title>
-        <link>https://dimenerno.github.io/2025/07/18/boolean-algebra</link>
-        <guid>https://dimenerno.github.io/2025/07/18/boolean-algebra</guid>
+        <link>http://localhost:4000/2025/07/18/boolean-algebra</link>
+        <guid>http://localhost:4000/2025/07/18/boolean-algebra</guid>
         <pubDate>Fri, 18 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;h2 id=&quot;불-대수&quot;&gt;불 대수&lt;/h2&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/18/boolean-algebra">
+          xml:base="http://localhost:4000/2025/07/18/boolean-algebra">
           <![CDATA[
             <h2 id="불-대수">불 대수</h2>
 
@@ -701,15 +701,15 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>스톤-체흐 콤팩트화</title>
-        <link>https://dimenerno.github.io/2025/07/10/stone-cech</link>
-        <guid>https://dimenerno.github.io/2025/07/10/stone-cech</guid>
+        <link>http://localhost:4000/2025/07/10/stone-cech</link>
+        <guid>http://localhost:4000/2025/07/10/stone-cech</guid>
         <pubDate>Thu, 10 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\iota : X \to Y$가 임베딩이라고 하자. 즉, $\iota$는 단사이며 $X$와 $\iota [X]$의 위상동형사상이다. $Y$가 $X$의 &lt;strong&gt;콤팩트화&lt;sub&gt;compactification&lt;/sub&gt;&lt;/strong&gt;라는 것은 $Y$가 콤팩트 공간이고, $\overline{\iota [X]} = Y$인 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/10/stone-cech">
+          xml:base="http://localhost:4000/2025/07/10/stone-cech">
           <![CDATA[
             <blockquote>
   <p><strong>정의.</strong> $\iota : X \to Y$가 임베딩이라고 하자. 즉, $\iota$는 단사이며 $X$와 $\iota [X]$의 위상동형사상이다. $Y$가 $X$의 <strong>콤팩트화<sub>compactification</sub></strong>라는 것은 $Y$가 콤팩트 공간이고, $\overline{\iota [X]} = Y$인 것이다.</p>
@@ -820,7 +820,7 @@ x \lor y = x + y + xy \\
 &amp;= \lambda_{\psi(x)}
 \end{align*}\]
 
-<p>따라서 $\beta : \mathbf{Top} \to \mathbf{CHaus}$는 함자이며, 특히 $U: \mathbf{CHaus} \to \mathbf{Top}$의 좌 어드조인트이다. 이로부터 임의의 $X$에 대해, 보편 조건을 만족하는 $(e, \beta X)$는 콤마 카테고리 $(A \Rightarrow U)$의 초기 대상이므로 동형성에 대해 유일함이 따라 나온다. (자세한 설명은 <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">이 글</a>을 참조) ■</p>
+<p>따라서 $\beta : \mathbf{Top} \to \mathbf{CHaus}$는 함자이며, 특히 $U: \mathbf{CHaus} \to \mathbf{Top}$의 좌 어드조인트이다. 이로부터 임의의 $X$에 대해, 보편 조건을 만족하는 $(e, \beta X)$는 콤마 카테고리 $(A \Rightarrow U)$의 초기 대상이므로 동형성에 대해 유일함이 따라 나온다. (자세한 설명은 <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint">이 글</a>을 참조) ■</p>
 
           ]]>
         </content:encoded>
@@ -828,15 +828,15 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>Stone-Čech Compactification</title>
-        <link>https://dimenerno.github.io/2025/07/10/stone-cech/en</link>
-        <guid>https://dimenerno.github.io/2025/07/10/stone-cech/en</guid>
+        <link>http://localhost:4000/2025/07/10/stone-cech/en</link>
+        <guid>http://localhost:4000/2025/07/10/stone-cech/en</guid>
         <pubDate>Thu, 10 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a &lt;strong&gt;compactification&lt;/strong&gt; of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/10/stone-cech/en">
+          xml:base="http://localhost:4000/2025/07/10/stone-cech/en">
           <![CDATA[
             <blockquote>
   <p><strong>Definition.</strong> Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a <strong>compactification</strong> of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.</p>
@@ -949,7 +949,7 @@ x \lor y = x + y + xy \\
 &amp;= \lambda_{\psi(x)}
 \end{align*}\]
 
-<p>Thus, $\beta : \mathbf{Top} \to \mathbf{CHaus}$ is a functor, and in particular, it is the left adjoint to $U: \mathbf{CHaus} \to \mathbf{Top}$. It follows that for any $X$, the pair $(e, \beta X)$ that satisfies the universal condition is the initial object in the comma category $(A \Rightarrow U)$, which implies uniqueness up to isomorphism. (For further details, refer to <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">this post</a>) ■</p>
+<p>Thus, $\beta : \mathbf{Top} \to \mathbf{CHaus}$ is a functor, and in particular, it is the left adjoint to $U: \mathbf{CHaus} \to \mathbf{Top}$. It follows that for any $X$, the pair $(e, \beta X)$ that satisfies the universal condition is the initial object in the comma category $(A \Rightarrow U)$, which implies uniqueness up to isomorphism. (For further details, refer to <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint">this post</a>) ■</p>
 
           ]]>
         </content:encoded>
@@ -957,13 +957,13 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>우리손 보조정리와 우리손 거리화 정리</title>
-        <link>https://dimenerno.github.io/2025/07/09/urysohn</link>
-        <guid>https://dimenerno.github.io/2025/07/09/urysohn</guid>
+        <link>http://localhost:4000/2025/07/09/urysohn</link>
+        <guid>http://localhost:4000/2025/07/09/urysohn</guid>
         <pubDate>Wed, 09 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;h2 id=&quot;우리손-보조정리&quot;&gt;우리손 보조정리&lt;/h2&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/09/urysohn">
+          xml:base="http://localhost:4000/2025/07/09/urysohn">
           <![CDATA[
             <h2 id="우리손-보조정리">우리손 보조정리</h2>
 
@@ -1103,8 +1103,8 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>The Urysohn Lemma and Urysohn Metrisation Theorem</title>
-        <link>https://dimenerno.github.io/2025/07/09/urysohn/en</link>
-        <guid>https://dimenerno.github.io/2025/07/09/urysohn/en</guid>
+        <link>http://localhost:4000/2025/07/09/urysohn/en</link>
+        <guid>http://localhost:4000/2025/07/09/urysohn/en</guid>
         <pubDate>Wed, 09 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Urysohn Lemma.&lt;/strong&gt; Let $X$ be a normal space. If $A$ and $B$ are disjoint closed sets in $X$, then there exists a continuous function $f: X \to [0, 1]$ such that $f[A] = \lbrace  0 \rbrace$ and $f[B] = \lbrace 1 \rbrace$.&lt;/p&gt;
@@ -1113,7 +1113,7 @@ x \lor y = x + y + xy \\
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/09/urysohn/en">
+          xml:base="http://localhost:4000/2025/07/09/urysohn/en">
           <![CDATA[
             <blockquote>
   <p><strong>Urysohn Lemma.</strong> Let $X$ be a normal space. If $A$ and $B$ are disjoint closed sets in $X$, then there exists a continuous function $f: X \to [0, 1]$ such that $f[A] = \lbrace  0 \rbrace$ and $f[B] = \lbrace 1 \rbrace$.</p>
@@ -1251,15 +1251,15 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>크립키-비트겐슈타인 역설</title>
-        <link>https://dimenerno.github.io/2025/07/03/kripkenstein</link>
-        <guid>https://dimenerno.github.io/2025/07/03/kripkenstein</guid>
+        <link>http://localhost:4000/2025/07/03/kripkenstein</link>
+        <guid>http://localhost:4000/2025/07/03/kripkenstein</guid>
         <pubDate>Thu, 03 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein">
+          xml:base="http://localhost:4000/2025/07/03/kripkenstein">
           <![CDATA[
             <blockquote>
   <p>“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.</p>
@@ -1613,15 +1613,15 @@ x + y &amp; x, y &lt; 50 \\\
     
       <item>
         <title>The Kripke-Wittgenstein Paradox</title>
-        <link>https://dimenerno.github.io/2025/07/03/kripkenstein/en</link>
-        <guid>https://dimenerno.github.io/2025/07/03/kripkenstein/en</guid>
+        <link>http://localhost:4000/2025/07/03/kripkenstein/en</link>
+        <guid>http://localhost:4000/2025/07/03/kripkenstein/en</guid>
         <pubDate>Thu, 03 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;Disclaimer: Section “2.2. Dispositional Analysis” contains some commentary by myself indepedent from Kripke.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein/en">
+          xml:base="http://localhost:4000/2025/07/03/kripkenstein/en">
           <![CDATA[
             <blockquote>
   <p>Disclaimer: Section “2.2. Dispositional Analysis” contains some commentary by myself indepedent from Kripke.</p>
@@ -1985,15 +1985,15 @@ x + y &amp; x, y &lt; 50 \\
     
       <item>
         <title>프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title>
-        <link>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos</link>
-        <guid>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos</guid>
+        <link>http://localhost:4000/2025/06/17/kafka-blue-octavos</link>
+        <guid>http://localhost:4000/2025/06/17/kafka-blue-octavos</guid>
         <pubDate>Tue, 17 Jun 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;「여덟 권의 청색 팔절판 노트&lt;sub&gt;Acht blaue Oktavhefte&lt;/sub&gt;」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos">
+          xml:base="http://localhost:4000/2025/06/17/kafka-blue-octavos">
           <![CDATA[
             <blockquote>
   <p>「여덟 권의 청색 팔절판 노트<sub>Acht blaue Oktavhefte</sub>」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다.</p>
@@ -2243,13 +2243,13 @@ Ich sitze zum Beispiel zu Hause, ehe ich angeln gehe, und drehe scharf zusehend 
     
       <item>
         <title>Franz Kafka, The Blue Octavo Notebooks, Volume 1</title>
-        <link>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en</link>
-        <guid>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en</guid>
+        <link>http://localhost:4000/2025/06/17/kafka-blue-octavos/en</link>
+        <guid>http://localhost:4000/2025/06/17/kafka-blue-octavos/en</guid>
         <pubDate>Tue, 17 Jun 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;&lt;img src=&quot;/public/the-blue-notebooks.png&quot; style=&quot;max-width: 350px; width: 100%; margin: 7em auto 5em auto;&quot; /&gt;&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en">
+          xml:base="http://localhost:4000/2025/06/17/kafka-blue-octavos/en">
           <![CDATA[
             <p><img src="/public/the-blue-notebooks.png" style="max-width: 350px; width: 100%; margin: 7em auto 5em auto;" /></p>
 

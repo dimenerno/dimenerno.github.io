@@ -42,3 +42,8 @@ include:
 
 exclude:
   - post-list.json
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
