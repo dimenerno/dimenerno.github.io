@@ -442,6 +442,126 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/04/regular-singular"> 정칙 기수와 특이 기수, 그리고 도달 불가능 기수 </a>
+      </h1>
+    <span class="post-date">04 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <p>이 글에서 $\kappa$는 무한 기수이다. 또한, 기수를 초기 서수<sub>initial ordinal</sub>로 정의하는 방식을 택한다(<a href="https://dimenerno.github.io/2025/04/20/cardinality/">이 글</a>의 3번). 이에 따라 모든 기수는 서수이기도 하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\theta$가 $\kappa$보다 작은 극한 서수라고 하자. 각 $\nu$에 대해 $\alpha_\nu &lt; \kappa$인 증가하는 서수열 $\langle \alpha_\nu : \nu &lt; \theta \rangle$에 대하여, 언제나 $\lim_{\nu \to \theta} \alpha_\nu &lt; \kappa$일 때, $\kappa$를 <strong>정칙 기수<sub>regular cardinal</sub></strong>라고 한다. 정칙 기수가 아닌 기수를 <strong>특이 기수<sub>singular cardinal</sub></strong>라고 한다.</p>
+</blockquote>
+
+<p><em>Remark.</em> $\alpha_\nu$와 $\theta$는 일반적으로 기수가 아니라 서수이다.</p>
+
+<p>예를 들어 $\aleph_0$는 정칙 기수이다. $\aleph_0$개보다 적은 개수의 — 즉, 유한한 — $\aleph_0$보다 작은 기수들 — 즉, 자연수 —  의 상한은 $\aleph_0$에 달하지 않기 때문이다.</p>
+
+<p>반면 $\aleph_\omega$는 특이 기수이다. 다음 기수열에서 각각의 기수는 $\aleph_\omega$보다 작고, 기수열의 길이 또한 $\aleph_0 &lt; \aleph_\omega$이지만, 그 상한은 $\aleph_\omega$이기 때문이다.</p>
+
+\[\aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \aleph_3 \quad \cdots\]
+
+<blockquote>
+  <p><strong>정리. (특이 기수 판별법)</strong> $\kappa$가 특이 기수일 필요충분조건은 $\kappa$가 $\kappa$개보다 적은 개수의 $\kappa$보다 작은 기수들의 합일 것이다. 즉, $|I| &lt; \kappa$, $\kappa_i &lt; \kappa \;(\forall i \in I)$에 대하여,</p>
+
+\[\sum_{i \in I} \kappa_i = \kappa\]
+</blockquote>
+
+<p><em>Remark.</em> $\kappa_i$는 일반적인 서수가 아닌 기수이다. 그리고 $\sum$은 서수 덧셈이 아니라 기수 덧셈이다.</p>
+
+<p><strong>증명.</strong></p>
+
+<p>($\Rightarrow$) $\kappa$가 특이 기수라면 어떤 서수열 $\langle \alpha_\nu : \nu &lt; \theta\rangle$이 존재하여,</p>
+
+\[\lim_{\nu \to \theta} \alpha_\nu = \sup \alpha_\nu = \bigcup_{\nu &lt; \theta}\alpha_\nu = \kappa\]
+
+<p>이다. 일반적으로 서수 $\alpha$는 자기보다 작은 서수 $\beta &lt; \alpha$들의 합집합이다. 따라서 다음이 성립한다.</p>
+
+\[\kappa = \bigcup_{\nu &lt; \theta}\alpha_\nu = \bigcup_{\nu &lt; \theta}\left( \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi \right)\]
+
+<p>$A_\nu = \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi$라고 하자. $A_\nu$는 더이상 서수가 아니지만 그건 중요하지 않다. 중요한 것은 $\lbrace  A_\nu \rbrace $가 쌍으로 서로소라는 것이다. 따라서 $\kappa_\nu = |A_\nu|$라고 하면 기수 덧셈의 정의에 의해,</p>
+
+\[\sum_{\nu &lt; \theta} \kappa_\nu = \left| \bigcup_{\nu &lt; \theta} A_\nu \right| = \kappa\]
+
+<p>이다.</p>
+
+<p>($\Leftarrow$) $\kappa = \sum_{i \in I}\kappa_i$라고 하자. $|I| = \lambda$라고 하면 기수 덧셈의 성질에 의해 $\kappa = \lambda \cdot \sup \kappa_i$이다. $\lambda &lt; \kappa$이므로, 기수 곱셈의 성질에 의해 $\kappa = \sup \kappa_i$이다. 각 $i \in I$에 대해 $\kappa_i &lt; \kappa$인데 $\sup \kappa_i = \kappa$이므로, 초한귀납법을 통해 증가하는 기수열</p>
+
+\[\langle \kappa_\nu : \kappa_\nu = \kappa_i \text{ for some } i \in I, \nu &lt; \theta\rangle\]
+
+<p>을 구축할 수 있으며, $\theta \leq \lambda$이므로 정리가 보여졌다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 어떤 $\alpha \in \mathrm{Ord}$에 대해 $\kappa = \aleph_{\alpha + 1}$일 때, $\kappa$를 <strong>계승 기수<sub>successor cardinal</sub></strong>라고 한다. 계승 기수가 아닌 기수를 <strong>극한 기수<sub>limit cardinal</sub></strong>라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 모든 계승 기수는 정칙이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\kappa = \aleph_{\alpha + 1}$이라고 하자. $\kappa$가 특이 기수라면, 특이 기수 판별법에 의해 $\kappa = \sum_{i \in I} \kappa_i$이며 $\kappa_i, |I| &lt; \kappa$이다. 이는 $\kappa_i , |I| \leq \aleph_\alpha$와 같다. 그런데</p>
+
+\[\sum_{i \in I} \kappa_i \leq \sum_{i \in I} \aleph_\alpha = |I| \cdot  \aleph_\alpha \leq  \aleph_\alpha \cdot \aleph_\alpha =  \aleph_\alpha &lt; \kappa\]
+
+<p>이므로 모순이다. ■</p>
+
+<p>따라서 모든 특이 기수는 극한 기수이다. 그러나 모든 극한 기수가 특이 기수인 것은 아니다. $\aleph_0$는 정칙인 극한 기수이기 때문이다. 그러나 $\aleph_0$ 이외에 정칙인 극한 기수가 존재할까?</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 비가산 정칙 극한 기수를 <strong>도달 불가능 기수<sub>inaccessible cardinal</sub></strong>라고 한다.<a href="#sub1" id="sup1"><sup>1</sup></a></p>
+</blockquote>
+
+<p>$\aleph_\alpha$가 도달 불가능 기수라고 하자. 다음의 증가 기수열의 극한은 $\aleph_\alpha$이다.</p>
+
+\[\langle \aleph_\beta : \beta &lt; \alpha \rangle : \aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \cdots \quad \to \aleph_\alpha\]
+
+<p>따라서 $\aleph_\alpha$가 정칙이기 위해서는 위 기수열의 길이인 $\alpha$가 $\aleph_\alpha$보다 작아서는 안 된다. 그런데 $\alpha \leq \aleph_\alpha$이므로, $\alpha = \aleph_\alpha$임이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\aleph_\alpha$가 도달 불가능할 필요조건은 $\alpha = \aleph_\alpha$인 것이다.</p>
+</blockquote>
+
+<p>이는 $\alpha$가 무지막지하게 큰 기수임을 시사한다. 일례로 다음의 기수열 $\langle \alpha_n : n \in \omega \rangle$을 보자.</p>
+
+\[\alpha_0 = \aleph_0, \alpha_{n + 1} = \aleph_{\alpha_n}\]
+
+<p>위 기수열의 상한을 $\kappa$라고 하자. 상한의 정의에 의해 $\lambda &lt; \kappa$라면 $\alpha_n &gt; \lambda$인 $n$이 존재한다. 따라서 $\aleph_\lambda = \alpha_{n+1} &lt; \kappa$이며,</p>
+
+\[\aleph_\kappa = \sum_{\lambda &lt; \kappa} \aleph_\lambda \leq \sum_{\lambda &lt; \kappa} \kappa = \kappa\]
+
+<p>이다. 다시 말해, $\alpha = \aleph_\alpha$를 만족하는 기수는 적어도 다음에 비견되는 크기를 가진다.</p>
+
+\[\kappa = \aleph_{\aleph_{\aleph_{\aleph_{\ddots}}}}\]
+
+<p>여기서 집고 넘어갈 점이 있다. 비록 $\kappa$가 $\kappa = \aleph_\kappa$를 보이긴 했지만, $\kappa$가 도달 불가능함을 보인 것은 아니다. 오히려 $\kappa$는 특이 기수이다. 길이가 $\omega$인 기수열 $\alpha_n$의 극한이기 때문이다.</p>
+
+<p>사실 도달 불가능 기수의 존재성은 ZFC와 독립적이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 도달 불가능 기수의 존재성은 ZFC와 독립이다.</p>
+</blockquote>
+
+<p>따라서 도달 불가능 기수의 존재는 공리로서 가정해야 한다. 도달 불가능 기수의 존재를 가정하는 부류의 공리들을 <strong>큰 기수 공리<sub>large cardinal axioms</sub></strong>라고 부르며, 이와 관련된 연구는 집합론의 중요한 부분을 이룬다.</p>
+
+<hr />
+
+<p><a href="#sup1" id="sub1">1.</a> 엄밀히 말해 이는 <strong>약한 도달 불가능 기수<sub>weakly inaccessible cardinal</sub></strong>에 해당한다. $\kappa$가 <strong>강한 도달 불가능 기수<sub>strongly inaccessible cardinal</sub></strong>라는 것은 $\kappa$가 약한 도달 불가능 기수이며, 추가로 $\lambda &lt; \kappa$일 때 $2^\lambda &lt; \kappa$인 것이다. 연속체 가설을 인정할 때 약한 도달 불가능성과 강한 도달 불가능성은 동치이다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
         <a href="/2025/05/04/regular-singular/en"> Regular Cardinals, Singular Cardinals, and Inaccessible Cardinals </a>
@@ -1493,206 +1613,6 @@ $$
 
 <p>The root of this paradox lies in the fact that the probability of an arbitrary prisoner guessing correctly is <strong>undefined</strong>. Upon careful consideration, the event of an arbitrary prisoner guessing correctly is equivalent to the event that a given real number $r \in [0, 1]$ belongs to a <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since Vitali sets are non-measurable, no probability can be defined for this event.</p>
 
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/17/los-tarski"> 워시-타르스키 보존 정리 </a>
-      </h1>
-    <span class="post-date">17 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/대수학/'">
-        대수학
-      </div>
-      
-    </div>
-     <p>군 $G$의 부분군 $H, K$에 대해 $H \cap K$는 언제나 군이다. 환과 체의 경우에도 마찬가지이다. 이는 워시-타르스키 정리의 따름결과로 설명할 수 있다.</p>
-
-<blockquote>
-  <p><em>Notation.</em> 본 글에서 $T$는 언어 $\mathcal{L}$의 1차 논리 이론이며, 프락투르 글자 $\mathfrak{M}, \mathfrak{N}, \dots$은 $\mathcal{L}$-구조<sub>structure</sub>이다. 또한 $\mathfrak{M}, \mathfrak{N}, \dots$의 정의역을 $M, N, \dots$와 같이 적는다.</p>
-</blockquote>
-
-<h2 id="기본-개념">기본 개념</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $N \subseteq M$이고 $\mathfrak{N}$에서의 해석<sub>interpretation</sub>이 $\mathfrak{M}$에서의 해석을 $N$으로 제한한 것일 때, $\mathfrak{N}$을 $\mathfrak{M}$의 <strong>부분모델<sub>submodel</sub></strong>이라고 하며, 기호로 $\mathfrak{N} \subseteq \mathfrak{M}$과 같이 적는다. 또한, $\mathfrak{M}$을 $\mathfrak{N}$의 <strong>확장<sub>extension</sub></strong>이라고 한다.</p>
-</blockquote>
-
-<p>일례로 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 부분모델이고, $(\mathbb{Q}, +, \cdot)$는 $(\mathbb{R}, +, \cdot)$의 부분모델이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 임의의 $\mathcal{L}$-문장 $\phi$에 대해 $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$일 때 $\mathfrak{M}$과 $\mathfrak{N}$이 <strong>초등적으로 동등<sub>elementarily equivalent</sub></strong>하다고 하며, 기호로 $\mathfrak{M} \equiv \mathfrak{N}$과 같이 적는다.</p>
-</blockquote>
-
-<p><a href="https://dimenerno.github.io/2025/04/10/completeness-theorem/">뢰벤하임-스콜렘 정리</a>에 의해 $\kappa$가 $|\mathcal{L}|$ 이상의 무한 기수라면, 임의의 무한 구조 $\mathfrak{M}$과 초등적으로 동등하며 크기가 $\kappa$인 모델 $\mathfrak{N}$이 존재한다. (cf. 워시-보트 판별<sub>Łoś-Vaught test</sub>)</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{M}$과 $\mathfrak{N}$이 구조적으로 동일할 때 <strong>동형<sub>isomorphic</sub></strong>이라고 하며, 기호로 $\mathfrak{M} \cong \mathfrak{N}$과 같이 적는다. 구체적으로, 어떤 일대일 대응 $\phi: M \to N$이 존재하여, $\mathcal{L}$의 임의의 함수 $f$와 관계 $R$에 대해 다음이 임의의 $a_1, \dots, a_n \in M$에 대해 성립할 때 $\mathfrak{M} \cong \mathfrak{N}$이다.</p>
-
-\[\begin{gather}
-\phi(f_\mathfrak{M}(a_1, \dots, a_n)) = f_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n)), \\\\
-R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
-\end{gather}\]
-</blockquote>
-
-<p>$(\mathbb{Z}, +)$와 $(2\mathbb{Z}, +)$는 $\phi: x \mapsto 2x$를 통해 동형이지만 $(\mathbb{Q}, +, \cdot)$와 $(\mathbb{R}, +, \cdot)$은 동형이 아니다.</p>
-
-<p>다음 정리의 증명은 거의 자명하다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 동형인 두 구조는 초등적으로 동등하다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{N} \subseteq \mathfrak{M}$이라고 하자. 임의의 $\mathcal{L}$-명제 $\phi$와 $\mathfrak{N}$에서의 자유변수 할당<sub>assignment</sub> $g$에 대해, $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$일 때 $\mathfrak{N}$이 $\mathfrak{M}$의 <strong>초등적 부분모델<sub>elementary submodel</sub></strong>이라고 하며, 기호로 $\mathfrak{N} \preceq \mathfrak{M}$과 같이 적는다.</p>
-</blockquote>
-
-<p>2와 3은 1보다 강하지만, 2와 3은 서로를 시사하지 않는다.</p>
-
-<ol>
-  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \equiv \mathfrak{M}$</li>
-  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \cong \mathfrak{M}$</li>
-  <li>$\mathfrak{N} \preceq \mathfrak{M}$</li>
-</ol>
-
-<p>2와 3이 서로를 시사하지 않는 이유는, 2가 구조적 동등을 요구한다는 점에서 3보다 약하지 않은 한편, 3이 임의의 할당에 대한 동등을 요구한다는 점에서 2보다 약하지 않기 때문이다. 예를 들어 $\mathfrak{M} = (\mathbb{R}, +, \cdot)$에 대해, $\mathfrak{N}$이 $\mathfrak{M}$의 동형인 부분모델이기 위해서는 <em>구성 가능한</em> 실수에 대해 <em>구조적으로</em> 동일해야 하는 반면, $\mathfrak{N}$이 $\mathfrak{M}$의 초등적 부분모델이기 위해서는 두 모델이 <em>모든</em> 실수에 대해 <em>초등적으로</em> 동등해야 한다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>2</th>
-      <th>3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2가 3보다 약하지 않다</td>
-      <td>구조적 동일성</td>
-      <td>초등적 동일성</td>
-    </tr>
-    <tr>
-      <td>3이 2보다 약하지 않다</td>
-      <td>구성 가능한 대상</td>
-      <td>임의의 대상</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>일례로 앞서 보았듯이 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 동형인 부분모델이지만, $\exists y \; (y + y = x)$에 $x \mapsto 2$ 할당을 고려하면 초등적 부분모델은 아님을 알 수 있다.</p>
-
-<h2 id="워시-타르스키-정리">워시-타르스키 정리</h2>
-
-<p>$\mathfrak{M}$이 $T$의 모델이라고 하자. $T$가 어떤 이론이어야 $\mathfrak{M}$의 임의의 부분모델 또한 $T$의 모델이 될까? 그 답은 다음의 정리로 주어진다.</p>
-
-<blockquote>
-  <p><strong>워시-타르스키<sub>Łoś-Tarski</sub> 보존 정리.</strong> $T$의 모델의 부분모델 또한 $T$의 모델일 필요충분조건은 $T$가 $\Pi_1$ 문장으로 이루어진 이론과 동치인 것이다.</p>
-</blockquote>
-
-<p>$\Pi_1$ 문장이 무엇인지에 대해서는 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a> 글에서 다룬 바 있다. 간략히만 설명하자면 $\forall$만을 양화사로 가지는 이론이다. 직관적으로 $\Pi_1$ 문장은 정의역이 제한될수록 만족시키기 쉬우므로, $T$가 $\Pi_1$ 이론이라면 $T$는 부분모델에 대해 보존될 것이다. 필요조건은 증명하기가 좀 더 까다롭다.</p>
-
-<p><strong>증명.</strong> 충분조건은 거의 자명하므로 필요조건만 증명한다. 다음의 보조정리를 증명한다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $T$가 언어 $\mathcal{L}$의 무모순적인 이론이라고 하자. $\mathcal{L}$ 문장들의 집합 $\Delta$가 다음 두 조건을 만족할 때, $\Delta$는 $T$의 공리화를 포함한다.</p>
-
-  <ol>
-    <li>$\Delta$는 선언<sub>disjunction</sub>에 대해 닫혀 있다. 즉, $\phi, \psi \in \Delta$라면 $\phi \lor \psi \in \Delta$이다.</li>
-    <li>$T$의 모델 $\mathfrak{A}$에 대해, $\mathfrak{B}$가 $\mathfrak{A}$에서 만족되는 모든 $\Delta$의 문장들을 만족한다면 $\mathfrak{B}$ 또한 $T$의 모델이다.</li>
-  </ol>
-</blockquote>
-
-<p><em>보조정리의 증명.</em> $\Gamma = \lbrace  \delta \in \Delta : T \vDash \delta \rbrace $라고 하자. $\Delta$가 $T$의 공리화를 포함함을 보이기 위해서는 다음을 보이면 충분하다.</p>
-
-\[\mathfrak{B} \vDash \Gamma \implies \mathfrak{B} \vDash T\]
-
-<p>$\mathfrak{B}$가 $\Gamma$의 모델이라고 하자. 다음과 같이 정의한다.</p>
-
-\[\Sigma = \{ \lnot \delta : \delta \in \Delta, \mathfrak{B} \not\vDash \delta \}\]
-
-<p>$T \cup \Sigma$는 무모순적인 이론임을 보이자. 만약 $T \cup \Sigma$가 모순적이라면 어떤 $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$에 대해 $T \vdash \lnot(\lnot\delta_1 \land \cdots \land \lnot\delta_n)$이므로, $T \vdash \delta_1 \lor \cdots \lor \delta_n$이다. $\Delta$가 선언에 대해 닫혀 있으므로 $\delta_1 \lor \cdots \lor \delta_n \in \Delta$이다. $\Gamma$의 정의에 의해 $\delta_1 \lor \cdots \lor \delta_n \in \Gamma$이므로 $\mathfrak{B} \vDash \delta_1 \lor \cdots \lor \delta_n$이다. 이는 $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$에 모순이다.</p>
-
-<p>$T \cup \Sigma$가 무모순적이므로 완전성 정리에 의해 모델을 가진다. 해당 모델을 $\mathfrak{A}$라고 하자. $\mathfrak{B}$는 $\mathfrak{A}$가 만족시키는 $\Delta$의 문장들을 모두 만족시키므로, 가정에 의해 $T$의 모델이다. □</p>
-
-<p>이제 본 정리의 증명으로 넘어가자. $\Delta$를 모든 $\mathcal{L}$의 $\Pi_1$ 문장들의 집합이라고 하자. 우리의 목표는 $\Delta$가 $T$의 공리화를 포함함을 보이는 것이다. $\Pi_1$ 문장들은 선언에 대해 닫혀 있으므로, 보조정리에 의해 다음을 보이면 충분하다.</p>
-
-<blockquote>
-  <p>$T$가 부분모델에 대해 보존적인 이론이라고 하자. $T$의 모델 $\mathfrak{A}$에 대해, $\mathfrak{B}$가 $\mathfrak{A}$에서 만족되는 모든 $\Pi_1$ 문장들을 만족한다면 $\mathfrak{B}$ 또한 $T$의 모델이다.</p>
-</blockquote>
-
-<p><a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이 글</a>에서의 표기법을 따라 $E(\mathfrak{B})$를 정의하자. 즉, $\mathfrak{M}$이 $E(\mathfrak{B})$를 만족할 때 $\mathfrak{B} \preceq \mathfrak{M}$이다.</p>
-
-<p>$T \cup E(\mathfrak{B})$는 무모순적임을 보이자. 만약 $T \cup E(\mathfrak{B})$가 모순적이라면, 어떤 $E(\mathfrak{B})$의 문장 $\phi(b_1, \dots, b_n)$이 존재하여 $T \cup \lbrace  \phi \rbrace $는 모델을 가지지 않는다. 따라서 $T$의 모델인 $\mathfrak{A}$는 $\phi$를 만족시키는 $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ 모델로 확장될 수 없다. 즉, 다음이 성립한다.</p>
-
-\[\mathfrak{A} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)\]
-
-<p>우변은 $\Pi_1$ 문장이므로, 가정에 의해 $\mathfrak{B} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)$이다. 그런데 $\phi(b_1, \dots, b_n) \in E(\mathfrak{B})$이므로, 이는 모순이다. 따라서 $T \cup E(\mathfrak{B})$는 무모순적이며, 완전성 정리에 의해 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{B})$를 만족하므로, $\mathfrak{B} \preceq \mathfrak{C}$이다. 한편 $\mathfrak{C}$는 부분모델에 대해 보존적인 이론 $T$의 모델이므로, $\mathfrak{B}$는 $T$의 모델이다. ■</p>
-
-<h2 id="응용">응용</h2>
-
-<p>군의 1차 논리적 공리화는, 항등원과 역원을 별도의 상수 $e$와 함수 $(-)^{-1}$로 표현하는지의 여부에 따라 구분된다.</p>
-
-<h4 id="표현하지-않는-경우">표현하지 않는 경우</h4>
-
-<p>언어 $\mathcal{L}_1 = \lbrace  G, \cdot \rbrace $의 이론 $T_1$를 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\exists x \forall y : x \cdot y = y \cdot x = y$</li>
-  <li>$\forall x \exists y \forall z : (x \cdot y) \cdot z = (y \cdot x) \cdot z = z$</li>
-</ul>
-
-<h4 id="표현하는-경우">표현하는 경우</h4>
-
-<p>언어 $\mathcal{L}_2 = \lbrace  G, \cdot, e, (-)^{-1} \rbrace $의 이론 $T_2$를 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\forall x : x \cdot e = e \cdot x = x$</li>
-  <li>$\forall x : x \cdot x^{-1} = x^{-1} \cdot x = e$</li>
-</ul>
-
-<p>$T_1$은 $\Pi_1$ 이론이 아니지만 $T_2$는 $\Pi_1$ 이론이다. 따라서 워시-타르스키 정리에 의해, $T_1$은 부분모델 보존적이지 않지만 $T_2$는 보존적이다. $T_1$이 부분모델 보존적이지 않다는 것은, 군의 부분집합이 연산에 대해 닫혀 있다고 해서 언제나 부분군인 것은 아님을 의미한다<small>(일례로 $\mathbb{Z}$의 부분집합 $\mathbb{Z}_{&gt; 0}$은 연산에 대해 닫혀 있지만 역원을 결여하므로 군이 아니다)</small>. 반면 $T_2$가 부분모델 보존적이라는 것은 다음이 성립함을 의미한다.</p>
-
-<blockquote>
-  <p>군 $G$에 대해, $G$의 부분집합 $H$가 다음을 만족한다면 $H$는 $G$의 부분군이다.</p>
-
-  <ol>
-    <li>연산에 대해 닫혀 있다.</li>
-    <li>역원에 대해 닫혀 있다.</li>
-    <li>$G$의 항등원을 포함한다.</li>
-  </ol>
-</blockquote>
-
-<p>그런데 위보다 더 강한 다음의 결과가 일반적으로 성립한다.</p>
-
-<blockquote>
-  <p>군 $G$에 대해, $G$의 부분집합 $H$가 다음을 만족한다면 $H$는 $G$의 부분군이다.</p>
-
-  <ol>
-    <li>연산에 대해 닫혀 있다.</li>
-    <li>역원에 대해 닫혀 있다.</li>
-  </ol>
-</blockquote>
-
-<p>즉, 항등원을 지시할 상수를 결여하는 언어 $\mathcal{L}_3 = \lbrace  G, \cdot, (-)^{-1} \rbrace$에서도 군의 이론은 부분모델 보존적이며, 이는 $\mathcal{L}_3$로 군을 형식화하는 $\Pi_1$ 이론이 존재함을 의미한다. 머리를 잘 굴려보면 실제로 다음의 이론 $T_3$가 존재함을 발견할 수 있다.</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\forall x, y : (x \cdot x^{-1}) \cdot y = y \cdot (x \cdot x^{-1}) = y$</li>
-</ul>
 
   </div>
   <div style="margin-bottom: 6em"></div>
