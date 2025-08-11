@@ -442,6 +442,299 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/07/arithmetic-hierarchy/en"> Arithmetic Hierarchy </a>
+      </h1>
+    <span class="post-date">07 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p><img src="/public/arithmetic-hierarchy.png" width="340px" style="margin: 2em auto;" /></p>
+
+<blockquote>
+  <p><strong>Warning.</strong> This article was written informally and may therefore lack rigour or even contain incorrect content.</p>
+</blockquote>
+
+<p>The <strong>arithmetic hierarchy</strong> is a classification of propositions in arithmetic — more precisely, first-order Peano arithmetic — according to the complexity of their quantifiers. The arithmetic hierarchy is a central concept in proof theory and computational complexity theory, and is also related to descriptive set theory.</p>
+
+<h2 id="1-delta_0-propositions">1. $\Delta_0$ Propositions</h2>
+
+<h3 id="11-definition">1.1. Definition</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> $\Sigma_0 = \Pi_0 = \Delta_0$ is the set of propositions containing only bounded quantifiers.</p>
+</blockquote>
+
+<p>Why the same class of propositions is referred to by three names will become clear shortly. In this article, unless there is a specific reason otherwise, we shall use $\Delta_0$ as the representative name among the three.</p>
+
+<p>For example, the following four propositions are all $\Delta_0$.</p>
+
+\[\begin{gather}
+\phi_1 : 0 = 1\\
+\phi_2(x) : \exists y &lt; x \; [y + y = x] \\
+\phi_3(x, y) : \exists z \leq y \;[ xz = y ] \\
+\end{gather}\]
+
+<p>$\phi_1$ is a false statement. $\phi_2$ is true when $x$ is even, and $\phi_3$ is true when $x$ is a divisor of $y$.</p>
+
+<p>Since $\Delta_0$ propositions have bounded quantifiers, it is possible to determine whether an arbitrary $x$ satisfies the corresponding proposition using a Turing machine. For instance, a Turing machine that determines whether $x$ satisfies $\phi_2$ is as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for y &lt; x:
+   if y + y == x:
+      return true;
+
+return false;
+</code></pre></div></div>
+
+<p>The above Turing machine halts within $x$ iterations. Therefore, $\Delta_0$ propositions are <strong>decidable</strong>, <strong>recursive</strong>, or <strong>computable</strong> (the three expressions are synonymous). However, as we shall explain in detail later, not all decidable propositions are $\Delta_0$.</p>
+
+<p>According to Gödel’s representability theorem, decidable true propositions are provable. In this article, when we say that $\phi$ is ‘true’, we mean $\mathcal{N} \vDash \phi$ for the standard model of arithmetics $\mathcal{N}$, rather than $\mathsf{PA} \vDash \phi$.</p>
+
+<p>The following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The set of true $\Delta_0$ sentences is complete. (That is, if $\phi$ is a true $\Delta_0$ sentence, then $\mathsf{PA} \vdash \phi$.)</p>
+</blockquote>
+
+<h3 id="12-delta_0-in-computational-theory">1.2. $\Delta_0$ in Computational Theory</h3>
+
+<p>From a programming language perspective, $\Delta_0$ sentences correspond to the set of code that permits only the following:</p>
+
+<ul>
+  <li>Conditional statements</li>
+  <li>Bounded loops</li>
+  <li>Addition and multiplication</li>
+</ul>
+
+<p>It should be noted that <em>unbounded loops</em> and <em>variable reassignment</em> are not permitted. For example, the following code demonstrates that primality testing is $\Delta_0$:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for y &lt; x:
+  for z &lt;= y:
+    if yz == x:
+      return false;
+
+return true;
+</code></pre></div></div>
+
+<p>However, the following code that computes $x^y$ does not correspond to $\Delta_0$:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let a = 1
+for 1&lt;= z &lt;= y:
+   a = a * x
+
+return a
+</code></pre></div></div>
+
+<p>So is exponentiation not $\Delta_0$? Not necessarily. Although complex, there are <a href="https://math.stackexchange.com/questions/5032077/how-to-express-exponentiation-with-a-delta-0-formula">methods</a> to express exponentiation with a $\Delta_0$ proposition. This case demonstrates that determining whether a given operation or predicate is $\Delta_0$ can be intricate. For instance, the following is known:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Factorial is $\Delta_0$, but tetration is not $\Delta_0$.</p>
+</blockquote>
+
+<p>However, tetration is decidable. Therefore, not all decidable propositions are $\Delta_0$.</p>
+
+<h2 id="2-moving-up-one-level">2. Moving Up One Level</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong></p>
+
+\[\begin{gather}
+\Sigma_1 := \{ \exists x_1 \cdots \exists x_n \;\phi : \phi \in \Pi_0 \}\\
+\Pi_1 := \{ \forall x_1 \cdots \forall x_n \;\phi : \phi \in \Sigma_0 \}\\
+\Delta_1 := \Sigma_1 \cap \Pi_1
+\end{gather}\]
+</blockquote>
+
+<h3 id="21-sigma_1-propositions">2.1. $\Sigma_1$ Propositions</h3>
+
+<p>The following propositions are $\Sigma_1$:</p>
+
+\[\begin{gather}
+\phi_1(x): \exists y \; \underbrace{[y^2 + y + 1 = x]}_{\Pi_0}\\
+\phi_2(x): ∃y\; ∃z\; \underbrace{(y \text{ is prime} ∧ z \text{ is prime} ∧ x = y + z ∧ x \text{ is even})}_{\Pi_0}
+\end{gather}\]
+
+<p>$\phi_1$ is true in the set $\lbrace 1, 3, 7, 13, \ldots\rbrace $. $\phi_2$ is Goldbach’s conjecture; it is not known whether all $x$ satisfy this.</p>
+
+<p>$\Sigma_1$ is the collection of <strong>recursively enumerable</strong> sets. That is, if $\phi \in \Sigma_1$, then there exists a Turing machine $M$ such that:</p>
+
+<ul>
+  <li>If $\phi(c)$ is true, then $M$ is guaranteed to decide $\phi(c)$.</li>
+  <li>If $\phi(c)$ is false, then $M$ is not guaranteed to decide $\phi(c)$.</li>
+</ul>
+
+<p>For example, the following Turing machine shows that $\phi_2$ is recursively enumerable:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for y &gt; 1:
+   for z &gt; 1:
+      if isPrime(y) &amp; isPrime(z) &amp; x = y + z &amp; isEven(x):
+         return true;
+
+return false;
+</code></pre></div></div>
+
+<p>Although there is a <code class="language-plaintext highlighter-rouge">return false</code> statement, since there is no <code class="language-plaintext highlighter-rouge">break</code> statement to exit the loop, <code class="language-plaintext highlighter-rouge">return false</code> is unreachable. That is, if $\phi_2(c)$ is true, the above Turing machine returns true, but if it is false, it falls into an infinite loop.</p>
+
+<p>If $\phi \in \Sigma_1$ is a sentence that is true in the standard model of arithmetics, then $\mathsf{PA} \vdash \phi$. A proposition of the form $\phi : \exists x \; \psi(x)$ being true in the standard model of arithmetics means that $\psi(c)$ is true for some $c \in \mathbb{N}$, and since $\psi(c)$ is a true $\Pi_0$ sentence, it is provable. Therefore, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The set of true $\Sigma_1$ sentences is complete.</p>
+</blockquote>
+
+<h3 id="22-sigma_1-setminus-delta_0-propositions">2.2. $\Sigma_1 \setminus \Delta_0$ Propositions</h3>
+
+<p>However, I have in fact been misleading the reader thus far. The propositions I listed earlier as examples of $\Sigma_1$ can actually be written as $\Delta_0$:</p>
+
+\[\begin{gather}
+\phi_1: \exists y&lt;x \;{[y^2 + y + 1 = x]}\\
+\phi_2(x): ∃y&lt;x\; ∃z&lt;x\; {(y \text{ is prime} ∧ z \text{ is prime} ∧ x = y + z ∧ x \text{ is even})}
+\end{gather}\]
+
+<p>So what do propositions that strictly belong to $\Sigma_1$ look like? One answer can be found in the <strong>halting problem</strong>.</p>
+
+<p>First, let $\mathrm{HaltsIn}(x, n)$ be a predicate that determines whether “the Turing machine with Gödel number $x$” produces an output within $n$ operations. This predicate can be easily defined from the <strong>Kleene predicate</strong>, and the Kleene predicate is known to be $\Sigma_0$. For example, if the Gödel number of a Turing machine that computes the square of 3 in 2 operations is $123$, then $\mathrm{HaltsIn}(123, 3)$ is true but $\mathrm{HaltsIn}(123, 1)$ is false.</p>
+
+<p>Now consider the following proposition:</p>
+
+\[\phi_1(x): \exists y \;[ \mathrm{HaltsIn}(x, y) ]\]
+
+<p>What this proposition states is that the Turing machine with Gödel number $x$ eventually halts. That is, the above proposition is equivalent to the halting problem. However, the halting problem is undecidable. Since we showed earlier that all $\Delta_0$ propositions are decidable, $\phi$ is a $\Sigma_1$ proposition that does not belong to $\Delta_0$.</p>
+
+<p>As another example, consider the following proposition:</p>
+
+\[\phi_2(x): \exists y \; [ \mathrm{Proves}(x, y) ]\]
+
+<p>Here, $\mathrm{Proves}(x, y)$ is a predicate that is true when the Gödel number of “a proof of the sentence with Gödel number $x$” is $y$. That is, $\phi_2(x)$ is a predicate stating that the sentence with Gödel number $x$ is provable. However, this predicate is not decidable. If $\phi_2$ were decidable, then (under the assumption that PA is consistent) there would exist a proof in PA that $\phi_2(\ulcorner 0 = 1 \urcorner)$ is false, which would conflict with Gödel’s incompleteness theorem.</p>
+
+<h3 id="23-pi_1-propositions">2.3. $\Pi_1$ Propositions</h3>
+
+<p>If $\Sigma_1$ propositions are the collection of recursively enumerable propositions, then $\Pi_1$ propositions are the collection of <strong>co-recursively enumerable</strong> propositions. That is, a $\Pi_1$ sentence is decidable if false, but not necessarily decidable if true. For example, the following two propositions are $\Pi_1$ sentences that are not $\Delta_0$:</p>
+
+\[\begin{gather}
+\phi_3(x): \forall y \;[ \lnot \mathrm{HaltsIn}(x, y) ] \\
+\phi_4(x): \forall y \; [ \lnot \mathrm{Proves}(x, y) ]
+\end{gather}\]
+
+<p>Unlike the case of $\Sigma_1$, $\Pi_1$ is not complete. Since the negation of a $\Sigma_1$ sentence is $\Pi_1$, if $\Pi_1$ were also complete, then $\Sigma_1 = \Pi_1 =$ (collection of decidable propositions).</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The set of true $\Pi_1$ sentences is not complete.</p>
+</blockquote>
+
+<h3 id="24-delta_1-propositions">2.4. $\Delta_1$ Propositions</h3>
+
+<p>$\Delta_1$ propositions belong to both $\Sigma_1$ and $\Pi_1$. Therefore, $\Delta_1$ is the collection of <strong>decidable</strong> propositions. The tetration we saw earlier is a $\Delta_1$ proposition that is not $\Delta_0$.</p>
+
+<h2 id="3-moving-up-another-level">3. Moving Up Another Level</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong></p>
+
+\[\begin{gather}
+\Sigma_2 := \{ \exists x_1 \cdots \exists x_n \;\phi : \phi \in \Pi_1 \}\\
+\Pi_2 := \{ \forall x_1 \cdots \forall x_n \;\phi : \phi \in \Sigma_1 \}\\
+\Delta_2 := \Sigma_2 \cap \Pi_2
+\end{gather}\]
+</blockquote>
+
+<p>I believe the pattern should now be clear. As an example of a $\Sigma_2$ proposition, consider the following:</p>
+
+\[\phi_5(x) : \exists y \; [ \mathrm{DoesNotHaltOn}(x, y)]\]
+
+<p>Here, $\mathrm{DoesNotHaltOn}(x, y)$ is a predicate that is true if “the Turing machine with Gödel number $x$” does not halt when given input $y$. From the preceding discussion, it is not difficult to see that $\mathrm{DoesNotHaltOn}$ is $\Pi_1$.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $\phi_5 \notin \Pi_1$</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Suppose $\phi_5 \in \Pi_1$. Our goal is to show that this assumption implies “the set of true $\Pi_1$ sentences is complete”.</p>
+
+<p>Let $\psi(x)$ be an arbitrary $\Delta_0$ proposition. Then $\theta : \forall x \;\psi(x)$ is a $\Pi_1$ sentence. Consider the following Turing machine $M$:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ψ(x):
+   return 1;
+
+while True:
+</code></pre></div></div>
+
+<p>This Turing machine halts for value $x$ if $\psi(x)$ is true and does not halt if it is false. Therefore, $\theta$ being true is equivalent to $M$ halting for all $x$, which is equivalent to $\phi_5(\ulcorner M \urcorner)$ being false. By assumption, $\phi_5 \in \Pi_1$, so if $\phi_5(\ulcorner M \urcorner)$ is false, then $\mathsf{PA} \vdash \lnot \phi(\ulcorner M \urcorner)$. That is, $\mathsf{PA} \vdash \theta$, making all true $\Pi_1$ sentences provable. This is a contradiction. ■</p>
+
+<p><em>Remark.</em> Strictly speaking, one should show that the above proof is expressible within PA.</p>
+
+<p>We said earlier that $\Sigma_1$ propositions are decidable when true, and $\Pi_1$ propositions are decidable when false. However, since $\Sigma_2$ sentences have mixed $\forall$ and $\exists$ quantifiers, there may be sentences that are undecidable both when true and when false.</p>
+
+<h3 id="31-oracles">3.1. Oracles</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> When $\mathcal{O}$ can obtain the result of problem $P$ in a single operation, we call $\mathcal{O}$ an <strong>oracle</strong> for $P$.</p>
+</blockquote>
+
+<p>For example, an oracle for the halting problem is a truly divine entity that can determine whether a given Turing machine halts in a single operation.</p>
+
+<p>Ascending the arithmetic hierarchy is equivalent to being given increasingly powerful oracles. We saw earlier the following as an example of a $\Sigma_1$ proposition:</p>
+
+\[\phi_1(x): \exists y \;[ \mathrm{HaltsIn}(x, y) ]\]
+
+<p>However, if a halting problem oracle $\mathcal{O}$ were given, $\phi_1$ could be expressed simply as a $\Delta_0$ proposition:</p>
+
+\[\phi_1(x) : \mathcal{O}(x)\]
+
+<p>Also, we saw earlier the following as an example of a $\Sigma_2$ proposition:</p>
+
+\[\phi_5(x) : \exists y \; [ \mathrm{DoesNotHaltOn}(x, y)]\]
+
+<p>If a halting problem oracle $\mathcal{O}$ were given, $\phi_5$ could be expressed as a $\Sigma_1$ proposition:</p>
+
+\[\phi_5(x): \exists y \; \lnot \mathcal{O}(x|_y)\]
+
+<p>Here, $x|_y$ is the Gödel number of the state where input $y$ is given to the Turing machine with Gödel number $x$. That is, $\Sigma_2$ propositions reduce to $\Sigma_1$ propositions when given an oracle for the halting problem. By similar principles, $\Pi_2$ and $\Delta_2$ propositions reduce to $\Pi_1$ and $\Delta_1$ propositions, respectively, when given an oracle for the halting problem.</p>
+
+<p>Furthermore, we can define <strong>second-order oracles</strong>. A second-order halting problem oracle is a halting problem oracle for Turing machines that use halting problem oracles. For example, whilst $\mathcal{O}$ is limited to determining whether the following code halts:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for x &gt; 0:
+   for y &gt; 0:
+      for z &gt; 0:
+         for n &gt; 2:
+            if x^n + y^n == z^n:
+               return True;
+return False;
+</code></pre></div></div>
+
+<p>$\mathcal{O}^2$ can also determine whether the following code halts. The following code takes as input the Gödel number $x$ of an NP Turing machine, halts if there exists a P Turing machine whose output matches $x$, and does not halt if no such machine exists:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let x ∈ NP;
+for y ∈ P:
+   if !Halts(
+      let z = 0
+      while x(z) == y(z):
+         z = z + 1
+   ):
+      return 1; // halts when x is an NP that belongs to P
+</code></pre></div></div>
+
+<p>In general, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Propositions in $\Pi_n$, $\Sigma_n$, $\Delta_n$ become propositions in $\Pi_{n-k}$, $\Sigma_{n-k}$, $\Delta_{n-k}$, respectively, when given a $k$-th order oracle.</p>
+</blockquote>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/02/05/order"> 곱군과 위수에 관한 노트: 페르마 소수 정리와 윌슨의 정리 </a>
@@ -1659,110 +1952,6 @@
 <p>철학자들이 지시에 대한 이론을 추구하는 이유는 그것이 언어의 의미론을 세우는 데 필요하기 때문이다. 즉, 문장에 등장하는 각 표현의 지시체가 결정되어야 해당 문장의 진릿값을 결정할 수 있다.</p>
 
 <p>그러나 데이비드슨은 이것이 본말을 전도하는 것이라고 주장한다. 데이비드슨은 문장에 대한 참 이론을 제시하는 것만으로 해당 언어의 의미론을 세울 수 있고, 이에 따라 지시 이론은 불필요하다고 주장한다. 참에 대한 철학적 논의는 이후 별개의 시리즈로 정리하도록 하겠다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/01/18/reference-3/en"> On Reference — Definite Descriptions </a>
-      </h1>
-    <span class="post-date">18 Jan 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/philosophy/'">
-        Philosophy
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/philosophy-of-language/'">
-        Philosophy of Language
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h2 id="4-definite-descriptions">4. Definite Descriptions</h2>
-
-<p>Unlike names, the primary question raised concerning definite descriptions is whether definite descriptions actually refer. Frege held that definite descriptions, like names, possess both sense (the content of the definite description) and reference (the object that uniquely satisfies that content), whilst Russell maintained that definite descriptions do not have referents.</p>
-
-<h3 id="41-russells-theory-of-descriptions">4.1. Russell’s Theory of Descriptions</h3>
-
-<h4 id="russells-claim">Russell’s Claim</h4>
-
-<p>According to Russell, definite descriptions do not refer to objects. Rather, definite descriptions are semantically equivalent to <strong>second-order predicates</strong>. In other words, just as we can think of a predicate P as</p>
-
-<blockquote>
-  <p>P: object → truth value</p>
-</blockquote>
-
-<p>when D is a definite description, we have</p>
-
-<blockquote>
-  <p>D: (object → truth value) → truth value (i.e. predicate → truth value)</p>
-</blockquote>
-
-<p>According to this view, “the present King of Britain” does not refer to Charles III, but rather is a second-order predicate that returns true for “x is male”, “x is British”, “x is the son of Elizabeth II”, etc., and returns false for “x is female”, “x is American”, “x is the son of James I”, etc.</p>
-
-<p>The strength of Russell’s theory of descriptions lies in its ability to explain how definite descriptions lacking referents can be used meaningfully in sentences such as “The present King of France is bald” (according to Frege this sentence would be meaningless, but according to Russell this sentence is simply false), and to resolve Frege’s puzzle.</p>
-
-<p>Furthermore, Russell claims that all names except ‘this’ and ‘I’ are disguised definite descriptions. Whilst this claim has the advantage of making the semantics of language elegantly simple, it fails to adequately explain Kripke’s modal and semantic arguments. Therefore, this essay shall examine only Russell’s claim that “definite descriptions do not refer”.</p>
-
-<p><em>Remark.</em> However, there remains doubt as to whether Russell’s theory of descriptions truly resolves Frege’s puzzle. If we adopt an <strong>extensional definition</strong> for predicates, then ‘the morning star’ and ‘the evening star’ become <strong>exactly</strong> the same (second-order) predicate. The arguments of Quine and others regarding intensionalism and extensionalism are also worth considering.</p>
-
-<h4 id="strawsons-theory">Strawson’s Theory</h4>
-
-<p>Consider the following sentence:</p>
-
-<blockquote>
-  <p>The table is covered with books.</p>
-</blockquote>
-
-<p>This sentence appears to be true when, for instance, the speaker is in a room, there is exactly one table in the room, and that table is covered with books. However, according to Russell’s theory of descriptions, since there is more than one table in the universe, the sentence is false.</p>
-
-<p>In response, Strawson argues that there are cases where definite descriptions genuinely refer. When a definite description is used <strong>referentially</strong>, the definite description refers to the object amongst those satisfying the descriptive content that is most salient in the given context. Conversely, when a definite description is used <strong>attributively</strong>, the description functions as in Russell’s theory.</p>
-
-<h4 id="donnellans-theory">Donnellan’s Theory</h4>
-
-<p>Consider the following sentence:</p>
-
-<blockquote>
-  <p>Who is the man drinking a martini?</p>
-</blockquote>
-
-<p>Suppose that the man the speaker intends to refer to is actually drinking water, not a martini. In this case, according to Strawson, “the man drinking a martini” cannot be used referentially (since there is no man drinking a martini in the relevant context), nor can it be used attributively (since there are multiple men currently drinking martinis worldwide).</p>
-
-<p>Therefore, Donnellan argues that definite descriptions can also refer to objects that do <strong>not satisfy</strong> their descriptive content. What matters is the speaker’s intention to designate a particular object with the definite description. Donnellan’s theory appears to fall into the problem of rigidity concerning definite descriptions, and being conscious of this, Donnellan appeals to Gricean theories of meaning.</p>
-
-<h4 id="kripkes-theory">Kripke’s Theory</h4>
-
-<p>Kripke argues that if we understand sentences such as “Who is the man drinking a martini?” pragmatically, we can maintain a strong Russellian position that definite descriptions <strong>never</strong> refer <strong>under any circumstances</strong>.</p>
-
-<p>Kripke appears to hold that reference must be achieved purely through convention (though it might be more appropriate to understand this as an algorithm). For instance, Kripke’s theory of names precisely specifies, given a name $N$, the object that this name designates through causal theory. However, given that strong conventionalism about names fails to properly explain names with multiple bearers or the principle of impure indexicals, Kripke’s conventionalism lacks solid foundation, and consequently Kripke’s argument against Donnellanism is also weakly grounded.</p>
-
-<h4 id="definite-descriptions-v-indefinite-descriptions">Definite Descriptions v. Indefinite Descriptions</h4>
-
-<p>Recently, the very distinction between definite descriptions (the <em>F</em>) and indefinite descriptions (a <em>F</em>) has come under question. Not only has precisely defining the difference between them proved to be extremely challenging, but numerous languages have been reported that do not grammatically distinguish between the two. If the distinction between definite and indefinite descriptions proves to be unfounded, this could strengthen Russellian views that definite descriptions do not refer. (Alternatively, one would have to advance the highly controversial claim that indefinite descriptions also refer.)</p>
-
-<h2 id="5-referential-scepticism">5. Referential Scepticism</h2>
-
-<p>Descriptivism, Millianism, and indexical theories agree in their position that reference is a philosophically worthy subject of enquiry and that meaningful analysis thereof is possible. However, there also exist so-called “referentially sceptical” positions that argue reference is an essentially meaningless or vacuous concept.</p>
-
-<h4 id="quinean-scepticism">Quinean Scepticism</h4>
-
-<p>Quine argues through the <strong>indeterminacy of translation thesis</strong> that referential expressions such as ‘gavagai’ are incomprehensible. Regarding the indeterminacy of translation thesis, <a href="https://dimen.notion.site/57b61059e29446b4b4292a7900193160">the present author has written previously, which may be consulted.</a></p>
-
-<h4 id="the-problem-of-the-many">The Problem of the Many</h4>
-
-<p><strong>The problem of the many</strong> concerns how to define the <em>boundaries</em> of the object that a referential expression refers to. For example, I can refer to the present Gyeongbokgung Palace with ‘Gyeongbokgung’. Now imagine that one day an incident occurs in which the roof tiles of Gyeongbokgung are burnt away. Even after the fire incident, it seems I can still refer to Gyeongbokgung (now without roof tiles) with ‘Gyeongbokgung’. Can we then say that ‘Gyeongbokgung’ before and after the fire incident has the same referent? How much of Gyeongbokgung must be burnt away before it can no longer be the referent of ‘Gyeongbokgung’? This problem raises doubts about the general schema that referential expressions have referents.</p>
-
-<h4 id="davidsons-theory-of-truth">Davidson’s Theory of Truth</h4>
-
-<p>The reason philosophers pursue theories of reference is that they are necessary for establishing the semantics of language. That is, the referent of each expression appearing in a sentence must be determined in order to determine the truth value of that sentence.</p>
-
-<p>However, Davidson argues that this puts the cart before the horse. Davidson claims that merely providing a theory of truth for sentences suffices to establish the semantics of the relevant language, and that reference theory is therefore unnecessary. Philosophical discussions of truth shall be organised in a separate series hereafter.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -442,6 +442,79 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/16/adjoints/en"> An Intuitive Understanding of Adjoints </a>
+      </h1>
+    <span class="post-date">16 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'">
+        Category Theory
+      </div>
+      
+    </div>
+     <p>One of the central concepts in category theory is that of an adjoint.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathcal{A}, \mathcal{B}$ be categories, and let $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$ be functors. We say that $F$ is a <strong>left adjoint</strong> to $G$, written as $F \dashv G$, if for any $A \in \mathcal{A}, B \in \mathcal{B}$, there exists a natural correspondence between $\hom_\mathcal{B}(F(A), B)$ and $\hom_\mathcal{A}(A, G(B))$. That is,</p>
+
+\[\begin{gather}
+(F(A) \xrightarrow{g} B) \quad \mapsto \quad (A \xrightarrow{\bar{g}} G(B))\\
+(A \xrightarrow{f} G(B)) \quad \mapsto \quad (F(A) \xrightarrow{\bar{f}} B)
+\end{gather}\]
+
+  <p>We also call $G$ the <strong>right adjoint</strong> to $F$.</p>
+</blockquote>
+
+<p>This may feel very abstract, but there is a couple of examples that could be of assist in grasping the definition.</p>
+
+<h3 id="1-adjoints-as-approximations">1. Adjoints as Approximations</h3>
+
+<p>When $F \dashv G$, the functors $F$ and $G$ can be thought of as approximating objects in $\mathcal{A}$ and $\mathcal{B}$ with respect to each other. In particular, the left adjoint represents approximation ‘from left to right’, whilst the right adjoint represents approximation ‘from right to left’.</p>
+
+<p>For example, let $\mathbf{Z}$ be a category whose objects are integers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. Similarly, let $\mathbf{R}$ be a category whose objects are real numbers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. We may think of $\lceil \cdot \rceil, \lfloor \cdot \rfloor$ as functors $\mathbf{R} → \mathbf{Z}$, and the inclusion map $\iota$ as a functor $\mathbf{Z} → \mathbf{R}$. It then follows that $\lceil \cdot \rceil \dashv \iota \dashv \lfloor \cdot \rfloor$.</p>
+
+<p><img src="/public/adjoint-int-2.png" style="width: 100%; max-width: 180px; margin: 0 auto;" /></p>
+
+<p>That is, $\lceil \cdot \rceil$ is a transformation that ‘lifts [a number] from left to right’ by mapping $r$ to $\lceil r \rceil$ with $r \leq \lceil r \rceil$, whilst $\lfloor \cdot \rfloor$ is a transformation that ‘pulls [a number] from right to left’ by mapping $r$ to $\lfloor r \rfloor$ with $\lfloor r \rfloor \leq r$.</p>
+
+<p>Furthermore, let $I$ and $T$ be the initial object and terminal object of $\mathcal{A}$ respectively. That is, for any $A \in \mathcal{A}$:</p>
+
+<ul>
+  <li>There exists a unique morphism $I \to A$.</li>
+  <li>There exists a unique morphism $A \to T$.</li>
+</ul>
+
+<p>For instance, in $\mathbf{Set}$, the empty set is the initial object and any singleton set is a terminal object.</p>
+
+<p>For the singleton category $\mathcal{S}$, there exists a unique functor $F: \mathcal{A} \to \mathcal{S}$ that maps every object of $\mathcal{A}$ to the single object of $\mathcal{S}$. Let $G_I, G_T: \mathcal{S} \to \mathcal{A}$ be functors that maps the single object of $\mathcal{S}$ to $I$ and $T$, respectively. It then follows that $G_T \dashv F \dashv G_I$. (Since the terminal object is the ‘rightmost’ object, $G_T$ represents approximation ‘from left to right’, whilst since the initial object is the ‘leftmost’ object, $G_I$ represents approximation ‘from right to left’.)</p>
+
+<h3 id="2-adjoints-as-construction-and-destruction">2. Adjoints as Construction and Destruction</h3>
+
+<p>Left adjoints are associated with construction, whilst right adjoints are associated with destruction. Therefore, free functors are generally left adjoints, whilst forgetful functors are right adjoints.</p>
+
+<p>For instance, let $\mathbf{Grp}$ be the category of groups and $\mathbf{Mon}$ be the category of monoids. Let $F$ be the free functor and $U$ be the forgetful functor. Define $R: \mathbf{Mon} → \mathbf{Grp}$ as follows:</p>
+
+<ul>
+  <li>$R(M) = \lbrace  m \in M : \exists m^{-1} \in M \rbrace$</li>
+  <li>$R(f): m \mapsto f(m)$</li>
+</ul>
+
+<p>Then the following diagram holds, yielding $F \dashv U \dashv R$.</p>
+
+<p><img src="/public/adjoint-int-3.png" style="width: 100%; max-width: 170px; margin: 0 auto;" /></p>
+
+<p>One can understand $U \dashv R$ as expressing that $R$ is more destructive than $U$.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2024/12/11/rolling"> 굴림에 대한 두 가지 삽화 </a>
@@ -1615,124 +1688,6 @@
     <li>$\lVert h − g\rVert &lt; ε$이다.</li>
     <li>$g$는 전 구간에서 연속이다.</li>
     <li>$g$는 전 구간에서 미분 불가능하다.</li>
-  </ul>
-</blockquote>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/12/01/baire/en"> The Baire Category Theorem </a>
-      </h1>
-    <span class="post-date">01 Dec 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <h3 id="1-baire-spaces">1. Baire Spaces</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $S$ be a subset of a topological space $X$. The following are equivalent:</p>
-
-  <ul>
-    <li>$\left( \operatorname{cl}S \right)^\circ$ is empty.</li>
-    <li>$(\operatorname{cl}S)^c$ is dense.</li>
-    <li>$S$ is not dense in any open set of $X$.</li>
-  </ul>
-
-  <p>Such a set $S$ is said to be <strong>rare</strong> (or <strong>nowhere dense</strong>).</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> A space $X$ is called a <strong>Baire space</strong> if every <em>countable</em> union $\bigcup F_n$ of rare closed sets is rare.</p>
-</blockquote>
-
-<p><img src="/public/baire.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
-
-<p><em>Remark.</em> $X$ is a Baire space iff every countable intersection of open dense sets in $X$ is dense.</p>
-
-<p><strong>Example.</strong> $\mathbb{Q}$ is not a Baire space.</p>
-
-<ul>
-  <li>$\lbrace  q \rbrace$ is a rare closed set, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ is not rare.</li>
-  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$ is a dense open set, but $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$ is not dense.</li>
-</ul>
-
-<h3 id="2-the-baire-category-theorem">2. The Baire Category Theorem</h3>
-
-<blockquote>
-  <p><strong>Cantor’s Theorem on Compact Spaces.</strong> The following are equivalent:</p>
-
-  <ol>
-    <li>$X$ is compact.</li>
-    <li>For any collection $\mathcal{C}$ of closed sets with the finite intersection property, $\bigcap_{C \in \mathcal{C}} C \neq \varnothing$.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-<p><strong>Cantor's Theorem on Complete Metric Spaces.</strong> The following are equivalent:</p>
-<ol start="3">
-  <li>$X$ is a complete metric space.</li>
-  <li>For any nonempty sequence of closed sets $C_1 \supseteq C_2 \supseteq \cdots$, we have $\bigcap C_n \neq \varnothing$, and in particular, when $\operatorname{diam}C_n \to 0$, $\bigcap C_n$ is a singleton.</li>
-</ol>
-</blockquote>
-
-<p><em>Remark.</em> Statement 2 implies statement 4. From this, one can show that compact metric spaces are complete. <strong>The converse does not hold.</strong></p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Complete metric spaces and compact Hausdorff spaces are Baire spaces.</p>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<p>Let $X$ be a complete metric space or a compact Hausdorff space. Given a countable collection $\lbrace  F_n \rbrace$ of rare closed sets, we shall show that for any open set $U$, we have $U \not\subset \bigcup F_n$. To this end, we shall find $x \in U$ such that $\forall n : x \not\in F_n$.</p>
-
-<p>Since $F_1$ is rare, there exists $x_1 \in U \setminus F_1$. As $X$ is a regular space, there exists an open set $U_1$ such that $x_1 \in U_1$ and $\overline{U_1} \cap F_1 = \varnothing$. Inductively, we define:</p>
-
-<ul>
-  <li>$x_n \in U_n \setminus F_n$</li>
-  <li>$U_n \subset U_{n - 1}$</li>
-  <li>$\overline{U_n} \cap F_n = \varnothing$</li>
-</ul>
-
-<p><img src="/public/baire-category-proof.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
-
-<p>By Cantor’s theorem, there exists $x \in \bigcap \overline{U_n}$.</p>
-
-<h3 id="3-applications-of-the-baire-category-theorem">3. Applications of the Baire Category Theorem</h3>
-
-<blockquote>
-  <p><strong>Convergence of continuous function sequences is almost continuous.</strong> Let $\lbrace  f_n : X → (Y, d) \rbrace$ be a sequence of continuous functions converging to $f$. Then</p>
-
-\[S = \lbrace  x \in X : f\text{ is continuous at } x \rbrace\]
-
-  <p>is dense in $X$.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>KAIST POW2024-20.</strong> Let $f$ be a continuous function such that</p>
-
-\[\forall x \geq 0 : \lim_{n \to \infty} f(nx) = 0\]
-
-  <p>Then $\lim_{x \to \infty} f(x) = 0$.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Existence of pathological functions.</strong> Let $h : [0, 1] → \mathbb{R}$ be a continuous function. For any $ε &gt; 0$, there exists a function $g : [0,1] → \mathbb{R}$ satisfying:</p>
-
-  <ul>
-    <li>$\lVert h − g\rVert &lt; ε$.</li>
-    <li>$g$ is continuous on the entire interval.</li>
-    <li>$g$ is differentiable nowhere.</li>
   </ul>
 </blockquote>
 

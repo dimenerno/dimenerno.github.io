@@ -442,6 +442,120 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/01/modal-logic/en"> Modal Logic </a>
+      </h1>
+    <span class="post-date">01 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h3 id="types">Types</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Entailment</th>
+      <th>Axioms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>K</strong></td>
+      <td>Kripke model for possible worlds</td>
+      <td>$\Box(p \to q) \to (\Box p \to \Box q)$</td>
+    </tr>
+    <tr>
+      <td><strong>T</strong></td>
+      <td>Reflexivity</td>
+      <td><strong>K</strong> + $\Box p \to p$</td>
+    </tr>
+    <tr>
+      <td><strong>S4</strong></td>
+      <td>Reflexivity + Transitivity</td>
+      <td><strong>T</strong> + $\Box p \to \Box \Box p$</td>
+    </tr>
+    <tr>
+      <td><strong>S4.2</strong></td>
+      <td>Reflexivity + Transitivity + R-convergence</td>
+      <td><strong>S4</strong> + $\Diamond \Box p \to \Box \Diamond p$</td>
+    </tr>
+    <tr>
+      <td><strong>S4.3</strong></td>
+      <td>Reflexivity + Transitivity + R-linearity</td>
+      <td><strong>S4</strong> + $(\Diamond p \land \Diamond q) \to$ <br /> $(\Diamond (p \land \Diamond q) \lor \Diamond(\Diamond p \land q))$</td>
+    </tr>
+    <tr>
+      <td><strong>S5</strong></td>
+      <td>Reflexivity + Transitivity + Symmetry</td>
+      <td><strong>S4</strong> + $(p \to \Box \Diamond p)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The logics become strictly stronger as one moves down the table.</p>
+
+<h3 id="modal-reduction">Modal Reduction</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> In <strong>S4</strong>, any sequence of modal operators is equivalent to one of six combinations, and the entailment relations amongst these combinations are as follows:</p>
+
+  <p><img src="/public/modal-operators.jpeg" width="550px" style="margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> In <strong>S5</strong>, any sequence of modal operators is equivalent to either $\Box$ or $\Diamond$. Furthermore, every formula is equivalent to a <strong>flat</strong> formula—that is, a formula containing no modal operators within the scope of other modal operators.</p>
+</blockquote>
+
+<h3 id="completeness-theorem">Completeness Theorem</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> <strong>K</strong> is complete.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<blockquote>
+  <p><strong>Lindenbaum’s Lemma.</strong> Any consistent theory can be extended to a maximally consistent theory.</p>
+</blockquote>
+
+<p>The completeness statement is equivalent to “every consistent theory is satisfiable”, and applying Lindenbaum’s lemma, this is equivalent to “every maximally consistent theory is satisfiable”.</p>
+
+<p>Let $u, v$ be maximally consistent theories. We write $u \lhd v$ when $\Box p \in u \implies p \in v$. The following can be shown without difficulty:</p>
+
+<ul>
+  <li>When $u \lhd v$, we have $p \in v \implies \Diamond p \in u$</li>
+  <li>For any maximally consistent theory $u$, if $p \in u$ and $\Box p \notin u$, then there exist maximally consistent theories $v, v’$ such that $p \in v, \lnot p \in v’$ and $u \lhd v, v’$.</li>
+</ul>
+
+<p>From this, for a maximally consistent theory $u$, we can define the <strong>canonical Kripke model</strong> $\mathfrak{K} = (U, \prec, V)$ as follows:</p>
+
+<ul>
+  <li>The collection of possible worlds $U$ is the collection of $v$ satisfying $u \lhd v$.</li>
+  <li>The accessibility relation $\prec$ is $\lhd$.</li>
+  <li>The valuation function $V(p, v)$ is true if and only if $p \in v$.</li>
+</ul>
+
+<p>It can be shown without difficulty that $\mathfrak{K}$ satisfies $u$. ■</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/03/21/yoneda"> 요네다 보조정리 </a>
@@ -2540,131 +2654,6 @@ U^* \otimes V^* &amp;\cong U^{***} \otimes V^{***} \\
 <p>두 번째 식에서 세 번째 식으로 넘어갈 때 $V \cong V^{\ast\ast}$ 표준<sub>canonical</sub> 동일시를 사용했다. ■</p>
 
 <p>따라서 쌍대 공간의 텐서는 쌍선형 사상과 표준적으로 동일시할 수 있다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/03/04/tensor/en"> Notes on Tensor Products </a>
-      </h1>
-    <span class="post-date">04 Mar 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/algebra/'">
-        Algebra
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p><strong>TL;DR.</strong> The tensor product of vector spaces has the following significance:</p>
-
-<ol>
-  <li>A domain for the linearisation of multilinear maps</li>
-  <li>A space of multilinear maps</li>
-</ol>
-
-<p>Strictly speaking, 1 corresponds to $U \otimes V$, whilst 2 corresponds to $U^\ast \otimes V^\ast$. However, these appear to be used interchangeably.</p>
-
-<h3 id="1-introduction">1. Introduction</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $U, V, W$ be vector spaces defined over a field $\mathbb{F}$. A map $b: U \times V \to W$ is called a <strong>bilinear map</strong> if $B$ is linear in each argument. That is, for any $\mathbf{u}_1, \mathbf{u}_2 \in U, \mathbf{v}_1, \mathbf{v}_2 \in V$ and scalar $\alpha \in \mathbb{F}$, the following hold:</p>
-
-\[b(\alpha \mathbf{u}_1 + \mathbf{u}_2, \mathbf{v}_1) = \alpha b(\mathbf{u}_1, \mathbf{v}_1) + b(\mathbf{u}_2, \mathbf{v}_1)\]
-
-\[b(\mathbf{u}_1, \alpha \mathbf{v}_1 + \mathbf{v}_2) = \alpha b(\mathbf{u}_1, \mathbf{v}_1) + b(\mathbf{u}_1, \mathbf{v}_2)\]
-</blockquote>
-
-<p>For example, the inner product $\cdot : V \times V \to \mathbb{R}$ in real vector spaces is a bilinear map when $\mathbb{R}$ is regarded as a one-dimensional vector space. Similarly, one can define <strong>multilinear forms</strong>. When $V$ is an $n$-dimensional vector space, $\mathrm{det}: V \times \dots \times V \to \mathbb{R}$ is an $n$-multilinear map.</p>
-
-<p>Let $b: U \times V \to W$ be a bilinear map. Naturally, $b$ is not a linear map. This is because $b$ takes vectors from two different spaces as arguments, rather than vectors from a single space. Even if we consider $b$ as a map from the direct sum $U \oplus V$ to $W$, we have $b(\alpha(u, v)) = b((\alpha u, \alpha v)) = \alpha^2 b(u, v)$, which does not satisfy linearity.</p>
-
-<p>However, using tensor products, we can identify $b$ with a linear map.</p>
-
-<h3 id="2-definition-of-tensor-products">2. Definition of Tensor Products</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> For vector spaces $U, V$, the <strong>tensor product</strong> $U \otimes V$ is defined as the vector space satisfying the following universal property:</p>
-
-  <p><img src="/public/tensor.png" width="280px" style="margin: 0 auto; mix-blend-mode: multiply;" /></p>
-
-  <p>Elements of $U \otimes V$ are called <strong>tensors</strong>.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> The tensor product of any vector spaces always exists and is unique up to isomorphism.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> We prove this only for finite-dimensional vector spaces. Suppose $U$ and $V$ have dimensions $n$ and $m$ respectively, with bases $\lbrace  e_1, \dots, e_n\rbrace$ and $\lbrace  f_1, \dots, f_m\rbrace$. Let $T$ be a vector space of dimension $nm$. Since vector spaces of the same dimension are isomorphic, such a $T$ is unique up to isomorphism. Let the formal basis of $T$ be:</p>
-
-\[\mathcal{B} = \{ e_1f_1, \dots, e_1f_m, \dots, e_nf_1, \dots, e_nf_m \}\]
-
-<p>To show that $T$ is the tensor product of $U$ and $V$, consider an arbitrary bilinear map $b: U \times V \to W$. From $b$, define the following row vector:</p>
-
-\[\tilde {b} = \big[ b(e_1, f_1), \dots, b(e_1, f_m), \dots, b(e_n, f_1), \dots, b(e_n, f_m) \big]_\mathcal{B}\]
-
-<p>Also define $\otimes: V \times W \to T$ as follows:</p>
-
-\[\otimes: (u, v) = (u_1e_1 + \dots + u_ne_n, v_1f_1 + \dots + v_mf_m) \mapsto \begin{bmatrix} u_1v_1 \\ \vdots \\ u_1v_m \\ \vdots \\ u_nv_1 \\ \vdots \\ u_nf_m \end{bmatrix}_{\mathcal{B}}\]
-
-<p>Then the following holds:</p>
-
-\[\begin{align}
-\tilde {b}(\otimes(u, v)) &amp;= \sum_i \sum_j (u_i v_j)b(e_i, f_j) \\
-&amp;= b\left( \sum_i   u_i e_i, \sum_j v_j f_j \right)  &amp;&amp; (\text{by bilinearity})\\
-&amp;= b(u, v) &amp;&amp; \blacksquare
-\end{align}\]
-
-<h3 id="3-identification-of-tensors-with-multilinear-maps">3. Identification of Tensors with Multilinear Maps</h3>
-
-<p>The discussion thus far can be summarised in one line:</p>
-
-\[\mathrm{Hom}^2(U \times V, W) \cong \mathrm{Hom}(U \otimes V, W)\]
-
-<p>Here $\mathrm{Hom}^2$ denotes the space of bilinear maps. In particular, when $W = \mathbb{F}$, by the definition of dual spaces, the following holds:</p>
-
-\[\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong \mathrm{Hom}(U \otimes V, \mathbb{F}) \cong (U \otimes V)^*\]
-
-<p>Using this relationship, we can view tensor products not merely as domains for the linearisation of bilinear maps, but as spaces of bilinear maps themselves. First, we prove the following lemma.</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> $(U \otimes V)^\ast = U^\ast \otimes V^\ast$</p>
-</blockquote>
-
-<p><strong>Proof.</strong> By the previous relationship and the definition of dual spaces, it suffices to show:</p>
-
-\[\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong \mathrm{Hom}(U, \mathbb{F}) \otimes \mathrm{Hom}(V, \mathbb{F})\]
-
-<p>That is, we need to show that $\mathrm{Hom}^2(U \times V, \mathbb{F})$ satisfies the universal property. This is almost identical to the previous proof, so we omit it. ■</p>
-
-<p>From the lemma, the following holds:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong U^\ast \otimes V^\ast$</p>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-\[\begin{align}
-U^* \otimes V^* &amp;\cong U^{***} \otimes V^{***} \\
-&amp;\cong (U^{**} \otimes V^{**})^* \\
-&amp;\cong (U \otimes V)^* \\
-&amp;\cong \mathrm{Hom}^2(U \times V, \mathbb{F})
-\end{align}\]
-
-<p>In going from the second to the third expression, we used the canonical identification $V \cong V^{\ast\ast}$. ■</p>
-
-<p>Therefore, tensors in dual spaces can be canonically identified with bilinear maps.</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>
