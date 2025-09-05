@@ -20,11 +20,9 @@ $$
 
 > **정의.** $\mathcal{L}$-이론 $T$가 **양화사 제거<sub>quantifier elimination</sub>** 가능하다는 것은 임의의 $\mathcal{L}$-명제 $\phi$에 대해 어떤 $\Delta\_0$ $\mathcal{L}$-명제 $\psi$가 존재하여 다음이 성립하는 것이다.
 >
-> $$T \vdash \phi \leftrightarrow \psi$$
->
-> 단, $\psi$의 자유변수는 모두 $\phi$의 자유변수이다.
+> $$T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$$
 
-> **양화사 제거 판별법.** $T$가 양화사 제거 가능할 충분조건은, $T$가 $\exists x \psi \; (\psi \in \Delta_0)$ 꼴의 명제에 대해 양화사 제거 가능한 것이다.
+> **양화사 제거 판별법.** $T$가 양화사 제거 가능할 충분조건은, $T$가 $\Sigma_1$ 명제에 대해 양화사 제거 가능한 것이다.
 
 **증명.** 먼저 임의의 $\Delta_0$ 명제 $\psi$에 대해 $\forall x \psi$가 양화사 제거 가능함을 보이자. $\forall x \psi$는 $\lnot\exists x \lnot \psi$와 동치이고, 가정에 의해 $\exists x \lnot \psi$는 어떤 양화사가 없는 명제 $\theta$와 동치이다. 따라서 $\forall x \psi$는 $\lnot \theta$와 동치이며, 양화사 제거 가능하다. 이제 양화사 개수에 대한 귀납법을 적용하면 임의의 명제에 대해 양화사 제거가 가능함이 보여진다. ■
 

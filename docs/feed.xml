@@ -3,20 +3,20 @@
   <channel>
     <title>디멘의 블로그</title>
     <description>이데아를 여행하는 히치하이커</description>
-    <link>https://dimenerno.github.io</link>
-    <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>초필터를 이용한 티호노프 정리의 증명</title>
-        <link>https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter</link>
-        <guid>https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter</guid>
+        <link>http://localhost:4000/2025/08/11/tychonoff-with-ultrafilter</link>
+        <guid>http://localhost:4000/2025/08/11/tychonoff-with-ultrafilter</guid>
         <pubDate>Mon, 11 Aug 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;티호노프 정리.&lt;/strong&gt; 콤팩트 공간들의 곱공간은 콤팩트 공간이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter">
+          xml:base="http://localhost:4000/2025/08/11/tychonoff-with-ultrafilter">
           <![CDATA[
             <blockquote>
   <p><strong>티호노프 정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
@@ -176,13 +176,13 @@
     
       <item>
         <title>돼지고기와 연어: 윤리적 삶은 사치품인가?</title>
-        <link>https://dimenerno.github.io/2025/08/08/pork-and-salmon</link>
-        <guid>https://dimenerno.github.io/2025/08/08/pork-and-salmon</guid>
+        <link>http://localhost:4000/2025/08/08/pork-and-salmon</link>
+        <guid>http://localhost:4000/2025/08/08/pork-and-salmon</guid>
         <pubDate>Fri, 08 Aug 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;&lt;small&gt;본 글은 일체의 챗지피티 도움 없이 작성되었습니다.&lt;/small&gt;&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/08/08/pork-and-salmon">
+          xml:base="http://localhost:4000/2025/08/08/pork-and-salmon">
           <![CDATA[
             <p><small>본 글은 일체의 챗지피티 도움 없이 작성되었습니다.</small></p>
 
@@ -266,13 +266,13 @@
     
       <item>
         <title>사적 언어는 가능한가?</title>
-        <link>https://dimenerno.github.io/2025/07/21/private-language</link>
-        <guid>https://dimenerno.github.io/2025/07/21/private-language</guid>
+        <link>http://localhost:4000/2025/07/21/private-language</link>
+        <guid>http://localhost:4000/2025/07/21/private-language</guid>
         <pubDate>Mon, 21 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/07/03/kripkenstein&quot;&gt;이전 글&lt;/a&gt;에서 크립키-비트겐슈타인 역설을 다루었다. 요약하자면, 크립키-비트겐슈타인 역설은 특정 단어가 사용될 수 있는 무한한 사례를 아우르는 규범적 사실이 없다는 고찰에 착안한다. 이로부터 크립키-비트겐슈타인이 내리는 결론은 다음과 같다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/21/private-language">
+          xml:base="http://localhost:4000/2025/07/21/private-language">
           <![CDATA[
             <p><a href="https://dimenerno.github.io/2025/07/03/kripkenstein">이전 글</a>에서 크립키-비트겐슈타인 역설을 다루었다. 요약하자면, 크립키-비트겐슈타인 역설은 특정 단어가 사용될 수 있는 무한한 사례를 아우르는 규범적 사실이 없다는 고찰에 착안한다. 이로부터 크립키-비트겐슈타인이 내리는 결론은 다음과 같다.</p>
 
@@ -534,13 +534,13 @@
     
       <item>
         <title>불 대수 구조의 아이디얼과 필터</title>
-        <link>https://dimenerno.github.io/2025/07/18/boolean-algebra</link>
-        <guid>https://dimenerno.github.io/2025/07/18/boolean-algebra</guid>
+        <link>http://localhost:4000/2025/07/18/boolean-algebra</link>
+        <guid>http://localhost:4000/2025/07/18/boolean-algebra</guid>
         <pubDate>Fri, 18 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;h2 id=&quot;불-대수&quot;&gt;불 대수&lt;/h2&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/18/boolean-algebra">
+          xml:base="http://localhost:4000/2025/07/18/boolean-algebra">
           <![CDATA[
             <h2 id="불-대수">불 대수</h2>
 
@@ -959,15 +959,15 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>스톤-체흐 콤팩트화</title>
-        <link>https://dimenerno.github.io/2025/07/10/stone-cech</link>
-        <guid>https://dimenerno.github.io/2025/07/10/stone-cech</guid>
+        <link>http://localhost:4000/2025/07/10/stone-cech</link>
+        <guid>http://localhost:4000/2025/07/10/stone-cech</guid>
         <pubDate>Thu, 10 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\iota : X \to Y$가 임베딩이라고 하자. 즉, $\iota$는 단사이며 $X$와 $\iota [X]$의 위상동형사상이다. $Y$가 $X$의 &lt;strong&gt;콤팩트화&lt;sub&gt;compactification&lt;/sub&gt;&lt;/strong&gt;라는 것은 $Y$가 콤팩트 공간이고, $\overline{\iota [X]} = Y$인 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/10/stone-cech">
+          xml:base="http://localhost:4000/2025/07/10/stone-cech">
           <![CDATA[
             <blockquote>
   <p><strong>정의.</strong> $\iota : X \to Y$가 임베딩이라고 하자. 즉, $\iota$는 단사이며 $X$와 $\iota [X]$의 위상동형사상이다. $Y$가 $X$의 <strong>콤팩트화<sub>compactification</sub></strong>라는 것은 $Y$가 콤팩트 공간이고, $\overline{\iota [X]} = Y$인 것이다.</p>
@@ -1086,15 +1086,15 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>Stone-Čech Compactification</title>
-        <link>https://dimenerno.github.io/2025/07/10/stone-cech/en</link>
-        <guid>https://dimenerno.github.io/2025/07/10/stone-cech/en</guid>
+        <link>http://localhost:4000/2025/07/10/stone-cech/en</link>
+        <guid>http://localhost:4000/2025/07/10/stone-cech/en</guid>
         <pubDate>Thu, 10 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a &lt;strong&gt;compactification&lt;/strong&gt; of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/10/stone-cech/en">
+          xml:base="http://localhost:4000/2025/07/10/stone-cech/en">
           <![CDATA[
             <blockquote>
   <p><strong>Definition.</strong> Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a <strong>compactification</strong> of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.</p>
@@ -1215,13 +1215,13 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>우리손 보조정리와 우리손 거리화 정리</title>
-        <link>https://dimenerno.github.io/2025/07/09/urysohn</link>
-        <guid>https://dimenerno.github.io/2025/07/09/urysohn</guid>
+        <link>http://localhost:4000/2025/07/09/urysohn</link>
+        <guid>http://localhost:4000/2025/07/09/urysohn</guid>
         <pubDate>Wed, 09 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;h2 id=&quot;우리손-보조정리&quot;&gt;우리손 보조정리&lt;/h2&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/09/urysohn">
+          xml:base="http://localhost:4000/2025/07/09/urysohn">
           <![CDATA[
             <h2 id="우리손-보조정리">우리손 보조정리</h2>
 
@@ -1361,8 +1361,8 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>The Urysohn Lemma and Urysohn Metrisation Theorem</title>
-        <link>https://dimenerno.github.io/2025/07/09/urysohn/en</link>
-        <guid>https://dimenerno.github.io/2025/07/09/urysohn/en</guid>
+        <link>http://localhost:4000/2025/07/09/urysohn/en</link>
+        <guid>http://localhost:4000/2025/07/09/urysohn/en</guid>
         <pubDate>Wed, 09 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Urysohn Lemma.&lt;/strong&gt; Let $X$ be a normal space. If $A$ and $B$ are disjoint closed sets in $X$, then there exists a continuous function $f: X \to [0, 1]$ such that $f[A] = \lbrace  0 \rbrace$ and $f[B] = \lbrace 1 \rbrace$.&lt;/p&gt;
@@ -1371,7 +1371,7 @@ x \lor y = x + y + xy \\
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/09/urysohn/en">
+          xml:base="http://localhost:4000/2025/07/09/urysohn/en">
           <![CDATA[
             <blockquote>
   <p><strong>Urysohn Lemma.</strong> Let $X$ be a normal space. If $A$ and $B$ are disjoint closed sets in $X$, then there exists a continuous function $f: X \to [0, 1]$ such that $f[A] = \lbrace  0 \rbrace$ and $f[B] = \lbrace 1 \rbrace$.</p>
@@ -1509,15 +1509,15 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>크립키-비트겐슈타인 역설</title>
-        <link>https://dimenerno.github.io/2025/07/03/kripkenstein</link>
-        <guid>https://dimenerno.github.io/2025/07/03/kripkenstein</guid>
+        <link>http://localhost:4000/2025/07/03/kripkenstein</link>
+        <guid>http://localhost:4000/2025/07/03/kripkenstein</guid>
         <pubDate>Thu, 03 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein">
+          xml:base="http://localhost:4000/2025/07/03/kripkenstein">
           <![CDATA[
             <blockquote>
   <p>“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.</p>
@@ -1871,15 +1871,15 @@ x + y &amp; x, y &lt; 50 \\\
     
       <item>
         <title>The Kripke-Wittgenstein Paradox</title>
-        <link>https://dimenerno.github.io/2025/07/03/kripkenstein/en</link>
-        <guid>https://dimenerno.github.io/2025/07/03/kripkenstein/en</guid>
+        <link>http://localhost:4000/2025/07/03/kripkenstein/en</link>
+        <guid>http://localhost:4000/2025/07/03/kripkenstein/en</guid>
         <pubDate>Thu, 03 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;Disclaimer: Section “2.2. Dispositional Analysis” contains some commentary by myself indepedent from Kripke.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein/en">
+          xml:base="http://localhost:4000/2025/07/03/kripkenstein/en">
           <![CDATA[
             <blockquote>
   <p>Disclaimer: Section “2.2. Dispositional Analysis” contains some commentary by myself indepedent from Kripke.</p>

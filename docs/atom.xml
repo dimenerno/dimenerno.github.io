@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>디멘의 블로그</title>
- <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
- <link href="https://dimenerno.github.io/"/>
- <updated>2025-08-12T15:52:33+09:00</updated>
- <id>https://dimenerno.github.io</id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2025-09-05T13:44:57+09:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>초필터를 이용한 티호노프 정리의 증명</title>
-   <link href="https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter"/>
+   <link href="http://localhost:4000/2025/08/11/tychonoff-with-ultrafilter"/>
    <updated>2025-08-11T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter</id>
+   <id>http://localhost:4000/2025/08/11/tychonoff-with-ultrafilter</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;티호노프 정리.&lt;/strong&gt; 콤팩트 공간들의 곱공간은 콤팩트 공간이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -173,9 +173,9 @@
  
  <entry>
    <title>돼지고기와 연어: 윤리적 삶은 사치품인가?</title>
-   <link href="https://dimenerno.github.io/2025/08/08/pork-and-salmon"/>
+   <link href="http://localhost:4000/2025/08/08/pork-and-salmon"/>
    <updated>2025-08-08T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/08/08/pork-and-salmon</id>
+   <id>http://localhost:4000/2025/08/08/pork-and-salmon</id>
    <content type="html">&lt;p&gt;&lt;small&gt;본 글은 일체의 챗지피티 도움 없이 작성되었습니다.&lt;/small&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;돼지고기와-연어&quot;&gt;돼지고기와 연어&lt;/h3&gt;
@@ -256,9 +256,9 @@
  
  <entry>
    <title>사적 언어는 가능한가?</title>
-   <link href="https://dimenerno.github.io/2025/07/21/private-language"/>
+   <link href="http://localhost:4000/2025/07/21/private-language"/>
    <updated>2025-07-21T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/21/private-language</id>
+   <id>http://localhost:4000/2025/07/21/private-language</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/07/03/kripkenstein&quot;&gt;이전 글&lt;/a&gt;에서 크립키-비트겐슈타인 역설을 다루었다. 요약하자면, 크립키-비트겐슈타인 역설은 특정 단어가 사용될 수 있는 무한한 사례를 아우르는 규범적 사실이 없다는 고찰에 착안한다. 이로부터 크립키-비트겐슈타인이 내리는 결론은 다음과 같다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -517,9 +517,9 @@
  
  <entry>
    <title>불 대수 구조의 아이디얼과 필터</title>
-   <link href="https://dimenerno.github.io/2025/07/18/boolean-algebra"/>
+   <link href="http://localhost:4000/2025/07/18/boolean-algebra"/>
    <updated>2025-07-18T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/18/boolean-algebra</id>
+   <id>http://localhost:4000/2025/07/18/boolean-algebra</id>
    <content type="html">&lt;h2 id=&quot;불-대수&quot;&gt;불 대수&lt;/h2&gt;
 
 &lt;p&gt;불 대수&lt;sub&gt;boolean algebra&lt;/sub&gt;는 거짓을 의미하는 $0$과 참을 의미하는 $1$ 위에서 정의되는 $\lor, \land, \lnot$ 등의 논리 연산으로 이루어진 대수이다.&lt;/p&gt;
@@ -935,9 +935,9 @@ x \lor y = x + y + xy \\
  
  <entry>
    <title>스톤-체흐 콤팩트화</title>
-   <link href="https://dimenerno.github.io/2025/07/10/stone-cech"/>
+   <link href="http://localhost:4000/2025/07/10/stone-cech"/>
    <updated>2025-07-10T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/10/stone-cech</id>
+   <id>http://localhost:4000/2025/07/10/stone-cech</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\iota : X \to Y$가 임베딩이라고 하자. 즉, $\iota$는 단사이며 $X$와 $\iota [X]$의 위상동형사상이다. $Y$가 $X$의 &lt;strong&gt;콤팩트화&lt;sub&gt;compactification&lt;/sub&gt;&lt;/strong&gt;라는 것은 $Y$가 콤팩트 공간이고, $\overline{\iota [X]} = Y$인 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1053,9 +1053,9 @@ x \lor y = x + y + xy \\
  
  <entry>
    <title>Stone-Čech Compactification</title>
-   <link href="https://dimenerno.github.io/2025/07/10/stone-cech/en"/>
+   <link href="http://localhost:4000/2025/07/10/stone-cech/en"/>
    <updated>2025-07-10T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/10/stone-cech/stone-cech-en</id>
+   <id>http://localhost:4000/2025/07/10/stone-cech/stone-cech-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a &lt;strong&gt;compactification&lt;/strong&gt; of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1173,9 +1173,9 @@ x \lor y = x + y + xy \\
  
  <entry>
    <title>우리손 보조정리와 우리손 거리화 정리</title>
-   <link href="https://dimenerno.github.io/2025/07/09/urysohn"/>
+   <link href="http://localhost:4000/2025/07/09/urysohn"/>
    <updated>2025-07-09T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/09/urysohn</id>
+   <id>http://localhost:4000/2025/07/09/urysohn</id>
    <content type="html">&lt;h2 id=&quot;우리손-보조정리&quot;&gt;우리손 보조정리&lt;/h2&gt;
 
 &lt;blockquote&gt;
@@ -1312,9 +1312,9 @@ x \lor y = x + y + xy \\
  
  <entry>
    <title>The Urysohn Lemma and Urysohn Metrisation Theorem</title>
-   <link href="https://dimenerno.github.io/2025/07/09/urysohn/en"/>
+   <link href="http://localhost:4000/2025/07/09/urysohn/en"/>
    <updated>2025-07-09T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/09/urysohn/urysohn-en</id>
+   <id>http://localhost:4000/2025/07/09/urysohn/urysohn-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Urysohn Lemma.&lt;/strong&gt; Let $X$ be a normal space. If $A$ and $B$ are disjoint closed sets in $X$, then there exists a continuous function $f: X \to [0, 1]$ such that $f[A] = \lbrace  0 \rbrace$ and $f[B] = \lbrace 1 \rbrace$.&lt;/p&gt;
 
@@ -1449,9 +1449,9 @@ x \lor y = x + y + xy \\
  
  <entry>
    <title>크립키-비트겐슈타인 역설</title>
-   <link href="https://dimenerno.github.io/2025/07/03/kripkenstein"/>
+   <link href="http://localhost:4000/2025/07/03/kripkenstein"/>
    <updated>2025-07-03T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/03/kripkenstein</id>
+   <id>http://localhost:4000/2025/07/03/kripkenstein</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1802,9 +1802,9 @@ x + y &amp;amp; x, y &amp;lt; 50 \\\
  
  <entry>
    <title>The Kripke-Wittgenstein Paradox</title>
-   <link href="https://dimenerno.github.io/2025/07/03/kripkenstein/en"/>
+   <link href="http://localhost:4000/2025/07/03/kripkenstein/en"/>
    <updated>2025-07-03T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/07/03/kripkenstein/kripkenstein-en</id>
+   <id>http://localhost:4000/2025/07/03/kripkenstein/kripkenstein-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;Disclaimer: Section “2.2. Dispositional Analysis” contains some commentary by myself indepedent from Kripke.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2165,9 +2165,9 @@ x + y &amp;amp; x, y &amp;lt; 50 \\
  
  <entry>
    <title>프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</title>
-   <link href="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos"/>
+   <link href="http://localhost:4000/2025/06/17/kafka-blue-octavos"/>
    <updated>2025-06-17T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos</id>
+   <id>http://localhost:4000/2025/06/17/kafka-blue-octavos</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;「여덟 권의 청색 팔절판 노트&lt;sub&gt;Acht blaue Oktavhefte&lt;/sub&gt;」는 1917년 말부터 1919년 중순까지 카프카가 작성한 일련의 노트이다. 「팔절판 노트」라는 이름은 카프카의 출판 담당자인 막스 브로트가 그의 사절판 일기장과 구분하기 위해 붙인 것이다. 이후 브로트가 카프카의 일기를 출판했을 때 「팔절판 노트」는 생략되었는데, 카프카의 다른 일기보다 철학적이고 문학적이라는 점에서 성격을 달리한다는 이유에서였다. 이로 인해 「팔절판 노트」는 카프카 특유의 사색적이고 몽환적인 성격에도 불구하고 세간에 잘 알려져 있지 않으며, 특히 국내에서는 전문이 번역된 바가 없다. 이에 필자가 직접 번역을 시도했다. 비전공자의 번역인 점을 감안하여 독일어 원문을 같이 수록했다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2414,9 +2414,9 @@ Ich sitze zum Beispiel zu Hause, ehe ich angeln gehe, und drehe scharf zusehend 
  
  <entry>
    <title>Franz Kafka, The Blue Octavo Notebooks, Volume 1</title>
-   <link href="https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/en"/>
+   <link href="http://localhost:4000/2025/06/17/kafka-blue-octavos/en"/>
    <updated>2025-06-17T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/06/17/kafka-blue-octavos/kafka-blue-octavos-en</id>
+   <id>http://localhost:4000/2025/06/17/kafka-blue-octavos/kafka-blue-octavos-en</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/public/the-blue-notebooks.png&quot; style=&quot;max-width: 350px; width: 100%; margin: 7em auto 5em auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This post is originally a Korean translation of Kafka’s &lt;em&gt;The Blue Octavo Notebooks&lt;/em&gt;. Given that there already exists an English translation of the work, I won’t go through the hassle of translating into English again. However, I present the following passage, which I particularly admire.&lt;/p&gt;
@@ -2434,9 +2434,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>이탈리안 게임</title>
-   <link href="https://dimenerno.github.io/2025/06/12/italian-game"/>
+   <link href="http://localhost:4000/2025/06/12/italian-game"/>
    <updated>2025-06-12T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/06/12/italian-game</id>
+   <id>http://localhost:4000/2025/06/12/italian-game</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/public/italian.png&quot; style=&quot;width: 100%; max-width: 350px; margin: 2em auto&quot; /&gt;&lt;/p&gt;
 
 &lt;ol&gt;
@@ -2648,9 +2648,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>슬라보예 지젝, ｢소프트 파시즘, 인공지능, 그리고 수치심의 몰락｣</title>
-   <link href="https://dimenerno.github.io/2025/06/06/zizek-soft-facism"/>
+   <link href="http://localhost:4000/2025/06/06/zizek-soft-facism"/>
    <updated>2025-06-06T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/06/06/zizek-soft-facism</id>
+   <id>http://localhost:4000/2025/06/06/zizek-soft-facism</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;본 글은 2024년 11월 26일에 이루어진 &lt;a href=&quot;https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx&quot;&gt;슬라보예 지젝의 옥스포드 강연&lt;/a&gt;을 번역한 것이다. 주석은 역자 주이다. 또한 섹션의 구분도 역자가 독자의 편의를 위해 넣은 것이다. 매끄러운 흐름을 위해 내용을 덧대거나 빼는 수준의 의역과 문장 재배치를 한 부분이 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2737,9 +2737,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>Slavoj Žižek, "Soft Fascism, Artificial Intelligence, and Shamelessness"</title>
-   <link href="https://dimenerno.github.io/2025/06/06/zizek-soft-facism/en"/>
+   <link href="http://localhost:4000/2025/06/06/zizek-soft-facism/en"/>
    <updated>2025-06-06T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/06/06/zizek-soft-facism/zizek-soft-facism-en</id>
+   <id>http://localhost:4000/2025/06/06/zizek-soft-facism/zizek-soft-facism-en</id>
    <content type="html">&lt;p&gt;This post is originally a Korean translation of &lt;a href=&quot;https://youtu.be/OSYjmH_WPQQ?si=9Rb5ToZSwf0qg7gx&quot;&gt;Slavoj Žižek’s Oxford lecture&lt;/a&gt;, so there is no separate English version. However, the following personal observation from the original post is reproduced here.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -2750,9 +2750,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>왜 연속함수의 위상적 정의는 “반대”인가?</title>
-   <link href="https://dimenerno.github.io/2025/06/02/notes-on-continuity"/>
+   <link href="http://localhost:4000/2025/06/02/notes-on-continuity"/>
    <updated>2025-06-02T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/06/02/notes-on-continuity</id>
+   <id>http://localhost:4000/2025/06/02/notes-on-continuity</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 두 위상공간 $X, Y$에 대해 사상 $f: X \to Y$가 &lt;strong&gt;연속&lt;/strong&gt;이라는 것은, $V \subseteq Y$가 열린 집합이라면 $f^{-1}[V] \subseteq X$ 또한 열린 집합이라는 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2825,9 +2825,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>Why is Continuity in Topology defined 'Backwards'?</title>
-   <link href="https://dimenerno.github.io/2025/06/02/notes-on-continuity/en"/>
+   <link href="http://localhost:4000/2025/06/02/notes-on-continuity/en"/>
    <updated>2025-06-02T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/06/02/notes-on-continuity/notes-on-continuity-en</id>
+   <id>http://localhost:4000/2025/06/02/notes-on-continuity/notes-on-continuity-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A mapping $f: X \to Y$ is said to be &lt;strong&gt;continuous&lt;/strong&gt; if for any open set $V \subseteq Y$, the preimage $f^{-1}[V] \subseteq X$ is also an open set.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2900,9 +2900,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》</title>
-   <link href="https://dimenerno.github.io/2025/06/02/wittgenstein-conant"/>
+   <link href="http://localhost:4000/2025/06/02/wittgenstein-conant"/>
    <updated>2025-06-02T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/06/02/wittgenstein-conant</id>
+   <id>http://localhost:4000/2025/06/02/wittgenstein-conant</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;이 글은 &lt;a href=&quot;/public/Search for Logically Alien Thought.pdf&quot;&gt;James Conant, &lt;em&gt;The Search for Logically Alien Thought: Descartes, Kant, Frege, and the&lt;/em&gt; Tractatus (1991)&lt;/a&gt;를 정리한 것이다. 괄호 안의 내용은 필자가 보충한 것이다 (다시 말해 뇌피셜이다).&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3086,9 +3086,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>Are Logically Alien Beings Possible? Descartes, Kant, Frege, and the Tractus</title>
-   <link href="https://dimenerno.github.io/2025/06/02/wittgenstein-conant/en"/>
+   <link href="http://localhost:4000/2025/06/02/wittgenstein-conant/en"/>
    <updated>2025-06-02T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/06/02/wittgenstein-conant/wittgenstein-conant-en</id>
+   <id>http://localhost:4000/2025/06/02/wittgenstein-conant/wittgenstein-conant-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3277,9 +3277,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>콰인, ⟪경험주의의 두 독단⟫</title>
-   <link href="https://dimenerno.github.io/2025/05/26/quine-two-dogmas"/>
+   <link href="http://localhost:4000/2025/05/26/quine-two-dogmas"/>
    <updated>2025-05-26T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/26/quine-two-dogmas</id>
+   <id>http://localhost:4000/2025/05/26/quine-two-dogmas</id>
    <content type="html">&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
 
 &lt;p&gt;분석·종합의 구분과 검증가능성 원리는 논리실증주의를 이루는 두 기둥이다. 하지만 콰인은 ⟪경험주의의 두 독단⟫에서 분석·종합의 구분과 검증가능성 원리는 문제적이라고 지적한다. 콰인은 분석성의 정의는 자기순환적이며, 명제는 독립적으로 검증될 수 없고 오로지 믿음의 망&lt;sub&gt;web of beliefs&lt;/sub&gt; 전체가 검증의 대상이 될 수 있다고 주장한다. 콰인이 ⟪두 독단⟫에서 제시하는 논증은 논리실증주의를 와해할 뿐 아니라, 의미의 개념 자체가 허구적이라는 의미 회의주의와, 극단적 전체론을 시사한다. 또한 콰인의 논증에 대한 반론을 검토한다.&lt;/p&gt;
@@ -3478,9 +3478,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>Quine, Two Dogmas of Empiricism</title>
-   <link href="https://dimenerno.github.io/2025/05/26/quine-two-dogmas/en"/>
+   <link href="http://localhost:4000/2025/05/26/quine-two-dogmas/en"/>
    <updated>2025-05-26T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/26/quine-two-dogmas/quine-two-dogmas-en</id>
+   <id>http://localhost:4000/2025/05/26/quine-two-dogmas/quine-two-dogmas-en</id>
    <content type="html">&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
 
 &lt;p&gt;The distinction between analytic and synthetic propositions, and the verification principle, are the two pillars of logical positivism. However, in &lt;em&gt;Two Dogmas of Empiricism&lt;/em&gt;, Quine argues that both the analytic-synthetic distinction and the verification principle are ungrounded. Quine argues that the definition of analyticity is circular. Furthermore, he argues that propositions cannot be verified in isolation, and that only the entire web of beliefs can stand up to verification. The arguments Quine presents in &lt;em&gt;Two Dogmas&lt;/em&gt; not only undermine logical positivism but also suggest skepticism about meaning and a radical form of holism. This post also examines some objections to Quine’s arguments.&lt;/p&gt;
@@ -3680,9 +3680,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>스톤 공간과 콤팩트성 정리</title>
-   <link href="https://dimenerno.github.io/2025/05/16/stone-space-compactness"/>
+   <link href="http://localhost:4000/2025/05/16/stone-space-compactness"/>
    <updated>2025-05-16T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/16/stone-space-compactness</id>
+   <id>http://localhost:4000/2025/05/16/stone-space-compactness</id>
    <content type="html">&lt;p&gt;다음은 학부 수리논리학의 유명한 정리이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -3771,9 +3771,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>Stone Spaces and the Compactness Theorem</title>
-   <link href="https://dimenerno.github.io/2025/05/16/stone-space-compactness/en"/>
+   <link href="http://localhost:4000/2025/05/16/stone-space-compactness/en"/>
    <updated>2025-05-16T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/16/stone-space-compactness/stone-space-compactness-en</id>
+   <id>http://localhost:4000/2025/05/16/stone-space-compactness/stone-space-compactness-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3867,9 +3867,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>양화사 제거</title>
-   <link href="https://dimenerno.github.io/2025/05/15/quantifier-elimination"/>
+   <link href="http://localhost:4000/2025/05/15/quantifier-elimination"/>
    <updated>2025-05-15T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/15/quantifier-elimination</id>
+   <id>http://localhost:4000/2025/05/15/quantifier-elimination</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/05/08/saturation/&quot;&gt;이전 글&lt;/a&gt;에서, $\mathcal{L}$-구조 $\mathfrak{A}$에서 &lt;strong&gt;정의가능&lt;/strong&gt;한 집합들이 무엇인지에 관해 알아 보았다. $S \subseteq A$가 $\mathfrak{A}$에서 특정 &lt;a href=&quot;https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/&quot;&gt;산술 위계&lt;/a&gt;에 속하는 명제 $\phi$로 정의가능할 때, $S$가 그 위계에 속한다고 하자. 예를 들어 $S$가 $\Pi_1$ 문장으로 정의 가능할 때, $S \in \Pi_1$이다.&lt;/p&gt;
 
 &lt;p&gt;예를 들어 표준 산술 모형 $\mathfrak{N} = (\mathbb{N}, 0, S, +)$에서 짝수의 집합은 $\Sigma_1$이다.&lt;/p&gt;
@@ -3881,13 +3881,11 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathcal{L}$-이론 $T$가 &lt;strong&gt;양화사 제거&lt;sub&gt;quantifier elimination&lt;/sub&gt;&lt;/strong&gt; 가능하다는 것은 임의의 $\mathcal{L}$-명제 $\phi$에 대해 어떤 $\Delta_0$ $\mathcal{L}$-명제 $\psi$가 존재하여 다음이 성립하는 것이다.&lt;/p&gt;
 
-\[T \vdash \phi \leftrightarrow \psi\]
-
-  &lt;p&gt;단, $\psi$의 자유변수는 모두 $\phi$의 자유변수이다.&lt;/p&gt;
+\[T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))\]
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;양화사 제거 판별법.&lt;/strong&gt; $T$가 양화사 제거 가능할 충분조건은, $T$가 $\exists x \psi \; (\psi \in \Delta_0)$ 꼴의 명제에 대해 양화사 제거 가능한 것이다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;양화사 제거 판별법.&lt;/strong&gt; $T$가 양화사 제거 가능할 충분조건은, $T$가 $\Sigma_1$ 명제에 대해 양화사 제거 가능한 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 먼저 임의의 $\Delta_0$ 명제 $\psi$에 대해 $\forall x \psi$가 양화사 제거 가능함을 보이자. $\forall x \psi$는 $\lnot\exists x \lnot \psi$와 동치이고, 가정에 의해 $\exists x \lnot \psi$는 어떤 양화사가 없는 명제 $\theta$와 동치이다. 따라서 $\forall x \psi$는 $\lnot \theta$와 동치이며, 양화사 제거 가능하다. 이제 양화사 개수에 대한 귀납법을 적용하면 임의의 명제에 대해 양화사 제거가 가능함이 보여진다. ■&lt;/p&gt;
@@ -3948,9 +3946,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>Quantifier Elimination</title>
-   <link href="https://dimenerno.github.io/2025/05/15/quantifier-elimination/en"/>
+   <link href="http://localhost:4000/2025/05/15/quantifier-elimination/en"/>
    <updated>2025-05-15T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/15/quantifier-elimination/quantifier-elimination-en</id>
+   <id>http://localhost:4000/2025/05/15/quantifier-elimination/quantifier-elimination-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4034,9 +4032,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>포화된 구조와 실수체의 완전성</title>
-   <link href="https://dimenerno.github.io/2025/05/13/saturation"/>
+   <link href="http://localhost:4000/2025/05/13/saturation"/>
    <updated>2025-05-13T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/13/saturation</id>
+   <id>http://localhost:4000/2025/05/13/saturation</id>
    <content type="html">&lt;p&gt;$\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $A$는 $\mathfrak{A}$의 정의역이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -4165,9 +4163,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>Saturated Structures and the Completeness of Real Closed Fields</title>
-   <link href="https://dimenerno.github.io/2025/05/13/saturation/en"/>
+   <link href="http://localhost:4000/2025/05/13/saturation/en"/>
    <updated>2025-05-13T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/13/saturation/saturation-en</id>
+   <id>http://localhost:4000/2025/05/13/saturation/saturation-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4301,9 +4299,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>η 집합</title>
-   <link href="https://dimenerno.github.io/2025/05/09/resiliency"/>
+   <link href="http://localhost:4000/2025/05/09/resiliency"/>
    <updated>2025-05-09T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/09/resiliency</id>
+   <id>http://localhost:4000/2025/05/09/resiliency</id>
    <content type="html">&lt;p&gt;가산 조밀 무계 전순서&lt;sub&gt;countable dense unbounded linear order&lt;/sub&gt;는 모두 동형임을 보인 칸토어의 앞뒤 논법&lt;sub&gt;back-and-forth argument&lt;/sub&gt;에서 핵심이 되는 원리는 다음이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -4434,9 +4432,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>η Sets</title>
-   <link href="https://dimenerno.github.io/2025/05/09/resiliency/en"/>
+   <link href="http://localhost:4000/2025/05/09/resiliency/en"/>
    <updated>2025-05-09T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/09/resiliency/resiliency-en</id>
+   <id>http://localhost:4000/2025/05/09/resiliency/resiliency-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4571,9 +4569,9 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
  
  <entry>
    <title>로빈슨, 크레이그, 베스의 정리</title>
-   <link href="https://dimenerno.github.io/2025/05/08/robinson-craig"/>
+   <link href="http://localhost:4000/2025/05/08/robinson-craig"/>
    <updated>2025-05-08T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/08/robinson-craig</id>
+   <id>http://localhost:4000/2025/05/08/robinson-craig</id>
    <content type="html">&lt;h3 id=&quot;초등적-병합-성질elementary-amalgamation-property&quot;&gt;초등적 병합 성질&lt;sub&gt;Elementary amalgamation property&lt;/sub&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -4741,9 +4739,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
  
  <entry>
    <title>Robinson, Craig, and Beth's Theorems</title>
-   <link href="https://dimenerno.github.io/2025/05/08/robinson-craig/en"/>
+   <link href="http://localhost:4000/2025/05/08/robinson-craig/en"/>
    <updated>2025-05-08T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/08/robinson-craig/robinson-craig-en</id>
+   <id>http://localhost:4000/2025/05/08/robinson-craig/robinson-craig-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4916,9 +4914,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
  
  <entry>
    <title>정칙 기수와 특이 기수, 그리고 도달 불가능 기수</title>
-   <link href="https://dimenerno.github.io/2025/05/04/regular-singular"/>
+   <link href="http://localhost:4000/2025/05/04/regular-singular"/>
    <updated>2025-05-04T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/04/regular-singular</id>
+   <id>http://localhost:4000/2025/05/04/regular-singular</id>
    <content type="html">&lt;p&gt;이 글에서 $\kappa$는 무한 기수이다. 또한, 기수를 초기 서수&lt;sub&gt;initial ordinal&lt;/sub&gt;로 정의하는 방식을 택한다(&lt;a href=&quot;https://dimenerno.github.io/2025/04/20/cardinality/&quot;&gt;이 글&lt;/a&gt;의 3번). 이에 따라 모든 기수는 서수이기도 하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -5023,9 +5021,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
  
  <entry>
    <title>Regular Cardinals, Singular Cardinals, and Inaccessible Cardinals</title>
-   <link href="https://dimenerno.github.io/2025/05/04/regular-singular/en"/>
+   <link href="http://localhost:4000/2025/05/04/regular-singular/en"/>
    <updated>2025-05-04T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/04/regular-singular/regular-singular-en</id>
+   <id>http://localhost:4000/2025/05/04/regular-singular/regular-singular-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5132,9 +5130,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
  
  <entry>
    <title>준동형 사상, 임베딩, 초등적 임베딩</title>
-   <link href="https://dimenerno.github.io/2025/05/01/elementary-embedding"/>
+   <link href="http://localhost:4000/2025/05/01/elementary-embedding"/>
    <updated>2025-05-01T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/01/elementary-embedding</id>
+   <id>http://localhost:4000/2025/05/01/elementary-embedding</id>
    <content type="html">&lt;p&gt;이 글에서는 편의를 위해 술어와 함수를 별도의 대상으로 생각하는 대신, 함수식 $f(a) = c$를 이항 술어 $F(a, c)$로 환원하는 접근을 택한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -5263,9 +5261,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
  
  <entry>
    <title>Homomorphisms, Embeddings, and Elementary Embeddings</title>
-   <link href="https://dimenerno.github.io/2025/05/01/elementary-embedding/en"/>
+   <link href="http://localhost:4000/2025/05/01/elementary-embedding/en"/>
    <updated>2025-05-01T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/05/01/elementary-embedding/elementary-embedding-en</id>
+   <id>http://localhost:4000/2025/05/01/elementary-embedding/elementary-embedding-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5397,9 +5395,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
  
  <entry>
    <title>연속체 가설과 동치인 색칠 문제</title>
-   <link href="https://dimenerno.github.io/2025/04/24/continuum-coloring"/>
+   <link href="http://localhost:4000/2025/04/24/continuum-coloring"/>
    <updated>2025-04-24T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/24/continuum-coloring</id>
+   <id>http://localhost:4000/2025/04/24/continuum-coloring</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;문제.&lt;/strong&gt; 좌표평면을 가산 개의 색깔을 사용하여 칠했을 때, 세 꼭짓점이 같은 색깔인 직각삼각형이 언제나 존재하는가?&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5460,9 +5458,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
  
  <entry>
    <title>A Colouring Problem Equivalent to the Continuum Hypothesis</title>
-   <link href="https://dimenerno.github.io/2025/04/24/continuum-coloring/en"/>
+   <link href="http://localhost:4000/2025/04/24/continuum-coloring/en"/>
    <updated>2025-04-24T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/24/continuum-coloring/continuum-coloring-en</id>
+   <id>http://localhost:4000/2025/04/24/continuum-coloring/continuum-coloring-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5527,9 +5525,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
  
  <entry>
    <title>기수의 정의에 관한 노트</title>
-   <link href="https://dimenerno.github.io/2025/04/20/cardinality"/>
+   <link href="http://localhost:4000/2025/04/20/cardinality"/>
    <updated>2025-04-20T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/20/cardinality</id>
+   <id>http://localhost:4000/2025/04/20/cardinality</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X$에서 $Y$로 가는 단사 사상이 존재할 때, $|X| \leq |Y|$라고 적는다. 전단사 사상이 존재할 때, $|X| = |Y|$라고 적는다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5609,9 +5607,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
  
  <entry>
    <title>Notes on the Definition of Cardinality</title>
-   <link href="https://dimenerno.github.io/2025/04/20/cardinality/en"/>
+   <link href="http://localhost:4000/2025/04/20/cardinality/en"/>
    <updated>2025-04-20T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/20/cardinality/cardinality-en</id>
+   <id>http://localhost:4000/2025/04/20/cardinality/cardinality-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5696,9 +5694,9 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
  
  <entry>
    <title>무한 죄수 모자 문제</title>
-   <link href="https://dimenerno.github.io/2025/04/18/prisoner-hat"/>
+   <link href="http://localhost:4000/2025/04/18/prisoner-hat"/>
    <updated>2025-04-18T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/18/prisoner-hat</id>
+   <id>http://localhost:4000/2025/04/18/prisoner-hat</id>
    <content type="html">&lt;p&gt;아마 여러분은 죄수들이 자신의 모자 색을 맞히는 내용의 퍼즐을 제법 보았을 것이다. 예시는 다음과 같다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -5822,9 +5820,9 @@ $$
  
  <entry>
    <title>Infinite Prisoner Hat Problem</title>
-   <link href="https://dimenerno.github.io/2025/04/18/prisoner-hat/en"/>
+   <link href="http://localhost:4000/2025/04/18/prisoner-hat/en"/>
    <updated>2025-04-18T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/18/prisoner-hat/prisoner-hat-en</id>
+   <id>http://localhost:4000/2025/04/18/prisoner-hat/prisoner-hat-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5953,9 +5951,9 @@ $$
  
  <entry>
    <title>워시-타르스키 보존 정리</title>
-   <link href="https://dimenerno.github.io/2025/04/17/los-tarski"/>
+   <link href="http://localhost:4000/2025/04/17/los-tarski"/>
    <updated>2025-04-17T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/17/los-tarski</id>
+   <id>http://localhost:4000/2025/04/17/los-tarski</id>
    <content type="html">&lt;p&gt;군 $G$의 부분군 $H, K$에 대해 $H \cap K$는 언제나 군이다. 환과 체의 경우에도 마찬가지이다. 이는 워시-타르스키 정리의 따름결과로 설명할 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -6136,9 +6134,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>The Łoś-Tarski Preservation Theorem</title>
-   <link href="https://dimenerno.github.io/2025/04/17/los-tarski/en"/>
+   <link href="http://localhost:4000/2025/04/17/los-tarski/en"/>
    <updated>2025-04-17T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/17/los-tarski/los-tarski-en</id>
+   <id>http://localhost:4000/2025/04/17/los-tarski/los-tarski-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -6324,9 +6322,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>완전성 정리와 뢰벤하임-스콜렘 정리</title>
-   <link href="https://dimenerno.github.io/2025/04/10/completeness-theorem"/>
+   <link href="http://localhost:4000/2025/04/10/completeness-theorem"/>
    <updated>2025-04-10T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/10/completeness-theorem</id>
+   <id>http://localhost:4000/2025/04/10/completeness-theorem</id>
    <content type="html">&lt;p&gt;괴델의 완전성 정리와 뢰벤하임-스콜렘 정리는 수리논리학의 가장 기본적인 정리들이다. 그래도 기본기를 다져보는 김에, 이 정리들의 증명을 복습해 보았다. 이 글에서 $T$는 언어 $\mathcal{L}$의 1차 논리 이론으로 간주한다.&lt;/p&gt;
 
 &lt;h2 id=&quot;괴델의-완전성-정리&quot;&gt;괴델의 완전성 정리&lt;/h2&gt;
@@ -6421,9 +6419,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>Completeness Theorem and Löwenheim-Skolem Theorem</title>
-   <link href="https://dimenerno.github.io/2025/04/10/completeness-theorem/en"/>
+   <link href="http://localhost:4000/2025/04/10/completeness-theorem/en"/>
    <updated>2025-04-10T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/10/completeness-theorem/completeness-theorem-en</id>
+   <id>http://localhost:4000/2025/04/10/completeness-theorem/completeness-theorem-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -6523,9 +6521,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>자이페르트-판 캄펀 정리에 대한 노트</title>
-   <link href="https://dimenerno.github.io/2025/04/04/van-kampen"/>
+   <link href="http://localhost:4000/2025/04/04/van-kampen"/>
    <updated>2025-04-04T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/04/van-kampen</id>
+   <id>http://localhost:4000/2025/04/04/van-kampen</id>
    <content type="html">&lt;p&gt;위상공간 $X$의 열린 덮개 $U, V$를 생각하자. 위상공간들의 범주 $\mathbf{Top}$에서 다음 푸시아웃&lt;sub&gt;pushout&lt;/sub&gt; 도식의 극한은 $X$이다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/seifert-1.png&quot; style=&quot;margin: 1.5em auto 2em auto; width: 250px&quot; /&gt;&lt;/p&gt;
@@ -6547,9 +6545,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>Notes on the Seifert-van Kampen Theorem</title>
-   <link href="https://dimenerno.github.io/2025/04/04/van-kampen/en"/>
+   <link href="http://localhost:4000/2025/04/04/van-kampen/en"/>
    <updated>2025-04-04T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/04/van-kampen/van-kampen-en</id>
+   <id>http://localhost:4000/2025/04/04/van-kampen/van-kampen-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -6575,9 +6573,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>범주론적 관점에서의 곱 위상·상자 위상과 직곱·직합의 차이</title>
-   <link href="https://dimenerno.github.io/2025/04/02/box-v-product"/>
+   <link href="http://localhost:4000/2025/04/02/box-v-product"/>
    <updated>2025-04-02T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/02/box-v-product</id>
+   <id>http://localhost:4000/2025/04/02/box-v-product</id>
    <content type="html">&lt;h2 id=&quot;곱-위상과-상자-위상&quot;&gt;곱 위상과 상자 위상&lt;/h2&gt;
 
 &lt;p&gt;학부 위상에서 곱 위상&lt;sub&gt;product topology&lt;/sub&gt;과 상자 위상&lt;sub&gt;box topology&lt;/sub&gt;을 다루는 부분은 많은 학생에게 난관으로 다가오는 대목이다. 겉보기에는 상자 위상이 훨씬 직관적인데, 교재에서는 상자 위상보다 곱 위상이 다루기에 자연스러운 개념이라고 가르치기 때문이다.&lt;/p&gt;
@@ -6701,9 +6699,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>The Difference Between Product and Box Topologies, and Direct Product and Direct Sum from a Categorical Perspective</title>
-   <link href="https://dimenerno.github.io/2025/04/02/box-v-product/en"/>
+   <link href="http://localhost:4000/2025/04/02/box-v-product/en"/>
    <updated>2025-04-02T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/02/box-v-product/box-v-product-en</id>
+   <id>http://localhost:4000/2025/04/02/box-v-product/box-v-product-en</id>
    <content type="html">&lt;h2 id=&quot;product-topology-and-box-topology&quot;&gt;Product Topology and Box Topology&lt;/h2&gt;
 
 &lt;p&gt;Product topology and box topology often stir confusion among many undergraduate students. For, although the box topology appears more intuitive at first glance, textbooks teach that the product topology is the more “natural” concept to work with.&lt;/p&gt;
@@ -6827,9 +6825,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>양상 논리</title>
-   <link href="https://dimenerno.github.io/2025/04/01/modal-logic"/>
+   <link href="http://localhost:4000/2025/04/01/modal-logic"/>
    <updated>2025-04-01T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/01/modal-logic</id>
+   <id>http://localhost:4000/2025/04/01/modal-logic</id>
    <content type="html">&lt;h3 id=&quot;종류&quot;&gt;종류&lt;/h3&gt;
 
 &lt;table&gt;
@@ -6923,9 +6921,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>Modal Logic</title>
-   <link href="https://dimenerno.github.io/2025/04/01/modal-logic/en"/>
+   <link href="http://localhost:4000/2025/04/01/modal-logic/en"/>
    <updated>2025-04-01T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/04/01/modal-logic/modal-logic-en</id>
+   <id>http://localhost:4000/2025/04/01/modal-logic/modal-logic-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7024,9 +7022,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>요네다 보조정리</title>
-   <link href="https://dimenerno.github.io/2025/03/21/yoneda"/>
+   <link href="http://localhost:4000/2025/03/21/yoneda"/>
    <updated>2025-03-21T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/03/21/yoneda</id>
+   <id>http://localhost:4000/2025/03/21/yoneda</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;em&gt;Notation.&lt;/em&gt;&lt;/p&gt;
 
@@ -7112,9 +7110,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>Yoneda Lemma</title>
-   <link href="https://dimenerno.github.io/2025/03/21/yoneda/en"/>
+   <link href="http://localhost:4000/2025/03/21/yoneda/en"/>
    <updated>2025-03-21T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/03/21/yoneda/yoneda-en</id>
+   <id>http://localhost:4000/2025/03/21/yoneda/yoneda-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7205,9 +7203,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게</title>
-   <link href="https://dimenerno.github.io/2025/03/18/quanitfying-in"/>
+   <link href="http://localhost:4000/2025/03/18/quanitfying-in"/>
    <updated>2025-03-18T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/03/18/quanitfying-in</id>
+   <id>http://localhost:4000/2025/03/18/quanitfying-in</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;이 글은 &lt;a href=&quot;/public/Quantifying In.pdf&quot;&gt;David Kaplan, &lt;em&gt;Quantifying In&lt;/em&gt; (1968)&lt;/a&gt;을 정리한 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7562,9 +7560,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>On Existential Quantification in Modal Contexts — Quine and Frege</title>
-   <link href="https://dimenerno.github.io/2025/03/18/quanitfying-in/en"/>
+   <link href="http://localhost:4000/2025/03/18/quanitfying-in/en"/>
    <updated>2025-03-18T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/03/18/quanitfying-in/quanitfying-in-en</id>
+   <id>http://localhost:4000/2025/03/18/quanitfying-in/quanitfying-in-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7922,9 +7920,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>참에 대한 이론이란 무엇인가?</title>
-   <link href="https://dimenerno.github.io/2025/03/12/what-is-a-theory-of-truth"/>
+   <link href="http://localhost:4000/2025/03/12/what-is-a-theory-of-truth"/>
    <updated>2025-03-12T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/03/12/what-is-a-theory-of-truth</id>
+   <id>http://localhost:4000/2025/03/12/what-is-a-theory-of-truth</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;이 글은 &lt;a href=&quot;/public/What is a Theory of Truth.pdf&quot;&gt;Scott Soames, &lt;em&gt;What is a Theory of Truth?&lt;/em&gt; (1984)&lt;/a&gt;을 정리한 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -8180,9 +8178,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>What is a Theory of Truth?</title>
-   <link href="https://dimenerno.github.io/2025/03/12/what-is-a-theory-of-truth/en"/>
+   <link href="http://localhost:4000/2025/03/12/what-is-a-theory-of-truth/en"/>
    <updated>2025-03-12T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/03/12/what-is-a-theory-of-truth/what-is-a-theory-of-truth-en</id>
+   <id>http://localhost:4000/2025/03/12/what-is-a-theory-of-truth/what-is-a-theory-of-truth-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -8437,9 +8435,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>시제 논리</title>
-   <link href="https://dimenerno.github.io/2025/03/10/temporal-logic"/>
+   <link href="http://localhost:4000/2025/03/10/temporal-logic"/>
    <updated>2025-03-10T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/03/10/temporal-logic</id>
+   <id>http://localhost:4000/2025/03/10/temporal-logic</id>
    <content type="html">&lt;h2 id=&quot;도입&quot;&gt;도입&lt;/h2&gt;
 
 &lt;p&gt;다음의 세 문장을 보자.&lt;/p&gt;
@@ -8663,9 +8661,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>Temporal Logic</title>
-   <link href="https://dimenerno.github.io/2025/03/10/temporal-logic/en"/>
+   <link href="http://localhost:4000/2025/03/10/temporal-logic/en"/>
    <updated>2025-03-10T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/03/10/temporal-logic/temporal-logic-en</id>
+   <id>http://localhost:4000/2025/03/10/temporal-logic/temporal-logic-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -8894,9 +8892,9 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
  
  <entry>
    <title>텐서곱에 관한 노트</title>
-   <link href="https://dimenerno.github.io/2025/03/04/tensor"/>
+   <link href="http://localhost:4000/2025/03/04/tensor"/>
    <updated>2025-03-04T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/03/04/tensor</id>
+   <id>http://localhost:4000/2025/03/04/tensor</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;TL;DR.&lt;/strong&gt; 벡터 공간의 텐서곱은 다음의 의미를 가진다.&lt;/p&gt;
 
 &lt;ol&gt;
@@ -9001,9 +8999,9 @@ U^* \otimes V^* &amp;amp;\cong U^{***} \otimes V^{***} \\
  
  <entry>
    <title>Notes on Tensor Products</title>
-   <link href="https://dimenerno.github.io/2025/03/04/tensor/en"/>
+   <link href="http://localhost:4000/2025/03/04/tensor/en"/>
    <updated>2025-03-04T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/03/04/tensor/tensor-en</id>
+   <id>http://localhost:4000/2025/03/04/tensor/tensor-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -9113,9 +9111,9 @@ U^* \otimes V^* &amp;amp;\cong U^{***} \otimes V^{***} \\
  
  <entry>
    <title>일반 공변성에 대한 노트</title>
-   <link href="https://dimenerno.github.io/2025/02/27/general-covariance"/>
+   <link href="http://localhost:4000/2025/02/27/general-covariance"/>
    <updated>2025-02-27T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/27/general-covariance</id>
+   <id>http://localhost:4000/2025/02/27/general-covariance</id>
    <content type="html">&lt;p&gt;어떤 이론이 &lt;strong&gt;일반 공변적&lt;sub&gt;general covariant&lt;/sub&gt;&lt;/strong&gt;이라는 것은, 물리 법칙의 형태&lt;sub&gt;form&lt;/sub&gt;가 미분가능한 좌표계 변환에 대해 보존된다는 것이다. 구체적으로, 좌표계 $\lbrace q_i \rbrace $와 좌표계 $\lbrace q’_i \rbrace $가 다음 관계에 있다고 하자.&lt;/p&gt;
 
 \[q_i&apos; = f_i(\{ q \})\]
@@ -9214,9 +9212,9 @@ y = f_2(r, \theta) = r \sin \theta
  
  <entry>
    <title>Notes on General Covariance</title>
-   <link href="https://dimenerno.github.io/2025/02/27/general-covariance/en"/>
+   <link href="http://localhost:4000/2025/02/27/general-covariance/en"/>
    <updated>2025-02-27T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/27/general-covariance/general-covariance-en</id>
+   <id>http://localhost:4000/2025/02/27/general-covariance/general-covariance-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -9320,9 +9318,9 @@ y = f_2(r, \theta) = r \sin \theta
  
  <entry>
    <title>오일러-라그랑주 방정식과 라그랑주 역학</title>
-   <link href="https://dimenerno.github.io/2025/02/27/euler-lagrange"/>
+   <link href="http://localhost:4000/2025/02/27/euler-lagrange"/>
    <updated>2025-02-27T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/27/euler-lagrange</id>
+   <id>http://localhost:4000/2025/02/27/euler-lagrange</id>
    <content type="html">&lt;h2 id=&quot;1-도입&quot;&gt;1. 도입&lt;/h2&gt;
 
 &lt;p&gt;1차원 위에서 운동하는 입자의 운동 경로는 $x(t)$와 같이 표현할 수 있다. 입자의 위치와 속도에 의존적인 함수 $f(x, x’)$를 생각하자. 이 입자가 시간 $t_1$일 때 $x_1$에서 출발하여 시간 $t_2$일 때 $x_2$에 도착하는데, 그 과정에서 다음 값을 극화&lt;sub&gt;extremise&lt;/sub&gt;하는 경로, 즉 다음 값이 극대 또는 극소가 되도록 하는 경로 $x(t)$를 찾는 것이 목표이다.&lt;/p&gt;
@@ -9452,9 +9450,9 @@ $$
  
  <entry>
    <title>The Euler-Lagrange Equation and Lagrangian Mechanics</title>
-   <link href="https://dimenerno.github.io/2025/02/27/euler-lagrange/en"/>
+   <link href="http://localhost:4000/2025/02/27/euler-lagrange/en"/>
    <updated>2025-02-27T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/27/euler-lagrange/euler-lagrange-en</id>
+   <id>http://localhost:4000/2025/02/27/euler-lagrange/euler-lagrange-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -9589,9 +9587,9 @@ Solving the above equation yields $y(x)$ in the form of a **cycloid**. Please fo
  
  <entry>
    <title>르베그 가측 집합과 보렐 가측 집합</title>
-   <link href="https://dimenerno.github.io/2025/02/25/lebesgue-borel"/>
+   <link href="http://localhost:4000/2025/02/25/lebesgue-borel"/>
    <updated>2025-02-25T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/25/lebesgue-borel</id>
+   <id>http://localhost:4000/2025/02/25/lebesgue-borel</id>
    <content type="html">&lt;h3 id=&quot;1-르베그-측도&quot;&gt;1. 르베그 측도&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/02/25/caratheodory/&quot;&gt;카라테오도리 정리&lt;/a&gt;로부터 다음과 같이 측도 $m$을 정의할 수 있다.&lt;/p&gt;
@@ -9736,9 +9734,9 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
  
  <entry>
    <title>Lebesgue Measurable Sets and Borel Measurable Sets</title>
-   <link href="https://dimenerno.github.io/2025/02/25/lebesgue-borel/en"/>
+   <link href="http://localhost:4000/2025/02/25/lebesgue-borel/en"/>
    <updated>2025-02-25T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/25/lebesgue-borel/lebesgue-borel-en</id>
+   <id>http://localhost:4000/2025/02/25/lebesgue-borel/lebesgue-borel-en</id>
    <content type="html">&lt;h3 id=&quot;1-lebesgue-measure&quot;&gt;1. Lebesgue Measure&lt;/h3&gt;
 
 &lt;p&gt;From &lt;a href=&quot;https://dimenerno.github.io/2025/02/25/caratheodory/&quot;&gt;Carathéodory’s theorem&lt;/a&gt;, we can define a measure $m$ on $\mathbb{R}$ as follows.&lt;/p&gt;
@@ -9883,9 +9881,9 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
  
  <entry>
    <title>카라테오도리 정리를 이용한 측도의 구성</title>
-   <link href="https://dimenerno.github.io/2025/02/25/caratheodory"/>
+   <link href="http://localhost:4000/2025/02/25/caratheodory"/>
    <updated>2025-02-25T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/25/caratheodory</id>
+   <id>http://localhost:4000/2025/02/25/caratheodory</id>
    <content type="html">&lt;p&gt;필자는 카라테오도리 정리&lt;sub&gt;Carathéodory theorem&lt;/sub&gt;를 3가지로 구분해서 이해하는 방식을 선호하기 때문에, 이 글에서도 해당 방식을 따른다. 각각 다음과 같다.&lt;/p&gt;
 
 &lt;ol&gt;
@@ -10116,9 +10114,9 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
  
  <entry>
    <title>Construction of Measures via Carathéodory's Theorem</title>
-   <link href="https://dimenerno.github.io/2025/02/25/caratheodory/en"/>
+   <link href="http://localhost:4000/2025/02/25/caratheodory/en"/>
    <updated>2025-02-25T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/25/caratheodory/caratheodory-en</id>
+   <id>http://localhost:4000/2025/02/25/caratheodory/caratheodory-en</id>
    <content type="html">&lt;p&gt;I prefer to approach Carathéodory’s theorem by dividing it into three subtheorems. They are as follows:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -10349,9 +10347,9 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
  
  <entry>
    <title>대수와 측도의 정의</title>
-   <link href="https://dimenerno.github.io/2025/02/24/algebra-measure"/>
+   <link href="http://localhost:4000/2025/02/24/algebra-measure"/>
    <updated>2025-02-24T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/24/algebra-measure</id>
+   <id>http://localhost:4000/2025/02/24/algebra-measure</id>
    <content type="html">&lt;h2 id=&quot;1-비탈리-정리&quot;&gt;1. 비탈리 정리&lt;/h2&gt;
 
 &lt;blockquote&gt;
@@ -10453,9 +10451,9 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
  
  <entry>
    <title>Definitions of Algebra and Measure</title>
-   <link href="https://dimenerno.github.io/2025/02/24/algebra-measure/en"/>
+   <link href="http://localhost:4000/2025/02/24/algebra-measure/en"/>
    <updated>2025-02-24T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/24/algebra-measure/algebra-measure-en</id>
+   <id>http://localhost:4000/2025/02/24/algebra-measure/algebra-measure-en</id>
    <content type="html">&lt;h2 id=&quot;1-vitalis-theorem&quot;&gt;1. Vitali’s Theorem&lt;/h2&gt;
 
 &lt;blockquote&gt;
@@ -10557,9 +10555,9 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
  
  <entry>
    <title>램지 수와 무한 램지 정리</title>
-   <link href="https://dimenerno.github.io/2025/02/20/ramsey"/>
+   <link href="http://localhost:4000/2025/02/20/ramsey"/>
    <updated>2025-02-20T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/20/ramsey</id>
+   <id>http://localhost:4000/2025/02/20/ramsey</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;초록.&lt;/strong&gt; 램지 수의 정의와, 램지 수가 잘 정의됨을 보장하는 램지 정리를 살펴보고, 이를 무한 그래프로 확장한다. 또한 콤팩트성 정리를 이용하여 무한 램지 정리로부터 유한 램지 정리를 도출하는 논증을 소개한다.&lt;/p&gt;
 
 &lt;h2 id=&quot;도입&quot;&gt;도입&lt;/h2&gt;
@@ -10825,9 +10823,9 @@ K = \{ v \in V : v \in B \}
  
  <entry>
    <title>Ramsey Numbers and the Infinite Ramsey Theorem</title>
-   <link href="https://dimenerno.github.io/2025/02/20/ramsey/en"/>
+   <link href="http://localhost:4000/2025/02/20/ramsey/en"/>
    <updated>2025-02-20T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/20/ramsey/ramsey-en</id>
+   <id>http://localhost:4000/2025/02/20/ramsey/ramsey-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -11117,9 +11115,9 @@ K = \{ v \in V : v \in B \}
  
  <entry>
    <title>어드조인트, 정규 변환, 그리고 스펙트럼 정리</title>
-   <link href="https://dimenerno.github.io/2025/02/13/spectral-theorem"/>
+   <link href="http://localhost:4000/2025/02/13/spectral-theorem"/>
    <updated>2025-02-13T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/13/spectral-theorem</id>
+   <id>http://localhost:4000/2025/02/13/spectral-theorem</id>
    <content type="html">&lt;p&gt;이 글에서 모든 벡터 공간은 내적 공간이라고 가정한다. 또한, 모든 변환은 선형 변환이다.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-선형-변환의-어드조인트&quot;&gt;1. 선형 변환의 어드조인트&lt;/h2&gt;
@@ -11247,9 +11245,9 @@ K = \{ v \in V : v \in B \}
  
  <entry>
    <title>Adjoints, Normal Transformations, and the Spectral Theorem</title>
-   <link href="https://dimenerno.github.io/2025/02/13/spectral-theorem/en"/>
+   <link href="http://localhost:4000/2025/02/13/spectral-theorem/en"/>
    <updated>2025-02-13T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/13/spectral-theorem/spectral-theorem-en</id>
+   <id>http://localhost:4000/2025/02/13/spectral-theorem/spectral-theorem-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -11381,9 +11379,9 @@ K = \{ v \in V : v \in B \}
  
  <entry>
    <title>어드조인트에 대한 세 가지 접근</title>
-   <link href="https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint"/>
+   <link href="http://localhost:4000/2025/02/13/three-definitions-of-adjoint"/>
    <updated>2025-02-13T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint</id>
+   <id>http://localhost:4000/2025/02/13/three-definitions-of-adjoint</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;본문의 내용은 Tom Leinster, &lt;em&gt;Basic Category Theory&lt;/em&gt;에 기반한다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -11508,9 +11506,9 @@ K = \{ v \in V : v \in B \}
  
  <entry>
    <title>Three Approaches to Adjoints</title>
-   <link href="https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/en"/>
+   <link href="http://localhost:4000/2025/02/13/three-definitions-of-adjoint/en"/>
    <updated>2025-02-13T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/three-definitions-of-adjoint-en</id>
+   <id>http://localhost:4000/2025/02/13/three-definitions-of-adjoint/three-definitions-of-adjoint-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -11640,9 +11638,9 @@ K = \{ v \in V : v \in B \}
  
  <entry>
    <title>정신은 기계로 환원될 수 있는가: 괴델의 조건문과 펜로즈-루카스 논증</title>
-   <link href="https://dimenerno.github.io/2025/02/09/godel-lucas-penrose"/>
+   <link href="http://localhost:4000/2025/02/09/godel-lucas-penrose"/>
    <updated>2025-02-09T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/09/godel-lucas-penrose</id>
+   <id>http://localhost:4000/2025/02/09/godel-lucas-penrose</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/b71a00d7-efdf-4ec3-ad5c-cc32b67cf70c/image.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -11961,9 +11959,9 @@ K = \{ v \in V : v \in B \}
  
  <entry>
    <title>Can the Mind Be Reduced to a Machine: Gödel's Disjunction and the Penrose-Lucas Argument</title>
-   <link href="https://dimenerno.github.io/2025/02/09/godel-lucas-penrose/en"/>
+   <link href="http://localhost:4000/2025/02/09/godel-lucas-penrose/en"/>
    <updated>2025-02-09T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/09/godel-lucas-penrose/godel-lucas-penrose-en</id>
+   <id>http://localhost:4000/2025/02/09/godel-lucas-penrose/godel-lucas-penrose-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -12287,9 +12285,9 @@ K = \{ v \in V : v \in B \}
  
  <entry>
    <title>산술 위계</title>
-   <link href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy"/>
+   <link href="http://localhost:4000/2025/02/07/arithmetic-hierarchy"/>
    <updated>2025-02-07T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy</id>
+   <id>http://localhost:4000/2025/02/07/arithmetic-hierarchy</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/public/arithmetic-hierarchy.png&quot; width=&quot;340px&quot; style=&quot;margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -12561,9 +12559,9 @@ for y ∈ P:
  
  <entry>
    <title>Arithmetic Hierarchy</title>
-   <link href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/en"/>
+   <link href="http://localhost:4000/2025/02/07/arithmetic-hierarchy/en"/>
    <updated>2025-02-07T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/arithmetic-hierarchy-en</id>
+   <id>http://localhost:4000/2025/02/07/arithmetic-hierarchy/arithmetic-hierarchy-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -12841,9 +12839,9 @@ for y ∈ P:
  
  <entry>
    <title>곱군과 위수에 관한 노트: 페르마 소수 정리와 윌슨의 정리</title>
-   <link href="https://dimenerno.github.io/2025/02/05/order"/>
+   <link href="http://localhost:4000/2025/02/05/order"/>
    <updated>2025-02-05T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/05/order</id>
+   <id>http://localhost:4000/2025/02/05/order</id>
    <content type="html">&lt;h3 id=&quot;remarks&quot;&gt;Remarks&lt;/h3&gt;
 
 &lt;table&gt;
@@ -12904,9 +12902,9 @@ for y ∈ P:
  
  <entry>
    <title>Notes on Multiplicative Groups and Order: Fermat's Theorem on Primes and Wilson's Theorem</title>
-   <link href="https://dimenerno.github.io/2025/02/05/order/en"/>
+   <link href="http://localhost:4000/2025/02/05/order/en"/>
    <updated>2025-02-05T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/02/05/order/order-en</id>
+   <id>http://localhost:4000/2025/02/05/order/order-en</id>
    <content type="html">&lt;h3 id=&quot;remarks&quot;&gt;Remarks&lt;/h3&gt;
 
 &lt;table&gt;
@@ -12967,9 +12965,9 @@ for y ∈ P:
  
  <entry>
    <title>베타 함수를 통한 페아노 산술에서의 괴델 수 정의</title>
-   <link href="https://dimenerno.github.io/2025/01/25/beta-function"/>
+   <link href="http://localhost:4000/2025/01/25/beta-function"/>
    <updated>2025-01-25T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/25/beta-function</id>
+   <id>http://localhost:4000/2025/01/25/beta-function</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;요약.&lt;/strong&gt; 1차 페아노 산술은 술어에 대한 양화를 허용하지 않기 때문에 덧셈과 곱셈 공리를 별도로 요구한다. 그러나 지수나 계승 등의 추가적인 연산은 — 튜플을 페아노 산술에서 정의할 수 있는 한 — 별도의 공리 없이 정의 가능하다. 그리고 튜플은 베타 암호화를 통해 페아노 산술에서 정의 가능하기 때문에, 페아노 산술은 지수, 계승, 소인수분해, 나아가 괴델 수까지 형식화할 수 있다.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-서론&quot;&gt;1. 서론&lt;/h2&gt;
@@ -13100,9 +13098,9 @@ for y ∈ P:
  
  <entry>
    <title>Defining Gödel Numbers in Peano Arithmetic via the Beta Function</title>
-   <link href="https://dimenerno.github.io/2025/01/25/beta-function/en"/>
+   <link href="http://localhost:4000/2025/01/25/beta-function/en"/>
    <updated>2025-01-25T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/25/beta-function/beta-function-en</id>
+   <id>http://localhost:4000/2025/01/25/beta-function/beta-function-en</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;Summary.&lt;/strong&gt; First-order Peano arithmetic does not permit quantification over predicates, hence it requires separate axioms to define addition and multiplication. However, further operations such as exponentiation and factorial are definable without separate axioms, provided that tuples can be defined in Peano arithmetic. And since tuples are definable in Peano arithmetic through beta encoding, Peano arithmetic can formalise exponentiation, factorial, prime factorisation, and ultimately Gödel numbering.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h2&gt;
@@ -13237,9 +13235,9 @@ for y ∈ P:
  
  <entry>
    <title>워시의 정리</title>
-   <link href="https://dimenerno.github.io/2025/01/25/los"/>
+   <link href="http://localhost:4000/2025/01/25/los"/>
    <updated>2025-01-25T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/25/los</id>
+   <id>http://localhost:4000/2025/01/25/los</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/01/22/hypernaturals/&quot;&gt;이전 글&lt;/a&gt;에서 이어지는 내용이다.&lt;/p&gt;
 
 &lt;h2 id=&quot;5-초자연수의-비표준적-특징&quot;&gt;5. 초자연수의 비표준적 특징&lt;/h2&gt;
@@ -13387,9 +13385,9 @@ for y ∈ P:
  
  <entry>
    <title>Łoś's Theorem</title>
-   <link href="https://dimenerno.github.io/2025/01/25/los/en"/>
+   <link href="http://localhost:4000/2025/01/25/los/en"/>
    <updated>2025-01-25T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/25/los/los-en</id>
+   <id>http://localhost:4000/2025/01/25/los/los-en</id>
    <content type="html">&lt;p&gt;This post continues from the &lt;a href=&quot;https://dimenerno.github.io/2025/01/22/hypernaturals/&quot;&gt;previous post&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;5-nonstandard-characteristics-of-hypernatural-numbers&quot;&gt;5. Nonstandard Characteristics of Hypernatural Numbers&lt;/h2&gt;
@@ -13531,9 +13529,9 @@ for y ∈ P:
  
  <entry>
    <title>프레셰 필터와 비표준 자연수</title>
-   <link href="https://dimenerno.github.io/2025/01/22/hypernaturals"/>
+   <link href="http://localhost:4000/2025/01/22/hypernaturals"/>
    <updated>2025-01-22T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/22/hypernaturals</id>
+   <id>http://localhost:4000/2025/01/22/hypernaturals</id>
    <content type="html">&lt;p&gt;뢰벤하임-스콜렘 정리에 따르면 표준 산술 모형과 초등적으로 동등&lt;sub&gt;elementarily equivalent&lt;/sub&gt;하지만 구조적으로 상이&lt;sub&gt;nonisomorphic&lt;/sub&gt;한 모형이 존재한다. 달리 말해, 자연수가 만족하는 모든 1차 논리 명제를 만족하지만 자연수가 아닌 수 체계가 존재한다.&lt;/p&gt;
 
 &lt;p&gt;이 글에서는 &lt;strong&gt;초곱&lt;sub&gt;ultraproduct&lt;/sub&gt;&lt;/strong&gt;을 이용하여 대표적인 산술의 비표준적 모형인 &lt;strong&gt;초자연수&lt;sub&gt;hypernaturals&lt;/sub&gt;&lt;/strong&gt;를 구성하고, 이것이 표준 산술 모형과 초등적으로 동등함을 보증하는 &lt;strong&gt;워시의 정리&lt;sub&gt;Łoś’s theorem&lt;/sub&gt;&lt;/strong&gt;를 증명한다.&lt;/p&gt;
@@ -13692,9 +13690,9 @@ for y ∈ P:
  
  <entry>
    <title>Fréchet Filters and Nonstandard Natural Numbers</title>
-   <link href="https://dimenerno.github.io/2025/01/22/hypernaturals/en"/>
+   <link href="http://localhost:4000/2025/01/22/hypernaturals/en"/>
    <updated>2025-01-22T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/22/hypernaturals/hypernaturals-en</id>
+   <id>http://localhost:4000/2025/01/22/hypernaturals/hypernaturals-en</id>
    <content type="html">&lt;p&gt;Löwenheim-Skolem theorem states that there exist models that are elementarily equivalent yet nonisomorphic to the standard model of arithmetics. In other words, there exist number systems that satisfy all first-order sentences of arithmetics, yet are not “the” natural numbers.&lt;/p&gt;
 
 &lt;p&gt;In this article, we construct the &lt;strong&gt;hypernaturals&lt;/strong&gt;, a representative nonstandard model of arithmetic, using &lt;strong&gt;ultraproducts&lt;/strong&gt;, and prove &lt;strong&gt;Łoś’s theorem&lt;/strong&gt;, which states that this model is elementarily equivalent to the standard model of arithmetics.&lt;/p&gt;
@@ -13858,9 +13856,9 @@ for y ∈ P:
  
  <entry>
    <title>지시에 대하여 — 한정 기술구</title>
-   <link href="https://dimenerno.github.io/2025/01/18/reference-3"/>
+   <link href="http://localhost:4000/2025/01/18/reference-3"/>
    <updated>2025-01-18T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/18/reference-3</id>
+   <id>http://localhost:4000/2025/01/18/reference-3</id>
    <content type="html">&lt;h2 id=&quot;4-한정-기술구&quot;&gt;4. 한정 기술구&lt;/h2&gt;
 
 &lt;p&gt;이름과 달리 한정 기술구와 관련하여 제기되는 일차적인 질문은 과연 한정 기술구는 지시를 하느냐는 것이다. 프레게는 한정 기술구 또한 이름과 마찬가지로 뜻(한정 기술구의 내용)과 지시체(해당 내용을 유일하게 만족하는 대상)를 가진다고 봤지만, 러셀은 한정 기술구가 지시체를 가지지 않는다고 보았다.&lt;/p&gt;
@@ -13945,9 +13943,9 @@ for y ∈ P:
  
  <entry>
    <title>On Reference — Definite Descriptions</title>
-   <link href="https://dimenerno.github.io/2025/01/18/reference-3/en"/>
+   <link href="http://localhost:4000/2025/01/18/reference-3/en"/>
    <updated>2025-01-18T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/18/reference-3/reference-3-en</id>
+   <id>http://localhost:4000/2025/01/18/reference-3/reference-3-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14036,9 +14034,9 @@ for y ∈ P:
  
  <entry>
    <title>지시에 대하여 — 특성 모델과 의도주의</title>
-   <link href="https://dimenerno.github.io/2025/01/13/reference-2"/>
+   <link href="http://localhost:4000/2025/01/13/reference-2"/>
    <updated>2025-01-13T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/13/reference-2</id>
+   <id>http://localhost:4000/2025/01/13/reference-2</id>
    <content type="html">&lt;h2 id=&quot;3-지표사&quot;&gt;3. 지표사&lt;/h2&gt;
 
 &lt;p&gt;지표사란 ‘나’, ‘너’, ’여기‘, ’지금‘, ’그‘, ’이것‘, ’저것‘과 같은 표현을 일컫는다. 지표사는 ’나‘, ’너‘, ’여기‘, ’지금‘과 같이 맥락이 주어졌을 때 지시체가 비교적 분명한 &lt;strong&gt;순수 지표사&lt;/strong&gt;와 ’그’, ‘이것’, ’저것’과 같이 지시체가 비교적 불분명한 &lt;strong&gt;불순 지표사&lt;/strong&gt;로 구분하는 것이 일반적이나, 모든 학자가 이 구분을 유의미하게 받아들이는 것은 아니다.&lt;/p&gt;
@@ -14145,9 +14143,9 @@ for y ∈ P:
  
  <entry>
    <title>On Reference — Character Model and Intentionalism</title>
-   <link href="https://dimenerno.github.io/2025/01/13/reference-2/en"/>
+   <link href="http://localhost:4000/2025/01/13/reference-2/en"/>
    <updated>2025-01-13T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/13/reference-2/reference-2-en</id>
+   <id>http://localhost:4000/2025/01/13/reference-2/reference-2-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14258,9 +14256,9 @@ for y ∈ P:
  
  <entry>
    <title>지시에 대하여 — 기술주의와 인과 이론</title>
-   <link href="https://dimenerno.github.io/2025/01/07/reference-1"/>
+   <link href="http://localhost:4000/2025/01/07/reference-1"/>
    <updated>2025-01-07T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/07/reference-1</id>
+   <id>http://localhost:4000/2025/01/07/reference-1</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;해당 글은 &lt;a href=&quot;https://plato.stanford.edu/entries/reference/&quot;&gt;스탠퍼드 철학백과의 지시 항목&lt;/a&gt;을 요약 및 정리한 글이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14519,9 +14517,9 @@ for y ∈ P:
  
  <entry>
    <title>On Reference — Descriptivism and Causal Theory</title>
-   <link href="https://dimenerno.github.io/2025/01/07/reference-1/en"/>
+   <link href="http://localhost:4000/2025/01/07/reference-1/en"/>
    <updated>2025-01-07T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/01/07/reference-1/reference-1-en</id>
+   <id>http://localhost:4000/2025/01/07/reference-1/reference-1-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14783,9 +14781,9 @@ for y ∈ P:
  
  <entry>
    <title>대각선 논법 없이 실수의 비가산성 증명하기</title>
-   <link href="https://dimenerno.github.io/2024/12/26/uncountability-of-reals"/>
+   <link href="http://localhost:4000/2024/12/26/uncountability-of-reals"/>
    <updated>2024-12-26T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/26/uncountability-of-reals</id>
+   <id>http://localhost:4000/2024/12/26/uncountability-of-reals</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\mathbb{R}$은 비가산이다. 즉, $\mathbb{N}$에서 $\mathbb{R}$로 가는 전사함수는 존재하지 않는다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14830,9 +14828,9 @@ for y ∈ P:
  
  <entry>
    <title>Proving the Uncountability of Real Numbers Without the Diagonal Argument</title>
-   <link href="https://dimenerno.github.io/2024/12/26/uncountability-of-reals/en"/>
+   <link href="http://localhost:4000/2024/12/26/uncountability-of-reals/en"/>
    <updated>2024-12-26T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/26/uncountability-of-reals/uncountability-of-reals-en</id>
+   <id>http://localhost:4000/2024/12/26/uncountability-of-reals/uncountability-of-reals-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; $\mathbb{R}$ is uncountable. That is, there exists no surjective function from $\mathbb{N}$ to $\mathbb{R}$.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14877,9 +14875,9 @@ for y ∈ P:
  
  <entry>
    <title>칸토어-벤딕슨 정리와 폴란드 공간</title>
-   <link href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson"/>
+   <link href="http://localhost:4000/2024/12/25/Cantor-Bendixson"/>
    <updated>2024-12-25T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/25/Cantor-Bendixson</id>
+   <id>http://localhost:4000/2024/12/25/Cantor-Bendixson</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 위상공간 $X$의 집합 $P$에 대해 $P’ = P$일 때 $P$를 &lt;strong&gt;완벽한 집합&lt;sub&gt;perfect set&lt;/sub&gt;&lt;/strong&gt;이라고 한다. ($P’$은 $P$의 집적점들의 집합)&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -14952,9 +14950,9 @@ for y ∈ P:
  
  <entry>
    <title>The Cantor-Bendixson Theorem and Polish Space</title>
-   <link href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson/en"/>
+   <link href="http://localhost:4000/2024/12/25/Cantor-Bendixson/en"/>
    <updated>2024-12-25T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/25/Cantor-Bendixson/Cantor-Bendixson-en</id>
+   <id>http://localhost:4000/2024/12/25/Cantor-Bendixson/Cantor-Bendixson-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -15031,9 +15029,9 @@ for y ∈ P:
  
  <entry>
    <title>어드조인트에 대한 직관적 이해</title>
-   <link href="https://dimenerno.github.io/2024/12/16/adjoints"/>
+   <link href="http://localhost:4000/2024/12/16/adjoints"/>
    <updated>2024-12-16T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/16/adjoints</id>
+   <id>http://localhost:4000/2024/12/16/adjoints</id>
    <content type="html">&lt;p&gt;카테고리 이론의 핵심 개념 중 하나는 어드조인트&lt;sub&gt;adjoint&lt;/sub&gt;이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -15091,9 +15089,9 @@ for y ∈ P:
  
  <entry>
    <title>An Intuitive Understanding of Adjoints</title>
-   <link href="https://dimenerno.github.io/2024/12/16/adjoints/en"/>
+   <link href="http://localhost:4000/2024/12/16/adjoints/en"/>
    <updated>2024-12-16T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/16/adjoints/adjoints-en</id>
+   <id>http://localhost:4000/2024/12/16/adjoints/adjoints-en</id>
    <content type="html">&lt;p&gt;One of the central concepts in category theory is that of an adjoint.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -15151,9 +15149,9 @@ for y ∈ P:
  
  <entry>
    <title>굴림에 대한 두 가지 삽화</title>
-   <link href="https://dimenerno.github.io/2024/12/11/rolling"/>
+   <link href="http://localhost:4000/2024/12/11/rolling"/>
    <updated>2024-12-11T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/11/rolling</id>
+   <id>http://localhost:4000/2024/12/11/rolling</id>
    <content type="html">&lt;p&gt;학부 시절 고전역학 수강 때 개인 공부용으로 만든 삽화인데, 잘 정리한 듯하여 이곳에도 공유한다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/rot-kr.png&quot; style=&quot;width: 100%; margin: 0 auto&quot; /&gt;&lt;/p&gt;
@@ -15166,9 +15164,9 @@ for y ∈ P:
  
  <entry>
    <title>Two Illustrations on Rolling</title>
-   <link href="https://dimenerno.github.io/2024/12/11/rolling/en"/>
+   <link href="http://localhost:4000/2024/12/11/rolling/en"/>
    <updated>2024-12-11T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/11/rolling/rolling-en</id>
+   <id>http://localhost:4000/2024/12/11/rolling/rolling-en</id>
    <content type="html">&lt;p&gt;These are illustrations I made when I studied classical mechanics in my BA. They seem to be well-made, so I decided to share them here, too.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/rot-en.png&quot; style=&quot;width: 100%; margin: 0 auto&quot; /&gt;&lt;/p&gt;
@@ -15183,9 +15181,9 @@ for y ∈ P:
  
  <entry>
    <title>V = L 공리의 무모순성</title>
-   <link href="https://dimenerno.github.io/2024/12/11/VL-axiom"/>
+   <link href="http://localhost:4000/2024/12/11/VL-axiom"/>
    <updated>2024-12-11T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/11/VL-axiom</id>
+   <id>http://localhost:4000/2024/12/11/VL-axiom</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;영문 버전의 글이 더 정확하고 설명이 풍부하니 참고하시길 바랍니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -15431,9 +15429,9 @@ for y ∈ P:
  
  <entry>
    <title>Consistency of the V = L Axiom</title>
-   <link href="https://dimenerno.github.io/2024/12/11/VL-axiom/en"/>
+   <link href="http://localhost:4000/2024/12/11/VL-axiom/en"/>
    <updated>2024-12-11T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/11/VL-axiom/VL-axiom-en</id>
+   <id>http://localhost:4000/2024/12/11/VL-axiom/VL-axiom-en</id>
    <content type="html">&lt;h2 id=&quot;1-universe&quot;&gt;1. Universe&lt;/h2&gt;
 
 &lt;h3 id=&quot;11-von-neumann-universe&quot;&gt;1.1. Von Neumann Universe&lt;/h3&gt;
@@ -15698,9 +15696,9 @@ for y ∈ P:
  
  <entry>
    <title>초한귀납과 초한재귀</title>
-   <link href="https://dimenerno.github.io/2024/12/05/transfinite-recursion"/>
+   <link href="http://localhost:4000/2024/12/05/transfinite-recursion"/>
    <updated>2024-12-05T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/05/transfinite-recursion</id>
+   <id>http://localhost:4000/2024/12/05/transfinite-recursion</id>
    <content type="html">&lt;h3 id=&quot;1-초한귀납법&quot;&gt;1. 초한귀납법&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -15747,9 +15745,9 @@ for y ∈ P:
  
  <entry>
    <title>Transfinite Induction and Transfinite Recursion</title>
-   <link href="https://dimenerno.github.io/2024/12/05/transfinite-recursion/en"/>
+   <link href="http://localhost:4000/2024/12/05/transfinite-recursion/en"/>
    <updated>2024-12-05T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/05/transfinite-recursion/transfinite-recursion-en</id>
+   <id>http://localhost:4000/2024/12/05/transfinite-recursion/transfinite-recursion-en</id>
    <content type="html">&lt;h3 id=&quot;1-transfinite-induction&quot;&gt;1. Transfinite Induction&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -15794,9 +15792,9 @@ for y ∈ P:
  
  <entry>
    <title>콤팩트성과 그물</title>
-   <link href="https://dimenerno.github.io/2024/12/01/net"/>
+   <link href="http://localhost:4000/2024/12/01/net"/>
    <updated>2024-12-01T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/01/net</id>
+   <id>http://localhost:4000/2024/12/01/net</id>
    <content type="html">&lt;h3 id=&quot;콤팩트성&quot;&gt;콤팩트성&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -15951,9 +15949,9 @@ for y ∈ P:
  
  <entry>
    <title>Compactness and Nets</title>
-   <link href="https://dimenerno.github.io/2024/12/01/net/en"/>
+   <link href="http://localhost:4000/2024/12/01/net/en"/>
    <updated>2024-12-01T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/01/net/net-en</id>
+   <id>http://localhost:4000/2024/12/01/net/net-en</id>
    <content type="html">&lt;h3 id=&quot;compactness&quot;&gt;Compactness&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -16108,9 +16106,9 @@ for y ∈ P:
  
  <entry>
    <title>베르 범주 정리</title>
-   <link href="https://dimenerno.github.io/2024/12/01/baire"/>
+   <link href="http://localhost:4000/2024/12/01/baire"/>
    <updated>2024-12-01T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/01/baire</id>
+   <id>http://localhost:4000/2024/12/01/baire</id>
    <content type="html">&lt;h3 id=&quot;1-베르-공간&quot;&gt;1. 베르 공간&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -16213,9 +16211,9 @@ for y ∈ P:
  
  <entry>
    <title>The Baire Category Theorem</title>
-   <link href="https://dimenerno.github.io/2024/12/01/baire/en"/>
+   <link href="http://localhost:4000/2024/12/01/baire/en"/>
    <updated>2024-12-01T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/12/01/baire/baire-en</id>
+   <id>http://localhost:4000/2024/12/01/baire/baire-en</id>
    <content type="html">&lt;h3 id=&quot;1-baire-spaces&quot;&gt;1. Baire Spaces&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -16318,9 +16316,9 @@ for y ∈ P:
  
  <entry>
    <title>정렬의 삼분성과 서수의 완전성</title>
-   <link href="https://dimenerno.github.io/2024/11/21/trichotomy"/>
+   <link href="http://localhost:4000/2024/11/21/trichotomy"/>
    <updated>2024-11-21T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/11/21/trichotomy</id>
+   <id>http://localhost:4000/2024/11/21/trichotomy</id>
    <content type="html">&lt;h3 id=&quot;1-기본-개념&quot;&gt;1. 기본 개념&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -16435,9 +16433,9 @@ S = \lbrace  \alpha_a \in \mathrm{Ord} :  a \in A\rbrace
  
  <entry>
    <title>Trichotomy and Completeness of Ordinals</title>
-   <link href="https://dimenerno.github.io/2024/11/21/trichotomy/en"/>
+   <link href="http://localhost:4000/2024/11/21/trichotomy/en"/>
    <updated>2024-11-21T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/11/21/trichotomy/trichotomy-en</id>
+   <id>http://localhost:4000/2024/11/21/trichotomy/trichotomy-en</id>
    <content type="html">&lt;h2 id=&quot;1-basic-concepts&quot;&gt;1. Basic Concepts&lt;/h2&gt;
 
 &lt;blockquote&gt;
@@ -16559,9 +16557,9 @@ R(x, y): y = \omega + x,
  
  <entry>
    <title>유리수와 실수의 집합론적 정의</title>
-   <link href="https://dimenerno.github.io/2024/11/20/Rational-Real"/>
+   <link href="http://localhost:4000/2024/11/20/Rational-Real"/>
    <updated>2024-11-20T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/11/20/Rational-Real</id>
+   <id>http://localhost:4000/2024/11/20/Rational-Real</id>
    <content type="html">&lt;h3 id=&quot;1-칸토어의-동형성-정리&quot;&gt;1. 칸토어의 동형성 정리&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -16695,9 +16693,9 @@ B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
  
  <entry>
    <title>Set-theoretic Definitions of Rational and Real Numbers</title>
-   <link href="https://dimenerno.github.io/2024/11/20/Rational-Real/en"/>
+   <link href="http://localhost:4000/2024/11/20/Rational-Real/en"/>
    <updated>2024-11-20T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/11/20/Rational-Real/Rational-Real-en</id>
+   <id>http://localhost:4000/2024/11/20/Rational-Real/Rational-Real-en</id>
    <content type="html">&lt;h3 id=&quot;1-cantors-isomorphism-theorem&quot;&gt;1. Cantor’s Isomorphism Theorem&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -16831,9 +16829,9 @@ B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
  
  <entry>
    <title>칸토어-슈뢰더-베른슈타인 정리</title>
-   <link href="https://dimenerno.github.io/2024/11/19/CSB"/>
+   <link href="http://localhost:4000/2024/11/19/CSB"/>
    <updated>2024-11-19T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/11/19/CSB</id>
+   <id>http://localhost:4000/2024/11/19/CSB</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 두 집합 $X, Y$에 대해 $|X| \leq |Y|$, $|X| \geq |Y|$라면 $|X| = |Y|$이다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -16908,9 +16906,9 @@ f(x) &amp;amp; x \in D
  
  <entry>
    <title>Cantor–Schröder–Bernstein Theorem</title>
-   <link href="https://dimenerno.github.io/2024/11/19/CSB/en"/>
+   <link href="http://localhost:4000/2024/11/19/CSB/en"/>
    <updated>2024-11-19T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/11/19/CSB/CSB-en</id>
+   <id>http://localhost:4000/2024/11/19/CSB/CSB-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; For two sets $X, Y$, if $|X| \leq |Y|$ and $|X| \geq |Y|$, then $|X| = |Y|$.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -16987,9 +16985,9 @@ f(x) &amp;amp; x \in D
  
  <entry>
    <title>ZFC 공리의 목록</title>
-   <link href="https://dimenerno.github.io/2024/11/18/ZFC"/>
+   <link href="http://localhost:4000/2024/11/18/ZFC"/>
    <updated>2024-11-18T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/11/18/ZFC</id>
+   <id>http://localhost:4000/2024/11/18/ZFC</id>
    <content type="html">&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
@@ -17143,9 +17141,9 @@ f(x) &amp;amp; x \in D
  
  <entry>
    <title>List of ZFC Axioms</title>
-   <link href="https://dimenerno.github.io/2024/11/18/ZFC/en"/>
+   <link href="http://localhost:4000/2024/11/18/ZFC/en"/>
    <updated>2024-11-18T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/11/18/ZFC/ZFC-en</id>
+   <id>http://localhost:4000/2024/11/18/ZFC/ZFC-en</id>
    <content type="html">&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
@@ -17292,9 +17290,9 @@ f(x) &amp;amp; x \in D
  
  <entry>
    <title>벨의 우주선 사고실험: 수동적 로렌츠 수축과 능동적 로렌츠 수축</title>
-   <link href="https://dimenerno.github.io/2024/11/17/bell-rocket"/>
+   <link href="http://localhost:4000/2024/11/17/bell-rocket"/>
    <updated>2024-11-17T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/11/17/bell-rocket</id>
+   <id>http://localhost:4000/2024/11/17/bell-rocket</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;우주선 A, B가 가느다란 실로 연결된 채 관성 상태에 있다가 동시에 같은 가속도로 광속에 가깝게 운동하기 시작한다. A와 B를 연결하는 실은 어떻게 되는가?&lt;/p&gt;
 
@@ -17448,9 +17446,9 @@ f(x) &amp;amp; x \in D
  
  <entry>
    <title>Bell's Spaceship Paradox: Passive and Active Lorentz Contraction</title>
-   <link href="https://dimenerno.github.io/2024/11/17/bell-rocket/en"/>
+   <link href="http://localhost:4000/2024/11/17/bell-rocket/en"/>
    <updated>2024-11-17T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2024/11/17/bell-rocket/bell-rocket-en</id>
+   <id>http://localhost:4000/2024/11/17/bell-rocket/bell-rocket-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;Spaceships A and B are connected by a thin thread and are initially at rest (with respect to a common inertial frame). They begin to accelerate simultaneously at the same rate to approach the speed of light. What happens to the thread?&lt;/p&gt;
 
