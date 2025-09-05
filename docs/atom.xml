@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-09-05T19:53:47+09:00</updated>
+ <updated>2025-09-05T19:58:00+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -69,7 +69,7 @@
 
 &lt;p&gt;$\phi(\vec{a})$는 $\Sigma_1(\mathcal{L}_\mathfrak{A})$-문장이므로 가정에 의해 $\mathfrak{A}$에서도 성립한다. 따라서 $\mathfrak{A}$는 $T’$의 모델이다.&lt;/p&gt;
 
-&lt;p&gt;이제 &lt;a href=&quot;/2025/04/17/los-tarski/&quot;&gt;워시-타르스키 정리&lt;/a&gt;의 다음 일반화를 사용한다 (증명은 연습문제).&lt;/p&gt;
+&lt;p&gt;이제 &lt;a href=&quot;/2025/04/17/los-tarski&quot;&gt;워시-타르스키 정리&lt;/a&gt;의 다음 일반화를 사용한다 (증명은 연습문제).&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\mathcal{L}’$-이론 $T \subseteq T’$에 대해 다음이 성립한다고 하자.&lt;/p&gt;
