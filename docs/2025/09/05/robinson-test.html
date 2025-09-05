@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: Topology &middot; 디멘의 블로그 
+     모델 완전성에 대한 로빈슨 판별법 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/topology/" />
+  <link rel="canonical" href="/2025/09/05/robinson-test" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -368,56 +368,114 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">모델 완전성에 대한 로빈슨 판별법</h1>
+  <span class="post-date">05 Sep 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'" >논리학</div>
+      
+      <div class="tag" onclick="location.href='/tags/모델론/'" >모델론</div>
+      
+    </div>
+  
+  <p>이 글에서 $T$는 언어 $\mathcal{L}$의 이론이다. 또한 $x_1, \dots, x_n$을 $\vec{x}$로 쓴다.</p>
 
+<blockquote>
+  <p><strong>정의.</strong> 이론 $T$가 <strong>모델 완전<sub>model complete</sub></strong>하다는 것은 임의의 $T$의 모델 $\mathfrak{A}, \mathfrak{B}$에 대해</p>
 
-<h1>Topology</h1>
+\[\mathfrak{A} \subseteq \mathfrak{B} \implies \mathfrak{A} \preceq \mathfrak{B}\]
 
-<ul>
-               
+  <p>라는 것이다.</p>
+</blockquote>
+
+<p><strong>예시</strong></p>
+
+<ol>
   <li>
-    <a href="/2025/07/10/stone-cech/en">Stone-Čech Compactification</a>
+    <p>체<sub>field</sub> 이론은 모델 완전하지 않다. 실수체 $\mathbb{R}$과 유리수체 $\mathbb{Q}$에 대해 $\mathbb{Q} \subseteq \mathbb{R}$이지만 $\exists x (x \cdot x = 2)$의 진릿값이 두 모델에서 다르므로 $\mathbb{Q} \not\preceq \mathbb{R}$이기 때문이다.</p>
   </li>
-      
   <li>
-    <a href="/2025/07/09/urysohn/en">The Urysohn Lemma and Urysohn Metrisation Theorem</a>
+    <p>비꼬임 가분 아벨군<sub>torsion-free divisible abelian group</sub> 이론은 모델 완전하다.</p>
   </li>
-                    
   <li>
-    <a href="/2025/06/02/notes-on-continuity/en">Why is Continuity in Topology defined 'Backwards'?</a>
+    <p>양화사 제거 가능한 이론은 모델 완전하다.</p>
   </li>
-              
-  <li>
-    <a href="/2025/05/16/stone-space-compactness/en">Stone Spaces and the Compactness Theorem</a>
-  </li>
-                                                  
-  <li>
-    <a href="/2025/04/04/van-kampen/en">Notes on the Seifert-van Kampen Theorem</a>
-  </li>
-      
-  <li>
-    <a href="/2025/04/02/box-v-product/en">The Difference Between Product and Box Topologies, and Direct Product and Direct Sum from a Categorical Perspective</a>
-  </li>
-                                                                                                  
-  <li>
-    <a href="/2024/12/26/uncountability-of-reals/en">Proving the Uncountability of Real Numbers Without the Diagonal Argument</a>
-  </li>
-      
-  <li>
-    <a href="/2024/12/25/Cantor-Bendixson/en">The Cantor-Bendixson Theorem and Polish Space</a>
-  </li>
-                      
-  <li>
-    <a href="/2024/12/01/net/en">Compactness and Nets</a>
-  </li>
-      
-  <li>
-    <a href="/2024/12/01/baire/en">The Baire Category Theorem</a>
-  </li>
-                       
-</ul>
+</ol>
+
+<p>2를 비롯하여, 모델 완전성을 판별하는 데 유용한 정리 중 하나는 다음이다.</p>
+
+<blockquote>
+  <p><strong>로빈슨 판별법<sub>Robinson’s Test</sub>.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$T$가 모델 완전하다.</li>
+    <li>임의의 $T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해, $\mathfrak{B}$가 만족하는 $\Sigma_1(\mathcal{L}_\mathfrak{A})$-문장은 $\mathfrak{A}$에서도 만족된다.</li>
+    <li>임의의 $\mathcal{L}$-명제 $\phi(\vec{x})$에 대해, $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$를 만족하는 $\Pi_1(\mathcal{L})$-명제 $\psi(\vec{x})$가 존재한다.</li>
+  </ol>
+</blockquote>
+
+<h3 id="증명">증명</h3>
+
+<h4 id="1--2">(1) → (2)</h4>
+
+<p>$T$가 모델 완전하므로 $\mathfrak{A} \subseteq \mathfrak{B}$라면 $\mathfrak{A} \preceq \mathfrak{B}$이다. 따라서 $\mathfrak{A}, \mathfrak{B}$는 $\mathcal{L}_\mathfrak{A}$-문장들에 대해 동치이다. □</p>
+
+<h4 id="2--3">(2) → (3)</h4>
+
+<p>$\phi(\vec{x})$가 $\Sigma_1(\mathcal{L})$-명제라고 하자. $\mathcal{L}$에 상수 $\vec{c}$를 추가한 언어를 $\mathcal{L}’$이라고 하자. $T$를 $\mathcal{L}’$-이론으로 생각하고, $\mathfrak{A} \subseteq \mathfrak{B}$를 $\mathcal{L}’$-구조들의 임베딩으로 생각할 수 있다.</p>
+
+<p>이제 $\mathcal{L}’$-이론 $T’ = T \cup { \phi(\vec{c}) }$를 생각하자. $\mathfrak{B}$가 $T’$의 모델이라고 하자. $\mathfrak{A}$ 또한 $T’$의 모델임을 보인다. $\mathfrak{A} \subseteq \mathfrak{B}$가 $\mathcal{L}’$-구조들의 임베딩이므로 다음이 성립함을 관찰하라.</p>
+
+\[\mathfrak{B} \vDash \phi(\vec{c}) \iff \exists \vec{a} \in \mathcal{L}_\mathfrak{A}  \text{ where } \mathfrak{B} \vDash \phi(\vec{a})\]
+
+<p>$\phi(\vec{a})$는 $\Sigma_1(\mathcal{L}_\mathfrak{A})$-문장이므로 가정에 의해 $\mathfrak{A}$에서도 성립한다. 따라서 $\mathfrak{A}$는 $T’$의 모델이다.</p>
+
+<p>이제 <a href="/2025/04/17/los-tarski/">워시-타르스키 정리</a>의 다음 일반화를 사용한다 (증명은 연습문제).</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{L}’$-이론 $T \subseteq T’$에 대해 다음이 성립한다고 하자.</p>
+
+  <ul>
+    <li>임의의 $T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해 $\mathfrak{B}$가 $T’$의 모델이라면 $\mathfrak{A}$도 $T’$의 모델이다.</li>
+  </ul>
+
+  <p>이때, 어떤 $\Pi_1(\mathcal{L}’)$-문장들의 모임 $P$가 존재하여 $T’$은 $T \cup P$와 동치이다.</p>
+</blockquote>
+
+<p>위 정리에 의해 $T’$은 어떤 $\Pi_1(\mathcal{L}’)$-문장들의 모임 $P$에 대해 $T \cup P$와 동치이다. 즉,</p>
+
+\[T \cup P \vdash \phi(\vec{c})\]
+
+<p>증명의 유한성에 의해 $T \cup P$에서 $\phi$를 증명하는 데 필요한 $P$의 명제는 유한하다. 그 명제들의 논리곱을 $\pi(\vec{c})$라고 하면,</p>
+
+\[T \vdash \forall x (\phi(\vec{x}) \leftrightarrow \pi(\vec{x}))\]
+
+<p>이고 $\pi(\vec{x})$는 $\Pi_1(\mathcal{L})$-명제이므로, $\phi \in \Sigma_1$일 때 증명이 완료되었다.</p>
+
+<p>이제 $\phi$에 대한 구조적 귀납법으로 증명하자. $\exists \leftrightarrow \lnot\forall\lnot$이므로, $\lor, \lnot, \forall$에 대해서만 고려하면 된다. $\lor, \forall$의 경우는 자명하므로 $\lnot$의 경우를 살핀다.</p>
+
+<p>어떤 $\Pi_1(\mathcal{L})$-명제 $\psi$에 대해 $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$라고 하자. 그러면 $\lnot \phi$는 $\lnot \psi$와 동치이며, 이는 $\Sigma_1(\mathcal{L})$-명제이다. 그리고 이는 앞선 논증에 의해 $\Pi_1$ 문장과 동치이다. □</p>
+
+<h4 id="3--1">(3) → (1)</h4>
+
+<p>$T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해, 만약 $\mathfrak{A} \not\preceq \mathfrak{B}$라면 콤팩트성 정리에 의해 어떤 $\mathcal{L}_\mathfrak{A}$의 문장 $\phi(\vec{a})$가 존재하여 $\mathfrak{A} \not\vDash \phi(\vec{a})$이지만 $\mathfrak{B} \vDash \phi(\vec{a})$이다.</p>
+
+<p>가정에 의해 $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$를 만족하는 $\Pi_1$ 명제 $\psi$가 존재한다. 따라서 $\mathfrak{B} \vDash \psi(\vec{a})$이다. 그런데 이는 $\Pi_1$ 문장이고, $\Pi_1$ 문장은 부분모델에 대해 보존되므로 $\mathfrak{A} \vDash \psi(\vec{a})$가 되어 모순이다. ■</p>
+
 </div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
