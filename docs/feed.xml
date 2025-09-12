@@ -3,18 +3,252 @@
   <channel>
     <title>디멘의 블로그</title>
     <description>이데아를 여행하는 히치하이커</description>
-    <link>https://dimenerno.github.io</link>
-    <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>자연주의적 목적론은 논리학을 환원할 수 있는가?</title>
+        <link>http://localhost:4000/2025/09/12/natural-teleology-and-logic</link>
+        <guid>http://localhost:4000/2025/09/12/natural-teleology-and-logic</guid>
+        <pubDate>Fri, 12 Sep 2025 00:00:00 +0900</pubDate>
+        <description>
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="http://localhost:4000/2025/09/12/natural-teleology-and-logic">
+          <![CDATA[
+            
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Can Natural Teleology Ground Logic?</title>
+        <link>http://localhost:4000/2025/09/12/natural-teleology-and-logic/en</link>
+        <guid>http://localhost:4000/2025/09/12/natural-teleology-and-logic/en</guid>
+        <pubDate>Fri, 12 Sep 2025 00:00:00 +0900</pubDate>
+        <description>&lt;h3 id=&quot;abstract&quot;&gt;Abstract&lt;/h3&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="http://localhost:4000/2025/09/12/natural-teleology-and-logic/en">
+          <![CDATA[
+            <h3 id="abstract">Abstract</h3>
+
+<p>This essay examines Dennett’s skepticism about original intentionality and his attempt to ground meaning in natural teleology. I argue, first, that the indeterminacy problem on which Dennett’s skepticism relies does not in itself undermine original intentionality; and second, that the natural-teleological account of logic is question-begging. I conclude that our use of logic demonstrates a domain in which the doctrine of original intentionality must hold.</p>
+
+<h2 id="1-introduction">1. Introduction</h2>
+
+<h3 id="11-the-doctrine-of-original-intentionality">1.1. The Doctrine of Original Intentionality</h3>
+
+<p>In his 1981 essay, Dennett observes a major disagreement in discussions surrounding the intentionality of the mind. The disagreement is about the doctrine of original intentionality. Dennett puts it as follows:</p>
+
+<blockquote>
+  <p>The doctrine of original intentionality is the claim that whereas some of our artifacts may have intentionality derived from us, we have original (or intrinsic) intentionality, utterly underived.</p>
+
+</blockquote>
+
+<p>Dennett illustrates it with the following example. Consider a vending machine, call it “two-bitser”, that accepts U.S. quarters. Allowing ourselves with some metaphorical use of language, say that when a two-bitser accepts a quarter, the machine goes into a state Q which “means” <em>x is a quarter</em>. Interestingly, vending machines cannot tell Panamanian balboas and U.S. quarters  apart. When a two-bitser accepts a balboa, then, should we say that the machine goes into state Q (hence a “misrepresentation”), or does it go into a new state B which “means” <em>x is a balboa</em> (hence a “correct representation”)?</p>
+
+<p>A straightforward answer is that it depends on the intention of the designer. If an American mechanic designed the two-bitser with the intention of detecting U.S. quarters and installed it in U.S., the machine goes into state Q, and a balboa fed to the machine triggers a misrepresentation. Had the designer been Panamanian, the opposite would have been the case. Hence the machine’s intentionality is <em>derived</em> from that of the designer.</p>
+
+<p>This much is uncontroversial, since a two-bitser is just an artifact. The debate concerns whether the same is true of humans. It is held <em>prima facie</em> that when Jones sees a horse and utters “horse”, he is in a state H, meaning <em>x is a horse</em>. One day, Jones is confronted with a <em>schmorse</em>, a creature that resembles horse yet is taxonomically not a horse. Does this encounter cause Jones to be in state H, or does it cause Jones to be in a new state SH meaning <em>x is a schmorse</em>? Or could it have been that it was not state H, but rather state H*, meaning <em>x is a horse or a schmorse or …</em> that Jones has been in all along?</p>
+
+<p>Here is where Dennett draws the battle line:</p>
+
+<blockquote>
+  <p><strong>However hard it may be to determine exactly which state he is in, he is really in one or the other</strong>… Anyone who finds this intuition irresistible believes in original intentionality, and has some distinguished company: Fodor, Searle, Dretske, Burge, and Kripke… Anyone who finds this intuition dubious if not downright dismissible can join me, the Churchlands, Davidson, Haugeland, Millikan, Rorty, Stalnaker, and our distinguished predecessors, Quine and Sellars, in the other corner.</p>
+
+</blockquote>
+
+<h3 id="12-dennetts-mother-nature">1.2. Dennett’s Mother Nature</h3>
+
+<p>Dennett claims that no fact about the individual can solve the indeterminacy problem regarding their mental states. What is needed to resolve the indeterminacy is to recognise that our intentionality is just as derived as that of a two-bitser, except that the designer is not human, but “Mother Nature”. To illustrate, it is well-known that frogs “mistakenly” snap at lead pellets for flies. But why is it a “mistake”? The answer is not in the frog’s neurophysiology, but in the evolutionary history guided by natural selection that led frogs to snap at things. It then becomes evident that the frog’s snapping has been “selected for” its function to obtain nutrient, so a frog snapping at a lead pellet is a mistake. Thus, just like a two-bitser, the intentionality of a frog is derived from its designer; the designer being “Mother Nature”. And if frogs have derived intentionality, the same would be true for more complex organisms too, including ourselves.</p>
+
+<p>Following Fodor 1996, we can more precisely ‘deconstruct’ Dennett’s position as composed of three parts: (1) adaptationism is the true account of natural selection, (2) adaptationism grounds natural teleology — the way of saying that nature “selects” an organ “for” a purpose —, and (3) natural teleology grounds intentionality. In this essay I will begin by simply accepting (1) and (2). So for example, I accept that although it is presumably a nomological necessity that hearts which pump blood are coextensional with hearts which make noise, it is true that hearts have been “selected for” their blood-pumping cability and not for their noise-making capability. The concern of this essay is whether natural teleology is sufficient to ground intentionality.</p>
+
+<h2 id="2-recasting-the-problem">2. Recasting the Problem</h2>
+
+<h3 id="21-is-the-indeterminacy-problem-fair">2.1. Is the Indeterminacy Problem “Fair”?</h3>
+
+<p>Since Dennett cites the indeterminacy problem as a major reason to doubt original intentionality, it will aid our discussion to elucidate the exact structure of the problem as follows.</p>
+
+<ol>
+  <li>Intentional realists (proponents of original intentionality) hold that:
+    <ol>
+      <li>there is a class of mental states called representational mental states</li>
+      <li>a representational mental state has a content that represents the world as being a certain way.</li>
+      <li>if an agent is in a representational mental state, there is a fact about what the content of their state is.</li>
+    </ol>
+  </li>
+  <li>From (1.2) it follows that:
+    <ol>
+      <li>given a representational mental state, there is a principled criterion as to whether it represents a world correctly.</li>
+    </ol>
+  </li>
+  <li>From (1.3) and (2.1) it follows that intentional realists hold that:
+    <ol>
+      <li>if an agent is in a representational mental state, there is a fact about what the principled criterion for their state representing a world correctly is.</li>
+    </ol>
+  </li>
+  <li>Hence, if there is a counterexample to (3.1), intentional realism is false.</li>
+</ol>
+
+<p>Dennett cites various counterexamples to (3.1), including the aforementioned horse-schmorse case, but also Putnam’s H₂O-XYZ case, and his own <em>glug</em> case (Dennett 1981). However, I argue that the indeterminacy problem as stated above is misformulated, since counterexamples to (3a) will always exist even if intentional realism were true. Granting (1.1), (1.2), and (1.3), say that when Jones utters “chair”, he is in a representational mental state whose content is <em>x is a chair</em>. Consider a Sorites sequence $(s_1, \dots, s_n)$ where $s_1$ is a chair and $s_n$ is a pile of sawdust. (3.1) demands there be a principled criterion as to whether Jones correctly represents $s_i$ for $1 ≤ i ≤ n$ when he utters “chair”. But there isn’t an answer to be found, hence (3.1) is falsified.</p>
+
+<p>Yet this cannot be a valid argument against intentional realism. At most, it reveals the vagueness of content associated with “chair”. The culprit is neither (1.1), (1.2), nor (1.3) <sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>, but in deducing (2.1) from (1.2). A content can represent the world <em>as being a certain way</em> without a predetermined criterion as to which worlds <em>are correct</em>. The conclusion to be drawn is not that the meaning is indeterminate, but that a determinate meaning could have a vague extension.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
+
+<p>That said, the extent to which this point applies to Dennett’s examples is not straightforward. Can the vagueness concerning one’s uttering of “chair” to half-borken chairs be identified with that of “horse” to schmorses? Irrealists about biological species may be inclined to view so, while essentialists will argue that it is a desperate move to put the two on the same line.<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup> We could decide to go on and try settle this issue, but this would be to laden the discussion with undesirable metaphysical baggage.</p>
+
+<p>My suggestion therefore is that we set aside the question of whether Dennett’s examples of indeterminacy genuinely threaten intentional realism. I find that a better way to proceed is to dispense with using physical objects — “natural kind” candidates — to pose the indeterminacy problem, and instead to restrict the problem to languages whose meaning, if they exist, cannot <em>possibly</em> be vague. This leads us to shift the focus to logic.</p>
+
+<h3 id="22-indeterminacy-in-logic-and-mathematics">2.2. Indeterminacy in Logic and Mathematics</h3>
+
+<p>A famous skeptical paradox from Kripke 1982 asks whether there is a fact as to whether a speaker, who has never added numbers higher than 50, meant addition, or <em>quaddition</em> (defined below), with ‘+’.</p>
+
+\[x \oplus y = \begin{cases}x + y &amp; (x, y &lt; 50) \\5 &amp; \text{(otherwise)}\end{cases}\]
+
+<p>For reasons to come, I will operate with a slight variation of Kripke’s case, applied to logic instead of arithmetics. Consider the material implication symbol ‘→’. <sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup> Let <em>quimplication</em> be the operation that coincides with implication if it appears in a sentence with less than 50 tokens, and evaluates to false otherwise. For example, $p \to p$ is true, but $(p_1 \land p_2 \land \dots \land p_{50}) \to p_1$ is false.</p>
+
+<p>Suppose that Alice has, in her whole lifetime, dealt with sentences of more than 50 tokens only once (for a more dramatic scenario we may consider her dead, so that no further data about her use of language is obtainable). Let us further assume that the said sentence, say φ, was true, but Alice had evaluated it to be false. It turns out that the sentence would have indeed been false, had ‘→’ been taken to stand for quimplication. We are now faced with an indeterminacy akin to the horse-schmorse case. Did Alice mean implication with ‘→’ but had made a mistake, or did Alice mean quimplication with ‘→’?</p>
+
+<p>I claim that the case for ‘→’ is better suited for discussing intentionality, for now the indeterminacy cannot be imputated on the vagueness of content.<sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup> So let us recast the indeterminacy problem of intentionality as follows. <em>When we use logical vocabulary such as “implies”, are we in mental states with determinate meanings?</em> I will now outline how a Dennettian might respond to this question, and then argue that the responses are question-begging. Hence the doctrine of original intentionality must hold true at least for our use of logic.</p>
+
+<h2 id="3-the-case-for-logic">3. The Case for Logic</h2>
+
+<h3 id="31-the-dennettian-view-of-logic">3.1. The Dennettian View of Logic</h3>
+
+<p>Presumably, a Dennettian would hold the statement “Alice means implication with ‘→’” and “Alice means quimplication with ‘→’” to be both justified. Indeed they both satisfy the criteria for “real patterns” laid out in Dennett 1991. Both describe Alice’s use of ‘→’ as a pattern in her behaviour, consisting of statements such as “when Alice approves ‘A’ and ‘A → B’, she is disposed to approve ‘B’”; the difference is that the latter requires the number of tokens in ‘A → B’ to be less than 50. This difference notwithstanding, the two patterns are both <em>real</em>, in the sense that had Jones used the first pattern and Brown the second to predict Alice’s future uses of ‘→’ and betted accordingly, “they will both get rich”.</p>
+
+<p>But a more ambitious Dennettian may not succumb to the indeterminacy so easily. Instead, she could attempt to justify the implication interpretation over quimplication through natural teleology. Previously we have seen how natural teleology paves the way to say that a frog snapping at a lead pellet is a mistake, because the frog’s ability to snap at things had been “selected for” its function to obtain nutrients. A Dennettian could argue likewise for logic: our ability to reason with logic had been “selected for” its function to deduce true sentences from true premises, because knowing more truths than falsities is evolutionarily benificial. It then follows that since deductions with ‘→’ as quimplication are vastly inconsistent, Alice meant implication with ‘→’, and her deducing φ to be true was a mistake.</p>
+
+<h3 id="32-logic-truth-and-utility">3.2. Logic, Truth, and Utility</h3>
+
+<p>However, I argue that this line of response has issues, due to its appeal to the notion of truth. It is a well-received moral from the works of Tarski that the notion of truth is relative to language. Hence, when a Dennettian claims that Alice’s knowing true sentences is beneficial to Alice, the “true” here really means “true-in-$L_A$”, where $L_A$ stands for Alice’s language. Importantly, Soames (1984) points out that the scope of language encompasses the logical vocabulary. Hence, the clauses for Tarskian truth definition, such as</p>
+
+<p>(1) $T_A(\ulcorner \phi \;\dot{\to}\; \psi \urcorner)$ if and only if $T_A(\ulcorner \phi \urcorner)$ implies $T_A(\ulcorner \psi \urcorner)$ <sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">6</a></sup></p>
+
+<p>where $T_A$ stands for “truth-in-$L_A$” presumes that ‘→’ <em>means</em> implication in Alice’s language. Without this premise, the definition of truth cannot even get off the ground. Soames uses this point to argue against a physicalist reduction of truth envisioned by Field 1972, but we can also use his point to deliver an attack against the natural-teological explanation for logic. The natural-teleological explanation appeals to the utility of truth, specifically “truth-in-$L_A$”, to decide the (derived) meanings of the logical vacabulary as used by Alice are. However, the very definition of “truth-in-$L_A$” is dependent on the said meaning, thus begging the question.</p>
+
+<p>Yet Dennetians need to appeal to <em>some</em> notion of truth, since it is presumably the utility of truth that endows a certain class of sentences and deductions to be more “evolutionarily beneficial” than others.<sup id="fnref:7"><a href="#fn:7" class="footnote" rel="footnote" role="doc-noteref">7</a></sup> That said, one possible move for Dennettians is to simply define “truth-in-$L_A$” as the class of sentences that, were Alice to believe them, would be useful to her. This would be to adopt the pragmatist theory of truth, and the claim that truth is evolutionarily beneficial would follow <em>tout court</em>. However, not only would it then be utterly unclear as to why implication is more truth-preserving (i.e. utility-preserving) than quimplication, it is even unclear if implication really <em>is</em> more truth-preserving than quimplication — not to mention the more serious problems of the pragmatist theory that made it fall out of fashion.</p>
+
+<p>Can Dennettians choose to simply bypass giving a substantatial account of truth by adopting a deflationist view? Again, the verdict lies on whether deflationism can explain the utility of truth. Burgess &amp; Burgess (2011) gives a sketch of such an explanation. Call a belief <em>directly action-guiding</em> if having that belief leads the agent to do a certain action unless the agent is weak-willed, e.g.</p>
+
+<p>(2) Going to the gym now will lead to the outcome most preferred.</p>
+
+<p>Say a belief is useful if it is useful in obtaining the agent’s most preferred outcome. It follows tautologically that (2) is a useful belief, if, going to the gym now will lead to the outcome most preferred, which in the deflanationist view of truth is equivalent to saying that (2) is true. So deflationists can explain the utility of truth, at least for directly action-guiding beliefs.</p>
+
+<p>Burgess then extends this approach to the general case. The picture is that “since directly action-­guiding beliefs will generally be inferred as conclusions in some manner from other beliefs taken as premises, it will be indirectly useful if the other beliefs involved are true and the manner of inferring conclusions from premises involved is truth-­preserving”. The picture may be more fully articulated as follows. Since</p>
+
+<p>(3) If I don’t have any urgent deadlines today, then going to the gym now will lead to the outcome most preferred.</p>
+
+<p>(4) I don’t have any urgent deadlines today.</p>
+
+<p>together deduce (2), it follows that:</p>
+
+<ul>
+  <li>(3) and (4) are indirectly useful beliefs, if (2) is a useful belief.</li>
+  <li>(2) is a useful belief, if going to the gym now will lead to the outcome most preferred.</li>
+  <li>Going to the gym now will lead to the outcome most preferred, if it is the case that (a) if I don’t have any urgent deadlines today, then going to the gym now will lead to the outcome most preferred, and (b) I don’t have any urgent deadlines today.</li>
+  <li>(a) is equivalent to saying (3) is true and (b) is equivalent to saying (4) is true.</li>
+  <li>Hence, (3) and (4) are indirectly useful beliefs if (3) and (4) are true.</li>
+</ul>
+
+<p>Although this picture may be satisfactory for deflationism <em>per se</em>, it poses problems for Dennettians, because this picture once again tacitly depends on the Tarskian approach to truth. Namely, in claiming that the truth — specifically, “truth-in-$L_A$” — of (3), as uttered by Alice, is equivalent to (a), it is presumed that Alice means <em>if</em> with ‘if’, and not some bizzarre quimplication-like operation.</p>
+
+<p>In conclusion, any natural-teleological story that appeals to the utility of truth to decide what an agent means with their logical vocabulary presupposes, via its Tarskian underpinnings, prior facts about the said meanings, begging the question. Hence, even if Dennettians could explain <em>some</em> notion of intentionality and correctness by appealing to natural teleology, logic cannot be one of them.</p>
+
+<h3 id="33-is-the-indeterminacy-of-logic-tolerable">3.3. Is the Indeterminacy of Logic Tolerable?</h3>
+
+<p>The remaining choice for Dennettians is to embrace the indeterminacy in interpeting Alice’s logical vocabulary in its fullest sense. Since this would equally apply to everyone else, it follows that logic as a whole is neither absolute nor normative, but rather is just one set of descriptions about patterns in thinking to which humans in general tend to conform.</p>
+
+<p>However, a well-developed line of thought, prominently featured in 19-20th century German-speaking world, asserts that such a view of logic is <em>non sequitur</em>. The line was developed as a reaction against then-fashionable psychologism, which holds that since psychology is the empirical science that explains why people think so-and-so, and logic is about regularities in thoughts, it follows that logic is subsumed under psychology.</p>
+
+<p>Although it is tempting to identify Dennett’s view with psychologism, with “psychology” construed to include neurophysiology and behaviourism, this accusation in itself would have been unjust, for Dennett is also equipped with the natural teleology story that could have secured some sense of normativity or correctness. However, now that we have seen that this story is ineffective for logic, it seems that the Dennettian view really is implicated to a full-fetched psychologism, and is prone to the difficulties raised against it.</p>
+
+<p>But instead of investigating these difficulties, which others have done and continue to do so to great extent (see Kusch 2024), it would be more appropriate in this essay to point out that even if the difficulties of psychologism could somehow be overcome, there are further reasons to doubt that it could be consistent <em>vis-à-vis</em> the Dennettian view. For, what is unique to the Dennettian view is that it tries to stay as an intermediate position between eliminativism and realism about mental contents. Dennett distances from eliminativism by appreciating the power of folk-psychology and holding that attributions of meanings or beliefs are justified, while also distancing from realism by claiming that there is no real answer as to what one truly means or believes. Thus he is led to claims such as “there could be two [disagreeing] systems of belief attribution to an individual… and yet where no deeper fact of the matter could establish that one was a description of the individual’s <em>real</em> beliefs and the other not.” (Dennett 1991)</p>
+
+<p>Frege 1884 famously raises the point that the notion of disagreement only makes sense against a common framework of logic. To illustrate how Frege’s point is relevant, consider a scenario where Jones and Brown attributes to Alice two different systems of belief about logic. Jones attributes the standard beliefs such as “From ‘p’ and ‘p → q’ one ought to deduce ‘q’”, while Brown attributes bizzare beliefs that nonetheless explains Alice’s behaviour equally well. Frege would ask: how can it be substantiated that the systems attributed by Brown and Jones are truly different? Perhaps Brown and Jones write out what they take “truth-in-$L_A$” to be as follows.</p>
+
+<ul>
+  <li>Jones claims:  “$T_A(\ulcorner \phi \;\dot{\to}\; \psi \urcorner)$ if and only if $T_A(\ulcorner \phi \urcorner)$ implies $T_A(\ulcorner \psi \urcorner)$”</li>
+  <li>Brown claims: “$T_A(\ulcorner \phi \;\dot{\to}\; \psi \urcorner)$ if and only if $T_A(\ulcorner \phi \urcorner)$ implies $T_A(\ulcorner \psi \urcorner)$, and snow is white.”</li>
+</ul>
+
+<p>However, this falls short of showing conclusively that their attributions are different, since it could be that Jones happens to mean <em>skimplication</em> with “implies”, rendering the two attributions equivalent. That is, writing $T_J$ for “truth-in-$L_J$” where $L_J$ stands for Jones’ language, it could turn out that:</p>
+
+<ul>
+  <li>$T_J(\ulcorner \phi \;\dot{\to}\; \psi \urcorner)$ if and only if $T_J(\ulcorner \phi \urcorner)$ implies $T_J(\ulcorner \psi \urcorner)$, and snow is white.</li>
+</ul>
+
+<p>To escape from such regress, a shared framework of logic must be firmly in place. Only when it is given <em>simpliciter</em> that Brown and Jones both mean implication with “implies” can we legitimately say that they attribute to Alice different systems of belief about logic. But then the <em>simpliciter</em> phrase refutes the very skepticism that sparked this discussion, namely, skepticism about the doctrine of original intentionality.</p>
+
+<p>In conclusion, the Dennettian view, when subjected to logic, faces a dilemma. It cannot furnish a natural-teleological explanation, for the explanation appeals to the utility of truth. Yet it cannot simply embrace the indeterminacy, for that would make it unintelligible that there be differing attributions of beliefs, unless it is given <em>simpliciter</em> that what we mean with our logical vocabulary is firmly in place. In either case the conclusion forced upon is that our mental states do have definite meaning for the logical vocabulary.</p>
+
+<h2 id="4-conclusion">4. Conclusion</h2>
+
+<p>In <em>Darwin’s Dangerous Idea</em> (1994), Dennett elaborates his project to show that intentionality can be explained entirely by “cranes” — the mindless process of natural selection — without reliance on “skyhooks,” namely, the doctrine of original intentionality. I have argued, however, that this picture overlooks the very “bedrock” that enables cranes to stand in the first place, the bedrock being logic.</p>
+
+<p>I anticipate that the readers may wonder where this leave us with respect to logic. One might wonder whether a stronger theory could ultimately explain away our most basic intentionality. Pursuing that question lies beyond the scope of this essay. My aim has been more modest: to illustrate problems in natural-teleological explanations for logic. I therefore close by aligning myself with a line of thought found in Kant, Frege, Wittgenstein, and Putnam — namely, that logic is not something that requires explanation, but is presupposed in every act of explanation (Putnam 2000; see also Conant 1992).</p>
+
+<h3 id="references">References</h3>
+
+<ul>
+  <li>Burgess, Alexis G. &amp; Burgess, John P. (2011). <em>Truth</em>. Princeton University Press.</li>
+  <li>Conant, James (1992). <em>The Search for Logically Alien Thought</em>. Philosophical Topics 20 (1):115-180.</li>
+  <li>Dennett, Daniel C. (1981). <em>Evolution, error and intentionality</em>. In Daniel Clement Dennett, The Intentional Stance. MIT Press.</li>
+  <li>Dennett, Daniel C. (1991). <em>Real patterns</em>. Journal of Philosophy 88 (1):27-51.</li>
+  <li>Dennett, Daniel C. (1994). <em>Darwin’s Dangerous Idea</em>. Behavior and Philosophy 24 (2):169-174.</li>
+  <li>Ellis, B. (2001). <em>Scientific Essentialism</em>, Cambridge Studies in Philosophy. Cambridge: Cambridge University Press.</li>
+  <li>Field, Hartry (1972). <em>Tarski’s Theory of Truth</em>. Journal of Philosophy 69 (13):347.</li>
+  <li>Fodor, Jerry (1996). <em>Deconstructing Dennett’s Darwin</em>. Mind and Language 11 (3):246-262.</li>
+  <li>Frege, Gottlob (1884/1950). <em>The foundations of arithmetic.</em> Evanston, Ill.,: Northwestern University Press.</li>
+  <li>Kripke, Saul A. (1982). <em>Wittgenstein on rules and private language: an elementary exposition</em>. Cambridge: Harvard University Press.</li>
+  <li>Kusch, Martin, “Psychologism”, <em>The Stanford Encyclopedia of Philosophy</em> (Spring 2024 Edition), Edward N. Zalta &amp; Uri Nodelman (eds.)</li>
+  <li>Putnam, Hilary. (2000). <em>Rethinking mathematical necessity</em>. In A. Crary &amp; R. Read (eds.), <em>The New Wittgenstein</em>, Routledge, pp. 233–249.</li>
+  <li>Soames, Scott (1984). <em>What is a theory of truth?</em> Journal of Philosophy 81 (8):411-429.</li>
+</ul>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>That (1.3) cannot be the culprit, i.e. there cannot be indeterminacy in ascription of content to mental states (granted they exist) seems to be an <em>a priori</em> truth, for it should be content, if anything, that is the essential property of a mental state, and hence the basis for rigidly designating mental states. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>To put the matter more generally, it is held by some that “natural kinds” are categorically distinct; there cannot be a smooth transition from one kind to another (Ellis 2001). Under this assumption, indeterminacy problems restricted to natural kinds may allow deducing (2a) from (1a). Though I still think there is difficulty remaining, since the premise required to infer (2a) from (1a) is that there is <em>no</em> candidate for Jones’ mental state whose content is vague. This is much stronger than the statement that <em>some</em> candidates for Jones’ mental states correspond to natural kinds. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>If it helps one may think of such meaning as a decision tree allowing supervaluationistic truth value. The meaning — the decision tree — is quite definite; it simply has fuzzy values in some of its nodes. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Although for convenience I am using symbols of formal logic for illustration, the symbols should be broadly construed as encompassing natural language. So ‘→’ also stands for  ‘implies’ and ‘if’, while $p \to q$ also stands for the English sentence “If p then q”. And for this reason, I will use the phrase “logical vocabulary” instead of “logical symbols”. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>This point is also emphasised by Kripke: “The point is… that anything in my head leaves it undetermined what function ‘plus’ (as I use it) denotes… The sceptical problem indicates no vagueness in the concept of addition (in the way there is vagueness in the concept of greenness)… The sceptical point is something else.” <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>The dot serves to distinguish the logical symbols of the target language from that of the metalanguage. So here, $\dot{\to}$ stands for ‘if’, as used by Alice. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>Dennett (1991) also notes the point, writing that “Even someone who… has seen the futility of correspondence theories of truth must accept the fact that within the natural ontological attitude we sometimes explain success by correspondence: one does better navigating off the coast of Maine when one uses an up-to-date nautical chart than one does when one uses a road map of Kansas. Why? Because the former accurately represents the hazards, markers, depths, and coastlines of the Maine coast, and the latter does not.” <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          ]]>
+        </content:encoded>
+      </item>
     
       <item>
         <title>모델 완전성에 대한 로빈슨 판별법</title>
-        <link>https://dimenerno.github.io/2025/09/05/robinson-test</link>
-        <guid>https://dimenerno.github.io/2025/09/05/robinson-test</guid>
+        <link>http://localhost:4000/2025/09/05/robinson-test</link>
+        <guid>http://localhost:4000/2025/09/05/robinson-test</guid>
         <pubDate>Fri, 05 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;이 글에서 $T$는 언어 $\mathcal{L}$의 이론이다. 또한 $x_1, \dots, x_n$을 $\vec{x}$로 쓴다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/05/robinson-test">
+          xml:base="http://localhost:4000/2025/09/05/robinson-test">
           <![CDATA[
             <p>이 글에서 $T$는 언어 $\mathcal{L}$의 이론이다. 또한 $x_1, \dots, x_n$을 $\vec{x}$로 쓴다.</p>
 
@@ -106,15 +340,15 @@
     
       <item>
         <title>초필터를 이용한 티호노프 정리의 증명</title>
-        <link>https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter</link>
-        <guid>https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter</guid>
+        <link>http://localhost:4000/2025/08/11/tychonoff-with-ultrafilter</link>
+        <guid>http://localhost:4000/2025/08/11/tychonoff-with-ultrafilter</guid>
         <pubDate>Mon, 11 Aug 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;티호노프 정리.&lt;/strong&gt; 콤팩트 공간들의 곱공간은 콤팩트 공간이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter">
+          xml:base="http://localhost:4000/2025/08/11/tychonoff-with-ultrafilter">
           <![CDATA[
             <blockquote>
   <p><strong>티호노프 정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
@@ -274,13 +508,13 @@
     
       <item>
         <title>돼지고기와 연어: 윤리적 삶은 사치품인가?</title>
-        <link>https://dimenerno.github.io/2025/08/08/pork-and-salmon</link>
-        <guid>https://dimenerno.github.io/2025/08/08/pork-and-salmon</guid>
+        <link>http://localhost:4000/2025/08/08/pork-and-salmon</link>
+        <guid>http://localhost:4000/2025/08/08/pork-and-salmon</guid>
         <pubDate>Fri, 08 Aug 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;&lt;small&gt;본 글은 일체의 챗지피티 도움 없이 작성되었습니다.&lt;/small&gt;&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/08/08/pork-and-salmon">
+          xml:base="http://localhost:4000/2025/08/08/pork-and-salmon">
           <![CDATA[
             <p><small>본 글은 일체의 챗지피티 도움 없이 작성되었습니다.</small></p>
 
@@ -364,13 +598,13 @@
     
       <item>
         <title>사적 언어는 가능한가?</title>
-        <link>https://dimenerno.github.io/2025/07/21/private-language</link>
-        <guid>https://dimenerno.github.io/2025/07/21/private-language</guid>
+        <link>http://localhost:4000/2025/07/21/private-language</link>
+        <guid>http://localhost:4000/2025/07/21/private-language</guid>
         <pubDate>Mon, 21 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/07/03/kripkenstein&quot;&gt;이전 글&lt;/a&gt;에서 크립키-비트겐슈타인 역설을 다루었다. 요약하자면, 크립키-비트겐슈타인 역설은 특정 단어가 사용될 수 있는 무한한 사례를 아우르는 규범적 사실이 없다는 고찰에 착안한다. 이로부터 크립키-비트겐슈타인이 내리는 결론은 다음과 같다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/21/private-language">
+          xml:base="http://localhost:4000/2025/07/21/private-language">
           <![CDATA[
             <p><a href="https://dimenerno.github.io/2025/07/03/kripkenstein">이전 글</a>에서 크립키-비트겐슈타인 역설을 다루었다. 요약하자면, 크립키-비트겐슈타인 역설은 특정 단어가 사용될 수 있는 무한한 사례를 아우르는 규범적 사실이 없다는 고찰에 착안한다. 이로부터 크립키-비트겐슈타인이 내리는 결론은 다음과 같다.</p>
 
@@ -632,13 +866,13 @@
     
       <item>
         <title>불 대수 구조의 아이디얼과 필터</title>
-        <link>https://dimenerno.github.io/2025/07/18/boolean-algebra</link>
-        <guid>https://dimenerno.github.io/2025/07/18/boolean-algebra</guid>
+        <link>http://localhost:4000/2025/07/18/boolean-algebra</link>
+        <guid>http://localhost:4000/2025/07/18/boolean-algebra</guid>
         <pubDate>Fri, 18 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;h2 id=&quot;불-대수&quot;&gt;불 대수&lt;/h2&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/18/boolean-algebra">
+          xml:base="http://localhost:4000/2025/07/18/boolean-algebra">
           <![CDATA[
             <h2 id="불-대수">불 대수</h2>
 
@@ -1057,15 +1291,15 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>스톤-체흐 콤팩트화</title>
-        <link>https://dimenerno.github.io/2025/07/10/stone-cech</link>
-        <guid>https://dimenerno.github.io/2025/07/10/stone-cech</guid>
+        <link>http://localhost:4000/2025/07/10/stone-cech</link>
+        <guid>http://localhost:4000/2025/07/10/stone-cech</guid>
         <pubDate>Thu, 10 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\iota : X \to Y$가 임베딩이라고 하자. 즉, $\iota$는 단사이며 $X$와 $\iota [X]$의 위상동형사상이다. $Y$가 $X$의 &lt;strong&gt;콤팩트화&lt;sub&gt;compactification&lt;/sub&gt;&lt;/strong&gt;라는 것은 $Y$가 콤팩트 공간이고, $\overline{\iota [X]} = Y$인 것이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/10/stone-cech">
+          xml:base="http://localhost:4000/2025/07/10/stone-cech">
           <![CDATA[
             <blockquote>
   <p><strong>정의.</strong> $\iota : X \to Y$가 임베딩이라고 하자. 즉, $\iota$는 단사이며 $X$와 $\iota [X]$의 위상동형사상이다. $Y$가 $X$의 <strong>콤팩트화<sub>compactification</sub></strong>라는 것은 $Y$가 콤팩트 공간이고, $\overline{\iota [X]} = Y$인 것이다.</p>
@@ -1184,15 +1418,15 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>Stone-Čech Compactification</title>
-        <link>https://dimenerno.github.io/2025/07/10/stone-cech/en</link>
-        <guid>https://dimenerno.github.io/2025/07/10/stone-cech/en</guid>
+        <link>http://localhost:4000/2025/07/10/stone-cech/en</link>
+        <guid>http://localhost:4000/2025/07/10/stone-cech/en</guid>
         <pubDate>Thu, 10 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a &lt;strong&gt;compactification&lt;/strong&gt; of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/10/stone-cech/en">
+          xml:base="http://localhost:4000/2025/07/10/stone-cech/en">
           <![CDATA[
             <blockquote>
   <p><strong>Definition.</strong> Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a <strong>compactification</strong> of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.</p>
@@ -1313,13 +1547,13 @@ x \lor y = x + y + xy \\
     
       <item>
         <title>우리손 보조정리와 우리손 거리화 정리</title>
-        <link>https://dimenerno.github.io/2025/07/09/urysohn</link>
-        <guid>https://dimenerno.github.io/2025/07/09/urysohn</guid>
+        <link>http://localhost:4000/2025/07/09/urysohn</link>
+        <guid>http://localhost:4000/2025/07/09/urysohn</guid>
         <pubDate>Wed, 09 Jul 2025 00:00:00 +0900</pubDate>
         <description>&lt;h2 id=&quot;우리손-보조정리&quot;&gt;우리손 보조정리&lt;/h2&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/09/urysohn">
+          xml:base="http://localhost:4000/2025/07/09/urysohn">
           <![CDATA[
             <h2 id="우리손-보조정리">우리손 보조정리</h2>
 
@@ -1452,516 +1686,6 @@ x \lor y = x + y + xy \\
     <p>$T_1$ 조건을 생략하면 $F$는 단사가 아닐 수 있음을 확인하라. 위 정리는 스톤-체흐 콤팩트화<sub>Stone-Čech compactification</sub>를 증명하는 데 사용된다.</p>
   </li>
 </ul>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>The Urysohn Lemma and Urysohn Metrisation Theorem</title>
-        <link>https://dimenerno.github.io/2025/07/09/urysohn/en</link>
-        <guid>https://dimenerno.github.io/2025/07/09/urysohn/en</guid>
-        <pubDate>Wed, 09 Jul 2025 00:00:00 +0900</pubDate>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Urysohn Lemma.&lt;/strong&gt; Let $X$ be a normal space. If $A$ and $B$ are disjoint closed sets in $X$, then there exists a continuous function $f: X \to [0, 1]$ such that $f[A] = \lbrace  0 \rbrace$ and $f[B] = \lbrace 1 \rbrace$.&lt;/p&gt;
-
-  &lt;p&gt;&lt;img src=&quot;/public/urysohn-1.png&quot; style=&quot;width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;&quot; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/09/urysohn/en">
-          <![CDATA[
-            <blockquote>
-  <p><strong>Urysohn Lemma.</strong> Let $X$ be a normal space. If $A$ and $B$ are disjoint closed sets in $X$, then there exists a continuous function $f: X \to [0, 1]$ such that $f[A] = \lbrace  0 \rbrace$ and $f[B] = \lbrace 1 \rbrace$.</p>
-
-  <p><img src="/public/urysohn-1.png" style="width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-</blockquote>
-
-<p>The separation axioms, e.g. normality, separate points from closed sets in the <em>given</em> space. The significance of the Urysohn Lemma lies in the fact that, in the case of the normal space, two closed sets can be further separated in a <em>nice</em> space. Specifically, with respect to an appropriate continuous map defined on the normal space to $[0, 1]$, two closed sets can be separated in $[0, 1]$. And the myriad “nice” properties of $[0, 1]$ — being a compact Hausdorff metric space, and a space which we are very familiar with and can visualise easily — suggest the remarkable potential of the Urysohn lemma.</p>
-
-<h4 id="proof">Proof</h4>
-
-<p>Let us denote $Q = [0, 1] \cap \mathbb{Q}$ (actually it suffices for $Q$ to be a countable dense subset of $[0, 1]$). Since $Q$ is countable, there exists an enumeration of the elements of $Q$. For instance, consider the lexicographic enumeration of the numerators and denominators, $\prec$.</p>
-
-\[0 \prec 1 \prec 1/2 \prec 1/3 \prec 2/3 \prec 1/4 \prec 1/5 \prec 2/5 \prec \cdots\]
-
-<p>Let us now define the collection $\lbrace  U_q \rbrace _{q \in Q}$. First, let $U_1 = X \setminus B$ (since $B$ is a closed set, $U_1$ is an open set). By normality, there exists an open set $U_0$ such that $A \subset U_0$ and $\overline{U_0} \subset U_1$. The remaining $U_q$ are recursively defined in the following manner. For any $p \prec q$,</p>
-
-<ul>
-  <li>If $p &lt; q$, then $\overline{U_p} \subset U_q$.</li>
-  <li>If $q &lt; p$, then $\overline{U_q} \subset U_p$.</li>
-</ul>
-
-<p>By normality, these conditions can be satisfied, allowing us to fully define the collection $\lbrace  U_q \rbrace _{q \in Q}$.</p>
-
-<p><img src="/public/urysohn-2.png" style="width: 100%; max-width: 400px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<p>Now, let us define the function $f: X \to [0, 1]$ as follows.</p>
-
-\[f(x) = \begin{cases}
-\sup_{&lt;}\{q \in Q : x \notin U_q \} &amp; x \notin U_0 \\
-0 &amp; x \in U_0
-\end{cases}\]
-
-<p>The notation $\sup_&lt;$ indicates that we are taking the supremum with respect to $&lt;$ rather than $\prec$. From the definition, it follows that $f[A] = 0$ and $f[B] = 1$.</p>
-
-<p>To complete the proof, we must show that $f$ is continuous. Since $\lbrace  B_\epsilon(q) \cap [0, 1] : q \in Q, \epsilon \in \mathbb{Q}_{&gt;0} \rbrace$ forms a basis for the topology on $[0, 1]$, it suffices to show that for any $q \in Q$ and postivie rational $\epsilon$ smaller than a certain supremum, the set $S_{q, \epsilon} = f^{-1}(B_\epsilon(q) \cap [0, 1])$ is an open set. Indeed,</p>
-
-<ul>
-  <li>If $0 &lt; q &lt; 1$, then $S_{q, \epsilon} = (X \setminus \overline{U_{q-\epsilon}}) \cap U_{q + \epsilon}$, which is an open set.</li>
-  <li>If $q = 0$, then $S_{0, \epsilon} = U_\epsilon$, which is an open set.</li>
-  <li>If $q = 1$, then $S_{1, \epsilon} = X \setminus \overline{U_{1 - \epsilon}}$, which is an open set.</li>
-</ul>
-
-<p>Thus, $f$ is continuous. ■</p>
-
-<h4 id="remarks">Remarks</h4>
-
-<ul>
-  <li>
-    <p>The converse of the Urysohn lemma trivially holds. That is, for any closed sets $A, B \subset X$, if there exists a continuous function $f: X \to [0, 1]$ that separates $A$ and $B$, then the sets $U = f^{-1}[0, 1/2)$ and $V = f^{-1}(1/2, 1]$ are disjoint open sets that separate $A$ and $B$, implying that $X$ is normal. In simple terms, <strong>in normal spaces, the Urysohn separation property and the separation axiom are equivalent.</strong></p>
-  </li>
-  <li>
-    <p>This does not hold in regular spaces. Specifically, given any closed set $F$ and point $a$ in a regular space $X$, it is not always the case that there exists a continuous function $f: X \to [0, 1]$ satisfying $f(a) = 0$ and $f[F] = \lbrace 1 \rbrace$. A regular space that is Urysohn separable is called a <strong>Tychonoff space</strong> or a <strong>completely regular space</strong>, which is a strictly stronger condition than regularity.</p>
-  </li>
-  <li>
-    <p>The reason the proof of the Urysohn Lemma does not go through for regular spaces is that constructing the collection $\lbrace  U_q \rbrace $ satisfying $p &lt; q \implies \overline{U_p} \subset U_q$ requires the normality axiom.</p>
-  </li>
-</ul>
-
-<h3 id="urysohn-metrisation-theorem">Urysohn Metrisation Theorem</h3>
-
-<p>As an application of the Urysohn Lemma, let us prove the Urysohn Metrisation Theorem.</p>
-
-<blockquote>
-  <p><strong>Urysohn Metrisation Theorem.</strong> A second countable normal space is metrizable.</p>
-</blockquote>
-
-<p>Recall that a second countable regular space is a normal space. Hence the statement of the above theorem can be strengthened to “A second countable regular space is metrisable.”</p>
-
-<p>Thus, the implications between spaces can be summarised as follows. Note that <strong>the longer the arrow, the stronger the required condition.</strong> The implication $T_2 \to T_4$ is strictly more difficult than $T_3 \to T_4$, and this is evidenced by the fact that the former requires a condition — compactness — strictly stronger than the latter — Lindelöf. Similarly, $T_3 \to \mathrm{Met}$ is strictly more difficult than $T_3 \to T_4$, as the second countability required in the former is strictly stronger than the Lindelöf property. However, neither $T_2 \to T_4$ nor $T_3 \to \mathrm{Met}$ is strictly more difficult than the other (the lengths of both arrows are similar). This is again evidenced by the fact that compactness and second countability do not generally imply each other.</p>
-
-<p><img src="/public/urysohn-3.png" style="width: 100%; max-width: 240px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<h4 id="proof-1">Proof</h4>
-
-<p>Let $X$ be a second countable normal space. We will prove the following lemma.</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> There exists a countable collection of continuous functions $\mathcal{F}$ mapping $X$ to $[0, 1]$ such that for any point $x_0 \in X$ and its neighbourhood $U$, there exists a function $f \in \mathcal{F}$ satisfying $f(x_0) &gt; 0$ and $f[X \setminus U] = \lbrace  0 \rbrace$.</p>
-</blockquote>
-
-<p>Given $x_0$ and $U$, the existence of such an $f$ follows from the Urysohn Lemma. Our task is to reduce this to a countable collection of functions. Let $\mathcal{B} = \lbrace  B_n \rbrace $ be a countable basis for the topology on $X$. When $B_m \subset B_n$, we define a continuous function $f_{nm}: X \to [0, 1]$ satisfying the following conditions according to the Urysohn Lemma:</p>
-
-<ul>
-  <li>$f_{nm}[\overline{B_m}] = 1$</li>
-  <li>$f_{nm}[X \setminus B_n] = 0$</li>
-</ul>
-
-<p>Let $\mathcal{F} = \lbrace  f_{nm} \rbrace $. Given any point $x_0$ and its neighbourhood $U$, by the definition of a basis, there exists a basis element $B_n$ such that $x_0 \in B_n \subset U$. Furthermore, by normality, there exists an open set $V$ such that $x \in \overline{V} \subset B_n$. Again, by the definition of a basis, there exists a basis element $B_m$ such that $x \in B_m \subset V$. Hence $f_{nm} \in \mathcal{F}$ satisfies the conditions of the lemma. □</p>
-
-<p>Now, let us prove the main theorem. The idea is to embed $X$ into $[0, 1]^\omega$, as $[0, 1]^\omega$ equipped with metric topology is known to be a metric space. It then follows that $X$ is metrisable, being a space homeomorphic to a subspace of a metric space.</p>
-
-<p>Let $\mathcal{F} = \lbrace  f_n \mid n \in \omega \rbrace $ be the countable collection of functions given by the lemma. We define the mapping $F: X \to [0, 1]^\omega$ as follows:</p>
-
-\[F: x \mapsto (f_1(x), f_2(x), f_3(x), \dots)\]
-
-<p>We will show that $F$ is an embedding. That is, we need to demonstrate that $F$ is continuous, injective, and a homeomorphism between the domain and the image.</p>
-
-<p>Since each $f_n$ is continuous, by the properties of the product topology, $F$ is continuous (side note: one can regard this as the <a href="https://dimenerno.github.io/2025/04/02/box-v-product">definition</a> of the product toplogy). The injectivity of $F$ follows from the fact that $X$ is Hausdorff. Therefore, it suffices to show the following:</p>
-
-<blockquote>
-  <p>If $U \subset X$ is an open set, then $F[U]$ is open in $\mathrm{im} F$.</p>
-</blockquote>
-
-<p>Let us show that for any $y_0 \in F[U]$, there exists a set $V \subset F[U]$ open in $\mathrm{im} F$ that contains $y_0$. By the definition of $F[U]$, there exists some $x_0 \in X$ such that $F(x_0) = y_0$. Let $f_n \in \mathcal{F}$ be a function satisfying the conditions of the lemma for $x_0$ and $U$. Since $f_n(x_0) = 1$, it follows that $(y_0)_n = 1$. Therefore, $W = \pi_n^{-1}(0, 1] \subset [0, 1]^\omega$ is a set containing $y_0$ that is open in $[0, 1]^\omega$.</p>
-
-<p>Now, we need to show that $W \cap \mathrm{im} F \subset F[U]$. For any $w \in W$, we can write $F(x_1) = w$. Additionally, if $w \in \mathrm{im} F$, then $f_n(x_1) = 1$. However, since $f_n$ vanishes outside of $U$, it follows that $x_1 \in U$. Thus, $w \in F[U]$, i.e. $W \cap \mathrm{im} F$ is contained in $F[U]$ and is an open set in $\mathrm{im} F$ containing $y_0$. Hence, $F[U]$ is an open set in $\mathrm{im} F$. ■</p>
-
-<h4 id="remarks-1">Remarks</h4>
-
-<ul>
-  <li>
-    <p>The Urysohn Metrisation Theorem can be strengthened to the <strong>Nagata-Smirnov Metrisation Theorem</strong>. The statement is as follows:</p>
-
-    <blockquote>
-      <p>A space $X$ is metrizable if and only if $X$ is regular and has a countably locally finite topology basis.</p>
-    </blockquote>
-
-    <p>A collection of subsets $\mathcal{A}$ of a topological space $X$ is said to be <strong>locally finite</strong> if for any point $x \in X$, there exists a neighbourhood $U$ such that $U$ intersects only finitely many sets from $\mathcal{A}$. A topological basis $\mathcal{B}$ is said to be <strong>countably locally finite</strong> if it can be expressed as $\mathcal{B} = \bigcup_{n \in \omega}\mathcal{B}_n$ where each $\mathcal{B}_n$ is locally finite.</p>
-  </li>
-  <li>
-    <p>A slight modification of the proof of the Urysohn Metrisation Theorem leads to the following result.</p>
-
-    <blockquote>
-      <p><strong>Theorem.</strong> Let $X$ be a $T_1$ space, and let $\lbrace f_{\alpha} \rbrace_{\alpha \in J}$ be a collection of continuous functions $f_\alpha : X \to [0, 1]$ satisfying the following condition: for any point $x_0 \in X$ and its neighbourhood $U$, there exists $\alpha \in J$ such that $f_\alpha(x_0) = 1$ and $f_\alpha[X \setminus U] = \lbrace  0 \rbrace$. Then, the mapping $F(x) = (f_\alpha(x))_{\alpha \in J}$ embeds $X$ into $[0, 1]^J$.</p>
-    </blockquote>
-
-    <p>Omitting the $T_1$ condition may result in $F$ not being injective. This theorem is used to prove the Stone-Čech compactification.</p>
-  </li>
-</ul>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>크립키-비트겐슈타인 역설</title>
-        <link>https://dimenerno.github.io/2025/07/03/kripkenstein</link>
-        <guid>https://dimenerno.github.io/2025/07/03/kripkenstein</guid>
-        <pubDate>Thu, 03 Jul 2025 00:00:00 +0900</pubDate>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/03/kripkenstein">
-          <![CDATA[
-            <blockquote>
-  <p>“2.2. 성향적 분석” 절에서 크립키의 원 논문과는 독자적인 필자의 보론이 많이 들어갔으니 유의 바랍니다.</p>
-</blockquote>
-
-<h3 id="개요">개요</h3>
-
-<p>크립키는 비트겐슈타인의 ⟪철학적 탐구⟫의 핵심이 소위 <strong>규칙 따르기에 대한 회의주의<sub>Skepticism about rule following</sub></strong>에 있다고 주장한다.</p>
-
-<p>크립키의 독해에 따르면 ⟪탐구⟫의 §1-137은 비트겐슈타인이 ⟪논리철학논고⟫의 언어관을 비판하고 극복하는 대목이다. §138-242에서는 규칙 따르기에 대한 회의주의가 제시된다. “앨리스는 ‘+’로 덧셈을 의미한다”와 같은 명제에 대응되는 사태가 있는지에 관해 의문을 제기하는 회의주의 논증은, ⟪논고⟫의 언어관이 올바를 수 없음을 보이는 최종적인 논증이라는 점에서 §1-137을 확정지을 뿐 아니라, 의미의 문제를 해명하는 이론은 어떠한 형태로든 가능하지 않다는 궤멸적인 결론을 시사하는 듯하다.</p>
-
-<p>크립키에 따르면 비트겐슈타인은 이에 대해 “회의주의적 해답”을 제시한다. 즉, 회의주의자의 결론 — “앨리스는 ‘+’로 덧셈을 의미한다’“에 대응하는 사태는 없다 — 을 받아들이되, 그것이 어떻게 “초록색 생각이 잠을 잔다”와 같은 명제와는 달리 유의미하게 사용될 수 있는지를 해명하는 것이다. 그 해답이란, 언어의 의미는 그것이 공동체에서 가지는 기능과 불가결하며, 따라서 의미에 대한 논의는 개별 언어 사용자 단위에서는 공허하지만 언어 공동체 단위에서는 유효하다는 <strong>언어의 공적성</strong>을 강조하는 것이다.</p>
-
-<p>§243 이후는 “회의주의적 해답”을 기타 철학적 문제에 적용하는 대목이다. 회의주의적 해답의 함의 중 하나는 사적 언어<sub>private language</sub>의 불가능성이다. 그럼에도 사적인 방식으로 작동하는 듯한 영역의 언어가 대표적으로 두 가지 있는데, 바로 수학적 언어와 심리적 언어이다. <strong>그러나 비트겐슈타인은 수학적 언어와 심리적 언어가 사적 언어에 해당한다는 생각이 착각이라고 역설한다.</strong> 이 대목에서 우리는 비트겐슈타인 특유의 수학철학적 · 심리철학적 입장을 엿볼 수 있다.</p>
-
-<h2 id="1-크립키-비트겐슈타인-역설">1. 크립키-비트겐슈타인 역설</h2>
-
-<p>크립키-비트겐슈타인 역설의 결론은 다음과 같다.</p>
-
-<blockquote>
-  <p>“화자 $A$는 기호 $s$로 의미 $m$을 의미한다” 꼴의 명제<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>에는 대응되는 사태가 없다. 즉, 해당 명제는 진릿값을 결여한다.</p>
-</blockquote>
-
-<p>따라서 가령 “앨리스는 ‘+’로 덧셈을 의미한다”라는 명제는 “앨리스의 생각은 초록색이다”라는 명제만큼이나 불가해한 명제이다.</p>
-
-<h3 id="11-회의주의자의-등장">1.1. 회의주의자의 등장</h3>
-
-<p>그렇다면 도대체 어째서 크립키-비트겐슈타인은 이토록 극단적인 주장을 하는 것일까? 논증의 핵심은, 언어 사용자가 단어의 의미를 파악하는 과정에 숨은, 간과하기 쉽지만 실로 모순적인 측면에 있다. 바로 과거의 <em>유한한</em> 학습 경험으로부터, 해당 단어가 사용될 수 있는 <em>무한한</em> 사례들에 대해 올바른 추론을 할 수 있어야 한다는 것이다.</p>
-
-<p>예를 들어 앨리스는 지금까지 50이 넘는 두 수의 덧셈을 해본 적이 없다고 하자. 그렇다고 해도 누군가 앨리스에게 ’68 + 57’을 묻는다면 그는 어렵지 않게 ‘125’라고 답할 것이다. 그런데 이때 앨리스에게 한 회의주의자가 다가오더니, ‘125’라는 그의 답은 틀렸으며, 앨리스가 내놓았어야 하는 답은 ‘5’였다고 주장한다. 구체적으로, 회의주의자는 다음을 주장한다.</p>
-
-<blockquote>
-  <p>만약 앨리스가 과거에 ‘+’에 부여하던 의미와 현재 ‘+’에 부여하는 의미가 일치한다면, 앨리스는 ‘5’라고 답했어야 한다.</p>
-</blockquote>
-
-<p>왜냐하면 — 적어도 회의주의자에 따르면 — 앨리스가 과거에 ‘+’에 부여했던 의미는 사실 덧셈(+)이 아니라 <strong>컷셈</strong>(⨁)이었기 때문이다. 컷셈의 정의는 다음과 같다.</p>
-
-\[x \oplus y =
-\begin{cases}
-x + y &amp; x, y &lt; 50 \\\
-5 &amp; \text{otherwise}
-\end{cases}\]
-
-<p>이에 앨리스는 과거부터 자신은 ‘+’를 컷셈이 아닌 덧셈의 의미를 사용했다고 즉각 반박할 것이다. 그런데 여기부터 본격적인 문제가 시작된다. <strong>과거에 앨리스가 ‘+’에 부여한 의미가 컷셈이 아닌 덧셈이었음을 어떻게 입증할 수 있는가?</strong> 문제의 가정으로 인해, 과거에 앨리스가 수행한 ‘+’의 계산 기록들로부터 이를 입증하는 것은 불가능하다.</p>
-
-<p>방금 등장한 ‘입증’이라는 표현으로 인해 이 문제가 인식론에 속하는 것처럼 보일 수 있다 (“우리는 앨리스가 ‘+’로 덧셈을 의미한다는 사실을 어떻게 알 수 있을까?”). 그러나 크립키가 묻는 것은, 앨리스의 머리 속까지 들여다 볼 수 있는 전지전능한 관찰자라고 할지라도 앨리스가 ‘+’로 덧셈을 의미하는지, 혹은 덧셈과 충분히 많은 경우에 일치하는 비표준적인 연산을 의미하는지 알 수 있는가이다. <strong>이런 점에서 크립키가 제시하는 회의주의는 존재론적인 것이다.</strong> 문제의 요점은 “앨리스가 컷셈이 아닌 덧셈을 의미한다”에 대응하는 사태<sub>case</sub>가 있는가이다. 이는 후술하다시피 크립키가 반사실적 조건문 혹은 가능세계를 통해 회의주의를 해소하려는 시도까지 검토한다는 점에서 — 비록 그 시도 또한 실패한다고 결론 내리지만 — 드러난다.</p>
-
-<h3 id="12-두-가지-조건">1.2. 두 가지 조건</h3>
-
-<p>회의주의자의 주장에는 두 가지 주목할 점이 있다. <strong>첫째, 회의주의자의 주장은 가정문이다.</strong> 회의주의자는 앨리스가 <em>어떤 경우에서든</em> ’5’라고 답해야 함을 주장하는 것이 아니다. 그가 주장하는 바는, 만약 앨리스가 과거에 ‘+’에 부여하던 의미와 현재 ‘+’에 부여하는 의미가 <em>일치한다면</em> ’5’라고 답해야 한다는 것이다. <strong>둘째, 회의주의자의 주장은 규범적이다.</strong> 회의주의자의 주장은 — 앞서 말한 조건이 만족되었을 때 — 앨리스는 ‘5’라고 <em>답할 것</em>이라는 주장이 아니라 ‘5’라고 <em>답해야 한다</em>는 주장이다.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> 달리 말해, 회의주의자는 만약 앨리스가 ’68 + 57’에 대해 ‘5’라고 대답했더라면 그 대답은 <em>정당했을 것</em> 임을 주장한다.</p>
-
-<p>따라서 회의주의자의 주장에 대한 반박 또한 두 가지 특징을 갖춰야 한다. <strong>첫째, 화자에 관한 어떠한 사실이, 해당 화자가 특정 기호를 특정 의미로 사용함을 구성하는지 설명해야 한다.</strong> 이 설명은 회의주의자의 주장에서 가정이 무엇을 의미하는지를 해명하기 위해 필요하다.<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup> <strong>둘째, 해당 사실이 어떠한 방식으로 화자의 언어 사용을 정당화하는지 설명해야 한다.</strong> 이 설명은 회의주의자의 결론이 규범적이기 때문에 필요하다.</p>
-
-<p>두 번째 조건의 의의가 안 와닿을 수도 있기 때문에 조금 더 설명을 해 보겠다. 가령 어떤 매드사이언티스트가 오더니 회의주의자에게 이렇게 말했다고 하자.</p>
-
-<blockquote>
-  <p>사실 나는 과거에 앨리스를 원자 단위로 스캔한 적이 있다. 그래서 나는 너의 말을 듣고 그 스캔본을 본따 만든 앨리스-2에게 ’68 + 57‘을 물어보았고, 앨리스-2는 ’125‘라고 대답했다. 따라서 과거의 앨리스는 ’+‘로 컷셈을 의미하지 않았다.</p>
-</blockquote>
-
-<p>그러나 매드사이언티스트의 실험은 회의주의자의 주장을 반박하는 데 역부족이다. 매드사이언티스트의 실험은 두 번째 조건을 만족하지 않기 때문이다. 해당 실험의 결과는 앨리스가 언제나 ‘125’라고 <em>답했을 것</em>임을 보증할 뿐, 앨리스가 언제나 ‘125’라고 <em>답해야만 했음</em>은 보증하지 않는다.</p>
-
-<p>이는 <strong>체계적 계산 오류의 사례</strong>를 통해 더 명확히 이해할 수 있다. 가령 덧셈을 처음 배우는 아이는 종종 받아올림을 까먹곤 한다. 그런 아이는 ’68 + 57’에 대해 ‘125’가 아니라 ‘115’라고 대답할 것이다. 그런데 모종의 문제로 인해 어른이 될 때까지 받아올림 실수를 교정하지 못한 존슨이라는 사람이 있다고 하자. 존슨은 덧셈이 무엇인지 이해하며, 구체적인 덧셈 문제가 아니라 덧셈에 대한 성질을 질문 받으면 — 가령, “결합법칙을 만족하는가?” — 올바르게 대답한다. 다만, 존슨은 그의 실수를 교정해 줄 지도자가 없는 상황에서 ’68 + 57’을 질문 받으면 <em>언제나</em> ‘115’라고 대답했을 것이며, 앞으로도 그럴 것이다. 이를 두고 우리는 존슨이 ‘+’에 덧셈의 의미를 부여하고 있으나, 그 의미에 <em>정당한 방식대로</em> ’68 + 57’에 대답하지 못하는 것이라 주장하고 싶다. 바로 이 주장을 성립시키기 위해 두 번째 조건이 필요한 것이다. 두 번째 조건을 만족하지 못하는 의미론을 채택한다면, 우리는 존슨이 ‘+’에 <strong>텃셈</strong> — 두 수의 덧셈을 받아올림을 제하고 수행하는 연산 — 혹은 <strong>펏셈</strong> — 곁에 지도자가 없는 상황에서는 텃셈을 수행하고, 있는 상황에서는 지도자의 교정을 받아 덧셈을 수행하는 연산 — 의 의미를 부여하고 있다고 수긍해야 하기 때문이다.<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup></p>
-
-<h2 id="2-회의주의에-대한-반박-검토">2. 회의주의에 대한 반박 검토</h2>
-
-<h3 id="21-언어적-해명">2.1. 언어적 해명</h3>
-
-<p>회의주의자의 주장을 들은 앨리스가 내놓을 첫 번째 대답은 아마 이러할 것이다. “과거의 나는 ‘x + y’에 x개의 대상과 y개의 대상을 한데 모아 세는 연산의 의미를 부여해 왔다. 따라서 과거의 나는 ‘+’를 컷셈의 의미로 사용하지 않았다.”</p>
-
-<p>그러나 회의주의자는 이에 대해 또 한번 회의주의를 펼칠 수 있다. 요컨대 그는 과거에 앨리스는 ‘모아 세다’라는 단어를 줄곧 셈<sub>count</sub>이 아닌 <em>켐<sub>quont</sub></em>으로 이해하고 있었다고 주장할 수 있다. 묶음을 켄다는 것은 묶음의 크기가 50 미만일 때는 세는 것이고 50을 초과할 때는 5라고 대답하는 것이다.</p>
-
-<p>요지는, <strong>‘+’에 부여한 의미가 무엇인지를 다른 언어적 증거를 통해 입증하려는 시도는 해당 증거 또한 비표준적인 의미가 부여되었을 가능성을 제거하지 못하므로 무한 퇴행에 빠진다</strong>는 것이다.<sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup></p>
-
-<h3 id="22-성향적-분석dispositional-analysis">2.2. 성향적 분석<sub>dispositional analysis</sub></h3>
-
-<p>심리철학에서 <strong>성향적 분석</strong>은 행동주의<sub>behaviourism</sub>가 심리 상태를 설명하는 방식으로, 핵심은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>심리 상태의 성향적 분석.</strong> 주체 $A$가 과거, 현재, 또는 미래에 심리 상태 $\mathfrak{m}$에 있다는 것은, $A$에게 특정 자극 $s$이 주어졌더라면 / 주어진다면 / 주어지게 된다면, $A$는 반응 $b = f_\mathfrak{m}(s)$를 보였을 / 보일 / 보이게 될 것이라는 말이다. 즉, 심리 상태($\mathfrak{m}$)은 자극-반응 대응($f_\mathfrak{m}$)으로 환원된다.</p>
-</blockquote>
-
-<p>예를 들어 금방 선잠에서 깬 앨리스가, 어둑어둑한 방과 창밖으로 들리는 물방울 소리를 듣고, “지금 비가 오고 있다”라는 믿음을 형성했다고 해보자. 성향적 분석에 따르면 “앨리스는 ‘지금 비가 오고 있다’고 믿는다”의 의미는 다음의 (무수히 많은) 자극-반응 대응과 다름이 없다.</p>
-
-<ul>
-  <li>친구에게서 같이 밥 먹으러 가자는 전화가 온다면, -&gt; 우산을 챙길 것이다.</li>
-  <li>이웃에게서 밖에 당신의 빨래가 걸려 있다는 연락이 온다면, -&gt; 빨래를 급히 거두러 갈 것이다.</li>
-  <li>내일 야외 일정이 잡힌다면, -&gt; 내일의 날씨를 확인할 것이다, 등등…</li>
-</ul>
-
-<p>만약 이러한 자극-반응 대응에서 크게 어긋나는 현상이 관측된다면 성향적 분석주의자는 앨리스의 믿음에 대한 견해를 수정할 것이다. 예를 들어 앨리스가 외출을 나서는데 우산을 챙기는 대신 선글라스를 챙긴다면, 그는 앨리스가 “비가 오고 있다”는 믿음이 아닌 “햇살이 쨍쨍하다”는 믿음을 가지고 있다고 판단할 것이다.</p>
-
-<p>지금까지의 설명에서 주목할 성향적 분석의 특징은 두 가지이다.</p>
-
-<ol>
-  <li><strong>반사실적 조건문을 사용한다.</strong> 앨리스가 과거, 현재, 또는 미래에 외출을 나가지 않는다고 하더라도, “앨리스가 외출을 <em>나갔더라면</em> / <em>나간다면</em> / <em>나가게 된다면</em> 그는 우산을 챙겼을 / 챙길 / 챙기게 될 것이다”는 그가 가졌던 / 가지고 있는 / 가지게 될 믿음에 대한 성향적 분석의 일부를 이룬다.</li>
-  <li><strong>기술적이다.</strong> 성향적 분석은 행동주의를 기반으로 하기 때문에 “앨리스가 외출을 나간다면 그는 우산을 <em>챙겨야 한다</em>” 와 같은 규범적 명제가 아닌, “앨리스가 외출을 나간다면 그는 우산을 <em>챙길 것이다</em>” 와 같은 기술적 명제로 이루어진다. 성향적 분석에 따르면, 만약 앨리스가 외출을 나서는데 우산을 챙기는 대신 선글라스를 챙긴다면, 앨리스는 비가 오고 있다는 믿음을 가지고 <em>있음에도</em> 그에 <em>정당하게</em> 행동하지 않는 것이 아니라, 애초에 비가 오고 있다는 믿음을 가지고 있지 않은 것이다.</li>
-</ol>
-
-<p>크립키는 자신과 사적인 자리에서 규칙 따르기 역설을 논의했던 일부 철학자들이, 성향적 분석의 1번 특징에 의존함으로써 성향적 분석을 통한 역설의 해결을 시도했다고 전한다. 이 접근법은 다음을 주장한다.</p>
-
-<blockquote>
-  <p><strong>의미에 대한 성향적 분석.</strong> 화자 $A$가 과거, 현재, 또는 미래에 기호 $s$로 의미 $\mathfrak{m}$을 의미한다는 것은, $s$가 포함된 문장 $\phi$가 $A$에게 주어졌더라면 / 주어진다면 / 주어지게 된다면, $A$는 문장 $\psi = f_\mathfrak{m}(\phi)$로 대답했을 / 대답할 / 대답하게 될 것이라는 말이다. 즉, 의미($\mathfrak{m}$)는 문답 대응($f_\mathfrak{m}$)으로 환원된다.</p>
-</blockquote>
-
-<p>이 분석에 따르면, 앨리스가 과거, 현재, 또는 미래에 ‘+’로 덧셈을 의미한다는 것은, 앨리스에게 x + y를 물어보았더라면 / 물어본다면 / 물어보게 될 때, $A$는 x와 y의 합으로 대답했을 / 대답할 / 대답하게 될 것이라는 말이다. 이러한 반사실적 조건문을 통해 회의주의를 극복하려는 철학자의 사고 흐름은 대략 다음과 같을 것이다.</p>
-
-<ol>
-  <li>회의주의자는 과거의 앨리스가 ‘+’로 덧셈을 의미했는지, 덧셈이 아니지만 충분히 많은 경우에 덧셈과 일치하는 비표준적 연산을 의미했는지 구별하는 사태가 지금까지 없었고, 앞으로도 없을 것임을 지적한다.</li>
-  <li>1이 주장 가능한 이유는, 앨리스가 지금까지 수행했고, 앞으로 수행할 ‘+’의 연산 횟수가 유한하기 때문이다.</li>
-  <li>그러나 “과거의 앨리스에게 ’x + y’을 <em>물어보았더라면</em> 나는 x와 y의 합을 <em>대답했을 것이다</em>”, 또는 “미래의 앨리스에게 ‘x + y’를 <em>물어본다면</em> 나는 x와 y의 합을 <em>대답할 것이다</em>”라는 반사실적 조건문을 사용하면, 우리는 2의 유한성을 극복할 수 있다.</li>
-  <li>이에 따라, 반사실적 조건문은 객관적인 진릿값을 가진다는 사실을 — 가능세계 존재론 등을 통해 — 인정한다면, ”앨리스가 ’+‘로 덧셈을 의미한다“에 대응되는 의미에 대한 성향적 분석은 앨리스가 ‘+’로서 의미하는 연산을 객관적으로 결정한다.</li>
-</ol>
-
-<p>이 논증은 회의주의자에 대한 반박이 갖춰야 할 첫째 조건 — 화자에 관한 <em>어떠한 사실이</em> 해당 화자가 특정 기호를 특정 의미로 사용함을 구성하는지 설명해야 한다 — 을 만족한다. 그 사실이라 함은 반사실적 조건문인 것이다. <strong>그러나 크립키는 둘째 조건 — 해당 사실이 어떠한 방식으로 화자의 언어 사용을 <em>정당화하는지</em> 설명해야 한다 — 을 갖추지 못하므로 성향적 분석은 역설을 해소하는 데 불충분하다고 지적한다.</strong> 이는 앞서 지적했듯이 성향적 분석이 본질적으로 기술적이기 때문이다. 크립키의 말을 인용하자면,</p>
-
-<blockquote>
-  <p>좋다. 나는 ‘125’가 내가 주어진 수식에 대해 내놓을 대답임을 알며, (실제로 그렇게 대답하고 있지 않은가!) 어쩌면 — <strong>그저 하나의 주어진 사실로서</strong> — 과거의 나에게 같은 수식이 주어졌다고 <em>하더라도</em> 똑같이 대답했으리라는 사실 또한 안다고 하자. <strong>이 모든 사실들이 도대체 어떻게 — 현재 <em>또는</em> 과거에서 — ‘125’가, 내 내면의 어떤 규칙에 의거하여 도출된 <em>정당화된</em> 답이지, 그저 눈 가리고 아웅하며 내놓은 아무 근거 없는 답이 아니라는 사실을 보여주는가?</strong></p>
-
-  <p><small>Well and good, I know that ‘125’ is the response I am disposed to give (I am actually giving it!), and maybe it is helpful to be told — <strong>as a matter of brute fact</strong> — that I <em>would have given</em> the same response in the past. <strong>How does any of this indicate that — now <em>or</em> in the past — ‘125’ was an answer <em>justified</em> in terms of instructions I gave myself, rather than a mere jack-in-the-box unjustified and arbitrary response?</strong></small></p>
-
-  <p>(이탤릭체는 원문, 강조는 필자)</p>
-</blockquote>
-
-<p>크립키가 지적하는 바는 다음과 같이 차근차근 이해할 수 있다. 기억을 되살려 보면, 회의주의자에게 대항하는 주장은 다음의 형식을 갖춰야 한다.</p>
-
-<blockquote>
-  <p><strong>주장 1.</strong> 만약 앨리스가 과거에 ‘+’에 부여하던 의미와 현재 ‘+’에 부여하는 의미가 일치한다면,</p>
-
-  <ol>
-    <li>앨리스는 ‘5’라고 답해야 하는 것이 아니라,</li>
-    <li>앨리스는 ‘125’라고 답해야 한다.</li>
-  </ol>
-</blockquote>
-
-<p>성향적 분석에 의하면 위 주장은 다음과 동의적이다.</p>
-
-<blockquote>
-  <p><strong>주장 1.1.</strong> 만약 ‘+’에 대한 과거 앨리스의 문답 성향이 ‘+’에 대한 현재 앨리스의 문답 성향과 일치한다면,</p>
-
-  <ol>
-    <li>앨리스는 ‘5’라고 답해야 하는 것이 아니라,</li>
-    <li>앨리스는 ‘125’라고 답해야 한다.</li>
-  </ol>
-</blockquote>
-
-<p>“그저 하나의 주어진 사실로서”, ‘+’에 대한 과거 앨리스의 문답 성향이 두 수가 주어졌을 때 그 합을 말하는 것이었다고 하자. 이 사실을 위에 대입하면,</p>
-
-<blockquote>
-  <p><strong>주장 1.2.</strong> 만약 ‘+’에 대한 현재 앨리스의 문답 성향이 두 수가 주어졌을 때 그 합을 말하는 것이라면,</p>
-
-  <ol>
-    <li>앨리스는 ‘5’라고 답해야 하는 것이 아니라,</li>
-    <li>앨리스는 ‘125’라고 답해야 한다.</li>
-  </ol>
-</blockquote>
-
-<p>그러나 주장 1을 주장 1.2.로 재진술하였다고 한들, 이를 성립시킬 근거는 여전히 전무하다. 만약 1, 2의 술어부가 “<em>답할 것이다</em>”였다면 주장이 성립하겠지만, 요구된 것은 “<em>답해야 한다</em>”이다. 이것은 문답 성향만 가지고서 알 수 있는 사실이 아니다.</p>
-
-<p>그렇다면 처음부터 1, 2의 술어부를 ”<em>답할 것이다</em>“라고 둘 수는 없을까? 요컨대 회의주의자에게 다음을 주장하는 것이다.</p>
-
-<blockquote>
-  <p><strong>주장 2.</strong> 만약 앨리스가 과거에 ‘+’에 부여하던 의미와 현재 ‘+’에 부여하는 의미가 일치한다면,</p>
-
-  <ol>
-    <li>앨리스는 ‘5’라고 답할 것이 아니라,</li>
-    <li>앨리스는 ‘125’라고 답할 것이다.</li>
-  </ol>
-</blockquote>
-
-<p>그럴 수는 없다. 앞서 “체계적 계산 오류의 사례”에서 자세히 설명했듯이, 앨리스가 ‘68 + 57’에 대해 ‘125’라고 대답하지 않았다고 해서 그 사실이 즉시 앨리스가 ‘+’로 덧셈을 의미하지 않았음을 시사하지는 않기 때문이다. 우리는 덧셈을 수행함에 있어 때때로 실수를 하곤 하지만, 그런 실수가 저지를 때마다 ’+‘를 덧셈이 아닌 다른 의미로 사용했음을 뜻하지는 않는다. 오히려 내가 ‘+’ 연산을 수행함에 있어 <strong>실수</strong>를 저지를 수 있다는 사실 자체가, 내가 내놓는 계산 결과가 내가 ‘+’에 부여하는 의미를 결정하는 것이 아니라, 역으로 내가 ‘+’에 부여하는 의미가 선행하여 내가 <em>내놓아야 할</em> 결과를 결정함을 시사한다.</p>
-
-<p>그럼에도 성향적 분석으로 의미의 규범성을 설명하기 위해서는 다음과 같이 회의주의자의 도전을 재해석해야만 할 듯하다.</p>
-
-<blockquote>
-  <p><strong>주장 3.</strong> 만약 앨리스가 과거에 ‘+’에 부여하던 의미와 현재 ‘+’에 부여하는 의미를 <em>일치시키고자 한다면,</em></p>
-
-  <ol>
-    <li>앨리스는 ‘5’라고 답해야 하는 것이 아니라,</li>
-    <li>앨리스는 ‘125’라고 답해야 한다.</li>
-  </ol>
-</blockquote>
-
-<p>이는 다음 진술로 이어진다.</p>
-
-<blockquote>
-  <p><strong>주장 3.1.</strong> 만약 ‘+’에 대한 현재 앨리스의 문답 성향이 두 수가 주어졌을 때 그 합을 말하는 것이 <em>되고자 한다면,</em></p>
-
-  <ol>
-    <li>앨리스는 ‘5’라고 답해야 하는 것이 아니라,</li>
-    <li>앨리스는 ‘125’라고 답해야 한다.</li>
-  </ol>
-</blockquote>
-
-<p>확실히 주장 3.1은 주장 1.1, 1.2보다는 그럴듯해 보인다. 그러나 필자가 보기에 주장 3.1에도 여전히 문제가 있다.</p>
-
-<p><strong>첫째 문제는, 설령 주장 3이 성립한다고 하더라도 그것이 주장 1을 시사하지는 않는다는 문제이다.</strong> $p, q$를 다음과 같이 두자.</p>
-
-<ul>
-  <li>$p:$ 앨리스가 과거에 ‘+‘에 부여하던 의미와 현재 ’+‘에 부여하는 의미가 일치한다.</li>
-  <li>$q:$ 앨리스는 ‘125’라고 답한다.</li>
-</ul>
-
-<p>이 경우 주장 1과 주장 3은 각각 다음과 같다. ($W$는 ”하고자 한다“를, $\Box$는 “해야 한다”를 의미)</p>
-
-<ul>
-  <li>주장 1. $p \rightarrow \Box q$</li>
-  <li>주장 3. $Wp \rightarrow \Box q$</li>
-</ul>
-
-<p>그러나 $p$는 $Wp$를 시사하지 않고 (내가 원하지 않는 일이 나에게 일어날 수 있다) $Wp$ 또한 $p$를 시사하지 않기 때문에 (내가 원하는 일이 나에게 일어나지 않을 수 있다) 주장 1과 주장 3에는 어떠한 논리적 관계도 없다. 구체적으로 전자의 경우로는, ‘+’를 곱셈의 의미로 사용하겠다고 다짐한 반항아 학생이 자신의 다짐이 무색하게 습관적으로 ‘68 + 57‘에 ’125‘라고 대답해버리는 상황이 있다. 후자의 경우로는 ‘+’ 기호를 덧셈의 의미로 사용하고자 하지만 아직 덧셈의 개념을 완전히 숙지하지 못한 학생의 경우가 있다.</p>
-
-<p><strong>둘째 문제는, 애초에 주장 3은 무한 회귀에 빠진다는 것이다.</strong> 잠시 설명의 편의를 위해 심리 상태의 사례로 돌아가 보자. 현재의 문제를 심리 상태에 관한 것으로 전환하면 다음과 같을 것이다. 앨리스는 지금 밖에 비가 오고 있다는 믿음을 가지고 있음에도 불구하고 우산이 아닌 다른 물건을 챙긴 채 밖으로 나갈 수 있다. 가령 앨리스가 허겁지겁 외출 준비를 하고는 우산꽂이에서 아무거나 뽑은 채 집을 나섰는데, 손에 잡힌 게 우산이 아니라 지팡이였던 상황을 고려해 보자. 기존의 성향적 분석에 따르면 이 경우 앨리스는 애초부터 비가 오고 있다는 믿음을 가지고 있지 않던 것인데 이는 반직관적인 결론이다. 이에 대해 성향적 분석주의자는 다음의 주장들을 대신 내세울지 모른다.</p>
-
-<blockquote>
-  <p><strong>주장 4.</strong> 만약 앨리스가 과거에 ‘어두컴컴한 방과 창밖으로 떨어지는 물방울 소리’에 형성하던 믿음과 현재 동 상황에 형성하는 믿음을 <em>일치시키고자 한다면,</em></p>
-
-  <ol>
-    <li>앨리스는 지팡이를 챙겨야 하는 것이 아니라,</li>
-    <li>앨리스는 우산을 챙겨야 한다.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>주장 4.1.</strong> 만약 ‘어두컴컴한 방과 창밖으로 떨어지는 물방울 소리’에 대해 앨리스가 보였을 자극-반응 대응과, 동 상황에 대한 현재 앨리스의 자극-반응 대응을 <em>일치시키고자 한다면,</em></p>
-
-  <ol>
-    <li>앨리스는 지팡이를 챙기는 것이 아니라,</li>
-    <li>앨리스는 우산을 챙겨야 한다.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>주장 4.2.</strong> 만약 ‘어두컴컴한 방과 창밖으로 떨어지는 물방울 소리’에 대한 앨리스의 자극-반응 대응이 외출을 나가는 상황에 대하여 우산을 챙기는 것이 <em>되고자 한다면</em>,</p>
-
-  <ol>
-    <li>앨리스는 지팡이를 챙기는 것이 아니라,</li>
-    <li>앨리스는 우산을 챙겨야 한다.</li>
-  </ol>
-</blockquote>
-
-<p>이미 앞서 말했듯이 주장 4는 $Wp \rightarrow \Box q$의 형태이므로 애초에 $p \rightarrow \Box q$와 논리적 관계가 없지만, 그 문제를 차치하더라도 일면 타당해 보이는 주장 4.2에는 본질적인 문제가 있다. 애당초 우리가 성향적 분석을 시도하는 이유는 심리 상태에 관한 진술을 행동주의적인 표현으로 옮기기 위해서이다. 그런데 주장 4.2는 한 특정 심리 상태 — 밖에 비가 오고 있다는 믿음 — 에 관한 진술을, 다른 심리 상태 — 외출을 나가는 상황에 대하여 우산을 챙기는 반응을 <em>보이고자 하는 의도</em> — 에 관한 진술로 바꾼 것에 지나지 않는다. 이제 우리는 누군가가 ‘외출을 나가는 상황에 대하여 우산을 챙기는 반응을 보이고자 하는 상태’가 무엇인지를 성향적 분석으로 설명해야 하는데, 이는 결국 무한 회귀에 빠지는 것이다.</p>
-
-<p>동일한 이유로 주장 3 또한 무한회귀에 빠진다. 앞선 논의를 되새겨 보면, 회의주의자의 주장에 대한 반박이 갖춰야 할 필요조건 중 하나는 “화자에 관한 어떠한 사실이, 해당 화자가 특정 기호를 특정 의미로 사용함을 구성하는지 설명할 것“이다. 그런데 주장 3.1은 이 문제에 대해 “문답 성향을 특정한 방식에 일치시키고자 하는 의도”라는 답을 제시한다. 그렇다면 회의주의자는 이에 대해, ”화자에 관한 어떠한 사실이, 해당 화자가 ‘+’ 기호에 대한 문답 성향을 특정한 방식 — 이를테면, 컷셈이 아닌 덧셈에 대응되는 문답 성향 — 에 일치시키고자 하는 의도를 가지고 있음을 구성하는가?“ 라고 반문할 수 있다.</p>
-
-<p>결론적으로, 성향적 분석으로 의미의 문제를 해결하려는 시도는 의미의 규범성을 설명하지 못한다. 규범성을 설명할 수 있도록 성향적 분석을 억지로 끼워맞추려는 시도는 문제가 요구하는 바를 벗어날 뿐 아니라, 무한 회귀의 오류에까지 빠지게 된다.</p>
-
-<h3 id="23-기계주의">2.3. 기계주의</h3>
-
-<p>그렇다면 언어적 해명이나 성향적 분석과 같은 추상적인 설명에 급급하는 대신, 아예 ‘+’가 의미하는 연산에 대응되는 구체적인 기계를 설계해 제시해 줌으로써 회의주의자에게 대응할 수는 없을까? 가령 기계식 계산기를 제작하거나, 논리 회로로 전가산기를 설계해 보이는 것이다. 그러나 크립키는 이 시도 또한 크게 세 가지 이유에서 부적절한다고 주장한다.</p>
-
-<p><strong>첫째, 기계의 사용법이 여전히 해명을 요하는 문제로 남는다.</strong> 튜링 기계로 예를 들면, 우리는 튜링 기계가 출력하는 이진 나열을 이진법으로 해석하여 결과를 읽을 것이다. 그러나 회의주의자는 이 기계를 해석하는 올바른 방식이 <em>퀴진법</em> 이며, 퀴진법에 따르면 튜링 기계는 덧셈이 아니라 컷셈을 출력하고 있다고 주장할 수 있다.</p>
-
-<p><strong>둘째, 실제 기계는 오직 유한한 입력만을 받을 수 있다.</strong> 그런 의미에서 실제 기계는 앨리스보다 더 ‘유능한’ 존재가 되지 못한다. 그렇다고 실제 기계를 구현하는 대신 기계의 알고리즘을 제시한다면, 이는 다시 “2.1. 언어적 해명”으로 돌아가는 것이다.</p>
-
-<p><strong>셋째, 기계는 오작동할 수 있다.</strong> 누군가 기계를 떨어뜨려서 기어가 빠지거나, 너무 오래 쓰다 보니 전선이 녹을 수도 있다. 따라서 우리는 기계에게 의미 해명의 책임을 전임하여 “이 기계는 <em>언제나</em> 내가 의미하는 연산을 계신한다”라고 주장할 수 없다. 그렇다고 우리는 “이 기계는 <em>오작동하지 않는 한 언제나</em> 내가 의미하는 연산을 계산한다”라고 주장할 수도 없다. 그렇게 주장하기 위해서는 기계가 정상적으로 작동하고 있는지 오작동하는지 판단하는 기준을 제시해야 하는데, 그 기준은 결국 우리가 이 기계를 어떤 <em>의도로</em> 사용하고자 하는지에 달려 있을 것이다 (어떤 괴이한 설계자는 기어의 빠짐과 전선의 녹아내림을 통해 덧셈을 계산하는 기계를 만들 수도 있지 않은가?). 따라서 <em>오작동하지 않는 한</em> 이라는 표현을 사용하는 순간 기계가 아닌 화자의 의도가 선행하게 된다.</p>
-
-<h3 id="24-오컴의-면도날">2.4. 오컴의 면도날</h3>
-
-<p>크립키는 다음의 주장도 고려한다.</p>
-
-<blockquote>
-  <p><strong>오캄 의미론.</strong> 두 가설 “화자 $A$는 기호 $s$로 의미 $\mathfrak{m}_1$을 의미한다”와 “화자 $A$는 기호 $s$로 의미 $\mathfrak{m}_2$를 의미한다”가 비결정 상태에 있을 때, $\mathfrak{m}_1$과 $\mathfrak{m}_2$ 중 더 단순한 쪽의 가설을 우선적으로 받아들여야 한다.</p>
-</blockquote>
-
-<p>예를 들어 다음 두 가설을 보자.</p>
-
-<p>    H1. 과거에 앨리스는 ‘+’로 덧셈을 의미했다.</p>
-
-<p>    H2. 과거에 앨리스는 ‘+’로 컷셈을 의미했다.</p>
-
-<p>과거에 앨리스가 수행한 ‘+’ 연산 기록의 양항은 모두 50 이하이므로, H1과 H2는 비결정 상태에 있다. 오캄 의미론이 주장하는 바는 이 경우 우리는 H1설을 우선적으로 받아들여야 한다는 것이다. 덧셈이 컷셈보다 더 단순한 연산이기 때문이다.</p>
-
-<p>그러나 크립키는 이 주장을 짧게만 언급하고 넘어가는데, 회의주의를 논박하는 데 있어 부적절하다는 사실이 자명하기 때문이다. 이는 ‘단순하다’라는 술어가 주관적이라든가, 정의하기 어렵다든가, 화성인에게는 컷셈이 덧셈보다 더 단순할지도 모른다 등의 이유 — 물론 이 이유들도 매우 정당하다 — 때문만이 아니다. 더 본질적인 이유는, 회의주의 논증의 결론이 “H1과 H2 중 어느 하나가 참인지 미정이다”가 아니라, “H1과 H2 중 어느 하나가 참이라는 사실이 <em>어떤 사태에 해당하는지가</em> 미정이다”라는 것이다. 회의주의 논증에 따르면 우리는 H1과 H2가 서로 다른 사태를 나타내는지도 확실하지 않은 상황이다. 이토록 가설이 나타내는 사태가 명확하지 않다면 우리는 오컴의 면도날의 적용이 정당한지를 따지기도 전에 애초에 적용할 <em>수</em> 없다.</p>
-
-<h3 id="25-심리주의">2.5. 심리주의</h3>
-
-<p>크립키가 더 중요하게 고려하는 반론은 심리주의이다.</p>
-
-<blockquote>
-  <p><strong>심리주의 의미론.</strong> 화자 $A$가 기호 $s$로 $\mathfrak{m}$을 의미한다는 것은, 화자의 내면에 $\mathfrak{m}$에 대응되는 특유한<sub>queer</sub> 심리적 경험 $p_\mathfrak{m}$이 형성되었다는 말이다.</p>
-</blockquote>
-
-<p>여기서 “특유한 심리적 경험”은 퀄리아와 비슷한 것으로 생각할 수 있다. 요컨대 “빨간색을 보는 것”이 다른 술어나 경험으로 환원될 수 없는 특유 경험이듯이, “‘+’로 덧셈을 의미하는 것” 또한 그러한 특유 경험이라는 것이다.</p>
-
-<p>크립키는 그러한 특유 경험이 존재할 가능성을 부정하지 않는다.<sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">6</a></sup> 그러나 크립키는 심리주의 의미론 또한 회의주의 논증을 해결하지 못함을 지적한다. 문제는 어김없이 “1.2. 두 가지 조건” 중 2번 조건에 있다.</p>
-
-<p>단적인 예시로, 앨리스는 ‘+’ 기호를 사용할 때마다 이마에서 통증을 느낀다고 해보자. 이 사실은 “1.2. 두 가지 조건” 중 1번 조건을 만족한다. 즉, 앨리스가 과거에 ‘+’에 부여한 의미와 현재 부여하는 의미가 같다는 것은 앨리스가 ‘+’ 기호를 사용할 때 느낀 과거의 통증과 현재의 통증이 질적으로 같다는 것이다. 그러나 그렇다고 해서, 그 통증이 도대체 어떤 방식으로 앨리스에게 ’68 + 57’에 대해 ‘125’라고 대답해야 한다는 사실을 알려줄 수 있다는 말인가?</p>
-
-<p>크립키는 이 논의를 보다 일반적인 경험주의 반박과 연관짓는다. 경험주의에 따르면 내가 ‘삼각형’을 의미한다는 것은 내가 내면에서 삼각형의 인상을 떠올린다는 것이다. 그런데 이 삼각형의 인상이 어떻게 내가 ‘삼각형’이라는 단어를 사용하는 규칙을 알려준다는 말인가? 가령 나의 머리에 떠오른 인상이 예각삼각형이라고 하더라도 나는 둔각삼각형을 가리키며 정당하게 삼각형이라고 말할 수 있다. 반면 나의 머리에 떠오른 인상과 정확히 같은 모양의 밑변을 가지는 삼각뿔을 가리키며 삼각형이라고 말할 수는 없다. 요컨대 머리 속에서 어떤 인상이 제시된다고 한들, 그 인상을 어떻게 <em>해석해 내야</em> 할지는 미궁에 쌓여있다.</p>
-
-<p>그럼에도 크립키는 우리가 반대 극단으로 치우쳐, 심리적 경험 내지 느낌이 의미의 문제와 완전히 무관하다고 결론내려서는 안 됨을 강조한다. 크립키는 ⟪철학적 탐구⟫의 논의에서 파생되는 다음의 사례들을 거론한다.</p>
-
-<ul>
-  <li><a href="https://en.wikipedia.org/wiki/Semantic_satiation">같은 단어를 수십 번 말하다 보면 마치 단어에서 의미가 빠져나가고 껍질만 남은 것처럼 ‘낯설게’ 느껴지는 현상</a></li>
-  <li>’배’를 운송수단을 떠올리며 말할 때와 과일을 떠올리며 말할 때의 차이 (이것을 <a href="https://en.wikipedia.org/wiki/Necker_cube">네커 큐브</a> 착시와 비교해 보라)</li>
-  <li>심리철학의 철학적 좀비와 유사한, <em>의미론적 좀비</em> — 발화 기록만으로는 일반적인 언어 사용자와 구별되지 않으나 내면에 어떠한 의미론도 가지고 있지 않은 화자</li>
-</ul>
-
-<p>크립키는 위 사례들이 해명되어야 할 문제임을 인정하지만, 안타깝게도 지면의 문제로 인해 넘어간다.</p>
-
-<h3 id="26-플라톤주의">2.6. 플라톤주의</h3>
-
-<p>마지막으로 크립키가 고려하는 반론은 플라톤주의다.</p>
-
-<blockquote>
-  <p><strong>플라톤주의 의미론.</strong> 화자 $A$가 기호 $s$로 $\mathfrak{m}$을 의미한다는 것은, 화자가 의미 $\mathfrak{m}$에 대응되는 플라톤적 대상 $\pi_\mathfrak{m}$을 지향한다는 것이다.</p>
-</blockquote>
-
-<p>따라서 앨리스가 ‘+’로 덧셈을 의미한다는 것은, 앨리스가 플라톤적 덧셈과 모종의 관계를 맺는 것이다.</p>
-
-<p>이것은 프레게가 회의주의자에게 제시했을 대답이었을 걸로 짐작할 수 있다. 프레게에 따르면 기호는 화제에게 특정한 뜻<sub>sense, <em>Sinn</em></sub>으로서 나타나는데, 뜻은 지시체를 유일하게 결정한다. 여기서 뜻과 지시체는 플라톤적 대상이다.</p>
-
-<blockquote>
-  <p>프레게의 언어철학: 기호 -&gt; 화자 -&gt; 뜻 -&gt; 지시체</p>
-</blockquote>
-
-<p>그러나 크립키는 플라톤주의 또한 이전과 거의 같은 논리로 기각한다. 플라톤주의는 유한한 인간이 어떻게 덧셈과 같은 무한집합과 관계 맺을 수 있는지를 설명하지 못할 뿐더러, 이에 따라 앨리스가 지향하는 플라톤적 대상이 덧셈 집합인지 컷셈 집합인지를 어떻게 결정하냐는 문제를 낳는다.</p>
-
-<div style="margin: 2em 0">$$\cdot \quad \cdot \quad \cdot$$</div>
-
-<p>이상으로 크립키-비트겐슈타인 역설과, 이에 대한 주요 반박 및 재반박을 살펴 보았다. 최종적으로 크립키는 회의주의 논증에 대한 직설적인 반박은 불가능하다고 결론 내린다. 따라서 이제 논의는, 정말로 회의주의 논증의 결론대로 “앨리스는 ‘+’로 덧셈을 의미한다”가 “앨리스의 생각은 초록색이다”와 다를 바 없이 대응되는 사태를 결여하는 명제라면, 어째서 전자는 후자와 달리 언어 생활에서 유의미하게 사용될 수 있는가를 해명하는 것으로 넘어간다. 이것은 비트겐슈타인의 사적 언어 논증에 대한 크립키의 독해와 밀접한 관련이 있으며, 다음 글에서 자세히 살펴보도록 한다.</p>
-
-<hr />
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1">
-      <p>프레게식 이론을 따른다면, 대응되는 사태가 없는 명제, 즉 진릿값을 결여한 명제는 진정한 의미에서의 명제가 아니므로 ”명제처럼 보이지만 명제가 아닌 기호들의 나열“이라는 표현이 더 적확할 것이다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2">
-      <p>만약 회의주의자의 주장이 전자에 해당했다면, 이는 “더 무거운 공이 더 빨리 떨어진다”라는 주장이 피사의 사탑 실험으로서 즉시 반박되었듯이, 앨리스가 ‘5’가 아니라 ‘125’라고 말했다는 사실로서 즉시 반박되었을 것이다. (피사의 사탑 실험이 실제로 진행된 바 없다는 것은 이제 잘 알려진 사실이지만 좋은 예시라서 사용했다.) <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3">
-      <p>다시 피사의 사탑 예시를 들자면, 이는 ‘더 무거운 공’이 어떤 사실로서 구성되는지를 설명하는 것으로 “양팔저울에 매달았을 때 기울어지는 쪽”과 같이 설명할 수 있다. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:4">
-      <p>물론 이 경우 그가 수행하는 ‘+’는 결합법칙을 만족하지 않으므로 (예를 들어 “(10 + 7) + (10 + 4)”에 대해서 그는 21이라고 대답하지만 ”(10 + (7 + 4)) + 10“에 대해서는 31이라고 대답한다) 우리는 그가 애초에 ‘+’에 일관된 의미를 부여하지 못하고 있다고 주장해야 할 것이다. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:5">
-      <p>수리논리학을 배워본 적 있는 독자라면 이를 뢰벤하임-스콜렘 정리와 연결지을 수 있을 것이다. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:6">
-      <p>크립키는 의미에 특유한 경험의 존재가 “미심쩍다<sub>dubious</sub>”고 하기는 한다. 반면 ⟪철학적 논고⟫에서 긴 지면을 할애하며 그러한 경험의 존재를 부정한다. 비트슈타인은 외국어를 알지 못하지만 읽는 척을 하는 경우와, 충분한 학습 이후 해당 외국어를 무의식적으로 읽는 경우를 비교해 볼 것을 중용하며, 전자의 경우나 후자의 경우나 어떤 특별한 ‘느낌’이 있지는 않음을 강조한다. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
 
           ]]>
         </content:encoded>

@@ -433,6 +433,186 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2024/12/25/Cantor-Bendixson"> 칸토어-벤딕슨 정리와 폴란드 공간 </a>
+      </h1>
+    <span class="post-date">25 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$의 집합 $P$에 대해 $P’ = P$일 때 $P$를 <strong>완벽한 집합<sub>perfect set</sub></strong>이라고 한다. ($P’$은 $P$의 집적점들의 집합)</p>
+</blockquote>
+
+<p><em>Remark.</em> 모든 완벽한 집합은 닫힌 집합이지만, 역은 성립하지 않는다. 일반적으로 $S \not\subset S’$ ($S$가 고립점을 가짐), $S’ \not\subset S$ ($S$가 닫힌 집합이 아님) 임에 유의하라. 뒤집어 말해, 완벽한 집합은 고립점이 없는 닫힌 집합이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X$의 임의의 부분공간이 린델뢰프일 때 $X$를 <strong>세습적 린델뢰프<sub>hereditarily Lindelöf</sub></strong>라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>약한 칸토어-벤딕슨 정리.</strong> $X$가 세습적 린델뢰프 공간이라고 하자. $F \subset X$가 닫힌 집합일 때 어떤 완벽한 집합 $P$와 가산집합 $C$가 존재하여 $F = P \sqcup C$이다.</p>
+</blockquote>
+
+<p><img src="/public/cantor-bendixson.png" style="width: 100%; max-width: 600px; margin: 2em auto;" /></p>
+
+<p>완벽한 집합은 고립점이 없는 닫힌 집합이므로, 위 정리는 “닫힌 집합은 최대 가산 개의 고립점을 가진다”로 재진술할 수 있다.</p>
+
+<p><strong>증명.</strong> 다음과 같이 $P, C$를 정의한다.</p>
+
+\[P = \lbrace  x \in F : \text{For all nbd $U$ of $x$, $U \cap F$ is uncountable} \rbrace\]
+
+\[C = \lbrace  x \in F : \text{There exists a nbd $U$ of $x$ s.t. $U \cap F$ is countable} \rbrace\]
+
+<p>$F = P \sqcup C$임에 주목하라.</p>
+
+<p><em>Claim 1.</em> $C$는 $F$에서 열린 집합이다.</p>
+
+<p><em>Proof of Claim.</em> $x \in C$일 때 어떤 $x$의 근방 $U$가 존재하여 $U \cap F$가 가산이다. 즉, 임의의 $y \in U \cap F$에 대해 $U$는 $y$의 근방이고 $U \cap F$가 가산이므로 $y \in C$이다. 따라서 $U \cap F \subset C$이다. □</p>
+
+<p><em>Claim 2.</em> $C$는 가산이다.</p>
+
+<p><em>Proof of Claim.</em> $F$의 부분공간 토폴로지를 생각하자. 가정에 의해 이 토폴로지는 린델뢰프이다. 임의의 $x \in C$에 대해 $U_x \cap F$가 가산인 $x$의 근방 $U_x$를 찾을 수 있다. 그러면 $\lbrace  U_x \rbrace_{x \in C}$는 $C$의 $F$-열린 덮개이며, 린델뢰프 가정에 의해 $C = \bigcup_{\alpha \in J} U_\alpha$ ($J$는 가산)이다. $U_\alpha$가 가산이므로 $C$는 가산이다. □</p>
+
+<p><em>Claim 3.</em> $P$는 완벽하다.</p>
+
+<p><em>Proof of Claim.</em> Claim 1에 의해 $P$는 $F$에서 닫힌 집합이며, $F$가 닫힌 집합이므로 $P$는 $X$에서 닫힌 집합이다. 따라서 $P’ \subset P$이다. 역을 보이기 위해 $x \in P$라고 하자. 임의의 $x$의 근방 $U$에 대해 $U \cap F = (U \cap C) \sqcup (U \cap P)$가 비가산이다. $C$가 가산이므로, $U \cap P$가 비가산이어야 한다. 따라서 $U$는 $P$와 $\lbrace x \rbrace$보다 큰 교집합을 가지며, $x \in P’$이다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 분리 가능한<sub>separable</sub> 완비 거리화 가능 공간을 <strong>폴란드 공간<sub>Polish space</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<p>거리화 가능 공간에서 분리 가능성, 2차 가산, 그리고 린델뢰프는 동치이므로 해당 세 가지 조건 중 하나로 정의를 대체할 수 있다. ‘폴란드 공간’이라는 이름은 해당 공간을 처음으로 연구한 학자들인 시에르핀스키, 쿠라토프스키, 타르스키 등이 폴란드인들인 데에서 유래했다.</p>
+
+<p>$X$가 폴란드 공간이라는 더 강한 조건이 주어지면 칸토어-벤딕슨 분해가 유일함을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>강한 칸토어-벤딕슨 정리.</strong> $X$가 폴란드 공간이라고 하자. $F \subset X$가 닫힌 집합일 때 어떤 완벽한 집합 $P$와 가산집합 $C$가 존재하여 $F = P \sqcup C$이다. 또한, 해당 분해는 유일하다.</p>
+</blockquote>
+
+<p>또한 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 폴란드 공간의 완벽한 집합은 $2^{\aleph_0}$의 크기를 가진다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 추후 기술적 집합론에 대한 글에서 따로 다룰 예정.</p>
+
+<p>이로부터 다음의 결론이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>따름정리: 실수의 닫힌집합에서의 연속체 가설.</strong> 실수의 닫힌집합은 가산이거나 $2^{\aleph_0}$의 크기를 가진다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 실수는 폴란드 공간이므로 칸토어-벤딕슨 정리에 의해 모든 닫힌집합이 가산집합과 완벽한 집합의 서로소 합으로 분해된다. 후자가 공집합일 경우 해당 닫힌집합은 가산이며, 그렇지 않을 경우 $2^{\aleph_0}$이다. ■</p>
+
+<p>칸토어는 위 정리의 증명으로부터 일반적인 연속체 가설을 증명할 수 있으리라는 희망을 품었지만 잘 알려져 있다시피 그 희망은 실현되지 못했다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/25/Cantor-Bendixson/en"> The Cantor-Bendixson Theorem and Polish Space </a>
+      </h1>
+    <span class="post-date">25 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> A set $P$ in a topological space $X$ is <strong>perfect</strong> when $P’ = P$. Here, $P’$ denotes the set of limit points of $P$.</p>
+</blockquote>
+
+<p><em>Remark.</em> Every perfect set is a closed set, but the converse does not hold. Recall that in general $S \not\subset S’$ (when $S$ has isolated points) and $S’ \not\subset S$ (when $S$ is not a closed set). It follows that <em>a perfect set is a closed set with no isolated points.</em></p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A topological space $X$ is <strong>hereditarily Lindelöf</strong> when every subspace of $X$ is Lindelöf.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Weak Cantor-Bendixson Theorem.</strong> Let $X$ be a hereditarily Lindelöf space. For any closed set $F \subset X$, there exist a perfect set $P$ and a countable set $C$ such that $F = P \sqcup C$.</p>
+</blockquote>
+
+<p><img src="/public/cantor-bendixson.png" style="width: 100%; max-width: 600px; margin: 2em auto;" /></p>
+
+<p>Since a perfect space is a closed space with no isolated points, the above theorem can be restated as: A closed subspace of a hereditarily Lindelöf space has at most countable isolated points.</p>
+
+<p><strong>Proof.</strong> We define $P$ and $C$ as follows:</p>
+
+\[P = \lbrace  x \in F : \text{For all nbd $U$ of $x$, $U \cap F$ is uncountable} \rbrace\]
+
+\[C = \lbrace  x \in F : \text{There exists a nbd $U$ of $x$ s.t. $U \cap F$ is countable} \rbrace\]
+
+<p>Note that $F = P \sqcup C$.</p>
+
+<p><em>Claim 1.</em> $C$ is open in $F$.</p>
+
+<p><em>Proof of Claim.</em> When $x \in C$, there exists a neighbourhood $U$ of $x$ such that $U \cap F$ is countable. That is, for any $y \in U \cap F$, $U$ is a neighbourhood of $y$ and $U \cap F$ is countable, so $y \in C$. Therefore $U \cap F \subset C$. □</p>
+
+<p><em>Claim 2.</em> $C$ is countable.</p>
+
+<p><em>Proof of Claim.</em> Consider the subspace topology on $F$. By hypothesis, this topology is Lindelöf. For any $x \in C$, we can find a neighbourhood $U_x$ of $x$ such that $U_x \cap F$ is countable. Then $\lbrace  U_x \rbrace_{x \in C}$ is an $F$-open cover of $C$, and by the Lindelöf hypothesis, $C = \bigcup_{\alpha \in J} U_\alpha$ where $J$ is countable. Since each $U_\alpha$ is countable, $C$ is countable. □</p>
+
+<p><em>Claim 3.</em> $P$ is perfect.</p>
+
+<p><em>Proof of Claim.</em> By Claim 1, $P$ is a closed set in $F$, and since $F$ is a closed set, $P$ is a closed set in $X$. Therefore $P’ \subset P$. To show the reverse inclusion, let $x \in P$. For any neighbourhood $U$ of $x$, we have that $U \cap F = (U \cap C) \sqcup (U \cap P)$ is uncountable. Since $C$ is countable, $U \cap P$ must be uncountable. Therefore $U$ has intersection with $P$ larger than $\lbrace x \rbrace$, and hence $x \in P’$. ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A separable complete metrisable space is called a <strong>Polish space</strong>.</p>
+</blockquote>
+
+<p>In metrisable spaces, separability, second countability, and the Lindelöf property are equivalent, so the definition can be replaced with any of these three conditions. The name ‘Polish space’ derives from the fact that the mathematicians who first studied these spaces — Sierpiński, Kuratowski, Tarski — were Polish.</p>
+
+<p>When the stronger condition that $X$ is a Polish space is given, one can prove that the Cantor-Bendixson decomposition is unique.</p>
+
+<blockquote>
+  <p><strong>Strong Cantor-Bendixson Theorem.</strong> Let $X$ be a Polish space. For any closed set $F \subset X$, there exist a perfect set $P$ and a countable set $C$ such that $F = P \sqcup C$. Moreover, this decomposition is unique.</p>
+</blockquote>
+
+<p>The following also holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> A perfect set in a Polish space has cardinality $2^{\aleph_0}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> This will be treated separately in a future article on descriptive set theory.</p>
+
+<p>From this, the following conclusion follows:</p>
+
+<blockquote>
+  <p><strong>Corollary: The Continuum Hypothesis for Closed Sets of Real Numbers.</strong> A closed set of real numbers is either countable or has cardinality $2^{\aleph_0}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Since the real numbers form a Polish space, by the Cantor-Bendixson theorem every closed set decomposes as a disjoint union of a countable set and a perfect set. If the latter is empty, then the closed set is countable; otherwise it has cardinality $2^{\aleph_0}$. ■</p>
+
+<p>Cantor had hoped that from the proof of the above theorem he might be able to prove the general continuum hypothesis, but as is well known, this hope was not realised.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2024/12/16/adjoints"> 어드조인트에 대한 직관적 이해 </a>
       </h1>
     <span class="post-date">16 Dec 2024</span>
@@ -1294,346 +1474,6 @@
 </blockquote>
 
 <p><strong>Proof.</strong> Apply transfinite induction extensively. (Sorry for the brevity, lol.) It is worth remarking that the proof does not depend on the axiom of choice, for the well-orderedness of ordinals is provable from ZF. Note, however, that the proof that every well-ordered set is order isomorophic to an ordinal <em>does</em> require AC.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/12/01/net"> 콤팩트성과 그물 </a>
-      </h1>
-    <span class="post-date">01 Dec 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <h3 id="콤팩트성">콤팩트성</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> $X$가 위상공간이라고 하자.</p>
-
-  <ol>
-    <li>임의의 열린 덮개가 유한한 부분덮개를 가질 때 $X$를 <strong>콤팩트</strong>하다고 한다.</li>
-    <li>임의의 점렬 $\lbrace x_n \in X \rbrace$가 수렴하는 부분점렬을 가질 때 $X$를 <strong>점렬 콤팩트<sub>sequentially compact</sub></strong>하다고 한다.</li>
-    <li>임의의 무한집합 $S \subset X$가 극점을 가질 때 $X$를 <strong>극점 콤팩트<sub>limit point compact</sub></strong>하다고 한다.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-  <ol>
-    <li>콤팩트 $\rightarrow$ 극점 콤팩트</li>
-    <li>점렬 콤팩트 $\rightarrow$ 극점 콤팩트</li>
-    <li>극점 콤팩트 $\not\rightarrow$ 콤팩트</li>
-    <li>극점 콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
-  </ol>
-</blockquote>
-
-<p><img src="/public/three-compactness.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
-
-<p><strong>증명.</strong></p>
-
-<ol>
-  <li>$S \subset X$가 극점이 없는 무한집합이라고 하자. $\overline{S} = S \cup S’ = S$이므로 $S$는 닫힌 집합이며, $X \setminus S$는 열린 집합이다. 임의의 $s \in S$에 대해, $s$가 극점이 아니므로 $U_s \cap S = \lbrace  s \rbrace$인 $s$의 근방 $U_s$가 존재한다. 따라서 다음 $X$의 열린 덮개는 유한한 부분덮개를 가지지 않는다.</li>
-</ol>
-
-\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
-
-<ol>
-  <li>$S \subset X$가 무한집합이라고 하자. $S$의 원소들을 임의로 추출하여 점렬 $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$을 만든다. $X$가 점렬 콤팩트하므로 $\lbrace  s_n \rbrace → s$이며, $s$는 $S$의 극점이다.</li>
-  <li>순서 토폴로지가 주어진 $\omega_1$은 극점 콤팩트하지만 콤팩트하지 않다.</li>
-  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, $\mathbb{N}$에는 이산 토폴로지가 주어지고 $\lbrace  0, 1\rbrace$에는 자명한 토폴로지가 주어짐.</li>
-</ol>
-
-<p><strong>Remark.</strong> 4의 올바르지 못한 “증명”</p>
-
-<blockquote>
-  <p>$X$가 극점 콤팩트하다고 하자. 점렬 $(x_n)$이 주어졌을 때, $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$이 유한집합이라면 $(x_n)$은 수렴하는 부분점렬을 자명하게 가진다. $S$가 무한집합이라면 $X$의 극점 콤팩트성에 의해 $x \in S’$가 존재한다. <strong>이제 다음 조건을 만족하는 $x$의 근방들의 가산 모임 $\mathcal{U} = \lbrace  U_n \rbrace$을 정의한다.</strong></p>
-
-  <ol>
-    <li>$n &lt; m \implies U_n \supset U_m$</li>
-    <li>$V$가 $x$의 근방일 때, $\exists U \in \mathcal{U} : U \subset V$</li>
-  </ol>
-
-  <p>이로부터 다음 조건을 만족하는 함수 $k: \mathbb{N} → \mathbb{N}$을 정의할 수 있다.</p>
-
-  <ol>
-    <li>$x_{k(n)} \in U_n$</li>
-    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
-    <li>$n \neq m \implies x_{k(n)} \neq x_{k(m)}$</li>
-  </ol>
-
-  <p>2가 가능한 이유는 $k(i)$가 $i \leq n$까지 정의되었을 때 $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$가 여전히 $x$를 극점으로 가지기 때문이다. 즉, $(x_n)$은 수렴하는 부분점렬 $(x_{k(n)})$을 가진다.</p>
-</blockquote>
-
-<p>위 증명이 올바르지 않은 이유는 볼드체 부분이 일반적으로 가능하지 않기 때문이다. 대신 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 1차 가산 $T_1$ 공간에서 극점 콤팩트성과 점렬 콤팩트성은 동치이다.</p>
-</blockquote>
-
-<p>$T_1$은 조건 3을 일반적으로 성립시키는 데 필요하다.</p>
-
-<h3 id="그물과-점렬">그물과 점렬</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> $(J, \leq)$가 원순서<sub>preorder</sub>라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합<sub>directed set</sub></strong>이라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종<sub>cofinal</sub></strong>이라고 한다.</p>
-</blockquote>
-
-<p><strong>Remark 1.</strong> $(J, \leq)$가 방향 집합이면 $J$는 $J$에서 자명하게 공종이다. 한편 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
-
-<p><strong>Remark 2.</strong> 이후 드러나듯이, 방향성은 수렴의 일반화와 관련되는 조건이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물<sub>net</sub></strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
-</blockquote>
-
-<p><img src="/public/directed-set-net.png" style="width: 100%; max-width: 600px; margin: 0 auto" /></p>
-
-<blockquote>
-  <p><strong>정의.</strong> 그물 $(x_\alpha)$가 $x$로 수렴한다는 것은, 임의의 $x$의 근방 $U$에 대해 어떤 $\alpha \in J$가 존재하여</p>
-
-\[\alpha \leq \beta \implies x_\beta \in U\]
-
-  <p>인 것이다.</p>
-</blockquote>
-
-<p>방향성에 의해, 특정한 $\alpha \in J$에 대해 $\alpha \leq \beta$인 $\beta$들만 고려해도 $\mathrm{im} f$ 전체를 포섭할 수 있음을 유의하라. 즉, 임의의 $x_\gamma$에 대해 $\alpha, \gamma \leq \beta$인 $\beta$가 존재한다. 달리 말해, 그물이 $x$로 수렴한다는 것은 임의의 $x$의 근방 $U$가 주어졌을 때, 그물의 어느 원소에서 시작하든 간에 위로 충분히 올라가다 보면 어느 지점부터 이후의 모든 원소가 $U$에 속한다는 것이다.</p>
-
-<p>일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $X$가 1차 가산 공간이라고 하자.</p>
-
-  <ol>
-    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 점렬 $(x_n)$이 존재하는 것이다.</li>
-    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면 $f(x_n) → f(x)$인 것이다.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $X$가 위상 공간이라고 하자.</p>
-
-  <ol>
-    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 그물 $(x_\alpha)$가 존재하는 것이다.</li>
-    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면 $f(x_\alpha) → f(x)$인 것이다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<ol>
-  <li>$\mathcal{U}_x$를 $x$의 근방들의 집합이라고 하자. 역포함관계로 $\mathcal{U}_x$에 순서 $\leq$를 준다. $x \in \bar{A}$라면 임의의 $U_\alpha \in \mathcal{U}_x$에 대해 $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$인 $x_\alpha$가 존재한다. $x_\alpha → x$임을 확인하라.</li>
-</ol>
-
-<blockquote>
-  <p><strong>정의.</strong> $(x_\alpha)_{\alpha \in J}$가 그물이라고 하자. $(I, \preceq)$가 방향 집합이고, $g: (I, \preceq) → (J, \leq)$가 순서 보존이며, $\operatorname{im}g$가 공종일 때, $(x_{g(\beta)})_{\beta \in I}$를 $(x_\alpha)$의 부분그물이라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $X$가 콤팩트할 필요충분조건은 임의의 그물이 수렴하는 부분그물을 가지는 것이다.</p>
-</blockquote>
-
-<p><strong>Remark.</strong> ”수렴하는 점렬이 존재한다“는 ”수렴하는 그물이 존재한다“보다 강한 조건이지만, ”임의의 점렬이 수렴하는 부분점렬을 가진다”는 “임의의 그물이 수렴하는 부분그물을 가진다”보다 강하지도, 약하지도 않은 조건임에 유의하라. 주어는 후자가 더 강하고, 술어는 전자가 더 강하다. 따라서 <strong>콤팩트성과 점렬 콤팩트성은 일반적으로 시사 관계가 없다.</strong> 구체적으로,</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-  <ol>
-    <li>콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
-    <li>점렬 콤팩트 $\not\rightarrow$ 콤팩트</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong></p>
-
-<ol>
-  <li>$[0, 1]^{[0, 1]}$은 티호노프 정리에 의해 콤팩트하지만 점렬 콤팩트하지 않다.</li>
-  <li>Long line과 $\omega_1$은 점렬 콤팩트하지만 콤팩트하지 않다.</li>
-</ol>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/12/01/net/en"> Compactness and Nets </a>
-      </h1>
-    <span class="post-date">01 Dec 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <h3 id="compactness">Compactness</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $X$ be a topological space.</p>
-
-  <ol>
-    <li>$X$ is said to be <strong>compact</strong> if every open cover has a finite subcover.</li>
-    <li>$X$ is said to be <strong>sequentially compact</strong> if every sequence $\lbrace x_n \in X \rbrace$ has a convergent subsequence.</li>
-    <li>$X$ is said to be <strong>limit point compact</strong> if every infinite set $S \subset X$ has a limit point.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-  <ol>
-    <li>Compact $\rightarrow$ Limit point compact</li>
-    <li>Sequentially compact $\rightarrow$ Limit point compact</li>
-    <li>Limit point compact $\not\rightarrow$ Compact</li>
-    <li>Limit point compact $\not\rightarrow$ Sequentially compact</li>
-  </ol>
-</blockquote>
-
-<p><img src="/public/three-compactness.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
-
-<p><strong>Proof.</strong></p>
-
-<ol>
-  <li>Let $S \subset X$ be an infinite set with no limit points. Since $\overline{S} = S \cup S’ = S$, $S$ is a closed set and $X \setminus S$ is an open set. For any $s \in S$, since $s$ is not a limit point, there exists a neighbourhood $U_s$ of $s$ such that $U_s \cap S = \lbrace  s \rbrace$. Therefore, the following open cover of $X$ has no finite subcover:</li>
-</ol>
-
-\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
-
-<ol>
-  <li>Let $S \subset X$ be an infinite set. Arbitrarily extract elements of $S$ to form a sequence $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$. Since $X$ is sequentially compact, $\lbrace  s_n \rbrace → s$, and $s$ is a limit point of $S$.</li>
-  <li>$\omega_1$ with the order topology is limit point compact but not compact.</li>
-  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, where $\mathbb{N}$ is given the discrete topology and $\lbrace  0, 1\rbrace$ is given the trivial topology.</li>
-</ol>
-
-<p><strong>Remark.</strong> An incorrect “proof” of 4</p>
-
-<blockquote>
-  <p>Suppose $X$ is limit point compact. Given a sequence $(x_n)$, if $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$ is a finite set, then $(x_n)$ trivially has a convergent subsequence. If $S$ is an infinite set, then by the limit point compactness of $X$, there exists $x \in S’$. <strong>Now we define a countable collection of neighbourhoods of $x$, $\mathcal{U} = \lbrace  U_n \rbrace$, satisfying the following conditions:</strong></p>
-
-  <ol>
-    <li>$n &lt; m \implies U_n \supset U_m$</li>
-    <li>For any neighbourhood $V$ of $x$, $\exists U \in \mathcal{U} : U \subset V$</li>
-  </ol>
-
-  <p>From this, we can define a function $k: \mathbb{N} → \mathbb{N}$ satisfying the following conditions:</p>
-
-  <ol>
-    <li>$x_{k(n)} \in U_n$</li>
-    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
-    <li>$n \neq m \implies x_{k(n)} \neq x_{k(m)}$</li>
-  </ol>
-
-  <p>Condition 2 is possible because when $k(i)$ is defined for $i \leq n$, $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$ still has $x$ as a limit point. Thus, $(x_n)$ has a convergent subsequence $(x_{k(n)})$.</p>
-</blockquote>
-
-<p>The above proof is incorrect because the bold portion is not generally possible. Consider, for instance, a topological space where $x \in S’$ has uncountably many neighbourhoods which form uncountably infinite distinct classes of containment chain. Hence, in the diagram below, the same-coloured sets contain one or the other properly, but distinct-coloured sets do not, although they need not be strictly disjoint either. Such a space may be limit point compact yet not be sequentially compact, for there is no guaranteed way to enumerate the points of $S$ into a series such that whichever open set one chooses, for a large enough index, all points after that index is included in that open set. (Exercise: Convince yourself that this is not the case if the open sets can be arranged to form only finite distinct classes of chain, or countably infinite distinct classes of chain.)</p>
-
-<p><img src="/public/limit-vs-sequential.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
-
-<p>Instead, the following holds:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> In first countable $T_1$ spaces, limit point compactness and sequential compactness are equivalent.</p>
-</blockquote>
-
-<p>Note that $T_1$-ness is also required, for without it Condition 3 cannot be guaranteed.</p>
-
-<h3 id="nets-and-sequences">Nets and Sequences</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $(J, \leq)$ be a preorder. If for any $x, y \in J$, there exists $z \in J$ such that $x, y \leq z$, then $(J, \leq)$ is called a <strong>directed set</strong>.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $K$ be a subset of $(J, \leq)$. If for any $x \in J$, there exists $y \in K$ such that $x \leq y$, then $K$ is said to be <strong>cofinal</strong>.</p>
-</blockquote>
-
-<p><strong>Remark 1.</strong> If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.</p>
-
-<p><strong>Remark 2.</strong> As will be shown, cofinality is related with the generalisation of convergence.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $(J, \leq)$ be a directed set. For a topological space $X$, a function $f: J → X$ is called a <strong>net</strong>. In particular, for $\alpha \in J$, we denote $f(\alpha)$ as $x_\alpha$.</p>
-</blockquote>
-
-<p><img src="/public/directed-set-net.png" style="width: 100%; max-width: 600px; margin: 0 auto" /></p>
-
-<blockquote>
-  <p><strong>Definition.</strong> A net $(x_\alpha)$ converges to $x$ if, for any neighbourhood $U$ of $x$, there exists some $\alpha \in J$ such that</p>
-
-\[\alpha \leq \beta \implies x_\beta \in U\]
-</blockquote>
-
-<p>The convergence of nets in general topological spaces corresponds to the convergence of sequences in first countable spaces. That is,</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $X$ be a first countable space.</p>
-
-  <ol>
-    <li>For $A \subset X$, $x \in \bar{A}$ if and only if there exists a sequence $(x_n)$ converging to $x$.</li>
-    <li>For $f: X → Y$, $f$ is continuous if and only if for any sequence $(x_n)$, if $x_n → x$ then $f(x_n) → f(x)$.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $X$ be a topological space.</p>
-
-  <ol>
-    <li>For $A \subset X$, $x \in \bar{A}$ if and only if there exists a net $(x_\alpha)$ converging to $x$.</li>
-    <li>For $f: X → Y$, $f$ is continuous if and only if for any net $(x_\alpha)$, if $x_\alpha → x$ then $f(x_\alpha) → f(x)$.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<ol>
-  <li>Let $\mathcal{U}_x$ be the set of neighbourhoods of $x$. Give $\mathcal{U}_x$ the order $\leq$ by reverse inclusion. If $x \in \bar{A}$, then for any $U_\alpha \in \mathcal{U}_x$, there exists $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$. Verify that $x_\alpha → x$.</li>
-</ol>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $(x_\alpha)_{\alpha \in J}$ be a net. If $(I, \preceq)$ is a directed set, $g: (I, \preceq) → (J, \leq)$ is order-preserving, and $\operatorname{im}g$ is cofinal, then $(x_{g(\beta)})_{\beta \in I}$ is called a subnet of $(x_\alpha)$.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $X$ is compact if and only if every net has a convergent subnet.</p>
-</blockquote>
-
-<p><strong>Remark.</strong> Note that “there exists a convergent sequence” is a stronger condition than “there exists a convergent net”, but “every sequence has a convergent subsequence” is neither stronger nor weaker than “every net has a convergent subnet”. The subject (for every sequence v. for every net) is stronger in the latter case, whilst the predicate (there exists a subsequence v. there exists a subnet) is stronger in the former case. Therefore, <strong>compactness and sequential compactness have no implication relation in general.</strong> Specifically,</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-  <ol>
-    <li>Compact $\not\rightarrow$ Sequentially compact</li>
-    <li>Sequentially compact $\not\rightarrow$ Compact</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<ol>
-  <li>$[0, 1]^{[0, 1]}$ is compact by Tychonoff’s theorem but not sequentially compact.</li>
-  <li>The long line and $\omega_1$ are sequentially compact but not compact.</li>
-</ol>
 
   </div>
   <div style="margin-bottom: 6em"></div>

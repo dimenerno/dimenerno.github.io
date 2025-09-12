@@ -433,6 +433,292 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/04/02/box-v-product"> 범주론적 관점에서의 곱 위상·상자 위상과 직곱·직합의 차이 </a>
+      </h1>
+    <span class="post-date">02 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'">
+        범주론
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <h2 id="곱-위상과-상자-위상">곱 위상과 상자 위상</h2>
+
+<p>학부 위상에서 곱 위상<sub>product topology</sub>과 상자 위상<sub>box topology</sub>을 다루는 부분은 많은 학생에게 난관으로 다가오는 대목이다. 겉보기에는 상자 위상이 훨씬 직관적인데, 교재에서는 상자 위상보다 곱 위상이 다루기에 자연스러운 개념이라고 가르치기 때문이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간의 모임 $\lbrace  X_i \rbrace _{i \in I}$에 대해, <strong>상자 위상공간</strong> $\prod X_i$는 다음의 기저로 생성되는 위상공간이다.</p>
+
+\[\left\{ \prod U_i : U_i \text{ is open in } X_i \right\}\]
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간의 모임 $\lbrace  X_i \rbrace _{i \in I}$에 대해, <strong>곱 위상공간</strong> $\prod X_i$는 다음의 기저로 생성되는 위상공간이다.</p>
+
+\[\left\{ \prod U_i : U_i \text{ is open in } X_i,\;  U_i \neq X_i \text{ for only finitely many } i\right\}\]
+</blockquote>
+
+<p>일례로 $\mathbb{R}^\omega$에서 $(1, 1, 1, \dots)$의 근방은 각각 다음과 같다.</p>
+
+<p><img src="/public/box-product.png" style="width: 550px; margin: 2em auto;" /></p>
+
+<p>왜 곱 위상은 상자 위상보다 자연스러운 위상으로 간주될까? 그 이유는 범주론에서 대상의 곱을 정의하는 방법과 관련이 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X, Y$가 범주 $\mathcal{A}$의 대상이라고 하자. $P \in \mathcal{A}$와 사상 $\pi_X : P \to X$, $\pi_Y : P \to Y$에 대해, 다음 조건이 만족될 때 $P$를 $X, Y$의 <strong>곱</strong><sub>product</sub>이라고 하며, $P = X \times Y$와 같이 적는다.</p>
+
+  <ul>
+    <li>임의의 $A \in \mathcal{A}$와 $f: A \to X$, $g: A \to Y$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: A \to P$가 언제나 유일하게 존재한다.</li>
+  </ul>
+
+  <p><img src="/public/categorical-product.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<p>위의 정의는 자연스러운 방식으로 3개 이상, 또는 무한한 대상들의 곱으로 일반화된다. 극한<sub>limit</sub>의 개념이 익숙한 독자라면, 곱은 이산 범주의 극한으로 이해할 수 있다. 또는, 곱은 주어진 대상들의 정보를 온전히 인코딩하는 <em>가장 작은</em> 범주로 이해할 수 있다.</p>
+
+<p>집합들의 범주에서 곱은 곱집합과 같다. 특히 $\pi_X, \pi_Y$는 각각 $(x, y) \mapsto x$, $(x, y) \mapsto y$로 주어진다.</p>
+
+<p><strong>위상공간들의 범주에서 곱은 상자 위상이 아닌 곱 위상이다.</strong> 이는 다음의 정리로 보증된다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 사영함수 $\pi_k : \prod_{i \in I}X_i \to X_k$가 각 $k \in I$에 대해 연속이 되도록 하는 가장 작은 $\prod_{i \in I}X_i$의 위상은 곱 위상이다.</p>
+</blockquote>
+
+<p>상자 위상도 각 사영함수가 연속이라는 특징을 가지지만, 상자 위상은 곱 위상보다 <em>큰</em> 토폴로지이다. 따라서 상자 위상은 범주론적 곱이 아니다.</p>
+
+<p>상자 위상이 곱이 아님을 보이는 반례를 살펴보자. $\mathbb{R}^\omega$에 상자 위상을 부여하자. 만약 상자 위상이 범주론적 곱이라면, 임의의 연속인 $f_k: \mathbb{R} \to \mathbb{R}$에 대해 $\pi_k \circ i = f_k$가 되도록 하는 연속함수 $i : \mathbb{R} \to \mathbb{R}^\omega$가 존재해야 한다. $f_k: x \mapsto kx$라면 $i$는 $x \mapsto (x, 2x, 3x, \dots)$이다. 상자 위상에서는 $U = (0, 1)^\omega$가 열린 집합이므로, $i$가 연속이면 $i^{-1}(U)$가 열린집합이다. 그런데 $i^{-1}(U) = \lbrace 0 \rbrace $이므로, 상자 위상은 곱의 성질을 만족하지 않는다.</p>
+
+<h2 id="직곱과-직합">직곱과 직합</h2>
+
+<p>상자 위상과 곱 위상의 차이는 전체 공간이 아닌 인덱스가 유한한지의 여부에 있다. 이와 유사한 차이를 대수학에서도 발견할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 벡터 공간들의 모임 $\lbrace  V_i \rbrace _{i \in I}$에 대해, <strong>직곱<sub>direct product</sub></strong> $\prod V_i$를 다음과 같이 정의한다.</p>
+
+\[\prod V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i \right\}\]
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> 벡터 공간들의 모임 $\lbrace  V_i \rbrace _{i \in I}$에 대해, <strong>직합<sub>direct sum</sub></strong> $\bigoplus V_i$를 다음과 같이 정의한다.</p>
+
+\[\bigoplus V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i,\; v_i \neq 0 \text{ for only finitely many }i \right\}\]
+</blockquote>
+
+<p>벡터의 연산은 항별<sub>term-wise</sub>로 정의한다. 또한 벡터 공간이 아닌 군에 대해서도 같은 방식으로 직곱과 직합을 정의할 수 있다.</p>
+
+<p>직곱과 상자 위상, 직합과 곱 위상의 정의가 비슷하다는 점으로부터 직합이 범주론적 곱에 대응된다고 생각할 수 있지만 <strong>그렇지 않다.</strong> 대수의 경우 <strong>범주론적 곱에 대응되는 것은 직곱이다.</strong> 직합은 범주론적 곱의 조건을 일반적으로 만족하지 않는다.</p>
+
+<p>일례로 다음의 경우를 보자. 일차원 실수 공간 $\mathbb{R}$의 직합 $\mathbb{R}^\omega$를 고려하자. 만약 직합이 범주론적 곱이라면, 임의의 선형인 $f_k: \mathbb{R} \to \mathbb{R}$에 대해 $\pi_k \circ i = f_k$가 되도록 하는 연속함수 $i : \mathbb{R} \to \mathbb{R}^\omega$가 존재해야 한다. $f_k: x \mapsto x$라면 $i$는 $x \mapsto (x, x, x, \dots)$이다. 그런데 $i(1) = (1, 1, 1, \dots) \notin \mathbb{R}^\omega$이므로, 직합은 곱의 성질을 만족하지 않는다.</p>
+
+<p>대신 직합은 <strong>범주론적 합<sub>sum</sub></strong>에 대응된다. 범주론적 합은 곱의 켤레<sub>dual</sub>이기 때문에 쌍곱<sub>coproduct</sub>이라고도 한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X, Y$가 범주 $\mathcal{A}$의 대상이라고 하자. $S \in \mathcal{A}$와 사상 $\sigma_X : X \to S$, $\sigma_Y : Y \to S$에 대해, 다음 조건이 만족될 때 $S$를 $X, Y$의 <strong>합</strong><sub>sum</sub>이라고 하며, $S = X + Y$와 같이 적는다.</p>
+
+  <ul>
+    <li>임의의 $A \in \mathcal{A}$와 $f: X \to A$, $g: Y \to X$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: S \to A$가 언제나 유일하게 존재한다.</li>
+  </ul>
+
+  <p><img src="/public/categorical-sum.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<p>앞서 들었던 예시를 다시 보자. 직합 $\bigoplus_\omega \mathbb{R}$를 고려하자. $\sigma_k: \mathbb{R} \to \bigoplus_\omega \mathbb{R}$은 다음과 같이 주어진다.</p>
+
+\[x \mapsto (0, \dots, 0, x, 0, \dots) \quad \text{($x$ is at the $k$th index)}\]
+
+<p>$A = \mathbb{R}$이라고 하고, 항등사상 $f_k : \mathbb{R} \to \mathbb{R}$을 고려하자. $\bigoplus_\omega \mathbb{R}$가 범주론적 합이라면 $i \circ \sigma_k = f_k$가 되도록 하는 연속함수 $i : \bigoplus_\omega \mathbb{R} \to \mathbb{R}$가 존재해야 한다. 실제로 이는 다음과 같이 존재한다.</p>
+
+\[i: (x_i)_{i \in \omega} \mapsto \sum_{i \in \omega} x_i\]
+
+<p>$\bigoplus_\omega \mathbb{R}$의 원소는 오직 유한한 비자명 항을 가지므로 $i$는 잘 정의됨에 주목하라. 반면, 이 예시는 직곱 $\mathbb{R}^\omega$가 범주론적 합이 아님을 보여준다. 직곱의 경우 $i$가 잘 정의되지 않기 때문이다. 이는 $i$에 $(1, 1, 1, \dots)$를 대입해 보면 알 수 있다.</p>
+
+<p>군의 경우 범주론적 곱과 범주론적 합에 대응되는 연산은 일반적인 군의 범주를 따지냐, 아벨군의 범주를 따지냐에 따라 조금 다르다. 이 부분은 간단한 노트 정도로 남겨둔다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>대수적 정의</th>
+      <th>범주론적 정의</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>자유곱</td>
+      <td>형식적 단어의 집합 + 병치 연산</td>
+      <td>$\mathbf{Grp}$의 합</td>
+    </tr>
+    <tr>
+      <td>직합</td>
+      <td>유한한 비자명 항을 가지는 튜플의 집합 + 항별 연산</td>
+      <td>$\mathbf{Ab}$의 합</td>
+    </tr>
+    <tr>
+      <td>직곱</td>
+      <td>튜플의 집합 + 항별 연산</td>
+      <td>$\mathbf{Grp}$의 곱</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/02/box-v-product/en"> The Difference Between Product and Box Topologies, and Direct Product and Direct Sum from a Categorical Perspective </a>
+      </h1>
+    <span class="post-date">02 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'">
+        Category Theory
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <h2 id="product-topology-and-box-topology">Product Topology and Box Topology</h2>
+
+<p>Product topology and box topology often stir confusion among many undergraduate students. For, although the box topology appears more intuitive at first glance, textbooks teach that the product topology is the more “natural” concept to work with.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a collection of topological spaces $\lbrace  X_i \rbrace _{i \in I}$, the <strong>box topological space</strong> $\prod X_i$ is the topological space generated by the following basis:</p>
+
+\[\left\{ \prod U_i : U_i \text{ is open in } X_i \right\}\]
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a collection of topological spaces $\lbrace  X_i \rbrace _{i \in I}$, the <strong>product topological space</strong> $\prod X_i$ is the topological space generated by the following basis:</p>
+
+\[\left\{ \prod U_i : U_i \text{ is open in } X_i,\;  U_i \neq X_i \text{ for only finitely many } i\right\}\]
+</blockquote>
+
+<p>For instance, the neighbourhoods of $(1, 1, 1, \dots)$ in $\mathbb{R}^\omega$ are as follows:</p>
+
+<p><img src="/public/box-product.png" style="width: 550px; margin: 2em auto;" /></p>
+
+<p>Why is the product topology considered more natural than the box topology? The reason is related to how products of objects are defined in category theory.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $X, Y$ be objects in category $\mathcal{A}$. For $P \in \mathcal{A}$ and morphisms $\pi_X : P \to X$, $\pi_Y : P \to Y$, we call $P$ the <strong>product</strong> of $X, Y$ and write $P = X \times Y$ when the following condition is satisfied:</p>
+
+  <ul>
+    <li>For any $A \in \mathcal{A}$ and morphisms $f: A \to X$, $g: A \to Y$, there exists a unique morphism $i: A \to P$ such that the following diagram commutes:</li>
+  </ul>
+
+  <p><img src="/public/categorical-product.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<p>The above definition naturally generalises to products of three or more, or infinitely many objects. Readers familiar with the concept of limits will recognise that the product can be understood as the limit of a discrete category. Alternatively, the product can be understood as the <em>smallest</em> category that fully encodes the information of the given objects.</p>
+
+<p>In the category of sets, the product coincides with the Cartesian product. In particular, $\pi_X, \pi_Y$ are given by $(x, y) \mapsto x$ and $(x, y) \mapsto y$ respectively.</p>
+
+<p><strong>In the category of topological spaces, the product is the product topology, not the box topology.</strong> This is seen by the following theorem:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The smallest topology on $\prod_{i \in I}X_i$ such that the projection functions $\pi_k : \prod_{i \in I}X_i \to X_k$ are continuous for each $k \in I$ is the product topology.</p>
+</blockquote>
+
+<p>Whilst the box topology also has the property that each projection function is continuous, the box topology is a <em>larger</em> topology than the product topology. Therefore, the box topology is not the categorical product.</p>
+
+<p>Let us examine a counterexample showing that the box topology is not the categorical product. Consider $\mathbb{R}^\omega$ with the box topology. If the box topology were the categorical product, then for any continuous functions $f_k: \mathbb{R} \to \mathbb{R}$, there would exist a continuous function $i : \mathbb{R} \to \mathbb{R}^\omega$ such that $\pi_k \circ i = f_k$. If $f_k: x \mapsto kx$, then $i$ would be $x \mapsto (x, 2x, 3x, \dots)$. In the box topology, $U = (0, 1)^\omega$ is an open set, so if $i$ were continuous, then $i^{-1}(U)$ would be an open set. However, $i^{-1}(U) = \lbrace 0 \rbrace $, so the box topology does not satisfy the property of a product. (Note that in the case of product topology, $U$ is not an open set.)</p>
+
+<h2 id="direct-product-and-direct-sum">Direct Product and Direct Sum</h2>
+
+<p>The difference between the box topology and product topology lies in whether only finitely many indices are allowed to be non-trivial. A similar difference can be found in algebra.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a collection of vector spaces $\lbrace  V_i \rbrace _{i \in I}$, the <strong>direct product</strong> $\prod V_i$ is defined as follows:</p>
+
+\[\prod V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i \right\}\]
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a collection of vector spaces $\lbrace  V_i \rbrace _{i \in I}$, the <strong>direct sum</strong> $\bigoplus V_i$ is defined as follows:</p>
+
+\[\bigoplus V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i,\; v_i \neq 0 \text{ for only finitely many }i \right\}\]
+</blockquote>
+
+<p>Vector operations are defined term-wise. The same definitions of direct product and direct sum can be applied to groups as well.</p>
+
+<p>From the similarity between the definitions of direct product and box topology, and direct sum and product topology, one might think that the direct sum corresponds to the categorical product, but this is not the case. In algebra, <strong>the direct product corresponds to the categorical product.</strong> The direct sum does not generally satisfy the conditions of a categorical product.</p>
+
+<p>Consider the following example: Let us examine the direct sum $\mathbb{R}^\omega$ of one-dimensional real spaces $\mathbb{R}$. If the direct sum were the categorical product, then for any linear maps $f_k: \mathbb{R} \to \mathbb{R}$, there would exist a continuous function $i : \mathbb{R} \to \mathbb{R}^\omega$ such that $\pi_k \circ i = f_k$. If $f_k: x \mapsto x$, then $i$ would be $x \mapsto (x, x, x, \dots)$. However, $i(1) = (1, 1, 1, \dots) \notin \mathbb{R}^\omega$, so the direct sum does not satisfy the property of a product.</p>
+
+<p>Instead, the direct sum corresponds to the <strong>categorical sum</strong>. The categorical sum is also called a <strong>coproduct</strong> because it is the dual of the categorical product.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $X, Y$ be objects in category $\mathcal{A}$. For $S \in \mathcal{A}$ and morphisms $\sigma_X : X \to S$, $\sigma_Y : Y \to S$, we call $S$ the <strong>sum</strong> of $X, Y$ and write $S = X + Y$ when the following condition is satisfied:</p>
+
+  <ul>
+    <li>For any $A \in \mathcal{A}$ and morphisms $f: X \to A$, $g: Y \to A$, there exists a unique morphism $i: S \to A$ such that the following diagram commutes:</li>
+  </ul>
+
+  <p><img src="/public/categorical-sum.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<p>Let us revisit the earlier example. Consider the direct sum $\bigoplus_\omega \mathbb{R}$. The morphism $\sigma_k: \mathbb{R} \to \bigoplus_\omega \mathbb{R}$ is given by:</p>
+
+\[x \mapsto (0, \dots, 0, x, 0, \dots) \quad \text{($x$ is at the $k$th index)}\]
+
+<p>Let $A = \mathbb{R}$ and consider the identity morphism $f_k : \mathbb{R} \to \mathbb{R}$. If $\bigoplus_\omega \mathbb{R}$ is the categorical sum, then there must exist a continuous function $i : \bigoplus_\omega \mathbb{R} \to \mathbb{R}$ such that $i \circ \sigma_k = f_k$. Indeed, this exists as follows:</p>
+
+\[i: (x_i)_{i \in \omega} \mapsto \sum_{i \in \omega} x_i\]
+
+<p>Note that $i$ is well-defined because elements of $\bigoplus_\omega \mathbb{R}$ have only finitely many non-trivial terms. Conversely, this example shows that the direct product $\mathbb{R}^\omega$ is not the categorical sum. In the case of the direct product, $i$ is not well-defined. This can be seen by substituting $(1, 1, 1, \dots)$ into $i$.</p>
+
+<p>For groups, the operations corresponding to categorical products and categorical sums differ slightly depending on whether we consider the general category of groups or the category of abelian groups. I shall leave this as a brief note.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Algebraic Definition</th>
+      <th>Categorical Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Free Product</td>
+      <td>Set of formal words + concatenation operation</td>
+      <td>Sum in $\mathbf{Grp}$</td>
+    </tr>
+    <tr>
+      <td>Direct Sum</td>
+      <td>Set of tuples with finitely many non-trivial terms + term-wise operation</td>
+      <td>Sum in $\mathbf{Ab}$</td>
+    </tr>
+    <tr>
+      <td>Direct Product</td>
+      <td>Set of tuples + term-wise operation</td>
+      <td>Product in $\mathbf{Grp}$</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/04/01/modal-logic"> 양상 논리 </a>
       </h1>
     <span class="post-date">01 Apr 2025</span>
@@ -2149,489 +2435,6 @@
 <h2 id="5-결론">5. 결론</h2>
 
 <p>결론적으로 논문의 저자는 참에 대한 이론이 의미에 대한 이론과 직결되어 있어야 한다는 요구는 부당하다고 주장함으로써 타르스키의 참 정의와, 그것이 함의하는 참에 대한 축소주의<sub>deflationism</sub>를 옹호한다. 이것이 참에 대한 이론이 불필요함을 의미하지는 않는다. 크립키의 참 이론은 타르스키의 참 이론을 실질적으로 발전시켰다. 그러나 그 발전은 이미 우리에게 익숙한 참의 성질들을 T-스키마로써 정확히 해명하고, 올바르게 설계된 형태론으로 거짓말쟁이 역설과 같은 모순을 회피하는 데 있다. 참에 대한 이론으로부터 이 이상을 기대하는 것은 바람직하지 않다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/03/10/temporal-logic"> 시제 논리 </a>
-      </h1>
-    <span class="post-date">10 Mar 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/철학/'">
-        철학
-      </div>
-      
-    </div>
-     <h2 id="도입">도입</h2>
-
-<p>다음의 세 문장을 보자.</p>
-
-<ol>
-  <li>가영이는 언젠가 등교할 것이다.</li>
-  <li>나영이는 언젠가 등교할 것이다.</li>
-  <li>나영이는 가영이가 등교하기 전에 등교하지 않는다.</li>
-</ol>
-
-<p>위로부터 다음을 추론할 수 있다.</p>
-
-<p>   4. 가영이가 먼저 등교하고 나영이가 등교할 것이다.</p>
-
-<p>그러나 고전 논리는 — 적어도 표면적으로는 — 위의 추론 관계를 함의하지 않는다. 따라서 우리에게 필요한 것은 시간에 대해 추론할 수 있는 논리학, 즉 <strong>시제 논리<sub>temporal logic</sub></strong>이다.</p>
-
-<h2 id="1-고전적-시제-논리">1. 고전적 시제 논리</h2>
-
-<h3 id="11-의미론">1.1. 의미론</h3>
-
-<p>시제 논리를 정의하는 길은 두 가지가 있다. 첫째는 고전 논리에 특정 구조를 부과함으로써 시제 논리를 얻는 것이다. 이 방법을 먼저 알아보자.</p>
-
-<p>시제 논리의 부호수<sub>signature</sub>는 하나의 이항 관계 $\prec$와, 0개 이상의 일항 술어 $P, Q, \dots$로 이루어져 있다. 시제 논리의 모델은 다음과 같다. (이 모델을 <strong>크립키<sub>Kripke</sub> 모델</strong>이라고 한다)</p>
-
-\[\mathcal{T} = (T, \prec^\mathcal{T}, P^\mathcal{T}, Q^\mathcal{T}, \dots)\]
-
-<ul>
-  <li>전체<sub>universe</sub> $T$: 상정하는 모든 순간을 의미한다.</li>
-  <li>$t_1 \prec^\mathcal{T} t_2$: $t_1$이 $t_2$보다 과거라는 의미이다.</li>
-  <li>$P^\mathcal{T}(t)$: $P$가 시점 $t$에서 참이라는 의미이다.</li>
-</ul>
-
-<p>예를 들어 어제, 오늘, 그리고 내일만을 고려하는 시제 논리의 경우 $T = \lbrace  -1, 0, 1 \rbrace $로 둘 수 있다. 고전 역학은 $T = \mathbb{R}$을 간주한다.</p>
-
-<p>가영이가 등교하는 사건을 $A$, 나영이가 등교하는 사건을 $B$라고 하면 도입의 3은 다음과 같이 쓸 수 있다.</p>
-
-\[\forall t_1 \forall t_2 \; \big( A(t_1) \land B(t_2) \rightarrow t_1 \prec t_2 \big)\]
-
-<p>$\phi$가 하나의 자유변수 $x$를 가지는 문장이라고 하자. $t \in T$를 <em>현재</em>로 뒀을 때 $\phi$가 참이라는 것을, $\mathcal{T} \vDash \phi[t]$와 같이 적는다.</p>
-
-<h3 id="12-프레임">1.2. 프레임</h3>
-
-<p>집합과, 그 위에 정의된 이항 관계의 쌍 $(T, \prec)$를 <strong>프레임<sub>frame</sub></strong>이라고 부른다. $\mathbf{F}$가 프레임의 모임<sub>class</sub>이라고 하자. $(T, \prec) \in \mathbf{F}$인 임의의 모델 $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$와 임의의 $t \in T$에 대해 $\mathcal{T} \vDash \phi[t]$일 때, $\phi$가 $\mathbf{F}$에 대해 참이라고 한다.</p>
-
-<p>$\mathbf{F}$가 특정 성질을 가질 것을 요구함으로써 시간의 특징을 포착할 수 있다. 다음과 같은 성질을 요구할 수 있다.</p>
-
-<ul>
-  <li>추이성<sub>transitivity</sub>: 임의의 서로 다른 $t_1, t_2, t_3 \in T$에 대해 $t_1 \prec t_2, t_2 \prec t_3$라면 $t_1 \prec t_3$이다.</li>
-  <li>선형성<sub>linearity</sub>: 임의의 서로 다른 $t_1, t_2 \in T$에 대해 $t_1 \prec t_2$이거나 $t_2 \prec t_1$이다.</li>
-  <li>조밀성<sub>denseness</sub>: 임의의 서로 다른 $t_1, t_2 \in T$에 대해 어떤 $t_3 \in T$가 존재하여 $t_1 \prec t_3 \prec t_2$이다.</li>
-  <li>우 연장성<sub>R-extendability</sub>: 임의의 $t \in T$에 대해 어떤 $t’ \in T$가 존재하여 $t \prec t’$이다.</li>
-  <li>좌 연장성<sub>L-extendability</sub>: 임의의 $t \in T$에 대해 어떤 $t’ \in T$가 존재하여 $t’ \prec t$이다.</li>
-</ul>
-
-<p>도입의 논증은 선형 프레임에 대해 참임을 보일 수 있다.</p>
-
-<h2 id="2-독립적-시제-논리">2. 독립적 시제 논리</h2>
-
-<p>시제 논리를 정의하는 두 번째 방식은 시제 논리에 특수한 논리 기호를 도입하는 것이다. 각각 다음과 같이 읽는다.</p>
-
-<ul>
-  <li>$\mathsf{F}p$: 언젠가 $p$일 것이다<sub>Future p</sub></li>
-  <li>$\mathsf{P}p$: 언젠가 $p$였다<sub>Past p</sub></li>
-  <li>$\mathsf{G}p$: 언제나 $p$일 것이다<sub>Going to always be p</sub></li>
-  <li>$\mathsf{H}p$: 언제나 $p$였다<sub>Has always been p</sub></li>
-</ul>
-
-<p>$\mathsf{F}, \mathsf{P}, \mathsf{G}, \mathsf{H}$의 관계는 다음과 같다.</p>
-
-<ul>
-  <li>$\mathsf{F}p \equiv \lnot\mathsf{G}\lnot p$</li>
-  <li>$\mathsf{P}p \equiv \lnot\mathsf{H}\lnot p$</li>
-</ul>
-
-<p>독립적 시제 논리의 명제는 <strong>메레디스 번역<sub>Meredith translation</sub></strong>을 통해 언제나 고전적 시제 논리의 명제로 변환할 수 있다. 예를 들어 $\mathsf{G}p$는 $\forall x \succ t \; p(x)$로 번역된다. 그러나 역은 성립하지 않는다. 따라서 독립적 시제 논리는 고전적 시제 논리보다 표현력이 약하다. 그럼에도 독립적 시제 논리가 연구할 만한 주제인 이유는, 표현력을 일부 포기하는대가로 결정 가능성, 완전성 등의 좋은 성질을 얻을 수 있을 뿐더러, 양상 논리와의 연결 고리를 제공하는 등 철학적 의의 또한 크기 때문이다.</p>
-
-<p>독립적 시제 논리의 모델은 종속적 시제 논리와 마찬가지로 $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$이다. 만족 관계는 자연스럽게 정의한다. 예를 들어,</p>
-
-<ul>
-  <li>$\mathcal{T} \vDash \mathsf{F}p[t] \iff$ 어떤 $t \prec t’$에 대해, $\mathcal{T} \vDash p[t’]$</li>
-</ul>
-
-<h2 id="3-시제-공리">3. 시제 공리</h2>
-
-<p>지금까지 시제 논리의 의미론을 살펴 보았다. 이제 시제 논리의 증명을 살펴본다.</p>
-
-<h3 id="31-최소-시제-논리">3.1. 최소 시제 논리</h3>
-
-<p>최소 시제 논리 $L_0$는 다음의 공리로 이루어져 있다.</p>
-
-<ul>
-  <li>$\tau$가 명제 논리의 항진명제일 때, $\tau$</li>
-  <li>$\mathsf{G}(\phi \to \psi) \to (\mathsf{G}\phi \to \mathsf{G}\psi)$</li>
-  <li>$\mathsf{H}(\phi \to \psi) \to (\mathsf{H}\phi \to \mathsf{H}\psi)$</li>
-  <li>$\phi \to \mathsf{GP}\phi$</li>
-  <li>$\phi \to \mathsf{HF}\phi$</li>
-</ul>
-
-<p>그리고 다음의 추론 규칙으로 이루어져 있다.</p>
-
-<ul>
-  <li><strong>MP</strong> $\vdash \phi, \phi \to \psi \implies \vdash \psi$</li>
-  <li><strong>TG1:</strong> $\vdash \phi \implies \vdash \mathsf{G}\phi$</li>
-  <li><strong>TG2:</strong> $\vdash \phi \implies \vdash \mathsf{H}\phi$</li>
-</ul>
-
-<p>MP는 Modus Ponens, TG는 Temporal Generalisation의 약어이다.</p>
-
-<p>TG가 $\vdash \phi \to \mathsf{G}\phi$를 의미하지 않는다는 사실에 유의하라. TG는 <em>논리적으로 증명된 명제 $\phi$에 한해,</em> $\mathsf{G}\phi$ 또는 $\mathsf{H}\phi$를 도출할 수 있다는 의미이다. 즉, TG는 논리적 명제가 시간과 무관하다는 의미이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $L_0$는 건전하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 명제 논리의 건전성 정리와 거의 동일하게, 논리식의 형태에 대한 귀납법으로 증명한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $L_0$에서 증명 가능성은 다음 규칙에 대해 닫혀 있다.</p>
-
-  <ol>
-    <li><strong>거울 규칙<sub>mirror rule</sub>:</strong> 명제 $\phi$에 등장하는 $\mathsf{G}$와 $\mathsf{H}$, $\mathsf{F}$와 $\mathsf{P}$를 서로 바꾼 명제를 거울 명제 $\bar{\phi}$라고 하자. $\vdash \phi$라면 $\vdash \bar{\phi}$이다.</li>
-    <li><strong>베커 규칙<sub>Becker’s rule</sub>:</strong> $\mathsf{T}$가 $\mathsf{G, H, F, P}$ 중 하나라고 하자. $\vdash \phi \to \psi$라면 $\vdash \mathsf{T}\phi \to \mathsf{T}\psi$이다.</li>
-    <li><strong>쌍대 규칙<sub>dual rule</sub>:</strong> 명제 $\phi$에 등장하는 $\land$와 $\lor$, $\mathsf{G}$와 $\mathsf{F}$, $\mathsf{H}$와 $\mathsf{P}$를 서로 바꾼 명제를 쌍대 명제 $\phi^\ast$라고 하자. $\vdash \phi$라면 $\vdash \phi^\ast$이다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> 연습문제 (^^)</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $L_0$는 모든 프레임의 모임 $\mathbf{F}_0$에 대해 완전하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> TODO</p>
-
-<h3 id="32-고전역학의-시제-논리">3.2. 고전역학의 시제 논리</h3>
-
-<p>추이성, 선형성, 조밀성, 좌우 연장성을 가지는 프레임들의 모임 $\mathbf{F}_1$을 고려하자. $\mathbf{F}_1$은 고전역학에서 상정하는 시간이다. $\mathbf{F}_1$에서 건전하고 완전한 공리계를 찾아 보자.</p>
-
-<p>고전역학의 시제 논리 $L_1$은 $L_0$에 다음 공리를 추가한 것이다.</p>
-
-<ul>
-  <li>$\mathsf{G} p \to \mathsf{GG}p$ (추이성)</li>
-  <li>$(\mathsf{P}p \land \mathsf{P}q) \to (\mathsf{P}(p \land \mathsf{P}q) \lor \mathsf{P}(p \land q) \lor \mathsf{P}(\mathsf{P}p \land q))$ (좌 선형성)</li>
-  <li>$(\mathsf{F}p \land \mathsf{F}q) \to (\mathsf{F}(p \land \mathsf{F}q) \lor \mathsf{F}(p \land q) \lor \mathsf{F}(\mathsf{F}p \land q))$ (우 선형성)</li>
-  <li>$\mathsf{H}p \to \mathsf{P}p$ (좌 연장성)</li>
-  <li>$\mathsf{G}p \to \mathsf{F}p$ (우 연장성)</li>
-  <li>$\mathsf{GG}p \to \mathsf{G}p$ (조밀성)</li>
-</ul>
-
-<blockquote>
-  <p><strong>햄린<sub>Hamblin</sub>의 정리.</strong> $L_1$에서 시제 기호의 조합은 14가지 시제 중 하나와 동치이다. 14가지 시제는 $\mathsf{FH, H, PH, HP, P, GP}$와 $\mathsf{PG, G, FG, GF, F, HF}$, 그리고 $\mathsf{GH} = \mathsf{HG}$와 $\mathsf{FP} = \mathsf{PF}$이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 추이적 프레임에서 $\mathsf{PP}$와 같이 중첩된 시제는 단일 시제 $\mathsf{P}$와 동치임을 쉽게 보일 수 있다. 따라서 $\mathsf{X} \neq \mathsf{Y}$, $\mathsf{Y} \neq \mathsf{Z}$인 시제들의 조합 $\mathsf{XYZ}$은 어떤 두 시제 조합과 동치임을 보이면 된다. 거울 규칙과 쌍대 규칙에 의해 $\mathsf{Z} = \mathsf{G}$인 경우만 고려하면 된다. 한편 $\mathsf{XY}$와 $\mathsf{X’Y’}$가 서로 동치가 아니라는 것을 보이기 위해서는 함의 관계가 성립하지 않는 크립키 모델을 찾으면 된다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $L_1$은 $\mathbf{F}_1$에 대해 완전하다.</p>
-</blockquote>
-
-<h2 id="4-시제-술어-논리">4. 시제 술어 논리</h2>
-
-<p>고전 논리학에서 술어 논리는 명제 논리에 다음 공리를 추가한 것이다.</p>
-
-<ul>
-  <li>$\forall x \phi \to \phi[y/x]$ (단, $y$는 $\phi$에서 $x$에 대해 자유)</li>
-  <li>$\forall x (\phi \to \psi) \to (\phi \to \forall x \psi)$ (단, $x$는 $\phi$의 자유변수가 아님)</li>
-  <li>$x = x$</li>
-  <li>$x = y \to (\phi[x/z] \to \phi[y / z]$) (단, $x, y$는 $\phi$에서 $z$에 대해 자유)</li>
-</ul>
-
-<p>그리고 다음의 추론 규칙을 추가한다.</p>
-
-<ul>
-  <li><strong>UG<sub>Universal Generalisation</sub>:</strong> $\vdash \phi \implies \vdash \forall x \phi$</li>
-</ul>
-
-<p>시제 논리 $L_0$에 상술한 공리들과 추론 규칙을 추가한 논리 체계를 시제 술어 논리 $L_P$라고 하자.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $L_P$는 다음을 증명한다.</p>
-
-  <ul>
-    <li><strong>정 바르칸<sub>direct Barcan</sub>:</strong> $\forall x \mathsf{G}\phi \to \mathsf{G}\forall x \phi$</li>
-    <li><strong>역 바르칸<sub>converse Barcan</sub>:</strong> $\mathsf{G}\forall x \phi \to \forall x \mathsf{G} \phi$</li>
-    <li><strong>동일성의 영속성<sub>permanence of identity</sub>:</strong> $x = y \to \mathsf{G}(x = y)$</li>
-  </ul>
-</blockquote>
-
-<p><strong>증명.</strong> 역 바르칸 명제만 증명해 보자.</p>
-
-\[\begin{aligned}
-&amp;1.  &amp;&amp;\forall x \phi \to \phi &amp;&amp;&amp;\text{Axiom} \\
-&amp;2. &amp;&amp;\mathsf{G}\forall x \phi \to \mathsf{G} \phi &amp;&amp;&amp;\text{Becker}\\
-&amp;3. &amp;&amp;\forall x (\mathsf{G}\forall x \phi \to \mathsf{G}\phi) &amp;&amp;&amp;\text{2, UG}\\
-&amp;4. &amp;&amp;\forall x (\mathsf{G}\forall x \phi \to \mathsf{G}\phi) \to (\mathsf{G}\forall x \phi \to \forall x \mathsf{G}\phi) &amp;&amp;&amp;\text{Axiom}\\
-&amp;5. &amp;&amp;\mathsf{G}\forall x \phi \to \forall x \mathsf{G} \phi \quad &amp;&amp;&amp;\text{3, 4, MP} \\
-&amp; \blacksquare
-\end{aligned}\]
-
-<p>자연 언어로 풀어 쓰자면,</p>
-
-<ul>
-  <li>정 바르칸: 현재 존재하는 모든 대상이 언제나 ____라고 하자. 그러면 임의의 미래 시점에 대해, 그때 존재하는 모든 대상은 ____이다.</li>
-  <li>역 바르칸: 임의의 미래 시점에서 대해, 그때 존재하는 모든 대상은 ____라고 하자. 그러면 현재 존재하는 모든 대상이 언제나 ____이다.</li>
-  <li>동일성의 영속성: 동일한 두 대상은 언제나 동일하다.</li>
-</ul>
-
-<p>동일성의 영속성은 시제 논리에서 상수가 고정 지시어<sub>rigid designator</sub>처럼 행동한다고 직관적으로 올바르다. 그러나 바르칸 명제는 직관적으로 틀렸다. 일례로 $\phi(x)$를 “$x$가 존재한다”로 치환해 보자.</p>
-
-<ul>
-  <li>역 바르칸: ① 임의의 미래 시점에서 대해, 그때 존재하는 모든 대상은 존재한다고 하자. ② 그러면 현재 존재하는 모든 대상이 언제나 존재한다.</li>
-</ul>
-
-<p>하지만 이 명제는 틀렸다. ①은 자명하게 성립하지만, 현재 존재하는 모든 대상이 영원히 존재할 것은 아니므로 ②는 성립하지 않기 때문이다. 따라서 역 바르칸 명제는 문제적이다.</p>
-
-<p>$L_P$가 바르칸 명제 같은 병리적 명제를 도출하는 이유는 TG가 열린 명제에 대해 유효하지 않기 때문이다(TG는 베커 규칙의 증명에 필요하다. 즉, 증명의 문제는 2단계에 있다). 앞서 말했듯이 TG는 논리적으로 참인 명제는 시간에 상관 없이 참이라는 의미이다. 그러나 열린 명제는 참도 아니고 거짓도 아니다. 열린 명제는 특정 대상에 의해 만족되거나, 만족되지 않기 때문이다.</p>
-
-<p>이 문제를 극복하기 위해 TG를 닫힌 명제에 대해서만 적용 가능하도록 제안하는 방안을 강구할 수 있으나, 제한된 시제 술어 논리는 일부 바람직한 명제를 증명하지 못함이 알려져 있다. 건전하면서도 완전한 시제 술어 논리를 만드는 작업은 아직도 해결되지 않은 문제이다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/03/10/temporal-logic/en"> Temporal Logic </a>
-      </h1>
-    <span class="post-date">10 Mar 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/philosophy/'">
-        Philosophy
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h2 id="introduction">Introduction</h2>
-
-<p>Consider the following three statements.</p>
-
-<ol>
-  <li>Gayeong will go to school at some point.</li>
-  <li>Nayeong will go to school at some point.</li>
-  <li>Nayeong will not go to school before Gayeong goes to school.</li>
-</ol>
-
-<p>From these, we can infer the following.</p>
-
-<p>   4. Gayeong will go to school first, and then Nayeong will go to school.</p>
-
-<p>However, classical logic—at least superficially—does not entail the above inference relation. Therefore, what we need is a logic that can reason about time, namely <strong>temporal logic</strong>.</p>
-
-<h2 id="1-classical-temporal-logic">1. Classical Temporal Logic</h2>
-
-<h3 id="11-semantics">1.1. Semantics</h3>
-
-<p>There are two ways to define temporal logic. The first is to obtain temporal logic by imposing a particular structure on classical logic. Let us examine this method first.</p>
-
-<p>The signature of temporal logic consists of one binary relation $\prec$ and zero or more unary predicates $P, Q, \dots$. A model of temporal logic is as follows. (This model is called a <strong>Kripke model</strong>.)</p>
-
-\[\mathcal{T} = (T, \prec^\mathcal{T}, P^\mathcal{T}, Q^\mathcal{T}, \dots)\]
-
-<ul>
-  <li>Universe $T$: represents all the moments under consideration.</li>
-  <li>$t_1 \prec^\mathcal{T} t_2$: means that $t_1$ is earlier than $t_2$.</li>
-  <li>$P^\mathcal{T}(t)$: means that $P$ is true at time $t$.</li>
-</ul>
-
-<p>For example, in temporal logic considering only yesterday, today, and tomorrow, we can set $T = \lbrace  -1, 0, 1 \rbrace $. Classical mechanics considers $T = \mathbb{R}$.</p>
-
-<p>If we let $A$ denote the event of Gayeong going to school and $B$ denote the event of Nayeong going to school, then statement 3 from the introduction can be written as follows.</p>
-
-\[\forall t_1 \forall t_2 \; \big( A(t_1) \land B(t_2) \rightarrow t_1 \prec t_2 \big)\]
-
-<p>Let $\phi$ be a formula with one free variable $x$. When $\phi$ is true with $t \in T$ taken as the <em>present</em>, we write this as $\mathcal{T} \vDash \phi[t]$.</p>
-
-<h3 id="12-frames">1.2. Frames</h3>
-
-<p>A pair $(T, \prec)$ consisting of a set and a binary relation defined on it is called a <strong>frame</strong>. Let $\mathbf{F}$ be a class of frames. When $\mathcal{T} \vDash \phi[t]$ for any model $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$ with $(T, \prec) \in \mathbf{F}$ and any $t \in T$, we say that $\phi$ is true with respect to $\mathbf{F}$.</p>
-
-<p>By requiring $\mathbf{F}$ to have certain properties, we can capture characteristics of time. The following properties can be required:</p>
-
-<ul>
-  <li>Transitivity: for any distinct $t_1, t_2, t_3 \in T$, if $t_1 \prec t_2$ and $t_2 \prec t_3$, then $t_1 \prec t_3$.</li>
-  <li>Linearity: for any distinct $t_1, t_2 \in T$, either $t_1 \prec t_2$ or $t_2 \prec t_1$.</li>
-  <li>Density: for any distinct $t_1, t_2 \in T$, there exists some $t_3 \in T$ such that $t_1 \prec t_3 \prec t_2$.</li>
-  <li>Right-extendability: for any $t \in T$, there exists some $t’ \in T$ such that $t \prec t’$.</li>
-  <li>Left-extendability: for any $t \in T$, there exists some $t’ \in T$ such that $t’ \prec t$.</li>
-</ul>
-
-<p>The argument from the introduction can be shown to be valid with respect to linear frames.</p>
-
-<h2 id="2-independent-temporal-logic">2. Independent Temporal Logic</h2>
-
-<p>The second way to define temporal logic is to introduce logical symbols specific to temporal logic. Each is read as follows:</p>
-
-<ul>
-  <li>$\mathsf{F}p$: Future $p$ (at some point $p$ will be the case)</li>
-  <li>$\mathsf{P}p$: Past $p$ (at some point $p$ was the case)</li>
-  <li>$\mathsf{G}p$: Going to always be $p$ (always $p$ will be the case)</li>
-  <li>$\mathsf{H}p$: Has always been $p$ (always $p$ was the case)</li>
-</ul>
-
-<p>The relationships between $\mathsf{F}, \mathsf{P}, \mathsf{G}, \mathsf{H}$ are as follows:</p>
-
-<ul>
-  <li>$\mathsf{F}p \equiv \lnot\mathsf{G}\lnot p$</li>
-  <li>$\mathsf{P}p \equiv \lnot\mathsf{H}\lnot p$</li>
-</ul>
-
-<p>Propositions of independent temporal logic can always be translated into propositions of classical temporal logic through the <strong>Meredith translation</strong>. For example, $\mathsf{G}p$ is translated as $\forall x \succ t \; p(x)$. However, the converse does not hold. Therefore, independent temporal logic has weaker expressive power than classical temporal logic. Nevertheless, independent temporal logic is a subject worth studying because, in exchange for sacrificing some expressive power, one can obtain good properties such as decidability and completeness, and it also provides connections to modal logic, amongst other significant philosophical merits.</p>
-
-<p>The model of independent temporal logic is $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$, the same as dependent temporal logic. The satisfaction relation is defined naturally. For example,</p>
-
-<ul>
-  <li>$\mathcal{T} \vDash \mathsf{F}p[t] \iff$ for some $t \prec t’$, $\mathcal{T} \vDash p[t’]$</li>
-</ul>
-
-<h2 id="3-temporal-axioms">3. Temporal Axioms</h2>
-
-<p>So far we have examined the semantics of temporal logic. Now let us examine proofs in temporal logic.</p>
-
-<h3 id="31-minimal-temporal-logic">3.1. Minimal Temporal Logic</h3>
-
-<p>The minimal temporal logic $L_0$ consists of the following axioms:</p>
-
-<ul>
-  <li>When $\tau$ is a tautology of propositional logic, $\tau$</li>
-  <li>$\mathsf{G}(\phi \to \psi) \to (\mathsf{G}\phi \to \mathsf{G}\psi)$</li>
-  <li>$\mathsf{H}(\phi \to \psi) \to (\mathsf{H}\phi \to \mathsf{H}\psi)$</li>
-  <li>$\phi \to \mathsf{GP}\phi$</li>
-  <li>$\phi \to \mathsf{HF}\phi$</li>
-</ul>
-
-<p>And it consists of the following inference rules:</p>
-
-<ul>
-  <li><strong>MP</strong> $\vdash \phi, \phi \to \psi \implies \vdash \psi$</li>
-  <li><strong>TG1:</strong> $\vdash \phi \implies \vdash \mathsf{G}\phi$</li>
-  <li><strong>TG2:</strong> $\vdash \phi \implies \vdash \mathsf{H}\phi$</li>
-</ul>
-
-<p>MP is an abbreviation for Modus Ponens, and TG is an abbreviation for Temporal Generalisation.</p>
-
-<p>Note that TG does not mean $\vdash \phi \to \mathsf{G}\phi$. TG means that <em>only for logically proven propositions $\phi$,</em> one can derive $\mathsf{G}\phi$ or $\mathsf{H}\phi$. That is, TG means that logical propositions are independent of time.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $L_0$ is sound.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> The proof is by induction on the form of logical formulae, almost identical to the soundness theorem for propositional logic.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Provability in $L_0$ is closed under the following rules:</p>
-
-  <ol>
-    <li><strong>Mirror rule:</strong> Let the mirror proposition $\bar{\phi}$ be the proposition obtained by swapping $\mathsf{G}$ with $\mathsf{H}$ and $\mathsf{F}$ with $\mathsf{P}$ in proposition $\phi$. If $\vdash \phi$, then $\vdash \bar{\phi}$.</li>
-    <li><strong>Becker’s rule:</strong> Let $\mathsf{T}$ be one of $\mathsf{G, H, F, P}$. If $\vdash \phi \to \psi$, then $\vdash \mathsf{T}\phi \to \mathsf{T}\psi$.</li>
-    <li><strong>Dual rule:</strong> Let the dual proposition $\phi^\ast$ be the proposition obtained by swapping $\land$ with $\lor$, $\mathsf{G}$ with $\mathsf{F}$, and $\mathsf{H}$ with $\mathsf{P}$ in proposition $\phi$. If $\vdash \phi$, then $\vdash \phi^\ast$.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong> Exercise (^^)</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $L_0$ is complete with respect to the class of all frames $\mathbf{F}_0$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> TODO</p>
-
-<h3 id="32-temporal-logic-of-classical-mechanics">3.2. Temporal Logic of Classical Mechanics</h3>
-
-<p>Consider the class $\mathbf{F}_1$ of frames that have transitivity, linearity, density, and left and right extendability. $\mathbf{F}_1$ represents time as postulated in classical mechanics. Let us find an axiom system that is sound and complete for $\mathbf{F}_1$.</p>
-
-<p>The temporal logic of classical mechanics $L_1$ is obtained by adding the following axioms to $L_0$:</p>
-
-<ul>
-  <li>$\mathsf{G} p \to \mathsf{GG}p$ (transitivity)</li>
-  <li>$(\mathsf{P}p \land \mathsf{P}q) \to (\mathsf{P}(p \land \mathsf{P}q) \lor \mathsf{P}(p \land q) \lor \mathsf{P}(\mathsf{P}p \land q))$ (left linearity)</li>
-  <li>$(\mathsf{F}p \land \mathsf{F}q) \to (\mathsf{F}(p \land \mathsf{F}q) \lor \mathsf{F}(p \land q) \lor \mathsf{F}(\mathsf{F}p \land q))$ (right linearity)</li>
-  <li>$\mathsf{H}p \to \mathsf{P}p$ (left extendability)</li>
-  <li>$\mathsf{G}p \to \mathsf{F}p$ (right extendability)</li>
-  <li>$\mathsf{GG}p \to \mathsf{G}p$ (density)</li>
-</ul>
-
-<blockquote>
-  <p><strong>Hamblin’s theorem.</strong> In $L_1$, combinations of temporal symbols are equivalent to one of 14 tenses. The 14 tenses are $\mathsf{FH, H, PH, HP, P, GP}$ and $\mathsf{PG, G, FG, GF, F, HF}$, together with $\mathsf{GH} = \mathsf{HG}$ and $\mathsf{FP} = \mathsf{PF}$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> In transitive frames, nested tenses such as $\mathsf{PP}$ can easily be shown to be equivalent to the single tense $\mathsf{P}$. Therefore, it suffices to show that combinations $\mathsf{XYZ}$ of tenses where $\mathsf{X} \neq \mathsf{Y}$ and $\mathsf{Y} \neq \mathsf{Z}$ are equivalent to some combination of two tenses. By the mirror rule and dual rule, we need only consider the case where $\mathsf{Z} = \mathsf{G}$. Meanwhile, to show that $\mathsf{XY}$ and $\mathsf{X’Y’}$ are not equivalent to each other, one can find a Kripke model where the implication relation does not hold.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $L_1$ is complete with respect to $\mathbf{F}_1$.</p>
-</blockquote>
-
-<h2 id="4-temporal-predicate-logic">4. Temporal Predicate Logic</h2>
-
-<p>In classical logic, predicate logic is obtained by adding the following axioms to propositional logic:</p>
-
-<ul>
-  <li>$\forall x \phi \to \phi[y/x]$ (provided $y$ is free for $x$ in $\phi$)</li>
-  <li>$\forall x (\phi \to \psi) \to (\phi \to \forall x \psi)$ (provided $x$ is not a free variable of $\phi$)</li>
-  <li>$x = x$</li>
-  <li>$x = y \to (\phi[x/z] \to \phi[y / z]$) (provided $x, y$ are free for $z$ in $\phi$)</li>
-</ul>
-
-<p>And the following inference rule is added:</p>
-
-<ul>
-  <li><strong>UG (Universal Generalisation):</strong> $\vdash \phi \implies \vdash \forall x \phi$</li>
-</ul>
-
-<p>The logical system obtained by adding the aforementioned axioms and inference rule to temporal logic $L_0$ is called temporal predicate logic $L_P$.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $L_P$ proves the following:</p>
-
-  <ul>
-    <li><strong>Direct Barcan:</strong> $\forall x \mathsf{G}\phi \to \mathsf{G}\forall x \phi$</li>
-    <li><strong>Converse Barcan:</strong> $\mathsf{G}\forall x \phi \to \forall x \mathsf{G} \phi$</li>
-    <li><strong>Permanence of identity:</strong> $x = y \to \mathsf{G}(x = y)$</li>
-  </ul>
-</blockquote>
-
-<p><strong>Proof.</strong> Let us prove only the converse Barcan formula.</p>
-
-\[\begin{aligned}
-&amp;1.  &amp;&amp;\forall x \phi \to \phi &amp;&amp;&amp;\text{Axiom} \\
-&amp;2. &amp;&amp;\mathsf{G}\forall x \phi \to \mathsf{G} \phi &amp;&amp;&amp;\text{Becker}\\
-&amp;3. &amp;&amp;\forall x (\mathsf{G}\forall x \phi \to \mathsf{G}\phi) &amp;&amp;&amp;\text{2, UG}\\
-&amp;4. &amp;&amp;\forall x (\mathsf{G}\forall x \phi \to \mathsf{G}\phi) \to (\mathsf{G}\forall x \phi \to \forall x \mathsf{G}\phi) &amp;&amp;&amp;\text{Axiom}\\
-&amp;5. &amp;&amp;\mathsf{G}\forall x \phi \to \forall x \mathsf{G} \phi \quad &amp;&amp;&amp;\text{3, 4, MP} \\
-&amp; \blacksquare
-\end{aligned}\]
-
-<p>In natural language terms:</p>
-
-<ul>
-  <li>Direct Barcan: suppose that all objects currently existing will always be ____. Then for any future time point, all objects existing at that time will be ____.</li>
-  <li>Converse Barcan: suppose that for any future time point, all objects existing at that time will be ____. Then all objects currently existing will always be ____.</li>
-  <li>Permanence of identity: two identical objects are always identical.</li>
-</ul>
-
-<p>The permanence of identity is intuitively correct, as constants behave like rigid designators in temporal logic. However, the Barcan formulae are intuitively false. As an example, let us substitute “$x$ exists” for $\phi(x)$.</p>
-
-<ul>
-  <li>Converse Barcan: ① suppose that for any future time point, all objects existing at that time exist. ② Then all objects currently existing will always exist.</li>
-</ul>
-
-<p>But this proposition is false. ① holds trivially, but ② does not hold since not all objects currently existing will exist forever. Therefore, the converse Barcan formula is problematic.</p>
-
-<p>The reason $L_P$ derives pathological propositions like the Barcan formulae is that TG is not valid for open formulae (TG is needed for the proof of Becker’s rule. That is, the problem in the proof is at step 2). As mentioned earlier, TG means that logically true propositions are true regardless of time. However, open formulae are neither true nor false. Open formulae are satisfied or not satisfied by particular objects.</p>
-
-<p>To overcome this problem, one might propose restricting TG to apply only to closed formulae, but it is known that restricted temporal predicate logic fails to prove some desirable propositions. The task of creating a temporal predicate logic that is both sound and complete remains an unsolved problem.</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

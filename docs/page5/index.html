@@ -433,6 +433,201 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/04/20/cardinality"> 기수의 정의에 관한 노트 </a>
+      </h1>
+    <span class="post-date">20 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>정의.</strong> $X$에서 $Y$로 가는 단사 사상이 존재할 때, $|X| \leq |Y|$라고 적는다. 전단사 사상이 존재할 때, $|X| = |Y|$라고 적는다.</p>
+</blockquote>
+
+<p>집합론을 처음 공부하는 학생들이 흔히 하는 오해는, 위 정의의 $|\cdot|$과 $\leq$를 복소수에서의 $|\cdot|$과 $\leq$와 유사한 것으로 은연 중에 취급하는 것이다. 요컨대 복소수 $z$에 대해 $|z|$가 실수이고 $\leq$가 실수의 대소 관계이듯이, 집합 $X$에 대해 $|X|$는 집합의 크기 — 이른바 <strong>기수<sub>cardinality</sub></strong>이고, $\leq$는 기수의 대소 관계라고 생각하는 것이다.</p>
+
+<p>그러나 이는 문제의 여지가 많은 접근이다. 왜냐하면 위 정의만으로는 <strong><u>기수라는 수학적 대상</u>을 정의할 수 있다는 보장이 없기 때문이다.</strong> 우리가 정의한 것은 이항 관계에 불과하다.</p>
+
+<p>이해를 위한 예시를 들어보자. $A$가 $B$를 좋아할 때, $|A| \leq |B|$라고 적을 수 있을 것이다. 그러나 이렇게 적었다고 해서, $|A|$는 ‘$A$의 호감도’를 의미하며 $\leq$가 호감도의 대소 관계라고 해석한다면 완전히 틀린 것이다. 이와 마찬가지로 $|X| \leq |Y|$는 단사 관계의 유무로 정의되는 이항 관계일 뿐, 이 관계 자체가 기수의 개념을 시사하는 것은 아니다.</p>
+
+<p>특히 ZFC에서는 모든 것이 집합이기 때문에, 만약 기수를 정의하고 싶다면 다음의 사실을 논증해야 한다.</p>
+
+<blockquote>
+  <p><strong>정리 1.</strong> 임의의 집합 $X, Y$에 대해, 어떤 집합 $\mathrm{Card}(X), \mathrm{Card}(Y)$가 존재하여, 다음이 성립한다.</p>
+
+  <ol>
+    <li>$|X| \leq |Y|$ iff $\mathrm{Card}(X) \subseteq \mathrm{Card}(Y)$</li>
+    <li>$|X| = |Y|$ iff $\mathrm{Card}(X) = \mathrm{Card}(Y)$</li>
+  </ol>
+
+  <p>$\mathrm{Card}(X)$를 $X$의 기수라고 부른다.</p>
+</blockquote>
+
+<p>즉 ① $\mathrm{Card}(X)$를 정의해야 하고, ② 해당 정의에 대해 위 진술이 성립함을 보여야 한다.</p>
+
+<p>표현의 편의를 위해 $|X| \leq |Y|$와 $|X| = |Y|$를 “$Y$가 $X$보다 작지 않다”, ”$X$와 $Y$의 크기가 같다“라고 부르자. ①부터 살펴 보자면, 크게 네 가지 접근이 가능하다. 짤막하게 알아보자면 이렇다.</p>
+
+<ol>
+  <li>
+    <p>칸토어의 정의</p>
+
+    <ul>
+      <li>정의: $\mathrm{Card}(X)$를 $X$와 크기가 같은 집합들의 집합으로 정의한다.</li>
+      <li>장점: 정의가 가장 직관적임</li>
+      <li>단점: $\mathrm{Card}(X)$는 사실 집합이 아니라 모임<sub>class</sub>임</li>
+    </ul>
+  </li>
+  <li>
+    <p>스콧의 트릭<sub>Scott’s trick</sub></p>
+
+    <ul>
+      <li>정의: $X$와 크기가 같은 집합 중 폰 노이만 위계에서 가장 먼저 등장하는 집합의 랭크가 $V_\alpha$일 때, $\mathrm{Card}(X)$를 $V_\alpha$로 정의한다.</li>
+      <li>장점: 모임의 문제 없이 기수를 정의함</li>
+      <li>단점: 정의가 직관적이지 않고 ad-hoc적인 면모가 있음</li>
+    </ul>
+  </li>
+  <li>
+    <p>정렬 원리<sub>well-ordering theorem</sub>를 사용하여 기수를 정의하기</p>
+
+    <ul>
+      <li>정의: $X$의 정렬에 대응되는 서수<sub>ordinal</sub>들보다 작지 않은 서수 중 가장 작은 서수를 $\mathrm{Card}(X)$로 정의한다.</li>
+      <li>장점: 정의가 다소 직관적이고, 모임의 문제가 없음</li>
+      <li>단점: 선택 공리 없이는 임의의 집합에 대해 해당 집합의 정렬이 존재함을 보장할 수 없음</li>
+    </ul>
+  </li>
+  <li>
+    <p>하르토그스 수<sub>Hartogs number</sub>를 사용하여 기수를 정의하기</p>
+    <ul>
+      <li>정의: $X$의 정렬 가능한 부분집합들에 대응되는 서수들보다 큰 서수 중 가장 작은 서수를 $X$의 하르토그수 수로 정의한다.</li>
+      <li>장점: 정의가 어느 정도 직관적이고, 모임의 문제가 없으며, 선택 공리에 의존적이지 않음</li>
+      <li>단점: 다루기 불편하고 제약이 많음</li>
+    </ul>
+  </li>
+</ol>
+
+<p>현대 집합론에서는 2 또는 3을 기수의 정의로 채택한다. 두 경우 모두 정리 1이 성립함을 ZFC에서 보일 수 있다.</p>
+
+<p>흥미로운 것은, 스콧의 트릭을 사용하여 기수를 정의하면 선택 공리가 필요하지는 않지만, 스콧의 트릭으로 정의된 기수가 정리 1을 만족함을 보일 때에는 선택 공리가 필요하다는 사실이다. 왜냐하면 다음이 선택 공리와 동치이기 때문이다.</p>
+
+<blockquote>
+  <p><strong>정리 2.</strong> 임의의 집합 $X, Y$에 대해, $|X| \leq |Y|$이거나 $|Y| \leq |X|$이다.</p>
+</blockquote>
+
+<p>즉, 선택 공리를 사용하지 않더라도 a) 스콧의 트릭을 통해 $\mathrm{Card}(X)$를 정의하거나, b) 단사 사상의 유무를 통해 $|X| \leq |Y|$를 정의할 수 있지만, a)와 b)가 맞물린다는 사실을 보일 때는 선택 공리가 필요하다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/20/cardinality/en"> Notes on the Definition of Cardinality </a>
+      </h1>
+    <span class="post-date">20 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> When there exists an injective mapping from $X$ to $Y$, we write $|X| \leq |Y|$. When there exists a bijective mapping, we write $|X| = |Y|$.</p>
+</blockquote>
+
+<p>A common misunderstanding amongst students first studying set theory is to implicitly treat the $|\cdot|$ and $\leq$ in the above definition as analogous to $|\cdot|$ and $\leq$ for complex numbers. In other words, just as $|z|$ is a real number for a complex number $z$ and $\leq$ is the ordering relation on real numbers, they think that $|X|$ for a set $X$ is the size of the set—the so-called <strong>cardinality</strong>—and $\leq$ is the ordering relation on cardinalities.</p>
+
+<p>However, this is a problematic approach. This is because <strong><u>there is no guarantee that we can define cardinality as a mathematical object</u> using only the definition above.</strong> What we have defined is merely a binary relation.</p>
+
+<p>Let us consider an example for understanding. When $A$ likes $B$, we might write $|A| \leq |B|$. However, if we interpret this notation to mean that $|A|$ represents ‘$A$’s affection level’ and $\leq$ is the ordering relation on affection levels, this would be completely incorrect. Similarly, $|X| \leq |Y|$ is merely a binary relation defined by the existence of an injective mapping; the relation itself does not suggest the concept of cardinality.</p>
+
+<p>In particular, since everything is a set in ZFC, if we wish to define cardinality, we must prove the following fact.</p>
+
+<blockquote>
+  <p><strong>Theorem 1.</strong> For any sets $X, Y$, there exist sets $\mathrm{Card}(X), \mathrm{Card}(Y)$ such that the following holds:</p>
+
+  <ol>
+    <li>$|X| \leq |Y|$ iff $\mathrm{Card}(X) \subseteq \mathrm{Card}(Y)$</li>
+    <li>$|X| = |Y|$ iff $\mathrm{Card}(X) = \mathrm{Card}(Y)$</li>
+  </ol>
+
+  <p>We call $\mathrm{Card}(X)$ the cardinality of $X$.</p>
+</blockquote>
+
+<p>That is, we must ① define $\mathrm{Card}(X)$, and ② show that the above statement holds for this definition.</p>
+
+<p>For convenience of expression, let us refer to $|X| \leq |Y|$ and $|X| = |Y|$ as “$Y$ is not smaller than $X$” and “$X$ and $Y$ have the same size”, respectively. Regarding ①, there are broadly four possible approaches. Let us briefly examine them:</p>
+
+<ol>
+  <li>
+    <p>Cantor’s definition</p>
+
+    <ul>
+      <li>Definition: Define $\mathrm{Card}(X)$ as the collection of all sets having the same size as $X$.</li>
+      <li>Advantage: The definition is most intuitive</li>
+      <li>Disadvantage: $\mathrm{Card}(X)$ is actually a class, not a set</li>
+    </ul>
+  </li>
+  <li>
+    <p>Scott’s trick</p>
+
+    <ul>
+      <li>Definition: When the rank of the first set to appear in the von Neumann hierarchy amongst sets having the same size as $X$ is $V_\alpha$, define $\mathrm{Card}(X)$ as $V_\alpha$.</li>
+      <li>Advantage: Defines cardinality without the class problem</li>
+      <li>Disadvantage: The definition is not intuitive and has ad-hoc aspects</li>
+    </ul>
+  </li>
+  <li>
+    <p>Defining cardinality using the well-ordering theorem</p>
+
+    <ul>
+      <li>Definition: Define $\mathrm{Card}(X)$ as the smallest ordinal that is not smaller than the ordinals corresponding to well-orderings of $X$.</li>
+      <li>Advantage: The definition is somewhat intuitive and avoids the class problem</li>
+      <li>Disadvantage: Without the axiom of choice, we cannot guarantee the existence of a well-ordering for arbitrary sets</li>
+    </ul>
+  </li>
+  <li>
+    <p>Defining cardinality using Hartogs numbers</p>
+    <ul>
+      <li>Definition: Define the Hartogs number of $X$ as the smallest ordinal greater than the ordinals corresponding to well-orderable subsets of $X$.</li>
+      <li>Advantage: The definition is reasonably intuitive, avoids the class problem, and is not dependent on the axiom of choice</li>
+      <li>Disadvantage: Inconvenient to handle and has many limitations</li>
+    </ul>
+  </li>
+</ol>
+
+<p>In modern set theory, either 2 or 3 is adopted as the definition of cardinality. In both cases, one can prove that Theorem 1 holds in ZFC.</p>
+
+<p>What is interesting is that whilst the axiom of choice is not required to define cardinality using Scott’s trick, the axiom of choice is needed to prove that cardinality defined by Scott’s trick satisfies Theorem 1. This is because the following is equivalent to the axiom of choice:</p>
+
+<blockquote>
+  <p><strong>Theorem 2.</strong> For any sets $X, Y$, either $|X| \leq |Y|$ or $|Y| \leq |X|$.</p>
+</blockquote>
+
+<p>That is, even without using the axiom of choice, we can a) define $\mathrm{Card}(X)$ through Scott’s trick, or b) define $|X| \leq |Y|$ through the existence of injective mappings, but the axiom of choice is required to prove that a) and b) mesh together.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/04/18/prisoner-hat"> 무한 죄수 모자 문제 </a>
       </h1>
     <span class="post-date">18 Apr 2025</span>
@@ -1426,292 +1621,6 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 </div>
 
 <p>The initial object in $\mathbf{Grp}$ is the trivial group, and the categorical sum is the free product. Accordingly, when $U \cap V$ is a simply connected space, we obtain the conclusion that $\pi_1(X)$ is the free product of $\pi_1(U)$ and $\pi_1(V)$.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/02/box-v-product"> 범주론적 관점에서의 곱 위상·상자 위상과 직곱·직합의 차이 </a>
-      </h1>
-    <span class="post-date">02 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/범주론/'">
-        범주론
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <h2 id="곱-위상과-상자-위상">곱 위상과 상자 위상</h2>
-
-<p>학부 위상에서 곱 위상<sub>product topology</sub>과 상자 위상<sub>box topology</sub>을 다루는 부분은 많은 학생에게 난관으로 다가오는 대목이다. 겉보기에는 상자 위상이 훨씬 직관적인데, 교재에서는 상자 위상보다 곱 위상이 다루기에 자연스러운 개념이라고 가르치기 때문이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간의 모임 $\lbrace  X_i \rbrace _{i \in I}$에 대해, <strong>상자 위상공간</strong> $\prod X_i$는 다음의 기저로 생성되는 위상공간이다.</p>
-
-\[\left\{ \prod U_i : U_i \text{ is open in } X_i \right\}\]
-</blockquote>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간의 모임 $\lbrace  X_i \rbrace _{i \in I}$에 대해, <strong>곱 위상공간</strong> $\prod X_i$는 다음의 기저로 생성되는 위상공간이다.</p>
-
-\[\left\{ \prod U_i : U_i \text{ is open in } X_i,\;  U_i \neq X_i \text{ for only finitely many } i\right\}\]
-</blockquote>
-
-<p>일례로 $\mathbb{R}^\omega$에서 $(1, 1, 1, \dots)$의 근방은 각각 다음과 같다.</p>
-
-<p><img src="/public/box-product.png" style="width: 550px; margin: 2em auto;" /></p>
-
-<p>왜 곱 위상은 상자 위상보다 자연스러운 위상으로 간주될까? 그 이유는 범주론에서 대상의 곱을 정의하는 방법과 관련이 있다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $X, Y$가 범주 $\mathcal{A}$의 대상이라고 하자. $P \in \mathcal{A}$와 사상 $\pi_X : P \to X$, $\pi_Y : P \to Y$에 대해, 다음 조건이 만족될 때 $P$를 $X, Y$의 <strong>곱</strong><sub>product</sub>이라고 하며, $P = X \times Y$와 같이 적는다.</p>
-
-  <ul>
-    <li>임의의 $A \in \mathcal{A}$와 $f: A \to X$, $g: A \to Y$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: A \to P$가 언제나 유일하게 존재한다.</li>
-  </ul>
-
-  <p><img src="/public/categorical-product.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<p>위의 정의는 자연스러운 방식으로 3개 이상, 또는 무한한 대상들의 곱으로 일반화된다. 극한<sub>limit</sub>의 개념이 익숙한 독자라면, 곱은 이산 범주의 극한으로 이해할 수 있다. 또는, 곱은 주어진 대상들의 정보를 온전히 인코딩하는 <em>가장 작은</em> 범주로 이해할 수 있다.</p>
-
-<p>집합들의 범주에서 곱은 곱집합과 같다. 특히 $\pi_X, \pi_Y$는 각각 $(x, y) \mapsto x$, $(x, y) \mapsto y$로 주어진다.</p>
-
-<p><strong>위상공간들의 범주에서 곱은 상자 위상이 아닌 곱 위상이다.</strong> 이는 다음의 정리로 보증된다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 사영함수 $\pi_k : \prod_{i \in I}X_i \to X_k$가 각 $k \in I$에 대해 연속이 되도록 하는 가장 작은 $\prod_{i \in I}X_i$의 위상은 곱 위상이다.</p>
-</blockquote>
-
-<p>상자 위상도 각 사영함수가 연속이라는 특징을 가지지만, 상자 위상은 곱 위상보다 <em>큰</em> 토폴로지이다. 따라서 상자 위상은 범주론적 곱이 아니다.</p>
-
-<p>상자 위상이 곱이 아님을 보이는 반례를 살펴보자. $\mathbb{R}^\omega$에 상자 위상을 부여하자. 만약 상자 위상이 범주론적 곱이라면, 임의의 연속인 $f_k: \mathbb{R} \to \mathbb{R}$에 대해 $\pi_k \circ i = f_k$가 되도록 하는 연속함수 $i : \mathbb{R} \to \mathbb{R}^\omega$가 존재해야 한다. $f_k: x \mapsto kx$라면 $i$는 $x \mapsto (x, 2x, 3x, \dots)$이다. 상자 위상에서는 $U = (0, 1)^\omega$가 열린 집합이므로, $i$가 연속이면 $i^{-1}(U)$가 열린집합이다. 그런데 $i^{-1}(U) = \lbrace 0 \rbrace $이므로, 상자 위상은 곱의 성질을 만족하지 않는다.</p>
-
-<h2 id="직곱과-직합">직곱과 직합</h2>
-
-<p>상자 위상과 곱 위상의 차이는 전체 공간이 아닌 인덱스가 유한한지의 여부에 있다. 이와 유사한 차이를 대수학에서도 발견할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 벡터 공간들의 모임 $\lbrace  V_i \rbrace _{i \in I}$에 대해, <strong>직곱<sub>direct product</sub></strong> $\prod V_i$를 다음과 같이 정의한다.</p>
-
-\[\prod V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i \right\}\]
-</blockquote>
-
-<blockquote>
-  <p><strong>정의.</strong> 벡터 공간들의 모임 $\lbrace  V_i \rbrace _{i \in I}$에 대해, <strong>직합<sub>direct sum</sub></strong> $\bigoplus V_i$를 다음과 같이 정의한다.</p>
-
-\[\bigoplus V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i,\; v_i \neq 0 \text{ for only finitely many }i \right\}\]
-</blockquote>
-
-<p>벡터의 연산은 항별<sub>term-wise</sub>로 정의한다. 또한 벡터 공간이 아닌 군에 대해서도 같은 방식으로 직곱과 직합을 정의할 수 있다.</p>
-
-<p>직곱과 상자 위상, 직합과 곱 위상의 정의가 비슷하다는 점으로부터 직합이 범주론적 곱에 대응된다고 생각할 수 있지만 <strong>그렇지 않다.</strong> 대수의 경우 <strong>범주론적 곱에 대응되는 것은 직곱이다.</strong> 직합은 범주론적 곱의 조건을 일반적으로 만족하지 않는다.</p>
-
-<p>일례로 다음의 경우를 보자. 일차원 실수 공간 $\mathbb{R}$의 직합 $\mathbb{R}^\omega$를 고려하자. 만약 직합이 범주론적 곱이라면, 임의의 선형인 $f_k: \mathbb{R} \to \mathbb{R}$에 대해 $\pi_k \circ i = f_k$가 되도록 하는 연속함수 $i : \mathbb{R} \to \mathbb{R}^\omega$가 존재해야 한다. $f_k: x \mapsto x$라면 $i$는 $x \mapsto (x, x, x, \dots)$이다. 그런데 $i(1) = (1, 1, 1, \dots) \notin \mathbb{R}^\omega$이므로, 직합은 곱의 성질을 만족하지 않는다.</p>
-
-<p>대신 직합은 <strong>범주론적 합<sub>sum</sub></strong>에 대응된다. 범주론적 합은 곱의 켤레<sub>dual</sub>이기 때문에 쌍곱<sub>coproduct</sub>이라고도 한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $X, Y$가 범주 $\mathcal{A}$의 대상이라고 하자. $S \in \mathcal{A}$와 사상 $\sigma_X : X \to S$, $\sigma_Y : Y \to S$에 대해, 다음 조건이 만족될 때 $S$를 $X, Y$의 <strong>합</strong><sub>sum</sub>이라고 하며, $S = X + Y$와 같이 적는다.</p>
-
-  <ul>
-    <li>임의의 $A \in \mathcal{A}$와 $f: X \to A$, $g: Y \to X$에 대해 다음 도식이 가환이 되도록 하는 사상 $i: S \to A$가 언제나 유일하게 존재한다.</li>
-  </ul>
-
-  <p><img src="/public/categorical-sum.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<p>앞서 들었던 예시를 다시 보자. 직합 $\bigoplus_\omega \mathbb{R}$를 고려하자. $\sigma_k: \mathbb{R} \to \bigoplus_\omega \mathbb{R}$은 다음과 같이 주어진다.</p>
-
-\[x \mapsto (0, \dots, 0, x, 0, \dots) \quad \text{($x$ is at the $k$th index)}\]
-
-<p>$A = \mathbb{R}$이라고 하고, 항등사상 $f_k : \mathbb{R} \to \mathbb{R}$을 고려하자. $\bigoplus_\omega \mathbb{R}$가 범주론적 합이라면 $i \circ \sigma_k = f_k$가 되도록 하는 연속함수 $i : \bigoplus_\omega \mathbb{R} \to \mathbb{R}$가 존재해야 한다. 실제로 이는 다음과 같이 존재한다.</p>
-
-\[i: (x_i)_{i \in \omega} \mapsto \sum_{i \in \omega} x_i\]
-
-<p>$\bigoplus_\omega \mathbb{R}$의 원소는 오직 유한한 비자명 항을 가지므로 $i$는 잘 정의됨에 주목하라. 반면, 이 예시는 직곱 $\mathbb{R}^\omega$가 범주론적 합이 아님을 보여준다. 직곱의 경우 $i$가 잘 정의되지 않기 때문이다. 이는 $i$에 $(1, 1, 1, \dots)$를 대입해 보면 알 수 있다.</p>
-
-<p>군의 경우 범주론적 곱과 범주론적 합에 대응되는 연산은 일반적인 군의 범주를 따지냐, 아벨군의 범주를 따지냐에 따라 조금 다르다. 이 부분은 간단한 노트 정도로 남겨둔다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>대수적 정의</th>
-      <th>범주론적 정의</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>자유곱</td>
-      <td>형식적 단어의 집합 + 병치 연산</td>
-      <td>$\mathbf{Grp}$의 합</td>
-    </tr>
-    <tr>
-      <td>직합</td>
-      <td>유한한 비자명 항을 가지는 튜플의 집합 + 항별 연산</td>
-      <td>$\mathbf{Ab}$의 합</td>
-    </tr>
-    <tr>
-      <td>직곱</td>
-      <td>튜플의 집합 + 항별 연산</td>
-      <td>$\mathbf{Grp}$의 곱</td>
-    </tr>
-  </tbody>
-</table>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/02/box-v-product/en"> The Difference Between Product and Box Topologies, and Direct Product and Direct Sum from a Categorical Perspective </a>
-      </h1>
-    <span class="post-date">02 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/category-theory/'">
-        Category Theory
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <h2 id="product-topology-and-box-topology">Product Topology and Box Topology</h2>
-
-<p>Product topology and box topology often stir confusion among many undergraduate students. For, although the box topology appears more intuitive at first glance, textbooks teach that the product topology is the more “natural” concept to work with.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a collection of topological spaces $\lbrace  X_i \rbrace _{i \in I}$, the <strong>box topological space</strong> $\prod X_i$ is the topological space generated by the following basis:</p>
-
-\[\left\{ \prod U_i : U_i \text{ is open in } X_i \right\}\]
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a collection of topological spaces $\lbrace  X_i \rbrace _{i \in I}$, the <strong>product topological space</strong> $\prod X_i$ is the topological space generated by the following basis:</p>
-
-\[\left\{ \prod U_i : U_i \text{ is open in } X_i,\;  U_i \neq X_i \text{ for only finitely many } i\right\}\]
-</blockquote>
-
-<p>For instance, the neighbourhoods of $(1, 1, 1, \dots)$ in $\mathbb{R}^\omega$ are as follows:</p>
-
-<p><img src="/public/box-product.png" style="width: 550px; margin: 2em auto;" /></p>
-
-<p>Why is the product topology considered more natural than the box topology? The reason is related to how products of objects are defined in category theory.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $X, Y$ be objects in category $\mathcal{A}$. For $P \in \mathcal{A}$ and morphisms $\pi_X : P \to X$, $\pi_Y : P \to Y$, we call $P$ the <strong>product</strong> of $X, Y$ and write $P = X \times Y$ when the following condition is satisfied:</p>
-
-  <ul>
-    <li>For any $A \in \mathcal{A}$ and morphisms $f: A \to X$, $g: A \to Y$, there exists a unique morphism $i: A \to P$ such that the following diagram commutes:</li>
-  </ul>
-
-  <p><img src="/public/categorical-product.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<p>The above definition naturally generalises to products of three or more, or infinitely many objects. Readers familiar with the concept of limits will recognise that the product can be understood as the limit of a discrete category. Alternatively, the product can be understood as the <em>smallest</em> category that fully encodes the information of the given objects.</p>
-
-<p>In the category of sets, the product coincides with the Cartesian product. In particular, $\pi_X, \pi_Y$ are given by $(x, y) \mapsto x$ and $(x, y) \mapsto y$ respectively.</p>
-
-<p><strong>In the category of topological spaces, the product is the product topology, not the box topology.</strong> This is seen by the following theorem:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> The smallest topology on $\prod_{i \in I}X_i$ such that the projection functions $\pi_k : \prod_{i \in I}X_i \to X_k$ are continuous for each $k \in I$ is the product topology.</p>
-</blockquote>
-
-<p>Whilst the box topology also has the property that each projection function is continuous, the box topology is a <em>larger</em> topology than the product topology. Therefore, the box topology is not the categorical product.</p>
-
-<p>Let us examine a counterexample showing that the box topology is not the categorical product. Consider $\mathbb{R}^\omega$ with the box topology. If the box topology were the categorical product, then for any continuous functions $f_k: \mathbb{R} \to \mathbb{R}$, there would exist a continuous function $i : \mathbb{R} \to \mathbb{R}^\omega$ such that $\pi_k \circ i = f_k$. If $f_k: x \mapsto kx$, then $i$ would be $x \mapsto (x, 2x, 3x, \dots)$. In the box topology, $U = (0, 1)^\omega$ is an open set, so if $i$ were continuous, then $i^{-1}(U)$ would be an open set. However, $i^{-1}(U) = \lbrace 0 \rbrace $, so the box topology does not satisfy the property of a product. (Note that in the case of product topology, $U$ is not an open set.)</p>
-
-<h2 id="direct-product-and-direct-sum">Direct Product and Direct Sum</h2>
-
-<p>The difference between the box topology and product topology lies in whether only finitely many indices are allowed to be non-trivial. A similar difference can be found in algebra.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a collection of vector spaces $\lbrace  V_i \rbrace _{i \in I}$, the <strong>direct product</strong> $\prod V_i$ is defined as follows:</p>
-
-\[\prod V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i \right\}\]
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a collection of vector spaces $\lbrace  V_i \rbrace _{i \in I}$, the <strong>direct sum</strong> $\bigoplus V_i$ is defined as follows:</p>
-
-\[\bigoplus V_i = \left\{ (v_i)_{i \in I} : v_i \in V_i,\; v_i \neq 0 \text{ for only finitely many }i \right\}\]
-</blockquote>
-
-<p>Vector operations are defined term-wise. The same definitions of direct product and direct sum can be applied to groups as well.</p>
-
-<p>From the similarity between the definitions of direct product and box topology, and direct sum and product topology, one might think that the direct sum corresponds to the categorical product, but this is not the case. In algebra, <strong>the direct product corresponds to the categorical product.</strong> The direct sum does not generally satisfy the conditions of a categorical product.</p>
-
-<p>Consider the following example: Let us examine the direct sum $\mathbb{R}^\omega$ of one-dimensional real spaces $\mathbb{R}$. If the direct sum were the categorical product, then for any linear maps $f_k: \mathbb{R} \to \mathbb{R}$, there would exist a continuous function $i : \mathbb{R} \to \mathbb{R}^\omega$ such that $\pi_k \circ i = f_k$. If $f_k: x \mapsto x$, then $i$ would be $x \mapsto (x, x, x, \dots)$. However, $i(1) = (1, 1, 1, \dots) \notin \mathbb{R}^\omega$, so the direct sum does not satisfy the property of a product.</p>
-
-<p>Instead, the direct sum corresponds to the <strong>categorical sum</strong>. The categorical sum is also called a <strong>coproduct</strong> because it is the dual of the categorical product.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $X, Y$ be objects in category $\mathcal{A}$. For $S \in \mathcal{A}$ and morphisms $\sigma_X : X \to S$, $\sigma_Y : Y \to S$, we call $S$ the <strong>sum</strong> of $X, Y$ and write $S = X + Y$ when the following condition is satisfied:</p>
-
-  <ul>
-    <li>For any $A \in \mathcal{A}$ and morphisms $f: X \to A$, $g: Y \to A$, there exists a unique morphism $i: S \to A$ such that the following diagram commutes:</li>
-  </ul>
-
-  <p><img src="/public/categorical-sum.png" style="width: 320px; margin: 2em auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<p>Let us revisit the earlier example. Consider the direct sum $\bigoplus_\omega \mathbb{R}$. The morphism $\sigma_k: \mathbb{R} \to \bigoplus_\omega \mathbb{R}$ is given by:</p>
-
-\[x \mapsto (0, \dots, 0, x, 0, \dots) \quad \text{($x$ is at the $k$th index)}\]
-
-<p>Let $A = \mathbb{R}$ and consider the identity morphism $f_k : \mathbb{R} \to \mathbb{R}$. If $\bigoplus_\omega \mathbb{R}$ is the categorical sum, then there must exist a continuous function $i : \bigoplus_\omega \mathbb{R} \to \mathbb{R}$ such that $i \circ \sigma_k = f_k$. Indeed, this exists as follows:</p>
-
-\[i: (x_i)_{i \in \omega} \mapsto \sum_{i \in \omega} x_i\]
-
-<p>Note that $i$ is well-defined because elements of $\bigoplus_\omega \mathbb{R}$ have only finitely many non-trivial terms. Conversely, this example shows that the direct product $\mathbb{R}^\omega$ is not the categorical sum. In the case of the direct product, $i$ is not well-defined. This can be seen by substituting $(1, 1, 1, \dots)$ into $i$.</p>
-
-<p>For groups, the operations corresponding to categorical products and categorical sums differ slightly depending on whether we consider the general category of groups or the category of abelian groups. I shall leave this as a brief note.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>Algebraic Definition</th>
-      <th>Categorical Definition</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Free Product</td>
-      <td>Set of formal words + concatenation operation</td>
-      <td>Sum in $\mathbf{Grp}$</td>
-    </tr>
-    <tr>
-      <td>Direct Sum</td>
-      <td>Set of tuples with finitely many non-trivial terms + term-wise operation</td>
-      <td>Sum in $\mathbf{Ab}$</td>
-    </tr>
-    <tr>
-      <td>Direct Product</td>
-      <td>Set of tuples + term-wise operation</td>
-      <td>Product in $\mathbf{Grp}$</td>
-    </tr>
-  </tbody>
-</table>
 
   </div>
   <div style="margin-bottom: 6em"></div>
