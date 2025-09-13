@@ -7,6 +7,186 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>자연수라는 신기루: 논리학에 관한 짧은 이야기</title>
+        <link>https://dimenerno.github.io/2025/09/13/questioning-alien</link>
+        <guid>https://dimenerno.github.io/2025/09/13/questioning-alien</guid>
+        <pubDate>Sat, 13 Sep 2025 00:00:00 +0900</pubDate>
+        <description>&lt;p&gt;어느 날 디멘은 외계인을 만났습니다. 외계인이 디멘에게 물었습니다.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/09/13/questioning-alien">
+          <![CDATA[
+            <p>어느 날 디멘은 외계인을 만났습니다. 외계인이 디멘에게 물었습니다.</p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>외계인</strong>
+<p>인간들이 사용하는 개념 중에서 이해되지 않는 게 있어. 도대체 자연수가 뭐야?</p>
+</div>
+
+<p><img src="/public/low1.png" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>디멘</strong>
+<p>뭐긴 뭐야. 자연수란 1부터 시작해서 2, 3, … 이렇게 순서대로 나아가는 수 체계야.</p>
+<strong>외계인</strong>
+<p>음…그러면 이것도 자연수야?</p>
+</div>
+
+<p><img src="/public/low2.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>디멘</strong>
+<p>엥, 그럴 리가! 자연수는 끝없이 이어져.</p>
+<strong>외계인</strong>
+<p>끝없이 이어진다고? 고리를 이룬다는 말인가? 그럼 1, 2, 3, 4, 5, 3, 4, 5, 3, 4, 5, … 이렇게 끝없이 이어지는데.</p>
+</div>
+
+<p><img src="/public/low3.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>디멘</strong>
+<p>맙소사, 그 뜻이 아니야. 고리 같은 거 없이 끝없이 이어져.</p>
+<strong>외계인</strong>
+<p>흠...그럼 중간에 가지라도 치나?</p>
+</div>
+
+<p><img src="/public/low4.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>디멘</strong>
+<p>그것도 아니야! 가지는 없어!</p>
+<strong>외계인</strong>
+<p>알겠어. 그렇다면 혹시 $c$도 자연수니?</p>
+<strong>디멘</strong>
+<p>$c$라니, 무슨 말이야?</p>
+<strong>외계인</strong>
+<p>너가 알려준 자연수의 정의대로라면 $c$가 자연수가 아닐 이유는 없는데? 자연수는 끝없이 이어진다고 했지만 모든 자연수가 그러한 연쇄에 포함된다고 말하지는 않았잖아.</p>
+</div>
+
+<p><img src="/public/low5.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>디멘</strong>
+<p>저건 또 뭐야... 자연수에는 자연수밖에 없어!</p>
+<strong>외계인</strong>
+<p>자연수에는 자연수밖에 없다니, 순환논법이 따로 없네.</p>
+<strong>디멘</strong>
+<p>너 지금 나 놀리는 거지?</p>
+<strong>외계인</strong>
+<p>무슨 소리야, 난 진짜 자연수가 뭔지 모르겠어. 너야말로 자연수의 정의를 제대로 알려줘야 내가 이해를 할 거 아니야.</p>
+<strong>디멘</strong>
+<p>자연수란...음...그러니까...하, 이걸 어떻게 설명하지!</p>
+</div>
+
+<p><img src="/public/low6.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
+
+<p>그 순간, 데데킨트라는 사람이 나타났습니다.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>데데킨트</strong>
+<p>내가 이 문제를 확실히 해결해 주지. 자연수란 다음 세 가지 조건을 만족하는 집합을 말해. 이 세 가지 조건을 만족하는 집합이 유일하다는 사실은 내가 증명해 놓았으니 더 이상 오해의 여지라고는 없지.</p>
+</div>
+
+<blockquote>
+  <p><strong>데데킨트의 자연수 정의.</strong> 집합 $A$, 원소 $e \in A$, 그리고 함수 $S: A \to A$가 다음 세 가지 조건을 만족한다면 $A, e, S$는 각각 자연수 집합, $0$, 그리고 $x \mapsto x + 1$에 대응된다.</p>
+
+  <ol>
+    <li>$S(x) = e$를 만족하는 $x$는 존재하지 않는다.</li>
+    <li>$S(x) = S(y)$라면 $x = y$이다.</li>
+    <li>$A$를 정의역으로 하는 임의의 명제 $P(x)$에 대해 다음 두 조건이 성립한다면 $P(x)$는 $A$의 모든 원소에 대해 참이다.
+      <ol>
+        <li>$P(0)$이 참이다.</li>
+        <li>$P(x)$가 참이라면 $P(S(x))$가 참이다.</li>
+      </ol>
+    </li>
+  </ol>
+</blockquote>
+
+<p>데데킨트의 대답에 외계인은 흡족해했지만, 이내 또다시 의아하다는 표정을 지었습니다.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>외계인</strong>
+<p>세 번째 조건에 "임의의 명제"라는 표현이 말이 돼? $P(x)$가 임의의 명제라면 $P(x)$는 "$x$가 자연수이다" 가 될 수도 있잖아. 하지만 자연수의 정의에 자연수에 대한 명제가 포함되는 건 순환논법일 텐데?</p>
+<strong>데데킨트</strong>
+<p>엇...그런가...?</p>
+<strong>외계인</strong>
+<p>애초에 "명제"라는 것이 정확히 뭐야? "$x$는 자기 자신을 포함하지 않는 집합이다" 는 잘 정의된 명제야?</p>
+<strong>디멘</strong>
+<p>(만약 $x$가 자기 자신을 포함하지 않는 집합이라면 $x$는 $x$의 정의에 해당하므로 자기 자신을 포함하게 되고, $x$가 자기 자신을 포함하는 집합이라면 $x$는 $x$의 정의에 해당하지 않으므로 자기 자신을 포함하지 않게 되고...엥?)</p>
+</div>
+
+<div style="margin: 1em auto"></div>
+<p>뜻밖의 지적에 데데킨트가 우물쭈물하자 옆에서 뢰벤하임이라는 사람이 끼어들었습니다.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>뢰벤하임</strong>
+<p>확실히 "임의의 명제"라는 표현은 문제가 있어 보이네. 아무래도 수학에서 이런 표현은 제한해야겠어. 이렇게 제한된 논리학을 <strong>1차 논리</strong>라고 부르자.</p>
+</div>
+
+<p><img src="/public/low7.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>데데킨트</strong>
+<p>그렇다면 이제 어떻게 1차 논리로 자연수를 정확하게 정의할 수 있는지 알아봐야겠군.</p>
+</div>
+
+<div style="margin: 1em auto"></div>
+<p>이 말에 스콜렘이라는 사람이 불쑥 나타났습니다.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>스콜렘</strong>
+<p>맞아. 그리고 내가 이 질문에 대한 답을 발견했어.</p>
+</div>
+
+<div style="margin: 1em auto"></div>
+<p>스콜렘의 발언에 모두가 주의를 집중했습니다.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>스콜렘</strong>
+<p><strong>불가능해.</strong> 1차 논리로는 자연수의 필요충분조건을 기술할 수 없어. 구체적으로, 자연수의 정의를 시도하는 모든 1차 논리적 정의에는 자연수가 아닌 반례가 존재해. <strong>따라서 자연수는 논리로 환원될 수 없어.</strong> 자연수를 순환논법 없이는 정의할 수 없다는 말이야.</p>
+</div>
+
+<blockquote>
+  <p><strong>뢰벤하임-스콜렘 정리.</strong> 자연수를 비롯하여, 원소가 무한히 많은 수 체계는 1차 논리로 유일하게 특정될 수 없다.</p>
+</blockquote>
+
+<p><img src="/public/low8.jpg" style="width: 100%; max-width: 400px; margin: 2em auto" /></p>
+
+<p>순간 정적이 흘렀습니다.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>외계인</strong>
+<p>그렇다면 인간들은 어떻게 자연수가 뭔지 아는 거야? 알고 보면 인간들은 저마다 자연수를 다르게 알고 있는 거 아냐?</p>
+</div>
+
+<div style="margin: 1em auto"></div>
+<p>외계인의 질문에 아무도 대답하지 못했습니다. 그들은 신기루 같은 자연수의 실체에 대해 할 말이 더 이상 남아 있지 않았습니다.</p>
+<div style="margin: 2em auto"></div>
+
+<p><img src="/public/low9.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
+
+<p><em>Note.</em> 이야기의 자연스러운 흐름을 위해 왜곡된 역사적 · 수학적 · 철학적 내용이 있습니다. 1차 논리의 탄생은 뢰벤하임을 비롯한 여러 수학자들의 점진적인 연구로 이루어졌습니다. 또한 데데킨트의 자연수 정의가 사용하는 2차 논리가 정말로 순환적인지에 관해서는 더 자세한 논의가 필요합니다. 마지막으로 스콜렘의 역설은 자연수에 관한 것이 아닌 집합론에 관한 것인데, 뢰벤하임-스콜렘 정리의 귀결이라는 점에서 두 현상은 유사하기 때문에 말풍선에 넣었습니다.</p>
+
+<h3 id="더-읽어보기">더 읽어보기</h3>
+
+<ul>
+  <li><a href="/2025/07/03/kripkenstein/">크립키-비트겐슈타인 역설</a></li>
+  <li><a href="/2025/07/21/private-language">사적 언어</a></li>
+  <li><a href="/2025/04/10/completeness-theorem/">뢰벤하임-스콜렘 정리</a></li>
+  <li><a href="https://plato.stanford.edu/entries/logic-higher-order/#SetTheoSheeClot">2차 논리는 “양의 탈을 쓴 집합론”인가?</a></li>
+</ul>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
         <title>자연주의적 목적론은 논리를 설명할 수 있는가?</title>
         <link>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic</link>
         <guid>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic</guid>
@@ -1746,152 +1926,6 @@ x \lor y = x + y + xy \\
 \end{align*}\]
 
 <p>Thus, $\beta : \mathbf{Top} \to \mathbf{CHaus}$ is a functor, and in particular, it is the left adjoint to $U: \mathbf{CHaus} \to \mathbf{Top}$. It follows that for any $X$, the pair $(e, \beta X)$ that satisfies the universal condition is the initial object in the comma category $(A \Rightarrow U)$, which implies uniqueness up to isomorphism. (For further details, refer to <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint">this post</a>) ■</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>우리손 보조정리와 우리손 거리화 정리</title>
-        <link>https://dimenerno.github.io/2025/07/09/urysohn</link>
-        <guid>https://dimenerno.github.io/2025/07/09/urysohn</guid>
-        <pubDate>Wed, 09 Jul 2025 00:00:00 +0900</pubDate>
-        <description>&lt;h2 id=&quot;우리손-보조정리&quot;&gt;우리손 보조정리&lt;/h2&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/09/urysohn">
-          <![CDATA[
-            <h2 id="우리손-보조정리">우리손 보조정리</h2>
-
-<blockquote>
-  <p><strong>우리손 보조정리<sub>Urysohn Lemma</sub>.</strong> $X$가 정규<sub>normal</sub> 공간이라고 하자. $A, B$가 서로소인 $X$의 닫힌집합일 때, 어떤 연속함수 $f: X \to [0, 1]$이 존재하여 $f[A] = \lbrace  0 \rbrace$, $f[B] = \lbrace 1 \rbrace$이다.</p>
-
-  <p><img src="/public/urysohn-1.png" style="width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-</blockquote>
-
-<p>정규성을 비롯한 분리 공리는 <em>해당 공간에서</em> 점과 닫힌집합을 분리한다. 우리손 보조정리의 의의는, 정규성 분리 공리의 경우 두 닫힌집합은 <em>좋은 공간에서도</em> 분리 가능하다는 것이다. 구체적으로, 정규공간을 적절한 연속함수로 사상시켰을 때 두 닫힌집합은 $[0, 1]$에서 분리 가능하다. 그리고 $[0, 1]$의 여러 좋은 성질은 — 콤팩트 하우스도르프 거리 공간일 뿐 아니라 우리에게 굉장히 익숙한 공간이라 논증하기도 쉽다 — 우리손 보조정리의 굉장한 잠재력을 암시한다.</p>
-
-<h4 id="증명">증명</h4>
-
-<p>$Q = [0, 1] \cap \mathbb{Q}$라고 하자 (사실 $[0, 1]$의 가산 조밀 집합이기만 하면 된다). $Q$가 가산이므로 $Q$의 원소를 열거<sub>enumerate</sub>하는 방법이 존재한다. 일례로 분모-분자의 사전식 열거 $\prec$를 고려하자.</p>
-
-\[0 \prec 1 \prec 1/2 \prec 1/3 \prec 2/3 \prec 1/4 \prec 1/5 \prec 2/5 \prec \cdots\]
-
-<p>이제 다음과 같이 $\lbrace  U_q \rbrace _{q \in Q}$를 정의하자. 먼저 $U_1 = X \setminus B$이다 ($B$가 닫힌집합이므로 $U_1$은 열린집합이다). 정규성에 의해 $A \subset U_0$이면서 $\overline{U_0} \subset U_1$인 $U_0$가 존재한다. 나머지 $U_q$는 열거 순서에 따라 다음과 같이 정의한다. $p \prec q$인 임의의 $p$에 대해,</p>
-
-<ul>
-  <li>$p &lt; q \implies \overline{U_p} \subset U_q$</li>
-  <li>$q &lt; p \implies \overline{U_q} \subset U_p$</li>
-</ul>
-
-<p>정규성에 의해 위 조건을 만족하며 $\lbrace  U_q \rbrace _{q \in Q}$를 완전히 정의할 수 있다.</p>
-
-<p><img src="/public/urysohn-2.png" style="width: 100%; max-width: 400px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<p>이제 다음과 같이 함수 $f: X \to [0, 1]$을 정의하자.</p>
-
-\[f(x) = \begin{cases}
-\sup_{&lt;}\{q \in Q : x \notin U_q \} &amp; x \notin U_0 \\
-0 &amp; x \in U_0
-\end{cases}\]
-
-<p>$\sup_&lt;$라는 표기는 $\prec$가 아닌 $&lt;$에 대해 상한을 취함을 의미한다. 정의로부터 $f[A] = 0, f[B] = 1$가 따라 나온다.</p>
-
-<p>이제 $f$가 연속임을 보이면 정리가 증명된다. $\lbrace  B_\epsilon(q) \cap [0, 1] : q \in Q, \epsilon \in \mathbb{Q}_{&gt;0} \rbrace $가 $[0, 1]$의 위상 기저이므로, 임의의 $q \in Q$와 특정 상한보다 작은 양의 유리수 $\epsilon$에 대해 $S_{q, \epsilon} = f^{-1}(B_\epsilon(q) \cap [0, 1])$가 열린집합임을 보이면 충분하다.</p>
-
-<ul>
-  <li>$0 &lt; q &lt; 1$인 경우, $S_{q, \epsilon} = (X \setminus \overline{U_{q-\epsilon}}) \cap U_{q + \epsilon}$이므로 열린집합이다.</li>
-  <li>$q = 0$인 경우, $S_{0, \epsilon} = U_\epsilon$이므로 열린집합이다.</li>
-  <li>$q = 1$인 경우, $S_{1, \epsilon} = X \setminus \overline{U_{1 - \epsilon}}$이므로 열린집합이다.</li>
-</ul>
-
-<p>따라서 $f$는 연속이다. ■</p>
-
-<h4 id="고찰">고찰</h4>
-
-<ul>
-  <li>
-    <p>우리손 보조정리의 역은 자명히 성립한다. 즉, 임의의 닫힌집합 $A, B \subset X$에 대해 어떤 연속인 $f: X \to [0, 1]$가 $A, B$를 분리한다면, $U = f^{-1}[0, 1/2)$, $V = f^{-1}(1/2, 1]$는 $A, B$를 분리하는 서로소 열린집합이므로 $X$는 정규이다. 간단히 말해, <strong>정규공간에서는 우리손 분리가능성과 분리 공리가 동치이다.</strong></p>
-  </li>
-  <li>
-    <p>정칙<sub>regular</sub> 공간에서는 이가 성립하지 않는다. 즉, 정칙 공간 $X$에서 임의의 닫힌집합 $F$와 점 $a$가 주어졌을 때, $f(a) = 0$, $f[F] = \lbrace 1 \rbrace$을 만족하는 연속인 $f: X \to [0, 1]$이 언제나 존재하는 것은 아니다. 우리손 분리가능한 정칙 공간을 <strong>티호노프<sub>Tychonoff</sub> 공간</strong> 또는 <strong>완전 정칙<sub>completely regular</sub> 공간</strong>이라고 하며, 정칙보다 엄격히 강한 조건이다.</p>
-  </li>
-  <li>
-    <p>우리손 보조정리의 증명이 정칙 공간에 대해 유효하지 않은 이유는 $p &lt; q \implies \overline{U_p} \subset U_q$를 만족하는 $\lbrace U_q \rbrace $를 구성할 때 정규 공리가 필요하기 때문이다.</p>
-  </li>
-</ul>
-
-<h2 id="우리손-거리화-정리">우리손 거리화 정리</h2>
-
-<p>우리손 보조정리의 응용으로서, 우리손 거리화 정리를 증명하자.</p>
-
-<blockquote>
-  <p><strong>우리손 거리화 정리<sub>Urysohn metrisation theorem</sub>.</strong> 2차 가산인 정규 공간은 거리화 가능하다.</p>
-</blockquote>
-
-<p>그런데 2차 가산인 정칙 공간은 정규 공간임이 알려져 있으므로 위 정리의 진술은 “2차 가산인 정칙 공간은 거리화 가능하다”와 같이 자연스럽게 강화할 수 있다.</p>
-
-<p>따라서 공간들 간의 시사 관계는 다음과 같다. <strong>화살표의 길이가 길수록 요구되는 조건이 강해진다.</strong> $T_2 \to T_4$는 $T_3 \to T_4$보다 엄격히 어려운 시사 관계이며, 이것은 전자에서 요구되는 콤팩트성이 후자에서 요구되는 린델뢰프보다 엄격히 강한 조건인 데에서 드러난다. 마찬가지로 $T_3 \to \mathrm{Met}$는 $T_3 \to T_4$보다 엄격히 어려운 시사 관계이며, 전자에서 요구되는 2차 가산성은 후자에서 요구되는 린델뢰프보다 엄격히 강한 조건이다. 그러나 $T_2 \to T_4$와 $T_3 \to \mathrm{Met}$는 어느 한쪽이 엄격히 어려운 시사 관계가 아니다 (두 화살표의 길이는 엇비슷하다). 이것은 콤팩트성과 2차 가산성이 일반적으로 서로를 시사하지 않는다는 점에서 드러난다.</p>
-
-<p><img src="/public/urysohn-3.png" style="width: 100%; max-width: 240px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<h4 id="증명-1">증명</h4>
-
-<p>$X$가 2차 가산인 정규 공간이라고 하자. 다음의 보조정리를 증명한다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $X$를 $[0, 1]$에 사상시키는 연속함수의 가산족 $\mathcal{F}$가 존재하여, 임의의 $x_0 \in X$와 그 근방 $U$에 대해, $f(x_0) &gt; 0$이고 $f[X \setminus U] = \lbrace  0 \rbrace $인 $f \in \mathcal{F}$가 존재한다.</p>
-</blockquote>
-
-<p>$x_0$와 $U$가 주어졌을 때 그러한 $f$가 존재함은 우리손 보조정리로부터 알 수 있다. 우리가 해야할 일은 이를 가산 함수족으로 줄이는 것이다. $\mathcal{B} = \lbrace  B_n \rbrace $이 $X$의 가산인 위상기저라고 하자. $B_m \subset B_n$일 때, 우리손 보조정리로부터 $f_{nm}: X \to [0, 1]$을 다음을 만족하는 연속함수로 정의하자.</p>
-
-<ul>
-  <li>$f_{nm}[\overline{B_m}] = 1$</li>
-  <li>$f_{nm}[X \setminus B_n] = 0$</li>
-</ul>
-
-<p>$\mathcal{F} = \lbrace  f_{nm} \rbrace $으로 정의하자. 임의의 $x_0$와 그 근방 $U$가 주어졌을 때, 위상기저의 정의에 의해 $x_0 \in B_n \subset U$인 $B_n$이 존재한다. 또한 정규성에 의해 $x \in \overline{V} \subset B_n$인 열린집합 $V$가 존재한다. 다시 위상기저의 정의에 의해 $x \in B_m \subset V$인 $B_m$이 존재한다. 이때 $f_{nm} \in \mathcal{F}$가 보조정리의 조건을 만족하는 함수이다. □</p>
-
-<p>이제 본 정리를 증명하자. 아이디어는 $X$를 $[0, 1]^\omega$에 임베딩하는 것이다. $[0, 1]^\omega$에 곱 위상이 주어지면 거리 공간임이 알려져 있으므로 $X$는 거리 공간의 부분공간과 동형인 공간으로서 거리화 가능함이 보여진다.</p>
-
-<p>$\mathcal{F} = \lbrace  f_n \mid n \in \omega \rbrace $가 보조정리로서 주어지는 가산 함수족이라고 하자. 다음과 같이 $F: X \to [0, 1]^\omega$를 정의한다.</p>
-
-\[F: x \mapsto (f_1(x), f_2(x), f_3(x), \dots)\]
-
-<p>$F$가 임베딩을 보이자. 즉, $F$가 연속이고, 단사이며, 정의역과 치역의 동형사상임을 보여야 한다.</p>
-
-<p>각 $f_n$은 연속이므로 곱 위상의 성질(<a href="https://dimenerno.github.io/2025/04/02/box-v-product">정의이기도 하다</a>)에 의해 $F$는 연속이다. $F$가 단사임은 $X$가 하우스도르프라는 사실에서 따라 나온다. 따라서 다음을 보이면 충분하다.</p>
-
-<blockquote>
-  <p>$U \subset X$가 열린집합일 때, $F[U]$는 $\mathrm{im} F$에서 열린집합이다.</p>
-</blockquote>
-
-<p>임의의 $y_0 \in F[U]$에 대해 $y_0 \in V \subset F[U]$이며 $\mathrm{im} F$에서 열린 $V$가 존재함을 보이자. $F[U]$의 정의에 의해 어떤 $x_0 \in X$가 존재하여 $F(x_0) = y_0$이다. $x_0$와 $U$에 대해 보조정리를 만족하는 함수가 $f_n \in \mathcal{F}$라고 하자. $f_n(x_0) = 1$이므로 $(y_0)_n = 1$이다. 따라서 $W = \pi_n^{-1}(0, 1] \subset [0, 1]^\omega$와 같이 정의하면 $W$는 $y_0$를 원소로 가지는 $[0, 1]^\omega$에서 열린집합이다.</p>
-
-<p>$W \cap \mathrm{im} F \subset F[U]$임을 보이자. 임의의 $w \in W$는 $F(x_1) = w$와 같이 쓸 수 있다. 추가로 $w \in \mathrm{im} F$라면 $f_n(x_1) = 1$이다. 그런데 $f_n$은 $U$ 외부에서는 $0$이므로, $x_1 \in U$이다. 따라서 $w \in F[U]$이다. 따라서 $W \cap \mathrm{im} F$는 $F[U]$에 포함되며 $y_0$를 원소로 가지는 $\mathrm{im} F$의 열린집합이다. 따라서 $F[U]$는 $\mathrm{im} F$에서 열린집합이다. ■</p>
-
-<h4 id="고찰-1">고찰</h4>
-
-<ul>
-  <li>
-    <p>우리손 거리화 정리는 <strong>나가타-스미로느프 거리화 정리<sub>Nagata-Smirnov metrisation theorem</sub></strong>로 강화할 수 있다. 진술은 다음과 같다.</p>
-
-    <blockquote>
-      <p>$X$가 거리화 가능할 필요충분조건은 $X$가 정칙이며 가산-국소적으로 유한한<sub>countably locally finite</sub> 위상기저를 가지는 공간인 것이다.</p>
-    </blockquote>
-
-    <p>위상공간 $X$의 부분집합들로 이루어진 집합족 $\mathcal{A}$가 <strong>국소적으로 유한</strong>하다는 것은, 임의의 $x \in X$에 대해 어떤 근방 $U$가 존재하여 $U$가 $\mathcal{A}$의 오직 유한한 개수의 집합과만 교집합을 가진다는 것이다. 위상기저 $\mathcal{B}$가 <strong>가산-국소적으로 유한</strong>하다는 것은, 각각의 $\mathcal{B}_n$이 국소적으로 유한이도록 $\mathcal{B} = \bigcup_{n \in \omega}\mathcal{B}_n$와 같이 적을 수 있다는 것이다.</p>
-  </li>
-  <li>
-    <p>우리손 거리화 정리의 증명을 살짝 변형하면 다음 사실을 발견할 수 있다.</p>
-
-    <blockquote>
-      <p><strong>정리.</strong> $T_1$ 공간인 $X$에 대해, $\lbrace f_{\alpha} \rbrace _{\alpha \in J} $가 다음 조건을 만족하는 연속함수 $f_\alpha : X \to [0, 1]$의 모임이라고 하자: 임의의 $x_0 \in X$와 근방 $U$에 대해, 어떤 $\alpha \in J$가 존재하여 $f_\alpha(x_0) = 1$이고 $f_\alpha[X \setminus U] = \lbrace  0 \rbrace $이다. 이때, $F(x) = (f_\alpha(x))_{\alpha \in J}$는 $X$를 $[0, 1]^J$로 임베딩하는 사상이다.</p>
-    </blockquote>
-
-    <p>$T_1$ 조건을 생략하면 $F$는 단사가 아닐 수 있음을 확인하라. 위 정리는 스톤-체흐 콤팩트화<sub>Stone-Čech compactification</sub>를 증명하는 데 사용된다.</p>
-  </li>
-</ul>
 
           ]]>
         </content:encoded>
