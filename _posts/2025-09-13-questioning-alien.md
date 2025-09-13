@@ -158,7 +158,7 @@ _Note._ 이야기의 자연스러운 흐름을 위해 왜곡된 역사적 · 수
 
 ### 더 읽어보기
 
-- [크립키-비트겐슈타인 역설](/2025/07/03/kripkenstein/)
+- [크립키-비트겐슈타인 역설](/2025/07/03/kripkenstein)
 - [사적 언어](/2025/07/21/private-language)
-- [뢰벤하임-스콜렘 정리](/2025/04/10/completeness-theorem/)
+- [뢰벤하임-스콜렘 정리](/2025/04/10/completeness-theorem)
 - [2차 논리는 "양의 탈을 쓴 집합론"인가?](https://plato.stanford.edu/entries/logic-higher-order/#SetTheoSheeClot)

@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-09-13T22:53:05+09:00</updated>
+ <updated>2025-09-13T22:58:45+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -177,9 +177,9 @@
 &lt;h3 id=&quot;더-읽어보기&quot;&gt;더 읽어보기&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/2025/07/03/kripkenstein/&quot;&gt;크립키-비트겐슈타인 역설&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2025/07/03/kripkenstein&quot;&gt;크립키-비트겐슈타인 역설&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/2025/07/21/private-language&quot;&gt;사적 언어&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/2025/04/10/completeness-theorem/&quot;&gt;뢰벤하임-스콜렘 정리&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/2025/04/10/completeness-theorem&quot;&gt;뢰벤하임-스콜렘 정리&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://plato.stanford.edu/entries/logic-higher-order/#SetTheoSheeClot&quot;&gt;2차 논리는 “양의 탈을 쓴 집합론”인가?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
