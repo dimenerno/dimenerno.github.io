@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-09-13T22:58:45+09:00</updated>
+ <updated>2025-09-14T19:04:13+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>자연수라는 신기루: 논리와 언어에 관한 짧은 이야기</title>
-   <link href="https://dimenerno.github.io/2025/09/13/questioning-alien"/>
-   <updated>2025-09-13T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/09/13/questioning-alien</id>
+   <link href="https://dimenerno.github.io/2025/09/14/alien-natural-numbers"/>
+   <updated>2025-09-14T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/09/14/alien-natural-numbers</id>
    <content type="html">&lt;p&gt;어느 날 디멘은 외계인을 만났습니다. 외계인이 디멘에게 물었습니다.&lt;/p&gt;
 
 &lt;div style=&quot;display: grid; grid-template-columns: 5em 1fr;&quot;&gt;
@@ -405,7 +405,7 @@
    <id>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/natural-teleology-and-logic-en</id>
    <content type="html">&lt;h3 id=&quot;abstract&quot;&gt;Abstract&lt;/h3&gt;
 
-&lt;p&gt;This essay examines Dennett’s skepticism about original intentionality and his attempt to ground meaning in natural teleology. I argue, first, that the indeterminacy problem on which Dennett’s skepticism relies does not in itself undermine original intentionality; and second, that the natural-teleological account of logic is question-begging. I conclude that our use of logic demonstrates a domain in which the doctrine of original intentionality must hold.&lt;/p&gt;
+&lt;p&gt;This essay examines Dennett’s skepticism about original intentionality and his attempt to ground meaning in natural selection and natural teleology. I argue, first, that the indeterminacy problem on which Dennett’s skepticism relies does not in itself undermine original intentionality; and second, that the natural-teleological account of logic is question-begging due to its appeal to the utility of truth. I conclude that our use of logic demonstrates a domain in which the doctrine of original intentionality must be presupposed.&lt;/p&gt;
 
 &lt;h2 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h2&gt;
 
