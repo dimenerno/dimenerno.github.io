@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "자연수라는 신기루: 짧은 이야기"
+title: "자연수라는 신기루: 짧은 논리학 이야기"
 date: 2025-09-14
 tags: ["철학", "논리학"]
 related:
