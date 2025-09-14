@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-09-14T19:09:20+09:00</updated>
+ <updated>2025-09-14T19:12:06+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -97,7 +97,7 @@
     &lt;li&gt;$S(x) = S(y)$라면 $x = y$이다.&lt;/li&gt;
     &lt;li&gt;$A$를 정의역으로 하는 임의의 명제 $P(x)$에 대해 다음 두 조건이 성립한다면 $P(x)$는 $A$의 모든 원소에 대해 참이다.
       &lt;ol&gt;
-        &lt;li&gt;$P(0)$이 참이다.&lt;/li&gt;
+        &lt;li&gt;$P(e)$가 참이다.&lt;/li&gt;
         &lt;li&gt;$P(x)$가 참이라면 $P(S(x))$가 참이다.&lt;/li&gt;
       &lt;/ol&gt;
     &lt;/li&gt;
