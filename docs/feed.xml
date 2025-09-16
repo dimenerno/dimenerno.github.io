@@ -7,6 +7,156 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>기수 덧셈과 기수 곱셈의 기본 정리들</title>
+        <link>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics</link>
+        <guid>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics</guid>
+        <pubDate>Tue, 16 Sep 2025 00:00:00 +0900</pubDate>
+        <description>&lt;p&gt;이 글에서 모든 집합과 기수는 무한집합, 무한기수이다.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/09/16/cardinal-arithmetics">
+          <![CDATA[
+            <p>이 글에서 모든 집합과 기수는 무한집합, 무한기수이다.</p>
+
+<p>기수 산술<sub>cardinal arithmetics</sub>을 다룰 때에는 각 연산의 정의를 정확히 아는 것이 중요하다. 정의와 정리를 혼동하기가 쉽기 때문이다. 먼저 기수 덧셈부터 보자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 서로소 집합이라고 하자. $\kappa + \lambda$를 $|A \cup B |$로 정의한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 기수의 유한 덧셈은 교환법칙과 결합법칙을 만족한다.</p>
+</blockquote>
+
+<p>위 정의가 well-defined임을 보이기 위해서는 $\kappa + \lambda$가 $A, B$의 선택에 의존적이지 않음을 보여야 한다. 이는 ZF에서 쉽게 증명 가능하다. 또한 유한한 기수 덧셈은 그저 최대 기수를 구하는 것이기 때문에 계산하기가 상당히 용이하다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong>
+\(\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\)</p>
+</blockquote>
+
+<p><strong>증명.</strong> 글 하단에 달린 보조정리와 칸토어-베른슈타인 정리에 의해, $\aleph_\alpha = \aleph_\alpha + \aleph_\alpha$이다. 따라서 $|A| \leq |B|$라면 $|B| \leq |A + B| \leq |B + B| = |B|$이다. ■</p>
+
+<p>기수 덧셈의 정의를 무한한 경우로 확장하면,</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 쌍으로 서로소인 집합족 $\lbrace  A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
+
+\[\sum_{i \in I} \kappa_i = \left| \bigcup_{i \in I}A_i \right|\]
+</blockquote>
+
+<p>유의할 점은, 위 정의가 well-defined임을 보이는 데는 선택 공리가 필요하다는 점이다. 각 $i \in I$에 대해 일대일 대응 $A_i \to \kappa_i$을 선택할 수 있어야 하기 때문이다. 그래서 기수 산술을 다룰 때에는 거의 언제나 선택 공리를 전제한다.</p>
+
+<p>$\kappa + \lambda = \mathrm{max}(\kappa, \lambda)$ 관계식으로부터 다음의 관계식을 유도하고 싶을 수 있지만, 성립하는 식이 아님에 주의해야 한다.</p>
+
+<blockquote>
+  <p><strong>주의.</strong> $\sum_{i \in I} \kappa_i = \sup \kappa_i$는 일반적으로 성립하지 않는다.</p>
+</blockquote>
+
+<p>그렇다면 무한한 기수 덧셈은 어떻게 계산해야 할까? 이를 알아보기 위해, 먼저 기수 곱셈을 정의하자 (이 정의 또한 well-definedness를 보이기 위해서는 선택 공리가 필요하다).</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 집합이라고 하자. $\kappa \cdot \lambda$를 $| A \times B|$로 정의한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 기수의 유한 곱셈은 교환법칙과 결합법칙을 만족한다.</p>
+</blockquote>
+
+<p>아주 용이하게도 유한 기수 곱셈의 계산은 유한 기수 덧셈의 계산과 같다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong>
+\(\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\)</p>
+</blockquote>
+
+<p><strong>증명.</strong> 글 하단에 달린 보조정리로부터 따라 나온다. ■</p>
+
+<p>물론, <strong>기수 곱셈의 정의는 기수 덧셈과 아무 관련이 없다.</strong> 즉, 기수 곱셈의 정의에는 “$\kappa$를 $\lambda$번 더한다”와 같은 의미가 없다. 그럼에도 다음 <em>정리</em>에 의해 기수 곱셈을 기수 덧셈과 연관지을 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong>
+\(\sum_{i \in I} \kappa = |I| \cdot \kappa\)</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\lbrace  A_i \rbrace $가 쌍으로 서로소이며 $|A_i| = \kappa$인 집합족이라고 하자. 좌변은 $\bigcup_{i \in I} A_i$의 기수이고, 우변은 $I \times A_k$의 기수이다 ($k$는 $I$의 어떤 원소). $|A_i| = |A_k| = \kappa$이므로, 선택 공리에 의해 각 $i \in I$에 대해 일대일 대응 $f_i : A_i \to A_k$를 정의할 수 있다. 다음의 대응 $f: \bigcup_{i \in I} A_i \to I \times A_k$을 정의하자.</p>
+
+\[f(x) = (i, f_i(x)) \quad (\text{if } x \in A_i)\]
+
+<p>위 함수가 일대일 대응임은 쉽게 확인할 수 있다. 따라서 (좌변) = (우변)이다. ■</p>
+
+<p>이로부터 앞선 언급한 “주의”에 해당되는 올바른 관계식을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong>
+\(\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\)</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\kappa = \sup \lbrace  \kappa_i : i \in I \rbrace $라고 하고, 좌변을 $L$, 우변을 $R$이라고 하자. 앞선 정리에 의해 $|I| \cdot \kappa = \sum_{i \in I} \kappa$이고 $\kappa_i \leq \kappa$이므로 $L ≤ R$이다. 반대로, $| I | = \sum_{i \in I} 1 \leq L$이고, $\kappa = \sup \kappa_i \leq L$이다. 글 하단의 보조정리에 의해 $L = L \cdot L$이므로 $L \geq | I | \cdot \kappa = R$이다. 따라서 칸토어-베른슈타인 정리에 의해 $L = R$이다. (이 증명에는 선택 공리가 암시적으로 많이 사용되었으니 관심 있는 독자는 생략된 논증을 자세히 써 봐도 좋을 것이다) ■</p>
+
+<p>이제 기수 곱셈도 무한 경우로 일반화하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 집합족 $\lbrace  A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
+
+\[\prod_{i \in I} \kappa_i = \left| \prod_{i \in I}A_i \right|\]
+</blockquote>
+
+<p>무한 기수 덧셈이 기수 곱셈과 관련이 있었던 것처럼, 무한 기수 곱셈은 기수 지수와 관련이 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 집합이라고 하자. $\kappa^\lambda$를 $|A^B |$로 정의한다. ($A^B$는 $B$에서 $A$로 가는 함수들의 집합이다)</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 기수의 지수 연산은 지수법칙을 만족한다. 즉,</p>
+
+  <ul>
+    <li>$\kappa^{\lambda + \mu} = \kappa^\lambda \cdot \kappa^\mu$</li>
+    <li>$(\kappa^\lambda)^\mu = \kappa^{\lambda \cdot \mu}$</li>
+    <li>$(\kappa \cdot \lambda)^{\mu} = \kappa^\mu \cdot \lambda^\mu$</li>
+  </ul>
+</blockquote>
+
+<p>하지만 기수 덧셈과 기수 곱셈의 경우와는 달리, 기수 곱셈과 기수 지수 사이에는 일률적인 관계가 없으며, 때문에 무한 기수 곱셈과 관련해서는 알려진 결과도 많지 않다. 적어도 다음은 잘 알려져 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\prod_{n \in \omega} n = 2^{\aleph_0}$</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\prod_{n \in \omega} n \geq \prod_{n \in \omega} 2 = 2^{\aleph_0}$이다. 역으로, $\prod_{n \in \omega} n \leq \prod_{n \in \omega} \aleph_0 = {\aleph_0}^{\aleph_0}$이다. 그런데</p>
+
+\[2^{\aleph_0} \leq {\aleph_0}^{\aleph_0} \leq (2^{\aleph_0})^{\aleph_0} = 2^{\aleph_0 \cdot \aleph_0}\]
+
+<p>이므로 ${\aleph_0}^{\aleph_0} = 2^{\aleph_0}$이다. ■</p>
+
+<p>대신 기수 곱셈을 계산할 때 <strong>쾨니히 정리<sub>König’s Theorem</sub></strong>가 유용하게 사용될 수 있다. 이에 대해서는 다음 글에서 알아보겠다.</p>
+
+<hr />
+
+<blockquote>
+  <p><strong>보조정리.</strong> 임의의 $\alpha \in \mathrm{Ord}$에 대해, $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$</p>
+</blockquote>
+
+<p>증명 개요는 다음과 같다. 임의의 $\alpha \in \mathrm{Ord}$에 대해, 다음과 같이 정의된 순서 $\prec$가 $\omega_\alpha \times \omega_\alpha$의 정렬 순서임을 보인다. $\hat{x} = \mathrm{max}(x_1, x_2), \hat{y} = \mathrm{max}(y_1, y_2)$일 때,</p>
+
+\[(x_1, x_2) \prec (y_1, y_2) \iff \begin{cases}
+\hat{x} &lt; \hat{y}\\
+x_1 &lt; y_1 \quad (\text{if }\hat{x} &lt; \hat{y}) \\
+x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
+\end{cases}\]
+
+<p>즉, $\prec$은 최댓값 우선 후 사전식 순서이다. 초한귀납법에 따라 모든 $\beta &lt; \alpha$에 대해 $\aleph_\beta \cdot \aleph_\beta = \aleph_\beta$일 때 $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$임을 보인다. 이를 위해 $(\omega_\alpha \times \omega_\alpha, \prec)$의 순서형<sub>order type</sub>이 $\omega_\alpha$를 넘지 않음을 보이면 된다. 이를 위해 임의의 $(\gamma_1, \gamma_2) \in \omega_\alpha \times \omega_\alpha$에 대해</p>
+
+\[X = \{ (\xi_1, \xi_2) : (\xi_1, \xi_2) \prec (\gamma_1, \gamma_2) \}\]
+
+<p>라면 $|X| &lt; \aleph_\alpha$임을 보이면 된다. $\gamma = \mathrm{max}(\gamma_1, \gamma_2) + 1$이라고 하자. $\omega_\alpha$는 극한 서수이므로 $\gamma \in \omega_\alpha$이며, 따라서 $|\gamma| = \aleph_\delta \; (\delta &lt; \alpha)$이다. 한편으로 $X \subseteq \gamma \times \gamma$이므로 $|X| \leq \aleph_\delta \cdot \aleph_\delta$이며 이는 귀납 가정에 의해 $\aleph_\delta$이다. ■</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
         <title>자연수라는 신기루: 짧은 논리학 이야기</title>
         <link>https://dimenerno.github.io/2025/09/14/alien-natural-numbers</link>
         <guid>https://dimenerno.github.io/2025/09/14/alien-natural-numbers</guid>
@@ -1797,135 +1947,6 @@ x \lor y = x + y + xy \\
 \end{align*}\]
 
 <p>따라서 $\beta : \mathbf{Top} \to \mathbf{CHaus}$는 함자이며, 특히 $U: \mathbf{CHaus} \to \mathbf{Top}$의 좌 어드조인트이다. 이로부터 임의의 $X$에 대해, 보편 조건을 만족하는 $(e, \beta X)$는 콤마 카테고리 $(A \Rightarrow U)$의 초기 대상이므로 동형성에 대해 유일함이 따라 나온다. (자세한 설명은 <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint">이 글</a>을 참조) ■</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>Stone-Čech Compactification</title>
-        <link>https://dimenerno.github.io/2025/07/10/stone-cech/en</link>
-        <guid>https://dimenerno.github.io/2025/07/10/stone-cech/en</guid>
-        <pubDate>Thu, 10 Jul 2025 00:00:00 +0900</pubDate>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a &lt;strong&gt;compactification&lt;/strong&gt; of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/10/stone-cech/en">
-          <![CDATA[
-            <blockquote>
-  <p><strong>Definition.</strong> Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a <strong>compactification</strong> of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.</p>
-</blockquote>
-
-<p><strong>Remarks</strong></p>
-
-<ul>
-  <li>
-    <p>Generally, compactification of $X$ is not unique, as $\overline{X}$ may vary depending on the background topology.</p>
-  </li>
-  <li>
-    <p>If $X$ and $Y$ are Hausdorff, then $Y$ is a compact Hausdorff space, hence normal, hence Tychonoff (completely regular). Since it is known that subspaces of Tychonoff spaces are Tychonoff, $X$ is also Tychonoff. Thus, <strong>spaces that can be compactified as Hausdorff spaces are Tychonoff.</strong></p>
-  </li>
-  <li>
-    <p>The converse also holds. That is, <strong>Tychonoff spaces can be compactified as Hausdorff spaces.</strong> This is one of the implications of the Stone-Čech compactification discussed in this post.</p>
-  </li>
-</ul>
-
-<p>For a locally compact Hausdorff space $X$, there exists a one-point compactification space $X^\ast$. (From this fact and the above remark, it follows that locally compact Hausdorff spaces are Tychonoff.) In particular, $X^\ast$ is the “smallest” compactification of $X$.</p>
-
-<p>The Stone-Čech compactification is, in some sense, the opposite concept. The Stone-Čech compactification space $\beta X$ of $X$ is the “largest” compactification of $X$. The precise definition of “largest” is given by the following universal property.</p>
-
-<blockquote>
-  <p><strong>Theorem 1.</strong> If $X$ is Tychonoff, then there exists a unique compact Hausdorff space $\beta X$ and an embedding $\iota: X \to \beta X$ such that the following holds: for any compact Hausdorff space $K$ and any continuous map $f: X \to K$, there exists a unique continuous map $f^\ast: \beta X \to K$ such that $f = f^\ast \circ \iota$.</p>
-
-  <p><img src="/public/stone-cech-1.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1.5em auto;" /></p>
-
-  <p>Furthermore, $\beta X = \overline{\iota[X]}$ and hence is a compactification of $X$. This is referred to as the <strong>Stone-Čech compactification</strong>.</p>
-</blockquote>
-
-<p>Here, even without the condition that $X$ is Tychonoff, quite strong conclusions can still be maintained.</p>
-
-<blockquote>
-  <p><strong>Theorem 2.</strong> If $X$ is a general topological space, then there exists a unique compact Hausdorff space $\beta X$ and a continuous function $e : X \to \beta X$ such that the following holds: for any compact Hausdorff space $K$ and any continuous map $f: X \to K$, there exists a unique continuous map $f^\ast: \beta X \to K$ such that $f = f^\ast \circ e$.</p>
-
-  <p><img src="/public/stone-cech-2.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1em auto;" /></p>
-
-  <p>Furthermore, $\beta X = \overline{\iota[X]}$.</p>
-</blockquote>
-
-<p>The difference is that $e$ is just a continuous function rather than an embedding. In fact, when $X$ is a general topological space, $e$ may not even be injective, let alone an homoemorphism. In this case, $\beta X$ is not a compactification of $X$ in the strict sense, but for convenience, this post will generally refer to $\beta X$ as the Stone-Čech compactification of $X$.</p>
-
-<p>Unlike one-point compactifications, which are only possible for locally compact spaces, the Stone-Čech compactification is possible for <em>all</em> topological spaces. Consequently, the Stone-Čech compactification can be regarded as a <strong>functor</strong> that maps the category of general topological spaces $\mathbf{Top}$ to the category of compact Hausdorff spaces $\mathbf{CHaus}$. Indeed, the following holds.</p>
-
-<blockquote>
-  <p><strong>Theorem 3.</strong> The forgetful functor $U: \mathbf{CHaus} \to \mathbf{Top}$ has a left adjoint $\beta: \mathbf{Top} \to \mathbf{CHaus}$.</p>
-</blockquote>
-
-<p>Due to the equivalence discussed in a <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">previous post</a>, this may well be taken as the <em>definition</em> of Stone-Čech compactification.</p>
-
-<p>The proof of Theorem 3 consists of three main steps. First, we define $\beta X$ for a topological space $X$. Second, we show that $\beta X$ satisfies the universal property. Third, we show that the relationship between $X$ and $\beta X$ is functorial, meaning that $\beta$ is a functor. Although Theorems 1, 2, and 3 are distinguished above, the proof below will demonstrate all three theorems together.</p>
-
-<h4 id="proof">Proof.</h4>
-
-<p><strong>1. Defining $\beta X$</strong></p>
-
-<p>Let us define the set $C$ as follows.</p>
-
-\[C = \{ f \mid f : X \to [0, 1] \text{ is continuous } \}\]
-
-<p>We shall give the product topology to $[0, 1]^C$ to form a topological space. $[0, 1]^C$ can be thought of as the space of maps from $C$ to $[0, 1]$. Note that the product of Hausdorff spaces is always Hausdorff, and the product of compact spaces is always compact (Tychonoff’s theorem), so $[0, 1]^C$ is a compact Hausdorff space. Now, let us define $e: X \to [0, 1]^C$ as follows.</p>
-
-\[e: x \mapsto \lambda_x \quad \text{where} \quad \lambda_x : f \mapsto f(x)\]
-
-<p>By the properties of the product topology (indeed, its <a href="https://dimenerno.github.io/2025/04/02/box-v-product">definition</a>), $e$ is a continuous function. In particular, if $X$ is a Tychonoff space, then by the Urysohn lemma and its corollary (the theorems in <a href="https://dimenerno.github.io/2025/07/09/urysohn">this post</a>), $e$ is an embedding.</p>
-
-<p><strong>Let us define $\beta X$ as the closure of $e[X]$ in $[0, 1]^C$.</strong> Since $\beta X$ is a closed subset of a compact space, it is compact, and since it is a subspace of a Hausdorff space, it is Hausdorff. Therefore, $\beta X$ is compact Hausdorff. In particular, due to the remark in the previous paragraph, if $X$ is Tychonoff, then $\beta X$ is a compactification of $X$.</p>
-
-<h4 id="2-beta-x-satisfies-the-universal-property">2. $\beta X$ satisfies the universal property</h4>
-
-<p>Now let us show that $\beta X$ satisfies the universal property. First, we consider the case when $K = [0, 1]$.</p>
-
-<p>Let us assume we are given a continuous map $f: X \to [0, 1]$. We define $f^\ast : \beta X \to [0, 1]$ as follows.</p>
-
-\[f^\ast : \lambda \mapsto \lambda (f)\]
-
-<p>That is, for the projection map $\pi_f: [0, 1]^C \to [0, 1]$ that maps $(x_g)_{g \in C}$ to $x_f$, we have $f^\ast = \pi_f \rvert_{\beta X}$. Since $\pi_f$ is continuous, $f^\ast$ is continuous. Furthermore, for any $x \in X$,</p>
-
-\[(f^\ast \circ e)(x) = f^\ast (\lambda_x) = \lambda_x(f) = f(x)\]
-
-<p>Thus, $f^\ast$ is the map required by the universal property.</p>
-
-<p>For general $K$ compact Hausdorff and $f: X \to K$ continuous, we observe that $K$ is Tychonoff, and hence can be embedded into $[0, 1]^J$ for some index set $J$. It then follows that without loss of generality we may only consider cases where $K = [0, 1]^J$ and $f: X \to [0, 1]^J$. In such cases, we let $f^\ast$ be:</p>
-
-\[f^\ast : \lambda \mapsto (\lambda (\pi_\alpha f))_{\alpha \in J}\]
-
-<p>It follows from the $K = [0, 1]$ case that $f^\ast$ is continuous, and satisfies the universal property. Therefore, $\beta X$ is the Stone-Čech compactification of $X$.</p>
-
-<h4 id="3-beta-is-a-functor">3. $\beta$ is a functor</h4>
-
-<p>Finally, we need to show that $\beta$ is a functor. That is, we need to show that for any topological spaces $X, Y$ and continuous map $\psi : X \to Y$, one can define $\beta \psi$ such that the following commutative diagram holds.</p>
-
-<p><img src="/public/stone-cech-3.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1em auto;" /></p>
-
-<p>Let us define $\beta \psi$ as follows. For any $\lambda \in \beta X$,</p>
-
-\[\beta \psi : \lambda \mapsto (g \mapsto \lambda(g \circ \psi) )_{g \in C_Y}\]
-
-<p>where $C_Y$ is the collection of continuous functions $g : Y \to [0, 1]$. (Exercise: Verify that the above definition is well-defined by checking the domains and codomains of each function.) The commutativity of the diagram reduces to the following equation.</p>
-
-\[\beta \psi(\lambda_x) = \lambda_{\psi(x)}\]
-
-<p>Expanding the left-hand side according to the definition, we see that the equation indeed holds.</p>
-
-\[\begin{align*}
-\beta \psi(\lambda_x) &amp;= (g \mapsto \lambda_x(g\circ \psi))_{g \in C_Y} \\
-&amp;= (g \mapsto (g \circ \psi)(x))_{g \in C_Y} \\
-&amp;= (g \mapsto g(\psi(x)))_{g \in C_Y} \\
-&amp;= \lambda_{\psi(x)}
-\end{align*}\]
-
-<p>Thus, $\beta : \mathbf{Top} \to \mathbf{CHaus}$ is a functor, and in particular, it is the left adjoint to $U: \mathbf{CHaus} \to \mathbf{Top}$. It follows that for any $X$, the pair $(e, \beta X)$ that satisfies the universal condition is the initial object in the comma category $(A \Rightarrow U)$, which implies uniqueness up to isomorphism. (For further details, refer to <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint">this post</a>) ■</p>
 
           ]]>
         </content:encoded>

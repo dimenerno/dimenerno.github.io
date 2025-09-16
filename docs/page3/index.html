@@ -431,6 +431,94 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/06/02/notes-on-continuity"> 왜 연속함수의 위상적 정의는 “반대”인가? </a>
+      </h1>
+    <span class="post-date">02 Jun 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>정의.</strong> 두 위상공간 $X, Y$에 대해 사상 $f: X \to Y$가 <strong>연속</strong>이라는 것은, $V \subseteq Y$가 열린 집합이라면 $f^{-1}[V] \subseteq X$ 또한 열린 집합이라는 것이다.</p>
+</blockquote>
+
+<p>위상수학을 처음 수강하는 학생들은 위 정의에서 혼란을 겪는다. 직관적으로는 “$U \subseteq X$가 열린 집합이라면 $f[U] \subseteq V$ 또한 열린 집합인 사상”이라는 정의가 자연스러운데, 실제 정의는 이와 반대이기 때문이다. 이러한 직관의 “근거”는 대충 다음과 같을 것이다.</p>
+
+<h3 id="1-엡실론-델타-논법">1. 엡실론-델타 논법</h3>
+
+<p>엡실론-델타 논법에 따르면 $f: X \to Y$가 연속이라는 것은 다음과 같다.</p>
+
+\[\forall \epsilon &gt; 0 \; \exists \delta &gt; 0 : |x - y| &lt; \delta \rightarrow |f(x) - f(y)| &lt; \epsilon\]
+
+<p>위 논리식을 보면 조건부에 $x, y \in X$가 있고 결론부에 $f(x), f(y) \in Y$가 있다. 따라서 연속함수의 위상적 정의 또한 조건부에 $U \subseteq X$가 있고 결론부에 $f[U] \subseteq Y$가 있는 것이 자연스러워 보인다.</p>
+
+<h3 id="2-열린-집합에-대한-직관">2. 열린 집합에 대한 직관</h3>
+
+<p>처음 위상수학을 배울 때, 열린 집합을 “서로 가까운 점들의 모임”으로 생각하곤 한다. 즉, $U$가 열린 집합이라는 것은 $x, y \in U$라면 $x, y$가 “가깝다”는 것이다. 그렇다면 연속함수는 “가까운 점들을 가까운 점들로 사상시키는 함수”이므로, 열린 집합을 열린 집합으로 사상시키는 함수로 정의하는 것이 자연스러워 보인다.</p>
+
+<div style="margin: 2.5em 0;">
+</div>
+
+<p><strong>그러나 위 두 “근거”는 매우 잘못되었다.</strong></p>
+
+<div style="margin: 2.5em 0;">
+</div>
+
+<h3 id="3-엡실론-델타-논법-근거가-잘못된-이유">3. “엡실론-델타 논법” 근거가 잘못된 이유</h3>
+
+<p>$\rightarrow$만을 기준으로 왼쪽이 조건부, 오른쪽이 결론부로 판단하는 것은 오해를 낳기 딱 좋다. 왜냐하면 여기서는 양화사 또한 고려해야 하기 때문이다. 엡실론-델타 논법의 양화사 부분을 언어적으로 읽으면 “임의의 양수 $\epsilon$에 대해, 어떤 양수 $\delta$가 존재한다” 이다. 다른 말로 하자면, U$\epsilon$이 양수<em>라면</em>, 어떤 양수 $\delta$가 존재한다” 이다.</p>
+
+<p>그리고 $\epsilon$과 유관한 공간은 $X$가 아닌 $Y$이다. <u>즉, $\epsilon$에 대한 서술, 그리고 그에 부수되는 $Y$에 대한 서술이 해당 논리식에서 가장 일차적인 조건부인 것이다.</u> 따라서 위상적 정의에서 $V \subseteq Y$가 조건부에 있는 것은 이상한 일이 아니다.</p>
+
+<h3 id="4-열린-집합에-대한-직관-근거가-잘못된-이유">4. “열린 집합에 대한 직관” 근거가 잘못된 이유</h3>
+
+<p>편의를 위해 $x$와 $y$가 “가깝다”는 것을 $x \sim y$로 표기하자. “열린 집합에 대한 직관” 근거는 다음의 잘못된 직관에 기반한다.</p>
+
+<blockquote>
+  <p><strong>열린 집합에 대한 잘못된 직관.</strong> $x \in U$에 대해, $y \in U$라면 $x \sim y$이다.</p>
+</blockquote>
+
+<p>이는 다음과 같이 수정해야 한다.</p>
+
+<blockquote>
+  <p><strong>열린 집합에 대한 올바른 직관.</strong> $x \in U$에 대해, $x \sim y$라면 $y \in U$이다.</p>
+</blockquote>
+
+<p>조금만 생각해 보면 이는 당연하다. 일례로 실수 전체의 집합 $\mathbb{R}$은 열린 집합이다. 그렇다면 임의의 두 실수는 언제나 “가까운” 것인가? 그건 말도 안 된다. 반대 경우를 보면, $\lbrace  0 \rbrace $은 열린 집합이 아니지만 $x, y \in \lbrace  0 \rbrace $일 때 $x = y$이므로 $x$와 $y$는 최대한으로 “가깝다”. 따라서 “잘못된 직관”에 따르면 $\lbrace  0 \rbrace $은 열린 집합이다.</p>
+
+<p>반면 “올바른 직관”으로 보면 $\mathbb{R}$은 열린 집합이고 $\lbrace  0 \rbrace $은 열린 집합이 아닌 것이 분명하게 드러난다. $x \in \mathbb{R}$일 때, $x$와 “가까운” 실수 $y$는 자명하게 $\mathbb{R}$에 포함된다. 한편 $\lbrace  0 \rbrace $은 $0$의 “바로 곁”에 있는 실수들을 포함하고 있지 않으므로 열린 집합이 아니다.</p>
+
+<p>또한 “올바른 직관”으로 보면 연속함수의 위상적 정의가 “뒤집혀야” 하는 이유 또한 분명하다. 먼저 연속함수는 다음과 같이 직관적으로 이해할 수 있다.</p>
+
+<blockquote>
+  <p><strong>연속함수에 대한 올바른 직관.</strong> $x \sim y$라면 $f(x) \sim f(y)$이다.</p>
+</blockquote>
+
+<p>이제 위의 “직관”과 연속함수의 위상적 정의가 동치임을 보이자.</p>
+
+<h4 id="직관적-정의--위상적-정의">직관적 정의 =&gt; 위상적 정의</h4>
+
+<p>$f$가 “직관적으로 연속”일 때, 열린 집합 $V$에 대해 $U = f^{-1}[V]$가 열린 집합임을 보이자. $x \in U$, $x \sim y$라고 하자. $f$가 연속이므로 $f(x) \sim f(y)$이다. 그리고 $V$가 열린 집합이며 $f(x) \in V$이므로 $f(y) \in V$이다. 따라서 $y \in U$이다. □</p>
+
+<h4 id="위상적-정의--직관적-정의">위상적 정의 =&gt; 직관적 정의</h4>
+
+<p>$f$가 “위상적으로 연속”일 때, $x \sim y$라면 $f(x) \sim f(y)$임을 보이자. $V$가 $f(x)$와 “가까운” 점들만을 포함하는 집합이라고 하자. $V$는 열린 집합이다. 왜냐하면 $z \in V$이고 $z \sim w$일 때, $V$의 정의에 의해 $f(x) \sim z$이므로 ~추이성에 의해~ $f(x) \sim w$, 즉 $w \in V$이기 때문이다. 그리고 $U = f^{-1}[V]$가 $x$를 포함하는 열린 집합이므로 $y \in U$이다. 따라서 $f(y) \in V$, 즉 $f(x) \sim f(y)$이다. ■</p>
+
+<p>물론 위의 논의는 엄밀하게 정의되지 않은 관계 $\sim$을 사용하기 때문에 조금 석연찮기는 하다. 그러나 필자는 $\sim$을 사용하여 열린 집합과 연속성을 이해하는 것이 위상수학을 처음 공부하는 데 있어 유용한 길잡이가 되어준다고 생각한다. 덧붙이자면, 비표준 해석학을 사용하면 $x \sim y$를 $|x - y| = \epsilon$으로 엄밀하게 정의할 수 있다. 이에 관해서는 나중에 기회가 되면 이야기해 보겠다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
         <a href="/2025/06/02/notes-on-continuity/en"> Why is Continuity in Topology defined 'Backwards'? </a>
@@ -1775,150 +1863,6 @@
 
 <p><strong>Proof.</strong> Since $T_{\mathrm{bd}}’$, which is a conservative extension of $T_{\mathrm{bd}}$, is complete, $T_{\mathrm{bd}}$ is also complete. ■</p>
 
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/13/saturation"> 포화된 구조와 실수체의 완전성 </a>
-      </h1>
-    <span class="post-date">13 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <p>$\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $A$는 $\mathfrak{A}$의 정의역이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $X \subseteq A$가 <strong>정의가능<sub>definable</sub></strong>하다는 것은, 어떤 $\mathcal{L}$-논리식 $\phi$와 자유변수 할당 $g$가 존재하여 다음이 성립한다는 것이다.</p>
-
-\[X = \{ x \in A : \mathfrak{A} \vDash \phi[g^0_x] \}\]
-
-  <p>$\phi$가 $v_0$ 이외의 자유변수를 가지지 않을 때, $X$는 $\emptyset$-정의가능하다고 한다.</p>
-</blockquote>
-
-<p><em>Remark.</em> 정의가능성은 <a href="https://dimenerno.github.io/2024/12/11/VL-axiom/">괴델의 구성가능성</a>과 같은 의미이다.</p>
-
-<p>예를 들어 $(\mathbb{R}, &lt;)$에서 $(e, 2\pi)$는 다음의 $\phi$와 $g$에 의해 정의가능하다.</p>
-
-<ul>
-  <li>$\phi \equiv (v_1 &lt; v_0 \land v_0 &lt; v_2)$</li>
-  <li>$g: v_1 \mapsto e, v_2 \mapsto 2\pi$</li>
-</ul>
-
-<p>그러나 $(e, 2\pi)$는 $\emptyset$-정의가능하지 않다. $(\mathbb{R}, &lt;)$에서 $e$와 $2\pi$를 특정할 방법이 없기 때문이다.</p>
-
-<p>한편 표준 산술 모형 $(\mathbb{N}, 0, +, S)$에서 짝수의 집합 $E$는 다음의 $\phi$에 의해 $\emptyset$-정의가능하다.</p>
-
-<ul>
-  <li>$\phi \equiv \exists y (x = y + y)$</li>
-</ul>
-
-<p>모든 유한집합은 정의가능하다. 예를 들어 $A = \lbrace a_1, a_2, a_3 \rbrace $는 다음과 같이 정의가능하다.</p>
-
-<ul>
-  <li>$\phi \equiv (v_0 = v_1) \lor (v_0 = v_2) \lor (v_0 = v_3)$</li>
-  <li>$g: v_1 \mapsto a_1, v_2 \mapsto a_2, v_3 \mapsto a_3$</li>
-</ul>
-
-<p>같은 이유로 모든 쌍대 유한집합<sub>cofinite set</sub> 또한 정의가능하다.</p>
-
-<p><a href="http://dimenerno.github.io/2025/05/09/resiliency/">저번 글</a>에서 탄력적<sub>resilient</sub> 집합족에 대해 알아 보았다. 이제 다음을 정의하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\kappa$가 비가산 기수라고 하자. $\mathfrak{A}$가 <strong>$\kappa$-포화<sub>$\kappa$-saturated</sub></strong>되었다는 것은, $\kappa$개보다 적은 $A$의 정의가능한 부분집합들의 모임이 언제나 탄력적이라는 것이다. 특히, $\mathfrak{A}$가 $|A|$-포화되었을 때, $\mathfrak{A}$는 <strong>포화<sub>saturated</sub></strong>되었다고 한다.</p>
-</blockquote>
-
-<p>따라서 $\aleph_1$-포화된 구조 $\mathfrak{A}$는, 가산 개의 $\mathfrak{A}$의 정의가능한 부분집합들의 모임이 유한 교집합 속성을 만족할 때, 전체 교집합 또한 공집합이 아닌 구조이다. 한편 구조 $\mathfrak{A}$가 $|A|^+$-포화되는 것은 불가능하다. 다음의 집합족이 유한 교집합 속성을 만족하지만 교집합은 공집합이기 때문이다.</p>
-
-\[\Big\{ A - \{ a \} : a \in A \Big\}\]
-
-<p>포화된 구조의 중요성은 다음 정리에 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 초등적으로 동등하며 기수가 같은 두 포화된 $\mathcal{L}$-구조는 동형이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 생략. 기초적인 아이디어는 <a href="https://dimenerno.github.io/2025/05/08/resiliency/">저번 글</a>에서 본 칸토어의 앞뒤 논법을 일반화한 것이다.</p>
-
-<p>그러나 유감스럽게도 포화된 구조는 구성하기가 까다롭다. 일례로 비가산 기수 $\kappa$와, $|T| \leq \kappa$인 건전한 이론 $T$에 대해, $T$는 $\kappa^+$-포화된, 기수 $2^\kappa$의 모델을 가진다. 따라서 일반화된 연속체 가설을 인정할 시 해당 모델은 포화되어 있다. 그러나 ZFC만으로는 포화된 구조가 존재함을 증명할 수 없음이 알려져 있다.</p>
-
-<p>따라서 다음의 더 약한 조건을 가진 개념을 도입한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 <strong>특별<sub>special</sub></strong>하다는 것은, $\mathfrak{A}$가 방향 유도계 $\lbrace  \mathfrak{A}_\kappa \rbrace _{\kappa &lt; |A|}$의 쌍대 극한이라는 것이다. 여기서 $\kappa$는 무한 기수이며, 각 $\mathfrak{A}_\kappa$는 $\kappa^+$-포화되어 있다.</p>
-</blockquote>
-
-<p>모든 포화된 구조는 특별하다. 각 $\mathfrak{A}_\kappa$를 자기 자신으로 두면 되기 때문이다. 그러나 모든 특별한 구조가 포화된 것은 아니다. 따라서 특별함은 포화보다 엄격히 약한 조건이다. 그럼에도 특별한 구조는 동형성 성질을 만족한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 초등적으로 동등하며 기수가 같은 두 특별한 $\mathcal{L}$-구조는 동형이다.</p>
-</blockquote>
-
-<p>더구나 특별한 구조는 포화된 구조보다 더 구성하기 쉽다. 특히, 다음 뢰벤하임-스콜렘 정리의 특수화가 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>특별 뢰벤하임-스콜렘 정리.</strong> $T$가 언어 $\mathcal{L}$의 이론이라고 하자.</p>
-
-  <ol>
-    <li>$T$가 무한 모델을 가진다면, $T$는 임의의 기수보다 큰 기수의 특별한 모델을 가진다.</li>
-    <li>$T$가 무한 모델을 가지고, $\mathcal{L}$이 가산이라면, $T$는 기수가 $\beth_\omega$인 특별한 모델을 가진다.</li>
-  </ol>
-</blockquote>
-
-<p>이 정리의 응용으로서, 다음의 유명한 결과를 보자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> <strong>실수 닫힌 순서체 이론</strong> 또는 <strong>RCOF</strong>란 다음의 공리들로 이루어진 언어 $(0, 1, +, \cdot, &lt;)$의 이론이다. ($x^n$은 $x \underbrace{\cdot \;\cdots\; \cdot}_{n} x$를 줄인 표기법)</p>
-
-  <ol>
-    <li>순서체 공리
-      <ul>
-        <li>$\forall a, b, c : (a &lt; b) \rightarrow (a + c &lt; b + c)$</li>
-        <li>$\forall a, b : (a &gt; 0 \land b &gt; 0) \rightarrow ab &gt; 0$</li>
-        <li>체 공리</li>
-      </ul>
-    </li>
-    <li>제곱근 공리: $\forall a &gt; 0 \; \exists x : x^2 = a$</li>
-    <li>닫힘 공리꼴:
-      <ul>
-        <li>$\forall a_2, a_1, a_0 \; \exists x :x^3 + a_2x^2 + a_1x + a_0 = 0$</li>
-        <li>$\forall a_4, a_3, a_2, a_1, a_0\; \exists x : x^5 + a_4x^4 + \cdots + a_0 = 0$</li>
-        <li>…</li>
-      </ul>
-    </li>
-  </ol>
-
-  <p><strong>실수 닫힌체 이론</strong> 또는 <strong>RCF</strong>란 다음의 공리들로 이루어진 언어 $(0, 1, +, \cdot)$의 이론이다.</p>
-
-  <ol>
-    <li>체 공리</li>
-    <li>형식적 실수 공리: $\forall x : x^2 \neq -1$</li>
-    <li>제곱근 공리: $\forall a \; \exists x : x^2 = a \lor x^2 = -a$</li>
-    <li>닫힘 공리꼴</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>타르스키 정리.</strong> RCOF와 RCF는 완전하다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 핵심은 다음의 보조정리이다.</p>
-
-<blockquote>
-  <p><strong>에르되시-길만-헨릭슨<sub>Erdös-Gillman-Henriksen</sub> 보조정리.</strong> 기수가 같은 두 특별한 실수 닫힌체는 동형이다.</p>
-</blockquote>
-
-<p>보조정리를 인정하고 타르스키 정리를 증명해 보자. 만약 RCF가 완전하지 않다면, RCF의 확장 $T_1$과 $T_2$가 존재하여 $T_1$의 모델과 $T_2$의 모델은 초등적으로 동등하지 않다. RCF의 모든 모델은 무한 모델이므로 (why?) 특별 뢰벤하임-스콜렘 정리에 의해 $T_1$과 $T_2$는 각각 기수가 $\beth_\omega$인 모델 $\mathfrak{A}_1, \mathfrak{A}_2$를 가진다. 그런데 보조정리에 의해 $\mathfrak{A}_1 \cong \mathfrak{A}_2$인데, 이는 $\mathfrak{A}_1 \not\equiv \mathfrak{A}_2$와 모순이다. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

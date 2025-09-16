@@ -4,13 +4,156 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-09-14T19:12:06+09:00</updated>
+ <updated>2025-09-16T23:14:35+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>기수 덧셈과 기수 곱셈의 기본 정리들</title>
+   <link href="https://dimenerno.github.io/2025/09/16/cardinal-arithmetics"/>
+   <updated>2025-09-16T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics</id>
+   <content type="html">&lt;p&gt;이 글에서 모든 집합과 기수는 무한집합, 무한기수이다.&lt;/p&gt;
+
+&lt;p&gt;기수 산술&lt;sub&gt;cardinal arithmetics&lt;/sub&gt;을 다룰 때에는 각 연산의 정의를 정확히 아는 것이 중요하다. 정의와 정리를 혼동하기가 쉽기 때문이다. 먼저 기수 덧셈부터 보자.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $A, B$가 각각 기수가 $\kappa, \lambda$인 서로소 집합이라고 하자. $\kappa + \lambda$를 $|A \cup B |$로 정의한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 기수의 유한 덧셈은 교환법칙과 결합법칙을 만족한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;위 정의가 well-defined임을 보이기 위해서는 $\kappa + \lambda$가 $A, B$의 선택에 의존적이지 않음을 보여야 한다. 이는 ZF에서 쉽게 증명 가능하다. 또한 유한한 기수 덧셈은 그저 최대 기수를 구하는 것이기 때문에 계산하기가 상당히 용이하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt;
+\(\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 글 하단에 달린 보조정리와 칸토어-베른슈타인 정리에 의해, $\aleph_\alpha = \aleph_\alpha + \aleph_\alpha$이다. 따라서 $|A| \leq |B|$라면 $|B| \leq |A + B| \leq |B + B| = |B|$이다. ■&lt;/p&gt;
+
+&lt;p&gt;기수 덧셈의 정의를 무한한 경우로 확장하면,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 쌍으로 서로소인 집합족 $\lbrace  A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.&lt;/p&gt;
+
+\[\sum_{i \in I} \kappa_i = \left| \bigcup_{i \in I}A_i \right|\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;유의할 점은, 위 정의가 well-defined임을 보이는 데는 선택 공리가 필요하다는 점이다. 각 $i \in I$에 대해 일대일 대응 $A_i \to \kappa_i$을 선택할 수 있어야 하기 때문이다. 그래서 기수 산술을 다룰 때에는 거의 언제나 선택 공리를 전제한다.&lt;/p&gt;
+
+&lt;p&gt;$\kappa + \lambda = \mathrm{max}(\kappa, \lambda)$ 관계식으로부터 다음의 관계식을 유도하고 싶을 수 있지만, 성립하는 식이 아님에 주의해야 한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;주의.&lt;/strong&gt; $\sum_{i \in I} \kappa_i = \sup \kappa_i$는 일반적으로 성립하지 않는다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그렇다면 무한한 기수 덧셈은 어떻게 계산해야 할까? 이를 알아보기 위해, 먼저 기수 곱셈을 정의하자 (이 정의 또한 well-definedness를 보이기 위해서는 선택 공리가 필요하다).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $A, B$가 각각 기수가 $\kappa, \lambda$인 집합이라고 하자. $\kappa \cdot \lambda$를 $| A \times B|$로 정의한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 기수의 유한 곱셈은 교환법칙과 결합법칙을 만족한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;아주 용이하게도 유한 기수 곱셈의 계산은 유한 기수 덧셈의 계산과 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt;
+\(\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 글 하단에 달린 보조정리로부터 따라 나온다. ■&lt;/p&gt;
+
+&lt;p&gt;물론, &lt;strong&gt;기수 곱셈의 정의는 기수 덧셈과 아무 관련이 없다.&lt;/strong&gt; 즉, 기수 곱셈의 정의에는 “$\kappa$를 $\lambda$번 더한다”와 같은 의미가 없다. 그럼에도 다음 &lt;em&gt;정리&lt;/em&gt;에 의해 기수 곱셈을 기수 덧셈과 연관지을 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt;
+\(\sum_{i \in I} \kappa = |I| \cdot \kappa\)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $\lbrace  A_i \rbrace $가 쌍으로 서로소이며 $|A_i| = \kappa$인 집합족이라고 하자. 좌변은 $\bigcup_{i \in I} A_i$의 기수이고, 우변은 $I \times A_k$의 기수이다 ($k$는 $I$의 어떤 원소). $|A_i| = |A_k| = \kappa$이므로, 선택 공리에 의해 각 $i \in I$에 대해 일대일 대응 $f_i : A_i \to A_k$를 정의할 수 있다. 다음의 대응 $f: \bigcup_{i \in I} A_i \to I \times A_k$을 정의하자.&lt;/p&gt;
+
+\[f(x) = (i, f_i(x)) \quad (\text{if } x \in A_i)\]
+
+&lt;p&gt;위 함수가 일대일 대응임은 쉽게 확인할 수 있다. 따라서 (좌변) = (우변)이다. ■&lt;/p&gt;
+
+&lt;p&gt;이로부터 앞선 언급한 “주의”에 해당되는 올바른 관계식을 증명할 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt;
+\(\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $\kappa = \sup \lbrace  \kappa_i : i \in I \rbrace $라고 하고, 좌변을 $L$, 우변을 $R$이라고 하자. 앞선 정리에 의해 $|I| \cdot \kappa = \sum_{i \in I} \kappa$이고 $\kappa_i \leq \kappa$이므로 $L ≤ R$이다. 반대로, $| I | = \sum_{i \in I} 1 \leq L$이고, $\kappa = \sup \kappa_i \leq L$이다. 글 하단의 보조정리에 의해 $L = L \cdot L$이므로 $L \geq | I | \cdot \kappa = R$이다. 따라서 칸토어-베른슈타인 정리에 의해 $L = R$이다. (이 증명에는 선택 공리가 암시적으로 많이 사용되었으니 관심 있는 독자는 생략된 논증을 자세히 써 봐도 좋을 것이다) ■&lt;/p&gt;
+
+&lt;p&gt;이제 기수 곱셈도 무한 경우로 일반화하자.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 집합족 $\lbrace  A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.&lt;/p&gt;
+
+\[\prod_{i \in I} \kappa_i = \left| \prod_{i \in I}A_i \right|\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;무한 기수 덧셈이 기수 곱셈과 관련이 있었던 것처럼, 무한 기수 곱셈은 기수 지수와 관련이 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $A, B$가 각각 기수가 $\kappa, \lambda$인 집합이라고 하자. $\kappa^\lambda$를 $|A^B |$로 정의한다. ($A^B$는 $B$에서 $A$로 가는 함수들의 집합이다)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 기수의 지수 연산은 지수법칙을 만족한다. 즉,&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;$\kappa^{\lambda + \mu} = \kappa^\lambda \cdot \kappa^\mu$&lt;/li&gt;
+    &lt;li&gt;$(\kappa^\lambda)^\mu = \kappa^{\lambda \cdot \mu}$&lt;/li&gt;
+    &lt;li&gt;$(\kappa \cdot \lambda)^{\mu} = \kappa^\mu \cdot \lambda^\mu$&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;하지만 기수 덧셈과 기수 곱셈의 경우와는 달리, 기수 곱셈과 기수 지수 사이에는 일률적인 관계가 없으며, 때문에 무한 기수 곱셈과 관련해서는 알려진 결과도 많지 않다. 적어도 다음은 잘 알려져 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\prod_{n \in \omega} n = 2^{\aleph_0}$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $\prod_{n \in \omega} n \geq \prod_{n \in \omega} 2 = 2^{\aleph_0}$이다. 역으로, $\prod_{n \in \omega} n \leq \prod_{n \in \omega} \aleph_0 = {\aleph_0}^{\aleph_0}$이다. 그런데&lt;/p&gt;
+
+\[2^{\aleph_0} \leq {\aleph_0}^{\aleph_0} \leq (2^{\aleph_0})^{\aleph_0} = 2^{\aleph_0 \cdot \aleph_0}\]
+
+&lt;p&gt;이므로 ${\aleph_0}^{\aleph_0} = 2^{\aleph_0}$이다. ■&lt;/p&gt;
+
+&lt;p&gt;대신 기수 곱셈을 계산할 때 &lt;strong&gt;쾨니히 정리&lt;sub&gt;König’s Theorem&lt;/sub&gt;&lt;/strong&gt;가 유용하게 사용될 수 있다. 이에 대해서는 다음 글에서 알아보겠다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;보조정리.&lt;/strong&gt; 임의의 $\alpha \in \mathrm{Ord}$에 대해, $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;증명 개요는 다음과 같다. 임의의 $\alpha \in \mathrm{Ord}$에 대해, 다음과 같이 정의된 순서 $\prec$가 $\omega_\alpha \times \omega_\alpha$의 정렬 순서임을 보인다. $\hat{x} = \mathrm{max}(x_1, x_2), \hat{y} = \mathrm{max}(y_1, y_2)$일 때,&lt;/p&gt;
+
+\[(x_1, x_2) \prec (y_1, y_2) \iff \begin{cases}
+\hat{x} &amp;lt; \hat{y}\\
+x_1 &amp;lt; y_1 \quad (\text{if }\hat{x} &amp;lt; \hat{y}) \\
+x_2 &amp;lt; y_2 \quad (\text{if }\hat{x} &amp;lt; \hat{y}, x_1 = y_1) \\
+\end{cases}\]
+
+&lt;p&gt;즉, $\prec$은 최댓값 우선 후 사전식 순서이다. 초한귀납법에 따라 모든 $\beta &amp;lt; \alpha$에 대해 $\aleph_\beta \cdot \aleph_\beta = \aleph_\beta$일 때 $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$임을 보인다. 이를 위해 $(\omega_\alpha \times \omega_\alpha, \prec)$의 순서형&lt;sub&gt;order type&lt;/sub&gt;이 $\omega_\alpha$를 넘지 않음을 보이면 된다. 이를 위해 임의의 $(\gamma_1, \gamma_2) \in \omega_\alpha \times \omega_\alpha$에 대해&lt;/p&gt;
+
+\[X = \{ (\xi_1, \xi_2) : (\xi_1, \xi_2) \prec (\gamma_1, \gamma_2) \}\]
+
+&lt;p&gt;라면 $|X| &amp;lt; \aleph_\alpha$임을 보이면 된다. $\gamma = \mathrm{max}(\gamma_1, \gamma_2) + 1$이라고 하자. $\omega_\alpha$는 극한 서수이므로 $\gamma \in \omega_\alpha$이며, 따라서 $|\gamma| = \aleph_\delta \; (\delta &amp;lt; \alpha)$이다. 한편으로 $X \subseteq \gamma \times \gamma$이므로 $|X| \leq \aleph_\delta \cdot \aleph_\delta$이며 이는 귀납 가정에 의해 $\aleph_\delta$이다. ■&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>자연수라는 신기루: 짧은 논리학 이야기</title>

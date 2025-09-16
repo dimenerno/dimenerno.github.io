@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     기수 덧셈과 기수 곱셈의 기본 정리들 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/09/16/cardinal-arithmetics" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">기수 덧셈과 기수 곱셈의 기본 정리들</h1>
+  <span class="post-date">16 Sep 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+    </div>
+  
+  <p>이 글에서 모든 집합과 기수는 무한집합, 무한기수이다.</p>
+
+<p>기수 산술<sub>cardinal arithmetics</sub>을 다룰 때에는 각 연산의 정의를 정확히 아는 것이 중요하다. 정의와 정리를 혼동하기가 쉽기 때문이다. 먼저 기수 덧셈부터 보자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 서로소 집합이라고 하자. $\kappa + \lambda$를 $|A \cup B |$로 정의한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 기수의 유한 덧셈은 교환법칙과 결합법칙을 만족한다.</p>
+</blockquote>
+
+<p>위 정의가 well-defined임을 보이기 위해서는 $\kappa + \lambda$가 $A, B$의 선택에 의존적이지 않음을 보여야 한다. 이는 ZF에서 쉽게 증명 가능하다. 또한 유한한 기수 덧셈은 그저 최대 기수를 구하는 것이기 때문에 계산하기가 상당히 용이하다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong>
+\(\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\)</p>
+</blockquote>
+
+<p><strong>증명.</strong> 글 하단에 달린 보조정리와 칸토어-베른슈타인 정리에 의해, $\aleph_\alpha = \aleph_\alpha + \aleph_\alpha$이다. 따라서 $|A| \leq |B|$라면 $|B| \leq |A + B| \leq |B + B| = |B|$이다. ■</p>
+
+<p>기수 덧셈의 정의를 무한한 경우로 확장하면,</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 쌍으로 서로소인 집합족 $\lbrace  A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
+
+\[\sum_{i \in I} \kappa_i = \left| \bigcup_{i \in I}A_i \right|\]
+</blockquote>
+
+<p>유의할 점은, 위 정의가 well-defined임을 보이는 데는 선택 공리가 필요하다는 점이다. 각 $i \in I$에 대해 일대일 대응 $A_i \to \kappa_i$을 선택할 수 있어야 하기 때문이다. 그래서 기수 산술을 다룰 때에는 거의 언제나 선택 공리를 전제한다.</p>
+
+<p>$\kappa + \lambda = \mathrm{max}(\kappa, \lambda)$ 관계식으로부터 다음의 관계식을 유도하고 싶을 수 있지만, 성립하는 식이 아님에 주의해야 한다.</p>
+
+<blockquote>
+  <p><strong>주의.</strong> $\sum_{i \in I} \kappa_i = \sup \kappa_i$는 일반적으로 성립하지 않는다.</p>
+</blockquote>
+
+<p>그렇다면 무한한 기수 덧셈은 어떻게 계산해야 할까? 이를 알아보기 위해, 먼저 기수 곱셈을 정의하자 (이 정의 또한 well-definedness를 보이기 위해서는 선택 공리가 필요하다).</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 집합이라고 하자. $\kappa \cdot \lambda$를 $| A \times B|$로 정의한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 기수의 유한 곱셈은 교환법칙과 결합법칙을 만족한다.</p>
+</blockquote>
+
+<p>아주 용이하게도 유한 기수 곱셈의 계산은 유한 기수 덧셈의 계산과 같다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong>
+\(\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\)</p>
+</blockquote>
+
+<p><strong>증명.</strong> 글 하단에 달린 보조정리로부터 따라 나온다. ■</p>
+
+<p>물론, <strong>기수 곱셈의 정의는 기수 덧셈과 아무 관련이 없다.</strong> 즉, 기수 곱셈의 정의에는 “$\kappa$를 $\lambda$번 더한다”와 같은 의미가 없다. 그럼에도 다음 <em>정리</em>에 의해 기수 곱셈을 기수 덧셈과 연관지을 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong>
+\(\sum_{i \in I} \kappa = |I| \cdot \kappa\)</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\lbrace  A_i \rbrace $가 쌍으로 서로소이며 $|A_i| = \kappa$인 집합족이라고 하자. 좌변은 $\bigcup_{i \in I} A_i$의 기수이고, 우변은 $I \times A_k$의 기수이다 ($k$는 $I$의 어떤 원소). $|A_i| = |A_k| = \kappa$이므로, 선택 공리에 의해 각 $i \in I$에 대해 일대일 대응 $f_i : A_i \to A_k$를 정의할 수 있다. 다음의 대응 $f: \bigcup_{i \in I} A_i \to I \times A_k$을 정의하자.</p>
+
+\[f(x) = (i, f_i(x)) \quad (\text{if } x \in A_i)\]
+
+<p>위 함수가 일대일 대응임은 쉽게 확인할 수 있다. 따라서 (좌변) = (우변)이다. ■</p>
+
+<p>이로부터 앞선 언급한 “주의”에 해당되는 올바른 관계식을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong>
+\(\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\)</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\kappa = \sup \lbrace  \kappa_i : i \in I \rbrace $라고 하고, 좌변을 $L$, 우변을 $R$이라고 하자. 앞선 정리에 의해 $|I| \cdot \kappa = \sum_{i \in I} \kappa$이고 $\kappa_i \leq \kappa$이므로 $L ≤ R$이다. 반대로, $| I | = \sum_{i \in I} 1 \leq L$이고, $\kappa = \sup \kappa_i \leq L$이다. 글 하단의 보조정리에 의해 $L = L \cdot L$이므로 $L \geq | I | \cdot \kappa = R$이다. 따라서 칸토어-베른슈타인 정리에 의해 $L = R$이다. (이 증명에는 선택 공리가 암시적으로 많이 사용되었으니 관심 있는 독자는 생략된 논증을 자세히 써 봐도 좋을 것이다) ■</p>
+
+<p>이제 기수 곱셈도 무한 경우로 일반화하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 집합족 $\lbrace  A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
+
+\[\prod_{i \in I} \kappa_i = \left| \prod_{i \in I}A_i \right|\]
+</blockquote>
+
+<p>무한 기수 덧셈이 기수 곱셈과 관련이 있었던 것처럼, 무한 기수 곱셈은 기수 지수와 관련이 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 집합이라고 하자. $\kappa^\lambda$를 $|A^B |$로 정의한다. ($A^B$는 $B$에서 $A$로 가는 함수들의 집합이다)</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 기수의 지수 연산은 지수법칙을 만족한다. 즉,</p>
+
+  <ul>
+    <li>$\kappa^{\lambda + \mu} = \kappa^\lambda \cdot \kappa^\mu$</li>
+    <li>$(\kappa^\lambda)^\mu = \kappa^{\lambda \cdot \mu}$</li>
+    <li>$(\kappa \cdot \lambda)^{\mu} = \kappa^\mu \cdot \lambda^\mu$</li>
+  </ul>
+</blockquote>
+
+<p>하지만 기수 덧셈과 기수 곱셈의 경우와는 달리, 기수 곱셈과 기수 지수 사이에는 일률적인 관계가 없으며, 때문에 무한 기수 곱셈과 관련해서는 알려진 결과도 많지 않다. 적어도 다음은 잘 알려져 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\prod_{n \in \omega} n = 2^{\aleph_0}$</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\prod_{n \in \omega} n \geq \prod_{n \in \omega} 2 = 2^{\aleph_0}$이다. 역으로, $\prod_{n \in \omega} n \leq \prod_{n \in \omega} \aleph_0 = {\aleph_0}^{\aleph_0}$이다. 그런데</p>
+
+\[2^{\aleph_0} \leq {\aleph_0}^{\aleph_0} \leq (2^{\aleph_0})^{\aleph_0} = 2^{\aleph_0 \cdot \aleph_0}\]
+
+<p>이므로 ${\aleph_0}^{\aleph_0} = 2^{\aleph_0}$이다. ■</p>
+
+<p>대신 기수 곱셈을 계산할 때 <strong>쾨니히 정리<sub>König’s Theorem</sub></strong>가 유용하게 사용될 수 있다. 이에 대해서는 다음 글에서 알아보겠다.</p>
+
+<hr />
+
+<blockquote>
+  <p><strong>보조정리.</strong> 임의의 $\alpha \in \mathrm{Ord}$에 대해, $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$</p>
+</blockquote>
+
+<p>증명 개요는 다음과 같다. 임의의 $\alpha \in \mathrm{Ord}$에 대해, 다음과 같이 정의된 순서 $\prec$가 $\omega_\alpha \times \omega_\alpha$의 정렬 순서임을 보인다. $\hat{x} = \mathrm{max}(x_1, x_2), \hat{y} = \mathrm{max}(y_1, y_2)$일 때,</p>
+
+\[(x_1, x_2) \prec (y_1, y_2) \iff \begin{cases}
+\hat{x} &lt; \hat{y}\\
+x_1 &lt; y_1 \quad (\text{if }\hat{x} &lt; \hat{y}) \\
+x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
+\end{cases}\]
+
+<p>즉, $\prec$은 최댓값 우선 후 사전식 순서이다. 초한귀납법에 따라 모든 $\beta &lt; \alpha$에 대해 $\aleph_\beta \cdot \aleph_\beta = \aleph_\beta$일 때 $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$임을 보인다. 이를 위해 $(\omega_\alpha \times \omega_\alpha, \prec)$의 순서형<sub>order type</sub>이 $\omega_\alpha$를 넘지 않음을 보이면 된다. 이를 위해 임의의 $(\gamma_1, \gamma_2) \in \omega_\alpha \times \omega_\alpha$에 대해</p>
+
+\[X = \{ (\xi_1, \xi_2) : (\xi_1, \xi_2) \prec (\gamma_1, \gamma_2) \}\]
+
+<p>라면 $|X| &lt; \aleph_\alpha$임을 보이면 된다. $\gamma = \mathrm{max}(\gamma_1, \gamma_2) + 1$이라고 하자. $\omega_\alpha$는 극한 서수이므로 $\gamma \in \omega_\alpha$이며, 따라서 $|\gamma| = \aleph_\delta \; (\delta &lt; \alpha)$이다. 한편으로 $X \subseteq \gamma \times \gamma$이므로 $|X| \leq \aleph_\delta \cdot \aleph_\delta$이며 이는 귀납 가정에 의해 $\aleph_\delta$이다. ■</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>
