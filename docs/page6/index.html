@@ -431,6 +431,780 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/18/prisoner-hat/en"> Infinite Prisoner Hat Problem </a>
+      </h1>
+    <span class="post-date">18 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>You have likely encountered puzzles where prisoners attempt to guess the colour of their own hats. Consider the following example:</p>
+
+<blockquote>
+  <p>Three prisoners A, B, and C stand in a line. A guard selects three hats from two black hats and three white hats, places them on each prisoner, and announces that if any one of them correctly guesses their hat colour, all will be freed, but if they guess incorrectly, all will be executed. Each prisoner can see the hat colours of those in front of them, but cannot see their own hat colour or those of prisoners behind them. After a long silence, one prisoner correctly identifies their hat colour. Which prisoner solved the problem?</p>
+
+  <p><img src="/public/hat-1.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<div onclick="toggleAnswer(1)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Answer</u>
+</div>
+
+<div id="answer1" class="answer" style="padding-bottom: 1em;">
+<p><strong>C provides the correct answer.</strong></p>
+<p>If both B and C wore black hats, A would have correctly guessed that their hat was white. However, since a "long silence" ensued, A could not determine their hat colour, indicating that the hat colours of B and C represent one of the cases: (white, black), (black, white), or (white, white).</p>
+<p>Considering this information, if C's hat were black, B would have correctly guessed that their hat was white. The fact that a "long silence" continued indicates that B also could not determine their hat colour, therefore C's hat must be white.</p>
+</div>
+
+<p>A more challenging problem follows:</p>
+
+<blockquote>
+  <p>One hundred prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, whilst those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What is the maximum number of prisoners whose survival can be guaranteed with certainty?</p>
+
+  <p><img src="/public/hat-2.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<div onclick="toggleAnswer(8)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Hint</u>
+</div>
+
+<div id="answer8" class="answer" style="padding-bottom: 1em;">
+<p>The survival of 99 prisoners, excluding the first, can be guaranteed.</p>
+</div>
+
+<div></div>
+
+<div onclick="toggleAnswer(2)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Answer</u>
+</div>
+
+<div id="answer2" class="answer" style="padding-bottom: 1em;">
+<p><strong>The survival of 99 prisoners, excluding the first, can be guaranteed.</strong></p>
+<p>The first prisoner can observe the hat colours of the remaining 99 prisoners. If the number of black hats amongst them is even, they guess their own hat is black; if odd, they guess white. The second prisoner can then compare the information conveyed by the first prisoner with the parity of black hats amongst those in front of them to correctly determine their own hat colour. Similarly, the third prisoner can use the information from the first prisoner and the fact that the second prisoner correctly identified their hat colour to determine their own, and in this manner, all 99 prisoners can be freed.</p>
+</div>
+
+<p>Let us now make the problem more formidable:</p>
+
+<blockquote>
+  <p><strong>Infinitely many prisoners stand in a line.</strong> A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, whilst those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What strategy minimises the number of prisoners who die? <strong>We assume that all prisoners possess infinite computational power and are mathematically omniscient.</strong> That is, when $f$ is a mathematically well-defined function, prisoners can always compute the value of $f$, and when discussing strategy beforehand, they may agree to employ $f$.</p>
+
+  <p><img src="/public/hat-3.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<div onclick="toggleAnswer(3)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Hint 1</u>
+</div>
+
+<div id="answer3" class="answer" style="padding-bottom: 1em;">
+<p>The survival of all prisoners except the first can be guaranteed.</p>
+</div>
+
+<div></div>
+
+<div onclick="toggleAnswer(4)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Hint 2</u>
+</div>
+
+<div id="answer4" class="answer" style="padding-bottom: 1em;">
+<p>The axiom of choice is employed.</p>
+</div>
+
+<div></div>
+
+<div onclick="toggleAnswer(5)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Answer</u>
+</div>
+
+<div id="answer5" class="answer" style="padding-bottom: 1em;">
+
+<p>By representing black hats as 0 and white hats as 1, the prisoners' hat arrangement can be expressed as an infinite sequence such as 101011... When a decimal point is placed at the beginning and read in binary, the prisoners' hat arrangement corresponds bijectively to a real number between 0 and 1 inclusive.</p>
+
+<p>For real numbers $a, b \in [0, 1]$, we define $a \sim b$ when their binary expansions differ in finitely many digits. For example:</p>
+
+$$
+0.11111\dots \sim 0.01111\dots, \; 0.10101\dots \not\sim 0.01010\dots
+$$
+
+<p>It can be readily shown that $\sim$ is an equivalence relation. Therefore, we may form the quotient $[0, 1]/\sim$. By the axiom of choice, there exists a choice function $\iota$ for $[0, 1]/\sim$. Since we have assumed that the prisoners are mathematically omniscient, they can agree beforehand on which choice function $\iota$ to employ.</p>
+
+<p>When the hat-guessing begins, the $n$-th prisoner can observe all hat colours except for $n$ hats. That is, when the real number corresponding to the prisoners' hat arrangement is $r$, the $n$-th prisoner knows all digits except for $n$ digits after the decimal point of $r$. Thus, they know which equivalence class of $[0, 1]/\sim$ contains $r$, and when the equivalence class containing $r$ is denoted $[r]$, they can compute $\iota([r])$.</p>
+
+<p>The following strategy is now employed: By the definition of $\sim$, $r$ and $\iota([r])$ differ in only finitely many digits. The first prisoner guesses their hat colour as black if the hat arrangement they observe differs from the hat arrangement corresponding to $\iota([r])$ by an even number of positions, and white if they differ by an odd number. The remaining prisoners can then determine their hat colours in the same manner as in the 100-prisoner problem.</p>
+
+<p>Thus, the axiom of choice ensures that when taking $N \to \infty$ in the $N$-prisoner problem, the conclusion that all prisoners except the first can survive remains valid.</p>
+
+</div>
+
+<p>Whilst the above puzzle is remarkably intriguing, the following puzzle is even more extraordinary:</p>
+
+<blockquote>
+  <p>Infinitely many prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, whilst those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. Furthermore, <strong>the moment the hats are placed, the prisoners completely lose their hearing and cannot exchange any information whatsoever.</strong> Is there a strategy that ensures only finitely many prisoners die? (Similarly, prisoners possess infinite computational power and are mathematically omniscient.)</p>
+
+  <p><img src="/public/hat-4.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<div onclick="toggleAnswer(6)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Answer</u>
+</div>
+
+<div id="answer6" class="answer" style="padding-bottom: 1em;">
+
+<p>As in the previous problem, let $\iota$ be a choice function for $[0, 1]/\sim$. The following strategy is employed: The $n$-th prisoner guesses their hat colour as the colour corresponding to the $n$-th digit of $\iota([r])$. By the definition of $\sim$, all prisoners except finitely many will answer correctly.</p>
+
+</div>
+
+<p>This puzzle is particularly extraordinary because the hearing loss condition renders the hat-guessing events of any two distinct prisoners independent, suggesting that each prisoner should have the same probability $p$ of guessing correctly. In this case, the probability that all $N$ prisoners guess correctly would be $p^N$, which converges to 0 as $N \to \infty$. However, in reality, infinitely many prisoners guess correctly.</p>
+
+<p>The root of this paradox lies in the fact that the probability of an arbitrary prisoner guessing correctly is <strong>undefined</strong>. Upon careful consideration, the event of an arbitrary prisoner guessing correctly is equivalent to the event that a given real number $r \in [0, 1]$ belongs to a <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since Vitali sets are non-measurable, no probability can be defined for this event.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/17/los-tarski"> 워시-타르스키 보존 정리 </a>
+      </h1>
+    <span class="post-date">17 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/대수학/'">
+        대수학
+      </div>
+      
+    </div>
+     <p>군 $G$의 부분군 $H, K$에 대해 $H \cap K$는 언제나 군이다. 환과 체의 경우에도 마찬가지이다. 이는 워시-타르스키 정리의 따름결과로 설명할 수 있다.</p>
+
+<blockquote>
+  <p><em>Notation.</em> 본 글에서 $T$는 언어 $\mathcal{L}$의 1차 논리 이론이며, 프락투르 글자 $\mathfrak{M}, \mathfrak{N}, \dots$은 $\mathcal{L}$-구조<sub>structure</sub>이다. 또한 $\mathfrak{M}, \mathfrak{N}, \dots$의 정의역을 $M, N, \dots$와 같이 적는다.</p>
+</blockquote>
+
+<h2 id="기본-개념">기본 개념</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> $N \subseteq M$이고 $\mathfrak{N}$에서의 해석<sub>interpretation</sub>이 $\mathfrak{M}$에서의 해석을 $N$으로 제한한 것일 때, $\mathfrak{N}$을 $\mathfrak{M}$의 <strong>부분모델<sub>submodel</sub></strong>이라고 하며, 기호로 $\mathfrak{N} \subseteq \mathfrak{M}$과 같이 적는다. 또한, $\mathfrak{M}$을 $\mathfrak{N}$의 <strong>확장<sub>extension</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<p>일례로 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 부분모델이고, $(\mathbb{Q}, +, \cdot)$는 $(\mathbb{R}, +, \cdot)$의 부분모델이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 임의의 $\mathcal{L}$-문장 $\phi$에 대해 $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$일 때 $\mathfrak{M}$과 $\mathfrak{N}$이 <strong>초등적으로 동등<sub>elementarily equivalent</sub></strong>하다고 하며, 기호로 $\mathfrak{M} \equiv \mathfrak{N}$과 같이 적는다.</p>
+</blockquote>
+
+<p><a href="https://dimenerno.github.io/2025/04/10/completeness-theorem/">뢰벤하임-스콜렘 정리</a>에 의해 $\kappa$가 $|\mathcal{L}|$ 이상의 무한 기수라면, 임의의 무한 구조 $\mathfrak{M}$과 초등적으로 동등하며 크기가 $\kappa$인 모델 $\mathfrak{N}$이 존재한다. (cf. 워시-보트 판별<sub>Łoś-Vaught test</sub>)</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{M}$과 $\mathfrak{N}$이 구조적으로 동일할 때 <strong>동형<sub>isomorphic</sub></strong>이라고 하며, 기호로 $\mathfrak{M} \cong \mathfrak{N}$과 같이 적는다. 구체적으로, 어떤 일대일 대응 $\phi: M \to N$이 존재하여, $\mathcal{L}$의 임의의 함수 $f$와 관계 $R$에 대해 다음이 임의의 $a_1, \dots, a_n \in M$에 대해 성립할 때 $\mathfrak{M} \cong \mathfrak{N}$이다.</p>
+
+\[\begin{gather}
+\phi(f_\mathfrak{M}(a_1, \dots, a_n)) = f_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n)), \\\\
+R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
+\end{gather}\]
+</blockquote>
+
+<p>$(\mathbb{Z}, +)$와 $(2\mathbb{Z}, +)$는 $\phi: x \mapsto 2x$를 통해 동형이지만 $(\mathbb{Q}, +, \cdot)$와 $(\mathbb{R}, +, \cdot)$은 동형이 아니다.</p>
+
+<p>다음 정리의 증명은 거의 자명하다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 동형인 두 구조는 초등적으로 동등하다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{N} \subseteq \mathfrak{M}$이라고 하자. 임의의 $\mathcal{L}$-명제 $\phi$와 $\mathfrak{N}$에서의 자유변수 할당<sub>assignment</sub> $g$에 대해, $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$일 때 $\mathfrak{N}$이 $\mathfrak{M}$의 <strong>초등적 부분모델<sub>elementary submodel</sub></strong>이라고 하며, 기호로 $\mathfrak{N} \preceq \mathfrak{M}$과 같이 적는다.</p>
+</blockquote>
+
+<p>2와 3은 1보다 강하지만, 2와 3은 서로를 시사하지 않는다.</p>
+
+<ol>
+  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \equiv \mathfrak{M}$</li>
+  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \cong \mathfrak{M}$</li>
+  <li>$\mathfrak{N} \preceq \mathfrak{M}$</li>
+</ol>
+
+<p>2와 3이 서로를 시사하지 않는 이유는, 2가 구조적 동등을 요구한다는 점에서 3보다 약하지 않은 한편, 3이 임의의 할당에 대한 동등을 요구한다는 점에서 2보다 약하지 않기 때문이다. 예를 들어 $\mathfrak{M} = (\mathbb{R}, +, \cdot)$에 대해, $\mathfrak{N}$이 $\mathfrak{M}$의 동형인 부분모델이기 위해서는 <em>구성 가능한</em> 실수에 대해 <em>구조적으로</em> 동일해야 하는 반면, $\mathfrak{N}$이 $\mathfrak{M}$의 초등적 부분모델이기 위해서는 두 모델이 <em>모든</em> 실수에 대해 <em>초등적으로</em> 동등해야 한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2가 3보다 약하지 않다</td>
+      <td>구조적 동일성</td>
+      <td>초등적 동일성</td>
+    </tr>
+    <tr>
+      <td>3이 2보다 약하지 않다</td>
+      <td>구성 가능한 대상</td>
+      <td>임의의 대상</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>일례로 앞서 보았듯이 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 동형인 부분모델이지만, $\exists y \; (y + y = x)$에 $x \mapsto 2$ 할당을 고려하면 초등적 부분모델은 아님을 알 수 있다.</p>
+
+<h2 id="워시-타르스키-정리">워시-타르스키 정리</h2>
+
+<p>$\mathfrak{M}$이 $T$의 모델이라고 하자. $T$가 어떤 이론이어야 $\mathfrak{M}$의 임의의 부분모델 또한 $T$의 모델이 될까? 그 답은 다음의 정리로 주어진다.</p>
+
+<blockquote>
+  <p><strong>워시-타르스키<sub>Łoś-Tarski</sub> 보존 정리.</strong> $T$의 모델의 부분모델 또한 $T$의 모델일 필요충분조건은 $T$가 $\Pi_1$ 문장으로 이루어진 이론과 동치인 것이다.</p>
+</blockquote>
+
+<p>$\Pi_1$ 문장이 무엇인지에 대해서는 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a> 글에서 다룬 바 있다. 간략히만 설명하자면 $\forall$만을 양화사로 가지는 이론이다. 직관적으로 $\Pi_1$ 문장은 정의역이 제한될수록 만족시키기 쉬우므로, $T$가 $\Pi_1$ 이론이라면 $T$는 부분모델에 대해 보존될 것이다. 필요조건은 증명하기가 좀 더 까다롭다.</p>
+
+<p><strong>증명.</strong> 충분조건은 거의 자명하므로 필요조건만 증명한다. 다음의 보조정리를 증명한다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $T$가 언어 $\mathcal{L}$의 무모순적인 이론이라고 하자. $\mathcal{L}$ 문장들의 집합 $\Delta$가 다음 두 조건을 만족할 때, $\Delta$는 $T$의 공리화를 포함한다.</p>
+
+  <ol>
+    <li>$\Delta$는 선언<sub>disjunction</sub>에 대해 닫혀 있다. 즉, $\phi, \psi \in \Delta$라면 $\phi \lor \psi \in \Delta$이다.</li>
+    <li>$T$의 모델 $\mathfrak{A}$에 대해, $\mathfrak{B}$가 $\mathfrak{A}$에서 만족되는 모든 $\Delta$의 문장들을 만족한다면 $\mathfrak{B}$ 또한 $T$의 모델이다.</li>
+  </ol>
+</blockquote>
+
+<p><em>보조정리의 증명.</em> $\Gamma = \lbrace  \delta \in \Delta : T \vDash \delta \rbrace $라고 하자. $\Delta$가 $T$의 공리화를 포함함을 보이기 위해서는 다음을 보이면 충분하다.</p>
+
+\[\mathfrak{B} \vDash \Gamma \implies \mathfrak{B} \vDash T\]
+
+<p>$\mathfrak{B}$가 $\Gamma$의 모델이라고 하자. 다음과 같이 정의한다.</p>
+
+\[\Sigma = \{ \lnot \delta : \delta \in \Delta, \mathfrak{B} \not\vDash \delta \}\]
+
+<p>$T \cup \Sigma$는 무모순적인 이론임을 보이자. 만약 $T \cup \Sigma$가 모순적이라면 어떤 $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$에 대해 $T \vdash \lnot(\lnot\delta_1 \land \cdots \land \lnot\delta_n)$이므로, $T \vdash \delta_1 \lor \cdots \lor \delta_n$이다. $\Delta$가 선언에 대해 닫혀 있으므로 $\delta_1 \lor \cdots \lor \delta_n \in \Delta$이다. $\Gamma$의 정의에 의해 $\delta_1 \lor \cdots \lor \delta_n \in \Gamma$이므로 $\mathfrak{B} \vDash \delta_1 \lor \cdots \lor \delta_n$이다. 이는 $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$에 모순이다.</p>
+
+<p>$T \cup \Sigma$가 무모순적이므로 완전성 정리에 의해 모델을 가진다. 해당 모델을 $\mathfrak{A}$라고 하자. $\mathfrak{B}$는 $\mathfrak{A}$가 만족시키는 $\Delta$의 문장들을 모두 만족시키므로, 가정에 의해 $T$의 모델이다. □</p>
+
+<p>이제 본 정리의 증명으로 넘어가자. $\Delta$를 모든 $\mathcal{L}$의 $\Pi_1$ 문장들의 집합이라고 하자. 우리의 목표는 $\Delta$가 $T$의 공리화를 포함함을 보이는 것이다. $\Pi_1$ 문장들은 선언에 대해 닫혀 있으므로, 보조정리에 의해 다음을 보이면 충분하다.</p>
+
+<blockquote>
+  <p>$T$가 부분모델에 대해 보존적인 이론이라고 하자. $T$의 모델 $\mathfrak{A}$에 대해, $\mathfrak{B}$가 $\mathfrak{A}$에서 만족되는 모든 $\Pi_1$ 문장들을 만족한다면 $\mathfrak{B}$ 또한 $T$의 모델이다.</p>
+</blockquote>
+
+<p><a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이 글</a>에서의 표기법을 따라 $E(\mathfrak{B})$를 정의하자. 즉, $\mathfrak{M}$이 $E(\mathfrak{B})$를 만족할 때 $\mathfrak{B} \preceq \mathfrak{M}$이다.</p>
+
+<p>$T \cup E(\mathfrak{B})$는 무모순적임을 보이자. 만약 $T \cup E(\mathfrak{B})$가 모순적이라면, 어떤 $E(\mathfrak{B})$의 문장 $\phi(b_1, \dots, b_n)$이 존재하여 $T \cup \lbrace  \phi \rbrace $는 모델을 가지지 않는다. 따라서 $T$의 모델인 $\mathfrak{A}$는 $\phi$를 만족시키는 $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ 모델로 확장될 수 없다. 즉, 다음이 성립한다.</p>
+
+\[\mathfrak{A} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)\]
+
+<p>우변은 $\Pi_1$ 문장이므로, 가정에 의해 $\mathfrak{B} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)$이다. 그런데 $\phi(b_1, \dots, b_n) \in E(\mathfrak{B})$이므로, 이는 모순이다. 따라서 $T \cup E(\mathfrak{B})$는 무모순적이며, 완전성 정리에 의해 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{B})$를 만족하므로, $\mathfrak{B} \preceq \mathfrak{C}$이다. 한편 $\mathfrak{C}$는 부분모델에 대해 보존적인 이론 $T$의 모델이므로, $\mathfrak{B}$는 $T$의 모델이다. ■</p>
+
+<h2 id="응용">응용</h2>
+
+<p>군의 1차 논리적 공리화는, 항등원과 역원을 별도의 상수 $e$와 함수 $(-)^{-1}$로 표현하는지의 여부에 따라 구분된다.</p>
+
+<h4 id="표현하지-않는-경우">표현하지 않는 경우</h4>
+
+<p>언어 $\mathcal{L}_1 = \lbrace  G, \cdot \rbrace $의 이론 $T_1$를 다음과 같이 정의한다.</p>
+
+<ul>
+  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
+  <li>$\exists x \forall y : x \cdot y = y \cdot x = y$</li>
+  <li>$\forall x \exists y \forall z : (x \cdot y) \cdot z = (y \cdot x) \cdot z = z$</li>
+</ul>
+
+<h4 id="표현하는-경우">표현하는 경우</h4>
+
+<p>언어 $\mathcal{L}_2 = \lbrace  G, \cdot, e, (-)^{-1} \rbrace $의 이론 $T_2$를 다음과 같이 정의한다.</p>
+
+<ul>
+  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
+  <li>$\forall x : x \cdot e = e \cdot x = x$</li>
+  <li>$\forall x : x \cdot x^{-1} = x^{-1} \cdot x = e$</li>
+</ul>
+
+<p>$T_1$은 $\Pi_1$ 이론이 아니지만 $T_2$는 $\Pi_1$ 이론이다. 따라서 워시-타르스키 정리에 의해, $T_1$은 부분모델 보존적이지 않지만 $T_2$는 보존적이다. $T_1$이 부분모델 보존적이지 않다는 것은, 군의 부분집합이 연산에 대해 닫혀 있다고 해서 언제나 부분군인 것은 아님을 의미한다<small>(일례로 $\mathbb{Z}$의 부분집합 $\mathbb{Z}_{&gt; 0}$은 연산에 대해 닫혀 있지만 역원을 결여하므로 군이 아니다)</small>. 반면 $T_2$가 부분모델 보존적이라는 것은 다음이 성립함을 의미한다.</p>
+
+<blockquote>
+  <p>군 $G$에 대해, $G$의 부분집합 $H$가 다음을 만족한다면 $H$는 $G$의 부분군이다.</p>
+
+  <ol>
+    <li>연산에 대해 닫혀 있다.</li>
+    <li>역원에 대해 닫혀 있다.</li>
+    <li>$G$의 항등원을 포함한다.</li>
+  </ol>
+</blockquote>
+
+<p>그런데 위보다 더 강한 다음의 결과가 일반적으로 성립한다.</p>
+
+<blockquote>
+  <p>군 $G$에 대해, $G$의 부분집합 $H$가 다음을 만족한다면 $H$는 $G$의 부분군이다.</p>
+
+  <ol>
+    <li>연산에 대해 닫혀 있다.</li>
+    <li>역원에 대해 닫혀 있다.</li>
+  </ol>
+</blockquote>
+
+<p>즉, 항등원을 지시할 상수를 결여하는 언어 $\mathcal{L}_3 = \lbrace  G, \cdot, (-)^{-1} \rbrace$에서도 군의 이론은 부분모델 보존적이며, 이는 $\mathcal{L}_3$로 군을 형식화하는 $\Pi_1$ 이론이 존재함을 의미한다. 머리를 잘 굴려보면 실제로 다음의 이론 $T_3$가 존재함을 발견할 수 있다.</p>
+
+<ul>
+  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
+  <li>$\forall x, y : (x \cdot x^{-1}) \cdot y = y \cdot (x \cdot x^{-1}) = y$</li>
+</ul>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/17/los-tarski/en"> The Łoś-Tarski Preservation Theorem </a>
+      </h1>
+    <span class="post-date">17 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/algebra/'">
+        Algebra
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>For subgroups $H, K$ of a group $G$, the intersection $H \cap K$ is always a group. The same holds for rings and fields. This can be explained as a consequence of the Łoś-Tarski theorem.</p>
+
+<blockquote>
+  <p><em>Notation.</em> In this article, $T$ is a first-order theory in language $\mathcal{L}$, and Fraktur letters $\mathfrak{M}, \mathfrak{N}, \dots$ denote $\mathcal{L}$-structures. Furthermore, we write the domains of $\mathfrak{M}, \mathfrak{N}, \dots$ as $M, N, \dots$ respectively.</p>
+</blockquote>
+
+<h2 id="basic-concepts">Basic Concepts</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> When $N \subseteq M$ and the interpretation in $\mathfrak{N}$ is the restriction of the interpretation in $\mathfrak{M}$ to $N$, we call $\mathfrak{N}$ a <strong>submodel</strong> of $\mathfrak{M}$, and write $\mathfrak{N} \subseteq \mathfrak{M}$. Furthermore, $\mathfrak{M}$ is called an <strong>extension</strong> of $\mathfrak{N}$.</p>
+</blockquote>
+
+<p>For example, $(2\mathbb{Z}, +)$ is a submodel of $(\mathbb{Z}, +)$, and $(\mathbb{Q}, +, \cdot)$ is a submodel of $(\mathbb{R}, +, \cdot)$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> When $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$ for any $\mathcal{L}$-sentence $\phi$, we say that $\mathfrak{M}$ and $\mathfrak{N}$ are <strong>elementarily equivalent</strong>, and write $\mathfrak{M} \equiv \mathfrak{N}$.</p>
+</blockquote>
+
+<p>By the <a href="https://dimenerno.github.io/2025/04/10/completeness-theorem/">Löwenheim-Skolem theorem</a>, if $\kappa$ is an infinite cardinal at least $|\mathcal{L}|$, then for any infinite structure $\mathfrak{M}$, there exists a model $\mathfrak{N}$ of cardinality $\kappa$ that is elementarily equivalent to $\mathfrak{M}$. (cf. Łoś-Vaught test)</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> When $\mathfrak{M}$ and $\mathfrak{N}$ are structurally identical, they are called <strong>isomorphic</strong>, written $\mathfrak{M} \cong \mathfrak{N}$. Specifically, $\mathfrak{M} \cong \mathfrak{N}$ when there exists a bijection $\phi: M \to N$ such that for any function $f$ and relation $R$ in $\mathcal{L}$, the following holds for any $a_1, \dots, a_n \in M$:</p>
+
+\[\begin{gather}
+\phi(f_\mathfrak{M}(a_1, \dots, a_n)) = f_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n)), \\\\
+R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
+\end{gather}\]
+</blockquote>
+
+<p>$(\mathbb{Z}, +)$ and $(2\mathbb{Z}, +)$ are isomorphic via $\phi: x \mapsto 2x$, but $(\mathbb{Q}, +, \cdot)$ and $(\mathbb{R}, +, \cdot)$ are not isomorphic.</p>
+
+<p>The proof of the following theorem is almost trivial.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Two isomorphic structures are elementarily equivalent.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathfrak{N} \subseteq \mathfrak{M}$. When $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$ for any $\mathcal{L}$-formula $\phi$ and any assignment $g$ of free variables in $\mathfrak{N}$, we call $\mathfrak{N}$ an <strong>elementary submodel</strong> of $\mathfrak{M}$, and write $\mathfrak{N} \preceq \mathfrak{M}$.</p>
+</blockquote>
+
+<p>Conditions 2 and 3 are stronger than 1, but 2 and 3 do not imply each other.</p>
+
+<ol>
+  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \equiv \mathfrak{M}$</li>
+  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \cong \mathfrak{M}$</li>
+  <li>$\mathfrak{N} \preceq \mathfrak{M}$</li>
+</ol>
+
+<p>The reason why 2 and 3 do not imply each other is that 2 requires structural equivalence, making it no weaker than 3, whilst 3 requires equivalence for arbitrary assignments, making it no weaker than 2. For instance, for $\mathfrak{M} = (\mathbb{R}, +, \cdot)$, for $\mathfrak{N}$ to be an isomorphic submodel of $\mathfrak{M}$, it must be <em>structurally</em> identical with respect to <em>constructible</em> real numbers, whereas for $\mathfrak{N}$ to be an elementary submodel of $\mathfrak{M}$, the two models must be <em>elementarily</em> equivalent with respect to <em>all</em> real numbers.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2 is no weaker than 3</td>
+      <td>Structural identity</td>
+      <td>Elementary identity</td>
+    </tr>
+    <tr>
+      <td>3 is no weaker than 2</td>
+      <td>Constructible objects</td>
+      <td>Arbitrary objects</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example, as we saw earlier, $(2\mathbb{Z}, +)$ is an isomorphic submodel of $(\mathbb{Z}, +)$, but considering the assignment $x \mapsto 2$ for $\exists y \; (y + y = x)$, we can see that it is not an elementary submodel.</p>
+
+<h2 id="the-łoś-tarski-theorem">The Łoś-Tarski Theorem</h2>
+
+<p>Let $\mathfrak{M}$ be a model of $T$. What kind of theory must $T$ be for any submodel of $\mathfrak{M}$ to also be a model of $T$? The answer is given by the following theorem.</p>
+
+<blockquote>
+  <p><strong>The Łoś-Tarski Preservation Theorem.</strong> A necessary and sufficient condition for submodels of models of $T$ to also be models of $T$ is that $T$ is equivalent to a theory consisting of $\Pi_1$ sentences.</p>
+</blockquote>
+
+<p>What $\Pi_1$ sentences are has been covered in the <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">arithmetic hierarchy</a> article. To explain briefly, these are theories having only $\forall$ as quantifiers. Intuitively, $\Pi_1$ sentences become easier to satisfy as the domain is restricted, so if $T$ is a $\Pi_1$ theory, then $T$ will be preserved under submodels. The necessity is somewhat more challenging to prove.</p>
+
+<p><strong>Proof.</strong> The sufficiency is almost trivial, so we prove only the necessity. We prove the following lemma.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> Let $T$ be a consistent theory in language $\mathcal{L}$. When a set $\Delta$ of $\mathcal{L}$-sentences satisfies the following two conditions, $\Delta$ contains an axiomatisation of $T$.</p>
+
+  <ol>
+    <li>$\Delta$ is closed under disjunction. That is, if $\phi, \psi \in \Delta$, then $\phi \lor \psi \in \Delta$.</li>
+    <li>For a model $\mathfrak{A}$ of $T$, if $\mathfrak{B}$ satisfies all sentences in $\Delta$ that are satisfied in $\mathfrak{A}$, then $\mathfrak{B}$ is also a model of $T$.</li>
+  </ol>
+</blockquote>
+
+<p><em>Proof of the lemma.</em> Let $\Gamma = \lbrace  \delta \in \Delta : T \vDash \delta \rbrace $. To show that $\Delta$ contains an axiomatisation of $T$, it suffices to show the following:</p>
+
+\[\mathfrak{B} \vDash \Gamma \implies \mathfrak{B} \vDash T\]
+
+<p>Suppose $\mathfrak{B}$ is a model of $\Gamma$. Define:</p>
+
+\[\Sigma = \{ \lnot \delta : \delta \in \Delta, \mathfrak{B} \not\vDash \delta \}\]
+
+<p>We show that $T \cup \Sigma$ is a consistent theory. If $T \cup \Sigma$ were inconsistent, then for some $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$, we would have $T \vdash \lnot(\lnot\delta_1 \land \cdots \land \lnot\delta_n)$, so $T \vdash \delta_1 \lor \cdots \lor \delta_n$. Since $\Delta$ is closed under disjunction, $\delta_1 \lor \cdots \lor \delta_n \in \Delta$. By the definition of $\Gamma$, $\delta_1 \lor \cdots \lor \delta_n \in \Gamma$, so $\mathfrak{B} \vDash \delta_1 \lor \cdots \lor \delta_n$. This contradicts $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$.</p>
+
+<p>Since $T \cup \Sigma$ is consistent, by the completeness theorem it has a model. Let this model be $\mathfrak{A}$. Since $\mathfrak{B}$ satisfies all sentences in $\Delta$ that $\mathfrak{A}$ satisfies, by assumption $\mathfrak{B}$ is a model of $T$. □</p>
+
+<p>Now we proceed to the proof of the main theorem. Let $\Delta$ be the set of all $\Pi_1$ sentences in $\mathcal{L}$. Our goal is to show that $\Delta$ contains an axiomatisation of $T$. Since $\Pi_1$ sentences are closed under disjunction, by the lemma it suffices to show the following:</p>
+
+<blockquote>
+  <p>Let $T$ be a theory that is preserved under submodels. For a model $\mathfrak{A}$ of $T$, if $\mathfrak{B}$ satisfies all $\Pi_1$ sentences satisfied in $\mathfrak{A}$, then $\mathfrak{B}$ is also a model of $T$.</p>
+</blockquote>
+
+<p>Following the notation from <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">this article</a>, let us define $E(\mathfrak{B})$. That is, $\mathfrak{M}$ satisfies $E(\mathfrak{B})$ when $\mathfrak{B} \preceq \mathfrak{M}$.</p>
+
+<p>We show that $T \cup E(\mathfrak{B})$ is consistent. If $T \cup E(\mathfrak{B})$ were inconsistent, then there would exist some sentence $\phi(b_1, \dots, b_n)$ from $E(\mathfrak{B})$ such that $T \cup \lbrace  \phi \rbrace $ has no model. Therefore, $\mathfrak{A}$, being a model of $T$, cannot be extended to an $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ model that satisfies $\phi$. That is, the following holds:</p>
+
+\[\mathfrak{A} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)\]
+
+<p>The right-hand side is a $\Pi_1$ sentence, so by assumption $\mathfrak{B} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)$. However, since $\phi(b_1, \dots, b_n) \in E(\mathfrak{B})$, this is a contradiction. Therefore, $T \cup E(\mathfrak{B})$ is consistent and by the completeness theorem has a model $\mathfrak{C}$. Since $\mathfrak{C}$ satisfies $E(\mathfrak{B})$, we have $\mathfrak{B} \preceq \mathfrak{C}$. Meanwhile, since $\mathfrak{C}$ is a model of $T$, which is preserved under submodels, $\mathfrak{B}$ is a model of $T$. ■</p>
+
+<h2 id="applications">Applications</h2>
+
+<p>The first-order logical axiomatisation of groups differs depending on whether the identity element and inverse are represented as separate constant $e$ and function $(-)^{-1}$.</p>
+
+<h4 id="without-representation">Without representation</h4>
+
+<p>Define theory $T_1$ in language $\mathcal{L}_1 = \lbrace  G, \cdot \rbrace $ as follows:</p>
+
+<ul>
+  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
+  <li>$\exists x \forall y : x \cdot y = y \cdot x = y$</li>
+  <li>$\forall x \exists y \forall z : (x \cdot y) \cdot z = (y \cdot x) \cdot z = z$</li>
+</ul>
+
+<h4 id="with-representation">With representation</h4>
+
+<p>Define theory $T_2$ in language $\mathcal{L}_2 = \lbrace  G, \cdot, e, (-)^{-1} \rbrace $ as follows:</p>
+
+<ul>
+  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
+  <li>$\forall x : x \cdot e = e \cdot x = x$</li>
+  <li>$\forall x : x \cdot x^{-1} = x^{-1} \cdot x = e$</li>
+</ul>
+
+<p>$T_1$ is not a $\Pi_1$ theory, but $T_2$ is a $\Pi_1$ theory. Therefore, by the Łoś-Tarski theorem, $T_1$ is not submodel-preserving whilst $T_2$ is preserving. That $T_1$ is not submodel-preserving means that a subset of a group being closed under the operation does not always make it a subgroup<small>(for instance, the subset $\mathbb{Z}_{&gt; 0}$ of $\mathbb{Z}$ is closed under the operation but is not a group as it lacks inverses)</small>. Conversely, that $T_2$ is submodel-preserving means the following holds:</p>
+
+<blockquote>
+  <p>For a group $G$, if a subset $H$ of $G$ satisfies the following, then $H$ is a subgroup of $G$:</p>
+
+  <ol>
+    <li>Closed under the operation.</li>
+    <li>Closed under inverses.</li>
+    <li>Contains the identity element of $G$.</li>
+  </ol>
+</blockquote>
+
+<p>However, the following stronger result generally holds:</p>
+
+<blockquote>
+  <p>For a group $G$, if a subset $H$ of $G$ satisfies the following, then $H$ is a subgroup of $G$:</p>
+
+  <ol>
+    <li>Closed under the operation.</li>
+    <li>Closed under inverses.</li>
+  </ol>
+</blockquote>
+
+<p>That is, even in language $\mathcal{L}_3 = \lbrace  G, \cdot, (-)^{-1} \rbrace$ lacking a constant to denote the identity element, the theory of groups is submodel-preserving, which means there exists a $\Pi_1$ theory formalising groups in $\mathcal{L}_3$. With some clever thinking, one can indeed discover that the following theory $T_3$ exists:</p>
+
+<ul>
+  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
+  <li>$\forall x, y : (x \cdot x^{-1}) \cdot y = y \cdot (x \cdot x^{-1}) = y$</li>
+</ul>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/10/completeness-theorem"> 완전성 정리와 뢰벤하임-스콜렘 정리 </a>
+      </h1>
+    <span class="post-date">10 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+    </div>
+     <p>괴델의 완전성 정리와 뢰벤하임-스콜렘 정리는 수리논리학의 가장 기본적인 정리들이다. 그래도 기본기를 다져보는 김에, 이 정리들의 증명을 복습해 보았다. 이 글에서 $T$는 언어 $\mathcal{L}$의 1차 논리 이론으로 간주한다.</p>
+
+<h2 id="괴델의-완전성-정리">괴델의 완전성 정리</h2>
+
+<blockquote>
+  <p><strong>괴델의 완전성 정리.</strong> $T \vDash \phi$라면 $T \vdash \phi$이다.</p>
+</blockquote>
+
+<h3 id="증명">증명</h3>
+
+<p>다음의 동치인 진술을 증명한다. (연습문제: 왜 동치인가?)</p>
+
+<blockquote>
+  <p>$T$가 무모순적인<sub>consistent</sub> 이론이라면, $T$는 모델을 가진다.</p>
+</blockquote>
+
+<h4 id="1-mathcall을-스콜렘-언어-mathcall_s로-확장하기">1. $\mathcal{L}$을 스콜렘 언어 $\mathcal{L}_S$로 확장하기</h4>
+
+<p>$\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $T$에 상수 $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ ($\alpha$는 서수)를 추가한 언어를 $\mathcal{L}_S$라고 하자. 여기서 첨자 $S$는 각 상수가 <strong>스콜렘 상수<sub>Skolem constant</sub></strong>의 역할을 담당할 것임을 의미한다.</p>
+
+<h4 id="2-t를-헨킨-이론-t_h로-확장하기">2. $T$를 헨킨 이론 $T_H$로 확장하기</h4>
+
+<p>$\mathcal{L}_S$의 명제 중 하나의 자유변수를 가지는 명제들의 집합의 크기는 $\kappa$와 같으므로, 정렬 원리로부터 $\lbrace  P_\alpha \rbrace _{\alpha \in \kappa}$와 같이 나타낼 수 있다. 이로부터 다음의 문장 집합을 정의한다.</p>
+
+\[\Sigma = \{ Q_\alpha := \exists x P_\alpha \rightarrow P_\alpha(c_\lambda) \mid \alpha \in \kappa \}\]
+
+<p>여기서 $c_\lambda$는 $P_\alpha$와 $Q_\beta \; (\beta &lt; \alpha)$에 등장하지 않는 상수 중 첨자가 최소인 상수이다(그러한 상수가 존재함은 서수가 정렬이라는 사실로부터 보장된다). 이제 $T_H = T \cup \Sigma$로 정의한다. $T_H$를 <strong>헨킨 이론<sub>Henkin theory</sub></strong>이라고 하고, $Q_\alpha$를 헨킨 공리라고 한다.</p>
+
+<h4 id="3-t_h를-극대적으로-무모순적인-이론-overlinet_h로-확장하기">3. $T_H$를 극대적으로 무모순적인 이론 $\overline{T_H}$로 확장하기</h4>
+
+<blockquote>
+  <p><strong>린덴바움 보조정리.</strong> $T$가 무모순적인 이론일 때, $T$를 확장하는 극대적으로 무모순적인<sub>maximally consistent</sub> 이론 $\overline{T}$가 존재한다. 즉, $T \subseteq T’$이고 임의의 $\mathcal{L}$ 문장 $\phi$에 대해 $\phi \in \overline{T}$거나 $\lnot\phi \in \overline{T}$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T$를 확장하는 무모순적인 이론들의 모임에 $\subseteq$로 순서 관계를 준 뒤, 초른의 보조정리를 적용한다.</p>
+
+<p>$T$가 무모순적인 이론일 때 $T_H$ 또한 무모순적임을 쉽게 보일 수 있다. 따라서 린덴바움 보조정리에 의해 $T_H$를 확장하는 극대적으로 무모순적인 이론 $\overline{T_H}$가 존재한다.</p>
+
+<h4 id="4-overlinet_h의-표준적canonical-모델-정의하기">4. $\overline{T_H}$의 표준적<sub>canonical</sub> 모델 정의하기</h4>
+
+<p>$c_\alpha \sim c_\beta$를 $(c_\alpha = c_\beta) \in \overline{T_H}$일 때 성립하는 관계로 정의하자. $\overline{T_H}$가 무모순적인 이론이라는 사실로부터 $\sim$이 동치 관계임을 보일 수 있다. 따라서 상수들의 동치류 $[c_\alpha]$가 잘 정의된다. 이제 다음과 같이 $\mathcal{L}_S$의 구조 $\mathfrak{M}$을 정의한다.</p>
+
+<ol>
+  <li>상수: $c_\alpha^{\mathfrak{M}} = [c_\alpha]$</li>
+  <li>술어: $R^{\mathfrak{M}}(c_{\alpha_1}^\mathfrak{M}, \dots, c_{\alpha_n}^{\mathfrak{M}}) \iff \overline{T_H} \vdash R(c_{\alpha_1}, \dots, c_{\alpha_n}) $</li>
+  <li>함수: $f(c_\alpha^\mathfrak{M}) = c_\beta^\mathfrak{M} \iff T_H \vdash \exists x (f(c_\alpha) = x) \rightarrow f(c_\alpha) = c_\beta$</li>
+</ol>
+
+<p>$\overline{T_H}$가 극대적으로 무모순적이므로 2가 잘 정의되고, 헨킨 이론이므로 3이 잘 정의된다. 따라서 $\mathfrak{M}$이 잘 정의되며, $\mathfrak{M}$이 $\overline{T_H}$의 모델임을 쉽게 확인할 수 있다. 그리고 $\mathfrak{M}$은 $T$의 모델이기도 하므로, $T$는 모델을 가진다. ■</p>
+
+<p><strong>Remark 1.</strong> 완전성 정리의 증명은 정렬 원리와 초른의 보조정리를 사용한다는 점에서 선택 공리에 의존적이다. 쾨니히 보조정리나 의존적 선택 공리와 같이 더 약한 유형의 선택 공리로도 증명할 수 있긴 하다.</p>
+
+<p><strong>Remark 2.</strong> <strong>콤팩트성 정리</strong>가 완전성 정리의 따름정리로서 얻어진다. (연습문제)</p>
+
+<p><strong>Remark 3.</strong> 완전성 정리의 증명에서 구축하는 모델의 크기는 $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$를 넘지 않는다. 마지막 단계에서 동치류를 취하므로 $\kappa$와 같다는 보장은 없다.</p>
+
+<h2 id="뢰벤하임-스콜렘-정리">뢰벤하임-스콜렘 정리</h2>
+
+<blockquote>
+  <p><strong>뢰벤하임-스콜렘 정리.</strong> $T$가 무한 모델을 가진다고 하자. 임의의 $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$에 대해, 크기가 $\kappa$인 $T$의 모델이 존재한다.</p>
+</blockquote>
+
+<h3 id="증명-1">증명</h3>
+
+<h4 id="하향-뢰벤하임-스콜렘-정리">하향 뢰벤하임-스콜렘 정리</h4>
+
+<blockquote>
+  <p><strong>하향 뢰벤하임-스콜렘 정리.</strong> $T$는 크기가 $\mathrm{max}(\aleph_0, |\mathcal{L}|)$을 넘지 않는 모델을 가진다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> Remark 2에서 즉시 얻어진다. □</p>
+
+<h4 id="상향-뢰벤하임-스콜렘-정리">상향 뢰벤하임-스콜렘 정리</h4>
+
+<blockquote>
+  <p><strong>상향 뢰벤하임-스콜렘 정리.</strong> $T$가 무한 모델을 가진다고 하자. 임의의 무한 기수 $\kappa$에 대해, 크기가 $\kappa$ 이상인 $T$의 모델이 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathcal{L}’$을 $\mathcal{L}$에 상수 $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$를 추가한 언어로 정의하자. 다음의 $\mathcal{L}’$-문장 집합을 정의하자.</p>
+
+\[\Sigma = \{ c_\alpha \neq c_\beta : \alpha, \beta \in \kappa, \alpha \neq \beta \}\]
+
+<p>$T’ = T \cup \Sigma$라고 하자. <em>$T$가 무한 모델 $\mathfrak{M}$을 가지므로,</em> 임의의 $T’$의 유한 부분이론은 $\mathfrak{M}$에 의해 만족된다. 따라서 콤팩트성 정리에 의해 $T’$은 무모순적이며, 완전성 정리에 의해 모델을 가진다. $\Sigma$는 $T’$의 모델이 적어도 $\kappa$개의 원소를 가질 것을 요구하므로, $T’$은 크기가 $\kappa$ 이상인 모델을 가지며, 이에 따라 $T$ 또한 크기가 $\kappa$ 이상인 모델을 가진다. □</p>
+
+<h4 id="뢰벤하임-스콜렘-정리-1">뢰벤하임-스콜렘 정리</h4>
+
+<p>$\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $\mathcal{L}’$과 $T’$을 앞선 바와 같이 정의한다.</p>
+
+<p>$\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$이므로 하향 뢰벤하임-스콜렘 정리에 의해 $T’$은 크기가 $\kappa$를 넘지 않는 모델을 가진다. 그런데 상향 뢰벤하임-스콜렘 정리의 증명에서 지적했듯이 $T’$의 모든 모델은 크기가 $\kappa$ 이상이다. 따라서 $T’$은 크기가 정확히 $\kappa$인 모델을 가지며, 이에 따라 $T$ 또한 크기가 정확히 $\kappa$인 모델을 가진다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/10/completeness-theorem/en"> Completeness Theorem and Löwenheim-Skolem Theorem </a>
+      </h1>
+    <span class="post-date">10 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>Gödel’s completeness theorem and the Löwenheim-Skolem theorem are amongst the most fundamental theorems in mathematical logic. To consolidate the fundamentals, I have revisited the proofs of these theorems. In this article, $T$ is considered as a first-order logical theory in language $\mathcal{L}$.</p>
+
+<h2 id="gödels-completeness-theorem">Gödel’s Completeness Theorem</h2>
+
+<blockquote>
+  <p><strong>Gödel’s Completeness Theorem.</strong> If $T \vDash \phi$, then $T \vdash \phi$.</p>
+</blockquote>
+
+<h3 id="proof">Proof</h3>
+
+<p>We prove the following equivalent statement. (Exercise: Why is this equivalent?)</p>
+
+<blockquote>
+  <p>If $T$ is a consistent theory, then $T$ has a model.</p>
+</blockquote>
+
+<h4 id="1-extending-mathcall-to-the-skolem-language-mathcall_s">1. Extending $\mathcal{L}$ to the Skolem language $\mathcal{L}_S$</h4>
+
+<p>Let $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$. Let $\mathcal{L}_S$ be the language obtained by adding constants $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ (where $\alpha$ is an ordinal) to $T$. Here, the subscript $S$ indicates that each constant will serve as a <strong>Skolem constant</strong>.</p>
+
+<h4 id="2-extending-t-to-the-henkin-theory-t_h">2. Extending $T$ to the Henkin theory $T_H$</h4>
+
+<p>Since the size of the set of formulae in $\mathcal{L}_S$ with one free variable is equal to $\kappa$, by the well-ordering principle, we can represent them as $\lbrace  P_\alpha \rbrace _{\alpha \in \kappa}$. From this, we define the following set of sentences:</p>
+
+\[\Sigma = \{ Q_\alpha := \exists x P_\alpha \rightarrow P_\alpha(c_\lambda) \mid \alpha \in \kappa \}\]
+
+<p>where $c_\lambda$ is the constant with the smallest index amongst the constants that do not appear in $P_\alpha$ and $Q_\beta \; (\beta &lt; \alpha)$ (the existence of such a constant is guaranteed by the fact that ordinals are well-ordered). Now we define $T_H = T \cup \Sigma$. We call $T_H$ the <strong>Henkin theory</strong> and $Q_\alpha$ the Henkin axioms.</p>
+
+<h4 id="3-extending-t_h-to-a-maximally-consistent-theory-overlinet_h">3. Extending $T_H$ to a maximally consistent theory $\overline{T_H}$</h4>
+
+<blockquote>
+  <p><strong>Lindenbaum’s Lemma.</strong> When $T$ is a consistent theory, there exists a maximally consistent theory $\overline{T}$ that extends $T$. That is, $T \subseteq T’$ and for any $\mathcal{L}$ sentence $\phi$, either $\phi \in \overline{T}$ or $\lnot\phi \in \overline{T}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> We order the collection of consistent theories that extend $T$ by $\subseteq$ and apply Zorn’s lemma.</p>
+
+<p>When $T$ is a consistent theory, we can easily show that $T_H$ is also consistent. Therefore, by Lindenbaum’s lemma, there exists a maximally consistent theory $\overline{T_H}$ that extends $T_H$.</p>
+
+<h4 id="4-defining-the-canonical-model-of-overlinet_h">4. Defining the canonical model of $\overline{T_H}$</h4>
+
+<p>Let $c_\alpha \sim c_\beta$ be the relation that holds when $(c_\alpha = c_\beta) \in \overline{T_H}$. From the fact that $\overline{T_H}$ is a consistent theory, we can show that $\sim$ is an equivalence relation. Therefore, the equivalence classes $[c_\alpha]$ of constants are well-defined. We now define a structure $\mathfrak{M}$ for $\mathcal{L}_S$ as follows:</p>
+
+<ol>
+  <li>Constants: $c_\alpha^{\mathfrak{M}} = [c_\alpha]$</li>
+  <li>Predicates: $R^{\mathfrak{M}}(c_{\alpha_1}^\mathfrak{M}, \dots, c_{\alpha_n}^{\mathfrak{M}}) \iff \overline{T_H} \vdash R(c_{\alpha_1}, \dots, c_{\alpha_n}) $</li>
+  <li>Functions: $f(c_\alpha^\mathfrak{M}) = c_\beta^\mathfrak{M} \iff T_H \vdash \exists x (f(c_\alpha) = x) \rightarrow f(c_\alpha) = c_\beta$</li>
+</ol>
+
+<p>Since $\overline{T_H}$ is maximally consistent, (2) is well-defined, and since it is a Henkin theory, (3) is well-defined. Therefore, $\mathfrak{M}$ is well-defined, and we can easily verify that $\mathfrak{M}$ is a model of $\overline{T_H}$. Since $\mathfrak{M}$ is also a model of $T$, $T$ has a model. ■</p>
+
+<p><strong>Remark 1.</strong> The proof of the completeness theorem depends on the axiom of choice in that it uses the well-ordering principle and Zorn’s lemma. It can also be proved using weaker forms of the axiom of choice such as König’s lemma or the axiom of dependent choice.</p>
+
+<p><strong>Remark 2.</strong> The <strong>compactness theorem</strong> is obtained as a corollary of the completeness theorem. (Exercise)</p>
+
+<p><strong>Remark 3.</strong> The size of the model constructed in the proof of the completeness theorem does not exceed $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$. Since we take equivalence classes in the final step, there is no guarantee that it equals $\kappa$.</p>
+
+<h2 id="löwenheim-skolem-theorem">Löwenheim-Skolem Theorem</h2>
+
+<blockquote>
+  <p><strong>Löwenheim-Skolem Theorem.</strong> Suppose $T$ has an infinite model. For any $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$, there exists a model of $T$ of size $\kappa$.</p>
+</blockquote>
+
+<h3 id="proof-1">Proof</h3>
+
+<h4 id="downward-löwenheim-skolem-theorem">Downward Löwenheim-Skolem Theorem</h4>
+
+<blockquote>
+  <p><strong>Downward Löwenheim-Skolem Theorem.</strong> $T$ has a model of size not exceeding $\mathrm{max}(\aleph_0, |\mathcal{L}|)$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> This follows immediately from Remark 2. □</p>
+
+<h4 id="upward-löwenheim-skolem-theorem">Upward Löwenheim-Skolem Theorem</h4>
+
+<blockquote>
+  <p><strong>Upward Löwenheim-Skolem Theorem.</strong> Suppose $T$ has an infinite model. For any infinite cardinal $\kappa$, there exists a model of $T$ of size at least $\kappa$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $\mathcal{L}’$ be the language obtained by adding constants $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ to $\mathcal{L}$. Define the following set of $\mathcal{L}’$-sentences:</p>
+
+\[\Sigma = \{ c_\alpha \neq c_\beta : \alpha, \beta \in \kappa, \alpha \neq \beta \}\]
+
+<p>Let $T’ = T \cup \Sigma$. <em>Since $T$ has an infinite model $\mathfrak{M}$,</em> any finite subtheory of $T’$ is satisfied by $\mathfrak{M}$. Therefore, by the compactness theorem, $T’$ is consistent, and by the completeness theorem, it has a model. Since $\Sigma$ requires that any model of $T’$ has at least $\kappa$ elements, $T’$ has a model of size at least $\kappa$, and thus $T$ also has a model of size at least $\kappa$. □</p>
+
+<h4 id="löwenheim-skolem-theorem-1">Löwenheim-Skolem Theorem</h4>
+
+<p>Let $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$. Define $\mathcal{L}’$ and $T’$ as above.</p>
+
+<p>Since $\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$, by the downward Löwenheim-Skolem theorem, $T’$ has a model of size not exceeding $\kappa$. However, as pointed out in the proof of the upward Löwenheim-Skolem theorem, every model of $T’$ has size at least $\kappa$. Therefore, $T’$ has a model of size exactly $\kappa$, and thus $T$ also has a model of size exactly $\kappa$. ■</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/04/04/van-kampen"> 자이페르트-판 캄펀 정리에 대한 노트 </a>
@@ -908,1078 +1682,6 @@
 </ul>
 
 <p>$\mathfrak{K}$가 $u$를 만족함을 어렵지 않게 보일 수 있다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/01/modal-logic/en"> Modal Logic </a>
-      </h1>
-    <span class="post-date">01 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h3 id="types">Types</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Entailment</th>
-      <th>Axioms</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>K</strong></td>
-      <td>Kripke model for possible worlds</td>
-      <td>$\Box(p \to q) \to (\Box p \to \Box q)$</td>
-    </tr>
-    <tr>
-      <td><strong>T</strong></td>
-      <td>Reflexivity</td>
-      <td><strong>K</strong> + $\Box p \to p$</td>
-    </tr>
-    <tr>
-      <td><strong>S4</strong></td>
-      <td>Reflexivity + Transitivity</td>
-      <td><strong>T</strong> + $\Box p \to \Box \Box p$</td>
-    </tr>
-    <tr>
-      <td><strong>S4.2</strong></td>
-      <td>Reflexivity + Transitivity + R-convergence</td>
-      <td><strong>S4</strong> + $\Diamond \Box p \to \Box \Diamond p$</td>
-    </tr>
-    <tr>
-      <td><strong>S4.3</strong></td>
-      <td>Reflexivity + Transitivity + R-linearity</td>
-      <td><strong>S4</strong> + $(\Diamond p \land \Diamond q) \to$ <br /> $(\Diamond (p \land \Diamond q) \lor \Diamond(\Diamond p \land q))$</td>
-    </tr>
-    <tr>
-      <td><strong>S5</strong></td>
-      <td>Reflexivity + Transitivity + Symmetry</td>
-      <td><strong>S4</strong> + $(p \to \Box \Diamond p)$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The logics become strictly stronger as one moves down the table.</p>
-
-<h3 id="modal-reduction">Modal Reduction</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> In <strong>S4</strong>, any sequence of modal operators is equivalent to one of six combinations, and the entailment relations amongst these combinations are as follows:</p>
-
-  <p><img src="/public/modal-operators.jpeg" width="550px" style="margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> In <strong>S5</strong>, any sequence of modal operators is equivalent to either $\Box$ or $\Diamond$. Furthermore, every formula is equivalent to a <strong>flat</strong> formula—that is, a formula containing no modal operators within the scope of other modal operators.</p>
-</blockquote>
-
-<h3 id="completeness-theorem">Completeness Theorem</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> <strong>K</strong> is complete.</p>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<blockquote>
-  <p><strong>Lindenbaum’s Lemma.</strong> Any consistent theory can be extended to a maximally consistent theory.</p>
-</blockquote>
-
-<p>The completeness statement is equivalent to “every consistent theory is satisfiable”, and applying Lindenbaum’s lemma, this is equivalent to “every maximally consistent theory is satisfiable”.</p>
-
-<p>Let $u, v$ be maximally consistent theories. We write $u \lhd v$ when $\Box p \in u \implies p \in v$. The following can be shown without difficulty:</p>
-
-<ul>
-  <li>When $u \lhd v$, we have $p \in v \implies \Diamond p \in u$</li>
-  <li>For any maximally consistent theory $u$, if $p \in u$ and $\Box p \notin u$, then there exist maximally consistent theories $v, v’$ such that $p \in v, \lnot p \in v’$ and $u \lhd v, v’$.</li>
-</ul>
-
-<p>From this, for a maximally consistent theory $u$, we can define the <strong>canonical Kripke model</strong> $\mathfrak{K} = (U, \prec, V)$ as follows:</p>
-
-<ul>
-  <li>The collection of possible worlds $U$ is the collection of $v$ satisfying $u \lhd v$.</li>
-  <li>The accessibility relation $\prec$ is $\lhd$.</li>
-  <li>The valuation function $V(p, v)$ is true if and only if $p \in v$.</li>
-</ul>
-
-<p>It can be shown without difficulty that $\mathfrak{K}$ satisfies $u$. ■</p>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/03/21/yoneda"> 요네다 보조정리 </a>
-      </h1>
-    <span class="post-date">21 Mar 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/범주론/'">
-        범주론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><em>Notation.</em></p>
-
-  <ol>
-    <li>$-$는 매개변수의 자릿값이다. $-$가 두 개 쓰였으면 매개변수가 두 개라는 뜻이다. 어느 매개변수가 어느 자리에 해당하는지는 맥락으로 파악한다.</li>
-    <li>$\bullet$은 $-$를 우선하는 매개변수이다. 따라서 $\hom(-, \bullet)$은 $A$를 함자 $\hom(-, A)$에 대응시키는 함자이다.</li>
-    <li>함자 $F, G$에 대해 $[F, G]$를 $F$에서 $G$로 가는 자연적 변환<sub>natural transformation</sub>들의 모임으로 정의한다.</li>
-    <li>모든 범주는 국소적으로 작은<sub>locally small</sub> 범주라고 가정한다.</li>
-  </ol>
-</blockquote>
-
-<p>요네다 보조정리<sub>Yoneda lemma</sub>는 표현가능함자<sub>representable</sub>가 다른 함자를 <em>바라볼</em> 때 <em>보이는</em> 것이 무엇인지를 알려주는 정리이다.</p>
-
-<p>예를 들어 $A \in \mathcal{A}$에 대해, 표현가능함자 $\hom_{\mathcal{A}}(-, A)$를 생각하자. 이 함자가 속하는 범주는 $[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$이다. 따라서 $\hom_{\mathcal{A}}(-, A)$가 함자 $F : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$를 <em>바라볼</em> 때 <em>보이는</em> 것은 다음 자연적 변환들의 집합이다.</p>
-
-\[[\hom_{\mathcal{A}}(-, A), F]\]
-
-<p>위 집합은 $A \in \mathcal{A}$와 $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$으로부터 정의된 집합이다. 그런데 $A, F$로부터 집합을 정의할 수 있는 또다른 자연스러운 방식이 있다. 단순히 $F$에 $A$를 취하는 것이다.</p>
-
-\[F(A)\]
-
-<p>요네다 보조정리에 따르면 두 집합은 <strong>동형<sub>isomorphic</sub></strong>이다. 게다가 그냥 동형인 것이 아니라, $A \in \mathcal{A}$와 $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$에서 자연스럽게 동형<sub>naturally isomorphic</sub>이다. 요컨대 다음 두 함자가 $[\mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}], \mathbf{Set}]$에서 동형이다.</p>
-
-\[\begin{aligned}
-\text{(i)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
-&amp;\xrightarrow{\hspace{0.15cm} \hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}} \times 1 \hspace{0.15cm}} [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}] \\
-&amp;\xrightarrow{\hom_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(-, -)} \mathbf{Set} \\\\
-\text{(ii)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
-&amp;\xrightarrow{-(-)} \mathbf{Set}
-\end{aligned}\]
-
-<blockquote>
-  <p><em>Remark.</em> $\hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}}$에 붙은 $\mathrm{op}$는 함자의 정의역을 $\mathcal{A}^\mathrm{op}$로 맞춰주기 위함이고, 실질적으로는 $\hom_{\mathcal{A}}(-, \cdot)$와 같다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 증명의 개요만 적자면, $\hat{(\;\;)} : [\hom_\mathcal{A}(-, A), F] \to F(A)$와 $\tilde{(\;\;)}: F(A) \to [\hom_\mathcal{A}(-, A), F]$를 다음과 같이 정의한다.</p>
-
-\[\hat{\alpha} = \alpha_A(1_A), \quad \tilde{x} = \theta\]
-
-<p>여기서 $\theta$는 $f : A’ \to A$를 다음과 같이 사상하는 자연적 변환이다.</p>
-
-\[\theta_{A'}: f \mapsto F(f^{\mathrm{op}})(x)\]
-
-<p>$\theta$를 위와 같이 정의하는 이유는 다음 가환 도식을 만족하게끔 만들기 위함이다. ($(-)$에 $1_A$를 대입해 확인해 보라.)</p>
-
-<p><img src="/public/yoneda-def.png" style="margin: 0 auto; width: 400px" /></p>
-
-<p>이제 임의의 $A \in \mathcal{A}, F : \mathcal{A}^\mathrm{op} \to \mathbf{Set}$에 대해 다음이 성립함을 보여아 한다.</p>
-
-<ul>
-  <li>임의의 $\alpha \in [\hom_\mathcal{A}(-, A), F]$에 대해 $\tilde{\hat{\alpha}} = \alpha$이다.</li>
-  <li>임의의 $x \in F(A)$에 대해 $\hat{\tilde{x}} = x$이다.</li>
-</ul>
-
-<p>이것은 $[\hom_\mathcal{A}(-, A), F] \cong F(A)$임을 보인다. 여기에 더해, 해당 동형이 자연적임을 보여아 한다. 자아아알 생각해 보면 이것은 임의의 $A, A’ \in \mathcal{A}$와 $F, G \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$와 $f: A’ \to A$와 $\alpha: F \Rightarrow G$에 대해 다음 도식이 가환임을 보이는 것과 같다.</p>
-
-<p><img src="/public/yoneda-naturality.png" style="margin: 0 auto; width: 470px" /></p>
-
-<p>원소 단위로 적으면,</p>
-
-<p><img src="/public/yoneda-comm.png" style="margin: 0 auto; margin-bottom: 2em; width: 400px" /></p>
-
-<p>위가 성립함은 $\theta$의 자연성으로부터 따라 나온다. ■</p>
-
-<h2 id="요네다-따름정리와-관계론적-존재론">요네다 따름정리와 관계론적 존재론</h2>
-
-<p>요네다 보조정리가 함의하는 결과 중 다음은 아주 중요하다. 필자는 이를 그냥 <strong>요네다 따름정리</strong>라고 부른다.</p>
-
-<blockquote>
-  <p><strong>요네다 따름정리.</strong> $X, Y \in \mathcal{A}$라고 하자.</p>
-
-  <ol>
-    <li>$[\hom(-, X), \hom(-, Y)] \cong \hom(X, Y)$</li>
-    <li>$X \cong Y \iff \hom(-, X) \cong \hom(-, Y)$</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> $F = \hom(-, Y)$로 둔다. ■</p>
-
-<p>요컨대 범주론에서 <strong>대상은, 그것이 받는 사상들의 집합과 다름없다.</strong> 일례로 정수 순서 범주에서 $0$은 초기 대상으로 정의할 수 있고, 더 일반적으로 $n$은 받는 사상들의 수가 $n$개인 대상으로 정의할 수 있다. 요네다 따름정리는 이처럼 대상을 그것이 다른 대상과 맺는 사상들로서 정의하는 접근이 모든<small>(엄밀히는 국소적으로 작은)</small> 범주에서 유효함을 보장한다. 필자는 이 접근을 <strong>관계론적 존재론</strong>이라고 부른다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/03/21/yoneda/en"> Yoneda Lemma </a>
-      </h1>
-    <span class="post-date">21 Mar 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/category-theory/'">
-        Category Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p><em>Notation.</em></p>
-
-  <ol>
-    <li>$-$ denotes a parameter placeholder. If two $-$ are used, it means there are two parameters. Which parameter corresponds to which position is determined by context.</li>
-    <li>$\bullet$ is a parameter that takes precedence over $-$. Therefore, $\hom(-, \bullet)$ is a functor that maps $A$ to the functor $\hom(-, A)$.</li>
-    <li>For functors $F, G$, we define $[F, G]$ as the collection of natural transformations from $F$ to $G$.</li>
-    <li>We assume all categories are locally small categories.</li>
-  </ol>
-</blockquote>
-
-<p>The Yoneda lemma is a theorem that tells us what a representable functor <em>sees</em> when it <em>looks at</em> another functor.</p>
-
-<p>For example, for $A \in \mathcal{A}$, consider the representable functor $\hom_{\mathcal{A}}(-, A)$. This functor belongs to the category $[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$. Therefore, what $\hom_{\mathcal{A}}(-, A)$ <em>sees</em> when it <em>looks at</em> a functor $F : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$ is the following set of natural transformations:</p>
-
-\[[\hom_{\mathcal{A}}(-, A), F]\]
-
-<p>The above set is a set defined from $A \in \mathcal{A}$ and $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$. However, there is another natural way to define a set from $A, F$. Simply applying $F$ to $A$:</p>
-
-\[F(A)\]
-
-<p>According to the Yoneda lemma, the two sets are <strong>isomorphic</strong>. Moreover, they are not just isomorphic, but naturally isomorphic in $A \in \mathcal{A}$ and $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$. In short, the following two functors are isomorphic in $[\mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}], \mathbf{Set}]$:</p>
-
-\[\begin{aligned}
-\text{(i)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
-&amp;\xrightarrow{\hspace{0.15cm} \hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}} \times 1 \hspace{0.15cm}} [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}] \\
-&amp;\xrightarrow{\hom_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(-, -)} \mathbf{Set} \\\\
-\text{(ii)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
-&amp;\xrightarrow{-(-)} \mathbf{Set}
-\end{aligned}\]
-
-<blockquote>
-  <p><em>Remark.</em> The $\mathrm{op}$ attached to $\hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}}$ is to adjust the domain of the functor to $\mathcal{A}^\mathrm{op}$, and is essentially the same as $\hom_{\mathcal{A}}(-, \cdot)$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> To outline the proof, we define $\hat{(\;\;)} : [\hom_\mathcal{A}(-, A), F] \to F(A)$ and $\tilde{(\;\;)}: F(A) \to [\hom_\mathcal{A}(-, A), F]$ as follows:</p>
-
-\[\hat{\alpha} = \alpha_A(1_A), \quad \tilde{x} = \theta\]
-
-<p>where $\theta$ is a natural transformation that maps $f : A’ \to A$ as follows:</p>
-
-\[\theta_{A'}: f \mapsto F(f^{\mathrm{op}})(x)\]
-
-<p>The reason for defining $\theta$ as above is to satisfy the following commutative diagram. (Verify by substituting $1_A$ for $(-)$.)</p>
-
-<p><img src="/public/yoneda-def.png" style="margin: 0 auto; width: 400px" /></p>
-
-<p>Now we must show that for any $A \in \mathcal{A}, F : \mathcal{A}^\mathrm{op} \to \mathbf{Set}$, the following holds:</p>
-
-<ul>
-  <li>For any $\alpha \in [\hom_\mathcal{A}(-, A), F]$, we have $\tilde{\hat{\alpha}} = \alpha$.</li>
-  <li>For any $x \in F(A)$, we have $\hat{\tilde{x}} = x$.</li>
-</ul>
-
-<p>This shows that $[\hom_\mathcal{A}(-, A), F] \cong F(A)$. In addition, we must show that this isomorphism is natural. Upon careful consideration, this is equivalent to showing that for any $A, A’ \in \mathcal{A}$ and $F, G \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$ and $f: A’ \to A$ and $\alpha: F \Rightarrow G$, the following diagram commutes:</p>
-
-<p><img src="/public/yoneda-naturality.png" style="margin: 0 auto; width: 470px" /></p>
-
-<p>In terms of elements:</p>
-
-<p><img src="/public/yoneda-comm.png" style="margin: 0 auto; margin-bottom: 2em; width: 400px" /></p>
-
-<p>That the above holds follows from the naturality of $\theta$. ■</p>
-
-<h2 id="the-yoneda-corollary-and-relational-ontology">The Yoneda Corollary and Relational Ontology</h2>
-
-<p>Among the results implied by the Yoneda lemma, the following is particularly important. I shall simply call this the <strong>Yoneda corollary</strong>.</p>
-
-<blockquote>
-  <p><strong>Yoneda Corollary.</strong> Let $X, Y \in \mathcal{A}$.</p>
-
-  <ol>
-    <li>$[\hom(-, X), \hom(-, Y)] \cong \hom(X, Y)$</li>
-    <li>$X \cong Y \iff \hom(-, X) \cong \hom(-, Y)$</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong> Let $F = \hom(-, Y)$. ■</p>
-
-<p>In essence, <strong>in category theory, an object is nothing more than the collection of morphisms it receives.</strong> For instance, in the integer order category, $0$ can be defined as the initial object, and more generally, $n$ can be defined as the object that receives $n$ morphisms. The Yoneda corollary guarantees that this approach of defining objects through the morphisms they form with other objects is valid in all (strictly speaking, locally small) categories. I call this approach <strong>relational ontology</strong>.</p>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/03/18/quanitfying-in"> 양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게 </a>
-      </h1>
-    <span class="post-date">18 Mar 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/철학/'">
-        철학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/언어철학/'">
-        언어철학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>이 글은 <a href="/public/Quantifying In.pdf">David Kaplan, <em>Quantifying In</em> (1968)</a>을 정리한 것이다.</p>
-</blockquote>
-
-<h2 id="1-평범한-발생-우연적-발생-모호한-발생">1. 평범한 발생, 우연적 발생, 모호한 발생</h2>
-
-<p>다음 두 문장을 보자.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(1)</div>
-<div>둘은 하나보다 크다.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(2)</div>
-<div>둘리는 고길동과 같이 산다.</div>
-</div>
-
-<p>(1)과 (2)에서 모두 ‘둘’이 나타나지만, 매우 다른 방식으로 나타난다. (1)에서 ‘둘’이 나타나는 방식을 <strong>평범한 발생<sub>vulgar occurence</sub></strong>이라고 하고, (2)에서 ‘둘’이 나타나는 방식을 <strong>우연적 발생<sub>accidental occurence</sub></strong>이라고 하자.</p>
-
-<p>단어가 평범하게 발생할 경우 해당 단어는 지시하며, 동일성에 대한 라이프니츠 원리를 만족한다(예컨데 ‘둘’을 ‘화성의 위성 개수’로 대치해도 문장의 진릿값이 보존된다). 단어가 우연적으로 발생할 경우 해당 단어는 지시하지 않으며, 라이프니츠 원리를 만족하지 않는다.</p>
-
-<p>이제 다음의 문장들을 보자.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(3)</div>
-<div>'둘은 하나보다 크다'는 산술의 참인 명제이다.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(4)</div>
-<div>필연적으로, 둘은 하나보다 크다.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(5)</div>
-<div>코페르니쿠스는 둘이 하나보다 크다고 믿었다.</div>
-</div>
-
-<p>(3), (4), (5)에서 ‘둘’은 지시를 하는 것으로 보인다. 그러나 ‘둘’을 ‘화성의 위성 개수’로 바꾸면 문장의 진릿값이 보존되지 않는 것으로 보인다. 이것을 <strong>모호한 발생<sub>intermediate occurence</sub></strong>이라고 하자.</p>
-
-<p>언어철학에서 모호한 발생은 크게 두 가지 방식으로 설명된다. 첫째는 모호한 발생을 우연적 발생에 동화하는 것이고, 둘째는 모호한 발생을 평범한 발생에 동화하는 것이다.</p>
-
-<h2 id="2-콰인-모호한-발생은-우연적-발생이다">2. 콰인: 모호한 발생은 우연적 발생이다</h2>
-
-<p>콰인은 모호한 발생을 우연적 발생에 동화한다. 그는 (3)에서 따옴표로 감싸진 문장은 하나의 단어이고, (5)에서 <em>둘이 하나보다 크다고 믿었다</em> 는 원자 술어라고 주장한다. 특히 (3), (4), (5)에서 ‘둘’이 나타나는 문맥을 <strong>불투명 문맥<sub>opaque context</sub></strong>이라고 명명한 것은 그가 모호한 발생과 우연적 발생의 동일시를 염두에 뒀음을 시사한다.</p>
-
-<p>콰인은 (3), (4), (5)와, 다음의 (6), (7), (8)을 대조한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(6)</div>
-<div>둘에 대해, 그것은 뒤에 '하나보다 크다'를 적었을 때 산술의 참인 명제이다. <sub>Two is such that the result of writing it after 'is greater than one' is a truth of Arithmetics</sub></div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(7)</div>
-<div>둘에 대해, 그것은 필연적으로 하나보다 크다. <sub>Two is such that necessarily it is greater than one.</sub></div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(8)</div>
-<div>둘에 대해, 그것은 코페르니쿠스가 하나보다 크다고 믿었다. <sub>Two is such that Copernicus believed it to be greater than one.</sub></div>
-</div>
-
-<p>(3), (4), (5)와 달리 (6), (7), (8)의 문형에서 ‘둘’은 평범하게 발생하는 것으로 보인다 (콰인이라면 ‘하나’는 여전히 우연적으로 발생한다고 주장할 것이다). 그러나 (6), (7), (8)은 고전 논리로 표현할 수 있는 문장이 아니다. 고전 논리는 ‘There exists $x$ such that…‘이라는 문형은 허용하지만 ‘$n$ is such that…‘이라는 표현은 결여하기 때문이다. 따라서 (6), (7), (8)의 의미론을 정당화하는 것이 과제로 남는다.</p>
-
-<p>우선 (6)부터 보자. 최소한의 논리적 분석으로도 (6)이 적형식<sub>well-formed formula</sub>이 아님을 알 수 있다. 주어의 <em>둘</em> 은 이름의 사용<sub>use</sub>에 해당하지만, <em>뒤에 ‘하나보다 크다’를 적기</em> 는 이름의 언급<sub>mention</sub>에 해당하기 때문이다. 따라서 (6)은 의미론적으로 정당하지 않다.</p>
-
-<p>(7)의 의미는 아리스토텔레스적 본질주의<sub>Aristotelian essentialism</sub>로써 설명할 수 있다. 이 설명은 임의의 대상에 대해, 그에게 본질적인 속성과 우연적인 속성이 무엇인지를 규정한다. 콰인은 이같은 방식으로 (7)의 정당성을 설명한 바 있다.</p>
-
-<p>(8)이 의미론적으로 정당함을 시사하는 예시는 많이 있다. 러셀의 다음 유명한 문장을 보자.</p>
-
-<ul>
-  <li>네 요트의 길이에 대해, 내가 생각한 네 요트의 길이는 그것보다 길다. <sub>The length of your yacht is such that I thought that your yacht was longer than that.</sub></li>
-</ul>
-
-<p>위 문장은 직관적으로 이해가 되며, 참인 듯하다. 이것은 (8)의 의미론적 정당성을 지지한다. 또한 콰인은 다음의 유명한 문장의 쌍을 거론한다.</p>
-
-<blockquote>
-  <p>a. 랄프는 누군가가 스파이라고 믿는다. <sub>Ralph believes that someone is a spy.</sub></p>
-
-  <p>b. 누군가에 대해, 랄프는 그가 스파이라고 믿는다. <sub>Someone is such that Ralph believes they are a spy.</sub></p>
-</blockquote>
-
-<p>a에서는 존재 양화가 믿음 문맥 안에서, b에서는 밖에서 이루어진다. 한편 콰인은 믿음 문맥 속의 단어들을 우연적 발생과 동일시하기 때문에, 그에 따르면</p>
-
-<ul>
-  <li>랄프는 올트커트가 스파이라고 믿는다.</li>
-</ul>
-
-<p>로부터 $\exists$-첨가를 적용하여 b를 유도할 수 없음에 유의하라. 그러나,</p>
-
-<ul>
-  <li>올트커트 씨에 대해, 랄프는 그가 스파이라고 믿는다.</li>
-</ul>
-
-<p>로부터 b를 유도하는 것은 가능하다.</p>
-
-<p>결론적으로 애매한 발생에 대한 콰인의 입장은 두 가지이다. 첫째, 애매한 발생은 우연적 발생과 동일시할 수 있다. 둘째, 불투명 문맥 안과 밖에서 단어가 등장하는 경우를 구분해야 할 필요가 있을 때는 ‘…에 대해<sub>such that</sub>’ 구문을 사용할 수 있다. 콰인은 이 구문을 <strong>관계론적 의미에서의 믿음<sub>relational sense of belief</sub></strong>이라고 부른다. 마찬가지로 우리는 관계론적 의미에서의 양상, 주장, 생각 등의 구문을 도입할 수 있겠으나, 각 구문의 도입은 별도의 정당화를 요구한다.</p>
-
-<h2 id="3-프레게-모호한-발생은-평범한-발생이다">3. 프레게: 모호한 발생은 평범한 발생이다</h2>
-
-<p>프레게는 모호한 발생을 평범한 발생에 동화한다. 프레게는 모호한 발생에서 라이프니츠 원리가 어긋나는 것으로 보이는 이유는, 해당 문맥에서 단어들의 실제 지시체를 우리가 혼동하기 때문이라고 주장한다. 이 혼동에는 두 가지 원인이 있다. 첫째는 지시 표현이 <em>언제나</em> 동일한 대상을 지시한다는 믿음이다. 이로부터 도출되는 둘째 믿음은, 대부분의 맥락에서 같은 대상을 지시하는 지시 표현은 언제나 같은 대상을 지시한다는 믿음이다.</p>
-
-<p>그러나 지시 표현이 언제나 같은 대상을 지시한다는 믿음에 반하는 사례는 많다. 일례로 다음과 같이 중의적이거나 모호한<sub>ambiguous</sub> 단어의 사례가 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(11)</div>
-<div>F.D.R.은 여러 번 출마했지만, F.D.R.은 텔레비전에 딱 한 번 방영되었다.</div>
-</div>
-
-<p>(11)에 대한 자연스러운 분석은, 전자의 ‘F.D.R.’은 정치인을 지칭하는 한편 후자의 ‘F.D.R.’은 텔레비전 방송을 지칭한다고 보는 것이다. 이 경우 두 ‘F.D.R.’은 모두 평범한 발생이다. 그러나 극단적인 이름-지시체-일대일-대응-주의자라면 (11)이 ‘텔레비전에 딱 한 번 방영되었다’가 불투명 문맥임을 드러내며, 후자의 ‘F.D.R.’은 우연적 발생이라고 주장할지 모른다. 이 입장을 조금 더 그럴듯하게 포장하면, (11)은 올바르지 않은 문장이며 후자의 ‘F.D.R.’은 ‘‘F.D.R’이라는 이름의 텔레비전 방송’으로 수정되어야 한다고 주장할 수 있다.</p>
-
-<p>이 사례가 보여주는 것은, 누군가 불투명 문맥으로 이해할 문장을 누군가는 모호함의 발생으로 이해할 수 있다는 것이다. 프레게는 지시 표현은 보통 그 일상적인 지시체를 지시하지만, 뜻<sub>sense</sub> 따위의 중간 대상을 지시할 수도 있으며, 이같은 모호함이 철학자들을 애매한 발생의 문제로 빠뜨린 원인이라고 주장한다. 프레게는 전자를 <strong>직접 지시</strong><sub>direct reference</sub>, 후자를 <strong>간접 지시</strong><sub>indirect reference</sub>라고 부른다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>콰인</th>
-      <th>프레게</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>둘은 하나보다 크다</td>
-      <td>지시 문맥</td>
-      <td>직접 지시</td>
-    </tr>
-    <tr>
-      <td>필연적으로, 둘은 하나보다 크다</td>
-      <td>불투명 문맥</td>
-      <td>간접 지시</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>그렇다면 애매한 발생에서 표현의 지시체가 무엇인지 어떻게 알아낼 수 있을까? 저자는 <strong>합성의 원리<sub>principle of compositionality</sub></strong>가 핵심이라고 말한다. 문장을 이루는 개별 요소의 지칭체가 불분명하다면, 문장 전체의 지칭체를 먼저 확인하고, 문장의 지칭체가 어떻게 분석 가능한지를 파악함으로써 개별 요소의 지칭체를 역추적할 수 있다는 것이다.</p>
-
-<p>이 방법론에 따라 프레게는 인용구 안의 표현<sub>expression</sub>들은 자기 자신을 지시한다는 입장에 도달했다. 예를 들어 $\ulcorner 1 + 2 = 3 \urcorner$에서 $\ulcorner 1 \urcorner$의 지시체는 $\ulcorner 1 \urcorner$이다. 이같은 프레게의 입장은 인용 문맥 내의 양화사 사용을 가능하게 만든다. 로마 문자의 정의역이 대상이고, 그리스 문자의 정의역이 표현이라고 하면 프레게의 이론 하에서 우리는 다음과 같은 참을 표현할 수 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(12)</div>
-<div>$\exists \alpha \big( \ulcorner \alpha$는 하나보다 크다$\urcorner$는 산술의 참인 명제이다$\big)$ </div>
-</div>
-
-<p>표현에 비해 뜻<sub>sense</sub> 또는 의미<sub>meaning</sub>의 존재론적 위상은 불분명하지만, 비슷한 접근을 시도해 볼 수 있다. 먼저 다음의 사례로 예증되는 의미 따옴표를 도입하자.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(13)</div>
-<div>'할아버지'의 의미 = <sup>m</sup>아버지의 아버지<sup>m</sup></div>
-</div>
-
-<p>고딕 문자의 정의역이 의미라고 하면 프레게주의는 다음과 같은 참을 표현할 수 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(14)</div>
-<div>$\exists \mathsf{a, b} \big($ <sup>M</sup>$\mathsf{a}$가 $\mathsf{b}$를 찼다<sup>M</sup> $=$  <sup>M</sup>$\mathsf{b}$가 $\mathsf{a}$에게 차였다<sup>M</sup> $\big)$ </div>
-</div>
-
-<blockquote>
-  <p><em>Remark.</em> 작은따옴표는 표현을 나타내는 반면, $\ulcorner$…$\urcorner$은 표현들의 합성을 의미한다. 마찬가지로 <sup>m</sup>…<sup>m</sup>은 의미를 나타내는 반면, <sup>M</sup>…<sup>M</sup>은 의미들의 합성을 의미한다. 물론 표현들의 합성도 표현이고, 의미들의 합성도 의미이기 때문에, 등식 1, 2가 성립한다. 저자가 등식 1, 2를 등식 3에 빗대어 설명했다는 사실을 떠올리면 도움이 된다.</p>
-
-  <ol>
-    <li>‘The cat is on the mat’ $=$ $\ulcorner$The cat is on the mat$\urcorner$</li>
-    <li><sup>m</sup>The cat is on the mat<sup>m</sup> $=$ <sup>M</sup>The cat is on the mat<sup>M</sup></li>
-    <li>$237 = 2 \times 10^2  + 3 \times 10 + 7$</li>
-  </ol>
-
-  <p>그러나 작은따옴표와 $\ulcorner$…$\urcorner$가 완전히 같고, 그리고 <sup>m</sup>…<sup>m</sup>과 <sup>M</sup>…<sup>M</sup>이 완전히 같은 것은 결코 아니다. 각 경우 전자는 불투명하지만 후자는 투명하기 때문이다. 따라서 1은 불가능하지만 2는 가능하다. 이것은 3은 말이 안 되지만 4는 올바른 것과 같은 이치이다.</p>
-
-  <ol>
-    <li>$\exists \alpha\; \big($ ‘$\alpha$ is on the mat’ is true$\big)$</li>
-    <li>$\exists \alpha\; \big(\ulcorner \alpha$ is on the mat$\urcorner$ is true$\big)$</li>
-    <li>$\exists n\; (237 &lt; 2n7)$</li>
-    <li>$\exists n\; (237 &lt; 2 \times 10^2 + n \times 10 + 7)$</li>
-  </ol>
-</blockquote>
-
-<h2 id="4-지시-술어를-통한-프레게주의의-보강">4. 지시 술어를 통한 프레게주의의 보강</h2>
-
-<p>이제 프레게주의가 (6), (7), (8)을 어떻게 설명하는지 보자.</p>
-
-<p>그에 앞서, (4), (5), (7), (8)에서 믿음의 대상이 되는 것이 정확히 무엇인지를 명료화하는 것이 도움이 된다. S가 문장일 때, 누군가가 S를 믿는다는 것, 또는 S가 필연적이라는 것은 어떻게 형식화할 수 있는가? 본 논문에서는 간단한 길을 택하여, 문장은 자기 자신을 지시하는 것으로 간주하고, 필연을 문장에 대한 단항 술어로, 믿음을 주체와 문장 사이의 이항 술어로 간주한다. 따라서 (4), (5)는 다음과 같이 적을 수 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(15)</div>
-<div>$\mathbf{N}$ '둘은 하나보다 크다'</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(16)</div>
-<div>코페르니쿠스 $\mathbf{B}$ '둘은 하나보다 크다'</div>
-</div>
-
-<p>(7), (8)을 콰인식으로 형식화하기 위해, 콰인의 관계론적 믿음과 관계론적 필연을 나타낼 술어 $\mathbf{Nec}$와 $\mathbf{Bel}$를 도입하자.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(17)</div>
-<div>$\mathbf{Nec}\big($'$\mathbf{x}$는 하나보다 크다', 둘$\big)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(18)</div>
-<div>코페르니쿠스 $\mathbf{Bel}\big($'$\mathbf{x}$는 하나보다 크다', 둘$\big)$</div>
-</div>
-
-<p>여기서 볼드체 문자 $\mathbf{x}$는 $\mathbf{x}$가 지시적으로서가 아닌, 오직 자리값<sub>placeholder</sub>으로서 사용되었음을 의미한다. 콰인에 따르면 $\mathbf{x}$는 불투명 문맥에 있으므로, 지시할 수 없기 때문이다.</p>
-
-<p>프레게주의는 (15)와 (16)을 다음과 같이 형식한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(19)</div>
-<div>$\mathbf{N}$ $\ulcorner$둘은 하나보다 크다$\urcorner$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(20)</div>
-<div>코페르니쿠스 $\mathbf{B} \ulcorner$둘은 하나보다 크다$\urcorner$</div>
-</div>
-
-<p>상술한 Remark로 인해 동일한 술어 $\mathbf{N}, \mathbf{B}$를 사용할 수 있다.</p>
-
-<p>하지만 (19)와 (20)만으로는 부족한 점이 있다. (19)와 (20)의 ‘둘’이 지시적이긴 하지만, (7)과 (8)의 ‘둘’과는 다른 대상을 지시한다. 전자는 표현을, 후자는 수를 지시하기 때문이다. 따라서 (7)과 (8), 또는 (17)과 (18)로부터 가능했을 논리적 추론이 (19)와 (20)만으로는 얻어지지 않는다. 예를 들어 (17)과 다음이 주어졌을 때,</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(21)</div>
-<div>둘 $=$ 화성의 위성 수</div>
-</div>
-
-<p>다음을 도출할 수 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(22)</div>
-<div>$\exists y \big(y =$ 화성의 위성 수 $\land$ $\mathbf{Nec}($'$\mathbf{x}$는 하나보다 크다', $y)\big)$</div>
-</div>
-
-<p>그러나 (19)와 (21)은 다음을 도출하는 데 그친다.</p>
-
-<ul>
-  <li>$\exists y \big(y =$ 화성의 위성 수 $\land$ $\mathbf{N}\ulcorner$둘은 하나보다 크다$\urcorner\big)$</li>
-</ul>
-
-<p>한편 다음은 올바르지 않다. $\alpha$는 수가 아니라 표현이기 때문이다.</p>
-
-<ul>
-  <li>$\exists \alpha \big(\alpha =$ 화성의 위성 수 $\land$ $\mathbf{N}\ulcorner \alpha$는 하나보다 크다$\urcorner\big)$</li>
-</ul>
-
-<p>그러나 이 문제는 처치가 도입한 바 있는 <strong>지시 술어</strong> $\Delta$를 도입함으로써 해결할 수 있다. $\alpha$가 $c$를 지칭할 때, 그리고 오직 그럴 때만 $\Delta(\alpha, c)$라고 하자. 그러면 프레게식으로 (22), (17), 그리고 (18)은 각각 다음과 같이 적을 수 있다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(23)</div>
-<div>$\exists y \Big(y =$ 화성의 위성 수 $\land$ $\exists \alpha \big(\Delta(\alpha, y) \land \mathbf{N}\ulcorner \alpha$는 하나보다 크다$\urcorner\big)\Big)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(24)</div>
-<div>$\exists \alpha \big(\Delta(\alpha, 2) \land \mathbf{N}\ulcorner \alpha$는 하나보다 크다$\urcorner\big)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(25)</div>
-<div>$\exists \alpha \big(\Delta(\alpha, 2)$ $\land$ 코페르니쿠스 $\mathbf{B}\ulcorner \alpha$는 하나보다 크다$\urcorner\big)$</div>
-</div>
-
-<p>논문의 저자는 (23), (24), (25)가 원 문장의 직관적인 의미를 포착할 뿐 아니라, 콰인과 달리 $\mathbf{Bel}, \mathbf{Nec}$ 등의 추가적인 술어를 소개하고 정의할 필요가 없다는 점을 강조한다.</p>
-
-<h2 id="5-올트커트-역설">5. 올트커트 역설</h2>
-
-<p>콰인은 다음의 사고실험을 제시한 바 있다. 랄프는 골목에서 갈색 모자를 쓴 수상한 인물이 벤치 밑의 서류가방을 가져가는 것을 보고는 그가 스파이일 것이라고 믿는다. 한편 랄프는 그가 속한 도시의 시장을 존경하며, 그가 스파이일 리가 없다고 믿는다. 그런데 사실 수상한 사람과 시장은 동일한 인물, 올트커트 씨이다.</p>
-
-<p>콰인은 이를 다음과 같이 형식화한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(26)</div>
-<div>랄프 $\mathbf{B}$ '갈색 모자를 쓴 사람은 스파이이다'</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(27)</div>
-<div>랄프 $\mathbf{B}$ '시장은 스파이가 아니다'</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(28)</div>
-<div>갈색 모자를 쓴 사람 = 시장 = 올트커트</div>
-</div>
-
-<p>(26), (27)을 관계론적 믿음으로 표현하면,</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(29)</div>
-<div>랄프 $\mathbf{Bel}($'$\mathbf{x}$는 스파이이다', 갈색 모자를 쓴 사람$)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(30)</div>
-<div>랄프 $\mathbf{Bel}($'$\mathbf{x}$는 스파이가 아니다', 시장$)$</div>
-</div>
-
-<p>(28)에 의해 (29), (30)은 각각 다음을 시사한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(32)</div>
-<div>랄프 $\mathbf{Bel}($'$\mathbf{x}$는 스파이이다', 올트커트$)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(33)</div>
-<div>랄프 $\mathbf{Bel}($'$\mathbf{x}$는 스파이가 아니다', 올트커트$)$</div>
-</div>
-
-<p>따라서 랄프는 다음을 믿는 것으로 보인다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(34)</div>
-<div>랄프 $\mathbf{Bel}($'$\mathbf{x}$는 스파이이고, $\mathbf{x}$는 스파이가 아니다', 올트커트$)$</div>
-</div>
-
-<p>그러나 (34)는 문제적이다. 콰인은 문제의 원인이 (32), (33)으로부터 (34)를 도출하는 데 있다고 주장한다. 프레게적 형식화는 콰인의 직관이 올바름을 증명한다. 자세한 과정은 생략하지만, (26), (27), (28)은 오직 다음을 도출한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(37)</div>
-<div>$\exists \alpha, \beta \big( \Delta(\alpha,$ 오트커트$) \land \Delta(\beta,$ 오트커트$)$ $\land$ 랄프 $\mathbf{B}\ulcorner \alpha$는 스파이이다$\urcorner \land$ 랄프 $\mathbf{B}\ulcorner \beta$는 스파이가 아니다 $\urcorner\big)$</div>
-</div>
-
-<p>여기까지는 좋다. 문제는 두 번째 역설이다. (9)가 참이라고 하자. 즉, 랄프는 스파이의 존재를 믿는다. 또한 랄프는 세상에 키가 정확히 똑같은 두 사람은 존재하지 않는다고 믿으므로 (매우 합당한 믿음이다) 키가 가장 짧은 스파이가 존재하리라 믿는다. 따라서 (39)가 성립한다.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(39)</div>
-<div>랄프 $\mathbf{B}$'키가 가장 작은 스파이는 스파이이다'</div>
-</div>
-
-<p>콰인식으로 ‘키가 가장 작은 스파이’를 추출<sub>exportation</sub>하면,</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(40)</div>
-<div>랄프 $\mathbf{Bel}\big($'$\mathbf{x}$는 스파이이다', 키가 가장 작은 스파이$\big)$</div>
-</div>
-
-<p>$\exists$-첨가에 의해,</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(41)</div>
-<div>$\exists y\Big($랄프 $\mathbf{Bel}\big($'$\mathbf{x}$는 스파이이다', $y\big)\Big)$</div>
-</div>
-
-<p>그리고 (41)은 (10)과 내용이 같다. 따라서 (9)와 (10)이 서로를 시사하게 되는 모순이 발생한다. 논문의 저자는 이 문제가 너무 까다로운 나머지 한때 양상 및 믿음 문맥에서 양화하는 것은 불가능하다는 입장으로 기울었으나, 이를 공략할 방안이 떠올랐다는 일화를 이야기한다. 이에 대해서는 다음 글에서 소개하도록 하겠다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/03/18/quanitfying-in/en"> On Existential Quantification in Modal Contexts — Quine and Frege </a>
-      </h1>
-    <span class="post-date">18 Mar 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/philosophy/'">
-        Philosophy
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/philosophy-of-language/'">
-        Philosophy of Language
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p>This article is a summary of <a href="/public/Quantifying In.pdf">David Kaplan, <em>Quantifying In</em> (1968)</a>.</p>
-</blockquote>
-
-<h2 id="1-vulgar-occurrence-accidental-occurrence-and-intermediate-occurrence">1. Vulgar Occurrence, Accidental Occurrence, and Intermediate Occurrence</h2>
-
-<p>Consider the following two sentences:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(1)</div>
-<div>Two is greater than one.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(2)</div>
-<div>Dooli lives with Ko Gil-dong.</div>
-</div>
-
-<p>Although ‘two’ appears in both (1) and (2), it occurs in very different ways. Let us call the way ‘two’ appears in (1) a <strong>vulgar occurrence</strong>, and the way ‘two’ appears in (2) an <strong>accidental occurrence</strong>.</p>
-
-<p>When a word occurs vulgarly, it refers and satisfies Leibniz’s principle of identity (for instance, substituting ‘two’ with ‘the number of moons of Mars’ preserves the truth value of the sentence). When a word occurs accidentally, it does not refer and fails to satisfy Leibniz’s principle.</p>
-
-<p>Now consider the following sentences:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(3)</div>
-<div>'Two is greater than one' is a true proposition of arithmetic.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(4)</div>
-<div>Necessarily, two is greater than one.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(5)</div>
-<div>Copernicus believed that two is greater than one.</div>
-</div>
-
-<p>In (3), (4), and (5), ‘two’ appears to refer. However, substituting ‘two’ with ‘the number of moons of Mars’ does not appear to preserve the truth value of the sentences. This is called an <strong>intermediate occurrence</strong>.</p>
-
-<p>In philosophy of language, intermediate occurrences are explained in two main ways. The first is to assimilate intermediate occurrences to accidental occurrences, and the second is to assimilate intermediate occurrences to vulgar occurrences.</p>
-
-<h2 id="2-quine-intermediate-occurrence-is-accidental-occurrence">2. Quine: Intermediate Occurrence is Accidental Occurrence</h2>
-
-<p>Quine assimilates intermediate occurrences to accidental occurrences. He argues that the sentence enclosed in quotation marks in (3) is a single word, and that <em>believed that two is greater than one</em> in (5) is an atomic predicate. In particular, Quine’s designation of the contexts in which ‘two’ appears in (3), (4), and (5) as <strong>opaque contexts</strong> suggests that he had in mind the identification of intermediate and accidental occurrences.</p>
-
-<p>Quine contrasts (3), (4), and (5) with the following (6), (7), and (8):</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(6)</div>
-<div>Two is such that the result of writing it after 'is greater than one' is a truth of arithmetic.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(7)</div>
-<div>Two is such that necessarily it is greater than one.</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(8)</div>
-<div>Two is such that Copernicus believed it to be greater than one.</div>
-</div>
-
-<p>Unlike (3), (4), and (5), in the sentence forms (6), (7), and (8), ‘two’ appears to occur vulgarly (though Quine would argue that ‘one’ still occurs accidentally). However, (6), (7), and (8) are not sentences that can be expressed in classical logic. Classical logic permits the form ‘There exists $x$ such that…’, but lacks the expression ‘$n$ is such that…’. Therefore, the task remains to justify the semantics of (6), (7), and (8).</p>
-
-<p>Let us first consider (6). Even with minimal logical analysis, we can see that (6) is not a well-formed formula. The subject <em>two</em> corresponds to the use of a name, whilst <em>writing it after ‘is greater than one’</em> corresponds to the mention of a name. Therefore, (6) is not semantically justified.</p>
-
-<p>The meaning of (7) can be explained by Aristotelian essentialism. This explanation specifies, for any object, what properties are essential and what properties are accidental to it. Quine has explained the justification of (7) in this manner.</p>
-
-<p>There are many examples suggesting that (8) is semantically justified. Consider Russell’s famous sentence:</p>
-
-<ul>
-  <li>The length of your yacht is such that I thought that your yacht was longer than that.</li>
-</ul>
-
-<p>This sentence is intuitively comprehensible and appears to be true. This supports the semantic justification of (8). Quine also mentions the following famous pair of sentences:</p>
-
-<blockquote>
-  <p>a. Ralph believes that someone is a spy.</p>
-
-  <p>b. Someone is such that Ralph believes they are a spy.</p>
-</blockquote>
-
-<p>In (a), existential quantification occurs within the belief context, whilst in (b) it occurs outside. Since Quine identifies words in belief contexts with accidental occurrences, according to him, note that (b) cannot be derived from</p>
-
-<ul>
-  <li>Ralph believes that Ortcutt is a spy</li>
-</ul>
-
-<p>by applying $\exists$-addition. However, it is possible to derive (b) from</p>
-
-<ul>
-  <li>Ortcutt is such that Ralph believes he is a spy.</li>
-</ul>
-
-<p>In conclusion, Quine’s position on intermediate occurrences is twofold. First, intermediate occurrences can be identified with accidental occurrences. Second, when it is necessary to distinguish between cases where words appear inside and outside opaque contexts, the ‘such that’ construction can be used. Quine calls this construction <strong>belief in the relational sense</strong>. Similarly, we could introduce constructions of modality, assertion, thought, etc., in the relational sense, but the introduction of each construction requires separate justification.</p>
-
-<h2 id="3-frege-intermediate-occurrence-is-vulgar-occurrence">3. Frege: Intermediate Occurrence is Vulgar Occurrence</h2>
-
-<p>Frege assimilates intermediate occurrences to vulgar occurrences. Frege argues that the reason Leibniz’s principle appears to fail in intermediate occurrences is that we confuse the actual referents of words in those contexts. This confusion has two causes. The first is the belief that referring expressions <em>always</em> refer to the same object. The second belief, derived from this, is that referring expressions that refer to the same object in most contexts always refer to the same object.</p>
-
-<p>However, there are many cases that contradict the belief that referring expressions always refer to the same object. For instance, there are cases of ambiguous words:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(11)</div>
-<div>F.D.R. ran several times, but F.D.R. was broadcast on television only once.</div>
-</div>
-
-<p>A natural analysis of (11) is that the former ‘F.D.R.’ refers to the politician whilst the latter ‘F.D.R.’ refers to the television programme. In this case, both instances of ‘F.D.R.’ are vulgar occurrences. However, an extreme name-referent-one-to-one-correspondence theorist might argue that (11) reveals that ‘was broadcast on television only once’ is an opaque context, and that the latter ‘F.D.R.’ is an accidental occurrence. This position could be made slightly more plausible by arguing that (11) is an incorrect sentence and that the latter ‘F.D.R.’ should be corrected to ‘the television programme named “F.D.R.”’.</p>
-
-<p>What this case shows is that what someone understands as an opaque context, someone else can understand as the occurrence of ambiguity. Frege argues that referring expressions usually refer to their ordinary referents, but can also refer to intermediate objects such as senses, and that such ambiguity is what led philosophers into the problem of intermediate occurrences. Frege calls the former <strong>direct reference</strong> and the latter <strong>indirect reference</strong>.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>Quine</th>
-      <th>Frege</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Two is greater than one</td>
-      <td>Referential context</td>
-      <td>Direct reference</td>
-    </tr>
-    <tr>
-      <td>Necessarily, two is greater than one</td>
-      <td>Opaque context</td>
-      <td>Indirect reference</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>How then can we determine what the referent of an expression is in intermediate occurrences? The author states that the <strong>principle of compositionality</strong> is key. If the referents of the individual elements that make up a sentence are unclear, we can first identify the referent of the entire sentence and then trace back the referents of the individual elements by understanding how the referent of the sentence can be analysed.</p>
-
-<p>Following this methodology, Frege arrived at the position that expressions within quotations refer to themselves. For example, in $\ulcorner 1 + 2 = 3 \urcorner$, the referent of $\ulcorner 1 \urcorner$ is $\ulcorner 1 \urcorner$. This position of Frege makes it possible to use quantifiers within quotational contexts. If the domain of Roman letters is objects and the domain of Greek letters is expressions, then under Frege’s theory we can express the following truth:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(12)</div>
-<div>$\exists \alpha \big( \ulcorner \alpha$ is greater than one$\urcorner$ is a true proposition of arithmetic$\big)$ </div>
-</div>
-
-<p>Although the ontological status of senses or meanings is unclear compared to expressions, we can attempt a similar approach. First, let us introduce meaning quotation marks exemplified by the following case:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(13)</div>
-<div>The meaning of 'grandfather' = <sup>m</sup>father of father<sup>m</sup></div>
-</div>
-
-<p>If the domain of Gothic letters is meanings, then Fregeanism can express the following truth:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(14)</div>
-<div>$\exists \mathsf{a, b} \big($ <sup>M</sup>$\mathsf{a}$ kicked $\mathsf{b}$<sup>M</sup> $=$  <sup>M</sup>$\mathsf{b}$ was kicked by $\mathsf{a}$<sup>M</sup> $\big)$ </div>
-</div>
-
-<blockquote>
-  <p><em>Remark.</em> Single quotation marks denote expressions, whilst $\ulcorner$…$\urcorner$ signifies the composition of expressions. Similarly, <sup>m</sup>…<sup>m</sup> denotes meanings, whilst <sup>M</sup>…<sup>M</sup> signifies the composition of meanings. Of course, the composition of expressions is also an expression, and the composition of meanings is also a meaning, so equations 1 and 2 hold. It is helpful to recall that the author explained equations 1 and 2 by analogy with equation 3.</p>
-
-  <ol>
-    <li>‘The cat is on the mat’ $=$ $\ulcorner$The cat is on the mat$\urcorner$</li>
-    <li><sup>m</sup>The cat is on the mat<sup>m</sup> $=$ <sup>M</sup>The cat is on the mat<sup>M</sup></li>
-    <li>$237 = 2 \times 10^2  + 3 \times 10 + 7$</li>
-  </ol>
-
-  <p>However, single quotation marks and $\ulcorner$…$\urcorner$ are not completely identical, nor are <sup>m</sup>…<sup>m</sup> and <sup>M</sup>…<sup>M</sup> completely identical. In each case, the former is opaque whilst the latter is transparent. Therefore, 1 is impossible but 2 is possible. This is analogous to how 3 is nonsensical but 4 is correct.</p>
-
-  <ol>
-    <li>$\exists \alpha\; \big($ ‘$\alpha$ is on the mat’ is true$\big)$</li>
-    <li>$\exists \alpha\; \big(\ulcorner \alpha$ is on the mat$\urcorner$ is true$\big)$</li>
-    <li>$\exists n\; (237 &lt; 2n7)$</li>
-    <li>$\exists n\; (237 &lt; 2 \times 10^2 + n \times 10 + 7)$</li>
-  </ol>
-</blockquote>
-
-<h2 id="4-strengthening-fregeanism-through-denotation-predicates">4. Strengthening Fregeanism through Denotation Predicates</h2>
-
-<p>Let us now see how Fregeanism explains (6), (7), and (8).</p>
-
-<p>Before this, it is helpful to clarify precisely what is the object of belief in (4), (5), (7), and (8). When S is a sentence, how can we formalise that someone believes S, or that S is necessary? In this paper, we take the simple path of considering that sentences refer to themselves, and regard necessity as a unary predicate on sentences and belief as a binary predicate between subjects and sentences. Therefore, (4) and (5) can be written as follows:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(15)</div>
-<div>$\mathbf{N}$ 'two is greater than one'</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(16)</div>
-<div>Copernicus $\mathbf{B}$ 'two is greater than one'</div>
-</div>
-
-<p>To formalise (7) and (8) in Quine’s manner, let us introduce predicates $\mathbf{Nec}$ and $\mathbf{Bel}$ to represent Quine’s relational belief and relational necessity.</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(17)</div>
-<div>$\mathbf{Nec}\big($'$\mathbf{x}$ is greater than one', two$\big)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(18)</div>
-<div>Copernicus $\mathbf{Bel}\big($'$\mathbf{x}$ is greater than one', two$\big)$</div>
-</div>
-
-<p>Here, the bold letter $\mathbf{x}$ signifies that $\mathbf{x}$ is used not referentially but solely as a placeholder. According to Quine, $\mathbf{x}$ is in an opaque context and therefore cannot refer.</p>
-
-<p>Fregeanism formalises (15) and (16) as follows:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(19)</div>
-<div>$\mathbf{N}$ $\ulcorner$two is greater than one$\urcorner$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(20)</div>
-<div>Copernicus $\mathbf{B} \ulcorner$two is greater than one$\urcorner$</div>
-</div>
-
-<p>Due to the aforementioned Remark, we can use the same predicates $\mathbf{N}, \mathbf{B}$.</p>
-
-<p>However, (19) and (20) alone are insufficient. Although ‘two’ in (19) and (20) is referential, it refers to a different object from ‘two’ in (7) and (8). The former refers to an expression, whilst the latter refers to a number. Therefore, logical inferences that were possible from (7) and (8), or (17) and (18), cannot be obtained from (19) and (20) alone. For example, when (17) and the following are given:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(21)</div>
-<div>Two = the number of moons of Mars</div>
-</div>
-
-<p>we can derive the following:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(22)</div>
-<div>$\exists y \big(y =$ the number of moons of Mars $\land$ $\mathbf{Nec}($'$\mathbf{x}$ is greater than one', $y)\big)$</div>
-</div>
-
-<p>However, (19) and (21) only derive the following:</p>
-
-<ul>
-  <li>$\exists y \big(y =$ the number of moons of Mars $\land$ $\mathbf{N}\ulcorner$two is greater than one$\urcorner\big)$</li>
-</ul>
-
-<p>Moreover, the following is incorrect because $\alpha$ is an expression, not a number:</p>
-
-<ul>
-  <li>$\exists \alpha \big(\alpha =$ the number of moons of Mars $\land$ $\mathbf{N}\ulcorner \alpha$ is greater than one$\urcorner\big)$</li>
-</ul>
-
-<p>However, this problem can be solved by introducing the <strong>denotation predicate</strong> $\Delta$ that Church introduced. Let $\Delta(\alpha, c)$ when and only when $\alpha$ denotes $c$. Then under Frege’s theory, (22), (17), and (18) can be written as follows respectively:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(23)</div>
-<div>$\exists y \Big(y =$ the number of moons of Mars $\land$ $\exists \alpha \big(\Delta(\alpha, y) \land \mathbf{N}\ulcorner \alpha$ is greater than one$\urcorner\big)\Big)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(24)</div>
-<div>$\exists \alpha \big(\Delta(\alpha, 2) \land \mathbf{N}\ulcorner \alpha$ is greater than one$\urcorner\big)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(25)</div>
-<div>$\exists \alpha \big(\Delta(\alpha, 2)$ $\land$ Copernicus $\mathbf{B}\ulcorner \alpha$ is greater than one$\urcorner\big)$</div>
-</div>
-
-<p>The author of the paper emphasises that (23), (24), and (25) not only capture the intuitive meaning of the original sentences but also, unlike Quine, do not require the introduction and definition of additional predicates such as $\mathbf{Bel}$ and $\mathbf{Nec}$.</p>
-
-<h2 id="5-the-ortcutt-paradox">5. The Ortcutt Paradox</h2>
-
-<p>Quine presented the following thought experiment. Ralph sees a suspicious figure in a brown hat taking a briefcase from under a bench in an alley and believes that he is a spy. Meanwhile, Ralph respects the mayor of his city and believes that he could not possibly be a spy. However, the suspicious person and the mayor are actually the same individual, Mr Ortcutt.</p>
-
-<p>Quine formalises this as follows:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(26)</div>
-<div>Ralph $\mathbf{B}$ 'the man in the brown hat is a spy'</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(27)</div>
-<div>Ralph $\mathbf{B}$ 'the mayor is not a spy'</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(28)</div>
-<div>The man in the brown hat = the mayor = Ortcutt</div>
-</div>
-
-<p>Expressing (26) and (27) as relational beliefs:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(29)</div>
-<div>Ralph $\mathbf{Bel}($'$\mathbf{x}$ is a spy', the man in the brown hat$)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(30)</div>
-<div>Ralph $\mathbf{Bel}($'$\mathbf{x}$ is not a spy', the mayor$)$</div>
-</div>
-
-<p>By (28), (29) and (30) respectively suggest the following:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(32)</div>
-<div>Ralph $\mathbf{Bel}($'$\mathbf{x}$ is a spy', Ortcutt$)$</div>
-</div>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(33)</div>
-<div>Ralph $\mathbf{Bel}($'$\mathbf{x}$ is not a spy', Ortcutt$)$</div>
-</div>
-
-<p>Therefore, Ralph appears to believe the following:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(34)</div>
-<div>Ralph $\mathbf{Bel}($'$\mathbf{x}$ is a spy and $\mathbf{x}$ is not a spy', Ortcutt$)$</div>
-</div>
-
-<p>However, (34) is problematic. Quine argues that the problem lies in deriving (34) from (32) and (33). Fregean formalisation proves that Quine’s intuition is correct. Although the detailed process is omitted, (26), (27), and (28) only derive the following:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(37)</div>
-<div>$\exists \alpha, \beta \big( \Delta(\alpha,$ Ortcutt$) \land \Delta(\beta,$ Ortcutt$)$ $\land$ Ralph $\mathbf{B}\ulcorner \alpha$ is a spy$\urcorner \land$ Ralph $\mathbf{B}\ulcorner \beta$ is not a spy $\urcorner\big)$</div>
-</div>
-
-<p>This is fine so far. The problem is the second paradox. Suppose (9) is true, i.e., Ralph believes in the existence of spies. Also, since Ralph believes that there are no two people in the world with exactly the same height (a very reasonable belief), he believes that there exists a shortest spy. Therefore, (39) holds:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(39)</div>
-<div>Ralph $\mathbf{B}$ 'the shortest spy is a spy'</div>
-</div>
-
-<p>Exporting ‘the shortest spy’ in Quine’s manner:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(40)</div>
-<div>Ralph $\mathbf{Bel}\big($'$\mathbf{x}$ is a spy', the shortest spy$\big)$</div>
-</div>
-
-<p>By $\exists$-addition:</p>
-
-<div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
-<div>(41)</div>
-<div>$\exists y\Big($Ralph $\mathbf{Bel}\big($'$\mathbf{x}$ is a spy', $y\big)\Big)$</div>
-</div>
-
-<p>And (41) has the same content as (10). Therefore, a contradiction arises where (9) and (10) imply each other. The author of the paper relates that this problem was so intractable that he once leaned towards the position that quantifying in modal and belief contexts is impossible, but that a way to tackle this occurred to him. This will be introduced in the next article.</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

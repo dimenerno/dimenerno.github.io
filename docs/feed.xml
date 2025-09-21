@@ -462,14 +462,14 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
         <guid>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic</guid>
         <pubDate>Sat, 13 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;이 글은 제가 작성한 소논문입니다. 원문이 영문으로 작성되었고, 주제 또한 영미철학이기 때문에, 영문 버전이 글 자체는 훨씬 더 자연스럽습니다. 영문 버전은 블로그 상단의 토글을 통해 읽을 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;이 글은 제가 작성한 소논문입니다. 원문이 영문으로 작성되었고, 주제 또한 영미철학이기 때문에, 영문 버전이 글 자체는 훨씬 더 자연스럽습니다. 영문 버전은 블로그 상단의 토글을 통해 읽을 수 있습니다. (PDF 버전: &lt;a href=&quot;/public/natural_teleology_and_logic.pdf&quot;&gt;링크&lt;/a&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
           xml:base="https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic">
           <![CDATA[
             <blockquote>
-  <p>이 글은 제가 작성한 소논문입니다. 원문이 영문으로 작성되었고, 주제 또한 영미철학이기 때문에, 영문 버전이 글 자체는 훨씬 더 자연스럽습니다. 영문 버전은 블로그 상단의 토글을 통해 읽을 수 있습니다.</p>
+  <p>이 글은 제가 작성한 소논문입니다. 원문이 영문으로 작성되었고, 주제 또한 영미철학이기 때문에, 영문 버전이 글 자체는 훨씬 더 자연스럽습니다. 영문 버전은 블로그 상단의 토글을 통해 읽을 수 있습니다. (PDF 버전: <a href="/public/natural_teleology_and_logic.pdf">링크</a>)</p>
 </blockquote>
 
 <h3 id="초록">초록</h3>
@@ -683,12 +683,18 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
         <link>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/en</link>
         <guid>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/en</guid>
         <pubDate>Sat, 13 Sep 2025 00:00:00 +0900</pubDate>
-        <description>&lt;h3 id=&quot;abstract&quot;&gt;Abstract&lt;/h3&gt;
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;PDF version: &lt;a href=&quot;/public/natural_teleology_and_logic.pdf&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
           xml:base="https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/en">
           <![CDATA[
-            <h3 id="abstract">Abstract</h3>
+            <blockquote>
+  <p>PDF version: <a href="/public/natural_teleology_and_logic.pdf">Link</a></p>
+</blockquote>
+
+<h3 id="abstract">Abstract</h3>
 
 <p>This essay examines Dennett’s skepticism about original intentionality and his attempt to ground meaning in natural selection and natural teleology. I argue, first, that the indeterminacy problem on which Dennett’s skepticism relies does not in itself undermine original intentionality; and second, that the natural-teleological account of logic is question-begging due to its appeal to the utility of truth. I conclude that our use of logic demonstrates a domain in which the doctrine of original intentionality must be presupposed.</p>
 
@@ -891,6 +897,106 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     </li>
   </ol>
 </div>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>모델 완전성에 대한 로빈슨 판별법</title>
+        <link>https://dimenerno.github.io/2025/09/11/robinson-test-en</link>
+        <guid>https://dimenerno.github.io/2025/09/11/robinson-test-en</guid>
+        <pubDate>Thu, 11 Sep 2025 00:00:00 +0900</pubDate>
+        <description>&lt;p&gt;이 글에서 $T$는 언어 $\mathcal{L}$의 이론이다. 또한 $x_1, \dots, x_n$을 $\vec{x}$로 쓴다.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/09/11/robinson-test-en">
+          <![CDATA[
+            <p>이 글에서 $T$는 언어 $\mathcal{L}$의 이론이다. 또한 $x_1, \dots, x_n$을 $\vec{x}$로 쓴다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 이론 $T$가 <strong>모델 완전<sub>model complete</sub></strong>하다는 것은 임의의 $T$의 모델 $\mathfrak{A}, \mathfrak{B}$에 대해</p>
+
+\[\mathfrak{A} \subseteq \mathfrak{B} \implies \mathfrak{A} \preceq \mathfrak{B}\]
+
+  <p>라는 것이다.</p>
+</blockquote>
+
+<p><strong>예시</strong></p>
+
+<ol>
+  <li>
+    <p>체<sub>field</sub> 이론은 모델 완전하지 않다. 실수체 $\mathbb{R}$과 유리수체 $\mathbb{Q}$에 대해 $\mathbb{Q} \subseteq \mathbb{R}$이지만 $\exists x (x \cdot x = 2)$의 진릿값이 두 모델에서 다르므로 $\mathbb{Q} \not\preceq \mathbb{R}$이기 때문이다.</p>
+  </li>
+  <li>
+    <p>비꼬임 가분 아벨군<sub>torsion-free divisible abelian group</sub> 이론은 모델 완전하다. (증명 어려움)</p>
+  </li>
+  <li>
+    <p>양화사 제거 가능한 이론은 모델 완전하다. (증명 쉬움)</p>
+  </li>
+</ol>
+
+<p>2를 비롯하여, 모델 완전성을 판별하는 데 유용한 정리 중 하나는 다음이다.</p>
+
+<blockquote>
+  <p><strong>로빈슨 판별법<sub>Robinson’s Test</sub>.</strong> $T$가 모델 완전할 필요충분조건은 다음이 성립하는 것이다.</p>
+
+  <ul>
+    <li>임의의 $T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해, $\mathfrak{B}$가 만족하는 $\Sigma_1$ $\mathcal{L}_\mathfrak{A}$-문장은 $\mathfrak{A}$ 또한 만족한다.</li>
+  </ul>
+</blockquote>
+
+<h3 id="증명">증명</h3>
+
+<p>다음의 보조정리를 먼저 증명한다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $T$가 모델 완전할 필요충분조건은 다음이 성립하는 것이다.</p>
+
+  <ul>
+    <li>임의의 $\mathcal{L}$-명제 $\phi(\vec{x})$에 대해, $T \vDash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$를 만족하는 $\Pi_1$ 명제 $\psi(\vec{x})$가 존재한다.</li>
+  </ul>
+</blockquote>
+
+<p>(이는 예시 3의 진술, 즉 양화사 제거 가능성은 모델 완전성보다 강한 조건임을 더 명확하게 보여준다.)</p>
+
+<p><strong>보조정리의 증명.</strong> 먼저 충분조건임을 보이자. $T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해, 만약 $\mathfrak{A} \not\preceq \mathfrak{B}$라면 콤팩트성 정리에 의해 어떤 $E(\mathfrak{A})$의 문장 $\phi(\vec{a})$가 존재하여 $\mathfrak{B} \not\vDash \phi(\vec{a})$이다. 가정에 의해 $T \vDash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$를 만족하는 $\Pi_1$ 명제 $\psi$가 존재한다. 따라서 $\mathfrak{B} \not\Vdash \psi(\vec{a})$이다. 그런데 이는 $\Pi_1$ 문장이고, $\Pi_1$ 문장은 부분모델에 대해 보존되므로 $\mathfrak{A} \not\Vdash \psi(\vec{a})$가 되어 모순이다.</p>
+
+<p>이제 필요조건임을 보이자. $\phi(\vec{x})$가 임의의 $\mathcal{L}$-명제라고 하자. <a href="/2025/04/17/los-tarski/">워시-타르스키 정리</a>의 다음 일반화를 사용한다 (증명은 연습문제).</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{L}$의 이론 $T \subseteq T’$에 대해 다음이 성립한다고 하자.</p>
+
+  <ul>
+    <li>임의의 $T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해 $\mathfrak{B}$가 $T’$의 모델이라면 $\mathfrak{A}$도 $T’$의 모델이다.</li>
+  </ul>
+
+  <p>이때, 어떤 $\Pi_1$ $\mathcal{L}$-문장들의 모임 $P$가 존재하여 $T’$은 $T \cup P$와 동치이다.</p>
+</blockquote>
+
+<p>$\mathcal{L}$에 상수 $\vec{c}$를 추가한 언어를 $\mathcal{L}’$이라고 하자. $T$를 $\mathcal{L}’$-이론으로 생각할 수 있다. 이제 $\mathcal{L}’$-이론 $T’ = T \cup { \phi(\vec{c}) }$를 생각하자.</p>
+
+<p>임의의 $T$ 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해 $\mathfrak{B} \vDash T’ \implies \mathfrak{A} \vDash T’$임을 보이자. $T$가 모델 완전하므로 $\mathfrak{A} \preceq \mathfrak{B}$이며, 따라서</p>
+
+\[\mathfrak{B} \vDash \phi(\vec{c}) \iff f $\mathfrak{A} \vDash \exists \phi(\vec{c})\]
+
+<p>이므로</p>
+
+<p>워시-타르스키 정리에 의해, 임의의 $T$ 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해 $\mathfrak{B} \vDash T’ \implies \mathfrak{A} \vDash T’$임을 보이면 $T’$은 어떤 $\Pi_1$ $\mathcal{L}’$-문장들의 모임 $P$에 대해 $T \cup P$와 동치이다. 즉,</p>
+
+\[T \cup P \vdash \phi(\vec{c})\]
+
+<p>증명의 유한성에 의해 $T \cup P$에서 $\phi$를 증명하는 데 필요한 $P$의 명제는 유한하다. 그 명제들의 논리곱을 $\pi(\vec{c})$라고 하면</p>
+
+\[T \vdash \forall x (\phi(\vec{x}) \leftrightarrow \pi(\vec{x}))\]
+
+<p>이고 $\pi(\vec{x})$는 $\Pi_1$ $\mathcal{L}$-문장이므로 증명이 완료된다.</p>
+
+<p>따라서, 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해 $\mathfrak{B} \vDash T’ \implies \mathfrak{A} \vDash T’$임을 보이자.</p>
+
+\[T \vDash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))\]
+
+<p>이 얻어져 증명이 완료된다.</p>
 
           ]]>
         </content:encoded>
@@ -1163,6 +1269,174 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
       </item>
     
       <item>
+        <title>초필터를 이용한 티호노프 정리의 증명</title>
+        <link>https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter-en</link>
+        <guid>https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter-en</guid>
+        <pubDate>Mon, 11 Aug 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;티호노프 정리.&lt;/strong&gt; 콤팩트 공간들의 곱공간은 콤팩트 공간이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2025/08/11/tychonoff-with-ultrafilter-en">
+          <![CDATA[
+            <blockquote>
+  <p><strong>티호노프 정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
+</blockquote>
+
+<p>굉장히 단순하고 강력한 정리이지만, Munkres 등의 학부 위상 책을 보면 증명이 상당히 복잡하다. 아예 증명을 생략하는 책도 많은 듯하다. 하지만 초필터를 이용하면 매우 간단하게 이를 증명해 보일 수 있다.</p>
+
+<h2 id="1-선행-개념">1. 선행 개념</h2>
+
+<p>여기서 소개된 개념의 자세한 설명과 증명은 <em>Stephen Willard, General Topology</em> 4장을 참고하라.</p>
+
+<h3 id="필터와-초필터">필터와 초필터</h3>
+
+<p><a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">이전 글</a>에서 불 대수 구조의 필터를 소개했다. 위상공간에서 $\cup$과 $\cap$을 각각 논리합과 논리곱에 대응하면 불 대수 구조가 되므로, 위상공간에서 필터를 정의할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$에 대해, $X$ 위의 필터 $\mathcal{F}$는 다음 조건을 만족하는 $X$의 부분집합들의 모임이다.</p>
+
+  <ol>
+    <li>$X \in \mathcal{F}, \varnothing \notin \mathcal{F}$</li>
+    <li>$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
+    <li>$A \in \mathcal{F}, A \subseteq B \implies B \in \mathcal{F}$</li>
+  </ol>
+</blockquote>
+
+<p>추가로 다음을 만족하면 초필터이다.</p>
+
+<blockquote>
+<ol start="4">
+  <li>$A \notin \mathcal{F} \implies X \setminus A \in \mathcal{F}$</li>
+</ol>
+</blockquote>
+
+<h3 id="근방-필터">근방 필터</h3>
+
+<p>위상수학에서 중요한 필터 중 하나는 근방 필터이다. 먼저 근방을 다음과 같이 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$에 대해 $N \subseteq X$가 $x \in X$의 <strong>근방<sub>neighbourhood</sub></strong>이라는 것은, 어떤 열린집합 $U$가 존재하여 $x \in U \subseteq N$라는 것이다.</p>
+</blockquote>
+
+<p><strong>근방은 열린집합일 필요가 없다는 점에 주목하라.</strong> 근방이 열린집합일 경우 열린 근방이라고 한다. 이는 근방과 열린 근방을 동의어로 사용하는 일부 교재의 관행과 대조적이므로 주의를 요한다.</p>
+
+<blockquote>
+  <p><strong>표기.</strong> $x$의 근방들의 모임을 $\mathcal{N}(x)$ 또는 $\mathcal{N}_x$라고 표기한다.</p>
+</blockquote>
+
+<p>$\mathcal{N}(x)$는 필터임을 쉽게 확인할 수 있다. 이에 따라 $\mathcal{N}(x)$를 <strong>근방 필터</strong>라고 부른다.</p>
+
+<h3 id="필터의-생성">필터의 생성</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$의 부분집합들의 모임 $\mathcal{C}$가 다음을 만족할 때, $\mathcal{C}$를 <strong>예비 필터<sub>prefilter</sub></strong> 또는 <strong>필터 기저<sub>filter base</sub></strong>라고 부른다.</p>
+
+  <ol>
+    <li>$\varnothing \notin \mathcal{C}$</li>
+    <li>$A, B \in \mathcal{C} \implies \exists C \in \mathcal{C} : C \subseteq A \cap B$</li>
+  </ol>
+</blockquote>
+
+<p>즉, 필터가 교집합에 대해 닫혀 있는 한편 예비 필터는 교집합에 대해 “약하게” 닫혀 있다. $\mathcal{C}$가 예비 필터일 때, $\mathcal{C}$로부터 다음과 같이 필터 $\mathcal{F}$를 <strong>생성<sub>generate</sub></strong>할 수 있다.</p>
+
+\[\mathcal{F} = \{ F \subseteq X : C \subseteq F \text{ for some } C \in \mathcal{C} \}\]
+
+<p>또한 사상 $f: X \to Y$와 $X$ 위의 필터 $\mathcal{F}$가 주어졌을 때, 다음 집합족은 예비 필터이다.</p>
+
+\[\mathcal{C} = \{ f(F) : F \in \mathcal{F} \}\]
+
+<blockquote>
+  <p><strong>표기.</strong> $\mathcal{C}$가 생성하는 필터를 $f(\mathcal{F})$와 같이 표기한다.</p>
+</blockquote>
+
+<p>$f$가 전사<sub>onto</sub>일 경우 $\mathcal{C} = f(\mathcal{F})$라서 다루기 편하다. 또한 $f$가 전사일 때 다음이 (자명하게) 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $f: X \to Y$가 전사이고 $\mathcal{F}$가 $X$ 위의 초필터일 때, $f(\mathcal{F})$는 $Y$의 초필터이다.</p>
+</blockquote>
+
+<h3 id="초필터로의-확장">초필터로의 확장</h3>
+
+<p>모든 필터는 초필터로 확장될 수 있다. 증명은 <a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">이전 글</a>을 참고하라 (선택 공리를 사용한다).</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{F}$가 $X$ 위의 필터일 때, $X$ 위의 초필터 $\mathcal{U}$가 존재하여 $\mathcal{U} \supseteq \mathcal{F}$이다.</p>
+</blockquote>
+
+<h3 id="필터의-수렴">필터의 수렴</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 필터 $\mathcal{F}$가 $\mathcal{N}(x)$를 포함할 때 $\mathcal{F}$는 $x$로 <strong>수렴</strong>한다고 하며, $\mathcal{F} \to x$와 같이 적는다.</p>
+</blockquote>
+
+<p>예를 들어 예비 필터 $\lbrace  (0, \epsilon) : \epsilon &gt; 0 \rbrace $로 생성되는 필터는 $0$으로 수렴한다 (이 예시는 $\mathcal{F} \to x$라고 해서 $\mathcal{F}$의 모든 원소가 $x$를 원소로 가질 필요는 없음을 보여준다).</p>
+
+<p>필터 수렴의 주요 성질은 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$E \subseteq X$에 대해 $x \in \overline{E}$일 필요충분조건은 어떤 필터 $\mathcal{F}$가 존재하여 $E \in \mathcal{F}$이고, $\mathcal{F} \to x$인 것이다.</li>
+    <li>$f: X \to Y$가 연속일 필요충분조건은 임의의 필터 $\mathcal{F}$에 대해 $\mathcal{F} \to x$라면 $f(\mathcal{F}) \to f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p>이는 1차 가산 공간에서 점렬로 폐포와 연속함수를 특징지었던 것을 일반화한 것이다.</p>
+
+<p>곱공간에서 필터의 수렴은 각 요소 공간에서의 수렴과 동치이다. 즉, 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 곱공간 $\prod_{i \in I}X_i$ 위의 필터 $\mathcal{F}$가 $x$로 수렴할 필요충분조건은 각각의 $i \in I$에 대해 $\pi_i(\mathcal{F}) \to \pi_i(x)$인 것이다.</p>
+</blockquote>
+
+<h2 id="2-티호노프-정리의-증명">2. 티호노프 정리의 증명</h2>
+
+<p>이제 티호노프 정리를 증명해 보자. 핵심은 다음의 보조정리이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $X$가 콤팩트할 필요충분조건은 $X$의 모든 초필터가 수렴하는 것이다.</p>
+</blockquote>
+
+<h4 id="증명">증명</h4>
+
+<p>$(\Rightarrow)$ $\mathcal{F}$가 수렴하지 않는 $X$의 초필터라고 하자. $\mathcal{F}$가 어느 점으로도 수렴하지 않는다는 것은, 임의의 $x \in X$에 대해 어떤 열린집합 $U_x$가 존재하여 $U_x \notin \mathcal{F}$라는 것이다. $\mathcal{F}$가 초필터이므로 $X \setminus U_x \in \mathcal{F}$이다. 이제 $U_x$들의 모임 $\mathcal{C} = \lbrace  U_x : x \in X \rbrace $를 생각하자. $\mathcal{C}$는 $X$를 덮으며, $X$가 콤팩트하므로 유한 부분덮개 $\lbrace U_{x_1}, \dots, U_{x_n} \rbrace $을 가진다. 따라서,</p>
+
+\[\begin{align}
+&amp;X \setminus (U_{x_1} \cup \dots \cup U_{x_n}) \\
+&amp;= (X \setminus U_{x_1}) \cap \dots \cap (X \setminus U_{x_n}) \\
+&amp;= \varnothing
+\end{align}\]
+
+<p>그런데 각 $1 \leq i \leq n$에 대해 $X \setminus U_{x_i} \in \mathcal{F}$이므로, 필터의 교집합 닫힘에 의해 $\varnothing \in \mathcal{F}$가 되어 모순이다. □</p>
+
+<p>$(\Leftarrow)$ $X$가 콤팩트하지 않다고 하자. 그러면 어떤 $X$의 열린 덮개 $\mathcal{C}$가 존재하여 $\mathcal{C}$는 유한 부분덮개를 가지지 않는다. 따라서 다음과 같이 $\mathcal{P}$를 정의할 때,</p>
+
+\[\mathcal{P} = \{ X \setminus (U_1 \cup \dots \cup U_n) : U_i \in \mathcal{C} \}\]
+
+<p>$\mathcal{P}$는 유한 교집합에 대해 닫혀 있으며 공집합을 원소로 가지지 않으므로 예비 필터이다. 이에 따라 $\mathcal{P}$는 필터로 확장될 수 있으며, 이 필터는 초필터로 확장될 수 있다. 그러한 초필터를 $\mathcal{F}$라고 하자. 가정에 의해 $\mathcal{F}$는 어떤 점 $x$로 수렴한다. 즉, $\mathcal{N}(x) \subseteq \mathcal{F}$이다. 따라서 다음이 성립한다.</p>
+
+\[x \in \bigcap_{F \in \mathcal{F}} \overline{F}\]
+
+<p>그런데 이는 $\bigcap_{P \in \mathcal{P}} \overline{P} = \bigcap_{P \in \mathcal{P}} P = \varnothing$ ($\mathcal{C}$가 $X$의 덮개이므로) 에 모순된다. ■</p>
+
+<p>이제 티호노프 정리는 거의 자명하게 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
+</blockquote>
+
+<h4 id="증명-1">증명</h4>
+
+<p>각각의 $i \in I$에 대해 $X_i$가 콤팩트 공간이라고 하자. $X$가 콤팩트할 필요충분조건은 임의의 $\prod_{i \in I}$ 위의 초필터 $\mathcal{F}$가 수렴하는 것이고, $\mathcal{F}$가 수렴할 필요충분조건은 $\pi_i(\mathcal{F})$가 $X_i$에서 수렴하는 것이다. 그런데 $\pi_i$는 전사이므로 $\pi_i(\mathcal{F})$는 초필터이고, $X_i$는 콤팩트하므로 $\pi_i(\mathcal{F})$는 수렴한다. 이에 따라 $X$는 콤팩트하다. ■</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
         <title>돼지고기와 연어: 윤리적 삶은 사치품인가?</title>
         <link>https://dimenerno.github.io/2025/08/08/pork-and-salmon</link>
         <guid>https://dimenerno.github.io/2025/08/08/pork-and-salmon</guid>
@@ -1253,820 +1527,90 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
       </item>
     
       <item>
-        <title>사적 언어는 가능한가?</title>
-        <link>https://dimenerno.github.io/2025/07/21/private-language</link>
-        <guid>https://dimenerno.github.io/2025/07/21/private-language</guid>
-        <pubDate>Mon, 21 Jul 2025 00:00:00 +0900</pubDate>
-        <description>&lt;p&gt;&lt;a href=&quot;https://dimenerno.github.io/2025/07/03/kripkenstein&quot;&gt;이전 글&lt;/a&gt;에서 크립키-비트겐슈타인 역설을 다루었다. 요약하자면, 크립키-비트겐슈타인 역설은 특정 단어가 사용될 수 있는 무한한 사례를 아우르는 규범적 사실이 없다는 고찰에 착안한다. 이로부터 크립키-비트겐슈타인이 내리는 결론은 다음과 같다.&lt;/p&gt;
+        <title>돼지고기와 연어: 윤리적 삶은 사치품인가?</title>
+        <link>https://dimenerno.github.io/2025/08/08/pork-and-salmon-en</link>
+        <guid>https://dimenerno.github.io/2025/08/08/pork-and-salmon-en</guid>
+        <pubDate>Fri, 08 Aug 2025 00:00:00 +0900</pubDate>
+        <description>&lt;p&gt;&lt;small&gt;본 글은 일체의 챗지피티 도움 없이 작성되었습니다.&lt;/small&gt;&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/21/private-language">
+          xml:base="https://dimenerno.github.io/2025/08/08/pork-and-salmon-en">
           <![CDATA[
-            <p><a href="https://dimenerno.github.io/2025/07/03/kripkenstein">이전 글</a>에서 크립키-비트겐슈타인 역설을 다루었다. 요약하자면, 크립키-비트겐슈타인 역설은 특정 단어가 사용될 수 있는 무한한 사례를 아우르는 규범적 사실이 없다는 고찰에 착안한다. 이로부터 크립키-비트겐슈타인이 내리는 결론은 다음과 같다.</p>
+            <p><small>본 글은 일체의 챗지피티 도움 없이 작성되었습니다.</small></p>
 
-<blockquote>
-  <p>“화자 A가 기호 s를 통해 M을 의미한다”는 대응되는 사태를 가지지 않는다.</p>
-</blockquote>
+<h3 id="돼지고기와-연어">돼지고기와 연어</h3>
 
-<p>그리고 크립키의 독해에 따르면 비트겐슈타인은 이 결론에 대해 “회의주의적 해답”을 제시한다. 즉, 위의 결론을 그대로 받아들이되 — “앨리스는 ‘+’로 덧셈을 의미한다’“에 대응하는 사태는 없다 — 그것이 어떻게 — “앨리스의 생각은 초록색이다”와 달리 — 유의미하게 사용될 수 있는지 해명하는 것이다. 해명의 요지는, 언어의 의미는 그것이 공동체에서 가지는 기능과 불가결하며, 따라서 의미에 대한 논의는 개별 화자 단위에서는 공허하지만 공동체 단위에서는 유효하다는 <strong>언어의 공적성</strong>을 강조하는 것이다.</p>
+<p>단도직입적으로 밝히자면, 나는 현행의 돼지고기 사육은 <em>굉장히</em> 비윤리적이라는 입장이다. 여기서 <em>굉장히</em> 라는 부사는 이 문제가 낙태 문제나 사형제 문제, 트롤리 딜레마보다 훨씬 자명하다는 입장까지를 표현한다.</p>
 
-<h2 id="1-논고에서-탐구로">1. ⟪논고⟫에서 ⟪탐구⟫로</h2>
+<p>돼지는 침팬지와 돌고래에 버금가는 가장 똑똑한 동물 중 하나이다. 돼지는 자아를 인식하고, 청결을 유지하기 위해 공간을 구획하며, 다른 돼지들과 사회적 관계를 형성하려는 습성을 보인다. 특히 감수성이 풍부하여 다른 돼지의 고통을 보았을 때 똑같이 고통스러워할 뿐 아니라, 애완용으로 길러진 돼지는 강아지 못지않게 주인의 애정을 갈구한다. 그에 반해 현행 산업에서 돼지가 사육되는 환경은 참혹하기 그지없다. 식용으로 사육되는 돼지의 90% 이상은 평생을 발 디딜 틈 없이 과포화된, 불결하고 어두침침한 우리에 갇혀 생활한다. 사육장은 스트레스, 고통, 싸움으로 인한 돼지 울음으로 조용할 날이 없다. 대다수의 산업에서 수퇘지는 고기가 더 맛있어진다는 이유로 진통제 없이 거세되며, 암퇘지는 쇠창살로 포박된 채 젖을 빨린다.</p>
 
-<p>크립키는 ⟪논리철학논고⟫로 상징되는 전기 비트겐슈타인과, ⟪철학적 탐구⟫로 상징되는 후기 비트겐슈타인 사이에 현격한 차이가 있다고 보는, 소위 “전통적 해석” 학파에 속한다. 크립키는 ⟪논고⟫에서 제시된 언어관의 특징을 다음과 같이 요약한다.</p>
+<p>전 세계에서 식용으로 사육되는 돼지의 수는 약 10억 마리이므로, 인간중심주의를 받아들여 한 인간의 생명이 1천 마리의 돼지에 준하는 가치를 가진다고 하더라도 이는 100만 명의 사람을 “보다 맛있는 식사”를 위해 고문실에 몰아넣은 상황이니 <em>굉장히</em> 비윤리적이라는 딱지를 붙여야 마땅하다. “돼지고기 소비를 법으로 금지해야 하는가?” 또는 “돼지고기를 먹는 사람은 지탄받아야 마땅한가?” 등의 질문은 사회·정치·문화적 맥락과 깊이 얽혀 있기 때문에 단적인 결론을 내리기 어려울 수 있어도, 돼지 사육의 윤리성만 두고 보았을 때 이를 옹호하는 입장을 고수하기란 극단적인 형태의 도덕 회의주의를 상정하지 않고서야 불가능해 보인다. 그리고 돼지고기 산업 구조가 이처럼 <em>굉장히</em> 비윤리적이라면, 개개인에 의한 그 산업의 소비, 즉 생산된 돼지고기를 먹는 행위는 <em>확실히</em> 비윤리적이라는 결론은 피하기 어렵다.</p>
 
-<ul>
-  <li><strong>논리적 원자주의.</strong> 모든 유의미한 명제는 원자명제의 논리적 합성으로 분석된다.</li>
-  <li><strong>그림 이론.</strong> 원자명제와 그것이 나타내는 사태는 서로 그림처럼 대응한다. 원자명제가 나타내는 사태가 성립하는 경우 해당 명제는 참이다.</li>
-  <li><strong>진리조건론.</strong> 명제의 의미는 그것의 진리조건 — 즉, 해당 명제에 대응되는 사태가 무엇인지 — 에 있다.</li>
-  <li><strong>선험적 접근.</strong> 위에서 개괄된 언어의 특징은 선험적<sub>a priori</sub> 사유를 통해 추론할 수 있다.</li>
-</ul>
+<p>그렇다고는 해도, 앞서 말한 사회·문화·정치적 맥락으로 인해 나는 이런 입장을 사회생활에서 드러내 보이지 않는다. 회식 메뉴가 돼지고기로 결정되었을 때 나는 마음속으로 윤리적 부담감을 느끼면서도 겉으로는 좋다며 고개를 끄덕인다. 그리고 회식에 가서는 돼지고기를 잘만 먹는다. 나에게는 모임 분위기를 초치고 주변 사람에게서 “채식주의자” 꼬리표가 달리는 사회적 리스크를 감수할 용기가 없는 까닭이다. 참 비겁한 짓이다.</p>
 
-<p>반면 ⟪탐구⟫에서는 ⟪논고⟫와 대비되는 두 가지 언어관이 드러난다고 분석한다.</p>
+<p>자아비판은 일기장에서 충분히 할 것이니 이쯤에서 일축하고, 이 글의 본론은 다른 것이다. 윤리적 책무를 덜기 위해 나는 대신 혼자서, 또는 돼지고기와 관련하여 나와 같은 윤리적 입장인 사람(∋ 여자친구)과 식사를 할 때는 돼지고기를 피하고자 한다. 동물의 고통 감수성과 해당 동물이 사육되는 환경을 함께 고려하면 돼지고기, 닭고기, 소고기, 생선류 순으로 윤리적 부담이 덜하다고 생각한다. 마침 내가 가장 좋아하는 음식 중 하나가 연어이다. 따라서 돼지고기 대신 연어를, 그리고 고기가 당기는 날에는 소고기를 먹으면 만사 해결이다.</p>
 
-<ul>
-  <li><strong>주장조건론.</strong> 명제의 의미는 그것의 주장조건<sub>assertability condition</sub> — 즉, 해당 명제가 어떤 상황에서 주장되거나 기각될 수 있는지 — 에 있다.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></li>
-  <li><strong>실용주의.</strong> 특정 명제를 주장하거나 기각하는 것이 우리 삶에서 어떤 역할 또는 기능을 수행하는지에 대한 고찰은 언어의 올바른 이해에 핵심적이다.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></li>
-</ul>
+<p>라는 생각의 식습관을 실천해 보았더니, 이것이 만사 해결이 아님을 알게 되었다. 그렇다. 잔고에서 돈이 물 흐르듯이 빠져나간 것이다. 물론 “돼지고기 대신 소고기와 연어를 먹어 보니 돈이 많이 들었다” 자체는 굉장히 자명한 관찰이다. 그러나 주어를 치환하면 조금 덜 자명한 관찰이 얻어진다. 즉, “윤리적 식습관을 시도해 보니 돈이 많이 들었다”는 것이다.</p>
 
-<p>여기서 주장조건론은 비트겐슈타인 이전에도 여타 철학적 입장에서 발견할 수 있는 것이다. 브라우어르의 직관주의 수학, 논리실증주의의 검증론 등이 대표적이다. 크립키는 비트겐슈타인의 독창성이 두 번째 특징, 즉 실용주의에 있다고 본다. 비트겐슈타인은 프레게 등이 요구하는 단어-대상 대응을 비판하며, 그 대신 단어들이 실제로 쓰이는 상황을 고려할 것을 촉구한다. 숫자로 예를 들자면, 프레게는 숫자가 가리키는 대상이 있어야 한다고 주장한다.<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup> 그러나 비트겐슈타인은 숫자가 쓰이는 실제 상황 — 장터에서 물건을 세는 것, 교사가 학생의 수를 세는 것 — 등을 거론하며, 이들 상황에서 숫자 대신 알파벳을 읊었더라도 언어 행위의 목적은 달성되었을 것임을 강조한다. 요컨데 숫자는 프레게의 말마따나 “자연수를 지칭하는 언어”가 아닌 “물건 등을 세는 활동에 종사하는 언어”인 것이다.</p>
+<p>물론 이 또한 변명의 심정에서 나온 관찰임을 부정할 수는 없다. 식비가 바닥이 나더라도 사찰 음식 위주의 식단이라면 저렴하게 윤리적 식습관을 실천할 수 있으니 말이다. 문제는 역시 맛이 없다는 것이다. 적은 돈만으로 윤리적 식습관을 실천할 수는 있어도, 돈을 펑펑 쓸 수 있는 경우와는 비할 수 없을 정도로 더 강력한 의지가 필요하다. 그러니 이런 결론을 잠정적으로 내릴 수 있다. “윤리적 식습관의 실천 난이도는 경제력에 반비례한다.” (공정 무역 식품 또한 이에 해당하는 사례이다)</p>
 
-<h2 id="2-회의주의적-해답">2. 회의주의적 해답</h2>
+<h3 id="유튜브와-독서">유튜브와 독서</h3>
 
-<p>주장조건론에 기반한 비트겐슈타인의 후기 언어관에 입각하여 보면 회의주의 논증은 그 즉시 “앨리스는 ‘+’로 덧셈을 의미한다”가 무의미함을 시사하지 않는다. 해당 명제에 대응되는 사태가 없을지언정, 애초에 사태의 존재 여부는 — 진리조건론 언어관과 달리 — 명제가 유의미할 필요조건이 아니기 때문이다.</p>
+<p>비단 식습관만 그런 것이 아니다. 가령 취미의 경우를 보자. 설명의 편의를 위해 — 이것을 취미라고 부를 수 있다면 — 악성 유튜브 시청과, 양서 독서라는 다소 과장된 극단을 대조해 보겠다. 여기서 악성 유튜브란 가짜뉴스, 성 상품화, 황색언론 등 윤리적으로 문제적인 내용을 통해 사용자에게 즉각적인 도파민을 주는 유튜브 채널을 말하고, 양서란 인문학적 가치를 잘 전달하고 독자로 하여금 성찰과 사색을 자극하는 책을 말한다 (수험준비서, 주식투자서 등을 배제하기 위한 표현이다).</p>
 
-<p>한편 실용주의는 “앨리스는 ‘+’로 덧셈을 의미한다”가 유의미한 명제로 간주되기 위한 별도의 필요조건을 제시한다. 즉, 해당 명제는 언어게임에서 유용한 역할을 수행해야 한다. 그리고 크립키는 해당 명제가 수행하는 역할을, ⟪탐구⟫에서 등장하는 또다른 사고실험인 “사적 언어 논증”과 결부지어 설명한다. 그러나 그 전에, 비트겐슈타인의 회의주의적 해답의 특징을 버클리 및 흄의 회의주의와 비교하여 고찰해 보자.</p>
+<p>취미에 윤리적 잣대를 들이미는 것이 부당해 보일 수 있지만, 적어도 이 경우 전자는 비윤리적인 취미이고 후자는 윤리적인 취미라는 주장은 매우 합당한 듯하다. 그리고 여기서 독자는 내가 의도하는 결론이 무엇인지 짐작할 수 있을 것이다. 부유층일수록 악성 유튜브를 보는 것보다 양서 독서를 할 확률이 높고, 빈곤층일수록 도리어 악성 유튜브에 빠질 확률이 더 높다는 것이다.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
 
-<h3 id="21-버클리의-회의주의">2.1. 버클리의 회의주의</h3>
+<p>물론 이것은 의도적으로 선택된 예시이다. 모든 “빈곤층 취미”는 비윤리적이고 “부유층 취미”는 윤리적인 것은 결코 아니니 말이다. 오히려 골프장을 만든답시고 산을 깎고, 배기가스 나 몰라라 하면서 스포츠카 예닐곱 대를 보유하는 부유층의 “취미”야말로 정말 문제적인 것 아닌가? 이것은 합당한 지적이다. 이 지적에 답하기 전에, 윤리적 소비 및 활동이 경제력이 떨어지는 사람일수록 실천하기 어려워지는 원리를 서술해 보자.</p>
 
-<p>크립키는 “회의주의적 해답”이라는 표현으로, 다음 특징을 가지는 논증들을 아울러 지칭한다.</p>
+<p>첫째 — 진부한 소리이지만, 자본주의 체제에서 제일 중요한 것은 이윤 최대화이기에, 특히 저소득층이 주요 소비자인 저가 시장의 경우 윤리적 고려는 한참 뒷전으로 밀려난다. 이것이 돼지고기와 연어의 사례에 해당한다. 모든 기업이 윤리적 하한을 설정하여 자율적으로 약속을 이행할 일은 죄수의 딜레마처럼 전무하다. 윤리라는 가치로 통합된 국민 다수가 정부를 통해 주권을 발휘하여 기업에 강제력을 행사하는 수밖에 없을 텐데, 차별금지법 제정에도 교착에 빠진 현재의 정국을 보아 이 또한 만무하다.</p>
 
-<ol>
-  <li>우리가 자명한 것으로 생각하는 명제 P를 제시한다.</li>
-  <li>명제 P가 사실 모순적이거나, 불가해하거나, 정당화될 수 없음을 주장하는 “회의주의 역설”을 제시한다.</li>
-  <li>그러나 회의주의 역설에도 불구하고 우리가 일상에서 P를 정당한 명제로서 간주할 수 있는 이유를, P의 의미를 재해석함으로써 설명한다.</li>
-  <li>보너스로, 3에서 재해석한 P의 의미가 “진짜 의미”, “일상인의 의미”이고, 2에서 기각된 P의 의미는 “가짜 의미”, “철학자들이 호도한 의미”라고 선전(?)할 수 있다.</li>
-</ol>
+<p>둘째 — 기본적으로 윤리는 이성적 성찰과 행동적 실천을 모두 요구하기 때문에 추구하는 데 굉장한 에너지가 필요하다. 이것이 유튜브와 독서의 사례에 해당한다. 이성적 성찰과 행동적 실천 중 하나만 추구하기도 굉장히 힘든 마당에 — 가령 다이어트는 후자만을 요구하는데도 성공률은 궤멸적이다 — 양쪽을 다 요구하는 윤리적 삶의 추구는, 일과 중 근로(노동)가 끝난 이후에도 그것을 추구할 만한 에너지가 남아도는 사람에게만 가능한 일이다. 하루 중 8시간을 육체노동을 하고 귀가한 사람이 피터 싱어의 책을 읽으며 밤을 보낸다는 것은 거의 생리학적으로 불가능한 것이다. 가령 나는 스스로 독서를 즐긴다고 자부하지만, 훈련소 있었을 때 힘든 일과가 끝난 밤에는 그냥 침대에 누워서 멍이나 때렸지 책을 읽어야겠다는 마음은 추호도 들지 않았다. 그것은 진정 “사치”이다.</p>
 
-<p>예를 들어 버클리의 관념론을 보자. 버클리는 한 개인이 인식할 수 있는 것은 그가 내면에서 발생하는 심상일 뿐임을 지적한다. 따라서 우리는 결코 ‘외부 대상’의 독립적 존재를 증명할 수 없다. 내적 심상들의 집합으로부터 외부 대상의 존재를 추론하는 것은 논리적으로 정당화될 수 없기 때문이다. 위에서 제시한 3단계에 맞추어 이를 개괄하자면,</p>
+<p>이제 앞서 제기되었던 지적, 즉 부유층의 취미가 오히려 더 심각하게 비윤리적인 경우가 많다는 지적으로 돌아가 보자. 이것은 분명 사실이지만, 주목해야 할 것은 부유층에게는 <strong>선택의 자유</strong>가 주어진다는 것이다. 즉, 그는 그의 자본으로 해외 원조 재단을 설립하는 <em>굉장히</em> 윤리적인 실천을 할 수도 있고 (논의상 이 재단의 설립에 돈세탁 등의 목적은 없다고 하자), 산등성이를 깎아서 골프장을 만드는 <em>굉장히</em> 비윤리적인 실천을 할 수도 있다. 물론 절대다수의 부유층은 후자를 선택할 것이지만, 중요한 것은 그들에게 보장된 선택의 자유이다.</p>
 
-<ol>
-  <li>우리는 “내 손에 사과가 있다”는 명제를 정당한 것으로 간주한다.</li>
-  <li>그러나 개인이 인식할 수 있는 것은 내적 심상으로 제한되므로 1의 명제는 정당화될 수 없다.</li>
-  <li>그럼에도 불구하고 우리가 1의 명제를 정당한 명제로서 간주할 수 있는 이유는, 사실 1의 명제의 진짜 의미는 “나는 빨간색 시각, 새콤한 후각, 구형의 단단한 촉각 등을 느끼고 있다”이기 때문이다.</li>
-</ol>
+<p>빈곤층에게는 선택의 자유가 애초에 주어지지 않는다. 그의 일상은 사회구조적으로 주입된 <em>사소하지만 그럼에도 확실히</em> 비윤리적인 소비들로 점철되어 있다. 비유하자면 이렇다. 부유층은 자신의 돈을 굴려 불어나게 할지, 사치를 부릴지 선택의 자유가 있다. 그러나 빈곤층에게는 그 자유가 없다. 그로서는 저금을 하거나 개미 투자를 할 수밖에 없는데, 인플레이션과 시장 불확실성을 고려하면 이는 통상 돈을 사소하지만 그럼에도 확실히 잃는 일이다. 마찬가지로 현대 사회에서 안정된 경제력을 가지지 않은 사람은 굉장히 이상<sub>理想, 異常</sub>한 경우가 아니고서야 잔인하게 사육된 돼지고기를 먹고, 개발도상국 노동자를 착취한 제품을 구입하고, 도파민 위주의 정치·시사 유튜브를 보고, 동물복지, 빈곤, 기아, 난민 문제를 뜬구름 잡는 일로 치부할 수밖에 없다.</p>
 
-<p>(크립키는 이런 식의 논증을 좋아하지 않는 티를 원 논문에서 팍팍 낸다. 필자 생각으로는 미국 기능주의 철학자들이 이러한 “회의주의적 해답”을 — 크립키가 보기에 — 부당할 정도로 몰아붙인 데서 온 반감이 아닐까 싶다.)</p>
+<h3 id="윤리적-삶은-사치품인가">윤리적 삶은 사치품인가?</h3>
 
-<h3 id="22-흄의-회의주의">2.2. 흄의 회의주의</h3>
+<p>여기서 본 글의 제목을 살펴보자. “윤리적 삶은 사치품이다”라는 명제는 당연히 슬로가니어링<sub>sloganeering</sub>이다. 모든 슬로건이 그렇듯이 이 진술은 자극적이고 신선하지만 (따라서 글의 제목으로 적절하다) 그것이 실제로 진술하는 내용이 무엇인지는 불명확하다 (따라서 글의 논점으로서는 부적절하다). “윤리적 삶은 사치품이다”라는 명제는 다음과 같이 여러 방식으로 해석될 수 있다.</p>
 
-<p>또다른 예시로, 흄의 인과에 대한 회의주의를 보자. 흄은 “사건 A가 사건 B의 원인이다”라는 명제에 대해, “사건 A와 사건 B가 잇달아 일어났다” 이상으로 제시할 수 있는 경험적 근거가 있는지를 질문한다. 그러한 근거는 자연에 실존하는 인과적 연결고리<sub>nexus</sub>의 관측으로 구성될 것인데, 흄은 그러한 연결고리의 관측은 인간의 경험 영역을 벗어나 있음을 지적한다. 우리가 경험할 수 있는 것은 오직 사건들의 규칙성이다. 즉, 사건 유형<sub>type</sub> A에 속하는 사건 사례<sub>token</sub>가 일어날 때, 사건 유형 B에 속하는 사건 사례가 일어나는 것을 수 차례 관측한 것을 두고 우리는 유형 A와 B 사이에 인과가 성립한다고 말한다.</p>
+<p>먼저 이 명제는 앞서 내린 결론의 주어를 윤리적 삶 일반으로 확장한 주장, 요컨대 “윤리적 삶의 실천 난이도는 경제력에 반비례한다”는 주장으로 해석될 수 있다. 이를 <strong>약한 주장</strong>이라고 부르자. 약한 주장은 기술적인 주장이다. 물론 “윤리적”이라는 표현은 규범적이며, 무엇이 “윤리적 삶”에 해당하는지에 관해서는 수많은 이견이 있다. 그러나 일단 그 외연이 전제되고 나면 약한 주장 자체는 기술적이며, 그 원인은 상술한 두 가지 원리에 있다. 이는 경제력과 엥겔 지수는 반비례한다는 것과 질적으로 다르지 않은 관찰이다.</p>
 
-<p>크립키는 흄의 인과 회의주의의 결론이 <strong>사적 인과의 불가능성</strong>임을 지적한다. 흄의 주장대로 인과가 두 사건 <em>유형</em> 간의 규칙성에 관한 진술이라면, 유형화도 불가능할 정도로 특이한 사건 <em>사례</em>에 대해서는 인과를 따지는 것이 무의미하다. 예를 들어 “중소수와 삼중소수의 충돌로 인해 헬륨이 발생했다”라는 명제는 “중소수”, “삼중소수”, “헬륨”이라는 유형에 해당하는 입자 사례가 여럿 있는데, 이들 입자를 수차례에 걸쳐 충돌시켜 보니 규칙성이 발견되었다는 진술로서 유의미하다. 그러나 우주에 딱 하나씩밖에 존재하지 않는 입자 X와 입자 Y가 있다면, 이들을 충돌시켜 입자 Z가 발생했다고 하더라도 “X와 Y의 충돌로 <em>인해</em> Z가 발생했다”라고 말할 수 없다. 우리가 말할 수 있는 것은 “X와 Y의 충돌 <em>직후</em> Z가 발생했다”뿐이다.</p>
+<p>그러나 여기서 더 도발적인 주장을 이끌어 낼 수 있다. 가령 연어를 일상적으로 사 먹을 경제력이 안 되는 사람이 — 철수라고 부르자 — 맛있는 한 끼를 위해 돼지고기를 먹었다고 하자. 서론에서 전제된 바에 따르면 이는 비윤리적이다. 그러나 만약 철수가 이 주장을 듣는다면 그는 자신에게 겨누어진 때아닌 윤리적 비방에 반발할 것이다 (누구라도 그럴 것이다). 철수가 민감하게 반응할 수밖에 없는 이유는, 윤리적 진술이 당위 및 책임의 부여와 불가결하기 때문이다. 가령 “노예제는 비윤리적이다”라는 진술은 암시적으로 노예제의 비윤리성에 대한 책임을 노예주에게 귀속하며, 노예주에게 노예를 해방할 당위를 부여한다. 이 당위를 이행하지 않은 노예주는 그가 받을 사회적 지탄을 스스로 책임져야 한다.</p>
 
-<p>크립키는 흄의 이 논증을 염두에 두고 비트겐슈타인의 사적 언어 논증을 읽어볼 것을 제안한다. 크립키의 독해에 따르면 비트겐슈타인과 흄의 논증은 흐름이 매우 비슷하기 때문이다.</p>
+<p>마찬가지로 “철수가 돼지고기를 먹은 것은 비윤리적이다”라는 도덕적 판단의 잣대는 보통 돼지고기를 먹은 철수를 향하는 것으로 이해된다. 그러나 정말로 “윤리적 삶은 사치품”이라면 이런 조준은 부당해 보인다. 윤리가 모든 사람이 추구해야 할 정도로 중요한 가치임에도 불구하고 그것이 “사치품”이라면, 즉 각고의 인내와 기회비용을 치러야 가까스로 손에 넣을 수 있는 것이라면, 그 책임은 개인이 아닌, 윤리를 사치품으로 만들어버린 <em>사회 전체에</em> 있지 않은가?</p>
 
-<h2 id="3-사적-언어-논증">3. 사적 언어 논증</h2>
+<p>이처럼 약한 주장을 근거로, 사회적으로 습관화된 비윤리적 행동의 책무를 개개인이 아닌 사회 전체에 귀속하는 규범적 주장을 <strong>강한 주장</strong>이라고 부르자. 강한 주장에 따르면 철수가 돼지고기를 먹은 것의 윤리적 책임은 철수에게뿐 아니라 우리 모두에게 있다. 이 글을 쓰는 나에게도 <em>사소하지만 그럼에도 확실한</em> 책임이 있다. 지금까지 나는 투표권을 행사하는 데 있어 정치인들의 동물복지 공약에는 일절 관심이 없었다.</p>
 
-<h3 id="31-전통적-해석">3.1. 전통적 해석</h3>
+<h3 id="좌파의-딜레마">좌파의 딜레마</h3>
 
-<p>이제 본격적으로 사적 언어 논증을 살펴보자. 비트겐슈타인은 ⟪탐구⟫에서 다음과 같은 사례를 제시한다. 앨리스는 자신이 느끼는 어떤 특정한 감정을 언어로 표현하는 데 어려움을 느낀다. 그래서 그는 그 감정에 ’S’라는 이름을 붙이고는, 그 감정을 느낄 때마다 “S를 느낌”이라고 일기에 적는다. 그렇게 몇 년이 지나자 앨리스는 스스로 ’S’의 사용에 익숙해졌다고 느낀다. 여기서 비트겐슈타인은 질문을 던진다. 우리는 앨리스가 ’S’라는 기호에 자신만의 의미를 부여했다고, 즉 그가 <strong>사적 언어</strong>를 형성했다고 말할 수 있는가?</p>
+<p>여기서 나는 한 가지 딜레마를 드러내고자 한다. “좌파”나 “우파”라는 이름표는 매우 두루뭉술한 사상들의 잡동사니이지만, 그럼에도 비교적 뚜렷한 특징은 “좌파”가 “우파”에 비해 개인의 도덕성을 중요하게 생각한다는 것이다. 따라서 환경주의, 평화주의, 비거니즘, 노동자 운동, 페미니즘, 퀴어 운동, 다문화주의 등은 통상 좌파 강령으로 분류된다. 이들 강령의 정당성은 경제적 성장이나 기술 발전이 아닌 개인 단위의 윤리적 주문에 기인한다.</p>
 
-<p>비트겐슈타인의 답은 부정적이다. 그러나 크립키 또한 지적하듯이, 비트겐슈타인이 사적 언어를 부정하는 이유는 해석자들에게 의문 투성이였다. 가장 표준적인 해석은 다음과 같다. 비트겐슈타인이 사적 언어가 불가능하다고 주장하는 이유는, 개인 혼자서는 자신이 이 기호를 올바르게 사용하고 있다는 확인을 받을 수 없기 때문이다. 가령 앨리스는 오늘 자신이 ’S’라고 부른 감정이 수년 전에 자신이 ’S’라고 부른 감정과 정말로 일치하는가에 대한 회의주의에서 벗어날 수 있다. 앨리스가 유아론적인 회의주의에서 벗어날 수 있는 유일한 길은, 통일된 기호들을 사용하는 언어 공동체에 속함으로써 그들로부터 자신의 기호 사용이 올바르다는 확인을 받는 것이다.</p>
+<p>그러나 이러한 좌파 이데올로기를 지탱하는 “윤리적 삶이 사치품”이라면, 좌파 진영은 약자의 진영임을 자처하는 한편으로 그 실천을 위해서는 충분한 경제력이 전제되어야 하는 딜레마를 품고 있다. 특히 자신의 권익보다 공동체의 상생을 중요시하는 것이 좌파의 가치 중 하나라면, 이 가치의 실현은 자신의 권익을 포기하는 것이 자신의 생계 내지 <strong>생존</strong>과 직결되어 있지 않은 사람에게만 가능할 것이다.</p>
 
-<p>그러나 이 논증은, 일찍이 에이어를 비롯한 수많은 학자가 지적했듯이, 굉장히 허술하다. 가령 내가 지금 나의 감정을 ‘행복’이라고 불러도 되는지 확신할 수 없는 상황에서 다른 사람들에게 “너는 지금 행복한 게 맞아”라고 확인받는 것이 상황을 개선하는가? 그들의 판단이 올바른지는 어떻게 확신할 수 있는가? 오히려 “다른 사람들이 내가 지금 행복한 상태라고 알려주더라도 그들의 판단이 정말로 올바른지 확신할 수 없으니 나 스스로가 내면을 확인해야 한다”는 역방향의 논증이 더 그럴듯하다. 더구나 공동체의 확인 또한 결국에는 시청각을 비롯한 개인의 사적 감각을 통해 수용된다는 사실을 고려하면, 개인이 자신의 내면을 확인하는 것과 공동체의 확인을 받는 것 사이에는 애당초 본질적인 차이가 없다.</p>
+<p>이것은 좌파 연대의 분열을 어느 정도 설명하는 것으로 보인다. 좌파에는 크게 두 가지 구조가 있다. 첫째는 절박하지 않은 사람이 절박한 사람을 경제적 또는 사상적으로 지원하는 구조이고 (지식인 사회), 둘째는 절박한 사람이 자신의 권익을 위해 스스로 투쟁하는 구조이다 (노동조합). 두 구조는 좌파라는 같은 지붕 아래서 살고 있기에 완전히 다른 원리로 작동한다는 사실이 가려지고는 한다. 이타심과 이기심이 깨끗이 구별되지 않는 경우가 많기는 하지만 기본적으로 전자는 이타심의 원리로, 후자는 이기심의 원리로 작동한다. 이 말의 의도는 후자를 폄훼하려는 것이 아니라, 전자가 후자에 대해 도덕적 우월성이라는 <strong>권력</strong>을 가지게 됨을, 그로 인해 좌파에 분열이 생기는 이유를 해명하고자 함이다.</p>
 
-<h3 id="32-크립키의-해석">3.2. 크립키의 해석</h3>
+<p>노동자 운동을 예로 들자면, 노동자의 절대다수는 당연히 노동자 운동에만 관심이 있고 페미니즘에는 관심이 없는 경우가 — 오히려 적대적인 경우가 — 대부분이다. 그들에게 있어서는 노동권 투쟁이 최종 목표이다. 그러나 소위 “엘리트 좌파 지식인”에게 있어 노동권 투쟁은, 정의롭고 윤리적인 사회라는 더 상위의 목표를 달성하기 위한 디딤돌일 뿐이다. 따라서 미혼 여성 비정규직 노동자를 고용하는 것으로 남성 노동자의 연봉을 인상할 수 있는 방침이 있다고 하더라도 그는 이 방침을 결코 채택하지 않을 것이다. 오히려 이러한 방침을 추구하는 사람을 좌파 정신에 대한 적으로 간주할 것이다. 문제는 이러한 태도가 좌파 진영이 대표하고자 하는 바로 그 집단, 다름 아닌 노동자 집단의 대다수를 좌파 정신에 대한 적으로 돌리는 꼴이라는 것이다. 그들은 “윤리적 삶이라는 사치품”을 체득하지 못했기 때문이다.</p>
 
-<p>그러나 크립키는 사적 언어 논증을 위와 같이 이해하는 것은 오해라고 주장한다. 비트겐슈타인의 의도는, 사적 언어를 불가능의 영역으로 <em>내쫓는</em> 것이 아니다. 오히려 회의주의 역설에 따르면 <em>모든 언어</em> — 사적 언어이든 공적 언어이든 — 는 불가능하다. 비트겐슈타인은 이에 맞서 언어의 가능성을 구제하고자 한다. 그 구제의 전략이 언어의 공적성에 호소하는 것이기 때문에, 사적 언어는 불가능의 영역에 <em>남는</em> 것이다.</p>
+<p>결국 정의와 도덕에 기반한 지식인의 좌파는 상아탑에서만 이루어지는 경우가 부지기수이다. 만약 그들 지식인이 실제 현장으로 내려와 노동자들 사이에서 오가는 생생한 말들 — “짱깨놈들 때문에 대한민국 망하게 생겼다”, “전장연 새끼들 지하철 가지고 지랄하네”, “오늘 밤에는 내가 좋은 데로 데려가 준다” — 을 듣는다면 <em>정나미가 떨어질 수밖에</em> 없기 때문이다.</p>
 
-<p>회의주의 역설에 대한 비트겐슈타인의 “해답”은 다음 세 가지 경우를 고려함으로써 이해할 수 있다. 첫째는 이 우주에서 ‘+’ 기호를 사용하는 사람이 앨리스뿐인 경우이다. 앨리스는 ‘+’에 대한 자신의 성향에 따라 ‘+’를 사용한다 (물론 이는 동어반복적인 진술이다). 이따금 앨리스는 ‘+’로 계산 실수를 할 것이고, 약물에 취해 있는 극단적인 경우에는 ‘+’를 컷셈과 같은 괴이한 방식으로 사용할 수도 있다. 그러나 모든 경우에 앨리스는 스스로 ‘+’를 정당한 규칙에 따라 사용한다고 믿을 것이다. 그리고 크립키-비트겐슈타인 역설에 따르면 앨리스의 믿음을 반증하는 사태는 존재하지 않으므로, 이것이 앨리스의 ‘+’ 사용에 대해 말할 수 있는 전부이다. 크립키의 말을 빌리자면,</p>
+<h3 id="비존중에-대한-존중">비존중에 대한 존중</h3>
 
-<blockquote>
-  <p>화자가, 궁극적으로는 아무런 정당화 없이, 그 자신의 확신에 찬 성향에 따라, 이 방식으로 대답하는 것이 (가령 ‘125’라고 대답하는 것) <em>올바르고</em> 다른 방식은 (가령 ‘5’라고 대답하는 것) 틀렸다고 말<strong>할 수 있다</strong>는 것은, ‘규칙에 관해 말하기’라는 우리의 언어게임을 구성하는 요소이다. […] 오직 한 명의 개인만을 고려했을 때 우리가 말할 수 있는 것은, 우리의 일상적 관습[‘규칙에 관해 말하기’라는 언어게임]이 그에게 그 자신에게 떠오르는 방식대로 규칙을 적용할 자격<sub>license</sub>를 준다는 것이다.</p>
+<p>그렇다고 내가 이 글을 통해 지식인들은 좌파 진영에서 빠져야 한다거나, 지식인들은 일찍이 좌파와 단념해야 한다고 말하려는 것은 당연히 아니다. 반대로 지식인들이 청산유수로 사회적 약자들을 감화시켜 그들에게 보편 윤리와 정의의 가치를 일깨우고, 그들로 하여금 공통 연합을 구축하게 만들어야 한다고 말하려는 것 또한 아니다. 사실 나는 앞서 내가 좌파의 딜레마라고 부른 문제를 어떻게 해결해야 하는지에 대해서 다소 무책임하게도 잘 정립된 생각이 아직은 없다. 그러나 적어도 다음 하나만큼은 확실히 주장하고자 한다.</p>
 
-  <p>It is part of our language game of speaking of rules that a speaker <strong>may</strong>, without ultimately giving any justification, follow his own confident inclination that this way (say, responding ‘125’) is the <em>right</em> way to respond, rather than another way (e.g. responding ‘5’). That is, the ‘assertability conditions’ that license an individual to say that, on a given occasion, he ought to follow his rule this way rather than that are, ultimately, that he does what he is inclided to do. […] All we can say, if we consider a single person in isolation, is that our ordinary practice licenses him to apply the rule in the way it strikes him.</p>
+<p>결론적으로, 나는 좌파를 자처하는 지식인이라면, 앞서 논의한 <strong>강한 주장</strong>을 항상 마음에 새길 필요가 있다고 생각한다. 실천하는 좌파는 약자들과 부대끼는 과정에서, 약자는 다른 약자의 권리를 존중할 것이라는 믿음, 약자는 윤리적일 것이라는 믿음이 깨어지는 과정을 감내해야만 한다. 분명 이것은 환멸스러운 과정이다. 그러나 강한 주장은, 이 환멸의 책임을 약자 개개인의 윤리적 타락에서가 아닌, 이들을 보편 윤리와 정의의 감각에서 멀리 떨어뜨려 놓는 사회적 구조에 따져야 함을 일깨워 준다.</p>
 
-  <p>(이탤릭체는 본문의 강조, 볼드체는 필자의 강조. “…라고 말할 수 있다는 것은 ‘규칙에 관해 말하기’라는 우리의 언어게임을 구성하는 요소이다”라는 진술을, 가령 “캐슬링을 할 수 있다는 것은 체스를 구성하는 요소이다”에 빗대어 이해하면 해당 진술이 ‘규칙에 대해 말하기’라는 언어게임의 정의의 일부와 다름없음을 알 수 있다. 즉, 그런 말하기가 가능하지 않은 언어게임은 ‘규칙에 대해 말하기’ 언어게임이라고 부를 수 없다.)</p>
-</blockquote>
-
-<p>하지만 크립키가 지적하듯이 이것은 우리가 ‘규칙에 관해 말하기’라는 언어게임에서 기대하는 바가 아니다. 가령 혼자서 벽을 보고 체스를 두는 사람을 상상해 보자. 그는 1시간으로 체스 시계를 맞추고 백으로서 첫수를 두고는 “상대”, 즉 벽이 응수하기를 기다린다. 하지만 “상대”는 응수를 하지 않아 1시간 후에 시간패를 당하고 만다. 따라서 백은 언제나 승리한다. 이것을 <em>사적 체스</em>라고 부르자. 사적 체스는 체스의 모든 규칙을 만족하지만, 한편으로는 전혀 체스가 아니다. 적어도 우리가 기대하는 체스는 아니다. 통상적인 체스에서는 백이 <em>질 수 있어야</em> 하기 때문이다. 마찬가지로 사적 규칙은 설령 그것이 ‘규칙 말하기’ 언어게임의 규칙을 만족하더라도, 우리가 기대하는 ‘규칙 말하기’ 언어게임은 아니다. 통상적인 ‘규칙 말하기’ 언어게임에서는 화자가 규칙의 준수에 있어 <em>실수를 할 수 있어야</em> 하기 때문이다.</p>
-
-<p>이제 다음 경우로 넘어가 보자. 둘째는 이 우주에서 ‘+’ 기호를 사용하는 사람이 앨리스와 스미스 두 명인 경우이다. ‘+’에 대한 둘의 성향은 일치할 수도, 어긋날 수도 있다. 만약 ‘68 + 57’에 대해 앨리스는 ‘125’라고 대답하고 스미스는 ‘5’라고 대답했다면, 앨리스는 스미스가 ‘+’를 올바른 규칙으로 사용하지 않는다고 지적할 것이다. 그러나 이 지적은 스미스 또한 앨리스에게 할 수 있는 것이다. 그리고 크립키-비트겐슈타인 역설에 따르면 둘 중 누구의 지적이 더 올바른지에 대응하는 사태는 존재하지 않으므로 이것이 둘의 ‘+’ 사용에 대해 말할 수 있는 전부이다.</p>
-
-<p>마지막은 이 우주에서 ‘+’ 기호를 사용하는 사람이 앨리스뿐 아니라 충분히 큰 공동체를 이루는 경우이다. 이 경우, 초기에는 공동체와 상충하는 방식으로 ‘+’를 사용하는 화자들이 있을 수 있더라도, 이들 화자는 ‘+’ 기호가 공동체에서 수행하는 기능에 지장을 일으키기 때문에 공동체에서 점차 사라질 것이다 (여기서 비트겐슈타인이 실용주의적 고려를 중요시하는 이유가 드러난다). 예를 들어 ‘+’의 기능 중 하나는 장부를 관리하는 것이다. 그러나 ‘+’를 컷셈처럼 사용하는 사람들은 장부를 비표준으로 관리할 것이고, 이는 ‘+’를 덧셈처럼 사용하는 사람들이 그들에게 ‘+’의 사용을 더는 위임하지 않을 사유가 된다. 이렇듯 언어의 기능에 기반한 지속된 승인과 추방의 과정은 일관된 규칙을 따르는 화자들의 공동체로 수렴한다. 그리하여 “앨리스는 ‘+’로 덧셈을 의미한다”는, 앨리스의 ‘+’ 사용을 해당 공동체가 승인한다는 표현으로서 <em>유용</em>하며, 따라서 <em>유의미</em>하다.</p>
-
-<p>여기서 크립키가 <strong>조건문의 반전<sub>inversion of a conditional</sub></strong>이라고 부르는 철학적 기술이 활용되었음에 유의하라. 조건문의 반전이란, “P라면 Q이다”라는 명제 대신에 “not Q라면 not P이다”를 주장하는 것이다. 물론 두 조건문은 대우 관계이므로 외연적으로 동치이지만, P와 Q의 우선순위를 설정하는 데 있어 차이가 있다. 전자의 경우에는 P의 성립이 Q의 성립을 결정하는 반면, 후자의 경우에는 Q의 성립이 P의 성립을 결정한다.</p>
-
-<p>언어에 대한 전통적인 관점에 따르면, 화자들이 같은 기호를 같은 방식으로 사용하는 것은 그들이 그 기호에 같은 의미를 부여하고 있다는 사실로서 설명된다. 이 관점에 따르면 다음 조건문이 성립한다.</p>
-
-<blockquote>
-  <p>앨리스는 ‘+’로 덧셈을 의미한다 -&gt; 앨리스는 ’68 + 57’에 대해 ‘125’라고 답한다</p>
-</blockquote>
-
-<p>그러나 회의주의적 해답은 이 조건문을 다음과 같이 뒤집는다.</p>
-
-<blockquote>
-  <p>앨리스는 ’68 + 57’에 대해 ’125’라고 답하지 않는다 -&gt; 앨리스는 ‘+’로 덧셈을 의미하지 않는다</p>
-</blockquote>
-
-<p>회의주의적 해답은 진리조건이 아닌 주장조건을 기반으로 한다는 점을 고려하여 더 적확히 적자면 다음과 같다.</p>
-
-<blockquote>
-  <p>앨리스는 ’68 + 57’에 대해 ’125’라고 답하지 않는다 -&gt; ‘규칙에 관해 말하기’ 언어게임이라는 맥락에서, 우리는 “앨리스는 ‘+’로 덧셈을 의미한다”라고 말할 수 없다.</p>
-</blockquote>
-
-<p>물론 단순히 앨리스가 ’68 + 57’에 대해 ‘125’라고 대답하지 않았다고 해서 우리는 그가 ‘+’로 덧셈을 의미하지 않는다는 극단적인 결론을 바로 도출하지는 않을 것이다. 아마 우리는 앨리스가 계산 실수를 했다고 생각할 것이다. 그러나 앨리스가 ’68 + 57’에 대해 ‘5’라고 답하는 등, 매우 받아들이기 힘든 방식으로 ‘+’ 기호를 사용한다면, 우리는 그가 ‘+’으로 덧셈을 의미한다는 진술을 철회할 것이다.</p>
-
-<p>요컨대 크립키-비트겐슈타인은 ‘규칙에 관해 말해기’라는 언어게임이 자명한 언어게임에서 유용한 언어게임으로 변이하는 과정을, 공동체를 통한 창발적 과정으로서 이해한다.</p>
-
-<h2 id="4-회의주의적-해답의-특징">4. 회의주의적 해답의 특징</h2>
-
-<h3 id="41-삶의-형식form-of-life">4.1. 삶의 형식<sub>form of life</sub></h3>
-
-<p>회의주의적 해답의 정당성은, 언어 사용자들이 ‘+’로 같은 연산, 즉 덧셈을 수행하는 것으로 <strong>수렴</strong>한다는 사실에 기반한다. 만약 ’68 + 57’에 대해 A는 125, B는 7, C는 58과 같이 개개인이 저마다 다른 답을 내놓았다면 회의주의적 해답은 성립할 수 없을 것이다.</p>
-
-<p>크립키의 독해에 따르면, 비트겐슈타인은 우리가 기호 사용에서 보이는 동의<sub>agreement</sub>와 (’68 + 57’에 대해 ‘125’라고 대답한다) 그로써 가능해지는 일련의 활동을 (따라서 가격이 125만 원인 컴퓨터를 68만 원과 57만 원으로 할부할 수 있다) “삶의 형식”이라고 부른다. 비트겐슈타인에 따르면, ’68 + 57’에 대해 우리가 ‘125’라는 일관된 답을 내놓을 수 있는 이유는 우리가 ‘+’로 동일한 연산, 즉 덧셈을 의미하기 때문이 아니다. 오히려, 우리가 ‘+’로 덧셈을 의미한다고 말할 수 있는 이유는, 우리가 공통된 삶의 형식을 기반으로 하는 언어게임에 참여하고 있기 때문이다. 비트겐슈타인의 분석에서 우리가 ’68 + 57’에 대해 ‘125’라는 일관된 답을 내놓는다는 사실은 그저 주어진 사실이지, 해명되어야 할 현상이 아니다.</p>
-
-<blockquote>
-  <p>(개인적 노트: 크립키의 주석 76과, <a href="https://dimenerno.github.io/2025/06/02/wittgenstein-conant">논리적 외계인 사고실험</a>을 비교해 보자.)</p>
-
-  <p>76. Can we imagine forms of life other than our own, that is, can we imagine creatures who follow rules in bizarre quus-like ways? It seems to me that there may be a certain tension in Wittgenstein’s philosophy here. On the one hand, it would seem that Wittgenstein’s paradox argues that there is no a <em>priori</em> reason why a creature could not follow a quus-like rule, and thus in this sense we ought to regard such creatures as conceivable. On the other hand, it is supposed to be part of our very form of life that we find it natural and, indeed, inevitable that we follow the rule for addition in the particular way that we do. (See §231: ““But surely you can see . . . ?” That is just the characteristic expression of someone who is under the compulsion of a rule.”) But then it seems that we should be unable to understand ‘from the inside’ (cf. the notion of ‘<em>Verstehen’</em> in various German writers) how any creature could follow a quus-like rule. We could describe such behavior extensionally and behavioristically, but we would be unable to find it intelligible how the creature finds it natural to behave in this way. This consequence does, indeed, seem to go with Wittgenstein’s conception of the matter.</p>
-
-  <p>Of course we can define the quus function, introduce a symbol for it, and follow the appropriate rule for computing its values. I have done so in this very essay. <strong>What it seems may be unintelligible to us is how an intelligent creature could get the very training we have for the addition function, and yet grasp the appropriate function in a quus-like way. If such a possibility were really completely intelligible to us, would we find it so inevitable to apply the plus function as we do? Yet this inevitability is an essential part ofWittgenstein’s own solution to his problem.</strong></p>
-
-  <p>The point is even stronger with respect to a term like ‘green’. Can we grasp how someone could be presented with a number of green objects, and be told to apply the term ‘green’ just to ‘things like these’, and yet apply the term learnt as if it meant ‘grue’? It would seem that if we find our own continuation to be inevitable, in some sense we cannot.</p>
-</blockquote>
-
-<h3 id="42-심리-현상의-외적-기준criteria">4.2. 심리 현상의 외적 기준<sub>criteria</sub></h3>
-
-<p>기호 사용에 있어서의 동의야말로 화자가 해당 기호를 특정 의미로 사용한다는 진술의 내용이라는 회의주의적 해답은, 심리철학에 대한 비트겐슈타인의 다음 언명으로 이어진다.</p>
-
-<blockquote>
-  <p>“내적 현상은 외적 기준을 필요로 한다.” (§580)</p>
-</blockquote>
-
-<p>어린아이가 ‘책상’과 ‘아프다’라는 두 단어를 배우는 경우를 생각해 보자. 전자의 경우, 어린아이가 책상을 가리키며 ‘책상’이라고 말하면 부모는 그 발화를 승인할 것이고, 의자를 가리키며 ‘책상’이라고 말하면 틀렸다고 알려줄 것이다. 이와 같은 과정을 통해 어린아이는 ‘책상’이라는 기호의 사용에 있어 언어 공동체와 동의를 이루게 된다. 그러나 ‘아프다’의 경우에는 이것이 불가능하다. 어린아이는 자신이 겪는 감정을 직접 내보임으로써 이것이 ‘아프다’에 해당하는지 확인을 받을 수 없기 때문이다. 대신 아이는 울음을 터뜨리거나, 얼굴을 찌푸리는 등의 <em>외적</em> 행동을 보일 것이고, 그 행동을 기준으로 부모는 ‘아프다’는 아이의 발화가 정당한지 결정할 것이다. 이것이 §580의 의미라면, §580은 — 전통적으로 간주되었던 것처럼 — 비트겐슈타인이 사적 언어 논증을 위해 마련하는 <em>전제</em>가 아니라, 사적 언어 논증과 마찬가지로 회의주의적 역설의 <em>함의</em>이다.</p>
-
-<blockquote>
-  <p>이와 관련해서 크립키는 §580의 유연한<sub>liberal</sub> 해석과 엄격한 해석을 제시한다. §580을 엄격하게 해석하면, 심리 언어에 속하는 각각의 표현에는 해당 표현과 결부되는 자연적 행동<sub>natural expression</sub>이 있어야 할 것이다. 예를 들어 아픔에 결부되는 자연적 행동은 얼굴을 찡그리는 것이다. 따라서 언어를 습득 중인 아이가 얼굴을 찡그리며 “아파!”라고 말한다면 우리는 그것을 승인한다. 이와 같은 식으로, 모든 심리적 표현에는 그와 결부되는 자연적 행동이 있으며 이 행동들의 관찰 가능성은 해당 표현들이 사적 언어로 퇴화되는 것을 방지한다.</p>
-
-  <p>그러나 크립키는 이보다 더 유연한 해석을 제시한다. 이에 따르면, 외적 기준을 필요로 하는 것은 개개의 심리 표현이 아닌, “심리 언어” 그 자체이다. 크립키는 이것이 심리 언어의 작동에 대한 더 정확한 고찰이라고 본다. 분명한 외적 기준을 가지는 심리 표현들 ‒ 가령, 아픔 ‒ 에 대해 충분한 숙지를 보이는 화자가 있으면, 우리는 그가 심리 언어 일반을 숙지했다고 판단하여, 그가 자신의 내면에서 특정한 감정 또는 퀄리아를 포착했다고 진술하면, 설령 그 감정 및 퀄리아가 어떠한 외적 기준을 가지지 않는다고 하더라도, 그 진술을 정당한 것으로 인정하기 때문이다. (필자가 보기에 “나는 의식을 가지고 있다”가 그러한 진술의 사례에 해당할 듯하다)</p>
-
-  <p>이에 관해서는 본문의 주석 81, 82, 83을 보라. (참고로 이 세 주석들은 독자적인 하나의 절을 구성할 만큼 분량이 많다…)</p>
-</blockquote>
-
-<h3 id="43-회의주의적-해답은-자기순환적인가">4.3. 회의주의적 해답은 자기순환적인가?</h3>
-
-<p>논문의 말미에서 크립키는 회의주의적 해답이 다음과 같이 오해될 수 있음을 경고한다.</p>
-
-<blockquote>
-  <p>언어 공동체가 ‘+’로 덧셈을 의미한다는 것은, 해당 공동체의 일원 대다수가 ‘+’를 덧셈으로 사용한다는 것이다.</p>
-</blockquote>
-
-<p>또는, 더 엄밀하게 적자면,</p>
-
-<blockquote>
-  <p>언어 공동체가 ’+’로 의미하는 연산이 f라는 것은, 해당 공동체의 일원 대다수가 ‘x + y’에 대해 f(x, y)라고 답한다는 것이다.</p>
-</blockquote>
-
-<p>크립키에 따르면 이는 잘못된 이해이다. 위와 같이 해석한 회의주의적 해답은 사실상 공동체 단위에서의 성향주의적 분석과 다름없으며, 따라서 성향주의적 분석이 직면하는 난점을 ‒ 전부 다가 아니라면 적어도 일부 ‒ 지니고 있다. 또한 위의 해석은 “언어 공동체가 …로 …을 의미한다”에 대한 진리조건을 제시하고 있다. 이는 진리조건론에서 주장조건론으로 이행하려는 비트겐슈타인의 기획을 근본적으로 잘못 짚은 것이다.</p>
-
-<p>크립키는 비트겐슈타인의 회의주의적 해답이 “언어 공동체가 …로 …을 의미한다”에 대한 새로운 진리조건을 제시하려는 것이 아니라, 단지 그러한 진술을 가능하게 만드는 환경과, 그러한 진술을 사용함으로 인해 얻게 되는 이점에 주목함을 강조한다. 본문을 인용하자면,</p>
-
-<blockquote>
-  <p>이러한 주장조건들이 함의하는 것은, 특정한 덧셈 문제에 대해 모두가 내놓는 대답이, 정의에 의해, 올바른 대답이라는 것이 아니라, <strong>모두가 특정한 대답에 동의한다면, 그 누구도 이 대답에 대한 이의 제기를 정당화하지 못할 것</strong>이라는 자명한 관찰이다.</p>
-
-  <p>What follows from these assertability conditions is <em>not</em> that the answer everyone gives to an addition problem is, by definition, the correct one, but rather the platitude that, <strong>if everyone agrees upon a certain answer, then no one will feel justified in calling the answer wrong.</strong></p>
-</blockquote>
-
-<p>아마 크립키는 이 대목이 많은 비판의 대상이 될 것임을 (정확히) 예측한 듯하다. 그래서 나중에 그는 긴 주석 87을 추가했다. 주석 87은 비트겐슈타인의 회의주의적 해답이 자기순환적이거나, 여전히 회의주의의 무한회귀에 빠진다는 비판에 대한 해명 스케치이다.</p>
-
-<blockquote>
-  <p>87. <strong>만약 비트겐슈타인이 ‘5’가 아닌 ‘125’가 ‘68 + 57’에 대해 ‘올바른’ 대답임을 보이는 필요충분조건을 제시하려 했던 것이라면, 이는 자기순환의 오류라는 비판이 제기될 수 있었을 것이다.</strong> 누군가는 그의 입장을, 나의 대답이 올바른 대답일 필요충분조건은 그 대답이 다른 사람의 대답과 일치하는 것이라는 입장으로 받아들일 수 있다. 그러나 회의주의자와 내가 사전에 이 기준에 합의하더라도, 회의주의자는 내가 과거에 ‘+’로 무엇을 의미했는지에 관해 틀렸던 것처럼, 내가 ‘일치’라는 표현을 잘못된 의미로 사용한다고 말할 수 있지 않은가? 확실히, 덧셈에 대한 규칙을 다른 규칙으로 환원하는 것 — “덧셈 문제가 주어졌을 때, 다른 사람이 대답하는 대로 대답하라!” — 은 여타 환원의 시도만큼이나 비트겐슈타인의 ‘규칙을 해석하기 위한 규칙’이라는 혹독한 비판으로부터 자유롭지 못하다. 더구나 비트겐슈타인이라면 강조했겠듯이, 이 규칙은 언어 수행을 부정확하게 설명한다. 나는 덧셈을 할 때 다른 사람에게 도움을 구하지 않는다. (만약 모두가 이런 규칙을 따라야 했다면 우리는 모두가 서로의 대답을 기다리는 교착 상태에 빠졌을 것이다)</p>
-
-  <p><strong>비트겐슈타인의 <em>실제</em> 목표는, 어떤 특정한 행위들이 우리의 삶에서 가지는 기능을 기술<sub>describe</sub>하는 것이다. 필연적으로 그는 이 기술을 우리의 언어로 해야 한다.</strong> 이와 같은 언어 사용에서 항상 가능하듯이, 또다른 삶의 형식을 가지는 일원은 이 기술에 포함된 단어들을 (이를테면 “동의”) 컷셈과 같은 방식으로 해석할 수 있을 것이다. 따라서 우리가 공동체 안에서의 ‘동의’가 이루어졌다고 간주하는 상황에서, 상이한 삶의 형식을 가지는 혹자는 그들이 동의를 이루어내지 못했다고 판단할 수 있다. 이 사실은 비트겐슈타인의 회의주의적 해답에 대한 비판이 될 수 없다. 적어도, 그에게서 언어의 사용 일체를 박탈하려는 것이 아니라면 말이다.</p>
-
-  <p><small>87. <strong>If Wittgenstein had been attempting to give a necessary and sufficient condition to show that ‘125’, not ‘5’, is the ‘right’ response to ‘68+ 57’, he might be charged with circularity.</strong> For he might be taken to say that my response is correct if and only if it agrees with that of others. But even if the sceptic and I both accept this criterion in advance, might not the sceptic maintain that just as I was wrong about what ‘+’ meant in the past, so I was wrong about ‘agree’? Indeed, to attempt to reduce the rule for addition to another rule - “Respond to an addition problem exactly as others do!” - falls foul of Wittgenstein’s strictures on ‘a rule for interpreting a rule’ just as much as any other such attempted reduction. Such a rule, as Wittgenstein would emphasize, also describes what I do wrongly: I do not consult others when I add. (We wouldn’t manage very well, if everyone had to follow a rule of the proposed form - no one would respond without waiting for everyone else.)</small></p>
-
-  <p><small><strong>What Wittgenstein <em>is</em> doing is describing the utility in our lives of a certain practice. Necessarily he must give this description in our own language.</strong> As in the case of any such use of our language, a participant in another form of life might apply various terms in the description (such as “agreement”) in a non-standard ‘quus-like’ way. Indeed, we may judge that those in a given community ‘agree’, while someone in another form of life would judge that they do not. This cannot be an objection to Wittgenstein’s solution unless he is to be prohibited from any use of language at all.</small></p>
-</blockquote>
-
-<p>그러나 몇 가지 의문이 여전히 남는다. 첫째, “이 사실은 비트겐슈타인의 회의주의적 해답에 대한 비판이 될 수 없다”는 크립키의 변호가 타당한지에 대한 의문이 남는다. 둘째, 회의주의적 해답의 의도가 의미 진술의 진리조건을 제시하는 것이 아닌 (특정한 덧셈 문제에 대해 모두가 내놓는 대답이 올바른 대답이다), 의미 진술의 기능을 기술하는 것이라고 하더라도 (모두가 특정한 대답에 동의한다면 그 누구도 이 대답에 대한 이의 제기를 정당화하지 못할 것이다), 과연 후자의 기술이 올바른지에 관해 의문이 남을 수 있다. 즉, 정말로 모두가 특정한 대답에 동의한다면 그 누구도 이 대답에 대한 이의 제기를 정당화하지 못하는가? 이에 관해서, 이어지는 크립키의 주석을 보자.</p>
-
-<blockquote>
-  <p>[그렇다면] <strong>우리 모두가 일치를 보이는 대답이 ‘올바른’ 대답이 아닐 수도 있다는 의문은 정당한가?</strong> 분명, 어떤 경우에 한 개인은, 자신의 언어 공동체가 한때 일치를 보였던 대답을 추후에 수정할 수도 있지 않을까, 하는 의문을 가질 수 있다. [필자 주: “간통은 범죄이다”에 대한 공동체의 입장 변경을 생각해 보라] 그러나 <strong>한 개인이, 자신의 공동체가 스스로 정정하지 않을지언정 사실은 <em>언제나</em> 틀린 것은 아닐까 하는 의문 또한 가질 수 있는가?</strong> 이와 같은 질문을 비트겐슈타인의 개념적 틀에서 정립하기란 어렵다는 것은 <em>사실이다.</em> 그것은, 어떤 ‘[객관적] 사실’로서, 우리가 항상 틀린 것은 아닌지에 대한 질문으로 보이는데, 그러한 사실은 존재하지 않기 때문이다.</p>
-
-  <p><small><strong>Does it make any sense to <em>doubt</em> whether a response we all agree upon is ‘correct’?</strong> Clearly in some cases an individual may doubt whether the community may correct, later, a response it had agreed upon at a given time. But <strong>may the individual doubt whether the community may not in fact <em>always</em> be wrong, even though it never corrects its error?</strong> It <em>is</em> hard to formulate such a doubt within Wittgenstein’s framework, since it looks like a question, whether, as a matter of ‘fact’, we might always be wrong; and there is no such fact.</small></p>
-</blockquote>
-
-<p>그렇다고 해서 크립키-비트겐슈타인이 의미의 규칙에 대한 전권을 오로지 공동체에 귀속하는 것은 아니다. 이어지는 주석에서 크립키는 의미와 규칙 따르기에 있어 개인이 가지는 자율성의 영역을 보장하는 단서를 남겨 놓는다.</p>
-
-<blockquote>
-  <p>다른 한편으로, 비트겐슈타인의 개념적 틀 안에서도 다음만큼은 여전히 사실이다. 공동체가 언제나 어떤 대답을 내놓았는지에 관한 정보는, 내가 덧셈 문제의 대답을 확정하는 데 있어 전혀 필요하지 않다. 설령 [덧셈의 사용에 관한 공동체의] 정보가 주어졌더라도, <em>나</em> 혼자서 정당하게 계산을 수행할 수 있다는 사실 또한 우리의 ‘언어게임’의 일부이다. [필자 주: 이를 <a href="https://en.wikipedia.org/wiki/Asch_conformity_experiments">애쉬의 동조 실험</a>과 비교해 보라.]</p>
-
-  <p><small>On the other hand, within Wittgenstein’s framework it is still true that, for me, no assertions about community responses for all time need establish the result of an arithmetical problem; that <em>I</em> can legitimately calculate the result for myself, even given this information, is part of our ‘language game’.</small></p>
-</blockquote>
-
-<p>아마 독자 분은 그래서 도대체 크립키가 하고 싶은 말이 무엇인지 혼란스러울 것이다. 문제는, 필자도 매우 혼란스럽다는 것이다. 그리고 필자 생각에, 크립키 본인도 이 점에 관해서는 혼란을 느낀 듯하다. 크립키의 주석은 다음의 인정으로 맺는다.</p>
-
-<blockquote>
-  <p>나는 이러한 질문들에 대해 어떤 긴장감이 여전히 남아 있을 수 있다고 느낀다. 시간과 지면의 제약, 그리고 내가 변호자 및 해설자의 역할을 버리고 비판자의 입장을 취해야 할지도 모른다는 점 때문에, 나는 이 문제에 대해 더 깊이 논의하지 않기로 했다.</p>
-
-  <p><small>I feel some uneasiness may remain regarding these questions. Considerations of time and space, as well as the fact that I might have to abandon the role of advocate and expositor in favor of that of critic, have led me not to carry out a more extensive discussion.</small></p>
-</blockquote>
-
-<p>요점을 정리해보자면 이렇다.</p>
-
-<ol>
-  <li>
-    <p>회의주의적 해답을 다음과 같이 이해하는 것은 잘못되었다: “‘68 + 57’에 대해 ‘125’라고 대답하는 것은 옳다”가 참일 필요충분조건은, 공동체가 ‘68 + 57’에 대해 ‘125’라는 일치된 대답을 보인다는 것이다.</p>
-  </li>
-  <li>
-    <p>회의주의적 해답은 다음과 같이 이해되어야 한다: “‘68 + 57’에 대해 ‘125’라고 대답하는 것은 옳다”가 공동체 안에서 받아들여질 필요충분조건은, 공동체가 ‘68 + 57’에 대해 ‘125’라는 일치된 대답을 보인다는 것이다.</p>
-
-    <ul>
-      <li>다르게 말해, 공동체가 ‘68 + 57’에 대해 ‘125’라는 일치된 대답을 보인다면, “‘68 + 57’에 대해 ‘125’라고 대답하는 것은 틀렸다”는 발화는 해당 공동체에서 정당하게 받아들여지지 않는다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>2에 대해 다음의 의문이 제기될 수 있다.</p>
-
-    <ol>
-      <li>1이 자기순환적이지만 2는 자기순환적이지 않은 이유가 불분명하다.</li>
-      <li>어떤 경우에는 공동체가 일치된 대답을 보이는 상황에서도 개인이 정당하게 그 대답이 정녕 올바른지에 관한 의문을 제기할 수 있는 것으로 보인다.</li>
-    </ol>
-  </li>
-</ol>
-
-<p>이 의문들은 크립키의 원 논문에서 다소 불명확하게 설명되었고, 실제로 이후 회의주의적 해답에 대해 제기된 비판들은 이들 의문에 초점을 맞춘다. 이에 관해서는 추후에 기회가 된다면 별도의 글로 정리해 보겠다.</p>
+<p>그리고 우리 지식인에게는 — 이 뻘글을 지금까지 읽고 있는 독자는 상대적 엘리트로 간주된다 — 이와 같은 방식으로 사유해야 할 의무 또한 있다. 왜냐하면 우리에게는 그런 사유를 실천할 수 있는 에너지, 즉 앞서 말한 것과 같은 의미에서의 <strong>선택의 자유</strong>가 주어졌기 때문이다. 윤리적 삶은 사치품이라는 자각 속에서, 약자의 다른 약자에 대한 비존중까지 존중하는 것, 즉 그것을 개인의 책임에 귀속하지 않는 것, 그것으로 좌파의 길에 환멸을 느끼지 않는 것, 포기하지 않는 것. 이것이 진정 “윤리적인 삶”이 아닐까?</p>
 
 <hr />
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1">
-      <p>“주장조건”이라는 표현을 사용했으나, 비트겐슈타인은 ⟪탐구⟫에서 평서문뿐 아니라 명령문, 의문문, 감탄문 등 다양한 유형의 문장을 고려함을 간과해서는 안 된다. 따라서 “주장조건”보다 “정당화 조건<sub>justification condition</sub>” — 어떤 상황에서 문장의 발화가 정당한가? — 이라는 표현이 더 적절할 수 있다. 그러나 이 표현에도 석연찮은 점이 있는데, 화자가 특정 문장을 발화하고자 하는 의도 외에는 그 문장의 발화를 정당화하는 독립적인 근거가 없는 경우가 있기 때문이다 (비트겐슈타인에 따르면 “아야!”가 그러한 사례에 해당한다). 따라서 크립키는 “주장조건”이라는 표현을, 그것이 평서문을 암시적으로 우선시한다는 단점에도 불구하고, 사용한다. 이와 관련해서 크립키의 원 논문의 주석 63을 보라. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2">
-      <p>물론 비트겐슈타인의 실용주의는 미국 실용주의 학파와는 구별되는 것이다. 본문의 “실용주의”는 설명의 편의를 위해 사용된 표현으로, 그 정확한 의미는 이후 내용에서 드러날 것이다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3">
-      <p>프레게의 카이사르 문제를 참고하라. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>세심한 독자를 위해 미주를 달자면 이 주장은 베이지안적으로 읽어야 한다. 말하자면 P(x가 현재 양서 독서 중이다 | x의 경제력이 e이다)는 e에 대한 증가함수이며, “양서 독서”를 “악성 유튜브 시청”으로 대체할 경우 감소함수라는 것이다. 그리고 당연히 모 전 대통령의 경우처럼 기득권 중의 기득권에 속한 사람이 악성 유튜브에 빠지는 경우도 있다. 하지만 이 주장은 어디까지나 확률에 관한 것이고, 확률에 관한 한 이 주장은 뒤엎기 어렵다고 본다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>불 대수 구조의 아이디얼과 필터</title>
-        <link>https://dimenerno.github.io/2025/07/18/boolean-algebra</link>
-        <guid>https://dimenerno.github.io/2025/07/18/boolean-algebra</guid>
-        <pubDate>Fri, 18 Jul 2025 00:00:00 +0900</pubDate>
-        <description>&lt;h2 id=&quot;불-대수&quot;&gt;불 대수&lt;/h2&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/18/boolean-algebra">
-          <![CDATA[
-            <h2 id="불-대수">불 대수</h2>
-
-<p>불 대수<sub>boolean algebra</sub>는 거짓을 의미하는 $0$과 참을 의미하는 $1$ 위에서 정의되는 $\lor, \land, \lnot$ 등의 논리 연산으로 이루어진 대수이다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>$a$</th>
-      <th>$b$</th>
-      <th>$a \lor b$</th>
-      <th>$a \land b$</th>
-      <th>$\lnot a$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$0$</td>
-      <td>$0$</td>
-      <td>$0$</td>
-      <td>$0$</td>
-      <td>$1$</td>
-    </tr>
-    <tr>
-      <td>$0$</td>
-      <td>$1$</td>
-      <td>$1$</td>
-      <td>$0$</td>
-      <td>$1$</td>
-    </tr>
-    <tr>
-      <td>$1$</td>
-      <td>$0$</td>
-      <td>$1$</td>
-      <td>$0$</td>
-      <td>$0$</td>
-    </tr>
-    <tr>
-      <td>$1$</td>
-      <td>$1$</td>
-      <td>$1$</td>
-      <td>$1$</td>
-      <td>$0$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>여기서 $0$과 $1$을 거짓과 참을 나타내는 형식적 기호로서가 아닌, 대소 비교가 가능한 실제 수로서 간주하면, $\lor$는 $\max$에, $\land$은 $\min$에, $\lnot$은 켤레 연산 $\bar{(\cdot)}: 0 \mapsto 1, 1 \mapsto 0$에 대응됨을 확인할 수 있다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>$a$</th>
-      <th>$b$</th>
-      <th>$\max (a, b)$</th>
-      <th>$\min (a, b)$</th>
-      <th>$\bar{a}$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$0$</td>
-      <td>$0$</td>
-      <td>$0$</td>
-      <td>$0$</td>
-      <td>$1$</td>
-    </tr>
-    <tr>
-      <td>$0$</td>
-      <td>$1$</td>
-      <td>$1$</td>
-      <td>$0$</td>
-      <td>$1$</td>
-    </tr>
-    <tr>
-      <td>$1$</td>
-      <td>$0$</td>
-      <td>$1$</td>
-      <td>$0$</td>
-      <td>$0$</td>
-    </tr>
-    <tr>
-      <td>$1$</td>
-      <td>$1$</td>
-      <td>$1$</td>
-      <td>$1$</td>
-      <td>$0$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>이에 착안하여, 우리는 불 대수의 정의역을 $\lbrace 0, 1 \rbrace$에서 $[0, 1]$로 자연스럽게 확장할 수 있다. 가령 $0.2 \lor 0.7 = 0.7, 0.3 \land \lnot(0.9) = 0.1$와 같이 말이다. 이 생각을 발전시켜 보면, 적절한 순서 관계가 주어진 집합 위에서는 불 대수와 구조적으로 비슷한 연산을 정의할 수 있으며, 반대로 불 대수와 구조적으로 비슷한 연산이 정의된 집합에는 적절한 순서 관계를 줄 수 있을 듯하다. 이것이 불 대수 구조의 발상이다.</p>
-
-<blockquote>
-<p><b>정의.</b> 어떤 두 원소 $0$과 $1$을 가지는 집합 $A$ 위에서 정의된 이항연산 $\lor, \land$과 단항연산 $\lnot$이 다음의 공리를 만족할 때, $(A, 0, 1, \lor, \land, \lnot)$을 <b>불 대수 구조<sub>Boolean algebraic structure</sub></b>라고 부른다.</p>
-<table style="font-size: 0.9em">
-<tr>
-<th>공리</th>
-<th>$\lor$</th>
-<th>$\land$</th>
-</tr>
-<tr>
-<td>결합</td>
-<td>$a \lor (b \lor c) = (a \lor b) \lor c$</td>
-<td>$a \land (b \land c) = (a \land b) \land c$</td>
-</tr>
-<tr>
-<td>교환</td>
-<td>$a \lor b = b \lor a$</td>
-<td>$a \land b = b \land a$</td>
-</tr>
-<tr>
-<td>분배</td>
-<td>$a \lor (b \land c) = (a \lor b) \land (a \lor c)$</td>
-<td>$a \land (b \lor c) = (a \land b) \lor (a \land c)$</td>
-</tr>
-<tr>
-<td>항등원</td>
-<td>$a \lor 0 = a$</td>
-<td>$a \land 1 = a$</td>
-</tr>
-<tr>
-<td>쌍역원</td>
-<td>$a \lor \lnot a = 1$</td>
-<td>$a \land \lnot a = 0$</td>
-</tr>
-<tr>
-<td>흡수</td>
-<td>$a \lor (a \land b) = a$</td>
-<td>$a \land (a \lor b) = a$</td>
-</tr>
-</table>
-</blockquote>
-
-<p><strong>Remark.</strong></p>
-
-<ul>
-  <li>
-    <p>흡수법칙은 나머지 다섯 공리로부터 증명이 가능하다.</p>
-  </li>
-  <li>
-    <p>“쌍역원”이라는 표현은, 원래 $x$에 곱의 역원 $x^{-1}$을 곱하면 곱의 항등원 $1$이 나오고, 합의 역원 $-x$를 더하면 합의 항등원 $0$이 나와야 하지만, 불 대수 구조의 경우 $x \lor \lnot x$의 결과가 $\lor$의 항등원 $0$이 아닌 $\land$의 항등원 $1$이고, $x \land \lnot x$의 결과가 $\land$의 항등원 $1$이 아닌 $\lor$의 항등원 $0$이기 때문에, 혼동의 여지를 줄이고자 도입했다.</p>
-  </li>
-</ul>
-
-<p>서론의 두 예시는 불 대수 구조임을 확인하라. 또다른 예시로, 집합 $X = \lbrace  p, q, r \rbrace $의 멱집합 $\mathcal{P}(X)$를 보자. 다음과 같이 두었을 때 $\mathcal{P}(X)$는 불 대수 구조가 됨을 확인하라.</p>
-
-<ul>
-  <li>$a \lor b = a \cup b$</li>
-  <li>$a \land b = a \cap b$</li>
-  <li>$\lnot a = X \setminus a$</li>
-  <li>$1 = X$</li>
-  <li>$0 = \varnothing$</li>
-</ul>
-
-<p>$X$가 임의의 집합일 때에도 일반적으로 $X$의 멱집합은 불 대수 구조를 이룬다.</p>
-
-<p>불 대수 구조에는 자연스러운 방식으로 부분순서<sub>partial order</sub>를 줄 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $A$가 불 대수 구조라고 하자. 다음의 이항관계를 정의한다.</p>
-
-\[a \leq b \iff a = a \land b\]
-
-  <p>$\leq$는 $A$의 부분순서이다. $1$과 $0$은 각각 $\leq$의 최대 원소, 최소 원소이다. $\lor$와 $\land$는 각각 $\leq$에 대한 상한과 하한을 내놓는 연산이다.</p>
-</blockquote>
-
-<p>마찬가지로 증명은 생략한다. 이와 같이 불 대수 구조 $A$ 위에는 자연스러운 방식으로 부분순서 $\leq$를 줄 수 있으므로, $\leq$에 따라 $A$의 하세 다이어그램<sub>Hasse diagram</sub>을 그릴 수 있다. 일례로 앞서 본 $X = \lbrace p, q, r\rbrace $에 대해 $\mathcal{P}(X)$가 이루는 불 대수 구조를 보자.</p>
-
-\[a \leq b \iff a = a \land b \iff a = a \cap b \iff a \subseteq b\]
-
-<p>이므로, 이 경우 불 대수 구조의 하세 다이어그램은 집합의 포함 다이어그램과 같다.</p>
-
-<p><img src="/public/boolalg-1.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
-
-<h2 id="불-환">불 환</h2>
-
-<p>불 대수 구조는 두 개의 연산과, 각 연산에 해당되는 항등원을 요구한다는 점에서 환<sub>ring</sub>과 정의가 비슷하다. 이는 단순한 우연이 아니다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 환 $R$이 <strong>불 환<sub>Boolean ring</sub></strong>이라는 것은, 임의의 $x \in R$에 대해 $x^2 = x$라는 것이다.</p>
-</blockquote>
-
-<p>불 대수 구조와 불 환은 일대일 대응된다. 즉, 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $(R, 0, 1, +, \cdot)$가 불 환이라면, $(R, 0, 1, \lor, \cdot, (\cdot)^{-1})$은 불 대수 구조이다. 여기서 $\lor, \lnot$은 다음과 같이 정의된다.</p>
-
-\[\begin{gather}
-x \lor y = x + y + xy \\
-\lnot x = 1 + x
-\end{gather}\]
-
-  <p>역으로, $(A, 0, 1, \lor, \land, \lnot)$이 불 대수 구조라면 $(A, 0, 1, +, \land)$은 불 환이다. 여기서 $+$는 다음과 같이 정의된다.</p>
-
-\[x + y = (x \lor y) \land \lnot (x \land y)\]
-</blockquote>
-
-<p>증명은 공리를 따라 계산해 보면 되므로 생략한다.</p>
-
-<h2 id="아이디얼">아이디얼</h2>
-
-<p>대수학에서 다음의 정의를 상기하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 환 $R$에 대해 공집합이 아닌 $I \subseteq R$이 <strong>아이디얼<sub>ideal</sub></strong>이라는 것은, $I$가 덧셈에 대해 군을 이루며, 임의의 $a \in R$과 $x \in I$에 대해 $ax \in I$라는 것이다. 즉, $aI \subseteq I$이다.</p>
-</blockquote>
-
-<p>불 대수 구조와 불 환 대응에서 드러난 유사성에 착안하여, 다음과 같이 정의하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 불 대수 구조 $A$에 대해 공집합이 아닌 $I \subseteq A$가 <strong>아이디얼</strong>이라는 것은, $I$가 $\lor$에 대해 닫혀 있고, 임의의 $a \in A$와 $x \in I$에 대해 $a \land x \in I$라는 것이다. 즉, $a \land I \subseteq I$이다.</p>
-</blockquote>
-
-<p>예를 들어 다음의 색칠된 영역은 $\mathcal{P}(\lbrace p, q, r\rbrace )$의 아이디얼이다.</p>
-
-<p><img src="/public/boolalg-2.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
-
-<p>불 대수 구조를 불 환에 대응시키면, $I$가 전자에서 아이디얼이라는 것은 곧 후자에서 아이디얼이라는 것과 같다. 즉 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 불 대수 구조 $A$에 대해 $I \subseteq A$가 (불) 아이디얼일 필요충분조건은, 대응되는 불 환 $A$에서 $I$가 (환) 아이디얼인 것이다.</p>
-</blockquote>
-
-<p>따라서 불 대수 구조에서도 소 아이디얼<sub>prime ideal</sub>과 극대 아이디얼<sub>maximal ideal</sub>을 정의할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $I$가 불 대수 구조 $A$의 아이디얼이라고 하자. $I$가 <strong>소 아이디얼</strong>이라는 것은, 임의의 $a, b \in A$에 대해, $a \land b \in I$라면 $a \in I$이거나 $b \in I$라는 것이다. $I$가 <strong>극대 아이디얼</strong>이라는 것은, $J$가 $I$를 엄격히 포함하는 아이디얼일 때, $J = A$라는 것이다.</p>
-</blockquote>
-
-<p>이들 개념 또한 불 환의 소 아이디얼과 극대 아이디얼에 정확히 상응한다. 앞서 본 아이디얼의 예시는 소 아이디얼인 동시에 극대 아이디얼임을 확인하라. 곧 드러나듯이, 이는 우연이 아니다.</p>
-
-<p>몇 가지 사실을 관찰해 보자. $I \subset A$가 아이디얼이라고 하자.</p>
-
-<ul>
-  <li>
-    <p>임의의 $a \in I$에 대해, 아이디얼의 정의로부터 $a \land \lnot a = 0 \in I$임이 따라 나온다. 따라서 불 대수의 아이디얼은 항상 $0$을 원소로 가진다.</p>
-  </li>
-  <li>
-    <p>만약 $1 \in I$라면, 임의의 $a \in A$에 대해 $1 \land a = a \in I$임이 따라 나온다. 따라서 $1$을 원소로 가지는 아이디얼은 전체 구조가 유일하다.</p>
-  </li>
-  <li>
-    <p>$I$가 소 아이디얼이라면, 임의의 $a \in A$에 대해 $a \land \lnot a = 0 \in I$이므로, $a \in I$ 또는 $\lnot a \in I$이다. 즉, 소 아이디얼은 언제나 임의의 원소 또는 그 부정을 포함한다.</p>
-  </li>
-  <li>
-    <p>$I$가 극대 아이디얼이라고 하자. 만약 어떤 $a \in A$가 존재하여 $a \not\in I, \lnot a \not\in I$라면 $I \cup \lbrace  x \land a : x \in A \rbrace$가 $I$를 엄격히 포함하며 $A$ 전체는 아닌 아이디얼이므로 $I$는 극대가 아니다. 따라서 극대 아이디얼 또한 언제나 임의의 원소 또는 그 부정을 포함한다.</p>
-  </li>
-</ul>
-
-<p>위 사실로부터 조금의 추론을 거치면 다음을 알 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $A$가 불 대수 구조이고 $I$가 $A$의 아이디얼이라고 하자. 다음은 동치이다.</p>
-
-  <ul>
-    <li>$I$는 소 아이디얼이다.</li>
-    <li>$I$는 극대 아이디얼이다.</li>
-    <li>임의의 $x \in A$에 대해, $x \in I$이거나 $\lnot x \in I$이다.</li>
-  </ul>
-</blockquote>
-
-<p>이런 면에서 불 대수 구조는 환론에서의 PID<sub>principal ideal domain</sub>와 비슷하다.</p>
-
-<h2 id="필터">필터</h2>
-
-<p>필터<sub>filter</sub>에 관해서는 <a href="https://dimenerno.github.io/2025/01/22/hypernaturals">이전 글</a>에서 다룬 바가 있다. 정의를 상기해 보자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $X$가 집합이라고 하자. $X$의 부분집합들로 이루어진 집합 $\mathcal{F}$가 다음을 만족할 때, $X$의 필터라고 부른다.</p>
-
-  <ol>
-    <li>$X \in \mathcal{F}$</li>
-    <li>$\varnothing \not\in \mathcal{F}$</li>
-    <li>상위집합 닫힘: $A \in \mathcal{F}, A \subset B \implies B \in \mathcal{F}$</li>
-    <li>유한 교집합 닫힘: $A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
-  </ol>
-</blockquote>
-
-<p>이 정의를 불 대수 구조로 옮기면 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 불 대수 구조 $A$에 대해 $F \subseteq A$가 <strong>필터</strong>라는 것은, $F$가 $\land$에 대해 닫혀 있고, 임의의 $a \in A$와 $x \in I$에 대해 $a \lor x \in I$라는 것이다. 즉, $a \lor I \subseteq I$이다.</p>
-</blockquote>
-
-<p>$\land$에 대해 닫혀 있음이 기존의 “유한 교집합 닫힘” 조건에 해당하고, $a \lor I \subseteq I$가 기존의 “상위집합 닫힘” 조건에 해당한다. 특히 $a \lor I \subseteq I$는, 불 대수 구조를 $\leq$ 방향으로 흐르는 일련의 물의 흐름으로 생각했을 때, $x \in I$에서 잉크를 떨어뜨리면 잉크가 퍼져나가는 영역이 모두 $I$에 포섭된다는 의미이다 (이를 <a href="https://dimenerno.github.io/2025/01/22/hypernaturals">이전 글</a>에서 든 잉크의 예시와 비교해 보라). 예를 들어 다음의 색칠된 영역은 $\mathcal{P}(\lbrace  p, q, r\rbrace )$의 필터이다.</p>
-
-<p><img src="/public/boolalg-3.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
-
-<h2 id="아이디얼과-필터의-쌍대성">아이디얼과 필터의 쌍대성</h2>
-
-<p>아이디얼과 필터의 정의를 비교해 보면 흥미로운 사실을 발견할 수 있다. 한쪽 정의에서 $\land$과 $\lor$을 맞바꾸면 정확히 다른 쪽 정의가 된다. 이를 두고, 아이디얼과 필터는 서로 <strong>쌍대<sub>dual</sub></strong>라고 말한다.</p>
-
-<p>쌍대성으로 인해, 한쪽 개념에 대해 증명된 사실은 자연스럽게 다른 쪽 개념에서도 성립한다. 일례로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $A$가 불 대수 구조이고 $F$가 $A$의 필터라고 하자. 다음은 동치이다.</p>
-
-  <ul>
-    <li>$x \lor y \in F$라면 $x \in F$이거나 $y \in F$이다.</li>
-    <li>$G$가 $F$를 엄격히 포함하는 필터라면 $G = A$이다.</li>
-    <li>임의의 $x \in A$에 대해, $x \in F$이거나 $\lnot x \in F$이다.</li>
-  </ul>
-</blockquote>
-
-<p>여기서 첫 번째 조건을 만족하는 필터를 소 필터, 두 번째 조건을 만족하는 필터를 극대 필터라고 부른다. 아이디얼의 경우와 달리 필터의 경우에는 세 번째 조건을 만족하는 필터에도 <strong>초필터<sub>ultrafilter</sub></strong>라는 이름이 붙어있다 (마찬가지로 <a href="https://dimenerno.github.io/2025/01/22/hypernaturals">이전 글</a> 참조).</p>
-
-<h2 id="초필터를-사용한-불-대수-구조의-불-대수화">초필터를 사용한 불 대수 구조의 불 대수화</h2>
-
-<p>일반적인 불 대수 구조는, 우리에게 익숙한 불 대수와는 달리, 각각의 원소가 참 또는 거짓으로 이분화되지 않는다. $p$는 $p \land q$에 비해 $1$(참)로부터 같거나 더 가까운 “거리”만큼 떨어져 있지만, 그 자체로는 $0$도 아니고 $1$도 아니다.</p>
-
-<p>그러나 불 대수 구조 $A$의 초필터, 또는 소 아이디얼이 주어졌을 때, 해당 필터(아이디얼)에 속하는 여부에 따라 $A$의 원소들을 “참” 또는 “거짓”으로 이분화할 수 있다. 앞서 본 아이디얼의 예시(왼쪽)와 필터의 예시(오른쪽)을 다시 보자. 왼쪽은 소 아이디얼이고, 오른쪽은 초필터이다.</p>
-
-<p><img src="/public/boolalg-4.png" style="width: 100%; margin: 0 auto;" /></p>
-
-<p>둘은 정확히 서로의 여집합임에 주목하라. 일반적으로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 불 대수 구조 $A$의 부분집합 $I$에 대해, $I$가 소(극대) 아이디얼일 필요충분조건은 $A \setminus I$가 초(소, 극대) 필터인 것이다.</p>
-</blockquote>
-
-<p>이에 착안하여, $A$의 원소 중 소 아이디얼 $I$에 속하는 원소는 $0$에, 속하지 않는 원소는 $1$에 대응하자. 또는 $A$의 원소 중 초필터 $F$에 속하는 원소는 $1$에, 속하지 않는 원소는 $0$에 대응하자. 방금의 예시를 사용하면 다음과 같다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>원소</th>
-      <th>값</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$\lbrace \rbrace $</td>
-      <td>$0$</td>
-    </tr>
-    <tr>
-      <td>$\lbrace p\rbrace $</td>
-      <td>$1$</td>
-    </tr>
-    <tr>
-      <td>$\lbrace q\rbrace $</td>
-      <td>$0$</td>
-    </tr>
-    <tr>
-      <td>$\lbrace r\rbrace $</td>
-      <td>$0$</td>
-    </tr>
-    <tr>
-      <td>$\lbrace p, q\rbrace $</td>
-      <td>$1$</td>
-    </tr>
-    <tr>
-      <td>$\lbrace p, r\rbrace $</td>
-      <td>$1$</td>
-    </tr>
-    <tr>
-      <td>$\lbrace q, r\rbrace $</td>
-      <td>$0$</td>
-    </tr>
-    <tr>
-      <td>$\lbrace p, q, r\rbrace $</td>
-      <td>$1$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>이때, 위 대응은 명제 논리의 모델을 이룬다. 특히, $P = \lbrace  p \rbrace , Q = \lbrace  q \rbrace , R = \lbrace  r \rbrace $로 두고, $\cup \leftrightarrow \lor, \cap \leftrightarrow \land$ 대응에 따라 표를 다시 작성하면 다음과 같다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>원소</th>
-      <th>값</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$\varnothing$</td>
-      <td>$0$</td>
-    </tr>
-    <tr>
-      <td>$P$</td>
-      <td>$1$</td>
-    </tr>
-    <tr>
-      <td>$Q$</td>
-      <td>$0$</td>
-    </tr>
-    <tr>
-      <td>$R$</td>
-      <td>$0$</td>
-    </tr>
-    <tr>
-      <td>$P \lor Q$</td>
-      <td>$1$</td>
-    </tr>
-    <tr>
-      <td>$P \lor R$</td>
-      <td>$1$</td>
-    </tr>
-    <tr>
-      <td>$Q \lor R$</td>
-      <td>$0$</td>
-    </tr>
-    <tr>
-      <td>$P \lor Q \lor R$</td>
-      <td>$1$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>이는 $P$가 참이고 $Q, R$은 거짓인 명제 논리의 모델이다. 이와 같이 일반적으로 불 대수 구조에 소 아이디얼 또는 초필터가 주어지면, 해당 정보를 바탕으로 논리적 모델을 구성할 수 있다. 이는 추후 살펴 볼 <strong>스톤 표현 정리<sub>Stone representation theorem</sub></strong>으로 가는 길목이다.</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>스톤-체흐 콤팩트화</title>
-        <link>https://dimenerno.github.io/2025/07/10/stone-cech</link>
-        <guid>https://dimenerno.github.io/2025/07/10/stone-cech</guid>
-        <pubDate>Thu, 10 Jul 2025 00:00:00 +0900</pubDate>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\iota : X \to Y$가 임베딩이라고 하자. 즉, $\iota$는 단사이며 $X$와 $\iota [X]$의 위상동형사상이다. $Y$가 $X$의 &lt;strong&gt;콤팩트화&lt;sub&gt;compactification&lt;/sub&gt;&lt;/strong&gt;라는 것은 $Y$가 콤팩트 공간이고, $\overline{\iota [X]} = Y$인 것이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/07/10/stone-cech">
-          <![CDATA[
-            <blockquote>
-  <p><strong>정의.</strong> $\iota : X \to Y$가 임베딩이라고 하자. 즉, $\iota$는 단사이며 $X$와 $\iota [X]$의 위상동형사상이다. $Y$가 $X$의 <strong>콤팩트화<sub>compactification</sub></strong>라는 것은 $Y$가 콤팩트 공간이고, $\overline{\iota [X]} = Y$인 것이다.</p>
-</blockquote>
-
-<p><strong>고찰</strong></p>
-
-<ul>
-  <li>
-    <p>일반적으로 $X$의 콤팩트화는 유일하지 않다. $\overline{X}$는 배경 위상에 따라 달라질 수 있기 때문이다.</p>
-  </li>
-  <li>
-    <p>$X, Y$가 하우스도르프라면 $Y$는 콤팩트 하우스도르프 공간이므로 정규이고, 따라서 티호노프(완전 정칙)이다. 그리고 티호노프 공간의 부분공간은 티호노프임이 알려져 있기 때문에 $X$ 또한 티호노프이다. 즉, <strong>하우스도르프 공간으로 콤팩트화 가능한 공간은 티호노프이다.</strong></p>
-  </li>
-  <li>
-    <p>이의 역도 성립한다. 즉, <strong>티호노프 공간은 하우스도르프 공간으로 콤팩트화 가능하다.</strong> 이것이 이 글에서 다루는 스톤-체흐 콤팩트화의 함의 중 하나이다.</p>
-  </li>
-</ul>
-
-<p>국소적으로 콤팩트<sub>locally compact</sub>한 하우스도르프 공간 $X$에 대해서는 $X$의 한점 콤팩트화<sub>one-point compactification</sub> 공간 $X^\ast$가 존재한다. (이 사실과 위의 고찰로부터 국소적으로 콤팩트한 하우스도르프 공간은 티호노프임이 따라 나온다.) 특히 $X^\ast$는 $X$의 “가장 작은” 콤팩트화이다.</p>
-
-<p>스톤-체흐 콤팩트화는 어떤 면에서 이의 반대 개념이다. $X$의 스톤-체흐 콤팩트화 공간 $\beta X$는 $X$의 “가장 큰” 콤팩트화이다. 여기서 “가장 큰”의 정확한 정의는 다음의 보편 성질<sub>universal property</sub>이다.</p>
-
-<blockquote>
-  <p><strong>정리 1.</strong> $X$가 티호노프일 때, 어떤 콤팩트 하우스도르프 공간 $\beta X$와 임베딩 $\iota: X \to \beta X$가 유일하게 존재하여, 다음을 만족한다: $K$가 임의의 콤팩트 하우스도르프 공간이고 $f: X \to K$가 연속사상일 때, $f = f^\ast \circ \iota$를 만족하는 연속사상 $f^\ast: \beta X \to K$가 유일하게 존재한다.</p>
-
-  <p><img src="/public/stone-cech-1.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1.5em auto;" /></p>
-
-  <p>또한 $\beta X$는 $X$의 콤팩트화이다. 이를 <strong>스톤-체흐 콤팩트화<sub>Stone-Čech compactification</sub></strong>라고 한다.</p>
-</blockquote>
-
-<p>여기서 $X$가 티호노프라는 조건을 빼도 꽤 강력한 결론을 유지할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리 2.</strong> $X$가 <em>일반 위상공간</em>일 때, 어떤 콤팩트 하우스도르프 공간 $\beta X$와 <em>연속함수</em> $e : X \to \beta X$가 유일하게 존재하여, 다음을 만족한다: $K$가 임의의 콤팩트 하우스도르프 공간이고 $f: X \to K$가 연속사상일 때, $f = f^\ast \circ \iota$를 만족하는 연속사상 $f^\ast: \beta X \to K$가 유일하게 존재한다.</p>
-
-  <p><img src="/public/stone-cech-2.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1em auto;" /></p>
-</blockquote>
-
-<p>차이점은 $e$가 임베딩이 아니라 연속함수라는 점이다. 실제로 $X$가 일반 위상공간일 때 $e$는 동형성은 고사하고 단사조차 아닐 수 있다. 이 경우 $\beta X$는 엄밀한 의미에서 $X$의 콤팩트화가 아니지만, 그럼에도 이 글에서는 편의를 위해 일반적으로 $\beta X$를 $X$의 스톤-체흐 콤팩트화라고 부를 것이다.</p>
-
-<p>한점 콤팩트화가 국소적으로 콤팩트한 공간에서만 가능한 것과 달리, 정리 2에서 드러나듯이 스톤-체흐 콤팩트화는 <em>모든</em> 위상공간에서 가능하다. 덕분에 스톤-체흐 콤팩트화는 일반 위상공간의 범주 $\mathbf{Top}$를 콤팩트 하우스도르프 공간의 범주 $\mathbf{CHaus}$로 보내는 <strong>함자</strong>로서 간주될 수 있다. 실제로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리 3.</strong> 망각함자<sub>forgetful functor</sub> $U: \mathbf{CHaus} \to \mathbf{Top}$는 좌 어드조인트 $\beta: \mathbf{Top} \to \mathbf{CHaus}$를 가진다. 또한 $X \in \mathbf{Top}$에 대해 $\beta X$는 $X$의 스톤-체흐 콤팩트화에 해당한다.</p>
-</blockquote>
-
-<p><a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">예전 글</a>에서 다룬 동치성으로 인해 이는 처음의 정의와 동치이다.</p>
-
-<p>$\beta$의 존재성 증명은 크게 세 단계로 구성된다. 첫째, 임의의 위상공간 $X$에 대해 $\beta X$를 정의한다. 둘째, $\beta X$가 보편 성질을 만족함을 보인다. 셋째, $X$와 $\beta X$의 관계가 함수적<sub>functorial</sub>임을, 즉 $\beta$가 함자임을 보인다. 위에서 정리 1, 정리 2, 정리 3을 구분하기는 했지만 아래의 증명에서는 세 정리를 함께 증명한다.</p>
-
-<h4 id="증명">증명.</h4>
-
-<p><strong>1. $\beta X$의 정의</strong></p>
-
-<p>집합 $C$를 다음과 같이 정의하자.</p>
-
-\[C = \{ f \mid f : X \to [0, 1] \text{ is continuous } \}\]
-
-<p>$[0, 1]^C$에 곱 위상을 주어 위상공간으로 만들자. $[0, 1]^C$는 $C \to [0, 1]$ 사상들의 공간으로 생각할 수 있다. 하우스도르프 공간의 곱은 언제나 하우스도르프이고, 콤팩트 공간의 곱 또한 언제나 콤팩트하므로 (티호노프 정리), $[0, 1]^C$는 콤팩트 하우스도르프 공간이다. 이제 $e: X \to [0, 1]^C$를 다음과 같이 정의한다.</p>
-
-\[e: x \mapsto \lambda_x \quad \text{where} \quad \lambda_x : f \mapsto f(x)\]
-
-<p>곱 위상의 성질(<a href="https://dimenerno.github.io/2025/04/02/box-v-product">정의</a>)에 의해 $e$는 연속함수이다. 특히 $X$가 티호노프 공간이라면 <a href="https://dimenerno.github.io/2025/07/09/urysohn">우리손 보조정리</a>와 그 따름결과 (링크의 말단에 있는 정리) 에 의해 $e$는 임베딩이다.</p>
-
-<p><strong>$\beta X$를 $[0, 1]^C$에서 $e[X]$의 폐포로 정의하자.</strong> $\beta X$는 콤팩트 공간의 닫힌집합이므로 콤팩트이며, 하우스도르프 공간의 부분공간이므로 하우스도르프이다. 따라서 $\beta X$는 콤팩트 하우스도르프이다. 특히, 직전 문단의 고찰로 인해 $X$가 티호노프일 때 $\beta X$는 $X$의 콤팩트화이다.</p>
-
-<h4 id="2-beta-x의-보편-성질-확인">2. $\beta X$의 보편 성질 확인</h4>
-
-<p>이제 $\beta X$가 보편 성질을 만족함을 보이자. 먼저 $K = [0, 1]$일 때를 보인다.</p>
-
-<p>임의의 연속사상 $f: X \to [0, 1]$이 주어졌다고 하자. $f^\ast : \beta X \to [0, 1]$을 다음과 같이 정의한다.</p>
-
-\[f^\ast : \lambda \mapsto \lambda (f)\]
-
-<p>즉, $(x_g)_{g \in C}$를 $x_f$로 사상시키는 사영사상 $\pi_f: [0, 1]^C \to [0, 1]$에 대해, $f^\ast = \pi_f \rvert_{\beta X}$이다. $\pi_f$가 연속이므로 $f^\ast$는 연속이다. 또한 임의의 $x \in X$에 대해,</p>
-
-\[(f^\ast \circ e)(x) = f^\ast (\lambda_x) = \lambda_x(f) = f(x)\]
-
-<p>이므로 $f^\ast$는 보편 성질이 요구하는 사상이다.</p>
-
-<p>이제 일반적인 콤팩트 하우스도르프 공간 $K$와 연속사상 $f: X \to K$을 고려하자. $K$는 티호노프 공간이므로 어떤 집합 $J$에 대해 $[0, 1]^J$에 임베딩될 수 있다. 그러므로 일반성을 잃지 않고 $K = [0, 1]^J$, $f: X \to [0, 1]^J$인 경우를 고려하면 충분하다. 이 경우 $f^\ast$를 다음과 같이 정의한다.</p>
-
-\[f^\ast : \lambda \mapsto (\lambda (\pi_\alpha f))_{\alpha \in J}\]
-
-<p>$K = [0, 1]$인 경우의 논증으로부터, $f^\ast$는 연속이며 보편 성질을 만족함이 따라 나온다. 따라서 $\beta X$는 $X$의 스톤-체흐 콤팩트화이다.</p>
-
-<h4 id="3-beta의-함자-조건-확인">3. $\beta$의 함자 조건 확인</h4>
-
-<p>마지막으로 $\beta$가 함자임을 보이자. 임의의 위상공간 $X, Y$와 연속사상 $\psi : X \to Y$에 대해 다음 가환 도식이 성립하도록 $\beta \psi$를 정의할 수 있음을 보여야 한다.</p>
-
-<p><img src="/public/stone-cech-3.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1em auto;" /></p>
-
-<p>다음과 같이 $\beta \psi$를 정의하자. 임의의 $\lambda \in \beta X$에 대해,</p>
-
-\[\beta \psi : \lambda \mapsto (g \mapsto \lambda(g \circ \psi) )_{g \in C_Y}\]
-
-<p>여기서 $C_Y$는 연속인 $g : Y \to [0, 1]$의 모임이다. (연습문제: 위 식이 잘 정의되었음을 각 함수의 정의역과 공역을 따져 확인해 보라.) 가환 도식의 성립은 다음 식으로 환원된다.</p>
-
-\[\beta \psi(\lambda_x) = \lambda_{\psi(x)}\]
-
-<p>좌변을 정의에 따라 풀어쓰면 위 식이 성립함을 알 수 있다.</p>
-
-\[\begin{align*}
-\beta \psi(\lambda_x) &amp;= (g \mapsto \lambda_x(g\circ \psi))_{g \in C_Y} \\
-&amp;= (g \mapsto (g \circ \psi)(x))_{g \in C_Y} \\
-&amp;= (g \mapsto g(\psi(x)))_{g \in C_Y} \\
-&amp;= \lambda_{\psi(x)}
-\end{align*}\]
-
-<p>따라서 $\beta : \mathbf{Top} \to \mathbf{CHaus}$는 함자이며, 특히 $U: \mathbf{CHaus} \to \mathbf{Top}$의 좌 어드조인트이다. 이로부터 임의의 $X$에 대해, 보편 조건을 만족하는 $(e, \beta X)$는 콤마 카테고리 $(A \Rightarrow U)$의 초기 대상이므로 동형성에 대해 유일함이 따라 나온다. (자세한 설명은 <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint">이 글</a>을 참조) ■</p>
 
           ]]>
         </content:encoded>

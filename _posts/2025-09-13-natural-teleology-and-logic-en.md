@@ -7,6 +7,8 @@ lang: en
 related:
 ---
 
+> PDF version: <a href="/public/natural_teleology_and_logic.pdf">Link</a>
+
 ### Abstract
 
 This essay examines Dennett's skepticism about original intentionality and his attempt to ground meaning in natural selection and natural teleology. I argue, first, that the indeterminacy problem on which Dennett's skepticism relies does not in itself undermine original intentionality; and second, that the natural-teleological account of logic is question-begging due to its appeal to the utility of truth. I conclude that our use of logic demonstrates a domain in which the doctrine of original intentionality must be presupposed.

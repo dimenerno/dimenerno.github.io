@@ -431,6 +431,739 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/08/robinson-craig/en"> Robinson, Craig, and Beth's Theorems </a>
+      </h1>
+    <span class="post-date">08 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/model-theory/'">
+        Model Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h3 id="elementary-amalgamation-property">Elementary Amalgamation Property</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathfrak{A}$ be an $\mathcal{L}$-structure and $\mathfrak{B}$ be an $\mathcal{L}’$-structure such that the $\mathcal{L}$-reduct of $\mathfrak{B}$ is elementarily equivalent to $\mathfrak{A}$. Then there exists an $\mathcal{L}’$-structure $\mathfrak{C}$ such that $f: \mathfrak{A} \to \mathfrak{C}$ is an <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">elementary embedding</a> in $\mathcal{L}$ and $g: \mathfrak{B} \to \mathfrak{C}$ is an elementary embedding in $\mathcal{L}’$.</p>
+
+  <p><img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply" /></p>
+</blockquote>
+
+<p><strong>Proof.</strong> Following the notation of <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">this post</a>, consider the theory $E(\mathfrak{A})$ in language $L_\mathfrak{A}$ and the theory $E(\mathfrak{B})$ in language $L’<em>\mathfrak{B}$. Let $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$ be a theory in the language $\mathcal{L}’</em>{\mathfrak{AB}} = \mathcal{L}<em>\mathfrak{A} \cup \mathcal{L}’</em>\mathfrak{B}$. We shall show that $T$ has a model $\mathfrak{C}$.</p>
+
+<p>Suppose $T$ has no model. Then $T$ is inconsistent. By the compactness theorem, there exist some $\mathcal{L}$-formula $\phi$ and $\mathcal{L}’$-formula $\psi$ such that for appropriate ${a_i} \subset \mathcal{L}<em>\mathfrak{A}$ and ${b_j} \subset \mathcal{L}</em>\mathfrak{B}$,</p>
+
+\[\{\phi(a_1, \dots, a_n), \psi(b_1, \dots, b_m)\}\]
+
+<p>has no model. Since $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$, there must be no way to assign the constants $a_1, \dots, a_n$ to elements of the domain of $\mathfrak{B}$ such that $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$. That is,</p>
+
+\[\mathfrak{B} \not\vDash \exists x_1, \dots x_n \; \phi(x_1, \dots, x_n)\]
+
+<p>However, since the $\mathcal{L}$-reduct of $\mathfrak{B}$ is elementarily equivalent to $\mathfrak{A}$, and the right-hand side above is an $\mathcal{L}$-sentence that is satisfied by $\mathfrak{A}$, this yields a contradiction. Therefore, $T$ has a model $\mathfrak{C}$. Since $\mathfrak{C}$ is a model of both $E(\mathfrak{A})$ and $E(\mathfrak{B})$, both $\mathfrak{A}$ and $\mathfrak{B}$ are naturally elementarily embedded into $\mathfrak{C}$. ■</p>
+
+<h3 id="robinson-consistency-theorem">Robinson Consistency Theorem</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$. Suppose $T$ is a (semantically) complete theory in $\mathcal{L}$, and $T_1$ and $T_2$ are consistent theories in $\mathcal{L}_1$ and $\mathcal{L}_2$ respectively, each extending $T$. Then $T_1 \cup T_2$ is consistent as a theory in $\mathcal{L}_1 \cup \mathcal{L}_2$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> It suffices to construct a model of $T_1 \cup T_2$.</p>
+
+<p>Since $T_1$ and $T_2$ are consistent, they have models $\mathfrak{A}_0$ and $\mathfrak{B}_0$ respectively. Since $T = T_1 \cap T_2$ is complete, the $\mathcal{L}$-reducts of $\mathfrak{A}_0$ and $\mathfrak{B}_0$ are elementarily equivalent. Therefore, by the elementary amalgamation property, there exist an $\mathcal{L}$-elementary embedding $f_0$ and an $\mathcal{L}_2$-elementary embedding $h_0$ such that the following holds:</p>
+
+<p><img src="/public/robinson-1.png" style="width: 100%; max-width: 115px; margin: 1em auto" /></p>
+
+<p>Now considering the $\mathcal{L}$-reduct of $\mathfrak{B}_1$, this is elementarily equivalent to $\mathfrak{A}_0$, so again by the elementary amalgamation property, there exist an $\mathcal{L}$-elementary embedding $g_0$ and an $\mathcal{L}_1$-elementary embedding $k_0$ such that the following holds:</p>
+
+<p><img src="/public/robinson-2.png" style="width: 100%; max-width: 127px; margin: 1em auto" /></p>
+
+<p>Repeating this process, we obtain the following directed system of structures:</p>
+
+<p><img src="/public/robinson-3.png" style="width: 100%; max-width: 285px; margin: 1em auto" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Map</th>
+      <th>Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$f, g$</td>
+      <td>$\mathcal{L}$-elementary embedding</td>
+    </tr>
+    <tr>
+      <td>$k$</td>
+      <td>$\mathcal{L}_1$-elementary embedding</td>
+    </tr>
+    <tr>
+      <td>$h$</td>
+      <td>$\mathcal{L}_2$-elementary embedding</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Reducing all models in the above directed system to $\mathcal{L}$ gives an $\mathcal{L}$-structure directed system. Let $\mathfrak{C}$ be the colimit of this directed system. $\mathfrak{C}$ is also the colimit of the directed system consisting of ${\mathfrak{A}_i}$, since the parts of the original directed system shown in grey all project to one of the ${\mathfrak{A}_i}$. Therefore, $\mathfrak{C}$ is an $\mathcal{L}_1$-structure that elementarily embeds $\mathfrak{A}_0$.</p>
+
+<p><img src="/public/robinson-4.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
+
+<p>For the same reason, $\mathfrak{C}$ is also the colimit of the directed system consisting of ${\mathfrak{B}_i}$. Therefore, $\mathfrak{C}$ is an $\mathcal{L}_2$-structure that elementarily embeds $\mathfrak{B}_0$.</p>
+
+<p><img src="/public/robinson-5.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
+
+<p>That is, $\mathfrak{C}$ embeds both $\mathfrak{A}$ and $\mathfrak{B}$, from which it follows that it is a model of $T_1 \cup T_2$. ■</p>
+
+<h3 id="craig-interpolation-theorem">Craig Interpolation Theorem</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For $\mathcal{L}$-sentences $\phi$ and $\psi$, if $\phi \vDash \psi$, then there exists an $\mathcal{L}$-sentence $\theta$ such that $\phi \vDash \theta$ and $\theta \vDash \psi$. Moreover, the non-logical symbols (constants, predicates, functions) contained in $\theta$ are those common to both $\phi$ and $\psi$.</p>
+</blockquote>
+
+<p>$\theta$ is called a <strong>Craig interpolant</strong> of $\phi$ and $\psi$.</p>
+
+<p><strong>Proof.</strong> We prove by contradiction. Suppose no Craig interpolant exists. Then $\phi$ has a model, for if $\phi$ had no model, then $\perp$ would be a Craig interpolant of $\phi$ and $\psi$. Also, $\lnot \psi$ has a model, for otherwise $\top$ would be a Craig interpolant.</p>
+
+<p>Let $\mathcal{L}’$ be the language consisting of the non-logical symbols common to both $\phi$ and $\psi$. Let $\Gamma$ be the set of $\mathcal{L}’$-sentences $\sigma$ such that either $\phi \vDash \sigma$ or $\lnot \psi \vDash \sigma$.</p>
+
+<p>We show that $\Gamma \cup {\phi}$ is consistent. Suppose it is inconsistent. Then by the compactness theorem, there exist $\mathcal{L}’$-sentences $\sigma_1$ and $\sigma_2$ such that $\phi \vDash \sigma_1$, $\lnot\psi \vDash \sigma_2$, and ${\sigma_1, \sigma_2, \phi}$ is inconsistent. Since $\phi \vDash \sigma_1$, we have $\phi \vDash \lnot\sigma_2$. By contraposition, from $\lnot\psi \vDash \sigma_2$ we obtain $\lnot\sigma_2 \vDash \psi$. Thus $\lnot\sigma_2$ is a Craig interpolant of $\phi$ and $\psi$, contradicting our assumption.</p>
+
+<p>Therefore, $\Gamma \cup {\phi}$ is consistent, and by the same reasoning, $\Gamma \cup {\lnot\psi}$ is also consistent. Now applying Zorn’s lemma, define $\overline{\Gamma}$ as the maximum of the following ordered set of $\mathcal{L}’$-theories:</p>
+
+\[\{ \Gamma' : \Gamma \subseteq \Gamma', \Gamma' \cup \{\phi\} \text{ and } \Gamma' \cup \{\lnot \psi\} \text{ are consistent} \}\]
+
+<p>We show that $\overline{\Gamma}$ is complete. Suppose $\overline{\Gamma}$ is not complete. Then there exists an $\mathcal{L}’$-sentence $\sigma$ such that $\sigma \notin \overline{\Gamma}$, and either $\overline{\Gamma} \cup {\sigma, \phi}$ or $\overline{\Gamma} \cup {\sigma, \lnot \psi}$ is consistent.</p>
+
+<p>In the former case, by the compactness theorem, there exists a sentence $\theta$ in $\overline{\Gamma}$ such that $\phi \vDash \theta \rightarrow \lnot \sigma$. By the definition of $\Gamma$, we have $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$. Therefore, $\overline{\Gamma} \cup {\sigma, \phi}$ proves $\lnot\phi$, which is a contradiction. The latter case yields a similar contradiction. Therefore, $\overline{\Gamma}$ is complete.</p>
+
+<p>Since $\overline{\Gamma}$ is complete and $\overline{\Gamma} \cup {\phi}$ and $\overline{\Gamma} \cup {\lnot\psi}$ are consistent, by Robinson’s consistency theorem, $\overline{\Gamma} \cup {\phi, \lnot \psi}$ is consistent. But this contradicts $\phi \vDash \psi$. Therefore, by contradiction, $\phi$ and $\psi$ have a Craig interpolant. ■</p>
+
+<h3 id="beth-definability-theorem">Beth Definability Theorem</h3>
+
+<p>Consider a language $\mathcal{L}$ and a predicate $P$ not contained in $\mathcal{L}$. Let $T$ be a theory in $\mathcal{L} \cup {P}$. We say that $T$ <strong>implicitly defines</strong> $P$ when there is a unique way to extend any $\mathcal{L}$-structure $\mathfrak{A}$ satisfying $T$ to $\mathcal{L} \cup {P}$.</p>
+
+<p>This can also be stated as follows. Let $T(P’)$ be the theory in $\mathcal{L} \cup {P’}$ obtained by replacing every occurrence of $P$ in $T$ with $P’$. Then $T$ implicitly defines $P$ if and only if the following holds:</p>
+
+\[T \cup T(P') \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow P'(x_1, \dots, x_n)\]
+
+<p>On the other hand, $T$ <strong>explicitly defines</strong> $P$ if there exists an $\mathcal{L}$-formula $\phi$ satisfying:</p>
+
+\[T \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow \phi(x_1, \dots, x_n)\]
+
+<p>For example, consider the following theory $T$, which adds axioms concerning a predicate $P(x, y)$ to the theory $\mathsf{PA}$ in the language $\mathcal{L} = (0, S, +, \cdot)$:</p>
+
+\[T = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
+
+<p>$T(P’)$ is as follows:</p>
+
+\[T(P') = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P'(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
+
+<p>That $T$ implicitly defines $P$ means the following holds:</p>
+
+\[T \cup T(P') \vDash \forall x, y \big[ P(x, y) \leftrightarrow P'(x, y) \big]\]
+
+<p>This follows naturally from the induction axiom schema. But $P$ can also be explicitly defined in $T$ as follows:</p>
+
+\[\begin{gather}
+T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
+\text{where}\\\\
+\phi(x, y) : \forall z \big[ x + z = S(0) \rightarrow z = y \big]
+\end{gather}\]
+
+<p>This is no coincidence.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For a language $\mathcal{L}$, if a theory $T$ in $\mathcal{L} \cup {P}$ implicitly defines $P$, then $T$ explicitly defines $P$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Suppose $P$ is an $n$-ary predicate. Let $\mathcal{L}’$ be the language obtained by adding new constants $c_1, \dots, c_n$ to $\mathcal{L}$. Since $T$ implicitly defines $P$, we have:</p>
+
+\[T \cup T(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>By the compactness theorem, there exists an $\mathcal{L} \cup {P}$-sentence $\psi$ such that $T \vdash \psi$ and the following holds:</p>
+
+\[\psi \land \psi(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>Using the deduction theorem and rearranging:</p>
+
+\[\psi \land P(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>The left-hand side is a sentence in $\mathcal{L}’ \cup {P}$, and the right-hand side is a sentence in $\mathcal{L}’ \cup {P’}$. Therefore, by Craig’s interpolation theorem, there exists an $\mathcal{L}’$-formula $\theta$ such that:</p>
+
+\[\begin{gather}
+\psi \land P(c_1, \dots, c_n) \vDash \theta(c_1, \dots, c_n), \\\\
+\theta(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)
+\end{gather}\]
+
+<p>Rearranging again and substituting $P$ for $P’$:</p>
+
+\[\begin{gather}
+\psi \vDash P(c_1, \dots, c_n) \rightarrow \theta(c_1, \dots, c_n), \\\\
+\psi \vDash \theta(c_1, \dots, c_n) \rightarrow P(c_1, \dots, c_n)
+\end{gather}\]
+
+<p>Therefore, $\theta$ explicitly defines $P$. ■</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/04/regular-singular"> 정칙 기수와 특이 기수, 그리고 도달 불가능 기수 </a>
+      </h1>
+    <span class="post-date">04 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <p>이 글에서 $\kappa$는 무한 기수이다. 또한, 기수를 초기 서수<sub>initial ordinal</sub>로 정의하는 방식을 택한다(<a href="https://dimenerno.github.io/2025/04/20/cardinality/">이 글</a>의 3번). 이에 따라 모든 기수는 서수이기도 하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\theta$가 $\kappa$보다 작은 극한 서수라고 하자. 각 $\nu$에 대해 $\alpha_\nu &lt; \kappa$인 증가하는 서수열 $\langle \alpha_\nu : \nu &lt; \theta \rangle$에 대하여, 언제나 $\lim_{\nu \to \theta} \alpha_\nu &lt; \kappa$일 때, $\kappa$를 <strong>정칙 기수<sub>regular cardinal</sub></strong>라고 한다. 정칙 기수가 아닌 기수를 <strong>특이 기수<sub>singular cardinal</sub></strong>라고 한다.</p>
+</blockquote>
+
+<p><em>Remark.</em> $\alpha_\nu$와 $\theta$는 일반적으로 기수가 아니라 서수이다.</p>
+
+<p>예를 들어 $\aleph_0$는 정칙 기수이다. $\aleph_0$개보다 적은 개수의 — 즉, 유한한 — $\aleph_0$보다 작은 기수들 — 즉, 자연수 —  의 상한은 $\aleph_0$에 달하지 않기 때문이다.</p>
+
+<p>반면 $\aleph_\omega$는 특이 기수이다. 다음 기수열에서 각각의 기수는 $\aleph_\omega$보다 작고, 기수열의 길이 또한 $\aleph_0 &lt; \aleph_\omega$이지만, 그 상한은 $\aleph_\omega$이기 때문이다.</p>
+
+\[\aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \aleph_3 \quad \cdots\]
+
+<blockquote>
+  <p><strong>정리. (특이 기수 판별법)</strong> $\kappa$가 특이 기수일 필요충분조건은 $\kappa$가 $\kappa$개보다 적은 개수의 $\kappa$보다 작은 기수들의 합일 것이다. 즉, $|I| &lt; \kappa$, $\kappa_i &lt; \kappa \;(\forall i \in I)$에 대하여,</p>
+
+\[\sum_{i \in I} \kappa_i = \kappa\]
+</blockquote>
+
+<p><em>Remark.</em> $\kappa_i$는 일반적인 서수가 아닌 기수이다. 그리고 $\sum$은 서수 덧셈이 아니라 기수 덧셈이다.</p>
+
+<p><strong>증명.</strong></p>
+
+<p>($\Rightarrow$) $\kappa$가 특이 기수라면 어떤 서수열 $\langle \alpha_\nu : \nu &lt; \theta\rangle$이 존재하여,</p>
+
+\[\lim_{\nu \to \theta} \alpha_\nu = \sup \alpha_\nu = \bigcup_{\nu &lt; \theta}\alpha_\nu = \kappa\]
+
+<p>이다. 일반적으로 서수 $\alpha$는 자기보다 작은 서수 $\beta &lt; \alpha$들의 합집합이다. 따라서 다음이 성립한다.</p>
+
+\[\kappa = \bigcup_{\nu &lt; \theta}\alpha_\nu = \bigcup_{\nu &lt; \theta}\left( \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi \right)\]
+
+<p>$A_\nu = \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi$라고 하자. $A_\nu$는 더이상 서수가 아니지만 그건 중요하지 않다. 중요한 것은 $\lbrace  A_\nu \rbrace $가 쌍으로 서로소라는 것이다. 따라서 $\kappa_\nu = |A_\nu|$라고 하면 기수 덧셈의 정의에 의해,</p>
+
+\[\sum_{\nu &lt; \theta} \kappa_\nu = \left| \bigcup_{\nu &lt; \theta} A_\nu \right| = \kappa\]
+
+<p>이다.</p>
+
+<p>($\Leftarrow$) $\kappa = \sum_{i \in I}\kappa_i$라고 하자. $|I| = \lambda$라고 하면 기수 덧셈의 성질에 의해 $\kappa = \lambda \cdot \sup \kappa_i$이다. $\lambda &lt; \kappa$이므로, 기수 곱셈의 성질에 의해 $\kappa = \sup \kappa_i$이다. 각 $i \in I$에 대해 $\kappa_i &lt; \kappa$인데 $\sup \kappa_i = \kappa$이므로, 초한귀납법을 통해 증가하는 기수열</p>
+
+\[\langle \kappa_\nu : \kappa_\nu = \kappa_i \text{ for some } i \in I, \nu &lt; \theta\rangle\]
+
+<p>을 구축할 수 있으며, $\theta \leq \lambda$이므로 정리가 보여졌다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 어떤 $\alpha \in \mathrm{Ord}$에 대해 $\kappa = \aleph_{\alpha + 1}$일 때, $\kappa$를 <strong>계승 기수<sub>successor cardinal</sub></strong>라고 한다. 계승 기수가 아닌 기수를 <strong>극한 기수<sub>limit cardinal</sub></strong>라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 모든 계승 기수는 정칙이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\kappa = \aleph_{\alpha + 1}$이라고 하자. $\kappa$가 특이 기수라면, 특이 기수 판별법에 의해 $\kappa = \sum_{i \in I} \kappa_i$이며 $\kappa_i, |I| &lt; \kappa$이다. 이는 $\kappa_i , |I| \leq \aleph_\alpha$와 같다. 그런데</p>
+
+\[\sum_{i \in I} \kappa_i \leq \sum_{i \in I} \aleph_\alpha = |I| \cdot  \aleph_\alpha \leq  \aleph_\alpha \cdot \aleph_\alpha =  \aleph_\alpha &lt; \kappa\]
+
+<p>이므로 모순이다. ■</p>
+
+<p>따라서 모든 특이 기수는 극한 기수이다. 그러나 모든 극한 기수가 특이 기수인 것은 아니다. $\aleph_0$는 정칙인 극한 기수이기 때문이다. 그러나 $\aleph_0$ 이외에 정칙인 극한 기수가 존재할까?</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 비가산 정칙 극한 기수를 <strong>도달 불가능 기수<sub>inaccessible cardinal</sub></strong>라고 한다.<a href="#sub1" id="sup1"><sup>1</sup></a></p>
+</blockquote>
+
+<p>$\aleph_\alpha$가 도달 불가능 기수라고 하자. 다음의 증가 기수열의 극한은 $\aleph_\alpha$이다.</p>
+
+\[\langle \aleph_\beta : \beta &lt; \alpha \rangle : \aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \cdots \quad \to \aleph_\alpha\]
+
+<p>따라서 $\aleph_\alpha$가 정칙이기 위해서는 위 기수열의 길이인 $\alpha$가 $\aleph_\alpha$보다 작아서는 안 된다. 그런데 $\alpha \leq \aleph_\alpha$이므로, $\alpha = \aleph_\alpha$임이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\aleph_\alpha$가 도달 불가능할 필요조건은 $\alpha = \aleph_\alpha$인 것이다.</p>
+</blockquote>
+
+<p>이는 $\alpha$가 무지막지하게 큰 기수임을 시사한다. 일례로 다음의 기수열 $\langle \alpha_n : n \in \omega \rangle$을 보자.</p>
+
+\[\alpha_0 = \aleph_0, \alpha_{n + 1} = \aleph_{\alpha_n}\]
+
+<p>위 기수열의 상한을 $\kappa$라고 하자. 상한의 정의에 의해 $\lambda &lt; \kappa$라면 $\alpha_n &gt; \lambda$인 $n$이 존재한다. 따라서 $\aleph_\lambda = \alpha_{n+1} &lt; \kappa$이며,</p>
+
+\[\aleph_\kappa = \sum_{\lambda &lt; \kappa} \aleph_\lambda \leq \sum_{\lambda &lt; \kappa} \kappa = \kappa\]
+
+<p>이다. 다시 말해, $\alpha = \aleph_\alpha$를 만족하는 기수는 적어도 다음에 비견되는 크기를 가진다.</p>
+
+\[\kappa = \aleph_{\aleph_{\aleph_{\aleph_{\ddots}}}}\]
+
+<p>여기서 집고 넘어갈 점이 있다. 비록 $\kappa$가 $\kappa = \aleph_\kappa$를 보이긴 했지만, $\kappa$가 도달 불가능함을 보인 것은 아니다. 오히려 $\kappa$는 특이 기수이다. 길이가 $\omega$인 기수열 $\alpha_n$의 극한이기 때문이다.</p>
+
+<p>사실 도달 불가능 기수의 존재성은 ZFC와 독립적이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 도달 불가능 기수의 존재성은 ZFC와 독립이다.</p>
+</blockquote>
+
+<p>따라서 도달 불가능 기수의 존재는 공리로서 가정해야 한다. 도달 불가능 기수의 존재를 가정하는 부류의 공리들을 <strong>큰 기수 공리<sub>large cardinal axioms</sub></strong>라고 부르며, 이와 관련된 연구는 집합론의 중요한 부분을 이룬다.</p>
+
+<hr />
+
+<p><a href="#sup1" id="sub1">1.</a> 엄밀히 말해 이는 <strong>약한 도달 불가능 기수<sub>weakly inaccessible cardinal</sub></strong>에 해당한다. $\kappa$가 <strong>강한 도달 불가능 기수<sub>strongly inaccessible cardinal</sub></strong>라는 것은 $\kappa$가 약한 도달 불가능 기수이며, 추가로 $\lambda &lt; \kappa$일 때 $2^\lambda &lt; \kappa$인 것이다. 연속체 가설을 인정할 때 약한 도달 불가능성과 강한 도달 불가능성은 동치이다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/04/regular-singular/en"> Regular Cardinals, Singular Cardinals, and Inaccessible Cardinals </a>
+      </h1>
+    <span class="post-date">04 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>In this article, $\kappa$ denotes an infinite cardinal. Moreover, we adopt the approach of defining cardinals as initial ordinals (see method 3 in <a href="https://dimenerno.github.io/2025/04/20/cardinality/">this post</a>). Accordingly, every cardinal is also an ordinal.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\theta$ be a limit ordinal less than $\kappa$. For each $\nu$, consider an increasing sequence of ordinals $\langle \alpha_\nu : \nu &lt; \theta \rangle$ where $\alpha_\nu &lt; \kappa$. If we always have $\lim_{\nu \to \theta} \alpha_\nu &lt; \kappa$, then $\kappa$ is called a <strong>regular cardinal</strong>. A cardinal that is not regular is called a <strong>singular cardinal</strong>.</p>
+</blockquote>
+
+<p><em>Remark.</em> $\alpha_\nu$ and $\theta$ are generally ordinals, not necessarily cardinals.</p>
+
+<p>For example, $\aleph_0$ is a regular cardinal. This is because the supremum of fewer than $\aleph_0$ many—that is, finitely many—cardinals less than $\aleph_0$—that is, natural numbers—does not reach $\aleph_0$.</p>
+
+<p>In contrast, $\aleph_\omega$ is a singular cardinal. This is because in the following sequence of cardinals, each cardinal is less than $\aleph_\omega$, and the length of the sequence is also $\aleph_0 &lt; \aleph_\omega$, yet their supremum is $\aleph_\omega$.</p>
+
+\[\aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \aleph_3 \quad \cdots\]
+
+<blockquote>
+  <p><strong>Theorem. (Characterisation of Singular Cardinals)</strong> $\kappa$ is a singular cardinal if and only if $\kappa$ is the sum of fewer than $\kappa$ many cardinals, each less than $\kappa$. That is, for $|I| &lt; \kappa$ and $\kappa_i &lt; \kappa \;(\forall i \in I)$, we have</p>
+
+\[\sum_{i \in I} \kappa_i = \kappa\]
+</blockquote>
+
+<p><em>Remark.</em> $\kappa_i$ denotes cardinals, not general ordinals. Moreover, $\sum$ denotes cardinal addition, not ordinal addition.</p>
+
+<p><strong>Proof.</strong></p>
+
+<p>($\Rightarrow$) If $\kappa$ is a singular cardinal, then there exists a sequence of ordinals $\langle \alpha_\nu : \nu &lt; \theta\rangle$ such that</p>
+
+\[\lim_{\nu \to \theta} \alpha_\nu = \sup \alpha_\nu = \bigcup_{\nu &lt; \theta}\alpha_\nu = \kappa\]
+
+<p>In general, an ordinal $\alpha$ is the union of all ordinals $\beta &lt; \alpha$ that are less than it. Therefore, the following holds:</p>
+
+\[\kappa = \bigcup_{\nu &lt; \theta}\alpha_\nu = \bigcup_{\nu &lt; \theta}\left( \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi \right)\]
+
+<p>Let $A_\nu = \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi$. Whilst $A_\nu$ is no longer an ordinal, this is not important. What matters is that $\lbrace  A_\nu \rbrace $ are pairwise disjoint. Therefore, letting $\kappa_\nu = |A_\nu|$, by the definition of cardinal addition, we have</p>
+
+\[\sum_{\nu &lt; \theta} \kappa_\nu = \left| \bigcup_{\nu &lt; \theta} A_\nu \right| = \kappa\]
+
+<p>($\Leftarrow$) Let $\kappa = \sum_{i \in I}\kappa_i$. Setting $|I| = \lambda$, by the properties of cardinal addition, we have $\kappa = \lambda \cdot \sup \kappa_i$. Since $\lambda &lt; \kappa$, by the properties of cardinal multiplication, we have $\kappa = \sup \kappa_i$. For each $i \in I$, we have $\kappa_i &lt; \kappa$, yet $\sup \kappa_i = \kappa$. Therefore, by transfinite induction, we can construct an increasing sequence of cardinals</p>
+
+\[\langle \kappa_\nu : \kappa_\nu = \kappa_i \text{ for some } i \in I, \nu &lt; \theta\rangle\]
+
+<p>Since $\theta \leq \lambda$, the theorem is proved. ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> When $\kappa = \aleph_{\alpha + 1}$ for some $\alpha \in \mathrm{Ord}$, we call $\kappa$ a <strong>successor cardinal</strong>. A cardinal that is not a successor cardinal is called a <strong>limit cardinal</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Every successor cardinal is regular.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $\kappa = \aleph_{\alpha + 1}$. If $\kappa$ is a singular cardinal, then by the characterisation of singular cardinals, we have $\kappa = \sum_{i \in I} \kappa_i$ where $\kappa_i, |I| &lt; \kappa$. This is equivalent to $\kappa_i , |I| \leq \aleph_\alpha$. However,</p>
+
+\[\sum_{i \in I} \kappa_i \leq \sum_{i \in I} \aleph_\alpha = |I| \cdot  \aleph_\alpha \leq  \aleph_\alpha \cdot \aleph_\alpha =  \aleph_\alpha &lt; \kappa\]
+
+<p>which is a contradiction. ■</p>
+
+<p>Therefore, every singular cardinal is a limit cardinal. However, not every limit cardinal is singular. This is because $\aleph_0$ is a regular limit cardinal. But do there exist other regular limit cardinals beyond $\aleph_0$?</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> An uncountable regular limit cardinal is called an <strong>inaccessible cardinal</strong>.<a href="#sub1" id="sup1"><sup>1</sup></a></p>
+</blockquote>
+
+<p>Let $\aleph_\alpha$ be an inaccessible cardinal. The limit of the following increasing sequence of cardinals is $\aleph_\alpha$:</p>
+
+\[\langle \aleph_\beta : \beta &lt; \alpha \rangle : \aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \cdots \quad \to \aleph_\alpha\]
+
+<p>Therefore, for $\aleph_\alpha$ to be regular, the length of the above sequence, namely $\alpha$, must not be less than $\aleph_\alpha$. Since $\alpha \leq \aleph_\alpha$, it follows that $\alpha = \aleph_\alpha$.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> A necessary condition for $\aleph_\alpha$ to be inaccessible is that $\alpha = \aleph_\alpha$.</p>
+</blockquote>
+
+<p>This suggests that $\alpha$ is an enormously large cardinal. For instance, consider the following sequence of cardinals $\langle \alpha_n : n \in \omega \rangle$:</p>
+
+\[\alpha_0 = \aleph_0, \alpha_{n + 1} = \aleph_{\alpha_n}\]
+
+<p>Let $\kappa$ be the supremum of this sequence. By the definition of supremum, if $\lambda &lt; \kappa$, then there exists $n$ such that $\alpha_n &gt; \lambda$. Therefore, $\aleph_\lambda = \alpha_{n+1} &lt; \kappa$, and</p>
+
+\[\aleph_\kappa = \sum_{\lambda &lt; \kappa} \aleph_\lambda \leq \sum_{\lambda &lt; \kappa} \kappa = \kappa\]
+
+<p>In other words, a cardinal satisfying $\alpha = \aleph_\alpha$ has a magnitude at least comparable to the following:</p>
+
+\[\kappa = \aleph_{\aleph_{\aleph_{\aleph_{\ddots}}}}\]
+
+<p>There is an important point to note here. Although $\kappa$ satisfies $\kappa = \aleph_\kappa$, we have not shown that $\kappa$ is inaccessible. Indeed, $\kappa$ is a singular cardinal, as it is the limit of a sequence $\alpha_n$ of length $\omega$.</p>
+
+<p>In fact, the existence of inaccessible cardinals is independent of ZFC.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The existence of inaccessible cardinals is independent of ZFC.</p>
+</blockquote>
+
+<p>Therefore, the existence of inaccessible cardinals must be assumed as an axiom. The class of axioms that assume the existence of inaccessible cardinals are called <strong>large cardinal axioms</strong>, and research related to these forms an important part of set theory.</p>
+
+<hr />
+
+<p><a href="#sup1" id="sub1">1.</a> Strictly speaking, this corresponds to a <strong>weakly inaccessible cardinal</strong>. A cardinal $\kappa$ is called <strong>strongly inaccessible</strong> if it is weakly inaccessible and additionally satisfies $2^\lambda &lt; \kappa$ whenever $\lambda &lt; \kappa$. Under the continuum hypothesis, weak and strong inaccessibility are equivalent.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/01/elementary-embedding"> 준동형 사상, 임베딩, 초등적 임베딩 </a>
+      </h1>
+    <span class="post-date">01 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/모델론/'">
+        모델론
+      </div>
+      
+    </div>
+     <p>이 글에서는 편의를 위해 술어와 함수를 별도의 대상으로 생각하는 대신, 함수식 $f(a) = c$를 이항 술어 $F(a, c)$로 환원하는 접근을 택한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}, \mathfrak{B}$가 언어 $\mathcal{L}$의 구조라고 하자. 다음을 만족하는 사상 $f: \mathfrak{A} \to \mathfrak{B}$을 <strong>준동형 사상<sub>homomorphism</sub></strong>이라고 부른다. $R$이 $\mathcal{L}$의 관계일 때, 임의의 $a_1, \dots, a_n \in \mathfrak{A}$에 대해,</p>
+
+\[R^\mathfrak{A}(a_1, \dots, a_n) \implies R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
+
+  <p>이다.</p>
+
+  <p>추가로, 준동형사상 $f$가 단사이고 다음을 만족할 때 $f$를 <strong>임베딩<sub>embedding</sub></strong>이라고 부른다.</p>
+
+\[R^\mathfrak{A}(a_1, \dots, a_n) \iff R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
+</blockquote>
+
+<p>단사 준동형사상이라고 해서 임베딩인 것은 아니다. 일례로 하나의 이항 관계 $&lt;$를 가지는 언어 $\mathcal{L}$의 다음의 두 구조를 보자. $&lt;$를 만족시키는 대상은 화살표로 표시되었다. 즉, $b_1 &lt;^\mathfrak{B} b_2$이다.</p>
+
+<p><img src="/public/model-injective-vs-embedding.png" style="width: 100%; max-width: 500px; margin: 1.5em auto;" /></p>
+
+<p>$\mathfrak{A}$의 원소들은 $&lt;^\mathfrak{A}$를 만족시키는 경우가 없으므로 $f: a_1 \mapsto b_1, a_2 \mapsto b_2$는 자명하게 준동형사상이며, 단사이다. 그러나 $f$는 임베딩이 아니다. $f$가 임베딩이라면 $b_1 &lt;^\mathfrak{B} b_2$으로부터 $a_1 &lt;^\mathfrak{A} a_2$가 성립해야 하기 때문이다. 즉, 임베딩은 $\mathfrak{A}$의 원소들뿐 아니라 원소들 간의 관계까지 그대로 $\mathfrak{B}$에 대응시켜야 한다. 이런 면에서 임베딩은 범주론에서의 포화된 함자<sub>full functor</sub>와 비슷하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 언어 $\mathcal{L}$의 구조라고 하자. $\mathcal{L}_\mathfrak{A}$를 $\mathcal{L}$에 $\mathfrak{A}$의 정의역 크기만큼의 상수를 추가한 언어로 정의한다.</p>
+</blockquote>
+
+<p>페아노 산술로 예를 들자면, $\mathcal{L} = (0, S, +)$이고 $\mathfrak{A}$가 산술의 표준 모형일 때, $\mathcal{L}_\mathfrak{A} = (0, 1, 2, 3, \dots, S, +)$이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-원자명제들의 집합을 $\Delta_\mathfrak{A}^+$로 적는다. 즉,</p>
+
+\[\Delta_\mathfrak{A}^+ = \{ R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
+
+  <p>추가로, $\Delta_\mathfrak{A}^+$에다 $\mathfrak{A}$가 만족시키지 않는 모든 $\mathcal{L}$-원자명제들의 부정까지 추가한 집합을 $\Delta_\mathfrak{A}$로 적는다. 즉,</p>
+
+\[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
+</blockquote>
+
+<p>$\Delta$라는 표기법은 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 관련이 있다.</p>
+
+<p>$\Delta_\mathfrak{A}^+$에 빠진 원자명제들의 부정을 추가한 것이 곧 $\Delta_\mathfrak{A}$이기 때문에, 두 집합이 내포하는 정보량은 사실상 같다. 그럼에도 두 집합을 구분하여 정의하는 것은 다음의 정리 때문이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자.</p>
+
+  <ol>
+    <li>단사 준동형사상 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
+    <li>임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p>즉, $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$를 만족할 경우 $\mathfrak{B}$가 원자명제들을 ‘과도하게’ 만족시켜서, $\mathfrak{A}$가 $\mathfrak{B}$로 임베딩되지 못할 가능성이 있다. 그러나 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$를 만족할 경우, $\mathfrak{B}$가 만족시킬 수 있는 원자명제에 한계가 걸리기 때문에 임베딩 가능성이 보장된다.</p>
+
+<p><a href="https://dimenerno.github.io/2025/04/17/los-tarski/">이전 글</a>에서 <strong>초등적 부분모델</strong>이라는 개념을 소개한 바 있다. 이로부터 다음의 개념을 정의할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $f: \mathfrak{A} \to \mathfrak{B}$가 임베딩이고, $f[\mathfrak{A}]$가 $\mathfrak{B}$의 초등적 부분모델일 때, $f$를 <strong>초등적 임베딩</strong>이라고 한다.</p>
+</blockquote>
+
+<p>초등적 임베딩과 관련된 문장 집합은 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-명제들의 집합을 $E(\mathfrak{A})$로 적는다. 즉,</p>
+
+\[E(\mathfrak{A}) = \{ \phi : \mathfrak{A} \vDash \phi \}\]
+</blockquote>
+
+<p>$E(\mathfrak{A})$가 $\Delta_\mathfrak{A}$와 가장 구별되는 특징은 양화사가 있는 문장 또한 포함한다는 것이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. 초등적 임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $E(\mathfrak{A})$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</p>
+</blockquote>
+
+<p>마지막으로 다음의 문장 집합을 언급할 만하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합을 $\mathrm{Th}(\mathfrak{A})$라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$와 $\mathfrak{B}$가 초등적으로 동등할 필요충분조건은 $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$인 것이다.</p>
+</blockquote>
+
+<p>사실 이는 초등적 동등성의 정의나 다름이 없어서 정리라고 부르기는 무색하지만, 이 글에서 소개한 나머지 정리들과 일관성을 유지하기 위해 소개하였다.</p>
+
+<p>표로 정리하면 이렇다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>정의</th>
+      <th>예시</th>
+      <th>사상</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$\Delta_\mathfrak{A}^+$</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제</td>
+      <td>$0 &lt; 1$</td>
+      <td>전사 준동형</td>
+    </tr>
+    <tr>
+      <td>$\Delta_\mathfrak{A}$</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제</td>
+      <td>$\lnot(1 &lt; 0)$</td>
+      <td>임베딩 (부분모델)</td>
+    </tr>
+    <tr>
+      <td>$\mathrm{Th}(\mathfrak{A})$</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제</td>
+      <td>$\forall x \exists y (x &lt; y)$</td>
+      <td>초등적 동등성</td>
+    </tr>
+    <tr>
+      <td>$E(\mathfrak{A})$</td>
+      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제</td>
+      <td>$\not \exists x (x &lt; 0)$</td>
+      <td>초등적 임베딩 (초등적 부분모델)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>예를 들어 $\mathfrak{A} = (\mathbb{N}, &lt;)$은 $\mathfrak{B} = (\mathbb{Z}, &lt;)$에 임베딩되지만, 초등적으로 임베딩되지는 않는다. $\mathfrak{B}$가 $E(\mathfrak{A})$의 문장인 $\not \exists x (x &lt; 0)$을 만족하지 않기 때문이다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/01/elementary-embedding/en"> Homomorphisms, Embeddings, and Elementary Embeddings </a>
+      </h1>
+    <span class="post-date">01 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/model-theory/'">
+        Model Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>For convenience, this article takes the approach of reducing function expressions $f(a) = c$ to binary predicates $F(a, c)$, rather than treating predicates and functions as separate objects.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be structures of language $\mathcal{L}$. A mapping $f: \mathfrak{A} \to \mathfrak{B}$ satisfying the following is called a <strong>homomorphism</strong>. For any relation $R$ in $\mathcal{L}$ and arbitrary $a_1, \dots, a_n \in \mathfrak{A}$,</p>
+
+\[R^\mathfrak{A}(a_1, \dots, a_n) \implies R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
+
+  <p>Additionally, when a homomorphism $f$ is injective and satisfies the following, we call $f$ an <strong>embedding</strong>.</p>
+
+\[R^\mathfrak{A}(a_1, \dots, a_n) \iff R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
+</blockquote>
+
+<p>An injective homomorphism is not necessarily an embedding. For example, consider the following two structures of language $\mathcal{L}$ with one binary relation $&lt;$. Objects satisfying $&lt;$ are indicated by arrows. That is, $b_1 &lt;^\mathfrak{B} b_2$.</p>
+
+<p><img src="/public/model-injective-vs-embedding.png" style="width: 100%; max-width: 500px; margin: 1.5em auto;" /></p>
+
+<p>Since no elements in $\mathfrak{A}$ satisfy $&lt;^\mathfrak{A}$, the mapping $f: a_1 \mapsto b_1, a_2 \mapsto b_2$ is trivially a homomorphism and is injective. However, $f$ is not an embedding. If $f$ were an embedding, then from $b_1 &lt;^\mathfrak{B} b_2$ it would follow that $a_1 &lt;^\mathfrak{A} a_2$. That is, an embedding must preserve not only the elements of $\mathfrak{A}$ but also the relationships between elements in $\mathfrak{B}$. In this respect, embeddings are similar to full functors in category theory.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathfrak{A}$ be a structure of language $\mathcal{L}$. Define $\mathcal{L}_\mathfrak{A}$ as the language obtained by adding to $\mathcal{L}$ as many constants as the size of the domain of $\mathfrak{A}$.</p>
+</blockquote>
+
+<p>For example with Peano arithmetic, when $\mathcal{L} = (0, S, +)$ and $\mathfrak{A}$ is the standard model of arithmetic, then $\mathcal{L}_\mathfrak{A} = (0, 1, 2, 3, \dots, S, +)$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\Delta_\mathfrak{A}^+$ denote the set of all $\mathcal{L}_\mathfrak{A}$-atomic propositions satisfied by $\mathfrak{A}$. That is,</p>
+
+\[\Delta_\mathfrak{A}^+ = \{ R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
+
+  <p>Additionally, let $\Delta_\mathfrak{A}$ denote the set obtained by adding to $\Delta_\mathfrak{A}^+$ the negations of all $\mathcal{L}$-atomic propositions not satisfied by $\mathfrak{A}$. That is,</p>
+
+\[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
+</blockquote>
+
+<p>The notation $\Delta$ is related to the <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">arithmetic hierarchy</a>.</p>
+
+<p>Since $\Delta_\mathfrak{A}$ is obtained by adding the negations of atomic propositions missing from $\Delta_\mathfrak{A}^+$, the two sets contain essentially the same information. Nevertheless, we define the two sets separately because of the following theorem.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be $\mathcal{L}$-structures.</p>
+
+  <ol>
+    <li>There exists an injective homomorphism $f: \mathfrak{A} \to \mathfrak{B}$ if and only if $\mathfrak{B}$ is an $\mathcal{L}<em>\mathfrak{A}$-model of $\Delta</em>\mathfrak{A}^+$.</li>
+    <li>There exists an embedding $f: \mathfrak{A} \to \mathfrak{B}$ if and only if $\mathfrak{B}$ is an $\mathcal{L}<em>\mathfrak{A}$-model of $\Delta</em>\mathfrak{A}$.</li>
+  </ol>
+</blockquote>
+
+<p>That is, when $\mathfrak{B}$ satisfies $\Delta_\mathfrak{A}^+$, there is a possibility that $\mathfrak{B}$ satisfies atomic propositions ‘excessively’, preventing $\mathfrak{A}$ from being embedded into $\mathfrak{B}$. However, when $\mathfrak{B}$ satisfies $\Delta_\mathfrak{A}$, there are constraints on which atomic propositions $\mathfrak{B}$ can satisfy, thus guaranteeing the possibility of embedding.</p>
+
+<p>In a <a href="https://dimenerno.github.io/2025/04/17/los-tarski/">previous article</a>, we introduced the concept of <strong>elementary submodel</strong>. From this, we can define the following concept.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> When $f: \mathfrak{A} \to \mathfrak{B}$ is an embedding and $f[\mathfrak{A}]$ is an elementary submodel of $\mathfrak{B}$, we call $f$ an <strong>elementary embedding</strong>.</p>
+</blockquote>
+
+<p>The set of sentences related to elementary embeddings is as follows.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $E(\mathfrak{A})$ denote the set of all $\mathcal{L}_\mathfrak{A}$-propositions satisfied by $\mathfrak{A}$. That is,</p>
+
+\[E(\mathfrak{A}) = \{ \phi : \mathfrak{A} \vDash \phi \}\]
+</blockquote>
+
+<p>The most distinguishing feature of $E(\mathfrak{A})$ from $\Delta_\mathfrak{A}$ is that it also includes sentences with quantifiers.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be $\mathcal{L}$-structures. There exists an elementary embedding $f: \mathfrak{A} \to \mathfrak{B}$ if and only if $\mathfrak{B}$ is an $\mathcal{L}_\mathfrak{A}$-model of $E(\mathfrak{A})$.</p>
+</blockquote>
+
+<p>Finally, the following set of sentences is worth mentioning.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathfrak{A}$ be an $\mathcal{L}$-structure. Let $\mathrm{Th}(\mathfrak{A})$ denote the set of all $\mathcal{L}$-sentences true in $\mathfrak{A}$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be $\mathcal{L}$-structures. $\mathfrak{A}$ and $\mathfrak{B}$ are elementarily equivalent if and only if $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$.</p>
+</blockquote>
+
+<p>In fact, this is nothing more than the definition of elementary equivalence, so it hardly deserves to be called a theorem, but it has been included here to maintain consistency with the other theorems introduced in this article.</p>
+
+<p>Summarising in a table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Definition</th>
+      <th>Example</th>
+      <th>Mapping</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$\Delta_\mathfrak{A}^+$</td>
+      <td>$\mathcal{L}_\mathfrak{A}$-atomic propositions satisfied by $\mathfrak{A}$</td>
+      <td>$0 &lt; 1$</td>
+      <td>Surjective homomorphism</td>
+    </tr>
+    <tr>
+      <td>$\Delta_\mathfrak{A}$</td>
+      <td>$\Delta_0$ $\mathcal{L}_\mathfrak{A}$-propositions satisfied by $\mathfrak{A}$</td>
+      <td>$\lnot(1 &lt; 0)$</td>
+      <td>Embedding (submodel)</td>
+    </tr>
+    <tr>
+      <td>$\mathrm{Th}(\mathfrak{A})$</td>
+      <td>$\mathcal{L}$-propositions satisfied by $\mathfrak{A}$</td>
+      <td>$\forall x \exists y (x &lt; y)$</td>
+      <td>Elementary equivalence</td>
+    </tr>
+    <tr>
+      <td>$E(\mathfrak{A})$</td>
+      <td>$\mathcal{L}_\mathfrak{A}$-propositions satisfied by $\mathfrak{A}$</td>
+      <td>$\not \exists x (x &lt; 0)$</td>
+      <td>Elementary embedding (elementary submodel)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example, $\mathfrak{A} = (\mathbb{N}, &lt;)$ embeds into $\mathfrak{B} = (\mathbb{Z}, &lt;)$, but does not embed elementarily. This is because $\mathfrak{B}$ does not satisfy the sentence $\not \exists x (x &lt; 0)$ from $E(\mathfrak{A})$.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/04/24/continuum-coloring"> 연속체 가설과 동치인 색칠 문제 </a>
@@ -917,780 +1650,6 @@ $$
 <p>위 퍼즐이 특히 기묘한 이유는, 청력 상실 조건에 의해 서로 다른 두 죄수가 모자를 맞히는 사건이 독립이므로, 각각의 죄수가 정답을 맞힐 확률은 $p$로 동일해야 할 듯하기 때문이다. 이 경우 총 $N$명의 죄수가 정답을 맞히는 확률은 $p^N$이 되므로, $N \to \infty$에 따라 확률은 0으로 수렴한다. 그러나 실제로는 무한히 많은 죄수들이 정답을 맞힌다.</p>
 
 <p>이 역설의 뿌리는, 임의의 죄수가 정답을 맞히는 확률이 <strong>정의되지 않는다</strong>는 데 있다. 잘 생각해 보면, 임의의 죄수가 정답을 맞히는 사건은 주어진 실수 $r \in [0, 1]$이 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>에 포함되는 사건과 동일한데, 비탈리 집합은 비가측 집합이므로 이 사건에는 확률을 정의할 수 없기 때문이다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/18/prisoner-hat/en"> Infinite Prisoner Hat Problem </a>
-      </h1>
-    <span class="post-date">18 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>You have likely encountered puzzles where prisoners attempt to guess the colour of their own hats. Consider the following example:</p>
-
-<blockquote>
-  <p>Three prisoners A, B, and C stand in a line. A guard selects three hats from two black hats and three white hats, places them on each prisoner, and announces that if any one of them correctly guesses their hat colour, all will be freed, but if they guess incorrectly, all will be executed. Each prisoner can see the hat colours of those in front of them, but cannot see their own hat colour or those of prisoners behind them. After a long silence, one prisoner correctly identifies their hat colour. Which prisoner solved the problem?</p>
-
-  <p><img src="/public/hat-1.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(1)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Answer</u>
-</div>
-
-<div id="answer1" class="answer" style="padding-bottom: 1em;">
-<p><strong>C provides the correct answer.</strong></p>
-<p>If both B and C wore black hats, A would have correctly guessed that their hat was white. However, since a "long silence" ensued, A could not determine their hat colour, indicating that the hat colours of B and C represent one of the cases: (white, black), (black, white), or (white, white).</p>
-<p>Considering this information, if C's hat were black, B would have correctly guessed that their hat was white. The fact that a "long silence" continued indicates that B also could not determine their hat colour, therefore C's hat must be white.</p>
-</div>
-
-<p>A more challenging problem follows:</p>
-
-<blockquote>
-  <p>One hundred prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, whilst those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What is the maximum number of prisoners whose survival can be guaranteed with certainty?</p>
-
-  <p><img src="/public/hat-2.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(8)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Hint</u>
-</div>
-
-<div id="answer8" class="answer" style="padding-bottom: 1em;">
-<p>The survival of 99 prisoners, excluding the first, can be guaranteed.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(2)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Answer</u>
-</div>
-
-<div id="answer2" class="answer" style="padding-bottom: 1em;">
-<p><strong>The survival of 99 prisoners, excluding the first, can be guaranteed.</strong></p>
-<p>The first prisoner can observe the hat colours of the remaining 99 prisoners. If the number of black hats amongst them is even, they guess their own hat is black; if odd, they guess white. The second prisoner can then compare the information conveyed by the first prisoner with the parity of black hats amongst those in front of them to correctly determine their own hat colour. Similarly, the third prisoner can use the information from the first prisoner and the fact that the second prisoner correctly identified their hat colour to determine their own, and in this manner, all 99 prisoners can be freed.</p>
-</div>
-
-<p>Let us now make the problem more formidable:</p>
-
-<blockquote>
-  <p><strong>Infinitely many prisoners stand in a line.</strong> A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, whilst those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What strategy minimises the number of prisoners who die? <strong>We assume that all prisoners possess infinite computational power and are mathematically omniscient.</strong> That is, when $f$ is a mathematically well-defined function, prisoners can always compute the value of $f$, and when discussing strategy beforehand, they may agree to employ $f$.</p>
-
-  <p><img src="/public/hat-3.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(3)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Hint 1</u>
-</div>
-
-<div id="answer3" class="answer" style="padding-bottom: 1em;">
-<p>The survival of all prisoners except the first can be guaranteed.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(4)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Hint 2</u>
-</div>
-
-<div id="answer4" class="answer" style="padding-bottom: 1em;">
-<p>The axiom of choice is employed.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(5)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Answer</u>
-</div>
-
-<div id="answer5" class="answer" style="padding-bottom: 1em;">
-
-<p>By representing black hats as 0 and white hats as 1, the prisoners' hat arrangement can be expressed as an infinite sequence such as 101011... When a decimal point is placed at the beginning and read in binary, the prisoners' hat arrangement corresponds bijectively to a real number between 0 and 1 inclusive.</p>
-
-<p>For real numbers $a, b \in [0, 1]$, we define $a \sim b$ when their binary expansions differ in finitely many digits. For example:</p>
-
-$$
-0.11111\dots \sim 0.01111\dots, \; 0.10101\dots \not\sim 0.01010\dots
-$$
-
-<p>It can be readily shown that $\sim$ is an equivalence relation. Therefore, we may form the quotient $[0, 1]/\sim$. By the axiom of choice, there exists a choice function $\iota$ for $[0, 1]/\sim$. Since we have assumed that the prisoners are mathematically omniscient, they can agree beforehand on which choice function $\iota$ to employ.</p>
-
-<p>When the hat-guessing begins, the $n$-th prisoner can observe all hat colours except for $n$ hats. That is, when the real number corresponding to the prisoners' hat arrangement is $r$, the $n$-th prisoner knows all digits except for $n$ digits after the decimal point of $r$. Thus, they know which equivalence class of $[0, 1]/\sim$ contains $r$, and when the equivalence class containing $r$ is denoted $[r]$, they can compute $\iota([r])$.</p>
-
-<p>The following strategy is now employed: By the definition of $\sim$, $r$ and $\iota([r])$ differ in only finitely many digits. The first prisoner guesses their hat colour as black if the hat arrangement they observe differs from the hat arrangement corresponding to $\iota([r])$ by an even number of positions, and white if they differ by an odd number. The remaining prisoners can then determine their hat colours in the same manner as in the 100-prisoner problem.</p>
-
-<p>Thus, the axiom of choice ensures that when taking $N \to \infty$ in the $N$-prisoner problem, the conclusion that all prisoners except the first can survive remains valid.</p>
-
-</div>
-
-<p>Whilst the above puzzle is remarkably intriguing, the following puzzle is even more extraordinary:</p>
-
-<blockquote>
-  <p>Infinitely many prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, whilst those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. Furthermore, <strong>the moment the hats are placed, the prisoners completely lose their hearing and cannot exchange any information whatsoever.</strong> Is there a strategy that ensures only finitely many prisoners die? (Similarly, prisoners possess infinite computational power and are mathematically omniscient.)</p>
-
-  <p><img src="/public/hat-4.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(6)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Answer</u>
-</div>
-
-<div id="answer6" class="answer" style="padding-bottom: 1em;">
-
-<p>As in the previous problem, let $\iota$ be a choice function for $[0, 1]/\sim$. The following strategy is employed: The $n$-th prisoner guesses their hat colour as the colour corresponding to the $n$-th digit of $\iota([r])$. By the definition of $\sim$, all prisoners except finitely many will answer correctly.</p>
-
-</div>
-
-<p>This puzzle is particularly extraordinary because the hearing loss condition renders the hat-guessing events of any two distinct prisoners independent, suggesting that each prisoner should have the same probability $p$ of guessing correctly. In this case, the probability that all $N$ prisoners guess correctly would be $p^N$, which converges to 0 as $N \to \infty$. However, in reality, infinitely many prisoners guess correctly.</p>
-
-<p>The root of this paradox lies in the fact that the probability of an arbitrary prisoner guessing correctly is <strong>undefined</strong>. Upon careful consideration, the event of an arbitrary prisoner guessing correctly is equivalent to the event that a given real number $r \in [0, 1]$ belongs to a <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since Vitali sets are non-measurable, no probability can be defined for this event.</p>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/17/los-tarski"> 워시-타르스키 보존 정리 </a>
-      </h1>
-    <span class="post-date">17 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/대수학/'">
-        대수학
-      </div>
-      
-    </div>
-     <p>군 $G$의 부분군 $H, K$에 대해 $H \cap K$는 언제나 군이다. 환과 체의 경우에도 마찬가지이다. 이는 워시-타르스키 정리의 따름결과로 설명할 수 있다.</p>
-
-<blockquote>
-  <p><em>Notation.</em> 본 글에서 $T$는 언어 $\mathcal{L}$의 1차 논리 이론이며, 프락투르 글자 $\mathfrak{M}, \mathfrak{N}, \dots$은 $\mathcal{L}$-구조<sub>structure</sub>이다. 또한 $\mathfrak{M}, \mathfrak{N}, \dots$의 정의역을 $M, N, \dots$와 같이 적는다.</p>
-</blockquote>
-
-<h2 id="기본-개념">기본 개념</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $N \subseteq M$이고 $\mathfrak{N}$에서의 해석<sub>interpretation</sub>이 $\mathfrak{M}$에서의 해석을 $N$으로 제한한 것일 때, $\mathfrak{N}$을 $\mathfrak{M}$의 <strong>부분모델<sub>submodel</sub></strong>이라고 하며, 기호로 $\mathfrak{N} \subseteq \mathfrak{M}$과 같이 적는다. 또한, $\mathfrak{M}$을 $\mathfrak{N}$의 <strong>확장<sub>extension</sub></strong>이라고 한다.</p>
-</blockquote>
-
-<p>일례로 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 부분모델이고, $(\mathbb{Q}, +, \cdot)$는 $(\mathbb{R}, +, \cdot)$의 부분모델이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 임의의 $\mathcal{L}$-문장 $\phi$에 대해 $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$일 때 $\mathfrak{M}$과 $\mathfrak{N}$이 <strong>초등적으로 동등<sub>elementarily equivalent</sub></strong>하다고 하며, 기호로 $\mathfrak{M} \equiv \mathfrak{N}$과 같이 적는다.</p>
-</blockquote>
-
-<p><a href="https://dimenerno.github.io/2025/04/10/completeness-theorem/">뢰벤하임-스콜렘 정리</a>에 의해 $\kappa$가 $|\mathcal{L}|$ 이상의 무한 기수라면, 임의의 무한 구조 $\mathfrak{M}$과 초등적으로 동등하며 크기가 $\kappa$인 모델 $\mathfrak{N}$이 존재한다. (cf. 워시-보트 판별<sub>Łoś-Vaught test</sub>)</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{M}$과 $\mathfrak{N}$이 구조적으로 동일할 때 <strong>동형<sub>isomorphic</sub></strong>이라고 하며, 기호로 $\mathfrak{M} \cong \mathfrak{N}$과 같이 적는다. 구체적으로, 어떤 일대일 대응 $\phi: M \to N$이 존재하여, $\mathcal{L}$의 임의의 함수 $f$와 관계 $R$에 대해 다음이 임의의 $a_1, \dots, a_n \in M$에 대해 성립할 때 $\mathfrak{M} \cong \mathfrak{N}$이다.</p>
-
-\[\begin{gather}
-\phi(f_\mathfrak{M}(a_1, \dots, a_n)) = f_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n)), \\\\
-R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
-\end{gather}\]
-</blockquote>
-
-<p>$(\mathbb{Z}, +)$와 $(2\mathbb{Z}, +)$는 $\phi: x \mapsto 2x$를 통해 동형이지만 $(\mathbb{Q}, +, \cdot)$와 $(\mathbb{R}, +, \cdot)$은 동형이 아니다.</p>
-
-<p>다음 정리의 증명은 거의 자명하다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 동형인 두 구조는 초등적으로 동등하다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{N} \subseteq \mathfrak{M}$이라고 하자. 임의의 $\mathcal{L}$-명제 $\phi$와 $\mathfrak{N}$에서의 자유변수 할당<sub>assignment</sub> $g$에 대해, $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$일 때 $\mathfrak{N}$이 $\mathfrak{M}$의 <strong>초등적 부분모델<sub>elementary submodel</sub></strong>이라고 하며, 기호로 $\mathfrak{N} \preceq \mathfrak{M}$과 같이 적는다.</p>
-</blockquote>
-
-<p>2와 3은 1보다 강하지만, 2와 3은 서로를 시사하지 않는다.</p>
-
-<ol>
-  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \equiv \mathfrak{M}$</li>
-  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \cong \mathfrak{M}$</li>
-  <li>$\mathfrak{N} \preceq \mathfrak{M}$</li>
-</ol>
-
-<p>2와 3이 서로를 시사하지 않는 이유는, 2가 구조적 동등을 요구한다는 점에서 3보다 약하지 않은 한편, 3이 임의의 할당에 대한 동등을 요구한다는 점에서 2보다 약하지 않기 때문이다. 예를 들어 $\mathfrak{M} = (\mathbb{R}, +, \cdot)$에 대해, $\mathfrak{N}$이 $\mathfrak{M}$의 동형인 부분모델이기 위해서는 <em>구성 가능한</em> 실수에 대해 <em>구조적으로</em> 동일해야 하는 반면, $\mathfrak{N}$이 $\mathfrak{M}$의 초등적 부분모델이기 위해서는 두 모델이 <em>모든</em> 실수에 대해 <em>초등적으로</em> 동등해야 한다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>2</th>
-      <th>3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2가 3보다 약하지 않다</td>
-      <td>구조적 동일성</td>
-      <td>초등적 동일성</td>
-    </tr>
-    <tr>
-      <td>3이 2보다 약하지 않다</td>
-      <td>구성 가능한 대상</td>
-      <td>임의의 대상</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>일례로 앞서 보았듯이 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 동형인 부분모델이지만, $\exists y \; (y + y = x)$에 $x \mapsto 2$ 할당을 고려하면 초등적 부분모델은 아님을 알 수 있다.</p>
-
-<h2 id="워시-타르스키-정리">워시-타르스키 정리</h2>
-
-<p>$\mathfrak{M}$이 $T$의 모델이라고 하자. $T$가 어떤 이론이어야 $\mathfrak{M}$의 임의의 부분모델 또한 $T$의 모델이 될까? 그 답은 다음의 정리로 주어진다.</p>
-
-<blockquote>
-  <p><strong>워시-타르스키<sub>Łoś-Tarski</sub> 보존 정리.</strong> $T$의 모델의 부분모델 또한 $T$의 모델일 필요충분조건은 $T$가 $\Pi_1$ 문장으로 이루어진 이론과 동치인 것이다.</p>
-</blockquote>
-
-<p>$\Pi_1$ 문장이 무엇인지에 대해서는 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a> 글에서 다룬 바 있다. 간략히만 설명하자면 $\forall$만을 양화사로 가지는 이론이다. 직관적으로 $\Pi_1$ 문장은 정의역이 제한될수록 만족시키기 쉬우므로, $T$가 $\Pi_1$ 이론이라면 $T$는 부분모델에 대해 보존될 것이다. 필요조건은 증명하기가 좀 더 까다롭다.</p>
-
-<p><strong>증명.</strong> 충분조건은 거의 자명하므로 필요조건만 증명한다. 다음의 보조정리를 증명한다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $T$가 언어 $\mathcal{L}$의 무모순적인 이론이라고 하자. $\mathcal{L}$ 문장들의 집합 $\Delta$가 다음 두 조건을 만족할 때, $\Delta$는 $T$의 공리화를 포함한다.</p>
-
-  <ol>
-    <li>$\Delta$는 선언<sub>disjunction</sub>에 대해 닫혀 있다. 즉, $\phi, \psi \in \Delta$라면 $\phi \lor \psi \in \Delta$이다.</li>
-    <li>$T$의 모델 $\mathfrak{A}$에 대해, $\mathfrak{B}$가 $\mathfrak{A}$에서 만족되는 모든 $\Delta$의 문장들을 만족한다면 $\mathfrak{B}$ 또한 $T$의 모델이다.</li>
-  </ol>
-</blockquote>
-
-<p><em>보조정리의 증명.</em> $\Gamma = \lbrace  \delta \in \Delta : T \vDash \delta \rbrace $라고 하자. $\Delta$가 $T$의 공리화를 포함함을 보이기 위해서는 다음을 보이면 충분하다.</p>
-
-\[\mathfrak{B} \vDash \Gamma \implies \mathfrak{B} \vDash T\]
-
-<p>$\mathfrak{B}$가 $\Gamma$의 모델이라고 하자. 다음과 같이 정의한다.</p>
-
-\[\Sigma = \{ \lnot \delta : \delta \in \Delta, \mathfrak{B} \not\vDash \delta \}\]
-
-<p>$T \cup \Sigma$는 무모순적인 이론임을 보이자. 만약 $T \cup \Sigma$가 모순적이라면 어떤 $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$에 대해 $T \vdash \lnot(\lnot\delta_1 \land \cdots \land \lnot\delta_n)$이므로, $T \vdash \delta_1 \lor \cdots \lor \delta_n$이다. $\Delta$가 선언에 대해 닫혀 있으므로 $\delta_1 \lor \cdots \lor \delta_n \in \Delta$이다. $\Gamma$의 정의에 의해 $\delta_1 \lor \cdots \lor \delta_n \in \Gamma$이므로 $\mathfrak{B} \vDash \delta_1 \lor \cdots \lor \delta_n$이다. 이는 $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$에 모순이다.</p>
-
-<p>$T \cup \Sigma$가 무모순적이므로 완전성 정리에 의해 모델을 가진다. 해당 모델을 $\mathfrak{A}$라고 하자. $\mathfrak{B}$는 $\mathfrak{A}$가 만족시키는 $\Delta$의 문장들을 모두 만족시키므로, 가정에 의해 $T$의 모델이다. □</p>
-
-<p>이제 본 정리의 증명으로 넘어가자. $\Delta$를 모든 $\mathcal{L}$의 $\Pi_1$ 문장들의 집합이라고 하자. 우리의 목표는 $\Delta$가 $T$의 공리화를 포함함을 보이는 것이다. $\Pi_1$ 문장들은 선언에 대해 닫혀 있으므로, 보조정리에 의해 다음을 보이면 충분하다.</p>
-
-<blockquote>
-  <p>$T$가 부분모델에 대해 보존적인 이론이라고 하자. $T$의 모델 $\mathfrak{A}$에 대해, $\mathfrak{B}$가 $\mathfrak{A}$에서 만족되는 모든 $\Pi_1$ 문장들을 만족한다면 $\mathfrak{B}$ 또한 $T$의 모델이다.</p>
-</blockquote>
-
-<p><a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이 글</a>에서의 표기법을 따라 $E(\mathfrak{B})$를 정의하자. 즉, $\mathfrak{M}$이 $E(\mathfrak{B})$를 만족할 때 $\mathfrak{B} \preceq \mathfrak{M}$이다.</p>
-
-<p>$T \cup E(\mathfrak{B})$는 무모순적임을 보이자. 만약 $T \cup E(\mathfrak{B})$가 모순적이라면, 어떤 $E(\mathfrak{B})$의 문장 $\phi(b_1, \dots, b_n)$이 존재하여 $T \cup \lbrace  \phi \rbrace $는 모델을 가지지 않는다. 따라서 $T$의 모델인 $\mathfrak{A}$는 $\phi$를 만족시키는 $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ 모델로 확장될 수 없다. 즉, 다음이 성립한다.</p>
-
-\[\mathfrak{A} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)\]
-
-<p>우변은 $\Pi_1$ 문장이므로, 가정에 의해 $\mathfrak{B} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)$이다. 그런데 $\phi(b_1, \dots, b_n) \in E(\mathfrak{B})$이므로, 이는 모순이다. 따라서 $T \cup E(\mathfrak{B})$는 무모순적이며, 완전성 정리에 의해 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{B})$를 만족하므로, $\mathfrak{B} \preceq \mathfrak{C}$이다. 한편 $\mathfrak{C}$는 부분모델에 대해 보존적인 이론 $T$의 모델이므로, $\mathfrak{B}$는 $T$의 모델이다. ■</p>
-
-<h2 id="응용">응용</h2>
-
-<p>군의 1차 논리적 공리화는, 항등원과 역원을 별도의 상수 $e$와 함수 $(-)^{-1}$로 표현하는지의 여부에 따라 구분된다.</p>
-
-<h4 id="표현하지-않는-경우">표현하지 않는 경우</h4>
-
-<p>언어 $\mathcal{L}_1 = \lbrace  G, \cdot \rbrace $의 이론 $T_1$를 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\exists x \forall y : x \cdot y = y \cdot x = y$</li>
-  <li>$\forall x \exists y \forall z : (x \cdot y) \cdot z = (y \cdot x) \cdot z = z$</li>
-</ul>
-
-<h4 id="표현하는-경우">표현하는 경우</h4>
-
-<p>언어 $\mathcal{L}_2 = \lbrace  G, \cdot, e, (-)^{-1} \rbrace $의 이론 $T_2$를 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\forall x : x \cdot e = e \cdot x = x$</li>
-  <li>$\forall x : x \cdot x^{-1} = x^{-1} \cdot x = e$</li>
-</ul>
-
-<p>$T_1$은 $\Pi_1$ 이론이 아니지만 $T_2$는 $\Pi_1$ 이론이다. 따라서 워시-타르스키 정리에 의해, $T_1$은 부분모델 보존적이지 않지만 $T_2$는 보존적이다. $T_1$이 부분모델 보존적이지 않다는 것은, 군의 부분집합이 연산에 대해 닫혀 있다고 해서 언제나 부분군인 것은 아님을 의미한다<small>(일례로 $\mathbb{Z}$의 부분집합 $\mathbb{Z}_{&gt; 0}$은 연산에 대해 닫혀 있지만 역원을 결여하므로 군이 아니다)</small>. 반면 $T_2$가 부분모델 보존적이라는 것은 다음이 성립함을 의미한다.</p>
-
-<blockquote>
-  <p>군 $G$에 대해, $G$의 부분집합 $H$가 다음을 만족한다면 $H$는 $G$의 부분군이다.</p>
-
-  <ol>
-    <li>연산에 대해 닫혀 있다.</li>
-    <li>역원에 대해 닫혀 있다.</li>
-    <li>$G$의 항등원을 포함한다.</li>
-  </ol>
-</blockquote>
-
-<p>그런데 위보다 더 강한 다음의 결과가 일반적으로 성립한다.</p>
-
-<blockquote>
-  <p>군 $G$에 대해, $G$의 부분집합 $H$가 다음을 만족한다면 $H$는 $G$의 부분군이다.</p>
-
-  <ol>
-    <li>연산에 대해 닫혀 있다.</li>
-    <li>역원에 대해 닫혀 있다.</li>
-  </ol>
-</blockquote>
-
-<p>즉, 항등원을 지시할 상수를 결여하는 언어 $\mathcal{L}_3 = \lbrace  G, \cdot, (-)^{-1} \rbrace$에서도 군의 이론은 부분모델 보존적이며, 이는 $\mathcal{L}_3$로 군을 형식화하는 $\Pi_1$ 이론이 존재함을 의미한다. 머리를 잘 굴려보면 실제로 다음의 이론 $T_3$가 존재함을 발견할 수 있다.</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\forall x, y : (x \cdot x^{-1}) \cdot y = y \cdot (x \cdot x^{-1}) = y$</li>
-</ul>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/17/los-tarski/en"> The Łoś-Tarski Preservation Theorem </a>
-      </h1>
-    <span class="post-date">17 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/algebra/'">
-        Algebra
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>For subgroups $H, K$ of a group $G$, the intersection $H \cap K$ is always a group. The same holds for rings and fields. This can be explained as a consequence of the Łoś-Tarski theorem.</p>
-
-<blockquote>
-  <p><em>Notation.</em> In this article, $T$ is a first-order theory in language $\mathcal{L}$, and Fraktur letters $\mathfrak{M}, \mathfrak{N}, \dots$ denote $\mathcal{L}$-structures. Furthermore, we write the domains of $\mathfrak{M}, \mathfrak{N}, \dots$ as $M, N, \dots$ respectively.</p>
-</blockquote>
-
-<h2 id="basic-concepts">Basic Concepts</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $N \subseteq M$ and the interpretation in $\mathfrak{N}$ is the restriction of the interpretation in $\mathfrak{M}$ to $N$, we call $\mathfrak{N}$ a <strong>submodel</strong> of $\mathfrak{M}$, and write $\mathfrak{N} \subseteq \mathfrak{M}$. Furthermore, $\mathfrak{M}$ is called an <strong>extension</strong> of $\mathfrak{N}$.</p>
-</blockquote>
-
-<p>For example, $(2\mathbb{Z}, +)$ is a submodel of $(\mathbb{Z}, +)$, and $(\mathbb{Q}, +, \cdot)$ is a submodel of $(\mathbb{R}, +, \cdot)$.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$ for any $\mathcal{L}$-sentence $\phi$, we say that $\mathfrak{M}$ and $\mathfrak{N}$ are <strong>elementarily equivalent</strong>, and write $\mathfrak{M} \equiv \mathfrak{N}$.</p>
-</blockquote>
-
-<p>By the <a href="https://dimenerno.github.io/2025/04/10/completeness-theorem/">Löwenheim-Skolem theorem</a>, if $\kappa$ is an infinite cardinal at least $|\mathcal{L}|$, then for any infinite structure $\mathfrak{M}$, there exists a model $\mathfrak{N}$ of cardinality $\kappa$ that is elementarily equivalent to $\mathfrak{M}$. (cf. Łoś-Vaught test)</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $\mathfrak{M}$ and $\mathfrak{N}$ are structurally identical, they are called <strong>isomorphic</strong>, written $\mathfrak{M} \cong \mathfrak{N}$. Specifically, $\mathfrak{M} \cong \mathfrak{N}$ when there exists a bijection $\phi: M \to N$ such that for any function $f$ and relation $R$ in $\mathcal{L}$, the following holds for any $a_1, \dots, a_n \in M$:</p>
-
-\[\begin{gather}
-\phi(f_\mathfrak{M}(a_1, \dots, a_n)) = f_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n)), \\\\
-R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
-\end{gather}\]
-</blockquote>
-
-<p>$(\mathbb{Z}, +)$ and $(2\mathbb{Z}, +)$ are isomorphic via $\phi: x \mapsto 2x$, but $(\mathbb{Q}, +, \cdot)$ and $(\mathbb{R}, +, \cdot)$ are not isomorphic.</p>
-
-<p>The proof of the following theorem is almost trivial.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Two isomorphic structures are elementarily equivalent.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $\mathfrak{N} \subseteq \mathfrak{M}$. When $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$ for any $\mathcal{L}$-formula $\phi$ and any assignment $g$ of free variables in $\mathfrak{N}$, we call $\mathfrak{N}$ an <strong>elementary submodel</strong> of $\mathfrak{M}$, and write $\mathfrak{N} \preceq \mathfrak{M}$.</p>
-</blockquote>
-
-<p>Conditions 2 and 3 are stronger than 1, but 2 and 3 do not imply each other.</p>
-
-<ol>
-  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \equiv \mathfrak{M}$</li>
-  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \cong \mathfrak{M}$</li>
-  <li>$\mathfrak{N} \preceq \mathfrak{M}$</li>
-</ol>
-
-<p>The reason why 2 and 3 do not imply each other is that 2 requires structural equivalence, making it no weaker than 3, whilst 3 requires equivalence for arbitrary assignments, making it no weaker than 2. For instance, for $\mathfrak{M} = (\mathbb{R}, +, \cdot)$, for $\mathfrak{N}$ to be an isomorphic submodel of $\mathfrak{M}$, it must be <em>structurally</em> identical with respect to <em>constructible</em> real numbers, whereas for $\mathfrak{N}$ to be an elementary submodel of $\mathfrak{M}$, the two models must be <em>elementarily</em> equivalent with respect to <em>all</em> real numbers.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>2</th>
-      <th>3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2 is no weaker than 3</td>
-      <td>Structural identity</td>
-      <td>Elementary identity</td>
-    </tr>
-    <tr>
-      <td>3 is no weaker than 2</td>
-      <td>Constructible objects</td>
-      <td>Arbitrary objects</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>For example, as we saw earlier, $(2\mathbb{Z}, +)$ is an isomorphic submodel of $(\mathbb{Z}, +)$, but considering the assignment $x \mapsto 2$ for $\exists y \; (y + y = x)$, we can see that it is not an elementary submodel.</p>
-
-<h2 id="the-łoś-tarski-theorem">The Łoś-Tarski Theorem</h2>
-
-<p>Let $\mathfrak{M}$ be a model of $T$. What kind of theory must $T$ be for any submodel of $\mathfrak{M}$ to also be a model of $T$? The answer is given by the following theorem.</p>
-
-<blockquote>
-  <p><strong>The Łoś-Tarski Preservation Theorem.</strong> A necessary and sufficient condition for submodels of models of $T$ to also be models of $T$ is that $T$ is equivalent to a theory consisting of $\Pi_1$ sentences.</p>
-</blockquote>
-
-<p>What $\Pi_1$ sentences are has been covered in the <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">arithmetic hierarchy</a> article. To explain briefly, these are theories having only $\forall$ as quantifiers. Intuitively, $\Pi_1$ sentences become easier to satisfy as the domain is restricted, so if $T$ is a $\Pi_1$ theory, then $T$ will be preserved under submodels. The necessity is somewhat more challenging to prove.</p>
-
-<p><strong>Proof.</strong> The sufficiency is almost trivial, so we prove only the necessity. We prove the following lemma.</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> Let $T$ be a consistent theory in language $\mathcal{L}$. When a set $\Delta$ of $\mathcal{L}$-sentences satisfies the following two conditions, $\Delta$ contains an axiomatisation of $T$.</p>
-
-  <ol>
-    <li>$\Delta$ is closed under disjunction. That is, if $\phi, \psi \in \Delta$, then $\phi \lor \psi \in \Delta$.</li>
-    <li>For a model $\mathfrak{A}$ of $T$, if $\mathfrak{B}$ satisfies all sentences in $\Delta$ that are satisfied in $\mathfrak{A}$, then $\mathfrak{B}$ is also a model of $T$.</li>
-  </ol>
-</blockquote>
-
-<p><em>Proof of the lemma.</em> Let $\Gamma = \lbrace  \delta \in \Delta : T \vDash \delta \rbrace $. To show that $\Delta$ contains an axiomatisation of $T$, it suffices to show the following:</p>
-
-\[\mathfrak{B} \vDash \Gamma \implies \mathfrak{B} \vDash T\]
-
-<p>Suppose $\mathfrak{B}$ is a model of $\Gamma$. Define:</p>
-
-\[\Sigma = \{ \lnot \delta : \delta \in \Delta, \mathfrak{B} \not\vDash \delta \}\]
-
-<p>We show that $T \cup \Sigma$ is a consistent theory. If $T \cup \Sigma$ were inconsistent, then for some $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$, we would have $T \vdash \lnot(\lnot\delta_1 \land \cdots \land \lnot\delta_n)$, so $T \vdash \delta_1 \lor \cdots \lor \delta_n$. Since $\Delta$ is closed under disjunction, $\delta_1 \lor \cdots \lor \delta_n \in \Delta$. By the definition of $\Gamma$, $\delta_1 \lor \cdots \lor \delta_n \in \Gamma$, so $\mathfrak{B} \vDash \delta_1 \lor \cdots \lor \delta_n$. This contradicts $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$.</p>
-
-<p>Since $T \cup \Sigma$ is consistent, by the completeness theorem it has a model. Let this model be $\mathfrak{A}$. Since $\mathfrak{B}$ satisfies all sentences in $\Delta$ that $\mathfrak{A}$ satisfies, by assumption $\mathfrak{B}$ is a model of $T$. □</p>
-
-<p>Now we proceed to the proof of the main theorem. Let $\Delta$ be the set of all $\Pi_1$ sentences in $\mathcal{L}$. Our goal is to show that $\Delta$ contains an axiomatisation of $T$. Since $\Pi_1$ sentences are closed under disjunction, by the lemma it suffices to show the following:</p>
-
-<blockquote>
-  <p>Let $T$ be a theory that is preserved under submodels. For a model $\mathfrak{A}$ of $T$, if $\mathfrak{B}$ satisfies all $\Pi_1$ sentences satisfied in $\mathfrak{A}$, then $\mathfrak{B}$ is also a model of $T$.</p>
-</blockquote>
-
-<p>Following the notation from <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">this article</a>, let us define $E(\mathfrak{B})$. That is, $\mathfrak{M}$ satisfies $E(\mathfrak{B})$ when $\mathfrak{B} \preceq \mathfrak{M}$.</p>
-
-<p>We show that $T \cup E(\mathfrak{B})$ is consistent. If $T \cup E(\mathfrak{B})$ were inconsistent, then there would exist some sentence $\phi(b_1, \dots, b_n)$ from $E(\mathfrak{B})$ such that $T \cup \lbrace  \phi \rbrace $ has no model. Therefore, $\mathfrak{A}$, being a model of $T$, cannot be extended to an $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ model that satisfies $\phi$. That is, the following holds:</p>
-
-\[\mathfrak{A} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)\]
-
-<p>The right-hand side is a $\Pi_1$ sentence, so by assumption $\mathfrak{B} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)$. However, since $\phi(b_1, \dots, b_n) \in E(\mathfrak{B})$, this is a contradiction. Therefore, $T \cup E(\mathfrak{B})$ is consistent and by the completeness theorem has a model $\mathfrak{C}$. Since $\mathfrak{C}$ satisfies $E(\mathfrak{B})$, we have $\mathfrak{B} \preceq \mathfrak{C}$. Meanwhile, since $\mathfrak{C}$ is a model of $T$, which is preserved under submodels, $\mathfrak{B}$ is a model of $T$. ■</p>
-
-<h2 id="applications">Applications</h2>
-
-<p>The first-order logical axiomatisation of groups differs depending on whether the identity element and inverse are represented as separate constant $e$ and function $(-)^{-1}$.</p>
-
-<h4 id="without-representation">Without representation</h4>
-
-<p>Define theory $T_1$ in language $\mathcal{L}_1 = \lbrace  G, \cdot \rbrace $ as follows:</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\exists x \forall y : x \cdot y = y \cdot x = y$</li>
-  <li>$\forall x \exists y \forall z : (x \cdot y) \cdot z = (y \cdot x) \cdot z = z$</li>
-</ul>
-
-<h4 id="with-representation">With representation</h4>
-
-<p>Define theory $T_2$ in language $\mathcal{L}_2 = \lbrace  G, \cdot, e, (-)^{-1} \rbrace $ as follows:</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\forall x : x \cdot e = e \cdot x = x$</li>
-  <li>$\forall x : x \cdot x^{-1} = x^{-1} \cdot x = e$</li>
-</ul>
-
-<p>$T_1$ is not a $\Pi_1$ theory, but $T_2$ is a $\Pi_1$ theory. Therefore, by the Łoś-Tarski theorem, $T_1$ is not submodel-preserving whilst $T_2$ is preserving. That $T_1$ is not submodel-preserving means that a subset of a group being closed under the operation does not always make it a subgroup<small>(for instance, the subset $\mathbb{Z}_{&gt; 0}$ of $\mathbb{Z}$ is closed under the operation but is not a group as it lacks inverses)</small>. Conversely, that $T_2$ is submodel-preserving means the following holds:</p>
-
-<blockquote>
-  <p>For a group $G$, if a subset $H$ of $G$ satisfies the following, then $H$ is a subgroup of $G$:</p>
-
-  <ol>
-    <li>Closed under the operation.</li>
-    <li>Closed under inverses.</li>
-    <li>Contains the identity element of $G$.</li>
-  </ol>
-</blockquote>
-
-<p>However, the following stronger result generally holds:</p>
-
-<blockquote>
-  <p>For a group $G$, if a subset $H$ of $G$ satisfies the following, then $H$ is a subgroup of $G$:</p>
-
-  <ol>
-    <li>Closed under the operation.</li>
-    <li>Closed under inverses.</li>
-  </ol>
-</blockquote>
-
-<p>That is, even in language $\mathcal{L}_3 = \lbrace  G, \cdot, (-)^{-1} \rbrace$ lacking a constant to denote the identity element, the theory of groups is submodel-preserving, which means there exists a $\Pi_1$ theory formalising groups in $\mathcal{L}_3$. With some clever thinking, one can indeed discover that the following theory $T_3$ exists:</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\forall x, y : (x \cdot x^{-1}) \cdot y = y \cdot (x \cdot x^{-1}) = y$</li>
-</ul>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/10/completeness-theorem"> 완전성 정리와 뢰벤하임-스콜렘 정리 </a>
-      </h1>
-    <span class="post-date">10 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <p>괴델의 완전성 정리와 뢰벤하임-스콜렘 정리는 수리논리학의 가장 기본적인 정리들이다. 그래도 기본기를 다져보는 김에, 이 정리들의 증명을 복습해 보았다. 이 글에서 $T$는 언어 $\mathcal{L}$의 1차 논리 이론으로 간주한다.</p>
-
-<h2 id="괴델의-완전성-정리">괴델의 완전성 정리</h2>
-
-<blockquote>
-  <p><strong>괴델의 완전성 정리.</strong> $T \vDash \phi$라면 $T \vdash \phi$이다.</p>
-</blockquote>
-
-<h3 id="증명">증명</h3>
-
-<p>다음의 동치인 진술을 증명한다. (연습문제: 왜 동치인가?)</p>
-
-<blockquote>
-  <p>$T$가 무모순적인<sub>consistent</sub> 이론이라면, $T$는 모델을 가진다.</p>
-</blockquote>
-
-<h4 id="1-mathcall을-스콜렘-언어-mathcall_s로-확장하기">1. $\mathcal{L}$을 스콜렘 언어 $\mathcal{L}_S$로 확장하기</h4>
-
-<p>$\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $T$에 상수 $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ ($\alpha$는 서수)를 추가한 언어를 $\mathcal{L}_S$라고 하자. 여기서 첨자 $S$는 각 상수가 <strong>스콜렘 상수<sub>Skolem constant</sub></strong>의 역할을 담당할 것임을 의미한다.</p>
-
-<h4 id="2-t를-헨킨-이론-t_h로-확장하기">2. $T$를 헨킨 이론 $T_H$로 확장하기</h4>
-
-<p>$\mathcal{L}_S$의 명제 중 하나의 자유변수를 가지는 명제들의 집합의 크기는 $\kappa$와 같으므로, 정렬 원리로부터 $\lbrace  P_\alpha \rbrace _{\alpha \in \kappa}$와 같이 나타낼 수 있다. 이로부터 다음의 문장 집합을 정의한다.</p>
-
-\[\Sigma = \{ Q_\alpha := \exists x P_\alpha \rightarrow P_\alpha(c_\lambda) \mid \alpha \in \kappa \}\]
-
-<p>여기서 $c_\lambda$는 $P_\alpha$와 $Q_\beta \; (\beta &lt; \alpha)$에 등장하지 않는 상수 중 첨자가 최소인 상수이다(그러한 상수가 존재함은 서수가 정렬이라는 사실로부터 보장된다). 이제 $T_H = T \cup \Sigma$로 정의한다. $T_H$를 <strong>헨킨 이론<sub>Henkin theory</sub></strong>이라고 하고, $Q_\alpha$를 헨킨 공리라고 한다.</p>
-
-<h4 id="3-t_h를-극대적으로-무모순적인-이론-overlinet_h로-확장하기">3. $T_H$를 극대적으로 무모순적인 이론 $\overline{T_H}$로 확장하기</h4>
-
-<blockquote>
-  <p><strong>린덴바움 보조정리.</strong> $T$가 무모순적인 이론일 때, $T$를 확장하는 극대적으로 무모순적인<sub>maximally consistent</sub> 이론 $\overline{T}$가 존재한다. 즉, $T \subseteq T’$이고 임의의 $\mathcal{L}$ 문장 $\phi$에 대해 $\phi \in \overline{T}$거나 $\lnot\phi \in \overline{T}$이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $T$를 확장하는 무모순적인 이론들의 모임에 $\subseteq$로 순서 관계를 준 뒤, 초른의 보조정리를 적용한다.</p>
-
-<p>$T$가 무모순적인 이론일 때 $T_H$ 또한 무모순적임을 쉽게 보일 수 있다. 따라서 린덴바움 보조정리에 의해 $T_H$를 확장하는 극대적으로 무모순적인 이론 $\overline{T_H}$가 존재한다.</p>
-
-<h4 id="4-overlinet_h의-표준적canonical-모델-정의하기">4. $\overline{T_H}$의 표준적<sub>canonical</sub> 모델 정의하기</h4>
-
-<p>$c_\alpha \sim c_\beta$를 $(c_\alpha = c_\beta) \in \overline{T_H}$일 때 성립하는 관계로 정의하자. $\overline{T_H}$가 무모순적인 이론이라는 사실로부터 $\sim$이 동치 관계임을 보일 수 있다. 따라서 상수들의 동치류 $[c_\alpha]$가 잘 정의된다. 이제 다음과 같이 $\mathcal{L}_S$의 구조 $\mathfrak{M}$을 정의한다.</p>
-
-<ol>
-  <li>상수: $c_\alpha^{\mathfrak{M}} = [c_\alpha]$</li>
-  <li>술어: $R^{\mathfrak{M}}(c_{\alpha_1}^\mathfrak{M}, \dots, c_{\alpha_n}^{\mathfrak{M}}) \iff \overline{T_H} \vdash R(c_{\alpha_1}, \dots, c_{\alpha_n}) $</li>
-  <li>함수: $f(c_\alpha^\mathfrak{M}) = c_\beta^\mathfrak{M} \iff T_H \vdash \exists x (f(c_\alpha) = x) \rightarrow f(c_\alpha) = c_\beta$</li>
-</ol>
-
-<p>$\overline{T_H}$가 극대적으로 무모순적이므로 2가 잘 정의되고, 헨킨 이론이므로 3이 잘 정의된다. 따라서 $\mathfrak{M}$이 잘 정의되며, $\mathfrak{M}$이 $\overline{T_H}$의 모델임을 쉽게 확인할 수 있다. 그리고 $\mathfrak{M}$은 $T$의 모델이기도 하므로, $T$는 모델을 가진다. ■</p>
-
-<p><strong>Remark 1.</strong> 완전성 정리의 증명은 정렬 원리와 초른의 보조정리를 사용한다는 점에서 선택 공리에 의존적이다. 쾨니히 보조정리나 의존적 선택 공리와 같이 더 약한 유형의 선택 공리로도 증명할 수 있긴 하다.</p>
-
-<p><strong>Remark 2.</strong> <strong>콤팩트성 정리</strong>가 완전성 정리의 따름정리로서 얻어진다. (연습문제)</p>
-
-<p><strong>Remark 3.</strong> 완전성 정리의 증명에서 구축하는 모델의 크기는 $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$를 넘지 않는다. 마지막 단계에서 동치류를 취하므로 $\kappa$와 같다는 보장은 없다.</p>
-
-<h2 id="뢰벤하임-스콜렘-정리">뢰벤하임-스콜렘 정리</h2>
-
-<blockquote>
-  <p><strong>뢰벤하임-스콜렘 정리.</strong> $T$가 무한 모델을 가진다고 하자. 임의의 $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$에 대해, 크기가 $\kappa$인 $T$의 모델이 존재한다.</p>
-</blockquote>
-
-<h3 id="증명-1">증명</h3>
-
-<h4 id="하향-뢰벤하임-스콜렘-정리">하향 뢰벤하임-스콜렘 정리</h4>
-
-<blockquote>
-  <p><strong>하향 뢰벤하임-스콜렘 정리.</strong> $T$는 크기가 $\mathrm{max}(\aleph_0, |\mathcal{L}|)$을 넘지 않는 모델을 가진다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> Remark 2에서 즉시 얻어진다. □</p>
-
-<h4 id="상향-뢰벤하임-스콜렘-정리">상향 뢰벤하임-스콜렘 정리</h4>
-
-<blockquote>
-  <p><strong>상향 뢰벤하임-스콜렘 정리.</strong> $T$가 무한 모델을 가진다고 하자. 임의의 무한 기수 $\kappa$에 대해, 크기가 $\kappa$ 이상인 $T$의 모델이 존재한다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $\mathcal{L}’$을 $\mathcal{L}$에 상수 $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$를 추가한 언어로 정의하자. 다음의 $\mathcal{L}’$-문장 집합을 정의하자.</p>
-
-\[\Sigma = \{ c_\alpha \neq c_\beta : \alpha, \beta \in \kappa, \alpha \neq \beta \}\]
-
-<p>$T’ = T \cup \Sigma$라고 하자. <em>$T$가 무한 모델 $\mathfrak{M}$을 가지므로,</em> 임의의 $T’$의 유한 부분이론은 $\mathfrak{M}$에 의해 만족된다. 따라서 콤팩트성 정리에 의해 $T’$은 무모순적이며, 완전성 정리에 의해 모델을 가진다. $\Sigma$는 $T’$의 모델이 적어도 $\kappa$개의 원소를 가질 것을 요구하므로, $T’$은 크기가 $\kappa$ 이상인 모델을 가지며, 이에 따라 $T$ 또한 크기가 $\kappa$ 이상인 모델을 가진다. □</p>
-
-<h4 id="뢰벤하임-스콜렘-정리-1">뢰벤하임-스콜렘 정리</h4>
-
-<p>$\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $\mathcal{L}’$과 $T’$을 앞선 바와 같이 정의한다.</p>
-
-<p>$\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$이므로 하향 뢰벤하임-스콜렘 정리에 의해 $T’$은 크기가 $\kappa$를 넘지 않는 모델을 가진다. 그런데 상향 뢰벤하임-스콜렘 정리의 증명에서 지적했듯이 $T’$의 모든 모델은 크기가 $\kappa$ 이상이다. 따라서 $T’$은 크기가 정확히 $\kappa$인 모델을 가지며, 이에 따라 $T$ 또한 크기가 정확히 $\kappa$인 모델을 가진다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/10/completeness-theorem/en"> Completeness Theorem and Löwenheim-Skolem Theorem </a>
-      </h1>
-    <span class="post-date">10 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>Gödel’s completeness theorem and the Löwenheim-Skolem theorem are amongst the most fundamental theorems in mathematical logic. To consolidate the fundamentals, I have revisited the proofs of these theorems. In this article, $T$ is considered as a first-order logical theory in language $\mathcal{L}$.</p>
-
-<h2 id="gödels-completeness-theorem">Gödel’s Completeness Theorem</h2>
-
-<blockquote>
-  <p><strong>Gödel’s Completeness Theorem.</strong> If $T \vDash \phi$, then $T \vdash \phi$.</p>
-</blockquote>
-
-<h3 id="proof">Proof</h3>
-
-<p>We prove the following equivalent statement. (Exercise: Why is this equivalent?)</p>
-
-<blockquote>
-  <p>If $T$ is a consistent theory, then $T$ has a model.</p>
-</blockquote>
-
-<h4 id="1-extending-mathcall-to-the-skolem-language-mathcall_s">1. Extending $\mathcal{L}$ to the Skolem language $\mathcal{L}_S$</h4>
-
-<p>Let $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$. Let $\mathcal{L}_S$ be the language obtained by adding constants $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ (where $\alpha$ is an ordinal) to $T$. Here, the subscript $S$ indicates that each constant will serve as a <strong>Skolem constant</strong>.</p>
-
-<h4 id="2-extending-t-to-the-henkin-theory-t_h">2. Extending $T$ to the Henkin theory $T_H$</h4>
-
-<p>Since the size of the set of formulae in $\mathcal{L}_S$ with one free variable is equal to $\kappa$, by the well-ordering principle, we can represent them as $\lbrace  P_\alpha \rbrace _{\alpha \in \kappa}$. From this, we define the following set of sentences:</p>
-
-\[\Sigma = \{ Q_\alpha := \exists x P_\alpha \rightarrow P_\alpha(c_\lambda) \mid \alpha \in \kappa \}\]
-
-<p>where $c_\lambda$ is the constant with the smallest index amongst the constants that do not appear in $P_\alpha$ and $Q_\beta \; (\beta &lt; \alpha)$ (the existence of such a constant is guaranteed by the fact that ordinals are well-ordered). Now we define $T_H = T \cup \Sigma$. We call $T_H$ the <strong>Henkin theory</strong> and $Q_\alpha$ the Henkin axioms.</p>
-
-<h4 id="3-extending-t_h-to-a-maximally-consistent-theory-overlinet_h">3. Extending $T_H$ to a maximally consistent theory $\overline{T_H}$</h4>
-
-<blockquote>
-  <p><strong>Lindenbaum’s Lemma.</strong> When $T$ is a consistent theory, there exists a maximally consistent theory $\overline{T}$ that extends $T$. That is, $T \subseteq T’$ and for any $\mathcal{L}$ sentence $\phi$, either $\phi \in \overline{T}$ or $\lnot\phi \in \overline{T}$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> We order the collection of consistent theories that extend $T$ by $\subseteq$ and apply Zorn’s lemma.</p>
-
-<p>When $T$ is a consistent theory, we can easily show that $T_H$ is also consistent. Therefore, by Lindenbaum’s lemma, there exists a maximally consistent theory $\overline{T_H}$ that extends $T_H$.</p>
-
-<h4 id="4-defining-the-canonical-model-of-overlinet_h">4. Defining the canonical model of $\overline{T_H}$</h4>
-
-<p>Let $c_\alpha \sim c_\beta$ be the relation that holds when $(c_\alpha = c_\beta) \in \overline{T_H}$. From the fact that $\overline{T_H}$ is a consistent theory, we can show that $\sim$ is an equivalence relation. Therefore, the equivalence classes $[c_\alpha]$ of constants are well-defined. We now define a structure $\mathfrak{M}$ for $\mathcal{L}_S$ as follows:</p>
-
-<ol>
-  <li>Constants: $c_\alpha^{\mathfrak{M}} = [c_\alpha]$</li>
-  <li>Predicates: $R^{\mathfrak{M}}(c_{\alpha_1}^\mathfrak{M}, \dots, c_{\alpha_n}^{\mathfrak{M}}) \iff \overline{T_H} \vdash R(c_{\alpha_1}, \dots, c_{\alpha_n}) $</li>
-  <li>Functions: $f(c_\alpha^\mathfrak{M}) = c_\beta^\mathfrak{M} \iff T_H \vdash \exists x (f(c_\alpha) = x) \rightarrow f(c_\alpha) = c_\beta$</li>
-</ol>
-
-<p>Since $\overline{T_H}$ is maximally consistent, (2) is well-defined, and since it is a Henkin theory, (3) is well-defined. Therefore, $\mathfrak{M}$ is well-defined, and we can easily verify that $\mathfrak{M}$ is a model of $\overline{T_H}$. Since $\mathfrak{M}$ is also a model of $T$, $T$ has a model. ■</p>
-
-<p><strong>Remark 1.</strong> The proof of the completeness theorem depends on the axiom of choice in that it uses the well-ordering principle and Zorn’s lemma. It can also be proved using weaker forms of the axiom of choice such as König’s lemma or the axiom of dependent choice.</p>
-
-<p><strong>Remark 2.</strong> The <strong>compactness theorem</strong> is obtained as a corollary of the completeness theorem. (Exercise)</p>
-
-<p><strong>Remark 3.</strong> The size of the model constructed in the proof of the completeness theorem does not exceed $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$. Since we take equivalence classes in the final step, there is no guarantee that it equals $\kappa$.</p>
-
-<h2 id="löwenheim-skolem-theorem">Löwenheim-Skolem Theorem</h2>
-
-<blockquote>
-  <p><strong>Löwenheim-Skolem Theorem.</strong> Suppose $T$ has an infinite model. For any $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$, there exists a model of $T$ of size $\kappa$.</p>
-</blockquote>
-
-<h3 id="proof-1">Proof</h3>
-
-<h4 id="downward-löwenheim-skolem-theorem">Downward Löwenheim-Skolem Theorem</h4>
-
-<blockquote>
-  <p><strong>Downward Löwenheim-Skolem Theorem.</strong> $T$ has a model of size not exceeding $\mathrm{max}(\aleph_0, |\mathcal{L}|)$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> This follows immediately from Remark 2. □</p>
-
-<h4 id="upward-löwenheim-skolem-theorem">Upward Löwenheim-Skolem Theorem</h4>
-
-<blockquote>
-  <p><strong>Upward Löwenheim-Skolem Theorem.</strong> Suppose $T$ has an infinite model. For any infinite cardinal $\kappa$, there exists a model of $T$ of size at least $\kappa$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Let $\mathcal{L}’$ be the language obtained by adding constants $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ to $\mathcal{L}$. Define the following set of $\mathcal{L}’$-sentences:</p>
-
-\[\Sigma = \{ c_\alpha \neq c_\beta : \alpha, \beta \in \kappa, \alpha \neq \beta \}\]
-
-<p>Let $T’ = T \cup \Sigma$. <em>Since $T$ has an infinite model $\mathfrak{M}$,</em> any finite subtheory of $T’$ is satisfied by $\mathfrak{M}$. Therefore, by the compactness theorem, $T’$ is consistent, and by the completeness theorem, it has a model. Since $\Sigma$ requires that any model of $T’$ has at least $\kappa$ elements, $T’$ has a model of size at least $\kappa$, and thus $T$ also has a model of size at least $\kappa$. □</p>
-
-<h4 id="löwenheim-skolem-theorem-1">Löwenheim-Skolem Theorem</h4>
-
-<p>Let $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$. Define $\mathcal{L}’$ and $T’$ as above.</p>
-
-<p>Since $\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$, by the downward Löwenheim-Skolem theorem, $T’$ has a model of size not exceeding $\kappa$. However, as pointed out in the proof of the upward Löwenheim-Skolem theorem, every model of $T’$ has size at least $\kappa$. Therefore, $T’$ has a model of size exactly $\kappa$, and thus $T$ also has a model of size exactly $\kappa$. ■</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

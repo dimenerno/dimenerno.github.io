@@ -431,6 +431,641 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/26/quine-two-dogmas/en"> Quine, Two Dogmas of Empiricism </a>
+      </h1>
+    <span class="post-date">26 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'">
+        Philosophy
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/philosophy-of-language/'">
+        Philosophy of Language
+      </div>
+      
+    </div>
+     <h2 id="overview">Overview</h2>
+
+<p>The distinction between analytic and synthetic propositions, and the verification principle, are the two pillars of logical positivism. However, in <em>Two Dogmas of Empiricism</em>, Quine argues that both the analytic-synthetic distinction and the verification principle are ungrounded. Quine argues that the definition of analyticity is circular. Furthermore, he argues that propositions cannot be verified in isolation, and that only the entire web of beliefs can stand up to verification. The arguments Quine presents in <em>Two Dogmas</em> not only undermine logical positivism but also suggest skepticism about meaning and a radical form of holism. This post also examines some objections to Quine’s arguments.</p>
+
+<h2 id="1-quines-attack-on-the-analytic-synthetic-distinction">1. Quine’s Attack on the Analytic-Synthetic Distinction</h2>
+
+<p>Quine claims that all previous attempts to define analyticity are unsatisfactory. He examines the definitions provided by Kant and Frege as examples.</p>
+
+<h3 id="11-kants-definition-of-analyticity">1.1. Kant’s Definition of Analyticity</h3>
+
+<p>Kant’s first definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>“All $a$ are $b$” is analytic $\iff$ $a$ is conceptually contained in b</p>
+</blockquote>
+
+<p>However, not only this definition relies on the metaphorical expression “conceptually contained”, but it is also limited to propositions with a subject-predicate structure. Kant’s second definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>$P$ is analytic $\iff$ $\lnot P$ implies a contradiction</p>
+</blockquote>
+
+<p>But this definition requires an explanation of what a contradiction is. If contradiction is defined as “a proposition that is analytically false,” then this is merely a circular definition.</p>
+
+<h3 id="12-freges-definition-of-analyticity">1.2. Frege’s Definition of Analyticity</h3>
+
+<p>Frege’s definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>$P$ is analytic $\iff$ $P$ is a law of logic, or is derivable solely from the definitions of terms involved and the laws of logic</p>
+</blockquote>
+
+<p>By “law of logic”, Quine understands it to be a sentence that is true regardless of how the non-logical terms are interpreted. For example, $(φ → ψ) → (¬ψ → ¬φ)$ is a law of logic because it is true no matter how $φ$ and $ψ$ are interpreted. Accordingly, “All bachelors are unmarried” is analytic as it can be derived solely from the definition of “bachelor” and laws of logic as follows:</p>
+
+<ol>
+  <li>Bachelor(x) := ¬Married(x) ∧ Male(x) (definition of bachelor)</li>
+  <li>∀x [ ¬Married(x) ∧ Male(x) → ¬Married(x) ] (law of logic)</li>
+  <li>∴ ∀x [ Bachelor(x) → ¬Married(x) ] (from 1 and 2)</li>
+</ol>
+
+<h3 id="13-quines-attack-on-synonymy">1.3. Quine’s Attack on Synonymy</h3>
+
+<p><strong>Quine challenges Frege’s definition by questioning how we can determine the definition of a word.</strong> That is, he questions under what conditions “$a$ and $b$ are <em>synonymous</em>” holds. Quine examines several possible answers to this question. The first attempt is as follows:</p>
+
+<blockquote>
+  <p>(i) $a$ and $b$ are synonymous $\iff$ $a$ and $b$ are listed as synonyms in the dictionary.</p>
+</blockquote>
+
+<p>But clearly this approach is flawed, since a dictionary merely records already known synonyms. What we want to know is the criterion by which dictionary compilers list two words as synonyms. The second attempt is as follows:</p>
+
+<blockquote>
+  <p>(ii) $a$ and $b$ are synonymous $\iff$ for any predicate $P$, $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>But this too is inadequate. For example, let $a$ = bachelor, $b$ = unmarried man, and $P(x)$: $x$ is a two-syllable word. Although $a$ and $b$ are synonymous, $P(a)$ is true while $P(b)$ is false.</p>
+
+<p>To address this, Quine introduces the notion of <strong>cognitive meaning</strong>. Cognitive meaning is related only to the referent or concept, and excludes aspects such as word length, poetic mood, etc. Thus, (ii) is revised as follows:</p>
+
+<blockquote>
+  <p>(iii) $a$ and $b$ are synonymous $\iff$ for any predicate $P$ <em>relevant only to cognitive meaning,</em> $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>However, this is also inadequate. <strong>This is because the extension of “any predicate” is language-relative.</strong> (This is partly related to Quine’s skepticism about second-order logic.) For example, let us call creatures with a heart “cordate” ($c$) and those with a kidney “renate” ($r$). All known species either have both a heart and a kidney or neither. Thus in a language $L_1$ that contains only the predicate $\mathrm{HasHeart}(x)$, both $\mathrm{HasHeart}(c)$ and $\mathrm{HasHeart}(r)$ are true, so cordate and renate are synonymous. Yet in a language $L_2$ that contains the predicate $\mathrm{NecessarilyHasHeart}(x)$, $\mathrm{NecessarilyHasHeart}(c)$ is true but $\mathrm{NecessarilyHasHeart}(r)$ is false, so they are no longer synonymous.</p>
+
+<p>Thus, (iii) makes synonymy language-dependent. Indeed, for (iii) to be valid, it seems that the assumed language must include modality. Accordingly, (iii) is revised as follows:</p>
+
+<blockquote>
+  <p>(iv) $a$ and $b$ are synonymous $\iff$ in a language $L$ with modal expressions, for any predicate $P$ relevant only to cognitive meaning, $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>However, Quine claims that even this is inadequate. <strong>For now the meaning of modality must be explained.</strong> That is, he now asks under what conditions “$a$ is necessarily $b$” holds. To define necessity as follows is to give a circular definition:</p>
+
+<blockquote>
+  <p>$a$ is necessarily $b$ $\iff$ “All a are b” is analytically true.</p>
+</blockquote>
+
+<p>Therefore, Frege’s definition of analyticity is circular unless either a valid definitions of synonymy, or necessity, is provided.</p>
+
+<h2 id="2-reflections-on-quines-attack">2. Reflections on Quine’s Attack</h2>
+
+<p>Quine’s attack targets synonymy, but its implications are much broader.</p>
+
+<h3 id="21-logical-skepticism">2.1. Logical Skepticism</h3>
+
+<p>First, Quine’s attack also undermines his own definition of laws of logic. For example, according to Quine, $P(x) ∧ Q(x) → P(x)$ is a law of logic because it is true no matter what is substituted for $P, Q, x$. <strong>However, for this criterion to be coherent, the terms substituted for x must be synonymous.</strong></p>
+
+<p>For example, let $P(x):$ $x$ is large, $Q(x):$ $x$ is wet, and $x$ = bank. Then, $P(x) ∧ Q(x) → P(x)$ becomes “A large and wet bank is a large bank.” For this sentence to be true, the two “bank”s of the subject and predicate must be synonymous<sub>A large and wet riverland is a large riverland</sub>. Otherwise, the sentence is false<sub>A large and wet riverland is a large financial establishment</sub>. Thus, Quine’s definition of law of logic also depends on synonymy.</p>
+
+<h3 id="22-semantic-skepticism">2.2. Semantic Skepticism</h3>
+
+<p>Second, Quine’s attack renders translation between languages fictitious. If someone asks for the translation of “Dieser Apfel ist rot,” we would say “This apple is red.” That this is the <em>correct</em> translation relies upon ‘dieser’, ‘Apfel’, ‘ist’, and ‘rot’ being respectively synonymous with ‘this’, ‘apple’, ‘is’, and ‘red’. Generally, the following seems to hold:</p>
+
+<blockquote>
+  <p>$φ$ is a translation of $ψ$ $\iff$ $φ$ is synonymous with $ψ$.</p>
+</blockquote>
+
+<p>Hence if the notion in the right side is ambiguous, then that in the left is also ambiguous. <strong>Consequently, Quine’s skepticism about synonymy extends to skepticism about translation, and hence to skepticism about meaning.</strong> (For an argument connecting skepticism about translation to skepticism about meaning, see forthcoming article.)</p>
+
+<h2 id="3-objections-to-quines-attack-on-the-analytic-synthetic-distinction">3. Objections to Quine’s Attack on the Analytic-Synthetic Distinction</h2>
+
+<p>Quine’s attack has the following structure:</p>
+
+<blockquote>
+  <p>If the definition of a concept $C$ is circular, then $C$ is unintelligible.</p>
+</blockquote>
+
+<p>Let us call this <em>Quine’s Socratic Condition</em>. <strong>It may be the case that Quine’s Socratic Condition is too strong of a requirement.</strong> For example, “red” or “blue” cannot be defined in a non-circular way — a person born blind cannot “make colors appear before them”, no matter how many utterances involving color words are given to them — but that does not mean that color words are unintelligible. Indeed, Davidson and others have argued that language learning requires some primitive terms — i.e. were there a language all of whose concepts satisfy the Socratic Condition, that language would be unlearnable.</p>
+
+<p>Nevertheless, Quine might argue that although not every concept should satisfy the Socratic Condition, especially those that relate to immediate sense data, certain vaguer concepts—such as analyticity—must. Consider the following sentence:</p>
+
+<blockquote>
+  <p>Everything green has an extension.</p>
+</blockquote>
+
+<p>Whether this sentence is analytic is ambiguous. Quine claims that this ambiguity arises not because of ambiguity in “green” or “extension,” but of “analytic.” This, he argues, shows that analyticity, unlike color words, cannot be legitimised without a rigorous definition.</p>
+
+<p>In response, Grice and Strawson argue that the ambiguity in whether “Everything green has an extension” is analytic arises not from “analytic,” but from “everything green.” For example, it is unclear whether a “green flash” counts as “everything green,” so the truth value of the sentence remains undetermined. On the other hand, analyticity seems to be used in a consistent way by almost every philosopher and every layman, so there is no reason to think of it so ambiguous as to require the Socratic Condition.</p>
+
+<h2 id="4-quines-critique-of-logical-positivism">4. Quine’s Critique of Logical Positivism</h2>
+
+<h3 id="41-critique-of-reductionism">4.1. Critique of Reductionism</h3>
+
+<p>According to logical positivism, every truth is either analytic or synthetic. Analytic truths can be verified through logical analysis, and synthetic truths can be verified through sense data. Thus, the meaning of a sentence is generally taken to be a logical compound of sense data. This is the reductionist thesis of positivism. For example, the meaning of “The cat is on the table or in the box” is analyzed into sense data corresponding to “cat,” “table,” “box,” and logical connectives such as “or” and “is.”</p>
+
+<p><strong>However, Quine argues that semantic reductionists bear the burden of proof to show that it is actually possible to reduce natural language sentences to logical compounds of sense data.</strong> He refers to Carnap’s attempt in <em>The Logical Structure of the World</em> to reconstruct natural language solely from sense data and logical connectives, but notes that, as Carnap himself admitted, the project failed.</p>
+
+<p>Quine claims that reductionism cannot be justified unless this burden of proof is met.</p>
+
+<h3 id="42-critique-of-verification-principle">4.2. Critique of Verification Principle</h3>
+
+<p>According to logical positivism, the meaning of a sentence is its verifiability. Under this verificationist theory of meaning, analyticity can be defined as follows:</p>
+
+<blockquote>
+  <p>P is analytic $\iff$ P is true regardless of the outcome of verification</p>
+</blockquote>
+
+<p>However, Quine argues that the logical positivist definition of analyticity is also problematic. <strong>Quine claims that it is impossible to verify individual propositions in isolation,</strong> hence the verificationist theory of meaning cannot account for the meaning of individual sentences.</p>
+
+<p>Consider the following proposition:</p>
+
+<blockquote>
+  <p>(i) Water boils at 100°C</p>
+</blockquote>
+
+<p>One way to verify this proposition is to put a thermometer in boiling water. But if the thermometer reads 102°C, should we reject (i)? Not necessarily. Instead, we might reject “the thermometer is working,” “the water is pure,” “superheating did not occur,” “I read the thermometer correctly,” and so on.</p>
+
+<p><strong>Thus, Quine argues that what is subject to verification is always the entire web of beliefs.</strong> This is his holistic epistemology. In the above case, what is being tested is not the proposition “water boils at 100°C,” but the entire web of beliefs: “this is pure water, the thermometer is working, superheating did not occur, water boils at 100°C, …” and so on.</p>
+
+<h3 id="43-implications-of-epistemological-holism">4.3. Implications of Epistemological Holism</h3>
+
+<p>Quine’s holism is radical in that it applies to all propositions. Quine claims that there is no sharp boundary between domains within the web of beliefs. Thus, mathematics does not enjoy a privileged epistemological status over science or philosophy. This leads to Quine’s naturalism.</p>
+
+<p>For Quien, that a proposition $φ$ is <em>certain</em>, does not mean that $φ$ is true in all cases — something which cannot be verified in isolation — but that $φ$ is located deep within the web of beliefs. When evidence contrary to the web of beliefs is presented, we must revise the web so as to minimise the likelihood of future contrary evidence. Hence in a pragmatic spirit, it is preferable to revise beliefs at the periphery rather than those at the core. Thus, beliefs at the core persist almost permanently and acquire the status of certainty. <strong>However, if it becomes more practical to abandon a core belief—such as a law of logic—Quine holds that it is appropriate to do so.</strong></p>
+
+<h3 id="44-objections-to-epistemological-holism">4.4. Objections to Epistemological Holism</h3>
+
+<p><strong>Crispin Wright argues that Quine’s holism is incoherent because it leads to infinite regress.</strong> Consider a web of beliefs consisting of the following two elements:</p>
+
+<ul>
+  <li>A scientific theory of the world $T$</li>
+  <li>A logical system $\mathcal{S}$</li>
+</ul>
+
+<p>Suppose that $p → q$ is a law derivable from $T$ and $\mathcal{S}$. For example, if $T$ is Newtonian mechanics and $\mathcal{S}$ is first-order logic, $p$ might be “photons have no mass” and $q$ might be “photons are not affected by gravity.”</p>
+
+<p>Now suppose that, contrary to $T$ and $\mathcal{S}$, an observation is made that supports $p$ and $¬q$—for example, gravitational lensing. According to Quine’s holism, the following four propositions are all candidates for rejection:</p>
+
+<ol>
+  <li>Reject $p ∧ ¬q$ (the gravitational lensing observation was mistaken)</li>
+  <li>Reject $T$ (Newtonian mechanics is false)</li>
+  <li>Reject $\mathcal{S}$ (first-order logic is false)</li>
+  <li>Reject $T \vdash_\mathcal{S} p → q$ (the derivation of $p → q$ from Newtonian mechanics and first-order logic is mistaken)</li>
+</ol>
+
+<p>Which of these four to reject is determined by pragmatic considerations. Suppose, for example, that pragmatism suggests the following:</p>
+
+<ol start="5">
+  <li>It is most practical to reject (4).</li>
+</ol>
+
+<p>However, Wright points out that (5) itself is part of the web of beliefs. Thus, instead of rejecting (4), we could choose to reject (5). Conversely, to avoid rejecting (5), the following belief is required:</p>
+
+<ol start="6">
+  <li>It is practical not to reject (5).</li>
+</ol>
+
+<p>But to avoid rejecting (6), we require the belief that it is practical not to reject (6), and so on, leading to infinite regress. Thus, Wright argues that to avoid infinite regress in epistemology, some beliefs—such as (4)—must be placed outside the scope of pragmatic considerations.</p>
+
+<h2 id="references">References</h2>
+
+<p>Quine, Willard V. O. (1951). Two Dogmas of Empiricism. Philosophical Review 60 (1):20–43.</p>
+
+<p>Miller, Alexander (1998). Philosophy of Language. New York: Routledge.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/16/stone-space-compactness"> 스톤 공간과 콤팩트성 정리 </a>
+      </h1>
+    <span class="post-date">16 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <p>다음은 학부 수리논리학의 유명한 정리이다.</p>
+
+<blockquote>
+  <p><strong>콤팩트성 정리.</strong> $\mathcal{L}$의 이론 $T$에 대해, $T$의 모든 유한한 부분이론이 모델을 가진다면, $T$는 모델을 가진다.</p>
+</blockquote>
+
+<p>그런데 왜 이 정리의 이름은 콤팩트성 정리인 것일까? 잘 들여다 보면, 위 정리의 진술은 다음과 같이 적을 수 있다.</p>
+
+<blockquote>
+  <p>임의의 $\mathcal{L}$-문장들의 집합 $T$가 모델을 가지지 않는다면, 어떤 유한한 부분집합 $T’ \subset T$가 존재하여 $T’$이 모델을 가지지 않는다.</p>
+</blockquote>
+
+<p>확실히 이는 위상수학에서 콤팩트의 정의와 유사하다.</p>
+
+<blockquote>
+  <p>임의의 열린집합들의 모임 $\mathcal{C}$가 전채 공간의 덮개라면, 어떤 유한한 부분집합 $\mathcal{C}’ \subset \mathcal{C}$가 존재하여 $\mathcal{C}’$가 전체 공간을 덮는다.</p>
+</blockquote>
+
+<p>이 유사성은 단순한 관찰 이상으로 확대될 수 있다. 아이디어는 각각의 완전<sub>complete</sub>한 $\mathcal{L}$-이론을 공간의 한 점으로 본 뒤, 이들 모임에 적절한 위상을 부여하였을 때, 콤팩트성 정리가 해당 공간이 콤팩트할 필요충분조건이 되는 것이다. 먼저 다음을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{L}$-구조 $\mathfrak{A}$에 대해, $\mathrm{Th}(\mathfrak{A})$를 $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합으로 정의한다.</p>
+</blockquote>
+
+<p>참고로 위 집합은 <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이전 글</a>에서 초등적 동등성을 설명하며 정의한 바 있다.</p>
+
+<p>$\mathrm{Th}(\mathfrak{A})$는 무모순적이며 형태론적으로 완전한 이론임이 자명하다. 반대로, 이론 $T$가 무모순적이며 형태론적으로 완전한 이론일 때, 괴델의 완전성 정리에 의해 $T$는 모델 $\mathfrak{A}$를 가지며, $T = \mathrm{Th}(\mathfrak{A})$이다. 따라서 $\mathrm{Th}$는 모든 무모순적이며 형태론적으로 완전한 이론을 생성한다.</p>
+
+<p>이제 위상공간의 배경이 될 공간을 정의해 보자. 먼저 언어 $\mathcal{L}$에 대해, 공간 $\mathcal{S}$를 다음과 같이 정의한다.</p>
+
+\[\mathcal{S} = \{ \mathrm{Th}(\mathfrak{A}) : \mathfrak{A}\text{ is a $\mathcal{L}$-structure } \}\]
+
+<p>앞서 말했듯이 괴델의 완전성 정리에 의해 $\mathcal{S}$는 무모순적이며 형태론적으로 완전한 이론들의 모임과 사실상 같다. 그러나 후술하겠듯이, 완전성 정리를 사용하지 않더라도 $\mathcal{S}$의 위상적 콤팩트성과 1차 논리의 콤팩트성 정리가 동치임을 보이는 것이 목적이기 때문에, 일단은 $\mathcal{S}$를 그저 $\mathrm{Th}(\mathfrak{A})$의 모임으로서 생각하는 것이 낫다.</p>
+
+<p>이제 $\mathcal{S}$의 위상 기저를 정의하자. $\mathcal{L}$-문장 $\phi$에 대해, 다음과 같이 정의한다.</p>
+
+\[U_\phi = \{ T \in \mathcal{S} : \phi \in T \}\]
+
+<p>자명하게, $U_\phi \cap U_\psi = U_{\phi \land \psi}$이다. 즉, $U_\phi$의 모임 $\mathcal{B}$는 유한 교집합에 대해 닫혀 있다. 또한 $\mathcal{B}$는 $\mathcal{S}$를 덮는다. $T \in \mathcal{S}$에 대해, $\phi \in T$라면 $T \in U_\phi$이기 때문이다. 따라서 $\mathcal{B}$는 위상 기저의 조건을 만족하며, 이에 따라 $\mathcal{B}$로 생성되는 위상을 $\mathcal{S}$에 부여하자.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{S}$는 다음의 특징을 가진다.</p>
+
+  <ol>
+    <li>하우스도르프이다.</li>
+    <li>완전 비연결 공간<sub>totally disconnected space</sub>이다. 즉, $\mathcal{S}$에서 연결된 공간은 오직 홑원소 집합뿐이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$T_1, T_2 \in \mathcal{S}$에 대해, $T_1 \neq T_2$라면 어떤 문장 $\phi$가 존재하여 $\phi \in T_1, \lnot\phi \in T_2$이다. 따라서 $U_\phi, U_{\lnot \phi}$가 $T_1$과 $T_2$를 각각 분리한다.</li>
+  <li>$T_1$ 공간이 완전 비연결 공간일 충분조건은 모든 원소가 열린닫힌집합<sub>clopen</sub>인 기저를 가지는 것이다. $U_\phi^c =U_{\lnot \phi}$에 의해 $\mathcal{B}$는 이 조건을 만족한다. ■</li>
+</ol>
+
+<blockquote>
+  <p><strong>정리.</strong> 1차 논리의 콤팩트성 정리는 $\mathcal{S}$가 콤팩트 공간인 것과 동치이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $\mathcal{C} \subset \mathcal{B}$가 $\mathcal{S}$를 덮을 필요충분조건은, $\Gamma = \lbrace \lnot \phi : U_\phi \in \mathcal{C} \rbrace $가 모델을 가지지 않는 것이다.</p>
+</blockquote>
+
+<p><em>증명.</em> 만약 $\Gamma$가 모델 $\mathfrak{A}$를 가진다면 $T = \mathrm{Th}(\mathfrak{A})$가 $\mathcal{C}$에 의해 덮여지지 않는다. 한편, $\mathcal{C}$가 $\mathcal{S}$를 덮지 못한다면 어떤 구조 $\mathfrak{A}$가 존재하여 $\phi \in \Gamma$에 대해 $\phi \notin \mathfrak{A}$이고, 이는 $\mathfrak{A}$가 $\Gamma$의 모델임을 의미한다. □</p>
+
+<p>이제 본 정리를 증명하자. $\mathcal{S}$가 콤팩트할 필요충분조건은 임의의 기저 원소들로 이루어진 $\mathcal{S}$의 덮개가 유한 부분덮개를 가지는 것이다. $\mathcal{C} \subset \mathcal{B}$에 대해, $\mathcal{C}$가 $\mathcal{S}$를 덮을 필요충분조건은 (보조정리에 의해) $\Gamma$가 모델을 가지지 않는 것이다. 따라서,</p>
+
+<p>$\mathcal{S}$가 콤팩트하다</p>
+
+<p>$\Leftrightarrow$ 임의의 기저 원소들의 모임 $\mathcal{C}$가 덮개라면, 유한 부분덮개가 존재한다.</p>
+
+<p>$\Leftrightarrow$ 임의의 이론 $\Gamma$가 모델을 가지지 않는다면, 모델을 가지지 않는 유한 부분이론이 존재한다.</p>
+
+<p>$\Leftrightarrow$ 콤팩트성 정리 ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 완전 비연결인 콤팩트 하우스도르프 공간을 <strong>스톤 공간<sub>Stone space</sub></strong>이라고 부른다.</p>
+</blockquote>
+
+<p>1차 논리의 콤팩트성 정리에 의해, $\mathcal{S}$는 스톤 공간이다. 이와 같이 논리적 구조를 위상적으로 분석하는 접근은 <strong>스톤 이중성<sub>Stone duality</sub></strong>이라고 불리는, 현대수학의 깊은 주제와 연관이 있다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/16/stone-space-compactness/en"> Stone Spaces and the Compactness Theorem </a>
+      </h1>
+    <span class="post-date">16 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>The following is a famous theorem from undergraduate mathematical logic.</p>
+
+<blockquote>
+  <p><strong>Compactness Theorem.</strong> For a theory $T$ in language $\mathcal{L}$, if every finite subtheory of $T$ has a model, then $T$ has a model.</p>
+</blockquote>
+
+<p>But why is this theorem called the compactness theorem? Upon closer examination, the statement of the above theorem can be written as follows:</p>
+
+<blockquote>
+  <p>If an arbitrary set of $\mathcal{L}$-sentences $T$ has no model, then there exists some finite subset $T’ \subset T$ such that $T’$ has no model.</p>
+</blockquote>
+
+<p>This is certainly similar to the definition of compactness in topology.</p>
+
+<blockquote>
+  <p>If an arbitrary collection of open sets $\mathcal{C}$ covers the entire space, then there exists some finite subset $\mathcal{C}’ \subset \mathcal{C}$ such that $\mathcal{C}’$ covers the entire space.</p>
+</blockquote>
+
+<p>This similarity can be extended beyond mere observation. The idea is to regard each complete $\mathcal{L}$-theory as a point in a space, and when we endow this collection with an appropriate topology, the compactness theorem becomes a necessary and sufficient condition for the corresponding space to be compact. First, we define the following:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For an $\mathcal{L}$-structure $\mathfrak{A}$, we define $\mathrm{Th}(\mathfrak{A})$ as the set of all $\mathcal{L}$-sentences that are true in $\mathfrak{A}$.</p>
+</blockquote>
+
+<p>Incidentally, this set was defined in a <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">previous post</a> when explaining elementary equivalence.</p>
+
+<p>It is clear that $\mathrm{Th}(\mathfrak{A})$ is a consistent and syntactically complete theory. Conversely, when a theory $T$ is consistent and syntactically complete, by Gödel’s completeness theorem, $T$ has a model $\mathfrak{A}$, and $T = \mathrm{Th}(\mathfrak{A})$. Therefore, $\mathrm{Th}$ generates all consistent and syntactically complete theories.</p>
+
+<p>Now let us define the space that will serve as the background for our topological space. First, for a language $\mathcal{L}$, we define the space $\mathcal{S}$ as follows:</p>
+
+\[\mathcal{S} = \{ \mathrm{Th}(\mathfrak{A}) : \mathfrak{A}\text{ is a $\mathcal{L}$-structure } \}\]
+
+<p>As mentioned earlier, by Gödel’s completeness theorem, $\mathcal{S}$ is essentially the same as the collection of consistent and syntactically complete theories. However, as we shall see later, since our goal is to show that the topological compactness of $\mathcal{S}$ is equivalent to the compactness theorem of first-order logic without using the completeness theorem, it is better to think of $\mathcal{S}$ simply as a collection of $\mathrm{Th}(\mathfrak{A})$ for now.</p>
+
+<p>Now let us define a topological basis for $\mathcal{S}$. For an $\mathcal{L}$-sentence $\phi$, we define:</p>
+
+\[U_\phi = \{ T \in \mathcal{S} : \phi \in T \}\]
+
+<p>Trivially, $U_\phi \cap U_\psi = U_{\phi \land \psi}$. That is, the collection $\mathcal{B}$ of $U_\phi$ is closed under finite intersections. Moreover, $\mathcal{B}$ covers $\mathcal{S}$. For $T \in \mathcal{S}$, if $\phi \in T$, then $T \in U_\phi$. Therefore, $\mathcal{B}$ satisfies the conditions for a topological basis, and we endow $\mathcal{S}$ with the topology generated by $\mathcal{B}$.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $\mathcal{S}$ has the following properties:</p>
+
+  <ol>
+    <li>It is Hausdorff.</li>
+    <li>It is a totally disconnected space. That is, the only connected subspaces in $\mathcal{S}$ are singleton sets.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>For $T_1, T_2 \in \mathcal{S}$, if $T_1 \neq T_2$, then there exists some sentence $\phi$ such that $\phi \in T_1$ and $\lnot\phi \in T_2$. Therefore, $U_\phi$ and $U_{\lnot \phi}$ separate $T_1$ and $T_2$ respectively.</li>
+  <li>A sufficient condition for a space to be totally disconnected is to have a basis where every element is clopen. Since $U_\phi^c =U_{\lnot \phi}$, $\mathcal{B}$ satisfies this condition. ■</li>
+</ol>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The compactness theorem of first-order logic is equivalent to $\mathcal{S}$ being a compact space.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> A necessary and sufficient condition for $\mathcal{C} \subset \mathcal{B}$ to cover $\mathcal{S}$ is that $\Gamma = \lbrace \lnot \phi : U_\phi \in \mathcal{C} \rbrace $ has no model.</p>
+</blockquote>
+
+<p><em>Proof.</em> If $\Gamma$ has a model $\mathfrak{A}$, then $T = \mathrm{Th}(\mathfrak{A})$ is not covered by $\mathcal{C}$. On the other hand, if $\mathcal{C}$ does not cover $\mathcal{S}$, then there exists some structure $\mathfrak{A}$ such that for $\phi \in \Gamma$, $\phi \notin \mathfrak{A}$, which means that $\mathfrak{A}$ is a model of $\Gamma$. □</p>
+
+<p>Now we prove the main theorem. A necessary and sufficient condition for $\mathcal{S}$ to be compact is that any cover of $\mathcal{S}$ consisting of basis elements has a finite subcover. For $\mathcal{C} \subset \mathcal{B}$, a necessary and sufficient condition for $\mathcal{C}$ to cover $\mathcal{S}$ is (by the lemma) that $\Gamma$ has no model. Therefore,</p>
+
+<p>$\mathcal{S}$ is compact</p>
+
+<p>$\Leftrightarrow$ If any collection of basis elements $\mathcal{C}$ is a cover, then there exists a finite subcover.</p>
+
+<p>$\Leftrightarrow$ If any theory $\Gamma$ has no model, then there exists a finite subtheory that has no model.</p>
+
+<p>$\Leftrightarrow$ Compactness theorem ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A compact Hausdorff space that is totally disconnected is called a <strong>Stone space</strong>.</p>
+</blockquote>
+
+<p>By the compactness theorem of first-order logic, $\mathcal{S}$ is a Stone space. This approach of analysing logical structures topologically is connected to a deep topic in modern mathematics called <strong>Stone duality</strong>.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/15/quantifier-elimination"> 양화사 제거 </a>
+      </h1>
+    <span class="post-date">15 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/모델론/'">
+        모델론
+      </div>
+      
+    </div>
+     <p><a href="https://dimenerno.github.io/2025/05/08/saturation/">이전 글</a>에서, $\mathcal{L}$-구조 $\mathfrak{A}$에서 <strong>정의가능</strong>한 집합들이 무엇인지에 관해 알아 보았다. $S \subseteq A$가 $\mathfrak{A}$에서 특정 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>에 속하는 명제 $\phi$로 정의가능할 때, $S$가 그 위계에 속한다고 하자. 예를 들어 $S$가 $\Pi_1$ 문장으로 정의 가능할 때, $S \in \Pi_1$이다.</p>
+
+<p>예를 들어 표준 산술 모형 $\mathfrak{N} = (\mathbb{N}, 0, S, +)$에서 짝수의 집합은 $\Sigma_1$이다.</p>
+
+\[\{ x \in \mathbb{N} : \mathfrak{N} \vDash \exists y (y + y = x) \}\]
+
+<p>집합의 구조는 위계가 높아질수록 까다롭기 때문에, 가장 다루기 이상적인 상황은 모든 정의가능한 집합이 $\Delta_0$으로 환원되는 상황이다. 이같은 특징을 가지는 이론을 양화사 제거 가능한 이론이라고 부른다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{L}$-이론 $T$가 <strong>양화사 제거<sub>quantifier elimination</sub></strong> 가능하다는 것은 임의의 $\mathcal{L}$-명제 $\phi$에 대해 어떤 $\Delta_0$ $\mathcal{L}$-명제 $\psi$가 존재하여 다음이 성립하는 것이다.</p>
+
+\[T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))\]
+</blockquote>
+
+<blockquote>
+  <p><strong>양화사 제거 판별법.</strong> $T$가 양화사 제거 가능할 충분조건은, $T$가 $\Sigma_1$ 명제에 대해 양화사 제거 가능한 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 먼저 임의의 $\Delta_0$ 명제 $\psi$에 대해 $\forall x \psi$가 양화사 제거 가능함을 보이자. $\forall x \psi$는 $\lnot\exists x \lnot \psi$와 동치이고, 가정에 의해 $\exists x \lnot \psi$는 어떤 양화사가 없는 명제 $\theta$와 동치이다. 따라서 $\forall x \psi$는 $\lnot \theta$와 동치이며, 양화사 제거 가능하다. 이제 양화사 개수에 대한 귀납법을 적용하면 임의의 명제에 대해 양화사 제거가 가능함이 보여진다. ■</p>
+
+<p>어떤 이론이 양화사 제거 가능할 경우 해당 이론이 완전함을 보일 수 있는 경우가 종종 있다. 일례로 다음을 보자.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 조밀 무계 전순서 이론 $T$는 양화사 제거 가능하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 먼저 다음 개념을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 유한한 변수들의 <strong>배열<sub>arrangement</sub></strong>이란, 변수들의 순서 관계의 무모순적인 논리곱을 의미한다.</p>
+</blockquote>
+
+<p>예를 들어 다음은 $\lbrace v_1, v_3, v_7, v_8 \rbrace$의 배열이다.</p>
+
+\[(v_1 &lt; v_3) \land (v_8 \land v_7) \land (v_3 = v_8)\]
+
+<p>증명의 핵심은 다음의 보조정리이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $\mathcal{L} = (&lt;)$의 $\Delta_0$ 명제는 전순서 이론에서 모순과 동치이거나, 어떤 배열들의 논리합과 동치이다.</p>
+</blockquote>
+
+<p>보조정리를 인정하고 본 정리를 증명해 보자. 양화사 제거 판별법에 의해, $\psi \in \Delta_0$에 대해 $\exists x \psi$가 양화사 제거 가능함을 보이면 된다. 보조정리에 의해 $\psi$는 $\theta_1 \lor \cdots \lor \theta_n$과 동치이며, 각 $\theta_i$는 변수들의 배열이다. $\exists$의 분배법칙에 의해,</p>
+
+\[T \vdash \exists x \psi \leftrightarrow \Big( (\exists x \theta_1) \lor \cdots (\exists x \theta_n) \Big)\]
+
+<p>이다. 그런데 조밀 무계 전순서에서는 배열 $\theta$에 대해, $\exists x \theta$는 $\theta$의 순서 관계를 한줄로 쭉 적은 뒤, $x$를 지운 명제와 동치이다. 예를 들어 $\exists x (v_1 &lt; x) \land (x &lt; v_2)$는 $\exists x (v_1 &lt; x &lt; v_2)$로 적을 수 있고, 이는 조밀성에 의해 $v_1 &lt; v_2$와 동치이다. 한편 $\exists x (v_1 &lt; x)$는 무계성에 의해 항진이며, $v_1 = v_1$과 동치이다. 따라서 위 식의 우항은 양화사 제거 가능하며, 이에 따라 $\exists x \psi$ 또한 양화사 제거 가능하다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $T$는 완전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T$가 양화사 제거 가능하므로, 표준 양화사 제거 형식에 의해, 최대 1개의 자유변수 $x$를 가지는 임의의 $\Delta_0$ 문장 $\psi \in \Delta_0$에 대해 $T \vdash \psi$이거나 $T \vdash \lnot\psi$임을 보이면 된다. 보조정리에 의해 $\psi$는 $x$의 배열과 동치이다. 그런데 가능한 $x$의 배열은 $x &lt; x$와 $x = x$, 두 가지밖에 없다. 전자의 경우 모순이므로 $T \vdash \lnot\psi$이고, 후자의 경우 항진이므로 $T \vdash \psi$이다. ■</p>
+
+<p>$T$가 양화사 제거 가능한 것과 대조적으로, 조밀 유계 전순서 이론 $T_{\mathrm{bd}}$는 양화사 제거 가능하지 않다. $a$가 $&lt;$의 최솟값일 때, $\phi \equiv \exists y (y &lt; x)$가 양화사 제거 가능하지 않기 때문이다. $T_{\mathrm{bd}}$도 전순서 이론이므로, 만약 $\phi$가 양화사 제거 가능했다면 보조정리에 의해 $\phi$는 $x &lt; x$ 또는 $x = x$와 동치여야 하는데, $\phi$는 $x = a$일 때 참이고 그 외의 경우에는 거짓이기 때문에 전자와 후자 모두에 해당하지 않는다.</p>
+
+<p>그러나 이 경우에는 양화사 제거가 가능한 $T_{\mathrm{bd}}$의 확장을 쉽게 찾을 수 있다. 먼저 언어 $\mathcal{L}$에 두 가지 새로운 상수 기호 $a$와 $b$를 추가한다. 그리고 $a$와 $b$가 각각 최솟값과 최댓값이라는 다음의 공리를 $T_{\mathrm{bd}}$에 추가한 것을 $T_{\mathrm{bd}}’$이라고 하자.</p>
+
+\[\lnot \exists (x &lt; a) \quad \lnot \exists (b &lt; x)\]
+
+<blockquote>
+  <p><strong>정리.</strong> $T_{\mathrm{bd}}’$는 양화사 제거 가능하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 연습문제</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $T_{\mathrm{bd}}$는 완전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T_{\mathrm{bd}}$의 보존적 확장<sub>conservative extension</sub>인 $T_{\mathrm{bd}}’$가 완전하므로, $T_{\mathrm{bd}}$ 또한 완전하다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/15/quantifier-elimination/en"> Quantifier Elimination </a>
+      </h1>
+    <span class="post-date">15 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/model-theory/'">
+        Model Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>In the <a href="https://dimenerno.github.io/2025/05/08/saturation/">previous article</a>, we examined what sets are <strong>definable</strong> in an $\mathcal{L}$-structure $\mathfrak{A}$. When $S \subseteq A$ is definable by a formula $\phi$ belonging to a particular <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">arithmetic hierarchy</a> in $\mathfrak{A}$, we say that $S$ belongs to that hierarchy. For instance, when $S$ is definable by a $\Pi_1$ sentence, we have $S \in \Pi_1$.</p>
+
+<p>For example, in the standard arithmetic model $\mathfrak{N} = (\mathbb{N}, 0, S, +)$, the set of even numbers is $\Sigma_1$.</p>
+
+\[\{ x \in \mathbb{N} : \mathfrak{N} \vDash \exists y (y + y = x) \}\]
+
+<p>Since the structure of sets becomes more complex as the hierarchy level increases, the most ideal situation is when all definable sets can be reduced to $\Delta_0$. Theories possessing such a property are called theories admitting quantifier elimination.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> An $\mathcal{L}$-theory $T$ <strong>admits quantifier elimination</strong> if for any $\mathcal{L}$-formula $\phi$, there exists some $\Delta_0$ $\mathcal{L}$-formula $\psi$ such that the following holds:</p>
+
+\[T \vdash \phi \leftrightarrow \psi\]
+
+  <p>where all free variables of $\psi$ are free variables of $\phi$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Quantifier Elimination Test.</strong> A sufficient condition for $T$ to admit quantifier elimination is that $T$ admits quantifier elimination for formulae of the form $\exists x \psi$ where $\psi \in \Delta_0$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> First, we show that for any $\Delta_0$ formula $\psi$, the formula $\forall x \psi$ admits quantifier elimination. The formula $\forall x \psi$ is equivalent to $\lnot\exists x \lnot \psi$, and by assumption, $\exists x \lnot \psi$ is equivalent to some quantifier-free formula $\theta$. Therefore, $\forall x \psi$ is equivalent to $\lnot \theta$ and admits quantifier elimination. By applying induction on the number of quantifiers, we can show that quantifier elimination is possible for any formula. ■</p>
+
+<p>When a theory admits quantifier elimination, it is often possible to show that the theory is complete. Consider the following example.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The theory $T$ of dense unbounded linear orders admits quantifier elimination.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> First, we define the following concept.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> An <strong>arrangement</strong> of finite variables is a consistent conjunction of order relations amongst the variables.</p>
+</blockquote>
+
+<p>For instance, the following is an arrangement of $\lbrace v_1, v_3, v_7, v_8 \rbrace$:</p>
+
+\[(v_1 &lt; v_3) \land (v_8 \land v_7) \land (v_3 = v_8)\]
+
+<p>The key to the proof is the following lemma.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> A $\Delta_0$ formula in $\mathcal{L} = (&lt;)$ is either equivalent to a contradiction in the theory of linear orders, or equivalent to a disjunction of arrangements.</p>
+</blockquote>
+
+<p>Accepting the lemma, we prove the main theorem. By the quantifier elimination test, it suffices to show that $\exists x \psi$ admits quantifier elimination for $\psi \in \Delta_0$. By the lemma, $\psi$ is equivalent to $\theta_1 \lor \cdots \lor \theta_n$, where each $\theta_i$ is an arrangement of variables. By the distributivity of $\exists$, we have</p>
+
+\[T \vdash \exists x \psi \leftrightarrow \Big( (\exists x \theta_1) \lor \cdots (\exists x \theta_n) \Big)\]
+
+<p>However, in dense unbounded linear orders, for an arrangement $\theta$, the formula $\exists x \theta$ is equivalent to the formula obtained by writing out the order relations of $\theta$ in a single line and then removing $x$. For example, $\exists x (v_1 &lt; x) \land (x &lt; v_2)$ can be written as $\exists x (v_1 &lt; x &lt; v_2)$, which by density is equivalent to $v_1 &lt; v_2$. On the other hand, $\exists x (v_1 &lt; x)$ is a tautology by unboundedness and is equivalent to $v_1 = v_1$. Therefore, the right-hand side of the above equation admits quantifier elimination, and consequently $\exists x \psi$ also admits quantifier elimination. ■</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> $T$ is complete.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Since $T$ admits quantifier elimination, by the standard quantifier elimination procedure, it suffices to show that for any $\Delta_0$ sentence $\psi \in \Delta_0$ with at most one free variable $x$, either $T \vdash \psi$ or $T \vdash \lnot\psi$. By the lemma, $\psi$ is equivalent to an arrangement of $x$. However, there are only two possible arrangements of $x$: $x &lt; x$ and $x = x$. In the former case, since it is a contradiction, we have $T \vdash \lnot\psi$; in the latter case, since it is a tautology, we have $T \vdash \psi$. ■</p>
+
+<p>In contrast to $T$ admitting quantifier elimination, the theory $T_{\mathrm{bd}}$ of dense bounded linear orders does not admit quantifier elimination. This is because when $a$ is the minimum element of $&lt;$, the formula $\phi \equiv \exists y (y &lt; x)$ does not admit quantifier elimination. Since $T_{\mathrm{bd}}$ is also a theory of linear orders, if $\phi$ admitted quantifier elimination, then by the lemma, $\phi$ would have to be equivalent to either $x &lt; x$ or $x = x$. However, $\phi$ is true when $x = a$ and false otherwise, so it corresponds to neither case.</p>
+
+<p>Nevertheless, in this case we can easily find an extension of $T_{\mathrm{bd}}$ that admits quantifier elimination. First, we add two new constant symbols $a$ and $b$ to the language $\mathcal{L}$. Then we define $T_{\mathrm{bd}}’$ as $T_{\mathrm{bd}}$ with the addition of the following axioms stating that $a$ and $b$ are the minimum and maximum elements, respectively:</p>
+
+\[\lnot \exists (x &lt; a) \quad \lnot \exists (b &lt; x)\]
+
+<blockquote>
+  <p><strong>Theorem.</strong> $T_{\mathrm{bd}}’$ admits quantifier elimination.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Exercise.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> $T_{\mathrm{bd}}$ is complete.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Since $T_{\mathrm{bd}}’$, which is a conservative extension of $T_{\mathrm{bd}}$, is complete, $T_{\mathrm{bd}}$ is also complete. ■</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/05/13/saturation"> 포화된 구조와 실수체의 완전성 </a>
@@ -1203,739 +1838,6 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 \end{gather}\]
 
 <p>따라서 $\theta$는 $P$를 명시적으로 정의한다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/08/robinson-craig/en"> Robinson, Craig, and Beth's Theorems </a>
-      </h1>
-    <span class="post-date">08 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/model-theory/'">
-        Model Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h3 id="elementary-amalgamation-property">Elementary Amalgamation Property</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $\mathfrak{A}$ be an $\mathcal{L}$-structure and $\mathfrak{B}$ be an $\mathcal{L}’$-structure such that the $\mathcal{L}$-reduct of $\mathfrak{B}$ is elementarily equivalent to $\mathfrak{A}$. Then there exists an $\mathcal{L}’$-structure $\mathfrak{C}$ such that $f: \mathfrak{A} \to \mathfrak{C}$ is an <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">elementary embedding</a> in $\mathcal{L}$ and $g: \mathfrak{B} \to \mathfrak{C}$ is an elementary embedding in $\mathcal{L}’$.</p>
-
-  <p><img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply" /></p>
-</blockquote>
-
-<p><strong>Proof.</strong> Following the notation of <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">this post</a>, consider the theory $E(\mathfrak{A})$ in language $L_\mathfrak{A}$ and the theory $E(\mathfrak{B})$ in language $L’<em>\mathfrak{B}$. Let $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$ be a theory in the language $\mathcal{L}’</em>{\mathfrak{AB}} = \mathcal{L}<em>\mathfrak{A} \cup \mathcal{L}’</em>\mathfrak{B}$. We shall show that $T$ has a model $\mathfrak{C}$.</p>
-
-<p>Suppose $T$ has no model. Then $T$ is inconsistent. By the compactness theorem, there exist some $\mathcal{L}$-formula $\phi$ and $\mathcal{L}’$-formula $\psi$ such that for appropriate ${a_i} \subset \mathcal{L}<em>\mathfrak{A}$ and ${b_j} \subset \mathcal{L}</em>\mathfrak{B}$,</p>
-
-\[\{\phi(a_1, \dots, a_n), \psi(b_1, \dots, b_m)\}\]
-
-<p>has no model. Since $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$, there must be no way to assign the constants $a_1, \dots, a_n$ to elements of the domain of $\mathfrak{B}$ such that $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$. That is,</p>
-
-\[\mathfrak{B} \not\vDash \exists x_1, \dots x_n \; \phi(x_1, \dots, x_n)\]
-
-<p>However, since the $\mathcal{L}$-reduct of $\mathfrak{B}$ is elementarily equivalent to $\mathfrak{A}$, and the right-hand side above is an $\mathcal{L}$-sentence that is satisfied by $\mathfrak{A}$, this yields a contradiction. Therefore, $T$ has a model $\mathfrak{C}$. Since $\mathfrak{C}$ is a model of both $E(\mathfrak{A})$ and $E(\mathfrak{B})$, both $\mathfrak{A}$ and $\mathfrak{B}$ are naturally elementarily embedded into $\mathfrak{C}$. ■</p>
-
-<h3 id="robinson-consistency-theorem">Robinson Consistency Theorem</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$. Suppose $T$ is a (semantically) complete theory in $\mathcal{L}$, and $T_1$ and $T_2$ are consistent theories in $\mathcal{L}_1$ and $\mathcal{L}_2$ respectively, each extending $T$. Then $T_1 \cup T_2$ is consistent as a theory in $\mathcal{L}_1 \cup \mathcal{L}_2$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> It suffices to construct a model of $T_1 \cup T_2$.</p>
-
-<p>Since $T_1$ and $T_2$ are consistent, they have models $\mathfrak{A}_0$ and $\mathfrak{B}_0$ respectively. Since $T = T_1 \cap T_2$ is complete, the $\mathcal{L}$-reducts of $\mathfrak{A}_0$ and $\mathfrak{B}_0$ are elementarily equivalent. Therefore, by the elementary amalgamation property, there exist an $\mathcal{L}$-elementary embedding $f_0$ and an $\mathcal{L}_2$-elementary embedding $h_0$ such that the following holds:</p>
-
-<p><img src="/public/robinson-1.png" style="width: 100%; max-width: 115px; margin: 1em auto" /></p>
-
-<p>Now considering the $\mathcal{L}$-reduct of $\mathfrak{B}_1$, this is elementarily equivalent to $\mathfrak{A}_0$, so again by the elementary amalgamation property, there exist an $\mathcal{L}$-elementary embedding $g_0$ and an $\mathcal{L}_1$-elementary embedding $k_0$ such that the following holds:</p>
-
-<p><img src="/public/robinson-2.png" style="width: 100%; max-width: 127px; margin: 1em auto" /></p>
-
-<p>Repeating this process, we obtain the following directed system of structures:</p>
-
-<p><img src="/public/robinson-3.png" style="width: 100%; max-width: 285px; margin: 1em auto" /></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Map</th>
-      <th>Property</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$f, g$</td>
-      <td>$\mathcal{L}$-elementary embedding</td>
-    </tr>
-    <tr>
-      <td>$k$</td>
-      <td>$\mathcal{L}_1$-elementary embedding</td>
-    </tr>
-    <tr>
-      <td>$h$</td>
-      <td>$\mathcal{L}_2$-elementary embedding</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Reducing all models in the above directed system to $\mathcal{L}$ gives an $\mathcal{L}$-structure directed system. Let $\mathfrak{C}$ be the colimit of this directed system. $\mathfrak{C}$ is also the colimit of the directed system consisting of ${\mathfrak{A}_i}$, since the parts of the original directed system shown in grey all project to one of the ${\mathfrak{A}_i}$. Therefore, $\mathfrak{C}$ is an $\mathcal{L}_1$-structure that elementarily embeds $\mathfrak{A}_0$.</p>
-
-<p><img src="/public/robinson-4.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
-
-<p>For the same reason, $\mathfrak{C}$ is also the colimit of the directed system consisting of ${\mathfrak{B}_i}$. Therefore, $\mathfrak{C}$ is an $\mathcal{L}_2$-structure that elementarily embeds $\mathfrak{B}_0$.</p>
-
-<p><img src="/public/robinson-5.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
-
-<p>That is, $\mathfrak{C}$ embeds both $\mathfrak{A}$ and $\mathfrak{B}$, from which it follows that it is a model of $T_1 \cup T_2$. ■</p>
-
-<h3 id="craig-interpolation-theorem">Craig Interpolation Theorem</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> For $\mathcal{L}$-sentences $\phi$ and $\psi$, if $\phi \vDash \psi$, then there exists an $\mathcal{L}$-sentence $\theta$ such that $\phi \vDash \theta$ and $\theta \vDash \psi$. Moreover, the non-logical symbols (constants, predicates, functions) contained in $\theta$ are those common to both $\phi$ and $\psi$.</p>
-</blockquote>
-
-<p>$\theta$ is called a <strong>Craig interpolant</strong> of $\phi$ and $\psi$.</p>
-
-<p><strong>Proof.</strong> We prove by contradiction. Suppose no Craig interpolant exists. Then $\phi$ has a model, for if $\phi$ had no model, then $\perp$ would be a Craig interpolant of $\phi$ and $\psi$. Also, $\lnot \psi$ has a model, for otherwise $\top$ would be a Craig interpolant.</p>
-
-<p>Let $\mathcal{L}’$ be the language consisting of the non-logical symbols common to both $\phi$ and $\psi$. Let $\Gamma$ be the set of $\mathcal{L}’$-sentences $\sigma$ such that either $\phi \vDash \sigma$ or $\lnot \psi \vDash \sigma$.</p>
-
-<p>We show that $\Gamma \cup {\phi}$ is consistent. Suppose it is inconsistent. Then by the compactness theorem, there exist $\mathcal{L}’$-sentences $\sigma_1$ and $\sigma_2$ such that $\phi \vDash \sigma_1$, $\lnot\psi \vDash \sigma_2$, and ${\sigma_1, \sigma_2, \phi}$ is inconsistent. Since $\phi \vDash \sigma_1$, we have $\phi \vDash \lnot\sigma_2$. By contraposition, from $\lnot\psi \vDash \sigma_2$ we obtain $\lnot\sigma_2 \vDash \psi$. Thus $\lnot\sigma_2$ is a Craig interpolant of $\phi$ and $\psi$, contradicting our assumption.</p>
-
-<p>Therefore, $\Gamma \cup {\phi}$ is consistent, and by the same reasoning, $\Gamma \cup {\lnot\psi}$ is also consistent. Now applying Zorn’s lemma, define $\overline{\Gamma}$ as the maximum of the following ordered set of $\mathcal{L}’$-theories:</p>
-
-\[\{ \Gamma' : \Gamma \subseteq \Gamma', \Gamma' \cup \{\phi\} \text{ and } \Gamma' \cup \{\lnot \psi\} \text{ are consistent} \}\]
-
-<p>We show that $\overline{\Gamma}$ is complete. Suppose $\overline{\Gamma}$ is not complete. Then there exists an $\mathcal{L}’$-sentence $\sigma$ such that $\sigma \notin \overline{\Gamma}$, and either $\overline{\Gamma} \cup {\sigma, \phi}$ or $\overline{\Gamma} \cup {\sigma, \lnot \psi}$ is consistent.</p>
-
-<p>In the former case, by the compactness theorem, there exists a sentence $\theta$ in $\overline{\Gamma}$ such that $\phi \vDash \theta \rightarrow \lnot \sigma$. By the definition of $\Gamma$, we have $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$. Therefore, $\overline{\Gamma} \cup {\sigma, \phi}$ proves $\lnot\phi$, which is a contradiction. The latter case yields a similar contradiction. Therefore, $\overline{\Gamma}$ is complete.</p>
-
-<p>Since $\overline{\Gamma}$ is complete and $\overline{\Gamma} \cup {\phi}$ and $\overline{\Gamma} \cup {\lnot\psi}$ are consistent, by Robinson’s consistency theorem, $\overline{\Gamma} \cup {\phi, \lnot \psi}$ is consistent. But this contradicts $\phi \vDash \psi$. Therefore, by contradiction, $\phi$ and $\psi$ have a Craig interpolant. ■</p>
-
-<h3 id="beth-definability-theorem">Beth Definability Theorem</h3>
-
-<p>Consider a language $\mathcal{L}$ and a predicate $P$ not contained in $\mathcal{L}$. Let $T$ be a theory in $\mathcal{L} \cup {P}$. We say that $T$ <strong>implicitly defines</strong> $P$ when there is a unique way to extend any $\mathcal{L}$-structure $\mathfrak{A}$ satisfying $T$ to $\mathcal{L} \cup {P}$.</p>
-
-<p>This can also be stated as follows. Let $T(P’)$ be the theory in $\mathcal{L} \cup {P’}$ obtained by replacing every occurrence of $P$ in $T$ with $P’$. Then $T$ implicitly defines $P$ if and only if the following holds:</p>
-
-\[T \cup T(P') \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow P'(x_1, \dots, x_n)\]
-
-<p>On the other hand, $T$ <strong>explicitly defines</strong> $P$ if there exists an $\mathcal{L}$-formula $\phi$ satisfying:</p>
-
-\[T \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow \phi(x_1, \dots, x_n)\]
-
-<p>For example, consider the following theory $T$, which adds axioms concerning a predicate $P(x, y)$ to the theory $\mathsf{PA}$ in the language $\mathcal{L} = (0, S, +, \cdot)$:</p>
-
-\[T = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
-
-<p>$T(P’)$ is as follows:</p>
-
-\[T(P') = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P'(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
-
-<p>That $T$ implicitly defines $P$ means the following holds:</p>
-
-\[T \cup T(P') \vDash \forall x, y \big[ P(x, y) \leftrightarrow P'(x, y) \big]\]
-
-<p>This follows naturally from the induction axiom schema. But $P$ can also be explicitly defined in $T$ as follows:</p>
-
-\[\begin{gather}
-T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
-\text{where}\\\\
-\phi(x, y) : \forall z \big[ x + z = S(0) \rightarrow z = y \big]
-\end{gather}\]
-
-<p>This is no coincidence.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> For a language $\mathcal{L}$, if a theory $T$ in $\mathcal{L} \cup {P}$ implicitly defines $P$, then $T$ explicitly defines $P$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Suppose $P$ is an $n$-ary predicate. Let $\mathcal{L}’$ be the language obtained by adding new constants $c_1, \dots, c_n$ to $\mathcal{L}$. Since $T$ implicitly defines $P$, we have:</p>
-
-\[T \cup T(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>By the compactness theorem, there exists an $\mathcal{L} \cup {P}$-sentence $\psi$ such that $T \vdash \psi$ and the following holds:</p>
-
-\[\psi \land \psi(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>Using the deduction theorem and rearranging:</p>
-
-\[\psi \land P(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>The left-hand side is a sentence in $\mathcal{L}’ \cup {P}$, and the right-hand side is a sentence in $\mathcal{L}’ \cup {P’}$. Therefore, by Craig’s interpolation theorem, there exists an $\mathcal{L}’$-formula $\theta$ such that:</p>
-
-\[\begin{gather}
-\psi \land P(c_1, \dots, c_n) \vDash \theta(c_1, \dots, c_n), \\\\
-\theta(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)
-\end{gather}\]
-
-<p>Rearranging again and substituting $P$ for $P’$:</p>
-
-\[\begin{gather}
-\psi \vDash P(c_1, \dots, c_n) \rightarrow \theta(c_1, \dots, c_n), \\\\
-\psi \vDash \theta(c_1, \dots, c_n) \rightarrow P(c_1, \dots, c_n)
-\end{gather}\]
-
-<p>Therefore, $\theta$ explicitly defines $P$. ■</p>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/04/regular-singular"> 정칙 기수와 특이 기수, 그리고 도달 불가능 기수 </a>
-      </h1>
-    <span class="post-date">04 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <p>이 글에서 $\kappa$는 무한 기수이다. 또한, 기수를 초기 서수<sub>initial ordinal</sub>로 정의하는 방식을 택한다(<a href="https://dimenerno.github.io/2025/04/20/cardinality/">이 글</a>의 3번). 이에 따라 모든 기수는 서수이기도 하다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\theta$가 $\kappa$보다 작은 극한 서수라고 하자. 각 $\nu$에 대해 $\alpha_\nu &lt; \kappa$인 증가하는 서수열 $\langle \alpha_\nu : \nu &lt; \theta \rangle$에 대하여, 언제나 $\lim_{\nu \to \theta} \alpha_\nu &lt; \kappa$일 때, $\kappa$를 <strong>정칙 기수<sub>regular cardinal</sub></strong>라고 한다. 정칙 기수가 아닌 기수를 <strong>특이 기수<sub>singular cardinal</sub></strong>라고 한다.</p>
-</blockquote>
-
-<p><em>Remark.</em> $\alpha_\nu$와 $\theta$는 일반적으로 기수가 아니라 서수이다.</p>
-
-<p>예를 들어 $\aleph_0$는 정칙 기수이다. $\aleph_0$개보다 적은 개수의 — 즉, 유한한 — $\aleph_0$보다 작은 기수들 — 즉, 자연수 —  의 상한은 $\aleph_0$에 달하지 않기 때문이다.</p>
-
-<p>반면 $\aleph_\omega$는 특이 기수이다. 다음 기수열에서 각각의 기수는 $\aleph_\omega$보다 작고, 기수열의 길이 또한 $\aleph_0 &lt; \aleph_\omega$이지만, 그 상한은 $\aleph_\omega$이기 때문이다.</p>
-
-\[\aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \aleph_3 \quad \cdots\]
-
-<blockquote>
-  <p><strong>정리. (특이 기수 판별법)</strong> $\kappa$가 특이 기수일 필요충분조건은 $\kappa$가 $\kappa$개보다 적은 개수의 $\kappa$보다 작은 기수들의 합일 것이다. 즉, $|I| &lt; \kappa$, $\kappa_i &lt; \kappa \;(\forall i \in I)$에 대하여,</p>
-
-\[\sum_{i \in I} \kappa_i = \kappa\]
-</blockquote>
-
-<p><em>Remark.</em> $\kappa_i$는 일반적인 서수가 아닌 기수이다. 그리고 $\sum$은 서수 덧셈이 아니라 기수 덧셈이다.</p>
-
-<p><strong>증명.</strong></p>
-
-<p>($\Rightarrow$) $\kappa$가 특이 기수라면 어떤 서수열 $\langle \alpha_\nu : \nu &lt; \theta\rangle$이 존재하여,</p>
-
-\[\lim_{\nu \to \theta} \alpha_\nu = \sup \alpha_\nu = \bigcup_{\nu &lt; \theta}\alpha_\nu = \kappa\]
-
-<p>이다. 일반적으로 서수 $\alpha$는 자기보다 작은 서수 $\beta &lt; \alpha$들의 합집합이다. 따라서 다음이 성립한다.</p>
-
-\[\kappa = \bigcup_{\nu &lt; \theta}\alpha_\nu = \bigcup_{\nu &lt; \theta}\left( \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi \right)\]
-
-<p>$A_\nu = \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi$라고 하자. $A_\nu$는 더이상 서수가 아니지만 그건 중요하지 않다. 중요한 것은 $\lbrace  A_\nu \rbrace $가 쌍으로 서로소라는 것이다. 따라서 $\kappa_\nu = |A_\nu|$라고 하면 기수 덧셈의 정의에 의해,</p>
-
-\[\sum_{\nu &lt; \theta} \kappa_\nu = \left| \bigcup_{\nu &lt; \theta} A_\nu \right| = \kappa\]
-
-<p>이다.</p>
-
-<p>($\Leftarrow$) $\kappa = \sum_{i \in I}\kappa_i$라고 하자. $|I| = \lambda$라고 하면 기수 덧셈의 성질에 의해 $\kappa = \lambda \cdot \sup \kappa_i$이다. $\lambda &lt; \kappa$이므로, 기수 곱셈의 성질에 의해 $\kappa = \sup \kappa_i$이다. 각 $i \in I$에 대해 $\kappa_i &lt; \kappa$인데 $\sup \kappa_i = \kappa$이므로, 초한귀납법을 통해 증가하는 기수열</p>
-
-\[\langle \kappa_\nu : \kappa_\nu = \kappa_i \text{ for some } i \in I, \nu &lt; \theta\rangle\]
-
-<p>을 구축할 수 있으며, $\theta \leq \lambda$이므로 정리가 보여졌다. ■</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 어떤 $\alpha \in \mathrm{Ord}$에 대해 $\kappa = \aleph_{\alpha + 1}$일 때, $\kappa$를 <strong>계승 기수<sub>successor cardinal</sub></strong>라고 한다. 계승 기수가 아닌 기수를 <strong>극한 기수<sub>limit cardinal</sub></strong>라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> 모든 계승 기수는 정칙이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $\kappa = \aleph_{\alpha + 1}$이라고 하자. $\kappa$가 특이 기수라면, 특이 기수 판별법에 의해 $\kappa = \sum_{i \in I} \kappa_i$이며 $\kappa_i, |I| &lt; \kappa$이다. 이는 $\kappa_i , |I| \leq \aleph_\alpha$와 같다. 그런데</p>
-
-\[\sum_{i \in I} \kappa_i \leq \sum_{i \in I} \aleph_\alpha = |I| \cdot  \aleph_\alpha \leq  \aleph_\alpha \cdot \aleph_\alpha =  \aleph_\alpha &lt; \kappa\]
-
-<p>이므로 모순이다. ■</p>
-
-<p>따라서 모든 특이 기수는 극한 기수이다. 그러나 모든 극한 기수가 특이 기수인 것은 아니다. $\aleph_0$는 정칙인 극한 기수이기 때문이다. 그러나 $\aleph_0$ 이외에 정칙인 극한 기수가 존재할까?</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 비가산 정칙 극한 기수를 <strong>도달 불가능 기수<sub>inaccessible cardinal</sub></strong>라고 한다.<a href="#sub1" id="sup1"><sup>1</sup></a></p>
-</blockquote>
-
-<p>$\aleph_\alpha$가 도달 불가능 기수라고 하자. 다음의 증가 기수열의 극한은 $\aleph_\alpha$이다.</p>
-
-\[\langle \aleph_\beta : \beta &lt; \alpha \rangle : \aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \cdots \quad \to \aleph_\alpha\]
-
-<p>따라서 $\aleph_\alpha$가 정칙이기 위해서는 위 기수열의 길이인 $\alpha$가 $\aleph_\alpha$보다 작아서는 안 된다. 그런데 $\alpha \leq \aleph_\alpha$이므로, $\alpha = \aleph_\alpha$임이 따라 나온다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\aleph_\alpha$가 도달 불가능할 필요조건은 $\alpha = \aleph_\alpha$인 것이다.</p>
-</blockquote>
-
-<p>이는 $\alpha$가 무지막지하게 큰 기수임을 시사한다. 일례로 다음의 기수열 $\langle \alpha_n : n \in \omega \rangle$을 보자.</p>
-
-\[\alpha_0 = \aleph_0, \alpha_{n + 1} = \aleph_{\alpha_n}\]
-
-<p>위 기수열의 상한을 $\kappa$라고 하자. 상한의 정의에 의해 $\lambda &lt; \kappa$라면 $\alpha_n &gt; \lambda$인 $n$이 존재한다. 따라서 $\aleph_\lambda = \alpha_{n+1} &lt; \kappa$이며,</p>
-
-\[\aleph_\kappa = \sum_{\lambda &lt; \kappa} \aleph_\lambda \leq \sum_{\lambda &lt; \kappa} \kappa = \kappa\]
-
-<p>이다. 다시 말해, $\alpha = \aleph_\alpha$를 만족하는 기수는 적어도 다음에 비견되는 크기를 가진다.</p>
-
-\[\kappa = \aleph_{\aleph_{\aleph_{\aleph_{\ddots}}}}\]
-
-<p>여기서 집고 넘어갈 점이 있다. 비록 $\kappa$가 $\kappa = \aleph_\kappa$를 보이긴 했지만, $\kappa$가 도달 불가능함을 보인 것은 아니다. 오히려 $\kappa$는 특이 기수이다. 길이가 $\omega$인 기수열 $\alpha_n$의 극한이기 때문이다.</p>
-
-<p>사실 도달 불가능 기수의 존재성은 ZFC와 독립적이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 도달 불가능 기수의 존재성은 ZFC와 독립이다.</p>
-</blockquote>
-
-<p>따라서 도달 불가능 기수의 존재는 공리로서 가정해야 한다. 도달 불가능 기수의 존재를 가정하는 부류의 공리들을 <strong>큰 기수 공리<sub>large cardinal axioms</sub></strong>라고 부르며, 이와 관련된 연구는 집합론의 중요한 부분을 이룬다.</p>
-
-<hr />
-
-<p><a href="#sup1" id="sub1">1.</a> 엄밀히 말해 이는 <strong>약한 도달 불가능 기수<sub>weakly inaccessible cardinal</sub></strong>에 해당한다. $\kappa$가 <strong>강한 도달 불가능 기수<sub>strongly inaccessible cardinal</sub></strong>라는 것은 $\kappa$가 약한 도달 불가능 기수이며, 추가로 $\lambda &lt; \kappa$일 때 $2^\lambda &lt; \kappa$인 것이다. 연속체 가설을 인정할 때 약한 도달 불가능성과 강한 도달 불가능성은 동치이다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/04/regular-singular/en"> Regular Cardinals, Singular Cardinals, and Inaccessible Cardinals </a>
-      </h1>
-    <span class="post-date">04 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>In this article, $\kappa$ denotes an infinite cardinal. Moreover, we adopt the approach of defining cardinals as initial ordinals (see method 3 in <a href="https://dimenerno.github.io/2025/04/20/cardinality/">this post</a>). Accordingly, every cardinal is also an ordinal.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $\theta$ be a limit ordinal less than $\kappa$. For each $\nu$, consider an increasing sequence of ordinals $\langle \alpha_\nu : \nu &lt; \theta \rangle$ where $\alpha_\nu &lt; \kappa$. If we always have $\lim_{\nu \to \theta} \alpha_\nu &lt; \kappa$, then $\kappa$ is called a <strong>regular cardinal</strong>. A cardinal that is not regular is called a <strong>singular cardinal</strong>.</p>
-</blockquote>
-
-<p><em>Remark.</em> $\alpha_\nu$ and $\theta$ are generally ordinals, not necessarily cardinals.</p>
-
-<p>For example, $\aleph_0$ is a regular cardinal. This is because the supremum of fewer than $\aleph_0$ many—that is, finitely many—cardinals less than $\aleph_0$—that is, natural numbers—does not reach $\aleph_0$.</p>
-
-<p>In contrast, $\aleph_\omega$ is a singular cardinal. This is because in the following sequence of cardinals, each cardinal is less than $\aleph_\omega$, and the length of the sequence is also $\aleph_0 &lt; \aleph_\omega$, yet their supremum is $\aleph_\omega$.</p>
-
-\[\aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \aleph_3 \quad \cdots\]
-
-<blockquote>
-  <p><strong>Theorem. (Characterisation of Singular Cardinals)</strong> $\kappa$ is a singular cardinal if and only if $\kappa$ is the sum of fewer than $\kappa$ many cardinals, each less than $\kappa$. That is, for $|I| &lt; \kappa$ and $\kappa_i &lt; \kappa \;(\forall i \in I)$, we have</p>
-
-\[\sum_{i \in I} \kappa_i = \kappa\]
-</blockquote>
-
-<p><em>Remark.</em> $\kappa_i$ denotes cardinals, not general ordinals. Moreover, $\sum$ denotes cardinal addition, not ordinal addition.</p>
-
-<p><strong>Proof.</strong></p>
-
-<p>($\Rightarrow$) If $\kappa$ is a singular cardinal, then there exists a sequence of ordinals $\langle \alpha_\nu : \nu &lt; \theta\rangle$ such that</p>
-
-\[\lim_{\nu \to \theta} \alpha_\nu = \sup \alpha_\nu = \bigcup_{\nu &lt; \theta}\alpha_\nu = \kappa\]
-
-<p>In general, an ordinal $\alpha$ is the union of all ordinals $\beta &lt; \alpha$ that are less than it. Therefore, the following holds:</p>
-
-\[\kappa = \bigcup_{\nu &lt; \theta}\alpha_\nu = \bigcup_{\nu &lt; \theta}\left( \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi \right)\]
-
-<p>Let $A_\nu = \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi$. Whilst $A_\nu$ is no longer an ordinal, this is not important. What matters is that $\lbrace  A_\nu \rbrace $ are pairwise disjoint. Therefore, letting $\kappa_\nu = |A_\nu|$, by the definition of cardinal addition, we have</p>
-
-\[\sum_{\nu &lt; \theta} \kappa_\nu = \left| \bigcup_{\nu &lt; \theta} A_\nu \right| = \kappa\]
-
-<p>($\Leftarrow$) Let $\kappa = \sum_{i \in I}\kappa_i$. Setting $|I| = \lambda$, by the properties of cardinal addition, we have $\kappa = \lambda \cdot \sup \kappa_i$. Since $\lambda &lt; \kappa$, by the properties of cardinal multiplication, we have $\kappa = \sup \kappa_i$. For each $i \in I$, we have $\kappa_i &lt; \kappa$, yet $\sup \kappa_i = \kappa$. Therefore, by transfinite induction, we can construct an increasing sequence of cardinals</p>
-
-\[\langle \kappa_\nu : \kappa_\nu = \kappa_i \text{ for some } i \in I, \nu &lt; \theta\rangle\]
-
-<p>Since $\theta \leq \lambda$, the theorem is proved. ■</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $\kappa = \aleph_{\alpha + 1}$ for some $\alpha \in \mathrm{Ord}$, we call $\kappa$ a <strong>successor cardinal</strong>. A cardinal that is not a successor cardinal is called a <strong>limit cardinal</strong>.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Every successor cardinal is regular.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Let $\kappa = \aleph_{\alpha + 1}$. If $\kappa$ is a singular cardinal, then by the characterisation of singular cardinals, we have $\kappa = \sum_{i \in I} \kappa_i$ where $\kappa_i, |I| &lt; \kappa$. This is equivalent to $\kappa_i , |I| \leq \aleph_\alpha$. However,</p>
-
-\[\sum_{i \in I} \kappa_i \leq \sum_{i \in I} \aleph_\alpha = |I| \cdot  \aleph_\alpha \leq  \aleph_\alpha \cdot \aleph_\alpha =  \aleph_\alpha &lt; \kappa\]
-
-<p>which is a contradiction. ■</p>
-
-<p>Therefore, every singular cardinal is a limit cardinal. However, not every limit cardinal is singular. This is because $\aleph_0$ is a regular limit cardinal. But do there exist other regular limit cardinals beyond $\aleph_0$?</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> An uncountable regular limit cardinal is called an <strong>inaccessible cardinal</strong>.<a href="#sub1" id="sup1"><sup>1</sup></a></p>
-</blockquote>
-
-<p>Let $\aleph_\alpha$ be an inaccessible cardinal. The limit of the following increasing sequence of cardinals is $\aleph_\alpha$:</p>
-
-\[\langle \aleph_\beta : \beta &lt; \alpha \rangle : \aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \cdots \quad \to \aleph_\alpha\]
-
-<p>Therefore, for $\aleph_\alpha$ to be regular, the length of the above sequence, namely $\alpha$, must not be less than $\aleph_\alpha$. Since $\alpha \leq \aleph_\alpha$, it follows that $\alpha = \aleph_\alpha$.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> A necessary condition for $\aleph_\alpha$ to be inaccessible is that $\alpha = \aleph_\alpha$.</p>
-</blockquote>
-
-<p>This suggests that $\alpha$ is an enormously large cardinal. For instance, consider the following sequence of cardinals $\langle \alpha_n : n \in \omega \rangle$:</p>
-
-\[\alpha_0 = \aleph_0, \alpha_{n + 1} = \aleph_{\alpha_n}\]
-
-<p>Let $\kappa$ be the supremum of this sequence. By the definition of supremum, if $\lambda &lt; \kappa$, then there exists $n$ such that $\alpha_n &gt; \lambda$. Therefore, $\aleph_\lambda = \alpha_{n+1} &lt; \kappa$, and</p>
-
-\[\aleph_\kappa = \sum_{\lambda &lt; \kappa} \aleph_\lambda \leq \sum_{\lambda &lt; \kappa} \kappa = \kappa\]
-
-<p>In other words, a cardinal satisfying $\alpha = \aleph_\alpha$ has a magnitude at least comparable to the following:</p>
-
-\[\kappa = \aleph_{\aleph_{\aleph_{\aleph_{\ddots}}}}\]
-
-<p>There is an important point to note here. Although $\kappa$ satisfies $\kappa = \aleph_\kappa$, we have not shown that $\kappa$ is inaccessible. Indeed, $\kappa$ is a singular cardinal, as it is the limit of a sequence $\alpha_n$ of length $\omega$.</p>
-
-<p>In fact, the existence of inaccessible cardinals is independent of ZFC.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> The existence of inaccessible cardinals is independent of ZFC.</p>
-</blockquote>
-
-<p>Therefore, the existence of inaccessible cardinals must be assumed as an axiom. The class of axioms that assume the existence of inaccessible cardinals are called <strong>large cardinal axioms</strong>, and research related to these forms an important part of set theory.</p>
-
-<hr />
-
-<p><a href="#sup1" id="sub1">1.</a> Strictly speaking, this corresponds to a <strong>weakly inaccessible cardinal</strong>. A cardinal $\kappa$ is called <strong>strongly inaccessible</strong> if it is weakly inaccessible and additionally satisfies $2^\lambda &lt; \kappa$ whenever $\lambda &lt; \kappa$. Under the continuum hypothesis, weak and strong inaccessibility are equivalent.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/01/elementary-embedding"> 준동형 사상, 임베딩, 초등적 임베딩 </a>
-      </h1>
-    <span class="post-date">01 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/모델론/'">
-        모델론
-      </div>
-      
-    </div>
-     <p>이 글에서는 편의를 위해 술어와 함수를 별도의 대상으로 생각하는 대신, 함수식 $f(a) = c$를 이항 술어 $F(a, c)$로 환원하는 접근을 택한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}, \mathfrak{B}$가 언어 $\mathcal{L}$의 구조라고 하자. 다음을 만족하는 사상 $f: \mathfrak{A} \to \mathfrak{B}$을 <strong>준동형 사상<sub>homomorphism</sub></strong>이라고 부른다. $R$이 $\mathcal{L}$의 관계일 때, 임의의 $a_1, \dots, a_n \in \mathfrak{A}$에 대해,</p>
-
-\[R^\mathfrak{A}(a_1, \dots, a_n) \implies R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
-
-  <p>이다.</p>
-
-  <p>추가로, 준동형사상 $f$가 단사이고 다음을 만족할 때 $f$를 <strong>임베딩<sub>embedding</sub></strong>이라고 부른다.</p>
-
-\[R^\mathfrak{A}(a_1, \dots, a_n) \iff R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
-</blockquote>
-
-<p>단사 준동형사상이라고 해서 임베딩인 것은 아니다. 일례로 하나의 이항 관계 $&lt;$를 가지는 언어 $\mathcal{L}$의 다음의 두 구조를 보자. $&lt;$를 만족시키는 대상은 화살표로 표시되었다. 즉, $b_1 &lt;^\mathfrak{B} b_2$이다.</p>
-
-<p><img src="/public/model-injective-vs-embedding.png" style="width: 100%; max-width: 500px; margin: 1.5em auto;" /></p>
-
-<p>$\mathfrak{A}$의 원소들은 $&lt;^\mathfrak{A}$를 만족시키는 경우가 없으므로 $f: a_1 \mapsto b_1, a_2 \mapsto b_2$는 자명하게 준동형사상이며, 단사이다. 그러나 $f$는 임베딩이 아니다. $f$가 임베딩이라면 $b_1 &lt;^\mathfrak{B} b_2$으로부터 $a_1 &lt;^\mathfrak{A} a_2$가 성립해야 하기 때문이다. 즉, 임베딩은 $\mathfrak{A}$의 원소들뿐 아니라 원소들 간의 관계까지 그대로 $\mathfrak{B}$에 대응시켜야 한다. 이런 면에서 임베딩은 범주론에서의 포화된 함자<sub>full functor</sub>와 비슷하다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 언어 $\mathcal{L}$의 구조라고 하자. $\mathcal{L}_\mathfrak{A}$를 $\mathcal{L}$에 $\mathfrak{A}$의 정의역 크기만큼의 상수를 추가한 언어로 정의한다.</p>
-</blockquote>
-
-<p>페아노 산술로 예를 들자면, $\mathcal{L} = (0, S, +)$이고 $\mathfrak{A}$가 산술의 표준 모형일 때, $\mathcal{L}_\mathfrak{A} = (0, 1, 2, 3, \dots, S, +)$이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-원자명제들의 집합을 $\Delta_\mathfrak{A}^+$로 적는다. 즉,</p>
-
-\[\Delta_\mathfrak{A}^+ = \{ R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
-
-  <p>추가로, $\Delta_\mathfrak{A}^+$에다 $\mathfrak{A}$가 만족시키지 않는 모든 $\mathcal{L}$-원자명제들의 부정까지 추가한 집합을 $\Delta_\mathfrak{A}$로 적는다. 즉,</p>
-
-\[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
-</blockquote>
-
-<p>$\Delta$라는 표기법은 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 관련이 있다.</p>
-
-<p>$\Delta_\mathfrak{A}^+$에 빠진 원자명제들의 부정을 추가한 것이 곧 $\Delta_\mathfrak{A}$이기 때문에, 두 집합이 내포하는 정보량은 사실상 같다. 그럼에도 두 집합을 구분하여 정의하는 것은 다음의 정리 때문이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자.</p>
-
-  <ol>
-    <li>단사 준동형사상 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
-    <li>임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</li>
-  </ol>
-</blockquote>
-
-<p>즉, $\mathfrak{B}$가 $\Delta_\mathfrak{A}^+$를 만족할 경우 $\mathfrak{B}$가 원자명제들을 ‘과도하게’ 만족시켜서, $\mathfrak{A}$가 $\mathfrak{B}$로 임베딩되지 못할 가능성이 있다. 그러나 $\mathfrak{B}$가 $\Delta_\mathfrak{A}$를 만족할 경우, $\mathfrak{B}$가 만족시킬 수 있는 원자명제에 한계가 걸리기 때문에 임베딩 가능성이 보장된다.</p>
-
-<p><a href="https://dimenerno.github.io/2025/04/17/los-tarski/">이전 글</a>에서 <strong>초등적 부분모델</strong>이라는 개념을 소개한 바 있다. 이로부터 다음의 개념을 정의할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $f: \mathfrak{A} \to \mathfrak{B}$가 임베딩이고, $f[\mathfrak{A}]$가 $\mathfrak{B}$의 초등적 부분모델일 때, $f$를 <strong>초등적 임베딩</strong>이라고 한다.</p>
-</blockquote>
-
-<p>초등적 임베딩과 관련된 문장 집합은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 만족시키는 모든 $\mathcal{L}_\mathfrak{A}$-명제들의 집합을 $E(\mathfrak{A})$로 적는다. 즉,</p>
-
-\[E(\mathfrak{A}) = \{ \phi : \mathfrak{A} \vDash \phi \}\]
-</blockquote>
-
-<p>$E(\mathfrak{A})$가 $\Delta_\mathfrak{A}$와 가장 구별되는 특징은 양화사가 있는 문장 또한 포함한다는 것이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. 초등적 임베딩 $f: \mathfrak{A} \to \mathfrak{B}$가 존재할 필요충분조건은 $\mathfrak{B}$가 $E(\mathfrak{A})$의 $\mathcal{L}_\mathfrak{A}$-모델인 것이다.</p>
-</blockquote>
-
-<p>마지막으로 다음의 문장 집합을 언급할 만하다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{A}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$에서 참인 모든 $\mathcal{L}$-문장들의 집합을 $\mathrm{Th}(\mathfrak{A})$라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathfrak{A}, \mathfrak{B}$가 $\mathcal{L}$-구조라고 하자. $\mathfrak{A}$와 $\mathfrak{B}$가 초등적으로 동등할 필요충분조건은 $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$인 것이다.</p>
-</blockquote>
-
-<p>사실 이는 초등적 동등성의 정의나 다름이 없어서 정리라고 부르기는 무색하지만, 이 글에서 소개한 나머지 정리들과 일관성을 유지하기 위해 소개하였다.</p>
-
-<p>표로 정리하면 이렇다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>정의</th>
-      <th>예시</th>
-      <th>사상</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$\Delta_\mathfrak{A}^+$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-원자명제</td>
-      <td>$0 &lt; 1$</td>
-      <td>전사 준동형</td>
-    </tr>
-    <tr>
-      <td>$\Delta_\mathfrak{A}$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\Delta_0$ $\mathcal{L}_\mathfrak{A}$-명제</td>
-      <td>$\lnot(1 &lt; 0)$</td>
-      <td>임베딩 (부분모델)</td>
-    </tr>
-    <tr>
-      <td>$\mathrm{Th}(\mathfrak{A})$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}$-명제</td>
-      <td>$\forall x \exists y (x &lt; y)$</td>
-      <td>초등적 동등성</td>
-    </tr>
-    <tr>
-      <td>$E(\mathfrak{A})$</td>
-      <td>$\mathfrak{A}$가 만족시키는 $\mathcal{L}_\mathfrak{A}$-명제</td>
-      <td>$\not \exists x (x &lt; 0)$</td>
-      <td>초등적 임베딩 (초등적 부분모델)</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>예를 들어 $\mathfrak{A} = (\mathbb{N}, &lt;)$은 $\mathfrak{B} = (\mathbb{Z}, &lt;)$에 임베딩되지만, 초등적으로 임베딩되지는 않는다. $\mathfrak{B}$가 $E(\mathfrak{A})$의 문장인 $\not \exists x (x &lt; 0)$을 만족하지 않기 때문이다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/01/elementary-embedding/en"> Homomorphisms, Embeddings, and Elementary Embeddings </a>
-      </h1>
-    <span class="post-date">01 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/model-theory/'">
-        Model Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>For convenience, this article takes the approach of reducing function expressions $f(a) = c$ to binary predicates $F(a, c)$, rather than treating predicates and functions as separate objects.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be structures of language $\mathcal{L}$. A mapping $f: \mathfrak{A} \to \mathfrak{B}$ satisfying the following is called a <strong>homomorphism</strong>. For any relation $R$ in $\mathcal{L}$ and arbitrary $a_1, \dots, a_n \in \mathfrak{A}$,</p>
-
-\[R^\mathfrak{A}(a_1, \dots, a_n) \implies R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
-
-  <p>Additionally, when a homomorphism $f$ is injective and satisfies the following, we call $f$ an <strong>embedding</strong>.</p>
-
-\[R^\mathfrak{A}(a_1, \dots, a_n) \iff R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
-</blockquote>
-
-<p>An injective homomorphism is not necessarily an embedding. For example, consider the following two structures of language $\mathcal{L}$ with one binary relation $&lt;$. Objects satisfying $&lt;$ are indicated by arrows. That is, $b_1 &lt;^\mathfrak{B} b_2$.</p>
-
-<p><img src="/public/model-injective-vs-embedding.png" style="width: 100%; max-width: 500px; margin: 1.5em auto;" /></p>
-
-<p>Since no elements in $\mathfrak{A}$ satisfy $&lt;^\mathfrak{A}$, the mapping $f: a_1 \mapsto b_1, a_2 \mapsto b_2$ is trivially a homomorphism and is injective. However, $f$ is not an embedding. If $f$ were an embedding, then from $b_1 &lt;^\mathfrak{B} b_2$ it would follow that $a_1 &lt;^\mathfrak{A} a_2$. That is, an embedding must preserve not only the elements of $\mathfrak{A}$ but also the relationships between elements in $\mathfrak{B}$. In this respect, embeddings are similar to full functors in category theory.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $\mathfrak{A}$ be a structure of language $\mathcal{L}$. Define $\mathcal{L}_\mathfrak{A}$ as the language obtained by adding to $\mathcal{L}$ as many constants as the size of the domain of $\mathfrak{A}$.</p>
-</blockquote>
-
-<p>For example with Peano arithmetic, when $\mathcal{L} = (0, S, +)$ and $\mathfrak{A}$ is the standard model of arithmetic, then $\mathcal{L}_\mathfrak{A} = (0, 1, 2, 3, \dots, S, +)$.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $\Delta_\mathfrak{A}^+$ denote the set of all $\mathcal{L}_\mathfrak{A}$-atomic propositions satisfied by $\mathfrak{A}$. That is,</p>
-
-\[\Delta_\mathfrak{A}^+ = \{ R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
-
-  <p>Additionally, let $\Delta_\mathfrak{A}$ denote the set obtained by adding to $\Delta_\mathfrak{A}^+$ the negations of all $\mathcal{L}$-atomic propositions not satisfied by $\mathfrak{A}$. That is,</p>
-
-\[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
-</blockquote>
-
-<p>The notation $\Delta$ is related to the <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">arithmetic hierarchy</a>.</p>
-
-<p>Since $\Delta_\mathfrak{A}$ is obtained by adding the negations of atomic propositions missing from $\Delta_\mathfrak{A}^+$, the two sets contain essentially the same information. Nevertheless, we define the two sets separately because of the following theorem.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be $\mathcal{L}$-structures.</p>
-
-  <ol>
-    <li>There exists an injective homomorphism $f: \mathfrak{A} \to \mathfrak{B}$ if and only if $\mathfrak{B}$ is an $\mathcal{L}<em>\mathfrak{A}$-model of $\Delta</em>\mathfrak{A}^+$.</li>
-    <li>There exists an embedding $f: \mathfrak{A} \to \mathfrak{B}$ if and only if $\mathfrak{B}$ is an $\mathcal{L}<em>\mathfrak{A}$-model of $\Delta</em>\mathfrak{A}$.</li>
-  </ol>
-</blockquote>
-
-<p>That is, when $\mathfrak{B}$ satisfies $\Delta_\mathfrak{A}^+$, there is a possibility that $\mathfrak{B}$ satisfies atomic propositions ‘excessively’, preventing $\mathfrak{A}$ from being embedded into $\mathfrak{B}$. However, when $\mathfrak{B}$ satisfies $\Delta_\mathfrak{A}$, there are constraints on which atomic propositions $\mathfrak{B}$ can satisfy, thus guaranteeing the possibility of embedding.</p>
-
-<p>In a <a href="https://dimenerno.github.io/2025/04/17/los-tarski/">previous article</a>, we introduced the concept of <strong>elementary submodel</strong>. From this, we can define the following concept.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $f: \mathfrak{A} \to \mathfrak{B}$ is an embedding and $f[\mathfrak{A}]$ is an elementary submodel of $\mathfrak{B}$, we call $f$ an <strong>elementary embedding</strong>.</p>
-</blockquote>
-
-<p>The set of sentences related to elementary embeddings is as follows.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $E(\mathfrak{A})$ denote the set of all $\mathcal{L}_\mathfrak{A}$-propositions satisfied by $\mathfrak{A}$. That is,</p>
-
-\[E(\mathfrak{A}) = \{ \phi : \mathfrak{A} \vDash \phi \}\]
-</blockquote>
-
-<p>The most distinguishing feature of $E(\mathfrak{A})$ from $\Delta_\mathfrak{A}$ is that it also includes sentences with quantifiers.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be $\mathcal{L}$-structures. There exists an elementary embedding $f: \mathfrak{A} \to \mathfrak{B}$ if and only if $\mathfrak{B}$ is an $\mathcal{L}_\mathfrak{A}$-model of $E(\mathfrak{A})$.</p>
-</blockquote>
-
-<p>Finally, the following set of sentences is worth mentioning.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $\mathfrak{A}$ be an $\mathcal{L}$-structure. Let $\mathrm{Th}(\mathfrak{A})$ denote the set of all $\mathcal{L}$-sentences true in $\mathfrak{A}$.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be $\mathcal{L}$-structures. $\mathfrak{A}$ and $\mathfrak{B}$ are elementarily equivalent if and only if $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$.</p>
-</blockquote>
-
-<p>In fact, this is nothing more than the definition of elementary equivalence, so it hardly deserves to be called a theorem, but it has been included here to maintain consistency with the other theorems introduced in this article.</p>
-
-<p>Summarising in a table:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>Definition</th>
-      <th>Example</th>
-      <th>Mapping</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$\Delta_\mathfrak{A}^+$</td>
-      <td>$\mathcal{L}_\mathfrak{A}$-atomic propositions satisfied by $\mathfrak{A}$</td>
-      <td>$0 &lt; 1$</td>
-      <td>Surjective homomorphism</td>
-    </tr>
-    <tr>
-      <td>$\Delta_\mathfrak{A}$</td>
-      <td>$\Delta_0$ $\mathcal{L}_\mathfrak{A}$-propositions satisfied by $\mathfrak{A}$</td>
-      <td>$\lnot(1 &lt; 0)$</td>
-      <td>Embedding (submodel)</td>
-    </tr>
-    <tr>
-      <td>$\mathrm{Th}(\mathfrak{A})$</td>
-      <td>$\mathcal{L}$-propositions satisfied by $\mathfrak{A}$</td>
-      <td>$\forall x \exists y (x &lt; y)$</td>
-      <td>Elementary equivalence</td>
-    </tr>
-    <tr>
-      <td>$E(\mathfrak{A})$</td>
-      <td>$\mathcal{L}_\mathfrak{A}$-propositions satisfied by $\mathfrak{A}$</td>
-      <td>$\not \exists x (x &lt; 0)$</td>
-      <td>Elementary embedding (elementary submodel)</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>For example, $\mathfrak{A} = (\mathbb{N}, &lt;)$ embeds into $\mathfrak{B} = (\mathbb{Z}, &lt;)$, but does not embed elementarily. This is because $\mathfrak{B}$ does not satisfy the sentence $\not \exists x (x &lt; 0)$ from $E(\mathfrak{A})$.</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>
