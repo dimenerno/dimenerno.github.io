@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     닫힌집합과 보렐 집합에서의 연속체 가설 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/09/23/ch-for-borel" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">닫힌집합과 보렐 집합에서의 연속체 가설</h1>
+  <span class="post-date">23 Sep 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'" >위상수학</div>
+      
+    </div>
+  
+  <p>연속체 가설은 $\aleph_1 = 2^{\aleph_0}$가 성립하는지에 관한 질문이다. 이는 비가산 집합 중 실수 집합보다 크기가 작은 집합이 있는지에 관한 질문과 같다. 잘 알려져 있듯이 연속체 가설은 ZFC에서 증명과 반증이 불가능하지만, 몇몇 제한적인 경우에 대해서는 증명할 수 있다. 일찍이 칸토어는 연속체 가설을 실수의 닫힌집합으로 제한할 경우 성립함을 증명했다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $F \subseteq \mathbb{R}$이 닫힌집합이라면 $|F| = \aleph_0$이거나 $|F| = 2^{\aleph_0}$이다.</p>
+</blockquote>
+
+<p>이 정리의 증명은 <strong>완벽한 집합<sub>perfect set</sub></strong>이라는 개념을 사용한다. 이에 관해서는 예전에 <a href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson">칸토어-벤딕슨 정리</a>를 다루며 소개한 적 있지만 다시 소개하겠다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$에 대해 $P \subseteq X$가 완벽하다는 것은 $P = P’$이라는 것이다. ($P’$은 $X$에 대한 $P$의 극점<sub>limit point</sub>들의 집합)</p>
+</blockquote>
+
+<p>일반적으로 부분집합 $A \subseteq X$에 대해 $A$와 $A’$이 서로 포함 관계가 아닌 이유는 두 가지이다:</p>
+
+<ol>
+  <li>$x$가 $A$의 고립점일 경우 $x \in A$이지만 $x \notin A’$</li>
+  <li>$x$가 $A$에 속하지 않는 극점일 경우 $x \notin A$이지만 $x \in A’$</li>
+</ol>
+
+<p>따라서 완벽한 집합은 고립점을 가지지 않는 닫힌집합이다. 이에 따라, 어떤 닫힌집합 $F$가 주어졌을 때 $F$의 고립점들을 모두 ‘덜어’ 내면 완벽한 집합이 되지 않을까 기대할 수 있다. 문제는, 고립점을 덜어 낸 집합이 또다시 고립점을 가질 수 있다는 것이다. 예를 들어,</p>
+
+\[F = \mathbb{N} \cup \lbrace  m - 1/n : m \geq 0, n &gt; 1 \rbrace\]
+
+<p>일 때, $F$의 고립점들을 덜어 낸 집합은 $\mathbb{N}$으로 또다시 가산 개의 고립점을 가진다. 그러나 이같이 고립점을 ‘덜어’ 내는 과정을 초한귀납적으로 반복한다면 다음의 흥미로운 결과를 얻을 수 있다.</p>
+
+<blockquote>
+  <p><strong>칸토어-벤딕슨 정리.</strong> $F \subseteq \mathbb{R}$가 닫힌집합이라면 어떤 가산집합 $C$와 완벽한 집합 $P$가 존재하여 $F = P \sqcup C$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 앞선 링크에 증명이 소개되어 있지만, 여기서는 칸토어의 증명을 소개한다.</p>
+
+<p>초한귀납적으로 다음과 같이 정의하자.</p>
+
+\[\begin{gather}
+F_0 = F \\
+F_{\alpha + 1} = F_\alpha' \\
+F_\lambda = \bigcup_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
+\end{gather}\]
+
+<p>다음을 관찰하라.</p>
+
+<ol>
+  <li>각 $F_\alpha$는 닫힌집합이다.</li>
+  <li>$\alpha \leq \beta$라면 $F_\alpha \supseteq F_\beta$이다.</li>
+  <li>$F_\alpha \setminus F_{\alpha + 1}$은 $F_\alpha$의 고립점들의 집합이다.</li>
+  <li>$\alpha \neq \beta$라면 $F_{\alpha} \setminus F_{\alpha + 1}$와 $F_{\beta} \setminus F_{\beta+1}$는 서로소이다.</li>
+</ol>
+
+<p>만약 모든 $\alpha \in \mathrm{Ord}$에 대해 $F_{\alpha} \setminus F_{\alpha+1} \neq \varnothing$이었다면 $\mathcal{P}(F)$의 하르토그 수 $\gamma$에 대해 $f : \gamma \to \mathcal{P}(F); \alpha \mapsto F_{\alpha} \setminus F_{\alpha + 1}$가 단사이므로 모순이다. 따라서 $F_{\xi} \setminus F_{\xi+1} = \varnothing$인 $\xi$가 존재한다. 따라서 $P = F_\xi$로 두면 $P$는 공집합이거나 완벽한 집합이다.</p>
+
+<p>$C = F \setminus P$라고 하자. $\mathcal{B} = \lbrace  B_n \rbrace $이 $\mathbb{R}$의 가산 기저라고 하자. 다음과 같이 $f: C \to \omega$를 정의한다.</p>
+
+\[f(x) = \mathop{\arg \min}\limits_{n \in \omega} : B_n \cap F_\alpha = \{ x \} \quad (x \in F_\alpha \setminus F_{\alpha + 1})\]
+
+<p>$f$가 well-defined이며 단사임을 확인하라. ■</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $P \subseteq \mathbb{R}$이 공집합이 아닌 완벽한 집합이라면 $|P| = 2^{\aleph_0}$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 다음의 두 보조정리를 증명한다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $P \subseteq \mathbb{R}$이 공집합이 아닌 완벽한 집합이라면, 어떤 공집합이 아니며 완벽한 서로소 집합 $P_1, P_2 \subset P$가 존재한다.</p>
+</blockquote>
+
+<p><em>증명.</em> $\alpha = \inf P, \beta = \sup P$라고 하자 ($\alpha, \beta$는 $\pm \infty$일 수도 있다). $(\alpha, \beta) \subset P$라면 $\alpha &lt; r &lt; s &lt; \beta$인 임의의 $r, s$에 대해 $P \cap (-\infty, r], P \cap [s, \infty)$가 조건을 만족한다. $(\alpha, \beta) \not\subset P$라면, 어떤 $x \in (\alpha, \beta)$가 존재하여 $x \notin P$이다. $P = P’$이므로, $x$는 $P$의 극점이 아니다. 따라서 어떤 충분히 작은 $\delta &gt; 0$가 존재하여 $(x - \delta, x + \delta)$가 $F$와 서로소이고 $\alpha &lt; x - \delta, x + \delta &lt; \beta$이다. 이때 $P \cap (-\infty, x - \delta], P \cap [x + \delta, \infty)$가 조건을 만족한다. □</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $P \subseteq \mathbb{R}$이 공집합이 아닌 완벽한 집합이라면, 임의의 $n &gt; 0$에 대해 어떤 공집합이 아니며 완벽한 집합 $P’ \subset P$가 존재하여 $\mathrm{diam} P’ &lt; 1/n$이다.</p>
+</blockquote>
+
+<p><em>증명.</em> $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $에 대해, 어떤 $(k/n, (k+1)/n) \in \mathcal{J}$가 존재하여 $J \cap F \neq \varnothing$이다 (만약 그렇지 않다면 $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $이므로 완벽하지 않다). $E = F \cap [k/n, (k+1)/n]$이라고 하자. $E$는 닫힌집합이므로, $E$가 고립점을 가지지 않는다면 $E$는 완벽하다. 만약 $x \in E$가 고립점이라면 어떤 충분히 작은 $\delta &gt; 0$가 존재하여 $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $이고 $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$이다. 이때 $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $이므로 $x$는 $F$의 고립점이다. 이는 모순이므로, $E$는 완벽하다. □</p>
+
+<p>$P$가 공집합이 아닌 완벽한 집합이라고 하자. 위 두 보조정리로부터, 선택 공리를 사용함으로써 다음과 같이 귀납적으로 정의할 수 있다.</p>
+
+<ul>
+  <li>$P_1, P_2 \subset P, P_1 \cap P_2 = \varnothing, \mathrm{diam} P_1, \mathrm{diam} P_2 &lt; 1/2$</li>
+  <li>$P_{11}, P_{12} \subset P_1, P_{11} \cap P_{12} = \varnothing, \mathrm{diam} P_{11}, \mathrm{diam} P_{12} &lt; 1/4$</li>
+  <li>$P_{21}, P_{22} \subset P_2, P_{21} \cap P_{22} = \varnothing, \mathrm{diam} P_{21}, \mathrm{diam} P_{22} &lt; 1/4$</li>
+  <li>$P_{111}, P_{112} \subset P_{11}, P_{111} \cap P_{112} = \varnothing, \mathrm{diam} P_{111}, \mathrm{diam} P_{112} &lt; 1/8$</li>
+  <li>…</li>
+</ul>
+
+<p>모든 $P_i$의 교집합을 $A$라고 하자. $A$는 칸토어 집합과 크기가 같다. 그런데 칸토어 집합은 실수와 크기가 같으므로, $|P| = 2^{\aleph_0}$이다. ■</p>
+
+<p>위 정리와 칸토어-벤딕슨 정리로부터 다음 결과가 얻어진다.</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $F \subseteq \mathbb{R}$이 닫힌집합이라면 $|F| = \aleph_0$이거나 $|F| = 2^{\aleph_0}$이다.</p>
+</blockquote>
+
+<p>참고로 칸토어-벤딕슨 정리와 비슷한 결과가 보렐 집합에서 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $B \subseteq \mathbb{R}$이 비가산 보렐 집합이라면 $B$는 완벽한 집합을 포함한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 생략.</p>
+
+<p>따라서 보다 일반적으로 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $B \subseteq \mathbb{R}$이 보렐 집합이라면 $|B| = \aleph_0$이거나 $|F| = 2^{\aleph_0}$이다.</p>
+</blockquote>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>
