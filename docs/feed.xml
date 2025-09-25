@@ -119,7 +119,7 @@ F_\lambda = \bigcup_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
 <p>따라서 보다 일반적으로 다음이 성립한다.</p>
 
 <blockquote>
-  <p><strong>따름정리.</strong> $B \subseteq \mathbb{R}$이 보렐 집합이라면 $|B| = \aleph_0$이거나 $|F| = 2^{\aleph_0}$이다.</p>
+  <p><strong>따름정리.</strong> $B \subseteq \mathbb{R}$이 보렐 집합이라면 $|B| = \aleph_0$이거나 $|B| = 2^{\aleph_0}$이다.</p>
 </blockquote>
 
           ]]>

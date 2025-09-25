@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-09-25T18:30:39+09:00</updated>
+ <updated>2025-09-25T18:38:59+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -120,7 +120,7 @@ F_\lambda = \bigcup_{\alpha &amp;lt; \lambda} F_\alpha \quad (\lim \lambda)
 &lt;p&gt;따라서 보다 일반적으로 다음이 성립한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;따름정리.&lt;/strong&gt; $B \subseteq \mathbb{R}$이 보렐 집합이라면 $|B| = \aleph_0$이거나 $|F| = 2^{\aleph_0}$이다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;따름정리.&lt;/strong&gt; $B \subseteq \mathbb{R}$이 보렐 집합이라면 $|B| = \aleph_0$이거나 $|B| = 2^{\aleph_0}$이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
  </entry>
