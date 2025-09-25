@@ -53,7 +53,7 @@ For convenience of expression, let us refer to $\|X\| \leq \|Y\|$ and $\|X\| = \
    - Advantage: The definition is reasonably intuitive, avoids the class problem, and is not dependent on the axiom of choice
    - Disadvantage: Inconvenient to handle and has many limitations
 
-In modern set theory, either 2 or 3 is adopted as the definition of cardinality. In both cases, one can prove that Theorem 1 holds in ZFC.
+In fact, 4 is never used as a definition, but I've listed it for reference purpose. In modern set theory, either 2 or 3 is adopted as the definition of cardinality. In both cases, one can prove that Theorem 1 holds in ZFC.
 
 What is interesting is that whilst the axiom of choice is not required to define cardinality using Scott's trick, the axiom of choice is needed to prove that cardinality defined by Scott's trick satisfies Theorem 1. This is because the following is equivalent to the axiom of choice:
 

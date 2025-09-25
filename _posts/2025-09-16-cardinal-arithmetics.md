@@ -6,7 +6,7 @@ tags: ["수학", "집합론"]
 related:
 ---
 
-이 글에서 모든 집합과 기수는 무한하다. 또한 $\omega\_\alpha$를 크기가 $\aleph\_\alpha$인 첫 서수로 정의한다 ([어떤 기수의 정의를 채택하냐에 따라](/2025/04/20/cardinality/) $\omega\_\alpha = \aleph\_\alpha$일 수 있다.) 또한 원래 $\mathrm{cf}$는 서수를 인자로 받지만, 이 글에서는 기수도 인자로 받을 수 있다고 한다. 즉, $\mathrm{cf}(\aleph_\alpha) = \mathrm{cf}(\omega_\alpha)$이다.
+이 글에서 모든 집합과 기수는 무한하다.
 
 ## 1. 기수 덧셈
 
