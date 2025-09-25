@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-09-25T18:29:31+09:00</updated>
+ <updated>2025-09-25T18:30:39+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>닫힌집합과 보렐 집합에서의 연속체 가설</title>
-   <link href="https://dimenerno.github.io/2025/09/23/ch-for-borel"/>
-   <updated>2025-09-23T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/09/23/ch-for-borel</id>
+   <link href="https://dimenerno.github.io/2025/09/25/ch-for-borel"/>
+   <updated>2025-09-25T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/09/25/ch-for-borel</id>
    <content type="html">&lt;p&gt;연속체 가설은 $\aleph_1 = 2^{\aleph_0}$가 성립하는지에 관한 질문이다. 이는 비가산 집합 중 실수 집합보다 크기가 작은 집합이 있는지에 관한 질문과 같다. 잘 알려져 있듯이 연속체 가설은 ZFC에서 증명과 반증이 불가능하지만, 몇몇 제한적인 경우에 대해서는 증명할 수 있다. 일찍이 칸토어는 연속체 가설을 실수의 닫힌집합으로 제한할 경우 성립함을 증명했다.&lt;/p&gt;
 
 &lt;blockquote&gt;
