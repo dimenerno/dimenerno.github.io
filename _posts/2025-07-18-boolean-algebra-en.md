@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "불 대수 구조의 아이디얼과 필터"
+title: "Ideals and Filters in Boolean Algebraic Structures"
 date: 2025-07-18
-tags: ["수학", "논리학", "대수학"]
-lang: en
+tags: ["Mathematics", "Logic", "Algebra"]
 related:
+lang: en
 ---
 
-## 불 대수
+> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
-불 대수<sub>boolean algebra</sub>는 거짓을 의미하는 $0$과 참을 의미하는 $1$ 위에서 정의되는 $\lor, \land, \lnot$ 등의 논리 연산으로 이루어진 대수이다.
+## Boolean Algebra
+
+Boolean algebra is an algebra consisting of logical operations such as $\lor, \land, \lnot$ defined over $0$ representing false and $1$ representing true.
 
 | $a$ | $b$ | $a \lor b$ | $a \land b$ | $\lnot a$ |
 | --- | --- | ---------- | ----------- | --------- |
@@ -18,7 +20,7 @@ related:
 | $1$ | $0$ | $1$        | $0$         | $0$       |
 | $1$ | $1$ | $1$        | $1$         | $0$       |
 
-여기서 $0$과 $1$을 거짓과 참을 나타내는 형식적 기호로서가 아닌, 대소 비교가 가능한 실제 수로서 간주하면, $\lor$는 $\max$에, $\land$은 $\min$에, $\lnot$은 켤레 연산 $\bar{(\cdot)}: 0 \mapsto 1, 1 \mapsto 0$에 대응됨을 확인할 수 있다.
+When we regard $0$ and $1$ not as formal symbols representing false and true, but as actual numbers capable of magnitude comparison, we can verify that $\lor$ corresponds to $\max$, $\land$ to $\min$, and $\lnot$ to the complement operation $\bar{(\cdot)}: 0 \mapsto 1, 1 \mapsto 0$.
 
 | $a$ | $b$ | $\max (a, b)$ | $\min (a, b)$ | $\bar{a}$ |
 | --- | --- | ------------- | ------------- | --------- |
@@ -27,43 +29,43 @@ related:
 | $1$ | $0$ | $1$           | $0$           | $0$       |
 | $1$ | $1$ | $1$           | $1$           | $0$       |
 
-이에 착안하여, 우리는 불 대수의 정의역을 $\lbrace 0, 1 \rbrace$에서 $[0, 1]$로 자연스럽게 확장할 수 있다. 가령 $0.2 \lor 0.7 = 0.7, 0.3 \land \lnot(0.9) = 0.1$와 같이 말이다. 이 생각을 발전시켜 보면, 적절한 순서 관계가 주어진 집합 위에서는 불 대수와 구조적으로 비슷한 연산을 정의할 수 있으며, 반대로 불 대수와 구조적으로 비슷한 연산이 정의된 집합에는 적절한 순서 관계를 줄 수 있을 듯하다. 이것이 불 대수 구조의 발상이다.
+Building on this insight, we can naturally extend the domain of Boolean algebra from $\lbrace 0, 1 \rbrace$ to $[0, 1]$. For instance, $0.2 \lor 0.7 = 0.7$ and $0.3 \land \lnot(0.9) = 0.1$. Developing this idea further, we can define operations structurally similar to Boolean algebra on sets with appropriate order relations, and conversely, sets with operations structurally similar to Boolean algebra can be given appropriate order relations. This is the genesis of Boolean algebraic structures.
 
 <blockquote>
-<p><b>정의.</b> 어떤 두 원소 $0$과 $1$을 가지는 집합 $A$ 위에서 정의된 이항연산 $\lor, \land$과 단항연산 $\lnot$이 다음의 공리를 만족할 때, $(A, 0, 1, \lor, \land, \lnot)$을 <b>불 대수 구조<sub>Boolean algebraic structure</sub></b>라고 부른다.</p>
+<p><b>Definition.</b> When binary operations $\lor, \land$ and unary operation $\lnot$ defined on a set $A$ with two elements $0$ and $1$ satisfy the following axioms, we call $(A, 0, 1, \lor, \land, \lnot)$ a <b>Boolean algebraic structure</b>.</p>
 <table style="font-size: 0.9em">
 <tr>
-<th>공리</th>
+<th>Axiom</th>
 <th>$\lor$</th>
 <th>$\land$</th>
 </tr>
 <tr>
-<td>결합</td>
+<td>Associativity</td>
 <td>$a \lor (b \lor c) = (a \lor b) \lor c$</td>
 <td>$a \land (b \land c) = (a \land b) \land c$</td>
 </tr>
 <tr>
-<td>교환</td>
+<td>Commutativity</td>
 <td>$a \lor b = b \lor a$</td>
 <td>$a \land b = b \land a$</td>
 </tr>
 <tr>
-<td>분배</td>
+<td>Distributivity</td>
 <td>$a \lor (b \land c) = (a \lor b) \land (a \lor c)$</td>
 <td>$a \land (b \lor c) = (a \land b) \lor (a \land c)$</td>
 </tr>
 <tr>
-<td>항등원</td>
+<td>Identity</td>
 <td>$a \lor 0 = a$</td>
 <td>$a \land 1 = a$</td>
 </tr>
 <tr>
-<td>쌍역원</td>
+<td>Complement</td>
 <td>$a \lor \lnot a = 1$</td>
 <td>$a \land \lnot a = 0$</td>
 </tr>
 <tr>
-<td>흡수</td>
+<td>Absorption</td>
 <td>$a \lor (a \land b) = a$</td>
 <td>$a \land (a \lor b) = a$</td>
 </tr>
@@ -72,11 +74,11 @@ related:
 
 **Remark.**
 
-- 흡수법칙은 나머지 다섯 공리로부터 증명이 가능하다.
+- The absorption law can be proved from the other five axioms.
 
-- "쌍역원"이라는 표현은, 원래 $x$에 곱의 역원 $x^{-1}$을 곱하면 곱의 항등원 $1$이 나오고, 합의 역원 $-x$를 더하면 합의 항등원 $0$이 나와야 하지만, 불 대수 구조의 경우 $x \lor \lnot x$의 결과가 $\lor$의 항등원 $0$이 아닌 $\land$의 항등원 $1$이고, $x \land \lnot x$의 결과가 $\land$의 항등원 $1$이 아닌 $\lor$의 항등원 $0$이기 때문에, 혼동의 여지를 줄이고자 도입했다.
+- The term "complement" is used because, whilst ordinarily multiplying $x$ by its multiplicative inverse $x^{-1}$ should yield the multiplicative identity $1$, and adding the additive inverse $-x$ should yield the additive identity $0$, in Boolean algebraic structures the result of $x \lor \lnot x$ is not the identity $0$ for $\lor$ but rather the identity $1$ for $\land$, and the result of $x \land \lnot x$ is not the identity $1$ for $\land$ but rather the identity $0$ for $\lor$. This terminology was introduced to reduce potential confusion.
 
-서론의 두 예시는 불 대수 구조임을 확인하라. 또다른 예시로, 집합 $X = \lbrace  p, q, r \rbrace $의 멱집합 $\mathcal{P}(X)$를 보자. 다음과 같이 두었을 때 $\mathcal{P}(X)$는 불 대수 구조가 됨을 확인하라.
+Verify that the two examples in the introduction are Boolean algebraic structures. As another example, consider the power set $\mathcal{P}(X)$ of the set $X = \lbrace  p, q, r \rbrace $. Verify that $\mathcal{P}(X)$ becomes a Boolean algebraic structure when we define:
 
 - $a \lor b = a \cup b$
 - $a \land b = a \cap b$
@@ -84,37 +86,37 @@ related:
 - $1 = X$
 - $0 = \varnothing$
 
-$X$가 임의의 집합일 때에도 일반적으로 $X$의 멱집합은 불 대수 구조를 이룬다.
+Generally, when $X$ is any set, the power set of $X$ forms a Boolean algebraic structure.
 
-불 대수 구조에는 자연스러운 방식으로 부분순서<sub>partial order</sub>를 줄 수 있다.
+A Boolean algebraic structure can be given a partial order in a natural way.
 
-> **정리.** $A$가 불 대수 구조라고 하자. 다음의 이항관계를 정의한다.
+> **Theorem.** Let $A$ be a Boolean algebraic structure. Define the following binary relation:
 >
 > $$
 > a \leq b \iff a = a \land b
 > $$
 >
-> $\leq$는 $A$의 부분순서이다. $1$과 $0$은 각각 $\leq$의 최대 원소, 최소 원소이다. $\lor$와 $\land$는 각각 $\leq$에 대한 상한과 하한을 내놓는 연산이다.
+> Then $\leq$ is a partial order on $A$. $1$ and $0$ are respectively the greatest and least elements of $\leq$. $\lor$ and $\land$ are respectively operations that yield the supremum and infimum with respect to $\leq$.
 
-마찬가지로 증명은 생략한다. 이와 같이 불 대수 구조 $A$ 위에는 자연스러운 방식으로 부분순서 $\leq$를 줄 수 있으므로, $\leq$에 따라 $A$의 하세 다이어그램<sub>Hasse diagram</sub>을 그릴 수 있다. 일례로 앞서 본 $X = \lbrace p, q, r\rbrace $에 대해 $\mathcal{P}(X)$가 이루는 불 대수 구조를 보자.
+The proof is omitted. Since a Boolean algebraic structure $A$ can be given a partial order $\leq$ in this natural way, we can draw the Hasse diagram of $A$ according to $\leq$. For instance, consider the Boolean algebraic structure formed by $\mathcal{P}(X)$ for $X = \lbrace p, q, r\rbrace $ seen earlier.
 
 $$
 a \leq b \iff a = a \land b \iff a = a \cap b \iff a \subseteq b
 $$
 
-이므로, 이 경우 불 대수 구조의 하세 다이어그램은 집합의 포함 다이어그램과 같다.
+So in this case, the Hasse diagram of the Boolean algebraic structure is the same as the inclusion diagram of sets.
 
 <img src="/public/boolalg-1.png" style="width: 100%; max-width: 300px; margin: 0 auto;">
 
-## 불 환
+## Boolean Rings
 
-불 대수 구조는 두 개의 연산과, 각 연산에 해당되는 항등원을 요구한다는 점에서 환<sub>ring</sub>과 정의가 비슷하다. 이는 단순한 우연이 아니다.
+Boolean algebraic structures require two operations and the corresponding identity elements for each operation, which makes their definition similar to that of rings. This is not mere coincidence.
 
-> **정의.** 환 $R$이 **불 환<sub>Boolean ring</sub>**이라는 것은, 임의의 $x \in R$에 대해 $x^2 = x$라는 것이다.
+> **Definition.** A ring $R$ is a **Boolean ring** if for any $x \in R$, we have $x^2 = x$.
 
-불 대수 구조와 불 환은 일대일 대응된다. 즉, 다음이 성립한다.
+Boolean algebraic structures and Boolean rings are in one-to-one correspondence. That is, the following holds:
 
-> **정리.** $(R, 0, 1, +, \cdot)$가 불 환이라면, $(R, 0, 1, \lor, \cdot, (\cdot)^{-1})$은 불 대수 구조이다. 여기서 $\lor, \lnot$은 다음과 같이 정의된다.
+> **Theorem.** If $(R, 0, 1, +, \cdot)$ is a Boolean ring, then $(R, 0, 1, \lor, \cdot, (\cdot)^{-1})$ is a Boolean algebraic structure, where $\lor, \lnot$ are defined as follows:
 >
 > $$
 > \begin{gather}
@@ -123,127 +125,128 @@ $$
 > \end{gather}
 > $$
 >
-> 역으로, $(A, 0, 1, \lor, \land, \lnot)$이 불 대수 구조라면 $(A, 0, 1, +, \land)$은 불 환이다. 여기서 $+$는 다음과 같이 정의된다.
+> Conversely, if $(A, 0, 1, \lor, \land, \lnot)$ is a Boolean algebraic structure, then $(A, 0, 1, +, \land)$ is a Boolean ring, where $+$ is defined as follows:
 >
 > $$
 > x + y = (x \lor y) \land \lnot (x \land y)
 > $$
 
-증명은 공리를 따라 계산해 보면 되므로 생략한다.
+The proof can be done by computing according to the axioms, so it is omitted.
 
-## 아이디얼
+## Ideals
 
-대수학에서 다음의 정의를 상기하자.
+Recall the following definition from algebra:
 
-> **정의.** 환 $R$에 대해 공집합이 아닌 $I \subseteq R$이 **아이디얼<sub>ideal</sub>**이라는 것은, $I$가 덧셈에 대해 군을 이루며, 임의의 $a \in R$과 $x \in I$에 대해 $ax \in I$라는 것이다. 즉, $aI \subseteq I$이다.
+> **Definition.** For a ring $R$, a non-empty subset $I \subseteq R$ is an **ideal** if $I$ forms a group under addition and for any $a \in R$ and $x \in I$, we have $ax \in I$. That is, $aI \subseteq I$.
 
-불 대수 구조와 불 환 대응에서 드러난 유사성에 착안하여, 다음과 같이 정의하자.
+Building on the similarity revealed in the correspondence between Boolean algebraic structures and Boolean rings, let us define:
 
-> **정의.** 불 대수 구조 $A$에 대해 공집합이 아닌 $I \subseteq A$가 **아이디얼**이라는 것은, $I$가 $\lor$에 대해 닫혀 있고, 임의의 $a \in A$와 $x \in I$에 대해 $a \land x \in I$라는 것이다. 즉, $a \land I \subseteq I$이다.
+> **Definition.** For a Boolean algebraic structure $A$, a non-empty subset $I \subseteq A$ is an **ideal** if $I$ is closed under $\lor$ and for any $a \in A$ and $x \in I$, we have $a \land x \in I$. That is, $a \land I \subseteq I$.
 
-예를 들어 다음의 색칠된 영역은 $\mathcal{P}(\lbrace p, q, r\rbrace )$의 아이디얼이다.
+For example, the following shaded region is an ideal of $\mathcal{P}(\lbrace p, q, r\rbrace )$:
 
 <img src="/public/boolalg-2.png" style="width: 100%; max-width: 300px; margin: 0 auto;">
 
-불 대수 구조를 불 환에 대응시키면, $I$가 전자에서 아이디얼이라는 것은 곧 후자에서 아이디얼이라는 것과 같다. 즉 다음이 성립한다.
+When we correspond a Boolean algebraic structure to a Boolean ring, $I$ being an ideal in the former is equivalent to being an ideal in the latter. That is, the following holds:
 
-> **정리.** 불 대수 구조 $A$에 대해 $I \subseteq A$가 (불) 아이디얼일 필요충분조건은, 대응되는 불 환 $A$에서 $I$가 (환) 아이디얼인 것이다.
+> **Theorem.** For a Boolean algebraic structure $A$, $I \subseteq A$ is a (Boolean) ideal if and only if $I$ is a (ring) ideal in the corresponding Boolean ring $A$.
 
-따라서 불 대수 구조에서도 소 아이디얼<sub>prime ideal</sub>과 극대 아이디얼<sub>maximal ideal</sub>을 정의할 수 있다.
+Therefore, we can also define prime ideals and maximal ideals in Boolean algebraic structures.
 
-> **정의.** $I$가 불 대수 구조 $A$의 아이디얼이라고 하자. $I$가 **소 아이디얼**이라는 것은, 임의의 $a, b \in A$에 대해, $a \land b \in I$라면 $a \in I$이거나 $b \in I$라는 것이다. $I$가 **극대 아이디얼**이라는 것은, $J$가 $I$를 엄격히 포함하는 아이디얼일 때, $J = A$라는 것이다.
+> **Definition.** Let $I$ be an ideal of the Boolean algebraic structure $A$. $I$ is a **prime ideal** if for any $a, b \in A$, if $a \land b \in I$, then $a \in I$ or $b \in I$. $I$ is a **maximal ideal** if whenever $J$ is an ideal that strictly contains $I$, we have $J = A$.
 
-이들 개념 또한 불 환의 소 아이디얼과 극대 아이디얼에 정확히 상응한다. 앞서 본 아이디얼의 예시는 소 아이디얼인 동시에 극대 아이디얼임을 확인하라. 곧 드러나듯이, 이는 우연이 아니다.
+These concepts also correspond exactly to prime ideals and maximal ideals of Boolean rings. Verify that the example ideal shown earlier is both a prime ideal and a maximal ideal. As will soon become apparent, this is not a coincidence.
 
-몇 가지 사실을 관찰해 보자. $I \subset A$가 아이디얼이라고 하자.
+Let us observe several facts. Let $I \subset A$ be an ideal.
 
-- 임의의 $a \in I$에 대해, 아이디얼의 정의로부터 $a \land \lnot a = 0 \in I$임이 따라 나온다. 따라서 불 대수의 아이디얼은 항상 $0$을 원소로 가진다.
+- For any $a \in I$, by the definition of an ideal, it follows that $a \land \lnot a = 0 \in I$. Therefore, ideals of Boolean algebras always contain $0$ as an element.
 
-- 만약 $1 \in I$라면, 임의의 $a \in A$에 대해 $1 \land a = a \in I$임이 따라 나온다. 따라서 $1$을 원소로 가지는 아이디얼은 전체 구조가 유일하다.
+- If $1 \in I$, then for any $a \in A$, it follows that $1 \land a = a \in I$. Therefore, the ideal containing $1$ as an element is uniquely the entire structure.
 
-- $I$가 소 아이디얼이라면, 임의의 $a \in A$에 대해 $a \land \lnot a = 0 \in I$이므로, $a \in I$ 또는 $\lnot a \in I$이다. 즉, 소 아이디얼은 언제나 임의의 원소 또는 그 부정을 포함한다.
+- If $I$ is a prime ideal, then for any $a \in A$, since $a \land \lnot a = 0 \in I$, we have $a \in I$ or $\lnot a \in I$. That is, prime ideals always contain either any element or its negation.
 
-- $I$가 극대 아이디얼이라고 하자. 만약 어떤 $a \in A$가 존재하여 $a \not\in I, \lnot a \not\in I$라면 $I \cup \lbrace  x \land a : x \in A \rbrace$가 $I$를 엄격히 포함하며 $A$ 전체는 아닌 아이디얼이므로 $I$는 극대가 아니다. 따라서 극대 아이디얼 또한 언제나 임의의 원소 또는 그 부정을 포함한다.
+- Let $I$ be a maximal ideal. If there exists some $a \in A$ such that $a \not\in I, \lnot a \not\in I$, then $I \cup \lbrace  x \land a : x \in A \rbrace$ is an ideal that strictly contains $I$ but is not the entire $A$, so $I$ is not maximal. Therefore, maximal ideals also always contain either any element or its negation.
 
-위 사실로부터 조금의 추론을 거치면 다음을 알 수 있다.
+From the above facts, with a little reasoning, we can deduce the following:
 
-> **정리.** $A$가 불 대수 구조이고 $I$가 $A$의 아이디얼이라고 하자. 다음은 동치이다.
+> **Theorem.** Let $A$ be a Boolean algebraic structure and $I$ be an ideal of $A$. The following are equivalent:
 >
-> - $I$는 소 아이디얼이다.
-> - $I$는 극대 아이디얼이다.
-> - 임의의 $x \in A$에 대해, $x \in I$이거나 $\lnot x \in I$이다.
+> - $I$ is a prime ideal.
+> - $I$ is a maximal ideal.
+> - For any $x \in A$, either $x \in I$ or $\lnot x \in I$.
 
-이런 면에서 불 대수 구조는 환론에서의 PID<sub>principal ideal domain</sub>와 비슷하다.
+In this respect, Boolean algebraic structures are similar to principal ideal domains in ring theory.
 
-## 필터
+## Filters
 
-필터<sub>filter</sub>에 관해서는 [이전 글](https://dimenerno.github.io/2025/01/22/hypernaturals)에서 다룬 바가 있다. 정의를 상기해 보자.
+Filters were discussed in a [previous post](https://dimenerno.github.io/2025/01/22/hypernaturals). Let us recall the definition:
 
-> **정의.** $X$가 집합이라고 하자. $X$의 부분집합들로 이루어진 집합 $\mathcal{F}$가 다음을 만족할 때, $X$의 필터라고 부른다.
+> **Definition.** Let $X$ be a set. A collection $\mathcal{F}$ of subsets of $X$ is called a filter on $X$ if it satisfies the following:
 >
 > 1. $X \in \mathcal{F}$
 > 2. $\varnothing \not\in \mathcal{F}$
-> 3. 상위집합 닫힘: $A \in \mathcal{F}, A \subset B \implies B \in \mathcal{F}$
-> 4. 유한 교집합 닫힘: $A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$
+> 3. Upward closure: $A \in \mathcal{F}, A \subset B \implies B \in \mathcal{F}$
+> 4. Finite intersection closure: $A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$
 
-이 정의를 불 대수 구조로 옮기면 다음과 같다.
+Translating this definition to Boolean algebraic structures gives us:
 
-> **정의.** 불 대수 구조 $A$에 대해 $F \subseteq A$가 **필터**라는 것은, $F$가 $\land$에 대해 닫혀 있고, 임의의 $a \in A$와 $x \in I$에 대해 $a \lor x \in I$라는 것이다. 즉, $a \lor I \subseteq I$이다.
+> **Definition.** For a Boolean algebraic structure $A$, $F \subseteq A$ is a **filter** if $F$ is closed under $\land$ and for any $a \in A$ and $x \in I$, we have $a \lor x \in I$. That is, $a \lor I \subseteq I$.
 
-$\land$에 대해 닫혀 있음이 기존의 "유한 교집합 닫힘" 조건에 해당하고, $a \lor I \subseteq I$가 기존의 "상위집합 닫힘" 조건에 해당한다. 특히 $a \lor I \subseteq I$는, 불 대수 구조를 $\leq$ 방향으로 흐르는 일련의 물의 흐름으로 생각했을 때, $x \in I$에서 잉크를 떨어뜨리면 잉크가 퍼져나가는 영역이 모두 $I$에 포섭된다는 의미이다 (이를 [이전 글](https://dimenerno.github.io/2025/01/22/hypernaturals)에서 든 잉크의 예시와 비교해 보라). 예를 들어 다음의 색칠된 영역은 $\mathcal{P}(\lbrace  p, q, r\rbrace )$의 필터이다.
+Being closed under $\land$ corresponds to the original "finite intersection closure" condition, and $a \lor I \subseteq I$ corresponds to the original "upward closure" condition. In particular, $a \lor I \subseteq I$ means that if we think of the Boolean algebraic structure as a flow of water flowing in the direction of $\leq$, when ink is dropped at $x \in I$, all regions where the ink spreads are contained in $I$ (compare this with the ink example from the [previous post](https://dimenerno.github.io/2025/01/22/hypernaturals)). For example, the following shaded region is a filter of $\mathcal{P}(\lbrace  p, q, r\rbrace )$:
 
 <img src="/public/boolalg-3.png" style="width: 100%; max-width: 300px; margin: 0 auto;">
 
-## 아이디얼과 필터의 쌍대성
+## Duality Between Ideals and Filters
 
-아이디얼과 필터의 정의를 비교해 보면 흥미로운 사실을 발견할 수 있다. 한쪽 정의에서 $\land$과 $\lor$을 맞바꾸면 정확히 다른 쪽 정의가 된다. 이를 두고, 아이디얼과 필터는 서로 **쌍대<sub>dual</sub>**라고 말한다.
+Comparing the definitions of ideals and filters reveals an interesting fact. If we swap $\land$ and $\lor$ in one definition, we get exactly the other definition. We say that ideals and filters are **dual** to each other.
 
-쌍대성으로 인해, 한쪽 개념에 대해 증명된 사실은 자연스럽게 다른 쪽 개념에서도 성립한다. 일례로 다음이 성립한다.
+Due to this duality, facts proved for one concept naturally hold for the other concept as well. For instance, the following holds:
 
-> **정리.** $A$가 불 대수 구조이고 $F$가 $A$의 필터라고 하자. 다음은 동치이다.
+> **Theorem.** Let $A$ be a Boolean algebraic structure and $F$ be a filter of $A$. The following are equivalent:
 >
-> - $x \lor y \in F$라면 $x \in F$이거나 $y \in F$이다.
-> - $G$가 $F$를 엄격히 포함하는 필터라면 $G = A$이다.
-> - 임의의 $x \in A$에 대해, $x \in F$이거나 $\lnot x \in F$이다.
+> - If $x \lor y \in F$, then $x \in F$ or $y \in F$.
+> - If $G$ is a filter that strictly contains $F$, then $G = A$.
+> - For any $x \in A$, either $x \in F$ or $\lnot x \in F$.
 
-여기서 첫 번째 조건을 만족하는 필터를 소 필터, 두 번째 조건을 만족하는 필터를 극대 필터라고 부른다. 아이디얼의 경우와 달리 필터의 경우에는 세 번째 조건을 만족하는 필터에도 **초필터<sub>ultrafilter</sub>**라는 이름이 붙어있다 (마찬가지로 [이전 글](https://dimenerno.github.io/2025/01/22/hypernaturals) 참조).
+Here, a filter satisfying the first condition is called a prime filter, one satisfying the second condition is called a maximal filter. Unlike the case of ideals, filters satisfying the third condition also have a name: **ultrafilters** (see also the [previous post](https://dimenerno.github.io/2025/01/22/hypernaturals)).
 
-## 초필터를 사용한 불 대수 구조의 불 대수화
+## Booleanisation of Boolean Algebraic Structures Using Ultrafilters
 
-일반적인 불 대수 구조는, 우리에게 익숙한 불 대수와는 달리, 각각의 원소가 참 또는 거짓으로 이분화되지 않는다. $p$는 $p \land q$에 비해 $1$(참)로부터 같거나 더 가까운 "거리"만큼 떨어져 있지만, 그 자체로는 $0$도 아니고 $1$도 아니다.
+General Boolean algebraic structures, unlike the Boolean algebra familiar to us, do not have each element dichotomised into true or false. $p$ is at the same or closer "distance" from $1$ (true) compared to $p \land q$, but it is neither $0$ nor $1$ in itself.
 
-그러나 불 대수 구조 $A$의 초필터, 또는 소 아이디얼이 주어졌을 때, 해당 필터(아이디얼)에 속하는 여부에 따라 $A$의 원소들을 "참" 또는 "거짓"으로 이분화할 수 있다. 앞서 본 아이디얼의 예시(왼쪽)와 필터의 예시(오른쪽)을 다시 보자. 왼쪽은 소 아이디얼이고, 오른쪽은 초필터이다.
+However, when an ultrafilter or prime ideal of a Boolean algebraic structure $A$ is given, we can dichotomise the elements of $A$ into "true" or "false" based on whether they belong to that filter (ideal). Consider again the ideal example (left) and filter example (right) seen earlier. The left is a prime ideal, and the right is an ultrafilter.
 
 <img src="/public/boolalg-4.png" style="width: 100%; margin: 0 auto;">
 
-둘은 정확히 서로의 여집합임에 주목하라. 일반적으로 다음이 성립한다.
+Note that they are exactly complements of each other. Generally, the following holds:
 
-> **정리.** 불 대수 구조 $A$의 부분집합 $I$에 대해, $I$가 소(극대) 아이디얼일 필요충분조건은 $A \setminus I$가 초(소, 극대) 필터인 것이다.
+> **Theorem.** For a subset $I$ of a Boolean algebraic structure $A$, $I$ is a prime (maximal) ideal if and only if $A \setminus I$ is an ultra (prime, maximal) filter.
 
-이에 착안하여, $A$의 원소 중 소 아이디얼 $I$에 속하는 원소는 $0$에, 속하지 않는 원소는 $1$에 대응하자. 또는 $A$의 원소 중 초필터 $F$에 속하는 원소는 $1$에, 속하지 않는 원소는 $0$에 대응하자. 방금의 예시를 사용하면 다음과 같다.
+Building on this, let us correspond elements of $A$ that belong to the prime ideal $I$ to $0$, and those that do not belong to $1$. Alternatively, let us correspond elements of $A$ that belong to the ultrafilter $F$ to $1$, and those that do not belong to $0$. Using the example just given:
 
-| 원소                      | 값  |
-| ------------------------- | --- |
-| $\lbrace \rbrace $        | $0$ |
-| $\lbrace p\rbrace $       | $1$ |
-| $\lbrace q\rbrace $       | $0$ |
-| $\lbrace r\rbrace $       | $0$ |
-| $\lbrace p, q\rbrace $    | $1$ |
-| $\lbrace p, r\rbrace $    | $1$ |
-| $\lbrace q, r\rbrace $    | $0$ |
-| $\lbrace p, q, r\rbrace $ | $1$ |
+| Element                   | Value |
+| ------------------------- | ----- |
+| $\lbrace \rbrace $        | $0$   |
+| $\lbrace p\rbrace $       | $1$   |
+| $\lbrace q\rbrace $       | $0$   |
+| $\lbrace r\rbrace $       | $0$   |
+| $\lbrace p, q\rbrace $    | $1$   |
+| $\lbrace p, r\rbrace $    | $1$   |
+| $\lbrace q, r\rbrace $    | $0$   |
+| $\lbrace p, q, r\rbrace $ | $1$   |
 
-이때, 위 대응은 명제 논리의 모델을 이룬다. 특히, $P = \lbrace  p \rbrace , Q = \lbrace  q \rbrace , R = \lbrace  r \rbrace $로 두고, $\cup \leftrightarrow \lor, \cap \leftrightarrow \land$ 대응에 따라 표를 다시 작성하면 다음과 같다.
+This correspondence forms a model of propositional logic. In particular, setting $P = \lbrace  p \rbrace , Q = \lbrace  q \rbrace , R = \lbrace  r \rbrace $ and rewriting the table according to the correspondence $\cup \leftrightarrow \lor, \cap \leftrightarrow \land$:
 
-| 원소              | 값  |
-| ----------------- | --- |
-| $\varnothing$     | $0$ |
-| $P$               | $1$ |
-| $Q$               | $0$ |
-| $R$               | $0$ |
-| $P \lor Q$        | $1$ |
-| $P \lor R$        | $1$ |
-| $Q \lor R$        | $0$ |
-| $P \lor Q \lor R$ | $1$ |
+| Element           | Value |
+| ----------------- | ----- |
+| $\varnothing$     | $0$   |
+| $P$               | $1$   |
+| $Q$               | $0$   |
+| $R$               | $0$   |
+| $P \lor Q$        | $1$   |
+| $P \lor R$        | $1$   |
+| $Q \lor R$        | $0$   |
+| $P \lor Q \lor R$ | $1$   |
 
-이는 $P$가 참이고 $Q, R$은 거짓인 명제 논리의 모델이다. 이와 같이 일반적으로 불 대수 구조에 소 아이디얼 또는 초필터가 주어지면, 해당 정보를 바탕으로 논리적 모델을 구성할 수 있다. 이는 추후 살펴 볼 **스톤 표현 정리<sub>Stone representation theorem</sub>**으로 가는 길목이다.
+This is a model of propositional logic where $P$ is true and $Q, R$ are false. In this way, generally when a Boolean algebraic structure is given a prime ideal or ultrafilter, we can construct a logical model based on that information. This is a stepping stone towards the **Stone representation theorem**, which we shall examine later.
+

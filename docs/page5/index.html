@@ -433,6 +433,638 @@
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/05/13/saturation/en"> Saturated Structures and the Completeness of Real Closed Fields </a>
+      </h1>
+    <span class="post-date">13 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>Let $\mathfrak{A}$ be an $\mathcal{L}$-structure. Let $A$ be the domain of $\mathfrak{A}$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A subset $X \subseteq A$ is said to be <strong>definable</strong> if there exist some $\mathcal{L}$-formula $\phi$ and free variable assignment $g$ such that the following holds:</p>
+
+\[X = \{ x \in A : \mathfrak{A} \vDash \phi[g^0_x] \}\]
+
+  <p>When $\phi$ has no free variables other than $v_0$, we say that $X$ is $\emptyset$-definable.</p>
+</blockquote>
+
+<p><em>Remark.</em> Definability has the same meaning as <a href="https://dimenerno.github.io/2024/12/11/VL-axiom/">Gödel’s constructibility</a>.</p>
+
+<p>For example, in $(\mathbb{R}, &lt;)$, the interval $(e, 2\pi)$ is definable by the following $\phi$ and $g$:</p>
+
+<ul>
+  <li>$\phi \equiv (v_1 &lt; v_0 \land v_0 &lt; v_2)$</li>
+  <li>$g: v_1 \mapsto e, v_2 \mapsto 2\pi$</li>
+</ul>
+
+<p>However, $(e, 2\pi)$ is not $\emptyset$-definable, as there is no way to specify $e$ and $2\pi$ in $(\mathbb{R}, &lt;)$.</p>
+
+<p>On the other hand, in the standard arithmetic model $(\mathbb{N}, 0, +, S)$, the set of even numbers $E$ is $\emptyset$-definable by the following $\phi$:</p>
+
+<ul>
+  <li>$\phi \equiv \exists y (x = y + y)$</li>
+</ul>
+
+<p>All finite sets are definable. For instance, $A = \lbrace a_1, a_2, a_3 \rbrace $ is definable as follows:</p>
+
+<ul>
+  <li>$\phi \equiv (v_0 = v_1) \lor (v_0 = v_2) \lor (v_0 = v_3)$</li>
+  <li>$g: v_1 \mapsto a_1, v_2 \mapsto a_2, v_3 \mapsto a_3$</li>
+</ul>
+
+<p>For the same reason, all cofinite sets are also definable.</p>
+
+<p>In <a href="http://dimenerno.github.io/2025/05/09/resiliency/">the previous post</a>, we examined resilient families of sets. We now define the following:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\kappa$ be an uncountable cardinal. We say that $\mathfrak{A}$ is <strong>$\kappa$-saturated</strong> if every collection of fewer than $\kappa$ definable subsets of $A$ is resilient. In particular, when $\mathfrak{A}$ is $|A|$-saturated, we say that $\mathfrak{A}$ is <strong>saturated</strong>.</p>
+</blockquote>
+
+<p>Therefore, an $\aleph_1$-saturated structure $\mathfrak{A}$ is one in which, whenever a countable collection of definable subsets of $\mathfrak{A}$ satisfies the finite intersection property, their total intersection is also non-empty. Meanwhile, it is impossible for a structure $\mathfrak{A}$ to be $|A|^+$-saturated, since the following family of sets satisfies the finite intersection property but has empty intersection:</p>
+
+\[\Big\{ A - \{ a \} : a \in A \Big\}\]
+
+<p>The importance of saturated structures lies in the following theorem:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Two elementarily equivalent saturated $\mathcal{L}$-structures of the same cardinality are isomorphic.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Omitted. The basic idea is a generalisation of <a href="https://dimenerno.github.io/2025/05/08/resiliency/">Cantor’s back-and-forth argument</a> seen in the previous post.</p>
+
+<p>Unfortunately, saturated structures are difficult to construct. For instance, for an uncountable cardinal $\kappa$ and a consistent theory $T$ with $|T| \leq \kappa$, the theory $T$ has a $\kappa^+$-saturated model of cardinality $2^\kappa$. Therefore, under the generalised continuum hypothesis, such a model is saturated. However, it is known that ZFC alone cannot prove the existence of saturated structures.</p>
+
+<p>We therefore introduce the following concept with a weaker condition:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> We say that $\mathfrak{A}$ is <strong>special</strong> if $\mathfrak{A}$ is the direct limit of a directed system $\lbrace  \mathfrak{A}_\kappa \rbrace _{\kappa &lt; |A|}$, where $\kappa$ is an infinite cardinal and each $\mathfrak{A}_\kappa$ is $\kappa^+$-saturated.</p>
+</blockquote>
+
+<p>Every saturated structure is special, as we can take each $\mathfrak{A}_\kappa$ to be itself. However, not every special structure is saturated. Therefore, being special is a strictly weaker condition than being saturated. Nevertheless, special structures satisfy the isomorphism property:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Two elementarily equivalent special $\mathcal{L}$-structures of the same cardinality are isomorphic.</p>
+</blockquote>
+
+<p>Moreover, special structures are easier to construct than saturated structures. In particular, the following specialisation of the Löwenheim-Skolem theorem is known:</p>
+
+<blockquote>
+  <p><strong>Special Löwenheim-Skolem Theorem.</strong> Let $T$ be a theory in language $\mathcal{L}$.</p>
+
+  <ol>
+    <li>If $T$ has an infinite model, then $T$ has a special model of cardinality greater than any given cardinal.</li>
+    <li>If $T$ has an infinite model and $\mathcal{L}$ is countable, then $T$ has a special model of cardinality $\beth_\omega$.</li>
+  </ol>
+</blockquote>
+
+<p>As an application of this theorem, we consider the following famous result:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> The <strong>theory of real closed ordered fields</strong> or <strong>RCOF</strong> is a theory in the language $(0, 1, +, \cdot, &lt;)$ consisting of the following axioms: ($x^n$ is an abbreviation for $x \underbrace{\cdot \;\cdots\; \cdot}_{n} x$)</p>
+
+  <ol>
+    <li>Ordered field axioms
+      <ul>
+        <li>$\forall a, b, c : (a &lt; b) \rightarrow (a + c &lt; b + c)$</li>
+        <li>$\forall a, b : (a &gt; 0 \land b &gt; 0) \rightarrow ab &gt; 0$</li>
+        <li>Field axioms</li>
+      </ul>
+    </li>
+    <li>Square root axiom: $\forall a &gt; 0 \; \exists x : x^2 = a$</li>
+    <li>Closure axiom schemas:
+      <ul>
+        <li>$\forall a_2, a_1, a_0 \; \exists x :x^3 + a_2x^2 + a_1x + a_0 = 0$</li>
+        <li>$\forall a_4, a_3, a_2, a_1, a_0\; \exists x : x^5 + a_4x^4 + \cdots + a_0 = 0$</li>
+        <li>…</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>The <strong>theory of real closed fields</strong> or <strong>RCF</strong> is a theory in the language $(0, 1, +, \cdot)$ consisting of the following axioms:</p>
+
+  <ol>
+    <li>Field axioms</li>
+    <li>Formally real axiom: $\forall x : x^2 \neq -1$</li>
+    <li>Square root axiom: $\forall a \; \exists x : x^2 = a \lor x^2 = -a$</li>
+    <li>Closure axiom schemas</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Tarski’s Theorem.</strong> RCOF and RCF are complete.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> The key is the following lemma:</p>
+
+<blockquote>
+  <p><strong>Erdős-Gillman-Henriksen Lemma.</strong> Two special real closed fields of the same cardinality are isomorphic.</p>
+</blockquote>
+
+<p>Assuming the lemma, we prove Tarski’s theorem. If RCF were not complete, there would exist extensions $T_1$ and $T_2$ of RCF such that models of $T_1$ and models of $T_2$ are not elementarily equivalent. Since all models of RCF are infinite models (why?), by the special Löwenheim-Skolem theorem, $T_1$ and $T_2$ each have models $\mathfrak{A}_1, \mathfrak{A}_2$ of cardinality $\beth_\omega$. However, by the lemma, $\mathfrak{A}_1 \cong \mathfrak{A}_2$, which contradicts $\mathfrak{A}_1 \not\equiv \mathfrak{A}_2$. ■</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/09/resiliency"> η 집합 </a>
+      </h1>
+    <span class="post-date">09 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <p>가산 조밀 무계 전순서<sub>countable dense unbounded linear order</sub>는 모두 동형임을 보인 칸토어의 앞뒤 논법<sub>back-and-forth argument</sub>에서 핵심이 되는 원리는 다음이다.</p>
+
+<blockquote>
+  <p><strong>가산 데데킨트 성질.</strong> $(L, &lt;)$이 전순서라고 하자. 다음은 동치이다.</p>
+
+  <ol>
+    <li>$(L, &lt;)$은 조밀하고 무계이다.</li>
+    <li>$L$의 유한 부분집합 $C, D$에 대해, $C &lt; D$일 경우 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
+  </ol>
+</blockquote>
+
+<p>여기서 $C &lt; D$는 $\forall c \in C, d \in D : c &lt; d$를 줄인 표기이다.</p>
+
+<p>유한 데데킨트 성질로부터 동형성 정리를 다음과 같이 보일 수 있다. $(A, &lt;_A), (B, &lt;_B)$가 두 가산 조밀 무계 전순서라고 하자. 가산이므로 $A, B$의 원소를 자연수로 인덱싱할 수 있다. $f: A \to B$를 다음과 같이 귀납적으로 정의한다.</p>
+
+<ol>
+  <li>$f(a_0) = b_0$로 두고, $n = 1$로 정한다.</li>
+  <li>$a_n \in \mathrm{dom} f$을 확인한다.
+    <ol>
+      <li>$a_n \in \mathrm{dom} f$라면 3으로 넘어간다.</li>
+      <li>$a_n \notin \mathrm{dom} f$라면 보조정리에 의해 $C = \lbrace  f(a_k) : k &lt; n, a_k &lt;_A a_n \rbrace , D = \lbrace  f(a_k) : k &lt; n, a_k &gt;_A a_n \rbrace $에 대해 $C &lt; y &lt; D$인 $y \in B$가 존재한다. $f(a_n) = y$로 정의한다.</li>
+    </ol>
+  </li>
+  <li>$b_n \in \mathrm{ran} f$를 확인한다.
+    <ol>
+      <li>$b_n \in \mathrm{ran} f$라면 4로 넘어간다.</li>
+      <li>$b_n \notin \mathrm{ran} f$라면, 보조정리에 의해 $C = \lbrace  f^{-1}(b_k) : k &lt; n, b_k &lt;_B b_n \rbrace , D = \lbrace  f^{-1}(b_k) : k &lt; n, b_k &gt;_B b_n \rbrace $에 대해 $C &lt; x &lt; D$인 $x \in A$가 존재한다. $f(x) = b_n$으로 정의한다.</li>
+    </ol>
+  </li>
+  <li>$n$을 $n + 1$로 갱신하고 2로 되돌아간다.</li>
+</ol>
+
+<p>위 과정의 귀납적 극한으로서 얻어지는 $f$는 $A$와 $B$의 동형 사상이다.</p>
+
+<p>그런데 위 보조정리의 다음 일반화는 일반적으로 성립하지 않는다.</p>
+
+<blockquote>
+  <p><strong>(틀린 명제)</strong> $(L, &lt;)$이 전순서라고 하자. 다음은 동치이다.</p>
+
+  <ol>
+    <li>$(L, &lt;)$은 조밀하고 무계이다.</li>
+    <li>$L$보다 작은 기수인 $L$의 부분집합 $C, D$에 대해, $C &lt; D$일 경우 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
+  </ol>
+</blockquote>
+
+<p>예를 들어 $(\mathbb{R} \setminus \lbrace  0 \rbrace , &lt;)$는 조밀하고 무계인 전순서이며, $C = (-\infty, 0) \cap \mathbb{Q}, D = (0, \infty) \cap \mathbb{Q}$일 때 $C &lt; D$이고 $|C|, |D| &lt; |\mathbb{R}|$이지만 $C &lt; y &lt; D$를 만족하는 실수 $y$는 존재하지 않는다.</p>
+
+<p>만약 위 보조정리의 일반화가 성립했다면, 다음과 같이 기수가 $\kappa &gt; \aleph_0$인 조밀 무계 전순서가 유일함을 증명할 수 있었을 것이다. 선택 공리를 가정했을 때, $A$와 $B$는 $\kappa$와 순서 동형이도록 정렬될 수 있다. 이제 서수 $\alpha &lt; \kappa$에 대해 초한귀납적으로 $f$를 정의한다.</p>
+
+<ol>
+  <li>$f(a_0) = b_0$로 두고, $\alpha = 1$로 정한다.</li>
+  <li>$a_\alpha \in \mathrm{dom} f$을 확인한다.
+    <ol>
+      <li>$a_\alpha \in \mathrm{dom} f$라면 3으로 넘어간다.</li>
+      <li>$a_\alpha \notin \mathrm{dom} f$라면 일반화된 보조정리에 의해 $C = \lbrace  f(a_\beta) : \beta &lt; \alpha, a_\beta &lt;_A a_\alpha \rbrace , D = \lbrace  f(a_\beta) : \beta &lt; \alpha, a_\beta &gt;_A a_\alpha \rbrace $에 대해 $C &lt; y &lt; D$인 $y \in B$가 존재한다. $f(a_\alpha) = y$로 정의한다.</li>
+    </ol>
+  </li>
+  <li>$b_\alpha \in \mathrm{ran} f$를 확인한다.
+    <ol>
+      <li>$b_\alpha \in \mathrm{ran} f$라면 4로 넘어간다.</li>
+      <li>$b_\alpha \notin \mathrm{ran} f$라면, 일반화된 보조정리에 의해 $C = \lbrace  f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &lt;_B b_\alpha \rbrace , D = \lbrace  f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &gt;_B b_\alpha \rbrace $에 대해 $C &lt; x &lt; D$인 $x \in A$가 존재한다. $f(x) = b_\alpha$로 정의한다.</li>
+    </ol>
+  </li>
+  <li>초한귀납적으로 $f$를 완성한다.</li>
+</ol>
+
+<p>그러나 일반화된 보조정리가 성립하지 않으므로, 칸토어의 앞뒤 논법은 비가산 조밀 무계 전순서가 유일하다는 것을 보이는 데 적용될 수 없다. 실제로 비가산 조밀 무계 전순서는 $\mathbb{R}$ 이외에도 $\lbrace 0\rbrace  \times \mathbb{R} \sqcup \lbrace 1\rbrace  \times \mathbb{Q}$에 사전식 순서를 준 순서 등 유일하지 않다.</p>
+
+<p>그렇다면 보조정리의 성질은 어느 정도까지 일반화될 수 있을까? 이 물음과 관련된 개념은 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong></p>
+
+  <ol>
+    <li>집합족 $\mathcal{C}$가 <strong>유한 교집합 속성<sub>finite intersection property</sub></strong>을 가진다는 것은, $\mathcal{C}$의 집합-원소들의 유한한 교집합은 언제나 공집합이 아니라는 것이다.</li>
+    <li>집합족 $\mathcal{C}$가 <strong>탄력적<sub>resilient</sub></strong>이라는 것은, $\mathcal{D}$가 유한 교집합 속성을 가지는 $\mathcal{C}$의 부분모임일 때, $\bigcap_{D \in \mathcal{D}} D \neq \varnothing$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p>위상수학을 공부한 독자라면 이는 친숙한 개념일 것이다.</p>
+
+<blockquote>
+  <p><strong>칸토어 축소구간 정리.</strong> $K$가 콤팩트할 필요충분조건은 $K$의 모든 닫힌 집합들의 모임 $\mathcal{F}$가 탄력적인 것이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $(\Rightarrow)$ $\mathcal{F}$가 탄력적이지 않다고 하자. 그러면 어떤 닫힌 집합들의 모임 $\mathcal{C}$가 존재하여, $\mathcal{C}$가 유한 교집합 속성을 가지지만 $\bigcap_{C \in \mathcal{C}} C = \varnothing$이다. 드 모르간 법칙에 의해 $\bigcup_{C \in \mathcal{C}} C^c = K$이다. 즉 $\lbrace  C^c : C \in \mathcal{C} \rbrace $는 $K$의 열린 덮개이다. $K$가 콤팩트하므로 이는 유한 부분 덮개를 가진다. 그러나 이 경우 다시 드 모르간 법칙에 의해, 어떤 유한한 $\mathcal{C}’ \subset \mathcal{C}$에 대해 $\bigcap_{C \in \mathcal{C}’} C = \varnothing$이다. 이는 $\mathcal{C}$의 유한 교집합 속성에 모순된다.</p>
+
+<p>$(\Leftarrow)$ 거의 비슷한 방식으로 증명한다. ■</p>
+
+<p>이제 다음과 같이 보조정리를 일반화할 수 있다.</p>
+
+<blockquote>
+  <p><strong>비가산 데데킨트 성질.</strong> $(L, &lt;)$이 전순서이고, $\kappa$가 비가산 기수라고 하자. 다음은 동치이다.</p>
+
+  <ol>
+    <li>$(L, &lt;)$은 조밀하고 무계이다. 또한, $\kappa$개보다 적은 임의의 열린 구간 및 반직선들의 모임은 탄력적이다.</li>
+    <li>$L$의 부분집합 $C, D$에 대해, $|C|, |D| &lt; \kappa$이고 $C &lt; D$라면 $C &lt; y &lt; D$를 만족하는 $y \in L$이 존재한다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> $(\Rightarrow)$</p>
+
+<h4 id="i-d--varnothing">i. $D = \varnothing$</h4>
+
+<p>$\mathcal{C} = \lbrace  (c, \infty) : c \in C \rbrace$를 고려하자. $|\mathcal{C}| = |C| &lt; \kappa$이므로 전제에 의해 $\mathcal{C}$는 탄력적이다. $\mathcal{C}$가 유한 교집합 속성을 가지므로 $\bigcap_{c \in C} (c, \infty) = (c’, \infty)$이다. 해당 $c’$이 찾고자 하는 $y$이다.</p>
+
+<h4 id="ii-c--varnothing">ii. $C = \varnothing$</h4>
+
+<p>i.의 경우와 거의 동일하다.</p>
+
+<h4 id="iii-c-d-neq-varnothing">iii. $C, D \neq \varnothing$</h4>
+
+<p>$\mathcal{E} = \lbrace  (c, d) : c \in C, d \in D \rbrace $를 고려하자. 기수 관계식 $\lambda \cdot \epsilon = \mathrm{max}(\lambda, \epsilon)$에 의해 $|\mathcal{E}| &lt; \kappa$이며, $\mathcal{E}$는 탄력적이다. $\mathcal{E}$가 유한 교집합 속성을 가지므로 ($\because$ 가산 데데킨트 성질) $\bigcap_{c \in C, d \in D} (c, d) = (c’, d’)$이다. $(c’, d’) \neq \varnothing$이므로 $y \in (c’, d’)$가 존재하며, 이것이 우리가 찾고자 하는 $y$이다.</p>
+
+<p>$(\Leftarrow)$ $(L, &lt;)$이 조밀하고 무계임은 자명하다.</p>
+
+<p>$\mathcal{E}$가 $\kappa$개보다 적은 열린 구간 및 반직선들의 모임이라고 하자. $\mathcal{F} \subseteq \mathcal{E}$가 유한 교집합 속성을 가진다고 하자. 그렇다면 $C = \lbrace  c : (c, d) \in \mathcal{F} \text{ or } (c, \infty) \in \mathcal{F} \rbrace $, $D = \lbrace  d : (c, d) \in \mathcal{F} \text{ or } (-\infty, d) \in \mathcal{F}\rbrace $에 대하여 $C &lt; D$이다. 그렇지 않다면 어떤 $c’ \in C, d’ \in D$에 대해 $d’ &lt; c’$라는 것인데, 이 경우 $c’$을 왼쪽 끝점으로 가지는 열린 구간 $(c’, d’’) \in \mathcal{F}$와 $d’$을 오른쪽 끝점으로 가지는 열린 구간 $(c’’, d’) \in \mathcal{F}$에 대해 $(c’, d’’) \cap (c’’, d’) = \varnothing$이 되어 $\mathcal{F}$의 유한 교집합 속성에 모순되기 때문이다.</p>
+
+<p>따라서 $C &lt; D$이며, 조건에 의해 $C &lt; y &lt; D$인 $y$가 존재한다. 이로부터 $y \in \bigcap_{I \in \mathcal{F}} I$가 따라 나오며, $\mathcal{E}$가 탄력적임이 보여진다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 비가산 데데킨트 성질을 만족하는 집합을 <a href="https://en.wikipedia.org/wiki/Η_set"><strong>$\eta$ 집합</strong></a>이라고 한다. 특히, $\kappa = \aleph_\alpha$에 대해 비가산 데데킨트 성질을 만족하는 집합을 $\eta_\alpha$ 집합이라고 한다.</p>
+</blockquote>
+
+<p>$\eta$ 집합은 하우스도르프에 의해 제시되었다. $\eta$ 집합은 다음 글에서 알아 볼 <strong>포화<sub>saturation</sub></strong> 개념과 밀접한 관련이 있다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/09/resiliency/en"> η Sets </a>
+      </h1>
+    <span class="post-date">09 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>The key principle in Cantor’s back-and-forth argument, which demonstrates that all countable dense unbounded linear orders are isomorphic, is the following.</p>
+
+<blockquote>
+  <p><strong>Countable Dedekind Property.</strong> Let $(L, &lt;)$ be a linear order. The following are equivalent:</p>
+
+  <ol>
+    <li>$(L, &lt;)$ is dense and unbounded.</li>
+    <li>For finite subsets $C, D$ of $L$, if $C &lt; D$ then there exists $y \in L$ such that $C &lt; y &lt; D$.</li>
+  </ol>
+</blockquote>
+
+<p>Here $C &lt; D$ is shorthand notation for $\forall c \in C, d \in D : c &lt; d$.</p>
+
+<p>From the finite Dedekind property, the isomorphism theorem can be proved as follows. Let $(A, &lt;_A), (B, &lt;_B)$ be two countable dense unbounded linear orders. Since they are countable, the elements of $A, B$ can be indexed by natural numbers. Define $f: A \to B$ inductively as follows:</p>
+
+<ol>
+  <li>Set $f(a_0) = b_0$ and let $n = 1$.</li>
+  <li>Check whether $a_n \in \mathrm{dom} f$.
+    <ol>
+      <li>If $a_n \in \mathrm{dom} f$, proceed to step 3.</li>
+      <li>If $a_n \notin \mathrm{dom} f$, by the lemma there exists $y \in B$ such that $C &lt; y &lt; D$ for $C = \lbrace f(a_k) : k &lt; n, a_k &lt;_A a_n \rbrace$ and $D = \lbrace f(a_k) : k &lt; n, a_k &gt;_A a_n \rbrace$. Define $f(a_n) = y$.</li>
+    </ol>
+  </li>
+  <li>Check whether $b_n \in \mathrm{ran} f$.
+    <ol>
+      <li>If $b_n \in \mathrm{ran} f$, proceed to step 4.</li>
+      <li>If $b_n \notin \mathrm{ran} f$, by the lemma there exists $x \in A$ such that $C &lt; x &lt; D$ for $C = \lbrace f^{-1}(b_k) : k &lt; n, b_k &lt;_B b_n \rbrace$ and $D = \lbrace f^{-1}(b_k) : k &lt; n, b_k &gt;_B b_n \rbrace$. Define $f(x) = b_n$.</li>
+    </ol>
+  </li>
+  <li>Update $n$ to $n + 1$ and return to step 2.</li>
+</ol>
+
+<p>The function $f$ obtained as the inductive limit of the above process is an isomorphism between $A$ and $B$.</p>
+
+<p>However, the following generalisation of the above lemma does not hold in general.</p>
+
+<blockquote>
+  <p><strong>(False Statement)</strong> Let $(L, &lt;)$ be a linear order. The following are equivalent:</p>
+
+  <ol>
+    <li>$(L, &lt;)$ is dense and unbounded.</li>
+    <li>For subsets $C, D$ of $L$ with cardinality less than that of $L$, if $C &lt; D$ then there exists $y \in L$ such that $C &lt; y &lt; D$.</li>
+  </ol>
+</blockquote>
+
+<p>For example, $(\mathbb{R} \setminus \lbrace 0 \rbrace, &lt;)$ is a dense unbounded linear order, and when $C = (-\infty, 0) \cap \mathbb{Q}$ and $D = (0, \infty) \cap \mathbb{Q}$, we have $C &lt; D$ and $|C|, |D| &lt; |\mathbb{R}|$, but there exists no real number $y$ satisfying $C &lt; y &lt; D$.</p>
+
+<p>If the generalisation of the above lemma held, one could prove the uniqueness of dense unbounded linear orders of cardinality $\kappa &gt; \aleph_0$ as follows. Assuming the axiom of choice, $A$ and $B$ can be well-ordered to be order-isomorphic to $\kappa$. Now define $f$ by transfinite induction for ordinals $\alpha &lt; \kappa$.</p>
+
+<ol>
+  <li>Set $f(a_0) = b_0$ and let $\alpha = 1$.</li>
+  <li>Check whether $a_\alpha \in \mathrm{dom} f$.
+    <ol>
+      <li>If $a_\alpha \in \mathrm{dom} f$, proceed to step 3.</li>
+      <li>If $a_\alpha \notin \mathrm{dom} f$, by the generalised lemma there exists $y \in B$ such that $C &lt; y &lt; D$ for $C = \lbrace f(a_\beta) : \beta &lt; \alpha, a_\beta &lt;<em>A a</em>\alpha \rbrace$ and $D = \lbrace f(a_\beta) : \beta &lt; \alpha, a_\beta &gt;<em>A a</em>\alpha \rbrace$. Define $f(a_\alpha) = y$.</li>
+    </ol>
+  </li>
+  <li>Check whether $b_\alpha \in \mathrm{ran} f$.
+    <ol>
+      <li>If $b_\alpha \in \mathrm{ran} f$, proceed to step 4.</li>
+      <li>If $b_\alpha \notin \mathrm{ran} f$, by the generalised lemma there exists $x \in A$ such that $C &lt; x &lt; D$ for $C = \lbrace f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &lt;<em>B b</em>\alpha \rbrace$ and $D = \lbrace f^{-1}(b_\beta) : \beta &lt; \alpha, b_\beta &gt;<em>B b</em>\alpha \rbrace$. Define $f(x) = b_\alpha$.</li>
+    </ol>
+  </li>
+  <li>Complete $f$ by transfinite induction.</li>
+</ol>
+
+<p>However, since the generalised lemma does not hold, Cantor’s back-and-forth argument cannot be applied to show that uncountable dense unbounded linear orders are unique. Indeed, uncountable dense unbounded linear orders are not unique—besides $\mathbb{R}$, there are others such as the lexicographic order on $\lbrace 0\rbrace \times \mathbb{R} \sqcup \lbrace 1\rbrace \times \mathbb{Q}$.</p>
+
+<p>To what extent can the property of the lemma be generalised? The concept related to this question is as follows.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong></p>
+
+  <ol>
+    <li>A family of sets $\mathcal{C}$ has the <strong>finite intersection property</strong> if the finite intersection of set-elements from $\mathcal{C}$ is always non-empty.</li>
+    <li>A family of sets $\mathcal{C}$ is <strong>resilient</strong> if, whenever $\mathcal{D}$ is a subfamily of $\mathcal{C}$ with the finite intersection property, we have $\bigcap_{D \in \mathcal{D}} D \neq \varnothing$.</li>
+  </ol>
+</blockquote>
+
+<p>Readers familiar with topology will recognise this as a familiar concept.</p>
+
+<blockquote>
+  <p><strong>Cantor’s Nested Interval Theorem.</strong> $K$ is compact if and only if every collection $\mathcal{F}$ of closed subsets of $K$ is resilient.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> $(\Rightarrow)$ Suppose $\mathcal{F}$ is not resilient. Then there exists a collection $\mathcal{C}$ of closed sets such that $\mathcal{C}$ has the finite intersection property but $\bigcap_{C \in \mathcal{C}} C = \varnothing$. By De Morgan’s laws, $\bigcup_{C \in \mathcal{C}} C^c = K$. That is, $\lbrace C^c : C \in \mathcal{C} \rbrace$ is an open cover of $K$. Since $K$ is compact, this has a finite subcover. However, in this case, again by De Morgan’s laws, for some finite $\mathcal{C}’ \subset \mathcal{C}$ we have $\bigcap_{C \in \mathcal{C}’} C = \varnothing$. This contradicts the finite intersection property of $\mathcal{C}$.</p>
+
+<p>$(\Leftarrow)$ The proof follows in almost exactly the same manner. ■</p>
+
+<p>We can now generalise the lemma as follows.</p>
+
+<blockquote>
+  <p><strong>Uncountable Dedekind Property.</strong> Let $(L, &lt;)$ be a linear order and let $\kappa$ be an uncountable cardinal. The following are equivalent:</p>
+
+  <ol>
+    <li>$(L, &lt;)$ is dense and unbounded. Moreover, any collection of fewer than $\kappa$ open intervals and half-lines is resilient.</li>
+    <li>For subsets $C, D$ of $L$, if $|C|, |D| &lt; \kappa$ and $C &lt; D$, then there exists $y \in L$ such that $C &lt; y &lt; D$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> $(\Rightarrow)$</p>
+
+<h4 id="i-d--varnothing">i. $D = \varnothing$</h4>
+
+<p>Consider $\mathcal{C} = \lbrace (c, \infty) : c \in C \rbrace$. Since $|\mathcal{C}| = |C| &lt; \kappa$, by the premise $\mathcal{C}$ is resilient. Since $\mathcal{C}$ has the finite intersection property, $\bigcap_{c \in C} (c, \infty) = (c’, \infty)$. This $c’$ is the desired $y$.</p>
+
+<h4 id="ii-c--varnothing">ii. $C = \varnothing$</h4>
+
+<p>Almost identical to case i.</p>
+
+<h4 id="iii-c-d-neq-varnothing">iii. $C, D \neq \varnothing$</h4>
+
+<p>Consider $\mathcal{E} = \lbrace (c, d) : c \in C, d \in D \rbrace$. By the cardinal arithmetic $\lambda \cdot \epsilon = \mathrm{max}(\lambda, \epsilon)$, we have $|\mathcal{E}| &lt; \kappa$, and $\mathcal{E}$ is resilient. Since $\mathcal{E}$ has the finite intersection property ($\because$ countable Dedekind property), $\bigcap_{c \in C, d \in D} (c, d) = (c’, d’)$. Since $(c’, d’) \neq \varnothing$, there exists $y \in (c’, d’)$, which is the desired $y$.</p>
+
+<p>$(\Leftarrow)$ That $(L, &lt;)$ is dense and unbounded is trivial.</p>
+
+<p>Let $\mathcal{E}$ be a collection of fewer than $\kappa$ open intervals and half-lines. Suppose $\mathcal{F} \subseteq \mathcal{E}$ has the finite intersection property. Then for $C = \lbrace c : (c, d) \in \mathcal{F} \text{ or } (c, \infty) \in \mathcal{F} \rbrace$ and $D = \lbrace d : (c, d) \in \mathcal{F} \text{ or } (-\infty, d) \in \mathcal{F}\rbrace$, we have $C &lt; D$. Otherwise, for some $c’ \in C, d’ \in D$ we would have $d’ &lt; c’$, in which case for an open interval $(c’, d’’) \in \mathcal{F}$ with left endpoint $c’$ and an open interval $(c’’, d’) \in \mathcal{F}$ with right endpoint $d’$, we would have $(c’, d’’) \cap (c’’, d’) = \varnothing$, contradicting the finite intersection property of $\mathcal{F}$.</p>
+
+<p>Therefore $C &lt; D$, and by the condition there exists $y$ such that $C &lt; y &lt; D$. From this it follows that $y \in \bigcap_{I \in \mathcal{F}} I$, showing that $\mathcal{E}$ is resilient. ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A set satisfying the uncountable Dedekind property is called an <a href="https://en.wikipedia.org/wiki/Η_set"><strong>$\eta$ set</strong></a>. In particular, a set satisfying the uncountable Dedekind property for $\kappa = \aleph_\alpha$ is called an $\eta_\alpha$ set.</p>
+</blockquote>
+
+<p>$\eta$ sets were introduced by Hausdorff. $\eta$ sets are closely related to the concept of <strong>saturation</strong>, which we shall explore in the following article.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/08/robinson-craig"> 로빈슨, 크레이그, 베스의 정리 </a>
+      </h1>
+    <span class="post-date">08 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/모델론/'">
+        모델론
+      </div>
+      
+    </div>
+     <h3 id="초등적-병합-성질elementary-amalgamation-property">초등적 병합 성질<sub>Elementary amalgamation property</sub></h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{L}$-구조 $\mathfrak{A}$와 $\mathcal{L}’$-구조 $\mathfrak{B}$에 대해, $\mathfrak{B}$의 $\mathcal{L}$-퇴화<sub>$\mathcal{L}$-reduct</sub>가 $\mathfrak{A}$와 초등적으로 동등<sub>elementarily equivalent</sub>하다고 하자. 이때, $\mathcal{L}’$-구조 $\mathfrak{C}$가 존재하여, $f: \mathfrak{A} \to \mathfrak{C}$가 $\mathcal{L}$의 <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">초등적 임베딩</a>이고 $g: \mathfrak{B} \to \mathfrak{C}$가 $\mathcal{L}’$의 초등적 임베딩이다.</p>
+
+  <p><img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply" /></p>
+</blockquote>
+
+<p><strong>증명.</strong> <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이 글</a>의 표기법을 따라, 언어 $L_\mathfrak{A}$의 이론 $E(\mathfrak{A})$와 언어 $L’_\mathfrak{B}$의 이론 $E(\mathfrak{B})$를 생각하자. $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$는 언어 $\mathcal{L}’_{\mathfrak{AB}} = \mathcal{L}_\mathfrak{A} \cup \mathcal{L}’_\mathfrak{B}$의 이론이다. $T$가 모델 $\mathfrak{C}$를 가짐을 보이자.</p>
+
+<p>만약 $T$가 모델이 없다면 $T$는 모순적이다. 따라서 콤팩트성 정리에 의해 어떤 $\mathcal{L}$-논리식 $\phi$와 $\mathcal{L}’$-논리식 $\psi$가 존재하여, 적절한 $\lbrace  a_i \rbrace  \subset \mathcal{L}_\mathfrak{A}$, $\lbrace  b_j \rbrace  \subset \mathcal{L}_\mathfrak{B}$에 대해,</p>
+
+\[\lbrace  \phi(a_1, \dots, a_n), \psi(b_1, \dots, b_m) \rbrace\]
+
+<p>이 모델을 가지지 않는다. $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$이므로, $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$를 만족하도록 상수 $a_1, \dots, a_n$을 $\mathfrak{B}$의 정의역에 대응시키는 방법이 존재하지 않아야 한다. 즉,</p>
+
+\[\mathfrak{B} \not\vDash \exists x_1, \dots x_n \; \phi(x_1, \dots, x_n)\]
+
+<p>그런데 $\mathfrak{B}$의 $\mathcal{L}$-퇴화가 $\mathfrak{A}$와 초등적으로 동등하며, 위 식의 우변이 $\mathcal{L}$-문장이고, $\mathfrak{A}$가 해당 문장을 만족하므로 이는 모순이다. 따라서 $T$는 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{A})$와 $E(\mathfrak{B})$의 모델이므로, $\mathfrak{A}$와 $\mathfrak{B}$는 $\mathfrak{C}$로 자연스럽게 초등적으로 임베딩된다. ■</p>
+
+<h3 id="로빈슨-건전성-정리robinson-consistency-theorem">로빈슨 건전성 정리<sub>Robinson consistency theorem</sub></h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$라고 하자. $T$가 $\mathcal{L}$의 (의미론적으로) 완전한 이론이고, $T_1$과 $T_2$가 각각 $T$를 확장하는 건전한 $\mathcal{L}_1, \mathcal{L}_2$ 이론일 때, $T_1 \cup T_2$는 $\mathcal{L}_1 \cup \mathcal{L}_2$ 이론으로서 건전하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $T_1 \cup T_2$의 모델을 구축하면 정리가 보여진다.</p>
+
+<p>$T_1, T_2$가 각각 건전하므로, 모델 $\mathfrak{A}_0, \mathfrak{B}_0$를 가진다. $T = T_1 \cap T_2$가 완전하므로, $\mathcal{L}$-퇴화로서의 $\mathfrak{A}_0$와 $\mathfrak{B}_0$는 초등적으로 동등하다. 따라서 초등적 병합 성질에 의해, $\mathcal{L}$-초등적 임베딩 $f_0$와 $\mathcal{L}_2$-초등적 임베딩 $h_0$가 존재하여 다음이 성립한다.</p>
+
+<p><img src="/public/robinson-1.png" style="width: 100%; max-width: 115px; margin: 1em auto" /></p>
+
+<p>이제 $\mathfrak{B}_1$의 $\mathcal{L}$-퇴화를 생각해 보면, 이는 $\mathfrak{A}_0$와 초등적으로 동등하므로, 다시 초등적 병합 성질에 의해 $\mathcal{L}$-초등적 임베딩 $g_0$와 $\mathcal{L}_1$-초등적 임베딩 $k_0$가 존재하여 다음이 성립한다.</p>
+
+<p><img src="/public/robinson-2.png" style="width: 100%; max-width: 127px; margin: 1em auto" /></p>
+
+<p>이 과정을 반복하여 다음의 구조 유도계<sub>directed system of structures</sub>를 얻는다.</p>
+
+<p><img src="/public/robinson-3.png" style="width: 100%; max-width: 285px; margin: 1em auto" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>사상</th>
+      <th>성질</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$f, g$</td>
+      <td>$\mathcal{L}$-초등적 임베딩</td>
+    </tr>
+    <tr>
+      <td>$k$</td>
+      <td>$\mathcal{L}_1$-초등적 임베딩</td>
+    </tr>
+    <tr>
+      <td>$h$</td>
+      <td>$\mathcal{L}_2$-초등적 임베딩</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>위 유도계의 모든 모델을 $\mathcal{L}$로 퇴화시키면 $\mathcal{L}$-구조 유도계를 얻는다. 해당 유도계의 쌍대극한<sub>colimit</sub>을 $\mathfrak{C}$라고 하자. $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{A}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 회색으로 표시된 원 유도계의 일부는 모두 $\lbrace  \mathfrak{A}_i \rbrace $ 중 하나로 투사되기 때문이다. 따라서 $\mathfrak{C}$는 $\mathfrak{A}_0$를 초등적으로 임베딩하는 $\mathcal{L}_1$ 구조이다.</p>
+
+<p><img src="/public/robinson-4.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
+
+<p>같은 이유로 $\mathfrak{C}$는 다음의 $\lbrace  \mathfrak{B}_i \rbrace $로 이루어진 유도계의 쌍대극한이기도 하다. 따라서 $\mathfrak{C}$는 $\mathfrak{B}_0$를 초등적으로 임베딩하는 $\mathcal{L}_2$ 구조이다.</p>
+
+<p><img src="/public/robinson-5.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
+
+<p>즉, $\mathfrak{C}$는 $\mathfrak{A}$와 $\mathfrak{B}$를 모두 임베딩하며, 이로부터 $T_1 \cup T_2$의 모델임이 보여졌다. ■</p>
+
+<h3 id="크레이그-보간-정리craig-interpolation-theorem">크레이그 보간 정리<sub>Craig interpolation theorem</sub></h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{L}$-문장 $\phi, \psi$에 대해 $\phi \vDash \psi$라면, 어떤 $\mathcal{L}$-문장 $\theta$가 존재하여 $\phi \vDash \theta, \theta \vDash \psi$이다. 또한, $\theta$에 포함된 비논리 기호(상수, 술어, 함수)는 $\phi$와 $\psi$에 공통적으로 포함된다.</p>
+</blockquote>
+
+<p>$\theta$를 $\phi$와 $\psi$의 <strong>크레이그 보간</strong>이라고 부른다.</p>
+
+<p><strong>증명.</strong> 귀류법으로 증명한다. 크레이그 보간이 존재하지 않는다고 가정하자. 그러면 $\phi$는 모델을 가진다. 만약 $\phi$가 모델을 가지지 않는다면 $\perp$가 $\phi, \psi$의 크레이그 보간이기 때문이다. 또한 $\lnot \psi$도 모델을 가진다. 그렇지 않다면 $\top$가 크레이그 보간이기 때문이다.</p>
+
+<p>$\mathcal{L}’$을 $\phi$와 $\psi$에 공통적으로 포함되는 비논리 기호들로 이루어진 언어라고 하자. $\Gamma$를, $\phi \vDash \sigma$이거나 $\lnot \psi \vDash \sigma$인 $\mathcal{L}’$-문장 $\sigma$의 집합이라고 하자.</p>
+
+<p>$\Gamma \cup \lbrace  \phi \rbrace $는 무모순적임을 보이자. 만약 모순적이라면, 콤팩트성 정리에 의해 어떤 $\mathcal{L}’$-문장 $\sigma_1, \sigma_2$가 존재하여 $\phi \vDash \sigma_1, \lnot\psi \vDash \sigma_2$이고 $\lbrace  \sigma_1, \sigma_2, \phi \rbrace $가 모순적이다. 그런데 $\phi \vDash \sigma_1$이므로 $\phi \vDash \lnot\sigma_2$이다. 대우법에 의해 $\lnot\psi\ \vDash \sigma_2$로부터 $\lnot\sigma_2 \vDash \psi$가 따라 나온다. 즉, $\sigma_2$는 $\phi, \psi$의 크레이그 보간이다. 이는 가정에 모순된다.</p>
+
+<p>따라서 $\Gamma \cup \lbrace  \phi \rbrace $는 무모순적이며, 같은 이유로 $\Gamma \cup \lbrace  \lnot\psi \rbrace $ 또한 무모순적이다. 이제 초른의 보조정리를 적용하여, $\overline{\Gamma}$를 다음 $\mathcal{L}’$-이론들의 순서의 극대로 정의한다.</p>
+
+\[\{ \Gamma' : \Gamma \subseteq \Gamma', \Gamma' \cup \{\phi\} \text{ and } \Gamma' \cup \{\lnot \psi\} \text{ are consistent} \}\]
+
+<p>$\overline{\Gamma}$는 완전함을 보이자. 만약 $\overline{\Gamma}$가 완전하지 않다면, 어떤 $\mathcal{L}’$-문장 $\sigma$가 존재하여 $\sigma \notin \overline{\Gamma}$이고, $\overline{\Gamma} \cup \lbrace \sigma, \phi \rbrace $ 또는 $\overline{\Gamma} \cup \lbrace \sigma, \lnot \psi \rbrace $가 무모순적이다.</p>
+
+<p>전자의 경우, 콤팩트성 정리에 의해 어떤 $\overline{\Gamma}$의 문장 $\theta$가 존재하여 $\phi \vDash \theta \rightarrow \lnot \sigma$이다. $\Gamma$의 정의에 의해 $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$이다. 따라서 $\overline{\Gamma} \cup \lbrace  \sigma, \phi \rbrace $는 $\lnot\phi$를 증명한다. 이는 모순이다. 후자의 경우에도 마찬가지 모순이 발생한다. 따라서 $\overline{\Gamma}$는 완전하다.</p>
+
+<p>$\overline{\Gamma}$가 완전하고, $\overline{\Gamma} \cup \lbrace \phi \rbrace , \overline{\Gamma} \cup \lbrace \lnot\psi \rbrace $가 건전하므로, 로빈슨 건전성 정리에 의해 $\overline{\Gamma} \cup \lbrace \phi, \lnot \psi \rbrace $가 건전하다. 그런데 이는 $\phi \vDash \psi$에 모순된다. 따라서 귀류법에 의해 $\phi, \psi$는 크레이그 보간을 가진다. ■</p>
+
+<h3 id="베스-정의-가능성-정리beth-definability-theorem">베스 정의 가능성 정리<sub>Beth definability theorem</sub></h3>
+
+<p>언어 $\mathcal{L}$과, $\mathcal{L}$에 포함되어 있지 않은 술어 $P$를 생각하자. $T$가 $\mathcal{L} \cup \lbrace  P \rbrace $의 이론이라고 하자. $T$를 만족하는 $\mathcal{L}$의 구조 $\mathfrak{A}$를 $\mathcal{L} \cup \lbrace  P \rbrace $로 확장하는 방법이 유일할 때, $T$가 $P$를 <strong>암시적으로 정의<sub>implicitly define</sub></strong>한다고 한다.</p>
+
+<p>이는 다음과 같이 말할 수도 있다. $T(P’)$가 $T$에서 등장하는 모든 $P$를 $P’$으로 바꾼 $\mathcal{L} \cup \lbrace P’ \rbrace $ 이론이라고 하자. $T$가 $P$를 암시적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
+
+\[T \cup T(P') \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow P'(x_1, \dots, x_n)\]
+
+<p>반면 $T$가 $P$를 <strong>명시적으로 정의<sub>explicitly define</sub></strong>한다는 것은 다음을 만족시키는 $\mathcal{L}$-논리식 $\phi$가 존재한다는 것이다.</p>
+
+\[T \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow \phi(x_1, \dots, x_n)\]
+
+<p>예를 들어 보자. $\mathcal{L} = (0, S, +, \cdot)$의 이론 $\mathsf{PA}$에 술어 $P(x, y)$에 관한 공리를 추가한 다음의 이론을 $T$라고 하자.</p>
+
+\[T = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
+
+<p>$T(P’)$은 다음과 같다.</p>
+
+\[T(P') = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P'(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
+
+<p>$T$가 $P$를 암묵적으로 정의한다는 것은 다음이 성립한다는 것이다.</p>
+
+\[T \cup T(P') \vDash \forall x, y \big[ P(x, y) \leftrightarrow P'(x, y) \big]\]
+
+<p>이는 귀납 공리꼴로부터 자연스럽게 따라 나온다. 그런데 $P$는 다음과 같이 $T$에서 명시적으로 정의될 수도 있다.</p>
+
+\[\begin{gather}
+T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
+\text{where}\\\\
+\phi(x, y) : \forall z \big[ x + z = S(0) \rightarrow z = y \big]
+\end{gather}\]
+
+<p>이는 우연이 아니다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 언어 $\mathcal{L}$에 대해, $\mathcal{L} \cup \lbrace  P \rbrace $의 이론 $T$가 $P$를 암시적으로 정의하면, $T$는 $P$를 명시적으로 정의한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $P$가 $n$항 술어라고 하자. $\mathcal{L}$에 새로운 상수 $c_1, \dots, c_n$을 추가한 언어를 $\mathcal{L}’$이라고 하자. $T$가 $P$를 암시적으로 정의하므로,</p>
+
+\[T \cup T(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>이다. 콤팩트성 정리에 의해 어떤 $\mathcal{L} \cup \lbrace  P \rbrace $ 문장 $\psi$가 존재하여, $T \vdash \psi$이고 다음이 성립한다.</p>
+
+\[\psi \land \psi(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>함축 원리를 이용하여 이항하면 다음과 같다.</p>
+
+\[\psi \land P(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>좌변은 $\mathcal{L}’ \cup \lbrace  P \rbrace $의 문장이고, 우변은 $\mathcal{L}’ \cup \lbrace  P’ \rbrace $의 문장이다. 따라서 크레이그 보간 정리에 의해 $\mathcal{L}$-논리식 $\theta$가 존재하여 다음이 성립한다.</p>
+
+\[\begin{gather}
+\psi \land P(c_1, \dots, c_n) \vDash \theta(c_1, \dots, c_n), \\\\
+\theta(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)
+\end{gather}\]
+
+<p>다시 이항하고 $P’$을 $P$로 치환하면,</p>
+
+\[\begin{gather}
+\psi \vDash P(c_1, \dots, c_n) \rightarrow \theta(c_1, \dots, c_n), \\\\
+\psi \vDash \theta(c_1, \dots, c_n) \rightarrow P(c_1, \dots, c_n)
+\end{gather}\]
+
+<p>따라서 $\theta$는 $P$를 명시적으로 정의한다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/05/08/robinson-craig/en"> Robinson, Craig, and Beth's Theorems </a>
       </h1>
     <span class="post-date">08 May 2025</span>
@@ -1236,420 +1868,6 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 <p>a의 경우, 다시 비둘기집의 원리에 의해 $c_1 \in \aleph_1(l)$을 만족하는 직선 $l \in L_1$의 개수가 $2^{\aleph_0}$인 색깔 $c_1$이 존재한다. 그러한 $L_1$의 직선들의 집합을 $L_1’$이라고 하자. 앞선 논의에 의해 $L_1’$에는 총 $\aleph_1$개의 $c_1$ 점들이 존재한다. 이 점들을 뺀 집합을 $L_2$라고 하자. 이같은 과정을 b가 될 때까지 반복한다. (색깔이 가산 개 있기 때문에 언젠가는 b에 도달함을 확인하라)</p>
 
 <p>b가 되었을 때 $L_n$은 최대 $\aleph_1$개의 점들을 가진다. 그런데 $L$이 $L_n$이 되는 과정에서 빠진 점들의 개수는 $\aleph_1 \cdot \aleph_0 = \aleph_1$을 넘지 않는다. 한편 $L$은 $2^{\aleph_0}$개의 점들을 가지고 있었기 때문에, 이는 $\aleph_1 &lt; 2^{\aleph_0}$에 모순된다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/24/continuum-coloring/en"> A Colouring Problem Equivalent to the Continuum Hypothesis </a>
-      </h1>
-    <span class="post-date">24 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Problem.</strong> When the coordinate plane is coloured using countably many colours, does there always exist a right triangle whose three vertices are of the same colour?</p>
-</blockquote>
-
-<p>For instance, the following colouring uses 3 colours, and one can easily find a right triangle whose three vertices are all of the same colour.</p>
-
-<p><img src="/public/color-1.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;" /></p>
-
-<p>Of course, the above case is a simple one, and we must consider whether the required right triangle exists even when infinitely many colours are applied in a highly irregular manner, as shown below.</p>
-
-<p><img src="/public/color-2.png" style="width: 100%; max-width: 400px; margin: 1.5em auto;" /></p>
-
-<p>Remarkably, this problem, which appears trivial at first glance, is equivalent to the continuum hypothesis.</p>
-
-<blockquote>
-  <p><strong>Continuum Hypothesis.</strong> There exists no infinite set whose cardinality is greater than that of the natural numbers but smaller than that of the real numbers.</p>
-</blockquote>
-
-<p>We define $\aleph_0$ as the cardinality of the smallest infinite set, namely the natural numbers, and $\aleph_1$ as the cardinality of the smallest infinite set larger than the natural numbers. Meanwhile, the real numbers can easily be shown to have the same cardinality as the power set of the natural numbers, and since the power set of a set $X$ has cardinality $2^{|X|}$, the cardinality of the real numbers is $2^{\aleph_0}$. Therefore, the statement of the continuum hypothesis is equivalent to $\aleph_1 = 2^{\aleph_0}$.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> A counterexample to the problem exists if and only if $\aleph_1 = 2^{\aleph_0}$.</p>
-</blockquote>
-
-<p>Note that the following proof is conceived by the author and may contain errors.</p>
-
-<p><strong>Proof.</strong> We shall show that if $\aleph_1 = 2^{\aleph_0}$, then a counterexample to the problem exists, and conversely, if a counterexample to the problem exists, then $\aleph_1 = 2^{\aleph_0}$.</p>
-
-<h4 id="if-aleph_1--2aleph_0-then-a-counterexample-to-the-problem-exists">If $\aleph_1 = 2^{\aleph_0}$, then a counterexample to the problem exists.</h4>
-
-<p>For the smallest uncountable ordinal $\omega_1$, there exists a method of colouring $\omega_1^2$ such that no right triangle with three vertices of the same colour exists. First, we establish a one-to-one correspondence between countably many colours and the integers. Since $\alpha &lt; \omega_1$ is a countable ordinal, we can colour all points of the red segment $\lbrace  (\beta, \alpha) : 0 \leq \beta \leq \alpha \rbrace $ with countably many distinct colours. We colour these points with colours corresponding to positive integers. Meanwhile, the points of the blue segment $\lbrace  (\alpha, \beta) : 0 \leq \beta &lt; \alpha \rbrace $ are coloured with colours corresponding to negative integers.</p>
-
-<p><img src="/public/color-3.png" style="width: 100%; max-width: 350px; margin: 1.5em auto;" /></p>
-
-<p>It can easily be shown that with this colouring, there exists no right triangle whose three vertices are all of the same colour.</p>
-
-<p>If $\aleph_1 = 2^{\aleph_0}$, then there exists a one-to-one correspondence $f: \mathbb{R} \to \omega_1$. We now define a colouring of the plane as follows. A point $p = (x, y) \in \mathbb{R}^2$ is coloured with the same colour as the point $f(p) = (f(x), f(y)) \in \omega_1^2$. Since $f$ is a one-to-one correspondence, if points $p_1, p_2, p_3$ form the three vertices of a right triangle of the same colour under this colouring, then $f(p_1), f(p_2), f(p_3)$ also form the three vertices of a right triangle of the same colour. However, since we have shown that no such triangle exists in $\omega_1^2$, the plane also lacks the required right triangle under this colouring.</p>
-
-<h4 id="if-a-counterexample-to-the-problem-exists-then-aleph_1--2aleph_0">If a counterexample to the problem exists, then $\aleph_1 = 2^{\aleph_0}$.</h4>
-
-<p>Suppose $2^{\aleph_0} &gt; \aleph_1$ and derive a contradiction. Let $I$ be a subset of the real numbers with cardinality $\aleph_1$. Consider the subset $X = I \times \mathbb{R}$ of the plane.</p>
-
-<p>Let $L_0$ denote the set of lines in $X$ parallel to the $x$-axis. For $l \in L_0$, we write $c \in \aleph_1(l)$ when the number of points in $l$ coloured with colour $c$ is at least $\aleph_1$. For any $l \in L_0$, since $|l| = \aleph_1$, verify that by the pigeonhole principle, there exists at least one colour $c$ such that $c \in \aleph_1(l)$ for each line.</p>
-
-<p>Moreover, since $|L_0| = 2^{\aleph_0}$, by the pigeonhole principle there exists some colour $c_0$ such that the number of lines $l$ satisfying $c_0 \in \aleph_1(l)$ is $2^{\aleph_0}$. Consider the set $L_0’$ of such lines. When vertical lines are drawn through the lines in $L_0’$, if any two intersection points have colour $c_0$, then there exists a right triangle whose three vertices are all of colour $c_0$. Therefore, amongst the intersection points of any vertical line with the lines in $L_0’$, at most one point is coloured $c_0$. Since there are $|I| = \aleph_1$ vertical lines in total, there exist $\aleph_1$ points of colour $c_0$ in $L_0’$.</p>
-
-<p>Removing all these points yields a sparse set of lines. Let this set be $L_1$.</p>
-
-<p><img src="/public/color-4.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
-
-<p>Two cases are possible: a) There are $2^{\aleph_0}$ lines in $L_1$ that contain $\aleph_1$ points. b) There are at most $\aleph_1$ lines in $L_1$ that contain $\aleph_1$ points.</p>
-
-<p>In case a), again by the pigeonhole principle, there exists a colour $c_1$ such that the number of lines $l \in L_1$ satisfying $c_1 \in \aleph_1(l)$ is $2^{\aleph_0}$. Let $L_1’$ denote the set of such lines in $L_1$. By the previous argument, there exist $\aleph_1$ points of colour $c_1$ in $L_1’$. Let $L_2$ denote the set obtained by removing these points. Repeat this process until case b) is reached. (Verify that case b) is eventually reached since there are countably many colours.)</p>
-
-<p>When case b) is reached, $L_n$ contains at most $\aleph_1$ points. However, the number of points removed in the process from $L$ to $L_n$ does not exceed $\aleph_1 \cdot \aleph_0 = \aleph_1$. Meanwhile, since $L$ originally contained $2^{\aleph_0}$ points, this contradicts $\aleph_1 &lt; 2^{\aleph_0}$. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/20/cardinality"> 기수의 정의에 관한 노트 </a>
-      </h1>
-    <span class="post-date">20 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>정의.</strong> $X$에서 $Y$로 가는 단사 사상이 존재할 때, $|X| \leq |Y|$라고 적는다. 전단사 사상이 존재할 때, $|X| = |Y|$라고 적는다.</p>
-</blockquote>
-
-<p>집합론을 처음 공부하는 학생들이 흔히 하는 오해는, 위 정의의 $|\cdot|$과 $\leq$를 복소수에서의 $|\cdot|$과 $\leq$와 유사한 것으로 은연 중에 취급하는 것이다. 요컨대 복소수 $z$에 대해 $|z|$가 실수이고 $\leq$가 실수의 대소 관계이듯이, 집합 $X$에 대해 $|X|$는 집합의 크기 — 이른바 <strong>기수<sub>cardinality</sub></strong>이고, $\leq$는 기수의 대소 관계라고 생각하는 것이다.</p>
-
-<p>그러나 이는 문제의 여지가 많은 접근이다. 왜냐하면 위 정의만으로는 <strong><u>기수라는 수학적 대상</u>을 정의할 수 있다는 보장이 없기 때문이다.</strong> 우리가 정의한 것은 이항 관계에 불과하다.</p>
-
-<p>이해를 위한 예시를 들어보자. $A$가 $B$를 좋아할 때, $|A| \leq |B|$라고 적을 수 있을 것이다. 그러나 이렇게 적었다고 해서, $|A|$는 ‘$A$의 호감도’를 의미하며 $\leq$가 호감도의 대소 관계라고 해석한다면 완전히 틀린 것이다. 이와 마찬가지로 $|X| \leq |Y|$는 단사 관계의 유무로 정의되는 이항 관계일 뿐, 이 관계 자체가 기수의 개념을 시사하는 것은 아니다.</p>
-
-<p>특히 ZFC에서는 모든 것이 집합이기 때문에, 만약 기수를 정의하고 싶다면 다음의 사실을 논증해야 한다.</p>
-
-<blockquote>
-  <p><strong>정리 1.</strong> 임의의 집합 $X, Y$에 대해, 어떤 집합 $\mathrm{Card}(X), \mathrm{Card}(Y)$가 존재하여, 다음이 성립한다.</p>
-
-  <ol>
-    <li>$|X| \leq |Y|$ iff $\mathrm{Card}(X) \subseteq \mathrm{Card}(Y)$</li>
-    <li>$|X| = |Y|$ iff $\mathrm{Card}(X) = \mathrm{Card}(Y)$</li>
-  </ol>
-
-  <p>$\mathrm{Card}(X)$를 $X$의 기수라고 부른다.</p>
-</blockquote>
-
-<p>즉 ① $\mathrm{Card}(X)$를 정의해야 하고, ② 해당 정의에 대해 위 진술이 성립함을 보여야 한다.</p>
-
-<p>표현의 편의를 위해 $|X| \leq |Y|$와 $|X| = |Y|$를 “$Y$가 $X$보다 작지 않다”, ”$X$와 $Y$의 크기가 같다“라고 부르자. ①부터 살펴 보자면, 크게 네 가지 접근이 가능하다. 짤막하게 알아보자면 이렇다.</p>
-
-<ol>
-  <li>
-    <p>칸토어의 정의</p>
-
-    <ul>
-      <li>정의: $\mathrm{Card}(X)$를 $X$와 크기가 같은 집합들의 집합으로 정의한다.</li>
-      <li>장점: 정의가 가장 직관적임</li>
-      <li>단점: $\mathrm{Card}(X)$는 사실 집합이 아니라 모임<sub>class</sub>임</li>
-    </ul>
-  </li>
-  <li>
-    <p>스콧의 트릭<sub>Scott’s trick</sub></p>
-
-    <ul>
-      <li>정의: $X$와 크기가 같은 집합 중 폰 노이만 위계에서 가장 먼저 등장하는 집합의 랭크가 $V_\alpha$일 때, $\mathrm{Card}(X)$를 $V_\alpha$로 정의한다.</li>
-      <li>장점: 모임의 문제 없이 기수를 정의함</li>
-      <li>단점: 정의가 직관적이지 않고 ad-hoc적인 면모가 있음</li>
-    </ul>
-  </li>
-  <li>
-    <p>정렬 원리<sub>well-ordering theorem</sub>를 사용하여 기수를 정의하기</p>
-
-    <ul>
-      <li>정의: $X$의 정렬에 대응되는 서수<sub>ordinal</sub>들보다 작지 않은 서수 중 가장 작은 서수를 $\mathrm{Card}(X)$로 정의한다.</li>
-      <li>장점: 정의가 다소 직관적이고, 모임의 문제가 없음</li>
-      <li>단점: 선택 공리 없이는 임의의 집합에 대해 해당 집합의 정렬이 존재함을 보장할 수 없음</li>
-    </ul>
-  </li>
-  <li>
-    <p>하르토그스 수<sub>Hartogs number</sub>를 사용하여 기수를 정의하기</p>
-    <ul>
-      <li>정의: $X$의 정렬 가능한 부분집합들에 대응되는 서수들보다 큰 서수 중 가장 작은 서수를 $X$의 하르토그수 수로 정의한다.</li>
-      <li>장점: 정의가 어느 정도 직관적이고, 모임의 문제가 없으며, 선택 공리에 의존적이지 않음</li>
-      <li>단점: 다루기 불편하고 제약이 많음</li>
-    </ul>
-  </li>
-</ol>
-
-<p>사실 4를 정의로 채택하는 경우는 없지만, 한 가지 가능성으로서 소개했다. 현대 집합론에서는 2 또는 3을 기수의 정의로 채택한다. 두 경우 모두 정리 1이 성립함을 ZFC에서 보일 수 있다.</p>
-
-<p>흥미로운 것은, 스콧의 트릭을 사용하여 기수를 정의하면 선택 공리가 필요하지는 않지만, 스콧의 트릭으로 정의된 기수가 정리 1을 만족함을 보일 때에는 선택 공리가 필요하다는 사실이다. 왜냐하면 다음이 선택 공리와 동치이기 때문이다.</p>
-
-<blockquote>
-  <p><strong>정리 2.</strong> 임의의 집합 $X, Y$에 대해, $|X| \leq |Y|$이거나 $|Y| \leq |X|$이다.</p>
-</blockquote>
-
-<p>즉, 선택 공리를 사용하지 않더라도 a) 스콧의 트릭을 통해 $\mathrm{Card}(X)$를 정의하거나, b) 단사 사상의 유무를 통해 $|X| \leq |Y|$를 정의할 수 있지만, a)와 b)가 맞물린다는 사실을 보일 때는 선택 공리가 필요하다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/20/cardinality/en"> Notes on the Definition of Cardinality </a>
-      </h1>
-    <span class="post-date">20 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> When there exists an injective mapping from $X$ to $Y$, we write $|X| \leq |Y|$. When there exists a bijective mapping, we write $|X| = |Y|$.</p>
-</blockquote>
-
-<p>A common misunderstanding amongst students first studying set theory is to implicitly treat the $|\cdot|$ and $\leq$ in the above definition as analogous to $|\cdot|$ and $\leq$ for complex numbers. In other words, just as $|z|$ is a real number for a complex number $z$ and $\leq$ is the ordering relation on real numbers, they think that $|X|$ for a set $X$ is the size of the set—the so-called <strong>cardinality</strong>—and $\leq$ is the ordering relation on cardinalities.</p>
-
-<p>However, this is a problematic approach. This is because <strong><u>there is no guarantee that we can define cardinality as a mathematical object</u> using only the definition above.</strong> What we have defined is merely a binary relation.</p>
-
-<p>Let us consider an example for understanding. When $A$ likes $B$, we might write $|A| \leq |B|$. However, if we interpret this notation to mean that $|A|$ represents ‘$A$’s affection level’ and $\leq$ is the ordering relation on affection levels, this would be completely incorrect. Similarly, $|X| \leq |Y|$ is merely a binary relation defined by the existence of an injective mapping; the relation itself does not suggest the concept of cardinality.</p>
-
-<p>In particular, since everything is a set in ZFC, if we wish to define cardinality, we must prove the following fact.</p>
-
-<blockquote>
-  <p><strong>Theorem 1.</strong> For any sets $X, Y$, there exist sets $\mathrm{Card}(X), \mathrm{Card}(Y)$ such that the following holds:</p>
-
-  <ol>
-    <li>$|X| \leq |Y|$ iff $\mathrm{Card}(X) \subseteq \mathrm{Card}(Y)$</li>
-    <li>$|X| = |Y|$ iff $\mathrm{Card}(X) = \mathrm{Card}(Y)$</li>
-  </ol>
-
-  <p>We call $\mathrm{Card}(X)$ the cardinality of $X$.</p>
-</blockquote>
-
-<p>That is, we must ① define $\mathrm{Card}(X)$, and ② show that the above statement holds for this definition.</p>
-
-<p>For convenience of expression, let us refer to $|X| \leq |Y|$ and $|X| = |Y|$ as “$Y$ is not smaller than $X$” and “$X$ and $Y$ have the same size”, respectively. Regarding ①, there are broadly four possible approaches. Let us briefly examine them:</p>
-
-<ol>
-  <li>
-    <p>Cantor’s definition</p>
-
-    <ul>
-      <li>Definition: Define $\mathrm{Card}(X)$ as the collection of all sets having the same size as $X$.</li>
-      <li>Advantage: The definition is most intuitive</li>
-      <li>Disadvantage: $\mathrm{Card}(X)$ is actually a class, not a set</li>
-    </ul>
-  </li>
-  <li>
-    <p>Scott’s trick</p>
-
-    <ul>
-      <li>Definition: When the rank of the first set to appear in the von Neumann hierarchy amongst sets having the same size as $X$ is $V_\alpha$, define $\mathrm{Card}(X)$ as $V_\alpha$.</li>
-      <li>Advantage: Defines cardinality without the class problem</li>
-      <li>Disadvantage: The definition is not intuitive and has ad-hoc aspects</li>
-    </ul>
-  </li>
-  <li>
-    <p>Defining cardinality using the well-ordering theorem</p>
-
-    <ul>
-      <li>Definition: Define $\mathrm{Card}(X)$ as the smallest ordinal that is not smaller than the ordinals corresponding to well-orderings of $X$.</li>
-      <li>Advantage: The definition is somewhat intuitive and avoids the class problem</li>
-      <li>Disadvantage: Without the axiom of choice, we cannot guarantee the existence of a well-ordering for arbitrary sets</li>
-    </ul>
-  </li>
-  <li>
-    <p>Defining cardinality using Hartogs numbers</p>
-    <ul>
-      <li>Definition: Define the Hartogs number of $X$ as the smallest ordinal greater than the ordinals corresponding to well-orderable subsets of $X$.</li>
-      <li>Advantage: The definition is reasonably intuitive, avoids the class problem, and is not dependent on the axiom of choice</li>
-      <li>Disadvantage: Inconvenient to handle and has many limitations</li>
-    </ul>
-  </li>
-</ol>
-
-<p>In fact, 4 is never used as a definition, but I’ve listed it for reference purpose. In modern set theory, either 2 or 3 is adopted as the definition of cardinality. In both cases, one can prove that Theorem 1 holds in ZFC.</p>
-
-<p>What is interesting is that whilst the axiom of choice is not required to define cardinality using Scott’s trick, the axiom of choice is needed to prove that cardinality defined by Scott’s trick satisfies Theorem 1. This is because the following is equivalent to the axiom of choice:</p>
-
-<blockquote>
-  <p><strong>Theorem 2.</strong> For any sets $X, Y$, either $|X| \leq |Y|$ or $|Y| \leq |X|$.</p>
-</blockquote>
-
-<p>That is, even without using the axiom of choice, we can a) define $\mathrm{Card}(X)$ through Scott’s trick, or b) define $|X| \leq |Y|$ through the existence of injective mappings, but the axiom of choice is required to prove that a) and b) mesh together.</p>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/18/prisoner-hat"> 무한 죄수 모자 문제 </a>
-      </h1>
-    <span class="post-date">18 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <p>아마 여러분은 죄수들이 자신의 모자 색을 맞히는 내용의 퍼즐을 제법 보았을 것이다. 예시는 다음과 같다.</p>
-
-<blockquote>
-  <p>3명의 죄수 A, B, C가 일렬로 서 있다. 간부는 검은 모자 2개와 흰 모자 3개 중 세 개를 골라 각 죄수에게 씌우고는, 만약 어느 한 명이라도 자신의 모자의 색을 맞히면 모두 풀려나지만 틀릴 경우 모두 사형에 처해질 것이라고 말한다. 죄수는 자기 앞에 있는 죄수들의 모자 색은 볼 수 있지만, 자신의 모자 색이나 자기 뒤에 있는 죄수들의 모자 색은 볼 수 없다. 오랜 침묵이 흐른 후, 한 죄수가 자신의 모자 색을 정확히 맞혔다. 문제를 맞힌 죄수는 누구인가?</p>
-
-  <p><img src="/public/hat-1.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(1)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer1" class="answer" style="padding-bottom: 1em;">
-<p><strong>C가 정답을 맞힌다.</strong></p>
-<p>만약 B와 C의 모자 색이 모두 검은색이었다면 A는 자신의 모자가 흰색임을 맞혔을 것이다. 그러나 "오랜 침묵"이 흘렀으므로, A는 자신의 모자 색을 맞히지 못하는 상황이며 이는 B, C의 모자 색이 (흰, 검), (검, 흰), (흰, 흰)의 경우 중 하나임을 시사한다.</p>
-<p>이 사실을 고려했을 때, 만약 C의 모자 색이 검정색이었다면 B는 자신의 모자 색이 흰색임을 맞혔을 것이다. 그럼에도 "오랜 침묵"이 흘렀다는 것은 B 또한 자신의 모자 색을 맞히지 못하는 상황임을 의미하므로, C의 모자 색은 흰색이다.</p>
-</div>
-
-<p>조금 더 어려운 문제도 있다.</p>
-
-<blockquote>
-  <p>100명의 죄수가 일렬로 서 있다. 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 최대 몇 명의 생존을 확실히 보장할 수 있는가?</p>
-
-  <p><img src="/public/hat-2.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(8)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>힌트 보기</u>
-</div>
-
-<div id="answer8" class="answer" style="padding-bottom: 1em;">
-<p>첫 번째 죄수를 제외한 99명의 생존을 보장할 수 있다.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(2)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer2" class="answer" style="padding-bottom: 1em;">
-<p><strong>첫 번째 죄수를 제외한 99명의 생존을 보장할 수 있다.</strong></p>
-<p>첫 번째 죄수는 자신을 제외한 99명의 모자 색을 볼 수 있다. 그 중 검은색 모자가 짝수 개라면 자신의 모자 색을 검은색으로 맞히고, 홀수 개라면 흰색으로 맞힌다. 그러면 두 번째 죄수는 첫 번째 죄수가 전달한 정보와, 자기 앞에 있는 모자들 중 검은색 모자의 홀짝성을 비교함으로서 자신의 모자 색을 정확히 맞힐 수 있다. 세 번째 죄수 또한 첫 번째 죄수가 전달한 정보와, 두 번째 죄수가 자신의 모자 색을 맞혔다는 사실로부터 자신의 모자 색을 정확히 맞힐 수 있고, 이같은 식으로 99명이 모두 풀려날 수 있다.</p>
-</div>
-
-<p>이제 문제를 더 괴랄하게 만들어 보자.</p>
-
-<blockquote>
-  <p><strong>무한히 많은 죄수가 일렬로 서 있다.</strong> 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 가능한 적은 죄수가 죽도록 하는 전략은 무엇인가? <strong>단, 모든 죄수는 무한한 연산 능력을 가지며, 수학적으로 전지전능하다고 가정한다.</strong> 즉, $f$가 수학적으로 존재하는 함수일 때, 죄수들은 $f$의 함숫값을 언제나 계산할 수 있으며, 사전에 전략을 의논할 때 $f$를 사용하자고 합의할 수 있다.</p>
-
-  <p><img src="/public/hat-3.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(3)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>힌트 보기 1</u>
-</div>
-
-<div id="answer3" class="answer" style="padding-bottom: 1em;">
-<p>첫 번째 죄수를 제외한 전원의 생존을 보장할 수 있다.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(4)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>힌트 보기 2</u>
-</div>
-
-<div id="answer4" class="answer" style="padding-bottom: 1em;">
-<p>선택 공리를 사용한다.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(5)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer5" class="answer" style="padding-bottom: 1em;">
-
-<p>검은색 모자를 0, 흰색 모자를 1로 적으면 죄수들의 모자 배열은 101011... 와 같은 무한 숫자열로 표현할 수 있다. 앞에 소숫점을 찍고 이진법으로 읽으면 죄수들의 모자 배열은 0 이상 1 이하의 실수와 일대일 대응된다.</p>
-
-<p>실수 $a, b \in [0, 1]$에 대해, $a$와 $b$의 이진 전개가 차이나는 자릿수의 개수가 유한할 때 $a \sim b$라고 하자. 예를 들어,</p>
-
-$$
-0.11111\dots \sim 0.01111\dots, \; 0.10101\dots \not\sim 0.01010\dots
-$$
-
-<p>$\sim$은 동치 관계임을 쉽게 보일 수 있다. 따라서 동치류 $[0, 1]/\sim$을 취할 수 있다. 선택 공리에 의해 $[0, 1]/\sim$의 선택 함수 $\iota$가 존재한다. 죄수들이 수학적으로 전지전능하다고 가정했으므로 사전에 죄수들은 어떤 선택 함수 $\iota$를 사용할지 합의할 수 있다.</p>
-
-<p>모자 맞히기가 시작되었을 때 $n$번째 죄수는 $n$개의 모자를 제외한 모든 모자의 색을 볼 수 있다. 즉, 죄수들의 모자 배열에 대응되는 실수가 $r$일 때, $n$번째 죄수는 $r$의 소숫점 아래 $n$개 자릿수 이외의 모든 자릿수를 알고 있다. 즉, 그는 $r$이 $[0, 1]/\sim$의 어떤 동치류에 속하는지 알며, $r$이 속하는 동치류를 $[r]$이라고 했을 때 $\iota([r])$을 계산할 수 있다.</p>
-
-<p>이제 다음의 전략을 취한다. $\sim$의 정의에 의해 $r$과 $\iota([r])$은 유한한 개수의 자릿수에서만 차이가 난다. 첫 번째 죄수는 자신이 보는 모자들의 배열과 $\iota([r])$에 대응되는 모자들의 배열이 짝수만큼 차이가 나면 자신의 모자색을 검정색으로 맞히고, 홀수만큼 차이가 나면 흰색으로 맞힌다. 이제 나머지 죄수들은 100명의 죄수 문제와 같은 방식으로 자신의 모자 색을 맞힐 수 있다.</p>
-
-<p>즉, 선택 공리는 $N$명의 죄수 문제에서 $N \to \infty$를 취했을 때에도 첫 번째 죄수를 제외한 전원이 생존할 수 있다는 결론이 존속되도록 보장하는 원리이다.</p>
-
-</div>
-
-<p>위 퍼즐도 상당히 신기하지만, 다음의 퍼즐은 더 기묘하다.</p>
-
-<blockquote>
-  <p>무한히 많은 죄수가 일렬로 서 있다. 간부는 각 죄수에게 검은 모자와 흰 모자를 무작위로 씌우고는, 1번 죄수부터 차례대로 자신의 모자 색을 맞히게 시킨다. 맞히는 사람은 풀려나지만 틀린 사람은 사형에 처해진다. 죄수들은 사전에 전략을 의논할 수 있지만 모자가 씌워진 이후부터는 정답을 외치는 것 이외의 모든 발언과 행동이 금지된다. 또한, <strong>모자가 씌워지는 순간 죄수들은 청력을 완전히 상실하여 아무런 정보를 주고받을 수 없다.</strong> 오직 유한한 수의 죄수만이 죽도록 하는 전략이 있는가? (마찬가지로 죄수는 무한한 연산 능력을 가지며 수학적으로 전지전능하다.)</p>
-
-  <p><img src="/public/hat-4.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(6)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>답안 보기</u>
-</div>
-
-<div id="answer6" class="answer" style="padding-bottom: 1em;">
-
-<p>이전 문제와 같이 $\iota$를 $[0, 1]/\sim$의 선택 함수라고 하자. 다음의 전략을 취한다. $n$번째 죄수는 자신의 모자 색을 $\iota([r])$의 $n$번째 자릿수에 대응되는 색으로 맞힌다. 그러면 $\sim$의 정의에 의해 유한한 수의 죄수를 제외한 전원이 정답을 맞힌다.</p>
-
-</div>
-
-<p>위 퍼즐이 특히 기묘한 이유는, 청력 상실 조건에 의해 서로 다른 두 죄수가 모자를 맞히는 사건이 독립이므로, 각각의 죄수가 정답을 맞힐 확률은 $p$로 동일해야 할 듯하기 때문이다. 이 경우 총 $N$명의 죄수가 정답을 맞히는 확률은 $p^N$이 되므로, $N \to \infty$에 따라 확률은 0으로 수렴한다. 그러나 실제로는 무한히 많은 죄수들이 정답을 맞힌다.</p>
-
-<p>이 역설의 뿌리는, 임의의 죄수가 정답을 맞히는 확률이 <strong>정의되지 않는다</strong>는 데 있다. 잘 생각해 보면, 임의의 죄수가 정답을 맞히는 사건은 주어진 실수 $r \in [0, 1]$이 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>에 포함되는 사건과 동일한데, 비탈리 집합은 비가측 집합이므로 이 사건에는 확률을 정의할 수 없기 때문이다.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

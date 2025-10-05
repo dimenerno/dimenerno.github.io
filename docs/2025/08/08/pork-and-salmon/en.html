@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Pork and Salmon: Is Ethical Living a Luxury? &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/08/08/pork-and-salmon/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Pork and Salmon: Is Ethical Living a Luxury?</h1>
+  <span class="post-date">08 Aug 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'" >Philosophy</div>
+      
+      <div class="tag" onclick="location.href='/tags/humanities/'" >Humanities</div>
+      
+      <div class="tag" onclick="location.href='/tags/essay/'" >Essay</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h3 id="pork-and-salmon">Pork and Salmon</h3>
+
+<p>To be blunt, I hold the position that current pig farming practices are <em>extremely</em> unethical. The adverb <em>extremely</em> here expresses my view that this issue is far more self-evident than problems like abortion, capital punishment, or the trolley problem.</p>
+
+<p>Pigs are among the most intelligent animals, rivalling chimpanzees and dolphins. Pigs recognise themselves, partition spaces to maintain cleanliness, and exhibit tendencies to form social relationships with other pigs. They are particularly sensitive, not only suffering equally when witnessing other pigs in pain, but also craving their owner’s affection no less than dogs when kept as pets. In contrast, the conditions under which pigs are raised in current industrial practices are utterly appalling. Over 90% of pigs raised for food spend their entire lives confined in overcrowded, filthy, and dim enclosures with no room to move. The farms are never quiet, filled constantly with the cries of pigs from stress, pain, and fighting. In most industries, male pigs are castrated without anaesthesia to supposedly improve meat flavour, whilst female pigs are restrained with metal bars whilst being suckled.</p>
+
+<p>With approximately one billion pigs raised for food worldwide, even if we accept anthropocentrism and suppose that one human life equals the value of a thousand pigs, this situation amounts to confining one million people in torture chambers for the sake of “tastier meals”—surely deserving the label <em>extremely</em> unethical. Whilst questions such as “Should pork consumption be legally prohibited?” or “Should people who eat pork be condemned?” may be difficult to answer definitively due to their deep entanglement with social, political, and cultural contexts, when considering only the ethics of pig farming, defending such practices appears impossible without assuming an extreme form of moral scepticism. And if the pork industry structure is indeed <em>extremely</em> unethical, then the conclusion that individual consumption of that industry—that is, eating the produced pork—is <em>certainly</em> unethical becomes difficult to avoid.</p>
+
+<p>Nevertheless, due to the aforementioned social, cultural, and political contexts, I do not reveal this position in my social life. When pork is chosen as the menu for company dinners, I nod approvingly whilst feeling ethical burden internally. And at such dinners, I eat pork quite readily. I lack the courage to risk the social consequences of disrupting the group atmosphere and being labelled a “vegetarian” by those around me. It is quite cowardly behaviour indeed.</p>
+
+<p>Self-criticism can be sufficiently conducted in my diary, so I shall dismiss it here, as the main point of this essay lies elsewhere. To alleviate ethical responsibility, I attempt to avoid pork when dining alone or with someone who shares my ethical position regarding pork (∋ my girlfriend). Considering both animals’ capacity for suffering and the conditions under which they are raised, I believe the ethical burden decreases in the order of pork, chicken, beef, and fish. Conveniently, salmon is one of my favourite foods. Therefore, eating salmon instead of pork, and beef on days when I crave meat, should solve everything.</p>
+
+<p>However, after practising this dietary approach, I discovered it was not a complete solution. Indeed, money flowed from my bank account like water. Of course, “eating beef and salmon instead of pork proved expensive” is itself a quite obvious observation. But substituting the subject yields a somewhat less obvious observation: “attempting ethical eating habits proved expensive.”</p>
+
+<p>Naturally, I cannot deny that this observation stems partly from a defensive mindset. Even if food expenses hit rock bottom, one could practice ethical eating habits inexpensively with a diet centred on temple food. The problem, of course, is that it tastes terrible. Whilst one can practice ethical eating habits with little money, it requires incomparably stronger willpower than when one can spend freely. Thus, we can tentatively conclude: “The difficulty of practising ethical eating habits is inversely proportional to economic power.” (Fair trade foods also exemplify this principle.)</p>
+
+<h3 id="youtube-and-reading">YouTube and Reading</h3>
+
+<p>It is not only dietary habits that follow this pattern. Consider, for instance, hobbies. For explanatory convenience—if we may call this a hobby—let us contrast the somewhat exaggerated extremes of malicious YouTube viewing and reading good books. Here, malicious YouTube refers to channels that provide users with immediate dopamine through ethically problematic content such as fake news, sexual commodification, and yellow journalism, whilst good books refer to works that effectively convey humanistic values and stimulate readers to reflection and contemplation (this expression excludes exam preparation books, stock investment guides, and such).</p>
+
+<p>Whilst applying ethical standards to hobbies may seem inappropriate, at least in this case, the claim that the former constitutes unethical leisure whilst the latter represents ethical leisure appears quite reasonable. And here the reader can likely guess my intended conclusion: the wealthy are more likely to read good books rather than watch malicious YouTube, whilst the poor are conversely more likely to fall into malicious YouTube consumption.[^1]</p>
+
+<p>Of course, this is an intentionally selected example. It is certainly not the case that all “poor people’s hobbies” are unethical whilst “rich people’s hobbies” are ethical. Rather, are not the “hobbies” of the wealthy—who level mountains to build golf courses and own seven or eight sports cars with utter disregard for emissions—truly more problematic? This is a valid criticism. Before addressing this point, let me describe the principle by which ethical consumption and activities become more difficult to practice for those with lower economic power.</p>
+
+<p>Firstly—though it sounds trite—in capitalist systems, profit maximisation is paramount, so ethical considerations are pushed far into the background, particularly in low-price markets where low-income groups are the primary consumers. This corresponds to the pork and salmon example. No company will voluntarily set ethical standards and fulfil such promises, as this would create a prisoner’s dilemma situation. The only recourse would be for a majority of citizens, unified by ethical values, to exercise sovereignty through government to impose coercive measures on companies—but given the current political deadlock even over anti-discrimination legislation, this too appears impossible.</p>
+
+<p>Secondly—ethical living fundamentally requires both rational reflection and practical action, thus demanding enormous energy to pursue. This corresponds to the YouTube and reading example. When pursuing either rational reflection or practical action alone is already extremely difficult—for instance, dieting requires only the latter yet has dismal success rates—pursuing ethical living, which demands both, is only possible for those who have enough energy remaining after their workday (labour) to pursue it. It is physiologically nearly impossible for someone who spends eight hours doing physical labour to return home and spend the evening reading Peter Singer. For instance, whilst I pride myself on enjoying reading, during my time in military training camp, after exhausting daily routines, I simply lay in bed staring blankly rather than feeling any desire to read. That truly is a “luxury.”</p>
+
+<p>Now let us return to the previously raised criticism that wealthy people’s hobbies are often more seriously unethical. Whilst this is certainly true, what we must note is that the wealthy are granted <strong>freedom of choice</strong>. That is, with their capital, they could establish overseas aid foundations—an <em>extremely</em> ethical practice (let us assume for argument’s sake that such foundation establishment involves no money laundering or similar purposes)—or they could level mountain ridges to build golf courses—an <em>extremely</em> unethical practice. Of course, the vast majority of wealthy people choose the latter, but what matters is the freedom of choice guaranteed to them.</p>
+
+<p>The poor are not granted freedom of choice from the outset. Their daily lives are structurally saturated with <em>minor but nonetheless certainly</em> unethical consumption. To use an analogy: the wealthy have the freedom to choose whether to invest their money for growth or to indulge in luxury. But the poor lack this freedom. They can only save money or make small investments, which, considering inflation and market uncertainty, typically amounts to losing money in ways that are minor but nonetheless certain. Similarly, in modern society, unless in <em>abnormal</em> circumstances, people without stable economic power have no choice but to eat cruelly raised pork, purchase products that exploit workers in developing countries, watch dopamine-driven political and current affairs YouTube content, and dismiss animal welfare, poverty, hunger, and refugee issues as pie-in-the-sky concerns.</p>
+
+<h3 id="is-ethical-living-a-luxury">Is Ethical Living a Luxury?</h3>
+
+<p>Let us now examine the title of this essay. The proposition “ethical living is a luxury” is naturally sloganeering. Like all slogans, this statement is provocative and fresh (thus appropriate as an essay title) but what it actually asserts remains unclear (thus inappropriate as an essay’s main argument). The proposition “ethical living is a luxury” can be interpreted in several ways.</p>
+
+<p>Firstly, this proposition can be interpreted as extending the subject of our earlier conclusion to ethical living in general—namely, the claim that “the difficulty of practising ethical living is inversely proportional to economic power.” Let us call this the <strong>weak claim</strong>. The weak claim is a descriptive assertion. Of course, “ethical” is a normative expression, and there are countless disagreements about what constitutes “ethical living.” However, once its extension is presupposed, the weak claim itself is descriptive, and its causes lie in the two principles described above. This observation is qualitatively no different from noting that economic power and the Engel coefficient are inversely related.</p>
+
+<p>However, we can derive a more provocative claim here. Suppose someone who cannot afford to buy salmon regularly—let us call him John—ate pork for a delicious meal. According to the premises established in the introduction, this is unethical. But if John were to hear this claim, he would react against this untimely ethical criticism directed at him (as anyone would). The reason John cannot help but react sensitively is that ethical statements are inseparable from the attribution of duty and responsibility. For instance, the statement “slavery is unethical” implicitly attributes responsibility for slavery’s unethical nature to slave owners and imposes upon them the duty to free their slaves. Slave owners who fail to fulfil this duty must themselves bear responsibility for the social condemnation they receive.</p>
+
+<p>Similarly, the moral judgement that “John’s eating pork was unethical” is usually understood as directed towards John, who ate the pork. But if “ethical living is truly a luxury,” such targeting seems inappropriate. If ethics is a value important enough for everyone to pursue, yet it is a “luxury”—that is, something that can only barely be obtained through tremendous perseverance and opportunity costs—then surely the responsibility lies not with individuals but with <em>society as a whole</em>, which has made ethics into a luxury?</p>
+
+<p>Thus, using the weak claim as grounds, let us call the normative claim that attributes responsibility for socially habituated unethical behaviour to society as a whole rather than to individuals the <strong>strong claim</strong>. According to the strong claim, the ethical responsibility for John’s eating pork lies not only with John but with all of us. Even I, writing this essay, bear <em>minor but nonetheless certain</em> responsibility. Until now, in exercising my voting rights, I have shown no interest whatsoever in politicians’ animal welfare pledges.</p>
+
+<h3 id="the-lefts-dilemma">The Left’s Dilemma</h3>
+
+<p>Here I wish to reveal a particular dilemma. Whilst labels like “left” and “right” represent rather vague collections of various ideas, a relatively clear characteristic is that the “left” values individual morality more highly than the “right.” Therefore, environmentalism, pacifism, veganism, labour movements, feminism, queer movements, and multiculturalism are typically classified as leftist platforms. The legitimacy of these platforms stems not from economic growth or technological advancement but from ethical demands at the individual level.</p>
+
+<p>However, if the leftist ideologies supporting “ethical living are luxuries,” then the leftist camp faces a dilemma: whilst claiming to be the camp of the weak, its practice requires sufficient economic power as a prerequisite. Particularly if prioritising community coexistence over one’s own interests is one of leftist values, realising this value would only be possible for those whose sacrifice of personal interests is not directly connected to their livelihood or <strong>survival</strong>.</p>
+
+<p>This appears to explain leftist solidarity fractures to some degree. The left has roughly two structures. The first is where non-desperate people provide economic or ideological support to desperate people (intellectual society), and the second is where desperate people struggle for their own interests (labour unions). Because both structures live under the same leftist roof, the fact that they operate on completely different principles is often obscured. Whilst altruism and self-interest are not always clearly distinguishable, the former basically operates on the principle of altruism, the latter on self-interest. My intention here is not to disparage the latter, but to explain how the former gains <strong>power</strong> through moral superiority over the latter, thereby causing divisions within the left.</p>
+
+<p>Taking labour movements as an example, the vast majority of workers are naturally interested only in labour movements and are mostly uninterested in—often hostile to—feminism. For them, labour rights struggle is the ultimate goal. But for so-called “elite leftist intellectuals,” labour rights struggle is merely a stepping stone towards achieving the higher goal of a just and ethical society. Therefore, even if there were a policy that could raise male workers’ salaries by employing unmarried female irregular workers, they would never adopt such a policy. Rather, they would regard those pursuing such policies as enemies of leftist spirit. The problem is that this attitude turns the very group the leftist camp seeks to represent—namely, the majority of the worker group—into enemies of leftist spirit. This is because they have not acquired the “luxury of ethical living.”</p>
+
+<p>Consequently, intellectuals’ leftism based on justice and morality often exists only in ivory towers. If these intellectuals were to come down to actual sites and hear the vivid words exchanged among workers—”Those Chinese bastards are going to ruin the Republic of Korea,” “Those disabled protesters are making a fuss with the subway,” “Tonight I’ll take you to a good place”—they would inevitably <em>become disillusioned</em>.</p>
+
+<h3 id="respect-for-disrespect">Respect for Disrespect</h3>
+
+<p>Yet I am certainly not suggesting through this essay that intellectuals should withdraw from leftist camps, nor that intellectuals should abandon leftism early on. Conversely, I am also not suggesting that intellectuals should eloquently influence social minorities to awaken them to universal ethics and justice values, thereby enabling them to build common alliances. In fact, I must somewhat irresponsibly admit that I do not yet have well-established thoughts on how to solve what I have called the left’s dilemma. However, I do wish to assert at least one thing with certainty.</p>
+
+<p>In conclusion, I believe that intellectuals who claim to be leftist need always to keep in mind the <strong>strong claim</strong> discussed earlier. Practising leftists must endure the process of having their beliefs shattered—the belief that the weak will respect other weak people’s rights, the belief that the weak will be ethical—whilst engaging with the weak. This is certainly a disillusioning process. But the strong claim reminds us that responsibility for this disillusionment should be attributed not to the ethical corruption of individual weak people, but to social structures that distance them from universal ethics and justice sensibilities.</p>
+
+<p>And we intellectuals—readers who have read this rambling essay to this point are considered relative elites—also have an obligation to think in such ways. Because we have been granted the energy to practice such thinking, that is, <strong>freedom of choice</strong> in the sense mentioned earlier. Within the awareness that ethical living is a luxury, respecting even the weak’s disrespect for other weak people—that is, not attributing it to individual responsibility, not becoming disillusioned with the leftist path because of it, not giving up. Might this not be truly “ethical living”?</p>
+
+<hr />
+
+<table>
+  <tbody>
+    <tr>
+      <td>[^1]: For careful readers, let me add a footnote that this claim should be read Bayesianly. That is, P(x is currently reading good books</td>
+      <td>x’s economic power is e) is an increasing function of e, and when “reading good books” is replaced with “watching malicious YouTube,” it becomes a decreasing function. And naturally, there are cases like a former president who, despite belonging to the establishment of establishments, fell into malicious YouTube. But this claim concerns probabilities, and regarding probabilities, I believe this claim is difficult to overturn.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

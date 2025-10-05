@@ -612,6 +612,141 @@ F_\lambda = \bigcup_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
   </div>
   <div style="margin-bottom: 6em"></div>
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/09/25/ch-for-borel/en"> The Continuum Hypothesis for Closed Sets and Borel Sets </a>
+      </h1>
+    <span class="post-date">25 Sep 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>The continuum hypothesis concerns whether $\aleph_1 = 2^{\aleph_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, the continuum hypothesis is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved early on that the continuum hypothesis holds when restricted to closed subsets of the real numbers.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then $|F| = \aleph_0$ or $|F| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+<p>The proof of this theorem uses the concept of a <strong>perfect set</strong>. I previously introduced this when discussing the <a href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson">Cantor-Bendixson theorem</a>, but I shall introduce it again.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, a subset $P \subseteq X$ is said to be perfect if $P = P’$, where $P’$ is the set of limit points of $P$ in $X$.</p>
+</blockquote>
+
+<p>In general, for a subset $A \subseteq X$, there are two reasons why $A$ and $A’$ may not have an inclusion relationship:</p>
+
+<ol>
+  <li>If $x$ is an isolated point of $A$, then $x \in A$ but $x \notin A’$</li>
+  <li>If $x$ is a limit point of $A$ that does not belong to $A$, then $x \notin A$ but $x \in A’$</li>
+</ol>
+
+<p>Therefore, a perfect set is a closed set with no isolated points. Accordingly, when given a closed set $F$, one might expect that removing all isolated points from $F$ would yield a perfect set. The problem is that the set obtained after removing isolated points may itself have isolated points. For example,</p>
+
+\[F = \mathbb{N} \cup \lbrace  m - 1/n : m \geq 0, n &gt; 1 \rbrace\]
+
+<p>In this case, the set obtained by removing the isolated points of $F$ is $\mathbb{N}$, which again has countably many isolated points. However, if we repeat this process of ‘removing’ isolated points transfinitely, we obtain the following interesting result.</p>
+
+<blockquote>
+  <p><strong>Cantor-Bendixson Theorem.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then there exist a countable set $C$ and a perfect set $P$ such that $F = P \sqcup C$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Although the proof is presented in the previous link, here we present Cantor’s proof.</p>
+
+<p>Define transfinitely as follows:</p>
+
+\[\begin{gather}
+F_0 = F \\
+F_{\alpha + 1} = F_\alpha' \\
+F_\lambda = \bigcup_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
+\end{gather}\]
+
+<p>Observe the following:</p>
+
+<ol>
+  <li>Each $F_\alpha$ is a closed set.</li>
+  <li>If $\alpha \leq \beta$, then $F_\alpha \supseteq F_\beta$.</li>
+  <li>$F_\alpha \setminus F_{\alpha + 1}$ is the set of isolated points of $F_\alpha$.</li>
+  <li>If $\alpha \neq \beta$, then $F_{\alpha} \setminus F_{\alpha + 1}$ and $F_{\beta} \setminus F_{\beta+1}$ are disjoint.</li>
+</ol>
+
+<p>If $F_{\alpha} \setminus F_{\alpha+1} \neq \varnothing$ for all $\alpha \in \mathrm{Ord}$, then for the Hartogs number $\gamma$ of $\mathcal{P}(F)$, the function $f : \gamma \to \mathcal{P}(F); \alpha \mapsto F_{\alpha} \setminus F_{\alpha + 1}$ would be injective, which is a contradiction. Therefore, there exists $\xi$ such that $F_{\xi} \setminus F_{\xi+1} = \varnothing$. Setting $P = F_\xi$, we have that $P$ is either empty or perfect.</p>
+
+<p>Let $C = F \setminus P$. Let $\mathcal{B} = \lbrace  B_n \rbrace $ be a countable basis for $\mathbb{R}$. Define $f: C \to \omega$ as follows:</p>
+
+\[f(x) = \mathop{\arg \min}\limits_{n \in \omega} : B_n \cap F_\alpha = \{ x \} \quad (x \in F_\alpha \setminus F_{\alpha + 1})\]
+
+<p>Verify that $f$ is well-defined and injective. ■</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then $|P| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> We prove the following two lemmas.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then there exist non-empty perfect disjoint sets $P_1, P_2 \subset P$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Let $\alpha = \inf P$ and $\beta = \sup P$ (where $\alpha, \beta$ may be $\pm \infty$). If $(\alpha, \beta) \subset P$, then for any $r, s$ with $\alpha &lt; r &lt; s &lt; \beta$, the sets $P \cap (-\infty, r]$ and $P \cap [s, \infty)$ satisfy the conditions. If $(\alpha, \beta) \not\subset P$, then there exists some $x \in (\alpha, \beta)$ such that $x \notin P$. Since $P = P’$, $x$ is not a limit point of $P$. Therefore, there exists sufficiently small $\delta &gt; 0$ such that $(x - \delta, x + \delta)$ is disjoint from $F$ and $\alpha &lt; x - \delta, x + \delta &lt; \beta$. In this case, $P \cap (-\infty, x - \delta]$ and $P \cap [x + \delta, \infty)$ satisfy the conditions. □</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then for any $n &gt; 0$, there exists a non-empty perfect set $P’ \subset P$ such that $\mathrm{diam} P’ &lt; 1/n$.</p>
+</blockquote>
+
+<p><em>Proof.</em> For $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $, there exists $(k/n, (k+1)/n) \in \mathcal{J}$ such that $J \cap F \neq \varnothing$ (otherwise $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $, which is not perfect). Let $E = F \cap [k/n, (k+1)/n]$. Since $E$ is a closed set, if $E$ has no isolated points, then $E$ is perfect. If $x \in E$ is an isolated point, then there exists sufficiently small $\delta &gt; 0$ such that $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $ and $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$. In this case, $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $, so $x$ is an isolated point of $F$. This is a contradiction, so $E$ is perfect. □</p>
+
+<p>Let $P$ be a non-empty perfect set. From the two lemmas above, using the axiom of choice, we can inductively define:</p>
+
+<ul>
+  <li>$P_1, P_2 \subset P, P_1 \cap P_2 = \varnothing, \mathrm{diam} P_1, \mathrm{diam} P_2 &lt; 1/2$</li>
+  <li>$P_{11}, P_{12} \subset P_1, P_{11} \cap P_{12} = \varnothing, \mathrm{diam} P_{11}, \mathrm{diam} P_{12} &lt; 1/4$</li>
+  <li>$P_{21}, P_{22} \subset P_2, P_{21} \cap P_{22} = \varnothing, \mathrm{diam} P_{21}, \mathrm{diam} P_{22} &lt; 1/4$</li>
+  <li>$P_{111}, P_{112} \subset P_{11}, P_{111} \cap P_{112} = \varnothing, \mathrm{diam} P_{111}, \mathrm{diam} P_{112} &lt; 1/8$</li>
+  <li>…</li>
+</ul>
+
+<p>Let $A$ be the intersection of all $P_i$. $A$ has the same cardinality as the Cantor set. Since the Cantor set has the same cardinality as the real numbers, $|P| = 2^{\aleph_0}$. ■</p>
+
+<p>From the above theorem and the Cantor-Bendixson theorem, we obtain the following result.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then $|F| = \aleph_0$ or $|F| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+<p>Incidentally, a result similar to the Cantor-Bendixson theorem holds for Borel sets.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $B \subseteq \mathbb{R}$ is an uncountable Borel set, then $B$ contains a perfect set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Omitted.</p>
+
+<p>Therefore, more generally, the following holds.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> If $B \subseteq \mathbb{R}$ is a Borel set, then $|B| = \aleph_0$ or $|B| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/09/16/cardinal-arithmetics"> 기수 연산의 기본 정리들 </a>
@@ -888,6 +1023,286 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
   </div>
   <div style="margin-bottom: 6em"></div>
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/09/16/cardinal-arithmetics/en"> Basic Theorems of Cardinal Arithmetic </a>
+      </h1>
+    <span class="post-date">16 Sep 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>In this article, all sets and cardinals are infinite.</p>
+
+<h2 id="1-cardinal-addition">1. Cardinal Addition</h2>
+
+<p>When dealing with cardinal arithmetic, it is important to know the precise definitions of each operation. It is easy to confuse definitions with theorems. Let us begin with cardinal addition.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $A, B$ be disjoint sets with cardinalities $\kappa, \lambda$ respectively. Define $\kappa + \lambda$ as $|A \cup B |$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Finite cardinal addition satisfies the commutative and associative laws.</p>
+</blockquote>
+
+<p>To show that the above definition is well-defined, we must prove that $\kappa + \lambda$ does not depend on the choice of $A, B$. This is easily provable in ZF. Moreover, finite cardinal addition is merely finding the maximum cardinal, making it quite easy to compute.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong>
+\(\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\)</p>
+</blockquote>
+
+<p><strong>Proof.</strong> By the lemma in “2. Cardinal Multiplication” and the Cantor-Bernstein theorem, $\aleph_\alpha = \aleph_\alpha + \aleph_\alpha$. Therefore, if $|A| \leq |B|$, then $|B| \leq |A + B| \leq |B + B| = |B|$. ■</p>
+
+<p>Extending the definition of cardinal addition to the infinite case,</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Given a family of pairwise disjoint sets $\lbrace  A_i \rbrace $ where each $A_i$ has cardinality $\kappa_i$ for $i \in I$, we define:</p>
+
+\[\sum_{i \in I} \kappa_i = \left| \bigcup_{i \in I}A_i \right|\]
+</blockquote>
+
+<p>Note that proving this definition is well-defined requires the axiom of choice. For each $i \in I$, we must be able to choose a bijection $A_i \to \kappa_i$. Therefore, when dealing with cardinal arithmetic, the axiom of choice is almost always presupposed.</p>
+
+<p>From the relation $\kappa + \lambda = \mathrm{max}(\kappa, \lambda)$, one might wish to derive the following relation, but note that this is not a valid equation.</p>
+
+<blockquote>
+  <p><strong>Warning.</strong> $\sum_{i \in I} \kappa_i = \sup \kappa_i$ does not hold in general.</p>
+</blockquote>
+
+<h2 id="2-cardinal-multiplication">2. Cardinal Multiplication</h2>
+
+<p>How then should we compute infinite cardinal addition? To understand this, let us first define cardinal multiplication.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $A, B$ be sets with cardinalities $\kappa, \lambda$ respectively. Define $\kappa \cdot \lambda$ as $| A \times B|$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Finite cardinal multiplication satisfies the commutative and associative laws.</p>
+</blockquote>
+
+<p>Very conveniently, the computation of finite cardinal multiplication is the same as that of finite cardinal addition.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong>
+\(\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\)</p>
+</blockquote>
+
+<p><strong>Proof.</strong> This follows from the lemma below. ■</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> For any $\alpha \in \mathrm{Ord}$, $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$</p>
+</blockquote>
+
+<p>The proof outline is as follows. For any $\alpha \in \mathrm{Ord}$, we show that the order $\prec$ defined as follows is a well-ordering of $\omega_\alpha \times \omega_\alpha$. When $\hat{x} = \mathrm{max}(x_1, x_2), \hat{y} = \mathrm{max}(y_1, y_2)$,</p>
+
+\[(x_1, x_2) \prec (y_1, y_2) \iff \begin{cases}
+\hat{x} &lt; \hat{y}\\
+x_1 &lt; y_1 \quad (\text{if }\hat{x} &lt; \hat{y}) \\
+x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
+\end{cases}\]
+
+<p>That is, $\prec$ is the maximum-first then lexicographic order. By transfinite induction, we show that $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$ when $\aleph_\beta \cdot \aleph_\beta = \aleph_\beta$ for all $\beta &lt; \alpha$. For this, it suffices to show that the order type of $(\omega_\alpha \times \omega_\alpha, \prec)$ does not exceed $\omega_\alpha$. We need to show that for any $(\gamma_1, \gamma_2) \in \omega_\alpha \times \omega_\alpha$,</p>
+
+\[X = \{ (\xi_1, \xi_2) : (\xi_1, \xi_2) \prec (\gamma_1, \gamma_2) \}\]
+
+<p>satisfies $|X| &lt; \aleph_\alpha$. Let $\gamma = \mathrm{max}(\gamma_1, \gamma_2) + 1$. Since $\omega_\alpha$ is a limit ordinal, $\gamma \in \omega_\alpha$, and therefore $|\gamma| = \aleph_\delta$ for some $\delta &lt; \alpha$. On the other hand, $X \subseteq \gamma \times \gamma$, so $|X| \leq \aleph_\delta \cdot \aleph_\delta$, which equals $\aleph_\delta$ by the induction hypothesis. ■</p>
+
+<p><strong>The definition of cardinal multiplication has no relation to cardinal addition.</strong> That is, there is no meaning like “adding $\kappa$ exactly $\lambda$ times” in the definition of cardinal multiplication. Nevertheless, the following <em>theorem</em> allows us to relate cardinal multiplication to cardinal addition.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong>
+\(\sum_{i \in I} \kappa = |I| \cdot \kappa\)</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $\lbrace  A_i \rbrace $ be a family of pairwise disjoint sets with $|A_i| = \kappa$. The left side is the cardinality of $\bigcup_{i \in I} A_i$, and the right side is the cardinality of $I \times A$ where $|A| = \kappa$. By the axiom of choice, for each $i \in I$ we can define a bijection $f_i : A_i \to A$. Define the following correspondence $f: \bigcup_{i \in I} A_i \to I \times A$:</p>
+
+\[f(x) = (i, f_i(x)) \quad (\text{if } x \in A_i)\]
+
+<p>It is easily verified that this function is a bijection. Therefore (left side) = (right side). ■</p>
+
+<p>From this, we can prove the correct relation corresponding to the aforementioned “warning”.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong>
+\(\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\)</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $\kappa = \sup \lbrace  \kappa_i : i \in I \rbrace $, and denote the left side as $L$ and the right side as $R$. By the previous theorem, $|I| \cdot \kappa = \sum_{i \in I} \kappa$, and since $\kappa_i \leq \kappa$, we have $L ≤ R$. Conversely, $| I | = \sum_{i \in I} 1 \leq L$ and $\kappa = \sup \kappa_i \leq L$. By the lemma at the bottom of this article, $L = L \cdot L$, so $L \geq | I | \cdot \kappa = R$. Therefore, by the Cantor-Bernstein theorem, $L = R$. (The axiom of choice is implicitly used extensively in this proof, so interested readers may wish to write out the omitted arguments in detail.) ■</p>
+
+<p>Now let us generalise cardinal multiplication to the infinite case.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Given a family of sets $\lbrace  A_i \rbrace $ where each $A_i$ has cardinality $\kappa_i$ for $i \in I$, we define:</p>
+
+\[\prod_{i \in I} \kappa_i = \left| \prod_{i \in I}A_i \right|\]
+</blockquote>
+
+<p>König’s theorem can be usefully employed when computing cardinal multiplication.</p>
+
+<blockquote>
+  <p><strong>König’s Theorem.</strong> For an index set $I$, suppose $\kappa_i &lt; \lambda_i$. The following holds:</p>
+
+\[\sum \kappa_i &lt; \prod \lambda_i\]
+</blockquote>
+
+<p>One might think this is obvious, but note that in general, not only do 1 and 2 fail to hold, but even 3 does not hold.</p>
+
+<ol>
+  <li>If $\kappa_i &lt; \lambda_i$, then $\sum \kappa_i &lt; \sum \lambda_i$</li>
+  <li>If $\kappa_i &lt; \lambda_i$, then $\prod \kappa_i &lt; \prod \lambda_i$</li>
+  <li>If $\kappa_i \leq \lambda_i$, then $\sum \kappa_i &lt; \prod \lambda_i$</li>
+</ol>
+
+<p>Of course, if we weaken the inequality in the conclusion from $&lt;$ to $\leq$ in 1, 2, and 3, they all hold. The distinctive feature of König’s theorem is that the conclusion involves a strict inequality.</p>
+
+<p><strong>Proof.</strong> Let $\lbrace  A_i \rbrace , \lbrace  B_i \rbrace $ be collections of (pairwise disjoint) sets with cardinalities $\kappa_i, \lambda_i$ respectively. By contradiction, suppose there exists an injective function $f: \prod B_i \to \cup A_i$. For any $i \in I$, by the injectivity of $f$, $|f^{-1}(A_i)| = |A_i|$. But since $|A_i| &lt; |B_i|$, $\pi_i (f^{-1}(A_i)) \subset B_i$ has strictly smaller cardinality than $B_i$, and accordingly there exists $b_i \in B_i \setminus \pi_i (f^{-1}(A_i))$. Choosing such $b_i$ for each $i$ and considering $b = (b_i)_{i \in I}$, we have $\pi_i(b) = b_i$ for any $i \in I$, so $f(b) \notin \cup A_i$, which is a contradiction. ■</p>
+
+<h2 id="3-cardinal-exponentiation">3. Cardinal Exponentiation</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $A, B$ be sets with cardinalities $\kappa, \lambda$ respectively. Define $\kappa^\lambda$ as $|A^B |$, where $A^B$ is the set of functions from $B$ to $A$.</p>
+</blockquote>
+
+<p>As in the case of cardinal multiplication, although the definition of cardinal exponentiation has no relation to cardinal multiplication, the following theorem allows us to bridge the two.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong>
+\(\prod_{i \in I} \kappa = \kappa^{|I|}\)</p>
+</blockquote>
+
+<p>Moreover, cardinal exponentiation shares several nice properties of ordinary exponentiation.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Cardinal exponentiation satisfies the laws of exponents. That is,</p>
+
+  <ul>
+    <li>$\kappa^{\lambda + \mu} = \kappa^\lambda \cdot \kappa^\mu$</li>
+    <li>$(\kappa^\lambda)^\mu = \kappa^{\lambda \cdot \mu}$</li>
+    <li>$(\kappa \cdot \lambda)^{\mu} = \kappa^\mu \cdot \lambda^\mu$</li>
+  </ul>
+</blockquote>
+
+<p>Nevertheless, computing cardinal exponentiation precisely is quite challenging, as the results obtainable without assuming the Generalised Continuum Hypothesis are limited. Let us first examine theorems that can be proved without the Generalised Continuum Hypothesis.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>$2^{\aleph_\alpha} &gt; \aleph_\alpha$</li>
+    <li>$\alpha \leq \beta \implies \kappa^{\aleph_\alpha} \leq \kappa^{\aleph_\beta}$</li>
+    <li>$\mathrm{cf}(\kappa^{\aleph_\alpha}) &gt; \aleph_\alpha$</li>
+  </ol>
+</blockquote>
+
+<p>Note that since $\mathrm{cf}(\kappa) \leq \kappa$, property 3 implies 1.</p>
+
+<p><strong>Proof.</strong> 1 is Cantor’s theorem, and 2 is trivial using the axiom of choice. The proof of 3 uses König’s theorem. Let $\mathrm{cf}(\kappa^{\aleph_\alpha}) = \aleph_\lambda$. By the definition of $\mathrm{cf}$, there exists $\lbrace  \xi_i \rbrace _{i &lt; \omega_\lambda}$ such that $\xi_i &lt; \kappa^{\aleph_\alpha}$ and $\sum_{i &lt; \omega_\lambda} \xi_i = \kappa^{\aleph_\alpha}$. By König’s theorem, the following holds:</p>
+
+\[\kappa^{\aleph_\alpha} = \sum_{i &lt; \omega_\lambda} \xi_i &lt; \prod_{i &lt; \omega_\lambda} \kappa^{\aleph_\alpha} = \kappa^{\aleph_\alpha \cdot \aleph_\lambda}\]
+
+<p>But if $\aleph_\lambda = \aleph_\alpha$, then $\kappa^{\aleph_\alpha \cdot \aleph_\lambda} = \kappa^{\aleph_\alpha}$, so the strict inequality $&lt;$ does not hold. Therefore $\aleph_\lambda &gt; \aleph_\alpha$. ■</p>
+
+<p>The following two theorems are particularly useful.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+\[\aleph_\alpha^{\aleph_\beta} =
+\begin{cases}
+2^{\aleph_\beta} &amp; (\aleph_\alpha \leq \aleph_\beta) \\
+\mathrm{card} \{ A \subseteq \omega_\alpha : |A| = \aleph_\beta \} &amp; (\aleph_\beta &lt; \aleph_\alpha)
+\end{cases}\]
+</blockquote>
+
+<p><strong>Proof.</strong> The proof for the case $\aleph_\alpha \leq \aleph_\beta$ is as follows:</p>
+
+\[2^{\aleph_\beta} \leq \aleph_\alpha^{\aleph_\beta} \leq (2^{\aleph_\alpha})^{\aleph_\beta} = 2^{\aleph_\alpha \cdot \aleph_\beta} = 2^{\aleph_\beta}\]
+
+<p>Let us prove the case $\aleph_\alpha &gt; \aleph_\beta$. Let $S$ denote the set on the left. Each element of $S$ can be thought of as an injective function from $\aleph_\beta$ to $\aleph_\alpha$, so $|S| \leq {\aleph_\alpha}^{\aleph_\beta}$. To show the reverse direction, first observe that since $\aleph_\beta &lt; \aleph_\alpha$, we have $\aleph_\alpha = \aleph_\beta \cdot \aleph_\alpha$. Therefore,</p>
+
+\[|S| = |T| \quad \text{where} \quad T = \{ A \subseteq \omega_\beta \times \omega_\alpha : |A| = \aleph_\beta \}\]
+
+<p>But each element of $T$ can be thought of as the number of ways to choose $\aleph_\beta$ elements from $\omega_\alpha$ <em>with repetition allowed</em>. This defines a surjective relation from $T$ to ${\aleph_\alpha}^{\aleph_\beta}$. Therefore ${\aleph_\alpha}^{\aleph_\beta} = |S|$. ■</p>
+
+<p>A corollary of this is Hausdorff’s theorem.</p>
+
+<blockquote>
+  <p><strong>Hausdorff’s Theorem.</strong></p>
+
+\[\aleph_{\alpha+1}^{\aleph_\beta} = \aleph_\alpha^{\aleph_\beta} \cdot \aleph_{\alpha + 1}\]
+</blockquote>
+
+<p><strong>Proof.</strong> If $\beta &gt; \alpha$, then by the previous theorem the statement holds trivially. Therefore suppose $\beta \leq \alpha$. Since $\aleph_{\alpha+1}^{\aleph_\beta} \geq \aleph_\alpha^{\aleph_\beta}, \aleph_{\alpha + 1}$, the $\geq$ direction holds trivially. Therefore it suffices to show the $\leq$ direction.</p>
+
+<p>Since $\aleph_{\alpha + 1}$ is a successor cardinal, it is regular, and accordingly $\aleph_\beta &lt; \mathrm{cf}(\aleph_{\alpha + 1})$. Therefore $f \in \omega_\alpha^{\omega_\beta}$ has an upper bound. That is,</p>
+
+\[\aleph_{\alpha+1}^{\aleph_\beta} = \bigcup_{\gamma &lt; \omega_{\alpha + 1}} \gamma^{\omega_\beta}\]
+
+<p>where each $\gamma$ has cardinality at most $\aleph_\alpha$. Therefore the following holds:</p>
+
+\[\aleph_{\alpha+1}^{\aleph_\beta} \leq \sum_{\gamma &lt; \omega_{\alpha + 1}} |\gamma|^{\aleph_\beta} \leq \sum_{\gamma &lt; \omega_{\alpha + 1}} {\aleph_\alpha}^{\aleph_\beta} =  {\aleph_\alpha}^{\aleph_\beta} \cdot \aleph_{\alpha + 1} \quad \blacksquare\]
+
+<h2 id="4-under-the-generalised-continuum-hypothesis">4. Under the Generalised Continuum Hypothesis</h2>
+
+<p>Assuming the Generalised Continuum Hypothesis allows us to prove much stronger results.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\aleph_\alpha$ is a regular cardinal, the following holds:</p>
+
+\[\aleph_\alpha^{\aleph_\beta} = \begin{cases}
+\aleph_{\beta + 1} &amp; \aleph_\alpha \leq \aleph_\beta \\
+\aleph_{\alpha} &amp; \aleph_\beta &lt; \aleph_\alpha \end{cases}\]
+</blockquote>
+
+<p><strong>Proof.</strong> For the case $\aleph_\alpha \leq \aleph_\beta$, $\aleph_\alpha^{\aleph_\beta} = 2^{\aleph_\beta}$, so it holds by GCH. For the case $\aleph_\alpha &gt; \aleph_\beta$,</p>
+
+\[\aleph_\alpha^{\aleph_\beta} = |S| \quad \text{where} S = \{ A \subseteq \omega_\alpha : |A| = \aleph_\beta \}\]
+
+<p>Since $\aleph_\alpha$ is regular, each element of $S$ is bounded. Therefore,</p>
+
+\[S \subseteq \bigcup_{\lambda \in \omega_\alpha} \mathcal{P}(\lambda)\]
+
+<p>For any $\lambda \in \omega_\alpha$, let $|\lambda| = \aleph_\delta$. Then $\aleph_\delta &lt; \aleph_\alpha$, so $2^{|\lambda|} = \aleph_{\delta + 1} &lt; \aleph_\alpha$. Therefore the following holds:</p>
+
+\[\begin{align}
+|S| &amp;\leq \sum_{\lambda \in \omega_\alpha} 2^{|\lambda} \\
+&amp;\leq \sum_{\lambda \in \omega_\alpha} \aleph_\alpha \\
+&amp;= \aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha \quad \blacksquare
+\end{align}\]
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\aleph_\alpha$ is a singular cardinal, the following holds:</p>
+
+\[\aleph_\alpha^{\aleph_\beta} = \begin{cases}
+\aleph_{\beta + 1} &amp; \aleph_\alpha \leq \aleph_\beta \\
+\aleph_{\alpha + 1} &amp; \mathrm{cf}(\aleph_\alpha) \leq \aleph_\beta &lt; \aleph_\alpha \\
+\aleph_{\alpha} &amp; \aleph_\beta &lt; \mathrm{cf}(\aleph_\alpha) \end{cases}\]
+</blockquote>
+
+<p><strong>Proof.</strong> The first and third cases are almost the same as the proof of the previous theorem, so we examine only the second case. The following holds:</p>
+
+\[\aleph_\alpha \leq \aleph_\alpha^{\aleph_\beta} \leq \aleph_\alpha^{\aleph_\alpha} = 2^{\aleph_\alpha} = \aleph_{\alpha+1}\]
+
+<p>Therefore it suffices to show that $\aleph_\alpha &lt; \aleph_\alpha^{\aleph_\beta}$. If $\aleph_\alpha = \aleph_\alpha^{\aleph_\beta}$, then $\mathrm{cf}(\aleph_\alpha) = \mathrm{cf}(\aleph_\alpha^{\aleph_\beta}) &gt; \aleph_\beta$, but by assumption $\mathrm{cf}(\aleph_\alpha) \leq \aleph_\beta$, which is a contradiction. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/09/14/alien-natural-numbers"> 자연수라는 신기루: 짧은 논리학 이야기 </a>
@@ -1069,6 +1484,196 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
   <li><a href="/2025/07/21/private-language">사적 언어</a></li>
   <li><a href="/2025/04/10/completeness-theorem">뢰벤하임-스콜렘 정리</a></li>
   <li><a href="https://plato.stanford.edu/entries/logic-higher-order/#SetTheoSheeClot">2차 논리는 “양의 탈을 쓴 집합론”인가?</a></li>
+</ul>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/09/14/alien-natural-numbers/en"> Natural Numbers as a Mirage: A Short Story in Logic </a>
+      </h1>
+    <span class="post-date">14 Sep 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'">
+        Philosophy
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>One day, Dimen encountered an alien. The alien asked Dimen:</p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Alien</strong>
+<p>There's a concept that humans use which I don't understand. What exactly are natural numbers?</p>
+</div>
+
+<p><img src="/public/low1.png" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Dimen</strong>
+<p>What do you mean? Natural numbers are a number system that starts from 1 and proceeds sequentially: 2, 3, … and so on.</p>
+<strong>Alien</strong>
+<p>Hmm... Then are these also natural numbers?</p>
+</div>
+
+<p><img src="/public/low2.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Dimen</strong>
+<p>No way! Natural numbers continue indefinitely.</p>
+<strong>Alien</strong>
+<p>Continue indefinitely? Do you mean they form a loop? Then they would continue indefinitely like this: 1, 2, 3, 4, 5, 3, 4, 5, 3, 4, 5, …</p>
+</div>
+
+<p><img src="/public/low3.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Dimen</strong>
+<p>Good heavens, that's not what I meant. They continue indefinitely without any loops.</p>
+<strong>Alien</strong>
+<p>Hmm... Then do they branch somewhere?</p>
+</div>
+
+<p><img src="/public/low4.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Dimen</strong>
+<p>That's not it either! There are no branches!</p>
+<strong>Alien</strong>
+<p>I see. Then is $c$ also a natural number by any chance?</p>
+<strong>Dimen</strong>
+<p>$c$? What do you mean?</p>
+<strong>Alien</strong>
+<p>According to the definition of natural numbers you've given me, there's no reason why $c$ shouldn't be a natural number. You said natural numbers continue indefinitely, but you didn't say that all natural numbers are included in such a chain.</p>
+</div>
+
+<p><img src="/public/low5.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Dimen</strong>
+<p>What is that supposed to be... Natural numbers contain only natural numbers!</p>
+<strong>Alien</strong>
+<p>Natural numbers contain only natural numbers—that's nothing but circular reasoning.</p>
+<strong>Dimen</strong>
+<p>Are you making fun of me?</p>
+<strong>Alien</strong>
+<p>What are you talking about? I genuinely don't understand what natural numbers are. You need to give me a proper definition of natural numbers for me to understand.</p>
+<strong>Dimen</strong>
+<p>Natural numbers are... well... that is... ugh, how do I explain this!</p>
+</div>
+
+<p><img src="/public/low6.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
+
+<p>At that moment, a person named Dedekind appeared.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Dedekind</strong>
+<p>I shall resolve this problem definitively. Natural numbers are a set that satisfies the following three conditions. I have proven that a set satisfying these three conditions is unique, so there is no room for further misunderstanding.</p>
+</div>
+
+<blockquote>
+  <p><strong>Dedekind’s definition of natural numbers.</strong> If a set $A$, an element $e \in A$, and a function $S: A \to A$ satisfy the following three conditions, then $A$, $e$, and $S$ correspond to the set of natural numbers, $0$, and $x \mapsto x + 1$, respectively.</p>
+
+  <ol>
+    <li>There exists no $x$ such that $S(x) = e$.</li>
+    <li>If $S(x) = S(y)$, then $x = y$.</li>
+    <li>For any proposition $P(x)$ with domain $A$, if the following two conditions hold, then $P(x)$ is true for all elements of $A$:
+      <ol>
+        <li>$P(e)$ is true.</li>
+        <li>If $P(x)$ is true, then $P(S(x))$ is true.</li>
+      </ol>
+    </li>
+  </ol>
+</blockquote>
+
+<p>The alien was satisfied with Dedekind’s answer, but soon looked puzzled again.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Alien</strong>
+<p>Does the expression "any proposition" in the third condition make sense? If $P(x)$ is any proposition, then $P(x)$ could be "$x$ is a natural number". But including a proposition about natural numbers in the definition of natural numbers would be circular reasoning, wouldn't it?</p>
+<strong>Dedekind</strong>
+<p>Oh... is that so...?</p>
+<strong>Alien</strong>
+<p>What exactly is a "proposition" anyway? Is "$x$ is a set that does not contain itself" a well-defined proposition?</p>
+<strong>Dimen</strong>
+<p>(If $x$ is a set that does not contain itself, then $x$ satisfies the definition of $x$, so it contains itself; but if $x$ is a set that contains itself, then $x$ does not satisfy the definition of $x$, so it does not contain itself... huh?)</p>
+</div>
+
+<div style="margin: 1em auto"></div>
+<p>As Dedekind hesitated at this unexpected criticism, a person named Löwenheim interjected from the side.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Löwenheim</strong>
+<p>Indeed, the expression "any proposition" seems problematic. We should restrict such expressions in mathematics. Let us call this restricted logic <strong>first-order logic</strong>.</p>
+</div>
+
+<p><img src="/public/low7.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Dedekind</strong>
+<p>Then we must now discover how to define natural numbers precisely using first-order logic.</p>
+</div>
+
+<div style="margin: 1em auto"></div>
+<p>At these words, a person named Skolem suddenly appeared.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Skolem</strong>
+<p>Precisely. And I have discovered the answer to this question.</p>
+</div>
+
+<div style="margin: 1em auto"></div>
+<p>Everyone focused their attention on Skolem’s statement.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Skolem</strong>
+<p><strong>It's impossible.</strong> First-order logic cannot describe the necessary and sufficient conditions for natural numbers. Specifically, every first-order logical definition that attempts to define natural numbers has counterexamples that are not natural numbers. <strong>Therefore, natural numbers cannot be reduced to logic.</strong> Natural numbers cannot be defined without circular reasoning.</p>
+</div>
+
+<blockquote>
+  <p><strong>Löwenheim-Skolem theorem.</strong> Mathematical systems with infinitely many elements, including natural numbers, cannot be uniquely characterised by first-order logic.</p>
+</blockquote>
+
+<p><img src="/public/low8.jpg" style="width: 100%; max-width: 400px; margin: 2em auto" /></p>
+
+<p>A moment of silence followed.</p>
+<div style="margin: 2em auto"></div>
+
+<div style="display: grid; grid-template-columns: 5em 1fr;">
+<strong>Alien</strong>
+<p>Then how do humans know what natural numbers are? Don't humans actually understand natural numbers differently from one another?</p>
+</div>
+
+<div style="margin: 1em auto"></div>
+<p>No one could answer the alien’s question. They had nothing more to say about the mirage-like reality of natural numbers.</p>
+<div style="margin: 2em auto"></div>
+
+<p><img src="/public/low9.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
+
+<p><em>Note.</em> For the natural flow of the narrative, there are distorted historical, mathematical, and philosophical contents. The birth of first-order logic was achieved through the gradual research of several mathematicians, including Löwenheim. Moreover, whether Dedekind’s definition of natural numbers using second-order logic is truly circular requires more detailed discussion. Finally, Skolem’s paradox concerns set theory rather than natural numbers, but it was included in the speech bubble because the two phenomena are similar as consequences of the Löwenheim-Skolem theorem.</p>
+
+<h3 id="further-reading">Further Reading</h3>
+
+<ul>
+  <li><a href="/2025/07/03/kripkenstein">Kripke-Wittgenstein Paradox</a></li>
+  <li><a href="/2025/07/21/private-language">Private Language</a></li>
+  <li><a href="/2025/04/10/completeness-theorem">Löwenheim-Skolem Theorem</a></li>
+  <li><a href="https://plato.stanford.edu/entries/logic-higher-order/#SetTheoSheeClot">Is Second-Order Logic “Set Theory in Sheep’s Clothing”?</a></li>
 </ul>
 
   </div>
@@ -1640,546 +2245,108 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
   </div>
   <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
+    <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/08/11/tychonoff-with-ultrafilter"> 초필터를 이용한 티호노프 정리의 증명 </a>
+        <a href="/2025/09/11/robinson-test/en"> Robinson's Test for Model Completeness </a>
       </h1>
-    <span class="post-date">11 Aug 2025</span>
+    <span class="post-date">11 Sep 2025</span>
     
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
       </div>
       
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
+      <div class="tag" onclick="location.href='/tags/model-theory/'">
+        Model Theory
       </div>
       
     </div>
      <blockquote>
-  <p><strong>티호노프 정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
 </blockquote>
 
-<p>굉장히 단순하고 강력한 정리이지만, Munkres 등의 학부 위상 책을 보면 증명이 상당히 복잡하다. 아예 증명을 생략하는 책도 많은 듯하다. 하지만 초필터를 이용하면 매우 간단하게 이를 증명해 보일 수 있다.</p>
-
-<h2 id="1-선행-개념">1. 선행 개념</h2>
-
-<p>여기서 소개된 개념의 자세한 설명과 증명은 <em>Stephen Willard, General Topology</em> 4장을 참고하라.</p>
-
-<h3 id="필터와-초필터">필터와 초필터</h3>
-
-<p><a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">이전 글</a>에서 불 대수 구조의 필터를 소개했다. 위상공간에서 $\cup$과 $\cap$을 각각 논리합과 논리곱에 대응하면 불 대수 구조가 되므로, 위상공간에서 필터를 정의할 수 있다.</p>
+<p>In this article, $T$ is a theory in language $\mathcal{L}$. We also write $x_1, \dots, x_n$ as $\vec{x}$.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$에 대해, $X$ 위의 필터 $\mathcal{F}$는 다음 조건을 만족하는 $X$의 부분집합들의 모임이다.</p>
+  <p><strong>Definition.</strong> A theory $T$ is <strong>model complete</strong> if for any models $\mathfrak{A}, \mathfrak{B}$ of $T$,</p>
 
-  <ol>
-    <li>$X \in \mathcal{F}, \varnothing \notin \mathcal{F}$</li>
-    <li>$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
-    <li>$A \in \mathcal{F}, A \subseteq B \implies B \in \mathcal{F}$</li>
-  </ol>
+\[\mathfrak{A} \subseteq \mathfrak{B} \implies \mathfrak{A} \preceq \mathfrak{B}\]
 </blockquote>
 
-<p>추가로 다음을 만족하면 초필터이다.</p>
+<p><strong>Examples</strong></p>
 
-<blockquote>
-<ol start="4">
-  <li>$A \notin \mathcal{F} \implies X \setminus A \in \mathcal{F}$</li>
+<ol>
+  <li>
+    <p>The theory of fields is not model complete. For the real field $\mathbb{R}$ and the rational field $\mathbb{Q}$, we have $\mathbb{Q} \subseteq \mathbb{R}$ but $\mathbb{Q} \not\preceq \mathbb{R}$ since the truth value of $\exists x (x \cdot x = 2)$ differs in the two models.</p>
+  </li>
+  <li>
+    <p>The theory of torsion-free divisible abelian groups is model complete.</p>
+  </li>
+  <li>
+    <p>Theories admitting quantifier elimination are model complete.</p>
+  </li>
 </ol>
-</blockquote>
 
-<h3 id="근방-필터">근방 필터</h3>
-
-<p>위상수학에서 중요한 필터 중 하나는 근방 필터이다. 먼저 근방을 다음과 같이 정의한다.</p>
+<p>One useful theorem for determining model completeness, including case 2 above, is the following.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$에 대해 $N \subseteq X$가 $x \in X$의 <strong>근방<sub>neighbourhood</sub></strong>이라는 것은, 어떤 열린집합 $U$가 존재하여 $x \in U \subseteq N$라는 것이다.</p>
-</blockquote>
-
-<p><strong>근방은 열린집합일 필요가 없다는 점에 주목하라.</strong> 근방이 열린집합일 경우 열린 근방이라고 한다. 이는 근방과 열린 근방을 동의어로 사용하는 일부 교재의 관행과 대조적이므로 주의를 요한다.</p>
-
-<blockquote>
-  <p><strong>표기.</strong> $x$의 근방들의 모임을 $\mathcal{N}(x)$ 또는 $\mathcal{N}_x$라고 표기한다.</p>
-</blockquote>
-
-<p>$\mathcal{N}(x)$는 필터임을 쉽게 확인할 수 있다. 이에 따라 $\mathcal{N}(x)$를 <strong>근방 필터</strong>라고 부른다.</p>
-
-<h3 id="필터의-생성">필터의 생성</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$의 부분집합들의 모임 $\mathcal{C}$가 다음을 만족할 때, $\mathcal{C}$를 <strong>예비 필터<sub>prefilter</sub></strong> 또는 <strong>필터 기저<sub>filter base</sub></strong>라고 부른다.</p>
+  <p><strong>Robinson’s Test.</strong> The following are equivalent:</p>
 
   <ol>
-    <li>$\varnothing \notin \mathcal{C}$</li>
-    <li>$A, B \in \mathcal{C} \implies \exists C \in \mathcal{C} : C \subseteq A \cap B$</li>
+    <li>$T$ is model complete.</li>
+    <li>For any models $\mathfrak{A} \subseteq \mathfrak{B}$ of $T$, any $\Sigma_1(\mathcal{L}_\mathfrak{A})$-sentence satisfied by $\mathfrak{B}$ is also satisfied by $\mathfrak{A}$.</li>
+    <li>For any $\mathcal{L}$-formula $\phi(\vec{x})$, there exists a $\Pi_1(\mathcal{L})$-formula $\psi(\vec{x})$ such that $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$.</li>
   </ol>
 </blockquote>
 
-<p>즉, 필터가 교집합에 대해 닫혀 있는 한편 예비 필터는 교집합에 대해 “약하게” 닫혀 있다. $\mathcal{C}$가 예비 필터일 때, $\mathcal{C}$로부터 다음과 같이 필터 $\mathcal{F}$를 <strong>생성<sub>generate</sub></strong>할 수 있다.</p>
+<h3 id="proof">Proof</h3>
 
-\[\mathcal{F} = \{ F \subseteq X : C \subseteq F \text{ for some } C \in \mathcal{C} \}\]
+<h4 id="1--2">(1) → (2)</h4>
 
-<p>또한 사상 $f: X \to Y$와 $X$ 위의 필터 $\mathcal{F}$가 주어졌을 때, 다음 집합족은 예비 필터이다.</p>
+<p>Since $T$ is model complete, if $\mathfrak{A} \subseteq \mathfrak{B}$ then $\mathfrak{A} \preceq \mathfrak{B}$. Therefore, $\mathfrak{A}$ and $\mathfrak{B}$ are equivalent with respect to $\mathcal{L}_\mathfrak{A}$-sentences. □</p>
 
-\[\mathcal{C} = \{ f(F) : F \in \mathcal{F} \}\]
+<h4 id="2--3">(2) → (3)</h4>
 
-<blockquote>
-  <p><strong>표기.</strong> $\mathcal{C}$가 생성하는 필터를 $f(\mathcal{F})$와 같이 표기한다.</p>
-</blockquote>
+<p>Suppose $\phi(\vec{x})$ is a $\Sigma_1(\mathcal{L})$-formula. Let $\mathcal{L}’$ be the language obtained by adding constants $\vec{c}$ to $\mathcal{L}$. We can view $T$ as an $\mathcal{L}’$-theory and consider $\mathfrak{A} \subseteq \mathfrak{B}$ as an embedding of $\mathcal{L}’$-structures.</p>
 
-<p>$f$가 전사<sub>onto</sub>일 경우 $\mathcal{C} = f(\mathcal{F})$라서 다루기 편하다. 또한 $f$가 전사일 때 다음이 (자명하게) 성립한다.</p>
+<p>Now consider the $\mathcal{L}’$-theory $T’ = T \cup { \phi(\vec{c}) }$. Suppose $\mathfrak{B}$ is a model of $T’$. We show that $\mathfrak{A}$ is also a model of $T’$. Since $\mathfrak{A} \subseteq \mathfrak{B}$ is an embedding of $\mathcal{L}’$-structures, observe that:</p>
 
-<blockquote>
-  <p><strong>정리.</strong> $f: X \to Y$가 전사이고 $\mathcal{F}$가 $X$ 위의 초필터일 때, $f(\mathcal{F})$는 $Y$의 초필터이다.</p>
-</blockquote>
+\[\mathfrak{B} \vDash \phi(\vec{c}) \iff \exists \vec{a} \in \mathcal{L}_\mathfrak{A}  \text{ where } \mathfrak{B} \vDash \phi(\vec{a})\]
 
-<h3 id="초필터로의-확장">초필터로의 확장</h3>
+<p>Since $\phi(\vec{a})$ is a $\Sigma_1(\mathcal{L}_\mathfrak{A})$-sentence, by assumption it also holds in $\mathfrak{A}$. Therefore, $\mathfrak{A}$ is a model of $T’$.</p>
 
-<p>모든 필터는 초필터로 확장될 수 있다. 증명은 <a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">이전 글</a>을 참고하라 (선택 공리를 사용한다).</p>
+<p>We now use the following generalisation of the <a href="/2025/04/17/los-tarski">Łoś-Tarski theorem</a> (proof left as an exercise).</p>
 
 <blockquote>
-  <p><strong>정리.</strong> $\mathcal{F}$가 $X$ 위의 필터일 때, $X$ 위의 초필터 $\mathcal{U}$가 존재하여 $\mathcal{U} \supseteq \mathcal{F}$이다.</p>
+  <p><strong>Theorem.</strong> Let $T \subseteq T’$ be $\mathcal{L}’$-theories such that:</p>
+
+  <ul>
+    <li>For any models $\mathfrak{A} \subseteq \mathfrak{B}$ of $T$, if $\mathfrak{B}$ is a model of $T’$ then $\mathfrak{A}$ is also a model of $T’$.</li>
+  </ul>
+
+  <p>Then there exists a collection $P$ of $\Pi_1(\mathcal{L}’)$-sentences such that $T’$ is equivalent to $T \cup P$.</p>
 </blockquote>
 
-<h3 id="필터의-수렴">필터의 수렴</h3>
+<p>By the theorem above, $T’$ is equivalent to $T \cup P$ for some collection $P$ of $\Pi_1(\mathcal{L}’)$-sentences. That is,</p>
 
-<blockquote>
-  <p><strong>정의.</strong> 필터 $\mathcal{F}$가 $\mathcal{N}(x)$를 포함할 때 $\mathcal{F}$는 $x$로 <strong>수렴</strong>한다고 하며, $\mathcal{F} \to x$와 같이 적는다.</p>
-</blockquote>
+\[T \cup P \vdash \phi(\vec{c})\]
 
-<p>예를 들어 예비 필터 $\lbrace  (0, \epsilon) : \epsilon &gt; 0 \rbrace $로 생성되는 필터는 $0$으로 수렴한다 (이 예시는 $\mathcal{F} \to x$라고 해서 $\mathcal{F}$의 모든 원소가 $x$를 원소로 가질 필요는 없음을 보여준다).</p>
+<p>By the finiteness of proofs, only finitely many sentences from $P$ are needed to prove $\phi$ from $T \cup P$. Let $\pi(\vec{c})$ be the conjunction of these sentences. Then</p>
 
-<p>필터 수렴의 주요 성질은 다음과 같다.</p>
+\[T \vdash \forall x (\phi(\vec{x}) \leftrightarrow \pi(\vec{x}))\]
 
-<blockquote>
-  <p><strong>정리.</strong></p>
+<p>and $\pi(\vec{x})$ is a $\Pi_1(\mathcal{L})$-formula, completing the proof for the case when $\phi \in \Sigma_1$.</p>
 
-  <ol>
-    <li>$E \subseteq X$에 대해 $x \in \overline{E}$일 필요충분조건은 어떤 필터 $\mathcal{F}$가 존재하여 $E \in \mathcal{F}$이고, $\mathcal{F} \to x$인 것이다.</li>
-    <li>$f: X \to Y$가 연속일 필요충분조건은 임의의 필터 $\mathcal{F}$에 대해 $\mathcal{F} \to x$라면 $f(\mathcal{F}) \to f(x)$인 것이다.</li>
-  </ol>
-</blockquote>
+<p>We now prove by structural induction on $\phi$. Since $\exists \leftrightarrow \lnot\forall\lnot$, we need only consider $\lor, \lnot, \forall$. The cases for $\lor$ and $\forall$ are trivial, so we examine the case for $\lnot$.</p>
 
-<p>이는 1차 가산 공간에서 점렬로 폐포와 연속함수를 특징지었던 것을 일반화한 것이다.</p>
+<p>Suppose for some $\Pi_1(\mathcal{L})$-formula $\psi$ we have $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$. Then $\lnot \phi$ is equivalent to $\lnot \psi$, which is a $\Sigma_1(\mathcal{L})$-formula. By the preceding argument, this is equivalent to a $\Pi_1$ sentence. □</p>
 
-<p>곱공간에서 필터의 수렴은 각 요소 공간에서의 수렴과 동치이다. 즉, 다음이 성립한다.</p>
+<h4 id="3--1">(3) → (1)</h4>
 
-<blockquote>
-  <p><strong>정리.</strong> 곱공간 $\prod_{i \in I}X_i$ 위의 필터 $\mathcal{F}$가 $x$로 수렴할 필요충분조건은 각각의 $i \in I$에 대해 $\pi_i(\mathcal{F}) \to \pi_i(x)$인 것이다.</p>
-</blockquote>
+<p>For models $\mathfrak{A} \subseteq \mathfrak{B}$ of $T$, if $\mathfrak{A} \not\preceq \mathfrak{B}$ then by the compactness theorem there exists some $\mathcal{L}_\mathfrak{A}$-sentence $\phi(\vec{a})$ such that $\mathfrak{A} \not\vDash \phi(\vec{a})$ but $\mathfrak{B} \vDash \phi(\vec{a})$.</p>
 
-<h2 id="2-티호노프-정리의-증명">2. 티호노프 정리의 증명</h2>
-
-<p>이제 티호노프 정리를 증명해 보자. 핵심은 다음의 보조정리이다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $X$가 콤팩트할 필요충분조건은 $X$의 모든 초필터가 수렴하는 것이다.</p>
-</blockquote>
-
-<h4 id="증명">증명</h4>
-
-<p>$(\Rightarrow)$ $\mathcal{F}$가 수렴하지 않는 $X$의 초필터라고 하자. $\mathcal{F}$가 어느 점으로도 수렴하지 않는다는 것은, 임의의 $x \in X$에 대해 어떤 열린집합 $U_x$가 존재하여 $U_x \notin \mathcal{F}$라는 것이다. $\mathcal{F}$가 초필터이므로 $X \setminus U_x \in \mathcal{F}$이다. 이제 $U_x$들의 모임 $\mathcal{C} = \lbrace  U_x : x \in X \rbrace $를 생각하자. $\mathcal{C}$는 $X$를 덮으며, $X$가 콤팩트하므로 유한 부분덮개 $\lbrace U_{x_1}, \dots, U_{x_n} \rbrace $을 가진다. 따라서,</p>
-
-\[\begin{align}
-&amp;X \setminus (U_{x_1} \cup \dots \cup U_{x_n}) \\
-&amp;= (X \setminus U_{x_1}) \cap \dots \cap (X \setminus U_{x_n}) \\
-&amp;= \varnothing
-\end{align}\]
-
-<p>그런데 각 $1 \leq i \leq n$에 대해 $X \setminus U_{x_i} \in \mathcal{F}$이므로, 필터의 교집합 닫힘에 의해 $\varnothing \in \mathcal{F}$가 되어 모순이다. □</p>
-
-<p>$(\Leftarrow)$ $X$가 콤팩트하지 않다고 하자. 그러면 어떤 $X$의 열린 덮개 $\mathcal{C}$가 존재하여 $\mathcal{C}$는 유한 부분덮개를 가지지 않는다. 따라서 다음과 같이 $\mathcal{P}$를 정의할 때,</p>
-
-\[\mathcal{P} = \{ X \setminus (U_1 \cup \dots \cup U_n) : U_i \in \mathcal{C} \}\]
-
-<p>$\mathcal{P}$는 유한 교집합에 대해 닫혀 있으며 공집합을 원소로 가지지 않으므로 예비 필터이다. 이에 따라 $\mathcal{P}$는 필터로 확장될 수 있으며, 이 필터는 초필터로 확장될 수 있다. 그러한 초필터를 $\mathcal{F}$라고 하자. 가정에 의해 $\mathcal{F}$는 어떤 점 $x$로 수렴한다. 즉, $\mathcal{N}(x) \subseteq \mathcal{F}$이다. 따라서 다음이 성립한다.</p>
-
-\[x \in \bigcap_{F \in \mathcal{F}} \overline{F}\]
-
-<p>그런데 이는 $\bigcap_{P \in \mathcal{P}} \overline{P} = \bigcap_{P \in \mathcal{P}} P = \varnothing$ ($\mathcal{C}$가 $X$의 덮개이므로) 에 모순된다. ■</p>
-
-<p>이제 티호노프 정리는 거의 자명하게 따라 나온다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
-</blockquote>
-
-<h4 id="증명-1">증명</h4>
-
-<p>각각의 $i \in I$에 대해 $X_i$가 콤팩트 공간이라고 하자. $X$가 콤팩트할 필요충분조건은 임의의 $\prod_{i \in I}$ 위의 초필터 $\mathcal{F}$가 수렴하는 것이고, $\mathcal{F}$가 수렴할 필요충분조건은 $\pi_i(\mathcal{F})$가 $X_i$에서 수렴하는 것이다. 그런데 $\pi_i$는 전사이므로 $\pi_i(\mathcal{F})$는 초필터이고, $X_i$는 콤팩트하므로 $\pi_i(\mathcal{F})$는 수렴한다. 이에 따라 $X$는 콤팩트하다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/08/11/tychonoff-with-ultrafilter-en"> 초필터를 이용한 티호노프 정리의 증명 </a>
-      </h1>
-    <span class="post-date">11 Aug 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>티호노프 정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
-</blockquote>
-
-<p>굉장히 단순하고 강력한 정리이지만, Munkres 등의 학부 위상 책을 보면 증명이 상당히 복잡하다. 아예 증명을 생략하는 책도 많은 듯하다. 하지만 초필터를 이용하면 매우 간단하게 이를 증명해 보일 수 있다.</p>
-
-<h2 id="1-선행-개념">1. 선행 개념</h2>
-
-<p>여기서 소개된 개념의 자세한 설명과 증명은 <em>Stephen Willard, General Topology</em> 4장을 참고하라.</p>
-
-<h3 id="필터와-초필터">필터와 초필터</h3>
-
-<p><a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">이전 글</a>에서 불 대수 구조의 필터를 소개했다. 위상공간에서 $\cup$과 $\cap$을 각각 논리합과 논리곱에 대응하면 불 대수 구조가 되므로, 위상공간에서 필터를 정의할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$에 대해, $X$ 위의 필터 $\mathcal{F}$는 다음 조건을 만족하는 $X$의 부분집합들의 모임이다.</p>
-
-  <ol>
-    <li>$X \in \mathcal{F}, \varnothing \notin \mathcal{F}$</li>
-    <li>$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
-    <li>$A \in \mathcal{F}, A \subseteq B \implies B \in \mathcal{F}$</li>
-  </ol>
-</blockquote>
-
-<p>추가로 다음을 만족하면 초필터이다.</p>
-
-<blockquote>
-<ol start="4">
-  <li>$A \notin \mathcal{F} \implies X \setminus A \in \mathcal{F}$</li>
-</ol>
-</blockquote>
-
-<h3 id="근방-필터">근방 필터</h3>
-
-<p>위상수학에서 중요한 필터 중 하나는 근방 필터이다. 먼저 근방을 다음과 같이 정의한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$에 대해 $N \subseteq X$가 $x \in X$의 <strong>근방<sub>neighbourhood</sub></strong>이라는 것은, 어떤 열린집합 $U$가 존재하여 $x \in U \subseteq N$라는 것이다.</p>
-</blockquote>
-
-<p><strong>근방은 열린집합일 필요가 없다는 점에 주목하라.</strong> 근방이 열린집합일 경우 열린 근방이라고 한다. 이는 근방과 열린 근방을 동의어로 사용하는 일부 교재의 관행과 대조적이므로 주의를 요한다.</p>
-
-<blockquote>
-  <p><strong>표기.</strong> $x$의 근방들의 모임을 $\mathcal{N}(x)$ 또는 $\mathcal{N}_x$라고 표기한다.</p>
-</blockquote>
-
-<p>$\mathcal{N}(x)$는 필터임을 쉽게 확인할 수 있다. 이에 따라 $\mathcal{N}(x)$를 <strong>근방 필터</strong>라고 부른다.</p>
-
-<h3 id="필터의-생성">필터의 생성</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$의 부분집합들의 모임 $\mathcal{C}$가 다음을 만족할 때, $\mathcal{C}$를 <strong>예비 필터<sub>prefilter</sub></strong> 또는 <strong>필터 기저<sub>filter base</sub></strong>라고 부른다.</p>
-
-  <ol>
-    <li>$\varnothing \notin \mathcal{C}$</li>
-    <li>$A, B \in \mathcal{C} \implies \exists C \in \mathcal{C} : C \subseteq A \cap B$</li>
-  </ol>
-</blockquote>
-
-<p>즉, 필터가 교집합에 대해 닫혀 있는 한편 예비 필터는 교집합에 대해 “약하게” 닫혀 있다. $\mathcal{C}$가 예비 필터일 때, $\mathcal{C}$로부터 다음과 같이 필터 $\mathcal{F}$를 <strong>생성<sub>generate</sub></strong>할 수 있다.</p>
-
-\[\mathcal{F} = \{ F \subseteq X : C \subseteq F \text{ for some } C \in \mathcal{C} \}\]
-
-<p>또한 사상 $f: X \to Y$와 $X$ 위의 필터 $\mathcal{F}$가 주어졌을 때, 다음 집합족은 예비 필터이다.</p>
-
-\[\mathcal{C} = \{ f(F) : F \in \mathcal{F} \}\]
-
-<blockquote>
-  <p><strong>표기.</strong> $\mathcal{C}$가 생성하는 필터를 $f(\mathcal{F})$와 같이 표기한다.</p>
-</blockquote>
-
-<p>$f$가 전사<sub>onto</sub>일 경우 $\mathcal{C} = f(\mathcal{F})$라서 다루기 편하다. 또한 $f$가 전사일 때 다음이 (자명하게) 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $f: X \to Y$가 전사이고 $\mathcal{F}$가 $X$ 위의 초필터일 때, $f(\mathcal{F})$는 $Y$의 초필터이다.</p>
-</blockquote>
-
-<h3 id="초필터로의-확장">초필터로의 확장</h3>
-
-<p>모든 필터는 초필터로 확장될 수 있다. 증명은 <a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">이전 글</a>을 참고하라 (선택 공리를 사용한다).</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{F}$가 $X$ 위의 필터일 때, $X$ 위의 초필터 $\mathcal{U}$가 존재하여 $\mathcal{U} \supseteq \mathcal{F}$이다.</p>
-</blockquote>
-
-<h3 id="필터의-수렴">필터의 수렴</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 필터 $\mathcal{F}$가 $\mathcal{N}(x)$를 포함할 때 $\mathcal{F}$는 $x$로 <strong>수렴</strong>한다고 하며, $\mathcal{F} \to x$와 같이 적는다.</p>
-</blockquote>
-
-<p>예를 들어 예비 필터 $\lbrace  (0, \epsilon) : \epsilon &gt; 0 \rbrace $로 생성되는 필터는 $0$으로 수렴한다 (이 예시는 $\mathcal{F} \to x$라고 해서 $\mathcal{F}$의 모든 원소가 $x$를 원소로 가질 필요는 없음을 보여준다).</p>
-
-<p>필터 수렴의 주요 성질은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-  <ol>
-    <li>$E \subseteq X$에 대해 $x \in \overline{E}$일 필요충분조건은 어떤 필터 $\mathcal{F}$가 존재하여 $E \in \mathcal{F}$이고, $\mathcal{F} \to x$인 것이다.</li>
-    <li>$f: X \to Y$가 연속일 필요충분조건은 임의의 필터 $\mathcal{F}$에 대해 $\mathcal{F} \to x$라면 $f(\mathcal{F}) \to f(x)$인 것이다.</li>
-  </ol>
-</blockquote>
-
-<p>이는 1차 가산 공간에서 점렬로 폐포와 연속함수를 특징지었던 것을 일반화한 것이다.</p>
-
-<p>곱공간에서 필터의 수렴은 각 요소 공간에서의 수렴과 동치이다. 즉, 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 곱공간 $\prod_{i \in I}X_i$ 위의 필터 $\mathcal{F}$가 $x$로 수렴할 필요충분조건은 각각의 $i \in I$에 대해 $\pi_i(\mathcal{F}) \to \pi_i(x)$인 것이다.</p>
-</blockquote>
-
-<h2 id="2-티호노프-정리의-증명">2. 티호노프 정리의 증명</h2>
-
-<p>이제 티호노프 정리를 증명해 보자. 핵심은 다음의 보조정리이다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $X$가 콤팩트할 필요충분조건은 $X$의 모든 초필터가 수렴하는 것이다.</p>
-</blockquote>
-
-<h4 id="증명">증명</h4>
-
-<p>$(\Rightarrow)$ $\mathcal{F}$가 수렴하지 않는 $X$의 초필터라고 하자. $\mathcal{F}$가 어느 점으로도 수렴하지 않는다는 것은, 임의의 $x \in X$에 대해 어떤 열린집합 $U_x$가 존재하여 $U_x \notin \mathcal{F}$라는 것이다. $\mathcal{F}$가 초필터이므로 $X \setminus U_x \in \mathcal{F}$이다. 이제 $U_x$들의 모임 $\mathcal{C} = \lbrace  U_x : x \in X \rbrace $를 생각하자. $\mathcal{C}$는 $X$를 덮으며, $X$가 콤팩트하므로 유한 부분덮개 $\lbrace U_{x_1}, \dots, U_{x_n} \rbrace $을 가진다. 따라서,</p>
-
-\[\begin{align}
-&amp;X \setminus (U_{x_1} \cup \dots \cup U_{x_n}) \\
-&amp;= (X \setminus U_{x_1}) \cap \dots \cap (X \setminus U_{x_n}) \\
-&amp;= \varnothing
-\end{align}\]
-
-<p>그런데 각 $1 \leq i \leq n$에 대해 $X \setminus U_{x_i} \in \mathcal{F}$이므로, 필터의 교집합 닫힘에 의해 $\varnothing \in \mathcal{F}$가 되어 모순이다. □</p>
-
-<p>$(\Leftarrow)$ $X$가 콤팩트하지 않다고 하자. 그러면 어떤 $X$의 열린 덮개 $\mathcal{C}$가 존재하여 $\mathcal{C}$는 유한 부분덮개를 가지지 않는다. 따라서 다음과 같이 $\mathcal{P}$를 정의할 때,</p>
-
-\[\mathcal{P} = \{ X \setminus (U_1 \cup \dots \cup U_n) : U_i \in \mathcal{C} \}\]
-
-<p>$\mathcal{P}$는 유한 교집합에 대해 닫혀 있으며 공집합을 원소로 가지지 않으므로 예비 필터이다. 이에 따라 $\mathcal{P}$는 필터로 확장될 수 있으며, 이 필터는 초필터로 확장될 수 있다. 그러한 초필터를 $\mathcal{F}$라고 하자. 가정에 의해 $\mathcal{F}$는 어떤 점 $x$로 수렴한다. 즉, $\mathcal{N}(x) \subseteq \mathcal{F}$이다. 따라서 다음이 성립한다.</p>
-
-\[x \in \bigcap_{F \in \mathcal{F}} \overline{F}\]
-
-<p>그런데 이는 $\bigcap_{P \in \mathcal{P}} \overline{P} = \bigcap_{P \in \mathcal{P}} P = \varnothing$ ($\mathcal{C}$가 $X$의 덮개이므로) 에 모순된다. ■</p>
-
-<p>이제 티호노프 정리는 거의 자명하게 따라 나온다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
-</blockquote>
-
-<h4 id="증명-1">증명</h4>
-
-<p>각각의 $i \in I$에 대해 $X_i$가 콤팩트 공간이라고 하자. $X$가 콤팩트할 필요충분조건은 임의의 $\prod_{i \in I}$ 위의 초필터 $\mathcal{F}$가 수렴하는 것이고, $\mathcal{F}$가 수렴할 필요충분조건은 $\pi_i(\mathcal{F})$가 $X_i$에서 수렴하는 것이다. 그런데 $\pi_i$는 전사이므로 $\pi_i(\mathcal{F})$는 초필터이고, $X_i$는 콤팩트하므로 $\pi_i(\mathcal{F})$는 수렴한다. 이에 따라 $X$는 콤팩트하다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/08/08/pork-and-salmon"> 돼지고기와 연어: 윤리적 삶은 사치품인가? </a>
-      </h1>
-    <span class="post-date">08 Aug 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/철학/'">
-        철학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/인문학/'">
-        인문학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/에세이/'">
-        에세이
-      </div>
-      
-    </div>
-     <p><small>본 글은 일체의 챗지피티 도움 없이 작성되었습니다.</small></p>
-
-<h3 id="돼지고기와-연어">돼지고기와 연어</h3>
-
-<p>단도직입적으로 밝히자면, 나는 현행의 돼지고기 사육은 <em>굉장히</em> 비윤리적이라는 입장이다. 여기서 <em>굉장히</em> 라는 부사는 이 문제가 낙태 문제나 사형제 문제, 트롤리 딜레마보다 훨씬 자명하다는 입장까지를 표현한다.</p>
-
-<p>돼지는 침팬지와 돌고래에 버금가는 가장 똑똑한 동물 중 하나이다. 돼지는 자아를 인식하고, 청결을 유지하기 위해 공간을 구획하며, 다른 돼지들과 사회적 관계를 형성하려는 습성을 보인다. 특히 감수성이 풍부하여 다른 돼지의 고통을 보았을 때 똑같이 고통스러워할 뿐 아니라, 애완용으로 길러진 돼지는 강아지 못지않게 주인의 애정을 갈구한다. 그에 반해 현행 산업에서 돼지가 사육되는 환경은 참혹하기 그지없다. 식용으로 사육되는 돼지의 90% 이상은 평생을 발 디딜 틈 없이 과포화된, 불결하고 어두침침한 우리에 갇혀 생활한다. 사육장은 스트레스, 고통, 싸움으로 인한 돼지 울음으로 조용할 날이 없다. 대다수의 산업에서 수퇘지는 고기가 더 맛있어진다는 이유로 진통제 없이 거세되며, 암퇘지는 쇠창살로 포박된 채 젖을 빨린다.</p>
-
-<p>전 세계에서 식용으로 사육되는 돼지의 수는 약 10억 마리이므로, 인간중심주의를 받아들여 한 인간의 생명이 1천 마리의 돼지에 준하는 가치를 가진다고 하더라도 이는 100만 명의 사람을 “보다 맛있는 식사”를 위해 고문실에 몰아넣은 상황이니 <em>굉장히</em> 비윤리적이라는 딱지를 붙여야 마땅하다. “돼지고기 소비를 법으로 금지해야 하는가?” 또는 “돼지고기를 먹는 사람은 지탄받아야 마땅한가?” 등의 질문은 사회·정치·문화적 맥락과 깊이 얽혀 있기 때문에 단적인 결론을 내리기 어려울 수 있어도, 돼지 사육의 윤리성만 두고 보았을 때 이를 옹호하는 입장을 고수하기란 극단적인 형태의 도덕 회의주의를 상정하지 않고서야 불가능해 보인다. 그리고 돼지고기 산업 구조가 이처럼 <em>굉장히</em> 비윤리적이라면, 개개인에 의한 그 산업의 소비, 즉 생산된 돼지고기를 먹는 행위는 <em>확실히</em> 비윤리적이라는 결론은 피하기 어렵다.</p>
-
-<p>그렇다고는 해도, 앞서 말한 사회·문화·정치적 맥락으로 인해 나는 이런 입장을 사회생활에서 드러내 보이지 않는다. 회식 메뉴가 돼지고기로 결정되었을 때 나는 마음속으로 윤리적 부담감을 느끼면서도 겉으로는 좋다며 고개를 끄덕인다. 그리고 회식에 가서는 돼지고기를 잘만 먹는다. 나에게는 모임 분위기를 초치고 주변 사람에게서 “채식주의자” 꼬리표가 달리는 사회적 리스크를 감수할 용기가 없는 까닭이다. 참 비겁한 짓이다.</p>
-
-<p>자아비판은 일기장에서 충분히 할 것이니 이쯤에서 일축하고, 이 글의 본론은 다른 것이다. 윤리적 책무를 덜기 위해 나는 대신 혼자서, 또는 돼지고기와 관련하여 나와 같은 윤리적 입장인 사람(∋ 여자친구)과 식사를 할 때는 돼지고기를 피하고자 한다. 동물의 고통 감수성과 해당 동물이 사육되는 환경을 함께 고려하면 돼지고기, 닭고기, 소고기, 생선류 순으로 윤리적 부담이 덜하다고 생각한다. 마침 내가 가장 좋아하는 음식 중 하나가 연어이다. 따라서 돼지고기 대신 연어를, 그리고 고기가 당기는 날에는 소고기를 먹으면 만사 해결이다.</p>
-
-<p>라는 생각의 식습관을 실천해 보았더니, 이것이 만사 해결이 아님을 알게 되었다. 그렇다. 잔고에서 돈이 물 흐르듯이 빠져나간 것이다. 물론 “돼지고기 대신 소고기와 연어를 먹어 보니 돈이 많이 들었다” 자체는 굉장히 자명한 관찰이다. 그러나 주어를 치환하면 조금 덜 자명한 관찰이 얻어진다. 즉, “윤리적 식습관을 시도해 보니 돈이 많이 들었다”는 것이다.</p>
-
-<p>물론 이 또한 변명의 심정에서 나온 관찰임을 부정할 수는 없다. 식비가 바닥이 나더라도 사찰 음식 위주의 식단이라면 저렴하게 윤리적 식습관을 실천할 수 있으니 말이다. 문제는 역시 맛이 없다는 것이다. 적은 돈만으로 윤리적 식습관을 실천할 수는 있어도, 돈을 펑펑 쓸 수 있는 경우와는 비할 수 없을 정도로 더 강력한 의지가 필요하다. 그러니 이런 결론을 잠정적으로 내릴 수 있다. “윤리적 식습관의 실천 난이도는 경제력에 반비례한다.” (공정 무역 식품 또한 이에 해당하는 사례이다)</p>
-
-<h3 id="유튜브와-독서">유튜브와 독서</h3>
-
-<p>비단 식습관만 그런 것이 아니다. 가령 취미의 경우를 보자. 설명의 편의를 위해 — 이것을 취미라고 부를 수 있다면 — 악성 유튜브 시청과, 양서 독서라는 다소 과장된 극단을 대조해 보겠다. 여기서 악성 유튜브란 가짜뉴스, 성 상품화, 황색언론 등 윤리적으로 문제적인 내용을 통해 사용자에게 즉각적인 도파민을 주는 유튜브 채널을 말하고, 양서란 인문학적 가치를 잘 전달하고 독자로 하여금 성찰과 사색을 자극하는 책을 말한다 (수험준비서, 주식투자서 등을 배제하기 위한 표현이다).</p>
-
-<p>취미에 윤리적 잣대를 들이미는 것이 부당해 보일 수 있지만, 적어도 이 경우 전자는 비윤리적인 취미이고 후자는 윤리적인 취미라는 주장은 매우 합당한 듯하다. 그리고 여기서 독자는 내가 의도하는 결론이 무엇인지 짐작할 수 있을 것이다. 부유층일수록 악성 유튜브를 보는 것보다 양서 독서를 할 확률이 높고, 빈곤층일수록 도리어 악성 유튜브에 빠질 확률이 더 높다는 것이다.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
-
-<p>물론 이것은 의도적으로 선택된 예시이다. 모든 “빈곤층 취미”는 비윤리적이고 “부유층 취미”는 윤리적인 것은 결코 아니니 말이다. 오히려 골프장을 만든답시고 산을 깎고, 배기가스 나 몰라라 하면서 스포츠카 예닐곱 대를 보유하는 부유층의 “취미”야말로 정말 문제적인 것 아닌가? 이것은 합당한 지적이다. 이 지적에 답하기 전에, 윤리적 소비 및 활동이 경제력이 떨어지는 사람일수록 실천하기 어려워지는 원리를 서술해 보자.</p>
-
-<p>첫째 — 진부한 소리이지만, 자본주의 체제에서 제일 중요한 것은 이윤 최대화이기에, 특히 저소득층이 주요 소비자인 저가 시장의 경우 윤리적 고려는 한참 뒷전으로 밀려난다. 이것이 돼지고기와 연어의 사례에 해당한다. 모든 기업이 윤리적 하한을 설정하여 자율적으로 약속을 이행할 일은 죄수의 딜레마처럼 전무하다. 윤리라는 가치로 통합된 국민 다수가 정부를 통해 주권을 발휘하여 기업에 강제력을 행사하는 수밖에 없을 텐데, 차별금지법 제정에도 교착에 빠진 현재의 정국을 보아 이 또한 만무하다.</p>
-
-<p>둘째 — 기본적으로 윤리는 이성적 성찰과 행동적 실천을 모두 요구하기 때문에 추구하는 데 굉장한 에너지가 필요하다. 이것이 유튜브와 독서의 사례에 해당한다. 이성적 성찰과 행동적 실천 중 하나만 추구하기도 굉장히 힘든 마당에 — 가령 다이어트는 후자만을 요구하는데도 성공률은 궤멸적이다 — 양쪽을 다 요구하는 윤리적 삶의 추구는, 일과 중 근로(노동)가 끝난 이후에도 그것을 추구할 만한 에너지가 남아도는 사람에게만 가능한 일이다. 하루 중 8시간을 육체노동을 하고 귀가한 사람이 피터 싱어의 책을 읽으며 밤을 보낸다는 것은 거의 생리학적으로 불가능한 것이다. 가령 나는 스스로 독서를 즐긴다고 자부하지만, 훈련소 있었을 때 힘든 일과가 끝난 밤에는 그냥 침대에 누워서 멍이나 때렸지 책을 읽어야겠다는 마음은 추호도 들지 않았다. 그것은 진정 “사치”이다.</p>
-
-<p>이제 앞서 제기되었던 지적, 즉 부유층의 취미가 오히려 더 심각하게 비윤리적인 경우가 많다는 지적으로 돌아가 보자. 이것은 분명 사실이지만, 주목해야 할 것은 부유층에게는 <strong>선택의 자유</strong>가 주어진다는 것이다. 즉, 그는 그의 자본으로 해외 원조 재단을 설립하는 <em>굉장히</em> 윤리적인 실천을 할 수도 있고 (논의상 이 재단의 설립에 돈세탁 등의 목적은 없다고 하자), 산등성이를 깎아서 골프장을 만드는 <em>굉장히</em> 비윤리적인 실천을 할 수도 있다. 물론 절대다수의 부유층은 후자를 선택할 것이지만, 중요한 것은 그들에게 보장된 선택의 자유이다.</p>
-
-<p>빈곤층에게는 선택의 자유가 애초에 주어지지 않는다. 그의 일상은 사회구조적으로 주입된 <em>사소하지만 그럼에도 확실히</em> 비윤리적인 소비들로 점철되어 있다. 비유하자면 이렇다. 부유층은 자신의 돈을 굴려 불어나게 할지, 사치를 부릴지 선택의 자유가 있다. 그러나 빈곤층에게는 그 자유가 없다. 그로서는 저금을 하거나 개미 투자를 할 수밖에 없는데, 인플레이션과 시장 불확실성을 고려하면 이는 통상 돈을 사소하지만 그럼에도 확실히 잃는 일이다. 마찬가지로 현대 사회에서 안정된 경제력을 가지지 않은 사람은 굉장히 이상<sub>理想, 異常</sub>한 경우가 아니고서야 잔인하게 사육된 돼지고기를 먹고, 개발도상국 노동자를 착취한 제품을 구입하고, 도파민 위주의 정치·시사 유튜브를 보고, 동물복지, 빈곤, 기아, 난민 문제를 뜬구름 잡는 일로 치부할 수밖에 없다.</p>
-
-<h3 id="윤리적-삶은-사치품인가">윤리적 삶은 사치품인가?</h3>
-
-<p>여기서 본 글의 제목을 살펴보자. “윤리적 삶은 사치품이다”라는 명제는 당연히 슬로가니어링<sub>sloganeering</sub>이다. 모든 슬로건이 그렇듯이 이 진술은 자극적이고 신선하지만 (따라서 글의 제목으로 적절하다) 그것이 실제로 진술하는 내용이 무엇인지는 불명확하다 (따라서 글의 논점으로서는 부적절하다). “윤리적 삶은 사치품이다”라는 명제는 다음과 같이 여러 방식으로 해석될 수 있다.</p>
-
-<p>먼저 이 명제는 앞서 내린 결론의 주어를 윤리적 삶 일반으로 확장한 주장, 요컨대 “윤리적 삶의 실천 난이도는 경제력에 반비례한다”는 주장으로 해석될 수 있다. 이를 <strong>약한 주장</strong>이라고 부르자. 약한 주장은 기술적인 주장이다. 물론 “윤리적”이라는 표현은 규범적이며, 무엇이 “윤리적 삶”에 해당하는지에 관해서는 수많은 이견이 있다. 그러나 일단 그 외연이 전제되고 나면 약한 주장 자체는 기술적이며, 그 원인은 상술한 두 가지 원리에 있다. 이는 경제력과 엥겔 지수는 반비례한다는 것과 질적으로 다르지 않은 관찰이다.</p>
-
-<p>그러나 여기서 더 도발적인 주장을 이끌어 낼 수 있다. 가령 연어를 일상적으로 사 먹을 경제력이 안 되는 사람이 — 철수라고 부르자 — 맛있는 한 끼를 위해 돼지고기를 먹었다고 하자. 서론에서 전제된 바에 따르면 이는 비윤리적이다. 그러나 만약 철수가 이 주장을 듣는다면 그는 자신에게 겨누어진 때아닌 윤리적 비방에 반발할 것이다 (누구라도 그럴 것이다). 철수가 민감하게 반응할 수밖에 없는 이유는, 윤리적 진술이 당위 및 책임의 부여와 불가결하기 때문이다. 가령 “노예제는 비윤리적이다”라는 진술은 암시적으로 노예제의 비윤리성에 대한 책임을 노예주에게 귀속하며, 노예주에게 노예를 해방할 당위를 부여한다. 이 당위를 이행하지 않은 노예주는 그가 받을 사회적 지탄을 스스로 책임져야 한다.</p>
-
-<p>마찬가지로 “철수가 돼지고기를 먹은 것은 비윤리적이다”라는 도덕적 판단의 잣대는 보통 돼지고기를 먹은 철수를 향하는 것으로 이해된다. 그러나 정말로 “윤리적 삶은 사치품”이라면 이런 조준은 부당해 보인다. 윤리가 모든 사람이 추구해야 할 정도로 중요한 가치임에도 불구하고 그것이 “사치품”이라면, 즉 각고의 인내와 기회비용을 치러야 가까스로 손에 넣을 수 있는 것이라면, 그 책임은 개인이 아닌, 윤리를 사치품으로 만들어버린 <em>사회 전체에</em> 있지 않은가?</p>
-
-<p>이처럼 약한 주장을 근거로, 사회적으로 습관화된 비윤리적 행동의 책무를 개개인이 아닌 사회 전체에 귀속하는 규범적 주장을 <strong>강한 주장</strong>이라고 부르자. 강한 주장에 따르면 철수가 돼지고기를 먹은 것의 윤리적 책임은 철수에게뿐 아니라 우리 모두에게 있다. 이 글을 쓰는 나에게도 <em>사소하지만 그럼에도 확실한</em> 책임이 있다. 지금까지 나는 투표권을 행사하는 데 있어 정치인들의 동물복지 공약에는 일절 관심이 없었다.</p>
-
-<h3 id="좌파의-딜레마">좌파의 딜레마</h3>
-
-<p>여기서 나는 한 가지 딜레마를 드러내고자 한다. “좌파”나 “우파”라는 이름표는 매우 두루뭉술한 사상들의 잡동사니이지만, 그럼에도 비교적 뚜렷한 특징은 “좌파”가 “우파”에 비해 개인의 도덕성을 중요하게 생각한다는 것이다. 따라서 환경주의, 평화주의, 비거니즘, 노동자 운동, 페미니즘, 퀴어 운동, 다문화주의 등은 통상 좌파 강령으로 분류된다. 이들 강령의 정당성은 경제적 성장이나 기술 발전이 아닌 개인 단위의 윤리적 주문에 기인한다.</p>
-
-<p>그러나 이러한 좌파 이데올로기를 지탱하는 “윤리적 삶이 사치품”이라면, 좌파 진영은 약자의 진영임을 자처하는 한편으로 그 실천을 위해서는 충분한 경제력이 전제되어야 하는 딜레마를 품고 있다. 특히 자신의 권익보다 공동체의 상생을 중요시하는 것이 좌파의 가치 중 하나라면, 이 가치의 실현은 자신의 권익을 포기하는 것이 자신의 생계 내지 <strong>생존</strong>과 직결되어 있지 않은 사람에게만 가능할 것이다.</p>
-
-<p>이것은 좌파 연대의 분열을 어느 정도 설명하는 것으로 보인다. 좌파에는 크게 두 가지 구조가 있다. 첫째는 절박하지 않은 사람이 절박한 사람을 경제적 또는 사상적으로 지원하는 구조이고 (지식인 사회), 둘째는 절박한 사람이 자신의 권익을 위해 스스로 투쟁하는 구조이다 (노동조합). 두 구조는 좌파라는 같은 지붕 아래서 살고 있기에 완전히 다른 원리로 작동한다는 사실이 가려지고는 한다. 이타심과 이기심이 깨끗이 구별되지 않는 경우가 많기는 하지만 기본적으로 전자는 이타심의 원리로, 후자는 이기심의 원리로 작동한다. 이 말의 의도는 후자를 폄훼하려는 것이 아니라, 전자가 후자에 대해 도덕적 우월성이라는 <strong>권력</strong>을 가지게 됨을, 그로 인해 좌파에 분열이 생기는 이유를 해명하고자 함이다.</p>
-
-<p>노동자 운동을 예로 들자면, 노동자의 절대다수는 당연히 노동자 운동에만 관심이 있고 페미니즘에는 관심이 없는 경우가 — 오히려 적대적인 경우가 — 대부분이다. 그들에게 있어서는 노동권 투쟁이 최종 목표이다. 그러나 소위 “엘리트 좌파 지식인”에게 있어 노동권 투쟁은, 정의롭고 윤리적인 사회라는 더 상위의 목표를 달성하기 위한 디딤돌일 뿐이다. 따라서 미혼 여성 비정규직 노동자를 고용하는 것으로 남성 노동자의 연봉을 인상할 수 있는 방침이 있다고 하더라도 그는 이 방침을 결코 채택하지 않을 것이다. 오히려 이러한 방침을 추구하는 사람을 좌파 정신에 대한 적으로 간주할 것이다. 문제는 이러한 태도가 좌파 진영이 대표하고자 하는 바로 그 집단, 다름 아닌 노동자 집단의 대다수를 좌파 정신에 대한 적으로 돌리는 꼴이라는 것이다. 그들은 “윤리적 삶이라는 사치품”을 체득하지 못했기 때문이다.</p>
-
-<p>결국 정의와 도덕에 기반한 지식인의 좌파는 상아탑에서만 이루어지는 경우가 부지기수이다. 만약 그들 지식인이 실제 현장으로 내려와 노동자들 사이에서 오가는 생생한 말들 — “짱깨놈들 때문에 대한민국 망하게 생겼다”, “전장연 새끼들 지하철 가지고 지랄하네”, “오늘 밤에는 내가 좋은 데로 데려가 준다” — 을 듣는다면 <em>정나미가 떨어질 수밖에</em> 없기 때문이다.</p>
-
-<h3 id="비존중에-대한-존중">비존중에 대한 존중</h3>
-
-<p>그렇다고 내가 이 글을 통해 지식인들은 좌파 진영에서 빠져야 한다거나, 지식인들은 일찍이 좌파와 단념해야 한다고 말하려는 것은 당연히 아니다. 반대로 지식인들이 청산유수로 사회적 약자들을 감화시켜 그들에게 보편 윤리와 정의의 가치를 일깨우고, 그들로 하여금 공통 연합을 구축하게 만들어야 한다고 말하려는 것 또한 아니다. 사실 나는 앞서 내가 좌파의 딜레마라고 부른 문제를 어떻게 해결해야 하는지에 대해서 다소 무책임하게도 잘 정립된 생각이 아직은 없다. 그러나 적어도 다음 하나만큼은 확실히 주장하고자 한다.</p>
-
-<p>결론적으로, 나는 좌파를 자처하는 지식인이라면, 앞서 논의한 <strong>강한 주장</strong>을 항상 마음에 새길 필요가 있다고 생각한다. 실천하는 좌파는 약자들과 부대끼는 과정에서, 약자는 다른 약자의 권리를 존중할 것이라는 믿음, 약자는 윤리적일 것이라는 믿음이 깨어지는 과정을 감내해야만 한다. 분명 이것은 환멸스러운 과정이다. 그러나 강한 주장은, 이 환멸의 책임을 약자 개개인의 윤리적 타락에서가 아닌, 이들을 보편 윤리와 정의의 감각에서 멀리 떨어뜨려 놓는 사회적 구조에 따져야 함을 일깨워 준다.</p>
-
-<p>그리고 우리 지식인에게는 — 이 뻘글을 지금까지 읽고 있는 독자는 상대적 엘리트로 간주된다 — 이와 같은 방식으로 사유해야 할 의무 또한 있다. 왜냐하면 우리에게는 그런 사유를 실천할 수 있는 에너지, 즉 앞서 말한 것과 같은 의미에서의 <strong>선택의 자유</strong>가 주어졌기 때문이다. 윤리적 삶은 사치품이라는 자각 속에서, 약자의 다른 약자에 대한 비존중까지 존중하는 것, 즉 그것을 개인의 책임에 귀속하지 않는 것, 그것으로 좌파의 길에 환멸을 느끼지 않는 것, 포기하지 않는 것. 이것이 진정 “윤리적인 삶”이 아닐까?</p>
-
-<hr />
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1">
-      <p>세심한 독자를 위해 미주를 달자면 이 주장은 베이지안적으로 읽어야 한다. 말하자면 P(x가 현재 양서 독서 중이다 | x의 경제력이 e이다)는 e에 대한 증가함수이며, “양서 독서”를 “악성 유튜브 시청”으로 대체할 경우 감소함수라는 것이다. 그리고 당연히 모 전 대통령의 경우처럼 기득권 중의 기득권에 속한 사람이 악성 유튜브에 빠지는 경우도 있다. 하지만 이 주장은 어디까지나 확률에 관한 것이고, 확률에 관한 한 이 주장은 뒤엎기 어렵다고 본다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/08/08/pork-and-salmon-en"> 돼지고기와 연어: 윤리적 삶은 사치품인가? </a>
-      </h1>
-    <span class="post-date">08 Aug 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/철학/'">
-        철학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/인문학/'">
-        인문학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/에세이/'">
-        에세이
-      </div>
-      
-    </div>
-     <p><small>본 글은 일체의 챗지피티 도움 없이 작성되었습니다.</small></p>
-
-<h3 id="돼지고기와-연어">돼지고기와 연어</h3>
-
-<p>단도직입적으로 밝히자면, 나는 현행의 돼지고기 사육은 <em>굉장히</em> 비윤리적이라는 입장이다. 여기서 <em>굉장히</em> 라는 부사는 이 문제가 낙태 문제나 사형제 문제, 트롤리 딜레마보다 훨씬 자명하다는 입장까지를 표현한다.</p>
-
-<p>돼지는 침팬지와 돌고래에 버금가는 가장 똑똑한 동물 중 하나이다. 돼지는 자아를 인식하고, 청결을 유지하기 위해 공간을 구획하며, 다른 돼지들과 사회적 관계를 형성하려는 습성을 보인다. 특히 감수성이 풍부하여 다른 돼지의 고통을 보았을 때 똑같이 고통스러워할 뿐 아니라, 애완용으로 길러진 돼지는 강아지 못지않게 주인의 애정을 갈구한다. 그에 반해 현행 산업에서 돼지가 사육되는 환경은 참혹하기 그지없다. 식용으로 사육되는 돼지의 90% 이상은 평생을 발 디딜 틈 없이 과포화된, 불결하고 어두침침한 우리에 갇혀 생활한다. 사육장은 스트레스, 고통, 싸움으로 인한 돼지 울음으로 조용할 날이 없다. 대다수의 산업에서 수퇘지는 고기가 더 맛있어진다는 이유로 진통제 없이 거세되며, 암퇘지는 쇠창살로 포박된 채 젖을 빨린다.</p>
-
-<p>전 세계에서 식용으로 사육되는 돼지의 수는 약 10억 마리이므로, 인간중심주의를 받아들여 한 인간의 생명이 1천 마리의 돼지에 준하는 가치를 가진다고 하더라도 이는 100만 명의 사람을 “보다 맛있는 식사”를 위해 고문실에 몰아넣은 상황이니 <em>굉장히</em> 비윤리적이라는 딱지를 붙여야 마땅하다. “돼지고기 소비를 법으로 금지해야 하는가?” 또는 “돼지고기를 먹는 사람은 지탄받아야 마땅한가?” 등의 질문은 사회·정치·문화적 맥락과 깊이 얽혀 있기 때문에 단적인 결론을 내리기 어려울 수 있어도, 돼지 사육의 윤리성만 두고 보았을 때 이를 옹호하는 입장을 고수하기란 극단적인 형태의 도덕 회의주의를 상정하지 않고서야 불가능해 보인다. 그리고 돼지고기 산업 구조가 이처럼 <em>굉장히</em> 비윤리적이라면, 개개인에 의한 그 산업의 소비, 즉 생산된 돼지고기를 먹는 행위는 <em>확실히</em> 비윤리적이라는 결론은 피하기 어렵다.</p>
-
-<p>그렇다고는 해도, 앞서 말한 사회·문화·정치적 맥락으로 인해 나는 이런 입장을 사회생활에서 드러내 보이지 않는다. 회식 메뉴가 돼지고기로 결정되었을 때 나는 마음속으로 윤리적 부담감을 느끼면서도 겉으로는 좋다며 고개를 끄덕인다. 그리고 회식에 가서는 돼지고기를 잘만 먹는다. 나에게는 모임 분위기를 초치고 주변 사람에게서 “채식주의자” 꼬리표가 달리는 사회적 리스크를 감수할 용기가 없는 까닭이다. 참 비겁한 짓이다.</p>
-
-<p>자아비판은 일기장에서 충분히 할 것이니 이쯤에서 일축하고, 이 글의 본론은 다른 것이다. 윤리적 책무를 덜기 위해 나는 대신 혼자서, 또는 돼지고기와 관련하여 나와 같은 윤리적 입장인 사람(∋ 여자친구)과 식사를 할 때는 돼지고기를 피하고자 한다. 동물의 고통 감수성과 해당 동물이 사육되는 환경을 함께 고려하면 돼지고기, 닭고기, 소고기, 생선류 순으로 윤리적 부담이 덜하다고 생각한다. 마침 내가 가장 좋아하는 음식 중 하나가 연어이다. 따라서 돼지고기 대신 연어를, 그리고 고기가 당기는 날에는 소고기를 먹으면 만사 해결이다.</p>
-
-<p>라는 생각의 식습관을 실천해 보았더니, 이것이 만사 해결이 아님을 알게 되었다. 그렇다. 잔고에서 돈이 물 흐르듯이 빠져나간 것이다. 물론 “돼지고기 대신 소고기와 연어를 먹어 보니 돈이 많이 들었다” 자체는 굉장히 자명한 관찰이다. 그러나 주어를 치환하면 조금 덜 자명한 관찰이 얻어진다. 즉, “윤리적 식습관을 시도해 보니 돈이 많이 들었다”는 것이다.</p>
-
-<p>물론 이 또한 변명의 심정에서 나온 관찰임을 부정할 수는 없다. 식비가 바닥이 나더라도 사찰 음식 위주의 식단이라면 저렴하게 윤리적 식습관을 실천할 수 있으니 말이다. 문제는 역시 맛이 없다는 것이다. 적은 돈만으로 윤리적 식습관을 실천할 수는 있어도, 돈을 펑펑 쓸 수 있는 경우와는 비할 수 없을 정도로 더 강력한 의지가 필요하다. 그러니 이런 결론을 잠정적으로 내릴 수 있다. “윤리적 식습관의 실천 난이도는 경제력에 반비례한다.” (공정 무역 식품 또한 이에 해당하는 사례이다)</p>
-
-<h3 id="유튜브와-독서">유튜브와 독서</h3>
-
-<p>비단 식습관만 그런 것이 아니다. 가령 취미의 경우를 보자. 설명의 편의를 위해 — 이것을 취미라고 부를 수 있다면 — 악성 유튜브 시청과, 양서 독서라는 다소 과장된 극단을 대조해 보겠다. 여기서 악성 유튜브란 가짜뉴스, 성 상품화, 황색언론 등 윤리적으로 문제적인 내용을 통해 사용자에게 즉각적인 도파민을 주는 유튜브 채널을 말하고, 양서란 인문학적 가치를 잘 전달하고 독자로 하여금 성찰과 사색을 자극하는 책을 말한다 (수험준비서, 주식투자서 등을 배제하기 위한 표현이다).</p>
-
-<p>취미에 윤리적 잣대를 들이미는 것이 부당해 보일 수 있지만, 적어도 이 경우 전자는 비윤리적인 취미이고 후자는 윤리적인 취미라는 주장은 매우 합당한 듯하다. 그리고 여기서 독자는 내가 의도하는 결론이 무엇인지 짐작할 수 있을 것이다. 부유층일수록 악성 유튜브를 보는 것보다 양서 독서를 할 확률이 높고, 빈곤층일수록 도리어 악성 유튜브에 빠질 확률이 더 높다는 것이다.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
-
-<p>물론 이것은 의도적으로 선택된 예시이다. 모든 “빈곤층 취미”는 비윤리적이고 “부유층 취미”는 윤리적인 것은 결코 아니니 말이다. 오히려 골프장을 만든답시고 산을 깎고, 배기가스 나 몰라라 하면서 스포츠카 예닐곱 대를 보유하는 부유층의 “취미”야말로 정말 문제적인 것 아닌가? 이것은 합당한 지적이다. 이 지적에 답하기 전에, 윤리적 소비 및 활동이 경제력이 떨어지는 사람일수록 실천하기 어려워지는 원리를 서술해 보자.</p>
-
-<p>첫째 — 진부한 소리이지만, 자본주의 체제에서 제일 중요한 것은 이윤 최대화이기에, 특히 저소득층이 주요 소비자인 저가 시장의 경우 윤리적 고려는 한참 뒷전으로 밀려난다. 이것이 돼지고기와 연어의 사례에 해당한다. 모든 기업이 윤리적 하한을 설정하여 자율적으로 약속을 이행할 일은 죄수의 딜레마처럼 전무하다. 윤리라는 가치로 통합된 국민 다수가 정부를 통해 주권을 발휘하여 기업에 강제력을 행사하는 수밖에 없을 텐데, 차별금지법 제정에도 교착에 빠진 현재의 정국을 보아 이 또한 만무하다.</p>
-
-<p>둘째 — 기본적으로 윤리는 이성적 성찰과 행동적 실천을 모두 요구하기 때문에 추구하는 데 굉장한 에너지가 필요하다. 이것이 유튜브와 독서의 사례에 해당한다. 이성적 성찰과 행동적 실천 중 하나만 추구하기도 굉장히 힘든 마당에 — 가령 다이어트는 후자만을 요구하는데도 성공률은 궤멸적이다 — 양쪽을 다 요구하는 윤리적 삶의 추구는, 일과 중 근로(노동)가 끝난 이후에도 그것을 추구할 만한 에너지가 남아도는 사람에게만 가능한 일이다. 하루 중 8시간을 육체노동을 하고 귀가한 사람이 피터 싱어의 책을 읽으며 밤을 보낸다는 것은 거의 생리학적으로 불가능한 것이다. 가령 나는 스스로 독서를 즐긴다고 자부하지만, 훈련소 있었을 때 힘든 일과가 끝난 밤에는 그냥 침대에 누워서 멍이나 때렸지 책을 읽어야겠다는 마음은 추호도 들지 않았다. 그것은 진정 “사치”이다.</p>
-
-<p>이제 앞서 제기되었던 지적, 즉 부유층의 취미가 오히려 더 심각하게 비윤리적인 경우가 많다는 지적으로 돌아가 보자. 이것은 분명 사실이지만, 주목해야 할 것은 부유층에게는 <strong>선택의 자유</strong>가 주어진다는 것이다. 즉, 그는 그의 자본으로 해외 원조 재단을 설립하는 <em>굉장히</em> 윤리적인 실천을 할 수도 있고 (논의상 이 재단의 설립에 돈세탁 등의 목적은 없다고 하자), 산등성이를 깎아서 골프장을 만드는 <em>굉장히</em> 비윤리적인 실천을 할 수도 있다. 물론 절대다수의 부유층은 후자를 선택할 것이지만, 중요한 것은 그들에게 보장된 선택의 자유이다.</p>
-
-<p>빈곤층에게는 선택의 자유가 애초에 주어지지 않는다. 그의 일상은 사회구조적으로 주입된 <em>사소하지만 그럼에도 확실히</em> 비윤리적인 소비들로 점철되어 있다. 비유하자면 이렇다. 부유층은 자신의 돈을 굴려 불어나게 할지, 사치를 부릴지 선택의 자유가 있다. 그러나 빈곤층에게는 그 자유가 없다. 그로서는 저금을 하거나 개미 투자를 할 수밖에 없는데, 인플레이션과 시장 불확실성을 고려하면 이는 통상 돈을 사소하지만 그럼에도 확실히 잃는 일이다. 마찬가지로 현대 사회에서 안정된 경제력을 가지지 않은 사람은 굉장히 이상<sub>理想, 異常</sub>한 경우가 아니고서야 잔인하게 사육된 돼지고기를 먹고, 개발도상국 노동자를 착취한 제품을 구입하고, 도파민 위주의 정치·시사 유튜브를 보고, 동물복지, 빈곤, 기아, 난민 문제를 뜬구름 잡는 일로 치부할 수밖에 없다.</p>
-
-<h3 id="윤리적-삶은-사치품인가">윤리적 삶은 사치품인가?</h3>
-
-<p>여기서 본 글의 제목을 살펴보자. “윤리적 삶은 사치품이다”라는 명제는 당연히 슬로가니어링<sub>sloganeering</sub>이다. 모든 슬로건이 그렇듯이 이 진술은 자극적이고 신선하지만 (따라서 글의 제목으로 적절하다) 그것이 실제로 진술하는 내용이 무엇인지는 불명확하다 (따라서 글의 논점으로서는 부적절하다). “윤리적 삶은 사치품이다”라는 명제는 다음과 같이 여러 방식으로 해석될 수 있다.</p>
-
-<p>먼저 이 명제는 앞서 내린 결론의 주어를 윤리적 삶 일반으로 확장한 주장, 요컨대 “윤리적 삶의 실천 난이도는 경제력에 반비례한다”는 주장으로 해석될 수 있다. 이를 <strong>약한 주장</strong>이라고 부르자. 약한 주장은 기술적인 주장이다. 물론 “윤리적”이라는 표현은 규범적이며, 무엇이 “윤리적 삶”에 해당하는지에 관해서는 수많은 이견이 있다. 그러나 일단 그 외연이 전제되고 나면 약한 주장 자체는 기술적이며, 그 원인은 상술한 두 가지 원리에 있다. 이는 경제력과 엥겔 지수는 반비례한다는 것과 질적으로 다르지 않은 관찰이다.</p>
-
-<p>그러나 여기서 더 도발적인 주장을 이끌어 낼 수 있다. 가령 연어를 일상적으로 사 먹을 경제력이 안 되는 사람이 — 철수라고 부르자 — 맛있는 한 끼를 위해 돼지고기를 먹었다고 하자. 서론에서 전제된 바에 따르면 이는 비윤리적이다. 그러나 만약 철수가 이 주장을 듣는다면 그는 자신에게 겨누어진 때아닌 윤리적 비방에 반발할 것이다 (누구라도 그럴 것이다). 철수가 민감하게 반응할 수밖에 없는 이유는, 윤리적 진술이 당위 및 책임의 부여와 불가결하기 때문이다. 가령 “노예제는 비윤리적이다”라는 진술은 암시적으로 노예제의 비윤리성에 대한 책임을 노예주에게 귀속하며, 노예주에게 노예를 해방할 당위를 부여한다. 이 당위를 이행하지 않은 노예주는 그가 받을 사회적 지탄을 스스로 책임져야 한다.</p>
-
-<p>마찬가지로 “철수가 돼지고기를 먹은 것은 비윤리적이다”라는 도덕적 판단의 잣대는 보통 돼지고기를 먹은 철수를 향하는 것으로 이해된다. 그러나 정말로 “윤리적 삶은 사치품”이라면 이런 조준은 부당해 보인다. 윤리가 모든 사람이 추구해야 할 정도로 중요한 가치임에도 불구하고 그것이 “사치품”이라면, 즉 각고의 인내와 기회비용을 치러야 가까스로 손에 넣을 수 있는 것이라면, 그 책임은 개인이 아닌, 윤리를 사치품으로 만들어버린 <em>사회 전체에</em> 있지 않은가?</p>
-
-<p>이처럼 약한 주장을 근거로, 사회적으로 습관화된 비윤리적 행동의 책무를 개개인이 아닌 사회 전체에 귀속하는 규범적 주장을 <strong>강한 주장</strong>이라고 부르자. 강한 주장에 따르면 철수가 돼지고기를 먹은 것의 윤리적 책임은 철수에게뿐 아니라 우리 모두에게 있다. 이 글을 쓰는 나에게도 <em>사소하지만 그럼에도 확실한</em> 책임이 있다. 지금까지 나는 투표권을 행사하는 데 있어 정치인들의 동물복지 공약에는 일절 관심이 없었다.</p>
-
-<h3 id="좌파의-딜레마">좌파의 딜레마</h3>
-
-<p>여기서 나는 한 가지 딜레마를 드러내고자 한다. “좌파”나 “우파”라는 이름표는 매우 두루뭉술한 사상들의 잡동사니이지만, 그럼에도 비교적 뚜렷한 특징은 “좌파”가 “우파”에 비해 개인의 도덕성을 중요하게 생각한다는 것이다. 따라서 환경주의, 평화주의, 비거니즘, 노동자 운동, 페미니즘, 퀴어 운동, 다문화주의 등은 통상 좌파 강령으로 분류된다. 이들 강령의 정당성은 경제적 성장이나 기술 발전이 아닌 개인 단위의 윤리적 주문에 기인한다.</p>
-
-<p>그러나 이러한 좌파 이데올로기를 지탱하는 “윤리적 삶이 사치품”이라면, 좌파 진영은 약자의 진영임을 자처하는 한편으로 그 실천을 위해서는 충분한 경제력이 전제되어야 하는 딜레마를 품고 있다. 특히 자신의 권익보다 공동체의 상생을 중요시하는 것이 좌파의 가치 중 하나라면, 이 가치의 실현은 자신의 권익을 포기하는 것이 자신의 생계 내지 <strong>생존</strong>과 직결되어 있지 않은 사람에게만 가능할 것이다.</p>
-
-<p>이것은 좌파 연대의 분열을 어느 정도 설명하는 것으로 보인다. 좌파에는 크게 두 가지 구조가 있다. 첫째는 절박하지 않은 사람이 절박한 사람을 경제적 또는 사상적으로 지원하는 구조이고 (지식인 사회), 둘째는 절박한 사람이 자신의 권익을 위해 스스로 투쟁하는 구조이다 (노동조합). 두 구조는 좌파라는 같은 지붕 아래서 살고 있기에 완전히 다른 원리로 작동한다는 사실이 가려지고는 한다. 이타심과 이기심이 깨끗이 구별되지 않는 경우가 많기는 하지만 기본적으로 전자는 이타심의 원리로, 후자는 이기심의 원리로 작동한다. 이 말의 의도는 후자를 폄훼하려는 것이 아니라, 전자가 후자에 대해 도덕적 우월성이라는 <strong>권력</strong>을 가지게 됨을, 그로 인해 좌파에 분열이 생기는 이유를 해명하고자 함이다.</p>
-
-<p>노동자 운동을 예로 들자면, 노동자의 절대다수는 당연히 노동자 운동에만 관심이 있고 페미니즘에는 관심이 없는 경우가 — 오히려 적대적인 경우가 — 대부분이다. 그들에게 있어서는 노동권 투쟁이 최종 목표이다. 그러나 소위 “엘리트 좌파 지식인”에게 있어 노동권 투쟁은, 정의롭고 윤리적인 사회라는 더 상위의 목표를 달성하기 위한 디딤돌일 뿐이다. 따라서 미혼 여성 비정규직 노동자를 고용하는 것으로 남성 노동자의 연봉을 인상할 수 있는 방침이 있다고 하더라도 그는 이 방침을 결코 채택하지 않을 것이다. 오히려 이러한 방침을 추구하는 사람을 좌파 정신에 대한 적으로 간주할 것이다. 문제는 이러한 태도가 좌파 진영이 대표하고자 하는 바로 그 집단, 다름 아닌 노동자 집단의 대다수를 좌파 정신에 대한 적으로 돌리는 꼴이라는 것이다. 그들은 “윤리적 삶이라는 사치품”을 체득하지 못했기 때문이다.</p>
-
-<p>결국 정의와 도덕에 기반한 지식인의 좌파는 상아탑에서만 이루어지는 경우가 부지기수이다. 만약 그들 지식인이 실제 현장으로 내려와 노동자들 사이에서 오가는 생생한 말들 — “짱깨놈들 때문에 대한민국 망하게 생겼다”, “전장연 새끼들 지하철 가지고 지랄하네”, “오늘 밤에는 내가 좋은 데로 데려가 준다” — 을 듣는다면 <em>정나미가 떨어질 수밖에</em> 없기 때문이다.</p>
-
-<h3 id="비존중에-대한-존중">비존중에 대한 존중</h3>
-
-<p>그렇다고 내가 이 글을 통해 지식인들은 좌파 진영에서 빠져야 한다거나, 지식인들은 일찍이 좌파와 단념해야 한다고 말하려는 것은 당연히 아니다. 반대로 지식인들이 청산유수로 사회적 약자들을 감화시켜 그들에게 보편 윤리와 정의의 가치를 일깨우고, 그들로 하여금 공통 연합을 구축하게 만들어야 한다고 말하려는 것 또한 아니다. 사실 나는 앞서 내가 좌파의 딜레마라고 부른 문제를 어떻게 해결해야 하는지에 대해서 다소 무책임하게도 잘 정립된 생각이 아직은 없다. 그러나 적어도 다음 하나만큼은 확실히 주장하고자 한다.</p>
-
-<p>결론적으로, 나는 좌파를 자처하는 지식인이라면, 앞서 논의한 <strong>강한 주장</strong>을 항상 마음에 새길 필요가 있다고 생각한다. 실천하는 좌파는 약자들과 부대끼는 과정에서, 약자는 다른 약자의 권리를 존중할 것이라는 믿음, 약자는 윤리적일 것이라는 믿음이 깨어지는 과정을 감내해야만 한다. 분명 이것은 환멸스러운 과정이다. 그러나 강한 주장은, 이 환멸의 책임을 약자 개개인의 윤리적 타락에서가 아닌, 이들을 보편 윤리와 정의의 감각에서 멀리 떨어뜨려 놓는 사회적 구조에 따져야 함을 일깨워 준다.</p>
-
-<p>그리고 우리 지식인에게는 — 이 뻘글을 지금까지 읽고 있는 독자는 상대적 엘리트로 간주된다 — 이와 같은 방식으로 사유해야 할 의무 또한 있다. 왜냐하면 우리에게는 그런 사유를 실천할 수 있는 에너지, 즉 앞서 말한 것과 같은 의미에서의 <strong>선택의 자유</strong>가 주어졌기 때문이다. 윤리적 삶은 사치품이라는 자각 속에서, 약자의 다른 약자에 대한 비존중까지 존중하는 것, 즉 그것을 개인의 책임에 귀속하지 않는 것, 그것으로 좌파의 길에 환멸을 느끼지 않는 것, 포기하지 않는 것. 이것이 진정 “윤리적인 삶”이 아닐까?</p>
-
-<hr />
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1">
-      <p>세심한 독자를 위해 미주를 달자면 이 주장은 베이지안적으로 읽어야 한다. 말하자면 P(x가 현재 양서 독서 중이다 | x의 경제력이 e이다)는 e에 대한 증가함수이며, “양서 독서”를 “악성 유튜브 시청”으로 대체할 경우 감소함수라는 것이다. 그리고 당연히 모 전 대통령의 경우처럼 기득권 중의 기득권에 속한 사람이 악성 유튜브에 빠지는 경우도 있다. 하지만 이 주장은 어디까지나 확률에 관한 것이고, 확률에 관한 한 이 주장은 뒤엎기 어렵다고 본다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<p>By assumption, there exists a $\Pi_1$ formula $\psi$ such that $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$. Therefore $\mathfrak{B} \vDash \psi(\vec{a})$. However, this is a $\Pi_1$ sentence, and $\Pi_1$ sentences are preserved under submodels, so $\mathfrak{A} \vDash \psi(\vec{a})$, which gives a contradiction. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

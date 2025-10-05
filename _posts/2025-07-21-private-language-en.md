@@ -1,203 +1,193 @@
 ---
 layout: post
-title: "사적 언어는 가능한가?"
+title: "Is Private Language Possible?"
 date: 2025-07-21
-tags: [철학, 언어철학]
+tags: [Philosophy, Philosophy of Language]
+lang: en
 related:
 ---
 
-[이전 글](https://dimenerno.github.io/2025/07/03/kripkenstein)에서 크립키-비트겐슈타인 역설을 다루었다. 요약하자면, 크립키-비트겐슈타인 역설은 특정 단어가 사용될 수 있는 무한한 사례를 아우르는 규범적 사실이 없다는 고찰에 착안한다. 이로부터 크립키-비트겐슈타인이 내리는 결론은 다음과 같다.
+> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
-> “화자 A가 기호 s를 통해 M을 의미한다”는 대응되는 사태를 가지지 않는다.
+In the [previous post](https://dimenerno.github.io/2025/07/03/kripkenstein), I examined the Kripke-Wittgenstein paradox. To summarise, the Kripke-Wittgenstein paradox is based on the consideration that there are no normative facts encompassing the infinite cases in which a particular word can be used. From this, Kripke-Wittgenstein draws the following conclusion:
 
-그리고 크립키의 독해에 따르면 비트겐슈타인은 이 결론에 대해 “회의주의적 해답”을 제시한다. 즉, 위의 결론을 그대로 받아들이되 — “앨리스는 ‘+’로 덧셈을 의미한다’“에 대응하는 사태는 없다 — 그것이 어떻게 — “앨리스의 생각은 초록색이다”와 달리 — 유의미하게 사용될 수 있는지 해명하는 것이다. 해명의 요지는, 언어의 의미는 그것이 공동체에서 가지는 기능과 불가결하며, 따라서 의미에 대한 논의는 개별 화자 단위에서는 공허하지만 공동체 단위에서는 유효하다는 **언어의 공적성**을 강조하는 것이다.
+> "Speaker A means M by symbol s" corresponds to no fact.
 
-## 1. ⟪논고⟫에서 ⟪탐구⟫로
+According to Kripke's reading, Wittgenstein offers a "sceptical solution" to this conclusion. That is, he accepts the above conclusion as it stands—there is no fact corresponding to "Alice means addition by '+'"—whilst explaining how it can be used meaningfully, unlike "Alice's thoughts are green". The gist of the explanation is to emphasise the **publicity of language**: the meaning of language is inextricably linked to the function it has in the community, and therefore discussions of meaning are vacuous at the level of individual speakers but valid at the community level.
 
-크립키는 ⟪논리철학논고⟫로 상징되는 전기 비트겐슈타인과, ⟪철학적 탐구⟫로 상징되는 후기 비트겐슈타인 사이에 현격한 차이가 있다고 보는, 소위 “전통적 해석” 학파에 속한다. 크립키는 ⟪논고⟫에서 제시된 언어관의 특징을 다음과 같이 요약한다.
+## 1. From the *Tractus* to the *Investigations*
 
-- **논리적 원자주의.** 모든 유의미한 명제는 원자명제의 논리적 합성으로 분석된다.
-- **그림 이론.** 원자명제와 그것이 나타내는 사태는 서로 그림처럼 대응한다. 원자명제가 나타내는 사태가 성립하는 경우 해당 명제는 참이다.
-- **진리조건론.** 명제의 의미는 그것의 진리조건 — 즉, 해당 명제에 대응되는 사태가 무엇인지 — 에 있다.
-- **선험적 접근.** 위에서 개괄된 언어의 특징은 선험적<sub>a priori</sub> 사유를 통해 추론할 수 있다.
+Kripke belongs to the so-called "traditional interpretation" school, which sees a stark difference between early Wittgenstein, symbolised by the *Tractatus Logico-Philosophicus*, and later Wittgenstein, symbolised by the *Philosophical Investigations*. Kripke summarises the characteristics of the view of language presented in the *Tractus* as follows:
 
-반면 ⟪탐구⟫에서는 ⟪논고⟫와 대비되는 두 가지 언어관이 드러난다고 분석한다.
+- **Logical atomism.** All meaningful propositions are analysed as logical compositions of atomic propositions.
+- **Picture theory.** Atomic propositions and the states of affairs they represent correspond to each other like pictures. When the state of affairs represented by an atomic proposition obtains, the proposition is true.
+- **Truth-conditional theory.** The meaning of a proposition lies in its truth conditions—that is, what state of affairs corresponds to that proposition.
+- **A priori approach.** The characteristics of language outlined above can be inferred through a priori reasoning.
 
-- **주장조건론.** 명제의 의미는 그것의 주장조건<sub>assertability condition</sub> — 즉, 해당 명제가 어떤 상황에서 주장되거나 기각될 수 있는지 — 에 있다.[^1]
-- **실용주의.** 특정 명제를 주장하거나 기각하는 것이 우리 삶에서 어떤 역할 또는 기능을 수행하는지에 대한 고찰은 언어의 올바른 이해에 핵심적이다.[^2]
+By contrast, Kripke analyses that the *Investigations* reveals two views of language that contrast with the *Tractus*.
 
-여기서 주장조건론은 비트겐슈타인 이전에도 여타 철학적 입장에서 발견할 수 있는 것이다. 브라우어르의 직관주의 수학, 논리실증주의의 검증론 등이 대표적이다. 크립키는 비트겐슈타인의 독창성이 두 번째 특징, 즉 실용주의에 있다고 본다. 비트겐슈타인은 프레게 등이 요구하는 단어-대상 대응을 비판하며, 그 대신 단어들이 실제로 쓰이는 상황을 고려할 것을 촉구한다. 숫자로 예를 들자면, 프레게는 숫자가 가리키는 대상이 있어야 한다고 주장한다.[^3] 그러나 비트겐슈타인은 숫자가 쓰이는 실제 상황 — 장터에서 물건을 세는 것, 교사가 학생의 수를 세는 것 — 등을 거론하며, 이들 상황에서 숫자 대신 알파벳을 읊었더라도 언어 행위의 목적은 달성되었을 것임을 강조한다. 요컨데 숫자는 프레게의 말마따나 “자연수를 지칭하는 언어”가 아닌 “물건 등을 세는 활동에 종사하는 언어”인 것이다.
+- **Assertability-conditional theory.** The meaning of a proposition lies in its assertability conditions—that is, in what circumstances the proposition can be asserted or rejected.[^1]
+- **Pragmatism.** Consideration of what role or function asserting or rejecting a particular proposition plays in our lives is central to a proper understanding of language.[^2]
 
-## 2. 회의주의적 해답
+Here, assertability-conditional theory can be found in other philosophical positions even before Wittgenstein. Brouwer's intuitionist mathematics and logical positivism's verificationism are representative examples. Kripke sees Wittgenstein's originality as lying in the second characteristic, namely pragmatism. Wittgenstein criticises the word-object correspondence demanded by Frege and others, urging instead that we consider the actual situations in which words are used. To take numbers as an example, Frege argues that there must be objects to which numbers refer.[^3] However, Wittgenstein mentions actual situations in which numbers are used—counting goods in the marketplace, teachers counting students—and emphasises that in these situations, if the alphabet had been recited instead of numbers, the purpose of the linguistic act would still have been achieved. In short, numbers are not, as Frege would have it, "language that refers to natural numbers" but "language that engages in the activity of counting things".
 
-주장조건론에 기반한 비트겐슈타인의 후기 언어관에 입각하여 보면 회의주의 논증은 그 즉시 “앨리스는 ‘+’로 덧셈을 의미한다”가 무의미함을 시사하지 않는다. 해당 명제에 대응되는 사태가 없을지언정, 애초에 사태의 존재 여부는 — 진리조건론 언어관과 달리 — 명제가 유의미할 필요조건이 아니기 때문이다.
+## 2. The Sceptical Solution
 
-한편 실용주의는 “앨리스는 ‘+’로 덧셈을 의미한다”가 유의미한 명제로 간주되기 위한 별도의 필요조건을 제시한다. 즉, 해당 명제는 언어게임에서 유용한 역할을 수행해야 한다. 그리고 크립키는 해당 명제가 수행하는 역할을, ⟪탐구⟫에서 등장하는 또다른 사고실험인 “사적 언어 논증”과 결부지어 설명한다. 그러나 그 전에, 비트겐슈타인의 회의주의적 해답의 특징을 버클리 및 흄의 회의주의와 비교하여 고찰해 보자.
+From the perspective of Wittgenstein's later view of language based on assertability-conditional theory, the sceptical argument does not immediately suggest that "Alice means addition by '+'" is meaningless. Even if there is no state of affairs corresponding to the proposition, the existence of a state of affairs is not—unlike the truth-conditional view of language—a necessary condition for a proposition to be meaningful.
 
-### 2.1. 버클리의 회의주의
+On the other hand, pragmatism provides a separate necessary condition for "Alice means addition by '+'" to be regarded as a meaningful proposition. That is, the proposition must play a useful role in the language game. Kripke explains the role played by this proposition in connection with another thought experiment that appears in the *Investigations*, the "private language argument". But before that, let us consider the characteristics of Wittgenstein's sceptical solution in comparison with the scepticism of Berkeley and Hume.
 
-크립키는 “회의주의적 해답”이라는 표현으로, 다음 특징을 가지는 논증들을 아울러 지칭한다.
+### 2.1. Berkeley's Scepticism
 
-1. 우리가 자명한 것으로 생각하는 명제 P를 제시한다.
-2. 명제 P가 사실 모순적이거나, 불가해하거나, 정당화될 수 없음을 주장하는 “회의주의 역설”을 제시한다.
-3. 그러나 회의주의 역설에도 불구하고 우리가 일상에서 P를 정당한 명제로서 간주할 수 있는 이유를, P의 의미를 재해석함으로써 설명한다.
-4. 보너스로, 3에서 재해석한 P의 의미가 “진짜 의미”, “일상인의 의미”이고, 2에서 기각된 P의 의미는 “가짜 의미”, “철학자들이 호도한 의미”라고 선전(?)할 수 있다.
+By the expression "sceptical solution", Kripke collectively refers to arguments with the following characteristics:
 
-예를 들어 버클리의 관념론을 보자. 버클리는 한 개인이 인식할 수 있는 것은 그가 내면에서 발생하는 심상일 뿐임을 지적한다. 따라서 우리는 결코 ‘외부 대상’의 독립적 존재를 증명할 수 없다. 내적 심상들의 집합으로부터 외부 대상의 존재를 추론하는 것은 논리적으로 정당화될 수 없기 때문이다. 위에서 제시한 3단계에 맞추어 이를 개괄하자면,
+1. Present a proposition P that we consider self-evident.
+2. Present a "sceptical paradox" that claims that proposition P is in fact contradictory, incomprehensible, or unjustifiable.
+3. Nevertheless, explain why we can regard P as a legitimate proposition in everyday life by reinterpreting the meaning of P, despite the sceptical paradox.
+4. As a bonus, one can propagate that the meaning of P reinterpreted in 3 is the "real meaning", the "meaning of ordinary people", and that the meaning of P rejected in 2 is the "false meaning", the "meaning misled by philosophers".
 
-1. 우리는 “내 손에 사과가 있다”는 명제를 정당한 것으로 간주한다.
-2. 그러나 개인이 인식할 수 있는 것은 내적 심상으로 제한되므로 1의 명제는 정당화될 수 없다.
-3. 그럼에도 불구하고 우리가 1의 명제를 정당한 명제로서 간주할 수 있는 이유는, 사실 1의 명제의 진짜 의미는 “나는 빨간색 시각, 새콤한 후각, 구형의 단단한 촉각 등을 느끼고 있다”이기 때문이다.
+Consider, for example, Berkeley's idealism. Berkeley points out that what an individual can perceive is only the mental images that occur within him. Therefore, we can never prove the independent existence of 'external objects'. This is because inferring the existence of external objects from a collection of internal mental images cannot be logically justified. To outline this in accordance with the three stages presented above:
 
-(크립키는 이런 식의 논증을 좋아하지 않는 티를 원 논문에서 팍팍 낸다. 필자 생각으로는 미국 기능주의 철학자들이 이러한 “회의주의적 해답”을 — 크립키가 보기에 — 부당할 정도로 몰아붙인 데서 온 반감이 아닐까 싶다.)
+1. We regard the proposition "There is an apple in my hand" as legitimate.
+2. However, since what an individual can perceive is limited to internal mental images, the proposition in 1 cannot be justified.
+3. Nevertheless, the reason we can regard the proposition in 1 as a legitimate proposition is that the real meaning of the proposition in 1 is actually "I am experiencing red visual sensations, sour olfactory sensations, spherical hard tactile sensations, etc."
 
-### 2.2. 흄의 회의주의
+(Kripke clearly shows his distaste for this kind of argument in the original paper. In my view, this may stem from resentment at the way American functionalist philosophers have—in Kripke's view—unjustifiably pushed such "sceptical solutions".)
 
-또다른 예시로, 흄의 인과에 대한 회의주의를 보자. 흄은 “사건 A가 사건 B의 원인이다”라는 명제에 대해, “사건 A와 사건 B가 잇달아 일어났다” 이상으로 제시할 수 있는 경험적 근거가 있는지를 질문한다. 그러한 근거는 자연에 실존하는 인과적 연결고리<sub>nexus</sub>의 관측으로 구성될 것인데, 흄은 그러한 연결고리의 관측은 인간의 경험 영역을 벗어나 있음을 지적한다. 우리가 경험할 수 있는 것은 오직 사건들의 규칙성이다. 즉, 사건 유형<sub>type</sub> A에 속하는 사건 사례<sub>token</sub>가 일어날 때, 사건 유형 B에 속하는 사건 사례가 일어나는 것을 수 차례 관측한 것을 두고 우리는 유형 A와 B 사이에 인과가 성립한다고 말한다.
+### 2.2. Hume's Scepticism
 
-크립키는 흄의 인과 회의주의의 결론이 **사적 인과의 불가능성**임을 지적한다. 흄의 주장대로 인과가 두 사건 _유형_ 간의 규칙성에 관한 진술이라면, 유형화도 불가능할 정도로 특이한 사건 *사례*에 대해서는 인과를 따지는 것이 무의미하다. 예를 들어 “중소수와 삼중소수의 충돌로 인해 헬륨이 발생했다”라는 명제는 “중소수”, “삼중소수”, “헬륨”이라는 유형에 해당하는 입자 사례가 여럿 있는데, 이들 입자를 수차례에 걸쳐 충돌시켜 보니 규칙성이 발견되었다는 진술로서 유의미하다. 그러나 우주에 딱 하나씩밖에 존재하지 않는 입자 X와 입자 Y가 있다면, 이들을 충돌시켜 입자 Z가 발생했다고 하더라도 “X와 Y의 충돌로 _인해_ Z가 발생했다”라고 말할 수 없다. 우리가 말할 수 있는 것은 “X와 Y의 충돌 _직후_ Z가 발생했다”뿐이다.
+As another example, consider Hume's scepticism about causation. Hume asks whether there is empirical evidence for the proposition "Event A is the cause of event B" that can be presented beyond "Event A and event B occurred in succession". Such evidence would consist of observations of causal nexuses that actually exist in nature, but Hume points out that observations of such nexuses are beyond the realm of human experience. What we can experience is only regularities of events. That is, when we observe several times that when an event token belonging to event type A occurs, an event token belonging to event type B occurs, we say that causation obtains between types A and B.
 
-크립키는 흄의 이 논증을 염두에 두고 비트겐슈타인의 사적 언어 논증을 읽어볼 것을 제안한다. 크립키의 독해에 따르면 비트겐슈타인과 흄의 논증은 흐름이 매우 비슷하기 때문이다.
+Kripke points out that the conclusion of Hume's causal scepticism is the **impossibility of private causation**. If, as Hume argues, causation is a statement about regularities between two event *types*, then it is meaningless to discuss causation for event *tokens* that are so peculiar that they cannot even be typed. For example, the proposition "Helium was generated by the collision of a meson and a trion" is meaningful as a statement that there are several particle tokens corresponding to the types "meson", "trion", and "helium", and that regularity was discovered by colliding these particles repeatedly. However, if there are particles X and Y that exist only once in the universe, then even if particle Z were generated by colliding them, we could not say "Z was generated *because of* the collision of X and Y". All we can say is "Z was generated *immediately after* the collision of X and Y".
 
-## 3. 사적 언어 논증
+Kripke suggests reading Wittgenstein's private language argument with Hume's argument in mind. According to Kripke's reading, the flow of arguments between Wittgenstein and Hume is very similar.
 
-### 3.1. 전통적 해석
+## 3. The Private Language Argument
 
-이제 본격적으로 사적 언어 논증을 살펴보자. 비트겐슈타인은 ⟪탐구⟫에서 다음과 같은 사례를 제시한다. 앨리스는 자신이 느끼는 어떤 특정한 감정을 언어로 표현하는 데 어려움을 느낀다. 그래서 그는 그 감정에 ’S’라는 이름을 붙이고는, 그 감정을 느낄 때마다 “S를 느낌”이라고 일기에 적는다. 그렇게 몇 년이 지나자 앨리스는 스스로 ’S’의 사용에 익숙해졌다고 느낀다. 여기서 비트겐슈타인은 질문을 던진다. 우리는 앨리스가 ’S’라는 기호에 자신만의 의미를 부여했다고, 즉 그가 **사적 언어**를 형성했다고 말할 수 있는가?
+### 3.1. Traditional Interpretation
 
-비트겐슈타인의 답은 부정적이다. 그러나 크립키 또한 지적하듯이, 비트겐슈타인이 사적 언어를 부정하는 이유는 해석자들에게 의문 투성이였다. 가장 표준적인 해석은 다음과 같다. 비트겐슈타인이 사적 언어가 불가능하다고 주장하는 이유는, 개인 혼자서는 자신이 이 기호를 올바르게 사용하고 있다는 확인을 받을 수 없기 때문이다. 가령 앨리스는 오늘 자신이 ’S’라고 부른 감정이 수년 전에 자신이 ’S’라고 부른 감정과 정말로 일치하는가에 대한 회의주의에서 벗어날 수 있다. 앨리스가 유아론적인 회의주의에서 벗어날 수 있는 유일한 길은, 통일된 기호들을 사용하는 언어 공동체에 속함으로써 그들로부터 자신의 기호 사용이 올바르다는 확인을 받는 것이다.
+Now let us examine the private language argument proper. Wittgenstein presents the following case in the *Investigations*. Alice has difficulty expressing a particular emotion she feels in language. So she gives that emotion the name 'S' and writes "feeling S" in her diary whenever she feels that emotion. After several years, Alice feels that she has become familiar with the use of 'S'. Here Wittgenstein poses a question. Can we say that Alice has given her own meaning to the symbol 'S', that is, that she has formed a **private language**?
 
-그러나 이 논증은, 일찍이 에이어를 비롯한 수많은 학자가 지적했듯이, 굉장히 허술하다. 가령 내가 지금 나의 감정을 ‘행복’이라고 불러도 되는지 확신할 수 없는 상황에서 다른 사람들에게 “너는 지금 행복한 게 맞아”라고 확인받는 것이 상황을 개선하는가? 그들의 판단이 올바른지는 어떻게 확신할 수 있는가? 오히려 “다른 사람들이 내가 지금 행복한 상태라고 알려주더라도 그들의 판단이 정말로 올바른지 확신할 수 없으니 나 스스로가 내면을 확인해야 한다”는 역방향의 논증이 더 그럴듯하다. 더구나 공동체의 확인 또한 결국에는 시청각을 비롯한 개인의 사적 감각을 통해 수용된다는 사실을 고려하면, 개인이 자신의 내면을 확인하는 것과 공동체의 확인을 받는 것 사이에는 애당초 본질적인 차이가 없다.
+Wittgenstein's answer is negative. However, as Kripke also points out, Wittgenstein's reasons for rejecting private language were puzzling to interpreters. The most standard interpretation is as follows. The reason Wittgenstein argues that private language is impossible is that an individual alone cannot receive confirmation that he is using this symbol correctly. For instance, Alice can escape from scepticism about whether the emotion she calls 'S' today really matches the emotion she called 'S' years ago. The only way Alice can escape from solipsistic scepticism is to belong to a linguistic community that uses unified symbols and receive confirmation from them that her use of symbols is correct.
 
-### 3.2. 크립키의 해석
+However, this argument is, as numerous scholars including Ayer have long pointed out, extremely flimsy. For instance, when I am uncertain whether I may now call my emotion 'happiness', does receiving confirmation from others saying "You are indeed happy now" improve the situation? How can we be certain that their judgement is correct? Rather, the reverse argument that "Even if others tell me that I am now in a state of happiness, I cannot be certain that their judgement is really correct, so I myself must check my inner state" is more plausible. Moreover, considering that community confirmation is also ultimately received through an individual's private senses, including sight and hearing, there is essentially no difference between an individual checking his own inner state and receiving confirmation from the community.
 
-그러나 크립키는 사적 언어 논증을 위와 같이 이해하는 것은 오해라고 주장한다. 비트겐슈타인의 의도는, 사적 언어를 불가능의 영역으로 _내쫓는_ 것이 아니다. 오히려 회의주의 역설에 따르면 _모든 언어_ — 사적 언어이든 공적 언어이든 — 는 불가능하다. 비트겐슈타인은 이에 맞서 언어의 가능성을 구제하고자 한다. 그 구제의 전략이 언어의 공적성에 호소하는 것이기 때문에, 사적 언어는 불가능의 영역에 _남는_ 것이다.
+### 3.2. Kripke's Interpretation
 
-회의주의 역설에 대한 비트겐슈타인의 “해답”은 다음 세 가지 경우를 고려함으로써 이해할 수 있다. 첫째는 이 우주에서 '+' 기호를 사용하는 사람이 앨리스뿐인 경우이다. 앨리스는 '+'에 대한 자신의 성향에 따라 '+'를 사용한다 (물론 이는 동어반복적인 진술이다). 이따금 앨리스는 '+'로 계산 실수를 할 것이고, 약물에 취해 있는 극단적인 경우에는 '+'를 컷셈과 같은 괴이한 방식으로 사용할 수도 있다. 그러나 모든 경우에 앨리스는 스스로 '+'를 정당한 규칙에 따라 사용한다고 믿을 것이다. 그리고 크립키-비트겐슈타인 역설에 따르면 앨리스의 믿음을 반증하는 사태는 존재하지 않으므로, 이것이 앨리스의 '+' 사용에 대해 말할 수 있는 전부이다. 크립키의 말을 빌리자면,
+However, Kripke argues that understanding the private language argument in this way is a misunderstanding. Wittgenstein's intention is not to *banish* private language to the realm of impossibility. Rather, according to the sceptical paradox, *all language*—whether private or public—is impossible. Wittgenstein seeks to rescue the possibility of language in response to this. Because the strategy of this rescue appeals to the publicity of language, private language *remains* in the realm of impossibility.
 
-> 화자가, 궁극적으로는 아무런 정당화 없이, 그 자신의 확신에 찬 성향에 따라, 이 방식으로 대답하는 것이 (가령 ‘125’라고 대답하는 것) _올바르고_ 다른 방식은 (가령 ‘5’라고 대답하는 것) 틀렸다고 말**할 수 있다**는 것은, ‘규칙에 관해 말하기’라는 우리의 언어게임을 구성하는 요소이다. […] 오직 한 명의 개인만을 고려했을 때 우리가 말할 수 있는 것은, 우리의 일상적 관습[‘규칙에 관해 말하기’라는 언어게임]이 그에게 그 자신에게 떠오르는 방식대로 규칙을 적용할 자격<sub>license</sub>를 준다는 것이다.
+Wittgenstein's "solution" to the sceptical paradox can be understood by considering the following three cases. The first is the case where Alice is the only person in this universe who uses the '+' symbol. Alice uses '+' according to her own inclination towards '+' (of course, this is a tautological statement). From time to time Alice will make calculation errors with '+', and in extreme cases when she is under the influence of drugs, she may use '+' in bizarre ways like quaddition. But in all cases Alice will believe that she is using '+' according to legitimate rules. And according to the Kripke-Wittgenstein paradox, there are no facts that refute Alice's belief, so this is all that can be said about Alice's use of '+'. To borrow Kripke's words:
+
+> It is part of our language game of speaking of rules that a speaker **may**, without ultimately giving any justification, follow his own confident inclination that this way (say, responding '125') is the _right_ way to respond, rather than another way (e.g. responding '5'). That is, the 'assertability conditions' that license an individual to say that, on a given occasion, he ought to follow his rule this way rather than that are, ultimately, that he does what he is inclined to do. […] All we can say, if we consider a single person in isolation, is that our ordinary practice licenses him to apply the rule in the way it strikes him.
 >
-> It is part of our language game of speaking of rules that a speaker **may**, without ultimately giving any justification, follow his own confident inclination that this way (say, responding ‘125’) is the _right_ way to respond, rather than another way (e.g. responding ‘5’). That is, the ‘assertability conditions’ that license an individual to say that, on a given occasion, he ought to follow his rule this way rather than that are, ultimately, that he does what he is inclided to do. […] All we can say, if we consider a single person in isolation, is that our ordinary practice licenses him to apply the rule in the way it strikes him.
+> (Italics are the original emphasis, bold is my emphasis. The statement "It is part of our language game of speaking of rules that a speaker may say..." can be understood by analogy to "Castling is part of chess", showing that such statements are no different from part of the definition of the language game of 'speaking of rules'. That is, a language game in which such speech is not possible cannot be called the language game of 'speaking of rules'.)
+
+But as Kripke points out, this is not what we expect from the language game of 'speaking of rules'. For instance, imagine someone playing chess alone against a wall. He sets a chess clock for one hour and makes the first move as white, then waits for his "opponent", the wall, to respond. But the "opponent" does not respond and loses by timeout after an hour. Therefore white always wins. Let us call this *private chess*. Private chess satisfies all the rules of chess, but it is not chess at all. At least, it is not the chess we expect. In normal chess, white *must be able to lose*. Similarly, private rules, even if they satisfy the rules of the 'rule-speaking' language game, are not the 'rule-speaking' language game we expect. In the normal 'rule-speaking' language game, the speaker *must be able to make mistakes* in following rules.
+
+Now let us move on to the next case. The second is the case where Alice and Smith are the two people in this universe who use the '+' symbol. Their inclinations towards '+' may match or diverge. If Alice answers '125' and Smith answers '5' to '68 + 57', Alice will point out that Smith is not using '+' according to the correct rule. However, this pointing out is something Smith can also do to Alice. And according to the Kripke-Wittgenstein paradox, there are no facts corresponding to which of their pointings out is more correct, so this is all that can be said about their use of '+'.
+
+Finally, there is the case where those who use the '+' symbol in this universe form a sufficiently large community, not just Alice. In this case, although there may initially be speakers who use '+' in ways that conflict with the community, these speakers will gradually disappear from the community because they interfere with the function that the '+' symbol performs in the community (here the reason why Wittgenstein values pragmatic considerations becomes apparent). For example, one of the functions of '+' is to manage accounts. However, people who use '+' like quaddition will manage accounts in a non-standard way, which gives those who use '+' like addition reason not to delegate the use of '+' to them any longer. In this way, the sustained process of approval and expulsion based on linguistic function converges to a community of speakers who follow consistent rules. Thus "Alice means addition by '+'" is *useful* as an expression that the community approves of Alice's use of '+', and therefore *meaningful*.
+
+Note that what Kripke calls **inversion of a conditional** is employed here as a philosophical technique. Inversion of a conditional means asserting "if not Q then not P" instead of the proposition "if P then Q". Of course, the two conditionals are contrapositives and therefore extensionally equivalent, but they differ in setting the priority between P and Q. In the former case, the obtaining of P determines the obtaining of Q, whereas in the latter case, the obtaining of Q determines the obtaining of P.
+
+According to the traditional view of language, the fact that speakers use the same symbol in the same way is explained by the fact that they assign the same meaning to that symbol. According to this view, the following conditional obtains:
+
+> Alice means addition by '+' -> Alice answers '125' to '68 + 57'
+
+However, the sceptical solution inverts this conditional as follows:
+
+> Alice does not answer '125' to '68 + 57' -> Alice does not mean addition by '+'
+
+More precisely, considering that the sceptical solution is based on assertability conditions rather than truth conditions:
+
+> Alice does not answer '125' to '68 + 57' -> In the context of the language game of 'speaking of rules', we cannot say "Alice means addition by '+'".
+
+Of course, we would not immediately draw the extreme conclusion that Alice does not mean addition by '+' simply because she did not answer '125' to '68 + 57'. We would probably think that Alice made a calculation error. However, if Alice uses the '+' symbol in a very unacceptable way, such as answering '5' to '68 + 57', we would withdraw the statement that she means addition by '+'.
+
+In short, Kripke-Wittgenstein understands the process by which the language game of 'speaking of rules' transforms from a trivial language game to a useful language game as an emergent process through community.
+
+## 4. Characteristics of the Sceptical Solution
+
+### 4.1. Form of Life
+
+The legitimacy of the sceptical solution is based on the fact that language users **converge** on performing the same operation, namely addition, with '+'. If individuals each gave different answers to '68 + 57'—A giving 125, B giving 7, C giving 58—the sceptical solution could not obtain.
+
+According to Kripke's reading, Wittgenstein calls the agreement we show in the use of symbols (answering '125' to '68 + 57') and the series of activities thereby made possible (thus being able to pay for a computer costing £125,000 in instalments of £68,000 and £57,000) a "form of life". According to Wittgenstein, the reason we can give the consistent answer '125' to '68 + 57' is not because we mean the same operation, namely addition, by '+'. Rather, the reason we can say that we mean addition by '+' is that we are participating in a language game based on a common form of life. In Wittgenstein's analysis, the fact that we give the consistent answer '125' to '68 + 57' is simply a given fact, not a phenomenon to be explained.
+
+> (Personal note: Compare Kripke's footnote 76 with the [logical alien thought experiment](https://dimenerno.github.io/2025/06/02/wittgenstein-conant).)
 >
-> (이탤릭체는 본문의 강조, 볼드체는 필자의 강조. “…라고 말할 수 있다는 것은 '규칙에 관해 말하기’라는 우리의 언어게임을 구성하는 요소이다”라는 진술을, 가령 “캐슬링을 할 수 있다는 것은 체스를 구성하는 요소이다”에 빗대어 이해하면 해당 진술이 ‘규칙에 대해 말하기’라는 언어게임의 정의의 일부와 다름없음을 알 수 있다. 즉, 그런 말하기가 가능하지 않은 언어게임은 ‘규칙에 대해 말하기’ 언어게임이라고 부를 수 없다.)
-
-하지만 크립키가 지적하듯이 이것은 우리가 ‘규칙에 관해 말하기’라는 언어게임에서 기대하는 바가 아니다. 가령 혼자서 벽을 보고 체스를 두는 사람을 상상해 보자. 그는 1시간으로 체스 시계를 맞추고 백으로서 첫수를 두고는 “상대”, 즉 벽이 응수하기를 기다린다. 하지만 “상대”는 응수를 하지 않아 1시간 후에 시간패를 당하고 만다. 따라서 백은 언제나 승리한다. 이것을 *사적 체스*라고 부르자. 사적 체스는 체스의 모든 규칙을 만족하지만, 한편으로는 전혀 체스가 아니다. 적어도 우리가 기대하는 체스는 아니다. 통상적인 체스에서는 백이 _질 수 있어야_ 하기 때문이다. 마찬가지로 사적 규칙은 설령 그것이 ‘규칙 말하기’ 언어게임의 규칙을 만족하더라도, 우리가 기대하는 ‘규칙 말하기’ 언어게임은 아니다. 통상적인 ‘규칙 말하기’ 언어게임에서는 화자가 규칙의 준수에 있어 _실수를 할 수 있어야_ 하기 때문이다.
-
-이제 다음 경우로 넘어가 보자. 둘째는 이 우주에서 '+' 기호를 사용하는 사람이 앨리스와 스미스 두 명인 경우이다. '+'에 대한 둘의 성향은 일치할 수도, 어긋날 수도 있다. 만약 '68 + 57'에 대해 앨리스는 '125'라고 대답하고 스미스는 '5'라고 대답했다면, 앨리스는 스미스가 '+'를 올바른 규칙으로 사용하지 않는다고 지적할 것이다. 그러나 이 지적은 스미스 또한 앨리스에게 할 수 있는 것이다. 그리고 크립키-비트겐슈타인 역설에 따르면 둘 중 누구의 지적이 더 올바른지에 대응하는 사태는 존재하지 않으므로 이것이 둘의 '+' 사용에 대해 말할 수 있는 전부이다.
-
-마지막은 이 우주에서 '+' 기호를 사용하는 사람이 앨리스뿐 아니라 충분히 큰 공동체를 이루는 경우이다. 이 경우, 초기에는 공동체와 상충하는 방식으로 '+'를 사용하는 화자들이 있을 수 있더라도, 이들 화자는 '+' 기호가 공동체에서 수행하는 기능에 지장을 일으키기 때문에 공동체에서 점차 사라질 것이다 (여기서 비트겐슈타인이 실용주의적 고려를 중요시하는 이유가 드러난다). 예를 들어 '+'의 기능 중 하나는 장부를 관리하는 것이다. 그러나 '+'를 컷셈처럼 사용하는 사람들은 장부를 비표준으로 관리할 것이고, 이는 '+'를 덧셈처럼 사용하는 사람들이 그들에게 '+'의 사용을 더는 위임하지 않을 사유가 된다. 이렇듯 언어의 기능에 기반한 지속된 승인과 추방의 과정은 일관된 규칙을 따르는 화자들의 공동체로 수렴한다. 그리하여 "앨리스는 '+'로 덧셈을 의미한다"는, 앨리스의 '+' 사용을 해당 공동체가 승인한다는 표현으로서 *유용*하며, 따라서 *유의미*하다.
-
-여기서 크립키가 **조건문의 반전<sub>inversion of a conditional</sub>**이라고 부르는 철학적 기술이 활용되었음에 유의하라. 조건문의 반전이란, “P라면 Q이다”라는 명제 대신에 “not Q라면 not P이다”를 주장하는 것이다. 물론 두 조건문은 대우 관계이므로 외연적으로 동치이지만, P와 Q의 우선순위를 설정하는 데 있어 차이가 있다. 전자의 경우에는 P의 성립이 Q의 성립을 결정하는 반면, 후자의 경우에는 Q의 성립이 P의 성립을 결정한다.
-
-언어에 대한 전통적인 관점에 따르면, 화자들이 같은 기호를 같은 방식으로 사용하는 것은 그들이 그 기호에 같은 의미를 부여하고 있다는 사실로서 설명된다. 이 관점에 따르면 다음 조건문이 성립한다.
-
-> 앨리스는 ‘+’로 덧셈을 의미한다 -> 앨리스는 ’68 + 57’에 대해 ‘125’라고 답한다
-
-그러나 회의주의적 해답은 이 조건문을 다음과 같이 뒤집는다.
-
-> 앨리스는 ’68 + 57’에 대해 ’125’라고 답하지 않는다 -> 앨리스는 ‘+’로 덧셈을 의미하지 않는다
-
-회의주의적 해답은 진리조건이 아닌 주장조건을 기반으로 한다는 점을 고려하여 더 적확히 적자면 다음과 같다.
-
-> 앨리스는 ’68 + 57’에 대해 ’125’라고 답하지 않는다 -> ‘규칙에 관해 말하기’ 언어게임이라는 맥락에서, 우리는 “앨리스는 ‘+’로 덧셈을 의미한다”라고 말할 수 없다.
-
-물론 단순히 앨리스가 ’68 + 57’에 대해 ‘125’라고 대답하지 않았다고 해서 우리는 그가 ‘+’로 덧셈을 의미하지 않는다는 극단적인 결론을 바로 도출하지는 않을 것이다. 아마 우리는 앨리스가 계산 실수를 했다고 생각할 것이다. 그러나 앨리스가 ’68 + 57’에 대해 ‘5’라고 답하는 등, 매우 받아들이기 힘든 방식으로 ‘+’ 기호를 사용한다면, 우리는 그가 ‘+’으로 덧셈을 의미한다는 진술을 철회할 것이다.
-
-요컨대 크립키-비트겐슈타인은 ‘규칙에 관해 말해기’라는 언어게임이 자명한 언어게임에서 유용한 언어게임으로 변이하는 과정을, 공동체를 통한 창발적 과정으로서 이해한다.
-
-## 4. 회의주의적 해답의 특징
-
-### 4.1. 삶의 형식<sub>form of life</sub>
-
-회의주의적 해답의 정당성은, 언어 사용자들이 ‘+’로 같은 연산, 즉 덧셈을 수행하는 것으로 **수렴**한다는 사실에 기반한다. 만약 ’68 + 57’에 대해 A는 125, B는 7, C는 58과 같이 개개인이 저마다 다른 답을 내놓았다면 회의주의적 해답은 성립할 수 없을 것이다.
-
-크립키의 독해에 따르면, 비트겐슈타인은 우리가 기호 사용에서 보이는 동의<sub>agreement</sub>와 (’68 + 57’에 대해 ‘125’라고 대답한다) 그로써 가능해지는 일련의 활동을 (따라서 가격이 125만 원인 컴퓨터를 68만 원과 57만 원으로 할부할 수 있다) “삶의 형식”이라고 부른다. 비트겐슈타인에 따르면, ’68 + 57’에 대해 우리가 ‘125’라는 일관된 답을 내놓을 수 있는 이유는 우리가 ‘+’로 동일한 연산, 즉 덧셈을 의미하기 때문이 아니다. 오히려, 우리가 ‘+’로 덧셈을 의미한다고 말할 수 있는 이유는, 우리가 공통된 삶의 형식을 기반으로 하는 언어게임에 참여하고 있기 때문이다. 비트겐슈타인의 분석에서 우리가 ’68 + 57’에 대해 ‘125’라는 일관된 답을 내놓는다는 사실은 그저 주어진 사실이지, 해명되어야 할 현상이 아니다.
-
-> (개인적 노트: 크립키의 주석 76과, [논리적 외계인 사고실험](https://dimenerno.github.io/2025/06/02/wittgenstein-conant)을 비교해 보자.)
+> 76\. Can we imagine forms of life other than our own, that is, can we imagine creatures who follow rules in bizarre quus-like ways? It seems to me that there may be a certain tension in Wittgenstein's philosophy here. On the one hand, it would seem that Wittgenstein's paradox argues that there is no a _priori_ reason why a creature could not follow a quus-like rule, and thus in this sense we ought to regard such creatures as conceivable. On the other hand, it is supposed to be part of our very form of life that we find it natural and, indeed, inevitable that we follow the rule for addition in the particular way that we do. (See §231: ""But surely you can see . . . ?" That is just the characteristic expression of someone who is under the compulsion of a rule.") But then it seems that we should be unable to understand 'from the inside' (cf. the notion of '_Verstehen'_ in various German writers) how any creature could follow a quus-like rule. We could describe such behaviour extensionally and behaviouristically, but we would be unable to find it intelligible how the creature finds it natural to behave in this way. This consequence does, indeed, seem to go with Wittgenstein's conception of the matter.
 >
-> 76\. Can we imagine forms of life other than our own, that is, can we imagine creatures who follow rules in bizarre quus-like ways? It seems to me that there may be a certain tension in Wittgenstein's philosophy here. On the one hand, it would seem that Wittgenstein's paradox argues that there is no a _priori_ reason why a creature could not follow a quus-like rule, and thus in this sense we ought to regard such creatures as conceivable. On the other hand, it is supposed to be part of our very form of life that we find it natural and, indeed, inevitable that we follow the rule for addition in the particular way that we do. (See §231: ""But surely you can see . . . ?" That is just the characteristic expression of someone who is under the compulsion of a rule.") But then it seems that we should be unable to understand 'from the inside' (cf. the notion of '_Verstehen'_ in various German writers) how any creature could follow a quus-like rule. We could describe such behavior extensionally and behavioristically, but we would be unable to find it intelligible how the creature finds it natural to behave in this way. This consequence does, indeed, seem to go with Wittgenstein's conception of the matter.
->
-> Of course we can define the quus function, introduce a symbol for it, and follow the appropriate rule for computing its values. I have done so in this very essay. **What it seems may be unintelligible to us is how an intelligent creature could get the very training we have for the addition function, and yet grasp the appropriate function in a quus-like way. If such a possibility were really completely intelligible to us, would we find it so inevitable to apply the plus function as we do? Yet this inevitability is an essential part ofWittgenstein's own solution to his problem.**
+> Of course we can define the quus function, introduce a symbol for it, and follow the appropriate rule for computing its values. I have done so in this very essay. **What it seems may be unintelligible to us is how an intelligent creature could get the very training we have for the addition function, and yet grasp the appropriate function in a quus-like way. If such a possibility were really completely intelligible to us, would we find it so inevitable to apply the plus function as we do? Yet this inevitability is an essential part of Wittgenstein's own solution to his problem.**
 >
 > The point is even stronger with respect to a term like 'green'. Can we grasp how someone could be presented with a number of green objects, and be told to apply the term 'green' just to 'things like these', and yet apply the term learnt as if it meant 'grue'? It would seem that if we find our own continuation to be inevitable, in some sense we cannot.
 
-### 4.2. 심리 현상의 외적 기준<sub>criteria</sub>
+### 4.2. External Criteria for Psychological Phenomena
 
-기호 사용에 있어서의 동의야말로 화자가 해당 기호를 특정 의미로 사용한다는 진술의 내용이라는 회의주의적 해답은, 심리철학에 대한 비트겐슈타인의 다음 언명으로 이어진다.
+The sceptical solution that agreement in the use of symbols is the very content of the statement that a speaker uses that symbol with a particular meaning leads to the following statement by Wittgenstein about the philosophy of mind:
 
-> “내적 현상은 외적 기준을 필요로 한다.” (§580)
+> "An 'inner process' stands in need of outward criteria." (§580)
 
-어린아이가 ‘책상’과 ‘아프다’라는 두 단어를 배우는 경우를 생각해 보자. 전자의 경우, 어린아이가 책상을 가리키며 ‘책상’이라고 말하면 부모는 그 발화를 승인할 것이고, 의자를 가리키며 ‘책상’이라고 말하면 틀렸다고 알려줄 것이다. 이와 같은 과정을 통해 어린아이는 ‘책상’이라는 기호의 사용에 있어 언어 공동체와 동의를 이루게 된다. 그러나 ‘아프다’의 경우에는 이것이 불가능하다. 어린아이는 자신이 겪는 감정을 직접 내보임으로써 이것이 ‘아프다’에 해당하는지 확인을 받을 수 없기 때문이다. 대신 아이는 울음을 터뜨리거나, 얼굴을 찌푸리는 등의 _외적_ 행동을 보일 것이고, 그 행동을 기준으로 부모는 ‘아프다’는 아이의 발화가 정당한지 결정할 것이다. 이것이 §580의 의미라면, §580은 — 전통적으로 간주되었던 것처럼 — 비트겐슈타인이 사적 언어 논증을 위해 마련하는 *전제*가 아니라, 사적 언어 논증과 마찬가지로 회의주의적 역설의 *함의*이다.
+Consider the case where a young child learns the two words 'table' and 'hurt'. In the former case, if the child points to a table and says 'table', the parents will approve the utterance, and if they point to a chair and say 'table', they will tell them it is wrong. Through this process, the child comes to agree with the linguistic community in the use of the symbol 'table'. However, in the case of 'hurt', this is impossible. The child cannot directly reveal the emotion they experience to receive confirmation that this corresponds to 'hurt'. Instead, the child will show *external* behaviour such as bursting into tears or frowning, and based on that behaviour, the parents will decide whether the child's utterance of 'hurt' is legitimate. If this is the meaning of §580, then §580 is not—as traditionally considered—a *premise* that Wittgenstein prepares for the private language argument, but rather an *implication* of the sceptical paradox, just like the private language argument.
 
-> 이와 관련해서 크립키는 §580의 유연한<sub>liberal</sub> 해석과 엄격한 해석을 제시한다. §580을 엄격하게 해석하면, 심리 언어에 속하는 각각의 표현에는 해당 표현과 결부되는 자연적 행동<sub>natural expression</sub>이 있어야 할 것이다. 예를 들어 아픔에 결부되는 자연적 행동은 얼굴을 찡그리는 것이다. 따라서 언어를 습득 중인 아이가 얼굴을 찡그리며 “아파!”라고 말한다면 우리는 그것을 승인한다. 이와 같은 식으로, 모든 심리적 표현에는 그와 결부되는 자연적 행동이 있으며 이 행동들의 관찰 가능성은 해당 표현들이 사적 언어로 퇴화되는 것을 방지한다.
+> In this regard, Kripke presents both liberal and strict interpretations of §580. If §580 is interpreted strictly, each expression belonging to psychological language must have a natural expression associated with that expression. For example, the natural expression associated with pain is grimacing. Therefore, if a child learning language grimaces and says "Ow!", we approve it. In this way, all psychological expressions have natural behaviours associated with them, and the observability of these behaviours prevents these expressions from degenerating into private language.
 >
-> 그러나 크립키는 이보다 더 유연한 해석을 제시한다. 이에 따르면, 외적 기준을 필요로 하는 것은 개개의 심리 표현이 아닌, “심리 언어” 그 자체이다. 크립키는 이것이 심리 언어의 작동에 대한 더 정확한 고찰이라고 본다. 분명한 외적 기준을 가지는 심리 표현들 ‒ 가령, 아픔 ‒ 에 대해 충분한 숙지를 보이는 화자가 있으면, 우리는 그가 심리 언어 일반을 숙지했다고 판단하여, 그가 자신의 내면에서 특정한 감정 또는 퀄리아를 포착했다고 진술하면, 설령 그 감정 및 퀄리아가 어떠한 외적 기준을 가지지 않는다고 하더라도, 그 진술을 정당한 것으로 인정하기 때문이다. (필자가 보기에 “나는 의식을 가지고 있다”가 그러한 진술의 사례에 해당할 듯하다)
+> However, Kripke presents a more liberal interpretation. According to this, what requires external criteria is not individual psychological expressions but "psychological language" itself. Kripke sees this as a more accurate consideration of how psychological language operates. If there is a speaker who shows sufficient mastery of psychological expressions that have clear external criteria—for instance, pain—we judge that they have mastered psychological language in general, and therefore, if they state that they have grasped a particular emotion or quale in their inner state, even if that emotion and quale have no external criteria, we acknowledge that statement as legitimate. (In my view, "I have consciousness" would seem to be an example of such a statement.)
 >
-> 이에 관해서는 본문의 주석 81, 82, 83을 보라. (참고로 이 세 주석들은 독자적인 하나의 절을 구성할 만큼 분량이 많다…)
+> For this, see footnotes 81, 82, and 83 in the main text. (Incidentally, these three footnotes are substantial enough to constitute a section on their own...)
 
-### 4.3. 회의주의적 해답은 자기순환적인가?
+### 4.3. Is the Sceptical Solution Circular?
 
-논문의 말미에서 크립키는 회의주의적 해답이 다음과 같이 오해될 수 있음을 경고한다.
+At the end of the paper, Kripke warns that the sceptical solution can be misunderstood as follows:
 
-> 언어 공동체가 ‘+’로 덧셈을 의미한다는 것은, 해당 공동체의 일원 대다수가 ‘+’를 덧셈으로 사용한다는 것이다.
+> That a linguistic community means addition by '+' is that the majority of members of that community use '+' as addition.
 
-또는, 더 엄밀하게 적자면,
+Or, more precisely:
 
-> 언어 공동체가 ’+’로 의미하는 연산이 f라는 것은, 해당 공동체의 일원 대다수가 ‘x + y’에 대해 f(x, y)라고 답한다는 것이다.
+> That the operation a linguistic community means by '+' is f means that the majority of members of that community answer f(x, y) to 'x + y'.
 
-크립키에 따르면 이는 잘못된 이해이다. 위와 같이 해석한 회의주의적 해답은 사실상 공동체 단위에서의 성향주의적 분석과 다름없으며, 따라서 성향주의적 분석이 직면하는 난점을 ‒ 전부 다가 아니라면 적어도 일부 ‒ 지니고 있다. 또한 위의 해석은 “언어 공동체가 ...로 …을 의미한다”에 대한 진리조건을 제시하고 있다. 이는 진리조건론에서 주장조건론으로 이행하려는 비트겐슈타인의 기획을 근본적으로 잘못 짚은 것이다.
+According to Kripke, this is a mistaken understanding. The sceptical solution interpreted in this way is virtually no different from a dispositional analysis at the community level, and therefore has—if not all, then at least some of—the difficulties faced by dispositional analysis. Moreover, the above interpretation provides truth conditions for "a linguistic community means ... by ...". This fundamentally misses Wittgenstein's project of moving from truth-conditional theory to assertability-conditional theory.
 
-크립키는 비트겐슈타인의 회의주의적 해답이 “언어 공동체가 …로 …을 의미한다”에 대한 새로운 진리조건을 제시하려는 것이 아니라, 단지 그러한 진술을 가능하게 만드는 환경과, 그러한 진술을 사용함으로 인해 얻게 되는 이점에 주목함을 강조한다. 본문을 인용하자면,
+Kripke emphasises that Wittgenstein's sceptical solution does not seek to provide new truth conditions for "a linguistic community means ... by ..." but merely focuses on the environment that makes such statements possible and the advantages gained by using such statements. To quote from the text:
 
-> 이러한 주장조건들이 함의하는 것은, 특정한 덧셈 문제에 대해 모두가 내놓는 대답이, 정의에 의해, 올바른 대답이라는 것이 아니라, **모두가 특정한 대답에 동의한다면, 그 누구도 이 대답에 대한 이의 제기를 정당화하지 못할 것**이라는 자명한 관찰이다.
->
 > What follows from these assertability conditions is _not_ that the answer everyone gives to an addition problem is, by definition, the correct one, but rather the platitude that, **if everyone agrees upon a certain answer, then no one will feel justified in calling the answer wrong.**
 
-아마 크립키는 이 대목이 많은 비판의 대상이 될 것임을 (정확히) 예측한 듯하다. 그래서 나중에 그는 긴 주석 87을 추가했다. 주석 87은 비트겐슈타인의 회의주의적 해답이 자기순환적이거나, 여전히 회의주의의 무한회귀에 빠진다는 비판에 대한 해명 스케치이다.
+Kripke probably (accurately) predicted that this passage would be the subject of much criticism. So he later added a long footnote 87. Footnote 87 is a sketch of an explanation against the criticism that Wittgenstein's sceptical solution is circular or still falls into the infinite regress of scepticism.
 
-> 87\. **만약 비트겐슈타인이 '5'가 아닌 '125'가 '68 + 57'에 대해 '올바른' 대답임을 보이는 필요충분조건을 제시하려 했던 것이라면, 이는 자기순환의 오류라는 비판이 제기될 수 있었을 것이다.** 누군가는 그의 입장을, 나의 대답이 올바른 대답일 필요충분조건은 그 대답이 다른 사람의 대답과 일치하는 것이라는 입장으로 받아들일 수 있다. 그러나 회의주의자와 내가 사전에 이 기준에 합의하더라도, 회의주의자는 내가 과거에 '+'로 무엇을 의미했는지에 관해 틀렸던 것처럼, 내가 '일치'라는 표현을 잘못된 의미로 사용한다고 말할 수 있지 않은가? 확실히, 덧셈에 대한 규칙을 다른 규칙으로 환원하는 것 — "덧셈 문제가 주어졌을 때, 다른 사람이 대답하는 대로 대답하라!" — 은 여타 환원의 시도만큼이나 비트겐슈타인의 '규칙을 해석하기 위한 규칙'이라는 혹독한 비판으로부터 자유롭지 못하다. 더구나 비트겐슈타인이라면 강조했겠듯이, 이 규칙은 언어 수행을 부정확하게 설명한다. 나는 덧셈을 할 때 다른 사람에게 도움을 구하지 않는다. (만약 모두가 이런 규칙을 따라야 했다면 우리는 모두가 서로의 대답을 기다리는 교착 상태에 빠졌을 것이다)
+> 87\. **If Wittgenstein had been attempting to give a necessary and sufficient condition to show that '125', not '5', is the 'right' response to '68+ 57', he might be charged with circularity.** For he might be taken to say that my response is correct if and only if it agrees with that of others. But even if the sceptic and I both accept this criterion in advance, might not the sceptic maintain that just as I was wrong about what '+' meant in the past, so I was wrong about 'agree'? Indeed, to attempt to reduce the rule for addition to another rule - "Respond to an addition problem exactly as others do!" - falls foul of Wittgenstein's strictures on 'a rule for interpreting a rule' just as much as any other such attempted reduction. Such a rule, as Wittgenstein would emphasise, also describes what I do wrongly: I do not consult others when I add. (We wouldn't manage very well, if everyone had to follow a rule of the proposed form - no one would respond without waiting for everyone else.)
 >
-> **비트겐슈타인의 _실제_ 목표는, 어떤 특정한 행위들이 우리의 삶에서 가지는 기능을 기술<sub>describe</sub>하는 것이다. 필연적으로 그는 이 기술을 우리의 언어로 해야 한다.** 이와 같은 언어 사용에서 항상 가능하듯이, 또다른 삶의 형식을 가지는 일원은 이 기술에 포함된 단어들을 (이를테면 "동의") 컷셈과 같은 방식으로 해석할 수 있을 것이다. 따라서 우리가 공동체 안에서의 '동의'가 이루어졌다고 간주하는 상황에서, 상이한 삶의 형식을 가지는 혹자는 그들이 동의를 이루어내지 못했다고 판단할 수 있다. 이 사실은 비트겐슈타인의 회의주의적 해답에 대한 비판이 될 수 없다. 적어도, 그에게서 언어의 사용 일체를 박탈하려는 것이 아니라면 말이다.
->
-> <small>87\. **If Wittgenstein had been attempting to give a necessary and sufficient condition to show that '125', not ‘5’, is the 'right' response to '68+ 57', he might be charged with circularity.** For he might be taken to say that my response is correct if and only if it agrees with that of others. But even if the sceptic and I both accept this criterion in advance, might not the sceptic maintain that just as I was wrong about what '+' meant in the past, so I was wrong about 'agree'? Indeed, to attempt to reduce the rule for addition to another rule - "Respond to an addition problem exactly as others do!" - falls foul of Wittgenstein's strictures on 'a rule for interpreting a rule' just as much as any other such attempted reduction. Such a rule, as Wittgenstein would emphasize, also describes what I do wrongly: I do not consult others when I add. (We wouldn't manage very well, if everyone had to follow a rule of the proposed form - no one would respond without waiting for everyone else.)</small>
->
-> <small>**What Wittgenstein _is_ doing is describing the utility in our lives of a certain practice. Necessarily he must give this description in our own language.** As in the case of any such use of our language, a participant in another form of life might apply various terms in the description (such as "agreement") in a non-standard 'quus-like' way. Indeed, we may judge that those in a given community 'agree', while someone in another form of life would judge that they do not. This cannot be an objection to Wittgenstein's solution unless he is to be prohibited from any use of language at all.</small>
+> **What Wittgenstein _is_ doing is describing the utility in our lives of a certain practice. Necessarily he must give this description in our own language.** As in the case of any such use of our language, a participant in another form of life might apply various terms in the description (such as "agreement") in a non-standard 'quus-like' way. Indeed, we may judge that those in a given community 'agree', while someone in another form of life would judge that they do not. This cannot be an objection to Wittgenstein's solution unless he is to be prohibited from any use of language at all.
 
-그러나 몇 가지 의문이 여전히 남는다. 첫째, "이 사실은 비트겐슈타인의 회의주의적 해답에 대한 비판이 될 수 없다"는 크립키의 변호가 타당한지에 대한 의문이 남는다. 둘째, 회의주의적 해답의 의도가 의미 진술의 진리조건을 제시하는 것이 아닌 (특정한 덧셈 문제에 대해 모두가 내놓는 대답이 올바른 대답이다), 의미 진술의 기능을 기술하는 것이라고 하더라도 (모두가 특정한 대답에 동의한다면 그 누구도 이 대답에 대한 이의 제기를 정당화하지 못할 것이다), 과연 후자의 기술이 올바른지에 관해 의문이 남을 수 있다. 즉, 정말로 모두가 특정한 대답에 동의한다면 그 누구도 이 대답에 대한 이의 제기를 정당화하지 못하는가? 이에 관해서, 이어지는 크립키의 주석을 보자.
+However, several questions still remain. First, there remains a question about whether Kripke's defence that "This cannot be an objection to Wittgenstein's sceptical solution" is valid. Second, even if the intention of the sceptical solution is not to provide truth conditions for meaning statements (the answer everyone gives to a particular addition problem is the correct answer) but to describe the function of meaning statements (if everyone agrees upon a certain answer, then no one will feel justified in calling the answer wrong), questions may remain about whether the latter description is correct. That is, if everyone really agrees upon a certain answer, will no one feel justified in calling the answer wrong? Regarding this, let us look at Kripke's following footnote:
 
-> [그렇다면] **우리 모두가 일치를 보이는 대답이 '올바른' 대답이 아닐 수도 있다는 의문은 정당한가?** 분명, 어떤 경우에 한 개인은, 자신의 언어 공동체가 한때 일치를 보였던 대답을 추후에 수정할 수도 있지 않을까, 하는 의문을 가질 수 있다. [필자 주: "간통은 범죄이다"에 대한 공동체의 입장 변경을 생각해 보라] 그러나 **한 개인이, 자신의 공동체가 스스로 정정하지 않을지언정 사실은 _언제나_ 틀린 것은 아닐까 하는 의문 또한 가질 수 있는가?** 이와 같은 질문을 비트겐슈타인의 개념적 틀에서 정립하기란 어렵다는 것은 _사실이다._ 그것은, 어떤 '[객관적] 사실'로서, 우리가 항상 틀린 것은 아닌지에 대한 질문으로 보이는데, 그러한 사실은 존재하지 않기 때문이다.
->
-> <small>**Does it make any sense to _doubt_ whether a response we all agree upon is 'correct’?** Clearly in some cases an individual may doubt whether the community may correct, later, a response it had agreed upon at a given time. But **may the individual doubt whether the community may not in fact _always_ be wrong, even though it never corrects its error?** It _is_ hard to formulate such a doubt within Wittgenstein's framework, since it looks like a question, whether, as a matter of 'fact', we might always be wrong; and there is no such fact.</small>
+> **Does it make any sense to _doubt_ whether a response we all agree upon is 'correct'?** Clearly in some cases an individual may doubt whether the community may correct, later, a response it had agreed upon at a given time. [Author's note: Think of the community's change of position on "adultery is a crime"] But **may the individual doubt whether the community may not in fact _always_ be wrong, even though it never corrects its error?** It _is_ hard to formulate such a doubt within Wittgenstein's framework, since it looks like a question, whether, as a matter of 'fact', we might always be wrong; and there is no such fact.
 
-그렇다고 해서 크립키-비트겐슈타인이 의미의 규칙에 대한 전권을 오로지 공동체에 귀속하는 것은 아니다. 이어지는 주석에서 크립키는 의미와 규칙 따르기에 있어 개인이 가지는 자율성의 영역을 보장하는 단서를 남겨 놓는다.
+However, this does not mean that Kripke-Wittgenstein attributes full authority over the rules of meaning solely to the community. In the following footnote, Kripke leaves a clause guaranteeing the realm of autonomy that individuals have in meaning and rule-following:
 
-> 다른 한편으로, 비트겐슈타인의 개념적 틀 안에서도 다음만큼은 여전히 사실이다. 공동체가 언제나 어떤 대답을 내놓았는지에 관한 정보는, 내가 덧셈 문제의 대답을 확정하는 데 있어 전혀 필요하지 않다. 설령 [덧셈의 사용에 관한 공동체의] 정보가 주어졌더라도, _나_ 혼자서 정당하게 계산을 수행할 수 있다는 사실 또한 우리의 '언어게임'의 일부이다. [필자 주: 이를 [애쉬의 동조 실험](https://en.wikipedia.org/wiki/Asch_conformity_experiments)과 비교해 보라.]
->
-> <small>On the other hand, within Wittgenstein's framework it is still true that, for me, no assertions about community responses for all time need establish the result of an arithmetical problem; that _I_ can legitimately calculate the result for myself, even given this information, is part of our 'language game'.</small>
+> On the other hand, within Wittgenstein's framework it is still true that, for me, no assertions about community responses for all time need establish the result of an arithmetical problem; that _I_ can legitimately calculate the result for myself, even given this information, is part of our 'language game'. [Author's note: Compare this with [Asch's conformity experiments](https://en.wikipedia.org/wiki/Asch_conformity_experiments).]
 
-아마 독자 분은 그래서 도대체 크립키가 하고 싶은 말이 무엇인지 혼란스러울 것이다. 문제는, 필자도 매우 혼란스럽다는 것이다. 그리고 필자 생각에, 크립키 본인도 이 점에 관해서는 혼란을 느낀 듯하다. 크립키의 주석은 다음의 인정으로 맺는다.
+The reader will probably be confused about what exactly Kripke is trying to say. The problem is that I too am very confused. And in my view, Kripke himself seems to have felt confusion about this point. Kripke's footnote concludes with the following admission:
 
-> 나는 이러한 질문들에 대해 어떤 긴장감이 여전히 남아 있을 수 있다고 느낀다. 시간과 지면의 제약, 그리고 내가 변호자 및 해설자의 역할을 버리고 비판자의 입장을 취해야 할지도 모른다는 점 때문에, 나는 이 문제에 대해 더 깊이 논의하지 않기로 했다.
->
-> <small>I feel some uneasiness may remain regarding these questions. Considerations of time and space, as well as the fact that I might have to abandon the role of advocate and expositor in favor of that of critic, have led me not to carry out a more extensive discussion.</small>
+> I feel some uneasiness may remain regarding these questions. Considerations of time and space, as well as the fact that I might have to abandon the role of advocate and expositor in favour of that of critic, have led me not to carry out a more extensive discussion.
 
-요점을 정리해보자면 이렇다.
+To summarise the key points:
 
-1. 회의주의적 해답을 다음과 같이 이해하는 것은 잘못되었다: "'68 + 57'에 대해 '125'라고 대답하는 것은 옳다"가 참일 필요충분조건은, 공동체가 '68 + 57'에 대해 '125'라는 일치된 대답을 보인다는 것이다.
+1. It is wrong to understand the sceptical solution as follows: The necessary and sufficient condition for "'125' is the right answer to '68 + 57'" to be true is that the community shows a unanimous answer of '125' to '68 + 57'.
 
-2. 회의주의적 해답은 다음과 같이 이해되어야 한다: "'68 + 57'에 대해 '125'라고 대답하는 것은 옳다"가 공동체 안에서 받아들여질 필요충분조건은, 공동체가 '68 + 57'에 대해 '125'라는 일치된 대답을 보인다는 것이다.
+2. The sceptical solution should be understood as follows: The necessary and sufficient condition for "'125' is the right answer to '68 + 57'" to be accepted within the community is that the community shows a unanimous answer of '125' to '68 + 57'.
 
-   - 다르게 말해, 공동체가 '68 + 57'에 대해 '125'라는 일치된 대답을 보인다면, "'68 + 57'에 대해 '125'라고 대답하는 것은 틀렸다"는 발화는 해당 공동체에서 정당하게 받아들여지지 않는다.
+   - Put differently, if the community shows a unanimous answer of '125' to '68 + 57', then the utterance "'125' is the wrong answer to '68 + 57'" will not be legitimately accepted in that community.
 
-3. 2에 대해 다음의 의문이 제기될 수 있다.
+3. The following questions can be raised about 2:
 
-   1. 1이 자기순환적이지만 2는 자기순환적이지 않은 이유가 불분명하다.
-   2. 어떤 경우에는 공동체가 일치된 대답을 보이는 상황에서도 개인이 정당하게 그 대답이 정녕 올바른지에 관한 의문을 제기할 수 있는 것으로 보인다.
+   1. It is unclear why 1 is circular but 2 is not circular.
+   2. In some cases, it seems that an individual can legitimately raise questions about whether an answer is really correct even in situations where the community shows a unanimous answer.
 
-이 의문들은 크립키의 원 논문에서 다소 불명확하게 설명되었고, 실제로 이후 회의주의적 해답에 대해 제기된 비판들은 이들 의문에 초점을 맞춘다. 이에 관해서는 추후에 기회가 된다면 별도의 글로 정리해 보겠다.
+These questions were explained somewhat unclearly in Kripke's original paper, and indeed the criticisms subsequently raised against the sceptical solution focus on these questions. I shall try to organise these in a separate post if the opportunity arises in the future.
 
 ---
 
-[^1]: “주장조건”이라는 표현을 사용했으나, 비트겐슈타인은 ⟪탐구⟫에서 평서문뿐 아니라 명령문, 의문문, 감탄문 등 다양한 유형의 문장을 고려함을 간과해서는 안 된다. 따라서 “주장조건”보다 “정당화 조건<sub>justification condition</sub>” — 어떤 상황에서 문장의 발화가 정당한가? — 이라는 표현이 더 적절할 수 있다. 그러나 이 표현에도 석연찮은 점이 있는데, 화자가 특정 문장을 발화하고자 하는 의도 외에는 그 문장의 발화를 정당화하는 독립적인 근거가 없는 경우가 있기 때문이다 (비트겐슈타인에 따르면 “아야!”가 그러한 사례에 해당한다). 따라서 크립키는 “주장조건”이라는 표현을, 그것이 평서문을 암시적으로 우선시한다는 단점에도 불구하고, 사용한다. 이와 관련해서 크립키의 원 논문의 주석 63을 보라.
-[^2]: 물론 비트겐슈타인의 실용주의는 미국 실용주의 학파와는 구별되는 것이다. 본문의 “실용주의”는 설명의 편의를 위해 사용된 표현으로, 그 정확한 의미는 이후 내용에서 드러날 것이다.
-[^3]: 프레게의 카이사르 문제를 참고하라.
+[^1]: Although I have used the expression "assertability conditions", it must not be overlooked that Wittgenstein in the *Investigations* considers various types of sentences including imperatives, interrogatives, and exclamations, not just declaratives. Therefore, the expression "justification conditions"—in what circumstances is the utterance of a sentence justified?—might be more appropriate than "assertability conditions". However, this expression also has dubious points, because there are cases where there are no independent grounds for justifying the utterance of a particular sentence other than the speaker's intention to utter that sentence (according to Wittgenstein, "Ow!" is such a case). Therefore, Kripke uses the expression "assertability conditions" despite the disadvantage that it implicitly prioritises declaratives. In this regard, see footnote 63 of Kripke's original paper.
+[^2]: Of course, Wittgenstein's pragmatism is distinct from the American pragmatist school. "Pragmatism" in the text is an expression used for convenience of explanation, and its precise meaning will become apparent in the subsequent content.
+[^3]: See Frege's Caesar problem.
+

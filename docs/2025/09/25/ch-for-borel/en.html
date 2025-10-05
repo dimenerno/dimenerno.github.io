@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     The Continuum Hypothesis for Closed Sets and Borel Sets &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/09/25/ch-for-borel/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">The Continuum Hypothesis for Closed Sets and Borel Sets</h1>
+  <span class="post-date">25 Sep 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'" >Set Theory</div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'" >Topology</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>The continuum hypothesis concerns whether $\aleph_1 = 2^{\aleph_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, the continuum hypothesis is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved early on that the continuum hypothesis holds when restricted to closed subsets of the real numbers.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then $|F| = \aleph_0$ or $|F| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+<p>The proof of this theorem uses the concept of a <strong>perfect set</strong>. I previously introduced this when discussing the <a href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson">Cantor-Bendixson theorem</a>, but I shall introduce it again.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, a subset $P \subseteq X$ is said to be perfect if $P = P’$, where $P’$ is the set of limit points of $P$ in $X$.</p>
+</blockquote>
+
+<p>In general, for a subset $A \subseteq X$, there are two reasons why $A$ and $A’$ may not have an inclusion relationship:</p>
+
+<ol>
+  <li>If $x$ is an isolated point of $A$, then $x \in A$ but $x \notin A’$</li>
+  <li>If $x$ is a limit point of $A$ that does not belong to $A$, then $x \notin A$ but $x \in A’$</li>
+</ol>
+
+<p>Therefore, a perfect set is a closed set with no isolated points. Accordingly, when given a closed set $F$, one might expect that removing all isolated points from $F$ would yield a perfect set. The problem is that the set obtained after removing isolated points may itself have isolated points. For example,</p>
+
+\[F = \mathbb{N} \cup \lbrace  m - 1/n : m \geq 0, n &gt; 1 \rbrace\]
+
+<p>In this case, the set obtained by removing the isolated points of $F$ is $\mathbb{N}$, which again has countably many isolated points. However, if we repeat this process of ‘removing’ isolated points transfinitely, we obtain the following interesting result.</p>
+
+<blockquote>
+  <p><strong>Cantor-Bendixson Theorem.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then there exist a countable set $C$ and a perfect set $P$ such that $F = P \sqcup C$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Although the proof is presented in the previous link, here we present Cantor’s proof.</p>
+
+<p>Define transfinitely as follows:</p>
+
+\[\begin{gather}
+F_0 = F \\
+F_{\alpha + 1} = F_\alpha' \\
+F_\lambda = \bigcup_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
+\end{gather}\]
+
+<p>Observe the following:</p>
+
+<ol>
+  <li>Each $F_\alpha$ is a closed set.</li>
+  <li>If $\alpha \leq \beta$, then $F_\alpha \supseteq F_\beta$.</li>
+  <li>$F_\alpha \setminus F_{\alpha + 1}$ is the set of isolated points of $F_\alpha$.</li>
+  <li>If $\alpha \neq \beta$, then $F_{\alpha} \setminus F_{\alpha + 1}$ and $F_{\beta} \setminus F_{\beta+1}$ are disjoint.</li>
+</ol>
+
+<p>If $F_{\alpha} \setminus F_{\alpha+1} \neq \varnothing$ for all $\alpha \in \mathrm{Ord}$, then for the Hartogs number $\gamma$ of $\mathcal{P}(F)$, the function $f : \gamma \to \mathcal{P}(F); \alpha \mapsto F_{\alpha} \setminus F_{\alpha + 1}$ would be injective, which is a contradiction. Therefore, there exists $\xi$ such that $F_{\xi} \setminus F_{\xi+1} = \varnothing$. Setting $P = F_\xi$, we have that $P$ is either empty or perfect.</p>
+
+<p>Let $C = F \setminus P$. Let $\mathcal{B} = \lbrace  B_n \rbrace $ be a countable basis for $\mathbb{R}$. Define $f: C \to \omega$ as follows:</p>
+
+\[f(x) = \mathop{\arg \min}\limits_{n \in \omega} : B_n \cap F_\alpha = \{ x \} \quad (x \in F_\alpha \setminus F_{\alpha + 1})\]
+
+<p>Verify that $f$ is well-defined and injective. ■</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then $|P| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> We prove the following two lemmas.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then there exist non-empty perfect disjoint sets $P_1, P_2 \subset P$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Let $\alpha = \inf P$ and $\beta = \sup P$ (where $\alpha, \beta$ may be $\pm \infty$). If $(\alpha, \beta) \subset P$, then for any $r, s$ with $\alpha &lt; r &lt; s &lt; \beta$, the sets $P \cap (-\infty, r]$ and $P \cap [s, \infty)$ satisfy the conditions. If $(\alpha, \beta) \not\subset P$, then there exists some $x \in (\alpha, \beta)$ such that $x \notin P$. Since $P = P’$, $x$ is not a limit point of $P$. Therefore, there exists sufficiently small $\delta &gt; 0$ such that $(x - \delta, x + \delta)$ is disjoint from $F$ and $\alpha &lt; x - \delta, x + \delta &lt; \beta$. In this case, $P \cap (-\infty, x - \delta]$ and $P \cap [x + \delta, \infty)$ satisfy the conditions. □</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then for any $n &gt; 0$, there exists a non-empty perfect set $P’ \subset P$ such that $\mathrm{diam} P’ &lt; 1/n$.</p>
+</blockquote>
+
+<p><em>Proof.</em> For $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $, there exists $(k/n, (k+1)/n) \in \mathcal{J}$ such that $J \cap F \neq \varnothing$ (otherwise $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $, which is not perfect). Let $E = F \cap [k/n, (k+1)/n]$. Since $E$ is a closed set, if $E$ has no isolated points, then $E$ is perfect. If $x \in E$ is an isolated point, then there exists sufficiently small $\delta &gt; 0$ such that $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $ and $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$. In this case, $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $, so $x$ is an isolated point of $F$. This is a contradiction, so $E$ is perfect. □</p>
+
+<p>Let $P$ be a non-empty perfect set. From the two lemmas above, using the axiom of choice, we can inductively define:</p>
+
+<ul>
+  <li>$P_1, P_2 \subset P, P_1 \cap P_2 = \varnothing, \mathrm{diam} P_1, \mathrm{diam} P_2 &lt; 1/2$</li>
+  <li>$P_{11}, P_{12} \subset P_1, P_{11} \cap P_{12} = \varnothing, \mathrm{diam} P_{11}, \mathrm{diam} P_{12} &lt; 1/4$</li>
+  <li>$P_{21}, P_{22} \subset P_2, P_{21} \cap P_{22} = \varnothing, \mathrm{diam} P_{21}, \mathrm{diam} P_{22} &lt; 1/4$</li>
+  <li>$P_{111}, P_{112} \subset P_{11}, P_{111} \cap P_{112} = \varnothing, \mathrm{diam} P_{111}, \mathrm{diam} P_{112} &lt; 1/8$</li>
+  <li>…</li>
+</ul>
+
+<p>Let $A$ be the intersection of all $P_i$. $A$ has the same cardinality as the Cantor set. Since the Cantor set has the same cardinality as the real numbers, $|P| = 2^{\aleph_0}$. ■</p>
+
+<p>From the above theorem and the Cantor-Bendixson theorem, we obtain the following result.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then $|F| = \aleph_0$ or $|F| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+<p>Incidentally, a result similar to the Cantor-Bendixson theorem holds for Borel sets.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $B \subseteq \mathbb{R}$ is an uncountable Borel set, then $B$ contains a perfect set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Omitted.</p>
+
+<p>Therefore, more generally, the following holds.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> If $B \subseteq \mathbb{R}$ is a Borel set, then $|B| = \aleph_0$ or $|B| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>
