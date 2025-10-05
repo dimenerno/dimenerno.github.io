@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "모델 완전성에 대한 로빈슨 판별법"
-date: 2025-09-05
+date: 2025-09-11
 tags: ["논리학", "모델론"]
 related:
 ---
