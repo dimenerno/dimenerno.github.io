@@ -382,23 +382,19 @@
       
     </div>
   
-  <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>The continuum hypothesis concerns whether $\aleph_1 = 2^{\aleph_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, the continuum hypothesis is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved early on that the continuum hypothesis holds when restricted to closed subsets of the real numbers.</p>
+  <p>The continuum hypothesis (CH) asks whether $\aleph_1 = 2^{\aleph_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, CH is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved that CH holds when restricted to closed subsets of the real numbers.</p>
 
 <blockquote>
   <p><strong>Theorem.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then $|F| = \aleph_0$ or $|F| = 2^{\aleph_0}$.</p>
 </blockquote>
 
-<p>The proof of this theorem uses the concept of a <strong>perfect set</strong>. I previously introduced this when discussing the <a href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson">Cantor-Bendixson theorem</a>, but I shall introduce it again.</p>
+<p>The proof of this theorem uses the concept of a <strong>perfect set</strong>. I previously introduced this when discussing the <a href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson">Cantor-Bendixson theorem</a>, but let me reintroduce it here.</p>
 
 <blockquote>
   <p><strong>Definition.</strong> For a topological space $X$, a subset $P \subseteq X$ is said to be perfect if $P = P’$, where $P’$ is the set of limit points of $P$ in $X$.</p>
 </blockquote>
 
-<p>In general, for a subset $A \subseteq X$, there are two reasons why $A$ and $A’$ may not have an inclusion relationship:</p>
+<p>In general, for a subset $A \subseteq X$, there are two reasons why $A$ and $A’$ may not include one or the other.</p>
 
 <ol>
   <li>If $x$ is an isolated point of $A$, then $x \in A$ but $x \notin A’$</li>
@@ -409,20 +405,20 @@
 
 \[F = \mathbb{N} \cup \lbrace  m - 1/n : m \geq 0, n &gt; 1 \rbrace\]
 
-<p>In this case, the set obtained by removing the isolated points of $F$ is $\mathbb{N}$, which again has countably many isolated points. However, if we repeat this process of ‘removing’ isolated points transfinitely, we obtain the following interesting result.</p>
+<p>The set obtained by removing the isolated points of $F$ is $\mathbb{N}$, each of whose points is isolated. However, if we repeat this process of ‘removing’ isolated points transfinitely, we obtain the following interesting result.</p>
 
 <blockquote>
   <p><strong>Cantor-Bendixson Theorem.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then there exist a countable set $C$ and a perfect set $P$ such that $F = P \sqcup C$.</p>
 </blockquote>
 
-<p><strong>Proof.</strong> Although the proof is presented in the previous link, here we present Cantor’s proof.</p>
+<p><strong>Proof.</strong> Although a proof is presented in the previous link, here we present Cantor’s alternate proof.</p>
 
 <p>Define transfinitely as follows:</p>
 
 \[\begin{gather}
 F_0 = F \\
 F_{\alpha + 1} = F_\alpha' \\
-F_\lambda = \bigcup_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
+F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
 \end{gather}\]
 
 <p>Observe the following:</p>
@@ -458,7 +454,7 @@ F_\lambda = \bigcup_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
   <p><strong>Lemma.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then for any $n &gt; 0$, there exists a non-empty perfect set $P’ \subset P$ such that $\mathrm{diam} P’ &lt; 1/n$.</p>
 </blockquote>
 
-<p><em>Proof.</em> For $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $, there exists $(k/n, (k+1)/n) \in \mathcal{J}$ such that $J \cap F \neq \varnothing$ (otherwise $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $, which is not perfect). Let $E = F \cap [k/n, (k+1)/n]$. Since $E$ is a closed set, if $E$ has no isolated points, then $E$ is perfect. If $x \in E$ is an isolated point, then there exists sufficiently small $\delta &gt; 0$ such that $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $ and $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$. In this case, $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $, so $x$ is an isolated point of $F$. This is a contradiction, so $E$ is perfect. □</p>
+<p><em>Proof.</em> For $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $, there exists $(k/n, (k+1)/n) \in \mathcal{J}$ such that $J \cap F \neq \varnothing$ (otherwise $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $, which is not perfect). Let $a = \inf F \cap (k/n, (k+1)/n)$ and $b = \sup F \cap (k/n, (k+1)/n)$ and take $E = F \cap [a, b]$. Since $E$ is a closed set, if $E$ has no isolated points, then $E$ is perfect. For contradiction, assume that $x \in E$ is an isolated point of $E$. By the definition of supremum and inifimum, $x \neq a, b$. Hence there exists sufficiently small $\delta &gt; 0$ such that $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $ and $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$. In this case, $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $, so $x$ is an isolated point of $F$, which is a contradiction. Hence, $E$ is perfect. □</p>
 
 <p>Let $P$ be a non-empty perfect set. From the two lemmas above, using the axiom of choice, we can inductively define:</p>
 
@@ -491,7 +487,6 @@ F_\lambda = \bigcup_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
 <blockquote>
   <p><strong>Corollary.</strong> If $B \subseteq \mathbb{R}$ is a Borel set, then $|B| = \aleph_0$ or $|B| = 2^{\aleph_0}$.</p>
 </blockquote>
-
 
 </div>
 

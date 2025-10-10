@@ -418,7 +418,7 @@
 \[\begin{gather}
 F_0 = F \\
 F_{\alpha + 1} = F_\alpha' \\
-F_\lambda = \bigcup_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
+F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
 \end{gather}\]
 
 <p>다음을 관찰하라.</p>
@@ -454,7 +454,7 @@ F_\lambda = \bigcup_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
   <p><strong>보조정리.</strong> $P \subseteq \mathbb{R}$이 공집합이 아닌 완벽한 집합이라면, 임의의 $n &gt; 0$에 대해 어떤 공집합이 아니며 완벽한 집합 $P’ \subset P$가 존재하여 $\mathrm{diam} P’ &lt; 1/n$이다.</p>
 </blockquote>
 
-<p><em>증명.</em> $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $에 대해, 어떤 $(k/n, (k+1)/n) \in \mathcal{J}$가 존재하여 $J \cap F \neq \varnothing$이다 (만약 그렇지 않다면 $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $이므로 완벽하지 않다). $E = F \cap [k/n, (k+1)/n]$이라고 하자. $E$는 닫힌집합이므로, $E$가 고립점을 가지지 않는다면 $E$는 완벽하다. 만약 $x \in E$가 고립점이라면 어떤 충분히 작은 $\delta &gt; 0$가 존재하여 $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $이고 $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$이다. 이때 $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $이므로 $x$는 $F$의 고립점이다. 이는 모순이므로, $E$는 완벽하다. □</p>
+<p><em>증명.</em> $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $에 대해, 어떤 $(k/n, (k+1)/n) \in \mathcal{J}$가 존재하여 $J \cap F \neq \varnothing$이다 (만약 그렇지 않다면 $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $이므로 완벽하지 않다). $a = \inf F \cap (k/n, (k+1)/n)$, $b = \sup F \cap (k/n, (k+1)/n)$라고 하고 $E = F \cap [a, b]$로 두자. $E = F \cap [k/n, (k+1)/n]$이라고 하자. $E$는 닫힌집합이므로, $E$가 고립점을 가지지 않는다면 $E$는 완벽하다. 귀류법에 따라 $x \in E$가 고립점이라고 하자. 상한과 하한의 정의에 의해 $x \neq a, b$이다. 따라서 어떤 충분히 작은 $\delta &gt; 0$가 존재하여 $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $이고 $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$이다. 이때 $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $이므로 $x$는 $F$의 고립점이다. 이는 모순이므로, $E$는 완벽하다. □</p>
 
 <p>$P$가 공집합이 아닌 완벽한 집합이라고 하자. 위 두 보조정리로부터, 선택 공리를 사용함으로써 다음과 같이 귀납적으로 정의할 수 있다.</p>
 

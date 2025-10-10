@@ -7,17 +7,15 @@ lang: en
 related:
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
-
-The continuum hypothesis concerns whether $\aleph\_1 = 2^{\aleph\_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, the continuum hypothesis is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved early on that the continuum hypothesis holds when restricted to closed subsets of the real numbers.
+The continuum hypothesis (CH) asks whether $\aleph\_1 = 2^{\aleph\_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, CH is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved that CH holds when restricted to closed subsets of the real numbers.
 
 > **Theorem.** If $F \subseteq \mathbb{R}$ is a closed set, then $\|F\| = \aleph\_0$ or $\|F\| = 2^{\aleph\_0}$.
 
-The proof of this theorem uses the concept of a **perfect set**. I previously introduced this when discussing the [Cantor-Bendixson theorem](https://dimenerno.github.io/2024/12/25/Cantor-Bendixson), but I shall introduce it again.
+The proof of this theorem uses the concept of a **perfect set**. I previously introduced this when discussing the [Cantor-Bendixson theorem](https://dimenerno.github.io/2024/12/25/Cantor-Bendixson), but let me reintroduce it here.
 
 > **Definition.** For a topological space $X$, a subset $P \subseteq X$ is said to be perfect if $P = P'$, where $P'$ is the set of limit points of $P$ in $X$.
 
-In general, for a subset $A \subseteq X$, there are two reasons why $A$ and $A'$ may not have an inclusion relationship:
+In general, for a subset $A \subseteq X$, there are two reasons why $A$ and $A'$ may not include one or the other.
 
 1. If $x$ is an isolated point of $A$, then $x \in A$ but $x \notin A'$
 2. If $x$ is a limit point of $A$ that does not belong to $A$, then $x \notin A$ but $x \in A'$
@@ -28,11 +26,11 @@ $$
 F = \mathbb{N} \cup \lbrace  m - 1/n : m \geq 0, n > 1 \rbrace
 $$
 
-In this case, the set obtained by removing the isolated points of $F$ is $\mathbb{N}$, which again has countably many isolated points. However, if we repeat this process of 'removing' isolated points transfinitely, we obtain the following interesting result.
+The set obtained by removing the isolated points of $F$ is $\mathbb{N}$, each of whose points is isolated. However, if we repeat this process of 'removing' isolated points transfinitely, we obtain the following interesting result.
 
 > **Cantor-Bendixson Theorem.** If $F \subseteq \mathbb{R}$ is a closed set, then there exist a countable set $C$ and a perfect set $P$ such that $F = P \sqcup C$.
 
-**Proof.** Although the proof is presented in the previous link, here we present Cantor's proof.
+**Proof.** Although a proof is presented in the previous link, here we present Cantor's alternate proof.
 
 Define transfinitely as follows:
 
@@ -40,7 +38,7 @@ $$
 \begin{gather}
 F_0 = F \\
 F_{\alpha + 1} = F_\alpha' \\
-F_\lambda = \bigcup_{\alpha < \lambda} F_\alpha \quad (\lim \lambda)
+F_\lambda = \bigcap_{\alpha < \lambda} F_\alpha \quad (\lim \lambda)
 \end{gather}
 $$
 
@@ -71,7 +69,7 @@ _Proof._ Let $\alpha = \inf P$ and $\beta = \sup P$ (where $\alpha, \beta$ may b
 
 > **Lemma.** If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then for any $n > 0$, there exists a non-empty perfect set $P' \subset P$ such that $\mathrm{diam} P' < 1/n$.
 
-_Proof._ For $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $, there exists $(k/n, (k+1)/n) \in \mathcal{J}$ such that $J \cap F \neq \varnothing$ (otherwise $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $, which is not perfect). Let $E = F \cap [k/n, (k+1)/n]$. Since $E$ is a closed set, if $E$ has no isolated points, then $E$ is perfect. If $x \in E$ is an isolated point, then there exists sufficiently small $\delta > 0$ such that $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $ and $k/n < x - \delta, x + \delta < (k + 1)/n$. In this case, $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $, so $x$ is an isolated point of $F$. This is a contradiction, so $E$ is perfect. □
+_Proof._ For $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $, there exists $(k/n, (k+1)/n) \in \mathcal{J}$ such that $J \cap F \neq \varnothing$ (otherwise $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $, which is not perfect). Let $a = \inf F \cap (k/n, (k+1)/n)$ and $b = \sup F \cap (k/n, (k+1)/n)$ and take $E = F \cap [a, b]$. Since $E$ is a closed set, if $E$ has no isolated points, then $E$ is perfect. For contradiction, assume that $x \in E$ is an isolated point of $E$. By the definition of supremum and inifimum, $x \neq a, b$. Hence there exists sufficiently small $\delta > 0$ such that $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $ and $k/n < x - \delta, x + \delta < (k + 1)/n$. In this case, $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $, so $x$ is an isolated point of $F$, which is a contradiction. Hence, $E$ is perfect. □
 
 Let $P$ be a non-empty perfect set. From the two lemmas above, using the axiom of choice, we can inductively define:
 
@@ -96,4 +94,3 @@ Incidentally, a result similar to the Cantor-Bendixson theorem holds for Borel s
 Therefore, more generally, the following holds.
 
 > **Corollary.** If $B \subseteq \mathbb{R}$ is a Borel set, then $\|B\| = \aleph\_0$ or $\|B\| = 2^{\aleph\_0}$.
-
