@@ -74,7 +74,7 @@ $$
 \mathcal{L}(r, \theta) = \frac{m}{2}(\dot{r}^2 + r^2 \dot{\theta}^2)
 $$
 
-> _Remark._ Whilst in the Euler-Lagrange equations we simply substitute $(r, \theta)$ for $(x, y)$, in the Lagrangian we substitute the relation $x = r \cos \theta, y = r \sin \theta$ because the Lagrangian is not a function of **pairs of real numbers** but rather a function of **points in spacetime**. General covariance does not mean that the form of equations is preserved under mindless, uniform coordinate transformations, but rather that when the functions describing a physical system are maintained whilst the coordinates expressing them are changed, the form of equations is preserved.
+> _Remark._ while in the Euler-Lagrange equations we simply substitute $(r, \theta)$ for $(x, y)$, in the Lagrangian we substitute the relation $x = r \cos \theta, y = r \sin \theta$ because the Lagrangian is not a function of **pairs of real numbers** but rather a function of **points in spacetime**. General covariance does not mean that the form of equations is preserved under mindless, uniform coordinate transformations, but rather that when the functions describing a physical system are maintained while the coordinates expressing them are changed, the form of equations is preserved.
 
 Substituting and calculating yields:
 
@@ -91,7 +91,7 @@ In general, the following holds:
 
 > **Theorem.** Lagrangian mechanics possesses general covariance.
 
-It may seem surprising that Newtonian mechanics lacks general covariance whilst Lagrangian mechanics possesses it, but upon reflection, this is quite natural. Newton's first law is commonly expressed mathematically as $F = 0 \implies \ddot{x} = 0$, but the precise statement is:
+It may seem surprising that Newtonian mechanics lacks general covariance while Lagrangian mechanics possesses it, but upon reflection, this is quite natural. Newton's first law is commonly expressed mathematically as $F = 0 \implies \ddot{x} = 0$, but the precise statement is:
 
 > The spacetime diagram of a particle not subject to external forces is linear.
 
@@ -108,4 +108,3 @@ Conversely, if a theory does not depend upon specific geometry, then that theory
 The Lagrangian is not a function dependent upon specific geometry, but merely a function that outputs real values for points in spacetime. Therefore, the above statement is not dependent upon any particular geometry, and Lagrangian mechanics is generally covariant.
 
 According to the hole argument, generally covariant theories are indeterministic in a metaphysical sense. An explanation of this will be provided later.
-

@@ -57,7 +57,7 @@ $$
 \frac{dA}{d\alpha} = \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x} - \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right) \right) \frac{\partial x}{\partial \alpha} dt = 0
 $$
 
-Since the above equation must be satisfied for arbitrary $h \in C^1$, we obtain the following *necessary condition* for $x(t)$ to extremise $A$:
+Since the above equation must be satisfied for arbitrary $h \in C^1$, we obtain the following _necessary condition_ for $x(t)$ to extremise $A$:
 
 $$
 \frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)
@@ -149,7 +149,6 @@ The final equation is Newton's equation of motion. Therefore, $\mathcal{L}$ is i
 
 **Proof.** See the linked [SE post](https://physics.stackexchange.com/questions/78138/is-there-a-proof-from-the-first-principle-that-the-lagrangian-l-t-v).
 
-However, in general, the Lagrangian of a system is not necessarily given by $T - V$. For instance, whilst the kinetic energy of a relativistic particle is $(\gamma - 1)m_0c^2$, the correct Lagrangian is $-m_0c^2/\gamma$.
+However, in general, the Lagrangian of a system is not necessarily given by $T - V$. For instance, while the kinetic energy of a relativistic particle is $(\gamma - 1)m_0c^2$, the correct Lagrangian is $-m_0c^2/\gamma$.
 
 Unlike Newtonian mechanics, Lagrangian mechanics has the advantage of permitting very flexible coordinate transformations. This is because, unlike Newtonian mechanics, Lagrangian mechanics possesses general covariance. A detailed explanation of this can be found in the [following article](http://dimenerno.github.io/2025/02/27/general-covariance/).
-

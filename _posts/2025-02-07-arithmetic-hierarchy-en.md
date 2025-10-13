@@ -255,7 +255,7 @@ $$
 
 Here, $x\|\_y$ is the Gödel number of the state where input $y$ is given to the Turing machine with Gödel number $x$. That is, $\Sigma\_2$ propositions reduce to $\Sigma\_1$ propositions when given an oracle for the halting problem. By similar principles, $\Pi\_2$ and $\Delta\_2$ propositions reduce to $\Pi\_1$ and $\Delta\_1$ propositions, respectively, when given an oracle for the halting problem.
 
-Furthermore, we can define **second-order oracles**. A second-order halting problem oracle is a halting problem oracle for Turing machines that use halting problem oracles. For example, whilst $\mathcal{O}$ is limited to determining whether the following code halts:
+Furthermore, we can define **second-order oracles**. A second-order halting problem oracle is a halting problem oracle for Turing machines that use halting problem oracles. For example, while $\mathcal{O}$ is limited to determining whether the following code halts:
 
 ```
 for x > 0:

@@ -172,8 +172,6 @@ $$
 > - $I$는 극대 아이디얼이다.
 > - 임의의 $x \in A$에 대해, $x \in I$이거나 $\lnot x \in I$이다.
 
-이런 면에서 불 대수 구조는 환론에서의 PID<sub>principal ideal domain</sub>와 비슷하다.
-
 ## 필터
 
 필터<sub>filter</sub>에 관해서는 [이전 글](https://dimenerno.github.io/2025/01/22/hypernaturals)에서 다룬 바가 있다. 정의를 상기해 보자.

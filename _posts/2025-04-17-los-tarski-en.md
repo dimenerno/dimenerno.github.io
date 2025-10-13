@@ -46,12 +46,12 @@ Conditions 2 and 3 are stronger than 1, but 2 and 3 do not imply each other.
 2. $\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \cong \mathfrak{M}$
 3. $\mathfrak{N} \preceq \mathfrak{M}$
 
-The reason why 2 and 3 do not imply each other is that 2 requires structural equivalence, making it no weaker than 3, whilst 3 requires equivalence for arbitrary assignments, making it no weaker than 2. For instance, for $\mathfrak{M} = (\mathbb{R}, +, \cdot)$, for $\mathfrak{N}$ to be an isomorphic submodel of $\mathfrak{M}$, it must be _structurally_ identical with respect to _constructible_ real numbers, whereas for $\mathfrak{N}$ to be an elementary submodel of $\mathfrak{M}$, the two models must be _elementarily_ equivalent with respect to _all_ real numbers.
+The reason why 2 and 3 do not imply each other is that 2 requires structural equivalence, making it no weaker than 3, while 3 requires equivalence for arbitrary assignments, making it no weaker than 2. For instance, for $\mathfrak{M} = (\mathbb{R}, +, \cdot)$, for $\mathfrak{N}$ to be an isomorphic submodel of $\mathfrak{M}$, it must be _structurally_ identical with respect to _constructible_ real numbers, whereas for $\mathfrak{N}$ to be an elementary submodel of $\mathfrak{M}$, the two models must be _elementarily_ equivalent with respect to _all_ real numbers.
 
-|                       | 2                       | 3                     |
-| --------------------- | ----------------------- | --------------------- |
-| 2 is no weaker than 3 | Structural identity     | Elementary identity   |
-| 3 is no weaker than 2 | Constructible objects   | Arbitrary objects     |
+|                       | 2                     | 3                   |
+| --------------------- | --------------------- | ------------------- |
+| 2 is no weaker than 3 | Structural identity   | Elementary identity |
+| 3 is no weaker than 2 | Constructible objects | Arbitrary objects   |
 
 For example, as we saw earlier, $(2\mathbb{Z}, +)$ is an isomorphic submodel of $(\mathbb{Z}, +)$, but considering the assignment $x \mapsto 2$ for $\exists y \; (y + y = x)$, we can see that it is not an elementary submodel.
 
@@ -106,7 +106,7 @@ The first-order logical axiomatisation of groups differs depending on whether th
 
 #### Without representation
 
-Define theory $T_1$ in language $\mathcal{L}_1 = \lbrace  G, \cdot \rbrace $ as follows:
+Define theory $T_1$ in language $\mathcal{L}\_1 = \lbrace G, \cdot \rbrace $ as follows:
 
 - $\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$
 - $\exists x \forall y : x \cdot y = y \cdot x = y$
@@ -114,13 +114,13 @@ Define theory $T_1$ in language $\mathcal{L}_1 = \lbrace  G, \cdot \rbrace $ as 
 
 #### With representation
 
-Define theory $T_2$ in language $\mathcal{L}_2 = \lbrace  G, \cdot, e, (-)^{-1} \rbrace $ as follows:
+Define theory $T_2$ in language $\mathcal{L}\_2 = \lbrace G, \cdot, e, (-)^{-1} \rbrace $ as follows:
 
 - $\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$
 - $\forall x : x \cdot e = e \cdot x = x$
 - $\forall x : x \cdot x^{-1} = x^{-1} \cdot x = e$
 
-$T_1$ is not a $\Pi_1$ theory, but $T_2$ is a $\Pi_1$ theory. Therefore, by the Łoś-Tarski theorem, $T_1$ is not submodel-preserving whilst $T_2$ is preserving. That $T_1$ is not submodel-preserving means that a subset of a group being closed under the operation does not always make it a subgroup<small>(for instance, the subset $\mathbb{Z}_{> 0}$ of $\mathbb{Z}$ is closed under the operation but is not a group as it lacks inverses)</small>. Conversely, that $T_2$ is submodel-preserving means the following holds:
+$T_1$ is not a $\Pi_1$ theory, but $T_2$ is a $\Pi_1$ theory. Therefore, by the Łoś-Tarski theorem, $T_1$ is not submodel-preserving while $T_2$ is preserving. That $T_1$ is not submodel-preserving means that a subset of a group being closed under the operation does not always make it a subgroup<small>(for instance, the subset $\mathbb{Z}_{> 0}$ of $\mathbb{Z}$ is closed under the operation but is not a group as it lacks inverses)</small>. Conversely, that $T_2$ is submodel-preserving means the following holds:
 
 > For a group $G$, if a subset $H$ of $G$ satisfies the following, then $H$ is a subgroup of $G$:
 >
@@ -139,4 +139,3 @@ That is, even in language $\mathcal{L}_3 = \lbrace  G, \cdot, (-)^{-1} \rbrace$ 
 
 - $\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$
 - $\forall x, y : (x \cdot x^{-1}) \cdot y = y \cdot (x \cdot x^{-1}) = y$
-

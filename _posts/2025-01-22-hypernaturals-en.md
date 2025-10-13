@@ -38,7 +38,7 @@ $$
 (0, 1, 0, 1, 0, 1, \dots)
 $$
 
-To resolve this ambiguity, we shall arbitrarily choose one among the set of even numbers and the set of odd numbers. If we choose the even numbers, the above tuple becomes $[0]$ (indices begin at 0), whilst if we choose the odd numbers it becomes $[1]$.
+To resolve this ambiguity, we shall arbitrarily choose one among the set of even numbers and the set of odd numbers. If we choose the even numbers, the above tuple becomes $[0]$ (indices begin at 0), while if we choose the odd numbers it becomes $[1]$.
 
 This "choosing" requires some intricacy. For example, if the set of multiples of 6 is chosen, then the set of multiples of 3 must also be chosen for consistency, since tuples satisfying the latter trivially satisfy the former. Moreover, since the set of multiples of 3 is chosen, the set of numbers that are _not_ multiples of 3 must be rejected. The end result of this process of choosing and rejecing for all subsets of the natural numbers will give rise to a structure called an **ultrafilter**. Given an appropriate ultrafilter, we can map any tuple to a hypernatural, and this entire process is called an **ultraproduct**.
 
@@ -51,7 +51,7 @@ This "choosing" requires some intricacy. For example, if the set of multiples of
 > 3. Upward closure: $A \in \mathcal{F}, A \subset B \implies B \in \mathcal{F}$
 > 4. Finite intersection closure: $A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$
 
-Intuitively, a filter is a "collection of large sets". From this perspective, axioms 1 and 2 express the trivial principle that the whole set is large and the empty set is small. Axiom 3 expresses the principle that a set containing a large set is large, whilst axiom 4 expresses the principle that finite intersections of large sets remain large.
+Intuitively, a filter is a "collection of large sets". From this perspective, axioms 1 and 2 express the trivial principle that the whole set is large and the empty set is small. Axiom 3 expresses the principle that a set containing a large set is large, while axiom 4 expresses the principle that finite intersections of large sets remain large.
 
 As a side note, filters are used not only in ultraproducts but also in converting models of fuzzy logic into models of classical logic. In this context, filters become "collections of true statements" rather than "collections of large sets". And indeed, the conversion from fuzzy logic to classical logic is also one way of understanding Cohen's forcing method.
 
@@ -71,7 +71,7 @@ The filter in the previous diagram is an ultrafilter. Note that an ultrafilter o
 
 ## 3. Ultrafilters on Infinite Sets
 
-A filter with the least element is called a **principal filter**, whilst a filter that is not principal is called a **free filter**. All filters we have seen so far are principal filters, which perfectly match the image of "the region an ink dropped at a particular point spreads over".
+A filter with the least element is called a **principal filter**, while a filter that is not principal is called a **free filter**. All filters we have seen so far are principal filters, which perfectly match the image of "the region an ink dropped at a particular point spreads over".
 
 > **Exercise.**
 >
@@ -136,7 +136,7 @@ $$
 
 We call $\mathbb{N}^*$ the **hypernaturals**. This reveals why the hypernaturals were written as $[n]$ in the introduction — a hypernatural number is an equivalence class. Indeed, it would have more accurate to write $[n]$ ans $[(n, n, n, \dots)]$, but let us allow ourselves some abuse of notation.
 
-What remains now is to define operations and  relations on the hypernaturals. Addition of hypernaturals is defined naturally as follows:
+What remains now is to define operations and relations on the hypernaturals. Addition of hypernaturals is defined naturally as follows:
 
 $$
 [(n_0, n_1, \dots)] + [(m_0, m_1, \dots)] = [(n_0 + m_0, n_1 + m_1, \dots)]

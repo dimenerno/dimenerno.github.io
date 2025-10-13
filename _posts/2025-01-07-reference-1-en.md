@@ -55,7 +55,7 @@ For example, a speaker who associates the name 'Venus' with the descriptive cont
 
 _Remark._
 
-1. Whilst it is standard to understand descriptive content as descriptions, scholars such as Searle argue that descriptive content need not be linguistically specifiable but may also be based on perception.
+1. while it is standard to understand descriptive content as descriptions, scholars such as Searle argue that descriptive content need not be linguistically specifiable but may also be based on perception.
 
 2. The satisfaction relation of descriptive content is speaker-independent. As we shall see, this spells problem in explaining indexicals.
 

@@ -73,7 +73,7 @@ Quine contrasts (3), (4), and (5) with the following (6), (7), and (8):
 
 Unlike (3), (4), and (5), in the sentence forms (6), (7), and (8), 'two' appears to occur vulgarly (though Quine would argue that 'one' still occurs accidentally). However, (6), (7), and (8) are not sentences that can be expressed in classical logic. Classical logic permits the form 'There exists $x$ such that...', but lacks the expression '$n$ is such that...'. Therefore, the task remains to justify the semantics of (6), (7), and (8).
 
-Let us first consider (6). Even with minimal logical analysis, we can see that (6) is not a well-formed formula. The subject _two_ corresponds to the use of a name, whilst _writing it after 'is greater than one'_ corresponds to the mention of a name. Therefore, (6) is not semantically justified.
+Let us first consider (6). Even with minimal logical analysis, we can see that (6) is not a well-formed formula. The subject _two_ corresponds to the use of a name, while _writing it after 'is greater than one'_ corresponds to the mention of a name. Therefore, (6) is not semantically justified.
 
 The meaning of (7) can be explained by Aristotelian essentialism. This explanation specifies, for any object, what properties are essential and what properties are accidental to it. Quine has explained the justification of (7) in this manner.
 
@@ -87,7 +87,7 @@ This sentence is intuitively comprehensible and appears to be true. This support
 >
 > b. Someone is such that Ralph believes they are a spy.
 
-In (a), existential quantification occurs within the belief context, whilst in (b) it occurs outside. Since Quine identifies words in belief contexts with accidental occurrences, according to him, note that (b) cannot be derived from
+In (a), existential quantification occurs within the belief context, while in (b) it occurs outside. Since Quine identifies words in belief contexts with accidental occurrences, according to him, note that (b) cannot be derived from
 
 - Ralph believes that Ortcutt is a spy
 
@@ -108,14 +108,14 @@ However, there are many cases that contradict the belief that referring expressi
 <div>F.D.R. ran several times, but F.D.R. was broadcast on television only once.</div>
 </div>
 
-A natural analysis of (11) is that the former 'F.D.R.' refers to the politician whilst the latter 'F.D.R.' refers to the television programme. In this case, both instances of 'F.D.R.' are vulgar occurrences. However, an extreme name-referent-one-to-one-correspondence theorist might argue that (11) reveals that 'was broadcast on television only once' is an opaque context, and that the latter 'F.D.R.' is an accidental occurrence. This position could be made slightly more plausible by arguing that (11) is an incorrect sentence and that the latter 'F.D.R.' should be corrected to 'the television programme named "F.D.R."'.
+A natural analysis of (11) is that the former 'F.D.R.' refers to the politician while the latter 'F.D.R.' refers to the television programme. In this case, both instances of 'F.D.R.' are vulgar occurrences. However, an extreme name-referent-one-to-one-correspondence theorist might argue that (11) reveals that 'was broadcast on television only once' is an opaque context, and that the latter 'F.D.R.' is an accidental occurrence. This position could be made slightly more plausible by arguing that (11) is an incorrect sentence and that the latter 'F.D.R.' should be corrected to 'the television programme named "F.D.R."'.
 
 What this case shows is that what someone understands as an opaque context, someone else can understand as the occurrence of ambiguity. Frege argues that referring expressions usually refer to their ordinary referents, but can also refer to intermediate objects such as senses, and that such ambiguity is what led philosophers into the problem of intermediate occurrences. Frege calls the former **direct reference** and the latter **indirect reference**.
 
-|                                | Quine         | Frege            |
-| ------------------------------ | ------------- | ---------------- |
-| Two is greater than one        | Referential context | Direct reference |
-| Necessarily, two is greater than one | Opaque context | Indirect reference |
+|                                      | Quine               | Frege              |
+| ------------------------------------ | ------------------- | ------------------ |
+| Two is greater than one              | Referential context | Direct reference   |
+| Necessarily, two is greater than one | Opaque context      | Indirect reference |
 
 How then can we determine what the referent of an expression is in intermediate occurrences? The author states that the **principle of compositionality** is key. If the referents of the individual elements that make up a sentence are unclear, we can first identify the referent of the entire sentence and then trace back the referents of the individual elements by understanding how the referent of the sentence can be analysed.
 
@@ -140,13 +140,13 @@ If the domain of Gothic letters is meanings, then Fregeanism can express the fol
 <div>$\exists \mathsf{a, b} \big($ <sup>M</sup>$\mathsf{a}$ kicked $\mathsf{b}$<sup>M</sup> $=$  <sup>M</sup>$\mathsf{b}$ was kicked by $\mathsf{a}$<sup>M</sup> $\big)$ </div>
 </div>
 
-> _Remark._ Single quotation marks denote expressions, whilst $\ulcorner$...$\urcorner$ signifies the composition of expressions. Similarly, <sup>m</sup>...<sup>m</sup> denotes meanings, whilst <sup>M</sup>...<sup>M</sup> signifies the composition of meanings. Of course, the composition of expressions is also an expression, and the composition of meanings is also a meaning, so equations 1 and 2 hold. It is helpful to recall that the author explained equations 1 and 2 by analogy with equation 3.
+> _Remark._ Single quotation marks denote expressions, while $\ulcorner$...$\urcorner$ signifies the composition of expressions. Similarly, <sup>m</sup>...<sup>m</sup> denotes meanings, while <sup>M</sup>...<sup>M</sup> signifies the composition of meanings. Of course, the composition of expressions is also an expression, and the composition of meanings is also a meaning, so equations 1 and 2 hold. It is helpful to recall that the author explained equations 1 and 2 by analogy with equation 3.
 >
 > 1. 'The cat is on the mat' $=$ $\ulcorner$The cat is on the mat$\urcorner$
 > 2. <sup>m</sup>The cat is on the mat<sup>m</sup> $=$ <sup>M</sup>The cat is on the mat<sup>M</sup>
 > 3. $237 = 2 \times 10^2  + 3 \times 10 + 7$
 >
-> However, single quotation marks and $\ulcorner$...$\urcorner$ are not completely identical, nor are <sup>m</sup>...<sup>m</sup> and <sup>M</sup>...<sup>M</sup> completely identical. In each case, the former is opaque whilst the latter is transparent. Therefore, 1 is impossible but 2 is possible. This is analogous to how 3 is nonsensical but 4 is correct.
+> However, single quotation marks and $\ulcorner$...$\urcorner$ are not completely identical, nor are <sup>m</sup>...<sup>m</sup> and <sup>M</sup>...<sup>M</sup> completely identical. In each case, the former is opaque while the latter is transparent. Therefore, 1 is impossible but 2 is possible. This is analogous to how 3 is nonsensical but 4 is correct.
 >
 > 1. $\exists \alpha\; \big($ '$\alpha$ is on the mat' is true$\big)$
 > 2. $\exists \alpha\; \big(\ulcorner \alpha$ is on the mat$\urcorner$ is true$\big)$
@@ -197,7 +197,7 @@ Fregeanism formalises (15) and (16) as follows:
 
 Due to the aforementioned Remark, we can use the same predicates $\mathbf{N}, \mathbf{B}$.
 
-However, (19) and (20) alone are insufficient. Although 'two' in (19) and (20) is referential, it refers to a different object from 'two' in (7) and (8). The former refers to an expression, whilst the latter refers to a number. Therefore, logical inferences that were possible from (7) and (8), or (17) and (18), cannot be obtained from (19) and (20) alone. For example, when (17) and the following are given:
+However, (19) and (20) alone are insufficient. Although 'two' in (19) and (20) is referential, it refers to a different object from 'two' in (7) and (8). The former refers to an expression, while the latter refers to a number. Therefore, logical inferences that were possible from (7) and (8), or (17) and (18), cannot be obtained from (19) and (20) alone. For example, when (17) and the following are given:
 
 <div style="display: grid; grid-template-columns: 2.5em auto; margin-bottom: 1.5em; margin-left: 1em; line-height: 1.5;">
 <div>(21)</div>
@@ -319,4 +319,3 @@ By $\exists$-addition:
 </div>
 
 And (41) has the same content as (10). Therefore, a contradiction arises where (9) and (10) imply each other. The author of the paper relates that this problem was so intractable that he once leaned towards the position that quantifying in modal and belief contexts is impossible, but that a way to tackle this occurred to him. This will be introduced in the next article.
-

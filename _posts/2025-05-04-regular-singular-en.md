@@ -13,7 +13,7 @@ In this article, $\kappa$ denotes an infinite cardinal. Moreover, we adopt the a
 
 > **Definition.** Let $\theta$ be a limit ordinal less than $\kappa$. For each $\nu$, consider an increasing sequence of ordinals $\langle \alpha\_\nu : \nu < \theta \rangle$ where $\alpha\_\nu < \kappa$. If we always have $\lim\_{\nu \to \theta} \alpha\_\nu < \kappa$, then $\kappa$ is called a **regular cardinal**. A cardinal that is not regular is called a **singular cardinal**.
 
-*Remark.* $\alpha\_\nu$ and $\theta$ are generally ordinals, not necessarily cardinals.
+_Remark._ $\alpha\_\nu$ and $\theta$ are generally ordinals, not necessarily cardinals.
 
 For example, $\aleph\_0$ is a regular cardinal. This is because the supremum of fewer than $\aleph\_0$ many—that is, finitely many—cardinals less than $\aleph\_0$—that is, natural numbers—does not reach $\aleph\_0$.
 
@@ -27,9 +27,9 @@ $$
 >
 > $$\sum_{i \in I} \kappa_i = \kappa$$
 
-*Remark.* $\kappa\_i$ denotes cardinals, not general ordinals. Moreover, $\sum$ denotes cardinal addition, not ordinal addition.
+_Remark._ $\kappa\_i$ denotes cardinals, not general ordinals. Moreover, $\sum$ denotes cardinal addition, not ordinal addition.
 
-**Proof.** 
+**Proof.**
 
 ($\Rightarrow$) If $\kappa$ is a singular cardinal, then there exists a sequence of ordinals $\langle \alpha\_\nu : \nu < \theta\rangle$ such that
 
@@ -43,7 +43,7 @@ $$
 \kappa = \bigcup_{\nu < \theta}\alpha_\nu = \bigcup_{\nu < \theta}\left( \alpha_\nu - \bigcup_{\xi < \nu} \alpha_\xi \right)
 $$
 
-Let $A\_\nu = \alpha\_\nu - \bigcup\_{\xi < \nu} \alpha\_\xi$. Whilst $A\_\nu$ is no longer an ordinal, this is not important. What matters is that $\lbrace  A\_\nu \rbrace $ are pairwise disjoint. Therefore, letting $\kappa\_\nu = \|A\_\nu\|$, by the definition of cardinal addition, we have
+Let $A\_\nu = \alpha\_\nu - \bigcup\_{\xi < \nu} \alpha\_\xi$. while $A\_\nu$ is no longer an ordinal, this is not important. What matters is that $\lbrace  A\_\nu \rbrace $ are pairwise disjoint. Therefore, letting $\kappa\_\nu = \|A\_\nu\|$, by the definition of cardinal addition, we have
 
 $$
 \sum_{\nu < \theta} \kappa_\nu = \left| \bigcup_{\nu < \theta} A_\nu \right| = \kappa

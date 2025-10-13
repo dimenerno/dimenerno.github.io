@@ -5,16 +5,16 @@ date: 2025-01-18
 lang: en
 tags: [Philosophy, Philosophy of Language]
 related:
-    - "On Reference — Descriptivism and Causal Theory"
-    - "On Reference — Cluster Model and Intentionalism"
-    - "On Reference — Definite Descriptions"
+  - "On Reference — Descriptivism and Causal Theory"
+  - "On Reference — Cluster Model and Intentionalism"
+  - "On Reference — Definite Descriptions"
 ---
 
 > This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 ## 4. Definite Descriptions
 
-Unlike names, the primary question raised concerning definite descriptions is whether definite descriptions actually refer. Frege held that definite descriptions, like names, possess both sense (the content of the definite description) and reference (the object that uniquely satisfies that content), whilst Russell maintained that definite descriptions do not have referents.
+Unlike names, the primary question raised concerning definite descriptions is whether definite descriptions actually refer. Frege held that definite descriptions, like names, possess both sense (the content of the definite description) and reference (the object that uniquely satisfies that content), while Russell maintained that definite descriptions do not have referents.
 
 ### 4.1. Russell's Theory of Descriptions
 
@@ -32,9 +32,9 @@ According to this view, "the present King of Britain" does not refer to Charles 
 
 The strength of Russell's theory of descriptions lies in its ability to explain how definite descriptions lacking referents can be used meaningfully in sentences such as "The present King of France is bald" (according to Frege this sentence would be meaningless, but according to Russell this sentence is simply false), and to resolve Frege's puzzle.
 
-Furthermore, Russell claims that all names except 'this' and 'I' are disguised definite descriptions. Whilst this claim has the advantage of making the semantics of language elegantly simple, it fails to adequately explain Kripke's modal and semantic arguments. Therefore, this essay shall examine only Russell's claim that "definite descriptions do not refer".
+Furthermore, Russell claims that all names except 'this' and 'I' are disguised definite descriptions. while this claim has the advantage of making the semantics of language elegantly simple, it fails to adequately explain Kripke's modal and semantic arguments. Therefore, this essay shall examine only Russell's claim that "definite descriptions do not refer".
 
-*Remark.* However, there remains doubt as to whether Russell's theory of descriptions truly resolves Frege's puzzle. If we adopt an **extensional definition** for predicates, then 'the morning star' and 'the evening star' become **exactly** the same (second-order) predicate. The arguments of Quine and others regarding intensionalism and extensionalism are also worth considering.
+_Remark._ However, there remains doubt as to whether Russell's theory of descriptions truly resolves Frege's puzzle. If we adopt an **extensional definition** for predicates, then 'the morning star' and 'the evening star' become **exactly** the same (second-order) predicate. The arguments of Quine and others regarding intensionalism and extensionalism are also worth considering.
 
 #### Strawson's Theory
 
@@ -64,7 +64,7 @@ Kripke appears to hold that reference must be achieved purely through convention
 
 #### Definite Descriptions v. Indefinite Descriptions
 
-Recently, the very distinction between definite descriptions (the *F*) and indefinite descriptions (a *F*) has come under question. Not only has precisely defining the difference between them proved to be extremely challenging, but numerous languages have been reported that do not grammatically distinguish between the two. If the distinction between definite and indefinite descriptions proves to be unfounded, this could strengthen Russellian views that definite descriptions do not refer. (Alternatively, one would have to advance the highly controversial claim that indefinite descriptions also refer.)
+Recently, the very distinction between definite descriptions (the _F_) and indefinite descriptions (a _F_) has come under question. Not only has precisely defining the difference between them proved to be extremely challenging, but numerous languages have been reported that do not grammatically distinguish between the two. If the distinction between definite and indefinite descriptions proves to be unfounded, this could strengthen Russellian views that definite descriptions do not refer. (Alternatively, one would have to advance the highly controversial claim that indefinite descriptions also refer.)
 
 ## 5. Referential Scepticism
 
@@ -76,7 +76,7 @@ Quine argues through the **indeterminacy of translation thesis** that referentia
 
 #### The Problem of the Many
 
-**The problem of the many** concerns how to define the *boundaries* of the object that a referential expression refers to. For example, I can refer to the present Gyeongbokgung Palace with 'Gyeongbokgung'. Now imagine that one day an incident occurs in which the roof tiles of Gyeongbokgung are burnt away. Even after the fire incident, it seems I can still refer to Gyeongbokgung (now without roof tiles) with 'Gyeongbokgung'. Can we then say that 'Gyeongbokgung' before and after the fire incident has the same referent? How much of Gyeongbokgung must be burnt away before it can no longer be the referent of 'Gyeongbokgung'? This problem raises doubts about the general schema that referential expressions have referents.
+**The problem of the many** concerns how to define the _boundaries_ of the object that a referential expression refers to. For example, I can refer to the present Gyeongbokgung Palace with 'Gyeongbokgung'. Now imagine that one day an incident occurs in which the roof tiles of Gyeongbokgung are burnt away. Even after the fire incident, it seems I can still refer to Gyeongbokgung (now without roof tiles) with 'Gyeongbokgung'. Can we then say that 'Gyeongbokgung' before and after the fire incident has the same referent? How much of Gyeongbokgung must be burnt away before it can no longer be the referent of 'Gyeongbokgung'? This problem raises doubts about the general schema that referential expressions have referents.
 
 #### Davidson's Theory of Truth
 

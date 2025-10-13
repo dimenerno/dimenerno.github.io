@@ -222,4 +222,4 @@ $$
 
 so $\mu$ and $\nu$ agree on the entire space. ■
 
-In the next article, we shall construct Lebesgue measure using Carathéodory's theorem, and then show that whilst every Borel measurable set is Lebesgue measurable, the converse does not hold.
+In the next article, we shall construct Lebesgue measure using Carathéodory's theorem, and then show that while every Borel measurable set is Lebesgue measurable, the converse does not hold.

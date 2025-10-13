@@ -464,7 +464,7 @@
   <li>$S$ has neither an upper bound nor a lower bound.</li>
 </ol>
 
-<p>$(\mathbb{Q}, \leq)$ satisfies all three conditions above, whilst $(\mathbb{R}, \leq)$ satisfies conditions 2 and 3. Therefore, if $\mathbb{R}$ were countable, then $(\mathbb{R}, \leq)$ would be order isomorphic to $(\mathbb{Q}, \leq)$. However, the former is complete while the latter is not, so $\mathbb{R}$ is uncountable. ■</p>
+<p>$(\mathbb{Q}, \leq)$ satisfies all three conditions above, while $(\mathbb{R}, \leq)$ satisfies conditions 2 and 3. Therefore, if $\mathbb{R}$ were countable, then $(\mathbb{R}, \leq)$ would be order isomorphic to $(\mathbb{Q}, \leq)$. However, the former is complete while the latter is not, so $\mathbb{R}$ is uncountable. ■</p>
 
 <h3 id="2-proof-using-compactness">2. Proof Using Compactness</h3>
 
@@ -778,13 +778,13 @@
 
 <h3 id="1-adjoints-as-approximations">1. Adjoints as Approximations</h3>
 
-<p>When $F \dashv G$, the functors $F$ and $G$ can be thought of as approximating objects in $\mathcal{A}$ and $\mathcal{B}$ with respect to each other. In particular, the left adjoint represents approximation ‘from left to right’, whilst the right adjoint represents approximation ‘from right to left’.</p>
+<p>When $F \dashv G$, the functors $F$ and $G$ can be thought of as approximating objects in $\mathcal{A}$ and $\mathcal{B}$ with respect to each other. In particular, the left adjoint represents approximation ‘from left to right’, while the right adjoint represents approximation ‘from right to left’.</p>
 
 <p>For example, let $\mathbf{Z}$ be a category whose objects are integers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. Similarly, let $\mathbf{R}$ be a category whose objects are real numbers, with a unique morphism $x \to y$ existing if and only if $x \leq y$. We may think of $\lceil \cdot \rceil, \lfloor \cdot \rfloor$ as functors $\mathbf{R} → \mathbf{Z}$, and the inclusion map $\iota$ as a functor $\mathbf{Z} → \mathbf{R}$. It then follows that $\lceil \cdot \rceil \dashv \iota \dashv \lfloor \cdot \rfloor$.</p>
 
 <p><img src="/public/adjoint-int-2.png" style="width: 100%; max-width: 180px; margin: 0 auto;" /></p>
 
-<p>That is, $\lceil \cdot \rceil$ is a transformation that ‘lifts [a number] from left to right’ by mapping $r$ to $\lceil r \rceil$ with $r \leq \lceil r \rceil$, whilst $\lfloor \cdot \rfloor$ is a transformation that ‘pulls [a number] from right to left’ by mapping $r$ to $\lfloor r \rfloor$ with $\lfloor r \rfloor \leq r$.</p>
+<p>That is, $\lceil \cdot \rceil$ is a transformation that ‘lifts [a number] from left to right’ by mapping $r$ to $\lceil r \rceil$ with $r \leq \lceil r \rceil$, while $\lfloor \cdot \rfloor$ is a transformation that ‘pulls [a number] from right to left’ by mapping $r$ to $\lfloor r \rfloor$ with $\lfloor r \rfloor \leq r$.</p>
 
 <p>Furthermore, let $I$ and $T$ be the initial object and terminal object of $\mathcal{A}$ respectively. That is, for any $A \in \mathcal{A}$:</p>
 
@@ -795,11 +795,11 @@
 
 <p>For instance, in $\mathbf{Set}$, the empty set is the initial object and any singleton set is a terminal object.</p>
 
-<p>For the singleton category $\mathcal{S}$, there exists a unique functor $F: \mathcal{A} \to \mathcal{S}$ that maps every object of $\mathcal{A}$ to the single object of $\mathcal{S}$. Let $G_I, G_T: \mathcal{S} \to \mathcal{A}$ be functors that maps the single object of $\mathcal{S}$ to $I$ and $T$, respectively. It then follows that $G_T \dashv F \dashv G_I$. (Since the terminal object is the ‘rightmost’ object, $G_T$ represents approximation ‘from left to right’, whilst since the initial object is the ‘leftmost’ object, $G_I$ represents approximation ‘from right to left’.)</p>
+<p>For the singleton category $\mathcal{S}$, there exists a unique functor $F: \mathcal{A} \to \mathcal{S}$ that maps every object of $\mathcal{A}$ to the single object of $\mathcal{S}$. Let $G_I, G_T: \mathcal{S} \to \mathcal{A}$ be functors that maps the single object of $\mathcal{S}$ to $I$ and $T$, respectively. It then follows that $G_T \dashv F \dashv G_I$. (Since the terminal object is the ‘rightmost’ object, $G_T$ represents approximation ‘from left to right’, while since the initial object is the ‘leftmost’ object, $G_I$ represents approximation ‘from right to left’.)</p>
 
 <h3 id="2-adjoints-as-construction-and-destruction">2. Adjoints as Construction and Destruction</h3>
 
-<p>Left adjoints are associated with construction, whilst right adjoints are associated with destruction. Therefore, free functors are generally left adjoints, whilst forgetful functors are right adjoints.</p>
+<p>Left adjoints are associated with construction, while right adjoints are associated with destruction. Therefore, free functors are generally left adjoints, while forgetful functors are right adjoints.</p>
 
 <p>For instance, let $\mathbf{Grp}$ be the category of groups and $\mathbf{Mon}$ be the category of monoids. Let $F$ be the free functor and $U$ be the forgetful functor. Define $R: \mathbf{Mon} → \mathbf{Grp}$ as follows:</p>
 
@@ -1209,7 +1209,7 @@
 
 <p>Assume $x \notin V$. By the axiom of separation, $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$ is a set, and by the axiom of foundation, there exists an $\in$-minimal element $z$ of $y$. If there exists $w \in z$ such that $w \notin V$, then by transitivity $w \in y$, contradicting the $\in$-minimality of $z$. Therefore, all elements of $z$ are in $V$, and by the axiom of replacement, $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$ is a set. Let $\beta = \bigcup_{\alpha \in \Omega}\alpha$. Then $\beta$ is an ordinal, and $z \in V_{\beta + 1}$. (This is where the definition of von Neumann universe $V_{\beta + 1} = \mathcal{P}(V_\beta)$ is invoked.) This yields a contradiction. ■</p>
 
-<p>Consequently, $V$ is not a set. Therefore, whilst $V$ is a model of ZFC in the sense that it contains all sets, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">many mathematicians require models to be sets</a>, so it is not a model in the strict sense. (This explains why our proof that $V$ is a ‘model’ of ZFC does not contradict Gödel’s incompleteness theorems; within ZFC, $V$ is not recognised as a valid set-theoretic object.) However, for convenience, in this article, we shall refer to $V$ as a model of set theory. Moreover, we shall understand $x \in V$ as a formal expression for “$x$ is a set”.</p>
+<p>Consequently, $V$ is not a set. Therefore, while $V$ is a model of ZFC in the sense that it contains all sets, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">many mathematicians require models to be sets</a>, so it is not a model in the strict sense. (This explains why our proof that $V$ is a ‘model’ of ZFC does not contradict Gödel’s incompleteness theorems; within ZFC, $V$ is not recognised as a valid set-theoretic object.) However, for convenience, in this article, we shall refer to $V$ as a model of set theory. Moreover, we shall understand $x \in V$ as a formal expression for “$x$ is a set”.</p>
 
 <h3 id="12-gödel-constructible-universe">1.2. Gödel Constructible Universe</h3>
 

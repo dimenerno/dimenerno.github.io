@@ -26,7 +26,7 @@ The following are well-known results in logic:
 
 Combining these three theses with the fact that we humans appear to be capable of grasping mathematical truths not captured by formal systems—such as the consistency of arithmetic—the incompleteness theorem appears to suggest that the extension of mathematical results derivable by an ideal human mind exceeds the extension of results derivable by an ideal finite machine. That is, the incompleteness theorem appears to suggest anti-mechanism: that the mind cannot be reduced to a machine.
 
-In this article, we examine how far this suggestion can be justified. As a result, we shall show that whilst the incompleteness theorem suggests anti-mechanism _or_ Platonism, it does not directly suggest anti-mechanism.
+In this article, we examine how far this suggestion can be justified. As a result, we shall show that while the incompleteness theorem suggests anti-mechanism _or_ Platonism, it does not directly suggest anti-mechanism.
 
 ## 1. Gödel's Disjunction
 
@@ -36,7 +36,7 @@ Gödel argued that from the incompleteness theorem, it follows that _at least on
 
 2. **Platonism:** There exist mathematical truths that cannot be grasped by an ideal human mind. Therefore, mathematical truth exists independently of the human mind.
 
-It is noteworthy that both positions are contrary to materialist philosophy. Whilst Gödel was generally reserved about philosophical arguments, he argued strongly that this particular argument was a "mathematically established fact". Our first task is to verify whether this argument is indeed a "mathematically established fact".
+It is noteworthy that both positions are contrary to materialist philosophy. while Gödel was generally reserved about philosophical arguments, he argued strongly that this particular argument was a "mathematically established fact". Our first task is to verify whether this argument is indeed a "mathematically established fact".
 
 ### 1.1. Gödel's Three Claims
 
@@ -57,7 +57,7 @@ Before proceeding to the main discussion, let us review Gödel's incompleteness 
 > - **First Theorem.** There exists a proposition that is true but unprovable in $F$.
 > - **Second Theorem.** The consistency of $F$ is an instance of the First Theorem.
 
-Incidentally, whilst the incompleteness theorem traditionally targets Peano arithmetic, the incompleteness theorem also holds for weaker arithmetic systems, including Robinson arithmetic.
+Incidentally, while the incompleteness theorem traditionally targets Peano arithmetic, the incompleteness theorem also holds for weaker arithmetic systems, including Robinson arithmetic.
 
 #### 1.1.1. First Claim
 
@@ -77,7 +77,7 @@ The proof is as follows. If $K(F \subseteq T)$, then $\mathrm{Con}(F) \in K$. Ho
 
 But if $F \subsetneq K$ is true, how should we understand this? One approach is to consider a hierarchy of formal systems.
 
-Gödel emphasises that the unprovable sentences suggested by the incompleteness theorem need not be _absolutely_ unprovable. This is because sentences unprovable in formal system $F$ may become provable in systems of higher order than $F$. For example, if $\mathsf{PA}$ is consistent, then whilst $\mathsf{PA}$ cannot prove $\mathrm{Con}(\mathsf{PA})$, it is known that second-order Peano arithmetic $\mathsf{PA}_2$ can prove $\mathrm{Con}(\mathsf{PA})$. Of course, $\mathsf{PA}_2$ cannot prove $\mathrm{Con}(\mathsf{PA}_2)$, but this is provable in third-order Peano arithmetic, and such a hierarchy continues.
+Gödel emphasises that the unprovable sentences suggested by the incompleteness theorem need not be _absolutely_ unprovable. This is because sentences unprovable in formal system $F$ may become provable in systems of higher order than $F$. For example, if $\mathsf{PA}$ is consistent, then while $\mathsf{PA}$ cannot prove $\mathrm{Con}(\mathsf{PA})$, it is known that second-order Peano arithmetic $\mathsf{PA}_2$ can prove $\mathrm{Con}(\mathsf{PA})$. Of course, $\mathsf{PA}_2$ cannot prove $\mathrm{Con}(\mathsf{PA}_2)$, but this is provable in third-order Peano arithmetic, and such a hierarchy continues.
 
 This entire hierarchy appears to be subsumed under $K$. From this perspective, each formal system is like a set, and $K$ is like the collection of all sets. And just as the collection of all sets cannot be a set, an analogy holds that $K$ cannot be a formal system.
 
@@ -97,7 +97,7 @@ Instead, Gödel's third claim is as follows. This claim is Gödel's disjunction.
 
 The proof is as follows. Suppose there is a formal system $F^*$ such that $F^* = K$. Since we have assumed $K \subset T$, we have $F^* \subset T$, and by Claim 1, $F^* \subsetneq T$.
 
-The former signifies anti-mechanism, whilst the latter signifies Platonism.
+The former signifies anti-mechanism, while the latter signifies Platonism.
 
 ### 1.2. Formalisation of Gödel's Disjunction
 
@@ -121,7 +121,7 @@ For example, $F_{123}$ might be Robinson arithmetic, $F_{456}$ might be ZFC, and
 
 #### 1.2.2. $T$
 
-The most promising formal definition of $T$ is **Tarski's typed truth definition**. Whilst Tarski's typed truth definition is a syntactic rather than semantic definition, it is suitable for the purposes of the present discussion. Tarski's definition consists of axioms including the following:
+The most promising formal definition of $T$ is **Tarski's typed truth definition**. while Tarski's typed truth definition is a syntactic rather than semantic definition, it is suitable for the purposes of the present discussion. Tarski's definition consists of axioms including the following:
 
 - $\forall x : \mathrm{Sent}(x) \rightarrow (T(\hat{\lnot} x) \leftrightarrow \lnot T(x))$
 
@@ -263,4 +263,3 @@ Remarkably, Gödel appears to have understood all of this discussion from the be
 ## 3. Conclusion
 
 The discussion thus far should be sufficient to prevent further attempts to directly derive anti-mechanism from Gödel's disjunction. However, there is another approach to arguing for anti-mechanism from logical results. This argument, commonly called **Penrose's new argument**, is an argument that puts forward type-free truth, as distinguished from Tarski's typed truth. The formalisation of this argument and its implications will be addressed in Part 2 of this paper.
-

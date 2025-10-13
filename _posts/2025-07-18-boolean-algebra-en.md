@@ -7,8 +7,6 @@ related:
 lang: en
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
-
 ## Boolean Algebra
 
 Boolean algebra is an algebra consisting of logical operations such as $\lor, \land, \lnot$ defined over $0$ representing false and $1$ representing true.
@@ -20,7 +18,7 @@ Boolean algebra is an algebra consisting of logical operations such as $\lor, \l
 | $1$ | $0$ | $1$        | $0$         | $0$       |
 | $1$ | $1$ | $1$        | $1$         | $0$       |
 
-When we regard $0$ and $1$ not as formal symbols representing false and true, but as actual numbers capable of magnitude comparison, we can verify that $\lor$ corresponds to $\max$, $\land$ to $\min$, and $\lnot$ to the complement operation $\bar{(\cdot)}: 0 \mapsto 1, 1 \mapsto 0$.
+When we regard $0$ and $1$ not as formal symbols representing false and true, but as integers, we can check that $\lor$ corresponds to $\max$, $\land$ to $\min$, and $\lnot$ to the complement operation $\bar{(\cdot)}: 0 \mapsto 1, 1 \mapsto 0$.
 
 | $a$ | $b$ | $\max (a, b)$ | $\min (a, b)$ | $\bar{a}$ |
 | --- | --- | ------------- | ------------- | --------- |
@@ -29,7 +27,7 @@ When we regard $0$ and $1$ not as formal symbols representing false and true, bu
 | $1$ | $0$ | $1$           | $0$           | $0$       |
 | $1$ | $1$ | $1$           | $1$           | $0$       |
 
-Building on this insight, we can naturally extend the domain of Boolean algebra from $\lbrace 0, 1 \rbrace$ to $[0, 1]$. For instance, $0.2 \lor 0.7 = 0.7$ and $0.3 \land \lnot(0.9) = 0.1$. Developing this idea further, we can define operations structurally similar to Boolean algebra on sets with appropriate order relations, and conversely, sets with operations structurally similar to Boolean algebra can be given appropriate order relations. This is the genesis of Boolean algebraic structures.
+Building on this insight, we can naturally extend the domain of Boolean algebra from $\lbrace 0, 1 \rbrace$ to $[0, 1]$. For instance, $0.2 \lor 0.7 = 0.7$ and $0.3 \land \lnot(0.9) = 0.1$. Developing this idea further, we can define operations structurally similar to Boolean algebra on sets with appropriate order relations, and conversely, sets with operations structurally similar to Boolean algebra can be given appropriate order relations. This is the idea of Boolean algebraic structures.
 
 <blockquote>
 <p><b>Definition.</b> When binary operations $\lor, \land$ and unary operation $\lnot$ defined on a set $A$ with two elements $0$ and $1$ satisfy the following axioms, we call $(A, 0, 1, \lor, \land, \lnot)$ a <b>Boolean algebraic structure</b>.</p>
@@ -76,7 +74,7 @@ Building on this insight, we can naturally extend the domain of Boolean algebra 
 
 - The absorption law can be proved from the other five axioms.
 
-- The term "complement" is used because, whilst ordinarily multiplying $x$ by its multiplicative inverse $x^{-1}$ should yield the multiplicative identity $1$, and adding the additive inverse $-x$ should yield the additive identity $0$, in Boolean algebraic structures the result of $x \lor \lnot x$ is not the identity $0$ for $\lor$ but rather the identity $1$ for $\land$, and the result of $x \land \lnot x$ is not the identity $1$ for $\land$ but rather the identity $0$ for $\lor$. This terminology was introduced to reduce potential confusion.
+- The term "complement" is used instead of "inverse", because while multiplying $x$ by its multiplicative inverse $x^{-1}$ should yield the multiplicative identity $1$, and adding the additive inverse $-x$ should yield the additive identity $0$, in Boolean algebraic structures the result of $x \lor \lnot x$ is not the disjunctive identity $0$ but rather the conjuctive identity $1$, and the result of $x \land \lnot x$ is not $1$ but rather $0$.
 
 Verify that the two examples in the introduction are Boolean algebraic structures. As another example, consider the power set $\mathcal{P}(X)$ of the set $X = \lbrace  p, q, r \rbrace $. Verify that $\mathcal{P}(X)$ becomes a Boolean algebraic structure when we define:
 
@@ -131,7 +129,7 @@ Boolean algebraic structures and Boolean rings are in one-to-one correspondence.
 > x + y = (x \lor y) \land \lnot (x \land y)
 > $$
 
-The proof can be done by computing according to the axioms, so it is omitted.
+The proof is routine and is omitted. (Use the fact that in a boolean ring, $x + x = 0$.)
 
 ## Ideals
 
@@ -139,7 +137,7 @@ Recall the following definition from algebra:
 
 > **Definition.** For a ring $R$, a non-empty subset $I \subseteq R$ is an **ideal** if $I$ forms a group under addition and for any $a \in R$ and $x \in I$, we have $ax \in I$. That is, $aI \subseteq I$.
 
-Building on the similarity revealed in the correspondence between Boolean algebraic structures and Boolean rings, let us define:
+Building on the correspondence between Boolean algebraic structures and Boolean rings, let us define:
 
 > **Definition.** For a Boolean algebraic structure $A$, a non-empty subset $I \subseteq A$ is an **ideal** if $I$ is closed under $\lor$ and for any $a \in A$ and $x \in I$, we have $a \land x \in I$. That is, $a \land I \subseteq I$.
 
@@ -151,7 +149,7 @@ When we correspond a Boolean algebraic structure to a Boolean ring, $I$ being an
 
 > **Theorem.** For a Boolean algebraic structure $A$, $I \subseteq A$ is a (Boolean) ideal if and only if $I$ is a (ring) ideal in the corresponding Boolean ring $A$.
 
-Therefore, we can also define prime ideals and maximal ideals in Boolean algebraic structures.
+We can also define prime ideals and maximal ideals in Boolean algebraic structures.
 
 > **Definition.** Let $I$ be an ideal of the Boolean algebraic structure $A$. $I$ is a **prime ideal** if for any $a, b \in A$, if $a \land b \in I$, then $a \in I$ or $b \in I$. $I$ is a **maximal ideal** if whenever $J$ is an ideal that strictly contains $I$, we have $J = A$.
 
@@ -174,8 +172,6 @@ From the above facts, with a little reasoning, we can deduce the following:
 > - $I$ is a prime ideal.
 > - $I$ is a maximal ideal.
 > - For any $x \in A$, either $x \in I$ or $\lnot x \in I$.
-
-In this respect, Boolean algebraic structures are similar to principal ideal domains in ring theory.
 
 ## Filters
 
@@ -220,9 +216,9 @@ However, when an ultrafilter or prime ideal of a Boolean algebraic structure $A$
 
 Note that they are exactly complements of each other. Generally, the following holds:
 
-> **Theorem.** For a subset $I$ of a Boolean algebraic structure $A$, $I$ is a prime (maximal) ideal if and only if $A \setminus I$ is an ultra (prime, maximal) filter.
+> **Theorem.** For a subset $I$ of a Boolean algebraic structure $A$, $I$ is a prime (maximal) ideal if and only if $A \setminus I$ is an ultra-(prime, maximal) filter.
 
-Building on this, let us correspond elements of $A$ that belong to the prime ideal $I$ to $0$, and those that do not belong to $1$. Alternatively, let us correspond elements of $A$ that belong to the ultrafilter $F$ to $1$, and those that do not belong to $0$. Using the example just given:
+Building on this, let us map elements of $A$ that belong to the prime ideal $I$ to $0$, and those that do not belong to $1$. Or to put in other words, let us map elements of $A$ that belong to the ultrafilter $F$ to $1$, and those that do not belong to $0$. Using the example just given:
 
 | Element                   | Value |
 | ------------------------- | ----- |
@@ -235,7 +231,7 @@ Building on this, let us correspond elements of $A$ that belong to the prime ide
 | $\lbrace q, r\rbrace $    | $0$   |
 | $\lbrace p, q, r\rbrace $ | $1$   |
 
-This correspondence forms a model of propositional logic. In particular, setting $P = \lbrace  p \rbrace , Q = \lbrace  q \rbrace , R = \lbrace  r \rbrace $ and rewriting the table according to the correspondence $\cup \leftrightarrow \lor, \cap \leftrightarrow \land$:
+The result is a model of propositional logic. In particular, setting $P = \lbrace  p \rbrace , Q = \lbrace  q \rbrace , R = \lbrace  r \rbrace $ and rewriting the table according to the correspondence $\cup \leftrightarrow \lor, \cap \leftrightarrow \land$ gives:
 
 | Element           | Value |
 | ----------------- | ----- |
@@ -248,5 +244,4 @@ This correspondence forms a model of propositional logic. In particular, setting
 | $Q \lor R$        | $0$   |
 | $P \lor Q \lor R$ | $1$   |
 
-This is a model of propositional logic where $P$ is true and $Q, R$ are false. In this way, generally when a Boolean algebraic structure is given a prime ideal or ultrafilter, we can construct a logical model based on that information. This is a stepping stone towards the **Stone representation theorem**, which we shall examine later.
-
+This is a model of propositional logic where $P$ is true and $Q, R$ are false. In this way, generally when a Boolean algebraic structure is given a prime ideal or ultrafilter, we can construct a logical model based on that information. This is a stepping stone towards the **Stone representation theorem**.

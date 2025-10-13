@@ -3,18 +3,18 @@
   <channel>
     <title>디멘의 블로그</title>
     <description>이데아를 여행하는 히치하이커</description>
-    <link>https://dimenerno.github.io</link>
-    <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>닫힌집합과 보렐 집합에서의 연속체 가설</title>
-        <link>https://dimenerno.github.io/2025/09/25/ch-for-borel</link>
-        <guid>https://dimenerno.github.io/2025/09/25/ch-for-borel</guid>
+        <link>http://localhost:4000/2025/09/25/ch-for-borel</link>
+        <guid>http://localhost:4000/2025/09/25/ch-for-borel</guid>
         <pubDate>Thu, 25 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;연속체 가설은 $\aleph_1 = 2^{\aleph_0}$가 성립하는지에 관한 질문이다. 이는 비가산 집합 중 실수 집합보다 크기가 작은 집합이 있는지에 관한 질문과 같다. 잘 알려져 있듯이 연속체 가설은 ZFC에서 증명과 반증이 불가능하지만, 몇몇 제한적인 경우에 대해서는 증명할 수 있다. 일찍이 칸토어는 연속체 가설을 실수의 닫힌집합으로 제한할 경우 성립함을 증명했다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/25/ch-for-borel">
+          xml:base="http://localhost:4000/2025/09/25/ch-for-borel">
           <![CDATA[
             <p>연속체 가설은 $\aleph_1 = 2^{\aleph_0}$가 성립하는지에 관한 질문이다. 이는 비가산 집합 중 실수 집합보다 크기가 작은 집합이 있는지에 관한 질문과 같다. 잘 알려져 있듯이 연속체 가설은 ZFC에서 증명과 반증이 불가능하지만, 몇몇 제한적인 경우에 대해서는 증명할 수 있다. 일찍이 칸토어는 연속체 가설을 실수의 닫힌집합으로 제한할 경우 성립함을 증명했다.</p>
 
@@ -128,13 +128,13 @@ F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
     
       <item>
         <title>The Continuum Hypothesis for Closed Sets and Borel Sets</title>
-        <link>https://dimenerno.github.io/2025/09/25/ch-for-borel/en</link>
-        <guid>https://dimenerno.github.io/2025/09/25/ch-for-borel/en</guid>
+        <link>http://localhost:4000/2025/09/25/ch-for-borel/en</link>
+        <guid>http://localhost:4000/2025/09/25/ch-for-borel/en</guid>
         <pubDate>Thu, 25 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;The continuum hypothesis (CH) asks whether $\aleph_1 = 2^{\aleph_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, CH is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved that CH holds when restricted to closed subsets of the real numbers.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/25/ch-for-borel/en">
+          xml:base="http://localhost:4000/2025/09/25/ch-for-borel/en">
           <![CDATA[
             <p>The continuum hypothesis (CH) asks whether $\aleph_1 = 2^{\aleph_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, CH is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved that CH holds when restricted to closed subsets of the real numbers.</p>
 
@@ -248,13 +248,13 @@ F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
     
       <item>
         <title>기수 연산의 기본 정리들</title>
-        <link>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics</link>
-        <guid>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics</guid>
+        <link>http://localhost:4000/2025/09/16/cardinal-arithmetics</link>
+        <guid>http://localhost:4000/2025/09/16/cardinal-arithmetics</guid>
         <pubDate>Tue, 16 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;이 글에서 모든 집합과 기수는 무한하다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/16/cardinal-arithmetics">
+          xml:base="http://localhost:4000/2025/09/16/cardinal-arithmetics">
           <![CDATA[
             <p>이 글에서 모든 집합과 기수는 무한하다.</p>
 
@@ -518,15 +518,15 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>Basic Theorems of Cardinal Arithmetic</title>
-        <link>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics/en</link>
-        <guid>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics/en</guid>
+        <link>http://localhost:4000/2025/09/16/cardinal-arithmetics/en</link>
+        <guid>http://localhost:4000/2025/09/16/cardinal-arithmetics/en</guid>
         <pubDate>Tue, 16 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/16/cardinal-arithmetics/en">
+          xml:base="http://localhost:4000/2025/09/16/cardinal-arithmetics/en">
           <![CDATA[
             <blockquote>
   <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
@@ -794,13 +794,13 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>자연수라는 신기루: 짧은 논리학 이야기</title>
-        <link>https://dimenerno.github.io/2025/09/14/alien-natural-numbers</link>
-        <guid>https://dimenerno.github.io/2025/09/14/alien-natural-numbers</guid>
+        <link>http://localhost:4000/2025/09/14/alien-natural-numbers</link>
+        <guid>http://localhost:4000/2025/09/14/alien-natural-numbers</guid>
         <pubDate>Sun, 14 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;어느 날 디멘은 외계인을 만났습니다. 외계인이 디멘에게 물었습니다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/14/alien-natural-numbers">
+          xml:base="http://localhost:4000/2025/09/14/alien-natural-numbers">
           <![CDATA[
             <p>어느 날 디멘은 외계인을 만났습니다. 외계인이 디멘에게 물었습니다.</p>
 
@@ -974,15 +974,15 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>Natural Numbers as a Mirage: A Short Story in Logic</title>
-        <link>https://dimenerno.github.io/2025/09/14/alien-natural-numbers/en</link>
-        <guid>https://dimenerno.github.io/2025/09/14/alien-natural-numbers/en</guid>
+        <link>http://localhost:4000/2025/09/14/alien-natural-numbers/en</link>
+        <guid>http://localhost:4000/2025/09/14/alien-natural-numbers/en</guid>
         <pubDate>Sun, 14 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/14/alien-natural-numbers/en">
+          xml:base="http://localhost:4000/2025/09/14/alien-natural-numbers/en">
           <![CDATA[
             <blockquote>
   <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
@@ -1160,15 +1160,15 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>자연주의적 목적론은 논리를 설명할 수 있는가?</title>
-        <link>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic</link>
-        <guid>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic</guid>
+        <link>http://localhost:4000/2025/09/13/natural-teleology-and-logic</link>
+        <guid>http://localhost:4000/2025/09/13/natural-teleology-and-logic</guid>
         <pubDate>Sat, 13 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;이 글은 제가 작성한 소논문입니다. 원문이 영문으로 작성되었고, 주제 또한 영미철학이기 때문에, 영문 버전이 글 자체는 훨씬 더 자연스럽습니다. 영문 버전은 블로그 상단의 토글을 통해 읽을 수 있습니다. (PDF 버전: &lt;a href=&quot;/public/natural_teleology_and_logic.pdf&quot;&gt;링크&lt;/a&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic">
+          xml:base="http://localhost:4000/2025/09/13/natural-teleology-and-logic">
           <![CDATA[
             <blockquote>
   <p>이 글은 제가 작성한 소논문입니다. 원문이 영문으로 작성되었고, 주제 또한 영미철학이기 때문에, 영문 버전이 글 자체는 훨씬 더 자연스럽습니다. 영문 버전은 블로그 상단의 토글을 통해 읽을 수 있습니다. (PDF 버전: <a href="/public/natural_teleology_and_logic.pdf">링크</a>)</p>
@@ -1382,15 +1382,15 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>Can Natural Teleology Ground Logic?</title>
-        <link>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/en</link>
-        <guid>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/en</guid>
+        <link>http://localhost:4000/2025/09/13/natural-teleology-and-logic/en</link>
+        <guid>http://localhost:4000/2025/09/13/natural-teleology-and-logic/en</guid>
         <pubDate>Sat, 13 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;PDF version: &lt;a href=&quot;/public/natural_teleology_and_logic.pdf&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/en">
+          xml:base="http://localhost:4000/2025/09/13/natural-teleology-and-logic/en">
           <![CDATA[
             <blockquote>
   <p>PDF version: <a href="/public/natural_teleology_and_logic.pdf">Link</a></p>
@@ -1606,13 +1606,13 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>모델 완전성에 대한 로빈슨 판별법</title>
-        <link>https://dimenerno.github.io/2025/09/11/robinson-test</link>
-        <guid>https://dimenerno.github.io/2025/09/11/robinson-test</guid>
+        <link>http://localhost:4000/2025/09/11/robinson-test</link>
+        <guid>http://localhost:4000/2025/09/11/robinson-test</guid>
         <pubDate>Thu, 11 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;이 글에서 $T$는 언어 $\mathcal{L}$의 이론이다. 또한 $x_1, \dots, x_n$을 $\vec{x}$로 쓴다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/11/robinson-test">
+          xml:base="http://localhost:4000/2025/09/11/robinson-test">
           <![CDATA[
             <p>이 글에서 $T$는 언어 $\mathcal{L}$의 이론이다. 또한 $x_1, \dots, x_n$을 $\vec{x}$로 쓴다.</p>
 
@@ -1704,15 +1704,15 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>Robinson's Test for Model Completeness</title>
-        <link>https://dimenerno.github.io/2025/09/11/robinson-test/en</link>
-        <guid>https://dimenerno.github.io/2025/09/11/robinson-test/en</guid>
+        <link>http://localhost:4000/2025/09/11/robinson-test/en</link>
+        <guid>http://localhost:4000/2025/09/11/robinson-test/en</guid>
         <pubDate>Thu, 11 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/11/robinson-test/en">
+          xml:base="http://localhost:4000/2025/09/11/robinson-test/en">
           <![CDATA[
             <blockquote>
   <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>

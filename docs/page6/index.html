@@ -694,14 +694,13 @@
 
 <p>In fact, 4 is never used as a definition, but I’ve listed it for reference purpose. In modern set theory, either 2 or 3 is adopted as the definition of cardinality. In both cases, one can prove that Theorem 1 holds in ZFC.</p>
 
-<p>What is interesting is that whilst the axiom of choice is not required to define cardinality using Scott’s trick, the axiom of choice is needed to prove that cardinality defined by Scott’s trick satisfies Theorem 1. This is because the following is equivalent to the axiom of choice:</p>
+<p>What is interesting is that while the axiom of choice is not required to define cardinality using Scott’s trick, the axiom of choice is needed to prove that cardinality defined by Scott’s trick satisfies Theorem 1. This is because the following is equivalent to the axiom of choice:</p>
 
 <blockquote>
   <p><strong>Theorem 2.</strong> For any sets $X, Y$, either $|X| \leq |Y|$ or $|Y| \leq |X|$.</p>
 </blockquote>
 
 <p>That is, even without using the axiom of choice, we can a) define $\mathrm{Card}(X)$ through Scott’s trick, or b) define $|X| \leq |Y|$ through the existence of injective mappings, but the axiom of choice is required to prove that a) and b) mesh together.</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>
@@ -887,7 +886,7 @@ $$
 <p>A more challenging problem follows:</p>
 
 <blockquote>
-  <p>One hundred prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, whilst those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What is the maximum number of prisoners whose survival can be guaranteed with certainty?</p>
+  <p>One hundred prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, while those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What is the maximum number of prisoners whose survival can be guaranteed with certainty?</p>
 
   <p><img src="/public/hat-2.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
 </blockquote>
@@ -914,7 +913,7 @@ $$
 <p>Let us now make the problem more formidable:</p>
 
 <blockquote>
-  <p><strong>Infinitely many prisoners stand in a line.</strong> A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, whilst those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What strategy minimises the number of prisoners who die? <strong>We assume that all prisoners possess infinite computational power and are mathematically omniscient.</strong> That is, when $f$ is a mathematically well-defined function, prisoners can always compute the value of $f$, and when discussing strategy beforehand, they may agree to employ $f$.</p>
+  <p><strong>Infinitely many prisoners stand in a line.</strong> A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, while those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What strategy minimises the number of prisoners who die? <strong>We assume that all prisoners possess infinite computational power and are mathematically omniscient.</strong> That is, when $f$ is a mathematically well-defined function, prisoners can always compute the value of $f$, and when discussing strategy beforehand, they may agree to employ $f$.</p>
 
   <p><img src="/public/hat-3.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
 </blockquote>
@@ -963,10 +962,10 @@ $$
 
 </div>
 
-<p>Whilst the above puzzle is remarkably intriguing, the following puzzle is even more extraordinary:</p>
+<p>while the above puzzle is remarkably intriguing, the following puzzle is even more extraordinary:</p>
 
 <blockquote>
-  <p>Infinitely many prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, whilst those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. Furthermore, <strong>the moment the hats are placed, the prisoners completely lose their hearing and cannot exchange any information whatsoever.</strong> Is there a strategy that ensures only finitely many prisoners die? (Similarly, prisoners possess infinite computational power and are mathematically omniscient.)</p>
+  <p>Infinitely many prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, while those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. Furthermore, <strong>the moment the hats are placed, the prisoners completely lose their hearing and cannot exchange any information whatsoever.</strong> Is there a strategy that ensures only finitely many prisoners die? (Similarly, prisoners possess infinite computational power and are mathematically omniscient.)</p>
 
   <p><img src="/public/hat-4.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
 </blockquote>
@@ -984,7 +983,6 @@ $$
 <p>This puzzle is particularly extraordinary because the hearing loss condition renders the hat-guessing events of any two distinct prisoners independent, suggesting that each prisoner should have the same probability $p$ of guessing correctly. In this case, the probability that all $N$ prisoners guess correctly would be $p^N$, which converges to 0 as $N \to \infty$. However, in reality, infinitely many prisoners guess correctly.</p>
 
 <p>The root of this paradox lies in the fact that the probability of an arbitrary prisoner guessing correctly is <strong>undefined</strong>. Upon careful consideration, the event of an arbitrary prisoner guessing correctly is equivalent to the event that a given real number $r \in [0, 1]$ belongs to a <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since Vitali sets are non-measurable, no probability can be defined for this event.</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>
@@ -1263,7 +1261,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
   <li>$\mathfrak{N} \preceq \mathfrak{M}$</li>
 </ol>
 
-<p>The reason why 2 and 3 do not imply each other is that 2 requires structural equivalence, making it no weaker than 3, whilst 3 requires equivalence for arbitrary assignments, making it no weaker than 2. For instance, for $\mathfrak{M} = (\mathbb{R}, +, \cdot)$, for $\mathfrak{N}$ to be an isomorphic submodel of $\mathfrak{M}$, it must be <em>structurally</em> identical with respect to <em>constructible</em> real numbers, whereas for $\mathfrak{N}$ to be an elementary submodel of $\mathfrak{M}$, the two models must be <em>elementarily</em> equivalent with respect to <em>all</em> real numbers.</p>
+<p>The reason why 2 and 3 do not imply each other is that 2 requires structural equivalence, making it no weaker than 3, while 3 requires equivalence for arbitrary assignments, making it no weaker than 2. For instance, for $\mathfrak{M} = (\mathbb{R}, +, \cdot)$, for $\mathfrak{N}$ to be an isomorphic submodel of $\mathfrak{M}$, it must be <em>structurally</em> identical with respect to <em>constructible</em> real numbers, whereas for $\mathfrak{N}$ to be an elementary submodel of $\mathfrak{M}$, the two models must be <em>elementarily</em> equivalent with respect to <em>all</em> real numbers.</p>
 
 <table>
   <thead>
@@ -1342,7 +1340,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 
 <h4 id="without-representation">Without representation</h4>
 
-<p>Define theory $T_1$ in language $\mathcal{L}_1 = \lbrace  G, \cdot \rbrace $ as follows:</p>
+<p>Define theory $T_1$ in language $\mathcal{L}_1 = \lbrace G, \cdot \rbrace $ as follows:</p>
 
 <ul>
   <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
@@ -1352,7 +1350,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 
 <h4 id="with-representation">With representation</h4>
 
-<p>Define theory $T_2$ in language $\mathcal{L}_2 = \lbrace  G, \cdot, e, (-)^{-1} \rbrace $ as follows:</p>
+<p>Define theory $T_2$ in language $\mathcal{L}_2 = \lbrace G, \cdot, e, (-)^{-1} \rbrace $ as follows:</p>
 
 <ul>
   <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
@@ -1360,7 +1358,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
   <li>$\forall x : x \cdot x^{-1} = x^{-1} \cdot x = e$</li>
 </ul>
 
-<p>$T_1$ is not a $\Pi_1$ theory, but $T_2$ is a $\Pi_1$ theory. Therefore, by the Łoś-Tarski theorem, $T_1$ is not submodel-preserving whilst $T_2$ is preserving. That $T_1$ is not submodel-preserving means that a subset of a group being closed under the operation does not always make it a subgroup<small>(for instance, the subset $\mathbb{Z}_{&gt; 0}$ of $\mathbb{Z}$ is closed under the operation but is not a group as it lacks inverses)</small>. Conversely, that $T_2$ is submodel-preserving means the following holds:</p>
+<p>$T_1$ is not a $\Pi_1$ theory, but $T_2$ is a $\Pi_1$ theory. Therefore, by the Łoś-Tarski theorem, $T_1$ is not submodel-preserving while $T_2$ is preserving. That $T_1$ is not submodel-preserving means that a subset of a group being closed under the operation does not always make it a subgroup<small>(for instance, the subset $\mathbb{Z}_{&gt; 0}$ of $\mathbb{Z}$ is closed under the operation but is not a group as it lacks inverses)</small>. Conversely, that $T_2$ is submodel-preserving means the following holds:</p>
 
 <blockquote>
   <p>For a group $G$, if a subset $H$ of $G$ satisfies the following, then $H$ is a subgroup of $G$:</p>
@@ -1389,7 +1387,6 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
   <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
   <li>$\forall x, y : (x \cdot x^{-1}) \cdot y = y \cdot (x \cdot x^{-1}) = y$</li>
 </ul>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

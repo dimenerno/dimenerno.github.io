@@ -43,7 +43,7 @@ In the category of sets, the product coincides with the Cartesian product. In pa
 
 > **Theorem.** The smallest topology on $\prod\_{i \in I}X\_i$ such that the projection functions $\pi\_k : \prod\_{i \in I}X\_i \to X\_k$ are continuous for each $k \in I$ is the product topology.
 
-Whilst the box topology also has the property that each projection function is continuous, the box topology is a _larger_ topology than the product topology. Therefore, the box topology is not the categorical product.
+while the box topology also has the property that each projection function is continuous, the box topology is a _larger_ topology than the product topology. Therefore, the box topology is not the categorical product.
 
 Let us examine a counterexample showing that the box topology is not the categorical product. Consider $\mathbb{R}^\omega$ with the box topology. If the box topology were the categorical product, then for any continuous functions $f\_k: \mathbb{R} \to \mathbb{R}$, there would exist a continuous function $i : \mathbb{R} \to \mathbb{R}^\omega$ such that $\pi\_k \circ i = f\_k$. If $f\_k: x \mapsto kx$, then $i$ would be $x \mapsto (x, 2x, 3x, \dots)$. In the box topology, $U = (0, 1)^\omega$ is an open set, so if $i$ were continuous, then $i^{-1}(U)$ would be an open set. However, $i^{-1}(U) = \lbrace 0 \rbrace $, so the box topology does not satisfy the property of a product. (Note that in the case of product topology, $U$ is not an open set.)
 

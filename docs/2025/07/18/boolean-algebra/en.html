@@ -382,11 +382,7 @@
       
     </div>
   
-  <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h2 id="boolean-algebra">Boolean Algebra</h2>
+  <h2 id="boolean-algebra">Boolean Algebra</h2>
 
 <p>Boolean algebra is an algebra consisting of logical operations such as $\lor, \land, \lnot$ defined over $0$ representing false and $1$ representing true.</p>
 
@@ -432,7 +428,7 @@
   </tbody>
 </table>
 
-<p>When we regard $0$ and $1$ not as formal symbols representing false and true, but as actual numbers capable of magnitude comparison, we can verify that $\lor$ corresponds to $\max$, $\land$ to $\min$, and $\lnot$ to the complement operation $\bar{(\cdot)}: 0 \mapsto 1, 1 \mapsto 0$.</p>
+<p>When we regard $0$ and $1$ not as formal symbols representing false and true, but as integers, we can check that $\lor$ corresponds to $\max$, $\land$ to $\min$, and $\lnot$ to the complement operation $\bar{(\cdot)}: 0 \mapsto 1, 1 \mapsto 0$.</p>
 
 <table>
   <thead>
@@ -476,7 +472,7 @@
   </tbody>
 </table>
 
-<p>Building on this insight, we can naturally extend the domain of Boolean algebra from $\lbrace 0, 1 \rbrace$ to $[0, 1]$. For instance, $0.2 \lor 0.7 = 0.7$ and $0.3 \land \lnot(0.9) = 0.1$. Developing this idea further, we can define operations structurally similar to Boolean algebra on sets with appropriate order relations, and conversely, sets with operations structurally similar to Boolean algebra can be given appropriate order relations. This is the genesis of Boolean algebraic structures.</p>
+<p>Building on this insight, we can naturally extend the domain of Boolean algebra from $\lbrace 0, 1 \rbrace$ to $[0, 1]$. For instance, $0.2 \lor 0.7 = 0.7$ and $0.3 \land \lnot(0.9) = 0.1$. Developing this idea further, we can define operations structurally similar to Boolean algebra on sets with appropriate order relations, and conversely, sets with operations structurally similar to Boolean algebra can be given appropriate order relations. This is the idea of Boolean algebraic structures.</p>
 
 <blockquote>
 <p><b>Definition.</b> When binary operations $\lor, \land$ and unary operation $\lnot$ defined on a set $A$ with two elements $0$ and $1$ satisfy the following axioms, we call $(A, 0, 1, \lor, \land, \lnot)$ a <b>Boolean algebraic structure</b>.</p>
@@ -526,7 +522,7 @@
     <p>The absorption law can be proved from the other five axioms.</p>
   </li>
   <li>
-    <p>The term “complement” is used because, whilst ordinarily multiplying $x$ by its multiplicative inverse $x^{-1}$ should yield the multiplicative identity $1$, and adding the additive inverse $-x$ should yield the additive identity $0$, in Boolean algebraic structures the result of $x \lor \lnot x$ is not the identity $0$ for $\lor$ but rather the identity $1$ for $\land$, and the result of $x \land \lnot x$ is not the identity $1$ for $\land$ but rather the identity $0$ for $\lor$. This terminology was introduced to reduce potential confusion.</p>
+    <p>The term “complement” is used instead of “inverse”, because while multiplying $x$ by its multiplicative inverse $x^{-1}$ should yield the multiplicative identity $1$, and adding the additive inverse $-x$ should yield the additive identity $0$, in Boolean algebraic structures the result of $x \lor \lnot x$ is not the disjunctive identity $0$ but rather the conjuctive identity $1$, and the result of $x \land \lnot x$ is not $1$ but rather $0$.</p>
   </li>
 </ul>
 
@@ -583,7 +579,7 @@ x \lor y = x + y + xy \\
 \[x + y = (x \lor y) \land \lnot (x \land y)\]
 </blockquote>
 
-<p>The proof can be done by computing according to the axioms, so it is omitted.</p>
+<p>The proof is routine and is omitted. (Use the fact that in a boolean ring, $x + x = 0$.)</p>
 
 <h2 id="ideals">Ideals</h2>
 
@@ -593,7 +589,7 @@ x \lor y = x + y + xy \\
   <p><strong>Definition.</strong> For a ring $R$, a non-empty subset $I \subseteq R$ is an <strong>ideal</strong> if $I$ forms a group under addition and for any $a \in R$ and $x \in I$, we have $ax \in I$. That is, $aI \subseteq I$.</p>
 </blockquote>
 
-<p>Building on the similarity revealed in the correspondence between Boolean algebraic structures and Boolean rings, let us define:</p>
+<p>Building on the correspondence between Boolean algebraic structures and Boolean rings, let us define:</p>
 
 <blockquote>
   <p><strong>Definition.</strong> For a Boolean algebraic structure $A$, a non-empty subset $I \subseteq A$ is an <strong>ideal</strong> if $I$ is closed under $\lor$ and for any $a \in A$ and $x \in I$, we have $a \land x \in I$. That is, $a \land I \subseteq I$.</p>
@@ -609,7 +605,7 @@ x \lor y = x + y + xy \\
   <p><strong>Theorem.</strong> For a Boolean algebraic structure $A$, $I \subseteq A$ is a (Boolean) ideal if and only if $I$ is a (ring) ideal in the corresponding Boolean ring $A$.</p>
 </blockquote>
 
-<p>Therefore, we can also define prime ideals and maximal ideals in Boolean algebraic structures.</p>
+<p>We can also define prime ideals and maximal ideals in Boolean algebraic structures.</p>
 
 <blockquote>
   <p><strong>Definition.</strong> Let $I$ be an ideal of the Boolean algebraic structure $A$. $I$ is a <strong>prime ideal</strong> if for any $a, b \in A$, if $a \land b \in I$, then $a \in I$ or $b \in I$. $I$ is a <strong>maximal ideal</strong> if whenever $J$ is an ideal that strictly contains $I$, we have $J = A$.</p>
@@ -645,8 +641,6 @@ x \lor y = x + y + xy \\
     <li>For any $x \in A$, either $x \in I$ or $\lnot x \in I$.</li>
   </ul>
 </blockquote>
-
-<p>In this respect, Boolean algebraic structures are similar to principal ideal domains in ring theory.</p>
 
 <h2 id="filters">Filters</h2>
 
@@ -702,10 +696,10 @@ x \lor y = x + y + xy \\
 <p>Note that they are exactly complements of each other. Generally, the following holds:</p>
 
 <blockquote>
-  <p><strong>Theorem.</strong> For a subset $I$ of a Boolean algebraic structure $A$, $I$ is a prime (maximal) ideal if and only if $A \setminus I$ is an ultra (prime, maximal) filter.</p>
+  <p><strong>Theorem.</strong> For a subset $I$ of a Boolean algebraic structure $A$, $I$ is a prime (maximal) ideal if and only if $A \setminus I$ is an ultra-(prime, maximal) filter.</p>
 </blockquote>
 
-<p>Building on this, let us correspond elements of $A$ that belong to the prime ideal $I$ to $0$, and those that do not belong to $1$. Alternatively, let us correspond elements of $A$ that belong to the ultrafilter $F$ to $1$, and those that do not belong to $0$. Using the example just given:</p>
+<p>Building on this, let us map elements of $A$ that belong to the prime ideal $I$ to $0$, and those that do not belong to $1$. Or to put in other words, let us map elements of $A$ that belong to the ultrafilter $F$ to $1$, and those that do not belong to $0$. Using the example just given:</p>
 
 <table>
   <thead>
@@ -750,7 +744,7 @@ x \lor y = x + y + xy \\
   </tbody>
 </table>
 
-<p>This correspondence forms a model of propositional logic. In particular, setting $P = \lbrace  p \rbrace , Q = \lbrace  q \rbrace , R = \lbrace  r \rbrace $ and rewriting the table according to the correspondence $\cup \leftrightarrow \lor, \cap \leftrightarrow \land$:</p>
+<p>The result is a model of propositional logic. In particular, setting $P = \lbrace  p \rbrace , Q = \lbrace  q \rbrace , R = \lbrace  r \rbrace $ and rewriting the table according to the correspondence $\cup \leftrightarrow \lor, \cap \leftrightarrow \land$ gives:</p>
 
 <table>
   <thead>
@@ -795,8 +789,7 @@ x \lor y = x + y + xy \\
   </tbody>
 </table>
 
-<p>This is a model of propositional logic where $P$ is true and $Q, R$ are false. In this way, generally when a Boolean algebraic structure is given a prime ideal or ultrafilter, we can construct a logical model based on that information. This is a stepping stone towards the <strong>Stone representation theorem</strong>, which we shall examine later.</p>
-
+<p>This is a model of propositional logic where $P$ is true and $Q, R$ are false. In this way, generally when a Boolean algebraic structure is given a prime ideal or ultrafilter, we can construct a logical model based on that information. This is a stepping stone towards the <strong>Stone representation theorem</strong>.</p>
 
 </div>
 

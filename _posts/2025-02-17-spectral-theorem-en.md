@@ -23,7 +23,7 @@ If one recalls the [definition of adjoints in category theory](https://dimenerno
 To justify this definition, we must show that the adjoint exists uniquely for every $T$. This follows from the Riesz representation theorem.
 
 > **Riesz Representation Theorem.** Let $V$ be an inner product space. For $\phi \in V^\ast$, there exists a unique vector $v$ satisfying:
-> 
+>
 > $$
 > \forall u \in V : \quad \phi(u) = \langle u, v \rangle
 > $$
@@ -38,7 +38,7 @@ $$
 
 At this point, one can easily show that the mapping $w \mapsto u_w$ is linear. This linear mapping is the adjoint we seek.
 
-> **Definition.** A linear mapping $T : V \to V$ satisfying $T^\ast = T$ is called **self-adjoint**. 
+> **Definition.** A linear mapping $T : V \to V$ satisfying $T^\ast = T$ is called **self-adjoint**.
 
 When the matrix representation of $T : V \to W$ is $M$, the matrix representation of $T^\ast$ in the same basis is the conjugate transpose of $M$, namely $M^\dagger$ — this can be shown, albeit somewhat tediously, without much difficulty. Therefore, the matrix of a self-adjoint transformation is a Hermitian matrix.
 
@@ -46,9 +46,9 @@ When the matrix representation of $T : V \to W$ is $M$, the matrix representatio
 
 **Proof.** The necessary condition is trivial, so we prove the sufficient condition. First, we establish the following lemma.
 
-*Lemma.* Let $V$ be a complex vector space. For $T : V \to V$, $T = 0$ if and only if $\langle Tv, v \rangle = 0$ for any $v \in V$.
+_Lemma._ Let $V$ be a complex vector space. For $T : V \to V$, $T = 0$ if and only if $\langle Tv, v \rangle = 0$ for any $v \in V$.
 
-*Proof of the lemma.* The necessary condition is trivial, so we prove the sufficient condition. For any $u, v \in V$,
+_Proof of the lemma._ The necessary condition is trivial, so we prove the sufficient condition. For any $u, v \in V$,
 
 $$
 \langle T(u + v) , u + v \rangle = \langle Tu, v \rangle + \langle Tv, u \rangle = 0
@@ -115,12 +115,12 @@ Since $\alpha - \beta \neq 0$, we have $\langle u, v \rangle = 0$. ■
 
 ## 3. Spectral Theorems
 
-Whilst it is commonly claimed that the name 'spectral' derives from the spectral theorem being used to explain atomic spectra in quantum mechanics, this is not factual. Hilbert had already used the term 'spectrum' before the spectral theorem was employed to explain atomic spectra. The precise origin is unknown, but one might conjecture that it arose from the imagery that eigenvectors characterise the properties of Hilbert spaces, similar to how light spectra characterise light.
+while it is commonly claimed that the name 'spectral' derives from the spectral theorem being used to explain atomic spectra in quantum mechanics, this is not factual. Hilbert had already used the term 'spectrum' before the spectral theorem was employed to explain atomic spectra. The precise origin is unknown, but one might conjecture that it arose from the imagery that eigenvectors characterise the properties of Hilbert spaces, similar to how light spectra characterise light.
 
 > **Complex Spectral Theorem.** Let $V$ be a complex vector space. $T: V \to V$ is normal if and only if the eigenvectors of $T$ form an orthogonal basis for $V$.
 
-**Proof.** *TODO* ■
+**Proof.** _TODO_ ■
 
 > **Real Spectral Theorem.** Let $V$ be a real vector space. $T: V \to V$ is self-adjoint if and only if the eigenvectors of $T$ form an orthogonal basis for $V$.
 
-**Proof.** *TODO* ■
+**Proof.** _TODO_ ■

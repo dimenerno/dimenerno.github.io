@@ -72,7 +72,7 @@ In modern times, Tarski's theory of truth has become the subject of philosophica
 
 ### Two Stages of Tarskian Definition
 
-Field distinguishes Tarski's definition of truth into two stages. The first is **primitive denotation**. In this stage, one defines what it means for a name $n$ to *denote* an object $o$ in language $L$, and for a predicate $P$ to *hold* of an object $o$. This definition consists of the following:
+Field distinguishes Tarski's definition of truth into two stages. The first is **primitive denotation**. In this stage, one defines what it means for a name $n$ to _denote_ an object $o$ in language $L$, and for a predicate $P$ to _hold_ of an object $o$. This definition consists of the following:
 
 - Name $n$ denotes object $o$ in $L$ $\iff$ one of the following holds:
   - $n = \text{'apple'}, o = $ apple
@@ -104,7 +104,7 @@ Therefore, Field seeks to overcome Tarski's limitations by presenting a physical
 
 However, Field's project has problems. The first problem is the issue raised by the denotation of abstract objects that appear to lack causal efficacy.
 
-However, a more serious second problem is that, following Field's objection, not only does primitive denotation fail to elucidate the meaning of denotation, but **the recursive definition of truth also fails to elucidate the meaning of truth**. This is because rules related to logical operators are hardcoded in the recursive definition of truth. Therefore, the modal objection is equally valid. For instance, whilst it is clearly contingent that $\lor$ means disjunction, according to the recursive definition, "$T(\ulcorner A \lor B \urcorner) \Leftrightarrow T(\ulcorner A \urcorner)$ or $T(\ulcorner B \urcorner)$" is necessary.
+However, a more serious second problem is that, following Field's objection, not only does primitive denotation fail to elucidate the meaning of denotation, but **the recursive definition of truth also fails to elucidate the meaning of truth**. This is because rules related to logical operators are hardcoded in the recursive definition of truth. Therefore, the modal objection is equally valid. For instance, while it is clearly contingent that $\lor$ means disjunction, according to the recursive definition, "$T(\ulcorner A \lor B \urcorner) \Leftrightarrow T(\ulcorner A \urcorner)$ or $T(\ulcorner B \urcorner)$" is necessary.
 
 Therefore, Field must also present physicalist reductions of 3, 4, 5, ... as well as 1 and 2.
 
@@ -116,7 +116,7 @@ Therefore, Field must also present physicalist reductions of 3, 4, 5, ... as wel
 
 However, it is unclear how 3, 4, 5, ... can be reduced without circular dependence on truth. The author argues that attempts at this work so far have not been successful. As an example, he mentions Quine's attempt to reduce truth-functional operators to collective acceptance or rejection by the linguistic community, which is problematic for reasons given in <a href="/public/Quine on Alternative Logics.pdf">Alan Berger, _Quine on 'Alternative Logics' and Verdict Tables_ (1980)</a>. (I haven't read this yet, but it's probably a modal problem.)
 
-> **Addition.** Burgess points out in *Truth* that Field's project's dependence on Kripke's theory is also problematic. This is because Kripke's theory is not a theory of reference. Kripke's theory is about how the initial act of using name $n$ to refer to object $o$ continues to form the semantics of names; in his theory, reference is a primitive concept. Kripke himself strongly objected to the popular opinion that his theory is reductionist about reference.
+> **Addition.** Burgess points out in _Truth_ that Field's project's dependence on Kripke's theory is also problematic. This is because Kripke's theory is not a theory of reference. Kripke's theory is about how the initial act of using name $n$ to refer to object $o$ continues to form the semantics of names; in his theory, reference is a primitive concept. Kripke himself strongly objected to the popular opinion that his theory is reductionist about reference.
 
 ## 3. The Relationship Between Meaning and Truth
 
@@ -185,7 +185,7 @@ To my knowledge, Trump has never given a lecture on ethics, so the token that is
 
 ### The Problem of Pragmatics
 
-Although the author has attributed the relationship between language and speaker to the realm of pragmatics, this does not mean that this problem is unimportant. This is because there are various philosophical considerations regarding the relationship between language and speaker. For instance, Quine argues that the statement "speaker $A$ uses language $L$" cannot be reduced physicalistically<small>(the gavagai argument)</small>. According to the author, Quine's position can be seen as accepting Tarski's definition of truth whilst rejecting the physicalist reduction of the relationship between language and speaker.
+Although the author has attributed the relationship between language and speaker to the realm of pragmatics, this does not mean that this problem is unimportant. This is because there are various philosophical considerations regarding the relationship between language and speaker. For instance, Quine argues that the statement "speaker $A$ uses language $L$" cannot be reduced physicalistically<small>(the gavagai argument)</small>. According to the author, Quine's position can be seen as accepting Tarski's definition of truth while rejecting the physicalist reduction of the relationship between language and speaker.
 
 ### The Problem of Truth-Conditional Semantics
 

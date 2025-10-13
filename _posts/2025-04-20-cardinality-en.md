@@ -55,9 +55,8 @@ For convenience of expression, let us refer to $\|X\| \leq \|Y\|$ and $\|X\| = \
 
 In fact, 4 is never used as a definition, but I've listed it for reference purpose. In modern set theory, either 2 or 3 is adopted as the definition of cardinality. In both cases, one can prove that Theorem 1 holds in ZFC.
 
-What is interesting is that whilst the axiom of choice is not required to define cardinality using Scott's trick, the axiom of choice is needed to prove that cardinality defined by Scott's trick satisfies Theorem 1. This is because the following is equivalent to the axiom of choice:
+What is interesting is that while the axiom of choice is not required to define cardinality using Scott's trick, the axiom of choice is needed to prove that cardinality defined by Scott's trick satisfies Theorem 1. This is because the following is equivalent to the axiom of choice:
 
 > **Theorem 2.** For any sets $X, Y$, either $\|X\| \leq \|Y\|$ or $\|Y\| \leq \|X\|$.
 
 That is, even without using the axiom of choice, we can a) define $\mathrm{Card}(X)$ through Scott's trick, or b) define $\|X\| \leq \|Y\|$ through the existence of injective mappings, but the axiom of choice is required to prove that a) and b) mesh together.
-
