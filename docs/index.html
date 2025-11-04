@@ -484,6 +484,68 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/11/03/euler-poincare"> 띠와 토러스의 호몰로지 </a>
+      </h1>
+    <span class="post-date">03 Nov 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>정의.</strong> $K$가 순수 $k$-단체 복합체<sub>pure simplicial complex</sub>이고, $p \leq k$에 대해 $C_p(K)$가 $K$의 $p$-체인<sub>chain</sub>들의 집합이라고 하자.</p>
+
+  <ul>
+    <li>$z \in C_p(K)$가 $K$의 <strong>$p$-고리<sub>cycle</sub></strong>라는 것은 $z \in \ker \partial_p$라는 것이다.</li>
+    <li>$b \in C_p(K)$가 $K$의 <strong>$p$-경계<sub>boundary</sub></strong>라는 것은 $b \in \operatorname{im} \partial_{p + 1}$이라는 것이다.</li>
+  </ul>
+
+  <p>$p$-고리들의 집합을 $Z_p(K)$, $p$-경계들의 집합을 $B_p(K)$라고 적는다.</p>
+</blockquote>
+
+<p>$C_p(K)$를 자유 아벨군으로 보았을 때 $Z_p(K)$와 $B_p(K)$는 $C_p(K)$의 부분군이다. 자유 아벨군의 부분군은 언제나 자유 아벨군이므로 $Z_p(K)$와 $B_p(K)$는 자유 아벨군이다. 또한 $\partial_p \partial_{p+1} = 0$이므로 $B_p(K) \leq Z_p(K)$이며, 아벨군의 부분군은 정규부분군이므로 몫군 $Z_p(K)/B_p(K)$를 취할 수 있다. 이 목군을 <strong>호몰로지 군<sub>homology group</sub></strong>이라고 하며 $H_p(K)$라고 적는다.</p>
+
+<p>쉬운 언어로 설명하자면, 두 1-고리 $z_1, z_2$가 같은 호몰로지 군의 원소에 대응된다는 것은 $z_1 - z_2$가 어떤 2-체인의 경계를 이룬다는 것이다. 예를 들어 띠<sub>cylinder</sub>의 삼각화인 다음 복합체 $K$를 보자.</p>
+
+<p><img src="/public/homology-1.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>$z_1 = \langle 01 \rangle + \langle 12 \rangle + \langle 20 \rangle, z_2 = \langle 34 \rangle + \langle 45 \rangle + \langle 53 \rangle$이라고 하자. $z_1 - z_2$는 오른쪽과 같다.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 1em;">
+<img src="/public/homology-2.png" style="width: 100%; max-width: 300px; margin: 0 auto" />
+<img src="/public/homology-3.png" style="width: 100%; max-width: 300px; margin: 0 auto" />
+</div>
+
+<p>그런데 이는 띠 전체의 경계와 같다. 구체적으로,</p>
+
+\[\begin{align*}
+&amp;\partial (\langle 013 \rangle + \langle 143 \rangle + \langle 124 \rangle + \langle 254 \rangle + \langle 205 \rangle + \langle 035 \rangle) \\
+&amp;= (\langle 01 \rangle + \langle 12 \rangle + \langle 20 \rangle) - ( \langle 34 \rangle + \langle 45 \rangle + \langle 53 \rangle) \\
+&amp;= z_1 - z_2
+\end{align*}\]
+
+<p>따라서 $z_1$과 $z_2$는 같은 호몰로지 군의 원소에 대응된다. 그러나 $n, m \in \mathbb{Z}$에 대해 $n \neq m$이라면 $n \cdot z_1$과 $m \cdot z_1$은 서로 다른 호몰로지 군의 원소에 대응된다. $(n - m) \cdot z_1$이 $B_1(K)$에 속하지 않기 때문이다. 이로부터 띠의 1-호몰로지 군이 $\mathbb{Z}$임을 유추할 수 있으며, 이 유추는 올바르다.</p>
+
+<p>반면 토러스의 경우, 다음의 $w_1$과 $w_2$는 서로 다른 호몰로지 군의 원소에 대응된다. $w_1 - w_2$가 어떠한 2-체인의 경계도 아님을 직관적으로 파악할 수 있을 것이다. 실제로 토러스의 1-호몰로지 군은 $\mathbb{Z} \oplus \mathbb{Z}$이다.</p>
+
+<p><img src="/public/homology-4.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
+
+<p>호몰로지 군의 랭크<sub>rank</sub>는 직관적으로 구멍의 의미를 가진다. 띠의 1-호몰로지 군의 랭크가 1이라는 것은 띠의 1차원 구멍이 하나 있다는 것이고, 토러스의 1-호몰로지 군의 랭크가 2라는 것은 토러스의 1차원 구멍이 2개 있다는 것이다. (여기서 $n$차원 구멍이라 함은 $n$차원 경로에 의해 둘러질 수 있는 구멍을 말한다.)</p>
+
+<p><img src="/public/homology-5.png" style="width: 100%; max-width: 550px; margin: 0 auto;" /></p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/09/25/ch-for-borel"> 닫힌집합과 보렐 집합에서의 연속체 가설 </a>
       </h1>
     <span class="post-date">25 Sep 2025</span>
@@ -2236,112 +2298,6 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 <p>$T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해, 만약 $\mathfrak{A} \not\preceq \mathfrak{B}$라면 콤팩트성 정리에 의해 어떤 $\mathcal{L}_\mathfrak{A}$의 문장 $\phi(\vec{a})$가 존재하여 $\mathfrak{A} \not\vDash \phi(\vec{a})$이지만 $\mathfrak{B} \vDash \phi(\vec{a})$이다.</p>
 
 <p>가정에 의해 $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$를 만족하는 $\Pi_1$ 명제 $\psi$가 존재한다. 따라서 $\mathfrak{B} \vDash \psi(\vec{a})$이다. 그런데 이는 $\Pi_1$ 문장이고, $\Pi_1$ 문장은 부분모델에 대해 보존되므로 $\mathfrak{A} \vDash \psi(\vec{a})$가 되어 모순이다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/09/11/robinson-test/en"> Robinson's Test for Model Completeness </a>
-      </h1>
-    <span class="post-date">11 Sep 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/model-theory/'">
-        Model Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>In this article, $T$ is a theory in language $\mathcal{L}$. We also write $x_1, \dots, x_n$ as $\vec{x}$.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> A theory $T$ is <strong>model complete</strong> if for any models $\mathfrak{A}, \mathfrak{B}$ of $T$,</p>
-
-\[\mathfrak{A} \subseteq \mathfrak{B} \implies \mathfrak{A} \preceq \mathfrak{B}\]
-</blockquote>
-
-<p><strong>Examples</strong></p>
-
-<ol>
-  <li>
-    <p>The theory of fields is not model complete. For the real field $\mathbb{R}$ and the rational field $\mathbb{Q}$, we have $\mathbb{Q} \subseteq \mathbb{R}$ but $\mathbb{Q} \not\preceq \mathbb{R}$ since the truth value of $\exists x (x \cdot x = 2)$ differs in the two models.</p>
-  </li>
-  <li>
-    <p>The theory of torsion-free divisible abelian groups is model complete.</p>
-  </li>
-  <li>
-    <p>Theories admitting quantifier elimination are model complete.</p>
-  </li>
-</ol>
-
-<p>One useful theorem for determining model completeness, including case 2 above, is the following.</p>
-
-<blockquote>
-  <p><strong>Robinson’s Test.</strong> The following are equivalent:</p>
-
-  <ol>
-    <li>$T$ is model complete.</li>
-    <li>For any models $\mathfrak{A} \subseteq \mathfrak{B}$ of $T$, any $\Sigma_1(\mathcal{L}_\mathfrak{A})$-sentence satisfied by $\mathfrak{B}$ is also satisfied by $\mathfrak{A}$.</li>
-    <li>For any $\mathcal{L}$-formula $\phi(\vec{x})$, there exists a $\Pi_1(\mathcal{L})$-formula $\psi(\vec{x})$ such that $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$.</li>
-  </ol>
-</blockquote>
-
-<h3 id="proof">Proof</h3>
-
-<h4 id="1--2">(1) → (2)</h4>
-
-<p>Since $T$ is model complete, if $\mathfrak{A} \subseteq \mathfrak{B}$ then $\mathfrak{A} \preceq \mathfrak{B}$. Therefore, $\mathfrak{A}$ and $\mathfrak{B}$ are equivalent with respect to $\mathcal{L}_\mathfrak{A}$-sentences. □</p>
-
-<h4 id="2--3">(2) → (3)</h4>
-
-<p>Suppose $\phi(\vec{x})$ is a $\Sigma_1(\mathcal{L})$-formula. Let $\mathcal{L}’$ be the language obtained by adding constants $\vec{c}$ to $\mathcal{L}$. We can view $T$ as an $\mathcal{L}’$-theory and consider $\mathfrak{A} \subseteq \mathfrak{B}$ as an embedding of $\mathcal{L}’$-structures.</p>
-
-<p>Now consider the $\mathcal{L}’$-theory $T’ = T \cup { \phi(\vec{c}) }$. Suppose $\mathfrak{B}$ is a model of $T’$. We show that $\mathfrak{A}$ is also a model of $T’$. Since $\mathfrak{A} \subseteq \mathfrak{B}$ is an embedding of $\mathcal{L}’$-structures, observe that:</p>
-
-\[\mathfrak{B} \vDash \phi(\vec{c}) \iff \exists \vec{a} \in \mathcal{L}_\mathfrak{A}  \text{ where } \mathfrak{B} \vDash \phi(\vec{a})\]
-
-<p>Since $\phi(\vec{a})$ is a $\Sigma_1(\mathcal{L}_\mathfrak{A})$-sentence, by assumption it also holds in $\mathfrak{A}$. Therefore, $\mathfrak{A}$ is a model of $T’$.</p>
-
-<p>We now use the following generalisation of the <a href="/2025/04/17/los-tarski">Łoś-Tarski theorem</a> (proof left as an exercise).</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $T \subseteq T’$ be $\mathcal{L}’$-theories such that:</p>
-
-  <ul>
-    <li>For any models $\mathfrak{A} \subseteq \mathfrak{B}$ of $T$, if $\mathfrak{B}$ is a model of $T’$ then $\mathfrak{A}$ is also a model of $T’$.</li>
-  </ul>
-
-  <p>Then there exists a collection $P$ of $\Pi_1(\mathcal{L}’)$-sentences such that $T’$ is equivalent to $T \cup P$.</p>
-</blockquote>
-
-<p>By the theorem above, $T’$ is equivalent to $T \cup P$ for some collection $P$ of $\Pi_1(\mathcal{L}’)$-sentences. That is,</p>
-
-\[T \cup P \vdash \phi(\vec{c})\]
-
-<p>By the finiteness of proofs, only finitely many sentences from $P$ are needed to prove $\phi$ from $T \cup P$. Let $\pi(\vec{c})$ be the conjunction of these sentences. Then</p>
-
-\[T \vdash \forall x (\phi(\vec{x}) \leftrightarrow \pi(\vec{x}))\]
-
-<p>and $\pi(\vec{x})$ is a $\Pi_1(\mathcal{L})$-formula, completing the proof for the case when $\phi \in \Sigma_1$.</p>
-
-<p>We now prove by structural induction on $\phi$. Since $\exists \leftrightarrow \lnot\forall\lnot$, we need only consider $\lor, \lnot, \forall$. The cases for $\lor$ and $\forall$ are trivial, so we examine the case for $\lnot$.</p>
-
-<p>Suppose for some $\Pi_1(\mathcal{L})$-formula $\psi$ we have $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$. Then $\lnot \phi$ is equivalent to $\lnot \psi$, which is a $\Sigma_1(\mathcal{L})$-formula. By the preceding argument, this is equivalent to a $\Pi_1$ sentence. □</p>
-
-<h4 id="3--1">(3) → (1)</h4>
-
-<p>For models $\mathfrak{A} \subseteq \mathfrak{B}$ of $T$, if $\mathfrak{A} \not\preceq \mathfrak{B}$ then by the compactness theorem there exists some $\mathcal{L}_\mathfrak{A}$-sentence $\phi(\vec{a})$ such that $\mathfrak{A} \not\vDash \phi(\vec{a})$ but $\mathfrak{B} \vDash \phi(\vec{a})$.</p>
-
-<p>By assumption, there exists a $\Pi_1$ formula $\psi$ such that $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$. Therefore $\mathfrak{B} \vDash \psi(\vec{a})$. However, this is a $\Pi_1$ sentence, and $\Pi_1$ sentences are preserved under submodels, so $\mathfrak{A} \vDash \psi(\vec{a})$, which gives a contradiction. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

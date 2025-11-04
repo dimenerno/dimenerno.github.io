@@ -431,6 +431,139 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/07/10/stone-cech/en"> Stone-Čech Compactification </a>
+      </h1>
+    <span class="post-date">10 Jul 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>Definition.</strong> Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a <strong>compactification</strong> of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.</p>
+</blockquote>
+
+<p><strong>Remarks</strong></p>
+
+<ul>
+  <li>
+    <p>Generally, compactification of $X$ is not unique, as $\overline{X}$ may vary depending on the background topology.</p>
+  </li>
+  <li>
+    <p>If $X$ and $Y$ are Hausdorff, then $Y$ is a compact Hausdorff space, hence normal, hence Tychonoff (completely regular). Since it is known that subspaces of Tychonoff spaces are Tychonoff, $X$ is also Tychonoff. Thus, <strong>spaces that can be compactified as Hausdorff spaces are Tychonoff.</strong></p>
+  </li>
+  <li>
+    <p>The converse also holds. That is, <strong>Tychonoff spaces can be compactified as Hausdorff spaces.</strong> This is one of the implications of the Stone-Čech compactification discussed in this post.</p>
+  </li>
+</ul>
+
+<p>For a locally compact Hausdorff space $X$, there exists a one-point compactification space $X^\ast$. (From this fact and the above remark, it follows that locally compact Hausdorff spaces are Tychonoff.) In particular, $X^\ast$ is the “smallest” compactification of $X$.</p>
+
+<p>The Stone-Čech compactification is, in some sense, the opposite concept. The Stone-Čech compactification space $\beta X$ of $X$ is the “largest” compactification of $X$. The precise definition of “largest” is given by the following universal property.</p>
+
+<blockquote>
+  <p><strong>Theorem 1.</strong> If $X$ is Tychonoff, then there exists a unique compact Hausdorff space $\beta X$ and an embedding $\iota: X \to \beta X$ such that the following holds: for any compact Hausdorff space $K$ and any continuous map $f: X \to K$, there exists a unique continuous map $f^\ast: \beta X \to K$ such that $f = f^\ast \circ \iota$.</p>
+
+  <p><img src="/public/stone-cech-1.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1.5em auto;" /></p>
+
+  <p>Furthermore, $\beta X = \overline{\iota[X]}$ and hence is a compactification of $X$. This is referred to as the <strong>Stone-Čech compactification</strong>.</p>
+</blockquote>
+
+<p>Here, even without the condition that $X$ is Tychonoff, quite strong conclusions can still be maintained.</p>
+
+<blockquote>
+  <p><strong>Theorem 2.</strong> If $X$ is a general topological space, then there exists a unique compact Hausdorff space $\beta X$ and a continuous function $e : X \to \beta X$ such that the following holds: for any compact Hausdorff space $K$ and any continuous map $f: X \to K$, there exists a unique continuous map $f^\ast: \beta X \to K$ such that $f = f^\ast \circ e$.</p>
+
+  <p><img src="/public/stone-cech-2.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1em auto;" /></p>
+
+  <p>Furthermore, $\beta X = \overline{\iota[X]}$.</p>
+</blockquote>
+
+<p>The difference is that $e$ is just a continuous function rather than an embedding. In fact, when $X$ is a general topological space, $e$ may not even be injective, let alone an homoemorphism. In this case, $\beta X$ is not a compactification of $X$ in the strict sense, but for convenience, this post will generally refer to $\beta X$ as the Stone-Čech compactification of $X$.</p>
+
+<p>Unlike one-point compactifications, which are only possible for locally compact spaces, the Stone-Čech compactification is possible for <em>all</em> topological spaces. Consequently, the Stone-Čech compactification can be regarded as a <strong>functor</strong> that maps the category of general topological spaces $\mathbf{Top}$ to the category of compact Hausdorff spaces $\mathbf{CHaus}$. Indeed, the following holds.</p>
+
+<blockquote>
+  <p><strong>Theorem 3.</strong> The forgetful functor $U: \mathbf{CHaus} \to \mathbf{Top}$ has a left adjoint $\beta: \mathbf{Top} \to \mathbf{CHaus}$.</p>
+</blockquote>
+
+<p>Due to the equivalence discussed in a <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">previous post</a>, this may well be taken as the <em>definition</em> of Stone-Čech compactification.</p>
+
+<p>The proof of Theorem 3 consists of three main steps. First, we define $\beta X$ for a topological space $X$. Second, we show that $\beta X$ satisfies the universal property. Third, we show that the relationship between $X$ and $\beta X$ is functorial, meaning that $\beta$ is a functor. Although Theorems 1, 2, and 3 are distinguished above, the proof below will demonstrate all three theorems together.</p>
+
+<h4 id="proof">Proof.</h4>
+
+<p><strong>1. Defining $\beta X$</strong></p>
+
+<p>Let us define the set $C$ as follows.</p>
+
+\[C = \{ f \mid f : X \to [0, 1] \text{ is continuous } \}\]
+
+<p>We shall give the product topology to $[0, 1]^C$ to form a topological space. $[0, 1]^C$ can be thought of as the space of maps from $C$ to $[0, 1]$. Note that the product of Hausdorff spaces is always Hausdorff, and the product of compact spaces is always compact (Tychonoff’s theorem), so $[0, 1]^C$ is a compact Hausdorff space. Now, let us define $e: X \to [0, 1]^C$ as follows.</p>
+
+\[e: x \mapsto \lambda_x \quad \text{where} \quad \lambda_x : f \mapsto f(x)\]
+
+<p>By the properties of the product topology (indeed, its <a href="https://dimenerno.github.io/2025/04/02/box-v-product">definition</a>), $e$ is a continuous function. In particular, if $X$ is a Tychonoff space, then by the Urysohn lemma and its corollary (the theorems in <a href="https://dimenerno.github.io/2025/07/09/urysohn">this post</a>), $e$ is an embedding.</p>
+
+<p><strong>Let us define $\beta X$ as the closure of $e[X]$ in $[0, 1]^C$.</strong> Since $\beta X$ is a closed subset of a compact space, it is compact, and since it is a subspace of a Hausdorff space, it is Hausdorff. Therefore, $\beta X$ is compact Hausdorff. In particular, due to the remark in the previous paragraph, if $X$ is Tychonoff, then $\beta X$ is a compactification of $X$.</p>
+
+<h4 id="2-beta-x-satisfies-the-universal-property">2. $\beta X$ satisfies the universal property</h4>
+
+<p>Now let us show that $\beta X$ satisfies the universal property. First, we consider the case when $K = [0, 1]$.</p>
+
+<p>Let us assume we are given a continuous map $f: X \to [0, 1]$. We define $f^\ast : \beta X \to [0, 1]$ as follows.</p>
+
+\[f^\ast : \lambda \mapsto \lambda (f)\]
+
+<p>That is, for the projection map $\pi_f: [0, 1]^C \to [0, 1]$ that maps $(x_g)_{g \in C}$ to $x_f$, we have $f^\ast = \pi_f \rvert_{\beta X}$. Since $\pi_f$ is continuous, $f^\ast$ is continuous. Furthermore, for any $x \in X$,</p>
+
+\[(f^\ast \circ e)(x) = f^\ast (\lambda_x) = \lambda_x(f) = f(x)\]
+
+<p>Thus, $f^\ast$ is the map required by the universal property.</p>
+
+<p>For general $K$ compact Hausdorff and $f: X \to K$ continuous, we observe that $K$ is Tychonoff, and hence can be embedded into $[0, 1]^J$ for some index set $J$. It then follows that without loss of generality we may only consider cases where $K = [0, 1]^J$ and $f: X \to [0, 1]^J$. In such cases, we let $f^\ast$ be:</p>
+
+\[f^\ast : \lambda \mapsto (\lambda (\pi_\alpha f))_{\alpha \in J}\]
+
+<p>It follows from the $K = [0, 1]$ case that $f^\ast$ is continuous, and satisfies the universal property. Therefore, $\beta X$ is the Stone-Čech compactification of $X$.</p>
+
+<h4 id="3-beta-is-a-functor">3. $\beta$ is a functor</h4>
+
+<p>Finally, we need to show that $\beta$ is a functor. That is, we need to show that for any topological spaces $X, Y$ and continuous map $\psi : X \to Y$, one can define $\beta \psi$ such that the following commutative diagram holds.</p>
+
+<p><img src="/public/stone-cech-3.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1em auto;" /></p>
+
+<p>Let us define $\beta \psi$ as follows. For any $\lambda \in \beta X$,</p>
+
+\[\beta \psi : \lambda \mapsto (g \mapsto \lambda(g \circ \psi) )_{g \in C_Y}\]
+
+<p>where $C_Y$ is the collection of continuous functions $g : Y \to [0, 1]$. (Exercise: Verify that the above definition is well-defined by checking the domains and codomains of each function.) The commutativity of the diagram reduces to the following equation.</p>
+
+\[\beta \psi(\lambda_x) = \lambda_{\psi(x)}\]
+
+<p>Expanding the left-hand side according to the definition, we see that the equation indeed holds.</p>
+
+\[\begin{align*}
+\beta \psi(\lambda_x) &amp;= (g \mapsto \lambda_x(g\circ \psi))_{g \in C_Y} \\
+&amp;= (g \mapsto (g \circ \psi)(x))_{g \in C_Y} \\
+&amp;= (g \mapsto g(\psi(x)))_{g \in C_Y} \\
+&amp;= \lambda_{\psi(x)}
+\end{align*}\]
+
+<p>Thus, $\beta : \mathbf{Top} \to \mathbf{CHaus}$ is a functor, and in particular, it is the left adjoint to $U: \mathbf{CHaus} \to \mathbf{Top}$. It follows that for any $X$, the pair $(e, \beta X)$ that satisfies the universal condition is the initial object in the comma category $(A \Rightarrow U)$, which implies uniqueness up to isomorphism. (For further details, refer to <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint">this post</a>) ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/07/09/urysohn"> 우리손 보조정리와 우리손 거리화 정리 </a>
@@ -2109,94 +2242,6 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
 <blockquote>
   <p>Psychoanalytically, <strong>Perversion</strong> is a manifestation of subconscious positivity while <strong>hysteria</strong> is a manifestation of subconscious negativity. <strong>Positivity</strong> encompasses concepts such as freedom, laissez-faire, liveliness, and activity, while <strong>negativity</strong> encompasses concepts such as repression, constraint, prohibition, and passivity. In this lecture, Žižek appears to subsume “soft fascism” — the pathological fusion of ideology and capitalism, — artificial intelligence, and the rise of Shamelessness under the category of perversion, namely the uncontrolled manifestation of positivity.</p>
 </blockquote>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/06/02/notes-on-continuity"> 왜 연속함수의 위상적 정의는 “반대”인가? </a>
-      </h1>
-    <span class="post-date">02 Jun 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>정의.</strong> 두 위상공간 $X, Y$에 대해 사상 $f: X \to Y$가 <strong>연속</strong>이라는 것은, $V \subseteq Y$가 열린 집합이라면 $f^{-1}[V] \subseteq X$ 또한 열린 집합이라는 것이다.</p>
-</blockquote>
-
-<p>위상수학을 처음 수강하는 학생들은 위 정의에서 혼란을 겪는다. 직관적으로는 “$U \subseteq X$가 열린 집합이라면 $f[U] \subseteq V$ 또한 열린 집합인 사상”이라는 정의가 자연스러운데, 실제 정의는 이와 반대이기 때문이다. 이러한 직관의 “근거”는 대충 다음과 같을 것이다.</p>
-
-<h3 id="1-엡실론-델타-논법">1. 엡실론-델타 논법</h3>
-
-<p>엡실론-델타 논법에 따르면 $f: X \to Y$가 연속이라는 것은 다음과 같다.</p>
-
-\[\forall \epsilon &gt; 0 \; \exists \delta &gt; 0 : |x - y| &lt; \delta \rightarrow |f(x) - f(y)| &lt; \epsilon\]
-
-<p>위 논리식을 보면 조건부에 $x, y \in X$가 있고 결론부에 $f(x), f(y) \in Y$가 있다. 따라서 연속함수의 위상적 정의 또한 조건부에 $U \subseteq X$가 있고 결론부에 $f[U] \subseteq Y$가 있는 것이 자연스러워 보인다.</p>
-
-<h3 id="2-열린-집합에-대한-직관">2. 열린 집합에 대한 직관</h3>
-
-<p>처음 위상수학을 배울 때, 열린 집합을 “서로 가까운 점들의 모임”으로 생각하곤 한다. 즉, $U$가 열린 집합이라는 것은 $x, y \in U$라면 $x, y$가 “가깝다”는 것이다. 그렇다면 연속함수는 “가까운 점들을 가까운 점들로 사상시키는 함수”이므로, 열린 집합을 열린 집합으로 사상시키는 함수로 정의하는 것이 자연스러워 보인다.</p>
-
-<div style="margin: 2.5em 0;">
-</div>
-
-<p><strong>그러나 위 두 “근거”는 매우 잘못되었다.</strong></p>
-
-<div style="margin: 2.5em 0;">
-</div>
-
-<h3 id="3-엡실론-델타-논법-근거가-잘못된-이유">3. “엡실론-델타 논법” 근거가 잘못된 이유</h3>
-
-<p>$\rightarrow$만을 기준으로 왼쪽이 조건부, 오른쪽이 결론부로 판단하는 것은 오해를 낳기 딱 좋다. 왜냐하면 여기서는 양화사 또한 고려해야 하기 때문이다. 엡실론-델타 논법의 양화사 부분을 언어적으로 읽으면 “임의의 양수 $\epsilon$에 대해, 어떤 양수 $\delta$가 존재한다” 이다. 다른 말로 하자면, U$\epsilon$이 양수<em>라면</em>, 어떤 양수 $\delta$가 존재한다” 이다.</p>
-
-<p>그리고 $\epsilon$과 유관한 공간은 $X$가 아닌 $Y$이다. <u>즉, $\epsilon$에 대한 서술, 그리고 그에 부수되는 $Y$에 대한 서술이 해당 논리식에서 가장 일차적인 조건부인 것이다.</u> 따라서 위상적 정의에서 $V \subseteq Y$가 조건부에 있는 것은 이상한 일이 아니다.</p>
-
-<h3 id="4-열린-집합에-대한-직관-근거가-잘못된-이유">4. “열린 집합에 대한 직관” 근거가 잘못된 이유</h3>
-
-<p>편의를 위해 $x$와 $y$가 “가깝다”는 것을 $x \sim y$로 표기하자. “열린 집합에 대한 직관” 근거는 다음의 잘못된 직관에 기반한다.</p>
-
-<blockquote>
-  <p><strong>열린 집합에 대한 잘못된 직관.</strong> $x \in U$에 대해, $y \in U$라면 $x \sim y$이다.</p>
-</blockquote>
-
-<p>이는 다음과 같이 수정해야 한다.</p>
-
-<blockquote>
-  <p><strong>열린 집합에 대한 올바른 직관.</strong> $x \in U$에 대해, $x \sim y$라면 $y \in U$이다.</p>
-</blockquote>
-
-<p>조금만 생각해 보면 이는 당연하다. 일례로 실수 전체의 집합 $\mathbb{R}$은 열린 집합이다. 그렇다면 임의의 두 실수는 언제나 “가까운” 것인가? 그건 말도 안 된다. 반대 경우를 보면, $\lbrace  0 \rbrace $은 열린 집합이 아니지만 $x, y \in \lbrace  0 \rbrace $일 때 $x = y$이므로 $x$와 $y$는 최대한으로 “가깝다”. 따라서 “잘못된 직관”에 따르면 $\lbrace  0 \rbrace $은 열린 집합이다.</p>
-
-<p>반면 “올바른 직관”으로 보면 $\mathbb{R}$은 열린 집합이고 $\lbrace  0 \rbrace $은 열린 집합이 아닌 것이 분명하게 드러난다. $x \in \mathbb{R}$일 때, $x$와 “가까운” 실수 $y$는 자명하게 $\mathbb{R}$에 포함된다. 한편 $\lbrace  0 \rbrace $은 $0$의 “바로 곁”에 있는 실수들을 포함하고 있지 않으므로 열린 집합이 아니다.</p>
-
-<p>또한 “올바른 직관”으로 보면 연속함수의 위상적 정의가 “뒤집혀야” 하는 이유 또한 분명하다. 먼저 연속함수는 다음과 같이 직관적으로 이해할 수 있다.</p>
-
-<blockquote>
-  <p><strong>연속함수에 대한 올바른 직관.</strong> $x \sim y$라면 $f(x) \sim f(y)$이다.</p>
-</blockquote>
-
-<p>이제 위의 “직관”과 연속함수의 위상적 정의가 동치임을 보이자.</p>
-
-<h4 id="직관적-정의--위상적-정의">직관적 정의 =&gt; 위상적 정의</h4>
-
-<p>$f$가 “직관적으로 연속”일 때, 열린 집합 $V$에 대해 $U = f^{-1}[V]$가 열린 집합임을 보이자. $x \in U$, $x \sim y$라고 하자. $f$가 연속이므로 $f(x) \sim f(y)$이다. 그리고 $V$가 열린 집합이며 $f(x) \in V$이므로 $f(y) \in V$이다. 따라서 $y \in U$이다. □</p>
-
-<h4 id="위상적-정의--직관적-정의">위상적 정의 =&gt; 직관적 정의</h4>
-
-<p>$f$가 “위상적으로 연속”일 때, $x \sim y$라면 $f(x) \sim f(y)$임을 보이자. $V$가 $f(x)$와 “가까운” 점들만을 포함하는 집합이라고 하자. $V$는 열린 집합이다. 왜냐하면 $z \in V$이고 $z \sim w$일 때, $V$의 정의에 의해 $f(x) \sim z$이므로 ~추이성에 의해~ $f(x) \sim w$, 즉 $w \in V$이기 때문이다. 그리고 $U = f^{-1}[V]$가 $x$를 포함하는 열린 집합이므로 $y \in U$이다. 따라서 $f(y) \in V$, 즉 $f(x) \sim f(y)$이다. ■</p>
-
-<p>물론 위의 논의는 엄밀하게 정의되지 않은 관계 $\sim$을 사용하기 때문에 조금 석연찮기는 하다. 그러나 필자는 $\sim$을 사용하여 열린 집합과 연속성을 이해하는 것이 위상수학을 처음 공부하는 데 있어 유용한 길잡이가 되어준다고 생각한다. 덧붙이자면, 비표준 해석학을 사용하면 $x \sim y$를 $|x - y| = \epsilon$으로 엄밀하게 정의할 수 있다. 이에 관해서는 나중에 기회가 되면 이야기해 보겠다.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
