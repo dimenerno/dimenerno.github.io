@@ -7,10 +7,10 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>띠와 토러스의 호몰로지</title>
-        <link>https://dimenerno.github.io/2025/11/03/euler-poincare</link>
-        <guid>https://dimenerno.github.io/2025/11/03/euler-poincare</guid>
-        <pubDate>Mon, 03 Nov 2025 00:00:00 +0900</pubDate>
+        <title>단체 호몰로지</title>
+        <link>https://dimenerno.github.io/2025/11/05/euler-poincare</link>
+        <guid>https://dimenerno.github.io/2025/11/05/euler-poincare</guid>
+        <pubDate>Wed, 05 Nov 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $K$가 순수 $k$-단체 복합체&lt;sub&gt;pure simplicial complex&lt;/sub&gt;이고, $p \leq k$에 대해 $C_p(K)$가 $K$의 $p$-체인&lt;sub&gt;chain&lt;/sub&gt;들의 집합이라고 하자.&lt;/p&gt;
 
@@ -23,7 +23,7 @@
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/11/03/euler-poincare">
+          xml:base="https://dimenerno.github.io/2025/11/05/euler-poincare">
           <![CDATA[
             <blockquote>
   <p><strong>정의.</strong> $K$가 순수 $k$-단체 복합체<sub>pure simplicial complex</sub>이고, $p \leq k$에 대해 $C_p(K)$가 $K$의 $p$-체인<sub>chain</sub>들의 집합이라고 하자.</p>

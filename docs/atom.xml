@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-11-04T11:15:24+09:00</updated>
+ <updated>2025-11-05T10:07:24+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -13,10 +13,10 @@
 
  
  <entry>
-   <title>띠와 토러스의 호몰로지</title>
-   <link href="https://dimenerno.github.io/2025/11/03/euler-poincare"/>
-   <updated>2025-11-03T00:00:00+09:00</updated>
-   <id>https://dimenerno.github.io/2025/11/03/euler-poincare</id>
+   <title>단체 호몰로지</title>
+   <link href="https://dimenerno.github.io/2025/11/05/euler-poincare"/>
+   <updated>2025-11-05T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/11/05/euler-poincare</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $K$가 순수 $k$-단체 복합체&lt;sub&gt;pure simplicial complex&lt;/sub&gt;이고, $p \leq k$에 대해 $C_p(K)$가 $K$의 $p$-체인&lt;sub&gt;chain&lt;/sub&gt;들의 집합이라고 하자.&lt;/p&gt;
 

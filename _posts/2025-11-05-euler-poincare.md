@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "띠와 토러스의 호몰로지"
-date: 2025-11-03
+title: "단체 호몰로지"
+date: 2025-11-05
 tags: ["수학", "위상수학"]
 related:
 ---
