@@ -431,6 +431,155 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/20/Rational-Real/en"> Set-theoretic Definitions of Rational and Real Numbers </a>
+      </h1>
+    <span class="post-date">20 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <h3 id="1-cantors-isomorphism-theorem">1. Cantor’s Isomorphism Theorem</h3>
+
+<blockquote>
+  <p><strong>Cantor’s Isomorphism Theorem.</strong> Any countable, dense, linear order without endpoints is unique up to order isomorphism.</p>
+</blockquote>
+
+<p><strong>Proof 1. (Back-and-Forth Argument)</strong></p>
+
+<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B  \setminus \mathrm{im} f_n$ so that order isomorphism is preserved, and then map the <strong>least-indexed</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$ to an <strong>arbitrary</strong> $a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$ so that order isomorphism is preserved. (In the diagram, blue indicates the ‘least-indexed’ elements.)</p>
+
+<p><strong>Proof 2. (Only-Forth Argument)</strong></p>
+
+<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to the <strong>least-indexed</strong> $b_l \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
+
+<p><strong>Incorrect Proof. (Incorrect Only-Forth Argument)</strong></p>
+
+<p>At the $n$-th step, match the <strong>least-index</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
+
+<p><u>Why this is incorrect</u>: There is no guarantee that $\mathrm{im} \left[ \bigcup f_n \right]$ exhausts all of $B$. For example, it is possible that only $b$’s with even indices are chosen in every step.</p>
+
+<h3 id="2-dedekind-cuts">2. Dedekind Cuts</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a linearly ordered set $(P, &lt;)$, a pair of subsets $A, B$ of $P$ is called a <strong>cut</strong> if:</p>
+
+  <ol>
+    <li>$A \sqcup B = P$</li>
+    <li>For any $a \in A, b \in B$, $a &lt; b$.</li>
+  </ol>
+
+  <p>Furthermore, it is a <strong>Dedekind cut</strong> if:</p>
+
+  <ol>
+    <li>$A$ has no greatest element.</li>
+  </ol>
+
+  <p>It is called a <strong>gap</strong> if, in addition:</p>
+
+  <ol>
+    <li>$B$ has no least element.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Remark</strong></p>
+
+<ol>
+  <li>$P$ is complete ⇔ $P$ has no gaps.</li>
+  <li>As will be seen, for $P = \mathbb{Q}$, gaps correspond to irrational numbers while Dedekind cuts correspond to real numbers.</li>
+</ol>
+
+<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
+
+<h3 id="3-completion-theorem">3. Completion Theorem</h3>
+
+<blockquote>
+  <p><strong>Completion Theorem.</strong> If $(P, &lt;)$ is a dense linear order without endpoints, then there exists a unique (up to order isomorphism) complete linear order $(C, \prec)$ satisfying:</p>
+
+  <ol>
+    <li>$P \subseteq C$</li>
+    <li>$\prec$ coincides with $&lt;$ on $P$</li>
+    <li>$P$ is dense in $C$: for any $c_1 &lt; c_2 \in C$, there exists $p \in P$ with $c_1 &lt; p &lt; c_2$</li>
+    <li>$C$ has no endpoints.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Uniqueness Proof.</strong>
+Suppose $(C, \prec)$ and $(C^\ast, \prec^\ast)$ are complete linear orders satisfying the conditions. Define $\phi: C \to C^\ast$ as follows:</p>
+
+<ol>
+  <li>If $c \in P$, then $\phi(c)=c$</li>
+  <li>If $c \notin P$, then $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
+</ol>
+
+<p>This $\phi$ is an order isomorphism.</p>
+
+<p><strong>Existence Proof.</strong>
+Define:</p>
+
+\[\begin{gather}
+\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
+\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
+\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
+\end{gather}\]
+
+<p>Define an order on $\mathcal{D}$ by:</p>
+
+\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
+
+<p>If $(A, B) \in \mathcal{P}$, then for some $p$, $B = \lbrace  x \in P : x \geq p  \rbrace$, and we write $(A, B) = [p]$. That is,</p>
+
+\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
+
+<p>It is easy to check that $(\mathcal{P}, \prec) \sim (P, &lt;)$. Now, we show the following:</p>
+
+<p><em>Claim.</em> $\mathcal{D}$ is an extension of $\mathcal{P}$ satisfying all four conditions of the Completion Theorem.</p>
+
+<p>Conditions 1, 2, and 4 are clear. We show 3.</p>
+
+<p>Let $\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$ with $\mathfrak{d}_1 \prec \mathfrak{d}_2$, i.e., $A_1 \subset A_2$. There exists $p \in A_2 \setminus A_1$ such that $p$ is not the least element of $B$, i.e., $p \in P$. For such $p$, we have $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$. □</p>
+
+<p>Finally, we show:</p>
+
+<p><em>Claim.</em> $(\mathcal{D}, \prec)$ is complete.</p>
+
+<p>Let $\mathcal{S}$ be a nonempty, upward-bounded subset of $\mathcal{D}$. Define:</p>
+
+\[\begin{gather}
+A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
+B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
+\end{gather}\]
+
+<p>Then $(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$ and is the least upper bound of $\mathcal{S}$. ◾</p>
+
+<blockquote>
+  <p><strong>Set-theoretic Definition of the Real Numbers.</strong> A set $(R, &lt;)$ satisfying the following is unique up to order isomorphism:</p>
+
+  <ol>
+    <li>It is a complete linear order.</li>
+    <li>It has no endpoints.</li>
+    <li>It is separable; i.e., there exists $Q \subset R$ which is countable and dense in $R$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> This follows from Cantor’s Isomorphism Theorem and the Completion Theorem.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2024/11/19/CSB"> 칸토어-슈뢰더-베른슈타인 정리 </a>

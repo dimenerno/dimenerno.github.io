@@ -431,6 +431,153 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/13/spectral-theorem/en"> Adjoints, Normal Transformations, and the Spectral Theorem </a>
+      </h1>
+    <span class="post-date">13 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/algebra/'">
+        Algebra
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>In this article, we assume that all vector spaces are inner product spaces. Furthermore, all transformations are linear transformations.</p>
+
+<h2 id="1-adjoints-of-linear-transformations">1. Adjoints of Linear Transformations</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(V, \langle \cdot \rangle_V), (W, \langle \cdot \rangle_W)$ be inner product vector spaces. For $T: V \to W$, the <strong>adjoint</strong> $T^\ast: W \to V$ of $T$ is the linear transformation satisfying the following condition:</p>
+
+\[\forall v \in V, w \in W : \quad \langle w, Tv \rangle_W = \langle T^\ast w, v \rangle_V\]
+</blockquote>
+
+<p>If one recalls the <a href="https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">definition of adjoints in category theory</a>, the form of this equation is similar.</p>
+
+<p>To justify this definition, we must show that the adjoint exists uniquely for every $T$. This follows from the Riesz representation theorem.</p>
+
+<blockquote>
+  <p><strong>Riesz Representation Theorem.</strong> Let $V$ be an inner product space. For $\phi \in V^\ast$, there exists a unique vector $v$ satisfying:</p>
+
+\[\forall u \in V : \quad \phi(u) = \langle u, v \rangle\]
+</blockquote>
+
+<p>When $V$ is finite-dimensional, the above theorem is easily shown by choosing an orthogonal basis for $V$. When $V$ is a general Hilbert space, the proof is more involved and shall be omitted.</p>
+
+<p>From the Riesz representation theorem, we can justify the definition of the adjoint as follows. Given $w \in W$, the mapping $v \mapsto \langle w, Tv \rangle$ is an element of $V^\ast$. Therefore, there exists some $u_w \in V$ such that</p>
+
+\[\forall v \in V : \langle w, Tv \rangle = \langle u_w, v \rangle\]
+
+<p>At this point, one can easily show that the mapping $w \mapsto u_w$ is linear. This linear mapping is the adjoint we seek.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A linear mapping $T : V \to V$ satisfying $T^\ast = T$ is called <strong>self-adjoint</strong>.</p>
+</blockquote>
+
+<p>When the matrix representation of $T : V \to W$ is $M$, the matrix representation of $T^\ast$ in the same basis is the conjugate transpose of $M$, namely $M^\dagger$ — this can be shown, albeit somewhat tediously, without much difficulty. Therefore, the matrix of a self-adjoint transformation is a Hermitian matrix.</p>
+
+<blockquote>
+  <p><strong>Complex Self-Adjoint Criterion.</strong> When $V$ is a complex vector space, $T: V \to V$ is self-adjoint if and only if $\langle Tv, v \rangle \in \mathbb{R}$ for any $v \in V$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> The necessary condition is trivial, so we prove the sufficient condition. First, we establish the following lemma.</p>
+
+<p><em>Lemma.</em> Let $V$ be a complex vector space. For $T : V \to V$, $T = 0$ if and only if $\langle Tv, v \rangle = 0$ for any $v \in V$.</p>
+
+<p><em>Proof of the lemma.</em> The necessary condition is trivial, so we prove the sufficient condition. For any $u, v \in V$,</p>
+
+\[\langle T(u + v) , u + v \rangle = \langle Tu, v \rangle + \langle Tv, u \rangle = 0\]
+
+<p>and</p>
+
+\[\begin{aligned}
+\langle T(u + iv), u + iv \rangle &amp;= \langle T(u), iv \rangle + \langle T(iv), u \rangle \\ &amp;= -i \langle Tu, v \rangle + i \langle Tv, u \rangle = 0
+\end{aligned}\]
+
+<p>Solving these two equations simultaneously yields $\langle Tu, v \rangle = 0$. From this, it is easy to show that $T = 0$. □</p>
+
+<p>We now prove the main theorem. Since $\langle Tv, v \rangle \in \mathbb{R}$, we have $\langle Tv, v \rangle = \langle v, Tv \rangle$. Also, by the definition of the adjoint, $\langle Tv, v \rangle = \langle v, T^\ast v \rangle$. Therefore, $\langle v, (T - T^\ast)v \rangle = 0$. From the lemma, it follows that $T = T^\ast$. ■</p>
+
+<blockquote>
+  <p><strong>Trivial Self-Adjoint Criterion.</strong> Let $V$ be a real or complex vector space. For a self-adjoint transformation $T: V \to V$, $T = 0$ if and only if $\langle Tv, v \rangle = 0$ for any $v \in V$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> For complex vector spaces, this follows from the lemma above. Therefore, we prove only the case when $V$ is a real vector space. The necessary condition is trivial, so we prove the sufficient condition. For any $u, v \in V$,</p>
+
+\[\begin{aligned}
+\langle T(u + v), u + v \rangle &amp;= \langle Tu, v \rangle + \langle Tv, u \rangle &amp;&amp;(\because \langle Tv, v \rangle = 0) \\
+&amp;= \langle Tu, v \rangle + \langle u, Tv \rangle &amp;&amp;(\because \mathrm{im} \langle \cdot \rangle \subset \mathbb{R}) \\
+&amp;= 2\langle Tu, v \rangle &amp;&amp;(\because T^\ast = T)
+\end{aligned}\]
+
+<p>That is, $\langle Tu, v \rangle = 0$ for any $u, v \in V$, so $T = 0$. ■</p>
+
+<h2 id="2-normal-linear-transformations">2. Normal Linear Transformations</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> For $T : V \to V$, when $TT^\ast = T^\ast T$, we call $T$ <strong>normal</strong>.</p>
+</blockquote>
+
+<p>Every self-adjoint transformation is normal, but the converse does not hold.</p>
+
+<blockquote>
+  <p><strong>Normal Criterion.</strong> Let $V$ be a real or complex vector space. $T: V \to V$ is normal if and only if $\lVert Tv \rVert = \lVert T^\ast v \rVert$ for any $v$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> This follows from the “Trivial Self-Adjoint Criterion”. ■</p>
+
+<blockquote>
+  <p><strong>Conjugacy of Normal Eigenvectors.</strong> Let $V$ be a real or complex vector space, and let $T : V \to V$ be normal. When $v$ is an eigenvector of $T$ with eigenvalue $\lambda$, then $v$ is an eigenvector of $T^\ast$ with eigenvalue $\bar{\lambda}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> When $T$ is normal, $T - \lambda I$ is also easily shown to be normal. Therefore,</p>
+
+\[\lVert (T - \lambda I) v \rVert = \lVert (T - \lambda I)^\ast v \rVert = \lVert (T^\ast - \bar{\lambda} I) v \rVert = 0. \quad \blacksquare\]
+
+<p>The origin of the name ‘normal’ lies in the following theorem.</p>
+
+<blockquote>
+  <p><strong>Normality of Normal Eigenvectors.</strong> Let $T: V \to V$ be normal. If $u, v \in V$ are eigenvectors of $T$ with distinct eigenvalues, then $u$ and $v$ are orthogonal.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let the eigenvalues of $u, v$ be $\alpha, \beta$ respectively.</p>
+
+\[\begin{aligned}
+(\alpha - \beta)\langle u, v \rangle &amp;= \langle \alpha u, v \rangle - \langle u, \bar{\beta}v \rangle \\
+&amp;= \langle Tu, v \rangle - \langle u, T^\ast v \rangle = 0.
+\end{aligned}\]
+
+<p>Since $\alpha - \beta \neq 0$, we have $\langle u, v \rangle = 0$. ■</p>
+
+<h2 id="3-spectral-theorems">3. Spectral Theorems</h2>
+
+<p>while it is commonly claimed that the name ‘spectral’ derives from the spectral theorem being used to explain atomic spectra in quantum mechanics, this is not factual. Hilbert had already used the term ‘spectrum’ before the spectral theorem was employed to explain atomic spectra. The precise origin is unknown, but one might conjecture that it arose from the imagery that eigenvectors characterise the properties of Hilbert spaces, similar to how light spectra characterise light.</p>
+
+<blockquote>
+  <p><strong>Complex Spectral Theorem.</strong> Let $V$ be a complex vector space. $T: V \to V$ is normal if and only if the eigenvectors of $T$ form an orthogonal basis for $V$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> <em>TODO</em> ■</p>
+
+<blockquote>
+  <p><strong>Real Spectral Theorem.</strong> Let $V$ be a real vector space. $T: V \to V$ is self-adjoint if and only if the eigenvectors of $T$ form an orthogonal basis for $V$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> <em>TODO</em> ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/02/13/three-definitions-of-adjoint"> 어드조인트에 대한 세 가지 접근 </a>
@@ -2270,156 +2417,6 @@ for y ∈ P:
 </blockquote>
 
 <p>이런 이유로 지금까지의 과정을 <strong>베타 암호화(Beta coding)</strong>라고 부른다. 괴델은 베타 암호화를 이용하여 지수 연산과 소인수분해를 PA에서 성공적으로 정의했으며, 이로부터 괴델 수와 비롯된 여러 술어를 PA에서 형식화할 수 있었다. 제목에서 드러나다시피 원래 이 글의 목표는 이 과정을 모두 개괄하는 것이었으나 때늦게 찾아온 필자의 귀찮음 이슈와, 글을 여기까지 읽은 독자라면 이후 내용은 어렵지 않게 유추 가능하리라는 생각으로 이만 줄인다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/01/25/beta-function/en"> Defining Gödel Numbers in Peano Arithmetic via the Beta Function </a>
-      </h1>
-    <span class="post-date">25 Jan 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <p><strong>Summary.</strong> First-order Peano arithmetic does not permit quantification over predicates, hence it requires separate axioms to define addition and multiplication. However, further operations such as exponentiation and factorial are definable without separate axioms, provided that tuples can be defined in Peano arithmetic. And since tuples are definable in Peano arithmetic through beta encoding, Peano arithmetic can formalise exponentiation, factorial, prime factorisation, and ultimately Gödel numbering.</p>
-
-<h2 id="1-introduction">1. Introduction</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> <strong>Peano arithmetic (PA)</strong> is a theory with signature $(0, S, +, \cdot)$, where the axioms are as follows:</p>
-
-  <ol>
-    <li>$\forall x : S(x) \neq 0$</li>
-    <li>$\forall x, y : S(x) = S(y) \rightarrow x = y$</li>
-    <li>$\forall x : x + 0 = x$</li>
-    <li>$\forall x, y : x + S(y) = S(x + y)$</li>
-    <li>$\forall x, y : x \cdot 0 = 0$</li>
-    <li>$\forall x, y : x \cdot S(y) = (x \cdot y) + x$</li>
-  </ol>
-
-  <p>Additionally, it has the following induction axiom schema. For any first-order formula $\phi(x)$:</p>
-
-  <p> 7. $\big[ \phi(0) \land \forall x \; [ \phi(x) \rightarrow \phi(S(x)) ] \big] \rightarrow \forall x \;\phi(x)$</p>
-</blockquote>
-
-<p>For convenience, we define $&lt;, -, \bmod$ as follows:</p>
-
-\[\begin{aligned}
-&amp;x &lt; y : &amp;&amp;\exists z \neq 0\; [x + z = y]\\
-&amp;x - y = z : &amp;&amp;x = y + z \\
-&amp;x \bmod y = z: &amp;&amp; (z &lt; y) \land \exists q \;[ qy + z = x ]
-\end{aligned}\]
-
-<p>Historically, the Peano arithmetic first presented by Dedekind was a second-order logic theory, hence it had an induction <em>axiom</em> rather than induction <em>axiom schema</em>.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> <strong>Second-order Peano arithmetic</strong> is a theory with signature $(0, S)$, where the axioms are as follows:</p>
-
-  <ol>
-    <li>$\forall x : S(x) \neq 0$</li>
-    <li>$\forall x, y : S(x) = S(y) \rightarrow x = y$</li>
-    <li>$\forall \phi \bigg[ \big[ \phi(0) \land \forall x \; [ \phi(x) \rightarrow \phi(S(x)) ] \big] \rightarrow \forall x \;\phi(x)\bigg]$</li>
-  </ol>
-</blockquote>
-
-<p>Note that second-order formalisation omits axioms 3-6. The reason they are unnecessary is that second-order logic permits quantification over predicates, enabling addition and multiplication to be defined using second-order formulae alone. For instance, $w = u + v$ is equivalent to the following formula:</p>
-
-\[\forall \phi \bigg[ \forall x, y, z \big[ \phi(x, 0, x) \land (\phi(x, S(y), z) \rightarrow \phi(x, y, S(z)) \big] \rightarrow \phi(u, v, w) \bigg]\]
-
-<p>However, since second-order logic was found to have numerous mathematical and philosophical shortcomings, the first-order Peano arithmetic introduced at the beginning became the standard norm. The implications of the transition from second to first are, firstly, that the induction axiom becomes an axiom schema, and secondly, that addition and multiplication must be defined through separate axioms.</p>
-
-<p>This raises the question: are there no other operations besides addition and multiplication that need separate definition? For example, can operations such as exponentiation, prime factorisation, and factorial be defined without additional axioms? Furthermore, can Gödel numbering, which maps formulae to natural numbers one-to-one, be defined using Peano arithmetic alone?</p>
-
-<h2 id="2-tuples">2. Tuples</h2>
-
-<p>The insight that answers this question is that if <strong>tuples</strong> can be defined in Peano arithmetic, then numerous other operations become definable. Here, a tuple refers to a finite sequence of natural numbers such as $(1, 4, 2)$.</p>
-
-<p>For instance, suppose the following predicates and functions are defined:</p>
-
-<ul>
-  <li>$\mathrm{Tup}(\tau):$ $\tau$ is a tuple.</li>
-  <li>$\mathrm{At}(\tau, i):$ When $\tau$ is a tuple, returns the $i$-th index of $\tau$.</li>
-  <li>$\mathrm{Len}(\tau):$ Returns the length of $\tau$.</li>
-</ul>
-
-<p>For convenience, let us write $\mathrm{At}(\tau, i)$ as $\tau[i]$. For example, if $\tau = (1, 4, 2)$, then the following holds (assuming the index starts from 0):</p>
-
-\[\mathrm{Tup}(\tau) \; \land \;  \mathrm{Len}(\tau) = 3 \;\land\; \tau[1] = 4\]
-
-<p>Using tuples, we can define $z = x^y$ as follows:</p>
-
-\[\forall \tau \bigg[ \big[ \mathrm{Tup}(\tau)\; \land \; \tau[0] = 1 \;\land \forall i &lt; y (\tau[i + 1] = \tau[i] \cdot x) \big] \rightarrow \tau[y] = z \bigg]\]
-
-<h2 id="3-beta-encoding">3. Beta Encoding</h2>
-
-<p>Can tuples be defined using only addition, multiplication, and first-order formulae? The answer is <strong>yes</strong>. As might be expected, it was Gödel who first proved this result. Let us first recall the following theorem:</p>
-
-<blockquote>
-  <p><strong>Chinese Remainder Theorem.</strong> Let $(n_1, \dots, n_k)$ be pairwise coprime. For any $(r_1, \dots, r_k)$ with $0 \leq r_i &lt; n_i$, there always exists a number $x$ satisfying:</p>
-
-\[x \bmod n_i = r_i\]
-</blockquote>
-
-<p>Gödel’s idea was to think of the number $x$ from the Chinese Remainder Theorem as a code for the tuple $(r_1, \dots, r_k)$. However, there is a problem here. To decode $(r_1, \dots, r_k)$ from $x$, we need $(n_1, \dots, n_k)$ to be given, which itself is a tuple.</p>
-
-<p>To solve this problem, Gödel produced the following lemma:</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> $n!+ 1, 2n! + 1, \dots, n \cdot n! + 1$ are pairwise coprime.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> For $1 \leq a &lt; b \leq n$, let $u = an! + 1, v = bn! + 1$. By the Euclidean algorithm,</p>
-
-\[\mathrm{gcd}(u, v) = \mathrm{gcd}(u, v - u) = \mathrm{gcd}(an! + 1, (b - a)n!)\]
-
-<p>The set of all divisors of $(b - a)n!$ is $\lbrace  1, 2, \dots, n\rbrace $. Since none of these elements divides $an! + 1$, we have $\mathrm{gcd}(an! + 1, (b - a)n!) = \mathrm{gcd}(u, v) = 1$. □</p>
-
-<p>With this lemma, instead of individually specifying $n$ pairwise coprime numbers, we can simply let $n$ be an arbitrary number, and from it, $n$ pairwise coprime numbers $n! + 1, 2n! + 1, \dots, n \cdot n! + 1$ can be chosen canonically. We can now define tuples as an <strong>ordered pair</strong>.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> We represent the tuple $(r_1, \dots, r_k)$ as an ordered pair $\langle a, b \rangle$ as follows:</p>
-
-  <ul>
-    <li>$b = n! \quad \text{where} \quad n = \max(r_1, \dots, r_k, k)$</li>
-    <li>$a \bmod (kb + 1) = r_k$</li>
-  </ul>
-
-  <p>where $a$ is chosen to be the smallest natural number satisfying the second condition.</p>
-</blockquote>
-
-<p>Meanwhile, tuples can be represented as natural numbers through a well-defined injection from $\mathbb{N}^2$ to $\mathbb{N}$. The following is an example:</p>
-
-\[\pi(a, b) = \frac{(a + b)(a + b + 1)}{2} + b\]
-
-<p>Check that $b$ is injective. Hence we can define as follows:</p>
-
-<blockquote>
-  <p><strong>Definition.</strong></p>
-
-\[\langle a, b \rangle = \frac{(a + b)(a + b + 1)}{2} + b\]
-</blockquote>
-
-<p>This establishes that we can encode a tuple $\tau$ as a natural number $n$. Conversely, given $n$, we can decode $\tau$ using only addition, multiplication, and the modulo operation. Since the modulo operation is easily definable from addition, multiplication, and first-order logic, our goal is achieved.</p>
-
-<p>Historically, Gödel’s theorem was as follows:</p>
-
-<blockquote>
-  <p><strong>$\beta$-function Lemma.</strong> For any sequence of natural numbers $(n_1, \dots, n_k)$, there exist natural numbers $a, b$ such that $\beta(a, b, i) = n_i$ for $1 \leq i \leq k$, where $\beta$ is the function defined as follows:</p>
-
-\[\beta(x, y, i) = x \bmod (iy + 1)\]
-</blockquote>
-
-<p>For this reason, the entire process is called <strong>beta encoding</strong>. Gödel used beta encoding to successfully define exponentiation and prime factorisation in PA, enabling the formalisation of Gödel numbers and various related predicates in PA. As indicated by the title, the original goal of this article was to provide an overview of this entire process. However, due to the author’s tardily arising laziness and the belief that readers who have come this far can easily infer the subsequent content, let me finish off here.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -431,6 +431,157 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/01/elementary-embedding/en"> Homomorphisms, Embeddings, and Elementary Embeddings </a>
+      </h1>
+    <span class="post-date">01 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/model-theory/'">
+        Model Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>For convenience, this article takes the approach of reducing function expressions $f(a) = c$ to binary predicates $F(a, c)$, rather than treating predicates and functions as separate objects.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be structures of language $\mathcal{L}$. A mapping $f: \mathfrak{A} \to \mathfrak{B}$ satisfying the following is called a <strong>homomorphism</strong>. For any relation $R$ in $\mathcal{L}$ and arbitrary $a_1, \dots, a_n \in \mathfrak{A}$,</p>
+
+\[R^\mathfrak{A}(a_1, \dots, a_n) \implies R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
+
+  <p>Additionally, when a homomorphism $f$ is injective and satisfies the following, we call $f$ an <strong>embedding</strong>.</p>
+
+\[R^\mathfrak{A}(a_1, \dots, a_n) \iff R^\mathfrak{B}(f(a_1), \dots, f(a_n))\]
+</blockquote>
+
+<p>An injective homomorphism is not necessarily an embedding. For example, consider the following two structures of language $\mathcal{L}$ with one binary relation $&lt;$. Objects satisfying $&lt;$ are indicated by arrows. That is, $b_1 &lt;^\mathfrak{B} b_2$.</p>
+
+<p><img src="/public/model-injective-vs-embedding.png" style="width: 100%; max-width: 500px; margin: 1.5em auto;" /></p>
+
+<p>Since no elements in $\mathfrak{A}$ satisfy $&lt;^\mathfrak{A}$, the mapping $f: a_1 \mapsto b_1, a_2 \mapsto b_2$ is trivially a homomorphism and is injective. However, $f$ is not an embedding. If $f$ were an embedding, then from $b_1 &lt;^\mathfrak{B} b_2$ it would follow that $a_1 &lt;^\mathfrak{A} a_2$. That is, an embedding must preserve not only the elements of $\mathfrak{A}$ but also the relationships between elements in $\mathfrak{B}$. In this respect, embeddings are similar to full functors in category theory.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathfrak{A}$ be a structure of language $\mathcal{L}$. Define $\mathcal{L}_\mathfrak{A}$ as the language obtained by adding to $\mathcal{L}$ as many constants as the size of the domain of $\mathfrak{A}$.</p>
+</blockquote>
+
+<p>For example with Peano arithmetic, when $\mathcal{L} = (0, S, +)$ and $\mathfrak{A}$ is the standard model of arithmetic, then $\mathcal{L}_\mathfrak{A} = (0, 1, 2, 3, \dots, S, +)$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\Delta_\mathfrak{A}^+$ denote the set of all $\mathcal{L}_\mathfrak{A}$-atomic propositions satisfied by $\mathfrak{A}$. That is,</p>
+
+\[\Delta_\mathfrak{A}^+ = \{ R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
+
+  <p>Additionally, let $\Delta_\mathfrak{A}$ denote the set obtained by adding to $\Delta_\mathfrak{A}^+$ the negations of all $\mathcal{L}$-atomic propositions not satisfied by $\mathfrak{A}$. That is,</p>
+
+\[\Delta_\mathfrak{A} = \Delta_\mathfrak{A}^+ \cup \{ \lnot R(c_1, \dots, c_n) \mid R, c_i \in \mathcal{L}_\mathfrak{A}, \; \mathfrak{A} \not\vDash R^{\mathfrak{A}}(c_1^\mathfrak{A}, \dots, c_n^\mathfrak{A}) \}\]
+</blockquote>
+
+<p>The notation $\Delta$ is related to the <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">arithmetic hierarchy</a>.</p>
+
+<p>Since $\Delta_\mathfrak{A}$ is obtained by adding the negations of atomic propositions missing from $\Delta_\mathfrak{A}^+$, the two sets contain essentially the same information. Nevertheless, we define the two sets separately because of the following theorem.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be $\mathcal{L}$-structures.</p>
+
+  <ol>
+    <li>There exists an injective homomorphism $f: \mathfrak{A} \to \mathfrak{B}$ if and only if $\mathfrak{B}$ is an $\mathcal{L}<em>\mathfrak{A}$-model of $\Delta</em>\mathfrak{A}^+$.</li>
+    <li>There exists an embedding $f: \mathfrak{A} \to \mathfrak{B}$ if and only if $\mathfrak{B}$ is an $\mathcal{L}<em>\mathfrak{A}$-model of $\Delta</em>\mathfrak{A}$.</li>
+  </ol>
+</blockquote>
+
+<p>That is, when $\mathfrak{B}$ satisfies $\Delta_\mathfrak{A}^+$, there is a possibility that $\mathfrak{B}$ satisfies atomic propositions ‘excessively’, preventing $\mathfrak{A}$ from being embedded into $\mathfrak{B}$. However, when $\mathfrak{B}$ satisfies $\Delta_\mathfrak{A}$, there are constraints on which atomic propositions $\mathfrak{B}$ can satisfy, thus guaranteeing the possibility of embedding.</p>
+
+<p>In a <a href="https://dimenerno.github.io/2025/04/17/los-tarski/">previous article</a>, we introduced the concept of <strong>elementary submodel</strong>. From this, we can define the following concept.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> When $f: \mathfrak{A} \to \mathfrak{B}$ is an embedding and $f[\mathfrak{A}]$ is an elementary submodel of $\mathfrak{B}$, we call $f$ an <strong>elementary embedding</strong>.</p>
+</blockquote>
+
+<p>The set of sentences related to elementary embeddings is as follows.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $E(\mathfrak{A})$ denote the set of all $\mathcal{L}_\mathfrak{A}$-propositions satisfied by $\mathfrak{A}$. That is,</p>
+
+\[E(\mathfrak{A}) = \{ \phi : \mathfrak{A} \vDash \phi \}\]
+</blockquote>
+
+<p>The most distinguishing feature of $E(\mathfrak{A})$ from $\Delta_\mathfrak{A}$ is that it also includes sentences with quantifiers.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be $\mathcal{L}$-structures. There exists an elementary embedding $f: \mathfrak{A} \to \mathfrak{B}$ if and only if $\mathfrak{B}$ is an $\mathcal{L}_\mathfrak{A}$-model of $E(\mathfrak{A})$.</p>
+</blockquote>
+
+<p>Finally, the following set of sentences is worth mentioning.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathfrak{A}$ be an $\mathcal{L}$-structure. Let $\mathrm{Th}(\mathfrak{A})$ denote the set of all $\mathcal{L}$-sentences true in $\mathfrak{A}$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathfrak{A}, \mathfrak{B}$ be $\mathcal{L}$-structures. $\mathfrak{A}$ and $\mathfrak{B}$ are elementarily equivalent if and only if $\mathrm{Th}(\mathfrak{A}) = \mathrm{Th}(\mathfrak{B})$.</p>
+</blockquote>
+
+<p>In fact, this is nothing more than the definition of elementary equivalence, so it hardly deserves to be called a theorem, but it has been included here to maintain consistency with the other theorems introduced in this article.</p>
+
+<p>Summarising in a table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Definition</th>
+      <th>Example</th>
+      <th>Mapping</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$\Delta_\mathfrak{A}^+$</td>
+      <td>$\mathcal{L}_\mathfrak{A}$-atomic propositions satisfied by $\mathfrak{A}$</td>
+      <td>$0 &lt; 1$</td>
+      <td>Surjective homomorphism</td>
+    </tr>
+    <tr>
+      <td>$\Delta_\mathfrak{A}$</td>
+      <td>$\Delta_0$ $\mathcal{L}_\mathfrak{A}$-propositions satisfied by $\mathfrak{A}$</td>
+      <td>$\lnot(1 &lt; 0)$</td>
+      <td>Embedding (submodel)</td>
+    </tr>
+    <tr>
+      <td>$\mathrm{Th}(\mathfrak{A})$</td>
+      <td>$\mathcal{L}$-propositions satisfied by $\mathfrak{A}$</td>
+      <td>$\forall x \exists y (x &lt; y)$</td>
+      <td>Elementary equivalence</td>
+    </tr>
+    <tr>
+      <td>$E(\mathfrak{A})$</td>
+      <td>$\mathcal{L}_\mathfrak{A}$-propositions satisfied by $\mathfrak{A}$</td>
+      <td>$\not \exists x (x &lt; 0)$</td>
+      <td>Elementary embedding (elementary submodel)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example, $\mathfrak{A} = (\mathbb{N}, &lt;)$ embeds into $\mathfrak{B} = (\mathbb{Z}, &lt;)$, but does not embed elementarily. This is because $\mathfrak{B}$ does not satisfy the sentence $\not \exists x (x &lt; 0)$ from $E(\mathfrak{A})$.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/04/24/continuum-coloring"> 연속체 가설과 동치인 색칠 문제 </a>
@@ -1573,121 +1724,6 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 <p>$\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$라고 하자. $\mathcal{L}’$과 $T’$을 앞선 바와 같이 정의한다.</p>
 
 <p>$\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$이므로 하향 뢰벤하임-스콜렘 정리에 의해 $T’$은 크기가 $\kappa$를 넘지 않는 모델을 가진다. 그런데 상향 뢰벤하임-스콜렘 정리의 증명에서 지적했듯이 $T’$의 모든 모델은 크기가 $\kappa$ 이상이다. 따라서 $T’$은 크기가 정확히 $\kappa$인 모델을 가지며, 이에 따라 $T$ 또한 크기가 정확히 $\kappa$인 모델을 가진다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/10/completeness-theorem/en"> Completeness Theorem and Löwenheim-Skolem Theorem </a>
-      </h1>
-    <span class="post-date">10 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>Gödel’s completeness theorem and the Löwenheim-Skolem theorem are amongst the most fundamental theorems in mathematical logic. To consolidate the fundamentals, I have revisited the proofs of these theorems. In this article, $T$ is considered as a first-order logical theory in language $\mathcal{L}$.</p>
-
-<h2 id="gödels-completeness-theorem">Gödel’s Completeness Theorem</h2>
-
-<blockquote>
-  <p><strong>Gödel’s Completeness Theorem.</strong> If $T \vDash \phi$, then $T \vdash \phi$.</p>
-</blockquote>
-
-<h3 id="proof">Proof</h3>
-
-<p>We prove the following equivalent statement. (Exercise: Why is this equivalent?)</p>
-
-<blockquote>
-  <p>If $T$ is a consistent theory, then $T$ has a model.</p>
-</blockquote>
-
-<h4 id="1-extending-mathcall-to-the-skolem-language-mathcall_s">1. Extending $\mathcal{L}$ to the Skolem language $\mathcal{L}_S$</h4>
-
-<p>Let $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$. Let $\mathcal{L}_S$ be the language obtained by adding constants $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ (where $\alpha$ is an ordinal) to $T$. Here, the subscript $S$ indicates that each constant will serve as a <strong>Skolem constant</strong>.</p>
-
-<h4 id="2-extending-t-to-the-henkin-theory-t_h">2. Extending $T$ to the Henkin theory $T_H$</h4>
-
-<p>Since the size of the set of formulae in $\mathcal{L}_S$ with one free variable is equal to $\kappa$, by the well-ordering principle, we can represent them as $\lbrace  P_\alpha \rbrace _{\alpha \in \kappa}$. From this, we define the following set of sentences:</p>
-
-\[\Sigma = \{ Q_\alpha := \exists x P_\alpha \rightarrow P_\alpha(c_\lambda) \mid \alpha \in \kappa \}\]
-
-<p>where $c_\lambda$ is the constant with the smallest index amongst the constants that do not appear in $P_\alpha$ and $Q_\beta \; (\beta &lt; \alpha)$ (the existence of such a constant is guaranteed by the fact that ordinals are well-ordered). Now we define $T_H = T \cup \Sigma$. We call $T_H$ the <strong>Henkin theory</strong> and $Q_\alpha$ the Henkin axioms.</p>
-
-<h4 id="3-extending-t_h-to-a-maximally-consistent-theory-overlinet_h">3. Extending $T_H$ to a maximally consistent theory $\overline{T_H}$</h4>
-
-<blockquote>
-  <p><strong>Lindenbaum’s Lemma.</strong> When $T$ is a consistent theory, there exists a maximally consistent theory $\overline{T}$ that extends $T$. That is, $T \subseteq T’$ and for any $\mathcal{L}$ sentence $\phi$, either $\phi \in \overline{T}$ or $\lnot\phi \in \overline{T}$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> We order the collection of consistent theories that extend $T$ by $\subseteq$ and apply Zorn’s lemma.</p>
-
-<p>When $T$ is a consistent theory, we can easily show that $T_H$ is also consistent. Therefore, by Lindenbaum’s lemma, there exists a maximally consistent theory $\overline{T_H}$ that extends $T_H$.</p>
-
-<h4 id="4-defining-the-canonical-model-of-overlinet_h">4. Defining the canonical model of $\overline{T_H}$</h4>
-
-<p>Let $c_\alpha \sim c_\beta$ be the relation that holds when $(c_\alpha = c_\beta) \in \overline{T_H}$. From the fact that $\overline{T_H}$ is a consistent theory, we can show that $\sim$ is an equivalence relation. Therefore, the equivalence classes $[c_\alpha]$ of constants are well-defined. We now define a structure $\mathfrak{M}$ for $\mathcal{L}_S$ as follows:</p>
-
-<ol>
-  <li>Constants: $c_\alpha^{\mathfrak{M}} = [c_\alpha]$</li>
-  <li>Predicates: $R^{\mathfrak{M}}(c_{\alpha_1}^\mathfrak{M}, \dots, c_{\alpha_n}^{\mathfrak{M}}) \iff \overline{T_H} \vdash R(c_{\alpha_1}, \dots, c_{\alpha_n}) $</li>
-  <li>Functions: $f(c_\alpha^\mathfrak{M}) = c_\beta^\mathfrak{M} \iff T_H \vdash \exists x (f(c_\alpha) = x) \rightarrow f(c_\alpha) = c_\beta$</li>
-</ol>
-
-<p>Since $\overline{T_H}$ is maximally consistent, (2) is well-defined, and since it is a Henkin theory, (3) is well-defined. Therefore, $\mathfrak{M}$ is well-defined, and we can easily verify that $\mathfrak{M}$ is a model of $\overline{T_H}$. Since $\mathfrak{M}$ is also a model of $T$, $T$ has a model. ■</p>
-
-<p><strong>Remark 1.</strong> The proof of the completeness theorem depends on the axiom of choice in that it uses the well-ordering principle and Zorn’s lemma. It can also be proved using weaker forms of the axiom of choice such as König’s lemma or the axiom of dependent choice.</p>
-
-<p><strong>Remark 2.</strong> The <strong>compactness theorem</strong> is obtained as a corollary of the completeness theorem. (Exercise)</p>
-
-<p><strong>Remark 3.</strong> The size of the model constructed in the proof of the completeness theorem does not exceed $\kappa = \mathrm{max}(\aleph_0, |\mathcal{L}|)$. Since we take equivalence classes in the final step, there is no guarantee that it equals $\kappa$.</p>
-
-<h2 id="löwenheim-skolem-theorem">Löwenheim-Skolem Theorem</h2>
-
-<blockquote>
-  <p><strong>Löwenheim-Skolem Theorem.</strong> Suppose $T$ has an infinite model. For any $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$, there exists a model of $T$ of size $\kappa$.</p>
-</blockquote>
-
-<h3 id="proof-1">Proof</h3>
-
-<h4 id="downward-löwenheim-skolem-theorem">Downward Löwenheim-Skolem Theorem</h4>
-
-<blockquote>
-  <p><strong>Downward Löwenheim-Skolem Theorem.</strong> $T$ has a model of size not exceeding $\mathrm{max}(\aleph_0, |\mathcal{L}|)$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> This follows immediately from Remark 2. □</p>
-
-<h4 id="upward-löwenheim-skolem-theorem">Upward Löwenheim-Skolem Theorem</h4>
-
-<blockquote>
-  <p><strong>Upward Löwenheim-Skolem Theorem.</strong> Suppose $T$ has an infinite model. For any infinite cardinal $\kappa$, there exists a model of $T$ of size at least $\kappa$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Let $\mathcal{L}’$ be the language obtained by adding constants $\lbrace  c_\alpha \rbrace _{\alpha \in \kappa}$ to $\mathcal{L}$. Define the following set of $\mathcal{L}’$-sentences:</p>
-
-\[\Sigma = \{ c_\alpha \neq c_\beta : \alpha, \beta \in \kappa, \alpha \neq \beta \}\]
-
-<p>Let $T’ = T \cup \Sigma$. <em>Since $T$ has an infinite model $\mathfrak{M}$,</em> any finite subtheory of $T’$ is satisfied by $\mathfrak{M}$. Therefore, by the compactness theorem, $T’$ is consistent, and by the completeness theorem, it has a model. Since $\Sigma$ requires that any model of $T’$ has at least $\kappa$ elements, $T’$ has a model of size at least $\kappa$, and thus $T$ also has a model of size at least $\kappa$. □</p>
-
-<h4 id="löwenheim-skolem-theorem-1">Löwenheim-Skolem Theorem</h4>
-
-<p>Let $\kappa \geq \mathrm{max}(\aleph_0, |\mathcal{L}|)$. Define $\mathcal{L}’$ and $T’$ as above.</p>
-
-<p>Since $\mathrm{max}(\aleph_0, |\mathcal{L}’|) = \kappa$, by the downward Löwenheim-Skolem theorem, $T’$ has a model of size not exceeding $\kappa$. However, as pointed out in the proof of the upward Löwenheim-Skolem theorem, every model of $T’$ has size at least $\kappa$. Therefore, $T’$ has a model of size exactly $\kappa$, and thus $T$ also has a model of size exactly $\kappa$. ■</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

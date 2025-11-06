@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     수학 실재론과 윤리 반실재론은 양립 가능한가? 진화론 논변을 중심으로 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/11/06/mathematics-morality-evolution" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">수학 실재론과 윤리 반실재론은 양립 가능한가? 진화론 논변을 중심으로</h1>
+  <span class="post-date">06 Nov 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/철학/'" >철학</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>이 글은 Justin Clarke-Doane, <em>Morality and Mathematics: The Evolutionary Challenge</em> (2012)를 정리한 것이다.</p>
+</blockquote>
+
+<h2 id="개요">개요</h2>
+
+<p>윤리 실재론에 대한 잘 알려진 반론 중 하나는 <strong>진화론 논변<sub>The Evolutionary Challenge</sub></strong>이다. 진화론 논변에 따르면, 오늘날의 인류가 가지는 윤리적 믿음들은 진화적 압력<sub>evolutionary forces</sub>에 의해 형성되었다. 그러나 진화의 원리는 윤리적 명제들의 진릿값과 무관하므로, 윤리적 명제들의 진릿값이 완전히 다른 반사실적 세계에서도 인류는 동일한 윤리적 믿음들을 가지도록 진화했을 것이다. 그러므로 만약 우리의 윤리적 믿음들이 실제로 참이라면, 이는 진화의 결과와 윤리의 명제들이 굉장한 우연으로 일치하게 된 것이다. 따라서 진화론 논변을 옹호하는 자들은 윤리 실재론이 굉장한 우연을 날것 그대로의 사실로 받아들이거나, 혹은 우리의 윤리적 믿음들이 참이라고 생각할 근거가 없음을 인정해야 한다고 주장한다.</p>
+
+<p>한편으로 진화론 논변은 수학 실재론을 위협하지는 않는 것으로 받아들여져 왔다. 왜냐하면 진화의 원리는 수학의 명제들에는 의존적인 것으로 보이기 때문이다. 예를 들어 2 + 3 = 5임을 믿는 개체들은 그렇지 않은 개체보다 생존에 유리하다 (가령 2 + 3 = 1이라고 믿는 개체는 두 개의 사과와 세 개의 배를 가져가는 것보다 두 개의 사과만 가져가는 것이 더 낫다고 판단할 것이다). 혹자는 윤리학의 경우에서도 상호 협력을 중시하는 개체들은 완전 개인주의를 표방하는 개체들보다 생존에 유리하다는 사실을 지적할 수 있지만, 이는 상호 협력이 윤리적이기 때문이 아니라 상호 협력 전략이 개인주의 전략보다 유리하다는 게임 이론적 사실 때문이라는 점에 주목하라. 요컨대 윤리적 믿음들의 진화적 이점에 대한 설명은 <em>해당 믿음들의 윤리적 참</em>이 아닌 <em>해당 믿음들의 기댓값에 관한 수학적 참</em>에 있다.</p>
+
+<p>그러나 논문에서 저자는 이것이 잘못된 생각이라고 주장한다. 저자는 진화론 논변이 윤리 실재론을 위협하는 것과 같은 정도로 수학 실재론을 위협한다고 주장한다. 결론적으로 저자는 윤리 실재론과 수학 실재론 중 하나만 받아들이는 입장은 비정합적이라고 피력한다.</p>
+
+<h2 id="1-실재론은-정확히-무엇인가">1. 실재론은 정확히 무엇인가?</h2>
+
+<p>본 논증에 들어가기 앞서 저자는 윤리 실재론과 수학 실재론이 정확히 무엇을 의미하는지를 해명하고자 한다. 일반적으로, 저자는 어떤 논의 영역<sub>area of discourse</sub> D에 대해, <strong>D-실재론</strong>을 다음 네 입장의 연언으로 정의한다.</p>
+
+<ol>
+  <li>D-참-적합성<sub>D-Truth-Aptness</sub>. D의 문장들은 진릿값을 가진다.</li>
+  <li>D-참<sub>D-Truth</sub>. 어떤 D의 원자명제 또는 존재 양화 명제는 참이다.</li>
+  <li>D-독립성<sub>D-Independence</sub>. D의 문장들의 진릿값은 정신과 언어에 유의미한 의미에서 독립적이다.</li>
+  <li>D-액면성<sub>D-Literalness</sub>. D의 문장들은 문자 그대로 받아들여져야 한다.</li>
+</ol>
+
+<p>D를 윤리학으로 설정할 경우 1은 에이어의 감정주의<sub>emotivism</sub><sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>를 기각하고, 2는 매키의 오류 이론<sub>error theory</sub><sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>을 기각하고, 3은 구성주의<sub>constructivism</sub><sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup>를 기각하고, 4는 하먼의 상대주의<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup>를 기각한다. D를 수학으로 설정할 경우 1은 힐베르트의 형식주의<sub>formalism</sub><sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup>를 기각하고, 2는 필드의 허구주의<sub>fictionalism</sub><sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">6</a></sup>를 기각하고, 3은 브라우어르 구성주의<sup id="fnref:7"><a href="#fn:7" class="footnote" rel="footnote" role="doc-noteref">7</a></sup>를 기각하고, 4는 만약주의<sub>if-thenism</sub><sup id="fnref:8"><a href="#fn:8" class="footnote" rel="footnote" role="doc-noteref">8</a></sup>를 기각한다.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>윤리적 문장은 감정의 발화라는 입장. 이 입장은 윤리학을 환호성과 동일시한다. “도둑질은 나쁘다”는 “도둑질 우우!”와 동등하다 (“나는 도둑질을 싫어한다”와 동등하지는 않음에 유의하라). <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>모든 윤리적 문장은 거짓이라는 입장. 이 입장은 윤리학을 플로지스톤 이론과 동일시한다. 플로지스톤이 존재하지 않으므로 플로지스톤 이론의 모든 문장이 틀렸듯이, 선함이 존재하지 않으므로 윤리학의 모든 문장은 틀렸다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>인간의 정신이 윤리적 대상과 속성을 구성한다는 입장. 이 입장은 윤리학을 색깔 이론과 동일시한다. 색깔 이론의 객관성과 유용성과는 별개로 모든 인간이 사라지면 색의 개념도 사라지듯이, 모든 인간이 사라지면 선함의 개념도 사라진다. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>모든 윤리적 문장에는 생략된 전제구가 있다는 입장. 예를 들어 “트롤리의 선로를 바꿔야 한다”에서 생략된 전제구가 “공리주의에 따르면”이라면 이 문장은 참이고, “의무론에 따르면”이라면 거짓이다. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>수학은 규칙이 정해진 게임 활동이라는 입장. 이 입장은 수학을 체스의 수와 동일시한다. 가령 “1 + 1” 뒤에 “= 2”를 쓰는 것은 킹과 룩 사이를 비운 뒤 캐슬링을 하는 것과 동등하다 (“킹과 룩 사이가 비어 있으면 캐슬링이 가능하다”와 동등하지는 않음에 유의하라). <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>모든 수학적 문장은 거짓이라는 입장. 주석 2 참조. 필드는 유명론과 허구주의를 견지하면서도 수학이 과학에 유용할 수 있는 이유를 “다리 원리”를 통해 설명할 수 있다고 주장했다. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>인간의 정신이 수학적 대상과 속성을 구성한다는 입장. 주석 3 참조. 브라우어르의 구성주의는 수학이 인간의 시공간 인식에 정초되어야 한다고 주장한다. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>모든 수학적 명제에는 생략된 전제구가 있다는 입장. 예를 들어 “삼각형의 세 내각의 합은 180도이다”에서 생략된 전제구가 “유클리드 기하학에서”라면 이 문장은 참이고, “쌍곡 기하학에서”라면 거짓이다. <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

@@ -3,13 +3,83 @@
   <channel>
     <title>디멘의 블로그</title>
     <description>이데아를 여행하는 히치하이커</description>
-    <link>https://dimenerno.github.io</link>
-    <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>수학 실재론과 윤리 반실재론은 양립 가능한가? 진화론 논변을 중심으로</title>
+        <link>http://localhost:4000/2025/11/06/mathematics-morality-evolution</link>
+        <guid>http://localhost:4000/2025/11/06/mathematics-morality-evolution</guid>
+        <pubDate>Thu, 06 Nov 2025 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;이 글은 Justin Clarke-Doane, &lt;em&gt;Morality and Mathematics: The Evolutionary Challenge&lt;/em&gt; (2012)를 정리한 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="http://localhost:4000/2025/11/06/mathematics-morality-evolution">
+          <![CDATA[
+            <blockquote>
+  <p>이 글은 Justin Clarke-Doane, <em>Morality and Mathematics: The Evolutionary Challenge</em> (2012)를 정리한 것이다.</p>
+</blockquote>
+
+<h2 id="개요">개요</h2>
+
+<p>윤리 실재론에 대한 잘 알려진 반론 중 하나는 <strong>진화론 논변<sub>The Evolutionary Challenge</sub></strong>이다. 진화론 논변에 따르면, 오늘날의 인류가 가지는 윤리적 믿음들은 진화적 압력<sub>evolutionary forces</sub>에 의해 형성되었다. 그러나 진화의 원리는 윤리적 명제들의 진릿값과 무관하므로, 윤리적 명제들의 진릿값이 완전히 다른 반사실적 세계에서도 인류는 동일한 윤리적 믿음들을 가지도록 진화했을 것이다. 그러므로 만약 우리의 윤리적 믿음들이 실제로 참이라면, 이는 진화의 결과와 윤리의 명제들이 굉장한 우연으로 일치하게 된 것이다. 따라서 진화론 논변을 옹호하는 자들은 윤리 실재론이 굉장한 우연을 날것 그대로의 사실로 받아들이거나, 혹은 우리의 윤리적 믿음들이 참이라고 생각할 근거가 없음을 인정해야 한다고 주장한다.</p>
+
+<p>한편으로 진화론 논변은 수학 실재론을 위협하지는 않는 것으로 받아들여져 왔다. 왜냐하면 진화의 원리는 수학의 명제들에는 의존적인 것으로 보이기 때문이다. 예를 들어 2 + 3 = 5임을 믿는 개체들은 그렇지 않은 개체보다 생존에 유리하다 (가령 2 + 3 = 1이라고 믿는 개체는 두 개의 사과와 세 개의 배를 가져가는 것보다 두 개의 사과만 가져가는 것이 더 낫다고 판단할 것이다). 혹자는 윤리학의 경우에서도 상호 협력을 중시하는 개체들은 완전 개인주의를 표방하는 개체들보다 생존에 유리하다는 사실을 지적할 수 있지만, 이는 상호 협력이 윤리적이기 때문이 아니라 상호 협력 전략이 개인주의 전략보다 유리하다는 게임 이론적 사실 때문이라는 점에 주목하라. 요컨대 윤리적 믿음들의 진화적 이점에 대한 설명은 <em>해당 믿음들의 윤리적 참</em>이 아닌 <em>해당 믿음들의 기댓값에 관한 수학적 참</em>에 있다.</p>
+
+<p>그러나 논문에서 저자는 이것이 잘못된 생각이라고 주장한다. 저자는 진화론 논변이 윤리 실재론을 위협하는 것과 같은 정도로 수학 실재론을 위협한다고 주장한다. 결론적으로 저자는 윤리 실재론과 수학 실재론 중 하나만 받아들이는 입장은 비정합적이라고 피력한다.</p>
+
+<h2 id="1-실재론은-정확히-무엇인가">1. 실재론은 정확히 무엇인가?</h2>
+
+<p>본 논증에 들어가기 앞서 저자는 윤리 실재론과 수학 실재론이 정확히 무엇을 의미하는지를 해명하고자 한다. 일반적으로, 저자는 어떤 논의 영역<sub>area of discourse</sub> D에 대해, <strong>D-실재론</strong>을 다음 네 입장의 연언으로 정의한다.</p>
+
+<ol>
+  <li>D-참-적합성<sub>D-Truth-Aptness</sub>. D의 문장들은 진릿값을 가진다.</li>
+  <li>D-참<sub>D-Truth</sub>. 어떤 D의 원자명제 또는 존재 양화 명제는 참이다.</li>
+  <li>D-독립성<sub>D-Independence</sub>. D의 문장들의 진릿값은 정신과 언어에 유의미한 의미에서 독립적이다.</li>
+  <li>D-액면성<sub>D-Literalness</sub>. D의 문장들은 문자 그대로 받아들여져야 한다.</li>
+</ol>
+
+<p>D를 윤리학으로 설정할 경우 1은 에이어의 감정주의<sub>emotivism</sub><sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>를 기각하고, 2는 매키의 오류 이론<sub>error theory</sub><sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>을 기각하고, 3은 구성주의<sub>constructivism</sub><sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup>를 기각하고, 4는 하먼의 상대주의<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup>를 기각한다. D를 수학으로 설정할 경우 1은 힐베르트의 형식주의<sub>formalism</sub><sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup>를 기각하고, 2는 필드의 허구주의<sub>fictionalism</sub><sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">6</a></sup>를 기각하고, 3은 브라우어르 구성주의<sup id="fnref:7"><a href="#fn:7" class="footnote" rel="footnote" role="doc-noteref">7</a></sup>를 기각하고, 4는 만약주의<sub>if-thenism</sub><sup id="fnref:8"><a href="#fn:8" class="footnote" rel="footnote" role="doc-noteref">8</a></sup>를 기각한다.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>윤리적 문장은 감정의 발화라는 입장. 이 입장은 윤리학을 환호성과 동일시한다. “도둑질은 나쁘다”는 “도둑질 우우!”와 동등하다 (“나는 도둑질을 싫어한다”와 동등하지는 않음에 유의하라). <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>모든 윤리적 문장은 거짓이라는 입장. 이 입장은 윤리학을 플로지스톤 이론과 동일시한다. 플로지스톤이 존재하지 않으므로 플로지스톤 이론의 모든 문장이 틀렸듯이, 선함이 존재하지 않으므로 윤리학의 모든 문장은 틀렸다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>인간의 정신이 윤리적 대상과 속성을 구성한다는 입장. 이 입장은 윤리학을 색깔 이론과 동일시한다. 색깔 이론의 객관성과 유용성과는 별개로 모든 인간이 사라지면 색의 개념도 사라지듯이, 모든 인간이 사라지면 선함의 개념도 사라진다. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>모든 윤리적 문장에는 생략된 전제구가 있다는 입장. 예를 들어 “트롤리의 선로를 바꿔야 한다”에서 생략된 전제구가 “공리주의에 따르면”이라면 이 문장은 참이고, “의무론에 따르면”이라면 거짓이다. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>수학은 규칙이 정해진 게임 활동이라는 입장. 이 입장은 수학을 체스의 수와 동일시한다. 가령 “1 + 1” 뒤에 “= 2”를 쓰는 것은 킹과 룩 사이를 비운 뒤 캐슬링을 하는 것과 동등하다 (“킹과 룩 사이가 비어 있으면 캐슬링이 가능하다”와 동등하지는 않음에 유의하라). <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>모든 수학적 문장은 거짓이라는 입장. 주석 2 참조. 필드는 유명론과 허구주의를 견지하면서도 수학이 과학에 유용할 수 있는 이유를 “다리 원리”를 통해 설명할 수 있다고 주장했다. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>인간의 정신이 수학적 대상과 속성을 구성한다는 입장. 주석 3 참조. 브라우어르의 구성주의는 수학이 인간의 시공간 인식에 정초되어야 한다고 주장한다. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>모든 수학적 명제에는 생략된 전제구가 있다는 입장. 예를 들어 “삼각형의 세 내각의 합은 180도이다”에서 생략된 전제구가 “유클리드 기하학에서”라면 이 문장은 참이고, “쌍곡 기하학에서”라면 거짓이다. <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+          ]]>
+        </content:encoded>
+      </item>
     
       <item>
         <title>단체 호몰로지</title>
-        <link>https://dimenerno.github.io/2025/11/05/euler-poincare</link>
-        <guid>https://dimenerno.github.io/2025/11/05/euler-poincare</guid>
+        <link>http://localhost:4000/2025/11/05/euler-poincare</link>
+        <guid>http://localhost:4000/2025/11/05/euler-poincare</guid>
         <pubDate>Wed, 05 Nov 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $K$가 순수 $k$-단체 복합체&lt;sub&gt;pure simplicial complex&lt;/sub&gt;이고, $p \leq k$에 대해 $C_p(K)$가 $K$의 $p$-체인&lt;sub&gt;chain&lt;/sub&gt;들의 집합이라고 하자.&lt;/p&gt;
@@ -23,7 +93,7 @@
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/11/05/euler-poincare">
+          xml:base="http://localhost:4000/2025/11/05/euler-poincare">
           <![CDATA[
             <blockquote>
   <p><strong>정의.</strong> $K$가 순수 $k$-단체 복합체<sub>pure simplicial complex</sub>이고, $p \leq k$에 대해 $C_p(K)$가 $K$의 $p$-체인<sub>chain</sub>들의 집합이라고 하자.</p>
@@ -73,13 +143,13 @@
     
       <item>
         <title>닫힌집합과 보렐 집합에서의 연속체 가설</title>
-        <link>https://dimenerno.github.io/2025/09/25/ch-for-borel</link>
-        <guid>https://dimenerno.github.io/2025/09/25/ch-for-borel</guid>
+        <link>http://localhost:4000/2025/09/25/ch-for-borel</link>
+        <guid>http://localhost:4000/2025/09/25/ch-for-borel</guid>
         <pubDate>Thu, 25 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;연속체 가설은 $\aleph_1 = 2^{\aleph_0}$가 성립하는지에 관한 질문이다. 이는 비가산 집합 중 실수 집합보다 크기가 작은 집합이 있는지에 관한 질문과 같다. 잘 알려져 있듯이 연속체 가설은 ZFC에서 증명과 반증이 불가능하지만, 몇몇 제한적인 경우에 대해서는 증명할 수 있다. 일찍이 칸토어는 연속체 가설을 실수의 닫힌집합으로 제한할 경우 성립함을 증명했다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/25/ch-for-borel">
+          xml:base="http://localhost:4000/2025/09/25/ch-for-borel">
           <![CDATA[
             <p>연속체 가설은 $\aleph_1 = 2^{\aleph_0}$가 성립하는지에 관한 질문이다. 이는 비가산 집합 중 실수 집합보다 크기가 작은 집합이 있는지에 관한 질문과 같다. 잘 알려져 있듯이 연속체 가설은 ZFC에서 증명과 반증이 불가능하지만, 몇몇 제한적인 경우에 대해서는 증명할 수 있다. 일찍이 칸토어는 연속체 가설을 실수의 닫힌집합으로 제한할 경우 성립함을 증명했다.</p>
 
@@ -193,13 +263,13 @@ F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
     
       <item>
         <title>The Continuum Hypothesis for Closed Sets and Borel Sets</title>
-        <link>https://dimenerno.github.io/2025/09/25/ch-for-borel/en</link>
-        <guid>https://dimenerno.github.io/2025/09/25/ch-for-borel/en</guid>
+        <link>http://localhost:4000/2025/09/25/ch-for-borel/en</link>
+        <guid>http://localhost:4000/2025/09/25/ch-for-borel/en</guid>
         <pubDate>Thu, 25 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;The continuum hypothesis (CH) asks whether $\aleph_1 = 2^{\aleph_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, CH is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved that CH holds when restricted to closed subsets of the real numbers.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/25/ch-for-borel/en">
+          xml:base="http://localhost:4000/2025/09/25/ch-for-borel/en">
           <![CDATA[
             <p>The continuum hypothesis (CH) asks whether $\aleph_1 = 2^{\aleph_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, CH is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved that CH holds when restricted to closed subsets of the real numbers.</p>
 
@@ -313,13 +383,13 @@ F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
     
       <item>
         <title>기수 연산의 기본 정리들</title>
-        <link>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics</link>
-        <guid>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics</guid>
+        <link>http://localhost:4000/2025/09/16/cardinal-arithmetics</link>
+        <guid>http://localhost:4000/2025/09/16/cardinal-arithmetics</guid>
         <pubDate>Tue, 16 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;이 글에서 모든 집합과 기수는 무한하다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/16/cardinal-arithmetics">
+          xml:base="http://localhost:4000/2025/09/16/cardinal-arithmetics">
           <![CDATA[
             <p>이 글에서 모든 집합과 기수는 무한하다.</p>
 
@@ -583,15 +653,15 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>Basic Theorems of Cardinal Arithmetic</title>
-        <link>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics/en</link>
-        <guid>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics/en</guid>
+        <link>http://localhost:4000/2025/09/16/cardinal-arithmetics/en</link>
+        <guid>http://localhost:4000/2025/09/16/cardinal-arithmetics/en</guid>
         <pubDate>Tue, 16 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/16/cardinal-arithmetics/en">
+          xml:base="http://localhost:4000/2025/09/16/cardinal-arithmetics/en">
           <![CDATA[
             <blockquote>
   <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
@@ -859,13 +929,13 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>자연수라는 신기루: 짧은 논리학 이야기</title>
-        <link>https://dimenerno.github.io/2025/09/14/alien-natural-numbers</link>
-        <guid>https://dimenerno.github.io/2025/09/14/alien-natural-numbers</guid>
+        <link>http://localhost:4000/2025/09/14/alien-natural-numbers</link>
+        <guid>http://localhost:4000/2025/09/14/alien-natural-numbers</guid>
         <pubDate>Sun, 14 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;p&gt;어느 날 디멘은 외계인을 만났습니다. 외계인이 디멘에게 물었습니다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/14/alien-natural-numbers">
+          xml:base="http://localhost:4000/2025/09/14/alien-natural-numbers">
           <![CDATA[
             <p>어느 날 디멘은 외계인을 만났습니다. 외계인이 디멘에게 물었습니다.</p>
 
@@ -1039,15 +1109,15 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>Natural Numbers as a Mirage: A Short Story in Logic</title>
-        <link>https://dimenerno.github.io/2025/09/14/alien-natural-numbers/en</link>
-        <guid>https://dimenerno.github.io/2025/09/14/alien-natural-numbers/en</guid>
+        <link>http://localhost:4000/2025/09/14/alien-natural-numbers/en</link>
+        <guid>http://localhost:4000/2025/09/14/alien-natural-numbers/en</guid>
         <pubDate>Sun, 14 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/14/alien-natural-numbers/en">
+          xml:base="http://localhost:4000/2025/09/14/alien-natural-numbers/en">
           <![CDATA[
             <blockquote>
   <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
@@ -1225,15 +1295,15 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>자연주의적 목적론은 논리를 설명할 수 있는가?</title>
-        <link>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic</link>
-        <guid>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic</guid>
+        <link>http://localhost:4000/2025/09/13/natural-teleology-and-logic</link>
+        <guid>http://localhost:4000/2025/09/13/natural-teleology-and-logic</guid>
         <pubDate>Sat, 13 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;이 글은 제가 작성한 소논문입니다. 원문이 영문으로 작성되었고, 주제 또한 영미철학이기 때문에, 영문 버전이 글 자체는 훨씬 더 자연스럽습니다. (영문 PDF: &lt;a href=&quot;/public/natural_teleology_and_logic.pdf&quot;&gt;링크&lt;/a&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic">
+          xml:base="http://localhost:4000/2025/09/13/natural-teleology-and-logic">
           <![CDATA[
             <blockquote>
   <p>이 글은 제가 작성한 소논문입니다. 원문이 영문으로 작성되었고, 주제 또한 영미철학이기 때문에, 영문 버전이 글 자체는 훨씬 더 자연스럽습니다. (영문 PDF: <a href="/public/natural_teleology_and_logic.pdf">링크</a>)</p>
@@ -1461,15 +1531,15 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     
       <item>
         <title>Can Natural Teleology Ground Logic?</title>
-        <link>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/en</link>
-        <guid>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/en</guid>
+        <link>http://localhost:4000/2025/09/13/natural-teleology-and-logic/en</link>
+        <guid>http://localhost:4000/2025/09/13/natural-teleology-and-logic/en</guid>
         <pubDate>Sat, 13 Sep 2025 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;PDF version: &lt;a href=&quot;/public/natural_teleology_and_logic.pdf&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/en">
+          xml:base="http://localhost:4000/2025/09/13/natural-teleology-and-logic/en">
           <![CDATA[
             <blockquote>
   <p>PDF version: <a href="/public/natural_teleology_and_logic.pdf">Link</a></p>
@@ -1678,104 +1748,6 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     </li>
   </ol>
 </div>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>모델 완전성에 대한 로빈슨 판별법</title>
-        <link>https://dimenerno.github.io/2025/09/11/robinson-test</link>
-        <guid>https://dimenerno.github.io/2025/09/11/robinson-test</guid>
-        <pubDate>Thu, 11 Sep 2025 00:00:00 +0900</pubDate>
-        <description>&lt;p&gt;이 글에서 $T$는 언어 $\mathcal{L}$의 이론이다. 또한 $x_1, \dots, x_n$을 $\vec{x}$로 쓴다.&lt;/p&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/09/11/robinson-test">
-          <![CDATA[
-            <p>이 글에서 $T$는 언어 $\mathcal{L}$의 이론이다. 또한 $x_1, \dots, x_n$을 $\vec{x}$로 쓴다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 이론 $T$가 <strong>모델 완전<sub>model complete</sub></strong>하다는 것은 임의의 $T$의 모델 $\mathfrak{A}, \mathfrak{B}$에 대해</p>
-
-\[\mathfrak{A} \subseteq \mathfrak{B} \implies \mathfrak{A} \preceq \mathfrak{B}\]
-
-  <p>라는 것이다.</p>
-</blockquote>
-
-<p><strong>예시</strong></p>
-
-<ol>
-  <li>
-    <p>체<sub>field</sub> 이론은 모델 완전하지 않다. 실수체 $\mathbb{R}$과 유리수체 $\mathbb{Q}$에 대해 $\mathbb{Q} \subseteq \mathbb{R}$이지만 $\exists x (x \cdot x = 2)$의 진릿값이 두 모델에서 다르므로 $\mathbb{Q} \not\preceq \mathbb{R}$이기 때문이다.</p>
-  </li>
-  <li>
-    <p>비꼬임 가분 아벨군<sub>torsion-free divisible abelian group</sub> 이론은 모델 완전하다.</p>
-  </li>
-  <li>
-    <p>양화사 제거 가능한 이론은 모델 완전하다.</p>
-  </li>
-</ol>
-
-<p>2를 비롯하여, 모델 완전성을 판별하는 데 유용한 정리 중 하나는 다음이다.</p>
-
-<blockquote>
-  <p><strong>로빈슨 판별법<sub>Robinson’s Test</sub>.</strong> 다음은 동치이다.</p>
-
-  <ol>
-    <li>$T$가 모델 완전하다.</li>
-    <li>임의의 $T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해, $\mathfrak{B}$가 만족하는 $\Sigma_1(\mathcal{L}_\mathfrak{A})$-문장은 $\mathfrak{A}$에서도 만족된다.</li>
-    <li>임의의 $\mathcal{L}$-명제 $\phi(\vec{x})$에 대해, $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$를 만족하는 $\Pi_1(\mathcal{L})$-명제 $\psi(\vec{x})$가 존재한다.</li>
-  </ol>
-</blockquote>
-
-<h3 id="증명">증명</h3>
-
-<h4 id="1--2">(1) → (2)</h4>
-
-<p>$T$가 모델 완전하므로 $\mathfrak{A} \subseteq \mathfrak{B}$라면 $\mathfrak{A} \preceq \mathfrak{B}$이다. 따라서 $\mathfrak{A}, \mathfrak{B}$는 $\mathcal{L}_\mathfrak{A}$-문장들에 대해 동치이다. □</p>
-
-<h4 id="2--3">(2) → (3)</h4>
-
-<p>$\phi(\vec{x})$가 $\Sigma_1(\mathcal{L})$-명제라고 하자. $\mathcal{L}$에 상수 $\vec{c}$를 추가한 언어를 $\mathcal{L}’$이라고 하자. $T$를 $\mathcal{L}’$-이론으로 생각하고, $\mathfrak{A} \subseteq \mathfrak{B}$를 $\mathcal{L}’$-구조들의 임베딩으로 생각할 수 있다.</p>
-
-<p>이제 $\mathcal{L}’$-이론 $T’ = T \cup { \phi(\vec{c}) }$를 생각하자. $\mathfrak{B}$가 $T’$의 모델이라고 하자. $\mathfrak{A}$ 또한 $T’$의 모델임을 보인다. $\mathfrak{A} \subseteq \mathfrak{B}$가 $\mathcal{L}’$-구조들의 임베딩이므로 다음이 성립함을 관찰하라.</p>
-
-\[\mathfrak{B} \vDash \phi(\vec{c}) \iff \exists \vec{a} \in \mathcal{L}_\mathfrak{A}  \text{ where } \mathfrak{B} \vDash \phi(\vec{a})\]
-
-<p>$\phi(\vec{a})$는 $\Sigma_1(\mathcal{L}_\mathfrak{A})$-문장이므로 가정에 의해 $\mathfrak{A}$에서도 성립한다. 따라서 $\mathfrak{A}$는 $T’$의 모델이다.</p>
-
-<p>이제 <a href="/2025/04/17/los-tarski">워시-타르스키 정리</a>의 다음 일반화를 사용한다 (증명은 연습문제).</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{L}’$-이론 $T \subseteq T’$에 대해 다음이 성립한다고 하자.</p>
-
-  <ul>
-    <li>임의의 $T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해 $\mathfrak{B}$가 $T’$의 모델이라면 $\mathfrak{A}$도 $T’$의 모델이다.</li>
-  </ul>
-
-  <p>이때, 어떤 $\Pi_1(\mathcal{L}’)$-문장들의 모임 $P$가 존재하여 $T’$은 $T \cup P$와 동치이다.</p>
-</blockquote>
-
-<p>위 정리에 의해 $T’$은 어떤 $\Pi_1(\mathcal{L}’)$-문장들의 모임 $P$에 대해 $T \cup P$와 동치이다. 즉,</p>
-
-\[T \cup P \vdash \phi(\vec{c})\]
-
-<p>증명의 유한성에 의해 $T \cup P$에서 $\phi$를 증명하는 데 필요한 $P$의 명제는 유한하다. 그 명제들의 논리곱을 $\pi(\vec{c})$라고 하면,</p>
-
-\[T \vdash \forall x (\phi(\vec{x}) \leftrightarrow \pi(\vec{x}))\]
-
-<p>이고 $\pi(\vec{x})$는 $\Pi_1(\mathcal{L})$-명제이므로, $\phi \in \Sigma_1$일 때 증명이 완료되었다.</p>
-
-<p>이제 $\phi$에 대한 구조적 귀납법으로 증명하자. $\exists \leftrightarrow \lnot\forall\lnot$이므로, $\lor, \lnot, \forall$에 대해서만 고려하면 된다. $\lor, \forall$의 경우는 자명하므로 $\lnot$의 경우를 살핀다.</p>
-
-<p>어떤 $\Pi_1(\mathcal{L})$-명제 $\psi$에 대해 $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$라고 하자. 그러면 $\lnot \phi$는 $\lnot \psi$와 동치이며, 이는 $\Sigma_1(\mathcal{L})$-명제이다. 그리고 이는 앞선 논증에 의해 $\Pi_1$ 문장과 동치이다. □</p>
-
-<h4 id="3--1">(3) → (1)</h4>
-
-<p>$T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해, 만약 $\mathfrak{A} \not\preceq \mathfrak{B}$라면 콤팩트성 정리에 의해 어떤 $\mathcal{L}_\mathfrak{A}$의 문장 $\phi(\vec{a})$가 존재하여 $\mathfrak{A} \not\vDash \phi(\vec{a})$이지만 $\mathfrak{B} \vDash \phi(\vec{a})$이다.</p>
-
-<p>가정에 의해 $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$를 만족하는 $\Pi_1$ 명제 $\psi$가 존재한다. 따라서 $\mathfrak{B} \vDash \psi(\vec{a})$이다. 그런데 이는 $\Pi_1$ 문장이고, $\Pi_1$ 문장은 부분모델에 대해 보존되므로 $\mathfrak{A} \vDash \psi(\vec{a})$가 되어 모순이다. ■</p>
 
           ]]>
         </content:encoded>
