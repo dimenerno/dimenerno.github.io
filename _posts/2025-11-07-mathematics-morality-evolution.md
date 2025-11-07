@@ -6,7 +6,7 @@ tags: ["수학", "철학"]
 related:
 ---
 
-> 이 글은 Justin Clarke-Doane, _Morality and Mathematics: The Evolutionary Challenge_ (2012)를 정리한 것이다.
+> 이 글은 Justin Clarke-Doane, _Morality and Mathematics: The Evolutionary Challenge_ (2012)를 정리한 것이다. "저자"는 논문의 저자를, "필자"는 이 글의 필자를 가리킨다. "도덕"과 "윤리"의 혼용을 방지하기 위해 "윤리"로 표현을 통일했다.
 
 ## 개요
 
