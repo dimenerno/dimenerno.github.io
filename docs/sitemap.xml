@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://dimenerno.github.io/404.html</loc>
-<lastmod>2025-11-10T09:06:29+09:00</lastmod>
+<lastmod>2025-11-10T15:59:37+09:00</lastmod>
 </url>
 <url>
 <loc>https://dimenerno.github.io/about/</loc>
@@ -579,6 +579,10 @@
 <url>
 <loc>https://dimenerno.github.io/2025/11/07/mathematics-morality-evolution</loc>
 <lastmod>2025-11-07T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://dimenerno.github.io/2025/11/10/stationary-sets</loc>
+<lastmod>2025-11-10T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>https://dimenerno.github.io/temp/2025-03-05-hole-argument/</loc>

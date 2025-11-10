@@ -4,13 +4,124 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2025-11-10T09:06:29+09:00</updated>
+ <updated>2025-11-10T15:59:37+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>클럽 집합과 정상 집합</title>
+   <link href="https://dimenerno.github.io/2025/11/10/stationary-sets"/>
+   <updated>2025-11-10T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/11/10/stationary-sets</id>
+   <content type="html">&lt;h2 id=&quot;클럽-집합&quot;&gt;클럽 집합&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $C \subseteq \omega_1$이 &lt;strong&gt;클럽 집합&lt;sub&gt;club set&lt;/sub&gt;&lt;/strong&gt;이라는 것은 $C$가 닫히고 무계&lt;sub&gt;closed and unbounded&lt;/sub&gt;라는 것이다. 즉,&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;임의의 서수열 $(\alpha_n)_{n \in \omega} \subseteq C$에 대해 $\alpha_n \to \alpha$라면 $\alpha \in C$이다.&lt;/li&gt;
+    &lt;li&gt;임의의 $\gamma &amp;lt; \kappa$에 대해 $\alpha &amp;gt; \gamma$인 $\alpha \in C$가 존재한다.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그야말로 정직한 네이밍이 아닐 수 없다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $C_1, C_2 \subseteq \omega_1$이 두 클럽 집합일 때, $C = C_1 \cap C_2$ 또한 클럽 집합이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $C$가 닫힘이라는 것은 쉽게 보여진다. $C$가 무계임을 보이기 위해 임의의 $\gamma \in \omega_1$를 잡자. $C_1$이 무계이므로 $\gamma &amp;lt; \alpha_0$을 만족하는 가장 작은 $\alpha_0 \in C_1$가 있다. $C_2$가 무계이므로 $\alpha_0 &amp;lt; \beta_0$인 가장 작은 $\beta_0 \in C_2$가 있다. 다시 $C_1$이 무계이므로 $\beta_0 &amp;lt; \alpha_1$인 $\alpha_1 \in C_1$가 있다. 이 과정을 계속 반복하여 서수열 $\lbrace  \alpha_n \rbrace $과 $\lbrace  \beta_n \rbrace $을 얻는다. 두 서수열은 같은 서수 $\delta$로 수렴하므로 $\delta \in C$이며, $\delta &amp;gt; \gamma$이다. (p.s. “가장 작은”은 불필요한 선택 공리의 사용을 피하기 위해 사용되었다) ■&lt;/p&gt;
+
+&lt;p&gt;위 증명을 살짝 변형하면 다음 정리를 얻을 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\lbrace  C_n \rbrace _{n &amp;lt; \omega}$가 클럽 집합들의 가산 모임일 때, $C = \bigcap C_n$ 또한 클럽 집합이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 연습문제 (힌트: 삼각형을 사용한다) ■&lt;/p&gt;
+
+&lt;p&gt;따라서 가산 개의 클럽 집합들이 주어지면 교집합을 취함으로써 새로운 클럽 집합을 얻을 수 있다. 한편, 비가산 개의 클럽 집합들이 주어지면 다음을 사용할 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\lbrace  C_\xi \rbrace _{\xi &amp;lt; \omega_1}$이 클럽 집합들의 모임일 때, $\lbrace C_\xi \rbrace $의 &lt;strong&gt;대각 교집합&lt;sub&gt;diagonal intersection&lt;/sub&gt;&lt;/strong&gt;을 다음과 같이 정의한다.&lt;/p&gt;
+
+\[\Delta_{\xi &amp;lt; \omega_1} C_\xi = \{ \alpha \in \omega_1 : \forall \xi &amp;lt; \alpha \;\; \alpha \in C_\xi \}\]
+
+  &lt;p&gt;$D$는 클럽 집합이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $D$가 닫혀 있음을 먼저 보이자. 서수열 $(\alpha_n)_{n \in \omega} \subseteq D$에 대해 $\alpha_n \to \alpha$라고 하자. 임의의 $\xi &amp;lt; \alpha$에 대해 $\xi &amp;lt; \alpha_n$인 $n \in \omega$가 존재하며, 대각 교집합의 정의에 의해 $C_\xi$은 $\lbrace  \alpha_m : m \geq n \rbrace $을 포함한다. 따라서 $\sup \lbrace  \alpha_m : m \geq n \rbrace  = \alpha \in C_\xi$이므로 $\alpha \in D$이다.&lt;/p&gt;
+
+&lt;p&gt;이제 $D$가 무계임을 보이자. 임의의 $\gamma &amp;lt; \omega_1$에 대해, $D_0 = \bigcap_{\xi &amp;lt; \gamma} C_\xi$는 클럽 집합이므로 무계이다. 따라서 $\alpha_0 &amp;gt; \gamma$를 만족하는 가장 작은 $\alpha_0 \in D_0$가 존재한다. 마찬가지로 $D_1 = \bigcap_{\xi &amp;lt; \alpha_0} C_\xi$가 클럽 집합이므로 $\alpha_1 &amp;gt; \alpha_0$를 만족하는 가장 작은 $\alpha_1 \in D_1$이 존재한다. 이 과정을 귀납적으로 반복하여 얻은 서수열 $(\alpha_n)$의 극한이 $\alpha$라고 하자. 임의의 $\xi &amp;lt; \alpha$에 대해, 어떤 $n$이 존재하여 $\xi &amp;lt; \alpha_n$이므로 임의의 $m \geq n$에 대하여 $\alpha_m \in C_\xi$이다. 따라서 $\alpha \in C_\xi$이며 $\alpha \in D$이다. ■&lt;/p&gt;
+
+&lt;p&gt;$\Delta C_\xi \supseteq \bigcap C_\xi$임을 확인하라.&lt;/p&gt;
+
+&lt;p&gt;참고로 지금까지의 정의와 정리들은 다음과 같이 일반화될 수 있다. $\kappa$가 $\operatorname{cf}\kappa &amp;gt; \omega$인 비가산 기수라고 하자.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $C \subseteq \kappa$가 &lt;strong&gt;클럽 집합&lt;sub&gt;club set&lt;/sub&gt;&lt;/strong&gt;이라는 것은 $C$가 닫히고 무계&lt;sub&gt;closed and unbounded&lt;/sub&gt;라는 것이다. 즉,&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;임의의 $\alpha &amp;lt; \kappa$에 대해 $\sup (C \cap \alpha) = \alpha$라면 (즉 $C$가 $\alpha$에서 무계라면) $\alpha \in C$이다.&lt;/li&gt;
+    &lt;li&gt;임의의 $\gamma &amp;lt; \kappa$에 대해 $\alpha &amp;gt; \gamma$인 $\alpha \in C$가 존재한다.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\lambda &amp;lt; \operatorname{cf}\kappa$에 대해 $\lbrace  C_\xi \rbrace _{\xi &amp;lt; \lambda}$가 클럽 집합들의 모임일 때, $C = \bigcap C_\xi$ 또한 클럽 집합이다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $\kappa$가 정칙&lt;sub&gt;regular&lt;/sub&gt;이라면, $\lbrace  C_\xi \rbrace _{\xi &amp;lt; \kappa}$가 클럽 집합들의 모임일 때, $\lbrace C_\xi \rbrace $의 대각 교집합 또한 클럽 집합이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $\kappa = \omega_1$인 경우와 거의 같다. ■&lt;/p&gt;
+
+&lt;h2 id=&quot;쌍대-집합&quot;&gt;쌍대 집합&lt;/h2&gt;
+
+&lt;p&gt;유한 교집합 닫힘에 의해 클럽 집합들의 모임은 필터를 생성한다. 해당 필터의 쌍대&lt;sub&gt;dual&lt;/sub&gt; 아이디얼에 속하지 않는 집합을 &lt;strong&gt;정상 집합&lt;sub&gt;stationary set&lt;/sub&gt;&lt;/strong&gt;이라고 한다. 다른 말로 하자면 다음과 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $S \subseteq \omega_1$이라고 하자. 임의의 클럽 집합 $C \subseteq \omega_1$에 대해 $C \cap S \neq \varnothing$이라면 $S$는 정상 집합이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;어떤 클럽 집합 $C$에 대해 $C \cap S = \varnothing$이라면 $S^c \subseteq C$이므로 $C$는 쌍대 아이디얼의 원소이다. 따라서 두 정의는 동치이다.&lt;/p&gt;
+
+&lt;p&gt;정상 집합은 $\omega_1$의 부분집합 중 “유의미하게 큰” 집합들을 포착한다. 이 사실은 다음의 (엄밀하지는 않은) 유비를 통해 더 잘 이해할 수 있다. $\omega_1$의 측도가 1이라고 할 때, 클럽 집합은 $\mu(C) = 1$인 집합에, 정상 집합은 $\mu(S) &amp;gt; 0$인 집합에 대응된다.&lt;/p&gt;
+
+&lt;p&gt;다음의 사실들은 쉽게 증명될 수 있다 (1번과 3번이 측도 유비와 자연스럽게 연결되는 것에 주목하라).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 다음이 성립한다.&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;모든 클럽 집합은 정상 집합이다.&lt;/li&gt;
+    &lt;li&gt;모든 정상 집합은 무계이다.&lt;/li&gt;
+    &lt;li&gt;$\bigcup_{n &amp;lt; \omega} A_n$가 정상 집합이라면 어떤 $m \in \omega$에 대해 $A_m$은 정상 집합이다.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;정상 집합의 이름이 stationary인 이유는 다음의 정리 때문이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; $S \subseteq \omega_1$에 대해, $f: S \to \omega_1$이 &lt;strong&gt;퇴행적&lt;sub&gt;regressive&lt;/sub&gt;&lt;/strong&gt;이라는 것은 임의의 $\alpha \in S$에 대해 $f(\alpha) &amp;lt; \alpha$라는 것이다. 다음이 동치이다.&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;$S$는 정상 집합이다.&lt;/li&gt;
+    &lt;li&gt;임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 무계 집합 $T \subseteq S$ 위에서 상수&lt;sub&gt;constant&lt;/sub&gt;이다.&lt;/li&gt;
+    &lt;li&gt;임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 정상 집합 $T \subseteq S$ 위에서 상수이다.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 3 ⇒ 2는 자명하므로, 1 ⇒ 3과 2 ⇒ 1을 증명하면 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1--3&quot;&gt;1 ⇒ 3&lt;/h3&gt;
+
+&lt;p&gt;대우를 증명한다. 어떤 퇴행적 함수 $f: S \to \omega_1$에 대해, $S$의 모든 정상 부분집합 위에서 $f$가 상수가 아니라고 하자. 즉, 임의의 $\xi \in \omega_1$에 대하여 $A_\xi = f^{-1}(\lbrace  \xi \rbrace )$는 정상 집합이 아니다. 따라서 $A_\xi \cap C_\xi = \varnothing$인 클럽 집합 $C_\xi$가 존재한다.&lt;/p&gt;
+
+&lt;p&gt;$D = \Delta_{\xi &amp;lt; \omega_1} C_\xi$라고 하자. $D$는 클럽 집합이므로, 만약 $S$가 정상 집합이라면 $D \cap S \neq \varnothing$이다. $\alpha \in D \cap S$라고 하자. $\alpha \in D$이므로 임의의 $\xi &amp;lt; \alpha$에 대하여 $\alpha \in C_\xi$이다. 즉, $\alpha \notin A_\xi$이므로 $f(\alpha) \neq \xi$이다. 그런데 $\alpha \in S$이므로 $f(\alpha) &amp;lt; \alpha$이다. 이는 모순이다. □&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>수학과 윤리학은 같은 배를 탔는가? 진화론 논변을 중심으로</title>

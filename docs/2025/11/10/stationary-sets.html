@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     클럽 집합과 정상 집합 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/11/10/stationary-sets" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2025. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2025. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">클럽 집합과 정상 집합</h1>
+  <span class="post-date">10 Nov 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+    </div>
+  
+  <h2 id="클럽-집합">클럽 집합</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> $C \subseteq \omega_1$이 <strong>클럽 집합<sub>club set</sub></strong>이라는 것은 $C$가 닫히고 무계<sub>closed and unbounded</sub>라는 것이다. 즉,</p>
+
+  <ul>
+    <li>임의의 서수열 $(\alpha_n)_{n \in \omega} \subseteq C$에 대해 $\alpha_n \to \alpha$라면 $\alpha \in C$이다.</li>
+    <li>임의의 $\gamma &lt; \kappa$에 대해 $\alpha &gt; \gamma$인 $\alpha \in C$가 존재한다.</li>
+  </ul>
+</blockquote>
+
+<p>그야말로 정직한 네이밍이 아닐 수 없다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $C_1, C_2 \subseteq \omega_1$이 두 클럽 집합일 때, $C = C_1 \cap C_2$ 또한 클럽 집합이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $C$가 닫힘이라는 것은 쉽게 보여진다. $C$가 무계임을 보이기 위해 임의의 $\gamma \in \omega_1$를 잡자. $C_1$이 무계이므로 $\gamma &lt; \alpha_0$을 만족하는 가장 작은 $\alpha_0 \in C_1$가 있다. $C_2$가 무계이므로 $\alpha_0 &lt; \beta_0$인 가장 작은 $\beta_0 \in C_2$가 있다. 다시 $C_1$이 무계이므로 $\beta_0 &lt; \alpha_1$인 $\alpha_1 \in C_1$가 있다. 이 과정을 계속 반복하여 서수열 $\lbrace  \alpha_n \rbrace $과 $\lbrace  \beta_n \rbrace $을 얻는다. 두 서수열은 같은 서수 $\delta$로 수렴하므로 $\delta \in C$이며, $\delta &gt; \gamma$이다. (p.s. “가장 작은”은 불필요한 선택 공리의 사용을 피하기 위해 사용되었다) ■</p>
+
+<p>위 증명을 살짝 변형하면 다음 정리를 얻을 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\lbrace  C_n \rbrace _{n &lt; \omega}$가 클럽 집합들의 가산 모임일 때, $C = \bigcap C_n$ 또한 클럽 집합이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 연습문제 (힌트: 삼각형을 사용한다) ■</p>
+
+<p>따라서 가산 개의 클럽 집합들이 주어지면 교집합을 취함으로써 새로운 클럽 집합을 얻을 수 있다. 한편, 비가산 개의 클럽 집합들이 주어지면 다음을 사용할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\lbrace  C_\xi \rbrace _{\xi &lt; \omega_1}$이 클럽 집합들의 모임일 때, $\lbrace C_\xi \rbrace $의 <strong>대각 교집합<sub>diagonal intersection</sub></strong>을 다음과 같이 정의한다.</p>
+
+\[\Delta_{\xi &lt; \omega_1} C_\xi = \{ \alpha \in \omega_1 : \forall \xi &lt; \alpha \;\; \alpha \in C_\xi \}\]
+
+  <p>$D$는 클럽 집합이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $D$가 닫혀 있음을 먼저 보이자. 서수열 $(\alpha_n)_{n \in \omega} \subseteq D$에 대해 $\alpha_n \to \alpha$라고 하자. 임의의 $\xi &lt; \alpha$에 대해 $\xi &lt; \alpha_n$인 $n \in \omega$가 존재하며, 대각 교집합의 정의에 의해 $C_\xi$은 $\lbrace  \alpha_m : m \geq n \rbrace $을 포함한다. 따라서 $\sup \lbrace  \alpha_m : m \geq n \rbrace  = \alpha \in C_\xi$이므로 $\alpha \in D$이다.</p>
+
+<p>이제 $D$가 무계임을 보이자. 임의의 $\gamma &lt; \omega_1$에 대해, $D_0 = \bigcap_{\xi &lt; \gamma} C_\xi$는 클럽 집합이므로 무계이다. 따라서 $\alpha_0 &gt; \gamma$를 만족하는 가장 작은 $\alpha_0 \in D_0$가 존재한다. 마찬가지로 $D_1 = \bigcap_{\xi &lt; \alpha_0} C_\xi$가 클럽 집합이므로 $\alpha_1 &gt; \alpha_0$를 만족하는 가장 작은 $\alpha_1 \in D_1$이 존재한다. 이 과정을 귀납적으로 반복하여 얻은 서수열 $(\alpha_n)$의 극한이 $\alpha$라고 하자. 임의의 $\xi &lt; \alpha$에 대해, 어떤 $n$이 존재하여 $\xi &lt; \alpha_n$이므로 임의의 $m \geq n$에 대하여 $\alpha_m \in C_\xi$이다. 따라서 $\alpha \in C_\xi$이며 $\alpha \in D$이다. ■</p>
+
+<p>$\Delta C_\xi \supseteq \bigcap C_\xi$임을 확인하라.</p>
+
+<p>참고로 지금까지의 정의와 정리들은 다음과 같이 일반화될 수 있다. $\kappa$가 $\operatorname{cf}\kappa &gt; \omega$인 비가산 기수라고 하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $C \subseteq \kappa$가 <strong>클럽 집합<sub>club set</sub></strong>이라는 것은 $C$가 닫히고 무계<sub>closed and unbounded</sub>라는 것이다. 즉,</p>
+
+  <ul>
+    <li>임의의 $\alpha &lt; \kappa$에 대해 $\sup (C \cap \alpha) = \alpha$라면 (즉 $C$가 $\alpha$에서 무계라면) $\alpha \in C$이다.</li>
+    <li>임의의 $\gamma &lt; \kappa$에 대해 $\alpha &gt; \gamma$인 $\alpha \in C$가 존재한다.</li>
+  </ul>
+
+  <p><strong>정리.</strong> $\lambda &lt; \operatorname{cf}\kappa$에 대해 $\lbrace  C_\xi \rbrace _{\xi &lt; \lambda}$가 클럽 집합들의 모임일 때, $C = \bigcap C_\xi$ 또한 클럽 집합이다.</p>
+
+  <p><strong>정리.</strong> $\kappa$가 정칙<sub>regular</sub>이라면, $\lbrace  C_\xi \rbrace _{\xi &lt; \kappa}$가 클럽 집합들의 모임일 때, $\lbrace C_\xi \rbrace $의 대각 교집합 또한 클럽 집합이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\kappa = \omega_1$인 경우와 거의 같다. ■</p>
+
+<h2 id="쌍대-집합">쌍대 집합</h2>
+
+<p>유한 교집합 닫힘에 의해 클럽 집합들의 모임은 필터를 생성한다. 해당 필터의 쌍대<sub>dual</sub> 아이디얼에 속하지 않는 집합을 <strong>정상 집합<sub>stationary set</sub></strong>이라고 한다. 다른 말로 하자면 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $S \subseteq \omega_1$이라고 하자. 임의의 클럽 집합 $C \subseteq \omega_1$에 대해 $C \cap S \neq \varnothing$이라면 $S$는 정상 집합이다.</p>
+</blockquote>
+
+<p>어떤 클럽 집합 $C$에 대해 $C \cap S = \varnothing$이라면 $S^c \subseteq C$이므로 $C$는 쌍대 아이디얼의 원소이다. 따라서 두 정의는 동치이다.</p>
+
+<p>정상 집합은 $\omega_1$의 부분집합 중 “유의미하게 큰” 집합들을 포착한다. 이 사실은 다음의 (엄밀하지는 않은) 유비를 통해 더 잘 이해할 수 있다. $\omega_1$의 측도가 1이라고 할 때, 클럽 집합은 $\mu(C) = 1$인 집합에, 정상 집합은 $\mu(S) &gt; 0$인 집합에 대응된다.</p>
+
+<p>다음의 사실들은 쉽게 증명될 수 있다 (1번과 3번이 측도 유비와 자연스럽게 연결되는 것에 주목하라).</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 다음이 성립한다.</p>
+
+  <ol>
+    <li>모든 클럽 집합은 정상 집합이다.</li>
+    <li>모든 정상 집합은 무계이다.</li>
+    <li>$\bigcup_{n &lt; \omega} A_n$가 정상 집합이라면 어떤 $m \in \omega$에 대해 $A_m$은 정상 집합이다.</li>
+  </ol>
+</blockquote>
+
+<p>정상 집합의 이름이 stationary인 이유는 다음의 정리 때문이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $S \subseteq \omega_1$에 대해, $f: S \to \omega_1$이 <strong>퇴행적<sub>regressive</sub></strong>이라는 것은 임의의 $\alpha \in S$에 대해 $f(\alpha) &lt; \alpha$라는 것이다. 다음이 동치이다.</p>
+
+  <ol>
+    <li>$S$는 정상 집합이다.</li>
+    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 무계 집합 $T \subseteq S$ 위에서 상수<sub>constant</sub>이다.</li>
+    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 정상 집합 $T \subseteq S$ 위에서 상수이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 3 ⇒ 2는 자명하므로, 1 ⇒ 3과 2 ⇒ 1을 증명하면 된다.</p>
+
+<h3 id="1--3">1 ⇒ 3</h3>
+
+<p>대우를 증명한다. 어떤 퇴행적 함수 $f: S \to \omega_1$에 대해, $S$의 모든 정상 부분집합 위에서 $f$가 상수가 아니라고 하자. 즉, 임의의 $\xi \in \omega_1$에 대하여 $A_\xi = f^{-1}(\lbrace  \xi \rbrace )$는 정상 집합이 아니다. 따라서 $A_\xi \cap C_\xi = \varnothing$인 클럽 집합 $C_\xi$가 존재한다.</p>
+
+<p>$D = \Delta_{\xi &lt; \omega_1} C_\xi$라고 하자. $D$는 클럽 집합이므로, 만약 $S$가 정상 집합이라면 $D \cap S \neq \varnothing$이다. $\alpha \in D \cap S$라고 하자. $\alpha \in D$이므로 임의의 $\xi &lt; \alpha$에 대하여 $\alpha \in C_\xi$이다. 즉, $\alpha \notin A_\xi$이므로 $f(\alpha) \neq \xi$이다. 그런데 $\alpha \in S$이므로 $f(\alpha) &lt; \alpha$이다. 이는 모순이다. □</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>
