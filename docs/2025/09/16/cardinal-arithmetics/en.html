@@ -12,7 +12,7 @@
   />
 
   <title>
-     Basic Theorems of Cardinal Arithmetic &middot; 디멘의 블로그 
+     Cardinal Arithmetic &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -369,7 +369,7 @@
       </div>
 
       <div class="container content"><div class="post">
-  <h1 class="post-title">Basic Theorems of Cardinal Arithmetic</h1>
+  <h1 class="post-title">Cardinal Arithmetic</h1>
   <span class="post-date">16 Sep 2025</span>
   
     <div class="tag-container">
@@ -401,8 +401,9 @@
 <p>To show that the above definition is well-defined, we must prove that $\kappa + \lambda$ does not depend on the choice of $A, B$. This is easily provable in ZF. Moreover, finite cardinal addition is merely finding the maximum cardinal, making it quite easy to compute.</p>
 
 <blockquote>
-  <p><strong>Theorem.</strong>
-\(\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\)</p>
+  <p><strong>Theorem.</strong></p>
+
+\[\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\]
 </blockquote>
 
 <p><strong>Proof.</strong> By the lemma in “2. Cardinal Multiplication” and the Cantor-Bernstein theorem, $\aleph_\alpha = \aleph_\alpha + \aleph_\alpha$. Therefore, if $|A| \leq |B|$, then $|B| \leq |A + B| \leq |B + B| = |B|$. ■</p>
@@ -438,8 +439,9 @@
 <p>Very conveniently, the computation of finite cardinal multiplication is the same as that of finite cardinal addition.</p>
 
 <blockquote>
-  <p><strong>Theorem.</strong>
-\(\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\)</p>
+  <p><strong>Theorem.</strong></p>
+
+\[\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\]
 </blockquote>
 
 <p><strong>Proof.</strong> This follows from the lemma below. ■</p>
@@ -465,8 +467,9 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 <p><strong>The definition of cardinal multiplication has no relation to cardinal addition.</strong> That is, there is no meaning like “adding $\kappa$ exactly $\lambda$ times” in the definition of cardinal multiplication. Nevertheless, the following <em>theorem</em> allows us to relate cardinal multiplication to cardinal addition.</p>
 
 <blockquote>
-  <p><strong>Theorem.</strong>
-\(\sum_{i \in I} \kappa = |I| \cdot \kappa\)</p>
+  <p><strong>Theorem.</strong></p>
+
+\[\sum_{i \in I} \kappa = |I| \cdot \kappa\]
 </blockquote>
 
 <p><strong>Proof.</strong> Let $\lbrace  A_i \rbrace $ be a family of pairwise disjoint sets with $|A_i| = \kappa$. The left side is the cardinality of $\bigcup_{i \in I} A_i$, and the right side is the cardinality of $I \times A$ where $|A| = \kappa$. By the axiom of choice, for each $i \in I$ we can define a bijection $f_i : A_i \to A$. Define the following correspondence $f: \bigcup_{i \in I} A_i \to I \times A$:</p>
@@ -478,8 +481,9 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 <p>From this, we can prove the correct relation corresponding to the aforementioned “warning”.</p>
 
 <blockquote>
-  <p><strong>Theorem.</strong>
-\(\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\)</p>
+  <p><strong>Theorem.</strong></p>
+
+\[\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\]
 </blockquote>
 
 <p><strong>Proof.</strong> Let $\kappa = \sup \lbrace  \kappa_i : i \in I \rbrace $, and denote the left side as $L$ and the right side as $R$. By the previous theorem, $|I| \cdot \kappa = \sum_{i \in I} \kappa$, and since $\kappa_i \leq \kappa$, we have $L ≤ R$. Conversely, $| I | = \sum_{i \in I} 1 \leq L$ and $\kappa = \sup \kappa_i \leq L$. By the lemma at the bottom of this article, $L = L \cdot L$, so $L \geq | I | \cdot \kappa = R$. Therefore, by the Cantor-Bernstein theorem, $L = R$. (The axiom of choice is implicitly used extensively in this proof, so interested readers may wish to write out the omitted arguments in detail.) ■</p>
@@ -521,8 +525,9 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 <p>As in the case of cardinal multiplication, although the definition of cardinal exponentiation has no relation to cardinal multiplication, the following theorem allows us to bridge the two.</p>
 
 <blockquote>
-  <p><strong>Theorem.</strong>
-\(\prod_{i \in I} \kappa = \kappa^{|I|}\)</p>
+  <p><strong>Theorem.</strong></p>
+
+\[\prod_{i \in I} \kappa = \kappa^{|I|}\]
 </blockquote>
 
 <p>Moreover, cardinal exponentiation shares several nice properties of ordinary exponentiation.</p>

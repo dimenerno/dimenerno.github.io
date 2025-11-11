@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Basic Theorems of Cardinal Arithmetic"
+title: "Cardinal Arithmetic"
 date: 2025-09-16
 lang: en
 tags: ["Mathematics", "Set Theory"]
@@ -22,6 +22,7 @@ When dealing with cardinal arithmetic, it is important to know the precise defin
 To show that the above definition is well-defined, we must prove that $\kappa + \lambda$ does not depend on the choice of $A, B$. This is easily provable in ZF. Moreover, finite cardinal addition is merely finding the maximum cardinal, making it quite easy to compute.
 
 > **Theorem.**
+>
 > $$
 > \kappa + \lambda = \mathrm{max}(\kappa, \lambda)
 > $$
@@ -53,6 +54,7 @@ How then should we compute infinite cardinal addition? To understand this, let u
 Very conveniently, the computation of finite cardinal multiplication is the same as that of finite cardinal addition.
 
 > **Theorem.**
+>
 > $$
 > \kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)
 > $$
@@ -61,7 +63,7 @@ Very conveniently, the computation of finite cardinal multiplication is the same
 
 > **Lemma.** For any $\alpha \in \mathrm{Ord}$, $\aleph\_\alpha \cdot \aleph\_\alpha = \aleph\_\alpha$
 
-The proof outline is as follows. For any $\alpha \in \mathrm{Ord}$, we show that the order $\prec$ defined as follows is a well-ordering of $\omega\_\alpha \times \omega\_\alpha$. When $\hat{x} = \mathrm{max}(x\_1, x\_2), \hat{y} = \mathrm{max}(y\_1, y\_2)$, 
+The proof outline is as follows. For any $\alpha \in \mathrm{Ord}$, we show that the order $\prec$ defined as follows is a well-ordering of $\omega\_\alpha \times \omega\_\alpha$. When $\hat{x} = \mathrm{max}(x\_1, x\_2), \hat{y} = \mathrm{max}(y\_1, y\_2)$,
 
 $$
 (x_1, x_2) \prec (y_1, y_2) \iff \begin{cases}
@@ -79,9 +81,10 @@ $$
 
 satisfies $\|X\| < \aleph\_\alpha$. Let $\gamma = \mathrm{max}(\gamma\_1, \gamma\_2) + 1$. Since $\omega\_\alpha$ is a limit ordinal, $\gamma \in \omega\_\alpha$, and therefore $\|\gamma\| = \aleph\_\delta$ for some $\delta < \alpha$. On the other hand, $X \subseteq \gamma \times \gamma$, so $\|X\| \leq \aleph\_\delta \cdot \aleph\_\delta$, which equals $\aleph\_\delta$ by the induction hypothesis. ■
 
-**The definition of cardinal multiplication has no relation to cardinal addition.** That is, there is no meaning like "adding $\kappa$ exactly $\lambda$ times" in the definition of cardinal multiplication. Nevertheless, the following *theorem* allows us to relate cardinal multiplication to cardinal addition.
+**The definition of cardinal multiplication has no relation to cardinal addition.** That is, there is no meaning like "adding $\kappa$ exactly $\lambda$ times" in the definition of cardinal multiplication. Nevertheless, the following _theorem_ allows us to relate cardinal multiplication to cardinal addition.
 
 > **Theorem.**
+>
 > $$
 > \sum_{i \in I} \kappa = |I| \cdot \kappa
 > $$
@@ -97,6 +100,7 @@ It is easily verified that this function is a bijection. Therefore (left side) =
 From this, we can prove the correct relation corresponding to the aforementioned "warning".
 
 > **Theorem.**
+>
 > $$
 > \sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i
 > $$
@@ -136,6 +140,7 @@ Of course, if we weaken the inequality in the conclusion from $<$ to $\leq$ in 1
 As in the case of cardinal multiplication, although the definition of cardinal exponentiation has no relation to cardinal multiplication, the following theorem allows us to bridge the two.
 
 > **Theorem.**
+>
 > $$
 > \prod_{i \in I} \kappa = \kappa^{|I|}
 > $$
@@ -151,7 +156,7 @@ Moreover, cardinal exponentiation shares several nice properties of ordinary exp
 Nevertheless, computing cardinal exponentiation precisely is quite challenging, as the results obtainable without assuming the Generalised Continuum Hypothesis are limited. Let us first examine theorems that can be proved without the Generalised Continuum Hypothesis.
 
 > **Theorem.**
-> 
+>
 > 1. $2^{\aleph\_\alpha} > \aleph\_\alpha$
 > 2. $\alpha \leq \beta \implies \kappa^{\aleph\_\alpha} \leq \kappa^{\aleph\_\beta}$
 > 3. $\mathrm{cf}(\kappa^{\aleph\_\alpha}) > \aleph\_\alpha$
@@ -169,7 +174,7 @@ But if $\aleph\_\lambda = \aleph\_\alpha$, then $\kappa^{\aleph\_\alpha \cdot \a
 The following two theorems are particularly useful.
 
 > **Theorem.**
-> 
+>
 > $$
 > \aleph_\alpha^{\aleph_\beta} =
 > \begin{cases}
@@ -219,7 +224,7 @@ $$
 Assuming the Generalised Continuum Hypothesis allows us to prove much stronger results.
 
 > **Theorem.** If $\aleph\_\alpha$ is a regular cardinal, the following holds:
-> 
+>
 > $$
 > \aleph_\alpha^{\aleph_\beta} = \begin{cases}
 > \aleph_{\beta + 1} & \aleph_\alpha \leq \aleph_\beta \\
@@ -249,7 +254,7 @@ $$
 $$
 
 > **Theorem.** If $\aleph\_\alpha$ is a singular cardinal, the following holds:
-> 
+>
 > $$
 > \aleph_\alpha^{\aleph_\beta} = \begin{cases}
 > \aleph_{\beta + 1} & \aleph_\alpha \leq \aleph_\beta \\

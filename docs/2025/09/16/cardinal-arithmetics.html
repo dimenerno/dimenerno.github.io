@@ -12,7 +12,7 @@
   />
 
   <title>
-     기수 연산의 기본 정리들 &middot; 디멘의 블로그 
+     기수 연산 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -369,7 +369,7 @@
       </div>
 
       <div class="container content"><div class="post">
-  <h1 class="post-title">기수 연산의 기본 정리들</h1>
+  <h1 class="post-title">기수 연산</h1>
   <span class="post-date">16 Sep 2025</span>
   
     <div class="tag-container">
@@ -397,8 +397,9 @@
 <p>위 정의가 well-defined임을 보이기 위해서는 $\kappa + \lambda$가 $A, B$의 선택에 의존적이지 않음을 보여야 한다. 이는 ZF에서 쉽게 증명 가능하다. 또한 유한한 기수 덧셈은 그저 최대 기수를 구하는 것이기 때문에 계산하기가 상당히 용이하다.</p>
 
 <blockquote>
-  <p><strong>정리.</strong>
-\(\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\)</p>
+  <p><strong>정리.</strong></p>
+
+\[\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\]
 </blockquote>
 
 <p><strong>증명.</strong> “2. 기수 곱셈”의 보조정리와 칸토어-베른슈타인 정리에 의해, $\aleph_\alpha = \aleph_\alpha + \aleph_\alpha$이다. 따라서 $|A| \leq |B|$라면 $|B| \leq |A + B| \leq |B + B| = |B|$이다. ■</p>
@@ -406,7 +407,7 @@
 <p>기수 덧셈의 정의를 무한한 경우로 확장하면,</p>
 
 <blockquote>
-  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 쌍으로 서로소인 집합족 $\lbrace  A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
+  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 쌍으로 서로소인 집합족 $\lbrace A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
 
 \[\sum_{i \in I} \kappa_i = \left| \bigcup_{i \in I}A_i \right|\]
 </blockquote>
@@ -434,8 +435,9 @@
 <p>아주 용이하게도 유한 기수 곱셈의 계산은 유한 기수 덧셈의 계산과 같다.</p>
 
 <blockquote>
-  <p><strong>정리.</strong>
-\(\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\)</p>
+  <p><strong>정리.</strong></p>
+
+\[\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\]
 </blockquote>
 
 <p><strong>증명.</strong> 다음의 보조정리로부터 따라 나온다. ■</p>
@@ -461,8 +463,9 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 <p><strong>기수 곱셈의 정의는 기수 덧셈과 아무 관련이 없다.</strong> 즉, 기수 곱셈의 정의에는 “$\kappa$를 $\lambda$번 더한다”와 같은 의미가 없다. 그럼에도 다음 <em>정리</em>에 의해 기수 곱셈을 기수 덧셈과 연관지을 수 있다.</p>
 
 <blockquote>
-  <p><strong>정리.</strong>
-\(\sum_{i \in I} \kappa = |I| \cdot \kappa\)</p>
+  <p><strong>정리.</strong></p>
+
+\[\sum_{i \in I} \kappa = |I| \cdot \kappa\]
 </blockquote>
 
 <p><strong>증명.</strong> $\lbrace  A_i \rbrace $가 쌍으로 서로소이며 $|A_i| = \kappa$인 집합족이라고 하자. 좌변은 $\bigcup_{i \in I} A_i$의 기수이고, 우변은 $I \times A$의 기수이다 $(|A| = \kappa)$. 선택 공리에 의해 각 $i \in I$에 대해 일대일 대응 $f_i : A_i \to A$를 정의할 수 있다. 다음의 대응 $f: \bigcup_{i \in I} A_i \to I \times A$을 정의하자.</p>
@@ -474,8 +477,9 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 <p>이로부터 앞선 언급한 “주의”에 해당되는 올바른 관계식을 증명할 수 있다.</p>
 
 <blockquote>
-  <p><strong>정리.</strong>
-\(\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\)</p>
+  <p><strong>정리.</strong></p>
+
+\[\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\]
 </blockquote>
 
 <p><strong>증명.</strong> $\kappa = \sup \lbrace  \kappa_i : i \in I \rbrace $라고 하고, 좌변을 $L$, 우변을 $R$이라고 하자. 앞선 정리에 의해 $|I| \cdot \kappa = \sum_{i \in I} \kappa$이고 $\kappa_i \leq \kappa$이므로 $L ≤ R$이다. 반대로, $| I | = \sum_{i \in I} 1 \leq L$이고, $\kappa = \sup \kappa_i \leq L$이다. 글 하단의 보조정리에 의해 $L = L \cdot L$이므로 $L \geq | I | \cdot \kappa = R$이다. 따라서 칸토어-베른슈타인 정리에 의해 $L = R$이다. (이 증명에는 선택 공리가 암시적으로 많이 사용되었으니 관심 있는 독자는 생략된 논증을 자세히 써 봐도 좋을 것이다) ■</p>
@@ -483,7 +487,7 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 <p>이제 기수 곱셈도 무한 경우로 일반화하자.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 집합족 $\lbrace  A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
+  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 집합족 $\lbrace A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
 
 \[\prod_{i \in I} \kappa_i = \left| \prod_{i \in I}A_i \right|\]
 </blockquote>
@@ -517,8 +521,9 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 <p>기수 곱셈의 경우와 마찬가지로, 비록 기수 지수의 정의는 기수 곱셈과 아무 관련이 없지만, 다음 정리에 의해 둘 사이에 다리를 놓을 수 있다.</p>
 
 <blockquote>
-  <p><strong>정리.</strong>
-\(\prod_{i \in I} \kappa = \kappa^{|I|}\)</p>
+  <p><strong>정리.</strong></p>
+
+\[\prod_{i \in I} \kappa = \kappa^{|I|}\]
 </blockquote>
 
 <p>또한 기수 지수는 일반적인 지수의 여러 좋은 성질을 공유한다.</p>
