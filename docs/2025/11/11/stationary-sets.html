@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/2025/11/10/stationary-sets" />
+  <link rel="canonical" href="/2025/11/11/stationary-sets" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -370,7 +370,7 @@
 
       <div class="container content"><div class="post">
   <h1 class="post-title">클럽 집합과 정상 집합</h1>
-  <span class="post-date">10 Nov 2025</span>
+  <span class="post-date">11 Nov 2025</span>
   
     <div class="tag-container">
       
@@ -440,7 +440,7 @@
 
 <p><strong>증명.</strong> $\kappa = \omega_1$인 경우와 거의 같다. ■</p>
 
-<h2 id="쌍대-집합">쌍대 집합</h2>
+<h2 id="정상-집합">정상 집합</h2>
 
 <p>유한 교집합 닫힘에 의해 클럽 집합들의 모임은 필터를 생성한다. 해당 필터의 쌍대<sub>dual</sub> 아이디얼에 속하지 않는 집합을 <strong>정상 집합<sub>stationary set</sub></strong>이라고 한다. 다른 말로 하자면 다음과 같다.</p>
 
@@ -478,11 +478,65 @@
 
 <p><strong>증명.</strong> 3 ⇒ 2는 자명하므로, 1 ⇒ 3과 2 ⇒ 1을 증명하면 된다.</p>
 
-<h3 id="1--3">1 ⇒ 3</h3>
+<h4 id="1--3">1 ⇒ 3</h4>
 
 <p>대우를 증명한다. 어떤 퇴행적 함수 $f: S \to \omega_1$에 대해, $S$의 모든 정상 부분집합 위에서 $f$가 상수가 아니라고 하자. 즉, 임의의 $\xi \in \omega_1$에 대하여 $A_\xi = f^{-1}(\lbrace  \xi \rbrace )$는 정상 집합이 아니다. 따라서 $A_\xi \cap C_\xi = \varnothing$인 클럽 집합 $C_\xi$가 존재한다.</p>
 
-<p>$D = \Delta_{\xi &lt; \omega_1} C_\xi$라고 하자. $D$는 클럽 집합이므로, 만약 $S$가 정상 집합이라면 $D \cap S \neq \varnothing$이다. $\alpha \in D \cap S$라고 하자. $\alpha \in D$이므로 임의의 $\xi &lt; \alpha$에 대하여 $\alpha \in C_\xi$이다. 즉, $\alpha \notin A_\xi$이므로 $f(\alpha) \neq \xi$이다. 그런데 $\alpha \in S$이므로 $f(\alpha) &lt; \alpha$이다. 이는 모순이다. □</p>
+<p>$D = \Delta_{\xi &lt; \omega_1} C_\xi$라고 하자. $D$는 클럽 집합이므로, 만약 $S$가 정상 집합이라면 $D \cap S \neq \varnothing$이다. $\alpha \in D \cap S$라고 하자. $\alpha \in D$이므로 임의의 $\xi &lt; \alpha$에 대하여 $\alpha \in C_\xi$이다. 즉, $\alpha \notin A_\xi$이므로 $f(\alpha) \neq \xi$이다. 그런데 $\alpha \in S$이므로 $f(\alpha) &lt; \alpha$이다. 이는 모순이므로 $S$는 정상 집합이 아니다. □</p>
+
+<h4 id="2--1">2 ⇒ 1</h4>
+
+<p>마찬가지로 대우를 증명한다. $S$가 정상 집합이 아니라고 하자. 그러면 어떤 클럽 집합 $C$에 대해 $S \cap C = \varnothing$이다. 다음의 함수를 정의하자.</p>
+
+\[f(\alpha) = \sup (C \cap \alpha)\]
+
+<p>임의의 $\alpha \in S$에 대하여 $f(\alpha) \leq \alpha$이다. 만약 $f(\alpha) = \alpha$라면, $C$는 $\alpha$로 수렴하는 서수열을 가진다. 그런데 $C$는 닫힌 집합이므로, $\alpha \in C$이다. 이는 $S \cap C = \varnothing$에 모순이다. 따라서 $f(\alpha) &lt; \alpha$이며, $f$는 퇴행적이다.</p>
+
+<p>만약 어떤 무계 집합 $T$ 위에서 $f$의 값이 $\gamma &lt; \omega_1$로 일정했다면, 어떤 무계인 서수열 $(\alpha_n)$에 대해 $\sup (C \cap \alpha_n) = \gamma$이다. 그런데 $C$는 무계이므로, 이는 $\sup \alpha_n = \gamma$를 함축한다. 그런데 $(\alpha_n)$이 무계이므로 $\sup \alpha_n = \omega_1$이다. 이는 모순이다. 따라서 $f$는 어떠한 무계 집합 위에서도 상수가 아닌 퇴행적 함수이다. ■</p>
+
+<p>위 정리는 다음의 정리로 일반화될 수 있다.</p>
+
+<blockquote>
+  <p><strong>포더 보조정리<sub>Fodor’s lemma</sub>.</strong> $\kappa$가 비가산 정칙 기수라고 하자. 임의의 $S \subseteq \kappa$에 대해 다음이 동치이다.</p>
+
+  <ol>
+    <li>$S$는 정상 집합이다.</li>
+    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 무계 집합 $T \subseteq S$ 위에서 상수이다.</li>
+    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 정상 집합 $T \subseteq S$ 위에서 상수이다.</li>
+  </ol>
+</blockquote>
+
+<h2 id="정상-집합의-응용">정상 집합의 응용</h2>
+
+<p>정상 집합의 한 응용으로서 조합론의 다음 정리를 보자.</p>
+
+<blockquote>
+  <p><strong>Δ-계 보조정리<sub>Δ-system lemma</sub>.</strong> $\lbrace A_\xi\rbrace _{\xi &lt; \omega_1}$가 $\omega_1$의 유한부분집합들의 모임이라고 하자. 어떤 $I \subseteq \omega_1$와 $A \subset \omega_1$이 존재하여, 임의의 $i, j \in I, i \neq j$에 대해 $A_i \cap A_j = A$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 비둘기집의 원리에 의해 일반성을 잃지 않고, 임의의 $\xi &lt; \omega_1$에 대해 $|A_\xi | = n$이라고 가정할 수 있다. 다음과 같이 정의하자.</p>
+
+\[C = \{ \alpha &lt; \omega_1 : \forall \xi &lt; \alpha \;\; \operatorname{max}C_\xi &lt; \alpha \}\]
+
+<p>$C$는 클럽 집합이다. 또한 $0 \leq k \leq n$에 대해 다음과 같이 정의하자.</p>
+
+\[T_k = \{ \alpha \in C : |A_\alpha \cap \alpha | = k \}\]
+
+<p>$\bigcup_{0 \leq k \leq n} T_k = C$이므로 어떤 $m$에 대해 $T_m$은 정적 집합이다. 이제 $0 \leq l &lt; m$에 대해 다음의 함수를 정의하자.</p>
+
+\[f_l(\alpha) : T_m \to \omega_1; \quad \alpha \mapsto \text{$l$th element of $A_\alpha$}\]
+
+<p>$|A_\alpha \cap \alpha| &gt; l$이므로 $f_l(\alpha) &lt; \alpha$이다. 따라서 각 $l$에 대해 $f_l$는 퇴행적이다. 이제 다음의 단계를 반복한다.</p>
+
+<ul>
+  <li>$f_0$가 상수가 되는 정적 집합 $S_0 \subseteq T_m$이 존재한다.</li>
+  <li>$f_1 |_{S_0}$이 상수가 되는 정적 집합 $S_1 \subseteq S_0$가 존재한다.</li>
+  <li>$f_2 |_{S_1}$이 상수가 되는 정적 집합 $S_2 \subseteq S_1$이 존재한다.</li>
+  <li>…</li>
+  <li>$f_{m-1} |_{S_{m-2}}$가 상수가 되는 정적 집합 $S_{m-1} \subseteq S_{m-2}$가 존재한다.</li>
+</ul>
+
+<p>그러면 임의의 $0 \leq l &lt; m$에 대해 $f_l$은 $S_{m-1}$에서 상수이다. 이제 $S_{m-1} = I$가 찾고자 하는 집합임을 쉽게 확인할 수 있다. ■</p>
 
 </div>
 
