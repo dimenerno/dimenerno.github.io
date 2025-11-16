@@ -38,7 +38,3 @@ date: 2024-01-01
     <li><a href="http://youtube.com/@dimenerno">YouTube</a>: Videos on linguistics and the philosophy of language. (Korean only)</li>
   </ul>
 </div>
-
-<div style="opacity: 0">
-<a href="https://dimenerno.notion.site/aae0ff728a20495fbffad40d905d4f2f">비밀 통로</a>
-</div>
