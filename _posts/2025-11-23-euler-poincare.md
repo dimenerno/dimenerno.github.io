@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "오일러-푸앵카레 정리"
-date: 2025-11-22
+date: 2025-11-23
 tags: ["수학", "위상수학"]
 related:
 ---
