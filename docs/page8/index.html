@@ -431,6 +431,112 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/03/21/yoneda/en"> Yoneda Lemma </a>
+      </h1>
+    <span class="post-date">21 Mar 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'">
+        Category Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p><em>Notation.</em></p>
+
+  <ol>
+    <li>$-$ denotes a parameter placeholder. If two $-$ are used, it means there are two parameters. Which parameter corresponds to which position is determined by context.</li>
+    <li>$\bullet$ is a parameter that takes precedence over $-$. Therefore, $\hom(-, \bullet)$ is a functor that maps $A$ to the functor $\hom(-, A)$.</li>
+    <li>For functors $F, G$, we define $[F, G]$ as the collection of natural transformations from $F$ to $G$.</li>
+    <li>We assume all categories are locally small categories.</li>
+  </ol>
+</blockquote>
+
+<p>The Yoneda lemma is a theorem that tells us what a representable functor <em>sees</em> when it <em>looks at</em> another functor.</p>
+
+<p>For example, for $A \in \mathcal{A}$, consider the representable functor $\hom_{\mathcal{A}}(-, A)$. This functor belongs to the category $[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$. Therefore, what $\hom_{\mathcal{A}}(-, A)$ <em>sees</em> when it <em>looks at</em> a functor $F : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$ is the following set of natural transformations:</p>
+
+\[[\hom_{\mathcal{A}}(-, A), F]\]
+
+<p>The above set is a set defined from $A \in \mathcal{A}$ and $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$. However, there is another natural way to define a set from $A, F$. Simply applying $F$ to $A$:</p>
+
+\[F(A)\]
+
+<p>According to the Yoneda lemma, the two sets are <strong>isomorphic</strong>. Moreover, they are not just isomorphic, but naturally isomorphic in $A \in \mathcal{A}$ and $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$. In short, the following two functors are isomorphic in $[\mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}], \mathbf{Set}]$:</p>
+
+\[\begin{aligned}
+\text{(i)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
+&amp;\xrightarrow{\hspace{0.15cm} \hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}} \times 1 \hspace{0.15cm}} [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}] \\
+&amp;\xrightarrow{\hom_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(-, -)} \mathbf{Set} \\\\
+\text{(ii)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
+&amp;\xrightarrow{-(-)} \mathbf{Set}
+\end{aligned}\]
+
+<blockquote>
+  <p><em>Remark.</em> The $\mathrm{op}$ attached to $\hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}}$ is to adjust the domain of the functor to $\mathcal{A}^\mathrm{op}$, and is essentially the same as $\hom_{\mathcal{A}}(-, \cdot)$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> To outline the proof, we define $\hat{(\;\;)} : [\hom_\mathcal{A}(-, A), F] \to F(A)$ and $\tilde{(\;\;)}: F(A) \to [\hom_\mathcal{A}(-, A), F]$ as follows:</p>
+
+\[\hat{\alpha} = \alpha_A(1_A), \quad \tilde{x} = \theta\]
+
+<p>where $\theta$ is a natural transformation that maps $f : A’ \to A$ as follows:</p>
+
+\[\theta_{A'}: f \mapsto F(f^{\mathrm{op}})(x)\]
+
+<p>The reason for defining $\theta$ as above is to satisfy the following commutative diagram. (Verify by substituting $1_A$ for $(-)$.)</p>
+
+<p><img src="/public/yoneda-def.png" style="margin: 0 auto; width: 400px" /></p>
+
+<p>Now we must show that for any $A \in \mathcal{A}, F : \mathcal{A}^\mathrm{op} \to \mathbf{Set}$, the following holds:</p>
+
+<ul>
+  <li>For any $\alpha \in [\hom_\mathcal{A}(-, A), F]$, we have $\tilde{\hat{\alpha}} = \alpha$.</li>
+  <li>For any $x \in F(A)$, we have $\hat{\tilde{x}} = x$.</li>
+</ul>
+
+<p>This shows that $[\hom_\mathcal{A}(-, A), F] \cong F(A)$. In addition, we must show that this isomorphism is natural. Upon careful consideration, this is equivalent to showing that for any $A, A’ \in \mathcal{A}$ and $F, G \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$ and $f: A’ \to A$ and $\alpha: F \Rightarrow G$, the following diagram commutes:</p>
+
+<p><img src="/public/yoneda-naturality.png" style="margin: 0 auto; width: 470px" /></p>
+
+<p>In terms of elements:</p>
+
+<p><img src="/public/yoneda-comm.png" style="margin: 0 auto; margin-bottom: 2em; width: 400px" /></p>
+
+<p>That the above holds follows from the naturality of $\theta$. ■</p>
+
+<h2 id="the-yoneda-corollary-and-relational-ontology">The Yoneda Corollary and Relational Ontology</h2>
+
+<p>Among the results implied by the Yoneda lemma, the following is particularly important. I shall simply call this the <strong>Yoneda corollary</strong>.</p>
+
+<blockquote>
+  <p><strong>Yoneda Corollary.</strong> Let $X, Y \in \mathcal{A}$.</p>
+
+  <ol>
+    <li>$[\hom(-, X), \hom(-, Y)] \cong \hom(X, Y)$</li>
+    <li>$X \cong Y \iff \hom(-, X) \cong \hom(-, Y)$</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $F = \hom(-, Y)$. ■</p>
+
+<p>In essence, <strong>in category theory, an object is nothing more than the collection of morphisms it receives.</strong> For instance, in the integer order category, $0$ can be defined as the initial object, and more generally, $n$ can be defined as the object that receives $n$ morphisms. The Yoneda corollary guarantees that this approach of defining objects through the morphisms they form with other objects is valid in all (strictly speaking, locally small) categories. I call this approach <strong>relational ontology</strong>.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/03/18/quanitfying-in"> 양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게 </a>
@@ -2559,124 +2665,6 @@ y = f_2(r, \theta) = r \sin \theta
 <p>그리고 라그랑지안은 특정 기하학에 의존적인 함수가 아닌, 그저 시공간의 점들에 대해 실숫값을 출력하는 함수이다. 따라서 위 진술은 어떠한 기하학에 대해서도 의존적이지 않으며, 라그랑주 역학은 일반 공변적이다.</p>
 
 <p>구멍 논증<sub>hole argument</sub>에 따르면 일반 공변적인 이론들은 형이상학적인 의미에서 비결정론적이다. 이에 대한 설명은 나중에 하도록 하겠다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/27/general-covariance/en"> Notes on General Covariance </a>
-      </h1>
-    <span class="post-date">27 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/physics/'">
-        Physics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/mechanics/'">
-        Mechanics
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>A theory is said to be <strong>general covariant</strong> when the form of physical laws is preserved under differentiable coordinate transformations. Specifically, suppose coordinate systems $\lbrace q_i \rbrace$ and $\lbrace q’_i \rbrace$ are related by:</p>
-
-\[q_i' = f_i(\{ q \})\]
-
-<p>Let each $f_i$ be differentiable for all $i$. If a theory is generally covariant, then the physical laws must have the same form when using coordinate system $\lbrace q_i \rbrace$ as when using coordinate system $\lbrace q_i’ \rbrace$.</p>
-
-<p>Consider an example. Suppose we describe the position of a particle in a system with zero potential using either polar coordinates $(r, \theta)$ or Cartesian coordinates $(x, y)$. The two coordinate systems are related by:</p>
-
-\[\begin{gather}
-x = f_1(r, \theta) = r \cos \theta\\
-y = f_2(r, \theta) = r \sin \theta
-\end{gather}\]
-
-<p>Since $f_1$ and $f_2$ are differentiable, a generally covariant theory must have the same form when expressed in both coordinate systems.</p>
-
-<p>First, consider the case of Newtonian mechanics. The physical laws of Newtonian mechanics are:</p>
-
-\[\begin{gather}
--\frac{dV(x, y)}{dx} = m\ddot{x} \\
--\frac{dV(x, y)}{dy} = m\ddot{y}
-\end{gather}\]
-
-<p>Since $V(x, y) = 0$, we have $\ddot{x} = \ddot{y} = 0$. That is, the particle undergoes uniform linear motion. If Newtonian mechanics were generally covariant, then expressing the above laws in terms of $(r, \theta)$ instead of $(x, y)$ should yield the same result.</p>
-
-\[\begin{gather}
--\frac{dV(r, \theta)}{dr} = m\ddot{r} \\
--\frac{dV(r, \theta)}{d\theta} = m\ddot{\theta}
-\end{gather}\]
-
-<p>Since $V(r, \theta) = 0$, we have $\ddot{r} = \ddot{\theta} = 0$. This time, the particle undergoes uniform circular motion. Since the results differ, <strong>Newtonian mechanics is not generally covariant.</strong></p>
-
-<p>Now consider the case of <a href="http://dimenerno.github.io/2025/02/27/euler-lagrange/">Lagrangian mechanics</a>. The physical laws of Lagrangian mechanics are:</p>
-
-\[\begin{gather}
-\frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
-\frac{\partial \mathcal{L}}{\partial y} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{y}}
-\end{gather}\]
-
-<p>Substituting $\mathcal{L}(x, y) = T - V = \frac{m}{2}(\dot{x}^2 + \dot{y}^2)$ yields $\ddot{x} = \ddot{y} = 0$, i.e., uniform linear motion. This is the same as in Newtonian mechanics thus far.</p>
-
-<p>Now let us substitute $(r, \theta)$ for $(x, y)$ in the Euler-Lagrange equations:</p>
-
-\[\begin{gather}
-\frac{\partial \mathcal{L}}{\partial r} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{r}} \\
-\frac{\partial \mathcal{L}}{\partial \theta} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}}
-\end{gather}\]
-
-<p>Substituting $x = r\cos\theta, y = r\sin\theta$ and simplifying, $\mathcal{L}(r, \theta)$ becomes:</p>
-
-\[\mathcal{L}(r, \theta) = \frac{m}{2}(\dot{r}^2 + r^2 \dot{\theta}^2)\]
-
-<blockquote>
-  <p><em>Remark.</em> while in the Euler-Lagrange equations we simply substitute $(r, \theta)$ for $(x, y)$, in the Lagrangian we substitute the relation $x = r \cos \theta, y = r \sin \theta$ because the Lagrangian is not a function of <strong>pairs of real numbers</strong> but rather a function of <strong>points in spacetime</strong>. General covariance does not mean that the form of equations is preserved under mindless, uniform coordinate transformations, but rather that when the functions describing a physical system are maintained while the coordinates expressing them are changed, the form of equations is preserved.</p>
-</blockquote>
-
-<p>Substituting and calculating yields:</p>
-
-\[\begin{gather}
-\ddot{r} = r\dot{\theta}^2 \\
-2\dot{r}\dot{\theta} + r\ddot{\theta} = 0
-\end{gather}\]
-
-<p>Although the differential equations are complex and difficult to interpret, the above two differential equations are equivalent to $\ddot{x} = \ddot{y} = 0$. For instance, one can verify that $\theta = \tan^{-1}t, r = \sqrt{1 + t^2}$ is a solution to the equations.</p>
-
-<p>In general, the following holds:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Lagrangian mechanics possesses general covariance.</p>
-</blockquote>
-
-<p>It may seem surprising that Newtonian mechanics lacks general covariance while Lagrangian mechanics possesses it, but upon reflection, this is quite natural. Newton’s first law is commonly expressed mathematically as $F = 0 \implies \ddot{x} = 0$, but the precise statement is:</p>
-
-<blockquote>
-  <p>The spacetime diagram of a particle not subject to external forces is linear.</p>
-</blockquote>
-
-<p>Note the expression ‘linear’. Linearity is a concept dependent upon specific geometry. For example, in Euclidean geometry, ‘linear’ refers to what we commonly call a straight line, but in spherical geometry, ‘linear’ is given by great circles. Therefore, the above statement is most accurately written as:</p>
-
-<blockquote>
-  <p><strong>Newtonian mechanics</strong>. The spacetime diagram of a particle not subject to external forces is linear in Euclidean geometry.</p>
-</blockquote>
-
-<p>Linear motion in Euclidean geometry is given by $\ddot{x} = \ddot{y} = 0$ in Cartesian coordinates. Therefore, $F = 0 \implies \ddot{x} = 0$ is a correct equation only when Euclidean geometry and Cartesian coordinates are presupposed.</p>
-
-<p>Conversely, if a theory does not depend upon specific geometry, then that theory is generally covariant. Lagrangian mechanics is an example of such a theory. The statement of Lagrangian mechanics can be expressed as:</p>
-
-<blockquote>
-  <p><strong>Lagrangian mechanics</strong>. The path that extremises the integral of the Lagrangian is the particle’s trajectory.</p>
-</blockquote>
-
-<p>The Lagrangian is not a function dependent upon specific geometry, but merely a function that outputs real values for points in spacetime. Therefore, the above statement is not dependent upon any particular geometry, and Lagrangian mechanics is generally covariant.</p>
-
-<p>According to the hole argument, generally covariant theories are indeterministic in a metaphysical sense. An explanation of this will be provided later.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

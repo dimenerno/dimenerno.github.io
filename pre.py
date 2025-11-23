@@ -42,5 +42,5 @@ def process_markdown(filename):
 
 if __name__ == "__main__":
     # filename = input("수정 파일: ")
-    filename = "2025-11-10-stationary-sets"
+    filename = "2025-11-22-euler-poincare"
     process_markdown(filename)

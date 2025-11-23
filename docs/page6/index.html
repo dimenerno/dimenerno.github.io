@@ -431,6 +431,128 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/04/regular-singular/en"> Regular Cardinals, Singular Cardinals, and Inaccessible Cardinals </a>
+      </h1>
+    <span class="post-date">04 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>In this article, $\kappa$ denotes an infinite cardinal. Moreover, we adopt the approach of defining cardinals as initial ordinals (see method 3 in <a href="https://dimenerno.github.io/2025/04/20/cardinality/">this post</a>). Accordingly, every cardinal is also an ordinal.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\theta$ be a limit ordinal less than $\kappa$. For each $\nu$, consider an increasing sequence of ordinals $\langle \alpha_\nu : \nu &lt; \theta \rangle$ where $\alpha_\nu &lt; \kappa$. If we always have $\lim_{\nu \to \theta} \alpha_\nu &lt; \kappa$, then $\kappa$ is called a <strong>regular cardinal</strong>. A cardinal that is not regular is called a <strong>singular cardinal</strong>.</p>
+</blockquote>
+
+<p><em>Remark.</em> $\alpha_\nu$ and $\theta$ are generally ordinals, not necessarily cardinals.</p>
+
+<p>For example, $\aleph_0$ is a regular cardinal. This is because the supremum of fewer than $\aleph_0$ many—that is, finitely many—cardinals less than $\aleph_0$—that is, natural numbers—does not reach $\aleph_0$.</p>
+
+<p>In contrast, $\aleph_\omega$ is a singular cardinal. This is because in the following sequence of cardinals, each cardinal is less than $\aleph_\omega$, and the length of the sequence is also $\aleph_0 &lt; \aleph_\omega$, yet their supremum is $\aleph_\omega$.</p>
+
+\[\aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \aleph_3 \quad \cdots\]
+
+<blockquote>
+  <p><strong>Theorem. (Characterisation of Singular Cardinals)</strong> $\kappa$ is a singular cardinal if and only if $\kappa$ is the sum of fewer than $\kappa$ many cardinals, each less than $\kappa$. That is, for $|I| &lt; \kappa$ and $\kappa_i &lt; \kappa \;(\forall i \in I)$, we have</p>
+
+\[\sum_{i \in I} \kappa_i = \kappa\]
+</blockquote>
+
+<p><em>Remark.</em> $\kappa_i$ denotes cardinals, not general ordinals. Moreover, $\sum$ denotes cardinal addition, not ordinal addition.</p>
+
+<p><strong>Proof.</strong></p>
+
+<p>($\Rightarrow$) If $\kappa$ is a singular cardinal, then there exists a sequence of ordinals $\langle \alpha_\nu : \nu &lt; \theta\rangle$ such that</p>
+
+\[\lim_{\nu \to \theta} \alpha_\nu = \sup \alpha_\nu = \bigcup_{\nu &lt; \theta}\alpha_\nu = \kappa\]
+
+<p>In general, an ordinal $\alpha$ is the union of all ordinals $\beta &lt; \alpha$ that are less than it. Therefore, the following holds:</p>
+
+\[\kappa = \bigcup_{\nu &lt; \theta}\alpha_\nu = \bigcup_{\nu &lt; \theta}\left( \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi \right)\]
+
+<p>Let $A_\nu = \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi$. while $A_\nu$ is no longer an ordinal, this is not important. What matters is that $\lbrace  A_\nu \rbrace $ are pairwise disjoint. Therefore, letting $\kappa_\nu = |A_\nu|$, by the definition of cardinal addition, we have</p>
+
+\[\sum_{\nu &lt; \theta} \kappa_\nu = \left| \bigcup_{\nu &lt; \theta} A_\nu \right| = \kappa\]
+
+<p>($\Leftarrow$) Let $\kappa = \sum_{i \in I}\kappa_i$. Setting $|I| = \lambda$, by the properties of cardinal addition, we have $\kappa = \lambda \cdot \sup \kappa_i$. Since $\lambda &lt; \kappa$, by the properties of cardinal multiplication, we have $\kappa = \sup \kappa_i$. For each $i \in I$, we have $\kappa_i &lt; \kappa$, yet $\sup \kappa_i = \kappa$. Therefore, by transfinite induction, we can construct an increasing sequence of cardinals</p>
+
+\[\langle \kappa_\nu : \kappa_\nu = \kappa_i \text{ for some } i \in I, \nu &lt; \theta\rangle\]
+
+<p>Since $\theta \leq \lambda$, the theorem is proved. ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> When $\kappa = \aleph_{\alpha + 1}$ for some $\alpha \in \mathrm{Ord}$, we call $\kappa$ a <strong>successor cardinal</strong>. A cardinal that is not a successor cardinal is called a <strong>limit cardinal</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Every successor cardinal is regular.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $\kappa = \aleph_{\alpha + 1}$. If $\kappa$ is a singular cardinal, then by the characterisation of singular cardinals, we have $\kappa = \sum_{i \in I} \kappa_i$ where $\kappa_i, |I| &lt; \kappa$. This is equivalent to $\kappa_i , |I| \leq \aleph_\alpha$. However,</p>
+
+\[\sum_{i \in I} \kappa_i \leq \sum_{i \in I} \aleph_\alpha = |I| \cdot  \aleph_\alpha \leq  \aleph_\alpha \cdot \aleph_\alpha =  \aleph_\alpha &lt; \kappa\]
+
+<p>which is a contradiction. ■</p>
+
+<p>Therefore, every singular cardinal is a limit cardinal. However, not every limit cardinal is singular. This is because $\aleph_0$ is a regular limit cardinal. But do there exist other regular limit cardinals beyond $\aleph_0$?</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> An uncountable regular limit cardinal is called an <strong>inaccessible cardinal</strong>.<a href="#sub1" id="sup1"><sup>1</sup></a></p>
+</blockquote>
+
+<p>Let $\aleph_\alpha$ be an inaccessible cardinal. The limit of the following increasing sequence of cardinals is $\aleph_\alpha$:</p>
+
+\[\langle \aleph_\beta : \beta &lt; \alpha \rangle : \aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \cdots \quad \to \aleph_\alpha\]
+
+<p>Therefore, for $\aleph_\alpha$ to be regular, the length of the above sequence, namely $\alpha$, must not be less than $\aleph_\alpha$. Since $\alpha \leq \aleph_\alpha$, it follows that $\alpha = \aleph_\alpha$.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> A necessary condition for $\aleph_\alpha$ to be inaccessible is that $\alpha = \aleph_\alpha$.</p>
+</blockquote>
+
+<p>This suggests that $\alpha$ is an enormously large cardinal. For instance, consider the following sequence of cardinals $\langle \alpha_n : n \in \omega \rangle$:</p>
+
+\[\alpha_0 = \aleph_0, \alpha_{n + 1} = \aleph_{\alpha_n}\]
+
+<p>Let $\kappa$ be the supremum of this sequence. By the definition of supremum, if $\lambda &lt; \kappa$, then there exists $n$ such that $\alpha_n &gt; \lambda$. Therefore, $\aleph_\lambda = \alpha_{n+1} &lt; \kappa$, and</p>
+
+\[\aleph_\kappa = \sum_{\lambda &lt; \kappa} \aleph_\lambda \leq \sum_{\lambda &lt; \kappa} \kappa = \kappa\]
+
+<p>In other words, a cardinal satisfying $\alpha = \aleph_\alpha$ has a magnitude at least comparable to the following:</p>
+
+\[\kappa = \aleph_{\aleph_{\aleph_{\aleph_{\ddots}}}}\]
+
+<p>There is an important point to note here. Although $\kappa$ satisfies $\kappa = \aleph_\kappa$, we have not shown that $\kappa$ is inaccessible. Indeed, $\kappa$ is a singular cardinal, as it is the limit of a sequence $\alpha_n$ of length $\omega$.</p>
+
+<p>In fact, the existence of inaccessible cardinals is independent of ZFC.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The existence of inaccessible cardinals is independent of ZFC.</p>
+</blockquote>
+
+<p>Therefore, the existence of inaccessible cardinals must be assumed as an axiom. The class of axioms that assume the existence of inaccessible cardinals are called <strong>large cardinal axioms</strong>, and research related to these forms an important part of set theory.</p>
+
+<hr />
+
+<p><a href="#sup1" id="sub1">1.</a> Strictly speaking, this corresponds to a <strong>weakly inaccessible cardinal</strong>. A cardinal $\kappa$ is called <strong>strongly inaccessible</strong> if it is weakly inaccessible and additionally satisfies $2^\lambda &lt; \kappa$ whenever $\lambda &lt; \kappa$. Under the continuum hypothesis, weak and strong inaccessibility are equivalent.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/05/01/elementary-embedding"> 준동형 사상, 임베딩, 초등적 임베딩 </a>
@@ -1553,210 +1675,6 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 </blockquote>
 
 <p>즉, 항등원을 지시할 상수를 결여하는 언어 $\mathcal{L}_3 = \lbrace  G, \cdot, (-)^{-1} \rbrace$에서도 군의 이론은 부분모델 보존적이며, 이는 $\mathcal{L}_3$로 군을 형식화하는 $\Pi_1$ 이론이 존재함을 의미한다. 머리를 잘 굴려보면 실제로 다음의 이론 $T_3$가 존재함을 발견할 수 있다.</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\forall x, y : (x \cdot x^{-1}) \cdot y = y \cdot (x \cdot x^{-1}) = y$</li>
-</ul>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/17/los-tarski/en"> The Łoś-Tarski Preservation Theorem </a>
-      </h1>
-    <span class="post-date">17 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/algebra/'">
-        Algebra
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>For subgroups $H, K$ of a group $G$, the intersection $H \cap K$ is always a group. The same holds for rings and fields. This can be explained as a consequence of the Łoś-Tarski theorem.</p>
-
-<blockquote>
-  <p><em>Notation.</em> In this article, $T$ is a first-order theory in language $\mathcal{L}$, and Fraktur letters $\mathfrak{M}, \mathfrak{N}, \dots$ denote $\mathcal{L}$-structures. Furthermore, we write the domains of $\mathfrak{M}, \mathfrak{N}, \dots$ as $M, N, \dots$ respectively.</p>
-</blockquote>
-
-<h2 id="basic-concepts">Basic Concepts</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $N \subseteq M$ and the interpretation in $\mathfrak{N}$ is the restriction of the interpretation in $\mathfrak{M}$ to $N$, we call $\mathfrak{N}$ a <strong>submodel</strong> of $\mathfrak{M}$, and write $\mathfrak{N} \subseteq \mathfrak{M}$. Furthermore, $\mathfrak{M}$ is called an <strong>extension</strong> of $\mathfrak{N}$.</p>
-</blockquote>
-
-<p>For example, $(2\mathbb{Z}, +)$ is a submodel of $(\mathbb{Z}, +)$, and $(\mathbb{Q}, +, \cdot)$ is a submodel of $(\mathbb{R}, +, \cdot)$.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$ for any $\mathcal{L}$-sentence $\phi$, we say that $\mathfrak{M}$ and $\mathfrak{N}$ are <strong>elementarily equivalent</strong>, and write $\mathfrak{M} \equiv \mathfrak{N}$.</p>
-</blockquote>
-
-<p>By the <a href="https://dimenerno.github.io/2025/04/10/completeness-theorem/">Löwenheim-Skolem theorem</a>, if $\kappa$ is an infinite cardinal at least $|\mathcal{L}|$, then for any infinite structure $\mathfrak{M}$, there exists a model $\mathfrak{N}$ of cardinality $\kappa$ that is elementarily equivalent to $\mathfrak{M}$. (cf. Łoś-Vaught test)</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $\mathfrak{M}$ and $\mathfrak{N}$ are structurally identical, they are called <strong>isomorphic</strong>, written $\mathfrak{M} \cong \mathfrak{N}$. Specifically, $\mathfrak{M} \cong \mathfrak{N}$ when there exists a bijection $\phi: M \to N$ such that for any function $f$ and relation $R$ in $\mathcal{L}$, the following holds for any $a_1, \dots, a_n \in M$:</p>
-
-\[\begin{gather}
-\phi(f_\mathfrak{M}(a_1, \dots, a_n)) = f_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n)), \\\\
-R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
-\end{gather}\]
-</blockquote>
-
-<p>$(\mathbb{Z}, +)$ and $(2\mathbb{Z}, +)$ are isomorphic via $\phi: x \mapsto 2x$, but $(\mathbb{Q}, +, \cdot)$ and $(\mathbb{R}, +, \cdot)$ are not isomorphic.</p>
-
-<p>The proof of the following theorem is almost trivial.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Two isomorphic structures are elementarily equivalent.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $\mathfrak{N} \subseteq \mathfrak{M}$. When $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$ for any $\mathcal{L}$-formula $\phi$ and any assignment $g$ of free variables in $\mathfrak{N}$, we call $\mathfrak{N}$ an <strong>elementary submodel</strong> of $\mathfrak{M}$, and write $\mathfrak{N} \preceq \mathfrak{M}$.</p>
-</blockquote>
-
-<p>Conditions 2 and 3 are stronger than 1, but 2 and 3 do not imply each other.</p>
-
-<ol>
-  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \equiv \mathfrak{M}$</li>
-  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \cong \mathfrak{M}$</li>
-  <li>$\mathfrak{N} \preceq \mathfrak{M}$</li>
-</ol>
-
-<p>The reason why 2 and 3 do not imply each other is that 2 requires structural equivalence, making it no weaker than 3, while 3 requires equivalence for arbitrary assignments, making it no weaker than 2. For instance, for $\mathfrak{M} = (\mathbb{R}, +, \cdot)$, for $\mathfrak{N}$ to be an isomorphic submodel of $\mathfrak{M}$, it must be <em>structurally</em> identical with respect to <em>constructible</em> real numbers, whereas for $\mathfrak{N}$ to be an elementary submodel of $\mathfrak{M}$, the two models must be <em>elementarily</em> equivalent with respect to <em>all</em> real numbers.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>2</th>
-      <th>3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2 is no weaker than 3</td>
-      <td>Structural identity</td>
-      <td>Elementary identity</td>
-    </tr>
-    <tr>
-      <td>3 is no weaker than 2</td>
-      <td>Constructible objects</td>
-      <td>Arbitrary objects</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>For example, as we saw earlier, $(2\mathbb{Z}, +)$ is an isomorphic submodel of $(\mathbb{Z}, +)$, but considering the assignment $x \mapsto 2$ for $\exists y \; (y + y = x)$, we can see that it is not an elementary submodel.</p>
-
-<h2 id="the-łoś-tarski-theorem">The Łoś-Tarski Theorem</h2>
-
-<p>Let $\mathfrak{M}$ be a model of $T$. What kind of theory must $T$ be for any submodel of $\mathfrak{M}$ to also be a model of $T$? The answer is given by the following theorem.</p>
-
-<blockquote>
-  <p><strong>The Łoś-Tarski Preservation Theorem.</strong> A necessary and sufficient condition for submodels of models of $T$ to also be models of $T$ is that $T$ is equivalent to a theory consisting of $\Pi_1$ sentences.</p>
-</blockquote>
-
-<p>What $\Pi_1$ sentences are has been covered in the <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">arithmetic hierarchy</a> article. To explain briefly, these are theories having only $\forall$ as quantifiers. Intuitively, $\Pi_1$ sentences become easier to satisfy as the domain is restricted, so if $T$ is a $\Pi_1$ theory, then $T$ will be preserved under submodels. The necessity is somewhat more challenging to prove.</p>
-
-<p><strong>Proof.</strong> The sufficiency is almost trivial, so we prove only the necessity. We prove the following lemma.</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> Let $T$ be a consistent theory in language $\mathcal{L}$. When a set $\Delta$ of $\mathcal{L}$-sentences satisfies the following two conditions, $\Delta$ contains an axiomatisation of $T$.</p>
-
-  <ol>
-    <li>$\Delta$ is closed under disjunction. That is, if $\phi, \psi \in \Delta$, then $\phi \lor \psi \in \Delta$.</li>
-    <li>For a model $\mathfrak{A}$ of $T$, if $\mathfrak{B}$ satisfies all sentences in $\Delta$ that are satisfied in $\mathfrak{A}$, then $\mathfrak{B}$ is also a model of $T$.</li>
-  </ol>
-</blockquote>
-
-<p><em>Proof of the lemma.</em> Let $\Gamma = \lbrace  \delta \in \Delta : T \vDash \delta \rbrace $. To show that $\Delta$ contains an axiomatisation of $T$, it suffices to show the following:</p>
-
-\[\mathfrak{B} \vDash \Gamma \implies \mathfrak{B} \vDash T\]
-
-<p>Suppose $\mathfrak{B}$ is a model of $\Gamma$. Define:</p>
-
-\[\Sigma = \{ \lnot \delta : \delta \in \Delta, \mathfrak{B} \not\vDash \delta \}\]
-
-<p>We show that $T \cup \Sigma$ is a consistent theory. If $T \cup \Sigma$ were inconsistent, then for some $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$, we would have $T \vdash \lnot(\lnot\delta_1 \land \cdots \land \lnot\delta_n)$, so $T \vdash \delta_1 \lor \cdots \lor \delta_n$. Since $\Delta$ is closed under disjunction, $\delta_1 \lor \cdots \lor \delta_n \in \Delta$. By the definition of $\Gamma$, $\delta_1 \lor \cdots \lor \delta_n \in \Gamma$, so $\mathfrak{B} \vDash \delta_1 \lor \cdots \lor \delta_n$. This contradicts $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$.</p>
-
-<p>Since $T \cup \Sigma$ is consistent, by the completeness theorem it has a model. Let this model be $\mathfrak{A}$. Since $\mathfrak{B}$ satisfies all sentences in $\Delta$ that $\mathfrak{A}$ satisfies, by assumption $\mathfrak{B}$ is a model of $T$. □</p>
-
-<p>Now we proceed to the proof of the main theorem. Let $\Delta$ be the set of all $\Pi_1$ sentences in $\mathcal{L}$. Our goal is to show that $\Delta$ contains an axiomatisation of $T$. Since $\Pi_1$ sentences are closed under disjunction, by the lemma it suffices to show the following:</p>
-
-<blockquote>
-  <p>Let $T$ be a theory that is preserved under submodels. For a model $\mathfrak{A}$ of $T$, if $\mathfrak{B}$ satisfies all $\Pi_1$ sentences satisfied in $\mathfrak{A}$, then $\mathfrak{B}$ is also a model of $T$.</p>
-</blockquote>
-
-<p>Following the notation from <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">this article</a>, let us define $E(\mathfrak{B})$. That is, $\mathfrak{M}$ satisfies $E(\mathfrak{B})$ when $\mathfrak{B} \preceq \mathfrak{M}$.</p>
-
-<p>We show that $T \cup E(\mathfrak{B})$ is consistent. If $T \cup E(\mathfrak{B})$ were inconsistent, then there would exist some sentence $\phi(b_1, \dots, b_n)$ from $E(\mathfrak{B})$ such that $T \cup \lbrace  \phi \rbrace $ has no model. Therefore, $\mathfrak{A}$, being a model of $T$, cannot be extended to an $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ model that satisfies $\phi$. That is, the following holds:</p>
-
-\[\mathfrak{A} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)\]
-
-<p>The right-hand side is a $\Pi_1$ sentence, so by assumption $\mathfrak{B} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)$. However, since $\phi(b_1, \dots, b_n) \in E(\mathfrak{B})$, this is a contradiction. Therefore, $T \cup E(\mathfrak{B})$ is consistent and by the completeness theorem has a model $\mathfrak{C}$. Since $\mathfrak{C}$ satisfies $E(\mathfrak{B})$, we have $\mathfrak{B} \preceq \mathfrak{C}$. Meanwhile, since $\mathfrak{C}$ is a model of $T$, which is preserved under submodels, $\mathfrak{B}$ is a model of $T$. ■</p>
-
-<h2 id="applications">Applications</h2>
-
-<p>The first-order logical axiomatisation of groups differs depending on whether the identity element and inverse are represented as separate constant $e$ and function $(-)^{-1}$.</p>
-
-<h4 id="without-representation">Without representation</h4>
-
-<p>Define theory $T_1$ in language $\mathcal{L}_1 = \lbrace G, \cdot \rbrace $ as follows:</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\exists x \forall y : x \cdot y = y \cdot x = y$</li>
-  <li>$\forall x \exists y \forall z : (x \cdot y) \cdot z = (y \cdot x) \cdot z = z$</li>
-</ul>
-
-<h4 id="with-representation">With representation</h4>
-
-<p>Define theory $T_2$ in language $\mathcal{L}_2 = \lbrace G, \cdot, e, (-)^{-1} \rbrace $ as follows:</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\forall x : x \cdot e = e \cdot x = x$</li>
-  <li>$\forall x : x \cdot x^{-1} = x^{-1} \cdot x = e$</li>
-</ul>
-
-<p>$T_1$ is not a $\Pi_1$ theory, but $T_2$ is a $\Pi_1$ theory. Therefore, by the Łoś-Tarski theorem, $T_1$ is not submodel-preserving while $T_2$ is preserving. That $T_1$ is not submodel-preserving means that a subset of a group being closed under the operation does not always make it a subgroup<small>(for instance, the subset $\mathbb{Z}_{&gt; 0}$ of $\mathbb{Z}$ is closed under the operation but is not a group as it lacks inverses)</small>. Conversely, that $T_2$ is submodel-preserving means the following holds:</p>
-
-<blockquote>
-  <p>For a group $G$, if a subset $H$ of $G$ satisfies the following, then $H$ is a subgroup of $G$:</p>
-
-  <ol>
-    <li>Closed under the operation.</li>
-    <li>Closed under inverses.</li>
-    <li>Contains the identity element of $G$.</li>
-  </ol>
-</blockquote>
-
-<p>However, the following stronger result generally holds:</p>
-
-<blockquote>
-  <p>For a group $G$, if a subset $H$ of $G$ satisfies the following, then $H$ is a subgroup of $G$:</p>
-
-  <ol>
-    <li>Closed under the operation.</li>
-    <li>Closed under inverses.</li>
-  </ol>
-</blockquote>
-
-<p>That is, even in language $\mathcal{L}_3 = \lbrace  G, \cdot, (-)^{-1} \rbrace$ lacking a constant to denote the identity element, the theory of groups is submodel-preserving, which means there exists a $\Pi_1$ theory formalising groups in $\mathcal{L}_3$. With some clever thinking, one can indeed discover that the following theory $T_3$ exists:</p>
 
 <ul>
   <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>

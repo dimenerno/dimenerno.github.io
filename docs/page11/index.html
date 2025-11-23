@@ -431,6 +431,82 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/05/order/en"> Notes on Multiplicative Groups and Order: Fermat's Theorem on Primes and Wilson's Theorem </a>
+      </h1>
+    <span class="post-date">05 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/algebra/'">
+        Algebra
+      </div>
+      
+    </div>
+     <h3 id="remarks">Remarks</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Multiplicative Group</strong></th>
+      <th><strong>Additive Group</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 is the identity element</td>
+      <td>0 is the identity element</td>
+    </tr>
+    <tr>
+      <td>When the order of $x$ is $r$, $x^r = 1$</td>
+      <td>When the order of $x$ is $r$, $rx = 0$</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>For a prime $p$, if information about $p - 1$ is given, consider the multiplicative group $(\mathbb{Z}/p\mathbb{Z})^\times$ of order $p - 1$.</li>
+  <li>The multiplicative group of a finite field is cyclic.</li>
+  <li>For a <em>cyclic</em> multiplicative group $G$, $nm \mid |G|$ is equivalent to the existence of an element $x$ such that $x^{nm} = 1$ but $x^n, x^m \neq 1$.</li>
+  <li>Order is different from period. In general, <strong>(period) = (order) + 1</strong>.</li>
+</ul>
+
+<h3 id="fermats-theorem-on-primes">Fermat’s Theorem on Primes</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> A prime $p$ can be expressed in the form $p = a^2 + b^2$ for two integers $a, b$ if and only if $p \equiv 1 \pmod{4}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p>(⇒) Trivial.</p>
+
+<p>(⇐) Let $G = (\mathbb{Z}/p\mathbb{Z})^\times$. By the condition, $4 \mid |G|$. Therefore, there exists an element $n$ such that $n^4 = 1$ but $n^2 \neq 1$. That is, $n^2 = -1$. Hence, $p \mid n^2 + 1$. Now, considering in $\mathbb{Z}[i]$, we have $p \mid (n + i)(n - i)$. If $p$ were irreducible in $\mathbb{Z}[i]$, then $p \mid n + i$ or $p \mid n - i$ (note that the fact that $\mathbb{Z}[i]$ is UFD is used here) but both are impossible. Therefore, $p$ is not irreducible, and by conjugacy,</p>
+
+\[p = (a + bi)(a - bi) = a^2 + b^2\]
+
+<p>■</p>
+
+<h3 id="wilsons-theorem">Wilson’s Theorem</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $p$ is prime if and only if $(p - 1)! \equiv -1 \pmod{p}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p>(⇒) Let $G = (\mathbb{Z}/p\mathbb{Z})^\times$. The product of all elements of $G$ is $(p - 1)!$. Except for $\pm 1$, which are the roots of $x^2 = 1$, all other elements of $G$ do not have themselves as their inverse. Therefore, $(p - 1)! \equiv -1$.</p>
+
+<p>(⇐) Let $N = (p - 1)! + 1$. By the condition, $p \mid N$. If $p$ were not prime, then for some prime $q &lt; p$, we would have $q \mid N$. However, $N \equiv 1 \pmod{q}$, which is a contradiction. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/01/25/beta-function"> 베타 함수를 통한 페아노 산술에서의 괴델 수 정의 </a>
@@ -1722,132 +1798,6 @@
 <p>그라이스식 의도주의는 ’상대가 내 마음을 읽을 수 있다고 믿는 화자‘의 경우와 같이 충분히 이상한 믿음을 가진 화자의 경우 험티덤티 문제를 제거하지 못한다는 한계(?)를 가진다.</p>
 
 <p>이에 대해 라이머는 의도주의에 제약을 가하기 위한 다른 전략을 택하는데, 그의 전략은 <strong>제스처 우선순위</strong>로 요약할 수 있다. 라이머의 제약된 의도주의는 기대 이상으로 많은 험티덤티 문제를 명쾌하게 해결하는 것으로 보인다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/01/13/reference-2/en"> On Reference — Character Model and Intentionalism </a>
-      </h1>
-    <span class="post-date">13 Jan 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/philosophy/'">
-        Philosophy
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/philosophy-of-language/'">
-        Philosophy of Language
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h2 id="3-indexicals">3. Indexicals</h2>
-
-<p>Indexicals refer to expressions such as ‘I’, ‘you’, ‘here’, ‘now’, ‘he’, ‘this’, and ‘that’. It is common to distinguish between <strong>pure indexicals</strong> like ‘I’, ‘you’, ‘here’, and ‘now’, whose referents are relatively clear when context is given, and <strong>impure indexicals</strong> like ‘he’, ‘this’, and ‘that’, whose referents are relatively unclear. However, not all scholars accept this distinction as meaningful.</p>
-
-<h3 id="31-pure-indexicals">3.1. Pure Indexicals</h3>
-
-<h4 id="311-does-descriptivism-adequately-explain-pure-indexicals">3.1.1. Does Descriptivism Adequately Explain Pure Indexicals?</h4>
-
-<p>At first glance, descriptivism appears to adequately explain pure indexicals by claiming that the referent of ‘I’ is determined through the descriptive content “the speaker of this utterance”. However, there are two problems with this approach.</p>
-
-<p>Firstly, it is unclear whether “the speaker of this utterance” constitutes a description. Typically, descriptions specify their corresponding objects purely through their content, and are thus called <em>descriptions</em>. In this respect, “the speaker of this utterance” is problematic as a general description.</p>
-
-<p>For instance, suppose you wake up one day to find the following note in front of you:</p>
-
-<blockquote>
-  <p>Who is <em>the former British Prime Minister who implemented Brexit</em>?</p>
-</blockquote>
-
-<p>You would answer ‘Boris Johnson’, albeit with some confusion. However, what if the question on the note were:</p>
-
-<blockquote>
-  <p>Who is <em>the speaker of this sentence</em>?</p>
-</blockquote>
-
-<p>With only this note, one cannot determine what <em>the speaker of this sentence</em> refers to. That is, <em>the speaker of this sentence</em> appeals beyond the semantic level to the <strong>pragmatic level</strong> concerning the concrete use of language.</p>
-
-<p>The second problem related to this is that if “the speaker of this utterance” is the meaning of ‘I’, it makes strange predictions regarding the use of ‘I’. For instance, when Alice and Bob both utter “I am hungry”, it seems natural to view them as making different claims. However, descriptivism predicts that Alice and Bob both made equivalent claims: “the speaker of this utterance is hungry”.</p>
-
-<h4 id="312-reichenbachs-solution-token-reflexivity">3.1.2. Reichenbach’s Solution: Token Reflexivity</h4>
-
-<p>Reichenbach attempted to bridge the gap between descriptivism and indexicals by claiming that indexicals are <strong>token reflexive</strong>. That is, if Alice uttered “I am hungry” at Gwanghwamun at 4:53 PM on 13th January 2025, then the description associated with ‘I’ in this sentence is <em>the speaker who uttered “I am hungry” at Gwanghwamun at 4:53 PM on 13th January 2025</em>.</p>
-
-<h4 id="313-kaplans-solution-character-models">3.1.3. Kaplan’s Solution: Character Models</h4>
-
-<p>Kaplan modified Reichenbach’s approach in a Millian direction. Kaplan distinguishes between two types of meaning. <strong>Content</strong> is what we have hitherto called meaning; for the Millian Kaplan, the content of a name is its referent. Meanwhile, <strong>character</strong> is a rule of use that determines what the content of an expression is in a given context.</p>
-
-<p>Since Kaplan holds that there are no co-referential names in the strict sense, names have constant character according to him. For example, the content of ‘Boris Johnsonᵢ’ is <em>produce Boris Johnsonᵢ as referent in all contexts</em>.</p>
-
-<p>In contrast, the character of pure indexicals is <em>produce this speaker</em>, <em>produce the location of this utterance</em>, and so forth. If we accept Kaplan’s position, we can explain how “I am here now” is logically necessary (the <em>character</em> of ‘I’, ‘now’, and ‘here’ ensures that this sentence is true in all contexts) but not metaphysically necessary (the sentence obtained by substituting ‘I’, ‘now’, and ‘here’ with their <em>content</em> in a given context is not necessarily true), and also resolve the case of Alice and Bob.</p>
-
-<p><em>Remark.</em> For a famous objection to Kaplan’s theory, see the <strong>answering machine paradox</strong>.</p>
-
-<h4 id="314-fusion-of-causal-theory-and-character-models">3.1.4. Fusion of Causal Theory and Character Models</h4>
-
-<p>Since both causal theory and character models are Millian theories, they can be fused to present a more sophisticated theory of names.</p>
-
-<p>As mentioned earlier, Kaplan claimed that (1) names are mental phenomena, (2) accordingly, names with multiple bearers do not exist, and therefore (3) the character of names is constant. However, viewing names as psychological phenomena is somewhat burdensome. Instead, we might modify (1), (2), and (3) as follows:</p>
-
-<ol>
-  <li>Names are linguistic phenomena.</li>
-  <li>Names with multiple bearers exist.</li>
-  <li>The character of a name produces as referent the <strong>most salient</strong> object in the current context from the set of that name’s bearers.</li>
-</ol>
-
-<p>In addition to this, we add a fourth thesis from causal theory:</p>
-
-<ol>
-  <li>The set of bearers of a name is the set of objects initially named in the causal chains associated with that name.</li>
-</ol>
-
-<p>Such a fusion of causal theory and character models is attractive but not without limitations. In particular, it does not perfectly preserve the strength of causal theory: “the principle by which the mere transmission of a name enables the recipient to refer with that name”. (Author’s note: Well, so they say, but this theory seems perfect to me~)</p>
-
-<h3 id="32-impure-indexicals">3.2. Impure Indexicals</h3>
-
-<p>The meaning of impure indexicals such as ‘he’ and ‘she’, or ‘genuine indexicals’ such as ‘this’ and ‘that’, is more unclear than that of pure indexicals. Wettstein and Alison Mount developed theories along the lines that impure indexicals refer to <strong>the most salient person/object in the relevant context</strong>.</p>
-
-<p>What then makes a particular object ‘the most salient object in the relevant context’? It seems most natural to view it as the interest of the speaker or hearer. But whose side should we take?</p>
-
-<h4 id="1-mount-principle-of-mutual-salience">1. Mount: Principle of Mutual Salience</h4>
-
-<p><strong>Claim.</strong> Mount argues that the necessary and sufficient condition for an impure indexical to refer to object $c$ is that the interests of speaker and hearer coincide and that the object commonly salient to both is A.</p>
-
-<p><strong>Problem.</strong> This view implies the counterintuitive conclusion that when the interests of speaker and hearer diverge, or when the hearer happens not to be paying attention to the speaker’s words, the reference of the indexical fails.</p>
-
-<h4 id="2-kaplan-intentionalism">2. Kaplan: Intentionalism</h4>
-
-<p><strong>Claim.</strong> Kaplan argues that the necessary and sufficient condition for an impure indexical to refer to object $c$ is that the speaker uses the indexical with a <strong>directing intention</strong> to refer to $c$.</p>
-
-<p><strong>Problem.</strong> When the speaker’s directing intention can be infinitely flexible, the <strong>Humpty Dumpty problem</strong> arises. For instance, provided the speaker has sufficient intention, the speaker could point to a photograph of Donald Trump and refer to Rudolf Carnap, which is highly counterintuitive.</p>
-
-<p>Kaplan also presents the following complex Humpty Dumpty case:</p>
-
-<blockquote>
-  <p>A philosophy teacher had hung a photograph of Rudolf Carnap behind the lectern. However, one day a mischievous student secretly replaced Carnap’s photograph with one of Donald Trump. Unaware of this fact, when students entered the classroom, the teacher pointed behind himself and said <strong>“That is one of the greatest philosophers of the 20th century”</strong>.</p>
-</blockquote>
-
-<p>In the above case, the teacher has the intention to refer to Rudolf Carnap’s photograph with the indexical ‘that’, but the hearers (the students) cannot grasp this intention. This raises the question: is the teacher’s utterance true or false?</p>
-
-<p>According to strong intentionalism, since the teacher uttered ‘that’ with the intention to refer to Carnap, ‘that’ refers to Carnap, and therefore the teacher’s utterance is true.</p>
-
-<h4 id="3-gricean-intentionalism">3. Gricean Intentionalism</h4>
-
-<p>Gail Stine provides a different solution to Kaplan’s dilemma by grafting Grice’s semantics onto intentionalism. For indexical $i$ to successfully refer to object $c$, the speaker must have three intentions: the speaker must 1) have the intention to refer to $c$ with $i$, 2) have the intention to get the hearer to identify $c$ as the referent with $i$, and 3) have the intention to get the hearer to identify $c$ as referent through the hearer’s recognition of the speaker’s intention.</p>
-
-<p>Gricean intentionalism resolves the Humpty Dumpty problem. To resolve Kaplan’s Humpty Dumpty problem, Stine presents the distinction between direct reference and indirect reference. In Kaplan’s case, the teacher has the intention to refer to Rudolf Carnap, but this intention is achieved <strong>through</strong> the intention to refer to the picture behind him. Therefore, the former is indirect reference and the latter is direct reference. Stine argues that when indirect referent and direct referent conflict, the direct referent takes priority. That is, the teacher’s statement is false.</p>
-
-<h4 id="4-reimer-style-intentionalism">4. Reimer-style Intentionalism</h4>
-
-<p>Gricean intentionalism has the limitation(?) that it cannot eliminate the Humpty Dumpty problem in cases of speakers with sufficiently strange beliefs, such as ‘a speaker who believes the other party can read their mind’.</p>
-
-<p>In response, Reimer takes a different strategy for constraining intentionalism, which can be summarised as <strong>gesture priority</strong>. Reimer’s constrained intentionalism appears to resolve many more Humpty Dumpty problems than expected with remarkable clarity.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
