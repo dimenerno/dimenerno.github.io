@@ -112,7 +112,7 @@ $$
 
 정상 집합의 한 응용으로서 조합론의 다음 정리를 보자.
 
-> **Δ-계 보조정리<sub>Δ-system lemma</sub>.** $\lbrace A\_\xi\rbrace \_{\xi < \omega\_1}$가 $\omega\_1$의 유한부분집합들의 모임이라고 하자. 어떤 $I \subseteq \omega\_1$와 $A \subset \omega\_1$이 존재하여, 임의의 $i, j \in I, i \neq j$에 대해 $A\_i \cap A\_j = A$이다.
+> **Δ-계 보조정리<sub>Δ-system lemma</sub>.** $\lbrace A\_\xi\rbrace \_{\xi < \omega\_1}$가 $\omega\_1$의 유한부분집합들의 모임이라고 하자. 어떤 무계인 $I \subseteq \omega\_1$와 유한집합 $A$가 존재하여, 임의의 $i, j \in I, i \neq j$에 대해 $A\_i \cap A\_j = A$이다.
 
 **증명.** 비둘기집의 원리에 의해 일반성을 잃지 않고, 임의의 $\xi < \omega\_1$에 대해 $\|A\_\xi \| = n$이라고 가정할 수 있다. 다음과 같이 정의하자.
 
