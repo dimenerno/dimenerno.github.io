@@ -484,6 +484,169 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/12/26/suslin"> 서슬린의 문제와 다이아몬드 원리 </a>
+      </h1>
+    <span class="post-date">26 Dec 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <p><a href="https://dimenerno.github.io/2024/11/20/Rational-Real">이전 글</a>에서 다음 정리를 소개했다.</p>
+
+<blockquote>
+  <p><strong>집합론적 실수의 정의.</strong> 다음을 만족하는 순서 집합 $(R, &lt;)$은 순서 동형에 대해 유일하다.</p>
+
+  <ol>
+    <li>완비 전순서 집합이다.</li>
+    <li>양끝점이 없다.</li>
+    <li>분리 가능<sub>separable</sub>하다. 즉, 어떤 가산인 $Q \subset R$이 존재하여 $Q$가 $R$에서 조밀<sub>dense</sub>하다.</li>
+  </ol>
+</blockquote>
+
+<p>3번 성질로부터 다음이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{C}$가 $\mathbb{R}$의 개구간들의 모임이라고 하자. $\mathcal{C}$의 원소들이 쌍으로 서로소<sub>pairwise disjoint</sub>라면 $\mathcal{C}$는 가산이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathcal{C}$의 원소들이 쌍으로 서로소이므로, 각 $(x, y) \in \mathcal{C}$를 $q \in (x, y) \cap \mathbb{Q}$에 대응시키는 단사 사상 $\mathcal{C} \to \mathbb{Q}$가 존재한다. 따라서 $\mathcal{C}$는 가산이다. ■</p>
+
+<p>쌍으로 서로소인 개구간들의 모임이 기껏 가산인 순서 집합은 <strong>가산 체인 성질<sub>countable chain condition</sub></strong>을 가진다고 한다. 이 특이한 이름의 이유는 뒤에서 설명할 것이다.</p>
+
+<p>서슬린의 문제<sub>Suslin’s problem</sub>는 집합론적 실수의 정의에서 분리 가능성을 가산 체인 성질로 약화시킬 수 있는지를 묻는다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 양끝점이 없고 가산 체인 성질을 가지는 완비 전순서 집합 중 실수와 순서 동형이 <em>아닌</em> 순서 집합을 <strong>서슬린 선<sub>Suslin line</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<p>따라서 서슬린 선은 분리 가능하지 않아야 한다.</p>
+
+<blockquote>
+  <p><strong>서슬린의 문제.</strong> 서슬린 선이 존재하는가?</p>
+</blockquote>
+
+<p>1920년에 제기된 이 문제는, 1971년 솔로베이<sub>Solovay</sub>와 테넨바움<sub>Tennenbaum</sub>에 의해 ZFC와 독립적임이 증명되었다. 이 글에서는 독립성 증명을 살펴보는 대신, 서슬린 선의 조합론적 버전인 서슬린 트리에 대해서 알아보고자 한다. 우선 다음의 유명한 정리를 보자.</p>
+
+<blockquote>
+  <p><strong>쾨니히 보조정리<sub>König’s lemma</sub>.</strong> 트리 $T$에 대해, $T$의 높이가 $\omega$이고, $T$의 각 노드가 유한한 수의 자식을 가진다면, $T$는 길이가 $\omega$인 가지를 가진다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\alpha_0$를 루트 노드라고 하고, 다음과 같이 귀납적으로 노드열을 정의한다. $\alpha_n$이 주어졌을 때, $\alpha_n$의 자식 노드의 수는 유한하므로, 어떤 자식 노드에 대해 해당 노드를 루트로 하는 트리는 높이가 무한하다. 그러한 자식 노드 중 하나를 선택하여 (여기서 선택 공리가 필요하다) $\alpha_{n + 1}$로 정의한다. $\lbrace  a_n \rbrace $은 길이가 무한한 가지이다. ■</p>
+
+<p>$T$의 노드가 가산 수의 자식을 가질 수 있다면 다음과 같이 $T$의 모든 가지가 유한 길이임에도 $T$의 높이는 $\omega$일 수 있다.</p>
+
+<p><img src="/public/koenig-counterexample.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>자연스러운 질문은, 쾨니히 보조정리를 비가산 기수에 대해 확장할 수 있는지이다. 그러나 이 질문에 대한 답은 부정적이다.</p>
+
+<blockquote>
+  <p><strong>아론샤인 정리<sub>Aronszajn theorem</sub>.</strong> 높이가 $\omega_1$이고, 각 노드가 가산 수의 자식을 가지지만, 길이가 $\omega_1$인 가지가 없는 트리가 존재한다. (그러한 트리를 높이 $\omega_1$의 <strong>아론샤인 트리</strong>라고 한다.)</p>
+</blockquote>
+
+<p>따라서 쾨니히 보조정리를 비가산 기수로 확장하기 위해서는 “각 노드가 가산 수의 자식을 가진다”보다 더 강력한 조건이 필요하다. 이를 위해 다음의 정의를 도입한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 트리 $T$의 부분집합 $S$에 대해, $S$의 원소들이 서로 비교 불가능<sub>mutually incomparable</sub>할 때, $S$를 <strong>반체인<sub>antichain</sub></strong>이라고 한다. $T$의 모든 반체인이 가산일 때, $T$가 <strong>가산 체인 성질</strong>을 가진다고 한다.</p>
+</blockquote>
+
+<p>예를 들어 다음 트리의 색칠된 노드들은 반체인을 이룬다.</p>
+
+<p><img src="/public/antichain.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
+
+<p>“각 노드가 가산 수의 자식을 가진다”가 국소적 성질이라면, 가산 체인 성질은 트리 전체에 관한 전역적 성질이다. 즉, 가산 체인 성질은 직관적으로 트리의 “너비”가 $\omega_1$보다 작다는 의미이다. 참고로 가산 반체인 성질이 아니라 가산 체인 성질이라고 부르는 것은 역사적 이유이기 때문에 크게 신경 쓸 필요는 없다.</p>
+
+<p>앞서 쌍으로 서로소인 실수의 개구간들의 모임이 기껏 가산인 성질 또한 가산 체인 성질이라고 부른다고 했는데, 두 용법은 밀접한 관련이 있다. 반체인의 일반적인 정의는 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $(P, \leq)$가 부분순서라고 하자. $x, y \in P$가 비교 불가능하다는 것은, $z \leq x, z \leq y$인 $z \in P$가 존재하지 않는다는 것이다. $S \subseteq P$의 원소들이 서로 비교 불가능할 때 $S$를 반체인이라고 한다. $P$의 모든 반체인이 가산일 때, $P$가 가산 체인 성질을 가진다고 한다.</p>
+</blockquote>
+
+<p>트리 $T$에서, 노드 $x$가 노드 $y$의 후손일 때 $x \leq y$라고 하자. 이때 트리의 노드로서 $x, y$가 비교 불가능한 것은 $(T, \leq)$의 원소로서 $x, y$가 비교 불가능한 것과 동치이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 가산 체인 성질을 가지는 아론샤인 트리를 <strong>서슬린 트리</strong>라고 한다.</p>
+</blockquote>
+
+<p>서슬린 트리의 존재성은 서슬린 선의 존재성과 동치이기 때문에 ZFC와 독립적이다. 동치가 되는 개략적인 이유는 각 성질이 다음 표와 같이 대응하기 때문이다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>서슬린 선</th>
+      <th>서슬린 트리</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>분리 불가능성</td>
+      <td>트리의 높이가 $\omega_1$</td>
+    </tr>
+    <tr>
+      <td>개구간의 가산 체인 성질</td>
+      <td>트리의 가산 체인 성질</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>분리 불가능성이 높이 $\omega_1$ 성질에 대응되는 개략적인 이유는, 어떤 집합 $D$가 존재하여 $|D| \leq \aleph_0$이고 임의의 개구간 $(a, b)$가 $D$와 교차한다는 사실이 (분리 가능성), 어떤 서수 $\alpha$가 존재하여 $\alpha &lt; \omega_1$이고 임의의 노드 $x \in T$에 대해 $x$가 $T^{(\alpha)}$의 노드들로 이루어진 노드열의 극한이라는 사실과 (트리의 높이가 가산) 대응되기 때문이다.</p>
+
+<p>서슬린 트리와 관련하여, 집합론의 다음 비표준 공리를 살펴보자.</p>
+
+<blockquote>
+  <p><strong>다이아몬드 원리.</strong> 어떤 집합열 $\langle W_\alpha : \alpha &lt; \omega_1 \rangle$가 존재하여 $W_\alpha \subseteq \mathcal{P}(\alpha)$이고, 각 $W_\alpha$가 가산집합이며, 임의의 $X \subseteq \omega_1$에 대해 $\lbrace  \alpha : \alpha &lt; \omega_1, X \cap \alpha \in W_\alpha \rbrace $가 정상 집합<sub>stationary set</sub>이다.</p>
+</blockquote>
+
+<p>다이아몬드 원리는 $\Diamond$로 자주 표기한다. 또한 다이아몬드 원리의 $\langle W_\alpha \rangle$을 다이아몬드 열이라고 부른다.</p>
+
+<p>$X \cap \alpha$는 $\alpha$라는 “거울”을 통해 “비춰” 보인 $X$의 모습으로 생각될 수 있다. 이 경우, 다이아몬드 원리는 $\omega_1$보다 작은 서수들에서 $X$의 반사된 모습이 $\langle W_\alpha \rangle$에서 충분히 자주 나타난다는 의미로 이해될 수 있다 (<a href="https://dimenerno.github.io/2025/11/11/stationary-sets">이 글</a>에서 정상 집합이 “측도 &gt; 0”의 집합론적 버전임을 설명했다).</p>
+
+<p>따라서 다이아몬드 원리는 반사 원리<sub>reflection principle</sub>의 일종이며, $V = L$ 공리와 비슷하게 집합론적 우주를 규제하는 역할을 한다 (실제로 $V = L$은 $\Diamond$를 함의한다). 그리고 집합론적 우주를 규제하는 공리들이 그렇듯이, 다이아몬드 원리는 연속체 가설을 함의한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\Diamond \implies \mathsf{CH}$</p>
+</blockquote>
+
+<p><strong>증명.</strong> $X \subseteq \omega \subset \omega_1$이라고 하자. $X$가 $&lt; \omega_1$에서 정상적으로 반사되므로, 어떤 $\alpha &gt; \omega$에 대해 $X \cap \alpha = X \in W_\alpha$이다. 따라서 $\omega$의 부분집합들은 모두 $\bigcup_{\alpha &lt; \omega_1} W_\alpha$에 속하는데, 후자의 기수가 $\aleph_1$이므로 $2^{\aleph_0} = \aleph_1$이다. ■</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\Diamond$라면 서슬린 선이 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> Hrbacek &amp; Jech (3rd ed), Chapter 12, Section 5를 참고하라. 참고로 원문에는 다음의 오타가 있으니 주의하라.</p>
+
+<blockquote>
+  <p>(원문) <strong>Lemma 5.3.</strong> $\Diamond$ implies that there exists a sequence $\langle Z_\alpha : \alpha &lt; \omega_1 \rangle$ such that, for each $\alpha &lt; \omega_1$, $Z_\alpha \subseteq \omega^{&lt;\alpha}$, $Z_\alpha$ is at most countable, and for any $X \subseteq \omega^{&lt;\omega_1}$ the set $\lbrace  \alpha &lt; \omega_1 : X \cap \omega^{&lt;\alpha} \rbrace $ is stationary.</p>
+
+  <p><em>Proof.</em> We note that […] Clearly, $Z_\alpha \subseteq \omega^{&lt;\alpha}$ and is at most countable.</p>
+</blockquote>
+
+<blockquote>
+  <p>(수정) <strong>Lemma 5.3.</strong> $\Diamond$ implies that there exists a sequence $\langle Z_\alpha : \alpha &lt; \omega_1 \rangle$ such that, for each $\alpha &lt; \omega_1$, $Z_\alpha \subseteq \mathcal{P}(\omega^{&lt;\alpha})$, $Z_\alpha$ is at most countable, and for any $X \subseteq \omega^{&lt;\omega_1}$ the set $\lbrace  \alpha &lt; \omega_1 : X \cap \omega^{&lt;\alpha} \rbrace $ is stationary.</p>
+
+  <p><em>Proof.</em> We note that […] Clearly, $Z_\alpha \subseteq \mathcal{P}(\omega^{&lt;\alpha})$ and is at most countable.</p>
+</blockquote>
+
+<p>또한 Claim 5.5 직전에 나오는 문장 “Let $\lbrace  C_n : n \in \mathbb{N} \rbrace $ be the at most countable collection of those elements of $Z_\alpha$ which happen to be maximal antichains in $T^{(\alpha)}$.”의 의미는, 각 $n$에 대해 $C_n \in Z_\alpha$이고, $C_n \subseteq \omega^\alpha$이며, $C_n$의 원소들을 $T^{(\alpha)}$의 노드로 간주했을 때 $C_n$이 반체인이라는 것이다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $V = L$이라면 서슬린 선이 존재한다.</p>
+</blockquote>
+
+<p>따라서 서슬린 선의 존재성은 집합론적 우주의 규제와 관련이 있다. 이 사실이 모순적으로 느껴질 수 있지만, 서슬린 선의 조건 중 하나가 가산 조밀 집합의 “비”존재라는 사실을 고려하면 그렇게 이상한 것은 아니다. 서슬린 선은 가산 체인 성질까지만 얻고 가산 조밀 집합은 발생시키지 않는 것이 가능한 “허술한” 집합론적 우주의 특징인 것이다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/11/23/euler-poincare"> 오일러-푸앵카레 정리 </a>
       </h1>
     <span class="post-date">23 Nov 2025</span>
@@ -2079,196 +2242,6 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
   <li><a href="/2025/07/21/private-language">사적 언어</a></li>
   <li><a href="/2025/04/10/completeness-theorem">뢰벤하임-스콜렘 정리</a></li>
   <li><a href="https://plato.stanford.edu/entries/logic-higher-order/#SetTheoSheeClot">2차 논리는 “양의 탈을 쓴 집합론”인가?</a></li>
-</ul>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/09/14/alien-natural-numbers/en"> Natural Numbers as a Mirage: A Short Story in Logic </a>
-      </h1>
-    <span class="post-date">14 Sep 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/philosophy/'">
-        Philosophy
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>One day, Dimen encountered an alien. The alien asked Dimen:</p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Alien</strong>
-<p>There's a concept that humans use which I don't understand. What exactly are natural numbers?</p>
-</div>
-
-<p><img src="/public/low1.png" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dimen</strong>
-<p>What do you mean? Natural numbers are a number system that starts from 1 and proceeds sequentially: 2, 3, … and so on.</p>
-<strong>Alien</strong>
-<p>Hmm... Then are these also natural numbers?</p>
-</div>
-
-<p><img src="/public/low2.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dimen</strong>
-<p>No way! Natural numbers continue indefinitely.</p>
-<strong>Alien</strong>
-<p>Continue indefinitely? Do you mean they form a loop? Then they would continue indefinitely like this: 1, 2, 3, 4, 5, 3, 4, 5, 3, 4, 5, …</p>
-</div>
-
-<p><img src="/public/low3.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dimen</strong>
-<p>Good heavens, that's not what I meant. They continue indefinitely without any loops.</p>
-<strong>Alien</strong>
-<p>Hmm... Then do they branch somewhere?</p>
-</div>
-
-<p><img src="/public/low4.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dimen</strong>
-<p>That's not it either! There are no branches!</p>
-<strong>Alien</strong>
-<p>I see. Then is $c$ also a natural number by any chance?</p>
-<strong>Dimen</strong>
-<p>$c$? What do you mean?</p>
-<strong>Alien</strong>
-<p>According to the definition of natural numbers you've given me, there's no reason why $c$ shouldn't be a natural number. You said natural numbers continue indefinitely, but you didn't say that all natural numbers are included in such a chain.</p>
-</div>
-
-<p><img src="/public/low5.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dimen</strong>
-<p>What is that supposed to be... Natural numbers contain only natural numbers!</p>
-<strong>Alien</strong>
-<p>Natural numbers contain only natural numbers—that's nothing but circular reasoning.</p>
-<strong>Dimen</strong>
-<p>Are you making fun of me?</p>
-<strong>Alien</strong>
-<p>What are you talking about? I genuinely don't understand what natural numbers are. You need to give me a proper definition of natural numbers for me to understand.</p>
-<strong>Dimen</strong>
-<p>Natural numbers are... well... that is... ugh, how do I explain this!</p>
-</div>
-
-<p><img src="/public/low6.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<p>At that moment, a person named Dedekind appeared.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dedekind</strong>
-<p>I shall resolve this problem definitively. Natural numbers are a set that satisfies the following three conditions. I have proven that a set satisfying these three conditions is unique, so there is no room for further misunderstanding.</p>
-</div>
-
-<blockquote>
-  <p><strong>Dedekind’s definition of natural numbers.</strong> If a set $A$, an element $e \in A$, and a function $S: A \to A$ satisfy the following three conditions, then $A$, $e$, and $S$ correspond to the set of natural numbers, $0$, and $x \mapsto x + 1$, respectively.</p>
-
-  <ol>
-    <li>There exists no $x$ such that $S(x) = e$.</li>
-    <li>If $S(x) = S(y)$, then $x = y$.</li>
-    <li>For any proposition $P(x)$ with domain $A$, if the following two conditions hold, then $P(x)$ is true for all elements of $A$:
-      <ol>
-        <li>$P(e)$ is true.</li>
-        <li>If $P(x)$ is true, then $P(S(x))$ is true.</li>
-      </ol>
-    </li>
-  </ol>
-</blockquote>
-
-<p>The alien was satisfied with Dedekind’s answer, but soon looked puzzled again.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Alien</strong>
-<p>Does the expression "any proposition" in the third condition make sense? If $P(x)$ is any proposition, then $P(x)$ could be "$x$ is a natural number". But including a proposition about natural numbers in the definition of natural numbers would be circular reasoning, wouldn't it?</p>
-<strong>Dedekind</strong>
-<p>Oh... is that so...?</p>
-<strong>Alien</strong>
-<p>What exactly is a "proposition" anyway? Is "$x$ is a set that does not contain itself" a well-defined proposition?</p>
-<strong>Dimen</strong>
-<p>(If $x$ is a set that does not contain itself, then $x$ satisfies the definition of $x$, so it contains itself; but if $x$ is a set that contains itself, then $x$ does not satisfy the definition of $x$, so it does not contain itself... huh?)</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>As Dedekind hesitated at this unexpected criticism, a person named Löwenheim interjected from the side.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Löwenheim</strong>
-<p>Indeed, the expression "any proposition" seems problematic. We should restrict such expressions in mathematics. Let us call this restricted logic <strong>first-order logic</strong>.</p>
-</div>
-
-<p><img src="/public/low7.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dedekind</strong>
-<p>Then we must now discover how to define natural numbers precisely using first-order logic.</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>At these words, a person named Skolem suddenly appeared.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Skolem</strong>
-<p>Precisely. And I have discovered the answer to this question.</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>Everyone focused their attention on Skolem’s statement.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Skolem</strong>
-<p><strong>It's impossible.</strong> First-order logic cannot describe the necessary and sufficient conditions for natural numbers. Specifically, every first-order logical definition that attempts to define natural numbers has counterexamples that are not natural numbers. <strong>Therefore, natural numbers cannot be reduced to logic.</strong> Natural numbers cannot be defined without circular reasoning.</p>
-</div>
-
-<blockquote>
-  <p><strong>Löwenheim-Skolem theorem.</strong> Mathematical systems with infinitely many elements, including natural numbers, cannot be uniquely characterised by first-order logic.</p>
-</blockquote>
-
-<p><img src="/public/low8.jpg" style="width: 100%; max-width: 400px; margin: 2em auto" /></p>
-
-<p>A moment of silence followed.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Alien</strong>
-<p>Then how do humans know what natural numbers are? Don't humans actually understand natural numbers differently from one another?</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>No one could answer the alien’s question. They had nothing more to say about the mirage-like reality of natural numbers.</p>
-<div style="margin: 2em auto"></div>
-
-<p><img src="/public/low9.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<p><em>Note.</em> For the natural flow of the narrative, there are distorted historical, mathematical, and philosophical contents. The birth of first-order logic was achieved through the gradual research of several mathematicians, including Löwenheim. Moreover, whether Dedekind’s definition of natural numbers using second-order logic is truly circular requires more detailed discussion. Finally, Skolem’s paradox concerns set theory rather than natural numbers, but it was included in the speech bubble because the two phenomena are similar as consequences of the Löwenheim-Skolem theorem.</p>
-
-<h3 id="further-reading">Further Reading</h3>
-
-<ul>
-  <li><a href="/2025/07/03/kripkenstein">Kripke-Wittgenstein Paradox</a></li>
-  <li><a href="/2025/07/21/private-language">Private Language</a></li>
-  <li><a href="/2025/04/10/completeness-theorem">Löwenheim-Skolem Theorem</a></li>
-  <li><a href="https://plato.stanford.edu/entries/logic-higher-order/#SetTheoSheeClot">Is Second-Order Logic “Set Theory in Sheep’s Clothing”?</a></li>
 </ul>
 
   </div>
