@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: Philosophy of Language &middot; 디멘의 블로그 
+     교환법칙, 분배법칙, 지수법칙의 범주론적 증명 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/philosophy-of-language/" />
+  <link rel="canonical" href="/2025/12/27/distributive-law" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -368,56 +368,85 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">교환법칙, 분배법칙, 지수법칙의 범주론적 증명</h1>
+  <span class="post-date">27 Dec 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'" >범주론</div>
+      
+    </div>
+  
+  <blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>분배법칙: $(A + B) \times C = A \times C + B \times C$</li>
+    <li>지수법칙: $(A \times B)^C = A^C \times B^C$</li>
+  </ol>
+</blockquote>
+
+<p><a href="https://dimenerno.github.io/2025/04/02/box-v-product">이전 글</a>에서 범주론적 합과 곱을 살펴 보았다. 합은 쌍극한의 일종이고, 곱은 극한의 일종이다. 이 관찰로부터, 분배법칙과 지수법칙을 다음 정리로 일반화할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 좌 어드조인트는 쌍극한<sub>colimit</sub>을, 우 어드조인트는 극한<sub>limit</sub>을 보존한다.</p>
+</blockquote>
+
+<p>이 정리의 정확한 의미는 다음과 같다. $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$에 대해 $F \dashv G$라고 하자. $G$가 <strong>극한을 보존<sub>preserves limits</sub></strong>한다는 것은, 임의의 작은 범주<sub>small category</sub> $\mathbf{I}$와 함자 $D : \mathbf{I} \to \mathcal{B}$에 대해 다음이 성립한다는 것이다.</p>
+
+<blockquote>
+  <p>$\big(B \xrightarrow{q_I} D(I)\big)_{I \in \mathbf{I}}$가 $\mathcal{B}$에서 극한 고깔<sub>limit cone</sub>일 때, $\big(G(B) \xrightarrow{G(q_I)} GD(I)\big)_{I \in \mathbf{I}}$가 $\mathcal{A}$에서 극한 고깔이다.</p>
+</blockquote>
+
+<p>이로부터, $G$가 극한을 보존할 때 다음이 성립함을 알 수 있다.</p>
+
+\[G\left(\lim_{\leftarrow \mathbf{I}} D\right) \cong \lim_{\leftarrow \mathbf{I}} G \circ D\]
+
+<p>쌍극한의 경우에는 고깔을 쌍고깔로 바꿔 정의한다.</p>
+
+<p>한편, 임의의 $X, Y, Z \in \mathbf{Set}$에 대해 $\hom(X \times Y, Z) \cong \hom(X, Z^Y)$가 성립한다 (이는 함수형 프로그래밍에서 자주 등장하는 커링<sub>Currying</sub> 기법이다). 이로부터 다음의 어드조인트 관계가 따라 나온다.</p>
+
+\[(-) \times Y \dashv (-)^Y\]
+
+<p>따라서 함자 $(-) \times Y$는 쌍극한을 보존하고, $(-)^Y$는 극한을 보존한다. 이로부터 일반화된 분배법칙과 지수법칙을 얻을 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 집합 $A, B, Y$에 대해, $A, B$가 서로소라면 다음이 성립한다.</p>
+
+  <ol>
+    <li>$(A + B) \times Y \cong (A \times Y) + (B \times Y)$</li>
+    <li>$(A \times B)^Y \cong A^Y \times B^Y$</li>
+  </ol>
+</blockquote>
+
+<p>여기서 $+$는 서로소 집합의 합집합으로, $\sqcup$과 의미가 같으나 분배법칙과의 유사성을 강조하기 위해 사용되었다. 좌변이 $G\left(\lim_{\leftarrow \mathbf{I}} D\right)$에, 우변이 $\lim_{\leftarrow \mathbf{I}} G \circ D$에 대응된다. 위 정리에 집합의 크기 연산을 취하면 자연수에서의 분배법칙과 지수법칙을 얻는다.</p>
+
+<p>참고로 극한에 대한 다음 성질 또한 알려져 있다 ($\bullet, -$ 표기법은 <a href="https://dimenerno.github.io/2025/03/21/yoneda">이 글</a>을 참고)</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathbf{I}, \mathbf{J}$가 작은 범주이고, $\mathcal{S}$가 $\mathbf{I}, \mathbf{J}$ 모양의 극한들을 가지는 국소적으로 작은 범주라고 하자. $D: \mathbf{I} \times \mathbf{J} \to \mathcal{S}$에 대해, 다음이 성립한다.</p>
+
+\[\lim_{\leftarrow \mathbf{J}}\lim_{\leftarrow \mathbf{I}} D(\bullet, -) \cong \lim_{\leftarrow \mathbf{I} \times \mathbf{J}} D \cong \lim_{\leftarrow \mathbf{I}}\lim_{\leftarrow \mathbf{J}} D(-, \bullet)\]
+</blockquote>
+
+<p>즉, 극한끼리는 교환법칙을 만족한다. 이것은 덧셈의 교환법칙과 곱셈의 교환법칙을 일반화한 것으로 생각할 수 있다.</p>
 
 
-<h1>Philosophy of Language</h1>
-
-<ul>
-                             
-  <li>
-    <a href="/2025/09/13/natural-teleology-and-logic/en">Can Natural Teleology Ground Logic?</a>
-  </li>
-                  
-  <li>
-    <a href="/2025/07/21/private-language/en">Is Private Language Possible?</a>
-  </li>
-                  
-  <li>
-    <a href="/2025/07/03/kripkenstein/en">The Kripke-Wittgenstein Paradox</a>
-  </li>
-                    
-  <li>
-    <a href="/2025/06/02/wittgenstein-conant/en">Are Logically Alien Beings Possible? Descartes, Kant, Frege, and the Tractus</a>
-  </li>
-      
-  <li>
-    <a href="/2025/05/26/quine-two-dogmas/en">Quine, Two Dogmas of Empiricism</a>
-  </li>
-                                                                      
-  <li>
-    <a href="/2025/03/18/quanitfying-in/en">On Existential Quantification in Modal Contexts — Quine and Frege</a>
-  </li>
-      
-  <li>
-    <a href="/2025/03/12/what-is-a-theory-of-truth/en">What is a Theory of Truth?</a>
-  </li>
-                                                                      
-  <li>
-    <a href="/2025/01/18/reference-3/en">On Reference — Definite Descriptions</a>
-  </li>
-      
-  <li>
-    <a href="/2025/01/13/reference-2/en">On Reference — Character Model and Intentionalism</a>
-  </li>
-      
-  <li>
-    <a href="/2025/01/07/reference-1/en">On Reference — Descriptivism and Causal Theory</a>
-  </li>
-                                                       
-</ul>
 </div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

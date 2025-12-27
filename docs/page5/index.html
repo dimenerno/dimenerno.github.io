@@ -431,6 +431,221 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/26/quine-two-dogmas/en"> Quine, Two Dogmas of Empiricism </a>
+      </h1>
+    <span class="post-date">26 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'">
+        Philosophy
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/philosophy-of-language/'">
+        Philosophy of Language
+      </div>
+      
+    </div>
+     <h2 id="overview">Overview</h2>
+
+<p>The distinction between analytic and synthetic propositions, and the verification principle, are the two pillars of logical positivism. However, in <em>Two Dogmas of Empiricism</em>, Quine argues that both the analytic-synthetic distinction and the verification principle are ungrounded. Quine argues that the definition of analyticity is circular. Furthermore, he argues that propositions cannot be verified in isolation, and that only the entire web of beliefs can stand up to verification. The arguments Quine presents in <em>Two Dogmas</em> not only undermine logical positivism but also suggest skepticism about meaning and a radical form of holism. This post also examines some objections to Quine’s arguments.</p>
+
+<h2 id="1-quines-attack-on-the-analytic-synthetic-distinction">1. Quine’s Attack on the Analytic-Synthetic Distinction</h2>
+
+<p>Quine claims that all previous attempts to define analyticity are unsatisfactory. He examines the definitions provided by Kant and Frege as examples.</p>
+
+<h3 id="11-kants-definition-of-analyticity">1.1. Kant’s Definition of Analyticity</h3>
+
+<p>Kant’s first definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>“All $a$ are $b$” is analytic $\iff$ $a$ is conceptually contained in b</p>
+</blockquote>
+
+<p>However, not only this definition relies on the metaphorical expression “conceptually contained”, but it is also limited to propositions with a subject-predicate structure. Kant’s second definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>$P$ is analytic $\iff$ $\lnot P$ implies a contradiction</p>
+</blockquote>
+
+<p>But this definition requires an explanation of what a contradiction is. If contradiction is defined as “a proposition that is analytically false,” then this is merely a circular definition.</p>
+
+<h3 id="12-freges-definition-of-analyticity">1.2. Frege’s Definition of Analyticity</h3>
+
+<p>Frege’s definition of analyticity is as follows:</p>
+
+<blockquote>
+  <p>$P$ is analytic $\iff$ $P$ is a law of logic, or is derivable solely from the definitions of terms involved and the laws of logic</p>
+</blockquote>
+
+<p>By “law of logic”, Quine understands it to be a sentence that is true regardless of how the non-logical terms are interpreted. For example, $(φ → ψ) → (¬ψ → ¬φ)$ is a law of logic because it is true no matter how $φ$ and $ψ$ are interpreted. Accordingly, “All bachelors are unmarried” is analytic as it can be derived solely from the definition of “bachelor” and laws of logic as follows:</p>
+
+<ol>
+  <li>Bachelor(x) := ¬Married(x) ∧ Male(x) (definition of bachelor)</li>
+  <li>∀x [ ¬Married(x) ∧ Male(x) → ¬Married(x) ] (law of logic)</li>
+  <li>∴ ∀x [ Bachelor(x) → ¬Married(x) ] (from 1 and 2)</li>
+</ol>
+
+<h3 id="13-quines-attack-on-synonymy">1.3. Quine’s Attack on Synonymy</h3>
+
+<p><strong>Quine challenges Frege’s definition by questioning how we can determine the definition of a word.</strong> That is, he questions under what conditions “$a$ and $b$ are <em>synonymous</em>” holds. Quine examines several possible answers to this question. The first attempt is as follows:</p>
+
+<blockquote>
+  <p>(i) $a$ and $b$ are synonymous $\iff$ $a$ and $b$ are listed as synonyms in the dictionary.</p>
+</blockquote>
+
+<p>But clearly this approach is flawed, since a dictionary merely records already known synonyms. What we want to know is the criterion by which dictionary compilers list two words as synonyms. The second attempt is as follows:</p>
+
+<blockquote>
+  <p>(ii) $a$ and $b$ are synonymous $\iff$ for any predicate $P$, $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>But this too is inadequate. For example, let $a$ = bachelor, $b$ = unmarried man, and $P(x)$: $x$ is a two-syllable word. Although $a$ and $b$ are synonymous, $P(a)$ is true while $P(b)$ is false.</p>
+
+<p>To address this, Quine introduces the notion of <strong>cognitive meaning</strong>. Cognitive meaning is related only to the referent or concept, and excludes aspects such as word length, poetic mood, etc. Thus, (ii) is revised as follows:</p>
+
+<blockquote>
+  <p>(iii) $a$ and $b$ are synonymous $\iff$ for any predicate $P$ <em>relevant only to cognitive meaning,</em> $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>However, this is also inadequate. <strong>This is because the extension of “any predicate” is language-relative.</strong> (This is partly related to Quine’s skepticism about second-order logic.) For example, let us call creatures with a heart “cordate” ($c$) and those with a kidney “renate” ($r$). All known species either have both a heart and a kidney or neither. Thus in a language $L_1$ that contains only the predicate $\mathrm{HasHeart}(x)$, both $\mathrm{HasHeart}(c)$ and $\mathrm{HasHeart}(r)$ are true, so cordate and renate are synonymous. Yet in a language $L_2$ that contains the predicate $\mathrm{NecessarilyHasHeart}(x)$, $\mathrm{NecessarilyHasHeart}(c)$ is true but $\mathrm{NecessarilyHasHeart}(r)$ is false, so they are no longer synonymous.</p>
+
+<p>Thus, (iii) makes synonymy language-dependent. Indeed, for (iii) to be valid, it seems that the assumed language must include modality. Accordingly, (iii) is revised as follows:</p>
+
+<blockquote>
+  <p>(iv) $a$ and $b$ are synonymous $\iff$ in a language $L$ with modal expressions, for any predicate $P$ relevant only to cognitive meaning, $P(a)$ and $P(b)$ have the same truth value.</p>
+</blockquote>
+
+<p>However, Quine claims that even this is inadequate. <strong>For now the meaning of modality must be explained.</strong> That is, he now asks under what conditions “$a$ is necessarily $b$” holds. To define necessity as follows is to give a circular definition:</p>
+
+<blockquote>
+  <p>$a$ is necessarily $b$ $\iff$ “All a are b” is analytically true.</p>
+</blockquote>
+
+<p>Therefore, Frege’s definition of analyticity is circular unless either a valid definitions of synonymy, or necessity, is provided.</p>
+
+<h2 id="2-reflections-on-quines-attack">2. Reflections on Quine’s Attack</h2>
+
+<p>Quine’s attack targets synonymy, but its implications are much broader.</p>
+
+<h3 id="21-logical-skepticism">2.1. Logical Skepticism</h3>
+
+<p>First, Quine’s attack also undermines his own definition of laws of logic. For example, according to Quine, $P(x) ∧ Q(x) → P(x)$ is a law of logic because it is true no matter what is substituted for $P, Q, x$. <strong>However, for this criterion to be coherent, the terms substituted for x must be synonymous.</strong></p>
+
+<p>For example, let $P(x):$ $x$ is large, $Q(x):$ $x$ is wet, and $x$ = bank. Then, $P(x) ∧ Q(x) → P(x)$ becomes “A large and wet bank is a large bank.” For this sentence to be true, the two “bank”s of the subject and predicate must be synonymous<sub>A large and wet riverland is a large riverland</sub>. Otherwise, the sentence is false<sub>A large and wet riverland is a large financial establishment</sub>. Thus, Quine’s definition of law of logic also depends on synonymy.</p>
+
+<h3 id="22-semantic-skepticism">2.2. Semantic Skepticism</h3>
+
+<p>Second, Quine’s attack renders translation between languages fictitious. If someone asks for the translation of “Dieser Apfel ist rot,” we would say “This apple is red.” That this is the <em>correct</em> translation relies upon ‘dieser’, ‘Apfel’, ‘ist’, and ‘rot’ being respectively synonymous with ‘this’, ‘apple’, ‘is’, and ‘red’. Generally, the following seems to hold:</p>
+
+<blockquote>
+  <p>$φ$ is a translation of $ψ$ $\iff$ $φ$ is synonymous with $ψ$.</p>
+</blockquote>
+
+<p>Hence if the notion in the right side is ambiguous, then that in the left is also ambiguous. <strong>Consequently, Quine’s skepticism about synonymy extends to skepticism about translation, and hence to skepticism about meaning.</strong> (For an argument connecting skepticism about translation to skepticism about meaning, see forthcoming article.)</p>
+
+<h2 id="3-objections-to-quines-attack-on-the-analytic-synthetic-distinction">3. Objections to Quine’s Attack on the Analytic-Synthetic Distinction</h2>
+
+<p>Quine’s attack has the following structure:</p>
+
+<blockquote>
+  <p>If the definition of a concept $C$ is circular, then $C$ is unintelligible.</p>
+</blockquote>
+
+<p>Let us call this <em>Quine’s Socratic Condition</em>. <strong>It may be the case that Quine’s Socratic Condition is too strong of a requirement.</strong> For example, “red” or “blue” cannot be defined in a non-circular way — a person born blind cannot “make colors appear before them”, no matter how many utterances involving color words are given to them — but that does not mean that color words are unintelligible. Indeed, Davidson and others have argued that language learning requires some primitive terms — i.e. were there a language all of whose concepts satisfy the Socratic Condition, that language would be unlearnable.</p>
+
+<p>Nevertheless, Quine might argue that although not every concept should satisfy the Socratic Condition, especially those that relate to immediate sense data, certain vaguer concepts—such as analyticity—must. Consider the following sentence:</p>
+
+<blockquote>
+  <p>Everything green has an extension.</p>
+</blockquote>
+
+<p>Whether this sentence is analytic is ambiguous. Quine claims that this ambiguity arises not because of ambiguity in “green” or “extension,” but of “analytic.” This, he argues, shows that analyticity, unlike color words, cannot be legitimised without a rigorous definition.</p>
+
+<p>In response, Grice and Strawson argue that the ambiguity in whether “Everything green has an extension” is analytic arises not from “analytic,” but from “everything green.” For example, it is unclear whether a “green flash” counts as “everything green,” so the truth value of the sentence remains undetermined. On the other hand, analyticity seems to be used in a consistent way by almost every philosopher and every layman, so there is no reason to think of it so ambiguous as to require the Socratic Condition.</p>
+
+<h2 id="4-quines-critique-of-logical-positivism">4. Quine’s Critique of Logical Positivism</h2>
+
+<h3 id="41-critique-of-reductionism">4.1. Critique of Reductionism</h3>
+
+<p>According to logical positivism, every truth is either analytic or synthetic. Analytic truths can be verified through logical analysis, and synthetic truths can be verified through sense data. Thus, the meaning of a sentence is generally taken to be a logical compound of sense data. This is the reductionist thesis of positivism. For example, the meaning of “The cat is on the table or in the box” is analyzed into sense data corresponding to “cat,” “table,” “box,” and logical connectives such as “or” and “is.”</p>
+
+<p><strong>However, Quine argues that semantic reductionists bear the burden of proof to show that it is actually possible to reduce natural language sentences to logical compounds of sense data.</strong> He refers to Carnap’s attempt in <em>The Logical Structure of the World</em> to reconstruct natural language solely from sense data and logical connectives, but notes that, as Carnap himself admitted, the project failed.</p>
+
+<p>Quine claims that reductionism cannot be justified unless this burden of proof is met.</p>
+
+<h3 id="42-critique-of-verification-principle">4.2. Critique of Verification Principle</h3>
+
+<p>According to logical positivism, the meaning of a sentence is its verifiability. Under this verificationist theory of meaning, analyticity can be defined as follows:</p>
+
+<blockquote>
+  <p>P is analytic $\iff$ P is true regardless of the outcome of verification</p>
+</blockquote>
+
+<p>However, Quine argues that the logical positivist definition of analyticity is also problematic. <strong>Quine claims that it is impossible to verify individual propositions in isolation,</strong> hence the verificationist theory of meaning cannot account for the meaning of individual sentences.</p>
+
+<p>Consider the following proposition:</p>
+
+<blockquote>
+  <p>(i) Water boils at 100°C</p>
+</blockquote>
+
+<p>One way to verify this proposition is to put a thermometer in boiling water. But if the thermometer reads 102°C, should we reject (i)? Not necessarily. Instead, we might reject “the thermometer is working,” “the water is pure,” “superheating did not occur,” “I read the thermometer correctly,” and so on.</p>
+
+<p><strong>Thus, Quine argues that what is subject to verification is always the entire web of beliefs.</strong> This is his holistic epistemology. In the above case, what is being tested is not the proposition “water boils at 100°C,” but the entire web of beliefs: “this is pure water, the thermometer is working, superheating did not occur, water boils at 100°C, …” and so on.</p>
+
+<h3 id="43-implications-of-epistemological-holism">4.3. Implications of Epistemological Holism</h3>
+
+<p>Quine’s holism is radical in that it applies to all propositions. Quine claims that there is no sharp boundary between domains within the web of beliefs. Thus, mathematics does not enjoy a privileged epistemological status over science or philosophy. This leads to Quine’s naturalism.</p>
+
+<p>For Quien, that a proposition $φ$ is <em>certain</em>, does not mean that $φ$ is true in all cases — something which cannot be verified in isolation — but that $φ$ is located deep within the web of beliefs. When evidence contrary to the web of beliefs is presented, we must revise the web so as to minimise the likelihood of future contrary evidence. Hence in a pragmatic spirit, it is preferable to revise beliefs at the periphery rather than those at the core. Thus, beliefs at the core persist almost permanently and acquire the status of certainty. <strong>However, if it becomes more practical to abandon a core belief—such as a law of logic—Quine holds that it is appropriate to do so.</strong></p>
+
+<h3 id="44-objections-to-epistemological-holism">4.4. Objections to Epistemological Holism</h3>
+
+<p><strong>Crispin Wright argues that Quine’s holism is incoherent because it leads to infinite regress.</strong> Consider a web of beliefs consisting of the following two elements:</p>
+
+<ul>
+  <li>A scientific theory of the world $T$</li>
+  <li>A logical system $\mathcal{S}$</li>
+</ul>
+
+<p>Suppose that $p → q$ is a law derivable from $T$ and $\mathcal{S}$. For example, if $T$ is Newtonian mechanics and $\mathcal{S}$ is first-order logic, $p$ might be “photons have no mass” and $q$ might be “photons are not affected by gravity.”</p>
+
+<p>Now suppose that, contrary to $T$ and $\mathcal{S}$, an observation is made that supports $p$ and $¬q$—for example, gravitational lensing. According to Quine’s holism, the following four propositions are all candidates for rejection:</p>
+
+<ol>
+  <li>Reject $p ∧ ¬q$ (the gravitational lensing observation was mistaken)</li>
+  <li>Reject $T$ (Newtonian mechanics is false)</li>
+  <li>Reject $\mathcal{S}$ (first-order logic is false)</li>
+  <li>Reject $T \vdash_\mathcal{S} p → q$ (the derivation of $p → q$ from Newtonian mechanics and first-order logic is mistaken)</li>
+</ol>
+
+<p>Which of these four to reject is determined by pragmatic considerations. Suppose, for example, that pragmatism suggests the following:</p>
+
+<ol start="5">
+  <li>It is most practical to reject (4).</li>
+</ol>
+
+<p>However, Wright points out that (5) itself is part of the web of beliefs. Thus, instead of rejecting (4), we could choose to reject (5). Conversely, to avoid rejecting (5), the following belief is required:</p>
+
+<ol start="6">
+  <li>It is practical not to reject (5).</li>
+</ol>
+
+<p>But to avoid rejecting (6), we require the belief that it is practical not to reject (6), and so on, leading to infinite regress. Thus, Wright argues that to avoid infinite regress in epistemology, some beliefs—such as (4)—must be placed outside the scope of pragmatic considerations.</p>
+
+<h2 id="references">References</h2>
+
+<p>Quine, Willard V. O. (1951). Two Dogmas of Empiricism. Philosophical Review 60 (1):20–43.</p>
+
+<p>Miller, Alexander (1998). Philosophy of Language. New York: Routledge.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/05/16/stone-space-compactness"> 스톤 공간과 콤팩트성 정리 </a>
@@ -1623,198 +1838,6 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
 \end{gather}\]
 
 <p>따라서 $\theta$는 $P$를 명시적으로 정의한다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/05/08/robinson-craig/en"> Robinson, Craig, and Beth's Theorems </a>
-      </h1>
-    <span class="post-date">08 May 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/model-theory/'">
-        Model Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h3 id="elementary-amalgamation-property">Elementary Amalgamation Property</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $\mathfrak{A}$ be an $\mathcal{L}$-structure and $\mathfrak{B}$ be an $\mathcal{L}’$-structure such that the $\mathcal{L}$-reduct of $\mathfrak{B}$ is elementarily equivalent to $\mathfrak{A}$. Then there exists an $\mathcal{L}’$-structure $\mathfrak{C}$ such that $f: \mathfrak{A} \to \mathfrak{C}$ is an <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">elementary embedding</a> in $\mathcal{L}$ and $g: \mathfrak{B} \to \mathfrak{C}$ is an elementary embedding in $\mathcal{L}’$.</p>
-
-  <p><img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply" /></p>
-</blockquote>
-
-<p><strong>Proof.</strong> Following the notation of <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">this post</a>, consider the theory $E(\mathfrak{A})$ in language $L_\mathfrak{A}$ and the theory $E(\mathfrak{B})$ in language $L’<em>\mathfrak{B}$. Let $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$ be a theory in the language $\mathcal{L}’</em>{\mathfrak{AB}} = \mathcal{L}<em>\mathfrak{A} \cup \mathcal{L}’</em>\mathfrak{B}$. We shall show that $T$ has a model $\mathfrak{C}$.</p>
-
-<p>Suppose $T$ has no model. Then $T$ is inconsistent. By the compactness theorem, there exist some $\mathcal{L}$-formula $\phi$ and $\mathcal{L}’$-formula $\psi$ such that for appropriate ${a_i} \subset \mathcal{L}<em>\mathfrak{A}$ and ${b_j} \subset \mathcal{L}</em>\mathfrak{B}$,</p>
-
-\[\{\phi(a_1, \dots, a_n), \psi(b_1, \dots, b_m)\}\]
-
-<p>has no model. Since $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$, there must be no way to assign the constants $a_1, \dots, a_n$ to elements of the domain of $\mathfrak{B}$ such that $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$. That is,</p>
-
-\[\mathfrak{B} \not\vDash \exists x_1, \dots x_n \; \phi(x_1, \dots, x_n)\]
-
-<p>However, since the $\mathcal{L}$-reduct of $\mathfrak{B}$ is elementarily equivalent to $\mathfrak{A}$, and the right-hand side above is an $\mathcal{L}$-sentence that is satisfied by $\mathfrak{A}$, this yields a contradiction. Therefore, $T$ has a model $\mathfrak{C}$. Since $\mathfrak{C}$ is a model of both $E(\mathfrak{A})$ and $E(\mathfrak{B})$, both $\mathfrak{A}$ and $\mathfrak{B}$ are naturally elementarily embedded into $\mathfrak{C}$. ■</p>
-
-<h3 id="robinson-consistency-theorem">Robinson Consistency Theorem</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$. Suppose $T$ is a (semantically) complete theory in $\mathcal{L}$, and $T_1$ and $T_2$ are consistent theories in $\mathcal{L}_1$ and $\mathcal{L}_2$ respectively, each extending $T$. Then $T_1 \cup T_2$ is consistent as a theory in $\mathcal{L}_1 \cup \mathcal{L}_2$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> It suffices to construct a model of $T_1 \cup T_2$.</p>
-
-<p>Since $T_1$ and $T_2$ are consistent, they have models $\mathfrak{A}_0$ and $\mathfrak{B}_0$ respectively. Since $T = T_1 \cap T_2$ is complete, the $\mathcal{L}$-reducts of $\mathfrak{A}_0$ and $\mathfrak{B}_0$ are elementarily equivalent. Therefore, by the elementary amalgamation property, there exist an $\mathcal{L}$-elementary embedding $f_0$ and an $\mathcal{L}_2$-elementary embedding $h_0$ such that the following holds:</p>
-
-<p><img src="/public/robinson-1.png" style="width: 100%; max-width: 115px; margin: 1em auto" /></p>
-
-<p>Now considering the $\mathcal{L}$-reduct of $\mathfrak{B}_1$, this is elementarily equivalent to $\mathfrak{A}_0$, so again by the elementary amalgamation property, there exist an $\mathcal{L}$-elementary embedding $g_0$ and an $\mathcal{L}_1$-elementary embedding $k_0$ such that the following holds:</p>
-
-<p><img src="/public/robinson-2.png" style="width: 100%; max-width: 127px; margin: 1em auto" /></p>
-
-<p>Repeating this process, we obtain the following directed system of structures:</p>
-
-<p><img src="/public/robinson-3.png" style="width: 100%; max-width: 285px; margin: 1em auto" /></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Map</th>
-      <th>Property</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$f, g$</td>
-      <td>$\mathcal{L}$-elementary embedding</td>
-    </tr>
-    <tr>
-      <td>$k$</td>
-      <td>$\mathcal{L}_1$-elementary embedding</td>
-    </tr>
-    <tr>
-      <td>$h$</td>
-      <td>$\mathcal{L}_2$-elementary embedding</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Reducing all models in the above directed system to $\mathcal{L}$ gives an $\mathcal{L}$-structure directed system. Let $\mathfrak{C}$ be the colimit of this directed system. $\mathfrak{C}$ is also the colimit of the directed system consisting of ${\mathfrak{A}_i}$, since the parts of the original directed system shown in grey all project to one of the ${\mathfrak{A}_i}$. Therefore, $\mathfrak{C}$ is an $\mathcal{L}_1$-structure that elementarily embeds $\mathfrak{A}_0$.</p>
-
-<p><img src="/public/robinson-4.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
-
-<p>For the same reason, $\mathfrak{C}$ is also the colimit of the directed system consisting of ${\mathfrak{B}_i}$. Therefore, $\mathfrak{C}$ is an $\mathcal{L}_2$-structure that elementarily embeds $\mathfrak{B}_0$.</p>
-
-<p><img src="/public/robinson-5.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
-
-<p>That is, $\mathfrak{C}$ embeds both $\mathfrak{A}$ and $\mathfrak{B}$, from which it follows that it is a model of $T_1 \cup T_2$. ■</p>
-
-<h3 id="craig-interpolation-theorem">Craig Interpolation Theorem</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> For $\mathcal{L}$-sentences $\phi$ and $\psi$, if $\phi \vDash \psi$, then there exists an $\mathcal{L}$-sentence $\theta$ such that $\phi \vDash \theta$ and $\theta \vDash \psi$. Moreover, the non-logical symbols (constants, predicates, functions) contained in $\theta$ are those common to both $\phi$ and $\psi$.</p>
-</blockquote>
-
-<p>$\theta$ is called a <strong>Craig interpolant</strong> of $\phi$ and $\psi$.</p>
-
-<p><strong>Proof.</strong> We prove by contradiction. Suppose no Craig interpolant exists. Then $\phi$ has a model, for if $\phi$ had no model, then $\perp$ would be a Craig interpolant of $\phi$ and $\psi$. Also, $\lnot \psi$ has a model, for otherwise $\top$ would be a Craig interpolant.</p>
-
-<p>Let $\mathcal{L}’$ be the language consisting of the non-logical symbols common to both $\phi$ and $\psi$. Let $\Gamma$ be the set of $\mathcal{L}’$-sentences $\sigma$ such that either $\phi \vDash \sigma$ or $\lnot \psi \vDash \sigma$.</p>
-
-<p>We show that $\Gamma \cup {\phi}$ is consistent. Suppose it is inconsistent. Then by the compactness theorem, there exist $\mathcal{L}’$-sentences $\sigma_1$ and $\sigma_2$ such that $\phi \vDash \sigma_1$, $\lnot\psi \vDash \sigma_2$, and ${\sigma_1, \sigma_2, \phi}$ is inconsistent. Since $\phi \vDash \sigma_1$, we have $\phi \vDash \lnot\sigma_2$. By contraposition, from $\lnot\psi \vDash \sigma_2$ we obtain $\lnot\sigma_2 \vDash \psi$. Thus $\lnot\sigma_2$ is a Craig interpolant of $\phi$ and $\psi$, contradicting our assumption.</p>
-
-<p>Therefore, $\Gamma \cup {\phi}$ is consistent, and by the same reasoning, $\Gamma \cup {\lnot\psi}$ is also consistent. Now applying Zorn’s lemma, define $\overline{\Gamma}$ as the maximum of the following ordered set of $\mathcal{L}’$-theories:</p>
-
-\[\{ \Gamma' : \Gamma \subseteq \Gamma', \Gamma' \cup \{\phi\} \text{ and } \Gamma' \cup \{\lnot \psi\} \text{ are consistent} \}\]
-
-<p>We show that $\overline{\Gamma}$ is complete. Suppose $\overline{\Gamma}$ is not complete. Then there exists an $\mathcal{L}’$-sentence $\sigma$ such that $\sigma \notin \overline{\Gamma}$, and either $\overline{\Gamma} \cup {\sigma, \phi}$ or $\overline{\Gamma} \cup {\sigma, \lnot \psi}$ is consistent.</p>
-
-<p>In the former case, by the compactness theorem, there exists a sentence $\theta$ in $\overline{\Gamma}$ such that $\phi \vDash \theta \rightarrow \lnot \sigma$. By the definition of $\Gamma$, we have $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$. Therefore, $\overline{\Gamma} \cup {\sigma, \phi}$ proves $\lnot\phi$, which is a contradiction. The latter case yields a similar contradiction. Therefore, $\overline{\Gamma}$ is complete.</p>
-
-<p>Since $\overline{\Gamma}$ is complete and $\overline{\Gamma} \cup {\phi}$ and $\overline{\Gamma} \cup {\lnot\psi}$ are consistent, by Robinson’s consistency theorem, $\overline{\Gamma} \cup {\phi, \lnot \psi}$ is consistent. But this contradicts $\phi \vDash \psi$. Therefore, by contradiction, $\phi$ and $\psi$ have a Craig interpolant. ■</p>
-
-<h3 id="beth-definability-theorem">Beth Definability Theorem</h3>
-
-<p>Consider a language $\mathcal{L}$ and a predicate $P$ not contained in $\mathcal{L}$. Let $T$ be a theory in $\mathcal{L} \cup {P}$. We say that $T$ <strong>implicitly defines</strong> $P$ when there is a unique way to extend any $\mathcal{L}$-structure $\mathfrak{A}$ satisfying $T$ to $\mathcal{L} \cup {P}$.</p>
-
-<p>This can also be stated as follows. Let $T(P’)$ be the theory in $\mathcal{L} \cup {P’}$ obtained by replacing every occurrence of $P$ in $T$ with $P’$. Then $T$ implicitly defines $P$ if and only if the following holds:</p>
-
-\[T \cup T(P') \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow P'(x_1, \dots, x_n)\]
-
-<p>On the other hand, $T$ <strong>explicitly defines</strong> $P$ if there exists an $\mathcal{L}$-formula $\phi$ satisfying:</p>
-
-\[T \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow \phi(x_1, \dots, x_n)\]
-
-<p>For example, consider the following theory $T$, which adds axioms concerning a predicate $P(x, y)$ to the theory $\mathsf{PA}$ in the language $\mathcal{L} = (0, S, +, \cdot)$:</p>
-
-\[T = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
-
-<p>$T(P’)$ is as follows:</p>
-
-\[T(P') = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P'(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
-
-<p>That $T$ implicitly defines $P$ means the following holds:</p>
-
-\[T \cup T(P') \vDash \forall x, y \big[ P(x, y) \leftrightarrow P'(x, y) \big]\]
-
-<p>This follows naturally from the induction axiom schema. But $P$ can also be explicitly defined in $T$ as follows:</p>
-
-\[\begin{gather}
-T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
-\text{where}\\\\
-\phi(x, y) : \forall z \big[ x + z = S(0) \rightarrow z = y \big]
-\end{gather}\]
-
-<p>This is no coincidence.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> For a language $\mathcal{L}$, if a theory $T$ in $\mathcal{L} \cup {P}$ implicitly defines $P$, then $T$ explicitly defines $P$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Suppose $P$ is an $n$-ary predicate. Let $\mathcal{L}’$ be the language obtained by adding new constants $c_1, \dots, c_n$ to $\mathcal{L}$. Since $T$ implicitly defines $P$, we have:</p>
-
-\[T \cup T(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>By the compactness theorem, there exists an $\mathcal{L} \cup {P}$-sentence $\psi$ such that $T \vdash \psi$ and the following holds:</p>
-
-\[\psi \land \psi(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>Using the deduction theorem and rearranging:</p>
-
-\[\psi \land P(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)\]
-
-<p>The left-hand side is a sentence in $\mathcal{L}’ \cup {P}$, and the right-hand side is a sentence in $\mathcal{L}’ \cup {P’}$. Therefore, by Craig’s interpolation theorem, there exists an $\mathcal{L}’$-formula $\theta$ such that:</p>
-
-\[\begin{gather}
-\psi \land P(c_1, \dots, c_n) \vDash \theta(c_1, \dots, c_n), \\\\
-\theta(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)
-\end{gather}\]
-
-<p>Rearranging again and substituting $P$ for $P’$:</p>
-
-\[\begin{gather}
-\psi \vDash P(c_1, \dots, c_n) \rightarrow \theta(c_1, \dots, c_n), \\\\
-\psi \vDash \theta(c_1, \dots, c_n) \rightarrow P(c_1, \dots, c_n)
-\end{gather}\]
-
-<p>Therefore, $\theta$ explicitly defines $P$. ■</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

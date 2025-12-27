@@ -431,6 +431,149 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/04/18/prisoner-hat/en"> Infinite Prisoner Hat Problem </a>
+      </h1>
+    <span class="post-date">18 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>You have likely encountered puzzles where prisoners attempt to guess the colour of their own hats. Consider the following example:</p>
+
+<blockquote>
+  <p>Three prisoners A, B, and C stand in a line. A guard selects three hats from two black hats and three white hats, places them on each prisoner, and announces that if any one of them correctly guesses their hat colour, all will be freed, but if they guess incorrectly, all will be executed. Each prisoner can see the hat colours of those in front of them, but cannot see their own hat colour or those of prisoners behind them. After a long silence, one prisoner correctly identifies their hat colour. Which prisoner solved the problem?</p>
+
+  <p><img src="/public/hat-1.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<div onclick="toggleAnswer(1)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Answer</u>
+</div>
+
+<div id="answer1" class="answer" style="padding-bottom: 1em;">
+<p><strong>C provides the correct answer.</strong></p>
+<p>If both B and C wore black hats, A would have correctly guessed that their hat was white. However, since a "long silence" ensued, A could not determine their hat colour, indicating that the hat colours of B and C represent one of the cases: (white, black), (black, white), or (white, white).</p>
+<p>Considering this information, if C's hat were black, B would have correctly guessed that their hat was white. The fact that a "long silence" continued indicates that B also could not determine their hat colour, therefore C's hat must be white.</p>
+</div>
+
+<p>A more challenging problem follows:</p>
+
+<blockquote>
+  <p>One hundred prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, while those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What is the maximum number of prisoners whose survival can be guaranteed with certainty?</p>
+
+  <p><img src="/public/hat-2.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<div onclick="toggleAnswer(8)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Hint</u>
+</div>
+
+<div id="answer8" class="answer" style="padding-bottom: 1em;">
+<p>The survival of 99 prisoners, excluding the first, can be guaranteed.</p>
+</div>
+
+<div></div>
+
+<div onclick="toggleAnswer(2)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Answer</u>
+</div>
+
+<div id="answer2" class="answer" style="padding-bottom: 1em;">
+<p><strong>The survival of 99 prisoners, excluding the first, can be guaranteed.</strong></p>
+<p>The first prisoner can observe the hat colours of the remaining 99 prisoners. If the number of black hats amongst them is even, they guess their own hat is black; if odd, they guess white. The second prisoner can then compare the information conveyed by the first prisoner with the parity of black hats amongst those in front of them to correctly determine their own hat colour. Similarly, the third prisoner can use the information from the first prisoner and the fact that the second prisoner correctly identified their hat colour to determine their own, and in this manner, all 99 prisoners can be freed.</p>
+</div>
+
+<p>Let us now make the problem more formidable:</p>
+
+<blockquote>
+  <p><strong>Infinitely many prisoners stand in a line.</strong> A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, while those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What strategy minimises the number of prisoners who die? <strong>We assume that all prisoners possess infinite computational power and are mathematically omniscient.</strong> That is, when $f$ is a mathematically well-defined function, prisoners can always compute the value of $f$, and when discussing strategy beforehand, they may agree to employ $f$.</p>
+
+  <p><img src="/public/hat-3.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<div onclick="toggleAnswer(3)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Hint 1</u>
+</div>
+
+<div id="answer3" class="answer" style="padding-bottom: 1em;">
+<p>The survival of all prisoners except the first can be guaranteed.</p>
+</div>
+
+<div></div>
+
+<div onclick="toggleAnswer(4)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Hint 2</u>
+</div>
+
+<div id="answer4" class="answer" style="padding-bottom: 1em;">
+<p>The axiom of choice is employed.</p>
+</div>
+
+<div></div>
+
+<div onclick="toggleAnswer(5)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Answer</u>
+</div>
+
+<div id="answer5" class="answer" style="padding-bottom: 1em;">
+
+<p>By representing black hats as 0 and white hats as 1, the prisoners' hat arrangement can be expressed as an infinite sequence such as 101011... When a decimal point is placed at the beginning and read in binary, the prisoners' hat arrangement corresponds bijectively to a real number between 0 and 1 inclusive.</p>
+
+<p>For real numbers $a, b \in [0, 1]$, we define $a \sim b$ when their binary expansions differ in finitely many digits. For example:</p>
+
+$$
+0.11111\dots \sim 0.01111\dots, \; 0.10101\dots \not\sim 0.01010\dots
+$$
+
+<p>It can be readily shown that $\sim$ is an equivalence relation. Therefore, we may form the quotient $[0, 1]/\sim$. By the axiom of choice, there exists a choice function $\iota$ for $[0, 1]/\sim$. Since we have assumed that the prisoners are mathematically omniscient, they can agree beforehand on which choice function $\iota$ to employ.</p>
+
+<p>When the hat-guessing begins, the $n$-th prisoner can observe all hat colours except for $n$ hats. That is, when the real number corresponding to the prisoners' hat arrangement is $r$, the $n$-th prisoner knows all digits except for $n$ digits after the decimal point of $r$. Thus, they know which equivalence class of $[0, 1]/\sim$ contains $r$, and when the equivalence class containing $r$ is denoted $[r]$, they can compute $\iota([r])$.</p>
+
+<p>The following strategy is now employed: By the definition of $\sim$, $r$ and $\iota([r])$ differ in only finitely many digits. The first prisoner guesses their hat colour as black if the hat arrangement they observe differs from the hat arrangement corresponding to $\iota([r])$ by an even number of positions, and white if they differ by an odd number. The remaining prisoners can then determine their hat colours in the same manner as in the 100-prisoner problem.</p>
+
+<p>Thus, the axiom of choice ensures that when taking $N \to \infty$ in the $N$-prisoner problem, the conclusion that all prisoners except the first can survive remains valid.</p>
+
+</div>
+
+<p>while the above puzzle is remarkably intriguing, the following puzzle is even more extraordinary:</p>
+
+<blockquote>
+  <p>Infinitely many prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, while those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. Furthermore, <strong>the moment the hats are placed, the prisoners completely lose their hearing and cannot exchange any information whatsoever.</strong> Is there a strategy that ensures only finitely many prisoners die? (Similarly, prisoners possess infinite computational power and are mathematically omniscient.)</p>
+
+  <p><img src="/public/hat-4.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<div onclick="toggleAnswer(6)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
+<u>View Answer</u>
+</div>
+
+<div id="answer6" class="answer" style="padding-bottom: 1em;">
+
+<p>As in the previous problem, let $\iota$ be a choice function for $[0, 1]/\sim$. The following strategy is employed: The $n$-th prisoner guesses their hat colour as the colour corresponding to the $n$-th digit of $\iota([r])$. By the definition of $\sim$, all prisoners except finitely many will answer correctly.</p>
+
+</div>
+
+<p>This puzzle is particularly extraordinary because the hearing loss condition renders the hat-guessing events of any two distinct prisoners independent, suggesting that each prisoner should have the same probability $p$ of guessing correctly. In this case, the probability that all $N$ prisoners guess correctly would be $p^N$, which converges to 0 as $N \to \infty$. However, in reality, infinitely many prisoners guess correctly.</p>
+
+<p>The root of this paradox lies in the fact that the probability of an arbitrary prisoner guessing correctly is <strong>undefined</strong>. Upon careful consideration, the event of an arbitrary prisoner guessing correctly is equivalent to the event that a given real number $r \in [0, 1]$ belongs to a <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since Vitali sets are non-measurable, no probability can be defined for this event.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/04/17/los-tarski"> 워시-타르스키 보존 정리 </a>
@@ -1537,120 +1680,6 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 </ul>
 
 <p>$\mathfrak{K}$가 $u$를 만족함을 어렵지 않게 보일 수 있다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/01/modal-logic/en"> Modal Logic </a>
-      </h1>
-    <span class="post-date">01 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h3 id="types">Types</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Entailment</th>
-      <th>Axioms</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>K</strong></td>
-      <td>Kripke model for possible worlds</td>
-      <td>$\Box(p \to q) \to (\Box p \to \Box q)$</td>
-    </tr>
-    <tr>
-      <td><strong>T</strong></td>
-      <td>Reflexivity</td>
-      <td><strong>K</strong> + $\Box p \to p$</td>
-    </tr>
-    <tr>
-      <td><strong>S4</strong></td>
-      <td>Reflexivity + Transitivity</td>
-      <td><strong>T</strong> + $\Box p \to \Box \Box p$</td>
-    </tr>
-    <tr>
-      <td><strong>S4.2</strong></td>
-      <td>Reflexivity + Transitivity + R-convergence</td>
-      <td><strong>S4</strong> + $\Diamond \Box p \to \Box \Diamond p$</td>
-    </tr>
-    <tr>
-      <td><strong>S4.3</strong></td>
-      <td>Reflexivity + Transitivity + R-linearity</td>
-      <td><strong>S4</strong> + $(\Diamond p \land \Diamond q) \to$ <br /> $(\Diamond (p \land \Diamond q) \lor \Diamond(\Diamond p \land q))$</td>
-    </tr>
-    <tr>
-      <td><strong>S5</strong></td>
-      <td>Reflexivity + Transitivity + Symmetry</td>
-      <td><strong>S4</strong> + $(p \to \Box \Diamond p)$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The logics become strictly stronger as one moves down the table.</p>
-
-<h3 id="modal-reduction">Modal Reduction</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> In <strong>S4</strong>, any sequence of modal operators is equivalent to one of six combinations, and the entailment relations amongst these combinations are as follows:</p>
-
-  <p><img src="/public/modal-operators.jpeg" width="550px" style="margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> In <strong>S5</strong>, any sequence of modal operators is equivalent to either $\Box$ or $\Diamond$. Furthermore, every formula is equivalent to a <strong>flat</strong> formula—that is, a formula containing no modal operators within the scope of other modal operators.</p>
-</blockquote>
-
-<h3 id="completeness-theorem">Completeness Theorem</h3>
-
-<blockquote>
-  <p><strong>Theorem.</strong> <strong>K</strong> is complete.</p>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<blockquote>
-  <p><strong>Lindenbaum’s Lemma.</strong> Any consistent theory can be extended to a maximally consistent theory.</p>
-</blockquote>
-
-<p>The completeness statement is equivalent to “every consistent theory is satisfiable”, and applying Lindenbaum’s lemma, this is equivalent to “every maximally consistent theory is satisfiable”.</p>
-
-<p>Let $u, v$ be maximally consistent theories. We write $u \lhd v$ when $\Box p \in u \implies p \in v$. The following can be shown without difficulty:</p>
-
-<ul>
-  <li>When $u \lhd v$, we have $p \in v \implies \Diamond p \in u$</li>
-  <li>For any maximally consistent theory $u$, if $p \in u$ and $\Box p \notin u$, then there exist maximally consistent theories $v, v’$ such that $p \in v, \lnot p \in v’$ and $u \lhd v, v’$.</li>
-</ul>
-
-<p>From this, for a maximally consistent theory $u$, we can define the <strong>canonical Kripke model</strong> $\mathfrak{K} = (U, \prec, V)$ as follows:</p>
-
-<ul>
-  <li>The collection of possible worlds $U$ is the collection of $v$ satisfying $u \lhd v$.</li>
-  <li>The accessibility relation $\prec$ is $\lhd$.</li>
-  <li>The valuation function $V(p, v)$ is true if and only if $p \in v$.</li>
-</ul>
-
-<p>It can be shown without difficulty that $\mathfrak{K}$ satisfies $u$. ■</p>
-
 
   </div>
   <div style="margin-bottom: 6em"></div>

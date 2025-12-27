@@ -484,6 +484,81 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/12/27/distributive-law"> 교환법칙, 분배법칙, 지수법칙의 범주론적 증명 </a>
+      </h1>
+    <span class="post-date">27 Dec 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'">
+        범주론
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>분배법칙: $(A + B) \times C = A \times C + B \times C$</li>
+    <li>지수법칙: $(A \times B)^C = A^C \times B^C$</li>
+  </ol>
+</blockquote>
+
+<p><a href="https://dimenerno.github.io/2025/04/02/box-v-product">이전 글</a>에서 범주론적 합과 곱을 살펴 보았다. 합은 쌍극한의 일종이고, 곱은 극한의 일종이다. 이 관찰로부터, 분배법칙과 지수법칙을 다음 정리로 일반화할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 좌 어드조인트는 쌍극한<sub>colimit</sub>을, 우 어드조인트는 극한<sub>limit</sub>을 보존한다.</p>
+</blockquote>
+
+<p>이 정리의 정확한 의미는 다음과 같다. $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$에 대해 $F \dashv G$라고 하자. $G$가 <strong>극한을 보존<sub>preserves limits</sub></strong>한다는 것은, 임의의 작은 범주<sub>small category</sub> $\mathbf{I}$와 함자 $D : \mathbf{I} \to \mathcal{B}$에 대해 다음이 성립한다는 것이다.</p>
+
+<blockquote>
+  <p>$\big(B \xrightarrow{q_I} D(I)\big)_{I \in \mathbf{I}}$가 $\mathcal{B}$에서 극한 고깔<sub>limit cone</sub>일 때, $\big(G(B) \xrightarrow{G(q_I)} GD(I)\big)_{I \in \mathbf{I}}$가 $\mathcal{A}$에서 극한 고깔이다.</p>
+</blockquote>
+
+<p>이로부터, $G$가 극한을 보존할 때 다음이 성립함을 알 수 있다.</p>
+
+\[G\left(\lim_{\leftarrow \mathbf{I}} D\right) \cong \lim_{\leftarrow \mathbf{I}} G \circ D\]
+
+<p>쌍극한의 경우에는 고깔을 쌍고깔로 바꿔 정의한다.</p>
+
+<p>한편, 임의의 $X, Y, Z \in \mathbf{Set}$에 대해 $\hom(X \times Y, Z) \cong \hom(X, Z^Y)$가 성립한다 (이는 함수형 프로그래밍에서 자주 등장하는 커링<sub>Currying</sub> 기법이다). 이로부터 다음의 어드조인트 관계가 따라 나온다.</p>
+
+\[(-) \times Y \dashv (-)^Y\]
+
+<p>따라서 함자 $(-) \times Y$는 쌍극한을 보존하고, $(-)^Y$는 극한을 보존한다. 이로부터 일반화된 분배법칙과 지수법칙을 얻을 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 집합 $A, B, Y$에 대해, $A, B$가 서로소라면 다음이 성립한다.</p>
+
+  <ol>
+    <li>$(A + B) \times Y \cong (A \times Y) + (B \times Y)$</li>
+    <li>$(A \times B)^Y \cong A^Y \times B^Y$</li>
+  </ol>
+</blockquote>
+
+<p>여기서 $+$는 서로소 집합의 합집합으로, $\sqcup$과 의미가 같으나 분배법칙과의 유사성을 강조하기 위해 사용되었다. 좌변이 $G\left(\lim_{\leftarrow \mathbf{I}} D\right)$에, 우변이 $\lim_{\leftarrow \mathbf{I}} G \circ D$에 대응된다. 위 정리에 집합의 크기 연산을 취하면 자연수에서의 분배법칙과 지수법칙을 얻는다.</p>
+
+<p>참고로 극한에 대한 다음 성질 또한 알려져 있다 ($\bullet, -$ 표기법은 <a href="https://dimenerno.github.io/2025/03/21/yoneda">이 글</a>을 참고)</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathbf{I}, \mathbf{J}$가 작은 범주이고, $\mathcal{S}$가 $\mathbf{I}, \mathbf{J}$ 모양의 극한들을 가지는 국소적으로 작은 범주라고 하자. $D: \mathbf{I} \times \mathbf{J} \to \mathcal{S}$에 대해, 다음이 성립한다.</p>
+
+\[\lim_{\leftarrow \mathbf{J}}\lim_{\leftarrow \mathbf{I}} D(\bullet, -) \cong \lim_{\leftarrow \mathbf{I} \times \mathbf{J}} D \cong \lim_{\leftarrow \mathbf{I}}\lim_{\leftarrow \mathbf{J}} D(-, \bullet)\]
+</blockquote>
+
+<p>즉, 극한끼리는 교환법칙을 만족한다. 이것은 덧셈의 교환법칙과 곱셈의 교환법칙을 일반화한 것으로 생각할 수 있다.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/12/26/suslin"> 서슬린의 문제와 다이아몬드 원리 </a>
       </h1>
     <span class="post-date">26 Dec 2025</span>
@@ -2057,192 +2132,6 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 \[\aleph_\alpha \leq \aleph_\alpha^{\aleph_\beta} \leq \aleph_\alpha^{\aleph_\alpha} = 2^{\aleph_\alpha} = \aleph_{\alpha+1}\]
 
 <p>Therefore it suffices to show that $\aleph_\alpha &lt; \aleph_\alpha^{\aleph_\beta}$. If $\aleph_\alpha = \aleph_\alpha^{\aleph_\beta}$, then $\mathrm{cf}(\aleph_\alpha) = \mathrm{cf}(\aleph_\alpha^{\aleph_\beta}) &gt; \aleph_\beta$, but by assumption $\mathrm{cf}(\aleph_\alpha) \leq \aleph_\beta$, which is a contradiction. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/09/14/alien-natural-numbers"> 자연수라는 신기루: 짧은 논리학 이야기 </a>
-      </h1>
-    <span class="post-date">14 Sep 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/철학/'">
-        철학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <p>어느 날 디멘은 외계인을 만났습니다. 외계인이 디멘에게 물었습니다.</p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>외계인</strong>
-<p>인간들이 사용하는 개념 중에서 이해되지 않는 게 있어. 도대체 자연수가 뭐야?</p>
-</div>
-
-<p><img src="/public/low1.png" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>디멘</strong>
-<p>뭐긴 뭐야. 자연수란 1부터 시작해서 2, 3, … 이렇게 순서대로 나아가는 수 체계야.</p>
-<strong>외계인</strong>
-<p>음…그러면 이것도 자연수야?</p>
-</div>
-
-<p><img src="/public/low2.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>디멘</strong>
-<p>엥, 그럴 리가! 자연수는 끝없이 이어져.</p>
-<strong>외계인</strong>
-<p>끝없이 이어진다고? 고리를 이룬다는 말인가? 그럼 1, 2, 3, 4, 5, 3, 4, 5, 3, 4, 5, … 이렇게 끝없이 이어지는데.</p>
-</div>
-
-<p><img src="/public/low3.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>디멘</strong>
-<p>맙소사, 그 뜻이 아니야. 고리 같은 거 없이 끝없이 이어져.</p>
-<strong>외계인</strong>
-<p>흠...그럼 중간에 가지라도 치나?</p>
-</div>
-
-<p><img src="/public/low4.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>디멘</strong>
-<p>그것도 아니야! 가지는 없어!</p>
-<strong>외계인</strong>
-<p>알겠어. 그렇다면 혹시 $c$도 자연수니?</p>
-<strong>디멘</strong>
-<p>$c$라니, 무슨 말이야?</p>
-<strong>외계인</strong>
-<p>너가 알려준 자연수의 정의대로라면 $c$가 자연수가 아닐 이유는 없는데? 자연수는 끝없이 이어진다고 했지만 모든 자연수가 그러한 연쇄에 포함된다고 말하지는 않았잖아.</p>
-</div>
-
-<p><img src="/public/low5.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>디멘</strong>
-<p>저건 또 뭐야... 자연수에는 자연수밖에 없어!</p>
-<strong>외계인</strong>
-<p>자연수에는 자연수밖에 없다니, 순환논법이 따로 없네.</p>
-<strong>디멘</strong>
-<p>너 지금 나 놀리는 거지?</p>
-<strong>외계인</strong>
-<p>무슨 소리야, 난 진짜 자연수가 뭔지 모르겠어. 너야말로 자연수의 정의를 제대로 알려줘야 내가 이해를 할 거 아니야.</p>
-<strong>디멘</strong>
-<p>자연수란...음...그러니까...하, 이걸 어떻게 설명하지!</p>
-</div>
-
-<p><img src="/public/low6.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<p>그 순간, 데데킨트라는 사람이 나타났습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>데데킨트</strong>
-<p>내가 이 문제를 확실히 해결해 주지. 자연수란 다음 세 가지 조건을 만족하는 집합을 말해. 이 세 가지 조건을 만족하는 집합이 유일하다는 사실은 내가 증명해 놓았으니 더 이상 오해의 여지라고는 없지.</p>
-</div>
-
-<blockquote>
-  <p><strong>데데킨트의 자연수 정의.</strong> 집합 $A$, 원소 $e \in A$, 그리고 함수 $S: A \to A$가 다음 세 가지 조건을 만족한다면 $A, e, S$는 각각 자연수 집합, $0$, 그리고 $x \mapsto x + 1$에 대응된다.</p>
-
-  <ol>
-    <li>$S(x) = e$를 만족하는 $x$는 존재하지 않는다.</li>
-    <li>$S(x) = S(y)$라면 $x = y$이다.</li>
-    <li>$A$를 정의역으로 하는 임의의 명제 $P(x)$에 대해 다음 두 조건이 성립한다면 $P(x)$는 $A$의 모든 원소에 대해 참이다.
-      <ol>
-        <li>$P(e)$가 참이다.</li>
-        <li>$P(x)$가 참이라면 $P(S(x))$가 참이다.</li>
-      </ol>
-    </li>
-  </ol>
-</blockquote>
-
-<p>데데킨트의 대답에 외계인은 흡족해했지만, 이내 또다시 의아하다는 표정을 지었습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>외계인</strong>
-<p>세 번째 조건에 "임의의 명제"라는 표현이 말이 돼? $P(x)$가 임의의 명제라면 $P(x)$는 "$x$가 자연수이다" 가 될 수도 있잖아. 하지만 자연수의 정의에 자연수에 대한 명제가 포함되는 건 순환논법일 텐데?</p>
-<strong>데데킨트</strong>
-<p>엇...그런가...?</p>
-<strong>외계인</strong>
-<p>애초에 "명제"라는 것이 정확히 뭐야? "$x$는 자기 자신을 포함하지 않는 집합이다" 는 잘 정의된 명제야?</p>
-<strong>디멘</strong>
-<p>(만약 $x$가 자기 자신을 포함하지 않는 집합이라면 $x$는 $x$의 정의에 해당하므로 자기 자신을 포함하게 되고, $x$가 자기 자신을 포함하는 집합이라면 $x$는 $x$의 정의에 해당하지 않으므로 자기 자신을 포함하지 않게 되고...엥?)</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>뜻밖의 지적에 데데킨트가 우물쭈물하자 옆에서 뢰벤하임이라는 사람이 끼어들었습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>뢰벤하임</strong>
-<p>확실히 "임의의 명제"라는 표현은 문제가 있어 보이네. 아무래도 수학에서 이런 표현은 제한해야겠어. 이렇게 제한된 논리학을 <strong>1차 논리</strong>라고 부르자.</p>
-</div>
-
-<p><img src="/public/low7.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>데데킨트</strong>
-<p>그렇다면 이제 어떻게 1차 논리로 자연수를 정확하게 정의할 수 있는지 알아봐야겠군.</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>이 말에 스콜렘이라는 사람이 불쑥 나타났습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>스콜렘</strong>
-<p>맞아. 그리고 내가 이 질문에 대한 답을 발견했어.</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>스콜렘의 발언에 모두가 주의를 집중했습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>스콜렘</strong>
-<p><strong>불가능해.</strong> 1차 논리로는 자연수의 필요충분조건을 기술할 수 없어. 구체적으로, 자연수의 정의를 시도하는 모든 1차 논리적 정의에는 자연수가 아닌 반례가 존재해. <strong>따라서 자연수는 논리로 환원될 수 없어.</strong> 자연수를 순환논법 없이는 정의할 수 없다는 말이야.</p>
-</div>
-
-<blockquote>
-  <p><strong>뢰벤하임-스콜렘 정리.</strong> 자연수를 비롯하여, 원소가 무한히 많은 수 체계는 1차 논리로 유일하게 특정될 수 없다.</p>
-</blockquote>
-
-<p><img src="/public/low8.jpg" style="width: 100%; max-width: 400px; margin: 2em auto" /></p>
-
-<p>순간 정적이 흘렀습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>외계인</strong>
-<p>그렇다면 인간들은 어떻게 자연수가 뭔지 아는 거야? 알고 보면 인간들은 저마다 자연수를 다르게 알고 있는 거 아냐?</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>외계인의 질문에 아무도 대답하지 못했습니다. 그들은 신기루 같은 자연수의 실체에 대해 할 말이 더 이상 남아 있지 않았습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<p><img src="/public/low9.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<p><em>Note.</em> 이야기의 자연스러운 흐름을 위해 왜곡된 역사적 · 수학적 · 철학적 내용이 있습니다. 1차 논리의 탄생은 뢰벤하임을 비롯한 여러 수학자들의 점진적인 연구로 이루어졌습니다. 또한 데데킨트의 자연수 정의가 사용하는 2차 논리가 정말로 순환적인지에 관해서는 더 자세한 논의가 필요합니다. 마지막으로 스콜렘의 역설은 자연수에 관한 것이 아닌 집합론에 관한 것인데, 뢰벤하임-스콜렘 정리의 귀결이라는 점에서 두 현상은 유사하기 때문에 말풍선에 넣었습니다.</p>
-
-<h3 id="더-읽어보기">더 읽어보기</h3>
-
-<ul>
-  <li><a href="/2025/07/03/kripkenstein">크립키-비트겐슈타인 역설</a></li>
-  <li><a href="/2025/07/21/private-language">사적 언어</a></li>
-  <li><a href="/2025/04/10/completeness-theorem">뢰벤하임-스콜렘 정리</a></li>
-  <li><a href="https://plato.stanford.edu/entries/logic-higher-order/#SetTheoSheeClot">2차 논리는 “양의 탈을 쓴 집합론”인가?</a></li>
-</ul>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -431,6 +431,123 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/24/algebra-measure/en"> Definitions of Algebra and Measure </a>
+      </h1>
+    <span class="post-date">24 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/measure-theory/'">
+        Measure Theory
+      </div>
+      
+    </div>
+     <h2 id="1-vitalis-theorem">1. Vitali’s Theorem</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> A <strong>measure</strong> $\mu$ on a set $X$ satisfies the following conditions:</p>
+
+  <ol>
+    <li>$\mu(\varnothing) = 0$</li>
+    <li>For any countable collection of pairwise disjoint sets $\lbrace A_n \rbrace$, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$</li>
+  </ol>
+</blockquote>
+
+<p>Unfortunately, when $X = \mathbb{R}$, the domain of measure cannot range over all subsets of the real numbers.</p>
+
+<blockquote>
+  <p><strong>Vitali’s Theorem.</strong> There does not exist a measure $\mu$ on $\mathbb{R}$ that satisfies all of the following conditions:</p>
+
+  <ol>
+    <li>It is not identically zero.</li>
+    <li>It is invariant under translation. That is, for any $r \in \mathbb{R}$, $\mu(A + r) = \mu(A)$.</li>
+    <li>$\operatorname{dom} \mu = \mathcal{P}(\mathbb{R})$</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> Suppose such a measure $\mu$ exists. Define the following equivalence relation on $\mathbb{R}$:</p>
+
+\[x \sim y \iff x - y \in \mathbb{Q}\]
+
+<p>By the axiom of choice, there exists a choice function $\iota$ for $[0, 1]/{\sim}$. Let $V = \operatorname{im} \iota$. We call $V$ a <strong>Vitali set</strong>. For example, $V = \lbrace 0.1, \pi - 3, \sqrt{2} - 1, \dots \rbrace$. We shall show that $\mu$ cannot be defined on $V$.</p>
+
+<p>By the definition of $V$, for $q \in \mathbb{Q}$, $V$ and $V + q$ are disjoint. Moreover, $[0, 1] \subset \bigcup_{q \in \mathbb{Q}} (V + q) \subset [-1, 3]$. Therefore,</p>
+
+\[1 \leq \sum_{q \in \mathbb{Q}}\mu(V + q) \leq 4.\]
+
+<p>However, since $\mu(V + q) = \mu(V)$, if $\mu(V) = 0$, then the left inequality fails, and if $\mu(V) &gt; 0$, then the right inequality fails. This is a contradiction. ■</p>
+
+<h2 id="2-sigma-algebra">2. $\sigma$-algebra</h2>
+
+<p>Therefore, to construct a proper measure, it is necessary to appropriately restrict the domain of the measure. To this end, we introduce the concept of an algebra.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> An <strong>algebra</strong> $\mathcal{A}_0$ on a set $X$ is a collection of sets satisfying the following conditions:</p>
+
+  <ol>
+    <li>$\varnothing, X \in \mathcal{A}_0$</li>
+    <li>$A \in \mathcal{A}_0 \implies A^c \in \mathcal{A}_0$</li>
+    <li>$A, B \in \mathcal{A}_0 \implies A \cup B \in \mathcal{A}_0$</li>
+  </ol>
+</blockquote>
+
+<p><em>Remark.</em> By axiom 2 and De Morgan’s laws, axiom 3 also implies that $A \cap B \in \mathcal{A}_0$.</p>
+
+<p>Strengthening the third condition of an algebra to countable unions yields the definition of a $\sigma$-algebra. That is,</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A <strong>$\sigma$-algebra</strong> $\mathcal{A}$ on a set $X$ is an algebra satisfying the following condition:</p>
+
+  <ol>
+    <li>$\lbrace  A_n \rbrace _{n \in \mathbb{N}} \subset \mathcal{A}_0 \implies \bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\lbrace \mathcal{A}_i \rbrace_{i \in I}$ is a collection of $\sigma$-algebras on $X$, then $\bigcap_{i \in I}\mathcal{A}_i$ is also a $\sigma$-algebra on $X$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> This can be proved easily from the definition of a $\sigma$-algebra. However, to spice things up, we provide a slightly unconventional proof. By the <strong>Łoś-Tarski theorem</strong>, a first-order theory is preserved under intersections if and only if every sentence of the first-order theory is a $\Pi_1$ sentence. Since all three axioms of a $\sigma$-algebra are $\Pi_1$ sentences, $\sigma$-algebras are preserved under intersections. ■</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> Let $\mathcal{C}$ be a collection of subsets of $X$. There exists the smallest $\sigma$-algebra containing $\mathcal{C}$. Such $\sigma$-algebra is denoted $\sigma(\mathcal{C})$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is a $\sigma$-algebra containing } \mathcal{C} \rbrace$. Since $\mathcal{P}(X) \in \mathcal{S}$, $\mathcal{S}$ is non-empty. Then $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$.</p>
+
+<p>As a representative example of a $\sigma$-algebra, let us examine the Borel $\sigma$-algebra.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathcal{G}$ be the collection of open sets in $\mathbb{R}$. We call $\sigma(\mathcal{G})$ the <strong>Borel $\sigma$-algebra</strong> and denote it by $\mathcal{B}$.</p>
+</blockquote>
+
+<p>The Borel $\sigma$-algebra can also be understood through the <strong>Borel hierarchy</strong>. Let $\Sigma_1$ be the collection of open sets and $\Pi_1$ be the collection of closed sets. We define:</p>
+
+<ul>
+  <li>$\Delta_n = \Sigma_n \cap \Pi_n$</li>
+  <li>$\Sigma_{n + 1} = \lbrace S : \exists \lbrace P_n \rbrace _{n \in \mathbb{N}} \subset \Pi_n \; S = \bigcup_{n \in \mathbb{N}} P_n \rbrace$</li>
+  <li>$\Pi_n = \lbrace P : \exists S \in \Sigma_n \; P = S^c \rbrace$</li>
+</ul>
+
+<p>That is, $\Sigma_2 = F_\sigma$ and $\Pi_2 = G_\delta$. Note that when we think of union as $\exists$ and intersection as $\forall$, the form of the definition is similar to the <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">arithmetic hierarchy</a>.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $\mathcal{B} = \Sigma_{\omega_1} = \Pi_{\omega_1} = \Delta_{\omega_1}$</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Omitted. However, this can be understood intuitively. Since $\mathcal{B}$ must be closed under countable intersections, countable unions, and complements, we have $\Sigma_\alpha, \Pi_\alpha, \Delta_\alpha \subset \mathcal{B}$ for all countable ordinals $\alpha$. From this fact, we obtain the theorem by transfinite induction. ■</p>
+
+<p>There is a known method for defining a measure from an algebra and a premeasure on some set. This method is called the <strong>Carathéodory method</strong>. Since premeasures are very easy to construct, using this method allows us to construct measures very easily. The Carathéodory method will be discussed in the <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">next post</a>.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/02/20/ramsey"> 램지 수와 무한 램지 정리 </a>
@@ -2562,299 +2679,6 @@ for y ∈ P:
 
 <blockquote>
   <p><strong>정리.</strong> $\Pi_n, \Sigma_n, \Delta_n$의 명제들은 $k$차 오라클이 주어졌을 때 각각 $\Pi_{n - k}, \Sigma_{n - k}, \Delta_{n - k}$의 명제들이 된다.</p>
-</blockquote>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/07/arithmetic-hierarchy/en"> Arithmetic Hierarchy </a>
-      </h1>
-    <span class="post-date">07 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p><img src="/public/arithmetic-hierarchy.png" width="340px" style="margin: 2em auto;" /></p>
-
-<blockquote>
-  <p><strong>Warning.</strong> This article was written informally and may therefore lack rigour or even contain incorrect content.</p>
-</blockquote>
-
-<p>The <strong>arithmetic hierarchy</strong> is a classification of propositions in arithmetic — more precisely, first-order Peano arithmetic — according to the complexity of their quantifiers. The arithmetic hierarchy is a central concept in proof theory and computational complexity theory, and is also related to descriptive set theory.</p>
-
-<h2 id="1-delta_0-propositions">1. $\Delta_0$ Propositions</h2>
-
-<h3 id="11-definition">1.1. Definition</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> $\Sigma_0 = \Pi_0 = \Delta_0$ is the set of propositions containing only bounded quantifiers.</p>
-</blockquote>
-
-<p>Why the same class of propositions is referred to by three names will become clear shortly. In this article, unless there is a specific reason otherwise, we shall use $\Delta_0$ as the representative name among the three.</p>
-
-<p>For example, the following four propositions are all $\Delta_0$.</p>
-
-\[\begin{gather}
-\phi_1 : 0 = 1\\
-\phi_2(x) : \exists y &lt; x \; [y + y = x] \\
-\phi_3(x, y) : \exists z \leq y \;[ xz = y ] \\
-\end{gather}\]
-
-<p>$\phi_1$ is a false statement. $\phi_2$ is true when $x$ is even, and $\phi_3$ is true when $x$ is a divisor of $y$.</p>
-
-<p>Since $\Delta_0$ propositions have bounded quantifiers, it is possible to determine whether an arbitrary $x$ satisfies the corresponding proposition using a Turing machine. For instance, a Turing machine that determines whether $x$ satisfies $\phi_2$ is as follows:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for y &lt; x:
-   if y + y == x:
-      return true;
-
-return false;
-</code></pre></div></div>
-
-<p>The above Turing machine halts within $x$ iterations. Therefore, $\Delta_0$ propositions are <strong>decidable</strong>, <strong>recursive</strong>, or <strong>computable</strong> (the three expressions are synonymous). However, as we shall explain in detail later, not all decidable propositions are $\Delta_0$.</p>
-
-<p>According to Gödel’s representability theorem, decidable true propositions are provable. In this article, when we say that $\phi$ is ‘true’, we mean $\mathcal{N} \vDash \phi$ for the standard model of arithmetics $\mathcal{N}$, rather than $\mathsf{PA} \vDash \phi$.</p>
-
-<p>The following holds:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> The set of true $\Delta_0$ sentences is complete. (That is, if $\phi$ is a true $\Delta_0$ sentence, then $\mathsf{PA} \vdash \phi$.)</p>
-</blockquote>
-
-<h3 id="12-delta_0-in-computational-theory">1.2. $\Delta_0$ in Computational Theory</h3>
-
-<p>From a programming language perspective, $\Delta_0$ sentences correspond to the set of code that permits only the following:</p>
-
-<ul>
-  <li>Conditional statements</li>
-  <li>Bounded loops</li>
-  <li>Addition and multiplication</li>
-</ul>
-
-<p>It should be noted that <em>unbounded loops</em> and <em>variable reassignment</em> are not permitted. For example, the following code demonstrates that primality testing is $\Delta_0$:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for y &lt; x:
-  for z &lt;= y:
-    if yz == x:
-      return false;
-
-return true;
-</code></pre></div></div>
-
-<p>However, the following code that computes $x^y$ does not correspond to $\Delta_0$:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let a = 1
-for 1&lt;= z &lt;= y:
-   a = a * x
-
-return a
-</code></pre></div></div>
-
-<p>So is exponentiation not $\Delta_0$? Not necessarily. Although complex, there are <a href="https://math.stackexchange.com/questions/5032077/how-to-express-exponentiation-with-a-delta-0-formula">methods</a> to express exponentiation with a $\Delta_0$ proposition. This case demonstrates that determining whether a given operation or predicate is $\Delta_0$ can be intricate. For instance, the following is known:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Factorial is $\Delta_0$, but tetration is not $\Delta_0$.</p>
-</blockquote>
-
-<p>However, tetration is decidable. Therefore, not all decidable propositions are $\Delta_0$.</p>
-
-<h2 id="2-moving-up-one-level">2. Moving Up One Level</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong></p>
-
-\[\begin{gather}
-\Sigma_1 := \{ \exists x_1 \cdots \exists x_n \;\phi : \phi \in \Pi_0 \}\\
-\Pi_1 := \{ \forall x_1 \cdots \forall x_n \;\phi : \phi \in \Sigma_0 \}\\
-\Delta_1 := \Sigma_1 \cap \Pi_1
-\end{gather}\]
-</blockquote>
-
-<h3 id="21-sigma_1-propositions">2.1. $\Sigma_1$ Propositions</h3>
-
-<p>The following propositions are $\Sigma_1$:</p>
-
-\[\begin{gather}
-\phi_1(x): \exists y \; \underbrace{[y^2 + y + 1 = x]}_{\Pi_0}\\
-\phi_2(x): ∃y\; ∃z\; \underbrace{(y \text{ is prime} ∧ z \text{ is prime} ∧ x = y + z ∧ x \text{ is even})}_{\Pi_0}
-\end{gather}\]
-
-<p>$\phi_1$ is true in the set $\lbrace 1, 3, 7, 13, \ldots\rbrace $. $\phi_2$ is Goldbach’s conjecture; it is not known whether all $x$ satisfy this.</p>
-
-<p>$\Sigma_1$ is the collection of <strong>recursively enumerable</strong> sets. That is, if $\phi \in \Sigma_1$, then there exists a Turing machine $M$ such that:</p>
-
-<ul>
-  <li>If $\phi(c)$ is true, then $M$ is guaranteed to decide $\phi(c)$.</li>
-  <li>If $\phi(c)$ is false, then $M$ is not guaranteed to decide $\phi(c)$.</li>
-</ul>
-
-<p>For example, the following Turing machine shows that $\phi_2$ is recursively enumerable:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for y &gt; 1:
-   for z &gt; 1:
-      if isPrime(y) &amp; isPrime(z) &amp; x = y + z &amp; isEven(x):
-         return true;
-
-return false;
-</code></pre></div></div>
-
-<p>Although there is a <code class="language-plaintext highlighter-rouge">return false</code> statement, since there is no <code class="language-plaintext highlighter-rouge">break</code> statement to exit the loop, <code class="language-plaintext highlighter-rouge">return false</code> is unreachable. That is, if $\phi_2(c)$ is true, the above Turing machine returns true, but if it is false, it falls into an infinite loop.</p>
-
-<p>If $\phi \in \Sigma_1$ is a sentence that is true in the standard model of arithmetics, then $\mathsf{PA} \vdash \phi$. A proposition of the form $\phi : \exists x \; \psi(x)$ being true in the standard model of arithmetics means that $\psi(c)$ is true for some $c \in \mathbb{N}$, and since $\psi(c)$ is a true $\Pi_0$ sentence, it is provable. Therefore, the following holds:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> The set of true $\Sigma_1$ sentences is complete.</p>
-</blockquote>
-
-<h3 id="22-sigma_1-setminus-delta_0-propositions">2.2. $\Sigma_1 \setminus \Delta_0$ Propositions</h3>
-
-<p>However, I have in fact been misleading the reader thus far. The propositions I listed earlier as examples of $\Sigma_1$ can actually be written as $\Delta_0$:</p>
-
-\[\begin{gather}
-\phi_1: \exists y&lt;x \;{[y^2 + y + 1 = x]}\\
-\phi_2(x): ∃y&lt;x\; ∃z&lt;x\; {(y \text{ is prime} ∧ z \text{ is prime} ∧ x = y + z ∧ x \text{ is even})}
-\end{gather}\]
-
-<p>So what do propositions that strictly belong to $\Sigma_1$ look like? One answer can be found in the <strong>halting problem</strong>.</p>
-
-<p>First, let $\mathrm{HaltsIn}(x, n)$ be a predicate that determines whether “the Turing machine with Gödel number $x$” produces an output within $n$ operations. This predicate can be easily defined from the <strong>Kleene predicate</strong>, and the Kleene predicate is known to be $\Sigma_0$. For example, if the Gödel number of a Turing machine that computes the square of 3 in 2 operations is $123$, then $\mathrm{HaltsIn}(123, 3)$ is true but $\mathrm{HaltsIn}(123, 1)$ is false.</p>
-
-<p>Now consider the following proposition:</p>
-
-\[\phi_1(x): \exists y \;[ \mathrm{HaltsIn}(x, y) ]\]
-
-<p>What this proposition states is that the Turing machine with Gödel number $x$ eventually halts. That is, the above proposition is equivalent to the halting problem. However, the halting problem is undecidable. Since we showed earlier that all $\Delta_0$ propositions are decidable, $\phi$ is a $\Sigma_1$ proposition that does not belong to $\Delta_0$.</p>
-
-<p>As another example, consider the following proposition:</p>
-
-\[\phi_2(x): \exists y \; [ \mathrm{Proves}(x, y) ]\]
-
-<p>Here, $\mathrm{Proves}(x, y)$ is a predicate that is true when the Gödel number of “a proof of the sentence with Gödel number $x$” is $y$. That is, $\phi_2(x)$ is a predicate stating that the sentence with Gödel number $x$ is provable. However, this predicate is not decidable. If $\phi_2$ were decidable, then (under the assumption that PA is consistent) there would exist a proof in PA that $\phi_2(\ulcorner 0 = 1 \urcorner)$ is false, which would conflict with Gödel’s incompleteness theorem.</p>
-
-<h3 id="23-pi_1-propositions">2.3. $\Pi_1$ Propositions</h3>
-
-<p>If $\Sigma_1$ propositions are the collection of recursively enumerable propositions, then $\Pi_1$ propositions are the collection of <strong>co-recursively enumerable</strong> propositions. That is, a $\Pi_1$ sentence is decidable if false, but not necessarily decidable if true. For example, the following two propositions are $\Pi_1$ sentences that are not $\Delta_0$:</p>
-
-\[\begin{gather}
-\phi_3(x): \forall y \;[ \lnot \mathrm{HaltsIn}(x, y) ] \\
-\phi_4(x): \forall y \; [ \lnot \mathrm{Proves}(x, y) ]
-\end{gather}\]
-
-<p>Unlike the case of $\Sigma_1$, $\Pi_1$ is not complete. Since the negation of a $\Sigma_1$ sentence is $\Pi_1$, if $\Pi_1$ were also complete, then $\Sigma_1 = \Pi_1 =$ (collection of decidable propositions).</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> The set of true $\Pi_1$ sentences is not complete.</p>
-</blockquote>
-
-<h3 id="24-delta_1-propositions">2.4. $\Delta_1$ Propositions</h3>
-
-<p>$\Delta_1$ propositions belong to both $\Sigma_1$ and $\Pi_1$. Therefore, $\Delta_1$ is the collection of <strong>decidable</strong> propositions. The tetration we saw earlier is a $\Delta_1$ proposition that is not $\Delta_0$.</p>
-
-<h2 id="3-moving-up-another-level">3. Moving Up Another Level</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong></p>
-
-\[\begin{gather}
-\Sigma_2 := \{ \exists x_1 \cdots \exists x_n \;\phi : \phi \in \Pi_1 \}\\
-\Pi_2 := \{ \forall x_1 \cdots \forall x_n \;\phi : \phi \in \Sigma_1 \}\\
-\Delta_2 := \Sigma_2 \cap \Pi_2
-\end{gather}\]
-</blockquote>
-
-<p>I believe the pattern should now be clear. As an example of a $\Sigma_2$ proposition, consider the following:</p>
-
-\[\phi_5(x) : \exists y \; [ \mathrm{DoesNotHaltOn}(x, y)]\]
-
-<p>Here, $\mathrm{DoesNotHaltOn}(x, y)$ is a predicate that is true if “the Turing machine with Gödel number $x$” does not halt when given input $y$. From the preceding discussion, it is not difficult to see that $\mathrm{DoesNotHaltOn}$ is $\Pi_1$.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $\phi_5 \notin \Pi_1$</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Suppose $\phi_5 \in \Pi_1$. Our goal is to show that this assumption implies “the set of true $\Pi_1$ sentences is complete”.</p>
-
-<p>Let $\psi(x)$ be an arbitrary $\Delta_0$ proposition. Then $\theta : \forall x \;\psi(x)$ is a $\Pi_1$ sentence. Consider the following Turing machine $M$:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ψ(x):
-   return 1;
-
-while True:
-</code></pre></div></div>
-
-<p>This Turing machine halts for value $x$ if $\psi(x)$ is true and does not halt if it is false. Therefore, $\theta$ being true is equivalent to $M$ halting for all $x$, which is equivalent to $\phi_5(\ulcorner M \urcorner)$ being false. By assumption, $\phi_5 \in \Pi_1$, so if $\phi_5(\ulcorner M \urcorner)$ is false, then $\mathsf{PA} \vdash \lnot \phi(\ulcorner M \urcorner)$. That is, $\mathsf{PA} \vdash \theta$, making all true $\Pi_1$ sentences provable. This is a contradiction. ■</p>
-
-<p><em>Remark.</em> Strictly speaking, one should show that the above proof is expressible within PA.</p>
-
-<p>We said earlier that $\Sigma_1$ propositions are decidable when true, and $\Pi_1$ propositions are decidable when false. However, since $\Sigma_2$ sentences have mixed $\forall$ and $\exists$ quantifiers, there may be sentences that are undecidable both when true and when false.</p>
-
-<h3 id="31-oracles">3.1. Oracles</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $\mathcal{O}$ can obtain the result of problem $P$ in a single operation, we call $\mathcal{O}$ an <strong>oracle</strong> for $P$.</p>
-</blockquote>
-
-<p>For example, an oracle for the halting problem is a truly divine entity that can determine whether a given Turing machine halts in a single operation.</p>
-
-<p>Ascending the arithmetic hierarchy is equivalent to being given increasingly powerful oracles. We saw earlier the following as an example of a $\Sigma_1$ proposition:</p>
-
-\[\phi_1(x): \exists y \;[ \mathrm{HaltsIn}(x, y) ]\]
-
-<p>However, if a halting problem oracle $\mathcal{O}$ were given, $\phi_1$ could be expressed simply as a $\Delta_0$ proposition:</p>
-
-\[\phi_1(x) : \mathcal{O}(x)\]
-
-<p>Also, we saw earlier the following as an example of a $\Sigma_2$ proposition:</p>
-
-\[\phi_5(x) : \exists y \; [ \mathrm{DoesNotHaltOn}(x, y)]\]
-
-<p>If a halting problem oracle $\mathcal{O}$ were given, $\phi_5$ could be expressed as a $\Sigma_1$ proposition:</p>
-
-\[\phi_5(x): \exists y \; \lnot \mathcal{O}(x|_y)\]
-
-<p>Here, $x|_y$ is the Gödel number of the state where input $y$ is given to the Turing machine with Gödel number $x$. That is, $\Sigma_2$ propositions reduce to $\Sigma_1$ propositions when given an oracle for the halting problem. By similar principles, $\Pi_2$ and $\Delta_2$ propositions reduce to $\Pi_1$ and $\Delta_1$ propositions, respectively, when given an oracle for the halting problem.</p>
-
-<p>Furthermore, we can define <strong>second-order oracles</strong>. A second-order halting problem oracle is a halting problem oracle for Turing machines that use halting problem oracles. For example, while $\mathcal{O}$ is limited to determining whether the following code halts:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for x &gt; 0:
-   for y &gt; 0:
-      for z &gt; 0:
-         for n &gt; 2:
-            if x^n + y^n == z^n:
-               return True;
-return False;
-</code></pre></div></div>
-
-<p>$\mathcal{O}^2$ can also determine whether the following code halts. The following code takes as input the Gödel number $x$ of an NP Turing machine, halts if there exists a P Turing machine whose output matches $x$, and does not halt if no such machine exists:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let x ∈ NP;
-for y ∈ P:
-   if !Halts(
-      let z = 0
-      while x(z) == y(z):
-         z = z + 1
-   ):
-      return 1; // halts when x is an NP that belongs to P
-</code></pre></div></div>
-
-<p>In general, the following holds:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Propositions in $\Pi_n$, $\Sigma_n$, $\Delta_n$ become propositions in $\Pi_{n-k}$, $\Sigma_{n-k}$, $\Delta_{n-k}$, respectively, when given a $k$-th order oracle.</p>
 </blockquote>
 
   </div>
