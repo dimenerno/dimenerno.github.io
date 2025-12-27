@@ -21,6 +21,8 @@ date: 2024-01-01
     <li><a href="http://brunch.co.kr/@dimen">브런치</a>: 개인적이거나 문학에 가까운 글이 올라옵니다.</li>
     <li><a href="http://youtube.com/@dimenerno">유튜브</a>: 언어학 및 언어철학 영상이 올라옵니다. 현재는 개인적인 사정으로 활동을 쉬고 있습니다.</li>
   </ul>
+
+  <p style="color: white">윤민규 김윤하</p>
 </div>
 
 <div class="lang-en">
