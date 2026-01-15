@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-01-15T16:40:26+09:00</updated>
+ <updated>2026-01-15T19:43:21+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -54,7 +54,7 @@
 &lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $\nu$ 위의 측도 $\mu$가 존재한다고 하자. $\mu$에 대한 영집합&lt;sub&gt;null set&lt;/sub&gt;들의 모임 $\mathcal{I}$는 아이디얼&lt;sub&gt;ideal&lt;/sub&gt;이다. 특히, $\mathcal{I}$가 다음을 만족함을 쉽게 보일 수 있다.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;홑원소집합 포함: 임의의 $\xi &amp;lt; \omega_1$에 대해, $\lbrace  \xi \rbrace  \in \mathcal{I}$.&lt;/li&gt;
+  &lt;li&gt;홑원소집합 포함: 임의의 $\xi &amp;lt; \nu$에 대해, $\lbrace  \xi \rbrace  \in \mathcal{I}$.&lt;/li&gt;
   &lt;li&gt;가산 닫힘: $\lbrace  A_n \rbrace _{n &amp;lt; \omega}$이 $\mathcal{I}$에 속하는 집합들의 모임일 때, $\bigcup_{n &amp;lt; \omega} A_n \in \mathcal{I}$.&lt;/li&gt;
   &lt;li&gt;쌍대 가산 체인 성질&lt;sub&gt;co-c.c.c. (countable chain condition)&lt;/sub&gt;: $\lbrace  B_i \rbrace _{i \in J}$가 $\mathcal{I}$에 속하지 않는 서로소 집합들의 모임일 때, $|J| \leq \aleph_0$.&lt;/li&gt;
 &lt;/ol&gt;

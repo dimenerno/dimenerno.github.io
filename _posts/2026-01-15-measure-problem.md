@@ -30,7 +30,7 @@ related:
 
 **증명.** $\nu$ 위의 측도 $\mu$가 존재한다고 하자. $\mu$에 대한 영집합<sub>null set</sub>들의 모임 $\mathcal{I}$는 아이디얼<sub>ideal</sub>이다. 특히, $\mathcal{I}$가 다음을 만족함을 쉽게 보일 수 있다.
 
-1.  홑원소집합 포함: 임의의 $\xi < \omega\_1$에 대해, $\lbrace  \xi \rbrace  \in \mathcal{I}$.
+1.  홑원소집합 포함: 임의의 $\xi < \nu$에 대해, $\lbrace  \xi \rbrace  \in \mathcal{I}$.
 2. 가산 닫힘: $\lbrace  A\_n \rbrace \_{n < \omega}$이 $\mathcal{I}$에 속하는 집합들의 모임일 때, $\bigcup\_{n < \omega} A\_n \in \mathcal{I}$.
 3. 쌍대 가산 체인 성질<sub>co-c.c.c. (countable chain condition)</sub>: $\lbrace  B\_i \rbrace \_{i \in J}$가 $\mathcal{I}$에 속하지 않는 서로소 집합들의 모임일 때, $\|J\| \leq \aleph\_0$.
 
