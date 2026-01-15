@@ -292,9 +292,9 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>&copy; 2025. All rights reserved.</p>
+    <p>&copy; 2026. All rights reserved.</p>
     <p style="color: #202020">
-      &copy; 2025. 디멘 reserved by 곰댕.
+      &copy; 2026. 디멘 reserved by 곰댕.
     </p>
   </div>
 </div>
@@ -380,11 +380,7 @@
       
     </div>
   
-  <blockquote>
-  <p>영문 버전의 글이 더 정확하고 설명이 풍부하니 참고하시길 바랍니다.</p>
-</blockquote>
-
-<h2 id="1-전체">1. 전체</h2>
+  <h2 id="1-전체">1. 전체</h2>
 
 <h3 id="11-폰-노이만-전체">1.1. 폰 노이만 전체</h3>
 
@@ -434,52 +430,52 @@
   <p><strong>정리.</strong> $x$가 집합이라면 $x \in V$이다.</p>
 </blockquote>
 
-<p><strong>증명.</strong> 집합 $x$에 대해 $x$의 <strong>추이적 폐포</strong> $\bar{x}$를, $x$를 원소로 가지는 가장 작은 추이적 집합으로 정의한다(추이적 집합들의 교집합은 추이적이기 때문에 이 정의는 정당하다).</p>
+<p><strong>증명.</strong> 집합 $x$에 대해 $x$의 <strong>추이적 폐포</strong> $\bar{x}$를, $x$를 원소로 가지는 가장 작은 추이적 집합으로 정의한다(이것이 well-defined임을 증명하기 위해서는 $x_0 = x, x_{n + 1} = \lbrace  y : y \in x \text{ for some } x \in x_n \rbrace $일 때 $\bigcup x_n$가 $\bar{x}$임을 보이면 된다.)</p>
 
 <p>$x \notin V$라고 가정하자. 분류 공리에 의해 $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$가 집합이며, 정초 공리에 의해 $y$의 $\in$-극소 원소 $z$가 존재한다. 만약 $w \notin V$인 $w \in z$가 존재한다면, 추이성에 의해 $w \in y$가 되어 $z$의 $\in$-극소성과 모순된다. 따라서 $z$의 모든 원소는 $V$에 있으며, 치환 공리로부터 $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$가 집합이다. $\beta = \bigcup_{\alpha \in \Omega}\alpha$라고 하자. $\beta$는 서수이며, $z \in V_{\beta + 1}$이다. (이 부분에서 $V_{\beta + 1} = \mathcal{P}(V_\beta)$임이 필요하다) 따라서 모순이다. ■</p>
 
-<p>이에 따라 $V$는 집합이 아니다. 따라서 $V$는 모든 집합을 포함한다는 점에서 ZFC의 모델이지만, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">많은 수학자들은 모델이 집합일 것을 요구하기 때문에</a> 엄격한 의미에서의 모델은 아니다. 하지만 이 글에서는 편의를 위해 $V$를 집합론의 모델이라고 부르도록 한다. 또한 $x \in V$를 “$x$는 집합이다“의 형식적 표현으로 이해하도록 한다.</p>
+<p>이에 따라 $V$는 집합이 아니다. 따라서 $V$는 모든 집합을 포함한다는 점에서 ZFC의 모델이지만, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">많은 수학자들은 모델이 집합일 것을 요구하기 때문에</a> 엄격한 의미에서의 모델은 아니다. 나중에 드러나겠지만, 이는 $V = L$의 무모순성 증명이 괴델의 제2불완전성 정리와 상충하지 않는 이유를 설명한다.</p>
+
+<p>한편 $x \in V$는 “$x$는 집합이다“의 형식적 표현으로 이해하도록 한다.</p>
 
 <h3 id="12-괴델-구성-가능-전체">1.2. 괴델 구성 가능 전체</h3>
 
 <p>먼저 다음과 같이 구성 가능성을 정의한다.</p>
 
 <blockquote>
-  <p><strong>정의.</strong> $u$가 집합 $S$로부터 <strong>구성 가능</strong>하다는 것은, 어떤 1차 논리 명제 $\phi(y, x_1, \dots, x_n)$와 $c_1, \dots, c_n \in S$가 존재하여 다음이 성립하는 것이다.</p>
+  <p><strong>정의.</strong> 집합론의 언어를 $\mathcal{L}$이라고 하자. $X$가 $\mathcal{L}$-구조 $(L, \in)$에서 <strong>구성 가능</strong>하다는 것은, 어떤 $\mathcal{L}$-명제 $\phi$와 자유변수 할당 $g$가 존재하여 다음이 성립한다는 것이다.</p>
 
-\[y \in u \iff y \in S \land \phi(y, c_1, \dots, c_n)\]
-
-  <p>단, $\phi$의 양화사의 정의역은 $S$이다.</p>
+\[X = \{ x \in L : (L, \in) \vDash \phi[g^0_x] \}\]
 </blockquote>
 
-<p>예를 들어 $S = \lbrace 0, 1, 2\rbrace$일 때 다음은 $u = \lbrace  1, 2 \rbrace$를 구성한다.</p>
+<p>예를 들어 $L = \lbrace 0, 1, 2\rbrace$일 때 다음은 $X = \lbrace  1, 2 \rbrace$를 구성한다.</p>
 
 <ul>
-  <li>$\phi(y, x_1, x_2) := (y = x_1) \lor (y = x_2)$</li>
-  <li>$c_1 = 1, c_2 = 2$</li>
+  <li>$\phi(v_0, v_1, v_2) := (v_0 = v_1) \lor (v_0 = v_2)$</li>
+  <li>$g: v_1 \mapsto 1, v_2 \mapsto 2$</li>
 </ul>
 
-<p>또한 $S = \mathbb{N}$일 때 다음은 $u = \lbrace 0, 3, 6, 9, \dots \rbrace$를 구성한다.</p>
+<p>또한 $L = \mathbb{N}$일 때 다음은 $X = \lbrace 0, 3, 6, 9, \dots \rbrace$를 구성한다.</p>
 
 <ul>
-  <li>$\phi(y, x_1) := x_1 \mid y$</li>
-  <li>$c_1 = 3$</li>
+  <li>$\phi(v_0, v_1) := v_1 \mid v_0$</li>
+  <li>$g: v_1 \mapsto 3$</li>
 </ul>
 
-<p>괴델의 구성가능성은 일반적인 의미에서의 구성가능성, 즉 언어로서의 표현가능성과 다르다. 일례로 언어로 표현가능한 실수의 집합은 가산이므로, 어떤 실수는 언어로 표현이 불가능하다. 그러한 실수를 $r$이라고 하자. 이제 $S = \mathbb{R}$일 때, 다음은 $u = \lbrace  r \rbrace$을 구성한다.</p>
+<p>괴델의 구성가능성은 언어로서의 표현가능성과 다르다. 일례로 언어로 표현가능한 실수의 집합은 가산이므로, 어떤 실수는 언어로 표현이 불가능하다. 그러한 실수를 $r$이라고 하자. $(L, \in)$이 실수 집합을 포함하는 구조일 때, 다음은 $X = \lbrace  r \rbrace$을 구성한다.</p>
 
 <ul>
-  <li>$\phi(y, x_1) := x_1 = y$</li>
-  <li>$c_1 = r$</li>
+  <li>$\phi(v_0, v_1) := v_0 = v_1$</li>
+  <li>$g: v_1 \mapsto r$</li>
 </ul>
 
 <p>즉, 괴델의 구성가능성은 자유변수의 초기화를 임의의 원소에 대해 허용한다는 점에서 강력하다. 그러나 자유변수의 수가 유한하다는 점에서 한계를 가진다. 이제 초한귀납적으로 $\lbrace  L_\alpha \rbrace$를 정의하자.</p>
 
 <ul>
   <li>$L_0 = \varnothing$</li>
-  <li>$L_{\alpha + 1} = \lbrace  x : x \text{ is constructible from } L_\alpha  \rbrace$</li>
+  <li>$L_{\alpha + 1} = \lbrace  x : x \text{ is constructible from } (L_\alpha, \in)  \rbrace$</li>
   <li>$\lambda$가 극한 서수일 때, $L_\lambda = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
-  <li>$L = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+  <li>$L = \bigcup_{\alpha \in \mathrm{Ord}} L_\alpha$</li>
 </ul>
 
 <p>$\alpha &lt; \omega$일 때 $L_\alpha = V_\alpha$임을 쉽게 보일 수 있다. $\alpha = n$일 때, 최대 $n$개의 $\lor$ 연언으로 $x \in V_\alpha$를 구성할 수 있기 때문이다. 따라서,</p>
