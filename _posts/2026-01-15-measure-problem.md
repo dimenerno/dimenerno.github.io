@@ -8,7 +8,7 @@ related:
 
 > **정의.** 측도 $\mu$가 집합 $X$의 모든 부분집합에 대해 정의될 때, $\mu$를 **$X$ 위의 측도**라고 한다.
 
-> **정리.** 임의의 $A \subseteq \mathbb{R}$과 $x \in \mathbb{R}$에 대해, $\mu(A + x) = \mu(A)$를 만족하는 실수 위의 측도 $\mu$는 존재하지 않는다. ($A + x = \{ a + x : a \in A\}$)
+> **정리.** 임의의 $A \subseteq \mathbb{R}$과 $x \in \mathbb{R}$에 대해, $\mu(A + x) = \mu(A)$를 만족하는 실수 위의 측도 $\mu$는 존재하지 않는다. ($A + x = \lbrace a + x : a \in A\rbrace$)
 
 **증명.** [비탈리 집합](https://dimenerno.github.io/2025/02/24/algebra-measure)의 구성을 참고하라.
 
