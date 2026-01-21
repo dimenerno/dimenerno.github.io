@@ -7,7 +7,7 @@ lang: en
 related:
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 > **Problem.** When the coordinate plane is coloured using countably many colours, does there always exist a right triangle whose three vertices are of the same colour?
 

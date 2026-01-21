@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Are Mathematics and Ethics in the Same Boat?: The Evolutionary Challenge &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/11/07/mathematics-morality-evolution%20copy/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Are Mathematics and Ethics in the Same Boat?: The Evolutionary Challenge</h1>
+  <span class="post-date">07 Nov 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'" >Philosophy</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p>This article summarises Justin Clarke-Doane’s <em>Morality and Mathematics: The Evolutionary Challenge</em> (2012). “The author” refers to the author of the paper, while “the writer” refers to the author of this post. To avoid confusion between “morality” and “ethics,” the term “ethics” is used consistently throughout.</p>
+</blockquote>
+
+<h2 id="overview">Overview</h2>
+
+<p>One of the objections to ethical realism is the <strong>evolutionary challenge</strong>. According to this argument, the ethical beliefs held by modern humans were shaped by evolutionary pressures. However, the principles of evolution are independent of ethical facts, meaning that even in a counterfactual world with entirely different ethical facts, humans would have evolved to hold the same ethical beliefs. Therefore, if our ethical beliefs are true, it would be an extraordinary coincidence that they align with the outcomes of evolution. Proponents of the evolutionary challenge argue that ethical realists must either accept this extraordinary coincidence or concede that we have no grounds to believe our ethical beliefs are true.</p>
+
+<p>For instance, the reason we hold the ethical belief “we should care for others” is likely because, in human evolution, groups that valued mutual cooperation had higher survival rates than those that prioritised selfishness. However, the fact that mutual cooperation increases survival rates is not an ethical fact but a game-theoretic or mathematical fact. Thus, even if selfishness were ethically superior to mutual cooperation, we would still have evolved to believe “we should care for others.”</p>
+
+<p>On the other hand, the evolutionary challenge has traditionally been seen as not threatening mathematical realism. This is because the principles of evolution appear to depend on mathematical truths. For example, individuals who believe that 1 + 1 = 2 are more likely to survive than those who do not, precisely because 1 + 1 = 2 is actually true. Joyce explains this as follows:</p>
+
+<blockquote>
+  <p>Suppose there is one lion behind bush A and another lion behind bush B. Our ancestors, P and Q, are hiding behind bush C. P believes that one lion plus another lion equals two lions, while Q believes that one lion plus another lion equals zero lions. <em>P is less likely to die and more likely to pass on their genes than Q.</em> This is because P is less likely than Q to step out from behind bush C and be eaten by the two lions. However, the explanation for this fact [italicised fact] presupposes that one lion plus another lion is <em>actually</em> two lions and not zero lions.</p>
+</blockquote>
+
+<p>However, the author of the paper argues that this reasoning is mistaken. They claim that the evolutionary challenge threatens mathematical realism to the same extent that it threatens ethical realism. Ultimately, the author asserts that accepting either ethical realism or mathematical realism while rejecting the other is an incoherent position.</p>
+
+<h2 id="1-what-exactly-is-realism">1. What Exactly Is Realism?</h2>
+
+<p>Before delving into the argument, the author seeks to clarify what is meant by ethical realism and mathematical realism. Generally, the author defines <strong>D-realism</strong> for a domain of discourse D as the conjunction of the following four positions:</p>
+
+<ol>
+  <li><strong>D-Truth-Aptness.</strong> Sentences in D have truth values.</li>
+  <li><strong>D-Truth.</strong> Some atomic or existentially quantified sentences in D are true.</li>
+  <li><strong>D-Independence.</strong> The truth values of sentences in D are independent of minds and language in a meaningful sense.</li>
+  <li><strong>D-Literalness.</strong> Sentences in D should be taken literally.</li>
+</ol>
+
+<p>When D is set to ethics, (1) rules out Ayer’s emotivism, (2) rules out Mackie’s error theory, (3) rules out constructivism, and (4) rules out Harman’s relativism. When D is set to mathematics, (1) rules out Hilbert’s formalism, (2) rules out Field’s fictionalism, (3) rules out Brouwer’s constructivism, and (4) rules out if-thenism.</p>
+
+<p>This paper assumes both ethical realism and mathematical realism and examines whether they can withstand the evolutionary challenge. Additionally, it assumes that most of our ethical and mathematical beliefs are true.</p>
+
+<h2 id="2-the-evolutionary-challenge-to-ethical-realism">2. The Evolutionary Challenge to Ethical Realism</h2>
+
+<p>Having clarified the requirements of realism, let us examine how the evolutionary challenge attacks ethical realism. The challenge is based on the following premise:</p>
+
+<blockquote>
+  <p><strong>Strong Premise.</strong> Our ethical beliefs were shaped by evolutionary pressures that are independent of their truth.</p>
+</blockquote>
+
+<p>The strong premise consists of the following two sub-premises:</p>
+
+<div style="margin-left: 1em;">
+<p><strong>E.</strong> Our ethical beliefs were shaped by evolution.</p>
+<p><strong>NTT.</strong> The evolution of ethical beliefs occurred in a <strong>non-truth-tracking</strong> manner.</p>
+</div>
+
+<p>The precise meaning of <strong>NTT</strong> is captured by the following counterfactual conditional:</p>
+
+<blockquote>
+  <p><strong>P.</strong> Suppose all other facts remained the same, but ethical facts were entirely different. Even so, we would have evolved to hold the same ethical beliefs that are true in the actual world.</p>
+</blockquote>
+
+<p>Some might argue that <strong>Q</strong> could serve as an alternative interpretation of <strong>NTT</strong>:</p>
+
+<blockquote>
+  <p><strong>Q.</strong> We could have evolved to hold false ethical beliefs.</p>
+</blockquote>
+
+<p>However, the author contends that <strong>Q</strong> is untenable. While Darwin noted that if humans had evolved in an environment like that of bees, they might have condoned the killing of brothers by unmarried females, this example does not substantiate <strong>Q</strong>. To substantiate <strong>Q</strong>, one would need the additional assumption that “in a bee-like environment, it would have been wrong for unmarried females to kill their brothers,” which is not self-evident. (Consider the differing ethical weight of infanticide in premodern societies with frequent famine versus modern societies.) Thus, the author argues that <strong>Q</strong> can only be substantiated by presenting cases where individuals hold fundamentally false ethical beliefs, such as “pain is good” or “pleasure is bad.” However, individuals who believe that pain is good and pleasure is bad would have been evolutionarily eliminated, making <strong>Q</strong> untenable. Therefore, <strong>P</strong> is the correct interpretation of <strong>NTT</strong>.</p>
+
+<p>However, <strong>P</strong> also faces challenges. Many ethical realists argue that ethical properties are metaphysically necessarily identical to descriptive properties. For instance, if “pleasure is good” is true, this truth is metaphysically necessary. According to this view, it is metaphysically impossible for descriptive facts to remain fixed while ethical facts change. Thus, the following interpretation of <strong>P</strong> is untenable:</p>
+
+<blockquote>
+  <p><strong>P<sub>1</sub>.</strong> In a metaphysical sense, suppose all other facts remained the same, but ethical facts were entirely different. Even so, we would have evolved to hold the same ethical beliefs that are true in the actual world.</p>
+</blockquote>
+
+<p>Instead, the author argues that <strong>P</strong> should be understood as follows:</p>
+
+<blockquote>
+  <p><strong>P<sub>2</sub>.</strong> Suppose all other facts remained the same, but ethical facts were entirely different. We can intelligibly imagine such a scenario. Even so, we would have evolved to hold the same ethical beliefs that are true in the actual world.</p>
+</blockquote>
+
+<p>To illustrate, consider a child who guesses the answer to the problem of finding $\zeta(-1)$ as $-1/12$ and gets it right. Since $\zeta(-1) = -1/12$ is metaphysically necessary, the counterfactual statement “even if the answer to this problem were different, the child would still have guessed correctly (the child’s answer was truth-tracking)” is metaphysically vacuous. Nevertheless, we can <em>imagine</em> a scenario where $\zeta(-1) \neq -1/12$, and in such an imagined scenario, the child would have been wrong. In this sense, the child’s answer was non-truth-tracking.</p>
+
+<p>With the meanings of <strong>E</strong> and <strong>NTT</strong> clarified, let us examine how the strong premise leads to a refutation of ethical realism. Street and others present the following argument:</p>
+
+<ol>
+  <li>Even if it is metaphysically impossible for ethical facts to be entirely different, we can imagine such a scenario.</li>
+  <li>As far as we can imagine, even if ethical facts were entirely different, the ethical beliefs shaped by evolution would remain the same.</li>
+  <li>Therefore, the fact that we hold true ethical beliefs in the actual world is an unexplained coincidence.</li>
+</ol>
+
+<p>However, the author argues that (2) does not necessarily lead to (3). To derive (3) from (2), the following general principle must be assumed:</p>
+
+<blockquote>
+  <p>If the fundamental facts of D were different, then the truth of the D-beliefs that remain unchanged is coincidental.</p>
+</blockquote>
+
+<p>The author provides the following counterexample to this principle. Chulsoo sees a basketball flying towards him and believes, “a basketball is flying towards me.” Here, it is metaphysically necessary that a basketball is identical to atoms arranged basketballwise. However, we can imagine a world where matter is composed of something other than atoms. Even in such a world, if a basketball were flying towards Chulsoo, he would hold the same belief, “a basketball is flying towards me.” Thus, even if the fundamental facts about basketballs were different, Chulsoo would hold the same belief, yet the truth of his belief in the actual world is not coincidental.</p>
+
+<blockquote>
+  <p>Writer’s note: I believe the author has provided a flawed analogy. The belief “a basketball is flying towards me” held by Chulsoo in a world where basketballs are composed of atoms is not the same as the belief held by Chulsoo in a world where basketballs are composed of continua. This is because the meaning of “basketball” for the two Chulsoos is determined by ostension. In the former case, “basketball” refers to “atoms arranged basketballwise,” while in the latter, it refers to “continua condensed basketballwise.” Thus, if the fundamental facts about basketballs change, Chulsoo would hold a different belief. In contrast, the meaning of ethical language does not seem to be determined by ostension.</p>
+</blockquote>
+
+<p>Nevertheless, the author argues that even if Street’s argument does not demonstrate the complete impossibility of explaining why we hold true ethical beliefs, it at least shows that the following two explanations are flawed:</p>
+
+<ol>
+  <li><strong>Evolutionary Explanation.</strong> We hold true ethical beliefs because we were selected to hold true ethical beliefs.</li>
+  <li><strong>Trivial Explanation.</strong> We hold true ethical beliefs because the current ethical facts are the only possible ethical facts, and believing those facts is evolutionarily advantageous.</li>
+</ol>
+
+<p>Focus on the distinction between the evolutionary explanation and the trivial explanation. The evolutionary explanation claims that if ethical facts had changed — even if only in an imaginable sense — we would have evolved to believe those changed facts. In contrast, the trivial explanation asserts that it is impossible for ethical facts to change, either metaphysically or imaginably, and therefore, it suffices to explain how evolution produced beings that believe the actual ethical facts.</p>
+
+<blockquote>
+  <p>Writer’s note: The trivial explanation seems to presuppose the game-theoretic explanation mentioned in the overview. That is, the trivial explanation attempts to overcome the evolutionary challenge to ethical realism by relying on (i) the strong necessity of ethical facts, (ii) the mathematical fact that those ethical facts are evolutionarily advantageous, and (iii) the necessity of mathematical facts. This appears to ground the explanation of the truth of ethical beliefs in the explanation of the truth of mathematical beliefs.</p>
+</blockquote>
+
+<p>However, if the purpose of the evolutionary challenge is to argue that the evolutionary explanation and the trivial explanation are flawed, then the challenge does not need to assume <strong>E ∧ NTT</strong> but only <strong>E → NTT</strong>. Thus, the evolutionary challenge can be summarised as follows:</p>
+
+<blockquote>
+  <p><strong>Evolutionary Challenge.</strong> If <strong>E → NTT</strong>, then explaining why we hold true ethical beliefs through the evolutionary explanation or the trivial explanation is flawed.</p>
+</blockquote>
+
+<p>The author summarises the evolutionary challenge in this way and then examines how valid it is in the context of mathematics.</p>
+
+<h2 id="3-does-mathematics-influence-evolution">3. Does Mathematics Influence Evolution?</h2>
+
+<p>It is commonly thought that mathematics is not subject to the evolutionary challenge. Unlike ethical truths, which are independent of evolution (ethical truths can change without affecting evolution), mathematical truths are thought to influence evolution. Let us revisit Joyce’s example:</p>
+
+<blockquote>
+  <p>Suppose there is one lion behind bush A and another lion behind bush B. Our ancestors, P and Q, are hiding behind bush C. P believes that one lion plus another lion equals two lions, while Q believes that one lion plus another lion equals zero lions. <em>P is less likely to die and more likely to pass on their genes than Q.</em> This is because P is less likely than Q to step out from behind bush C and be eaten by the two lions. However, the explanation for this fact [italicised fact] presupposes that one lion plus another lion is <em>actually</em> two lions and not zero lions.</p>
+</blockquote>
+
+<p>However, the author identifies two problems with Joyce’s argument. The first problem arises from the principle underlying Joyce’s argument:</p>
+
+<blockquote>
+  <p>If the evolutionary explanation for why we hold certain beliefs about D presupposes the content of those beliefs, then we were selected to hold true beliefs about D.</p>
+</blockquote>
+
+<p>The author argues that even if we were not selected to hold true D-beliefs (i.e., our D-beliefs are false or non-truth-tracking), the evolutionary explanation for our D-beliefs can still presuppose the content of those beliefs. For instance, all types of explanations presuppose the content of our logical beliefs, yet it remains questionable whether we were selected to hold true logical beliefs (see the writer’s <a href="https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic">short paper</a>).</p>
+
+<p>Even so, one might counter by adopting Quine-Putnam-style holistic epistemology, arguing that the consideration that mathematical facts explain our mathematical beliefs can serve as a <em>provisional</em> justification for the truth of those mathematical facts. In response, the author identifies a second, more serious problem: the evolutionary explanation for our mathematical beliefs is not actually related to mathematical facts. Instead, the author argues that the evolutionary explanation is only related to <strong>first-order logical facts</strong>. In the earlier example of the lions, the reason P is more likely to survive than Q is not because <strong>M</strong> is true but because <strong>L</strong> is true:</p>
+
+<div style="margin-left: 1em;">
+<p><strong>M.</strong> 1 + 1 = 2</p>
+<p><strong>L.</strong> If there is one lion behind bush A, one lion behind bush B, and no lion behind bush A is the same as any lion behind bush B, then there are two lions behind bushes A and B.</p>
+</div>
+
+<p><strong>L</strong> can be expressed as the following first-order logical formula:</p>
+
+\[\begin{align}
+&amp;\;\exists! x A(x) \land \exists! y B(y) \land \forall x, y (A(x) \land B(y) \rightarrow x \neq y) \\
+&amp;\rightarrow \exists x, y \big((x \neq y) \land (A(x) \lor B(x)) \land (A(y) \lor B(y)) \\
+&amp;\quad \quad \land\; \forall z ( (A(z) \lor B(z)) \rightarrow (z = x) \lor (z = y))\big)
+\end{align}\]
+
+<p>While many mathematicians and philosophers hold that mathematics can be reduced to logic, no one claims that the reduction ends at first-order logic. Therefore, if the evolutionary explanation for our mathematical beliefs depends only on first-order logical facts and not on mathematical facts, it cannot definitively or provisionally conclude that we were selected to hold true mathematical beliefs.</p>
+
+<p>Moreover, mathematical realists cannot simply identify <strong>M</strong> with <strong>L</strong>. This is because one of the requirements of realism is D-literalness. The statement 1 + 1 = 2 must be taken literally, and when taken literally, it asserts the existence of the numbers 1 and 2 and a specific relationship between them under addition.</p>
+
+<p>In conclusion, the reason P is more likely to survive than Q is not because the content of P’s mathematical belief <strong>M</strong> is true but because the corresponding logical content <strong>L</strong> is true. The correspondence between <strong>M</strong> and <strong>L</strong> can be explained without assuming mathematical objects. Various anti-realist positions mentioned earlier — formalism, fictionalism, constructivism, if-thenism — all explain the correspondence between <strong>M</strong> and <strong>L</strong> without positing mathematical entities.</p>
+
+<p>Of course, we also hold mathematical beliefs that cannot be captured by first-order logic. Belief in the induction axiom is one example. However, the author points out that belief in the induction axiom was not directly shaped by evolutionary pressures. The induction axiom was not explicitly formulated until the 17th century. Belief in the induction axiom arose from formalising basic arithmetic beliefs. In other words, we believe in the induction axiom because of our beliefs in basic arithmetic, which were shaped by first-order logical facts, not mathematical facts. Consequently, mathematical facts that transcend logic have no influence on the evolutionary formation of mathematical beliefs (see the following diagram: A → B means “A causes the evolution of beings that believe B”).</p>
+
+<p><img src="/public/math-moral.png" style="width: 100%; max-width: 500px; margin: 0 auto;" /></p>
+
+<p>Here, the author briefly raises the following question: does the preceding discussion show that we were selected to hold true <em>first-order logical</em> beliefs? The author thinks the answer is “no.” This is because logical facts become exceedingly complex even for simple arithmetic facts like 5 + 7 = 12. Evolutionarily, it seems more advantageous for beings to simply hold mathematical beliefs than to hold mathematical beliefs, logical beliefs, and beliefs about how to translate each mathematical statement into a logical statement. Thus, while logical facts might influence the evolution of our mathematical beliefs, it remains unclear how they influenced the evolution of our logical beliefs (— or so the author seems to think, though their comments on this point are too terse to be clear. For a separate argument on why the formation of logical beliefs cannot be explained evolutionarily, see the writer’s <a href="https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic">short paper</a>).</p>
+
+<h2 id="4-is-another-mathematics-imaginable">4. Is Another Mathematics Imaginable?</h2>
+
+<p>Having dismissed the evolutionary explanation for mathematics, the author turns to the trivial explanation. The trivial explanation asserts that the current mathematical facts are the only possible mathematical facts.</p>
+
+<p>It is commonly thought that the trivial explanation is unconvincing in ethics. This is because, in ethics, sufficiently reasonable individuals often hold conflicting positions. If rational individuals can hold different ethical facts, then worlds with different ethical facts are imaginably coherent. In contrast, such conflicts are rarely observed in mathematics. Compare the divergence of opinions on the trolley dilemma with the consensus on the Pythagorean theorem.</p>
+
+<p>However, the author argues that this comparison is biased against ethical realists. We can find ethical propositions on which ethical realists unanimously agree — for instance, “it is wrong to torture children for fun.” Conversely, we can also find mathematical axioms on which mathematical realists disagree. Finitism denies the axiom that there is always a natural number greater than any given natural number, the</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

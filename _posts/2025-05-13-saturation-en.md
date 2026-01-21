@@ -8,7 +8,7 @@ related:
   - "η sets"
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 Let $\mathfrak{A}$ be an $\mathcal{L}$-structure. Let $A$ be the domain of $\mathfrak{A}$.
 

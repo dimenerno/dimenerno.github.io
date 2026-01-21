@@ -6,7 +6,7 @@ tags: [Mathematics, Logic]
 lang: en
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 <img src="/public/arithmetic-hierarchy.png" width="340px" style="margin: 2em auto;"/>
 

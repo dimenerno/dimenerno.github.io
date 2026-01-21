@@ -7,7 +7,7 @@ lang: en
 related:
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 In this article, $T$ is a theory in language $\mathcal{L}$. We also write $x_1, \dots, x_n$ as $\vec{x}$.
 

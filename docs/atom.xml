@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-01-15T19:43:21+09:00</updated>
+ <updated>2026-01-21T13:08:47+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -126,6 +126,127 @@
  </entry>
  
  <entry>
+   <title>The Measure Problem and the Continuum Hypothesis</title>
+   <link href="https://dimenerno.github.io/2026/01/15/measure-problem/en"/>
+   <updated>2026-01-15T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2026/01/15/measure-problem/measure-problem-en</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; When a measure $\mu$ is defined for all subsets of a set $X$, $\mu$ is called a &lt;strong&gt;measure on $X$&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; For any $A \subseteq \mathbb{R}$ and $x \in \mathbb{R}$, there does not exist a measure $\mu$ on the real numbers satisfying $\mu(A + x) = \mu(A)$. (Here, $A + x = \lbrace a + x : a \in A\rbrace$.)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Refer to the construction of the &lt;a href=&quot;https://dimenerno.github.io/2025/02/24/algebra-measure&quot;&gt;Vitali set&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus, a translation-invariant measure on the real numbers does not exist. Instead, one may weaken the translation-invariance condition and ask whether there exists a measure $\mu$ on the real numbers such that $\mu(A) = m(A)$ for Lebesgue measurable sets $A$, where $m$ denotes the Lebesgue measure. This is called the &lt;strong&gt;measure problem&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Measure Problem.&lt;/strong&gt; Does there exist a measure $\mu$ on the real numbers such that $\mu(A) = m(A)$ for any Lebesgue measurable set $A \subseteq \mathbb{R}$?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In fact, the above problem is known to be equivalent to the following generalised problem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Generalised Measure Problem.&lt;/strong&gt; Does there exist a non-trivial probabilistic measure $\mu$ on $2^{\aleph_0}$? (A measure is &lt;strong&gt;probabilistic&lt;/strong&gt; if the measure of the whole space is 1.)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If such a measure exists, it is known that the Lebesgue measure can be extended to $\mathcal{P}(\mathbb{R})$ using this measure and a bijection between $\mathbb{R}$ and $2^{\aleph_0}$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Remark 1.&lt;/strong&gt; Since the translation-invariance condition has been removed, the existence of a measure on a set $S$ depends solely on the cardinality of $S$. Therefore, in the subsequent discussion, we focus only on measures on (uncountable) cardinals.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Remark 2.&lt;/strong&gt; It is known that if $\mu$ is a probabilistic measure on $S$, $C = \lbrace  x \in S : \mu(\lbrace  x \rbrace ) &amp;gt; 0 \rbrace $ is at most countable. Hence if $|S| = \kappa$ is uncountable, we have $|S| = |S \setminus C|$, and $\mu$ restricted to $S \setminus C$ is a measure satisfying $\mu(\lbrace  x \rbrace ) = 0$ for all $x \in S \setminus C$. It follows that if a measure $\mu$ exists on an uncountable cardinal $\kappa$, we may assume without loss of generality $\mu(\lbrace  \alpha \rbrace ) = 0$ for all $\alpha &amp;lt; \kappa$. Indeed, we will assume this fact from now on.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Interestingly, the measure problem is related to the continuum hypothesis and large cardinal axioms. Let us first examine the following theorem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If a measure exists on $\nu$, then some $\kappa \leq \nu$ is weakly inaccessible.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Suppose a measure $\mu$ exists on $\nu$. The collection $\mathcal{I}$ of null sets with respect to $\mu$ forms an ideal. In particular, it can be easily shown that $\mathcal{I}$ satisfies the following properties:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Contains singletons: For any $\xi &amp;lt; \nu$, $\lbrace \xi \rbrace \in \mathcal{I}$.&lt;/li&gt;
+  &lt;li&gt;Countably closed: If $\lbrace A_n \rbrace_{n &amp;lt; \omega}$ is a collection of sets in $\mathcal{I}$, then $\bigcup_{n &amp;lt; \omega} A_n \in \mathcal{I}$.&lt;/li&gt;
+  &lt;li&gt;Satisfies the countable chain condition: If $\lbrace B_i \rbrace_{i \in J}$ is a collection of pairwise disjoint sets not in $\mathcal{I}$, then $|J| \leq \aleph_0$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Let $\kappa \leq \nu$ be the smallest cardinal such that there exists an ideal $\mathcal{J}$ on $\kappa$ satisfying the above three conditions. We now prove the following lemma:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $\mathcal{I}$ be an ideal. If for any $\lambda &amp;lt; \kappa$, $\lbrace A_\xi \rbrace_{\xi &amp;lt; \lambda}$ is a collection of sets in $\mathcal{I}$, and $\bigcup A_\xi \in \mathcal{I}$, then $\mathcal{I}$ is said to be &lt;strong&gt;$\kappa$-complete&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Lemma.&lt;/strong&gt; $\mathcal{J}$ is $\kappa$-complete.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Suppose $\mathcal{J}$ is not $\kappa$-complete. Then there exist some $\lambda &amp;lt; \kappa$ and a collection $\lbrace A_\xi \rbrace_{\xi &amp;lt; \lambda}$ of sets in $\mathcal{J}$ such that $\bigcup A_\xi \notin \mathcal{J}$. Without loss of generality, we may redefine $\lbrace A_\xi \rbrace$ as follows to assume that the sets are pairwise disjoint:&lt;/p&gt;
+
+\[A_\xi&apos; = A_\xi - \bigcup_{\eta &amp;lt; \xi} A_\eta\]
+
+&lt;p&gt;(Since $A_\xi’ \subseteq A_\xi$, it follows that $A_\xi’ \in \mathcal{J}$ from $A_\xi \in \mathcal{J}$. Additionally, $A_\xi’$ may be empty, but this does not affect the proof as empty sets are trivially disjoint.)&lt;/p&gt;
+
+&lt;p&gt;Define an ideal $\mathcal{K}$ on $\lambda$ as follows:&lt;/p&gt;
+
+\[S \in \mathcal{K} \iff \bigcup_{\xi \in S} A_\xi \in \mathcal{J}\]
+
+&lt;p&gt;We verify that $\mathcal{K}$ satisfies the three conditions:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Contains singletons: This is immediate from the definition of $\mathcal{K}$.&lt;/li&gt;
+  &lt;li&gt;Countably closed: Since $\mathcal{J}$ is countably closed, so is $\mathcal{K}$.&lt;/li&gt;
+  &lt;li&gt;Satisfies the countable chain condition: Suppose $\lbrace S_i \rbrace_{i \in J}$ is a collection of pairwise disjoint sets not in $\mathcal{K}$. For each $i \in J$, let $B_i = \bigcup_{\xi \in S_i} A_\xi$. Then $B_i \notin \mathcal{J}$, and $B_i \cap B_j = \varnothing$ for $i \neq j$ (using the disjointness of $\lbrace A_\xi \rbrace$). Thus, $\lbrace B_i \rbrace_{i \in J}$ forms a pairwise disjoint antichain in $\mathcal{J}$, implying that $J$ is countable.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This contradicts the minimality of $\kappa$. Hence, $\mathcal{J}$ is $\kappa$-complete. □&lt;/p&gt;
+
+&lt;p&gt;From the above lemma, it follows that $\kappa$ is weakly inaccessible, i.e., an uncountable regular limit cardinal.&lt;/p&gt;
+
+&lt;h4 id=&quot;kappa-is-uncountable&quot;&gt;$\kappa$ is uncountable.&lt;/h4&gt;
+
+&lt;p&gt;The singleton containment and countable closure properties imply that if $\kappa$ were countable, $\kappa \in \mathcal{J}$, leading to a contradiction.&lt;/p&gt;
+
+&lt;h4 id=&quot;kappa-is-regular&quot;&gt;$\kappa$ is regular.&lt;/h4&gt;
+
+&lt;p&gt;If $\kappa$ were not regular, there would exist some $\lambda &amp;lt; \kappa$ and an increasing sequence $\lbrace \nu_\xi \rbrace_{\xi &amp;lt; \lambda}$ of cardinals less than $\kappa$ such that $\bigcup_{\xi &amp;lt; \lambda} \nu_\xi = \kappa$. By the singleton containment and $\kappa$-completeness properties, each $\nu_\xi$ belongs to $\mathcal{J}$. Hence, by $\kappa$-completeness, $\bigcup_{\xi &amp;lt; \lambda} \nu_\xi = \kappa$ belongs to $\mathcal{J}$, contradicting the fact that $\mathcal{J}$ is an ideal.&lt;/p&gt;
+
+&lt;h4 id=&quot;kappa-is-a-limit-cardinal&quot;&gt;$\kappa$ is a limit cardinal.&lt;/h4&gt;
+
+&lt;p&gt;If $\kappa$ were not a limit cardinal, there would exist some ordinal $\alpha$ such that $\kappa = \aleph_{\alpha + 1}$. For each $\gamma &amp;lt; \kappa$, there exists a surjection $f_\gamma: \omega_\alpha \to \gamma$. Using the axiom of choice, we obtain a sequence of such functions $\lbrace f_\gamma \rbrace_{\gamma &amp;lt; \omega_{\alpha + 1}}$.&lt;/p&gt;
+
+&lt;p&gt;For each $\beta &amp;lt; \omega_\alpha$ and $\gamma &amp;lt; \omega_{\alpha + 1}$, define:&lt;/p&gt;
+
+\[A_{\gamma\beta} = \{ \xi &amp;lt; \omega_{\alpha + 1} : f_\xi(\beta) = \gamma \}\]
+
+&lt;p&gt;Observe the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\bigcup_{\beta &amp;lt; \omega_\alpha} A_{\gamma\beta} = \omega_{\alpha + 1} - (\gamma + 1)$&lt;/li&gt;
+  &lt;li&gt;$\gamma_1 \neq \gamma_2 \implies A_{\gamma_1 \beta} \cap A_{\gamma_2 \beta} = \varnothing$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In particular, by $\kappa$-completeness, $\gamma + 1 \in \mathcal{J}$ implies $\bigcup_{\beta &amp;lt; \omega_\alpha} A_{\gamma \beta} \notin \mathcal{J}$. Hence, for some $\beta$, $A_{\gamma\beta} \notin \mathcal{J}$. Choosing such $\beta_\gamma$ for each $\gamma$, we obtain $\lbrace A_{\gamma\beta_\gamma} \rbrace_{\gamma &amp;lt; \omega_{\alpha + 1}}$. However, the possible values of $\beta_\gamma$ are limited to $\omega_\alpha$, so by the pigeonhole principle, there exists some $\beta &amp;lt; \omega_\alpha$ such that $|\lbrace A_{\gamma\beta_\gamma} : \beta_\gamma = \beta \rbrace| = \aleph_{\alpha + 1}$. This contradicts the countable chain condition. ■&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollary.&lt;/strong&gt; If the measure problem has a positive solution, then the continuum hypothesis has a negative solution.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; If the measure problem holds and $2^{\aleph_0} = \aleph_1$, then by the theorem, $\aleph_0$ or $\aleph_1$ must be weakly inaccessible. However, $\aleph_0$ is countable, and $\aleph_1$ is a successor cardinal, leading to a contradiction. ■&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>교환법칙, 분배법칙, 지수법칙의 범주론적 증명</title>
    <link href="https://dimenerno.github.io/2025/12/27/distributive-law"/>
    <updated>2025-12-27T00:00:00+09:00</updated>
@@ -183,6 +304,72 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;즉, 극한끼리는 교환법칙을 만족한다. 이것은 덧셈의 교환법칙과 곱셈의 교환법칙을 일반화한 것으로 생각할 수 있다.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Categorical Proofs of the Commutative Law, Distributive Law, and Exponential Law</title>
+   <link href="https://dimenerno.github.io/2025/12/27/distributive-law/en"/>
+   <updated>2025-12-27T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/12/27/distributive-law/distributive-law-en</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;Distributive law: $(A + B) \times C = A \times C + B \times C$&lt;/li&gt;
+    &lt;li&gt;Exponential law: $(A \times B)^C = A^C \times B^C$&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In a &lt;a href=&quot;https://dimenerno.github.io/2025/04/02/box-v-product&quot;&gt;previous post&lt;/a&gt;, we explored categorical sums and products. Sums are a type of colimit, while products are a type of limit. From this observation, the distributive and exponential laws can be generalised into the following theorem.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Left adjoints preserve colimits, and right adjoints preserve limits.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The precise meaning of this theorem is as follows. Let $F: \mathcal{A} \to \mathcal{B}$ and $G: \mathcal{B} \to \mathcal{A}$, and suppose $F \dashv G$. The statement that $G$ &lt;strong&gt;preserves limits&lt;/strong&gt; means that for any small category $\mathbf{I}$ and functor $D : \mathbf{I} \to \mathcal{B}$, the following holds:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If $\big(B \xrightarrow{q_I} D(I)\big)_{I \in \mathbf{I}}$ is a limit cone in $\mathcal{B}$, then $\big(G(B) \xrightarrow{G(q_I)} G(D(I))\big)_{I \in \mathbf{I}}$ is a limit cone in $\mathcal{A}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;From this, we can deduce the following when $G$ preserves limits:&lt;/p&gt;
+
+\[G\left(\lim_{\leftarrow \mathbf{I}} D\right) \cong \lim_{\leftarrow \mathbf{I}} G \circ D\]
+
+&lt;p&gt;For colimits, the definition is analogous, replacing cones with cocones.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, for any $X, Y, Z \in \mathbf{Set}$, the following holds: $\hom(X \times Y, Z) \cong \hom(X, Z^Y)$ (this is a common technique in functional programming known as currying). From this, the following adjoint relationship arises:&lt;/p&gt;
+
+\[(-) \times Y \dashv (-)^Y\]
+
+&lt;p&gt;Thus, the functor $(-) \times Y$ preserves colimits, and the functor $(-)^Y$ preserves limits. From this, we can derive the generalised distributive and exponential laws.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; For sets $A, B, Y$, if $A$ and $B$ are disjoint, the following holds:&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;$(A + B) \times Y \cong (A \times Y) + (B \times Y)$&lt;/li&gt;
+    &lt;li&gt;$(A \times B)^Y \cong A^Y \times B^Y$&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here, $+$ denotes the disjoint union of sets, which is equivalent to $\sqcup$, but the notation $+$ is used to emphasise its similarity to the distributive law. The left-hand side corresponds to $G\left(\lim_{\leftarrow \mathbf{I}} D\right)$, while the right-hand side corresponds to $\lim_{\leftarrow \mathbf{I}} G \circ D$. By applying cardinality operations to the sets in the above theorem, we recover the distributive and exponential laws for natural numbers.&lt;/p&gt;
+
+&lt;p&gt;Additionally, the following property of limits is also known (the $\bullet, -$ notation is explained in &lt;a href=&quot;https://dimenerno.github.io/2025/03/21/yoneda&quot;&gt;this post&lt;/a&gt;):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $\mathbf{I}$ and $\mathbf{J}$ be small categories, and let $\mathcal{S}$ be a locally small category that admits limits of shape $\mathbf{I}$ and $\mathbf{J}$. For $D: \mathbf{I} \times \mathbf{J} \to \mathcal{S}$, the following holds:&lt;/p&gt;
+
+\[\lim_{\leftarrow \mathbf{J}}\lim_{\leftarrow \mathbf{I}} D(\bullet, -) \cong \lim_{\leftarrow \mathbf{I} \times \mathbf{J}} D \cong \lim_{\leftarrow \mathbf{I}}\lim_{\leftarrow \mathbf{J}} D(-, \bullet)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;In other words, limits satisfy the commutative law. This can be thought of as a generalisation of the commutative laws for addition and multiplication.&lt;/p&gt;
 
 </content>
  </entry>
@@ -338,6 +525,160 @@
  </entry>
  
  <entry>
+   <title>Suslin's Problem and the Diamond Principle</title>
+   <link href="https://dimenerno.github.io/2025/12/26/suslin/en"/>
+   <updated>2025-12-26T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/12/26/suslin/suslin-en</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://dimenerno.github.io/2024/11/20/Rational-Real&quot;&gt;the previous post&lt;/a&gt;, the following theorem was introduced:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition of the set-theoretic real numbers.&lt;/strong&gt; A totally ordered set $(R, &amp;lt;)$ satisfying the following properties is unique up to order isomorphism:&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;It is a complete totally ordered set.&lt;/li&gt;
+    &lt;li&gt;It has no endpoints.&lt;/li&gt;
+    &lt;li&gt;It is separable, i.e., there exists a countable $Q \subset R$ such that $Q$ is dense in $R$.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;From the third property, the following result follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $\mathcal{C}$ be the collection of open intervals of $\mathbb{R}$. If the elements of $\mathcal{C}$ are pairwise disjoint, then $\mathcal{C}$ is countable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Since the elements of $\mathcal{C}$ are pairwise disjoint, there exists an injective mapping $\mathcal{C} \to \mathbb{Q}$ that maps each $(x, y) \in \mathcal{C}$ to some $q \in (x, y) \cap \mathbb{Q}$. Hence, $\mathcal{C}$ is countable. ■&lt;/p&gt;
+
+&lt;p&gt;A totally ordered set in which any collection of pairwise disjoint open intervals is at most countable is said to have the &lt;strong&gt;countable chain condition&lt;/strong&gt;. The peculiar name of this property will be explained later.&lt;/p&gt;
+
+&lt;p&gt;Suslin’s problem asks whether the separability condition in the definition of the set-theoretic real numbers can be weakened to the countable chain condition.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A complete totally ordered set without endpoints that satisfies the countable chain condition but is not order-isomorphic to the real numbers is called a &lt;strong&gt;Suslin line&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Thus, a Suslin line must not be separable.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Suslin’s problem.&lt;/strong&gt; Does a Suslin line exist?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This problem, posed in 1920, was shown to be independent of ZFC by Solovay and Tennenbaum in 1971. Instead of examining the independence proof, this post will explore the combinatorial counterpart of Suslin lines, known as Suslin trees. Let us first consider the following well-known theorem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;König’s lemma.&lt;/strong&gt; For a tree $T$, if $T$ has height $\omega$ and each node has finitely many children, then $T$ has a branch of length $\omega$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Let $\alpha_0$ be the root node, and define a sequence of nodes inductively as follows. Given $\alpha_n$, since $\alpha_n$ has finitely many children, there exists a child node such that the subtree rooted at that node has infinite height. Choose one such child node (using the axiom of choice) and define it as $\alpha_{n+1}$. The sequence ${a_n}$ forms a branch of infinite length. ■&lt;/p&gt;
+
+&lt;p&gt;If the nodes of $T$ are allowed to have countably many children, it is possible for all branches of $T$ to have finite length while $T$ itself has height $\omega$, as illustrated below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/koenig-counterexample.png&quot; style=&quot;width: 100%; max-width: 350px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A natural question is whether König’s lemma can be extended to uncountable cardinals. However, the answer to this question is negative.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Aronszajn’s theorem.&lt;/strong&gt; There exists a tree of height $\omega_1$ in which each node has countably many children, but no branch has length $\omega_1$. (Such a tree is called an &lt;strong&gt;Aronszajn tree&lt;/strong&gt; of height $\omega_1$.)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Thus, to extend König’s lemma to uncountable cardinals, a stronger condition than “each node has countably many children” is required. To this end, the following definition is introduced:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A subset $S$ of a tree $T$ is called an &lt;strong&gt;antichain&lt;/strong&gt; if the elements of $S$ are mutually incomparable. A tree $T$ is said to have the &lt;strong&gt;countable chain condition&lt;/strong&gt; if all antichains in $T$ are countable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For example, in the tree below, the coloured nodes form an antichain:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/antichain.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While “each node has countably many children” is a local property, the countable chain condition is a global property of the entire tree. Intuitively, the countable chain condition implies that the “width” of the tree is less than $\omega_1$. Note that the term “countable chain condition” rather than “countable antichain condition” is used for historical reasons and need not be a cause for concern.&lt;/p&gt;
+
+&lt;p&gt;Earlier, it was mentioned that a collection of pairwise disjoint open intervals of the real numbers is at most countable, and this property is also referred to as the countable chain condition. The two usages are closely related. The general definition of an antichain is as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $(P, \leq)$ be a partially ordered set. Two elements $x, y \in P$ are said to be &lt;strong&gt;incomparable&lt;/strong&gt; if there does not exist $z \in P$ such that $z \leq x$ and $z \leq y$. A subset $S \subseteq P$ is called an &lt;strong&gt;antichain&lt;/strong&gt; if its elements are mutually incomparable. $P$ is said to have the &lt;strong&gt;countable chain condition&lt;/strong&gt; if all antichains in $P$ are countable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In a tree $T$, let $x \leq y$ denote that the node $x$ is a descendant of the node $y$. Then, two nodes $x$ and $y$ are incomparable as tree nodes if and only if they are incomparable as elements of the partially ordered set $(T, \leq)$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; An Aronszajn tree with the countable chain condition is called a &lt;strong&gt;Suslin tree&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The existence of Suslin trees is equivalent to the existence of Suslin lines, and hence is independent of ZFC. The equivalence arises because each property corresponds as follows:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Suslin line&lt;/th&gt;
+      &lt;th&gt;Suslin tree&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Non-separability&lt;/td&gt;
+      &lt;td&gt;Height $\omega_1$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Countable chain condition for open intervals&lt;/td&gt;
+      &lt;td&gt;Countable chain condition for the tree&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The correspondence between non-separability and the height $\omega_1$ property can be understood as follows: the existence of a countable set $D$ such that $|D| \leq \aleph_0$ and every open interval $(a, b)$ intersects $D$ (non-separability) corresponds to the existence of an ordinal $\alpha$ such that $\alpha &amp;lt; \omega_1$ and every node $x \in T$ is the limit of a sequence of nodes in $T^{(\alpha)}$ (tree height being countable).&lt;/p&gt;
+
+&lt;p&gt;In connection with Suslin trees, consider the following non-standard axiom in set theory:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Diamond principle.&lt;/strong&gt; There exists a sequence $\langle W_\alpha : \alpha &amp;lt; \omega_1 \rangle$ such that $W_\alpha \subseteq \mathcal{P}(\alpha)$, each $W_\alpha$ is countable, and for any $X \subseteq \omega_1$, the set ${\alpha : \alpha &amp;lt; \omega_1, X \cap \alpha \in W_\alpha}$ is stationary.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The diamond principle is often denoted by $\Diamond$, and the sequence $\langle W_\alpha \rangle$ is called a diamond sequence.&lt;/p&gt;
+
+&lt;p&gt;The set $X \cap \alpha$ can be thought of as the “reflection” of $X$ through the “mirror” $\alpha$. In this sense, the diamond principle implies that the reflection of $X$ at ordinals less than $\omega_1$ appears sufficiently often in $\langle W_\alpha \rangle$. (In &lt;a href=&quot;https://dimenerno.github.io/2025/11/11/stationary-sets&quot;&gt;this post&lt;/a&gt;, it was explained that stationary sets are the set-theoretic analogue of “measure &amp;gt; 0”.)&lt;/p&gt;
+
+&lt;p&gt;Thus, the diamond principle is a type of reflection principle and plays a role in regulating the set-theoretic universe, similar to the axiom $V = L$ (in fact, $V = L$ implies $\Diamond$). Like other axioms that regulate the set-theoretic universe, the diamond principle implies the continuum hypothesis.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; $\Diamond \implies \mathsf{CH}$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Let $X \subseteq \omega \subset \omega_1$. Since $X$ reflects stationarily at ordinals less than $\omega_1$, there exists some $\alpha &amp;gt; \omega$ such that $X \cap \alpha = X \in W_\alpha$. Hence, all subsets of $\omega$ are contained in $\bigcup_{\alpha &amp;lt; \omega_1} W_\alpha$, whose cardinality is $\aleph_1$. Therefore, $2^{\aleph_0} = \aleph_1$. ■&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If $\Diamond$ holds, then a Suslin line exists.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; See Hrbacek &amp;amp; Jech (3rd ed), Chapter 12, Section 5. Note the following typographical error in the original text:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(Original) &lt;strong&gt;Lemma 5.3.&lt;/strong&gt; $\Diamond$ implies that there exists a sequence $\langle Z_\alpha : \alpha &amp;lt; \omega_1 \rangle$ such that, for each $\alpha &amp;lt; \omega_1$, $Z_\alpha \subseteq \omega^{&amp;lt;\alpha}$, $Z_\alpha$ is at most countable, and for any $X \subseteq \omega^{&amp;lt;\omega_1}$ the set ${\alpha &amp;lt; \omega_1 : X \cap \omega^{&amp;lt;\alpha}}$ is stationary.&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; We note that […] Clearly, $Z_\alpha \subseteq \omega^{&amp;lt;\alpha}$ and is at most countable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(Corrected) &lt;strong&gt;Lemma 5.3.&lt;/strong&gt; $\Diamond$ implies that there exists a sequence $\langle Z_\alpha : \alpha &amp;lt; \omega_1 \rangle$ such that, for each $\alpha &amp;lt; \omega_1$, $Z_\alpha \subseteq \mathcal{P}(\omega^{&amp;lt;\alpha})$, $Z_\alpha$ is at most countable, and for any $X \subseteq \omega^{&amp;lt;\omega_1}$ the set ${\alpha &amp;lt; \omega_1 : X \cap \omega^{&amp;lt;\alpha}}$ is stationary.&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; We note that […] Clearly, $Z_\alpha \subseteq \mathcal{P}(\omega^{&amp;lt;\alpha})$ and is at most countable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Additionally, the sentence “Let ${C_n : n \in \mathbb{N}}$ be the at most countable collection of those elements of $Z_\alpha$ which happen to be maximal antichains in $T^{(\alpha)}$.” just before Claim 5.5 means that for each $n$, $C_n \in Z_\alpha$, $C_n \subseteq \omega^\alpha$, and $C_n$ is an antichain when its elements are regarded as nodes of $T^{(\alpha)}$. ■&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollary.&lt;/strong&gt; If $V = L$, then a Suslin line exists.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Thus, the existence of Suslin lines is related to the regulation of the set-theoretic universe. While this may seem paradoxical, it is not so surprising when one considers that one of the conditions for Suslin lines is the “non-existence” of countable dense sets. Suslin lines are a feature of a “loose” set-theoretic universe that achieves the countable chain condition without generating countable dense sets.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>오일러-푸앵카레 정리</title>
    <link href="https://dimenerno.github.io/2025/11/23/euler-poincare"/>
    <updated>2025-11-23T00:00:00+09:00</updated>
@@ -448,6 +789,124 @@ Z_p = B_p \oplus G_p\\\\
 &lt;/ul&gt;
 
 &lt;p&gt;따라서 구의 0차, 1차, 2차 베티 수는 1, 0, 1이며, $1 - 0 + 1 = 2$이다. 따라서 볼록다면체의 경우 $v - e + f = 2$이다.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Euler-Poincaré Theorem</title>
+   <link href="https://dimenerno.github.io/2025/11/23/euler-poincare/en"/>
+   <updated>2025-11-23T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/11/23/euler-poincare/euler-poincare-en</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Readers may recall learning the following theorem in their youth:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Euler’s Formula.&lt;/strong&gt; For a convex polyhedron, let $v, e, f$ denote the number of vertices, edges, and faces, respectively. Then $v - e + f = 2$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For instance, in the case of a cube, $v = 8, e = 12, f = 6$, so $v - e + f = 2$ holds. The condition of convexity is crucial; if the polyhedron has “holes,” the formula does not hold. For example, in the case of the punctured prism below, $v = 16, e = 32, f = 16$, so $v - e + f = 0$.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/punctured-prism.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 1em auto 1.5em auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From this, we may conjecture that the value of $v - e + f$ is determined by the topology of the shape. This is the essence of the Euler-Poincaré theorem. Before stating the theorem, let us first define the following concept:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; For a topological space $X$, the rank of the free part of the homology group $H_p(X)$ of $X$ is called the $p$th &lt;strong&gt;Betti number&lt;/strong&gt; of $X$, denoted $R_p(X)$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;While it is customary to denote this as $b_p(X)$, we adopt a different notation here as $b_p$ will be used for another purpose in this article. Since homology groups are topological invariants, Betti numbers are also topological invariants.&lt;/p&gt;
+
+&lt;p&gt;For example, the homology groups of a torus are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$H_0(X) = \mathbb{Z}$&lt;/li&gt;
+  &lt;li&gt;$H_1(X) = \mathbb{Z} \oplus \mathbb{Z}$&lt;/li&gt;
+  &lt;li&gt;$H_2(X) = \mathbb{Z}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus, the 0th, 1st, and 2nd Betti numbers of the torus are 1, 2, and 1, respectively. Intuitively, Betti numbers represent the number of “holes” (see &lt;a href=&quot;https://dimenerno.github.io/2025/11/05/euler-poincare&quot;&gt;previous post&lt;/a&gt;). In particular, the 0th Betti number corresponds to the number of connected components of $K$. For instance, if two tetrahedra are considered as a single simplicial complex, the 0th Betti number of this complex is 2.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Euler-Poincaré Theorem.&lt;/strong&gt; For an $n$-dimensional simplicial complex $K$, let $\alpha_p \; (p \leq n)$ denote the number of $p$-simplices in $K$. Then the following holds:&lt;/p&gt;
+
+\[\sum^n_{p = 0} (-1)^p\alpha_p = \sum^n_{p=0}(-1)^p R_p(K)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;In proving this theorem, it is more natural to view $p$-chains as elements of a vector space rather than a free group, and we adopt this approach.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Let $C_p, Z_p, B_p$ denote the vector spaces of $p$-chains, cycles, and boundaries of $K$ over the field of rational numbers, respectively. Let $\lbrace  d^i_p \rbrace $ be a maximal subset of $C_p$ that does not linearly generate cycles, and let the vector space spanned by $\lbrace  d^i_p \rbrace $ be $D_p$. Then the following holds ($\oplus$ denotes the direct sum of vector spaces):&lt;/p&gt;
+
+\[\begin{gather}
+C_p = D_p \oplus Z_p\\\\
+\alpha_p = \dim C_p = \dim D_p + \dim Z_p
+\end{gather}\]
+
+&lt;p&gt;For $p \leq n - 1$, let $b^i_p = \partial d^i_{p + 1}$. Let the vector space spanned by $\lbrace  b^i_p \rbrace $ be $B_p$. Since $\partial$ is a linear operator, it follows from the fact that $\lbrace  d^i_{p +1} \rbrace $ forms a basis of $D_{p + 1}$ that $\lbrace  b^i_p \rbrace $ forms a basis of $B_p$. We prove the following lemma:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Lemma.&lt;/strong&gt; $B_p$ contains all $p$-boundaries of $K$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; If $b_p$ is a $p$-boundary of $K$, then there exists some $c_{p + 1} \in C_{p + 1}$ such that $\partial c_{p + 1} = b_p$. By the relation $C_{p + 1} = D_{p + 1} \oplus Z_{p + 1}$, there exist unique $d_{p + 1} \in D_{p + 1}$ and $z_{p + 1} \in Z_{p + 1}$ such that $c_{p + 1 } = d_{p + 1} + z_{p + 1}$. Since $\partial z_{p + 1} = 0$, it follows that $\partial d_{p + 1} = b_p$. Hence, $b_p \in B_p$. □&lt;/p&gt;
+
+&lt;p&gt;Let $\lbrace  z^i_p \rbrace $ be a maximal subset of $Z_p$ that does not linearly generate elements of $B_p$, and let the vector space spanned by $\lbrace  z^i_p \rbrace $ be $G_p$. By the lemma, the following holds:&lt;/p&gt;
+
+\[\dim G_p = R_p\]
+
+&lt;p&gt;Thus, we have:&lt;/p&gt;
+
+\[\begin{gather}
+Z_p = B_p \oplus G_p\\\\
+\dim Z_p = \dim B_p + \dim G_p = \dim D_{p + 1} + R_p
+\end{gather}\]
+
+&lt;p&gt;Combining this with earlier results, we obtain the following for $p \leq n - 1$:&lt;/p&gt;
+
+\[\alpha_p = \dim D_{p + 1} + \dim D_p + R_p\]
+
+&lt;p&gt;For $p = n$, $\alpha_n = \dim D_n + R_n$, and for $p = 0$, $\alpha_0 = \dim D_1 + R_0$. Hence, we derive the following (wlog, $n$ is even):&lt;/p&gt;
+
+\[\begin{alignat}{3}
+&amp;amp;\alpha_n      &amp;amp;&amp;amp;= \;\cancel{\dim D_n} + R_p \\
+&amp;amp;-\alpha_{n-1} &amp;amp;&amp;amp;= \;\cancel{-\dim D_{n}} \cancel{- \dim D_{n - 1}} - R_{n - 1} \\
+&amp;amp;\alpha_{n-2}  &amp;amp;&amp;amp;= \;\cancel{\dim D_{n - 1}} \cancel{ + \dim D_{n - 2}} + R_{n - 2} \\
+&amp;amp;&amp;amp;\vdots \\
+&amp;amp;-\alpha_{1}   &amp;amp;&amp;amp;= \;\cancel{-\dim D_{2}} \cancel{-\dim D_{1}} - R_{1} \\
+&amp;amp;\alpha_{0}    &amp;amp;&amp;amp;= \;\cancel{\dim D_{1}} + R_{0} \\
+\hline
+&amp;amp;\sum_{p = 0}^n (-1)^p \alpha_p &amp;amp;&amp;amp;= \;\sum_{p=0}^n (-1)^p R_p(K) \quad \blacksquare
+\end{alignat}\]
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; For a topological space $X$, the following value is called the &lt;strong&gt;Euler characteristic&lt;/strong&gt;:&lt;/p&gt;
+
+\[\xi(X) = \sum (-1)^p R_p(X)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;Since Betti numbers are topological invariants, the Euler characteristic is also a topological invariant.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollary.&lt;/strong&gt; Let $v, e, f$ denote the number of vertices, edges, and faces of a polyhedron $P$, respectively. Let $X$ denote the surface of $P$ as a 2-dimensional topological space. Then the following holds:&lt;/p&gt;
+
+\[v - e + f = \xi(X)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; The triangulation of a $k$-gon can be obtained by adding $k - 3$ edges, which creates $k - 3$ faces. Thus, $P$ has the same $v - e + f$ value as its triangulation, which equals the Euler characteristic. ■&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/triangulation.png&quot; style=&quot;width: 100%; max-width: 400px; margin: 1em auto 1.5em auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Earlier, we observed that for a polyhedron with one hole, $v - e + f = 0$. Indeed, the 0th, 1st, and 2nd Betti numbers of a torus are 1, 2, and 1, respectively, and $1 - 2 + 1 = 0$. On the other hand, the homology groups of a sphere are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$H_0(K) = \mathbb{Z}$&lt;/li&gt;
+  &lt;li&gt;$H_1(K) = 0$&lt;/li&gt;
+  &lt;li&gt;$H_2(K) = \mathbb{Z}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus, the 0th, 1st, and 2nd Betti numbers of a sphere are 1, 0, and 1, respectively, and $1 - 0 + 1 = 2$. Therefore, for convex polyhedra, $v - e + f = 2$.&lt;/p&gt;
 </content>
  </entry>
  
@@ -613,6 +1072,175 @@ Z_p = B_p \oplus G_p\\\\
 &lt;/ul&gt;
 
 &lt;p&gt;그러면 임의의 $0 \leq l &amp;lt; m$에 대해 $f_l$은 $S_{m-1}$에서 상수이다. 이제 $S_{m-1} = I$가 찾고자 하는 집합임을 쉽게 확인할 수 있다. ■&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Club Sets and Stationary Sets</title>
+   <link href="https://dimenerno.github.io/2025/11/11/stationary-sets/en"/>
+   <updated>2025-11-11T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/11/11/stationary-sets/stationary-sets-en</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;club-sets&quot;&gt;Club Sets&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; $C \subseteq \omega_1$ is a &lt;strong&gt;club set&lt;/strong&gt; if $C$ is closed and unbounded. That is,&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;For any sequence of ordinals $(\alpha_n)_{n \in \omega} \subseteq C$, if $\alpha_n \to \alpha$, then $\alpha \in C$.&lt;/li&gt;
+    &lt;li&gt;For any $\gamma &amp;lt; \kappa$, there exists $\alpha \in C$ such that $\alpha &amp;gt; \gamma$.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The name is indeed quite straightforward.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If $C_1, C_2 \subseteq \omega_1$ are two club sets, then $C = C_1 \cap C_2$ is also a club set.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; It is easy to show that $C$ is closed. To prove that $C$ is unbounded, let us take an arbitrary $\gamma \in \omega_1$. Since $C_1$ is unbounded, there exists the smallest $\alpha_0 \in C_1$ such that $\gamma &amp;lt; \alpha_0$. Similarly, since $C_2$ is unbounded, there exists the smallest $\beta_0 \in C_2$ such that $\alpha_0 &amp;lt; \beta_0$. Again, since $C_1$ is unbounded, there exists $\alpha_1 \in C_1$ such that $\beta_0 &amp;lt; \alpha_1$. Repeating this process, we obtain sequences of ordinals $\lbrace \alpha_n \rbrace$ and $\lbrace \beta_n \rbrace$. These sequences converge to the same ordinal $\delta$, so $\delta \in C$ and $\delta &amp;gt; \gamma$. (Note: “the smallest” is used to avoid unnecessary reliance on the axiom of choice.) ■&lt;/p&gt;
+
+&lt;p&gt;By slightly modifying the above proof, we can derive the following theorem.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If $\lbrace C_n \rbrace _{n &amp;lt; \omega}$ is a countable collection of club sets, then $C = \bigcap C_n$ is also a club set.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Exercise (Hint: Use a triangle argument). ■&lt;/p&gt;
+
+&lt;p&gt;Thus, given a countable collection of club sets, we can obtain a new club set by taking their intersection. On the other hand, if we are given an uncountable collection of club sets, the following result can be used.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $\lbrace C_\xi \rbrace _{\xi &amp;lt; \omega_1}$ be a collection of club sets. The &lt;strong&gt;diagonal intersection&lt;/strong&gt; of $\lbrace C_\xi \rbrace$ is defined as follows:&lt;/p&gt;
+
+\[\Delta_{\xi &amp;lt; \omega_1} C_\xi = \{ \alpha \in \omega_1 : \forall \xi &amp;lt; \alpha \;\; \alpha \in C_\xi \}\]
+
+  &lt;p&gt;$D$ is a club set.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; First, let us show that $D$ is closed. Suppose $(\alpha_n)_{n \in \omega} \subseteq D$ and $\alpha_n \to \alpha$. For any $\xi &amp;lt; \alpha$, there exists $n \in \omega$ such that $\xi &amp;lt; \alpha_n$. By the definition of the diagonal intersection, $C_\xi$ contains $\lbrace \alpha_m : m \geq n \rbrace$. Hence, $\sup \lbrace \alpha_m : m \geq n \rbrace = \alpha \in C_\xi$, so $\alpha \in D$.&lt;/p&gt;
+
+&lt;p&gt;Next, let us show that $D$ is unbounded. For any $\gamma &amp;lt; \omega_1$, let $D_0 = \bigcap_{\xi &amp;lt; \gamma} C_\xi$. Since $D_0$ is a club set, it is unbounded. Thus, there exists the smallest $\alpha_0 \in D_0$ such that $\alpha_0 &amp;gt; \gamma$. Similarly, let $D_1 = \bigcap_{\xi &amp;lt; \alpha_0} C_\xi$. Since $D_1$ is a club set, there exists the smallest $\alpha_1 \in D_1$ such that $\alpha_1 &amp;gt; \alpha_0$. Repeating this process inductively, we obtain a sequence $(\alpha_n)$ whose limit is $\alpha$. For any $\xi &amp;lt; \alpha$, there exists $n$ such that $\xi &amp;lt; \alpha_n$, and for all $m \geq n$, $\alpha_m \in C_\xi$. Hence, $\alpha \in C_\xi$ and $\alpha \in D$. ■&lt;/p&gt;
+
+&lt;p&gt;Verify that $\Delta C_\xi \supseteq \bigcap C_\xi$.&lt;/p&gt;
+
+&lt;p&gt;The definitions and theorems discussed so far can be generalised as follows. Let $\kappa$ be an uncountable cardinal with $\operatorname{cf}\kappa &amp;gt; \omega$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; $C \subseteq \kappa$ is a &lt;strong&gt;club set&lt;/strong&gt; if $C$ is closed and unbounded. That is,&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;For any $\alpha &amp;lt; \kappa$, if $\sup (C \cap \alpha) = \alpha$ (i.e., $C$ is unbounded at $\alpha$), then $\alpha \in C$.&lt;/li&gt;
+    &lt;li&gt;For any $\gamma &amp;lt; \kappa$, there exists $\alpha \in C$ such that $\alpha &amp;gt; \gamma$.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If $\lambda &amp;lt; \operatorname{cf}\kappa$ and $\lbrace C_\xi \rbrace _{\xi &amp;lt; \lambda}$ is a collection of club sets, then $C = \bigcap C_\xi$ is also a club set.&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If $\kappa$ is regular, then the diagonal intersection of a collection $\lbrace C_\xi \rbrace _{\xi &amp;lt; \kappa}$ of club sets is also a club set.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; The proof is almost identical to the case $\kappa = \omega_1$. ■&lt;/p&gt;
+
+&lt;h2 id=&quot;stationary-sets&quot;&gt;Stationary Sets&lt;/h2&gt;
+
+&lt;p&gt;By closure under finite intersections, the collection of club sets generates a filter. A set that does not belong to the dual ideal of this filter is called a &lt;strong&gt;stationary set&lt;/strong&gt;. In other words:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $S \subseteq \omega_1$. If $C \cap S \neq \varnothing$ for every club set $C \subseteq \omega_1$, then $S$ is a stationary set.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If there exists a club set $C$ such that $C \cap S = \varnothing$, then $S^c \subseteq C$, so $C$ belongs to the dual ideal. Thus, the two definitions are equivalent.&lt;/p&gt;
+
+&lt;p&gt;Stationary sets capture “significantly large” subsets of $\omega_1$. This can be better understood through the following (informal) analogy: if $\omega_1$ has measure 1, then club sets correspond to sets with $\mu(C) = 1$, and stationary sets correspond to sets with $\mu(S) &amp;gt; 0$.&lt;/p&gt;
+
+&lt;p&gt;The following facts are easily proven (note how 1 and 3 naturally align with the measure analogy):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; The following hold:&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;Every club set is a stationary set.&lt;/li&gt;
+    &lt;li&gt;Every stationary set is unbounded.&lt;/li&gt;
+    &lt;li&gt;If $\bigcup_{n &amp;lt; \omega} A_n$ is a stationary set, then there exists some $m \in \omega$ such that $A_m$ is a stationary set.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The name “stationary” for stationary sets arises from the following theorem.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $S \subseteq \omega_1$. A function $f: S \to \omega_1$ is &lt;strong&gt;regressive&lt;/strong&gt; if $f(\alpha) &amp;lt; \alpha$ for all $\alpha \in S$. The following are equivalent:&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;$S$ is a stationary set.&lt;/li&gt;
+    &lt;li&gt;For any regressive function $f: S \to \omega_1$, $f$ is constant on some unbounded set $T \subseteq S$.&lt;/li&gt;
+    &lt;li&gt;For any regressive function $f: S \to \omega_1$, $f$ is constant on some stationary set $T \subseteq S$.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; 3 ⇒ 2 is trivial, so it suffices to prove 1 ⇒ 3 and 2 ⇒ 1.&lt;/p&gt;
+
+&lt;h4 id=&quot;1--3&quot;&gt;1 ⇒ 3&lt;/h4&gt;
+
+&lt;p&gt;We prove the contrapositive. Suppose there exists a regressive function $f: S \to \omega_1$ such that $f$ is not constant on any stationary subset of $S$. That is, for every $\xi \in \omega_1$, $A_\xi = f^{-1}(\lbrace \xi \rbrace)$ is not stationary. Hence, there exists a club set $C_\xi$ such that $A_\xi \cap C_\xi = \varnothing$.&lt;/p&gt;
+
+&lt;p&gt;Let $D = \Delta_{\xi &amp;lt; \omega_1} C_\xi$. Since $D$ is a club set, if $S$ is stationary, then $D \cap S \neq \varnothing$. Let $\alpha \in D \cap S$. Since $\alpha \in D$, for any $\xi &amp;lt; \alpha$, $\alpha \in C_\xi$. Thus, $\alpha \notin A_\xi$, so $f(\alpha) \neq \xi$. However, since $\alpha \in S$, $f(\alpha) &amp;lt; \alpha$. This is a contradiction, so $S$ is not stationary. □&lt;/p&gt;
+
+&lt;h4 id=&quot;2--1&quot;&gt;2 ⇒ 1&lt;/h4&gt;
+
+&lt;p&gt;We again prove the contrapositive. Suppose $S$ is not stationary. Then there exists a club set $C$ such that $S \cap C = \varnothing$. Define the following function:&lt;/p&gt;
+
+\[f(\alpha) = \sup (C \cap \alpha)\]
+
+&lt;p&gt;For any $\alpha \in S$, $f(\alpha) \leq \alpha$. If $f(\alpha) = \alpha$, then $C$ contains a sequence of ordinals converging to $\alpha$. Since $C$ is closed, $\alpha \in C$. This contradicts $S \cap C = \varnothing$. Thus, $f(\alpha) &amp;lt; \alpha$, and $f$ is regressive.&lt;/p&gt;
+
+&lt;p&gt;If $f$ were constant on some unbounded set $T$, then for some $\gamma &amp;lt; \omega_1$, there would exist an unbounded sequence $(\alpha_n)$ such that $\sup (C \cap \alpha_n) = \gamma$. Since $C$ is unbounded, this implies $\sup \alpha_n = \gamma$. However, since $(\alpha_n)$ is unbounded, $\sup \alpha_n = \omega_1$. This is a contradiction. Thus, $f$ is a regressive function that is not constant on any unbounded set. ■&lt;/p&gt;
+
+&lt;p&gt;The above theorem can be generalised as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Fodor’s Lemma.&lt;/strong&gt; Let $\kappa$ be an uncountable regular cardinal. For any $S \subseteq \kappa$, the following are equivalent:&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;$S$ is a stationary set.&lt;/li&gt;
+    &lt;li&gt;For any regressive function $f: S \to \omega_1$, $f$ is constant on some unbounded set $T \subseteq S$.&lt;/li&gt;
+    &lt;li&gt;For any regressive function $f: S \to \omega_1$, $f$ is constant on some stationary set $T \subseteq S$.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;applications-of-stationary-sets&quot;&gt;Applications of Stationary Sets&lt;/h2&gt;
+
+&lt;p&gt;As an application of stationary sets, consider the following combinatorial theorem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Δ-System Lemma.&lt;/strong&gt; Let $\lbrace A_\xi\rbrace _{\xi &amp;lt; \omega_1}$ be a collection of finite subsets of $\omega_1$. There exist an unbounded set $I \subseteq \omega_1$ and a finite set $A$ such that for any $i, j \in I$ with $i \neq j$, $A_i \cap A_j = A$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; By the pigeonhole principle, we may assume without loss of generality that $|A_\xi | = n$ for all $\xi &amp;lt; \omega_1$. Define:&lt;/p&gt;
+
+\[C = \{ \alpha &amp;lt; \omega_1 : \forall \xi &amp;lt; \alpha \;\; \operatorname{max}C_\xi &amp;lt; \alpha \}\]
+
+&lt;p&gt;$C$ is a club set. For $0 \leq k \leq n$, define:&lt;/p&gt;
+
+\[T_k = \{ \alpha \in C : |A_\alpha \cap \alpha | = k \}\]
+
+&lt;p&gt;Since $\bigcup_{0 \leq k \leq n} T_k = C$, there exists some $m$ such that $T_m$ is stationary. For $0 \leq l &amp;lt; m$, define:&lt;/p&gt;
+
+\[f_l(\alpha) : T_m \to \omega_1; \quad \alpha \mapsto \text{$l$th element of $A_\alpha$}\]
+
+&lt;p&gt;Since $|A_\alpha \cap \alpha| &amp;gt; l$, $f_l(\alpha) &amp;lt; \alpha$. Thus, $f_l$ is regressive. Now, repeat the following steps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;There exists a stationary set $S_0 \subseteq T_m$ such that $f_0$ is constant on $S_0$.&lt;/li&gt;
+  &lt;li&gt;There exists a stationary set $S_1 \subseteq S_0$ such that $f_1 |_{S_0}$ is constant on $S_1$.&lt;/li&gt;
+  &lt;li&gt;There exists a stationary set $S_2 \subseteq S_1$ such that $f_2 |_{S_1}$ is constant on $S_2$.&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+  &lt;li&gt;There exists a stationary set $S_{m-1} \subseteq S_{m-2}$ such that $f_{m-1} |_{S_{m-2}}$ is constant on $S_{m-1}$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For each $0 \leq l &amp;lt; m$, $f_l$ is constant on $S_{m-1}$. It is now easy to verify that $S_{m-1} = I$ is the desired set. ■&lt;/p&gt;
 </content>
  </entry>
  
@@ -827,6 +1455,185 @@ Z_p = B_p \oplus G_p\\\\
  </entry>
  
  <entry>
+   <title>Are Mathematics and Ethics in the Same Boat?: The Evolutionary Challenge</title>
+   <link href="https://dimenerno.github.io/2025/11/07/mathematics-morality-evolution copy/en"/>
+   <updated>2025-11-07T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/11/07/mathematics-morality-evolution copy/mathematics-morality-evolution copy</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This article summarises Justin Clarke-Doane’s &lt;em&gt;Morality and Mathematics: The Evolutionary Challenge&lt;/em&gt; (2012). “The author” refers to the author of the paper, while “the writer” refers to the author of this post. To avoid confusion between “morality” and “ethics,” the term “ethics” is used consistently throughout.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;One of the objections to ethical realism is the &lt;strong&gt;evolutionary challenge&lt;/strong&gt;. According to this argument, the ethical beliefs held by modern humans were shaped by evolutionary pressures. However, the principles of evolution are independent of ethical facts, meaning that even in a counterfactual world with entirely different ethical facts, humans would have evolved to hold the same ethical beliefs. Therefore, if our ethical beliefs are true, it would be an extraordinary coincidence that they align with the outcomes of evolution. Proponents of the evolutionary challenge argue that ethical realists must either accept this extraordinary coincidence or concede that we have no grounds to believe our ethical beliefs are true.&lt;/p&gt;
+
+&lt;p&gt;For instance, the reason we hold the ethical belief “we should care for others” is likely because, in human evolution, groups that valued mutual cooperation had higher survival rates than those that prioritised selfishness. However, the fact that mutual cooperation increases survival rates is not an ethical fact but a game-theoretic or mathematical fact. Thus, even if selfishness were ethically superior to mutual cooperation, we would still have evolved to believe “we should care for others.”&lt;/p&gt;
+
+&lt;p&gt;On the other hand, the evolutionary challenge has traditionally been seen as not threatening mathematical realism. This is because the principles of evolution appear to depend on mathematical truths. For example, individuals who believe that 1 + 1 = 2 are more likely to survive than those who do not, precisely because 1 + 1 = 2 is actually true. Joyce explains this as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Suppose there is one lion behind bush A and another lion behind bush B. Our ancestors, P and Q, are hiding behind bush C. P believes that one lion plus another lion equals two lions, while Q believes that one lion plus another lion equals zero lions. &lt;em&gt;P is less likely to die and more likely to pass on their genes than Q.&lt;/em&gt; This is because P is less likely than Q to step out from behind bush C and be eaten by the two lions. However, the explanation for this fact [italicised fact] presupposes that one lion plus another lion is &lt;em&gt;actually&lt;/em&gt; two lions and not zero lions.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;However, the author of the paper argues that this reasoning is mistaken. They claim that the evolutionary challenge threatens mathematical realism to the same extent that it threatens ethical realism. Ultimately, the author asserts that accepting either ethical realism or mathematical realism while rejecting the other is an incoherent position.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-what-exactly-is-realism&quot;&gt;1. What Exactly Is Realism?&lt;/h2&gt;
+
+&lt;p&gt;Before delving into the argument, the author seeks to clarify what is meant by ethical realism and mathematical realism. Generally, the author defines &lt;strong&gt;D-realism&lt;/strong&gt; for a domain of discourse D as the conjunction of the following four positions:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;D-Truth-Aptness.&lt;/strong&gt; Sentences in D have truth values.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;D-Truth.&lt;/strong&gt; Some atomic or existentially quantified sentences in D are true.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;D-Independence.&lt;/strong&gt; The truth values of sentences in D are independent of minds and language in a meaningful sense.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;D-Literalness.&lt;/strong&gt; Sentences in D should be taken literally.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;When D is set to ethics, (1) rules out Ayer’s emotivism, (2) rules out Mackie’s error theory, (3) rules out constructivism, and (4) rules out Harman’s relativism. When D is set to mathematics, (1) rules out Hilbert’s formalism, (2) rules out Field’s fictionalism, (3) rules out Brouwer’s constructivism, and (4) rules out if-thenism.&lt;/p&gt;
+
+&lt;p&gt;This paper assumes both ethical realism and mathematical realism and examines whether they can withstand the evolutionary challenge. Additionally, it assumes that most of our ethical and mathematical beliefs are true.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-the-evolutionary-challenge-to-ethical-realism&quot;&gt;2. The Evolutionary Challenge to Ethical Realism&lt;/h2&gt;
+
+&lt;p&gt;Having clarified the requirements of realism, let us examine how the evolutionary challenge attacks ethical realism. The challenge is based on the following premise:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Strong Premise.&lt;/strong&gt; Our ethical beliefs were shaped by evolutionary pressures that are independent of their truth.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The strong premise consists of the following two sub-premises:&lt;/p&gt;
+
+&lt;div style=&quot;margin-left: 1em;&quot;&gt;
+&lt;p&gt;&lt;strong&gt;E.&lt;/strong&gt; Our ethical beliefs were shaped by evolution.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NTT.&lt;/strong&gt; The evolution of ethical beliefs occurred in a &lt;strong&gt;non-truth-tracking&lt;/strong&gt; manner.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The precise meaning of &lt;strong&gt;NTT&lt;/strong&gt; is captured by the following counterfactual conditional:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;P.&lt;/strong&gt; Suppose all other facts remained the same, but ethical facts were entirely different. Even so, we would have evolved to hold the same ethical beliefs that are true in the actual world.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Some might argue that &lt;strong&gt;Q&lt;/strong&gt; could serve as an alternative interpretation of &lt;strong&gt;NTT&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; We could have evolved to hold false ethical beliefs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;However, the author contends that &lt;strong&gt;Q&lt;/strong&gt; is untenable. While Darwin noted that if humans had evolved in an environment like that of bees, they might have condoned the killing of brothers by unmarried females, this example does not substantiate &lt;strong&gt;Q&lt;/strong&gt;. To substantiate &lt;strong&gt;Q&lt;/strong&gt;, one would need the additional assumption that “in a bee-like environment, it would have been wrong for unmarried females to kill their brothers,” which is not self-evident. (Consider the differing ethical weight of infanticide in premodern societies with frequent famine versus modern societies.) Thus, the author argues that &lt;strong&gt;Q&lt;/strong&gt; can only be substantiated by presenting cases where individuals hold fundamentally false ethical beliefs, such as “pain is good” or “pleasure is bad.” However, individuals who believe that pain is good and pleasure is bad would have been evolutionarily eliminated, making &lt;strong&gt;Q&lt;/strong&gt; untenable. Therefore, &lt;strong&gt;P&lt;/strong&gt; is the correct interpretation of &lt;strong&gt;NTT&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;However, &lt;strong&gt;P&lt;/strong&gt; also faces challenges. Many ethical realists argue that ethical properties are metaphysically necessarily identical to descriptive properties. For instance, if “pleasure is good” is true, this truth is metaphysically necessary. According to this view, it is metaphysically impossible for descriptive facts to remain fixed while ethical facts change. Thus, the following interpretation of &lt;strong&gt;P&lt;/strong&gt; is untenable:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;P&lt;sub&gt;1&lt;/sub&gt;.&lt;/strong&gt; In a metaphysical sense, suppose all other facts remained the same, but ethical facts were entirely different. Even so, we would have evolved to hold the same ethical beliefs that are true in the actual world.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Instead, the author argues that &lt;strong&gt;P&lt;/strong&gt; should be understood as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;P&lt;sub&gt;2&lt;/sub&gt;.&lt;/strong&gt; Suppose all other facts remained the same, but ethical facts were entirely different. We can intelligibly imagine such a scenario. Even so, we would have evolved to hold the same ethical beliefs that are true in the actual world.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To illustrate, consider a child who guesses the answer to the problem of finding $\zeta(-1)$ as $-1/12$ and gets it right. Since $\zeta(-1) = -1/12$ is metaphysically necessary, the counterfactual statement “even if the answer to this problem were different, the child would still have guessed correctly (the child’s answer was truth-tracking)” is metaphysically vacuous. Nevertheless, we can &lt;em&gt;imagine&lt;/em&gt; a scenario where $\zeta(-1) \neq -1/12$, and in such an imagined scenario, the child would have been wrong. In this sense, the child’s answer was non-truth-tracking.&lt;/p&gt;
+
+&lt;p&gt;With the meanings of &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;NTT&lt;/strong&gt; clarified, let us examine how the strong premise leads to a refutation of ethical realism. Street and others present the following argument:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Even if it is metaphysically impossible for ethical facts to be entirely different, we can imagine such a scenario.&lt;/li&gt;
+  &lt;li&gt;As far as we can imagine, even if ethical facts were entirely different, the ethical beliefs shaped by evolution would remain the same.&lt;/li&gt;
+  &lt;li&gt;Therefore, the fact that we hold true ethical beliefs in the actual world is an unexplained coincidence.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;However, the author argues that (2) does not necessarily lead to (3). To derive (3) from (2), the following general principle must be assumed:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If the fundamental facts of D were different, then the truth of the D-beliefs that remain unchanged is coincidental.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The author provides the following counterexample to this principle. Chulsoo sees a basketball flying towards him and believes, “a basketball is flying towards me.” Here, it is metaphysically necessary that a basketball is identical to atoms arranged basketballwise. However, we can imagine a world where matter is composed of something other than atoms. Even in such a world, if a basketball were flying towards Chulsoo, he would hold the same belief, “a basketball is flying towards me.” Thus, even if the fundamental facts about basketballs were different, Chulsoo would hold the same belief, yet the truth of his belief in the actual world is not coincidental.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Writer’s note: I believe the author has provided a flawed analogy. The belief “a basketball is flying towards me” held by Chulsoo in a world where basketballs are composed of atoms is not the same as the belief held by Chulsoo in a world where basketballs are composed of continua. This is because the meaning of “basketball” for the two Chulsoos is determined by ostension. In the former case, “basketball” refers to “atoms arranged basketballwise,” while in the latter, it refers to “continua condensed basketballwise.” Thus, if the fundamental facts about basketballs change, Chulsoo would hold a different belief. In contrast, the meaning of ethical language does not seem to be determined by ostension.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Nevertheless, the author argues that even if Street’s argument does not demonstrate the complete impossibility of explaining why we hold true ethical beliefs, it at least shows that the following two explanations are flawed:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Evolutionary Explanation.&lt;/strong&gt; We hold true ethical beliefs because we were selected to hold true ethical beliefs.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Trivial Explanation.&lt;/strong&gt; We hold true ethical beliefs because the current ethical facts are the only possible ethical facts, and believing those facts is evolutionarily advantageous.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Focus on the distinction between the evolutionary explanation and the trivial explanation. The evolutionary explanation claims that if ethical facts had changed — even if only in an imaginable sense — we would have evolved to believe those changed facts. In contrast, the trivial explanation asserts that it is impossible for ethical facts to change, either metaphysically or imaginably, and therefore, it suffices to explain how evolution produced beings that believe the actual ethical facts.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Writer’s note: The trivial explanation seems to presuppose the game-theoretic explanation mentioned in the overview. That is, the trivial explanation attempts to overcome the evolutionary challenge to ethical realism by relying on (i) the strong necessity of ethical facts, (ii) the mathematical fact that those ethical facts are evolutionarily advantageous, and (iii) the necessity of mathematical facts. This appears to ground the explanation of the truth of ethical beliefs in the explanation of the truth of mathematical beliefs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;However, if the purpose of the evolutionary challenge is to argue that the evolutionary explanation and the trivial explanation are flawed, then the challenge does not need to assume &lt;strong&gt;E ∧ NTT&lt;/strong&gt; but only &lt;strong&gt;E → NTT&lt;/strong&gt;. Thus, the evolutionary challenge can be summarised as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Evolutionary Challenge.&lt;/strong&gt; If &lt;strong&gt;E → NTT&lt;/strong&gt;, then explaining why we hold true ethical beliefs through the evolutionary explanation or the trivial explanation is flawed.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The author summarises the evolutionary challenge in this way and then examines how valid it is in the context of mathematics.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-does-mathematics-influence-evolution&quot;&gt;3. Does Mathematics Influence Evolution?&lt;/h2&gt;
+
+&lt;p&gt;It is commonly thought that mathematics is not subject to the evolutionary challenge. Unlike ethical truths, which are independent of evolution (ethical truths can change without affecting evolution), mathematical truths are thought to influence evolution. Let us revisit Joyce’s example:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Suppose there is one lion behind bush A and another lion behind bush B. Our ancestors, P and Q, are hiding behind bush C. P believes that one lion plus another lion equals two lions, while Q believes that one lion plus another lion equals zero lions. &lt;em&gt;P is less likely to die and more likely to pass on their genes than Q.&lt;/em&gt; This is because P is less likely than Q to step out from behind bush C and be eaten by the two lions. However, the explanation for this fact [italicised fact] presupposes that one lion plus another lion is &lt;em&gt;actually&lt;/em&gt; two lions and not zero lions.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;However, the author identifies two problems with Joyce’s argument. The first problem arises from the principle underlying Joyce’s argument:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If the evolutionary explanation for why we hold certain beliefs about D presupposes the content of those beliefs, then we were selected to hold true beliefs about D.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The author argues that even if we were not selected to hold true D-beliefs (i.e., our D-beliefs are false or non-truth-tracking), the evolutionary explanation for our D-beliefs can still presuppose the content of those beliefs. For instance, all types of explanations presuppose the content of our logical beliefs, yet it remains questionable whether we were selected to hold true logical beliefs (see the writer’s &lt;a href=&quot;https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic&quot;&gt;short paper&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Even so, one might counter by adopting Quine-Putnam-style holistic epistemology, arguing that the consideration that mathematical facts explain our mathematical beliefs can serve as a &lt;em&gt;provisional&lt;/em&gt; justification for the truth of those mathematical facts. In response, the author identifies a second, more serious problem: the evolutionary explanation for our mathematical beliefs is not actually related to mathematical facts. Instead, the author argues that the evolutionary explanation is only related to &lt;strong&gt;first-order logical facts&lt;/strong&gt;. In the earlier example of the lions, the reason P is more likely to survive than Q is not because &lt;strong&gt;M&lt;/strong&gt; is true but because &lt;strong&gt;L&lt;/strong&gt; is true:&lt;/p&gt;
+
+&lt;div style=&quot;margin-left: 1em;&quot;&gt;
+&lt;p&gt;&lt;strong&gt;M.&lt;/strong&gt; 1 + 1 = 2&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;L.&lt;/strong&gt; If there is one lion behind bush A, one lion behind bush B, and no lion behind bush A is the same as any lion behind bush B, then there are two lions behind bushes A and B.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;L&lt;/strong&gt; can be expressed as the following first-order logical formula:&lt;/p&gt;
+
+\[\begin{align}
+&amp;amp;\;\exists! x A(x) \land \exists! y B(y) \land \forall x, y (A(x) \land B(y) \rightarrow x \neq y) \\
+&amp;amp;\rightarrow \exists x, y \big((x \neq y) \land (A(x) \lor B(x)) \land (A(y) \lor B(y)) \\
+&amp;amp;\quad \quad \land\; \forall z ( (A(z) \lor B(z)) \rightarrow (z = x) \lor (z = y))\big)
+\end{align}\]
+
+&lt;p&gt;While many mathematicians and philosophers hold that mathematics can be reduced to logic, no one claims that the reduction ends at first-order logic. Therefore, if the evolutionary explanation for our mathematical beliefs depends only on first-order logical facts and not on mathematical facts, it cannot definitively or provisionally conclude that we were selected to hold true mathematical beliefs.&lt;/p&gt;
+
+&lt;p&gt;Moreover, mathematical realists cannot simply identify &lt;strong&gt;M&lt;/strong&gt; with &lt;strong&gt;L&lt;/strong&gt;. This is because one of the requirements of realism is D-literalness. The statement 1 + 1 = 2 must be taken literally, and when taken literally, it asserts the existence of the numbers 1 and 2 and a specific relationship between them under addition.&lt;/p&gt;
+
+&lt;p&gt;In conclusion, the reason P is more likely to survive than Q is not because the content of P’s mathematical belief &lt;strong&gt;M&lt;/strong&gt; is true but because the corresponding logical content &lt;strong&gt;L&lt;/strong&gt; is true. The correspondence between &lt;strong&gt;M&lt;/strong&gt; and &lt;strong&gt;L&lt;/strong&gt; can be explained without assuming mathematical objects. Various anti-realist positions mentioned earlier — formalism, fictionalism, constructivism, if-thenism — all explain the correspondence between &lt;strong&gt;M&lt;/strong&gt; and &lt;strong&gt;L&lt;/strong&gt; without positing mathematical entities.&lt;/p&gt;
+
+&lt;p&gt;Of course, we also hold mathematical beliefs that cannot be captured by first-order logic. Belief in the induction axiom is one example. However, the author points out that belief in the induction axiom was not directly shaped by evolutionary pressures. The induction axiom was not explicitly formulated until the 17th century. Belief in the induction axiom arose from formalising basic arithmetic beliefs. In other words, we believe in the induction axiom because of our beliefs in basic arithmetic, which were shaped by first-order logical facts, not mathematical facts. Consequently, mathematical facts that transcend logic have no influence on the evolutionary formation of mathematical beliefs (see the following diagram: A → B means “A causes the evolution of beings that believe B”).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/math-moral.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, the author briefly raises the following question: does the preceding discussion show that we were selected to hold true &lt;em&gt;first-order logical&lt;/em&gt; beliefs? The author thinks the answer is “no.” This is because logical facts become exceedingly complex even for simple arithmetic facts like 5 + 7 = 12. Evolutionarily, it seems more advantageous for beings to simply hold mathematical beliefs than to hold mathematical beliefs, logical beliefs, and beliefs about how to translate each mathematical statement into a logical statement. Thus, while logical facts might influence the evolution of our mathematical beliefs, it remains unclear how they influenced the evolution of our logical beliefs (— or so the author seems to think, though their comments on this point are too terse to be clear. For a separate argument on why the formation of logical beliefs cannot be explained evolutionarily, see the writer’s &lt;a href=&quot;https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic&quot;&gt;short paper&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 id=&quot;4-is-another-mathematics-imaginable&quot;&gt;4. Is Another Mathematics Imaginable?&lt;/h2&gt;
+
+&lt;p&gt;Having dismissed the evolutionary explanation for mathematics, the author turns to the trivial explanation. The trivial explanation asserts that the current mathematical facts are the only possible mathematical facts.&lt;/p&gt;
+
+&lt;p&gt;It is commonly thought that the trivial explanation is unconvincing in ethics. This is because, in ethics, sufficiently reasonable individuals often hold conflicting positions. If rational individuals can hold different ethical facts, then worlds with different ethical facts are imaginably coherent. In contrast, such conflicts are rarely observed in mathematics. Compare the divergence of opinions on the trolley dilemma with the consensus on the Pythagorean theorem.&lt;/p&gt;
+
+&lt;p&gt;However, the author argues that this comparison is biased against ethical realists. We can find ethical propositions on which ethical realists unanimously agree — for instance, “it is wrong to torture children for fun.” Conversely, we can also find mathematical axioms on which mathematical realists disagree. Finitism denies the axiom that there is always a natural number greater than any given natural number, the&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>단체 호몰로지</title>
    <link href="https://dimenerno.github.io/2025/11/05/simplicial-homology"/>
    <updated>2025-11-05T00:00:00+09:00</updated>
@@ -870,6 +1677,59 @@ Z_p = B_p \oplus G_p\\\\
 &lt;p&gt;&lt;img src=&quot;/public/homology-4.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;호몰로지 군의 랭크&lt;sub&gt;rank&lt;/sub&gt;는 직관적으로 구멍의 의미를 가진다. 띠의 1-호몰로지 군의 랭크가 1이라는 것은 띠의 1차원 구멍이 하나 있다는 것이고, 토러스의 1-호몰로지 군의 랭크가 2라는 것은 토러스의 1차원 구멍이 2개 있다는 것이다. (여기서 $n$차원 구멍이라 함은 $n$차원 경로에 의해 둘러질 수 있는 구멍을 말한다.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/homology-5.png&quot; style=&quot;width: 100%; max-width: 550px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Simplicial Homology</title>
+   <link href="https://dimenerno.github.io/2025/11/05/simplicial-homology/en"/>
+   <updated>2025-11-05T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2025/11/05/simplicial-homology/simplicial-homology-en</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $K$ be a pure $k$-simplicial complex, and for $p \leq k$, let $C_p(K)$ denote the set of $p$-chains of $K$.&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;$z \in C_p(K)$ is called a &lt;strong&gt;$p$-cycle&lt;/strong&gt; of $K$ if $z \in \ker \partial_p$.&lt;/li&gt;
+    &lt;li&gt;$b \in C_p(K)$ is called a &lt;strong&gt;$p$-boundary&lt;/strong&gt; of $K$ if $b \in \operatorname{im} \partial_{p + 1}$.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;The set of $p$-cycles is denoted by $Z_p(K)$, and the set of $p$-boundaries is denoted by $B_p(K)$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;When $C_p(K)$ is regarded as a free abelian group, $Z_p(K)$ and $B_p(K)$ are subgroups of $C_p(K)$. Since subgroups of free abelian groups are themselves free abelian, $Z_p(K)$ and $B_p(K)$ are free abelian groups. Moreover, as $\partial_p \partial_{p+1} = 0$, we have $B_p(K) \leq Z_p(K)$. Since subgroups of abelian groups are normal, the quotient group $Z_p(K)/B_p(K)$ can be formed. This quotient group is called the &lt;strong&gt;homology group&lt;/strong&gt; and is denoted by $H_p(K)$.&lt;/p&gt;
+
+&lt;p&gt;To explain in simpler terms, two 1-cycles $z_1$ and $z_2$ correspond to the same element in the homology group if $z_1 - z_2$ forms the boundary of some 2-chain. For example, consider the following simplicial complex $K$, which is a triangulation of a cylinder.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/homology-1.png&quot; style=&quot;width: 100%; max-width: 350px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let $z_1 = \langle 01 \rangle + \langle 12 \rangle + \langle 20 \rangle$ and $z_2 = \langle 34 \rangle + \langle 45 \rangle + \langle 53 \rangle$. Then $z_1 - z_2$ is as shown on the right.&lt;/p&gt;
+
+&lt;div style=&quot;display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 1em;&quot;&gt;
+&lt;img src=&quot;/public/homology-2.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 0 auto&quot; /&gt;
+&lt;img src=&quot;/public/homology-3.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 0 auto&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;However, this is equal to the boundary of the entire cylinder. Specifically,&lt;/p&gt;
+
+\[\begin{align*}
+&amp;amp;\partial (\langle 013 \rangle + \langle 143 \rangle + \langle 124 \rangle + \langle 254 \rangle + \langle 205 \rangle + \langle 035 \rangle) \\
+&amp;amp;= (\langle 01 \rangle + \langle 12 \rangle + \langle 20 \rangle) - ( \langle 34 \rangle + \langle 45 \rangle + \langle 53 \rangle) \\
+&amp;amp;= z_1 - z_2
+\end{align*}\]
+
+&lt;p&gt;Thus, $z_1$ and $z_2$ correspond to the same element in the homology group. However, for $n, m \in \mathbb{Z}$ with $n \neq m$, $n \cdot z_1$ and $m \cdot z_1$ correspond to different elements in the homology group, as $(n - m) \cdot z_1$ does not belong to $B_1(K)$. From this, we can deduce that the 1-homology group of the cylinder is $\mathbb{Z}$, and this deduction is correct.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, in the case of the torus, the following $w_1$ and $w_2$ correspond to different elements in the homology group. Intuitively, one can see that $w_1 - w_2$ is not the boundary of any 2-chain. Indeed, the 1-homology group of the torus is $\mathbb{Z} \oplus \mathbb{Z}$.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/homology-4.png&quot; style=&quot;width: 100%; max-width: 300px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The rank of the homology group intuitively represents the number of holes. The fact that the rank of the 1-homology group of the cylinder is 1 indicates that the cylinder has one 1-dimensional hole, while the fact that the rank of the 1-homology group of the torus is 2 indicates that the torus has two 1-dimensional holes. (Here, an $n$-dimensional hole refers to a hole that can be enclosed by an $n$-dimensional path.)&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/homology-5.png&quot; style=&quot;width: 100%; max-width: 550px; margin: 0 auto;&quot; /&gt;&lt;/p&gt;
 </content>
@@ -1375,7 +2235,7 @@ x_2 &amp;lt; y_2 \quad (\text{if }\hat{x} &amp;lt; \hat{y}, x_1 = y_1) \\
    <updated>2025-09-16T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/09/16/cardinal-arithmetics/cardinal-arithmetics-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;In this article, all sets and cardinals are infinite.&lt;/p&gt;
@@ -1820,7 +2680,7 @@ x_2 &amp;lt; y_2 \quad (\text{if }\hat{x} &amp;lt; \hat{y}, x_1 = y_1) \\
    <updated>2025-09-14T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/09/14/alien-natural-numbers/alien-natural-numbers-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;One day, Dimen encountered an alien. The alien asked Dimen:&lt;/p&gt;
@@ -2530,7 +3390,7 @@ x_2 &amp;lt; y_2 \quad (\text{if }\hat{x} &amp;lt; \hat{y}, x_1 = y_1) \\
    <updated>2025-09-11T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/09/11/robinson-test/robinson-test-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;In this article, $T$ is a theory in language $\mathcal{L}$. We also write $x_1, \dots, x_n$ as $\vec{x}$.&lt;/p&gt;
@@ -3022,7 +3882,7 @@ x_2 &amp;lt; y_2 \quad (\text{if }\hat{x} &amp;lt; \hat{y}, x_1 = y_1) \\
    <updated>2025-08-08T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/08/08/pork-and-salmon/pork-and-salmon-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;pork-and-salmon&quot;&gt;Pork and Salmon&lt;/h3&gt;
@@ -3368,7 +4228,7 @@ x_2 &amp;lt; y_2 \quad (\text{if }\hat{x} &amp;lt; \hat{y}, x_1 = y_1) \\
    <updated>2025-07-21T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/07/21/private-language/private-language-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;In the &lt;a href=&quot;https://dimenerno.github.io/2025/07/03/kripkenstein&quot;&gt;previous post&lt;/a&gt;, I examined the Kripke-Wittgenstein paradox. To summarise, the Kripke-Wittgenstein paradox is based on the consideration that there are no normative facts encompassing the infinite cases in which a particular word can be used. From this, Kripke-Wittgenstein draws the following conclusion:&lt;/p&gt;
@@ -6602,7 +7462,7 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
    <updated>2025-06-02T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/06/02/wittgenstein-conant/wittgenstein-conant-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
@@ -7286,7 +8146,7 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
    <updated>2025-05-16T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/05/16/stone-space-compactness/stone-space-compactness-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;The following is a famous theorem from undergraduate mathematical logic.&lt;/p&gt;
@@ -7461,7 +8321,7 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
    <updated>2025-05-15T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/05/15/quantifier-elimination/quantifier-elimination-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;In the &lt;a href=&quot;https://dimenerno.github.io/2025/05/08/saturation/&quot;&gt;previous article&lt;/a&gt;, we examined what sets are &lt;strong&gt;definable&lt;/strong&gt; in an $\mathcal{L}$-structure $\mathfrak{A}$. When $S \subseteq A$ is definable by a formula $\phi$ belonging to a particular &lt;a href=&quot;https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/&quot;&gt;arithmetic hierarchy&lt;/a&gt; in $\mathfrak{A}$, we say that $S$ belongs to that hierarchy. For instance, when $S$ is definable by a $\Pi_1$ sentence, we have $S \in \Pi_1$.&lt;/p&gt;
@@ -7678,7 +8538,7 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
    <updated>2025-05-13T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/05/13/saturation/saturation-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Let $\mathfrak{A}$ be an $\mathcal{L}$-structure. Let $A$ be the domain of $\mathfrak{A}$.&lt;/p&gt;
@@ -7947,7 +8807,7 @@ so hört man zum Beispiel das Scheppern eines nicht genug befestigten Wandspiege
    <updated>2025-05-09T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/05/09/resiliency/resiliency-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;The key principle in Cantor’s back-and-forth argument, which demonstrates that all countable dense unbounded linear orders are isomorphic, is the following.&lt;/p&gt;
@@ -8254,7 +9114,7 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
    <updated>2025-05-08T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/05/08/robinson-craig/robinson-craig-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;elementary-amalgamation-property&quot;&gt;Elementary Amalgamation Property&lt;/h3&gt;
@@ -8536,7 +9396,7 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
    <updated>2025-05-04T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/05/04/regular-singular/regular-singular-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;In this article, $\kappa$ denotes an infinite cardinal. Moreover, we adopt the approach of defining cardinals as initial ordinals (see method 3 in &lt;a href=&quot;https://dimenerno.github.io/2025/04/20/cardinality/&quot;&gt;this post&lt;/a&gt;). Accordingly, every cardinal is also an ordinal.&lt;/p&gt;
@@ -8776,7 +9636,7 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
    <updated>2025-05-01T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/05/01/elementary-embedding/elementary-embedding-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;For convenience, this article takes the approach of reducing function expressions $f(a) = c$ to binary predicates $F(a, c)$, rather than treating predicates and functions as separate objects.&lt;/p&gt;
@@ -8973,7 +9833,7 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
    <updated>2025-04-24T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/04/24/continuum-coloring/continuum-coloring-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
@@ -9122,7 +9982,7 @@ T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
    <updated>2025-04-20T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/04/20/cardinality/cardinality-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
@@ -9334,7 +10194,7 @@ $$
    <updated>2025-04-18T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/04/18/prisoner-hat/prisoner-hat-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;You have likely encountered puzzles where prisoners attempt to guess the colour of their own hats. Consider the following example:&lt;/p&gt;
@@ -9647,7 +10507,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
    <updated>2025-04-17T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/04/17/los-tarski/los-tarski-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;For subgroups $H, K$ of a group $G$, the intersection $H \cap K$ is always a group. The same holds for rings and fields. This can be explained as a consequence of the Łoś-Tarski theorem.&lt;/p&gt;
@@ -9931,7 +10791,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
    <updated>2025-04-10T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/04/10/completeness-theorem/completeness-theorem-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Gödel’s completeness theorem and the Löwenheim-Skolem theorem are amongst the most fundamental theorems in mathematical logic. To consolidate the fundamentals, I have revisited the proofs of these theorems. In this article, $T$ is considered as a first-order logical theory in language $\mathcal{L}$.&lt;/p&gt;
@@ -10057,7 +10917,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
    <updated>2025-04-04T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/04/04/van-kampen/van-kampen-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Consider an open cover $U, V$ of a topological space $X$. In the category of topological spaces $\mathbf{Top}$, the limit of the following pushout diagram is $X$.&lt;/p&gt;
@@ -10433,7 +11293,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
    <updated>2025-04-01T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/04/01/modal-logic/modal-logic-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;types&quot;&gt;Types&lt;/h3&gt;
@@ -10622,7 +11482,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
    <updated>2025-03-21T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/03/21/yoneda/yoneda-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
@@ -11072,7 +11932,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
    <updated>2025-03-18T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/03/18/quanitfying-in/quanitfying-in-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
@@ -11689,7 +12549,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
    <updated>2025-03-12T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/03/12/what-is-a-theory-of-truth/what-is-a-theory-of-truth-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
@@ -12172,7 +13032,7 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
    <updated>2025-03-10T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/03/10/temporal-logic/temporal-logic-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
@@ -12510,7 +13370,7 @@ U^* \otimes V^* &amp;amp;\cong U^{***} \otimes V^{***} \\
    <updated>2025-03-04T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/03/04/tensor/tensor-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;TL;DR.&lt;/strong&gt; The tensor product of vector spaces has the following significance:&lt;/p&gt;
@@ -12722,7 +13582,7 @@ y = f_2(r, \theta) = r \sin \theta
    <updated>2025-02-27T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/02/27/general-covariance/general-covariance-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;A theory is said to be &lt;strong&gt;general covariant&lt;/strong&gt; when the form of physical laws is preserved under differentiable coordinate transformations. Specifically, suppose coordinate systems $\lbrace q_i \rbrace$ and $\lbrace q’_i \rbrace$ are related by:&lt;/p&gt;
@@ -12959,7 +13819,7 @@ $$
    <updated>2025-02-27T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/02/27/euler-lagrange/euler-lagrange-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h2&gt;
@@ -14331,7 +15191,7 @@ K = \{ v \in V : v \in B \}
    <updated>2025-02-20T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/02/20/ramsey/ramsey-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;Abstract.&lt;/strong&gt; We examine the definition of Ramsey numbers and the Ramsey theorem that ensures Ramsey numbers are well-defined, extending this to infinite graphs. We also introduce an argument that derives the finite Ramsey theorem from the infinite Ramsey theorem using the compactness theorem.&lt;/p&gt;
@@ -14753,7 +15613,7 @@ K = \{ v \in V : v \in B \}
    <updated>2025-02-13T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/02/13/spectral-theorem/spectral-theorem-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;In this article, we assume that all vector spaces are inner product spaces. Furthermore, all transformations are linear transformations.&lt;/p&gt;
@@ -15014,7 +15874,7 @@ K = \{ v \in V : v \in B \}
    <updated>2025-02-13T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/three-definitions-of-adjoint-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
@@ -15467,7 +16327,7 @@ K = \{ v \in V : v \in B \}
    <updated>2025-02-09T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/02/09/godel-lucas-penrose/godel-lucas-penrose-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://velog.velcdn.com/images/dimenerno/post/b71a00d7-efdf-4ec3-ad5c-cc32b67cf70c/image.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -16066,7 +16926,7 @@ for y ∈ P:
    <updated>2025-02-07T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/arithmetic-hierarchy-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/arithmetic-hierarchy.png&quot; width=&quot;340px&quot; style=&quot;margin: 2em auto;&quot; /&gt;&lt;/p&gt;
@@ -17450,7 +18310,7 @@ for y ∈ P:
    <updated>2025-01-18T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/01/18/reference-3/reference-3-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;4-definite-descriptions&quot;&gt;4. Definite Descriptions&lt;/h2&gt;
@@ -17650,7 +18510,7 @@ for y ∈ P:
    <updated>2025-01-13T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/01/13/reference-2/reference-2-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;3-indexicals&quot;&gt;3. Indexicals&lt;/h2&gt;
@@ -18024,7 +18884,7 @@ for y ∈ P:
    <updated>2025-01-07T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2025/01/07/reference-1/reference-1-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
@@ -18457,7 +19317,7 @@ for y ∈ P:
    <updated>2024-12-25T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2024/12/25/Cantor-Bendixson/Cantor-Bendixson-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;

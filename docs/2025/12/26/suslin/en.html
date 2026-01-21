@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Suslin's Problem and the Diamond Principle &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/12/26/suslin/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Suslin's Problem and the Diamond Principle</h1>
+  <span class="post-date">26 Dec 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'" >Set Theory</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>In <a href="https://dimenerno.github.io/2024/11/20/Rational-Real">the previous post</a>, the following theorem was introduced:</p>
+
+<blockquote>
+  <p><strong>Definition of the set-theoretic real numbers.</strong> A totally ordered set $(R, &lt;)$ satisfying the following properties is unique up to order isomorphism:</p>
+
+  <ol>
+    <li>It is a complete totally ordered set.</li>
+    <li>It has no endpoints.</li>
+    <li>It is separable, i.e., there exists a countable $Q \subset R$ such that $Q$ is dense in $R$.</li>
+  </ol>
+</blockquote>
+
+<p>From the third property, the following result follows:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathcal{C}$ be the collection of open intervals of $\mathbb{R}$. If the elements of $\mathcal{C}$ are pairwise disjoint, then $\mathcal{C}$ is countable.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Since the elements of $\mathcal{C}$ are pairwise disjoint, there exists an injective mapping $\mathcal{C} \to \mathbb{Q}$ that maps each $(x, y) \in \mathcal{C}$ to some $q \in (x, y) \cap \mathbb{Q}$. Hence, $\mathcal{C}$ is countable. ■</p>
+
+<p>A totally ordered set in which any collection of pairwise disjoint open intervals is at most countable is said to have the <strong>countable chain condition</strong>. The peculiar name of this property will be explained later.</p>
+
+<p>Suslin’s problem asks whether the separability condition in the definition of the set-theoretic real numbers can be weakened to the countable chain condition.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A complete totally ordered set without endpoints that satisfies the countable chain condition but is not order-isomorphic to the real numbers is called a <strong>Suslin line</strong>.</p>
+</blockquote>
+
+<p>Thus, a Suslin line must not be separable.</p>
+
+<blockquote>
+  <p><strong>Suslin’s problem.</strong> Does a Suslin line exist?</p>
+</blockquote>
+
+<p>This problem, posed in 1920, was shown to be independent of ZFC by Solovay and Tennenbaum in 1971. Instead of examining the independence proof, this post will explore the combinatorial counterpart of Suslin lines, known as Suslin trees. Let us first consider the following well-known theorem:</p>
+
+<blockquote>
+  <p><strong>König’s lemma.</strong> For a tree $T$, if $T$ has height $\omega$ and each node has finitely many children, then $T$ has a branch of length $\omega$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $\alpha_0$ be the root node, and define a sequence of nodes inductively as follows. Given $\alpha_n$, since $\alpha_n$ has finitely many children, there exists a child node such that the subtree rooted at that node has infinite height. Choose one such child node (using the axiom of choice) and define it as $\alpha_{n+1}$. The sequence ${a_n}$ forms a branch of infinite length. ■</p>
+
+<p>If the nodes of $T$ are allowed to have countably many children, it is possible for all branches of $T$ to have finite length while $T$ itself has height $\omega$, as illustrated below:</p>
+
+<p><img src="/public/koenig-counterexample.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>A natural question is whether König’s lemma can be extended to uncountable cardinals. However, the answer to this question is negative.</p>
+
+<blockquote>
+  <p><strong>Aronszajn’s theorem.</strong> There exists a tree of height $\omega_1$ in which each node has countably many children, but no branch has length $\omega_1$. (Such a tree is called an <strong>Aronszajn tree</strong> of height $\omega_1$.)</p>
+</blockquote>
+
+<p>Thus, to extend König’s lemma to uncountable cardinals, a stronger condition than “each node has countably many children” is required. To this end, the following definition is introduced:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A subset $S$ of a tree $T$ is called an <strong>antichain</strong> if the elements of $S$ are mutually incomparable. A tree $T$ is said to have the <strong>countable chain condition</strong> if all antichains in $T$ are countable.</p>
+</blockquote>
+
+<p>For example, in the tree below, the coloured nodes form an antichain:</p>
+
+<p><img src="/public/antichain.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
+
+<p>While “each node has countably many children” is a local property, the countable chain condition is a global property of the entire tree. Intuitively, the countable chain condition implies that the “width” of the tree is less than $\omega_1$. Note that the term “countable chain condition” rather than “countable antichain condition” is used for historical reasons and need not be a cause for concern.</p>
+
+<p>Earlier, it was mentioned that a collection of pairwise disjoint open intervals of the real numbers is at most countable, and this property is also referred to as the countable chain condition. The two usages are closely related. The general definition of an antichain is as follows:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(P, \leq)$ be a partially ordered set. Two elements $x, y \in P$ are said to be <strong>incomparable</strong> if there does not exist $z \in P$ such that $z \leq x$ and $z \leq y$. A subset $S \subseteq P$ is called an <strong>antichain</strong> if its elements are mutually incomparable. $P$ is said to have the <strong>countable chain condition</strong> if all antichains in $P$ are countable.</p>
+</blockquote>
+
+<p>In a tree $T$, let $x \leq y$ denote that the node $x$ is a descendant of the node $y$. Then, two nodes $x$ and $y$ are incomparable as tree nodes if and only if they are incomparable as elements of the partially ordered set $(T, \leq)$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> An Aronszajn tree with the countable chain condition is called a <strong>Suslin tree</strong>.</p>
+</blockquote>
+
+<p>The existence of Suslin trees is equivalent to the existence of Suslin lines, and hence is independent of ZFC. The equivalence arises because each property corresponds as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Suslin line</th>
+      <th>Suslin tree</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Non-separability</td>
+      <td>Height $\omega_1$</td>
+    </tr>
+    <tr>
+      <td>Countable chain condition for open intervals</td>
+      <td>Countable chain condition for the tree</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The correspondence between non-separability and the height $\omega_1$ property can be understood as follows: the existence of a countable set $D$ such that $|D| \leq \aleph_0$ and every open interval $(a, b)$ intersects $D$ (non-separability) corresponds to the existence of an ordinal $\alpha$ such that $\alpha &lt; \omega_1$ and every node $x \in T$ is the limit of a sequence of nodes in $T^{(\alpha)}$ (tree height being countable).</p>
+
+<p>In connection with Suslin trees, consider the following non-standard axiom in set theory:</p>
+
+<blockquote>
+  <p><strong>Diamond principle.</strong> There exists a sequence $\langle W_\alpha : \alpha &lt; \omega_1 \rangle$ such that $W_\alpha \subseteq \mathcal{P}(\alpha)$, each $W_\alpha$ is countable, and for any $X \subseteq \omega_1$, the set ${\alpha : \alpha &lt; \omega_1, X \cap \alpha \in W_\alpha}$ is stationary.</p>
+</blockquote>
+
+<p>The diamond principle is often denoted by $\Diamond$, and the sequence $\langle W_\alpha \rangle$ is called a diamond sequence.</p>
+
+<p>The set $X \cap \alpha$ can be thought of as the “reflection” of $X$ through the “mirror” $\alpha$. In this sense, the diamond principle implies that the reflection of $X$ at ordinals less than $\omega_1$ appears sufficiently often in $\langle W_\alpha \rangle$. (In <a href="https://dimenerno.github.io/2025/11/11/stationary-sets">this post</a>, it was explained that stationary sets are the set-theoretic analogue of “measure &gt; 0”.)</p>
+
+<p>Thus, the diamond principle is a type of reflection principle and plays a role in regulating the set-theoretic universe, similar to the axiom $V = L$ (in fact, $V = L$ implies $\Diamond$). Like other axioms that regulate the set-theoretic universe, the diamond principle implies the continuum hypothesis.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $\Diamond \implies \mathsf{CH}$</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $X \subseteq \omega \subset \omega_1$. Since $X$ reflects stationarily at ordinals less than $\omega_1$, there exists some $\alpha &gt; \omega$ such that $X \cap \alpha = X \in W_\alpha$. Hence, all subsets of $\omega$ are contained in $\bigcup_{\alpha &lt; \omega_1} W_\alpha$, whose cardinality is $\aleph_1$. Therefore, $2^{\aleph_0} = \aleph_1$. ■</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\Diamond$ holds, then a Suslin line exists.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> See Hrbacek &amp; Jech (3rd ed), Chapter 12, Section 5. Note the following typographical error in the original text:</p>
+
+<blockquote>
+  <p>(Original) <strong>Lemma 5.3.</strong> $\Diamond$ implies that there exists a sequence $\langle Z_\alpha : \alpha &lt; \omega_1 \rangle$ such that, for each $\alpha &lt; \omega_1$, $Z_\alpha \subseteq \omega^{&lt;\alpha}$, $Z_\alpha$ is at most countable, and for any $X \subseteq \omega^{&lt;\omega_1}$ the set ${\alpha &lt; \omega_1 : X \cap \omega^{&lt;\alpha}}$ is stationary.</p>
+
+  <p><em>Proof.</em> We note that […] Clearly, $Z_\alpha \subseteq \omega^{&lt;\alpha}$ and is at most countable.</p>
+</blockquote>
+
+<blockquote>
+  <p>(Corrected) <strong>Lemma 5.3.</strong> $\Diamond$ implies that there exists a sequence $\langle Z_\alpha : \alpha &lt; \omega_1 \rangle$ such that, for each $\alpha &lt; \omega_1$, $Z_\alpha \subseteq \mathcal{P}(\omega^{&lt;\alpha})$, $Z_\alpha$ is at most countable, and for any $X \subseteq \omega^{&lt;\omega_1}$ the set ${\alpha &lt; \omega_1 : X \cap \omega^{&lt;\alpha}}$ is stationary.</p>
+
+  <p><em>Proof.</em> We note that […] Clearly, $Z_\alpha \subseteq \mathcal{P}(\omega^{&lt;\alpha})$ and is at most countable.</p>
+</blockquote>
+
+<p>Additionally, the sentence “Let ${C_n : n \in \mathbb{N}}$ be the at most countable collection of those elements of $Z_\alpha$ which happen to be maximal antichains in $T^{(\alpha)}$.” just before Claim 5.5 means that for each $n$, $C_n \in Z_\alpha$, $C_n \subseteq \omega^\alpha$, and $C_n$ is an antichain when its elements are regarded as nodes of $T^{(\alpha)}$. ■</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> If $V = L$, then a Suslin line exists.</p>
+</blockquote>
+
+<p>Thus, the existence of Suslin lines is related to the regulation of the set-theoretic universe. While this may seem paradoxical, it is not so surprising when one considers that one of the conditions for Suslin lines is the “non-existence” of countable dense sets. Suslin lines are a feature of a “loose” set-theoretic universe that achieves the countable chain condition without generating countable dense sets.</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Club Sets and Stationary Sets &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/11/11/stationary-sets/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Club Sets and Stationary Sets</h1>
+  <span class="post-date">11 Nov 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'" >Set Theory</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h2 id="club-sets">Club Sets</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> $C \subseteq \omega_1$ is a <strong>club set</strong> if $C$ is closed and unbounded. That is,</p>
+
+  <ul>
+    <li>For any sequence of ordinals $(\alpha_n)_{n \in \omega} \subseteq C$, if $\alpha_n \to \alpha$, then $\alpha \in C$.</li>
+    <li>For any $\gamma &lt; \kappa$, there exists $\alpha \in C$ such that $\alpha &gt; \gamma$.</li>
+  </ul>
+</blockquote>
+
+<p>The name is indeed quite straightforward.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $C_1, C_2 \subseteq \omega_1$ are two club sets, then $C = C_1 \cap C_2$ is also a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> It is easy to show that $C$ is closed. To prove that $C$ is unbounded, let us take an arbitrary $\gamma \in \omega_1$. Since $C_1$ is unbounded, there exists the smallest $\alpha_0 \in C_1$ such that $\gamma &lt; \alpha_0$. Similarly, since $C_2$ is unbounded, there exists the smallest $\beta_0 \in C_2$ such that $\alpha_0 &lt; \beta_0$. Again, since $C_1$ is unbounded, there exists $\alpha_1 \in C_1$ such that $\beta_0 &lt; \alpha_1$. Repeating this process, we obtain sequences of ordinals $\lbrace \alpha_n \rbrace$ and $\lbrace \beta_n \rbrace$. These sequences converge to the same ordinal $\delta$, so $\delta \in C$ and $\delta &gt; \gamma$. (Note: “the smallest” is used to avoid unnecessary reliance on the axiom of choice.) ■</p>
+
+<p>By slightly modifying the above proof, we can derive the following theorem.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\lbrace C_n \rbrace _{n &lt; \omega}$ is a countable collection of club sets, then $C = \bigcap C_n$ is also a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Exercise (Hint: Use a triangle argument). ■</p>
+
+<p>Thus, given a countable collection of club sets, we can obtain a new club set by taking their intersection. On the other hand, if we are given an uncountable collection of club sets, the following result can be used.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\lbrace C_\xi \rbrace _{\xi &lt; \omega_1}$ be a collection of club sets. The <strong>diagonal intersection</strong> of $\lbrace C_\xi \rbrace$ is defined as follows:</p>
+
+\[\Delta_{\xi &lt; \omega_1} C_\xi = \{ \alpha \in \omega_1 : \forall \xi &lt; \alpha \;\; \alpha \in C_\xi \}\]
+
+  <p>$D$ is a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> First, let us show that $D$ is closed. Suppose $(\alpha_n)_{n \in \omega} \subseteq D$ and $\alpha_n \to \alpha$. For any $\xi &lt; \alpha$, there exists $n \in \omega$ such that $\xi &lt; \alpha_n$. By the definition of the diagonal intersection, $C_\xi$ contains $\lbrace \alpha_m : m \geq n \rbrace$. Hence, $\sup \lbrace \alpha_m : m \geq n \rbrace = \alpha \in C_\xi$, so $\alpha \in D$.</p>
+
+<p>Next, let us show that $D$ is unbounded. For any $\gamma &lt; \omega_1$, let $D_0 = \bigcap_{\xi &lt; \gamma} C_\xi$. Since $D_0$ is a club set, it is unbounded. Thus, there exists the smallest $\alpha_0 \in D_0$ such that $\alpha_0 &gt; \gamma$. Similarly, let $D_1 = \bigcap_{\xi &lt; \alpha_0} C_\xi$. Since $D_1$ is a club set, there exists the smallest $\alpha_1 \in D_1$ such that $\alpha_1 &gt; \alpha_0$. Repeating this process inductively, we obtain a sequence $(\alpha_n)$ whose limit is $\alpha$. For any $\xi &lt; \alpha$, there exists $n$ such that $\xi &lt; \alpha_n$, and for all $m \geq n$, $\alpha_m \in C_\xi$. Hence, $\alpha \in C_\xi$ and $\alpha \in D$. ■</p>
+
+<p>Verify that $\Delta C_\xi \supseteq \bigcap C_\xi$.</p>
+
+<p>The definitions and theorems discussed so far can be generalised as follows. Let $\kappa$ be an uncountable cardinal with $\operatorname{cf}\kappa &gt; \omega$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> $C \subseteq \kappa$ is a <strong>club set</strong> if $C$ is closed and unbounded. That is,</p>
+
+  <ul>
+    <li>For any $\alpha &lt; \kappa$, if $\sup (C \cap \alpha) = \alpha$ (i.e., $C$ is unbounded at $\alpha$), then $\alpha \in C$.</li>
+    <li>For any $\gamma &lt; \kappa$, there exists $\alpha \in C$ such that $\alpha &gt; \gamma$.</li>
+  </ul>
+
+  <p><strong>Theorem.</strong> If $\lambda &lt; \operatorname{cf}\kappa$ and $\lbrace C_\xi \rbrace _{\xi &lt; \lambda}$ is a collection of club sets, then $C = \bigcap C_\xi$ is also a club set.</p>
+
+  <p><strong>Theorem.</strong> If $\kappa$ is regular, then the diagonal intersection of a collection $\lbrace C_\xi \rbrace _{\xi &lt; \kappa}$ of club sets is also a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> The proof is almost identical to the case $\kappa = \omega_1$. ■</p>
+
+<h2 id="stationary-sets">Stationary Sets</h2>
+
+<p>By closure under finite intersections, the collection of club sets generates a filter. A set that does not belong to the dual ideal of this filter is called a <strong>stationary set</strong>. In other words:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $S \subseteq \omega_1$. If $C \cap S \neq \varnothing$ for every club set $C \subseteq \omega_1$, then $S$ is a stationary set.</p>
+</blockquote>
+
+<p>If there exists a club set $C$ such that $C \cap S = \varnothing$, then $S^c \subseteq C$, so $C$ belongs to the dual ideal. Thus, the two definitions are equivalent.</p>
+
+<p>Stationary sets capture “significantly large” subsets of $\omega_1$. This can be better understood through the following (informal) analogy: if $\omega_1$ has measure 1, then club sets correspond to sets with $\mu(C) = 1$, and stationary sets correspond to sets with $\mu(S) &gt; 0$.</p>
+
+<p>The following facts are easily proven (note how 1 and 3 naturally align with the measure analogy):</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The following hold:</p>
+
+  <ol>
+    <li>Every club set is a stationary set.</li>
+    <li>Every stationary set is unbounded.</li>
+    <li>If $\bigcup_{n &lt; \omega} A_n$ is a stationary set, then there exists some $m \in \omega$ such that $A_m$ is a stationary set.</li>
+  </ol>
+</blockquote>
+
+<p>The name “stationary” for stationary sets arises from the following theorem.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $S \subseteq \omega_1$. A function $f: S \to \omega_1$ is <strong>regressive</strong> if $f(\alpha) &lt; \alpha$ for all $\alpha \in S$. The following are equivalent:</p>
+
+  <ol>
+    <li>$S$ is a stationary set.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some unbounded set $T \subseteq S$.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some stationary set $T \subseteq S$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> 3 ⇒ 2 is trivial, so it suffices to prove 1 ⇒ 3 and 2 ⇒ 1.</p>
+
+<h4 id="1--3">1 ⇒ 3</h4>
+
+<p>We prove the contrapositive. Suppose there exists a regressive function $f: S \to \omega_1$ such that $f$ is not constant on any stationary subset of $S$. That is, for every $\xi \in \omega_1$, $A_\xi = f^{-1}(\lbrace \xi \rbrace)$ is not stationary. Hence, there exists a club set $C_\xi$ such that $A_\xi \cap C_\xi = \varnothing$.</p>
+
+<p>Let $D = \Delta_{\xi &lt; \omega_1} C_\xi$. Since $D$ is a club set, if $S$ is stationary, then $D \cap S \neq \varnothing$. Let $\alpha \in D \cap S$. Since $\alpha \in D$, for any $\xi &lt; \alpha$, $\alpha \in C_\xi$. Thus, $\alpha \notin A_\xi$, so $f(\alpha) \neq \xi$. However, since $\alpha \in S$, $f(\alpha) &lt; \alpha$. This is a contradiction, so $S$ is not stationary. □</p>
+
+<h4 id="2--1">2 ⇒ 1</h4>
+
+<p>We again prove the contrapositive. Suppose $S$ is not stationary. Then there exists a club set $C$ such that $S \cap C = \varnothing$. Define the following function:</p>
+
+\[f(\alpha) = \sup (C \cap \alpha)\]
+
+<p>For any $\alpha \in S$, $f(\alpha) \leq \alpha$. If $f(\alpha) = \alpha$, then $C$ contains a sequence of ordinals converging to $\alpha$. Since $C$ is closed, $\alpha \in C$. This contradicts $S \cap C = \varnothing$. Thus, $f(\alpha) &lt; \alpha$, and $f$ is regressive.</p>
+
+<p>If $f$ were constant on some unbounded set $T$, then for some $\gamma &lt; \omega_1$, there would exist an unbounded sequence $(\alpha_n)$ such that $\sup (C \cap \alpha_n) = \gamma$. Since $C$ is unbounded, this implies $\sup \alpha_n = \gamma$. However, since $(\alpha_n)$ is unbounded, $\sup \alpha_n = \omega_1$. This is a contradiction. Thus, $f$ is a regressive function that is not constant on any unbounded set. ■</p>
+
+<p>The above theorem can be generalised as follows:</p>
+
+<blockquote>
+  <p><strong>Fodor’s Lemma.</strong> Let $\kappa$ be an uncountable regular cardinal. For any $S \subseteq \kappa$, the following are equivalent:</p>
+
+  <ol>
+    <li>$S$ is a stationary set.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some unbounded set $T \subseteq S$.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some stationary set $T \subseteq S$.</li>
+  </ol>
+</blockquote>
+
+<h2 id="applications-of-stationary-sets">Applications of Stationary Sets</h2>
+
+<p>As an application of stationary sets, consider the following combinatorial theorem:</p>
+
+<blockquote>
+  <p><strong>Δ-System Lemma.</strong> Let $\lbrace A_\xi\rbrace _{\xi &lt; \omega_1}$ be a collection of finite subsets of $\omega_1$. There exist an unbounded set $I \subseteq \omega_1$ and a finite set $A$ such that for any $i, j \in I$ with $i \neq j$, $A_i \cap A_j = A$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> By the pigeonhole principle, we may assume without loss of generality that $|A_\xi | = n$ for all $\xi &lt; \omega_1$. Define:</p>
+
+\[C = \{ \alpha &lt; \omega_1 : \forall \xi &lt; \alpha \;\; \operatorname{max}C_\xi &lt; \alpha \}\]
+
+<p>$C$ is a club set. For $0 \leq k \leq n$, define:</p>
+
+\[T_k = \{ \alpha \in C : |A_\alpha \cap \alpha | = k \}\]
+
+<p>Since $\bigcup_{0 \leq k \leq n} T_k = C$, there exists some $m$ such that $T_m$ is stationary. For $0 \leq l &lt; m$, define:</p>
+
+\[f_l(\alpha) : T_m \to \omega_1; \quad \alpha \mapsto \text{$l$th element of $A_\alpha$}\]
+
+<p>Since $|A_\alpha \cap \alpha| &gt; l$, $f_l(\alpha) &lt; \alpha$. Thus, $f_l$ is regressive. Now, repeat the following steps:</p>
+
+<ul>
+  <li>There exists a stationary set $S_0 \subseteq T_m$ such that $f_0$ is constant on $S_0$.</li>
+  <li>There exists a stationary set $S_1 \subseteq S_0$ such that $f_1 |_{S_0}$ is constant on $S_1$.</li>
+  <li>There exists a stationary set $S_2 \subseteq S_1$ such that $f_2 |_{S_1}$ is constant on $S_2$.</li>
+  <li>…</li>
+  <li>There exists a stationary set $S_{m-1} \subseteq S_{m-2}$ such that $f_{m-1} |_{S_{m-2}}$ is constant on $S_{m-1}$.</li>
+</ul>
+
+<p>For each $0 \leq l &lt; m$, $f_l$ is constant on $S_{m-1}$. It is now easy to verify that $S_{m-1} = I$ is the desired set. ■</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

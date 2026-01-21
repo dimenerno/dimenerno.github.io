@@ -6,7 +6,7 @@ tags: [Mathematics, Topology]
 lang: en
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 > **Definition.** A set $P$ in a topological space $X$ is **perfect** when $P' = P$. Here, $P'$ denotes the set of limit points of $P$.
 

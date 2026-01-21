@@ -7,7 +7,7 @@ lang: en
 related:
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 In the [previous post](https://dimenerno.github.io/2025/07/03/kripkenstein), I examined the Kripke-Wittgenstein paradox. To summarise, the Kripke-Wittgenstein paradox is based on the consideration that there are no normative facts encompassing the infinite cases in which a particular word can be used. From this, Kripke-Wittgenstein draws the following conclusion:
 

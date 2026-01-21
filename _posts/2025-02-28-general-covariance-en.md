@@ -7,7 +7,7 @@ lang: en
 related:
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 A theory is said to be **general covariant** when the form of physical laws is preserved under differentiable coordinate transformations. Specifically, suppose coordinate systems $\lbrace q_i \rbrace$ and $\lbrace q'\_i \rbrace$ are related by:
 

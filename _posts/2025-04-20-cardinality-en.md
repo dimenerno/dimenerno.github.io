@@ -7,7 +7,7 @@ tags: ["Mathematics", "Set Theory"]
 related:
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 > **Definition.** When there exists an injective mapping from $X$ to $Y$, we write $\|X\| \leq \|Y\|$. When there exists a bijective mapping, we write $\|X\| = \|Y\|$.
 

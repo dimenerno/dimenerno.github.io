@@ -10,7 +10,7 @@ related:
   - "On Reference — Definite Descriptions"
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 > This article is a summary and analysis of the [Stanford Encyclopedia of Philosophy entry on reference](https://plato.stanford.edu/entries/reference/).
 

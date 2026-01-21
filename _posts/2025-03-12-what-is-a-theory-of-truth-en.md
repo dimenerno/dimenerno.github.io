@@ -7,7 +7,7 @@ lang: en
 related:
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 > This article is a summary of <a href="/public/What is a Theory of Truth.pdf">Scott Soames, _What is a Theory of Truth?_ (1984)</a>.
 

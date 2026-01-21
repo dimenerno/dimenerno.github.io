@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     Euler-Poincaré Theorem &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2025/11/23/euler-poincare/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Euler-Poincaré Theorem</h1>
+  <span class="post-date">23 Nov 2025</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'" >Topology</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>Readers may recall learning the following theorem in their youth:</p>
+
+<blockquote>
+  <p><strong>Euler’s Formula.</strong> For a convex polyhedron, let $v, e, f$ denote the number of vertices, edges, and faces, respectively. Then $v - e + f = 2$.</p>
+</blockquote>
+
+<p>For instance, in the case of a cube, $v = 8, e = 12, f = 6$, so $v - e + f = 2$ holds. The condition of convexity is crucial; if the polyhedron has “holes,” the formula does not hold. For example, in the case of the punctured prism below, $v = 16, e = 32, f = 16$, so $v - e + f = 0$.</p>
+
+<p><img src="/public/punctured-prism.png" style="width: 100%; max-width: 300px; margin: 1em auto 1.5em auto;" /></p>
+
+<p>From this, we may conjecture that the value of $v - e + f$ is determined by the topology of the shape. This is the essence of the Euler-Poincaré theorem. Before stating the theorem, let us first define the following concept:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, the rank of the free part of the homology group $H_p(X)$ of $X$ is called the $p$th <strong>Betti number</strong> of $X$, denoted $R_p(X)$.</p>
+</blockquote>
+
+<p>While it is customary to denote this as $b_p(X)$, we adopt a different notation here as $b_p$ will be used for another purpose in this article. Since homology groups are topological invariants, Betti numbers are also topological invariants.</p>
+
+<p>For example, the homology groups of a torus are as follows:</p>
+
+<ul>
+  <li>$H_0(X) = \mathbb{Z}$</li>
+  <li>$H_1(X) = \mathbb{Z} \oplus \mathbb{Z}$</li>
+  <li>$H_2(X) = \mathbb{Z}$</li>
+</ul>
+
+<p>Thus, the 0th, 1st, and 2nd Betti numbers of the torus are 1, 2, and 1, respectively. Intuitively, Betti numbers represent the number of “holes” (see <a href="https://dimenerno.github.io/2025/11/05/euler-poincare">previous post</a>). In particular, the 0th Betti number corresponds to the number of connected components of $K$. For instance, if two tetrahedra are considered as a single simplicial complex, the 0th Betti number of this complex is 2.</p>
+
+<blockquote>
+  <p><strong>Euler-Poincaré Theorem.</strong> For an $n$-dimensional simplicial complex $K$, let $\alpha_p \; (p \leq n)$ denote the number of $p$-simplices in $K$. Then the following holds:</p>
+
+\[\sum^n_{p = 0} (-1)^p\alpha_p = \sum^n_{p=0}(-1)^p R_p(K)\]
+</blockquote>
+
+<p>In proving this theorem, it is more natural to view $p$-chains as elements of a vector space rather than a free group, and we adopt this approach.</p>
+
+<p><strong>Proof.</strong> Let $C_p, Z_p, B_p$ denote the vector spaces of $p$-chains, cycles, and boundaries of $K$ over the field of rational numbers, respectively. Let $\lbrace  d^i_p \rbrace $ be a maximal subset of $C_p$ that does not linearly generate cycles, and let the vector space spanned by $\lbrace  d^i_p \rbrace $ be $D_p$. Then the following holds ($\oplus$ denotes the direct sum of vector spaces):</p>
+
+\[\begin{gather}
+C_p = D_p \oplus Z_p\\\\
+\alpha_p = \dim C_p = \dim D_p + \dim Z_p
+\end{gather}\]
+
+<p>For $p \leq n - 1$, let $b^i_p = \partial d^i_{p + 1}$. Let the vector space spanned by $\lbrace  b^i_p \rbrace $ be $B_p$. Since $\partial$ is a linear operator, it follows from the fact that $\lbrace  d^i_{p +1} \rbrace $ forms a basis of $D_{p + 1}$ that $\lbrace  b^i_p \rbrace $ forms a basis of $B_p$. We prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> $B_p$ contains all $p$-boundaries of $K$.</p>
+</blockquote>
+
+<p><em>Proof.</em> If $b_p$ is a $p$-boundary of $K$, then there exists some $c_{p + 1} \in C_{p + 1}$ such that $\partial c_{p + 1} = b_p$. By the relation $C_{p + 1} = D_{p + 1} \oplus Z_{p + 1}$, there exist unique $d_{p + 1} \in D_{p + 1}$ and $z_{p + 1} \in Z_{p + 1}$ such that $c_{p + 1 } = d_{p + 1} + z_{p + 1}$. Since $\partial z_{p + 1} = 0$, it follows that $\partial d_{p + 1} = b_p$. Hence, $b_p \in B_p$. □</p>
+
+<p>Let $\lbrace  z^i_p \rbrace $ be a maximal subset of $Z_p$ that does not linearly generate elements of $B_p$, and let the vector space spanned by $\lbrace  z^i_p \rbrace $ be $G_p$. By the lemma, the following holds:</p>
+
+\[\dim G_p = R_p\]
+
+<p>Thus, we have:</p>
+
+\[\begin{gather}
+Z_p = B_p \oplus G_p\\\\
+\dim Z_p = \dim B_p + \dim G_p = \dim D_{p + 1} + R_p
+\end{gather}\]
+
+<p>Combining this with earlier results, we obtain the following for $p \leq n - 1$:</p>
+
+\[\alpha_p = \dim D_{p + 1} + \dim D_p + R_p\]
+
+<p>For $p = n$, $\alpha_n = \dim D_n + R_n$, and for $p = 0$, $\alpha_0 = \dim D_1 + R_0$. Hence, we derive the following (wlog, $n$ is even):</p>
+
+\[\begin{alignat}{3}
+&amp;\alpha_n      &amp;&amp;= \;\cancel{\dim D_n} + R_p \\
+&amp;-\alpha_{n-1} &amp;&amp;= \;\cancel{-\dim D_{n}} \cancel{- \dim D_{n - 1}} - R_{n - 1} \\
+&amp;\alpha_{n-2}  &amp;&amp;= \;\cancel{\dim D_{n - 1}} \cancel{ + \dim D_{n - 2}} + R_{n - 2} \\
+&amp;&amp;\vdots \\
+&amp;-\alpha_{1}   &amp;&amp;= \;\cancel{-\dim D_{2}} \cancel{-\dim D_{1}} - R_{1} \\
+&amp;\alpha_{0}    &amp;&amp;= \;\cancel{\dim D_{1}} + R_{0} \\
+\hline
+&amp;\sum_{p = 0}^n (-1)^p \alpha_p &amp;&amp;= \;\sum_{p=0}^n (-1)^p R_p(K) \quad \blacksquare
+\end{alignat}\]
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, the following value is called the <strong>Euler characteristic</strong>:</p>
+
+\[\xi(X) = \sum (-1)^p R_p(X)\]
+</blockquote>
+
+<p>Since Betti numbers are topological invariants, the Euler characteristic is also a topological invariant.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> Let $v, e, f$ denote the number of vertices, edges, and faces of a polyhedron $P$, respectively. Let $X$ denote the surface of $P$ as a 2-dimensional topological space. Then the following holds:</p>
+
+\[v - e + f = \xi(X)\]
+</blockquote>
+
+<p><strong>Proof.</strong> The triangulation of a $k$-gon can be obtained by adding $k - 3$ edges, which creates $k - 3$ faces. Thus, $P$ has the same $v - e + f$ value as its triangulation, which equals the Euler characteristic. ■</p>
+
+<p><img src="/public/triangulation.png" style="width: 100%; max-width: 400px; margin: 1em auto 1.5em auto;" /></p>
+
+<p>Earlier, we observed that for a polyhedron with one hole, $v - e + f = 0$. Indeed, the 0th, 1st, and 2nd Betti numbers of a torus are 1, 2, and 1, respectively, and $1 - 2 + 1 = 0$. On the other hand, the homology groups of a sphere are as follows:</p>
+
+<ul>
+  <li>$H_0(K) = \mathbb{Z}$</li>
+  <li>$H_1(K) = 0$</li>
+  <li>$H_2(K) = \mathbb{Z}$</li>
+</ul>
+
+<p>Thus, the 0th, 1st, and 2nd Betti numbers of a sphere are 1, 0, and 1, respectively, and $1 - 0 + 1 = 2$. Therefore, for convex polyhedra, $v - e + f = 2$.</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

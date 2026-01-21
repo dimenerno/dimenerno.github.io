@@ -9,7 +9,7 @@ related:
   - "Arithmetic Hierarchy"
 ---
 
-> This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
+> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
 In the [previous article](https://dimenerno.github.io/2025/05/08/saturation/), we examined what sets are **definable** in an $\mathcal{L}$-structure $\mathfrak{A}$. When $S \subseteq A$ is definable by a formula $\phi$ belonging to a particular [arithmetic hierarchy](https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/) in $\mathfrak{A}$, we say that $S$ belongs to that hierarchy. For instance, when $S$ is definable by a $\Pi\_1$ sentence, we have $S \in \Pi\_1$.
 

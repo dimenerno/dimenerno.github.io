@@ -612,6 +612,144 @@
   </div>
   <div style="margin-bottom: 6em"></div>
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2026/01/15/measure-problem/en"> The Measure Problem and the Continuum Hypothesis </a>
+      </h1>
+    <span class="post-date">15 Jan 2026</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set theory
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/measure-theory/'">
+        Measure theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> When a measure $\mu$ is defined for all subsets of a set $X$, $\mu$ is called a <strong>measure on $X$</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For any $A \subseteq \mathbb{R}$ and $x \in \mathbb{R}$, there does not exist a measure $\mu$ on the real numbers satisfying $\mu(A + x) = \mu(A)$. (Here, $A + x = \lbrace a + x : a \in A\rbrace$.)</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Refer to the construction of the <a href="https://dimenerno.github.io/2025/02/24/algebra-measure">Vitali set</a>.</p>
+
+<p>Thus, a translation-invariant measure on the real numbers does not exist. Instead, one may weaken the translation-invariance condition and ask whether there exists a measure $\mu$ on the real numbers such that $\mu(A) = m(A)$ for Lebesgue measurable sets $A$, where $m$ denotes the Lebesgue measure. This is called the <strong>measure problem</strong>.</p>
+
+<blockquote>
+  <p><strong>Measure Problem.</strong> Does there exist a measure $\mu$ on the real numbers such that $\mu(A) = m(A)$ for any Lebesgue measurable set $A \subseteq \mathbb{R}$?</p>
+</blockquote>
+
+<p>In fact, the above problem is known to be equivalent to the following generalised problem:</p>
+
+<blockquote>
+  <p><strong>Generalised Measure Problem.</strong> Does there exist a non-trivial probabilistic measure $\mu$ on $2^{\aleph_0}$? (A measure is <strong>probabilistic</strong> if the measure of the whole space is 1.)</p>
+</blockquote>
+
+<p>If such a measure exists, it is known that the Lebesgue measure can be extended to $\mathcal{P}(\mathbb{R})$ using this measure and a bijection between $\mathbb{R}$ and $2^{\aleph_0}$.</p>
+
+<blockquote>
+  <p><strong>Remark 1.</strong> Since the translation-invariance condition has been removed, the existence of a measure on a set $S$ depends solely on the cardinality of $S$. Therefore, in the subsequent discussion, we focus only on measures on (uncountable) cardinals.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Remark 2.</strong> It is known that if $\mu$ is a probabilistic measure on $S$, $C = \lbrace  x \in S : \mu(\lbrace  x \rbrace ) &gt; 0 \rbrace $ is at most countable. Hence if $|S| = \kappa$ is uncountable, we have $|S| = |S \setminus C|$, and $\mu$ restricted to $S \setminus C$ is a measure satisfying $\mu(\lbrace  x \rbrace ) = 0$ for all $x \in S \setminus C$. It follows that if a measure $\mu$ exists on an uncountable cardinal $\kappa$, we may assume without loss of generality $\mu(\lbrace  \alpha \rbrace ) = 0$ for all $\alpha &lt; \kappa$. Indeed, we will assume this fact from now on.</p>
+</blockquote>
+
+<p>Interestingly, the measure problem is related to the continuum hypothesis and large cardinal axioms. Let us first examine the following theorem:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If a measure exists on $\nu$, then some $\kappa \leq \nu$ is weakly inaccessible.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Suppose a measure $\mu$ exists on $\nu$. The collection $\mathcal{I}$ of null sets with respect to $\mu$ forms an ideal. In particular, it can be easily shown that $\mathcal{I}$ satisfies the following properties:</p>
+
+<ol>
+  <li>Contains singletons: For any $\xi &lt; \nu$, $\lbrace \xi \rbrace \in \mathcal{I}$.</li>
+  <li>Countably closed: If $\lbrace A_n \rbrace_{n &lt; \omega}$ is a collection of sets in $\mathcal{I}$, then $\bigcup_{n &lt; \omega} A_n \in \mathcal{I}$.</li>
+  <li>Satisfies the countable chain condition: If $\lbrace B_i \rbrace_{i \in J}$ is a collection of pairwise disjoint sets not in $\mathcal{I}$, then $|J| \leq \aleph_0$.</li>
+</ol>
+
+<p>Let $\kappa \leq \nu$ be the smallest cardinal such that there exists an ideal $\mathcal{J}$ on $\kappa$ satisfying the above three conditions. We now prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathcal{I}$ be an ideal. If for any $\lambda &lt; \kappa$, $\lbrace A_\xi \rbrace_{\xi &lt; \lambda}$ is a collection of sets in $\mathcal{I}$, and $\bigcup A_\xi \in \mathcal{I}$, then $\mathcal{I}$ is said to be <strong>$\kappa$-complete</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Lemma.</strong> $\mathcal{J}$ is $\kappa$-complete.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Suppose $\mathcal{J}$ is not $\kappa$-complete. Then there exist some $\lambda &lt; \kappa$ and a collection $\lbrace A_\xi \rbrace_{\xi &lt; \lambda}$ of sets in $\mathcal{J}$ such that $\bigcup A_\xi \notin \mathcal{J}$. Without loss of generality, we may redefine $\lbrace A_\xi \rbrace$ as follows to assume that the sets are pairwise disjoint:</p>
+
+\[A_\xi' = A_\xi - \bigcup_{\eta &lt; \xi} A_\eta\]
+
+<p>(Since $A_\xi’ \subseteq A_\xi$, it follows that $A_\xi’ \in \mathcal{J}$ from $A_\xi \in \mathcal{J}$. Additionally, $A_\xi’$ may be empty, but this does not affect the proof as empty sets are trivially disjoint.)</p>
+
+<p>Define an ideal $\mathcal{K}$ on $\lambda$ as follows:</p>
+
+\[S \in \mathcal{K} \iff \bigcup_{\xi \in S} A_\xi \in \mathcal{J}\]
+
+<p>We verify that $\mathcal{K}$ satisfies the three conditions:</p>
+
+<ol>
+  <li>Contains singletons: This is immediate from the definition of $\mathcal{K}$.</li>
+  <li>Countably closed: Since $\mathcal{J}$ is countably closed, so is $\mathcal{K}$.</li>
+  <li>Satisfies the countable chain condition: Suppose $\lbrace S_i \rbrace_{i \in J}$ is a collection of pairwise disjoint sets not in $\mathcal{K}$. For each $i \in J$, let $B_i = \bigcup_{\xi \in S_i} A_\xi$. Then $B_i \notin \mathcal{J}$, and $B_i \cap B_j = \varnothing$ for $i \neq j$ (using the disjointness of $\lbrace A_\xi \rbrace$). Thus, $\lbrace B_i \rbrace_{i \in J}$ forms a pairwise disjoint antichain in $\mathcal{J}$, implying that $J$ is countable.</li>
+</ol>
+
+<p>This contradicts the minimality of $\kappa$. Hence, $\mathcal{J}$ is $\kappa$-complete. □</p>
+
+<p>From the above lemma, it follows that $\kappa$ is weakly inaccessible, i.e., an uncountable regular limit cardinal.</p>
+
+<h4 id="kappa-is-uncountable">$\kappa$ is uncountable.</h4>
+
+<p>The singleton containment and countable closure properties imply that if $\kappa$ were countable, $\kappa \in \mathcal{J}$, leading to a contradiction.</p>
+
+<h4 id="kappa-is-regular">$\kappa$ is regular.</h4>
+
+<p>If $\kappa$ were not regular, there would exist some $\lambda &lt; \kappa$ and an increasing sequence $\lbrace \nu_\xi \rbrace_{\xi &lt; \lambda}$ of cardinals less than $\kappa$ such that $\bigcup_{\xi &lt; \lambda} \nu_\xi = \kappa$. By the singleton containment and $\kappa$-completeness properties, each $\nu_\xi$ belongs to $\mathcal{J}$. Hence, by $\kappa$-completeness, $\bigcup_{\xi &lt; \lambda} \nu_\xi = \kappa$ belongs to $\mathcal{J}$, contradicting the fact that $\mathcal{J}$ is an ideal.</p>
+
+<h4 id="kappa-is-a-limit-cardinal">$\kappa$ is a limit cardinal.</h4>
+
+<p>If $\kappa$ were not a limit cardinal, there would exist some ordinal $\alpha$ such that $\kappa = \aleph_{\alpha + 1}$. For each $\gamma &lt; \kappa$, there exists a surjection $f_\gamma: \omega_\alpha \to \gamma$. Using the axiom of choice, we obtain a sequence of such functions $\lbrace f_\gamma \rbrace_{\gamma &lt; \omega_{\alpha + 1}}$.</p>
+
+<p>For each $\beta &lt; \omega_\alpha$ and $\gamma &lt; \omega_{\alpha + 1}$, define:</p>
+
+\[A_{\gamma\beta} = \{ \xi &lt; \omega_{\alpha + 1} : f_\xi(\beta) = \gamma \}\]
+
+<p>Observe the following:</p>
+
+<ul>
+  <li>$\bigcup_{\beta &lt; \omega_\alpha} A_{\gamma\beta} = \omega_{\alpha + 1} - (\gamma + 1)$</li>
+  <li>$\gamma_1 \neq \gamma_2 \implies A_{\gamma_1 \beta} \cap A_{\gamma_2 \beta} = \varnothing$</li>
+</ul>
+
+<p>In particular, by $\kappa$-completeness, $\gamma + 1 \in \mathcal{J}$ implies $\bigcup_{\beta &lt; \omega_\alpha} A_{\gamma \beta} \notin \mathcal{J}$. Hence, for some $\beta$, $A_{\gamma\beta} \notin \mathcal{J}$. Choosing such $\beta_\gamma$ for each $\gamma$, we obtain $\lbrace A_{\gamma\beta_\gamma} \rbrace_{\gamma &lt; \omega_{\alpha + 1}}$. However, the possible values of $\beta_\gamma$ are limited to $\omega_\alpha$, so by the pigeonhole principle, there exists some $\beta &lt; \omega_\alpha$ such that $|\lbrace A_{\gamma\beta_\gamma} : \beta_\gamma = \beta \rbrace| = \aleph_{\alpha + 1}$. This contradicts the countable chain condition. ■</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> If the measure problem has a positive solution, then the continuum hypothesis has a negative solution.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> If the measure problem holds and $2^{\aleph_0} = \aleph_1$, then by the theorem, $\aleph_0$ or $\aleph_1$ must be weakly inaccessible. However, $\aleph_0$ is countable, and $\aleph_1$ is a successor cardinal, leading to a contradiction. ■</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/12/27/distributive-law"> 교환법칙, 분배법칙, 지수법칙의 범주론적 증명 </a>
@@ -682,6 +820,85 @@
 </blockquote>
 
 <p>즉, 극한끼리는 교환법칙을 만족한다. 이것은 덧셈의 교환법칙과 곱셈의 교환법칙을 일반화한 것으로 생각할 수 있다.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/12/27/distributive-law/en"> Categorical Proofs of the Commutative Law, Distributive Law, and Exponential Law </a>
+      </h1>
+    <span class="post-date">27 Dec 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'">
+        Category Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>Distributive law: $(A + B) \times C = A \times C + B \times C$</li>
+    <li>Exponential law: $(A \times B)^C = A^C \times B^C$</li>
+  </ol>
+</blockquote>
+
+<p>In a <a href="https://dimenerno.github.io/2025/04/02/box-v-product">previous post</a>, we explored categorical sums and products. Sums are a type of colimit, while products are a type of limit. From this observation, the distributive and exponential laws can be generalised into the following theorem.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Left adjoints preserve colimits, and right adjoints preserve limits.</p>
+</blockquote>
+
+<p>The precise meaning of this theorem is as follows. Let $F: \mathcal{A} \to \mathcal{B}$ and $G: \mathcal{B} \to \mathcal{A}$, and suppose $F \dashv G$. The statement that $G$ <strong>preserves limits</strong> means that for any small category $\mathbf{I}$ and functor $D : \mathbf{I} \to \mathcal{B}$, the following holds:</p>
+
+<blockquote>
+  <p>If $\big(B \xrightarrow{q_I} D(I)\big)_{I \in \mathbf{I}}$ is a limit cone in $\mathcal{B}$, then $\big(G(B) \xrightarrow{G(q_I)} G(D(I))\big)_{I \in \mathbf{I}}$ is a limit cone in $\mathcal{A}$.</p>
+</blockquote>
+
+<p>From this, we can deduce the following when $G$ preserves limits:</p>
+
+\[G\left(\lim_{\leftarrow \mathbf{I}} D\right) \cong \lim_{\leftarrow \mathbf{I}} G \circ D\]
+
+<p>For colimits, the definition is analogous, replacing cones with cocones.</p>
+
+<p>On the other hand, for any $X, Y, Z \in \mathbf{Set}$, the following holds: $\hom(X \times Y, Z) \cong \hom(X, Z^Y)$ (this is a common technique in functional programming known as currying). From this, the following adjoint relationship arises:</p>
+
+\[(-) \times Y \dashv (-)^Y\]
+
+<p>Thus, the functor $(-) \times Y$ preserves colimits, and the functor $(-)^Y$ preserves limits. From this, we can derive the generalised distributive and exponential laws.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For sets $A, B, Y$, if $A$ and $B$ are disjoint, the following holds:</p>
+
+  <ol>
+    <li>$(A + B) \times Y \cong (A \times Y) + (B \times Y)$</li>
+    <li>$(A \times B)^Y \cong A^Y \times B^Y$</li>
+  </ol>
+</blockquote>
+
+<p>Here, $+$ denotes the disjoint union of sets, which is equivalent to $\sqcup$, but the notation $+$ is used to emphasise its similarity to the distributive law. The left-hand side corresponds to $G\left(\lim_{\leftarrow \mathbf{I}} D\right)$, while the right-hand side corresponds to $\lim_{\leftarrow \mathbf{I}} G \circ D$. By applying cardinality operations to the sets in the above theorem, we recover the distributive and exponential laws for natural numbers.</p>
+
+<p>Additionally, the following property of limits is also known (the $\bullet, -$ notation is explained in <a href="https://dimenerno.github.io/2025/03/21/yoneda">this post</a>):</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathbf{I}$ and $\mathbf{J}$ be small categories, and let $\mathcal{S}$ be a locally small category that admits limits of shape $\mathbf{I}$ and $\mathbf{J}$. For $D: \mathbf{I} \times \mathbf{J} \to \mathcal{S}$, the following holds:</p>
+
+\[\lim_{\leftarrow \mathbf{J}}\lim_{\leftarrow \mathbf{I}} D(\bullet, -) \cong \lim_{\leftarrow \mathbf{I} \times \mathbf{J}} D \cong \lim_{\leftarrow \mathbf{I}}\lim_{\leftarrow \mathbf{J}} D(-, \bullet)\]
+</blockquote>
+
+<p>In other words, limits satisfy the commutative law. This can be thought of as a generalisation of the commutative laws for addition and multiplication.</p>
 
 
   </div>
@@ -850,6 +1067,173 @@
   </div>
   <div style="margin-bottom: 6em"></div>
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/12/26/suslin/en"> Suslin's Problem and the Diamond Principle </a>
+      </h1>
+    <span class="post-date">26 Dec 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>In <a href="https://dimenerno.github.io/2024/11/20/Rational-Real">the previous post</a>, the following theorem was introduced:</p>
+
+<blockquote>
+  <p><strong>Definition of the set-theoretic real numbers.</strong> A totally ordered set $(R, &lt;)$ satisfying the following properties is unique up to order isomorphism:</p>
+
+  <ol>
+    <li>It is a complete totally ordered set.</li>
+    <li>It has no endpoints.</li>
+    <li>It is separable, i.e., there exists a countable $Q \subset R$ such that $Q$ is dense in $R$.</li>
+  </ol>
+</blockquote>
+
+<p>From the third property, the following result follows:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathcal{C}$ be the collection of open intervals of $\mathbb{R}$. If the elements of $\mathcal{C}$ are pairwise disjoint, then $\mathcal{C}$ is countable.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Since the elements of $\mathcal{C}$ are pairwise disjoint, there exists an injective mapping $\mathcal{C} \to \mathbb{Q}$ that maps each $(x, y) \in \mathcal{C}$ to some $q \in (x, y) \cap \mathbb{Q}$. Hence, $\mathcal{C}$ is countable. ■</p>
+
+<p>A totally ordered set in which any collection of pairwise disjoint open intervals is at most countable is said to have the <strong>countable chain condition</strong>. The peculiar name of this property will be explained later.</p>
+
+<p>Suslin’s problem asks whether the separability condition in the definition of the set-theoretic real numbers can be weakened to the countable chain condition.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A complete totally ordered set without endpoints that satisfies the countable chain condition but is not order-isomorphic to the real numbers is called a <strong>Suslin line</strong>.</p>
+</blockquote>
+
+<p>Thus, a Suslin line must not be separable.</p>
+
+<blockquote>
+  <p><strong>Suslin’s problem.</strong> Does a Suslin line exist?</p>
+</blockquote>
+
+<p>This problem, posed in 1920, was shown to be independent of ZFC by Solovay and Tennenbaum in 1971. Instead of examining the independence proof, this post will explore the combinatorial counterpart of Suslin lines, known as Suslin trees. Let us first consider the following well-known theorem:</p>
+
+<blockquote>
+  <p><strong>König’s lemma.</strong> For a tree $T$, if $T$ has height $\omega$ and each node has finitely many children, then $T$ has a branch of length $\omega$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $\alpha_0$ be the root node, and define a sequence of nodes inductively as follows. Given $\alpha_n$, since $\alpha_n$ has finitely many children, there exists a child node such that the subtree rooted at that node has infinite height. Choose one such child node (using the axiom of choice) and define it as $\alpha_{n+1}$. The sequence ${a_n}$ forms a branch of infinite length. ■</p>
+
+<p>If the nodes of $T$ are allowed to have countably many children, it is possible for all branches of $T$ to have finite length while $T$ itself has height $\omega$, as illustrated below:</p>
+
+<p><img src="/public/koenig-counterexample.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>A natural question is whether König’s lemma can be extended to uncountable cardinals. However, the answer to this question is negative.</p>
+
+<blockquote>
+  <p><strong>Aronszajn’s theorem.</strong> There exists a tree of height $\omega_1$ in which each node has countably many children, but no branch has length $\omega_1$. (Such a tree is called an <strong>Aronszajn tree</strong> of height $\omega_1$.)</p>
+</blockquote>
+
+<p>Thus, to extend König’s lemma to uncountable cardinals, a stronger condition than “each node has countably many children” is required. To this end, the following definition is introduced:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A subset $S$ of a tree $T$ is called an <strong>antichain</strong> if the elements of $S$ are mutually incomparable. A tree $T$ is said to have the <strong>countable chain condition</strong> if all antichains in $T$ are countable.</p>
+</blockquote>
+
+<p>For example, in the tree below, the coloured nodes form an antichain:</p>
+
+<p><img src="/public/antichain.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
+
+<p>While “each node has countably many children” is a local property, the countable chain condition is a global property of the entire tree. Intuitively, the countable chain condition implies that the “width” of the tree is less than $\omega_1$. Note that the term “countable chain condition” rather than “countable antichain condition” is used for historical reasons and need not be a cause for concern.</p>
+
+<p>Earlier, it was mentioned that a collection of pairwise disjoint open intervals of the real numbers is at most countable, and this property is also referred to as the countable chain condition. The two usages are closely related. The general definition of an antichain is as follows:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(P, \leq)$ be a partially ordered set. Two elements $x, y \in P$ are said to be <strong>incomparable</strong> if there does not exist $z \in P$ such that $z \leq x$ and $z \leq y$. A subset $S \subseteq P$ is called an <strong>antichain</strong> if its elements are mutually incomparable. $P$ is said to have the <strong>countable chain condition</strong> if all antichains in $P$ are countable.</p>
+</blockquote>
+
+<p>In a tree $T$, let $x \leq y$ denote that the node $x$ is a descendant of the node $y$. Then, two nodes $x$ and $y$ are incomparable as tree nodes if and only if they are incomparable as elements of the partially ordered set $(T, \leq)$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> An Aronszajn tree with the countable chain condition is called a <strong>Suslin tree</strong>.</p>
+</blockquote>
+
+<p>The existence of Suslin trees is equivalent to the existence of Suslin lines, and hence is independent of ZFC. The equivalence arises because each property corresponds as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Suslin line</th>
+      <th>Suslin tree</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Non-separability</td>
+      <td>Height $\omega_1$</td>
+    </tr>
+    <tr>
+      <td>Countable chain condition for open intervals</td>
+      <td>Countable chain condition for the tree</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The correspondence between non-separability and the height $\omega_1$ property can be understood as follows: the existence of a countable set $D$ such that $|D| \leq \aleph_0$ and every open interval $(a, b)$ intersects $D$ (non-separability) corresponds to the existence of an ordinal $\alpha$ such that $\alpha &lt; \omega_1$ and every node $x \in T$ is the limit of a sequence of nodes in $T^{(\alpha)}$ (tree height being countable).</p>
+
+<p>In connection with Suslin trees, consider the following non-standard axiom in set theory:</p>
+
+<blockquote>
+  <p><strong>Diamond principle.</strong> There exists a sequence $\langle W_\alpha : \alpha &lt; \omega_1 \rangle$ such that $W_\alpha \subseteq \mathcal{P}(\alpha)$, each $W_\alpha$ is countable, and for any $X \subseteq \omega_1$, the set ${\alpha : \alpha &lt; \omega_1, X \cap \alpha \in W_\alpha}$ is stationary.</p>
+</blockquote>
+
+<p>The diamond principle is often denoted by $\Diamond$, and the sequence $\langle W_\alpha \rangle$ is called a diamond sequence.</p>
+
+<p>The set $X \cap \alpha$ can be thought of as the “reflection” of $X$ through the “mirror” $\alpha$. In this sense, the diamond principle implies that the reflection of $X$ at ordinals less than $\omega_1$ appears sufficiently often in $\langle W_\alpha \rangle$. (In <a href="https://dimenerno.github.io/2025/11/11/stationary-sets">this post</a>, it was explained that stationary sets are the set-theoretic analogue of “measure &gt; 0”.)</p>
+
+<p>Thus, the diamond principle is a type of reflection principle and plays a role in regulating the set-theoretic universe, similar to the axiom $V = L$ (in fact, $V = L$ implies $\Diamond$). Like other axioms that regulate the set-theoretic universe, the diamond principle implies the continuum hypothesis.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $\Diamond \implies \mathsf{CH}$</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $X \subseteq \omega \subset \omega_1$. Since $X$ reflects stationarily at ordinals less than $\omega_1$, there exists some $\alpha &gt; \omega$ such that $X \cap \alpha = X \in W_\alpha$. Hence, all subsets of $\omega$ are contained in $\bigcup_{\alpha &lt; \omega_1} W_\alpha$, whose cardinality is $\aleph_1$. Therefore, $2^{\aleph_0} = \aleph_1$. ■</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\Diamond$ holds, then a Suslin line exists.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> See Hrbacek &amp; Jech (3rd ed), Chapter 12, Section 5. Note the following typographical error in the original text:</p>
+
+<blockquote>
+  <p>(Original) <strong>Lemma 5.3.</strong> $\Diamond$ implies that there exists a sequence $\langle Z_\alpha : \alpha &lt; \omega_1 \rangle$ such that, for each $\alpha &lt; \omega_1$, $Z_\alpha \subseteq \omega^{&lt;\alpha}$, $Z_\alpha$ is at most countable, and for any $X \subseteq \omega^{&lt;\omega_1}$ the set ${\alpha &lt; \omega_1 : X \cap \omega^{&lt;\alpha}}$ is stationary.</p>
+
+  <p><em>Proof.</em> We note that […] Clearly, $Z_\alpha \subseteq \omega^{&lt;\alpha}$ and is at most countable.</p>
+</blockquote>
+
+<blockquote>
+  <p>(Corrected) <strong>Lemma 5.3.</strong> $\Diamond$ implies that there exists a sequence $\langle Z_\alpha : \alpha &lt; \omega_1 \rangle$ such that, for each $\alpha &lt; \omega_1$, $Z_\alpha \subseteq \mathcal{P}(\omega^{&lt;\alpha})$, $Z_\alpha$ is at most countable, and for any $X \subseteq \omega^{&lt;\omega_1}$ the set ${\alpha &lt; \omega_1 : X \cap \omega^{&lt;\alpha}}$ is stationary.</p>
+
+  <p><em>Proof.</em> We note that […] Clearly, $Z_\alpha \subseteq \mathcal{P}(\omega^{&lt;\alpha})$ and is at most countable.</p>
+</blockquote>
+
+<p>Additionally, the sentence “Let ${C_n : n \in \mathbb{N}}$ be the at most countable collection of those elements of $Z_\alpha$ which happen to be maximal antichains in $T^{(\alpha)}$.” just before Claim 5.5 means that for each $n$, $C_n \in Z_\alpha$, $C_n \subseteq \omega^\alpha$, and $C_n$ is an antichain when its elements are regarded as nodes of $T^{(\alpha)}$. ■</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> If $V = L$, then a Suslin line exists.</p>
+</blockquote>
+
+<p>Thus, the existence of Suslin lines is related to the regulation of the set-theoretic universe. While this may seem paradoxical, it is not so surprising when one considers that one of the conditions for Suslin lines is the “non-existence” of countable dense sets. Suslin lines are a feature of a “loose” set-theoretic universe that achieves the countable chain condition without generating countable dense sets.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/11/23/euler-poincare"> 오일러-푸앵카레 정리 </a>
@@ -973,6 +1357,137 @@ Z_p = B_p \oplus G_p\\\\
 </ul>
 
 <p>따라서 구의 0차, 1차, 2차 베티 수는 1, 0, 1이며, $1 - 0 + 1 = 2$이다. 따라서 볼록다면체의 경우 $v - e + f = 2$이다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/11/23/euler-poincare/en"> Euler-Poincaré Theorem </a>
+      </h1>
+    <span class="post-date">23 Nov 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>Readers may recall learning the following theorem in their youth:</p>
+
+<blockquote>
+  <p><strong>Euler’s Formula.</strong> For a convex polyhedron, let $v, e, f$ denote the number of vertices, edges, and faces, respectively. Then $v - e + f = 2$.</p>
+</blockquote>
+
+<p>For instance, in the case of a cube, $v = 8, e = 12, f = 6$, so $v - e + f = 2$ holds. The condition of convexity is crucial; if the polyhedron has “holes,” the formula does not hold. For example, in the case of the punctured prism below, $v = 16, e = 32, f = 16$, so $v - e + f = 0$.</p>
+
+<p><img src="/public/punctured-prism.png" style="width: 100%; max-width: 300px; margin: 1em auto 1.5em auto;" /></p>
+
+<p>From this, we may conjecture that the value of $v - e + f$ is determined by the topology of the shape. This is the essence of the Euler-Poincaré theorem. Before stating the theorem, let us first define the following concept:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, the rank of the free part of the homology group $H_p(X)$ of $X$ is called the $p$th <strong>Betti number</strong> of $X$, denoted $R_p(X)$.</p>
+</blockquote>
+
+<p>While it is customary to denote this as $b_p(X)$, we adopt a different notation here as $b_p$ will be used for another purpose in this article. Since homology groups are topological invariants, Betti numbers are also topological invariants.</p>
+
+<p>For example, the homology groups of a torus are as follows:</p>
+
+<ul>
+  <li>$H_0(X) = \mathbb{Z}$</li>
+  <li>$H_1(X) = \mathbb{Z} \oplus \mathbb{Z}$</li>
+  <li>$H_2(X) = \mathbb{Z}$</li>
+</ul>
+
+<p>Thus, the 0th, 1st, and 2nd Betti numbers of the torus are 1, 2, and 1, respectively. Intuitively, Betti numbers represent the number of “holes” (see <a href="https://dimenerno.github.io/2025/11/05/euler-poincare">previous post</a>). In particular, the 0th Betti number corresponds to the number of connected components of $K$. For instance, if two tetrahedra are considered as a single simplicial complex, the 0th Betti number of this complex is 2.</p>
+
+<blockquote>
+  <p><strong>Euler-Poincaré Theorem.</strong> For an $n$-dimensional simplicial complex $K$, let $\alpha_p \; (p \leq n)$ denote the number of $p$-simplices in $K$. Then the following holds:</p>
+
+\[\sum^n_{p = 0} (-1)^p\alpha_p = \sum^n_{p=0}(-1)^p R_p(K)\]
+</blockquote>
+
+<p>In proving this theorem, it is more natural to view $p$-chains as elements of a vector space rather than a free group, and we adopt this approach.</p>
+
+<p><strong>Proof.</strong> Let $C_p, Z_p, B_p$ denote the vector spaces of $p$-chains, cycles, and boundaries of $K$ over the field of rational numbers, respectively. Let $\lbrace  d^i_p \rbrace $ be a maximal subset of $C_p$ that does not linearly generate cycles, and let the vector space spanned by $\lbrace  d^i_p \rbrace $ be $D_p$. Then the following holds ($\oplus$ denotes the direct sum of vector spaces):</p>
+
+\[\begin{gather}
+C_p = D_p \oplus Z_p\\\\
+\alpha_p = \dim C_p = \dim D_p + \dim Z_p
+\end{gather}\]
+
+<p>For $p \leq n - 1$, let $b^i_p = \partial d^i_{p + 1}$. Let the vector space spanned by $\lbrace  b^i_p \rbrace $ be $B_p$. Since $\partial$ is a linear operator, it follows from the fact that $\lbrace  d^i_{p +1} \rbrace $ forms a basis of $D_{p + 1}$ that $\lbrace  b^i_p \rbrace $ forms a basis of $B_p$. We prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> $B_p$ contains all $p$-boundaries of $K$.</p>
+</blockquote>
+
+<p><em>Proof.</em> If $b_p$ is a $p$-boundary of $K$, then there exists some $c_{p + 1} \in C_{p + 1}$ such that $\partial c_{p + 1} = b_p$. By the relation $C_{p + 1} = D_{p + 1} \oplus Z_{p + 1}$, there exist unique $d_{p + 1} \in D_{p + 1}$ and $z_{p + 1} \in Z_{p + 1}$ such that $c_{p + 1 } = d_{p + 1} + z_{p + 1}$. Since $\partial z_{p + 1} = 0$, it follows that $\partial d_{p + 1} = b_p$. Hence, $b_p \in B_p$. □</p>
+
+<p>Let $\lbrace  z^i_p \rbrace $ be a maximal subset of $Z_p$ that does not linearly generate elements of $B_p$, and let the vector space spanned by $\lbrace  z^i_p \rbrace $ be $G_p$. By the lemma, the following holds:</p>
+
+\[\dim G_p = R_p\]
+
+<p>Thus, we have:</p>
+
+\[\begin{gather}
+Z_p = B_p \oplus G_p\\\\
+\dim Z_p = \dim B_p + \dim G_p = \dim D_{p + 1} + R_p
+\end{gather}\]
+
+<p>Combining this with earlier results, we obtain the following for $p \leq n - 1$:</p>
+
+\[\alpha_p = \dim D_{p + 1} + \dim D_p + R_p\]
+
+<p>For $p = n$, $\alpha_n = \dim D_n + R_n$, and for $p = 0$, $\alpha_0 = \dim D_1 + R_0$. Hence, we derive the following (wlog, $n$ is even):</p>
+
+\[\begin{alignat}{3}
+&amp;\alpha_n      &amp;&amp;= \;\cancel{\dim D_n} + R_p \\
+&amp;-\alpha_{n-1} &amp;&amp;= \;\cancel{-\dim D_{n}} \cancel{- \dim D_{n - 1}} - R_{n - 1} \\
+&amp;\alpha_{n-2}  &amp;&amp;= \;\cancel{\dim D_{n - 1}} \cancel{ + \dim D_{n - 2}} + R_{n - 2} \\
+&amp;&amp;\vdots \\
+&amp;-\alpha_{1}   &amp;&amp;= \;\cancel{-\dim D_{2}} \cancel{-\dim D_{1}} - R_{1} \\
+&amp;\alpha_{0}    &amp;&amp;= \;\cancel{\dim D_{1}} + R_{0} \\
+\hline
+&amp;\sum_{p = 0}^n (-1)^p \alpha_p &amp;&amp;= \;\sum_{p=0}^n (-1)^p R_p(K) \quad \blacksquare
+\end{alignat}\]
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, the following value is called the <strong>Euler characteristic</strong>:</p>
+
+\[\xi(X) = \sum (-1)^p R_p(X)\]
+</blockquote>
+
+<p>Since Betti numbers are topological invariants, the Euler characteristic is also a topological invariant.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> Let $v, e, f$ denote the number of vertices, edges, and faces of a polyhedron $P$, respectively. Let $X$ denote the surface of $P$ as a 2-dimensional topological space. Then the following holds:</p>
+
+\[v - e + f = \xi(X)\]
+</blockquote>
+
+<p><strong>Proof.</strong> The triangulation of a $k$-gon can be obtained by adding $k - 3$ edges, which creates $k - 3$ faces. Thus, $P$ has the same $v - e + f$ value as its triangulation, which equals the Euler characteristic. ■</p>
+
+<p><img src="/public/triangulation.png" style="width: 100%; max-width: 400px; margin: 1em auto 1.5em auto;" /></p>
+
+<p>Earlier, we observed that for a polyhedron with one hole, $v - e + f = 0$. Indeed, the 0th, 1st, and 2nd Betti numbers of a torus are 1, 2, and 1, respectively, and $1 - 2 + 1 = 0$. On the other hand, the homology groups of a sphere are as follows:</p>
+
+<ul>
+  <li>$H_0(K) = \mathbb{Z}$</li>
+  <li>$H_1(K) = 0$</li>
+  <li>$H_2(K) = \mathbb{Z}$</li>
+</ul>
+
+<p>Thus, the 0th, 1st, and 2nd Betti numbers of a sphere are 1, 0, and 1, respectively, and $1 - 0 + 1 = 2$. Therefore, for convex polyhedra, $v - e + f = 2$.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
@@ -1155,426 +1670,11 @@ Z_p = B_p \oplus G_p\\\\
   </div>
   <div style="margin-bottom: 6em"></div>
   
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/11/07/mathematics-morality-evolution"> 수학과 윤리학은 같은 배를 탔는가? 진화론 논변을 중심으로 </a>
-      </h1>
-    <span class="post-date">07 Nov 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/철학/'">
-        철학
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>이 글은 Justin Clarke-Doane, <em>Morality and Mathematics: The Evolutionary Challenge</em> (2012)를 정리한 것이다. “저자”는 논문의 저자를, “필자”는 이 글의 필자를 가리킨다. “도덕”과 “윤리”의 혼용을 방지하기 위해 “윤리”로 표현을 통일했다.</p>
-</blockquote>
-
-<h2 id="개요">개요</h2>
-
-<p>윤리 실재론에 대한 반론 중 하나는 <strong>진화론 논변<sub>The Evolutionary Challenge</sub></strong>이다. 진화론 논변에 따르면, 오늘날의 인류가 가지는 윤리적 믿음들은 진화적 압력<sub>evolutionary forces</sub>에 의해 형성되었다. 그러나 진화의 원리는 윤리적 사실들과 무관하므로, 윤리적 사실들이 완전히 다른 반사실적 세계에서도 인류는 동일한 윤리적 믿음들을 가지도록 진화했을 것이다. 그러므로 만약 우리의 윤리적 믿음들이 참이라면 이는 진화의 결과와 윤리의 명제들이 굉장한 우연으로 일치하게 된 것이다. 따라서 진화론 논변을 옹호하는 자들은 윤리 실재론이 굉장한 우연을 날것 그대로 받아들이거나, 혹은 우리의 윤리적 믿음들이 참이라고 생각할 근거가 없음을 인정해야 한다고 주장한다.</p>
-
-<p>예를 들어 우리가 “타인을 배려해야 한다”라는 윤리적 믿음을 가지게 된 이유는, 아마 인류의 진화에 있어 상호 협력을 중시하는 집단이 이기주의를 중시하는 집단보다 생존 확률이 높았기 때문일 것이다. 그런데 상호 협력이 이기주의보다 생존 확률이 높다는 것은 윤리적 사실이 아니라, 두 전략의 기댓값에 대한 게임이론적 내지는 수학적 사실이다. 따라서 설령 상호 협력보다 이기주의가 윤리적이었다고 하더라도, 우리는 “타인을 배려해야 한다”라는 믿음을 가지도록 진화했을 것이다.</p>
-
-<p>한편으로 진화론 논변은 수학 실재론을 위협하지는 않는 것으로 받아들여져 왔다. 왜냐하면 진화의 원리는 수학적 참에 의존적인 것으로 보이기 때문이다. 예를 들어 1 + 1 = 2임을 믿는 개체들은 그렇지 않은 개체보다 생존에 유리한데, 이는 1 + 1 = 2가 <em>실제로</em> 참이기 때문이다. 이를 조이스는 다음과 같이 설명한다.</p>
-
-<blockquote>
-  <p>수풀 A 뒤에 사자 한 마리가 있고 수풀 B 뒤에 사자 한 마리가 있다고 하자. 우리의 선조 P와 Q가 수풀 C 뒤에 숨어 있다. P는 사자 한 마리와 다른 사자 한 마리는 총 사자 두 마리가 된다고 믿고, Q는 사자 한 마리와 다른 사자 한 마리가 총 사자 0마리가 된다고 믿는다. <em>그렇다면 P가 Q보다 죽을 확률이 적으며, 자신의 유전자를 남길 확률이 크다.</em> 왜냐하면 P는 Q보다 수풀 C에서 걸어나와 두 마리의 사자에게 잡아먹힐 확률이 적기 때문이다. 그러나 이 사실[이탤릭체로 표시된 사실]에 대한 설명은, 사자 한 마리와 다른 사자 한 마리가 <em>정말로</em> 0마리가 아니라 두 마리의 사자라는 사실을 전제한다.</p>
-</blockquote>
-
-<p>그러나 논문에서 저자는 이것이 잘못된 생각이라고 주장한다. 저자는 진화론 논변이 윤리 실재론을 위협하는 것과 같은 정도로 수학 실재론을 위협한다고 주장한다. 결론적으로 저자는 윤리 실재론과 수학 실재론 중 하나만 받아들이는 입장은 비정합적이라고 피력한다.</p>
-
-<h2 id="1-실재론은-정확히-무엇인가">1. 실재론은 정확히 무엇인가?</h2>
-
-<p>본 논증에 들어가기 앞서 저자는 윤리 실재론과 수학 실재론이 정확히 무엇을 의미하는지를 해명하고자 한다. 일반적으로, 저자는 어떤 논의 영역<sub>area of discourse</sub> D에 대해, <strong>D-실재론</strong>을 다음 네 입장의 연언으로 정의한다.</p>
-
-<ol>
-  <li>D-참-적합성<sub>D-Truth-Aptness</sub>. D의 문장들은 진릿값을 가진다.</li>
-  <li>D-참<sub>D-Truth</sub>. 어떤 D의 원자명제 또는 존재 양화 명제는 참이다.</li>
-  <li>D-독립성<sub>D-Independence</sub>. D의 문장들의 진릿값은 정신과 언어에 유의미한 의미에서 독립적이다.</li>
-  <li>D-액면성<sub>D-Literalness</sub>. D의 문장들은 문자 그대로 받아들여져야 한다.</li>
-</ol>
-
-<p>D를 윤리학으로 설정할 경우 1은 에이어의 감정주의<sub>emotivism</sub><sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>를 기각하고, 2는 매키의 오류 이론<sub>error theory</sub><sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>을 기각하고, 3은 구성주의<sub>constructivism</sub><sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup>를 기각하고, 4는 하먼의 상대주의<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup>를 기각한다. D를 수학으로 설정할 경우 1은 힐베르트의 형식주의<sub>formalism</sub><sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup>를 기각하고, 2는 필드의 허구주의<sub>fictionalism</sub><sup id="fnref:6"><a href="#fn:6" class="footnote" rel="footnote" role="doc-noteref">6</a></sup>를 기각하고, 3은 브라우어르 구성주의<sup id="fnref:7"><a href="#fn:7" class="footnote" rel="footnote" role="doc-noteref">7</a></sup>를 기각하고, 4는 만약주의<sub>if-thenism</sub><sup id="fnref:8"><a href="#fn:8" class="footnote" rel="footnote" role="doc-noteref">8</a></sup>를 기각한다.</p>
-
-<p>이 논문에서는 윤리 실재론과 수학 실재론을 기본적으로 전제한 뒤, 이들이 진화론 논변을 극복할 수 있는지 검토한다. 추가로 우리의 윤리적, 수학적 믿음들은 대부분 참이라고 전제한다.</p>
-
-<h2 id="2-윤리-실재론에-대한-진화론-논변">2. 윤리 실재론에 대한 진화론 논변</h2>
-
-<p>실재론의 구성 요건을 밝혔으니, 진화론 논변이 어떻게 윤리 실재론을 공격하는지 살펴보자. 진화론 논변의 전제는 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>강한 전제.</strong> 우리의 윤리적 믿음은 참-독립적인 진화적 압력에 의해 형성되었다.</p>
-</blockquote>
-
-<p>강한 전제는 다음 두 전제로 이루어져 있다.</p>
-
-<div style="margin-left: 1em;">
-<p><strong>E.</strong> 우리의 윤리적 믿음은 진화적으로 형성되었다.</p>
-<p><strong>NTT.</strong> 윤리적 믿음의 진화는 <strong>참-독립적<sub>non-truth-tracking</sub></strong>으로 이루어졌다.</p>
-</div>
-
-<p><strong>NTT</strong>의 정확한 의미는 다음의 반사실적 조건문이다.</p>
-
-<blockquote>
-  <p><strong>P.</strong> 나머지 사실은 모두 유지된 채 오직 윤리적 사실만이 현실과 아주 달랐다고 하자. 그럼에도 우리는 현실에서 참인 윤리적 믿음들을 가지도록 진화했을 것이다.</p>
-</blockquote>
-
-<p>혹자는 <strong>P</strong> 대신 <strong>Q</strong>를 2의 의미로 해명할 수 있다고 지적할 수 있다.</p>
-
-<blockquote>
-  <p><strong>Q.</strong> 우리는 틀린 윤리적 믿음들을 가지도록 진화할 수 있었다.</p>
-</blockquote>
-
-<p>그러나 저자는 <strong>Q</strong>가 견지될 수 없는 입장이라고 주장한다. 물론, 다윈이 일찍이 지적했듯이 인류가 꿀벌과 같은 환경에서 발생했다면 인류는 결혼하지 않은 여성이 형제를 죽이는 것을 용인했을지 모른다. 그러나 이 사례 자체는 <strong>Q</strong>를 예증하지 않는다. 해당 사례가 <strong>Q</strong>를 예증하기 위해서는 “<em>꿀벌과 같은 환경에서</em> 결혼하지 않은 여성이 형제를 죽이는 것은 잘못되었다”가 윤리적 참이라는 추가적인 가정이 필요한데, 이는 자명한 가정이 아니기 때문이다. (기아가 빈번했던 전근대 사회에서의 영아 살해와 현대의 영아 살해가 가지는 윤리적 무게를 고려해 보라.) 따라서 저자는 <strong>Q</strong>를 예증하고자 할 경우 “고통은 좋다”, “쾌는 나쁘다”와 같이 기초적<sub>explanatorily basic</sub>으로 틀린 윤리적 믿음들을 가지게 되는 경우를 제시해야 한다고 주장한다. 그러나 고통이 좋고 쾌가 나쁘다고 믿는 개체들은 진화론적으로 절멸했을 것이므로 <strong>Q</strong>는 견지될 수 없다. 따라서 <strong>P</strong>가 <strong>NPP</strong>의 올바른 해명이다.</p>
-
-<p>그러나 <strong>P</strong>에도 문제가 있다. 많은 윤리 실재론자들은 윤리적 속성과 기술적<sub>descriptive</sub> 속성의 동일시가 형이상학적으로 필연적<sub>metaphysically necessary</sub>이라고 주장한다. 예를 들어 “쾌는 좋다”가 참이라면, 이 참은 형이상학적으로 필연적이다. 이 관점에 따르면 기술적 사실들이 고정된 채 윤리적 사실들만 달라지는 것은 형이상학적으로 불가능하다. 따라서 <strong>P</strong>에 대한 다음의 독해는 견지될 수 없다.</p>
-
-<blockquote>
-  <p><strong>P<sub>1</sub>.</strong> <em>형이상학적인 의미에서</em> 나머지 사실은 모두 유지된 채 오직 윤리적 사실만이 현실과 아주 달랐다고 하자. 그럼에도 우리는 현실에서 참인 윤리적 믿음들을 가지도록 진화했을 것이다.</p>
-</blockquote>
-
-<p>대신 저자는 <strong>P</strong>를 다음과 같이 이해해야 한다고 주장한다.</p>
-
-<blockquote>
-  <p><strong>P<sub>2</sub>.</strong> 나머지 사실은 모두 유지된 채 오직 윤리적 사실만이 현실과 아주 다른 상황을 <em>정합적으로 상상해 보자<sub>intelligibly imagine</sub></em>. 그럼에도 우리는 현실에서 참인 윤리적 믿음들을 가지도록 진화했을 것이다.</p>
-</blockquote>
-
-<p>수학을 예시로 들어, $\zeta(-1)$을 구하는 문제의 답을 $-1/12$로 찍어서 맞힌 아이의 경우를 생각해 보자. $\zeta(-1) = -1/12$은 필연적이므로, “이 문제의 답이 달랐더라도 아이는 정답을 맞혔을 것이다 (아이의 대답은 참-의존적<sub>truth-tracking</sub>이었다)”라는 반사실적 가정문은 형이상학적으로 공허참이다. 그럼에도 우리는 $\zeta(-1) = -1/12$이 아닌 경우를 <em>상상할</em> 수 있으며, 이 상상을 정합적으로<sub>intelligibly</sub> 전개한다면 아이는 문제를 틀렸을 것이다. 이런 의미에서 아이의 대답은 참-독립적이었다.</p>
-
-<p><strong>E</strong>와 <strong>NTT</strong>의 의미가 해명되었으므로, 강한 전제로부터 어떻게 윤리 실재론에 대한 반박을 유도하는지 살펴보자. 스트리트 등은 다음의 논변을 제시한다.</p>
-
-<ol>
-  <li>윤리적 사실이 아주 달라지는 것이 형이상학적으로는 불가능하더라도 그런 경우를 상상할 수는 있다.</li>
-  <li>우리가 상상할 수 있는 한에서, 윤리적 사실이 아주 달랐더라도 우리가 진화론적으로 형성하게 된 윤리적 믿음들은 동일했을 것이다.</li>
-  <li>따라서 현실의 우리가 윤리적으로 참인 믿음들을 가지게 되었다는 것은 설명될 수 없는 우연이다.</li>
-</ol>
-
-<p>그러나 저자는 2로부터 3이 따라 나오지는 않는다고 주장한다. 2로부터 3을 도출하기 위해서는 다음의 일반적인 원리를 전제해야 한다.</p>
-
-<blockquote>
-  <p>D에 대한 기본적인 사실들이 달라지더라도 D에 대한 믿음들 중 달라지지 않는 믿음들의 참은 우연적이다.</p>
-</blockquote>
-
-<p>저자는 위 원리에 대한 다음 반례를 든다. 철수는 자신을 향해 날아오는 농구공을 보며, “농구공이 내 눈앞으로 날라오고 있다”라고 믿는다. 여기서 농구공이 농구공처럼 배열된 원자들<sub>atoms arranged basketballwise</sub>과 같다는 것은 형이상학적으로 필연적이다. 그러나 우리는 물질이 원자가 아닌 다른 요소로 구성된 세계를 상상할 수 있다. 그런 세계에 사는 철수 앞으로 농구공이 날라오더라도 철수는 동일한 믿음, 즉 “농구공이 내 눈앞으로 날라오고 있다”라고 믿을 것이다. 이처럼 농구공에 대한 기본적인 사실들이 달라지더라도 철수는 동일한 믿음을 견지하지만, 그럼에도 불구하고 현실의 철수가 “농구공이 내 앞으로 날라오고 있다”라고 믿는 것은 참이며, 이 참은 우연적이지 않다.</p>
-
-<blockquote>
-  <p>필자 주: 필자는 저자가 잘못된 유비를 들었다고 생각한다. 농구공이 원자로 구성된 세계의 철수가 “농구공이 내 앞으로 날라오고 있다”라고 믿는 것과, 농구공이 연속체로 구성된 세계의 철수가 “농구공이 내 앞으로 날라오고 있다”라고 믿는 것은 동일한 믿음이 아니다. 왜냐하면 두 철수에게 있어 “농구공”의 의미는 지시<sub>ostension</sub>를 통해 결정되기 때문이다. 따라서 전자의 철수는 “농구공”으로 “농구공처럼 배열된 원자들”을 의미하고, 후자의 철수는 “농구공”으로 “농구공처럼 응축된 연속체”를 의미한다. 이렇듯 농구공에 대한 기본적인 사실이 달라지면 철수는 그에 상응하는 다른 믿음을 가지게 된다. 반면 윤리적 언어의 의미는 지시로 결정되지 않는 것으로 보인다.</p>
-</blockquote>
-
-<p>그러나 저자는 비록 스트리트의 논증이 그 자체로는 우리가 참인 윤리적 믿음들을 가지는 것에 대한 설명이 완전히 불가능함을 보이지 않더라도, 적어도 다음의 두 설명은 잘못되었음을 입증한다고 지적한다.</p>
-
-<ol>
-  <li><strong>진화적 설명<sub>evolutionary explanation</sub>.</strong> 우리가 참된 윤리적 믿음들을 가지는 이유는 우리가 참된 윤리적 믿음들을 가지도록 (자연)선택되었기 때문이다.</li>
-  <li><strong>자명한 설명<sub>trivial explanation</sub>.</strong> 우리가 참된 윤리적 믿음들을 가지는 이유는 현재의 윤리적 사실들이 유일하게 가능한 윤리적 사실들이며, 그 사실들을 믿는 개체들이 진화에 더 유리하기 때문이다.</li>
-</ol>
-
-<p>진화적 설명과 자명한 설명의 차이에 집중하라. 진화적 설명은 윤리적 사실이 “쾌는 좋다”에서 “고통은 좋다”로 — 형이상학적이지는 않을지언정 상상 속에서 — 바뀌었다면 우리 또한 “고통은 좋다”라는 믿음을 가지도록 진화했을 것이라고 주장한다. 반면 자명한 설명은 “쾌는 좋다”라는 윤리적 사실이 “고통은 좋다”로 바뀌는 것이 — 형이상학적인 의미에서나 상상 속에서나 — 불가능하다고 견지하며, 이에 따라 진화가 어떻게 <em>현실의</em> 윤리적 사실들을 믿는 개체를 탄생시키는지 설명한다면 그것으로 모든 문제는 해결된다고 주장한다.</p>
-
-<blockquote>
-  <p>필자 주: 자명한 설명은 개요에서 언급한 게임 이론적 설명을 전제하는 듯하다. 즉, 자명한 설명은 윤리 실재론에 대한 진화론 논변을 (i) 윤리적 사실들의 강한 필연성과, (ii) 해당 윤리적 사실들이 진화적으로 유리하다는 수학적 사실, 그리고 (iii) 수학적 사실들의 필연성이라는 세 전제를 통해 극복하고자 한다. 이는 (ii)라는 다리 원리를 통해 윤리적 믿음들의 참에 대한 설명을 수학적 믿음들의 참에 대한 설명에 정초하는 시도로 보인다.</p>
-</blockquote>
-
-<p>그런데 진화적 설명과 자명한 설명이 잘못되었음을 주장하는 것이 진화론 논변의 목적이라면, 진화론 논변은 <strong>E ∧ NTT</strong>를 전제할 필요 없이 <strong>E → NTT</strong>만 전제해도 그 목적을 달성할 수 있다. 즉, 진화론 논변은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>진화론 논변.</strong> <strong>E → NTT</strong>라면, 우리가 참된 윤리적 믿음들을 가진다는 사실을 진화적 설명 또는 자명한 설명으로 설명하는 것은 잘못되었다.</p>
-</blockquote>
-
-<p>저자는 위와 같이 진화론 논변을 정리한 뒤, 해당 논변이 수학에서는 얼마나 유효한지를 검토한다.</p>
-
-<h2 id="3-수학은-진화에-영향을-주는가">3. 수학은 진화에 영향을 주는가?</h2>
-
-<p>통상적으로 수학은 진화론 논변의 대상이 되지 않는다고 생각된다. 윤리적 참이 진화와 무관한 것과 달리 (윤리적 참이 달라지더라도 진화에는 영향이 없다) 수학적 참은 진화에 영향을 준다고 생각되기 때문이다. 앞서 소개한 조이스는 사례를 다시 보자.</p>
-
-<blockquote>
-  <p>수풀 A 뒤에 사자 한 마리가 있고 수풀 B 뒤에 사자 한 마리가 있다고 하자. 우리의 선조 P와 Q가 수풀 C 뒤에 숨어 있다. P는 사자 한 마리와 다른 사자 한 마리는 총 사자 두 마리가 된다고 믿고, Q는 사자 한 마리와 다른 사자 한 마리가 총 사자 0마리가 된다고 믿는다. <em>그렇다면 P가 Q보다 죽을 확률이 적으며, 자신의 유전자를 남길 확률이 크다.</em> 왜냐하면 P는 Q보다 수풀 C에서 걸어나와 두 마리의 사자에게 잡아먹힐 확률이 적기 때문이다. 그러나 이 사실[이탤릭체로 표시된 사실]에 대한 설명은, 사자 한 마리와 다른 사자 한 마리가 <em>정말로</em> 0마리가 아니라 두 마리의 사자라는 사실을 전제한다.</p>
-</blockquote>
-
-<p>그러나 저자는 조이스의 논증에 두 가지 문제가 있다고 지적한다. 첫 번째 문제는, 조이스의 논증이 다음의 원리에 기반한다는 사실에 기인한다.</p>
-
-<blockquote>
-  <p>우리가 D에 관한 특정 믿음들을 가지는 것에 대한 진화적 설명이 해당 믿음들의 내용을 전제하면, 우리는 D에 관한 참인 믿음들을 가지도록 선택되었다.</p>
-</blockquote>
-
-<p>그러나 저자는 우리가 참인 D-믿음들을 가지도록 선택되지 않았더라도 (즉 우리의 D-믿음들이 참이 아니거나, 참-독립적으로 형성되었다고 하더라도) 우리의 D-믿음들에 관한 진화적 설명이 우리의 D-믿음들의 내용을 전제할 수 있다고 주장한다. 가령 모든 유형의 설명은 우리의 논리적 믿음들에 대한 내용을 전제하지만, 그럼에도 불구하고 우리가 참인 논리적 믿음들을 가지도록 선택되었는지는 의문으로 남는 듯하다 (필자의 <a href="https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic">소논문</a> 참고).</p>
-
-<p>그럼에도 혹자는 콰인-퍼트넘 등의 전체론적 인식론을 채택함으로써, 수학적 사실이 우리의 수학적 믿음들을 설명하는 기반이 된다는 고찰을 해당 수학적 사실이 참인 <em>잠정적</em> 근거로 볼 수 있다고 반론할 수 있다. 이에 저자는 두 번째, 더 심각한 문제를 지적한다. 바로 우리의 수학적 믿음들에 관한 진화적 설명은 애당초 수학적 사실과는 관련이 없다는 것이다. 저자는 진화적 설명이 수학적 사실이 아닌 <strong>1차 논리적 사실</strong>과만 관련 있다고 주장한다. 앞선 사자의 사례를 보면, P가 Q보다 생존할 확률이 높았던 것은 <strong>M</strong>이 참이기 때문이 아니라 <strong>L</strong>이 참이기 때문이라는 것이다.</p>
-
-<div style="margin-left: 1em;">
-<p><strong>M.</strong> 1 + 1 = 2</p>
-<p><strong>L.</strong> 수풀 A 뒤에 사자 한 마리가 있고, 수풀 B 뒤에 사자 한 마리가 있고, 어떠한 수풀 A 뒤에 있는 사자도 수풀 B 뒤에 있는 사자와 같지 않다면, 수풀 A와 수풀 B 뒤에는 사자 두 마리가 있다.</p>
-</div>
-
-<p><strong>L</strong>은 다음과 같이 1차 논리식으로 풀어쓸 수 있다.</p>
-
-\[\begin{align}
-&amp;\;\exists! x A(x) \land \exists! y B(y) \land \forall x, y (A(x) \land B(y) \rightarrow x \neq y) \\
-&amp;\rightarrow \exists x, y \big((x \neq y) \land (A(x) \lor B(x)) \land (A(y) \lor B(y)) \\
-&amp;\quad \quad \land\; \forall z ( (A(z) \lor B(z)) \rightarrow (z = x) \lor (z = y))\big)
-\end{align}\]
-
-<p>많은 수학자와 철학자가 수학이 논리로 환원될 수 있다는 입장을 견지하기는 하지만, 환원의 종착지가 1차 논리라고 주장하는 학자는 없다. 따라서 우리의 수학적 믿음들에 대한 진화적 설명이 수학적 사실이 아닌 1차 논리적 사실에만 의존한다면, 진화적 설명은 우리가 참인 수학적 믿음들을 가지도록 선택되었다는 결론을 확정적으로도, 잠정적으로도 도출해내지 못한다.</p>
-
-<p>또한 수학 실재론자는 <strong>M</strong>과 <strong>L</strong>을 단순히 동일시할 수도 없다. 왜냐하면 실재론의 요건 중 D-액면성이 있기 때문이다. 1 + 1 = 2의 진술은 문자 그대로 받아들여져야 하며, 문자 그대로 받아들여졌을 때 이 진술은 1과 2라는 수가 존재하며, 해당 수들이 덧셈에 대해 특정 관계에 있다는 진술이다.</p>
-
-<p>결론적으로, P가 Q보다 생존 확률이 높은 이유는 P가 가진 수학적 믿음 <strong>M</strong>의 내용이 참이기 때문이 아니라, 그 믿음에 대응되는 논리적 내용 <strong>L</strong>이 참이기 때문이다. 그리고 <strong>M</strong>이 <strong>L</strong>에 대응된다는 사실은 수학적 실재론을 전제하지 않더라도 충분히 해명될 수 있다. 전반부에서 언급된 여러 반실재론적 입장들 — 형식주의, 허구주의, 구성주의, 만약주의 — 은 각자 정도의 차이는 있지만 모두 <strong>M</strong>과 <strong>L</strong>의 대응을 수학적 대상을 가정하지 않으면서 설명해 낸다.</p>
-
-<p>물론 우리는 1차 논리로 포착될 수 없는 수학적 믿음들 또한 가지고 있다. 귀납 공리에 대한 믿음이 한 예시이다. 그러나 저자는 귀납 공리가 직접적인 진화의 외압으로 인해 형성된 믿음이 아님을 지적한다. 귀납 공리는 17세기 전까지는 명시적으로 표현된 적조차 없었다. 귀납 공리에 대한 믿음은 기초적인 산술 믿음들을 형식화하여 정립하는 과정에서 발생한 것이다. 즉 우리가 귀납 공리를 믿는 이유는 기초적인 산술에 대한 믿음 때문이고, 그 믿음들은 수학적 사실이 아닌 1차 논리적 사실로 인해 형성된 것이다. 결론적으로, 논리를 초월하는 수학적 사실들은 정작 수학적 믿음의 진화적 형성에 아무런 영향을 미치지 않는다 (다음의 그림 참조: A → B는 “A로 인해 B를 믿는 개체가 진화한다”는 의미이다).</p>
-
-<p><img src="/public/math-moral.png" style="width: 100%; max-width: 500px; margin: 0 auto;" /></p>
-
-<p>여기서 저자는 짧게 다음의 질문을 제시한다. 그렇다면 지금까지의 논의는 우리가 참인 <em>1차 논리적</em> 믿음들을 가지도록 진화했다는 것을 보여주는가? 저자는 이 질문의 답이 “아니오”일 것이라고 생각한다. 왜냐하면 논리적 사실들은 5 + 7 = 12와 같은 단순한 산술적 사실만 되어도 굉장히 복잡해지기 때문이다. 따라서 진화론적으로는 <em>단순히</em> 수학적 믿음을 가지는 개체가, 수학적 믿음, 논리적 믿음, 그리고 각각의 수학적 명제를 논리적 명제로 어떻게 번역할지에 관한 믿음을 가지는 개체보다 유리할 것으로 보인다. 즉, 논리적 사실들이 달랐더라면 우리의 수학적 믿음들 또한 달라졌을 것이지만 우리의 논리적 믿음들이 어떻게 되었을지는 불분명하다(— 라고 저자는 생각하는 듯한데, 사실 이 부분에 관한 저자의 코멘트가 너무 함축적이라서 잘 모르겠다. 논리적 믿음의 형성을 진화론적으로 설명할 수 없다는 별도의 논증으로 <a href="https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic">필자의 소논문</a>을 참고하라.)</p>
-
-<h2 id="4-또다른-수학은-상상-가능한가">4. 또다른 수학은 상상 가능한가?</h2>
-
-<p>수학에 대한 진화적 설명을 기각한 저자는 자명한 설명으로 논의를 돌린다. 자명한 설명은, 현재의 수학적 사실들이 유일하게 가능한 수학적 사실들임을 주장한다.</p>
-
-<p>통상적으로 윤리에 대한 자명한 설명은 설득력이 없는 것으로 간주되었다. 왜냐하면 윤리의 영역에서는 충분히 합리적인 개인들이 상충하는 입장을 가지는 경우가 자주 있기 때문이다. 서로 다른 윤리적 사실을 견지하는 합리적 개인들이 존재한다면, 현실과 다른 윤리적 사실을 가진 세계는 충분히 정합적으로 상상될 수 있다. 반면 수학의 경우에는 그런 상충이 거의 보이지 않는다. 트롤리 딜레마와 피타고라스 정리에 대한 사람들의 견해차를 비교해 보라.</p>
-
-<p>그러나 저자는 이것이 윤리 실재론자에게 불리하도록 선별된 비교라고 주장한다. 우리는 윤리 실재론자들 사이에서 이견이 없는 명제들 — 이를테면 “아이를 재미로 고문하는 것은 정당하지 않다” — 을 찾을 수 있다. 반대로, 수학 실재론자들 사이에서 이견이 있는 수학의 공리들 또한 찾을 수 있다. 유한주의는 임의의 자연수보다 큰 자연수가 언제나 존재한다는 공리를 부정하고, 선택 공리는 전통적으로 굉장히 많은 논란을 야기했으며, 연속체 가설은 지금까지도 논란이 되고 있다. 따라서 저자는 현실과 다른 윤리적 참을 가지는 세계를 상상할 수 있는 것과 같은 정도로, 현실과 다른 수학적 참을 가지는 세계 — 이를테면 무한집합이 존재하지 않는 세계 — 를 상상할 수 있다고 주장한다.</p>
-
-<h2 id="5-결론">5. 결론</h2>
-
-<p>저자는 진화론 논변이 윤리 실재론을 위협하는 것으로 여겨졌지만, 동일한 위협이 수학 실재론에도 가해짐을 논증했다. 저자는 수학 실재론 말고 오직 윤리 실재론만 위협하는 다른 논증이 있을 수도 있다는 사실을 인정한다. 일례로 하먼은 경험과학에서 수학의 필수불가결성<sub>indispensability</sub>으로부터 수학적 참을 경험적으로 정당화하는 콰인-퍼트넘 논증이 윤리에서는 적용되지 않는다는 점을 지적했다. 하지만 저자는 경험과학-수학 불가결성에 대한 근래의 회의주의와 경험과학-윤리 불가결성에 대한 새로운 논증들, 그리고 베나세라프 등의 인식론적 고려들을 제시하며, 수학 실재론과 윤리 반실재론을 동시에 견지하는 것이 점점 어려워지고 있음을, 어쩌면 불가능해질지도 모른다고 결론 내린다.</p>
-
-<hr />
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1">
-      <p>윤리적 문장은 감정의 발화라는 입장. 이 입장은 윤리학을 환호 및 야유와 동일시한다. 예를 들어 “도둑질은 나쁘다”는 “도둑질 우우!”와 동등하다 (“나는 도둑질을 싫어한다”와 동등하지는 않음에 유의하라). <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2">
-      <p>모든 윤리적 문장은 거짓이라는 입장. 이 입장은 윤리학을 플로지스톤 이론과 동일시한다. 플로지스톤이 존재하지 않으므로 플로지스톤 이론의 모든 문장이 틀렸듯이, 선함이 존재하지 않으므로 윤리학의 모든 문장은 틀렸다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3">
-      <p>인간의 정신이 윤리적 대상과 속성을 구성한다는 입장. 이 입장은 윤리학을 색깔 이론과 동일시한다. 색깔 이론의 객관성과 유용성과는 별개로 모든 인간이 사라지면 색의 개념도 사라지듯이, 모든 인간이 사라지면 선함의 개념도 사라진다. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:4">
-      <p>모든 윤리적 문장에는 생략된 전제구가 있다는 입장. 예를 들어 “트롤리의 선로를 바꿔야 한다”에서 생략된 전제구가 “공리주의에 따르면”이라면 이 문장은 참이고, “의무론에 따르면”이라면 거짓이다. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:5">
-      <p>수학은 규칙이 정해진 게임 활동이라는 입장. 이 입장은 수학을 체스의 수와 동일시한다. 가령 “1 + 1” 뒤에 “= 2”를 쓰는 것은 킹과 룩 사이를 비운 뒤 캐슬링을 하는 행위와 동등하다 (“킹과 룩 사이가 비어 있으면 캐슬링이 가능하다”와 동등하지는 않음에 유의하라). <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:6">
-      <p>모든 수학적 문장은 거짓이라는 입장. 주석 2 참조. 필드는 유명론과 허구주의를 견지하면서도 수학이 과학에 유용할 수 있는 이유를 “다리 원리”를 통해 설명할 수 있다고 주장했다. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:7">
-      <p>인간의 정신이 수학적 대상과 속성을 구성한다는 입장. 주석 3 참조. 브라우어르의 구성주의는 수학이 인간의 시공간 인식에 정초되어야 한다고 주장한다. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:8">
-      <p>모든 수학적 명제에는 생략된 전제구가 있다는 입장. 예를 들어 “삼각형의 세 내각의 합은 180도이다”에서 생략된 전제구가 “유클리드 기하학에서”라면 이 문장은 참이고, “쌍곡 기하학에서”라면 거짓이다. <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/11/05/simplicial-homology"> 단체 호몰로지 </a>
-      </h1>
-    <span class="post-date">05 Nov 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>정의.</strong> $K$가 순수 $k$-단체 복합체<sub>pure simplicial complex</sub>이고, $p \leq k$에 대해 $C_p(K)$가 $K$의 $p$-체인<sub>chain</sub>들의 집합이라고 하자.</p>
-
-  <ul>
-    <li>$z \in C_p(K)$가 $K$의 <strong>$p$-고리<sub>cycle</sub></strong>라는 것은 $z \in \ker \partial_p$라는 것이다.</li>
-    <li>$b \in C_p(K)$가 $K$의 <strong>$p$-경계<sub>boundary</sub></strong>라는 것은 $b \in \operatorname{im} \partial_{p + 1}$이라는 것이다.</li>
-  </ul>
-
-  <p>$p$-고리들의 집합을 $Z_p(K)$, $p$-경계들의 집합을 $B_p(K)$라고 적는다.</p>
-</blockquote>
-
-<p>$C_p(K)$를 자유 아벨군으로 보았을 때 $Z_p(K)$와 $B_p(K)$는 $C_p(K)$의 부분군이다. 자유 아벨군의 부분군은 언제나 자유 아벨군이므로 $Z_p(K)$와 $B_p(K)$는 자유 아벨군이다. 또한 $\partial_p \partial_{p+1} = 0$이므로 $B_p(K) \leq Z_p(K)$이며, 아벨군의 부분군은 정규부분군이므로 몫군 $Z_p(K)/B_p(K)$를 취할 수 있다. 이 목군을 <strong>호몰로지 군<sub>homology group</sub></strong>이라고 하며 $H_p(K)$라고 적는다.</p>
-
-<p>쉬운 언어로 설명하자면, 두 1-고리 $z_1, z_2$가 같은 호몰로지 군의 원소에 대응된다는 것은 $z_1 - z_2$가 어떤 2-체인의 경계를 이룬다는 것이다. 예를 들어 띠<sub>cylinder</sub>의 삼각화인 다음 복합체 $K$를 보자.</p>
-
-<p><img src="/public/homology-1.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>$z_1 = \langle 01 \rangle + \langle 12 \rangle + \langle 20 \rangle, z_2 = \langle 34 \rangle + \langle 45 \rangle + \langle 53 \rangle$이라고 하자. $z_1 - z_2$는 오른쪽과 같다.</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 1em;">
-<img src="/public/homology-2.png" style="width: 100%; max-width: 300px; margin: 0 auto" />
-<img src="/public/homology-3.png" style="width: 100%; max-width: 300px; margin: 0 auto" />
-</div>
-
-<p>그런데 이는 띠 전체의 경계와 같다. 구체적으로,</p>
-
-\[\begin{align*}
-&amp;\partial (\langle 013 \rangle + \langle 143 \rangle + \langle 124 \rangle + \langle 254 \rangle + \langle 205 \rangle + \langle 035 \rangle) \\
-&amp;= (\langle 01 \rangle + \langle 12 \rangle + \langle 20 \rangle) - ( \langle 34 \rangle + \langle 45 \rangle + \langle 53 \rangle) \\
-&amp;= z_1 - z_2
-\end{align*}\]
-
-<p>따라서 $z_1$과 $z_2$는 같은 호몰로지 군의 원소에 대응된다. 그러나 $n, m \in \mathbb{Z}$에 대해 $n \neq m$이라면 $n \cdot z_1$과 $m \cdot z_1$은 서로 다른 호몰로지 군의 원소에 대응된다. $(n - m) \cdot z_1$이 $B_1(K)$에 속하지 않기 때문이다. 이로부터 띠의 1-호몰로지 군이 $\mathbb{Z}$임을 유추할 수 있으며, 이 유추는 올바르다.</p>
-
-<p>반면 토러스의 경우, 다음의 $w_1$과 $w_2$는 서로 다른 호몰로지 군의 원소에 대응된다. $w_1 - w_2$가 어떠한 2-체인의 경계도 아님을 직관적으로 파악할 수 있을 것이다. 실제로 토러스의 1-호몰로지 군은 $\mathbb{Z} \oplus \mathbb{Z}$이다.</p>
-
-<p><img src="/public/homology-4.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
-
-<p>호몰로지 군의 랭크<sub>rank</sub>는 직관적으로 구멍의 의미를 가진다. 띠의 1-호몰로지 군의 랭크가 1이라는 것은 띠의 1차원 구멍이 하나 있다는 것이고, 토러스의 1-호몰로지 군의 랭크가 2라는 것은 토러스의 1차원 구멍이 2개 있다는 것이다. (여기서 $n$차원 구멍이라 함은 $n$차원 경로에 의해 둘러질 수 있는 구멍을 말한다.)</p>
-
-<p><img src="/public/homology-5.png" style="width: 100%; max-width: 550px; margin: 0 auto;" /></p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/09/25/ch-for-borel"> 닫힌집합과 보렐 집합에서의 연속체 가설 </a>
-      </h1>
-    <span class="post-date">25 Sep 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <p>연속체 가설은 $\aleph_1 = 2^{\aleph_0}$가 성립하는지에 관한 질문이다. 이는 비가산 집합 중 실수 집합보다 크기가 작은 집합이 있는지에 관한 질문과 같다. 잘 알려져 있듯이 연속체 가설은 ZFC에서 증명과 반증이 불가능하지만, 몇몇 제한적인 경우에 대해서는 증명할 수 있다. 일찍이 칸토어는 연속체 가설을 실수의 닫힌집합으로 제한할 경우 성립함을 증명했다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $F \subseteq \mathbb{R}$이 닫힌집합이라면 $|F| = \aleph_0$이거나 $|F| = 2^{\aleph_0}$이다.</p>
-</blockquote>
-
-<p>이 정리의 증명은 <strong>완벽한 집합<sub>perfect set</sub></strong>이라는 개념을 사용한다. 이에 관해서는 예전에 <a href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson">칸토어-벤딕슨 정리</a>를 다루며 소개한 적 있지만 다시 소개하겠다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$에 대해 $P \subseteq X$가 완벽하다는 것은 $P = P’$이라는 것이다. ($P’$은 $X$에 대한 $P$의 극점<sub>limit point</sub>들의 집합)</p>
-</blockquote>
-
-<p>일반적으로 부분집합 $A \subseteq X$에 대해 $A$와 $A’$이 서로 포함 관계가 아닌 이유는 두 가지이다:</p>
-
-<ol>
-  <li>$x$가 $A$의 고립점일 경우 $x \in A$이지만 $x \notin A’$</li>
-  <li>$x$가 $A$에 속하지 않는 극점일 경우 $x \notin A$이지만 $x \in A’$</li>
-</ol>
-
-<p>따라서 완벽한 집합은 고립점을 가지지 않는 닫힌집합이다. 이에 따라, 어떤 닫힌집합 $F$가 주어졌을 때 $F$의 고립점들을 모두 ‘덜어’ 내면 완벽한 집합이 되지 않을까 기대할 수 있다. 문제는, 고립점을 덜어 낸 집합이 또다시 고립점을 가질 수 있다는 것이다. 예를 들어,</p>
-
-\[F = \mathbb{N} \cup \lbrace  m - 1/n : m \geq 0, n &gt; 1 \rbrace\]
-
-<p>일 때, $F$의 고립점들을 덜어 낸 집합은 $\mathbb{N}$으로 또다시 가산 개의 고립점을 가진다. 그러나 이같이 고립점을 ‘덜어’ 내는 과정을 초한귀납적으로 반복한다면 다음의 흥미로운 결과를 얻을 수 있다.</p>
-
-<blockquote>
-  <p><strong>칸토어-벤딕슨 정리.</strong> $F \subseteq \mathbb{R}$가 닫힌집합이라면 어떤 가산집합 $C$와 완벽한 집합 $P$가 존재하여 $F = P \sqcup C$이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 앞선 링크에 증명이 소개되어 있지만, 여기서는 칸토어의 증명을 소개한다.</p>
-
-<p>초한귀납적으로 다음과 같이 정의하자.</p>
-
-\[\begin{gather}
-F_0 = F \\
-F_{\alpha + 1} = F_\alpha' \\
-F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
-\end{gather}\]
-
-<p>다음을 관찰하라.</p>
-
-<ol>
-  <li>각 $F_\alpha$는 닫힌집합이다.</li>
-  <li>$\alpha \leq \beta$라면 $F_\alpha \supseteq F_\beta$이다.</li>
-  <li>$F_\alpha \setminus F_{\alpha + 1}$은 $F_\alpha$의 고립점들의 집합이다.</li>
-  <li>$\alpha \neq \beta$라면 $F_{\alpha} \setminus F_{\alpha + 1}$와 $F_{\beta} \setminus F_{\beta+1}$는 서로소이다.</li>
-</ol>
-
-<p>만약 모든 $\alpha \in \mathrm{Ord}$에 대해 $F_{\alpha} \setminus F_{\alpha+1} \neq \varnothing$이었다면 $\mathcal{P}(F)$의 하르토그 수 $\gamma$에 대해 $f : \gamma \to \mathcal{P}(F); \alpha \mapsto F_{\alpha} \setminus F_{\alpha + 1}$가 단사이므로 모순이다. 따라서 $F_{\xi} \setminus F_{\xi+1} = \varnothing$인 $\xi$가 존재한다. 따라서 $P = F_\xi$로 두면 $P$는 공집합이거나 완벽한 집합이다.</p>
-
-<p>$C = F \setminus P$라고 하자. $\mathcal{B} = \lbrace  B_n \rbrace $이 $\mathbb{R}$의 가산 기저라고 하자. 다음과 같이 $f: C \to \omega$를 정의한다.</p>
-
-\[f(x) = \mathop{\arg \min}\limits_{n \in \omega} : B_n \cap F_\alpha = \{ x \} \quad (x \in F_\alpha \setminus F_{\alpha + 1})\]
-
-<p>$f$가 well-defined이며 단사임을 확인하라. ■</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $P \subseteq \mathbb{R}$이 공집합이 아닌 완벽한 집합이라면 $|P| = 2^{\aleph_0}$이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 다음의 두 보조정리를 증명한다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $P \subseteq \mathbb{R}$이 공집합이 아닌 완벽한 집합이라면, 어떤 공집합이 아니며 완벽한 서로소 집합 $P_1, P_2 \subset P$가 존재한다.</p>
-</blockquote>
-
-<p><em>증명.</em> $\alpha = \inf P, \beta = \sup P$라고 하자 ($\alpha, \beta$는 $\pm \infty$일 수도 있다). $(\alpha, \beta) \subset P$라면 $\alpha &lt; r &lt; s &lt; \beta$인 임의의 $r, s$에 대해 $P \cap (-\infty, r], P \cap [s, \infty)$가 조건을 만족한다. $(\alpha, \beta) \not\subset P$라면, 어떤 $x \in (\alpha, \beta)$가 존재하여 $x \notin P$이다. $P = P’$이므로, $x$는 $P$의 극점이 아니다. 따라서 어떤 충분히 작은 $\delta &gt; 0$가 존재하여 $(x - \delta, x + \delta)$가 $F$와 서로소이고 $\alpha &lt; x - \delta, x + \delta &lt; \beta$이다. 이때 $P \cap (-\infty, x - \delta], P \cap [x + \delta, \infty)$가 조건을 만족한다. □</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $P \subseteq \mathbb{R}$이 공집합이 아닌 완벽한 집합이라면, 임의의 $n &gt; 0$에 대해 어떤 공집합이 아니며 완벽한 집합 $P’ \subset P$가 존재하여 $\mathrm{diam} P’ &lt; 1/n$이다.</p>
-</blockquote>
-
-<p><em>증명.</em> $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $에 대해, 어떤 $(k/n, (k+1)/n) \in \mathcal{J}$가 존재하여 $J \cap F \neq \varnothing$이다 (만약 그렇지 않다면 $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $이므로 완벽하지 않다). $a = \inf F \cap (k/n, (k+1)/n)$, $b = \sup F \cap (k/n, (k+1)/n)$라고 하고 $E = F \cap [a, b]$로 두자. $E = F \cap [k/n, (k+1)/n]$이라고 하자. $E$는 닫힌집합이므로, $E$가 고립점을 가지지 않는다면 $E$는 완벽하다. 귀류법에 따라 $x \in E$가 고립점이라고 하자. 상한과 하한의 정의에 의해 $x \neq a, b$이다. 따라서 어떤 충분히 작은 $\delta &gt; 0$가 존재하여 $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $이고 $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$이다. 이때 $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $이므로 $x$는 $F$의 고립점이다. 이는 모순이므로, $E$는 완벽하다. □</p>
-
-<p>$P$가 공집합이 아닌 완벽한 집합이라고 하자. 위 두 보조정리로부터, 선택 공리를 사용함으로써 다음과 같이 귀납적으로 정의할 수 있다.</p>
-
-<ul>
-  <li>$P_1, P_2 \subset P, P_1 \cap P_2 = \varnothing, \mathrm{diam} P_1, \mathrm{diam} P_2 &lt; 1/2$</li>
-  <li>$P_{11}, P_{12} \subset P_1, P_{11} \cap P_{12} = \varnothing, \mathrm{diam} P_{11}, \mathrm{diam} P_{12} &lt; 1/4$</li>
-  <li>$P_{21}, P_{22} \subset P_2, P_{21} \cap P_{22} = \varnothing, \mathrm{diam} P_{21}, \mathrm{diam} P_{22} &lt; 1/4$</li>
-  <li>$P_{111}, P_{112} \subset P_{11}, P_{111} \cap P_{112} = \varnothing, \mathrm{diam} P_{111}, \mathrm{diam} P_{112} &lt; 1/8$</li>
-  <li>…</li>
-</ul>
-
-<p>모든 $P_i$의 교집합을 $A$라고 하자. $A$는 칸토어 집합과 크기가 같다. 그런데 칸토어 집합은 실수와 크기가 같으므로, $|P| = 2^{\aleph_0}$이다. ■</p>
-
-<p>위 정리와 칸토어-벤딕슨 정리로부터 다음 결과가 얻어진다.</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> $F \subseteq \mathbb{R}$이 닫힌집합이라면 $|F| = \aleph_0$이거나 $|F| = 2^{\aleph_0}$이다.</p>
-</blockquote>
-
-<p>참고로 칸토어-벤딕슨 정리와 비슷한 결과가 보렐 집합에서 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $B \subseteq \mathbb{R}$이 비가산 보렐 집합이라면 $B$는 완벽한 집합을 포함한다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 생략.</p>
-
-<p>따라서 보다 일반적으로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> $B \subseteq \mathbb{R}$이 보렐 집합이라면 $|B| = \aleph_0$이거나 $|B| = 2^{\aleph_0}$이다.</p>
-</blockquote>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2025/09/25/ch-for-borel/en"> The Continuum Hypothesis for Closed Sets and Borel Sets </a>
+        <a href="/2025/11/11/stationary-sets/en"> Club Sets and Stationary Sets </a>
       </h1>
-    <span class="post-date">25 Sep 2025</span>
+    <span class="post-date">11 Nov 2025</span>
     
     <div class="tag-container">
       
@@ -1586,397 +1686,168 @@ F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
         Set Theory
       </div>
       
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
     </div>
-     <p>The continuum hypothesis (CH) asks whether $\aleph_1 = 2^{\aleph_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, CH is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved that CH holds when restricted to closed subsets of the real numbers.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then $|F| = \aleph_0$ or $|F| = 2^{\aleph_0}$.</p>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
 </blockquote>
 
-<p>The proof of this theorem uses the concept of a <strong>perfect set</strong>. I previously introduced this when discussing the <a href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson">Cantor-Bendixson theorem</a>, but let me reintroduce it here.</p>
+<h2 id="club-sets">Club Sets</h2>
 
 <blockquote>
-  <p><strong>Definition.</strong> For a topological space $X$, a subset $P \subseteq X$ is said to be perfect if $P = P’$, where $P’$ is the set of limit points of $P$ in $X$.</p>
-</blockquote>
-
-<p>In general, for a subset $A \subseteq X$, there are two reasons why $A$ and $A’$ may not include one or the other.</p>
-
-<ol>
-  <li>If $x$ is an isolated point of $A$, then $x \in A$ but $x \notin A’$</li>
-  <li>If $x$ is a limit point of $A$ that does not belong to $A$, then $x \notin A$ but $x \in A’$</li>
-</ol>
-
-<p>Therefore, a perfect set is a closed set with no isolated points. Accordingly, when given a closed set $F$, one might expect that removing all isolated points from $F$ would yield a perfect set. The problem is that the set obtained after removing isolated points may itself have isolated points. For example,</p>
-
-\[F = \mathbb{N} \cup \lbrace  m - 1/n : m \geq 0, n &gt; 1 \rbrace\]
-
-<p>The set obtained by removing the isolated points of $F$ is $\mathbb{N}$, each of whose points is isolated. However, if we repeat this process of ‘removing’ isolated points transfinitely, we obtain the following interesting result.</p>
-
-<blockquote>
-  <p><strong>Cantor-Bendixson Theorem.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then there exist a countable set $C$ and a perfect set $P$ such that $F = P \sqcup C$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Although a proof is presented in the previous link, here we present Cantor’s alternate proof.</p>
-
-<p>Define transfinitely as follows:</p>
-
-\[\begin{gather}
-F_0 = F \\
-F_{\alpha + 1} = F_\alpha' \\
-F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
-\end{gather}\]
-
-<p>Observe the following:</p>
-
-<ol>
-  <li>Each $F_\alpha$ is a closed set.</li>
-  <li>If $\alpha \leq \beta$, then $F_\alpha \supseteq F_\beta$.</li>
-  <li>$F_\alpha \setminus F_{\alpha + 1}$ is the set of isolated points of $F_\alpha$.</li>
-  <li>If $\alpha \neq \beta$, then $F_{\alpha} \setminus F_{\alpha + 1}$ and $F_{\beta} \setminus F_{\beta+1}$ are disjoint.</li>
-</ol>
-
-<p>If $F_{\alpha} \setminus F_{\alpha+1} \neq \varnothing$ for all $\alpha \in \mathrm{Ord}$, then for the Hartogs number $\gamma$ of $\mathcal{P}(F)$, the function $f : \gamma \to \mathcal{P}(F); \alpha \mapsto F_{\alpha} \setminus F_{\alpha + 1}$ would be injective, which is a contradiction. Therefore, there exists $\xi$ such that $F_{\xi} \setminus F_{\xi+1} = \varnothing$. Setting $P = F_\xi$, we have that $P$ is either empty or perfect.</p>
-
-<p>Let $C = F \setminus P$. Let $\mathcal{B} = \lbrace  B_n \rbrace $ be a countable basis for $\mathbb{R}$. Define $f: C \to \omega$ as follows:</p>
-
-\[f(x) = \mathop{\arg \min}\limits_{n \in \omega} : B_n \cap F_\alpha = \{ x \} \quad (x \in F_\alpha \setminus F_{\alpha + 1})\]
-
-<p>Verify that $f$ is well-defined and injective. ■</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then $|P| = 2^{\aleph_0}$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> We prove the following two lemmas.</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then there exist non-empty perfect disjoint sets $P_1, P_2 \subset P$.</p>
-</blockquote>
-
-<p><em>Proof.</em> Let $\alpha = \inf P$ and $\beta = \sup P$ (where $\alpha, \beta$ may be $\pm \infty$). If $(\alpha, \beta) \subset P$, then for any $r, s$ with $\alpha &lt; r &lt; s &lt; \beta$, the sets $P \cap (-\infty, r]$ and $P \cap [s, \infty)$ satisfy the conditions. If $(\alpha, \beta) \not\subset P$, then there exists some $x \in (\alpha, \beta)$ such that $x \notin P$. Since $P = P’$, $x$ is not a limit point of $P$. Therefore, there exists sufficiently small $\delta &gt; 0$ such that $(x - \delta, x + \delta)$ is disjoint from $F$ and $\alpha &lt; x - \delta, x + \delta &lt; \beta$. In this case, $P \cap (-\infty, x - \delta]$ and $P \cap [x + \delta, \infty)$ satisfy the conditions. □</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then for any $n &gt; 0$, there exists a non-empty perfect set $P’ \subset P$ such that $\mathrm{diam} P’ &lt; 1/n$.</p>
-</blockquote>
-
-<p><em>Proof.</em> For $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $, there exists $(k/n, (k+1)/n) \in \mathcal{J}$ such that $J \cap F \neq \varnothing$ (otherwise $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $, which is not perfect). Let $a = \inf F \cap (k/n, (k+1)/n)$ and $b = \sup F \cap (k/n, (k+1)/n)$ and take $E = F \cap [a, b]$. Since $E$ is a closed set, if $E$ has no isolated points, then $E$ is perfect. For contradiction, assume that $x \in E$ is an isolated point of $E$. By the definition of supremum and inifimum, $x \neq a, b$. Hence there exists sufficiently small $\delta &gt; 0$ such that $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $ and $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$. In this case, $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $, so $x$ is an isolated point of $F$, which is a contradiction. Hence, $E$ is perfect. □</p>
-
-<p>Let $P$ be a non-empty perfect set. From the two lemmas above, using the axiom of choice, we can inductively define:</p>
-
-<ul>
-  <li>$P_1, P_2 \subset P, P_1 \cap P_2 = \varnothing, \mathrm{diam} P_1, \mathrm{diam} P_2 &lt; 1/2$</li>
-  <li>$P_{11}, P_{12} \subset P_1, P_{11} \cap P_{12} = \varnothing, \mathrm{diam} P_{11}, \mathrm{diam} P_{12} &lt; 1/4$</li>
-  <li>$P_{21}, P_{22} \subset P_2, P_{21} \cap P_{22} = \varnothing, \mathrm{diam} P_{21}, \mathrm{diam} P_{22} &lt; 1/4$</li>
-  <li>$P_{111}, P_{112} \subset P_{11}, P_{111} \cap P_{112} = \varnothing, \mathrm{diam} P_{111}, \mathrm{diam} P_{112} &lt; 1/8$</li>
-  <li>…</li>
-</ul>
-
-<p>Let $A$ be the intersection of all $P_i$. $A$ has the same cardinality as the Cantor set. Since the Cantor set has the same cardinality as the real numbers, $|P| = 2^{\aleph_0}$. ■</p>
-
-<p>From the above theorem and the Cantor-Bendixson theorem, we obtain the following result.</p>
-
-<blockquote>
-  <p><strong>Corollary.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then $|F| = \aleph_0$ or $|F| = 2^{\aleph_0}$.</p>
-</blockquote>
-
-<p>Incidentally, a result similar to the Cantor-Bendixson theorem holds for Borel sets.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $B \subseteq \mathbb{R}$ is an uncountable Borel set, then $B$ contains a perfect set.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Omitted.</p>
-
-<p>Therefore, more generally, the following holds.</p>
-
-<blockquote>
-  <p><strong>Corollary.</strong> If $B \subseteq \mathbb{R}$ is a Borel set, then $|B| = \aleph_0$ or $|B| = 2^{\aleph_0}$.</p>
-</blockquote>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/09/16/cardinal-arithmetics"> 기수 연산 </a>
-      </h1>
-    <span class="post-date">16 Sep 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <p>이 글에서 모든 집합과 기수는 무한하다.</p>
-
-<h2 id="1-기수-덧셈">1. 기수 덧셈</h2>
-
-<p>기수 산술<sub>cardinal arithmetics</sub>을 다룰 때에는 각 연산의 정의를 정확히 아는 것이 중요하다. 정의와 정리를 혼동하기가 쉽기 때문이다. 먼저 기수 덧셈부터 보자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 서로소 집합이라고 하자. $\kappa + \lambda$를 $|A \cup B |$로 정의한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> 기수의 유한 덧셈은 교환법칙과 결합법칙을 만족한다.</p>
-</blockquote>
-
-<p>위 정의가 well-defined임을 보이기 위해서는 $\kappa + \lambda$가 $A, B$의 선택에 의존적이지 않음을 보여야 한다. 이는 ZF에서 쉽게 증명 가능하다. 또한 유한한 기수 덧셈은 그저 최대 기수를 구하는 것이기 때문에 계산하기가 상당히 용이하다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\]
-</blockquote>
-
-<p><strong>증명.</strong> “2. 기수 곱셈”의 보조정리와 칸토어-베른슈타인 정리에 의해, $\aleph_\alpha = \aleph_\alpha + \aleph_\alpha$이다. 따라서 $|A| \leq |B|$라면 $|B| \leq |A + B| \leq |B + B| = |B|$이다. ■</p>
-
-<p>기수 덧셈의 정의를 무한한 경우로 확장하면,</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 쌍으로 서로소인 집합족 $\lbrace A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
-
-\[\sum_{i \in I} \kappa_i = \left| \bigcup_{i \in I}A_i \right|\]
-</blockquote>
-
-<p>유의할 점은, 위 정의가 well-defined임을 보이는 데는 선택 공리가 필요하다는 점이다. 각 $i \in I$에 대해 일대일 대응 $A_i \to \kappa_i$을 선택할 수 있어야 하기 때문이다. 그래서 기수 산술을 다룰 때에는 거의 언제나 선택 공리를 전제한다.</p>
-
-<p>$\kappa + \lambda = \mathrm{max}(\kappa, \lambda)$ 관계식으로부터 다음의 관계식을 유도하고 싶을 수 있지만, 성립하는 식이 아님에 주의해야 한다.</p>
-
-<blockquote>
-  <p><strong>주의.</strong> $\sum_{i \in I} \kappa_i = \sup \kappa_i$는 일반적으로 성립하지 않는다.</p>
-</blockquote>
-
-<h2 id="2-기수-곱셈">2. 기수 곱셈</h2>
-
-<p>그렇다면 무한한 기수 덧셈은 어떻게 계산해야 할까? 이를 알아보기 위해, 먼저 기수 곱셈을 정의하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 집합이라고 하자. $\kappa \cdot \lambda$를 $| A \times B|$로 정의한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> 기수의 유한 곱셈은 교환법칙과 결합법칙을 만족한다.</p>
-</blockquote>
-
-<p>아주 용이하게도 유한 기수 곱셈의 계산은 유한 기수 덧셈의 계산과 같다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\]
-</blockquote>
-
-<p><strong>증명.</strong> 다음의 보조정리로부터 따라 나온다. ■</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> 임의의 $\alpha \in \mathrm{Ord}$에 대해, $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$</p>
-</blockquote>
-
-<p>증명 개요는 다음과 같다. 임의의 $\alpha \in \mathrm{Ord}$에 대해, 다음과 같이 정의된 순서 $\prec$가 $\omega_\alpha \times \omega_\alpha$의 정렬 순서임을 보인다. $\hat{x} = \mathrm{max}(x_1, x_2), \hat{y} = \mathrm{max}(y_1, y_2)$일 때,</p>
-
-\[(x_1, x_2) \prec (y_1, y_2) \iff \begin{cases}
-\hat{x} &lt; \hat{y}\\
-x_1 &lt; y_1 \quad (\text{if }\hat{x} &lt; \hat{y}) \\
-x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
-\end{cases}\]
-
-<p>즉, $\prec$은 최댓값 우선 후 사전식 순서이다. 초한귀납법에 따라 모든 $\beta &lt; \alpha$에 대해 $\aleph_\beta \cdot \aleph_\beta = \aleph_\beta$일 때 $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$임을 보인다. 이를 위해 $(\omega_\alpha \times \omega_\alpha, \prec)$의 순서형<sub>order type</sub>이 $\omega_\alpha$를 넘지 않음을 보이면 된다. 이를 위해 임의의 $(\gamma_1, \gamma_2) \in \omega_\alpha \times \omega_\alpha$에 대해</p>
-
-\[X = \{ (\xi_1, \xi_2) : (\xi_1, \xi_2) \prec (\gamma_1, \gamma_2) \}\]
-
-<p>라면 $|X| &lt; \aleph_\alpha$임을 보이면 된다. $\gamma = \mathrm{max}(\gamma_1, \gamma_2) + 1$이라고 하자. $\omega_\alpha$는 극한 서수이므로 $\gamma \in \omega_\alpha$이며, 따라서 $|\gamma| = \aleph_\delta \; (\delta &lt; \alpha)$이다. 한편으로 $X \subseteq \gamma \times \gamma$이므로 $|X| \leq \aleph_\delta \cdot \aleph_\delta$이며 이는 귀납 가정에 의해 $\aleph_\delta$이다. ■</p>
-
-<p><strong>기수 곱셈의 정의는 기수 덧셈과 아무 관련이 없다.</strong> 즉, 기수 곱셈의 정의에는 “$\kappa$를 $\lambda$번 더한다”와 같은 의미가 없다. 그럼에도 다음 <em>정리</em>에 의해 기수 곱셈을 기수 덧셈과 연관지을 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\sum_{i \in I} \kappa = |I| \cdot \kappa\]
-</blockquote>
-
-<p><strong>증명.</strong> $\lbrace  A_i \rbrace $가 쌍으로 서로소이며 $|A_i| = \kappa$인 집합족이라고 하자. 좌변은 $\bigcup_{i \in I} A_i$의 기수이고, 우변은 $I \times A$의 기수이다 $(|A| = \kappa)$. 선택 공리에 의해 각 $i \in I$에 대해 일대일 대응 $f_i : A_i \to A$를 정의할 수 있다. 다음의 대응 $f: \bigcup_{i \in I} A_i \to I \times A$을 정의하자.</p>
-
-\[f(x) = (i, f_i(x)) \quad (\text{if } x \in A_i)\]
-
-<p>위 함수가 일대일 대응임은 쉽게 확인할 수 있다. 따라서 (좌변) = (우변)이다. ■</p>
-
-<p>이로부터 앞선 언급한 “주의”에 해당되는 올바른 관계식을 증명할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\]
-</blockquote>
-
-<p><strong>증명.</strong> $\kappa = \sup \lbrace  \kappa_i : i \in I \rbrace $라고 하고, 좌변을 $L$, 우변을 $R$이라고 하자. 앞선 정리에 의해 $|I| \cdot \kappa = \sum_{i \in I} \kappa$이고 $\kappa_i \leq \kappa$이므로 $L ≤ R$이다. 반대로, $| I | = \sum_{i \in I} 1 \leq L$이고, $\kappa = \sup \kappa_i \leq L$이다. 글 하단의 보조정리에 의해 $L = L \cdot L$이므로 $L \geq | I | \cdot \kappa = R$이다. 따라서 칸토어-베른슈타인 정리에 의해 $L = R$이다. (이 증명에는 선택 공리가 암시적으로 많이 사용되었으니 관심 있는 독자는 생략된 논증을 자세히 써 봐도 좋을 것이다) ■</p>
-
-<p>이제 기수 곱셈도 무한 경우로 일반화하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 집합족 $\lbrace A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
-
-\[\prod_{i \in I} \kappa_i = \left| \prod_{i \in I}A_i \right|\]
-</blockquote>
-
-<p>기수 곱셈을 계산할 때 쾨니히 정리<sub>König’s Theorem</sub>가 유용하게 사용될 수 있다.</p>
-
-<blockquote>
-  <p><strong>쾨니히 정리.</strong> 인덱스 집합 $I$에 대해 $\kappa_i &lt; \lambda_i$라고 하자. 다음이 성립한다.</p>
-
-\[\sum \kappa_i &lt; \prod \lambda_i\]
-</blockquote>
-
-<p>당연한 거 아니냐고 생각할 수 있겠지만, 일반적으로 1, 2는 고사하고 3도 성립하지 않는다는 사실에 유의하라.</p>
-
-<ol>
-  <li>$\kappa_i &lt; \lambda_i$라면 $\sum \kappa_i &lt; \sum \lambda_i$</li>
-  <li>$\kappa_i &lt; \lambda_i$라면 $\prod \kappa_i &lt; \prod \lambda_i$</li>
-  <li>$\kappa_i \leq \lambda_i$일 때 $\sum \kappa_i &lt; \prod \lambda_i$</li>
-</ol>
-
-<p>물론 1, 2, 3에서 결론부의 부등호를 $&lt;$에서 $\leq$로 약화하면 모두 성립한다. 쾨니히 정리의 특징은 결론부가 엄격한 부등호라는 것이다.</p>
-
-<p><strong>증명.</strong> $\lbrace  A_i \rbrace , \lbrace  B_i \rbrace $가 각각 기수가 $\kappa_i, \lambda_i$인 (쌍으로 서로소인) 집합들의 모임이라고 하자. 귀류법에 따라, $f: \prod B_i \to \cup A_i$인 단사함수가 존재한다고 하자. 임의의 $i \in I$에 대해, $f$의 단사성으로부터 $|f^{-1}(A_i)| = |A_i|$이다. 그런데 $|A_i| &lt; |B_i|$이므로 $\pi_i (f^{-1}(A_i)) \subset B_i$는 $B_i$보다 크기가 엄격히 작으며, 이에 따라 $b_i \in B_i \setminus \pi_i (f^{-1}(A_i))$가 존재한다. 각 $i$에 대해 그러한 $b_i$를 고른 뒤, $b = (b_i)_{i \in I}$를 생각하면, 임의의 $i \in I$에 대해 $\pi_i(b) = b_i$이므로 $f(b) \notin \cup A_i$가 되어 모순이다. ■</p>
-
-<h2 id="3-기수-지수">3. 기수 지수</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 집합이라고 하자. $\kappa^\lambda$를 $|A^B |$로 정의한다. ($A^B$는 $B$에서 $A$로 가는 함수들의 집합이다)</p>
-</blockquote>
-
-<p>기수 곱셈의 경우와 마찬가지로, 비록 기수 지수의 정의는 기수 곱셈과 아무 관련이 없지만, 다음 정리에 의해 둘 사이에 다리를 놓을 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\prod_{i \in I} \kappa = \kappa^{|I|}\]
-</blockquote>
-
-<p>또한 기수 지수는 일반적인 지수의 여러 좋은 성질을 공유한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 기수의 지수 연산은 지수법칙을 만족한다. 즉,</p>
+  <p><strong>Definition.</strong> $C \subseteq \omega_1$ is a <strong>club set</strong> if $C$ is closed and unbounded. That is,</p>
 
   <ul>
-    <li>$\kappa^{\lambda + \mu} = \kappa^\lambda \cdot \kappa^\mu$</li>
-    <li>$(\kappa^\lambda)^\mu = \kappa^{\lambda \cdot \mu}$</li>
-    <li>$(\kappa \cdot \lambda)^{\mu} = \kappa^\mu \cdot \lambda^\mu$</li>
+    <li>For any sequence of ordinals $(\alpha_n)_{n \in \omega} \subseteq C$, if $\alpha_n \to \alpha$, then $\alpha \in C$.</li>
+    <li>For any $\gamma &lt; \kappa$, there exists $\alpha \in C$ such that $\alpha &gt; \gamma$.</li>
   </ul>
 </blockquote>
 
-<p>그럼에도 기수 지수를 정확히 계산하기란 굉장히 까다로운데, 일반화된 연속체 가설<sub>Generalized Continuum Hypothesis</sub>을 전제하지 않으면 얻을 수 있는 결과가 제한적이기 때문이다. 우선 일반화된 연속체 가설 없이 증명할 수 있는 정리들을 보자.</p>
+<p>The name is indeed quite straightforward.</p>
 
 <blockquote>
-  <p><strong>정리.</strong></p>
+  <p><strong>Theorem.</strong> If $C_1, C_2 \subseteq \omega_1$ are two club sets, then $C = C_1 \cap C_2$ is also a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> It is easy to show that $C$ is closed. To prove that $C$ is unbounded, let us take an arbitrary $\gamma \in \omega_1$. Since $C_1$ is unbounded, there exists the smallest $\alpha_0 \in C_1$ such that $\gamma &lt; \alpha_0$. Similarly, since $C_2$ is unbounded, there exists the smallest $\beta_0 \in C_2$ such that $\alpha_0 &lt; \beta_0$. Again, since $C_1$ is unbounded, there exists $\alpha_1 \in C_1$ such that $\beta_0 &lt; \alpha_1$. Repeating this process, we obtain sequences of ordinals $\lbrace \alpha_n \rbrace$ and $\lbrace \beta_n \rbrace$. These sequences converge to the same ordinal $\delta$, so $\delta \in C$ and $\delta &gt; \gamma$. (Note: “the smallest” is used to avoid unnecessary reliance on the axiom of choice.) ■</p>
+
+<p>By slightly modifying the above proof, we can derive the following theorem.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\lbrace C_n \rbrace _{n &lt; \omega}$ is a countable collection of club sets, then $C = \bigcap C_n$ is also a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Exercise (Hint: Use a triangle argument). ■</p>
+
+<p>Thus, given a countable collection of club sets, we can obtain a new club set by taking their intersection. On the other hand, if we are given an uncountable collection of club sets, the following result can be used.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\lbrace C_\xi \rbrace _{\xi &lt; \omega_1}$ be a collection of club sets. The <strong>diagonal intersection</strong> of $\lbrace C_\xi \rbrace$ is defined as follows:</p>
+
+\[\Delta_{\xi &lt; \omega_1} C_\xi = \{ \alpha \in \omega_1 : \forall \xi &lt; \alpha \;\; \alpha \in C_\xi \}\]
+
+  <p>$D$ is a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> First, let us show that $D$ is closed. Suppose $(\alpha_n)_{n \in \omega} \subseteq D$ and $\alpha_n \to \alpha$. For any $\xi &lt; \alpha$, there exists $n \in \omega$ such that $\xi &lt; \alpha_n$. By the definition of the diagonal intersection, $C_\xi$ contains $\lbrace \alpha_m : m \geq n \rbrace$. Hence, $\sup \lbrace \alpha_m : m \geq n \rbrace = \alpha \in C_\xi$, so $\alpha \in D$.</p>
+
+<p>Next, let us show that $D$ is unbounded. For any $\gamma &lt; \omega_1$, let $D_0 = \bigcap_{\xi &lt; \gamma} C_\xi$. Since $D_0$ is a club set, it is unbounded. Thus, there exists the smallest $\alpha_0 \in D_0$ such that $\alpha_0 &gt; \gamma$. Similarly, let $D_1 = \bigcap_{\xi &lt; \alpha_0} C_\xi$. Since $D_1$ is a club set, there exists the smallest $\alpha_1 \in D_1$ such that $\alpha_1 &gt; \alpha_0$. Repeating this process inductively, we obtain a sequence $(\alpha_n)$ whose limit is $\alpha$. For any $\xi &lt; \alpha$, there exists $n$ such that $\xi &lt; \alpha_n$, and for all $m \geq n$, $\alpha_m \in C_\xi$. Hence, $\alpha \in C_\xi$ and $\alpha \in D$. ■</p>
+
+<p>Verify that $\Delta C_\xi \supseteq \bigcap C_\xi$.</p>
+
+<p>The definitions and theorems discussed so far can be generalised as follows. Let $\kappa$ be an uncountable cardinal with $\operatorname{cf}\kappa &gt; \omega$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> $C \subseteq \kappa$ is a <strong>club set</strong> if $C$ is closed and unbounded. That is,</p>
+
+  <ul>
+    <li>For any $\alpha &lt; \kappa$, if $\sup (C \cap \alpha) = \alpha$ (i.e., $C$ is unbounded at $\alpha$), then $\alpha \in C$.</li>
+    <li>For any $\gamma &lt; \kappa$, there exists $\alpha \in C$ such that $\alpha &gt; \gamma$.</li>
+  </ul>
+
+  <p><strong>Theorem.</strong> If $\lambda &lt; \operatorname{cf}\kappa$ and $\lbrace C_\xi \rbrace _{\xi &lt; \lambda}$ is a collection of club sets, then $C = \bigcap C_\xi$ is also a club set.</p>
+
+  <p><strong>Theorem.</strong> If $\kappa$ is regular, then the diagonal intersection of a collection $\lbrace C_\xi \rbrace _{\xi &lt; \kappa}$ of club sets is also a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> The proof is almost identical to the case $\kappa = \omega_1$. ■</p>
+
+<h2 id="stationary-sets">Stationary Sets</h2>
+
+<p>By closure under finite intersections, the collection of club sets generates a filter. A set that does not belong to the dual ideal of this filter is called a <strong>stationary set</strong>. In other words:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $S \subseteq \omega_1$. If $C \cap S \neq \varnothing$ for every club set $C \subseteq \omega_1$, then $S$ is a stationary set.</p>
+</blockquote>
+
+<p>If there exists a club set $C$ such that $C \cap S = \varnothing$, then $S^c \subseteq C$, so $C$ belongs to the dual ideal. Thus, the two definitions are equivalent.</p>
+
+<p>Stationary sets capture “significantly large” subsets of $\omega_1$. This can be better understood through the following (informal) analogy: if $\omega_1$ has measure 1, then club sets correspond to sets with $\mu(C) = 1$, and stationary sets correspond to sets with $\mu(S) &gt; 0$.</p>
+
+<p>The following facts are easily proven (note how 1 and 3 naturally align with the measure analogy):</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The following hold:</p>
 
   <ol>
-    <li>$2^{\aleph_\alpha} &gt; \aleph_\alpha$</li>
-    <li>$\alpha \leq \beta \implies \kappa^{\aleph_\alpha} \leq \kappa^{\aleph_\beta}$</li>
-    <li>$\mathrm{cf}(\kappa^{\aleph_\alpha}) &gt; \aleph_\alpha$</li>
+    <li>Every club set is a stationary set.</li>
+    <li>Every stationary set is unbounded.</li>
+    <li>If $\bigcup_{n &lt; \omega} A_n$ is a stationary set, then there exists some $m \in \omega$ such that $A_m$ is a stationary set.</li>
   </ol>
 </blockquote>
 
-<p>$\mathrm{cf}(\kappa) \leq \kappa$이므로 3이 1을 함의한다는 사실에 주목하라.</p>
-
-<p><strong>증명.</strong> 1은 칸토어의 정리이고, 2는 선택 공리를 사용하면 자명하다. 3의 증명은 쾨니히 정리를 사용한다. $\mathrm{cf}(\kappa^{\aleph_\alpha}) = \aleph_\lambda$라고 하자. $\mathrm{cf}$의 정의에 의해 $\xi_i &lt; \kappa^{\aleph_\alpha}$이며 $\sum_{i &lt; \omega_\lambda} \xi_i = \kappa^{\aleph_\alpha}$을 만족하는 $\lbrace  \xi_i \rbrace _{i &lt; \omega_\lambda}$가 존재한다. 쾨니히 정리에 의해 다음이 성립한다.</p>
-
-\[\kappa^{\aleph_\alpha} = \sum_{i &lt; \omega_\lambda} \xi_i &lt; \prod_{i &lt; \omega_\lambda} \kappa^{\aleph_\alpha} = \kappa^{\aleph_\alpha \cdot \aleph_\lambda}\]
-
-<p>그런데 만약 $\aleph_\lambda = \aleph_\alpha$라면 $\kappa^{\aleph_\alpha \cdot \aleph_\lambda} = \kappa^{\aleph_\alpha}$이므로 $&lt;$가 성립하지 않는다. 따라서 $\aleph_\lambda &gt; \aleph_\alpha$이다. ■</p>
-
-<p>다음의 두 정리는 특히 유용하다.</p>
+<p>The name “stationary” for stationary sets arises from the following theorem.</p>
 
 <blockquote>
-  <p><strong>정리.</strong></p>
+  <p><strong>Theorem.</strong> Let $S \subseteq \omega_1$. A function $f: S \to \omega_1$ is <strong>regressive</strong> if $f(\alpha) &lt; \alpha$ for all $\alpha \in S$. The following are equivalent:</p>
 
-\[\aleph_\alpha^{\aleph_\beta} =
-\begin{cases}
-2^{\aleph_\beta} &amp; (\aleph_\alpha \leq \aleph_\beta) \\
-\mathrm{card} \{ A \subseteq \omega_\alpha : |A| = \aleph_\beta \} &amp; (\aleph_\beta &lt; \aleph_\alpha)
-\end{cases}\]
+  <ol>
+    <li>$S$ is a stationary set.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some unbounded set $T \subseteq S$.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some stationary set $T \subseteq S$.</li>
+  </ol>
 </blockquote>
 
-<p><strong>증명.</strong> $\aleph_\alpha \leq \aleph_\beta$인 경우의 증명은 다음과 같다.</p>
+<p><strong>Proof.</strong> 3 ⇒ 2 is trivial, so it suffices to prove 1 ⇒ 3 and 2 ⇒ 1.</p>
 
-\[2^{\aleph_\beta} \leq \aleph_\alpha^{\aleph_\beta} \leq (2^{\aleph_\alpha})^{\aleph_\beta} = 2^{\aleph_\alpha \cdot \aleph_\beta} = 2^{\aleph_\beta}\]
+<h4 id="1--3">1 ⇒ 3</h4>
 
-<p>$\aleph_\alpha &gt; \aleph_\beta$인 경우를 증명하자. 좌변의 집합을 $S$라고 하자. 각 $S$의 원소는 $\aleph_\beta$에서 $\aleph_\alpha$로 가는 단사함수로 생각할 수 있으므로 $|S| \leq {\aleph_\alpha}^{\aleph_\beta}$이다. 역방향을 보이기 위해 먼저 $\aleph_\beta &lt; \aleph_\alpha$이므로 $\aleph_\alpha = \aleph_\beta \cdot \aleph_\alpha$임을 관찰하자. 따라서,</p>
+<p>We prove the contrapositive. Suppose there exists a regressive function $f: S \to \omega_1$ such that $f$ is not constant on any stationary subset of $S$. That is, for every $\xi \in \omega_1$, $A_\xi = f^{-1}(\lbrace \xi \rbrace)$ is not stationary. Hence, there exists a club set $C_\xi$ such that $A_\xi \cap C_\xi = \varnothing$.</p>
 
-\[|S| = |T| \quad \text{where} \quad T = \{ A \subseteq \omega_\beta \times \omega_\alpha : |A| = \aleph_\beta \}\]
+<p>Let $D = \Delta_{\xi &lt; \omega_1} C_\xi$. Since $D$ is a club set, if $S$ is stationary, then $D \cap S \neq \varnothing$. Let $\alpha \in D \cap S$. Since $\alpha \in D$, for any $\xi &lt; \alpha$, $\alpha \in C_\xi$. Thus, $\alpha \notin A_\xi$, so $f(\alpha) \neq \xi$. However, since $\alpha \in S$, $f(\alpha) &lt; \alpha$. This is a contradiction, so $S$ is not stationary. □</p>
 
-<p>그런데 $T$의 각 원소는 $\omega_\alpha$에서 <em>중복을 허용하고</em> $\aleph_\beta$개의 원소를 뽑는 경우의 수로 생각될 수 있다. 이는 $T$에서 ${\aleph_\alpha}^{\aleph_\beta}$로 가는 전사 관계를 정의한다. 따라서 ${\aleph_\alpha}^{\aleph_\beta} = |S|$이다. ■</p>
+<h4 id="2--1">2 ⇒ 1</h4>
 
-<p>이의 따름정리는 하우스도르프 정리이다.</p>
+<p>We again prove the contrapositive. Suppose $S$ is not stationary. Then there exists a club set $C$ such that $S \cap C = \varnothing$. Define the following function:</p>
+
+\[f(\alpha) = \sup (C \cap \alpha)\]
+
+<p>For any $\alpha \in S$, $f(\alpha) \leq \alpha$. If $f(\alpha) = \alpha$, then $C$ contains a sequence of ordinals converging to $\alpha$. Since $C$ is closed, $\alpha \in C$. This contradicts $S \cap C = \varnothing$. Thus, $f(\alpha) &lt; \alpha$, and $f$ is regressive.</p>
+
+<p>If $f$ were constant on some unbounded set $T$, then for some $\gamma &lt; \omega_1$, there would exist an unbounded sequence $(\alpha_n)$ such that $\sup (C \cap \alpha_n) = \gamma$. Since $C$ is unbounded, this implies $\sup \alpha_n = \gamma$. However, since $(\alpha_n)$ is unbounded, $\sup \alpha_n = \omega_1$. This is a contradiction. Thus, $f$ is a regressive function that is not constant on any unbounded set. ■</p>
+
+<p>The above theorem can be generalised as follows:</p>
 
 <blockquote>
-  <p><strong>하우스도르프 정리.</strong></p>
+  <p><strong>Fodor’s Lemma.</strong> Let $\kappa$ be an uncountable regular cardinal. For any $S \subseteq \kappa$, the following are equivalent:</p>
 
-\[\aleph_{\alpha+1}^{\aleph_\beta} = \aleph_\alpha^{\aleph_\beta} \cdot \aleph_{\alpha + 1}\]
+  <ol>
+    <li>$S$ is a stationary set.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some unbounded set $T \subseteq S$.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some stationary set $T \subseteq S$.</li>
+  </ol>
 </blockquote>
 
-<p><strong>증명.</strong> $\beta &gt; \alpha$라면 앞선 정리에 의해 정리가 자명하게 성립한다. 따라서 $\beta \leq \alpha$라고 하자. $\aleph_{\alpha+1}^{\aleph_\beta} \geq \aleph_\alpha^{\aleph_\beta}, \aleph_{\alpha + 1}$이므로 $\geq$ 방향은 자명하게 성립한다. 따라서 $\leq$ 방향을 보이면 충분하다.</p>
+<h2 id="applications-of-stationary-sets">Applications of Stationary Sets</h2>
 
-<p>$\aleph_{\alpha + 1}$은 계승자 기수<sub>successor cardinal</sub>이므로 <a href="https://dimenerno.github.io/2025/05/04/regular-singular">정칙<sub>regular</sub></a>이며, 이에 따라 $\aleph_\beta &lt; \mathrm{cf}(\aleph_{\alpha + 1})$이다. 따라서 $f \in \omega_\alpha^{\omega_\beta}$는 상계를 가진다. 즉,</p>
-
-\[\aleph_{\alpha+1}^{\aleph_\beta} = \bigcup_{\gamma &lt; \omega_{\alpha + 1}} \gamma^{\omega_\beta}\]
-
-<p>여기서 각 $\gamma$는 기수가 $\aleph_\alpha$ 이하이다. 따라서 다음이 성립한다.</p>
-
-\[\aleph_{\alpha+1}^{\aleph_\beta} \leq \sum_{\gamma &lt; \omega_{\alpha + 1}} |\gamma|^{\aleph_\beta} \leq \sum_{\gamma &lt; \omega_{\alpha + 1}} {\aleph_\alpha}^{\aleph_\beta} =  {\aleph_\alpha}^{\aleph_\beta} \cdot \aleph_{\alpha + 1} \quad \blacksquare\]
-
-<h2 id="4-일반화된-연속체-가설-하에서">4. 일반화된 연속체 가설 하에서</h2>
-
-<p>일반화된 연속체 가설을 전제하면 훨씬 더 강력한 결과들을 증명할 수 있다.</p>
+<p>As an application of stationary sets, consider the following combinatorial theorem:</p>
 
 <blockquote>
-  <p><strong>정리.</strong> $\aleph_\alpha$가 정칙 기수인 경우, 다음이 성립한다.</p>
-
-\[\aleph_\alpha^{\aleph_\beta} = \begin{cases}
-\aleph_{\beta + 1} &amp; \aleph_\alpha \leq \aleph_\beta \\
-\aleph_{\alpha} &amp; \aleph_\beta &lt; \aleph_\alpha \end{cases}\]
+  <p><strong>Δ-System Lemma.</strong> Let $\lbrace A_\xi\rbrace _{\xi &lt; \omega_1}$ be a collection of finite subsets of $\omega_1$. There exist an unbounded set $I \subseteq \omega_1$ and a finite set $A$ such that for any $i, j \in I$ with $i \neq j$, $A_i \cap A_j = A$.</p>
 </blockquote>
 
-<p><strong>증명.</strong> $\aleph_\alpha \leq \aleph_\beta$인 경우 $\aleph_\alpha^{\aleph_\beta} = 2^{\aleph_\beta}$이므로 GCH에 의해 성립한다. $\aleph_\alpha &gt; \aleph_\beta$인 경우,</p>
+<p><strong>Proof.</strong> By the pigeonhole principle, we may assume without loss of generality that $|A_\xi | = n$ for all $\xi &lt; \omega_1$. Define:</p>
 
-\[\aleph_\alpha^{\aleph_\beta} = |S| \quad \text{where} S = \{ A \subseteq \omega_\alpha : |A| = \aleph_\beta \}\]
+\[C = \{ \alpha &lt; \omega_1 : \forall \xi &lt; \alpha \;\; \operatorname{max}C_\xi &lt; \alpha \}\]
 
-<p>이다. $\aleph_\alpha$가 정칙이므로 $S$의 각 원소는 유계이다. 따라서,</p>
+<p>$C$ is a club set. For $0 \leq k \leq n$, define:</p>
 
-\[S \subseteq \bigcup_{\lambda \in \omega_\alpha} \mathcal{P}(\lambda)\]
+\[T_k = \{ \alpha \in C : |A_\alpha \cap \alpha | = k \}\]
 
-<p>이다. 임의의 $\lambda \in \omega_\alpha$에 대해 $|\lambda| = \aleph_\delta$라고 하면, $\aleph_\delta &lt; \aleph_\alpha$이므로 $2^{|\lambda|} = \aleph_{\delta + 1} &lt; \aleph_\alpha$이다. 따라서 다음이 성립한다.</p>
+<p>Since $\bigcup_{0 \leq k \leq n} T_k = C$, there exists some $m$ such that $T_m$ is stationary. For $0 \leq l &lt; m$, define:</p>
 
-\[\begin{align}
-|S| &amp;\leq \sum_{\lambda \in \omega_\alpha} 2^{|\lambda} \\
-&amp;\leq \sum_{\lambda \in \omega_\alpha} \aleph_\alpha \\
-&amp;= \aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha \quad \blacksquare
-\end{align}\]
+\[f_l(\alpha) : T_m \to \omega_1; \quad \alpha \mapsto \text{$l$th element of $A_\alpha$}\]
 
-<blockquote>
-  <p><strong>정리.</strong> $\aleph_\alpha$가 특이 기수인 경우, 다음이 성립한다.</p>
+<p>Since $|A_\alpha \cap \alpha| &gt; l$, $f_l(\alpha) &lt; \alpha$. Thus, $f_l$ is regressive. Now, repeat the following steps:</p>
 
-\[\aleph_\alpha^{\aleph_\beta} = \begin{cases}
-\aleph_{\beta + 1} &amp; \aleph_\alpha \leq \aleph_\beta \\
-\aleph_{\alpha + 1} &amp; \mathrm{cf}(\aleph_\alpha) \leq \aleph_\beta &lt; \aleph_\alpha \\
-\aleph_{\alpha} &amp; \aleph_\beta &lt; \mathrm{cf}(\aleph_\alpha) \end{cases}\]
-</blockquote>
+<ul>
+  <li>There exists a stationary set $S_0 \subseteq T_m$ such that $f_0$ is constant on $S_0$.</li>
+  <li>There exists a stationary set $S_1 \subseteq S_0$ such that $f_1 |_{S_0}$ is constant on $S_1$.</li>
+  <li>There exists a stationary set $S_2 \subseteq S_1$ such that $f_2 |_{S_1}$ is constant on $S_2$.</li>
+  <li>…</li>
+  <li>There exists a stationary set $S_{m-1} \subseteq S_{m-2}$ such that $f_{m-1} |_{S_{m-2}}$ is constant on $S_{m-1}$.</li>
+</ul>
 
-<p><strong>증명.</strong> 첫 번째 경우와 세 번째 경우는 이전 정리의 증명과 거의 같으므로, 두 번째 경우만 살펴보자. 다음이 성립한다.</p>
-
-\[\aleph_\alpha \leq \aleph_\alpha^{\aleph_\beta} \leq \aleph_\alpha^{\aleph_\alpha} = 2^{\aleph_\alpha} = \aleph_{\alpha+1}\]
-
-<p>따라서 $\aleph_\alpha &lt; \aleph_\alpha^{\aleph_\beta}$임을 보이면 충분하다. 만약 $\aleph_\alpha = \aleph_\alpha^{\aleph_\beta}$라면 $\mathrm{cf}(\aleph_\alpha) = \mathrm{cf}(\aleph_\alpha^{\aleph_\beta}) &gt; \aleph_\beta$인데, 가정에 의해 $\mathrm{cf}(\aleph_\alpha) \leq \aleph_\beta$이므로 모순이다. ■</p>
+<p>For each $0 \leq l &lt; m$, $f_l$ is constant on $S_{m-1}$. It is now easy to verify that $S_{m-1} = I$ is the desired set. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

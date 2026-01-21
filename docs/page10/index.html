@@ -431,6 +431,1230 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/27/general-covariance/en"> Notes on General Covariance </a>
+      </h1>
+    <span class="post-date">27 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/physics/'">
+        Physics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/mechanics/'">
+        Mechanics
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>A theory is said to be <strong>general covariant</strong> when the form of physical laws is preserved under differentiable coordinate transformations. Specifically, suppose coordinate systems $\lbrace q_i \rbrace$ and $\lbrace q’_i \rbrace$ are related by:</p>
+
+\[q_i' = f_i(\{ q \})\]
+
+<p>Let each $f_i$ be differentiable for all $i$. If a theory is generally covariant, then the physical laws must have the same form when using coordinate system $\lbrace q_i \rbrace$ as when using coordinate system $\lbrace q_i’ \rbrace$.</p>
+
+<p>Consider an example. Suppose we describe the position of a particle in a system with zero potential using either polar coordinates $(r, \theta)$ or Cartesian coordinates $(x, y)$. The two coordinate systems are related by:</p>
+
+\[\begin{gather}
+x = f_1(r, \theta) = r \cos \theta\\
+y = f_2(r, \theta) = r \sin \theta
+\end{gather}\]
+
+<p>Since $f_1$ and $f_2$ are differentiable, a generally covariant theory must have the same form when expressed in both coordinate systems.</p>
+
+<p>First, consider the case of Newtonian mechanics. The physical laws of Newtonian mechanics are:</p>
+
+\[\begin{gather}
+-\frac{dV(x, y)}{dx} = m\ddot{x} \\
+-\frac{dV(x, y)}{dy} = m\ddot{y}
+\end{gather}\]
+
+<p>Since $V(x, y) = 0$, we have $\ddot{x} = \ddot{y} = 0$. That is, the particle undergoes uniform linear motion. If Newtonian mechanics were generally covariant, then expressing the above laws in terms of $(r, \theta)$ instead of $(x, y)$ should yield the same result.</p>
+
+\[\begin{gather}
+-\frac{dV(r, \theta)}{dr} = m\ddot{r} \\
+-\frac{dV(r, \theta)}{d\theta} = m\ddot{\theta}
+\end{gather}\]
+
+<p>Since $V(r, \theta) = 0$, we have $\ddot{r} = \ddot{\theta} = 0$. This time, the particle undergoes uniform circular motion. Since the results differ, <strong>Newtonian mechanics is not generally covariant.</strong></p>
+
+<p>Now consider the case of <a href="http://dimenerno.github.io/2025/02/27/euler-lagrange/">Lagrangian mechanics</a>. The physical laws of Lagrangian mechanics are:</p>
+
+\[\begin{gather}
+\frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
+\frac{\partial \mathcal{L}}{\partial y} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{y}}
+\end{gather}\]
+
+<p>Substituting $\mathcal{L}(x, y) = T - V = \frac{m}{2}(\dot{x}^2 + \dot{y}^2)$ yields $\ddot{x} = \ddot{y} = 0$, i.e., uniform linear motion. This is the same as in Newtonian mechanics thus far.</p>
+
+<p>Now let us substitute $(r, \theta)$ for $(x, y)$ in the Euler-Lagrange equations:</p>
+
+\[\begin{gather}
+\frac{\partial \mathcal{L}}{\partial r} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{r}} \\
+\frac{\partial \mathcal{L}}{\partial \theta} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}}
+\end{gather}\]
+
+<p>Substituting $x = r\cos\theta, y = r\sin\theta$ and simplifying, $\mathcal{L}(r, \theta)$ becomes:</p>
+
+\[\mathcal{L}(r, \theta) = \frac{m}{2}(\dot{r}^2 + r^2 \dot{\theta}^2)\]
+
+<blockquote>
+  <p><em>Remark.</em> while in the Euler-Lagrange equations we simply substitute $(r, \theta)$ for $(x, y)$, in the Lagrangian we substitute the relation $x = r \cos \theta, y = r \sin \theta$ because the Lagrangian is not a function of <strong>pairs of real numbers</strong> but rather a function of <strong>points in spacetime</strong>. General covariance does not mean that the form of equations is preserved under mindless, uniform coordinate transformations, but rather that when the functions describing a physical system are maintained while the coordinates expressing them are changed, the form of equations is preserved.</p>
+</blockquote>
+
+<p>Substituting and calculating yields:</p>
+
+\[\begin{gather}
+\ddot{r} = r\dot{\theta}^2 \\
+2\dot{r}\dot{\theta} + r\ddot{\theta} = 0
+\end{gather}\]
+
+<p>Although the differential equations are complex and difficult to interpret, the above two differential equations are equivalent to $\ddot{x} = \ddot{y} = 0$. For instance, one can verify that $\theta = \tan^{-1}t, r = \sqrt{1 + t^2}$ is a solution to the equations.</p>
+
+<p>In general, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Lagrangian mechanics possesses general covariance.</p>
+</blockquote>
+
+<p>It may seem surprising that Newtonian mechanics lacks general covariance while Lagrangian mechanics possesses it, but upon reflection, this is quite natural. Newton’s first law is commonly expressed mathematically as $F = 0 \implies \ddot{x} = 0$, but the precise statement is:</p>
+
+<blockquote>
+  <p>The spacetime diagram of a particle not subject to external forces is linear.</p>
+</blockquote>
+
+<p>Note the expression ‘linear’. Linearity is a concept dependent upon specific geometry. For example, in Euclidean geometry, ‘linear’ refers to what we commonly call a straight line, but in spherical geometry, ‘linear’ is given by great circles. Therefore, the above statement is most accurately written as:</p>
+
+<blockquote>
+  <p><strong>Newtonian mechanics</strong>. The spacetime diagram of a particle not subject to external forces is linear in Euclidean geometry.</p>
+</blockquote>
+
+<p>Linear motion in Euclidean geometry is given by $\ddot{x} = \ddot{y} = 0$ in Cartesian coordinates. Therefore, $F = 0 \implies \ddot{x} = 0$ is a correct equation only when Euclidean geometry and Cartesian coordinates are presupposed.</p>
+
+<p>Conversely, if a theory does not depend upon specific geometry, then that theory is generally covariant. Lagrangian mechanics is an example of such a theory. The statement of Lagrangian mechanics can be expressed as:</p>
+
+<blockquote>
+  <p><strong>Lagrangian mechanics</strong>. The path that extremises the integral of the Lagrangian is the particle’s trajectory.</p>
+</blockquote>
+
+<p>The Lagrangian is not a function dependent upon specific geometry, but merely a function that outputs real values for points in spacetime. Therefore, the above statement is not dependent upon any particular geometry, and Lagrangian mechanics is generally covariant.</p>
+
+<p>According to the hole argument, generally covariant theories are indeterministic in a metaphysical sense. An explanation of this will be provided later.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/27/euler-lagrange"> 오일러-라그랑주 방정식과 라그랑주 역학 </a>
+      </h1>
+    <span class="post-date">27 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/물리학/'">
+        물리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/역학/'">
+        역학
+      </div>
+      
+    </div>
+     <h2 id="1-도입">1. 도입</h2>
+
+<p>1차원 위에서 운동하는 입자의 운동 경로는 $x(t)$와 같이 표현할 수 있다. 입자의 위치와 속도에 의존적인 함수 $f(x, x’)$를 생각하자. 이 입자가 시간 $t_1$일 때 $x_1$에서 출발하여 시간 $t_2$일 때 $x_2$에 도착하는데, 그 과정에서 다음 값을 극화<sub>extremise</sub>하는 경로, 즉 다음 값이 극대 또는 극소가 되도록 하는 경로 $x(t)$를 찾는 것이 목표이다.</p>
+
+\[A[x] = \int^{t_2}_{t_1} f(x, \dot{x}) dt\]
+
+<p>대괄호는 $A$의 매개변수가 실수가 아닌 함수임을 의미한다. 따라서 직관적으로 생각했을 때 $A[x]$를 최소화하는 $x(t)$를 찾기 위해서는 함수에 대한 미분식을 세워야 한다.</p>
+
+\[\frac{dA[x]}{dx(t)} = 0?\]
+
+<h2 id="2-오일러-라그랑주-방정식">2. 오일러-라그랑주 방정식</h2>
+
+<p>물론 함수에 대한 미분을 우리는 정의한 적이 없다. 하지만 간단한 트릭을 통해 함수에 대한 미분을 일반적인 미분으로 환원할 수 있다. 먼저 $x_0(t)$가 우리가 찾고자 하는 경로, 즉 $A[x]$를 극화시키는 경로라고 하자. $x_0(t)$의 ‘주변’에 있는 경로는 다음과 같은 꼴이다.</p>
+
+\[x(\alpha, t) = x_0(t) + \alpha h(t)\]
+
+<p><img src="/public/euler-lagrange.png" width="400px" style="margin: 2em auto;" /></p>
+
+<p>경계 조건은 $h(t_1) = h(t_2) = 0$이다. $x_0(t)$가 $A[x]$를 극화시키므로, 충분히 작은 $\epsilon$에 대해 $A[x_0] = A[x(0, t)] \leq A[x(\epsilon, t)]$이다. 따라서,</p>
+
+\[\left. \frac{dA[x(\alpha, t)]}{d\alpha} \right\vert_{\alpha = 0} = 0\]
+
+<p>위 식을 전개하면 다음과 같다.</p>
+
+\[\begin{aligned}
+\frac{dA}{d\alpha} &amp;= \int^{t_2}_{t_1} \frac{d}{d\alpha} \Big[ f \big( x(\alpha, t), \dot{x}(\alpha, t) \big) \Big] dt \\
+&amp;= \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} + \frac{\partial f}{\partial \dot{x}}\frac{\partial \dot{x}}{\partial \alpha} \right) dt \\
+&amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \int^{t_2}_{t_1} \frac{\partial f}{\partial \dot{x}} \cdot \frac{d}{dt} \left( \frac{\partial x}{\partial \alpha} \right) dt \\
+&amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \left[ \frac{\partial f}{\partial \dot{x}} \frac{\partial x}{\partial \alpha} \right]^{t_2}_{t_1} -  \int^{t_2}_{t_1} \frac{d}{dt} \left( \frac{\partial f}{\partial \dot{x}} \right) \frac{\partial x}{\partial \alpha} dt
+\end{aligned}\]
+
+<p>3번 식에서 4번 식으로 넘어가는 데 부분적분이 쓰였다. ${\partial x}/{\partial \alpha} = h(t)$이므로, 경계 조건에 의해 4번 식의 두 번째 항은 소거된다. 따라서,</p>
+
+\[\frac{dA}{d\alpha} = \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x} - \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right) \right) \frac{\partial x}{\partial \alpha} dt = 0\]
+
+<p>임의의 $h \in C^1$에 대해 위 식이 만족되어야 하므로, $x(t)$가 $A$를 극화할 다음의 <em>필요조건</em>을 얻는다.</p>
+
+\[\frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
+
+<p>이것이 <strong>오일러-라그랑주 방정식<sub>Euler-Lagrange equation</sub></strong>이다. 값 $A$를 극화한다는 것을 $\delta A = 0$과 같이 표현하므로, 오일러-라그랑주 방정식의 결론은 다음과 같이 적을 수 있다.</p>
+
+\[\delta A = 0 \implies \frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
+
+<p>방금 우리는 일변수 함수에 대해 증명했지만, 다변수 함수에 대해서도 마찬가지 식이 성립한다. 즉, 어떤 입자(들)의 운동을 나타내는 좌표가 $\lbrace  q_i \rbrace _{i \leq n}$라고 하자. 예를 들어 2개의 입자가 3차원에서 운동하는 경우 $n = 6$이다. 이들의 운동이 $\int f(q_1, \dot{q_1}, \dots, q_n, \dot{q_n}) dt$를 극화할 필요조건은 각 $i$에 대해 다음이 성립하는 것이다.</p>
+
+\[\frac{\partial f}{\partial q_i} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{q_i}} \right)\]
+
+<!-- ## 3. 최단 강하 곡선 문제
+
+앞서 $t$를 시간, $x(t)$를 경로로 설정했지만, 다른 변수에 대해서도 오일러-라그랑주 방정식을 적용할 수 있다. 그 예시로, 최단 강하 곡선 문제를 풀어보자.
+
+<img src="public/brachistochrone.png" width="400px" style="margin: 2em auto;">
+
+에너지 보존 법칙에 의해 다음 식이 성립한다.
+
+$$
+\dot{x}^2 + \dot{y}^2 = -2gy
+$$
+
+따라서 곡선 $y(x)$를 따라 $(x\_1, y\_1)$에서 $(x\_2, y\_2)$까지 강하하는 데 걸리는 시간은 다음과 같다.
+
+$$
+\begin{aligned}
+T &= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{ds}{v} \\
+&= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{\sqrt{dx^2 + dy^2}}{\sqrt{\dot{x}^2 + \dot{y}^2}} \\
+&= \int^{x_2}_{x_1} \sqrt{-\frac{1 + y'^2}{2gy}} dx
+\end{aligned}
+$$
+
+다음과 같이 $f(y, y')$을 두자.
+
+$$
+f(y, y') = \sqrt{-\frac{1 + y'^2}{2gy}}
+$$
+
+오일러-라그랑주 방정식에 따르면 $T$가 극솟값을 가질 필요조건은 다음과 같다.
+
+$$
+\frac{\partial f}{\partial y} = \frac{d}{dx} \frac{\partial f}{\partial {y'}}
+$$
+
+위 식을 풀면 $y(x)$가 **사이클로이드** 꼴로 나타난다. 자세한 계산 과정은 연습문제로 땡처리하는 것을 양해 바란다. -->
+
+<h2 id="3-라그랑주-역학">3. 라그랑주 역학</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> 계 $S$의 입자(들)의 운동을 나타내는 좌표가 $\lbrace  q_i \rbrace _{1 \leq i \leq n}$라고 하자. $S$의 <strong>라그랑지안<sub>Lagrangian</sub></strong> $\mathcal{L}(\lbrace  q , \dot{q} \rbrace, t)$를, 다음의 값을 극화시키는 조건에 대한 방정식이 입자들의 운동 방정식과 같아지도록 하는 함수로 정의한다.</p>
+
+\[\mathcal{S} = \int^{t_2}_{t_1} \mathcal{L}(\{ q, \dot{q} \}, t) dt\]
+
+  <p>$\mathcal{S}$를 <strong>작용<sub>action</sub></strong>이라고 부른다.</p>
+</blockquote>
+
+<p>예를 들어 1차원 퍼텐셜 장 $V(x)$에 속하는 입자의 라그랑지안은 다음과 같다.</p>
+
+\[\begin{aligned}
+\mathcal{L}(x, \dot{x}) &amp;= T - V \\
+&amp;= \frac{1}{2}m\dot{x}^2 - V(x)
+\end{aligned}\]
+
+<p>위 함수가 라그랑지안이라는 것을 확인해 보자. 오일러-라그랑주 방정식을 사용하면 해당 라그랑지안에 따른 작용이 극화될 조건은 다음과 같다.</p>
+
+\[\begin{aligned}
+\delta \mathcal{S} = 0 &amp;\implies \frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
+&amp;\iff -\frac{dV}{dx} = \frac{d}{dt}(m\dot{x}) \\
+&amp;\iff -\frac{dV}{dx} = m\ddot{x}
+\end{aligned}\]
+
+<p>마지막 식은 뉴턴의 운동 방정식이다. 따라서 $\mathcal{L}$은 이 계의 라그랑지안이 맞다. 일반적으로 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 다음 두 조건을 만족하는 고전역학적 계의 라그랑지안은 $\mathcal{L} = T - V$로 주어진다.</p>
+
+  <ol>
+    <li>계의 경계 조건이 홀로노믹<sub>holonomic</sub>하다. 즉, 경계 조건이 입자들의 위치에만 의존하고 속도에 의존하지 않는다.</li>
+    <li>계에 작용하는 힘 $\mathbf{F}_i$가 퍼텐셜 함수 $U_i(\lbrace q, \dot{q} \rbrace, t)$를 가진다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 링크된 <a href="https://physics.stackexchange.com/questions/78138/is-there-a-proof-from-the-first-principle-that-the-lagrangian-l-t-v">SE 포스트</a>를 참조.</p>
+
+<p>그러나 일반적으로 계의 라그랑지안이 $T - V$로 주어지는 것은 아니다. 예를 들어 상대론적 입자의 운동 에너지는 $(\gamma - 1)m_0c^2$이지만, 올바른 라그랑지안은 $-m_0c^2/\gamma$이다.</p>
+
+<p>뉴턴 역학과 달리 라그랑주 역학은 매우 자유로운 좌표계 변환을 허용한다는 점에서 강점을 가진다. 뉴턴 역학과 달리 라그랑주 역학은 일반 공변성을 가지기 때문이다. 이에 대한 자세한 설명은 <a href="http://dimenerno.github.io/2025/02/27/general-covariance/">다음 글</a>에 있다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/27/euler-lagrange/en"> The Euler-Lagrange Equation and Lagrangian Mechanics </a>
+      </h1>
+    <span class="post-date">27 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/physics/'">
+        Physics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/mechanics/'">
+        Mechanics
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h2 id="1-introduction">1. Introduction</h2>
+
+<p>The trajectory of a particle moving in one dimension can be expressed as $x(t)$. Consider a function $f(x, x’)$ that depends on the particle’s position and velocity. Our objective is to find the path $x(t)$ along which the particle travels from position $x_1$ at time $t_1$ to position $x_2$ at time $t_2$, such that the following quantity is extremised—that is, the path that renders this quantity either maximum or minimum:</p>
+
+\[A[x] = \int^{t_2}_{t_1} f(x, \dot{x}) dt\]
+
+<p>The square brackets indicate that the parameter of $A$ is a function rather than a real number. Therefore, intuitively, to find $x(t)$ that minimises $A[x]$, we should establish a differential equation for functions.</p>
+
+\[\frac{dA[x]}{dx(t)} = 0?\]
+
+<h2 id="2-the-euler-lagrange-equation">2. The Euler-Lagrange Equation</h2>
+
+<p>Of course, we have never defined differentiation with respect to functions. However, through a simple trick, we can reduce differentiation with respect to functions to ordinary differentiation. First, let $x_0(t)$ be the path we seek—that is, the path that extremises $A[x]$. A path in the ‘neighbourhood’ of $x_0(t)$ takes the following form:</p>
+
+\[x(\alpha, t) = x_0(t) + \alpha h(t)\]
+
+<p><img src="/public/euler-lagrange.png" width="400px" style="margin: 2em auto;" /></p>
+
+<p>The boundary conditions are $h(t_1) = h(t_2) = 0$. Since $x_0(t)$ extremises $A[x]$, for sufficiently small $\epsilon$, we have $A[x_0] = A[x(0, t)] \leq A[x(\epsilon, t)]$. Therefore,</p>
+
+\[\left. \frac{dA[x(\alpha, t)]}{d\alpha} \right\vert_{\alpha = 0} = 0\]
+
+<p>Expanding the above equation yields:</p>
+
+\[\begin{aligned}
+\frac{dA}{d\alpha} &amp;= \int^{t_2}_{t_1} \frac{d}{d\alpha} \Big[ f \big( x(\alpha, t), \dot{x}(\alpha, t) \big) \Big] dt \\
+&amp;= \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} + \frac{\partial f}{\partial \dot{x}}\frac{\partial \dot{x}}{\partial \alpha} \right) dt \\
+&amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \int^{t_2}_{t_1} \frac{\partial f}{\partial \dot{x}} \cdot \frac{d}{dt} \left( \frac{\partial x}{\partial \alpha} \right) dt \\
+&amp;= \int^{t_2}_{t_1} \frac{\partial f}{\partial x}\frac{\partial x}{\partial \alpha} dt + \left[ \frac{\partial f}{\partial \dot{x}} \frac{\partial x}{\partial \alpha} \right]^{t_2}_{t_1} -  \int^{t_2}_{t_1} \frac{d}{dt} \left( \frac{\partial f}{\partial \dot{x}} \right) \frac{\partial x}{\partial \alpha} dt
+\end{aligned}\]
+
+<p>Integration by parts is employed in the transition from the third to the fourth equation. Since ${\partial x}/{\partial \alpha} = h(t)$, the second term in the fourth equation vanishes due to the boundary conditions. Therefore,</p>
+
+\[\frac{dA}{d\alpha} = \int^{t_2}_{t_1} \left( \frac{\partial f}{\partial x} - \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right) \right) \frac{\partial x}{\partial \alpha} dt = 0\]
+
+<p>Since the above equation must be satisfied for arbitrary $h \in C^1$, we obtain the following <em>necessary condition</em> for $x(t)$ to extremise $A$:</p>
+
+\[\frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
+
+<p>This is the <strong>Euler-Lagrange equation</strong>. Since extremising the value $A$ is expressed as $\delta A = 0$, the conclusion of the Euler-Lagrange equation can be written as follows:</p>
+
+\[\delta A = 0 \implies \frac{\partial f}{\partial x} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{x}} \right)\]
+
+<p>We have just proved this for functions of one variable, but the same equation holds for functions of multiple variables. That is, let the coordinates representing the motion of some particle(s) be $\lbrace  q_i \rbrace _{i \leq n}$. For example, if two particles move in three dimensions, then $n = 6$. The necessary condition for their motion to extremise $\int f(q_1, \dot{q_1}, \dots, q_n, \dot{q_n}) dt$ is that the following holds for each $i$:</p>
+
+\[\frac{\partial f}{\partial q_i} = \frac{d}{dt}\left( \frac{\partial f}{\partial \dot{q_i}} \right)\]
+
+<!-- ## 3. The Brachistochrone Problem
+
+Although we previously set $t$ as time and $x(t)$ as the path, the Euler-Lagrange equation can also be applied to other variables. As an example, let us solve the brachistochrone problem.
+
+<img src="public/brachistochrone.png" width="400px" style="margin: 2em auto;">
+
+By the law of conservation of energy, the following equation holds:
+
+$$
+\dot{x}^2 + \dot{y}^2 = -2gy
+$$
+
+Therefore, the time taken to descend from $(x_1, y_1)$ to $(x_2, y_2)$ along the curve $y(x)$ is as follows:
+
+$$
+\begin{aligned}
+T &= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{ds}{v} \\
+&= \int^{(x_2, y_2)}_{(x_1, y_1)} \frac{\sqrt{dx^2 + dy^2}}{\sqrt{\dot{x}^2 + \dot{y}^2}} \\
+&= \int^{x_2}_{x_1} \sqrt{-\frac{1 + y'^2}{2gy}} dx
+\end{aligned}
+$$
+
+Let us set $f(y, y')$ as follows:
+
+$$
+f(y, y') = \sqrt{-\frac{1 + y'^2}{2gy}}
+$$
+
+According to the Euler-Lagrange equation, the necessary condition for $T$ to have a minimum value is as follows:
+
+$$
+\frac{\partial f}{\partial y} = \frac{d}{dx} \frac{\partial f}{\partial {y'}}
+$$
+
+Solving the above equation yields $y(x)$ in the form of a **cycloid**. Please forgive me for leaving the detailed calculation process as an exercise. -->
+
+<h2 id="3-lagrangian-mechanics">3. Lagrangian Mechanics</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let the coordinates representing the motion of the particles in system $S$ be $\lbrace  q_i \rbrace _{1 \leq i \leq n}$. The <strong>Lagrangian</strong> $\mathcal{L}(\lbrace  q , \dot{q} \rbrace, t)$ of $S$ is defined as a function such that the equation for the condition that extremises the following quantity becomes identical to the equations of motion of the particles:</p>
+
+\[\mathcal{S} = \int^{t_2}_{t_1} \mathcal{L}(\{ q, \dot{q} \}, t) dt\]
+
+  <p>$\mathcal{S}$ is called the <strong>action</strong>.</p>
+</blockquote>
+
+<p>For example, the Lagrangian of a particle in a one-dimensional potential field $V(x)$ is as follows:</p>
+
+\[\begin{aligned}
+\mathcal{L}(x, \dot{x}) &amp;= T - V \\
+&amp;= \frac{1}{2}m\dot{x}^2 - V(x)
+\end{aligned}\]
+
+<p>Let us verify that the above function is indeed the Lagrangian. Using the Euler-Lagrange equation, the condition for the action corresponding to this Lagrangian to be extremised is as follows:</p>
+
+\[\begin{aligned}
+\delta \mathcal{S} = 0 &amp;\implies \frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
+&amp;\iff -\frac{dV}{dx} = \frac{d}{dt}(m\dot{x}) \\
+&amp;\iff -\frac{dV}{dx} = m\ddot{x}
+\end{aligned}\]
+
+<p>The final equation is Newton’s equation of motion. Therefore, $\mathcal{L}$ is indeed the Lagrangian of this system. In general, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The Lagrangian of a classical mechanical system satisfying the following two conditions is given by $\mathcal{L} = T - V$:</p>
+
+  <ol>
+    <li>The constraints of the system are holonomic. That is, the constraints depend only on the positions of the particles and not on their velocities.</li>
+    <li>The forces $\mathbf{F}_i$ acting on the system have potential functions $U_i(\lbrace q, \dot{q} \rbrace, t)$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> See the linked <a href="https://physics.stackexchange.com/questions/78138/is-there-a-proof-from-the-first-principle-that-the-lagrangian-l-t-v">SE post</a>.</p>
+
+<p>However, in general, the Lagrangian of a system is not necessarily given by $T - V$. For instance, while the kinetic energy of a relativistic particle is $(\gamma - 1)m_0c^2$, the correct Lagrangian is $-m_0c^2/\gamma$.</p>
+
+<p>Unlike Newtonian mechanics, Lagrangian mechanics has the advantage of permitting very flexible coordinate transformations. This is because, unlike Newtonian mechanics, Lagrangian mechanics possesses general covariance. A detailed explanation of this can be found in the <a href="http://dimenerno.github.io/2025/02/27/general-covariance/">following article</a>.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/25/lebesgue-borel"> 르베그 가측 집합과 보렐 가측 집합 </a>
+      </h1>
+    <span class="post-date">25 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/측도론/'">
+        측도론
+      </div>
+      
+    </div>
+     <h3 id="1-르베그-측도">1. 르베그 측도</h3>
+
+<p><a href="https://dimenerno.github.io/2025/02/25/caratheodory/">카라테오도리 정리</a>로부터 다음과 같이 측도 $m$을 정의할 수 있다.</p>
+
+<ol>
+  <li>
+    <p>$\mathcal{A}_0 = \lbrace \cup^n_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $는 대수임을 보인다.</p>
+  </li>
+  <li>
+    <p>$A \in \mathcal{A}_0$에 대해, $A = \sqcup^n_{k=1} (a_k, b_k]$로 표현하는 방법이 유일함을 보인다.</p>
+  </li>
+  <li>
+    <p>함수 $\rho: \mathcal{A}_0 \to [0, \infty]$를</p>
+
+\[\rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)\]
+
+    <p>와 같이 정의했을 때 $\rho$가 예비측도임을 보인다.</p>
+  </li>
+  <li>
+    <p>$\mathcal{A}_0, \rho$에 대해 카라테오도리 구축 정리를 적용하여 외측도 $m^\ast$을 얻는다.</p>
+  </li>
+  <li>
+    <p>$m^\ast$의 정의역을 $m^\ast$-가측집합으로 제한하여 측도 $m$을 얻는다.</p>
+  </li>
+</ol>
+
+<p>대수는 유한 합집합에만 닫혀 있기 때문에 1, 2, 3은 거의 자명하다. 4, 5의 증명은 <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">관련 글</a>을 참조하라.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 상술한 $m$을 <strong>르베그 측도<sub>Lebesgue measure</sub></strong>라고 부른다. 또한, $m$의 정의역에 속하는 집합을 <strong>르베그 가측<sub>Lebesgue measurable</sub></strong>이라고 부른다.</p>
+</blockquote>
+
+<p>카라테오도리 정리들로부터 다음 사실들이 어렵지 않게 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$m([a, b]) = m((a, b)) = m((a, b]) = m([a, b)) = b - a$</li>
+    <li>$A \subset \mathbb{R}$이 가산일 때, $m(A) = 0$</li>
+  </ol>
+</blockquote>
+
+<p>그리고 카라테오도리 확장 정리로 얻어지는 측도는 완비 측도<sub>complete measure</sub>이므로 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $m$은 완비 측도이다.</p>
+</blockquote>
+
+<p>또한 $\sigma(\mathcal{A}_0)$는 보렐 $\sigma$-대수 $\mathcal{B}$이므로, 다음이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 보렐 가측 집합은 르베그 가측이다.</p>
+</blockquote>
+
+<h3 id="2-르베그-가측이지만-보렐-가측이-아닌-집합">2. 르베그 가측이지만 보렐 가측이 아닌 집합</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 집합열 $\lbrace C_n \rbrace$을 다음과 같이 정의한다.</p>
+
+\[\begin{gather}
+C_0 = [0, 1]\\
+C_1 = I_0 \setminus (1/3, 2/3) \\
+C_2 = I_1 \setminus \{ (1/9, 2/9) \cup (7/9, 8/9) \} \\
+\vdots
+\end{gather}\]
+
+  <p><strong>칸토어 집합<sub>Cantor set</sub></strong> $C$를 $\cap^\infty_{n = 0}C_n$으로 정의한다.</p>
+
+  <p><img src="/public/cantor.png" width="500px" style="margin: 0 auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>칸토어 집합은 비가산이다.</li>
+    <li>칸토어 집합은 르베그 측도 0이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>
+    <p>칸토어 집합에 속하는 원소들은 삼진법으로 소숫점 전개했을 때 어느 자리에도 2가 등장하지 않는 수들이다. 그러한 수는 $2^\aleph_0$개 있으므로 비가산이다.</p>
+  </li>
+  <li>
+    <p>$m(C_n) = (2/3)^n$이므로 $m(C) = \lim_{n \to infty} (2/3)^n = 0$. ■</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><strong>정의.</strong> 칸토어 집합을 정의할 때 각 단계에서 빠지는 집합을 $J_n$이라고 하자. 즉,</p>
+
+\[\begin{gather}
+J_1 = (1/3, 2/3) \\
+J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
+\vdots
+\end{gather}\]
+
+  <p>다음과 같이 함수열을 정의한다.</p>
+
+\[\begin{gather}
+\operatorname{dom} f_1 = J_1,\; f_1(x) = \frac{1}{2} \\\\
+\operatorname{dom} f_2 = J_1 \cup J_2, \; f_2(x) = \begin{cases} 1/4 &amp; x \in (1/9, 2/9) \\ 1/2 &amp; x \in (1/3, 2/3) \\ 3/4 &amp; x \in (7/9, 8/9) \end{cases} \\\\
+\vdots
+\end{gather}\]
+
+  <p>$f: I \to I$를 다음과 같이 정의한다.</p>
+
+\[f(x) = \inf \{ f_n(y) : y \geq x, y \in \mathrm{dom} f \}\]
+
+  <p>$f$를 <strong>칸토어 함수<sub>Cantor function</sub></strong>라고 한다.</p>
+
+  <p><img src="/public/CantorEscalier.svg.png" width="300px" style="margin: 0 auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 칸토어 함수는 연속이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $f$를 칸토어 함수라고 하자. $f$는 증가함수이므로 $f$가 불연속점을 가진다면 해당 불연속은 틈 불연속<sub>gap discontinuity</sub>이며, 따라서 어떤 $\epsilon &gt; 0$와 $y_0 \in I$에 대해 $(y_0 - \epsilon, y_0 + \epsilon)$이 $\operatorname{im} f$ 밖에 속한다. 그런데 $(y_0 - \epsilon, y_0 + \epsilon)$의 원소 중에는 이진법으로 소숫점 전개했을 때 자릿수가 유한한 수가 존재한다. 해당 수는 $\operatorname{im}f$에 속하므로 모순이다. ■</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 르베그 가측이지만 보렐 가측이 아닌 함수가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><em>보조정리.</em> $f$가 증가함수라면 $f^{-1}$은 보렐 집합을 보렐 집합에 사상한다.</p>
+
+<p><em>보조정리의 증명.</em> $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $라고 하자. 열린 집합들의 모음 $\mathcal{G}$에 대해 $\mathcal{G} \subset \mathcal{A}$임이 자명하다. 또한 $\mathcal{A}$가 $\sigma$-대수임이 역함수의 성질로부터 자명하다. 따라서 $\mathcal{A} = \sigma(\mathcal{G}) = \mathcal{B}$이다.</p>
+
+<p>$f$가 칸토어 함수라고 하고, $F$를 다음과 같이 정의하자.</p>
+
+\[F(x) =\inf \{y : f(y) \geq x \}\]
+
+<p>$F$는 엄격히 증가하는 함수이고, $\operatorname{im} F = C$이다($C$는 칸토어 집합). $V$를 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>이라고 하자. $F[V]$는 $C$에 포함되므로 르베그 측도 0이며, 르베그 측도의 완비성에 따라 르베그 가측이다. 그러나 $F[V]$는 보렐 가측이 아니다. 만약 보렐 가측이었다면 $F$가 증가함수이므로 $F^{-1}(F[V]) = V$가 가측이어야 하기 때문이다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/25/lebesgue-borel/en"> Lebesgue Measurable Sets and Borel Measurable Sets </a>
+      </h1>
+    <span class="post-date">25 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/measure-theory/'">
+        Measure Theory
+      </div>
+      
+    </div>
+     <h3 id="1-lebesgue-measure">1. Lebesgue Measure</h3>
+
+<p>From <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">Carathéodory’s theorem</a>, we can define a measure $m$ on $\mathbb{R}$ as follows.</p>
+
+<ol>
+  <li>
+    <p>Show that $\mathcal{A}_0 = \lbrace \cup^n_{k=1} (a_k, b_k] : a_k, b_k \in \mathbb{R}^\infty \rbrace $ is an algebra.</p>
+  </li>
+  <li>
+    <p>For $A \in \mathcal{A}_0$, show that the representation $A = \sqcup^n_{k=1} (a_k, b_k]$ is unique.</p>
+  </li>
+  <li>
+    <p>Define $\rho: \mathcal{A}_0 \to [0, \infty]$ as:</p>
+
+\[\rho(\sqcup^n_{k=1} (a_k, b_k]) = \sum^n_{k=1}(b_k - a_k)\]
+
+    <p>Show that $\rho$ is a premeasure.</p>
+  </li>
+  <li>
+    <p>Apply Carathéodory’s extension theorem to $\mathcal{A}_0, \rho$ to obtain the outer measure $m^\ast$.</p>
+  </li>
+  <li>
+    <p>Restrict the domain of $m^\ast$ to $m^\ast$-measurable sets to obtain $m$.</p>
+  </li>
+</ol>
+
+<p>Since algebras are only closed under finite unions, steps 1, 2, and 3 are almost trivial. For the proofs of steps 4 and 5, see the <a href="https://dimenerno.github.io/2025/02/25/caratheodory/">related post</a>.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> The aforementioned $m$ is called the <strong>Lebesgue measure</strong>. Moreover, sets belonging to the domain of $m$ are called <strong>Lebesgue measurable</strong>.</p>
+</blockquote>
+
+<p>The following facts follow readily from Carathéodory’s theorems.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>$m([a, b]) = m((a, b)) = m((a, b]) = m([a, b)) = b - a$</li>
+    <li>When $A \subset \mathbb{R}$ is countable, $m(A) = 0$</li>
+  </ol>
+</blockquote>
+
+<p>Since the measure obtained by Carathéodory’s extension theorem is a complete measure, the following holds.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $m$ is a complete measure.</p>
+</blockquote>
+
+<p>Furthermore, since $\sigma(\mathcal{A}_0)$ is the Borel $\sigma$-algebra $\mathcal{B}$, it follows that:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Borel measurable sets are Lebesgue measurable.</p>
+</blockquote>
+
+<h3 id="2-sets-that-are-lebesgue-measurable-but-not-borel-measurable">2. Sets That Are Lebesgue Measurable but Not Borel Measurable</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> Define the sequence of sets $\lbrace C_n \rbrace$ as follows:</p>
+
+\[\begin{gather}
+C_0 = [0, 1]\\
+C_1 = I_0 \setminus (1/3, 2/3) \\
+C_2 = I_1 \setminus \{ (1/9, 2/9) \cup (7/9, 8/9) \} \\
+\vdots
+\end{gather}\]
+
+  <p>The <strong>Cantor set</strong> $C$ is defined as $\cap^\infty_{n = 0}C_n$.</p>
+
+  <p><img src="/public/cantor.png" width="500px" style="margin: 0 auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>The Cantor set is uncountable.</li>
+    <li>The Cantor set has Lebesgue measure 0.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>
+    <p>Elements belonging to the Cantor set are numbers whose ternary decimal expansion contains no digit 2 in any position. There are $2^\aleph_0$ such numbers, hence uncountable.</p>
+  </li>
+  <li>
+    <p>Since $m(C_n) = (2/3)^n$, we have $m(C) = \lim_{n \to infty} (2/3)^n = 0$. ■</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $J_n$ denote the sets removed at each stage in defining the Cantor set. That is,</p>
+
+\[\begin{gather}
+J_1 = (1/3, 2/3) \\
+J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
+\vdots
+\end{gather}\]
+
+  <p>Define the sequence of functions as follows:</p>
+
+\[\begin{gather}
+\operatorname{dom} f_1 = J_1,\; f_1(x) = \frac{1}{2} \\\\
+\operatorname{dom} f_2 = J_1 \cup J_2, \; f_2(x) = \begin{cases} 1/4 &amp; x \in (1/9, 2/9) \\ 1/2 &amp; x \in (1/3, 2/3) \\ 3/4 &amp; x \in (7/9, 8/9) \end{cases} \\\\
+\vdots
+\end{gather}\]
+
+  <p>Define $f: I \to I$ as follows:</p>
+
+\[f(x) = \inf \{ f_n(y) : y \geq x, y \in \mathrm{dom} f \}\]
+
+  <p>$f$ is called the <strong>Cantor function</strong>.</p>
+
+  <p><img src="/public/CantorEscalier.svg.png" width="300px" style="margin: 0 auto;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The Cantor function is continuous.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $f$ be the Cantor function. Since $f$ is an increasing function, if $f$ has discontinuities, they would be jump discontinuities. Therefore, for some $\epsilon &gt; 0$ and $y_0 \in I$, the interval $(y_0 - \epsilon, y_0 + \epsilon)$ would lie outside $\operatorname{im} f$. However, among the elements of $(y_0 - \epsilon, y_0 + \epsilon)$, there exists a number whose binary decimal expansion has finitely many digits. Such a number belongs to $\operatorname{im}f$, which is a contradiction. ■</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> There exist sets that are Lebesgue measurable but not Borel measurable.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p><em>Lemma.</em> If $f: I \to I$ is an increasing function, then $f^{-1}$ maps Borel sets to Borel sets.</p>
+
+<p><em>Proof of lemma.</em> Let $\mathcal{A} = \lbrace  S \subset I : f^{-1}(S) \in \mathcal{B} \rbrace $. It is trivial that $\mathcal{G} \subset \mathcal{A}$, where $\mathcal{G}$ is the collection of open sets of $I$. Moreover, it is trivial from properties of inverse functions that $\mathcal{A}$ is a $\sigma$-algebra. Therefore, $\mathcal{A} \supseteq \sigma(\mathcal{G}) = \mathcal{B}$.</p>
+
+<p>Let $f$ be the Cantor function and define $F$ as follows:</p>
+
+\[F(x) =\inf \{y : f(y) \geq x \}\]
+
+<p>$F$ is a strictly increasing function with $\operatorname{im} F = C$ (where $C$ is the Cantor set). Let $V$ be the <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since $F[V]$ is contained in $C$, it is a null set and thus, is Lebesgue measurable by the completeness of Lebesgue measure. However, $F[V]$ is not Borel measurable. If it were Borel measurable, then since $F$ is strictly increasing (hence injective), $F^{-1}(F[V]) = V$ would have to be measurable. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/25/caratheodory"> 카라테오도리 정리를 이용한 측도의 구성 </a>
+      </h1>
+    <span class="post-date">25 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/측도론/'">
+        측도론
+      </div>
+      
+    </div>
+     <p>필자는 카라테오도리 정리<sub>Carathéodory theorem</sub>를 3가지로 구분해서 이해하는 방식을 선호하기 때문에, 이 글에서도 해당 방식을 따른다. 각각 다음과 같다.</p>
+
+<ol>
+  <li><strong>카라테오도리 구축 정리:</strong> 임의의 집합족과 양함수로부터 외측도<sub>outer measure</sub> 를 정의할 수 있다.</li>
+  <li><strong>카라테오도리 제한 정리:</strong> 외측도의 정의역을 가측 집합으로 제한한 함수는 측도가 된다.</li>
+  <li><strong>카라테오도리 확장 정리:</strong> 대수 $\mathcal{A}_0$ 위의 예비측도<sub>premeasure</sub> $\mu_0$를 확장하는 $\sigma(\mathcal{A}_0)$ 위의 측도는, 집합족을 $\mathcal{A}_0$, 양함수를 $\mu_0$로 잡은 뒤 구축 정리를 적용하여 얻은 외측도 $\mu^\ast$에, 제한 정리를 적용하여 얻은 측도가 유일하다.</li>
+</ol>
+
+<p>도식적으로, 다음과 같이 이해할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>(1)</th>
+      <th>(2)</th>
+      <th>(3)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>정의역</td>
+      <td>대수 $\mathcal{A}_0$</td>
+      <td>$\sigma$-대수 $\mathcal{A}$</td>
+      <td>멱집합 $\mathcal{P}(X)$</td>
+    </tr>
+    <tr>
+      <td>함수</td>
+      <td>예비측도 $\mu_0$</td>
+      <td>측도 $\mu$</td>
+      <td>외측도 $\mu^\ast$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>구축 정리는 (1) → (3), 제한 정리는 (3) → (2), 확장 정리는 (1) → (2)의 방향을 가진다. 하나하나 살펴 보자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $X$ 위의 <strong>외측도</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$는 다음을 만족하는 함수이다.</p>
+
+  <ol>
+    <li>$\mu^\ast(\varnothing) = 0$</li>
+    <li>$A \subset B \implies \mu^\ast(A) \leq \mu^\ast(B)$</li>
+    <li>$\mu^\ast\left( \bigcup_{n \in \mathbb{N}} A_n  \right) \leq \sum_{n \in \mathbb{N}} \mu^\ast(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>카라테오도리 구축 정리.</strong> $X$의 부분집합으로 이루어진 임의의 집합족 $\mathcal{S}$와, $l(\varnothing) = 0$을 만족하는 임의의 함수 $l: \mathcal{S} \to [0, \infty]$가 주어졌을 때, 다음과 같이 정의된 $\mu^\ast$은 외측도이다.</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} l(A_n) : \{ A_n \} \subset \mathcal{S} \text{ covers }E  \right\}\]
+</blockquote>
+
+<p>즉, $\mu^\ast$은 덮개의 극한으로서 $E$의 ‘측도’ 비스무리한 것을 정의하는 함수이며, 구분구적법에서 상합<sub>upper sum</sub>과 개념적으로 비슷하다.</p>
+
+<p><strong>증명.</strong> 1과 2는 자명하다. 3을 보인다.</p>
+
+<p>$A = \bigcup A_n$이라고 하고, 임의의 $\epsilon &gt; 0$이 주어졌다고 하자. $\mu^\ast$의 정의에 의해, 각 $n$에 대해 다음을 만족하는 $A_n$의 덮개 $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$가 존재한다.</p>
+
+\[\sum l(A_{nm}) \leq \mu^*(A_n) + \epsilon/2^n\]
+
+<p>따라서,</p>
+
+\[\sum_{n, m \in \mathbb{N}} l(A_{nm}) \leq \sum \mu^*(A_n) + \epsilon.\]
+
+<p>그리고 $\bigcup \mathcal{C}_n$이 $A$를 덮으므로, $\mu^\ast$의 정의에 의해 $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$이다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. 임의의 $E$에 대해 다음을 만족하는 집합 $A$를 $\mu^\ast$에 대해 <strong>가측<sub>measurable</sub></strong>이라고 한다.</p>
+
+\[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast(N) = 0$인 $N$을 <strong>영집합<sub>null set</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<p>즉, 가측 집합은 $\mu^\ast$에 대해 임의의 집합을 ‘깔끔하게’ 분할하는 집합이다. 따라서 가측 집합으로만 이루어진 모임 위에서 $\mu^\ast$은 일반적인 측도와 같이 행동할 것으로 예측할 수 있다. 이 예측을 입증하는 것이 다음의 제한 정리이다.</p>
+
+<blockquote>
+  <p><strong>카라테오도리 제한 정리.</strong> $\mu^\ast$가 외측도라고 하자. $\mu^\ast$에 대해 가측인 집합들의 모임을 $\mathcal{A}$라고 할 때, 다음이 성립한다.</p>
+
+  <ol>
+    <li>$\mathcal{A}$는 $\sigma$-대수이다.</li>
+    <li>$\mu^\ast |_\mathcal{A}$는 측도이다.</li>
+    <li>$\mathcal{A}$는 $\mu^\ast$의 모든 영집합을 포함한다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><strong>1. $\mathcal{A}$는 대수이다.</strong></p>
+
+<p>여집합 닫힘은 자명하다. 유한 교집합 닫힘임을 보인다.</p>
+
+<p>$A, B$가 가측이라고 하자. $A \cap B$가 가측임을 보이기 위해 다음을 보이면 충분하다.</p>
+
+\[\mu^*(E \cap (A \cap B)) + \mu^*(E \cap (A \cap B)^c) \leq \mu^*(E) \quad \cdots \quad (*)\]
+
+<p>$A, B$가 가측이므로 다음이 성립한다.</p>
+
+\[\begin{aligned}
+\mu^*(E) &amp;= \mu^*(E \cap A) + \mu^*(E \cap A^c) \\
+&amp;= \mu^*(E \cap A \cap B) + \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B) + \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>따라서 $(\ast)$은 다음과 동치이다.</p>
+
+\[\begin{aligned}
+\mu^*(E \cap (A^c \cup B^c)) &amp;\leq \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B)  \quad \cdots \quad (**) \\ &amp;+ \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>간단한 집합론으로부터 다음을 알 수 있다.</p>
+
+\[A^c \cup B^c = (A \cap B^c) \cup (A^c \cap B) \cup (A^c \cap B^c)\]
+
+<p>따라서 $(\ast\ast)$가 성립한다. □</p>
+
+<p><strong>2. $\mathcal{A}$는 $\sigma$-대수이다.</strong></p>
+
+<p>$A_n \uparrow A$인 $\lbrace  A_n \rbrace  \subset \mathcal{A}$에 대해 $A \in \mathcal{A}$임을 보이면 충분하다. (why?)</p>
+
+<p>외측도의 정의에 의해 $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$이다. $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$이라고 하자. $\bigsqcup C_n = A$이다. 또한,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n) &amp;= \mu^*(E \cap A_n \cap C_n) + \mu^*(E \cap A_n \cap C_n^c) \\
+&amp;= \mu^*(E \cap C_n) + \mu^*(E \cap A_{n - 1}) \\
+&amp;= \cdots \\
+&amp;= \sum^n_{k = 1} \mu^*(E \cap C_k)
+\end{aligned}\]
+
+<p>이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$이다. 그런데 $\lbrace  E \cap C_n \rbrace $이 $E \cap A$를 덮으므로, $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$이다. 따라서 $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$이다.</p>
+
+<p>따라서 임의의 $\epsilon &gt; 0$에 대해, 충분히 큰 $N$이 존재하여 $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$이다. 따라서,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n^c) &amp;= \mu^*(E) - \mu^*(E \cap A_n) \\
+&amp;\leq \mu^*(E) - \mu^*(E \cap A) + \epsilon
+\end{aligned}\]
+
+<p>이므로 다음을 얻는다.</p>
+
+\[\mu^*(E) \leq \mu^*(E \cap A_n) + \mu^*(E \cap A_n^c) \leq \mu^*(E) + \epsilon\]
+
+<p>$n \to \infty$로 보내면 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$이다. □</p>
+
+<p><strong>3. $\mu^\ast|_\mathcal{A}$는 측도이다, 4. $\mathcal{A}$는 모든 영집합을 포함한다.</strong></p>
+
+<p>Left as an exercise to the readers. (어렵지 않음) ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{A}_0$가 대수라고 하자. $\rho: \mathcal{A}_0 \to [0, \infty]$가 <strong>예비측도</strong>라는 것은 다음을 만족한다는 것이다.</p>
+
+  <ol>
+    <li>$\rho(\varnothing) = 0$</li>
+    <li>쌍으로 서로소인 가산 집합족 $\lbrace  A_n \rbrace $에 대해, $\bigcup A_n \in \mathcal{A}_0$라면 $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>카라테오도리 확장 정리.</strong> 대수 $\mathcal{A}_0$ 위의 예비측도 $\rho$에 대해, 다음과 같이 정의하자.</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
+
+  <p>이때, 다음이 성립한다.</p>
+
+  <ol>
+    <li>$A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</li>
+    <li>$\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</li>
+    <li>$\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p><strong>1. $A \in \mathcal{A}_0$라면 $\mu^\ast(A) = \rho(A)$이다.</strong></p>
+
+<p>$A$가 $A$의 덮개이므로 $\mu^\ast(A) \leq \rho(A)$이다. 만약 $\mu^\ast(A) &lt; \rho(A)$라면 어떤 $A$의 덮개 $\lbrace  A_n \rbrace $이 존재하여 $\sum \rho(A_n) &lt; \rho(A)$이다. 그런데 $\rho$가 예비측도이므로 이는 모순이다. □</p>
+
+<p><strong>2. $\sigma(\mathcal{A}_0)$는 $\mu^\ast$에 대해 가측이다.</strong></p>
+
+<p>먼저 $\mathcal{A}_0$가 가측임을 보인다. 임의의 $A \in \mathcal{A}_0$에 대해 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$임을 보이면 충분하다. $\mu^\ast$의 정의에 의해, 임의의 $\epsilon &gt; 0$에 대해 어떤 $E$의 덮개 $\mathcal{C}$가 존재하여 다음이 성립한다.</p>
+
+\[\sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon\]
+
+<p>$\mathcal{A}_0$가 대수이므로, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$이다. 따라서,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A) + \mu^*(E \cap A^c) &amp;\leq \sum^\infty_{n = 1} \mu^*(A \cap C_n) + \sum^\infty_{n = 1} \mu^*(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(A \cap C_n) + \sum^\infty_{n = 1} \rho(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon
+\end{aligned}\]
+
+<p>(엄밀히 따지자면 $\sum^n_{k=1}$을 고려한 다음에 $n \to \infty$ 극한을 취해야 한다) 따라서 $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$이며, $\mathcal{A}_0$는 가측이다. 카라테오도리 제한 정리에 의해 가측 집합은 $\sigma$-대수를 이루므로, $\sigma(\mathcal{A}_0)$ 또한 가측이다. □</p>
+
+<p><strong>3. $\rho$가 $\sigma$-유한이라면, $\rho$의 정의역을 $\sigma(\mathcal{A}_0)$로 확장하는 측도는 $\mu^\ast|_{\sigma(\mathcal{A}_0)}$가 유일하다.</strong></p>
+
+<p>먼저 $\rho &lt; \infty$를 가정하자. $\sigma(\mathcal{A}_0)$ 위에서 정의된 측도 $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치한다고 하자. 또한 $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$라고 하자. $\nu = \mu$임을 보인다.</p>
+
+<p>$E \in \sigma(\mathcal{A}_0)$라고 하자. 어떤 $E$의 덮개 $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$가 존재하여,</p>
+
+\[\sum \rho(A_n) \leq \mu(E) + \epsilon\]
+
+<p>이다. $\nu$가 $\mathcal{A}_0$에서 $\rho$와 일치하므로, $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$이다. 따라서 $\nu \leq \mu$이다.</p>
+
+<p>이제 $B_n = \bigcup^n_{k=1}A_k$로 정의하고, $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$이라고 하자. $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$이므로 $\mu(B \setminus E) \leq \epsilon$이다. $\nu$가 측도이므로,</p>
+
+\[\mu(A) = \lim \rho(B_n) = \lim \nu(B_n) = \nu(A)\]
+
+<p>따라서,</p>
+
+\[\begin{aligned}
+\mu(E) \leq \mu(B) &amp;= \mu(B \setminus E) + \mu(E) \\
+&amp;\leq \epsilon + \nu(E)
+\end{aligned}\]
+
+<p>즉 $\mu \leq \nu$이다. 따라서 $\mu = \nu$이다.</p>
+
+<p>이제 $\rho$가 $\sigma$-유한하다고 가정하자. 어떤 집합족 $\lbrace  C_n \rbrace $이 존재하여 $C_n \uparrow X$이고, $\rho(C_n) &lt; \infty$이다. 앞선 논의에 의해 $C_n$에서 $\mu$와 $\nu$는 일치한다. 따라서,</p>
+
+\[\mu(A) = \lim \mu(A \cap C_i) = \lim \nu (A \cap C_i) = \nu(A)\]
+
+<p>이므로 $\mu$와 $\nu$는 전체 공간에서 일치한다. ■</p>
+
+<p>다음 글에서는 카라테오도리 정리를 이용하여 르베그 측도를 구성한 뒤, 모든 보렐 가측 집합은 르베그 가측 집합이지만 그 역은 성립하지 않음을 보인다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/02/25/caratheodory/en"> Construction of Measures via Carathéodory's Theorem </a>
+      </h1>
+    <span class="post-date">25 Feb 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/measure-theory/'">
+        Measure Theory
+      </div>
+      
+    </div>
+     <p>I prefer to approach Carathéodory’s theorem by dividing it into three subtheorems. They are as follows:</p>
+
+<ol>
+  <li><strong>Carathéodory Construction Theorem:</strong> Any collection of sets and a positive function define an outer measure.</li>
+  <li><strong>Carathéodory Restriction Theorem:</strong> Restricting the domain of an outer measure to measurable sets yields a measure.</li>
+  <li><strong>Carathéodory Extension Theorem:</strong> There exists a unique extension of premeasure $\mu_0$ on an algebra $\mathcal{A}_0$ to a measure $\mu$ on the $\sigma$-algebra $\sigma(\mathcal{A}_0)$. Furthermore, $\mu$ is the measure obtained by applying the construction theorem with the collection of sets as $\mathcal{A}_0$ and the positive function as $\mu_0$, and then applying the restriction theorem.</li>
+</ol>
+
+<p>Schematically, this can be understood as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>(1)</th>
+      <th>(2)</th>
+      <th>(3)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Domain</td>
+      <td>Algebra $\mathcal{A}_0$</td>
+      <td>$\sigma$-algebra $\mathcal{A}$</td>
+      <td>Power set $\mathcal{P}(X)$</td>
+    </tr>
+    <tr>
+      <td>Function</td>
+      <td>Premeasure $\mu_0$</td>
+      <td>Measure $\mu$</td>
+      <td>Outer measure $\mu^\ast$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The construction theorem goes in the direction (1) → (3), the restriction theorem goes (3) → (2), and the extension theorem goes (1) → (2). Let us examine each one by one.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> An <strong>outer measure</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$ on $X$ is a function satisfying the following:</p>
+
+  <ol>
+    <li>$\mu^\ast(\varnothing) = 0$</li>
+    <li>$A \subset B \implies \mu^\ast(A) \leq \mu^\ast(B)$</li>
+    <li>$\mu^\ast\left( \bigcup_{n \in \mathbb{N}} A_n  \right) \leq \sum_{n \in \mathbb{N}} \mu^\ast(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Carathéodory Construction Theorem.</strong> Given any collection $\mathcal{S}$ of subsets of $X$ and any function $l: \mathcal{S} \to [0, \infty]$ satisfying $l(\varnothing) = 0$, the function $\mu^\ast$ defined as follows is an outer measure:</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} l(A_n) : \{ A_n \} \subset \mathcal{S} \text{ covers }E  \right\}\]
+</blockquote>
+
+<p>That is, $\mu^\ast$ is a function that defines something akin to a ‘measure’ of $E$ as an infimum over covers, and is conceptually similar to the upper sum<sub>upper sum</sub> in Riemann integration.</p>
+
+<p><strong>Proof.</strong> Properties 1 and 2 are trivial. We prove property 3.</p>
+
+<p>Let $A = \bigcup A_n$ and suppose an arbitrary $\epsilon &gt; 0$ is given. By the definition of $\mu^\ast$, for each $n$, there exists a cover $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$ of $A_n$ satisfying:</p>
+
+\[\sum l(A_{nm}) \leq \mu^*(A_n) + \epsilon/2^n\]
+
+<p>Therefore,</p>
+
+\[\sum_{n, m \in \mathbb{N}} l(A_{nm}) \leq \sum \mu^*(A_n) + \epsilon.\]
+
+<p>Since $\bigcup \mathcal{C}_n$ covers $A$, by the definition of $\mu^\ast$, we have $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$. ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $A$ is said to be <strong>measurable</strong> with respect to $\mu^\ast$ if it satisfies the following for any $E$:</p>
+
+\[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $N$ with $\mu^\ast(N) = 0$ is called a <strong>null set</strong>.</p>
+</blockquote>
+
+<p>That is, a measurable set is one that ‘cleanly’ partitions any set with respect to $\mu^\ast$. Therefore, we can expect that $\mu^\ast$ will behave like an ordinary measure on the collection consisting only of measurable sets. The following restriction theorem validates this expectation.</p>
+
+<blockquote>
+  <p><strong>Carathéodory Restriction Theorem.</strong> Let $\mu^\ast$ be an outer measure. Let $\mathcal{A}$ be the collection of sets that are measurable with respect to $\mu^\ast$. Then the following hold:</p>
+
+  <ol>
+    <li>$\mathcal{A}$ is a $\sigma$-algebra.</li>
+    <li>$\mu^\ast |_\mathcal{A}$ is a measure.</li>
+    <li>$\mathcal{A}$ contains all null sets of $\mu^\ast$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p><strong>1. $\mathcal{A}$ is an algebra.</strong></p>
+
+<p>Closure under complements is trivial. We show closure under finite intersections.</p>
+
+<p>Suppose $A, B$ are measurable. To show that $A \cap B$ is measurable, it suffices to prove:</p>
+
+\[\mu^*(E \cap (A \cap B)) + \mu^*(E \cap (A \cap B)^c) \leq \mu^*(E) \quad \cdots \quad (*)\]
+
+<p>Since $A, B$ are measurable, the following holds:</p>
+
+\[\begin{aligned}
+\mu^*(E) &amp;= \mu^*(E \cap A) + \mu^*(E \cap A^c) \\
+&amp;= \mu^*(E \cap A \cap B) + \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B) + \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>Therefore, $(\ast)$ is equivalent to:</p>
+
+\[\begin{aligned}
+\mu^*(E \cap (A^c \cup B^c)) &amp;\leq \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B)  \quad \cdots \quad (**) \\ &amp;+ \mu^*(E \cap A^c \cap B^c)
+\end{aligned}\]
+
+<p>From elementary set theory, we have:</p>
+
+\[A^c \cup B^c = (A \cap B^c) \cup (A^c \cap B) \cup (A^c \cap B^c)\]
+
+<p>Therefore, $(\ast\ast)$ holds. □</p>
+
+<p><strong>2. $\mathcal{A}$ is a $\sigma$-algebra.</strong></p>
+
+<p>It suffices to show that for $\lbrace  A_n \rbrace  \subset \mathcal{A}$ with $A_n \uparrow A$, we have $A \in \mathcal{A}$. (Why?)</p>
+
+<p>By the definition of outer measure, $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$. Let $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$. Then $\bigsqcup C_n = A$. Moreover,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n) &amp;= \mu^*(E \cap A_n \cap C_n) + \mu^*(E \cap A_n \cap C_n^c) \\
+&amp;= \mu^*(E \cap C_n) + \mu^*(E \cap A_{n - 1}) \\
+&amp;= \cdots \\
+&amp;= \sum^n_{k = 1} \mu^*(E \cap C_k)
+\end{aligned}\]
+
+<p>Therefore, $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$. Since $\lbrace  E \cap C_n \rbrace $ covers $E \cap A$, we have $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$. Therefore, $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$.</p>
+
+<p>Thus, for any $\epsilon &gt; 0$, there exists a sufficiently large $N$ such that $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$. Therefore,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A_n^c) &amp;= \mu^*(E) - \mu^*(E \cap A_n) \\
+&amp;\leq \mu^*(E) - \mu^*(E \cap A) + \epsilon
+\end{aligned}\]
+
+<p>whence we obtain:</p>
+
+\[\mu^*(E) \leq \mu^*(E \cap A_n) + \mu^*(E \cap A_n^c) \leq \mu^*(E) + \epsilon\]
+
+<p>Letting $n \to \infty$, we get $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$. □</p>
+
+<p><strong>3. $\mu^\ast|_\mathcal{A}$ is a measure, 4. $\mathcal{A}$ contains all null sets.</strong></p>
+
+<p>Left as an exercise to the readers. (Not difficult) ■</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathcal{A}_0$ be an algebra. A function $\rho: \mathcal{A}_0 \to [0, \infty]$ is called a <strong>premeasure</strong> if it satisfies the following:</p>
+
+  <ol>
+    <li>$\rho(\varnothing) = 0$</li>
+    <li>For any pairwise disjoint countable collection $\lbrace  A_n \rbrace $, if $\bigcup A_n \in \mathcal{A}_0$, then $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Carathéodory Extension Theorem.</strong> For a premeasure $\rho$ on an algebra $\mathcal{A}_0$, define:</p>
+
+\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
+
+  <p>Then the following hold:</p>
+
+  <ol>
+    <li>If $A \in \mathcal{A}_0$, then $\mu^\ast(A) = \rho(A)$.</li>
+    <li>$\sigma(\mathcal{A}_0)$ is measurable with respect to $\mu^\ast$.</li>
+    <li>If $\rho$ is $\sigma$-finite, then $\mu^\ast|_{\sigma(\mathcal{A}_0)}$ is the unique measure that extends $\rho$ to $\sigma(\mathcal{A}_0)$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p><strong>1. If $A \in \mathcal{A}_0$, then $\mu^\ast(A) = \rho(A)$.</strong></p>
+
+<p>Since $A$ is a cover of $A$, we have $\mu^\ast(A) \leq \rho(A)$. If $\mu^\ast(A) &lt; \rho(A)$, then there exists some cover $\lbrace  A_n \rbrace $ of $A$ such that $\sum \rho(A_n) &lt; \rho(A)$. However, since $\rho$ is a premeasure, this is a contradiction. □</p>
+
+<p><strong>2. $\sigma(\mathcal{A}_0)$ is measurable with respect to $\mu^\ast$.</strong></p>
+
+<p>First, we show that $\mathcal{A}_0$ is measurable. For any $A \in \mathcal{A}_0$, it suffices to show $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$. By the definition of $\mu^\ast$, for any $\epsilon &gt; 0$, there exists some cover $\mathcal{C}$ of $E$ such that:</p>
+
+\[\sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon\]
+
+<p>Since $\mathcal{A}_0$ is an algebra, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$. Therefore,</p>
+
+\[\begin{aligned}
+\mu^*(E \cap A) + \mu^*(E \cap A^c) &amp;\leq \sum^\infty_{n = 1} \mu^*(A \cap C_n) + \sum^\infty_{n = 1} \mu^*(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(A \cap C_n) + \sum^\infty_{n = 1} \rho(A^c \cap C_n) \\
+&amp;= \sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon
+\end{aligned}\]
+
+<p>(Strictly speaking, one should consider $\sum^n_{k=1}$ and then take the limit $n \to \infty$) Therefore, $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$, and $\mathcal{A}_0$ is measurable. By the Carathéodory restriction theorem, measurable sets form a $\sigma$-algebra, so $\sigma(\mathcal{A}_0)$ is also measurable. □</p>
+
+<p><strong>3. If $\rho$ is $\sigma$-finite, then $\mu^\ast|_{\sigma(\mathcal{A}_0)}$ is the unique measure that extends $\rho$ to $\sigma(\mathcal{A}_0)$.</strong></p>
+
+<p>First, assume $\rho &lt; \infty$. Suppose a measure $\nu$ defined on $\sigma(\mathcal{A}_0)$ agrees with $\rho$ on $\mathcal{A}_0$. Let $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$. We show $\nu = \mu$.</p>
+
+<p>Let $E \in \sigma(\mathcal{A}_0)$. There exists some cover $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$ of $E$ such that:</p>
+
+\[\sum \rho(A_n) \leq \mu(E) + \epsilon\]
+
+<p>Since $\nu$ agrees with $\rho$ on $\mathcal{A}_0$, we have $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$. Therefore, $\nu \leq \mu$.</p>
+
+<p>Now define $B_n = \bigcup^n_{k=1}A_k$ and let $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$. Since $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$, we have $\mu(B \setminus E) \leq \epsilon$. Since $\nu$ is a measure,</p>
+
+\[\mu(A) = \lim \rho(B_n) = \lim \nu(B_n) = \nu(A)\]
+
+<p>Therefore,</p>
+
+\[\begin{aligned}
+\mu(E) \leq \mu(B) &amp;= \mu(B \setminus E) + \mu(E) \\
+&amp;\leq \epsilon + \nu(E)
+\end{aligned}\]
+
+<p>That is, $\mu \leq \nu$. Therefore, $\mu = \nu$.</p>
+
+<p>Now assume $\rho$ is $\sigma$-finite. There exists a collection $\lbrace  C_n \rbrace $ such that $C_n \uparrow X$ and $\rho(C_n) &lt; \infty$. By the preceding argument, $\mu$ and $\nu$ agree on $C_n$. Therefore,</p>
+
+\[\mu(A) = \lim \mu(A \cap C_i) = \lim \nu (A \cap C_i) = \nu(A)\]
+
+<p>so $\mu$ and $\nu$ agree on the entire space. ■</p>
+
+<p>In the next article, we shall construct Lebesgue measure using Carathéodory’s theorem, and then show that while every Borel measurable set is Lebesgue measurable, the converse does not hold.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/02/24/algebra-measure"> 대수와 측도의 정의 </a>
@@ -946,1570 +2170,6 @@ K = \{ v \in V : v \in B \}
 <p>즉, 정점수 $j$ 이상인 모든 완전 그래프는 $\psi$를 만족한다. 다시 말해, $j \to (k)^2_m$이다. 임의의 $n$에 대해서 증명하려면 $R$을 $n$항 관계로 두면 된다. ■</p>
 
 <p>¹ Joel H. Spencer (1994), <em>Ten Lectures on the Probabilistic Method</em></p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/20/ramsey/en"> Ramsey Numbers and the Infinite Ramsey Theorem </a>
-      </h1>
-    <span class="post-date">20 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/combinatorics/'">
-        Combinatorics
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p><strong>Abstract.</strong> We examine the definition of Ramsey numbers and the Ramsey theorem that ensures Ramsey numbers are well-defined, extending this to infinite graphs. We also introduce an argument that derives the finite Ramsey theorem from the infinite Ramsey theorem using the compactness theorem.</p>
-
-<h2 id="introduction">Introduction</h2>
-
-<blockquote>
-  <p><strong>Problem.</strong> When the edges of a complete graph with 6 vertices are coloured red or blue, show that there exists a triangle whose three edges are all the same colour.</p>
-</blockquote>
-
-<p>For instance, in the following diagram, triangles ACF and BEF satisfy the problem’s conditions.</p>
-
-<p><img src="/public/finite-ramsey.png" width="350px" style="margin: 0 auto;" /></p>
-
-<p><strong>Solution.</strong> The number of edges emanating from any vertex is 5, so by the pigeonhole principle, at least 3 of them have the same colour. Without loss of generality, suppose edges AB, AC, and AD are all red. If any one of edges BC, CD, or DB is red, then there exists a triangle with all three edges red. For example, if BC is red, then triangle ABC satisfies this condition. On the other hand, if BC, CD, and DB are all blue, then triangle BCD has all three edges blue. Therefore, there exists at least one triangle with all three edges the same colour. ■</p>
-
-<h2 id="ramsey-theorem">Ramsey Theorem</h2>
-
-<p>The conclusion of the above problem can be expressed as follows: When $G$ is a complete graph with 6 or more vertices, if the edges of $G$ are coloured red or blue, then either there exists a complete subgraph with 3 or more vertices whose edges are all red, or there exists a complete subgraph with 3 or more vertices whose edges are all blue.</p>
-
-<p>Generalising this conclusion, we can pose the following question: Let $r$ and $b$ be arbitrary natural numbers. Does there exist a natural number $j$ such that when $G$ is a complete graph with $j$ or more vertices and the edges of $G$ are coloured red or blue, it is guaranteed that either there exists a complete subgraph with $r$ or more vertices whose edges are all red, or there exists a complete subgraph with $b$ or more vertices whose edges are all blue?</p>
-
-<p>According to the Ramsey theorem, the answer is <strong>yes</strong>. Specifically, when the smallest such $j$ is defined as $R(r, b)$, the following holds:</p>
-
-<blockquote>
-  <p><strong>Ramsey Theorem.</strong> For any natural numbers $r$ and $b$, $R(r, b)$ exists.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> We prove by induction on $r + b$. It suffices to show that the following holds:</p>
-
-\[R(r, b) \leq R(r-1, b) + R(r, b-1)\]
-
-<p>Let $R(r-1, b) = i$ and $R(r, b-1) = j$. Suppose $G$ is a complete graph with $i + j$ vertices, and the edges of $G$ are coloured red or blue. For any vertex $v \in G$, let $R$ be the complete subgraph formed by vertices connected to $v$ by red edges, and let $B$ be the complete subgraph formed by vertices connected by blue edges. The following holds:</p>
-
-\[|R| + |B| + 1 = i + j\]
-
-<p>Therefore, one of the following must hold:</p>
-
-<ol>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>R</td>
-          <td>\geq i$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>B</td>
-          <td>\geq j$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ol>
-
-<p>In case 1, since $R(r-1, b) = i$, $R$ either has a complete subgraph with $r-1$ vertices whose edges are all red, or has a complete subgraph with $b$ vertices whose edges are all blue. In the latter case, the condition for $R(r, b)$ is satisfied, and in the former case, the graph obtained by adding $v$ to that subgraph satisfies the condition for $R(r, b)$. The same logic applies to case 2. ■</p>
-
-<p>The problem at the beginning suggests that $R(3, 3) \leq 6$. Since it is known that there exist graphs with 5 vertices that do not satisfy the problem’s conditions, we have $R(3, 3) = 6$. The following are also trivial:</p>
-
-<ul>
-  <li>$R(r, b) = R(b, r)$</li>
-  <li>$R(r, 2) = r$</li>
-</ul>
-
-<p>However, calculating Ramsey numbers exactly for general values is an extremely difficult problem. This is because the number of cases to be explored increases faster than exponentially with the number of vertices in the graph. The time complexity of the currently known fastest Ramsey number search algorithm is $O(c^{n^2})$. The problem of finding the value of $R(5, 5)$ remains unsolved, though it is known to be between 43 and 48 inclusive. The following anecdote is told regarding this:</p>
-
-<blockquote>
-  <p>Erdős once told this story. Imagine that a much more advanced alien force lands on Earth and says that unless we calculate the value of $R(5, 5)$, they will blow the Earth to pieces. Erdős claimed that in this case, we should gather all our computers and mathematicians to attempt the calculation. However, if they demanded the value of $R(6, 6)$, Erdős said it would be better to devise a plan to defeat the alien force.¹</p>
-</blockquote>
-
-<h2 id="ramsey-theorem-for-multiple-colours">Ramsey Theorem for Multiple Colours</h2>
-
-<p>The Ramsey theorem also holds when more than two colours are used. First, let us define $R(n_1, n_2, \ldots, n_k) = j$ as the smallest $j$ such that when the edges of a complete graph with $j$ vertices are coloured using $k$ colours, at least one of the following always exists:</p>
-
-<ul>
-  <li>A complete subgraph with $n_1$ vertices whose edges are all the 1st colour</li>
-  <li>A complete subgraph with $n_2$ vertices whose edges are all the 2nd colour</li>
-  <li>…</li>
-  <li>A complete subgraph with $n_k$ vertices whose edges are all the $k$th colour</li>
-</ul>
-
-<p>For example, it is known that $R(3, 3, 3) = 17$. This means that when the edges of a complete graph with 17 or more vertices are coloured red, blue, or yellow, there always exists a triangle whose three edges are all red, all blue, or all yellow.</p>
-
-<blockquote>
-  <p><strong>Ramsey Theorem for Multiple Colours.</strong> For any natural numbers $n_1, \ldots, n_k$, $R(n_1, \ldots, n_k)$ exists.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> We prove by induction on $k$. It suffices to show that the following holds:</p>
-
-\[R(n_1, \ldots, n_k) \leq R(n_1, \ldots, n_{k-2}, R(n_{k-1}, n_k))\]
-
-<p>Let $j$ be the right-hand side of the inequality. Suppose $G$ is a complete graph with $j$ vertices, and colour the edges of $G$ using $k$ colours. Temporarily identify the $(k-1)$th colour with the $k$th colour. Then, by the definition of $j$, at least one of the following exists in $G$:</p>
-
-<ul>
-  <li>A complete subgraph with $n_1$ vertices whose edges are all the 1st colour</li>
-  <li>A complete subgraph with $n_2$ vertices whose edges are all the 2nd colour</li>
-  <li>…</li>
-  <li>A complete subgraph with $n_{k-2}$ vertices whose edges are all the $(k-2)$th colour</li>
-  <li>A complete subgraph with $R(n_{k-1}, n_k)$ vertices whose edges are all the $(k-1)$th colour = $k$th colour</li>
-</ul>
-
-<p>Except for the last case, the condition for $R(n_1, \ldots, n_k)$ is satisfied, so we need only consider the last case. Let $H$ be the complete subgraph guaranteed by the last case. By the definition of $R(n_{k-1}, n_k)$, $H$ has at least one of the following:</p>
-
-<ul>
-  <li>A complete subgraph with $n_{k-1}$ vertices whose edges are all the $(k-1)$th colour</li>
-  <li>A complete subgraph with $n_k$ vertices whose edges are all the $k$th colour</li>
-</ul>
-
-<p>Since each case satisfies the condition for $R(n_1, \ldots, n_k)$, in all cases $G$ satisfies $R(n_1, \ldots, n_k)$. ■</p>
-
-<h2 id="erdős-rado-arrow">Erdős-Rado Arrow</h2>
-
-<p>So far, we have examined the colouring of edges. Edges are relationships between two vertices. Going further, we can consider situations where relationships among $n$ vertices are coloured.</p>
-
-<p>For convenience of discussion, let us introduce several definitions. First, we adopt the set-theoretic definition of natural numbers, defining $n = {0, 1, \ldots, n-1}$. We also introduce the following notation:</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $A$ is a set, we define:</p>
-
-\[A^{(n)} = \{ S: S \subset A, |S| = n \}\]
-</blockquote>
-
-<p>That is, for a natural number $j$, $j^{(n)}$ is a set whose elements are each case of $_jC_n$. For example,</p>
-
-\[4^{(2)} = \left\{ \{ 0, 1\}, \{0, 2 \}, \{0, 3\}, \{1, 2 \}, \{1, 3\}, \{2, 3\} \right\}\]
-
-<p>To <strong>partition</strong> a given set into $m$ parts means to classify each element of the set into one of $m$ categories. For example, one result of partitioning $4^{(2)}$ into 3 parts is:</p>
-
-\[\left\{ \left\{ \{0, 1\}, \{ 0, 2 \}, \{1, 2\} \right\}, \left\{ \{0, 3\}, \{2, 3 \} \right\}, \left\{ \{1, 3 \} \right\} \right\}\]
-
-<p>In the above partition, the sets formed by 0, 1, and 2 all belong to the same category. We say that 0, 1, and 2 are <strong>homogeneous</strong> with respect to this partition.</p>
-
-<p>We define the following notation, called the <strong>Erdős-Rado arrow</strong>:</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> If there always exist $k$ homogeneous elements when $j^{(n)}$ is partitioned into $m$ parts, we write:</p>
-
-\[j \rightarrow (k)^n_m\]
-</blockquote>
-
-<p>The problem at the beginning suggests that $6 \rightarrow (3)^2_2$. The reason $n = 2$ is that edges are relationships between two vertices, and $m = 2$ because there are two colours.</p>
-
-<p>By the Ramsey theorem we saw earlier, the following holds:</p>
-
-\[\forall k\; \exists j: j \to (k)^2_2\]
-
-<p>Meanwhile, the Ramsey theorem for multiple colours suggests:</p>
-
-\[\forall k, m \; \exists j : j \to (k)^2_m\]
-
-<p>In general, the following is known:</p>
-
-<blockquote>
-  <p><strong>Finite Erdős-Rado Theorem.</strong> For any natural numbers $n$, $m$, and $k$, there exists a natural number $j$ such that:</p>
-
-\[j \rightarrow (k)^n_m\]
-</blockquote>
-
-<h2 id="infinite-ramsey-theorem">Infinite Ramsey Theorem</h2>
-
-<p>Interestingly, the Ramsey theorem also holds when $k$ is an infinite cardinal. The following is known:</p>
-
-<blockquote>
-  <p><strong>Erdős-Rado Theorem.</strong> For any cardinal $\lambda$ and natural numbers $n$ and $m$, there exists a cardinal $\kappa$ such that:</p>
-
-\[\kappa \rightarrow (\lambda)^n_m\]
-</blockquote>
-
-<p>In particular, the following holds:</p>
-
-<blockquote>
-  <p><strong>Infinite Ramsey Theorem.</strong> \(\aleph_0 \rightarrow (\aleph_0)^n_m\)</p>
-</blockquote>
-
-<p>That is, when guests at Hilbert’s hotel arbitrarily shake hands, either there are infinitely many people who all shake hands with each other, or there are infinitely many people who never shake hands with each other.</p>
-
-<p>The proof of the above theorem is the author’s own conjecture, so please let me know if there are any errors.</p>
-
-<p><strong>Proof.</strong> We prove for the case $n = m = 2$. Suppose $G$ is a complete graph of size $\aleph_0$. Colour the edges of $G$ red or blue. For vertices $v$ and $w$ of $G$, if $\overline{vw}$ is red, we write $\overline{vw} \in R$; if blue, we write $\overline{vw} \in B$.</p>
-
-<p>For any vertex $v_0$ of $G$, define:</p>
-
-\[\begin{aligned}
-R_1 = \{ w \in G : \overline{v_0w} \in R \}\\
-B_1 = \{ w \in G : \overline{v_0w} \in B \}
-\end{aligned}\]
-
-<p>Since $R_1 \cup B_1 \cup {v_0} = G$, at least one of $R_1$ and $B_1$ is an infinite set. If $R_1$ is infinite, we write $v_0 \in R$; if $B_1$ is infinite, we write $v_0 \in B$.</p>
-
-<p>Suppose $R_1$ is infinite. By the axiom of choice, we can select an element $v_1$ of $R_1$. Now define:</p>
-
-\[\begin{aligned}
-R_2 = \{ w \in R_1 : \overline{v_1w} \in R \}\\
-B_2 = \{ w \in R_1 : \overline{v_1w} \in B \}
-\end{aligned}\]
-
-<p>Since $R_2 \cup B_2 \cup {v_1} = R_1$, at least one of $R_2$ and $B_2$ is infinite. Similarly, if $R_2$ is infinite, we write $v_1 \in R$; if $B_2$ is infinite, we write $v_1 \in B$.</p>
-
-<p>Suppose $B_2$ is infinite. Select an element $v_2$ of $B_2$ and define:</p>
-
-\[\begin{aligned}
-R_3 = \{ w \in B_2 : \overline{v_2w} \in R \}\\
-B_3 = \{ w \in B_2 : \overline{v_2w} \in B \}
-\end{aligned}\]
-
-<p>By repeating in this manner, we obtain the following sequence of vertices:</p>
-
-\[V = \{ v_0, v_1, v_2, v_3, \ldots \}\]
-
-<p><img src="/public/infinite-ramsey.png" width="100%" style="margin: 0 auto;" /></p>
-
-<p>For each $v \in V$, either $v \in R$ or $v \in B$. Since $V$ is infinite, one of the following is infinite:</p>
-
-\[\begin{aligned}
-H = \{ v \in V : v \in R \} \\
-K = \{ v \in V : v \in B \}
-\end{aligned}\]
-
-<p>If $H$ is infinite, then the complete graph formed by the vertices of $H$ has all edges red. On the other hand, if $K$ is infinite, then the complete graph formed by the vertices of $K$ has all edges blue. Therefore, $\aleph_0 \rightarrow (\aleph_0)^2_2$. ■</p>
-
-<blockquote>
-  <p><strong>Corollary.</strong> When $A$ is an infinite subset of $\mathbb{N}$, there exists an infinite subset $B$ of $A$ such that one of the following holds:</p>
-
-  <ul>
-    <li>For any $b \in B$, if $c$ is an element of $B$ greater than $b$, then $b \mid c$.</li>
-    <li>For any $b, c \in B$, $b \nmid c$ and $c \nmid b$.</li>
-  </ul>
-</blockquote>
-
-<p><strong>Proof.</strong> Take $k = A$, and consider a partition where for $x &lt; y$, if $x \mid y$, then ${x, y}$ is classified into category 1; otherwise, into category 2. Then use the fact that $\aleph_0 \rightarrow (\aleph_0)^2_2$. ■</p>
-
-<h2 id="from-infinite-to-finite">From Infinite to Finite</h2>
-
-<p>Interestingly, using the compactness theorem, one can prove the finite Ramsey theorem from the infinite Ramsey theorem. That is, the following holds:</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> If $\aleph_0 \rightarrow (\aleph_0)^n_m$, then for any natural number $k$, there exists a natural number $j$ such that $j \to (k)^n_m$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> We prove for the case $n = 2$. A graph whose edges are coloured with $m$ colours can be formalised as follows. First, define the signature of language $\mathcal{L} = (V, f, 1, 2, \ldots, m)$ as:</p>
-
-<ul>
-  <li>$V$ is a unary relation.</li>
-  <li>$f$ is a binary function.</li>
-  <li>$1, 2, \ldots, m$ are constants.</li>
-</ul>
-
-<p>Let $T$ be an $\mathcal{L}$-theory consisting of:</p>
-
-<ul>
-  <li>$\psi : \lnot V(1) \land \lnot V(2) \land \lnot V(m)$</li>
-  <li>$\theta : \forall x, y \; (V(x) \land V(y) \land x \neq y) \rightarrow ( f(x, y) = 1 \lor f(x, y) = 2 \lor \cdots \lor f(x, y) = m )$</li>
-  <li>$\phi_1 : \exists x_1, x_2 \; V(x_1) \land V(x_2) \land x_1 \neq x_2$</li>
-  <li>$\phi_2 : \exists x_1, x_2, x_3 \; V(x_1) \land V(x_2) \land V(x_3) \land x_1 \neq x_2 \land x_2 \neq x_3 \land x_1 \neq x_3$</li>
-  <li>For each $n \in \mathbb{N}$, $\phi_n$</li>
-</ul>
-
-<p>$\psi$ means that $1, 2, \ldots, m$ represent colours, not vertices. $\theta$ means that any edge between two vertices has one of the colours from $1$ to $m$. And $\phi_n$ means that at least $n$ vertices exist. Since $\phi_n \in T$ for any $n$, models of $T$ are infinite complete graphs.</p>
-
-<p>Let the following sentence be $\chi$:</p>
-
-\[\exists x_1, x_2, \ldots, x_k : f(x_1, x_2) = f(x_1, x_3) = \ldots = f(x_{k-1}, x_k)\]
-
-<p>That is, $\chi$ means that there exists a monochromatic complete subgraph with $k$ vertices. Therefore, according to the infinite Ramsey theorem, the following holds:</p>
-
-\[T \vDash \chi\]
-
-<p>And by the compactness theorem, there exists some finite sub-theory $T’ = {\psi, \theta, \phi_1, \ldots, \phi_j}$ such that:</p>
-
-\[T' \vDash \chi\]
-
-<p>That is, every complete graph with $j$ or more vertices satisfies $\chi$. In other words, $j \to (k)^2_m$. To prove for arbitrary $n$, one can take $R$ as an $n$-ary relation. ■</p>
-
-<p>¹ Joel H. Spencer (1994), <em>Ten Lectures on the Probabilistic Method</em></p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/13/spectral-theorem"> 어드조인트, 정규 변환, 그리고 스펙트럼 정리 </a>
-      </h1>
-    <span class="post-date">13 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/대수학/'">
-        대수학
-      </div>
-      
-    </div>
-     <p>이 글에서 모든 벡터 공간은 내적 공간이라고 가정한다. 또한, 모든 변환은 선형 변환이다.</p>
-
-<h2 id="1-선형-변환의-어드조인트">1. 선형 변환의 어드조인트</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $(V, \langle \cdot \rangle_V), (W, \langle \cdot \rangle_W)$가 내적 벡터 공간이라고 하자. $T: V \to W$에 대해, $T$의 <strong>어드조인트<sub>adjoint</sub></strong> $T^\ast: W \to V$는 다음 조건을 만족하는 선형 변환이다.</p>
-
-\[\forall v \in V, w \in W : \quad \langle w, Tv \rangle_W = \langle T^\ast w, v \rangle_V\]
-</blockquote>
-
-<p><a href="https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">범주론의 어드조인트 정의</a>를 떠올려 보면 식의 형태가 비슷하다.</p>
-
-<p>이 정의를 정당화하려면 모든 $T$에 대해 어드조인트가 유일하게 존재함을 보여야 한다. 이는 리스 표현 정리<sub>Riesz representation theorem</sub>로부터 얻어진다.</p>
-
-<blockquote>
-  <p><strong>리스 표현 정리.</strong> $V$가 내적 공간이라고 하자. $\phi \in V^\ast$에 대해, 다음을 만족하는 벡터 $v$가 유일하게 존재한다.</p>
-
-\[\forall u \in V : \quad \phi(u) = \langle u, v \rangle\]
-</blockquote>
-
-<p>$V$가 유한 차원일 경우, 위 정리는 $V$의 직교 기저를 잡음으로써 쉽게 보여진다. $V$가 일반적인 힐베르트 공간일 경우에는 증명이 더 까다롭기 때문에 생략한다.</p>
-
-<p>리스 표현 정리로부터 어드조인트의 정의를 다음과 같이 정당화할 수 있다. $w \in W$가 주어졌을 때, 사상 $v \mapsto \langle w, Tv \rangle$는 $V^\ast$의 원소이다. 따라서 어떤 $u_w \in V$가 존재하여</p>
-
-\[\forall v \in V : \langle w, Tv \rangle = \langle u_w, v \rangle\]
-
-<p>이다. 이때 사상 $w \mapsto u_w$는 선형임을 쉽게 보일 수 있다. 이 선형 사상이 우리가 구하고자 하는 어드조인트이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $T^\ast = T$인 선형 사상 $T : V \to V$를 <strong>자기 어드조인트<sub>self-adjoint</sub></strong>라고 한다.</p>
-</blockquote>
-
-<p>$T : V \to W$의 행렬 표현이 $M$일 때, 동일한 기저에서 $T^\ast$의 행렬 표현은 $M$의 켤레 전치, 즉 $M^\dagger$임을 — 다소 번거롭긴 하지만 — 어렵지 않게 보일 수 있다. 따라서 자기 어드조인트 변환의 행렬은 에르미트<sub>Hermitian</sub> 행렬이다.</p>
-
-<blockquote>
-  <p><strong>복소 자기 어드조인트 판별볍.</strong> $V$가 복소 벡터 공간일 때, $T: V \to V$가 자기 어드조인트 변환일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle \in \mathbb{R}$인 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 필요조건은 자명하므로 충분조건임을 보인다. 먼저 다음 보조정리를 증명한다.</p>
-
-<p><em>보조정리.</em> $V$가 복소 벡터 공간이라고 하자. $T : V \to V$에 대해, $T = 0$일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle = 0$인 것이다.</p>
-
-<p><em>보조정리의 증명.</em> 필요조건은 자명하므로 충분조건임을 보인다. 임의의 $u, v \in V$에 대해,</p>
-
-\[\langle T(u + v) , u + v \rangle = \langle Tu, v \rangle + \langle Tv, u \rangle = 0\]
-
-<p>이고,</p>
-
-\[\begin{aligned}
-\langle T(u + iv), u + iv \rangle &amp;= \langle T(u), iv \rangle + \langle T(iv), u \rangle \\ &amp;= -i \langle Tu, v \rangle + i \langle Tv, u \rangle = 0
-\end{aligned}\]
-
-<p>이다. 두 식을 연립하면 $\langle Tu, v \rangle = 0$을 얻는다. 이로부터 $T = 0$임을 보이기는 쉽다. □</p>
-
-<p>이제 본 정리를 보인다. $\langle Tv, v \rangle \in \mathbb{R}$이므로, $\langle Tv, v \rangle = \langle v, Tv \rangle$이다. 또한 어드조인트의 정의에 의해 $\langle Tv, v \rangle = \langle v, T^\ast v \rangle$이다. 따라서 $\langle v, (T - T^\ast)v \rangle = 0$이다. 보조정리로부터 $T = T^\ast$가 따라 나온다. ■</p>
-
-<blockquote>
-  <p><strong>자명한 자기 어드조인트 판별법.</strong> $V$가 실수 또는 복소 벡터 공간이라고 하자. 자기 어드조인트 변환 $T: V \to V$에 대해, $T = 0$일 필요충분조건은 임의의 $v \in V$에 대해 $\langle Tv, v \rangle = 0$인 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 복소 벡터 공간인 경우에는 위의 보조정리로부터 따라 나온다. 따라서 $V$가 실수 벡터 공간인 경우에만 증명한다. 필요조건은 자명하므로 충분조건임을 보인다. 임의의 $u, v \in V$에 대해,</p>
-
-\[\begin{aligned}
-\langle T(u + v), u + v \rangle &amp;= \langle Tu, v \rangle + \langle Tv, u \rangle &amp;&amp;(\because \langle Tv, v \rangle = 0) \\
-&amp;= \langle Tu, v \rangle + \langle u, Tv \rangle &amp;&amp;(\because \mathrm{im} \langle \cdot \rangle \subset \mathbb{R}) \\
-&amp;= 2\langle Tu, v \rangle &amp;&amp;(\because T^\ast = T)
-\end{aligned}\]
-
-<p>즉 임의의 $u, v \in V$에 대해 $\langle Tu, v \rangle = 0$이므로 $T = 0$이다. ■</p>
-
-<h2 id="2-정규-선형-변환">2. 정규 선형 변환</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $T : V \to V$에 대해 $TT^\ast = T^\ast T$일 때, $T$를 <strong>정규<sub>normal</sub></strong>라고 한다.</p>
-</blockquote>
-
-<p>모든 자기 어드조인트 변환은 정규 변환이지만 그 역은 성립하지 않는다.</p>
-
-<blockquote>
-  <p><strong>정규 판별법.</strong> $V$가 실수 또는 복소 벡터 공간이라고 하자. $T: V \to V$가 정규일 필요충분조건은 임의의 $v$에 대해 $\lVert Tv \rVert = \lVert T^\ast v \rVert$인 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> “자명한 자기 어드조인트 판별법”으로부터 따라 나온다. ■</p>
-
-<blockquote>
-  <p><strong>정규 고유벡터의 켤레성.</strong> $V$가 실수 또는 복소 벡터 공간이고, $T : V \to V$가 정규라고 하자. $v$가 고윳값 $\lambda$를 가지는 $T$의 고유벡터일 때, $v$는 고윳값 $\bar{\lambda}$를 가지는 $T^\ast$의 고유벡터이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $T$가 정규일 때, $T - \lambda I$ 또한 정규임을 쉽게 보일 수 있다. 따라서,</p>
-
-\[\lVert (T - \lambda I) v \rVert = \lVert (T - \lambda I)^\ast v \rVert = \lVert (T^\ast - \bar{\lambda} I) v \rVert = 0. \quad \blacksquare\]
-
-<p>‘정규’라는 이름의 유래는 다음 정리에 있다.</p>
-
-<blockquote>
-  <p><strong>정규 고유벡터의 정규성.</strong> $T: V \to V$가 정규라고 하자. $u, v \in V$가 서로 다른 고윳값을 가지는 $T$의 고유벡터라면 $u$와 $v$는 직교한다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $u, v$의 고윳값이 $\alpha, \beta$라고 하자.</p>
-
-\[\begin{aligned}
-(\alpha - \beta)\langle u, v \rangle &amp;= \langle \alpha u, v \rangle - \langle u, \bar{\beta}v \rangle \\
-&amp;= \langle Tu, v \rangle - \langle u, T^\ast v \rangle = 0.
-\end{aligned}\]
-
-<p>$\alpha - \beta \neq 0$이므로 $\langle u, v \rangle = 0$이다. ■</p>
-
-<h2 id="3-스펙트럼-정리spectral-theorems">3. 스펙트럼 정리<sub>Spectral theorems</sub></h2>
-
-<p>‘스펙트럼’이라는 이름은, 스펙트럼 정리가 양자역학에서 원자의 스펙트럼을 설명할 때 쓰였던 것에서 유래했다는 설이 흔히 전해지지만, 이것은 사실이 아니다. 스펙트럼 정리를 사용해서 원자의 스펙트럼을 설명하기 이전에 이미 힐베르트가 ‘스펙트럼’이라는 표현을 쓴 바 있기 때문이다. 정확한 유래는 알려져 있지 않은데, 고유벡터들이 힐베르트 공간의 특성을 나타낸다는 점에서 빛의 스펙트럼과 유사하다는 이미지 때문이 아니었을까 추측해 봄직하다.</p>
-
-<blockquote>
-  <p><strong>복소 스펙트럼 정리.</strong> $V$가 복소 벡터 공간이라고 하자. $T: V \to V$가 정규일 필요충분조건은, $T$의 고유벡터들이 $V$의 직교 기저를 이루는 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> <em>TODO</em> ■</p>
-
-<blockquote>
-  <p><strong>실수 스펙트럼 정리.</strong> $V$가 실수 벡터 공간이라고 하자. $T: V \to V$가 자기 어드조인트일 필요충분조건은, $T$의 고유벡터들이 $V$의 직교 기저를 이루는 것이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> <em>TODO</em> ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/13/spectral-theorem/en"> Adjoints, Normal Transformations, and the Spectral Theorem </a>
-      </h1>
-    <span class="post-date">13 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/algebra/'">
-        Algebra
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>In this article, we assume that all vector spaces are inner product spaces. Furthermore, all transformations are linear transformations.</p>
-
-<h2 id="1-adjoints-of-linear-transformations">1. Adjoints of Linear Transformations</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $(V, \langle \cdot \rangle_V), (W, \langle \cdot \rangle_W)$ be inner product vector spaces. For $T: V \to W$, the <strong>adjoint</strong> $T^\ast: W \to V$ of $T$ is the linear transformation satisfying the following condition:</p>
-
-\[\forall v \in V, w \in W : \quad \langle w, Tv \rangle_W = \langle T^\ast w, v \rangle_V\]
-</blockquote>
-
-<p>If one recalls the <a href="https://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">definition of adjoints in category theory</a>, the form of this equation is similar.</p>
-
-<p>To justify this definition, we must show that the adjoint exists uniquely for every $T$. This follows from the Riesz representation theorem.</p>
-
-<blockquote>
-  <p><strong>Riesz Representation Theorem.</strong> Let $V$ be an inner product space. For $\phi \in V^\ast$, there exists a unique vector $v$ satisfying:</p>
-
-\[\forall u \in V : \quad \phi(u) = \langle u, v \rangle\]
-</blockquote>
-
-<p>When $V$ is finite-dimensional, the above theorem is easily shown by choosing an orthogonal basis for $V$. When $V$ is a general Hilbert space, the proof is more involved and shall be omitted.</p>
-
-<p>From the Riesz representation theorem, we can justify the definition of the adjoint as follows. Given $w \in W$, the mapping $v \mapsto \langle w, Tv \rangle$ is an element of $V^\ast$. Therefore, there exists some $u_w \in V$ such that</p>
-
-\[\forall v \in V : \langle w, Tv \rangle = \langle u_w, v \rangle\]
-
-<p>At this point, one can easily show that the mapping $w \mapsto u_w$ is linear. This linear mapping is the adjoint we seek.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> A linear mapping $T : V \to V$ satisfying $T^\ast = T$ is called <strong>self-adjoint</strong>.</p>
-</blockquote>
-
-<p>When the matrix representation of $T : V \to W$ is $M$, the matrix representation of $T^\ast$ in the same basis is the conjugate transpose of $M$, namely $M^\dagger$ — this can be shown, albeit somewhat tediously, without much difficulty. Therefore, the matrix of a self-adjoint transformation is a Hermitian matrix.</p>
-
-<blockquote>
-  <p><strong>Complex Self-Adjoint Criterion.</strong> When $V$ is a complex vector space, $T: V \to V$ is self-adjoint if and only if $\langle Tv, v \rangle \in \mathbb{R}$ for any $v \in V$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> The necessary condition is trivial, so we prove the sufficient condition. First, we establish the following lemma.</p>
-
-<p><em>Lemma.</em> Let $V$ be a complex vector space. For $T : V \to V$, $T = 0$ if and only if $\langle Tv, v \rangle = 0$ for any $v \in V$.</p>
-
-<p><em>Proof of the lemma.</em> The necessary condition is trivial, so we prove the sufficient condition. For any $u, v \in V$,</p>
-
-\[\langle T(u + v) , u + v \rangle = \langle Tu, v \rangle + \langle Tv, u \rangle = 0\]
-
-<p>and</p>
-
-\[\begin{aligned}
-\langle T(u + iv), u + iv \rangle &amp;= \langle T(u), iv \rangle + \langle T(iv), u \rangle \\ &amp;= -i \langle Tu, v \rangle + i \langle Tv, u \rangle = 0
-\end{aligned}\]
-
-<p>Solving these two equations simultaneously yields $\langle Tu, v \rangle = 0$. From this, it is easy to show that $T = 0$. □</p>
-
-<p>We now prove the main theorem. Since $\langle Tv, v \rangle \in \mathbb{R}$, we have $\langle Tv, v \rangle = \langle v, Tv \rangle$. Also, by the definition of the adjoint, $\langle Tv, v \rangle = \langle v, T^\ast v \rangle$. Therefore, $\langle v, (T - T^\ast)v \rangle = 0$. From the lemma, it follows that $T = T^\ast$. ■</p>
-
-<blockquote>
-  <p><strong>Trivial Self-Adjoint Criterion.</strong> Let $V$ be a real or complex vector space. For a self-adjoint transformation $T: V \to V$, $T = 0$ if and only if $\langle Tv, v \rangle = 0$ for any $v \in V$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> For complex vector spaces, this follows from the lemma above. Therefore, we prove only the case when $V$ is a real vector space. The necessary condition is trivial, so we prove the sufficient condition. For any $u, v \in V$,</p>
-
-\[\begin{aligned}
-\langle T(u + v), u + v \rangle &amp;= \langle Tu, v \rangle + \langle Tv, u \rangle &amp;&amp;(\because \langle Tv, v \rangle = 0) \\
-&amp;= \langle Tu, v \rangle + \langle u, Tv \rangle &amp;&amp;(\because \mathrm{im} \langle \cdot \rangle \subset \mathbb{R}) \\
-&amp;= 2\langle Tu, v \rangle &amp;&amp;(\because T^\ast = T)
-\end{aligned}\]
-
-<p>That is, $\langle Tu, v \rangle = 0$ for any $u, v \in V$, so $T = 0$. ■</p>
-
-<h2 id="2-normal-linear-transformations">2. Normal Linear Transformations</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> For $T : V \to V$, when $TT^\ast = T^\ast T$, we call $T$ <strong>normal</strong>.</p>
-</blockquote>
-
-<p>Every self-adjoint transformation is normal, but the converse does not hold.</p>
-
-<blockquote>
-  <p><strong>Normal Criterion.</strong> Let $V$ be a real or complex vector space. $T: V \to V$ is normal if and only if $\lVert Tv \rVert = \lVert T^\ast v \rVert$ for any $v$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> This follows from the “Trivial Self-Adjoint Criterion”. ■</p>
-
-<blockquote>
-  <p><strong>Conjugacy of Normal Eigenvectors.</strong> Let $V$ be a real or complex vector space, and let $T : V \to V$ be normal. When $v$ is an eigenvector of $T$ with eigenvalue $\lambda$, then $v$ is an eigenvector of $T^\ast$ with eigenvalue $\bar{\lambda}$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> When $T$ is normal, $T - \lambda I$ is also easily shown to be normal. Therefore,</p>
-
-\[\lVert (T - \lambda I) v \rVert = \lVert (T - \lambda I)^\ast v \rVert = \lVert (T^\ast - \bar{\lambda} I) v \rVert = 0. \quad \blacksquare\]
-
-<p>The origin of the name ‘normal’ lies in the following theorem.</p>
-
-<blockquote>
-  <p><strong>Normality of Normal Eigenvectors.</strong> Let $T: V \to V$ be normal. If $u, v \in V$ are eigenvectors of $T$ with distinct eigenvalues, then $u$ and $v$ are orthogonal.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Let the eigenvalues of $u, v$ be $\alpha, \beta$ respectively.</p>
-
-\[\begin{aligned}
-(\alpha - \beta)\langle u, v \rangle &amp;= \langle \alpha u, v \rangle - \langle u, \bar{\beta}v \rangle \\
-&amp;= \langle Tu, v \rangle - \langle u, T^\ast v \rangle = 0.
-\end{aligned}\]
-
-<p>Since $\alpha - \beta \neq 0$, we have $\langle u, v \rangle = 0$. ■</p>
-
-<h2 id="3-spectral-theorems">3. Spectral Theorems</h2>
-
-<p>while it is commonly claimed that the name ‘spectral’ derives from the spectral theorem being used to explain atomic spectra in quantum mechanics, this is not factual. Hilbert had already used the term ‘spectrum’ before the spectral theorem was employed to explain atomic spectra. The precise origin is unknown, but one might conjecture that it arose from the imagery that eigenvectors characterise the properties of Hilbert spaces, similar to how light spectra characterise light.</p>
-
-<blockquote>
-  <p><strong>Complex Spectral Theorem.</strong> Let $V$ be a complex vector space. $T: V \to V$ is normal if and only if the eigenvectors of $T$ form an orthogonal basis for $V$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> <em>TODO</em> ■</p>
-
-<blockquote>
-  <p><strong>Real Spectral Theorem.</strong> Let $V$ be a real vector space. $T: V \to V$ is self-adjoint if and only if the eigenvectors of $T$ form an orthogonal basis for $V$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> <em>TODO</em> ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/13/three-definitions-of-adjoint"> 어드조인트에 대한 세 가지 접근 </a>
-      </h1>
-    <span class="post-date">13 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/범주론/'">
-        범주론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>본문의 내용은 Tom Leinster, <em>Basic Category Theory</em>에 기반한다.</p>
-</blockquote>
-
-<p>$\mathcal{A}, \mathcal{B}$가 범주<sub>category</sub>이고, $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자<sub>functor</sub>라고 하자.</p>
-
-<h2 id="1-자연성-공리naturality-axiom를-이용한-어드조인트의-정의">1. 자연성 공리<sub>naturality axiom</sub>를 이용한 어드조인트의 정의</h2>
-
-<p>$F \dashv G$라는 것은 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 일대일대응 $\Psi_{A, B} : \mathrm{Hom}_\mathcal{A}(A, G(B)) \to \mathrm{Hom}_\mathcal{B}(F(A), B)$가 존재하여, 임의의 $p: A’ \to A, q: B \to B’$에 대해 다음 가환 도식<sub>commutative diagram</sub>을 만족한다는 것이다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="300px" style="border-radius: 8px; border: none;"></iframe>
-
-<p>편의를 위해 $f: A \to G(B)$에 대해 $\Psi_{A, B}(f) = \bar{f}$, 그리고 $g: F(A) \to B$에 대해 $\Psi_{A, B}^{-1}(g) = \bar{g}$와 같이 표기한다. 이에 따라 위의 가환 도식을 다음과 같이 표현할 수 있다.</p>
-
-\[\begin{gather}
-\overline{A \xrightarrow{f} G(B) \xrightarrow{G(q)} G(B') } = F(A) \xrightarrow{\bar{f}} B \xrightarrow{q} B' \\
-\overline{F(A') \xrightarrow{F(p)} F(A) \xrightarrow{g} B} = A' \xrightarrow{p} A \xrightarrow{\bar{g}} G(B) \\\\
-\mathrm{i.e.}\\\\
-\overline{G(q) \circ f} = q \circ \bar{f}\\
-\overline{g \circ F(p)} = \bar{g} \circ p
-\end{gather}\]
-
-<p>위 두 조건을 자연성 공리라고 부른다. 자연성 공리로부터 다음을 증명할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리 1.</strong> $\eta_A := \overline{1_{F(A)}} : A \to GF(A)$와 같이 정의된 변환 $\eta: 1_{\mathcal{A}} \to GF$는 자연적 변환<sub>natural transformation</sub>이다. 그리고 $\epsilon_B := \overline{1_{G(B)}} : FG(B) \to B$와 같이 정의된 변환 $\epsilon: FG \to 1_{\mathcal{B}}$ 또한 자연적 변환이다. $\eta$를 <strong>단원</strong><sub>unit</sub>이라고 부르고, $\epsilon$을 <strong>쌍단원</strong><sub>counit</sub>이라고 부른다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 다음 가환 도식으로부터 얻어진다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ==&amp;embed" width="100%" height="260" style="border-radius: 8px; border: none;"></iframe>
-
-<blockquote>
-  <p><strong>정리 2.</strong> $f: A \to G(B), g: F(A) \to B$에 대해 다음이 성립한다.</p>
-
-\[\begin{gather}
-\bar{f} = \epsilon_B \circ F(f) \\
-\bar{g} = G(g) \circ \eta_A
-\end{gather}\]
-</blockquote>
-
-<p><strong>증명.</strong> 다음 가환 도식으로부터 얻어진다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="200" style="border-radius: 8px; border: none;"></iframe>
-
-<h2 id="2-단원과-쌍단원을-이용한-어드조인트의-정의">2. 단원과 쌍단원을 이용한 어드조인트의 정의</h2>
-
-<p>$F \dashv G$라는 것은 어떤 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF, \epsilon: FG \to 1_{\mathcal{B}}$가 존재하여, 임의의 $A \in \mathcal{A}, B \in \mathcal{B}$에 대해 다음 가환 도식을 언제나 만족한다는 것이다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d&amp;embed" width="100%" height="220" style="border-radius: 8px; border: none;"></iframe>
-
-<p>위 두 조건을 삼각 항등식<sub>triangle identity</sub>이라고 부른다.</p>
-
-<h2 id="3-초기-대상initial-object을-이용한-어드조인트의-정의">3. 초기 대상<sub>initial object</sub>을 이용한 어드조인트의 정의</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $P: \mathcal{A} \to \mathcal{C}$, $Q: \mathcal{B} \to \mathcal{C}$가 함자일 때, <strong>콤마 범주<sub>comma category</sub></strong> $(P \Rightarrow Q)$를 다음과 같이 정의한다.</p>
-
-  <ul>
-    <li>대상: $\mathcal{C}$의 사상 $h: P(A) \to Q(B)$에 대해, 삼중쌍<sub>triplet</sub> $(A, h, B)$</li>
-    <li>사상: 다음의 가환 도식이 성립할 때, $(f, g): (A, h, B) \to (A’, h’, B’)$</li>
-  </ul>
-</blockquote>
-
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJQKEEpIl0sWzIsMCwiUChBJykiXSxbMCwxLCJRKEIpIl0sWzIsMSwiUShCJykiXSxbMCwyLCJoIiwyXSxbMSwzLCJoJyJdLFswLDEsIlAoZikiXSxbMiwzLCJRKGcpIiwyXV0=&amp;embed" width="100%" height="230" style="border-radius: 8px; border: none;"></iframe>
-
-<p>$F \dashv G$라는 것은 어떤 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF$가 존재하여, 각 $A \in \mathcal{A}$에 대해 $A$를 홑원소 범주 $\mathbf{1}$에서 $\mathcal{A}$로 가는 함자 $A: 1 \mapsto A$로 간주했을 때 $\eta_A : A \to GF(A)$가 콤마 범주 $(A \Rightarrow G)$의 초기 대상이라는 것이다.</p>
-
-<h2 id="4-동치-증명">4. 동치 증명</h2>
-
-<p>1, 2, 3의 정의는 모두 동치이다. 구체적으로 다음의 정리가 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리 3.</strong> $\mathcal{A}, \mathcal{B}$가 범주이고 $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$가 함자라고 하자. 1, 2, 3은 서로 일대일 대응된다.</p>
-
-  <ol>
-    <li>자연성 공리를 만족하는 일대일대응 $\Psi$</li>
-    <li>삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta: 1_{\mathcal{A}} \to GF, \epsilon: FG \to 1_{\mathcal{B}})$</li>
-    <li>각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상이 되도록 하는 자연적 변환 $\eta: 1_{\mathcal{A}} \to GF$</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> 1과 2가 일대일 대응됨을 보이고, 2와 3이 일대일 대응됨을 보인다.</p>
-
-<h4 id="1과-2는-일대일-대응된다">1과 2는 일대일 대응된다.</h4>
-
-<p>$\Psi$가 주어졌을 때, $\eta$와 $\epsilon$을 각각 단원과 쌍단원으로 정의한다. 이때, $\eta$와 $\epsilon$이 삼각 항등식을 만족함은 정리 2로부터 쉽게 따라 나온다.</p>
-
-<p>역으로 삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta, \epsilon)$이 주어졌다고 하자. 이로부터 다음과 같이 $\Psi$를 정의한다. $f: A \to G(B), g: F(A) \to B$에 대해,</p>
-
-\[\begin{gather}
-\Psi_{A, B}(f) = \bar{f} = \epsilon_B \circ F(f) \\
-\Psi_{A, B}^{-1} = \bar{g} = G(g) \circ \eta_A
-\end{gather}\]
-
-<p>먼저 $\Psi_{A, B}^{-1}$이 실제로 $\Psi_{A, B}$의 역사상임을, 즉 $\bar{\bar{g}} = g, \bar{\bar{f}} = f$임을 보인다. 전자는 다음 가환 도식으로부터 얻어진다. 후자는 도식에서 $F, G$를 각각 $G, F$로 바꾼 뒤 적절히 쌍대<sub>dual</sub>을 취하면 된다.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ==&amp;embed" width="100%" height="250" style="border-radius: 8px; border: none;"></iframe>
-
-<p>이제 $\Psi$가 자연성 공리를 만족함을 보인다. 한쪽 공리만 보이도록 한다. $f: A \to G(B), q: B \to B’$에 대해 $\overline{G(q) \circ f} = q \circ \bar{f}$임을 보인다. 먼저,</p>
-
-\[\overline{G(q) \circ f} = \epsilon_{B'} \circ FG(q) \circ F(f)\]
-
-<p>이고,</p>
-
-\[q \circ \bar{f} = q \circ \epsilon_B \circ F(f)\]
-
-<p>이므로, $\epsilon_{B’} \circ FG(q) = q \circ \epsilon_B$임을 보이면 충분하다. 이것은 자연적 변환의 정의에 다름 아니다. 따라서 $\Psi$는 자연성 공리를 만족한다.</p>
-
-<h4 id="2와-3은-일대일-대응된다">2와 3은 일대일 대응된다.</h4>
-
-<p>삼각 항등식을 만족하는 자연적 변환의 쌍 $(\eta, \epsilon)$이 주어졌을 때, 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상임을 보이자.</p>
-
-<p>역으로 $\eta$가 각 $A \in \mathcal{A}$에 대해 $\eta_A : A \to GF(A)$가 $(A \Rightarrow G)$의 초기 대상이 되도록 하는 자연적 변환일 때, 어떤 $\epsilon: FG \to 1_{\mathcal{B}}$가 유일하게 존재하여 $(\eta, \epsilon)$이 삼각 항등식을 만족함을 보이자.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/13/three-definitions-of-adjoint/en"> Three Approaches to Adjoints </a>
-      </h1>
-    <span class="post-date">13 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/category-theory/'">
-        Category Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p>The content of this text is based on Tom Leinster, <em>Basic Category Theory</em>.</p>
-</blockquote>
-
-<p>Let $\mathcal{A}, \mathcal{B}$ be categories and $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$ be functors.</p>
-
-<h2 id="1-definition-of-adjoint-using-the-naturality-axiom">1. Definition of Adjoint Using the Naturality Axiom</h2>
-
-<p>$F \dashv G$ means that for any $A \in \mathcal{A}, B \in \mathcal{B}$, there exists a bijection $\Psi_{A, B} : \mathrm{Hom}_\mathcal{A}(A, G(B)) \to \mathrm{Hom}_\mathcal{B}(F(A), B)$ such that for any $p: A’ \to A, q: B \to B’$, the following commutative diagram is satisfied.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHKEIpKSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgRyhCKSkiXSxbMCwyLCJcXG1hdGhybXtIb219KEEsIEcoQicpKSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEIpIl0sWzIsMSwiXFxtYXRocm17SG9tfShGKEEpLCBCKSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgQicpIl0sWzAsMywiXFxQc2lfe0EnLCBCfSJdLFsxLDQsIlxcUHNpX3tBLCBCfSJdLFsyLDUsIlxcUHNpX3tBLCBCJ30iXSxbMCwxLCIoLSlcXGNpcmMgcCIsMl0sWzEsMiwiRyhxKVxcY2lyYyAoLSkiLDJdLFszLDQsIigtKVxcY2lyYyBGKHApIl0sWzQsNSwicSBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="300px" style="border-radius: 8px; border: none;"></iframe>
-
-<p>For convenience, we denote $\Psi_{A, B}(f) = \bar{f}$ for $f: A \to G(B)$, and $\Psi_{A, B}^{-1}(g) = \bar{g}$ for $g: F(A) \to B$. Accordingly, the above commutative diagram can be expressed as follows:</p>
-
-\[\begin{gather}
-\overline{A \xrightarrow{f} G(B) \xrightarrow{G(q)} G(B') } = F(A) \xrightarrow{\bar{f}} B \xrightarrow{q} B' \\
-\overline{F(A') \xrightarrow{F(p)} F(A) \xrightarrow{g} B} = A' \xrightarrow{p} A \xrightarrow{\bar{g}} G(B) \\\\
-\mathrm{i.e.}\\\\
-\overline{G(q) \circ f} = q \circ \bar{f}\\
-\overline{g \circ F(p)} = \bar{g} \circ p
-\end{gather}\]
-
-<p>The above two conditions are called the naturality axioms. From the naturality axioms, we can prove the following:</p>
-
-<blockquote>
-  <p><strong>Theorem 1.</strong> The transformation $\eta: 1_{\mathcal{A}} \to GF$ defined by $\eta_A := \overline{1_{F(A)}} : A \to GF(A)$ is a natural transformation. Moreover, the transformation $\epsilon: FG \to 1_{\mathcal{B}}$ defined by $\epsilon_B := \overline{1_{G(B)}} : FG(B) \to B$ is also a natural transformation. We call $\eta$ the <strong>unit</strong> and $\epsilon$ the <strong>counit</strong>.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> This follows from the following commutative diagram.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEnLCBHRihBJykpIFxcbWlkX3tcXGV0YV97QSd9fSJdLFswLDEsIlxcbWF0aHJte0hvbX0oQSwgR0YoQScpKSBcXG1pZF97e1xcZXRhX3tBJ30gXFxjaXJjIGZ9LFxcOyB7R0YoZikgXFxjaXJjIFxcZXRhX0F9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBJyksIEYoQScpKSBcXG1pZF97MV97RihBJyl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBJykpIFxcbWlkX3tGKGYpfSJdLFswLDIsIlxcbWF0aHJte0hvbX0oQSwgR0YoQSkpIFxcbWlkX3tcXGV0YV9BfSJdLFsyLDIsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFswLDEsIigtKVxcY2lyYyBmIiwyXSxbMiwzLCIoLSlcXGNpcmMgRihmKSJdLFswLDIsIlxcb3ZlcmxpbmV7KC0pfSIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs0LDEsIkdGKGYpIFxcY2lyYyAoLSkiXSxbNSwzLCJGKGYpIFxcY2lyYyAoLSkiLDJdLFs0LDUsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcb3ZlcmxpbmV7KC0pfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dXQ==&amp;embed" width="100%" height="260" style="border-radius: 8px; border: none;"></iframe>
-
-<blockquote>
-  <p><strong>Theorem 2.</strong> For $f: A \to G(B), g: F(A) \to B$, the following holds:</p>
-
-\[\begin{gather}
-\bar{f} = \epsilon_B \circ F(f) \\
-\bar{g} = G(g) \circ \eta_A
-\end{gather}\]
-</blockquote>
-
-<p><strong>Proof.</strong> This follows from the following commutative diagram.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhybXtIb219KEEsIEdGKEEpKSBcXG1pZF97XFxldGFfQX0iXSxbMCwxLCJcXG1hdGhybXtIb219KEEsIEcoQikpIFxcbWlkX3tHKGcpIFxcY2lyY1xcZXRhX0EgPVxcYmFye2d9fSJdLFsyLDAsIlxcbWF0aHJte0hvbX0oRihBKSwgRihBKSkgXFxtaWRfezFfe0YoQSl9fSJdLFsyLDEsIlxcbWF0aHJte0hvbX0oRihBKSwgQikgXFxtaWRfe2d9Il0sWzEsMCwiXFxvdmVyc2V0e1xcb3ZlcmxpbmV7KC0pfX17XFxsb25ncmlnaHRhcnJvd30iXSxbMSwxLCJcXG92ZXJzZXR7XFxvdmVybGluZXsoLSl9fXtcXGxvbmdyaWdodGFycm93fSJdLFswLDEsIkcoZykgXFxjaXJjICgtKSIsMl0sWzIsMywiZyBcXGNpcmMgKC0pIl1d&amp;embed" width="100%" height="200" style="border-radius: 8px; border: none;"></iframe>
-
-<h2 id="2-definition-of-adjoint-using-unit-and-counit">2. Definition of Adjoint Using Unit and Counit</h2>
-
-<p>$F \dashv G$ means that there exist natural transformations $\eta: 1_{\mathcal{A}} \to GF$ and $\epsilon: FG \to 1_{\mathcal{B}}$ such that for any $A \in \mathcal{A}, B \in \mathcal{B}$, the following commutative diagrams are always satisfied:</p>
-
-<!-- https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNixbMCwwLCJGKEEpIl0sWzEsMCwiXFw7RkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkcoQikiXSxbMywwLCJcXDtHRkcoQikiXSxbMywxLCJHKEIpIl0sWzAsMSwiRihcXGV0YV9BKSJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iXSxbMCwyLCIxX3tGKEEpfSIsMl0sWzMsNCwiXFxldGFfe0coQil9Il0sWzQsNSwiRyhcXGVwc2lsb25fQikiXSxbMyw1LCIxX3tHKEIpfSIsMl1d&amp;embed" width="100%" height="220" style="border-radius: 8px; border: none;"></iframe>
-
-<p>The above two conditions are called the triangle identities.</p>
-
-<h2 id="3-definition-of-adjoint-using-initial-objects">3. Definition of Adjoint Using Initial Objects</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> When $P: \mathcal{A} \to \mathcal{C}$ and $Q: \mathcal{B} \to \mathcal{C}$ are functors, we define the <strong>comma category</strong> $(P \Rightarrow Q)$ as follows:</p>
-
-  <ul>
-    <li>Objects: For a morphism $h: P(A) \to Q(B)$ in $\mathcal{C}$, the triplet $(A, h, B)$</li>
-    <li>Morphisms: When the following commutative diagram holds, $(f, g): (A, h, B) \to (A’, h’, B’)$</li>
-  </ul>
-</blockquote>
-
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJQKEEpIl0sWzIsMCwiUChBJykiXSxbMCwxLCJRKEIpIl0sWzIsMSwiUShCJykiXSxbMCwyLCJoIiwyXSxbMSwzLCJoJyJdLFswLDEsIlAoZikiXSxbMiwzLCJRKGcpIiwyXV0=&amp;embed" width="100%" height="230" style="border-radius: 8px; border: none;"></iframe>
-
-<p>$F \dashv G$ means that there exists a natural transformation $\eta: 1_{\mathcal{A}} \to GF$ such that for each $A \in \mathcal{A}$, when we regard $A$ as a functor $A: 1 \mapsto A$ from the singleton category $\mathbf{1}$ to $\mathcal{A}$, $\eta_A : A \to GF(A)$ is an initial object in the comma category $(A \Rightarrow G)$.</p>
-
-<h2 id="4-proof-of-equivalence">4. Proof of Equivalence</h2>
-
-<p>The definitions 1, 2, and 3 are all equivalent. Specifically, the following theorem holds:</p>
-
-<blockquote>
-  <p><strong>Theorem 3.</strong> Let $\mathcal{A}, \mathcal{B}$ be categories and $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$ be functors. Then 1, 2, and 3 are in one-to-one correspondence.</p>
-
-  <ol>
-    <li>A bijection $\Psi$ satisfying the naturality axioms</li>
-    <li>A pair of natural transformations $(\eta: 1_{\mathcal{A}} \to GF, \epsilon: FG \to 1_{\mathcal{B}})$ satisfying the triangle identities</li>
-    <li>A natural transformation $\eta: 1_{\mathcal{A}} \to GF$ such that for each $A \in \mathcal{A}$, $\eta_A : A \to GF(A)$ is an initial object in $(A \Rightarrow G)$</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong> We show that 1 and 2 are in one-to-one correspondence, and that 2 and 3 are in one-to-one correspondence.</p>
-
-<h4 id="1-and-2-are-in-one-to-one-correspondence">1 and 2 are in one-to-one correspondence.</h4>
-
-<p>Given $\Psi$, we define $\eta$ and $\epsilon$ as the unit and counit respectively. That $\eta$ and $\epsilon$ satisfy the triangle identities follows easily from Theorem 2.</p>
-
-<p>Conversely, suppose we are given a pair of natural transformations $(\eta, \epsilon)$ satisfying the triangle identities. From this, we define $\Psi$ as follows. For $f: A \to G(B), g: F(A) \to B$:</p>
-
-\[\begin{gather}
-\Psi_{A, B}(f) = \bar{f} = \epsilon_B \circ F(f) \\
-\Psi_{A, B}^{-1} = \bar{g} = G(g) \circ \eta_A
-\end{gather}\]
-
-<p>First, we show that $\Psi_{A, B}^{-1}$ is indeed the inverse of $\Psi_{A, B}$, i.e., that $\bar{\bar{g}} = g, \bar{\bar{f}} = f$. The former follows from the following commutative diagram. The latter can be obtained by replacing $F, G$ with $G, F$ respectively in the diagram and then taking the appropriate dual.</p>
-
-<!-- https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNSxbMCwwLCJGKEEpIl0sWzEsMCwiRkdGKEEpIl0sWzEsMSwiRihBKSJdLFsyLDAsIkZHKEIpIl0sWzIsMSwiQiJdLFsxLDMsIkZHKGcpIl0sWzIsNCwiZyJdLFsxLDIsIlxcZXBzaWxvbl97RihBKX0iLDJdLFszLDQsIlxcZXBzaWxvbl9CIl0sWzAsMSwiRihcXGV0YV9BKSJdLFswLDIsIjEiLDIseyJjdXJ2ZSI6Mn1dXQ==&amp;embed" width="100%" height="250" style="border-radius: 8px; border: none;"></iframe>
-
-<p>Now we show that $\Psi$ satisfies the naturality axioms. We shall prove only one axiom. For $f: A \to G(B), q: B \to B’$, we show that $\overline{G(q) \circ f} = q \circ \bar{f}$. First,</p>
-
-\[\overline{G(q) \circ f} = \epsilon_{B'} \circ FG(q) \circ F(f)\]
-
-<p>and</p>
-
-\[q \circ \bar{f} = q \circ \epsilon_B \circ F(f)\]
-
-<p>Therefore, it suffices to show that $\epsilon_{B’} \circ FG(q) = q \circ \epsilon_B$. This is nothing other than the definition of a natural transformation. Hence $\Psi$ satisfies the naturality axioms.</p>
-
-<h4 id="2-and-3-are-in-one-to-one-correspondence">2 and 3 are in one-to-one correspondence.</h4>
-
-<p>Given a pair of natural transformations $(\eta, \epsilon)$ satisfying the triangle identities, let us show that for each $A \in \mathcal{A}$, $\eta_A : A \to GF(A)$ is an initial object in $(A \Rightarrow G)$.</p>
-
-<p>Conversely, when $\eta$ is a natural transformation such that for each $A \in \mathcal{A}$, $\eta_A : A \to GF(A)$ is an initial object in $(A \Rightarrow G)$, let us show that there exists a unique $\epsilon: FG \to 1_{\mathcal{B}}$ such that $(\eta, \epsilon)$ satisfies the triangle identities.</p>
-
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/09/godel-lucas-penrose"> 정신은 기계로 환원될 수 있는가: 괴델의 조건문과 펜로즈-루카스 논증 </a>
-      </h1>
-    <span class="post-date">09 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/철학/'">
-        철학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <p><img src="https://velog.velcdn.com/images/dimenerno/post/b71a00d7-efdf-4ec3-ad5c-cc32b67cf70c/image.jpeg" alt="" /></p>
-
-<blockquote>
-  <p>이 글은 <a href="/public/On the question of whether the mind can be mechanized 1.pdf">Peter Koellner, <em>On the question of whether the mind can be mechanized</em> (2018)</a>을 정리한 것이다.</p>
-</blockquote>
-
-<p><strong>초록.</strong> 처치-튜링 논제와 괴델의 불완전성 정리는 기계로 증명할 수 없는 수학적 참의 존재를 시사한다. 그러나 만약 이상적인 인간 정신은 모든 수학적 참을 증명할 수 있다면, 이상적인 인간 정신은 기계와 같지 않다는 결론이 얻어진다. 이 글에서는 이같은 방식으로 반기계주의를 입증하려는 루카스와 펜로즈의 논증을 검토하고, 이 논증을 반박하는 형식 증명을 소개한다.</p>
-
-<h2 id="서론">서론</h2>
-
-<p>다음은 논리학에서 잘 알려진 결과들이다.</p>
-
-<ul>
-  <li>
-    <p><strong>처치-튜링 논제.</strong> 이상적인 기계에 의해 <strong>계산 가능하다<sub>computable</sub></strong>는 것은 튜링 기계로 구현 가능하다는 것이다.</p>
-  </li>
-  <li>
-    <p><strong>괴델의 불완전성 정리.</strong> $F$가 특정 조건을 만족하는 형식 체계라면, 참이지만 $F$로 증명 불가능한 문장이 존재한다.</p>
-  </li>
-  <li>
-    <p><strong>형식 체계-튜링 기계 대응.</strong> $F$가 특정 조건을 만족하는 형식 체계라면, $F$로 증명 가능한 명제들을 열거하는 튜링 기계가 존재한다.</p>
-  </li>
-</ul>
-
-<p>위 세 가지 논제에 더해, 우리 인간은 형식 체계가 포착하지 못하는 수학적 참 — 이를테면 산술의 무모순성 — 또한 포착할 수 있는 것으로 보인다는 사실을 종합해 보면, 불완전성 정리는 이상적인 인간 정신이 도출할 수 있는 수학적 결과들의 외연이 이상적인 유한 기계로 도출할 수 있는 결과들의 외연을 초과함을 시사하는 것으로 보인다. 즉, 불완전성 정리는 정신이 기계로 환원될 수 없다는 반기계주의를 시사하는 것으로 보인다.</p>
-
-<p>이 글에서는 과연 이 시사 관계가 얼마나 정당화될 수 있는지 검토한다. 그 결과, 불완전성 정리는 반기계주의 <em>또는</em> 플라톤주의를 시사하긴 하지만 반기계주의를 직접적으로 시사하지는 않음을 보일 것이다.</p>
-
-<h2 id="1-괴델-조건문">1. 괴델 조건문</h2>
-
-<p>괴델은 불완전성 정리로부터, 다음 두 입장 중 <em>적어도 하나가 참</em>이라는 결론이 따라 나온다고 주장했다. 이것을 <strong>괴델 조건문<sub>Gödel’s Disjunction</sub></strong>이라고 부르자.</p>
-
-<ol>
-  <li>
-    <p><strong>반기계주의:</strong> 이상적인 인간 정신이 도출할 수 있는 수학적 결과들은 언제나 이상적인 유한 기계가 도출하는 수학적 결과들을 초과한다. 따라서 인간 정신은 기계로 환원될 수 없다.</p>
-  </li>
-  <li>
-    <p><strong>플라톤주의:</strong> 이상적인 인간 정신이 포착할 수 없는 수학적 참이 존재한다. 따라서 수학적 참은 인간 정신과 독립적으로 존재한다.</p>
-  </li>
-</ol>
-
-<p>두 입장 모두 유물론적 철학에 반한다는 점이 주목할 만하다. 괴델은 평소 철학적 논증에 유보적이었지만, 해당 논증에 관해서만큼은 “수학적으로 입증된 사실”이라고 강하게 주장했다. 우리의 첫 번째 과제는, 과연 이 논증이 “수학적으로 입증된 사실”인지를 검증하는 것이다.</p>
-
-<h3 id="11-괴델의-세-가지-주장">1.1. 괴델의 세 가지 주장</h3>
-
-<p>몇 가지 기호를 도입하자.</p>
-
-<ol>
-  <li>
-    <p>$F$는 형식 체계 $F$가 증명할 수 있는 모든 문장들의 집합이다.</p>
-  </li>
-  <li>
-    <p>$K$는 이상적인 인간 정신이 증명할 수 있는 모든 문장들의 집합이다.</p>
-  </li>
-  <li>
-    <p>$T$는 참인 문장들의 집합이다.</p>
-  </li>
-</ol>
-
-<p>이 글에 걸쳐 $K \subseteq T$를 가정할 것이다. 또한 $F$는 괴델의 불완전성 정리가 적용되는 형식 체계 — 즉, 페아노 산술(사실 이 조건은 로빈슨 산술로 약화시킬 수 있다)을 포함하는 무모순적인 체계 — 임을 전제한다.</p>
-
-<p>본론에 들어가기 앞서 괴델의 불완전성 정리를 복습해 보자.</p>
-
-<blockquote>
-  <p><strong>괴델의 불완전성 정리.</strong> $F$가 산술을 포함하는 무모순적인 수학 체계일 때, 다음이 성립한다.</p>
-
-  <ul>
-    <li><strong>제1정리.</strong> 참이지만 $F$로 증명 불가능한 명제가 존재한다.</li>
-    <li><strong>제2정리.</strong> $F$의 무모순성이 제1정리의 실례에 해당한다.</li>
-  </ul>
-</blockquote>
-
-<p>첨언하자면 전통적으로 불완전성 정리가 대상으로 하는 산술은 페아노 산술이지만, 로빈슨 산술을 비롯한 더 약한 산술 체계에서도 불완전성 정리가 성립한다.</p>
-
-<h4 id="111-첫-번째-주장">1.1.1. 첫 번째 주장</h4>
-
-<p>괴델은 먼저 다음을 주장한다.</p>
-
-<blockquote>
-  <p><strong>주장 1.</strong> $F \subseteq T \implies F \subsetneq T$</p>
-</blockquote>
-
-<p>증명은 다음과 같다. $F \subseteq T$라면 $\mathrm{Con}(F) \in T$이다. 그런데 제2불완전성 정리에 의해 $\mathrm{Con}(F) \notin F$이다. 따라서 $F \subsetneq T$이다.</p>
-
-<h4 id="112-두-번째-주장">1.1.2. 두 번째 주장</h4>
-
-<p>괴델의 두 번째 주장은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>주장 2.</strong> $K(F \subseteq T) \implies F \subsetneq K$</p>
-</blockquote>
-
-<p>증명은 다음과 같다. $K(F \subseteq T)$라면 $\mathrm{Con}(F) \in K$이다. 하지만 앞서 보았듯이 $F \subseteq T \implies \mathrm{Con}(F) \notin F$이므로 $F \subsetneq K$이다.</p>
-
-<p>그런데 만약 $F \subsetneq K$가 참이라면, 이것을 어떤 식으로 이해해야 할까? 한 가지 방식은 형식 체계의 위계를 생각하는 것이다.</p>
-
-<p>괴델은 불완전성 정리가 시사하는 증명 불가능한 문장들이, <em>절대적으로</em> 증명 불가능할 필요는 없다고 강조한다. 형식 체계 $F$에서 증명 불가능한 문장이 $F$보다 고차적인 체계에서는 증명 가능해질 수 있기 때문이다. 예를 들어 $\mathsf{PA}$가 무모순적이라면 $\mathsf{PA}$는 $\mathrm{Con}(\mathsf{PA})$를 증명하지 못하지만, 2차 페아노 산술 $\mathsf{PA}_2$는 $\mathrm{Con}(\mathsf{PA})$를 증명할 수 있음이 알려져 있다. 물론 $\mathsf{PA}_2$는 $\mathrm{Con}(\mathsf{PA}_2)$를 증명하지는 못하지만, 이것은 3차 페아노 산술에서 증명 가능하며, 이런 식의 위계가 이어진다.</p>
-
-<p>그리고 이 위계 전체는 $K$에 포섭되는 것으로 보인다. 이 관점으로 보았을 때 각각의 형식 체계는 집합과 같고, $K$는 모든 집합을 모은 것과 같다. 그리고 모든 집합의 모임이 집합일 수 없듯이, $K$는 형식 체계일 수 없다는 유비가 성립한다.</p>
-
-<h4 id="113-세-번째-주장">1.1.3. 세 번째 주장</h4>
-
-<p>그런데 이런 의문이 든다. ”주장 2“를 조건문으로 적는 대신, $K(F \subsetneq T)$가 참이라고 주장함으로써 $F \subsetneq K$를 주장할 수는 없을까?</p>
-
-<p>괴델은 불완전성 정리만으로 그런 주장에 도착할 수는 없다고 지적한다. 왜냐하면 $K$와 일치하는 형식 체계 $F^\ast$의 존재 가능성을 완전히 배제할 수는 없기 때문이다 (앞선 고차 페아노 산술과 관련된 논의는 어디까지나 유비였음에 유의하라).</p>
-
-<p>이에 대해 괴델은 다음과 같이 말한다.</p>
-
-<blockquote>
-  <p>[만약 그러한 형식 체계가 존재한다면] 인간 이성은 — 적어도 수학적인 측면에서는 — 유한한 기계와 동등하다. 그러나 그 기계는 자기 자신의 동작을 [스스로의 무모순성을 증명할 수 없다는 점에서] 완전히 이해할 수는 없다. 이 불능은 인간에게 있어 정신의 무한한 확장성으로 오인될 것이다.</p>
-</blockquote>
-
-<p>대신 괴델의 세 번째 주장은 다음과 같다. 이 주장이 괴델의 조건문이다.</p>
-
-<blockquote>
-  <p><strong>주장 3.</strong> $\forall F (F \subsetneq K) \;  \lor \; K \subsetneq T$</p>
-</blockquote>
-
-<p>증명은 다음과 같다. $F^\ast = K$인 형식 체계 $F^\ast$가 있다고 가정하자. $K \subset T$를 가정했으므로 $F^\ast \subset T$이며, 주장 1에 의해 $F^\ast \subsetneq T$이다.</p>
-
-<p>전자는 반기계주의를, 후자는 플라톤주의를 의미한다.</p>
-
-<h3 id="12-괴델-조건문의-형식화">1.2. 괴델 조건문의 형식화</h3>
-
-<p>지금까지 우리는 괴델의 세 가지 주장을 제시하고, 그에 대한 간략한 증명을 소개했다. 하지만 이 증명들은 사실 정확하지 않았다. 왜냐하면 $F, K, T$의 엄밀한 정의를 도입하지 않았을 뿐더러, 어디까지가 형식 체계 <em>내에서</em> 증명 가능한 내용이고 어디까지가 형식 체계 <em>외에서</em>만 증명 가능한 내용인지 구분하지 않았기 때문이다. 이 한계를 극복하기 위해, $F, K, T$ 및 괴델의 세 가지 주장에 대한 증명을 엄밀하게 형식화해 보도록 한다.</p>
-
-<h4 id="121-f">1.2.1. $F$</h4>
-
-<p>$F$는 가장 형식화하기 쉬운 개념이다. 특히 다음 사실들이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>형식 체계-튜링 기계 대응.</strong> $F$가 재귀적으로 공리화 가능한<sub>recursively axiomatisable</sub> 형식 체계일 때, $F$로부터 증명 가능한 명제들을 재귀적으로 열거<sub>recursively enumerate</sub>하는 튜링 기계가 존재한다.</p>
-</blockquote>
-
-<p>덧붙이자면, 우리가 관심을 가질 만한 형식 체계는 재귀적으로 공리화 가능하다.</p>
-
-<blockquote>
-  <p><strong>클레이니 술어의 재귀성.</strong> 튜링 기계의 작동은 페아노 산술 내에서 형식화될 수 있다. 구체적으로, 괴델 수가 $x$인 튜링 기계가 자연수 $y$를 입력받았을 때 괴델 수가 $z$인 작동 기록<sub>computation record</sub>으로 끝나는지를 판단하는 1차 논리 술어 $K(x, y, z)$가 존재한다.</p>
-</blockquote>
-
-<p>위 두 정리의 따름정리로 다음을 얻는다.</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> 형식 체계는 재귀적으로 열거 가능하다. 즉, ”$e$번째 형식 체계“ $F_e$를 페아노 산술에서 정의할 수 있다.</p>
-</blockquote>
-
-<p>예를 들어 $F_{123}$은 로빈슨 산술, $F_{456}$은 ZFC 등과 같은 식이다. $F_{123}(\ulcorner 1 + 1 = 2 \urcorner)$은 $1 + 1 = 2$가 로빈슨 산술에서 증명 가능하다는 것이다. 그리고 $\mathsf{PA} \vdash F_{123}(\ulcorner 1 + 1 = 2 \urcorner)$이다.</p>
-
-<h4 id="122-t">1.2.2. $T$</h4>
-
-<p>$T$의 형식적 정의로는 <strong>타르스키의 유형적 참 정의<sub>Tarski’s typed truth definition</sub></strong>가 가장 유망하다. 타르스키의 유형적 참 정의는 의미론적 정의가 아니라 형태론적 정의이지만, 현 논의의 목적으로는 적합하다. 타르스키의 정의는 다음을 비롯한 공리들로 이루어져 있다.</p>
-
-<ul>
-  <li>
-    <p>$\forall x : \mathrm{Sent}(x) \rightarrow (T(\hat{\lnot} x) \leftrightarrow \lnot T(x))$</p>
-  </li>
-  <li>
-    <p>$\forall x, y : [\mathrm{Sent}(x) \land \mathrm{Sent}(y)] \rightarrow [T(x\; \hat{\lor} \;y) \leftrightarrow T(x) \lor T(y)]$</p>
-  </li>
-</ul>
-
-<p>여기서 $\mathrm{Sent}$는 주어진 문장(의 괴델 수)가 적형식인지를 판단한다. 한편 $\hat{\quad}$은 언어와 메타언어를 구분하기 위해 도입되는데, 자세한 설명은 크게 중요하지 않기 때문에 이 정도로 줄인다.</p>
-
-<h4 id="123-k">1.2.3. $K$</h4>
-
-<p>$K$는 세 개념 중 가장 까다로운 개념이다. 완전한 의미론적 정의를 제시할 수 없음은 물론, 형태론적 정의를 제시하기에도 의문스러운 구석이 많다. 그러나 이 글의 목표는 불완전성 정리로부터 $F \subsetneq K$를 직접적으로 보일 수 없음을 논증하는 것이므로, 자비의 원칙에 따라 $K$의 외연을 최대한으로 보장하는 다음의 형태론적 정의를 제시하도록 하겠다.</p>
-
-<blockquote>
-  <p><strong>$K$의 형태론적 정의.</strong></p>
-
-  <ol>
-    <li>$\phi$가 논리적으로 참일 때, $K\phi$이다.</li>
-    <li>임의의 문장 $\phi, \psi$에 대해 $(K(\phi \rightarrow \psi) \land K\phi) \rightarrow K\psi$이다.</li>
-    <li>임의의 문장 $\phi$에 대해 $K\phi \rightarrow \phi$이다.</li>
-    <li>임의의 문장 $\phi$에 대해 $K\phi \rightarrow KK\phi$이다.</li>
-  </ol>
-</blockquote>
-
-<p>여기서 $K$는 논리 연산자이다. 때문에 $K(\phi)$ 또는 $K(\ulcorner \phi \urcorner)$가 아닌 $K\phi$와 같이 적었다. $K$가 술어가 아닌 논리 연산자로 간주되어야 하는 이유는 본 논문의 주석 29를 참고하라.</p>
-
-<h4 id="124-mathsfea와-mathsfea_t">1.2.4. $\mathsf{EA}$와 $\mathsf{EA}_T$</h4>
-
-<p>$F, K, T$에 대해 추론할 수 있는 형식 체계를 구성해 보자. 먼저 1.2.1에서 보았듯이 $F$는 이미 $\mathsf{PA}$에서 형식화 가능하므로 별다른 조치가 필요하지 않다.</p>
-
-<p>$L_{\mathsf{EA}}$를 $\mathsf{PA}$에 함수 $K$를 추가한 것으로 정의하자. $\Sigma$를 $\mathsf{PA}$의 공리들과, $K$의 형태론적 정의의 공리들의 모임이라고 하자 (단, $\mathsf{PA}$의 귀납 공리꼴을 $L_{\mathsf{PA}}$가 아닌 $L_{\mathsf{EA}}$의 문장들에 대해 취한다). $\mathsf{EA}$의 공리는 $\Sigma \cup K\Sigma$이다.</p>
-
-<p>$L_{\mathsf{EA}_T}$를 $\mathsf{EA}$에 술어 $T$를 추가한 것으로 정의하자. $\Sigma^\ast$를 $\Sigma$와, $T$의 형태론적 정의의 공리들의 모임이라고 하자 (단, $\mathsf{PA}$의 귀납 공리꼴을 $L_{\mathsf{EA}_T}$의 문장들에 대해 취한다. $\mathsf{EA}_T$의 공리는 $\Sigma^\ast \cup K\Sigma^\ast$이다.</p>
-
-<h3 id="13-괴델-조건문의-형식적-증명">1.3. 괴델 조건문의 형식적 증명</h3>
-
-<p>괴델의 세 가지 주장은 $\mathsf{EA}_T$에서 형식적으로 증명 가능함을 보인다.</p>
-
-<h4 id="131-첫-번째-주장">1.3.1. 첫 번째 주장</h4>
-
-<blockquote>
-  <p><strong>주장 1.</strong> $F \subseteq T \implies F \subsetneq T$</p>
-</blockquote>
-
-<p>이 주장은 $\mathsf{EA}_T$에서 쉽게 증명 가능하다. 괴델의 불완전성 정리의 직접적인 결과이기 때문이다.</p>
-
-<h4 id="132-두-번째-주장">1.3.2. 두 번째 주장</h4>
-
-<blockquote>
-  <p><strong>주장 2.</strong> $K(F \subseteq T) \implies F \subsetneq K$</p>
-</blockquote>
-
-<p>이 주장 또한 $\mathsf{EA}_T$에서 증명 가능하다. 사실 다음의 더 강한 결과가 증명 가능하다.</p>
-
-<blockquote>
-  <p><strong>라인하르트 제1정리.</strong> 임의의 문장 $\phi$에 대해</p>
-
-\[\mathsf{EA} \vdash K(F(\ulcorner \phi \urcorner) \rightarrow \phi)\]
-
-  <p>라면, 어떤 문장 $\psi$가 존재하여</p>
-
-\[\mathsf{EA} \vdash K\psi \land K\lnot F(\ulcorner \psi \urcorner)\]
-
-  <p>이다 (즉, $\mathsf{EA} \vdash F \subsetneq K$이다).</p>
-</blockquote>
-
-<h4 id="133-세-번째-주장">1.3.3. 세 번째 주장</h4>
-
-<blockquote>
-  <p><strong>주장 3.</strong> $\forall F (F \subsetneq K) \;  \lor \; K \subsetneq T$</p>
-</blockquote>
-
-<p>위 주장에서 $F \subsetneq K$를 풀어 쓰면 다음과 같다.</p>
-
-\[\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land K(x) \land x \notin F_e  )\]
-
-<p>그리고 $K \subsetneq T$를 풀어 쓰면 다음과 같다.</p>
-
-\[\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot  K(x) \land \lnot K(\lnot x))\]
-
-<p>그런데 여기에는 문제가 있다. 앞서 말했듯이 $K$는 술어가 아닌 논리 연산자이기 때문에 양화 맥락에 속할 수 없다. 이를테면 $\exists \phi : \lnot\phi$가 문법적으로 올바르지 않듯이 말이다. 이 문제를 회피하기 위해, $\exists x \; K(x)$라고 적는 대신 $\exists x\; T(\hat{K}x)$와 같이 적도록 한다. 따라서 주장 3의 올바른 형식화는 다음과 같다.</p>
-
-\[\begin{gather}
-\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(\hat{K}x) \land x \notin F_e  ) \\\\
-\lor\\\\
-\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot T(\hat{K}x) \land \lnot T(\hat{K}\lnot x))
-\end{gather}\]
-
-<p>위 논리식을 $\mathrm{GD}$라고 하자. 다음 정리가 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>라인하르트 제2정리.</strong> $\mathsf{EA}_T \vdash \mathrm{GD}$.</p>
-</blockquote>
-
-<p>따라서 <strong>괴델 조건문은 적절한 형식 체계 하에서 증명 가능하다.</strong></p>
-
-<h2 id="2-루카스와-펜로즈">2. 루카스와 펜로즈</h2>
-
-<h3 id="21-무모순성-판별-문제">2.1. 무모순성 판별 문제</h3>
-
-<p>루카스와 펜로즈는 $K(F \subseteq T)$임을 주장함으로써 $F \subsetneq K$를 직접적으로 보이고자 한다. 즉, 루카스와 펜로즈는 이상적인 인간 정식은 주어진 임의의 형식 체계가 모순적인지 아닌지를 판별할 능력이 있으며, 이에 따라 $\forall F \subseteq T: F \subsetneq K$라고 주장한다.</p>
-
-<p>그러나 과연 이상적인 인간 정신에게 임의의 형식 체계의 무모순성을 판별할 능력이 있는지는 매우 의문스럽다. 일례로 $R$이 리만 가설이라고 하자. $R$은 페아노 산술에서 $\Pi_1$ 명제로 형식화될 수 있다. 그리고 앞서 언급했듯이 $\mathsf{PA}$는 $\Sigma_1$-완전하기 때문에, $\mathsf{PA} + R$의 무모순성은 $R$과 동치이다. 이 예시는 형식 체계의 무모순성 판별 문제가 리만 가설 이상으로 어려운 문제인 경우도 있음을 보여준다.</p>
-
-<h3 id="22-기계주의의-상대적-무모순성">2.2. 기계주의의 상대적 무모순성</h3>
-
-<p>이 사실만으로 루카스와 펜로즈의 기획은 난관에 봉착하겠으나, 여기서 나아가 우리는 더 강력한 사실을 보일 수 있다. 그 사실이란, $K(F\subseteq T)$는 형식적으로 증명 불가능하다는 것이다. 왜냐하면 기계주의적 논제들이 $\mathsf{EA}_T$와 무모순적이기 때문이다.</p>
-
-<p>이것을 보이기에 앞서, 기계주의적 논제들을 그 강도에 따라 분류하는 것이 유용하다. 이 글에서 채택하는 라인하르트의 구분법은 다음과 같다.</p>
-
-<ul>
-  <li><strong>약한 기계주의<sub>Weak Mechanical Thesis, WMT</sub>:</strong> $\exists e \; ( K = F_e )$</li>
-  <li><strong>강한 기계주의<sub>Strong Mechanical Thesis, SMT</sub>:</strong> $K\exists e\; (K = F_e)$</li>
-  <li><strong>아주 강한 기계주의<sub>Super Strong Mechanical Thesis, SSMT</sub>:</strong> $\exists e \; K(K = F_e)$</li>
-</ul>
-
-<p>각각 풀어 설명하자면,</p>
-
-<ul>
-  <li>WMT: 이상적인 인간 정신은 <em>어떠한</em> 튜링 기계와 동등하다.</li>
-  <li>SMT: 이상적인 인간 정신은, 자신이 <em>어떠한</em> 튜링 기계와 동등함을 안다.</li>
-  <li>SSMT: 이상적인 인간 정신은, 자신이 <em>특정한</em> 튜링 기계와 동등함을 안다.</li>
-</ul>
-
-<p>다음이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>라인하르트 제3정리.</strong> $\mathsf{EA}_T + \mathsf{SSMT}$는 모순적이다.</p>
-</blockquote>
-
-<p>따라서 $\mathsf{EA}_T$의 공리를 가정하면 아주 강한 기계주의는 거짓이다. 요컨데 설령 이상적인 인간 정신과 동등한 컴퓨터가 주어지더라도, 우리는 그것이 <em>정말로</em> 인간 정신과 동등한지 알 수는 없다.</p>
-
-<p>그러나 이 사실만으로 루카스와 펜로즈의 손을 들어주기는 어렵다. 기계주의의 핵심 논제는 우리와 동등한 능력을 가지는 기계의 판별법이 아닌 우리와 동등한 능력을 가지는 기계의 존재성이기 때문이다. 그리고 이에 관해서는 다음이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>라인하르트 제4정리.</strong> $\mathsf{EA}_T + \mathsf{WMT}$는 무모순적이다.</p>
-</blockquote>
-
-<p>더 나아가 다음이 알려져 있다.</p>
-
-<blockquote>
-  <p><strong>칼슨의 정리.</strong> $\mathsf{EA}_T + \mathsf{SMT}$는 무모순적이다.</p>
-</blockquote>
-
-<p>즉 $\mathsf{EA}_T$는 이상적인 인간 정신과 동등한 기계의 존재 가능성을 열어둘 뿐 아니라, 그 사실을 인간 정신이 스스로 입증하는 가능성 또한 열어둔다. 위 사실들은 불완전성 정리만으로 반기계주의를 입증하려는 시도가 수포로 돌아갈 수밖에 없음을 보여준다.</p>
-
-<h3 id="23-괴델의-혜안">2.3. 괴델의 혜안</h3>
-
-<p>놀랍게도 괴델은 처음부터 이 모든 논의를 꿰고 있었던 것으로 보인다. 왕<sub>Wang</sub>이 남긴 괴델과의 대화 회고에 따르면,</p>
-
-<blockquote>
-  <p>불완전성 정리는 인간의 수학적 직관과 동등한 결과를 내놓는 컴퓨터의 가능성 [$\exists e\; (F_e = K)$]을 배제하지 않는다. 그러나 다음을 시사하기는 한다. 만약 그 가능성이 — 비록 다른 고려 사항으로 인해 확률은 지극히 낮지만 — 사실이라면, 우리는 그러한 컴퓨터의 설계를 알 수 없거나 [$\lnot K (F_e = K)$], 그 컴퓨터가 올바르게 작동한다는 사실을 알 수 없다 [$\lnot K (F_e \subseteq T)$].</p>
-</blockquote>
-
-<s>괴델은 신이야</s>
-
-<h2 id="3-결론">3. 결론</h2>
-
-<p>지금까지의 논의는 괴델의 조건문으로부터 반기계주의를 직접적으로 이끌어내려는 더이상의 시도를 방지하는 데 충분할 것이다. 그러나 논리학의 결과로부터 반기계주의를 논증하려는 또다른 접근 방식이 있다. 흔히 <strong>펜로즈의 새 논증</strong>이라고 불리는 이 논증은 타르스키의 유형적 참과는 구별되는, 유형 독립적 참<sub>type-free truth</sub>을 내세우는 논증이다. 해당 논증의 형식화와 그것이 시사하는 바는 본 논문의 2편에서 다루도록 한다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/09/godel-lucas-penrose/en"> Can the Mind Be Reduced to a Machine: Gödel's Disjunction and the Penrose-Lucas Argument </a>
-      </h1>
-    <span class="post-date">09 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/philosophy/'">
-        Philosophy
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was machine translated and has not yet been proofread. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p><img src="https://velog.velcdn.com/images/dimenerno/post/b71a00d7-efdf-4ec3-ad5c-cc32b67cf70c/image.jpeg" alt="" /></p>
-
-<blockquote>
-  <p>This article is a summary of <a href="/public/On the question of whether the mind can be mechanized 1.pdf">Peter Koellner, <em>On the question of whether the mind can be mechanized</em> (2018)</a>.</p>
-</blockquote>
-
-<p><strong>Abstract.</strong> The Church-Turing thesis and Gödel’s incompleteness theorems suggest the existence of mathematical truths that cannot be proved mechanically. However, if an ideal human mind can prove all mathematical truths, then the conclusion follows that the ideal human mind is not equivalent to a machine. This article examines the arguments of Lucas and Penrose, who attempt to establish anti-mechanism in such a manner, and introduces formal proofs that refute these arguments.</p>
-
-<h2 id="introduction">Introduction</h2>
-
-<p>The following are well-known results in logic:</p>
-
-<ul>
-  <li>
-    <p><strong>Church-Turing Thesis.</strong> To be <strong>computable</strong> by an ideal machine is to be implementable by a Turing machine.</p>
-  </li>
-  <li>
-    <p><strong>Gödel’s Incompleteness Theorem.</strong> If $F$ is a formal system satisfying certain conditions, then there exists a sentence that is true but unprovable in $F$.</p>
-  </li>
-  <li>
-    <p><strong>Formal System-Turing Machine Correspondence.</strong> If $F$ is a formal system satisfying certain conditions, then there exists a Turing machine that enumerates the propositions provable in $F$.</p>
-  </li>
-</ul>
-
-<p>Combining these three theses with the fact that we humans appear to be capable of grasping mathematical truths not captured by formal systems—such as the consistency of arithmetic—the incompleteness theorem appears to suggest that the extension of mathematical results derivable by an ideal human mind exceeds the extension of results derivable by an ideal finite machine. That is, the incompleteness theorem appears to suggest anti-mechanism: that the mind cannot be reduced to a machine.</p>
-
-<p>In this article, we examine how far this suggestion can be justified. As a result, we shall show that while the incompleteness theorem suggests anti-mechanism <em>or</em> Platonism, it does not directly suggest anti-mechanism.</p>
-
-<h2 id="1-gödels-disjunction">1. Gödel’s Disjunction</h2>
-
-<p>Gödel argued that from the incompleteness theorem, it follows that <em>at least one</em> of the following two positions is true. We shall call this <strong>Gödel’s Disjunction</strong>.</p>
-
-<ol>
-  <li>
-    <p><strong>Anti-mechanism:</strong> The mathematical results derivable by an ideal human mind always exceed the mathematical results derivable by an ideal finite machine. Therefore, the human mind cannot be reduced to a machine.</p>
-  </li>
-  <li>
-    <p><strong>Platonism:</strong> There exist mathematical truths that cannot be grasped by an ideal human mind. Therefore, mathematical truth exists independently of the human mind.</p>
-  </li>
-</ol>
-
-<p>It is noteworthy that both positions are contrary to materialist philosophy. while Gödel was generally reserved about philosophical arguments, he argued strongly that this particular argument was a “mathematically established fact”. Our first task is to verify whether this argument is indeed a “mathematically established fact”.</p>
-
-<h3 id="11-gödels-three-claims">1.1. Gödel’s Three Claims</h3>
-
-<p>Let us introduce some notation.</p>
-
-<ol>
-  <li>
-    <p>$F$ is the set of all sentences that the formal system $F$ can prove.</p>
-  </li>
-  <li>
-    <p>$K$ is the set of all sentences that an ideal human mind can prove.</p>
-  </li>
-  <li>
-    <p>$T$ is the set of true sentences.</p>
-  </li>
-</ol>
-
-<p>Throughout this article, we shall assume $K \subseteq T$. We also presuppose that $F$ is a formal system to which Gödel’s incompleteness theorem applies—that is, a consistent system containing Peano arithmetic (in fact, this condition can be weakened to Robinson arithmetic).</p>
-
-<p>Before proceeding to the main discussion, let us review Gödel’s incompleteness theorem.</p>
-
-<blockquote>
-  <p><strong>Gödel’s Incompleteness Theorem.</strong> When $F$ is a consistent mathematical system containing arithmetic, the following holds:</p>
-
-  <ul>
-    <li><strong>First Theorem.</strong> There exists a proposition that is true but unprovable in $F$.</li>
-    <li><strong>Second Theorem.</strong> The consistency of $F$ is an instance of the First Theorem.</li>
-  </ul>
-</blockquote>
-
-<p>Incidentally, while the incompleteness theorem traditionally targets Peano arithmetic, the incompleteness theorem also holds for weaker arithmetic systems, including Robinson arithmetic.</p>
-
-<h4 id="111-first-claim">1.1.1. First Claim</h4>
-
-<p>Gödel first claims the following:</p>
-
-<blockquote>
-  <p><strong>Claim 1.</strong> $F \subseteq T \implies F \subsetneq T$</p>
-</blockquote>
-
-<p>The proof is as follows. If $F \subseteq T$, then $\mathrm{Con}(F) \in T$. However, by the Second Incompleteness Theorem, $\mathrm{Con}(F) \notin F$. Therefore, $F \subsetneq T$.</p>
-
-<h4 id="112-second-claim">1.1.2. Second Claim</h4>
-
-<p>Gödel’s second claim is as follows:</p>
-
-<blockquote>
-  <p><strong>Claim 2.</strong> $K(F \subseteq T) \implies F \subsetneq K$</p>
-</blockquote>
-
-<p>The proof is as follows. If $K(F \subseteq T)$, then $\mathrm{Con}(F) \in K$. However, as we have seen, $F \subseteq T \implies \mathrm{Con}(F) \notin F$, so $F \subsetneq K$.</p>
-
-<p>But if $F \subsetneq K$ is true, how should we understand this? One approach is to consider a hierarchy of formal systems.</p>
-
-<p>Gödel emphasises that the unprovable sentences suggested by the incompleteness theorem need not be <em>absolutely</em> unprovable. This is because sentences unprovable in formal system $F$ may become provable in systems of higher order than $F$. For example, if $\mathsf{PA}$ is consistent, then while $\mathsf{PA}$ cannot prove $\mathrm{Con}(\mathsf{PA})$, it is known that second-order Peano arithmetic $\mathsf{PA}_2$ can prove $\mathrm{Con}(\mathsf{PA})$. Of course, $\mathsf{PA}_2$ cannot prove $\mathrm{Con}(\mathsf{PA}_2)$, but this is provable in third-order Peano arithmetic, and such a hierarchy continues.</p>
-
-<p>This entire hierarchy appears to be subsumed under $K$. From this perspective, each formal system is like a set, and $K$ is like the collection of all sets. And just as the collection of all sets cannot be a set, an analogy holds that $K$ cannot be a formal system.</p>
-
-<h4 id="113-third-claim">1.1.3. Third Claim</h4>
-
-<p>However, one might wonder: instead of writing “Claim 2” as a conditional, could we not claim $F \subsetneq K$ by asserting that $K(F \subsetneq T)$ is true?</p>
-
-<p>Gödel points out that the incompleteness theorem alone cannot lead to such a claim. This is because the possibility of the existence of a formal system $F^*$ that coincides with $K$ cannot be completely ruled out (note that the previous discussion regarding higher-order Peano arithmetic was merely an analogy).</p>
-
-<p>Regarding this, Gödel says:</p>
-
-<blockquote>
-  <p>[If such a formal system exists] human reason—at least in its mathematical aspect—is equivalent to a finite machine. However, that machine cannot completely understand its own operation [in the sense that it cannot prove its own consistency]. This inability would be mistaken by humans as the infinite extensibility of the mind.</p>
-</blockquote>
-
-<p>Instead, Gödel’s third claim is as follows. This claim is Gödel’s disjunction.</p>
-
-<blockquote>
-  <p><strong>Claim 3.</strong> $\forall F (F \subsetneq K) \;  \lor \; K \subsetneq T$</p>
-</blockquote>
-
-<p>The proof is as follows. Suppose there is a formal system $F^<em>$ such that $F^</em> = K$. Since we have assumed $K \subset T$, we have $F^* \subset T$, and by Claim 1, $F^* \subsetneq T$.</p>
-
-<p>The former signifies anti-mechanism, while the latter signifies Platonism.</p>
-
-<h3 id="12-formalisation-of-gödels-disjunction">1.2. Formalisation of Gödel’s Disjunction</h3>
-
-<p>So far, we have presented Gödel’s three claims and introduced brief proofs thereof. However, these proofs were not actually precise. This is because we did not introduce rigorous definitions of $F, K, T$, nor did we distinguish between what content can be proved <em>within</em> a formal system and what content can only be proved <em>outside</em> a formal system. To overcome this limitation, let us rigorously formalise $F, K, T$ and the proofs of Gödel’s three claims.</p>
-
-<h4 id="121-f">1.2.1. $F$</h4>
-
-<p>$F$ is the easiest concept to formalise. In particular, the following facts are known:</p>
-
-<blockquote>
-  <p><strong>Formal System-Turing Machine Correspondence.</strong> When $F$ is a recursively axiomatisable formal system, there exists a Turing machine that recursively enumerates the propositions provable from $F$.</p>
-</blockquote>
-
-<p>Additionally, the formal systems of interest to us are recursively axiomatisable.</p>
-
-<blockquote>
-  <p><strong>Recursiveness of Kleene Predicates.</strong> The operation of Turing machines can be formalised within Peano arithmetic. Specifically, there exists a first-order logical predicate $K(x, y, z)$ that determines whether a Turing machine with Gödel number $x$, when given natural number $y$ as input, terminates with a computation record with Gödel number $z$.</p>
-</blockquote>
-
-<p>As a corollary of the above two theorems, we obtain:</p>
-
-<blockquote>
-  <p><strong>Corollary.</strong> Formal systems are recursively enumerable. That is, the “$e$-th formal system” $F_e$ can be defined in Peano arithmetic.</p>
-</blockquote>
-
-<p>For example, $F_{123}$ might be Robinson arithmetic, $F_{456}$ might be ZFC, and so forth. $F_{123}(\ulcorner 1 + 1 = 2 \urcorner)$ means that $1 + 1 = 2$ is provable in Robinson arithmetic. And $\mathsf{PA} \vdash F_{123}(\ulcorner 1 + 1 = 2 \urcorner)$.</p>
-
-<h4 id="122-t">1.2.2. $T$</h4>
-
-<p>The most promising formal definition of $T$ is <strong>Tarski’s typed truth definition</strong>. while Tarski’s typed truth definition is a syntactic rather than semantic definition, it is suitable for the purposes of the present discussion. Tarski’s definition consists of axioms including the following:</p>
-
-<ul>
-  <li>
-    <p>$\forall x : \mathrm{Sent}(x) \rightarrow (T(\hat{\lnot} x) \leftrightarrow \lnot T(x))$</p>
-  </li>
-  <li>
-    <p>$\forall x, y : [\mathrm{Sent}(x) \land \mathrm{Sent}(y)] \rightarrow [T(x\; \hat{\lor} \;y) \leftrightarrow T(x) \lor T(y)]$</p>
-  </li>
-</ul>
-
-<p>Here, $\mathrm{Sent}$ determines whether a given sentence (or its Gödel number) is well-formed. Meanwhile, $\hat{\quad}$ is introduced to distinguish between language and meta-language; a detailed explanation is not particularly important, so we shall leave it at this.</p>
-
-<h4 id="123-k">1.2.3. $K$</h4>
-
-<p>$K$ is the most challenging of the three concepts. Not only can we not provide a complete semantic definition, but there are also questionable aspects to providing a syntactic definition. However, since the goal of this article is to demonstrate that $F \subsetneq K$ cannot be directly shown from the incompleteness theorem, according to the principle of charity, we shall present the following syntactic definition that maximally guarantees the extension of $K$.</p>
-
-<blockquote>
-  <p><strong>Syntactic Definition of $K$.</strong></p>
-
-  <ol>
-    <li>When $\phi$ is logically true, $K\phi$.</li>
-    <li>For arbitrary sentences $\phi, \psi$: $(K(\phi \rightarrow \psi) \land K\phi) \rightarrow K\psi$.</li>
-    <li>For arbitrary sentence $\phi$: $K\phi \rightarrow \phi$.</li>
-    <li>For arbitrary sentence $\phi$: $K\phi \rightarrow KK\phi$.</li>
-  </ol>
-</blockquote>
-
-<p>Here, $K$ is a logical operator. Therefore, we write $K\phi$ rather than $K(\phi)$ or $K(\ulcorner \phi \urcorner)$. For the reason why $K$ should be regarded as a logical operator rather than a predicate, see footnote 29 of the original paper.</p>
-
-<h4 id="124-mathsfea-and-mathsfea_t">1.2.4. $\mathsf{EA}$ and $\mathsf{EA}_T$</h4>
-
-<p>Let us construct a formal system capable of reasoning about $F, K, T$. Firstly, as we saw in 1.2.1, $F$ is already formalisable in $\mathsf{PA}$, so no special measures are required.</p>
-
-<p>Let $L_{\mathsf{EA}}$ be defined as $\mathsf{PA}$ with the function $K$ added. Let $\Sigma$ be the collection of axioms of $\mathsf{PA}$ and the axioms of the syntactic definition of $K$ (where the induction schema of $\mathsf{PA}$ is taken over sentences of $L_{\mathsf{EA}}$ rather than $L_{\mathsf{PA}}$). The axioms of $\mathsf{EA}$ are $\Sigma \cup K\Sigma$.</p>
-
-<p>Let $L_{\mathsf{EA}<em>T}$ be defined as $\mathsf{EA}$ with the predicate $T$ added. Let $\Sigma^*$ be the collection of $\Sigma$ and the axioms of the syntactic definition of $T$ (where the induction schema of $\mathsf{PA}$ is taken over sentences of $L</em>{\mathsf{EA}_T}$). The axioms of $\mathsf{EA}_T$ are $\Sigma^* \cup K\Sigma^*$.</p>
-
-<h3 id="13-formal-proof-of-gödels-disjunction">1.3. Formal Proof of Gödel’s Disjunction</h3>
-
-<p>We show that Gödel’s three claims are formally provable in $\mathsf{EA}_T$.</p>
-
-<h4 id="131-first-claim">1.3.1. First Claim</h4>
-
-<blockquote>
-  <p><strong>Claim 1.</strong> $F \subseteq T \implies F \subsetneq T$</p>
-</blockquote>
-
-<p>This claim is easily provable in $\mathsf{EA}_T$. This is because it is a direct consequence of Gödel’s incompleteness theorem.</p>
-
-<h4 id="132-second-claim">1.3.2. Second Claim</h4>
-
-<blockquote>
-  <p><strong>Claim 2.</strong> $K(F \subseteq T) \implies F \subsetneq K$</p>
-</blockquote>
-
-<p>This claim is also provable in $\mathsf{EA}_T$. In fact, the following stronger result is provable:</p>
-
-<blockquote>
-  <p><strong>Reinhardt’s First Theorem.</strong> For arbitrary sentence $\phi$, if</p>
-
-\[\mathsf{EA} \vdash K(F(\ulcorner \phi \urcorner) \rightarrow \phi)\]
-
-  <p>then there exists some sentence $\psi$ such that</p>
-
-\[\mathsf{EA} \vdash K\psi \land K\lnot F(\ulcorner \psi \urcorner)\]
-
-  <p>(that is, $\mathsf{EA} \vdash F \subsetneq K$).</p>
-</blockquote>
-
-<h4 id="133-third-claim">1.3.3. Third Claim</h4>
-
-<blockquote>
-  <p><strong>Claim 3.</strong> $\forall F (F \subsetneq K) \;  \lor \; K \subsetneq T$</p>
-</blockquote>
-
-<p>Expanding $F \subsetneq K$ in the above claim gives:</p>
-
-\[\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land K(x) \land x \notin F_e  )\]
-
-<p>And expanding $K \subsetneq T$ gives:</p>
-
-\[\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot  K(x) \land \lnot K(\lnot x))\]
-
-<p>However, there is a problem here. As mentioned earlier, since $K$ is a logical operator rather than a predicate, it cannot be placed within a quantified context. Just as $\exists \phi : \lnot\phi$ is not grammatically correct. To circumvent this problem, instead of writing $\exists x \; K(x)$, we write $\exists x\; T(\hat{K}x)$. Therefore, the correct formalisation of Claim 3 is as follows:</p>
-
-\[\begin{gather}
-\forall e \; \exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(\hat{K}x) \land x \notin F_e  ) \\\\
-\lor\\\\
-\exists x \;(\mathrm{Sent}_{L_{\mathsf{PA}}}(x) \land T(x) \land \lnot T(\hat{K}x) \land \lnot T(\hat{K}\lnot x))
-\end{gather}\]
-
-<p>Let us call the above formula $\mathrm{GD}$. The following theorem is known:</p>
-
-<blockquote>
-  <p><strong>Reinhardt’s Second Theorem.</strong> $\mathsf{EA}_T \vdash \mathrm{GD}$.</p>
-</blockquote>
-
-<p>Therefore, <strong>Gödel’s disjunction is provable under an appropriate formal system.</strong></p>
-
-<h2 id="2-lucas-and-penrose">2. Lucas and Penrose</h2>
-
-<h3 id="21-the-consistency-decision-problem">2.1. The Consistency Decision Problem</h3>
-
-<p>Lucas and Penrose attempt to directly show $F \subsetneq K$ by claiming $K(F \subseteq T)$. That is, Lucas and Penrose argue that the ideal human mind has the ability to determine whether any given formal system is consistent or not, and accordingly claim $\forall F \subseteq T: F \subsetneq K$.</p>
-
-<p>However, it is highly questionable whether the ideal human mind has the ability to determine the consistency of arbitrary formal systems. For instance, let $R$ be the Riemann hypothesis. $R$ can be formalised as a $\Pi_1$ proposition in Peano arithmetic. And as mentioned earlier, since $\mathsf{PA}$ is $\Sigma_1$-complete, the consistency of $\mathsf{PA} + R$ is equivalent to $R$. This example shows that there are cases where the consistency decision problem for formal systems is at least as difficult as the Riemann hypothesis.</p>
-
-<h3 id="22-relative-consistency-of-mechanism">2.2. Relative Consistency of Mechanism</h3>
-
-<p>This fact alone would put Lucas and Penrose’s project in difficulty, but we can go further and show a more powerful fact. That fact is that $K(F\subseteq T)$ is formally unprovable. This is because mechanistic theses are consistent with $\mathsf{EA}_T$.</p>
-
-<p>Before showing this, it is useful to classify mechanistic theses according to their strength. Reinhardt’s classification adopted in this article is as follows:</p>
-
-<ul>
-  <li><strong>Weak Mechanical Thesis (WMT):</strong> $\exists e \; ( K = F_e )$</li>
-  <li><strong>Strong Mechanical Thesis (SMT):</strong> $K\exists e\; (K = F_e)$</li>
-  <li><strong>Super Strong Mechanical Thesis (SSMT):</strong> $\exists e \; K(K = F_e)$</li>
-</ul>
-
-<p>To explain each:</p>
-
-<ul>
-  <li>WMT: The ideal human mind is equivalent to <em>some</em> Turing machine.</li>
-  <li>SMT: The ideal human mind knows that it is equivalent to <em>some</em> Turing machine.</li>
-  <li>SSMT: The ideal human mind knows that it is equivalent to a <em>specific</em> Turing machine.</li>
-</ul>
-
-<p>The following is known:</p>
-
-<blockquote>
-  <p><strong>Reinhardt’s Third Theorem.</strong> $\mathsf{EA}_T + \mathsf{SSMT}$ is inconsistent.</p>
-</blockquote>
-
-<p>Therefore, assuming the axioms of $\mathsf{EA}<em>T$, the super strong mechanical thesis is false. In short, even if a computer equivalent to the ideal human mind were given, we could not know whether it is _truly</em> equivalent to the human mind.</p>
-
-<p>However, this fact alone is insufficient to support Lucas and Penrose. This is because the core thesis of mechanism is not the method of identifying machines with capabilities equivalent to ours, but the existence of machines with capabilities equivalent to ours. Regarding this, the following is known:</p>
-
-<blockquote>
-  <p><strong>Reinhardt’s Fourth Theorem.</strong> $\mathsf{EA}_T + \mathsf{WMT}$ is consistent.</p>
-</blockquote>
-
-<p>Furthermore, the following is known:</p>
-
-<blockquote>
-  <p><strong>Carlson’s Theorem.</strong> $\mathsf{EA}_T + \mathsf{SMT}$ is consistent.</p>
-</blockquote>
-
-<p>That is, $\mathsf{EA}_T$ not only leaves open the possibility of the existence of a machine equivalent to the ideal human mind, but also leaves open the possibility that the human mind can prove this fact itself. These facts show that attempts to establish anti-mechanism solely through the incompleteness theorem are bound to fail.</p>
-
-<h3 id="23-gödels-insight">2.3. Gödel’s Insight</h3>
-
-<p>Remarkably, Gödel appears to have understood all of this discussion from the beginning. According to Wang’s recollections of conversations with Gödel:</p>
-
-<blockquote>
-  <p>The incompleteness theorem does not rule out the possibility of a computer that produces results equivalent to human mathematical intuition [$\exists e\; (F_e = K)$]. However, it does suggest the following: if that possibility—though the probability is extremely low due to other considerations—is true, then either we cannot know the design of such a computer [$\lnot K (F_e = K)$], or we cannot know that the computer operates correctly [$\lnot K (F_e \subseteq T)$].</p>
-</blockquote>
-
-<s>Gödel is a god</s>
-
-<h2 id="3-conclusion">3. Conclusion</h2>
-
-<p>The discussion thus far should be sufficient to prevent further attempts to directly derive anti-mechanism from Gödel’s disjunction. However, there is another approach to arguing for anti-mechanism from logical results. This argument, commonly called <strong>Penrose’s new argument</strong>, is an argument that puts forward type-free truth, as distinguished from Tarski’s typed truth. The formalisation of this argument and its implications will be addressed in Part 2 of this paper.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -431,6 +431,1035 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/11/rolling/en"> Two Illustrations on Rolling </a>
+      </h1>
+    <span class="post-date">11 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/physics/'">
+        Physics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/mechanics/'">
+        Mechanics
+      </div>
+      
+    </div>
+     <p>These are illustrations I made when I studied classical mechanics in my BA. They seem to be well-made, so I decided to share them here, too.</p>
+
+<p><img src="/public/rot-en.png" style="width: 100%; margin: 0 auto" /></p>
+
+<p>Note that decomposing Revolution as the sum of Rotation about CM and Rotation about Axis is a specific case of the central axis theorem.</p>
+
+<p><img src="/public/rolling-on-ground.png" style="width: 100%; margin: 4em auto 0em auto" /></p>
+
+<p>Note that when analysing Rolling from CM’s frame, the ground also moves at $v = -r\omega$.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/11/VL-axiom"> V = L 공리의 무모순성 </a>
+      </h1>
+    <span class="post-date">11 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <h2 id="1-전체">1. 전체</h2>
+
+<h3 id="11-폰-노이만-전체">1.1. 폰 노이만 전체</h3>
+
+<p><a href="https://dimenerno.github.io/2024/12/05/transfinite-recursion/">초한귀납적으로</a> $\lbrace  V_\alpha \rbrace$를 정의하자.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$</li>
+  <li>$\lambda$가 극한 서수일 때, $V_\lambda = \bigcup_{\alpha &lt; \lambda} V_\alpha$</li>
+</ul>
+
+<p>처음 몇 개의 $V_\alpha$는 다음과 같다.</p>
+
+<ul>
+  <li>$V_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$V_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$V_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$V_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>모든 서수 $\alpha$에 대해 $V_\alpha$를 모아둔 모임을 <strong>폰 노이만 전체</strong>라고 한다.</p>
+
+\[V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha\]
+
+<p>$x \in y \in z$가 $x \in z$를 시사할 때 $z$를 <strong>추이적 집합<sub>transitive set</sub></strong>이라고 한다. 이것은 $V$의 중요한 특징이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$\alpha \in \mathrm{Ord}$에 대해 $V_\alpha$는 추이적이다.</li>
+    <li>$V$는 추이적이다.</li>
+  </ol>
+</blockquote>
+
+<p>증명은 초한귀납법을 이용한다. 이에 따라 $V$를 다음과 같이 정의해도 무방하다.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = \mathcal{P}(V_\alpha)$</li>
+  <li>$\lambda$가 극한 서수일 때, $V_\lambda = \bigcup_{\alpha &lt; \lambda}V_\alpha$</li>
+</ul>
+
+<p>직관적으로 생각했을 때 $V$는 모든 집합을 포함하는 듯하다. 실제로 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $x$가 집합이라면 $x \in V$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 집합 $x$에 대해 $x$의 <strong>추이적 폐포</strong> $\bar{x}$를, $x$를 원소로 가지는 가장 작은 추이적 집합으로 정의한다(이것이 well-defined임을 증명하기 위해서는 $x_0 = x, x_{n + 1} = \lbrace  y : y \in x \text{ for some } x \in x_n \rbrace $일 때 $\bigcup x_n$가 $\bar{x}$임을 보이면 된다.)</p>
+
+<p>$x \notin V$라고 가정하자. 분류 공리에 의해 $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$가 집합이며, 정초 공리에 의해 $y$의 $\in$-극소 원소 $z$가 존재한다. 만약 $w \notin V$인 $w \in z$가 존재한다면, 추이성에 의해 $w \in y$가 되어 $z$의 $\in$-극소성과 모순된다. 따라서 $z$의 모든 원소는 $V$에 있으며, 치환 공리로부터 $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$가 집합이다. $\beta = \bigcup_{\alpha \in \Omega}\alpha$라고 하자. $\beta$는 서수이며, $z \in V_{\beta + 1}$이다. (이 부분에서 $V_{\beta + 1} = \mathcal{P}(V_\beta)$임이 필요하다) 따라서 모순이다. ■</p>
+
+<p>이에 따라 $V$는 집합이 아니다. 따라서 $V$는 모든 집합을 포함한다는 점에서 ZFC의 모델이지만, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">많은 수학자들은 모델이 집합일 것을 요구하기 때문에</a> 엄격한 의미에서의 모델은 아니다. 나중에 드러나겠지만, 이는 $V = L$의 무모순성 증명이 괴델의 제2불완전성 정리와 상충하지 않는 이유를 설명한다.</p>
+
+<p>한편 $x \in V$는 “$x$는 집합이다“의 형식적 표현으로 이해하도록 한다.</p>
+
+<h3 id="12-괴델-구성-가능-전체">1.2. 괴델 구성 가능 전체</h3>
+
+<p>먼저 다음과 같이 구성 가능성을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 집합론의 언어를 $\mathcal{L}$이라고 하자. $X$가 $\mathcal{L}$-구조 $(L, \in)$에서 <strong>구성 가능</strong>하다는 것은, 어떤 $\mathcal{L}$-명제 $\phi$와 자유변수 할당 $g$가 존재하여 다음이 성립한다는 것이다.</p>
+
+\[X = \{ x \in L : (L, \in) \vDash \phi[g^0_x] \}\]
+</blockquote>
+
+<p>예를 들어 $L = \lbrace 0, 1, 2\rbrace$일 때 다음은 $X = \lbrace  1, 2 \rbrace$를 구성한다.</p>
+
+<ul>
+  <li>$\phi(v_0, v_1, v_2) := (v_0 = v_1) \lor (v_0 = v_2)$</li>
+  <li>$g: v_1 \mapsto 1, v_2 \mapsto 2$</li>
+</ul>
+
+<p>또한 $L = \mathbb{N}$일 때 다음은 $X = \lbrace 0, 3, 6, 9, \dots \rbrace$를 구성한다.</p>
+
+<ul>
+  <li>$\phi(v_0, v_1) := v_1 \mid v_0$</li>
+  <li>$g: v_1 \mapsto 3$</li>
+</ul>
+
+<p>괴델의 구성가능성은 언어로서의 표현가능성과 다르다. 일례로 언어로 표현가능한 실수의 집합은 가산이므로, 어떤 실수는 언어로 표현이 불가능하다. 그러한 실수를 $r$이라고 하자. $(L, \in)$이 실수 집합을 포함하는 구조일 때, 다음은 $X = \lbrace  r \rbrace$을 구성한다.</p>
+
+<ul>
+  <li>$\phi(v_0, v_1) := v_0 = v_1$</li>
+  <li>$g: v_1 \mapsto r$</li>
+</ul>
+
+<p>즉, 괴델의 구성가능성은 자유변수의 초기화를 임의의 원소에 대해 허용한다는 점에서 강력하다. 그러나 자유변수의 수가 유한하다는 점에서 한계를 가진다. 이제 초한귀납적으로 $\lbrace  L_\alpha \rbrace$를 정의하자.</p>
+
+<ul>
+  <li>$L_0 = \varnothing$</li>
+  <li>$L_{\alpha + 1} = \lbrace  x : x \text{ is constructible from } (L_\alpha, \in)  \rbrace$</li>
+  <li>$\lambda$가 극한 서수일 때, $L_\lambda = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+  <li>$L = \bigcup_{\alpha \in \mathrm{Ord}} L_\alpha$</li>
+</ul>
+
+<p>$\alpha &lt; \omega$일 때 $L_\alpha = V_\alpha$임을 쉽게 보일 수 있다. $\alpha = n$일 때, 최대 $n$개의 $\lor$ 연언으로 $x \in V_\alpha$를 구성할 수 있기 때문이다. 따라서,</p>
+
+<ul>
+  <li>$L_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$L_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$L_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$L_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>하지만 $L_{\omega + 1} \subsetneq V_{\omega + 1}$이다. $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$이므로 $V_{\omega + 1}$은 비가산인 반면, 1차 논리 문장들의 집합과 $L_\omega$는 모두 가산이므로 $L_{\omega + 1}$ 또한 가산이기 때문이다. 일반적으로 $\alpha$가 가산일 때 $L_\alpha$는 가산이다.</p>
+
+<p>그럼에도 $L$은 $V$와 많은 특징을 공유한다. 일례로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\alpha \in \mathrm{Ord}$에 대해 다음이 성립한다.</p>
+
+  <ol>
+    <li>$L_\alpha$는 추이적이다. (따라서 $L$이 추이적이다)</li>
+    <li>$\alpha \in L_{\alpha + 1} \setminus L_{\alpha}$</li>
+  </ol>
+</blockquote>
+
+<p>증명은 초한귀납법을 사용한다.</p>
+
+<p>$L$은 모든 서수를 포함하므로 부랄리포르티 정리에 의해 집합이 아님에 유의하라. 대신 $x \in L_\alpha$에 대응되는 1차 논리식 $\mathsf{IsInL}_\alpha(x)$가 존재한다. 증명은 조금 까다로운데, 괴델 수를 이용하여 명제를 산술화하면 된다. (<a href="https://math.stackexchange.com/questions/198437/a-formula-that-defines-constructible-universe">링크</a> 참조) 따라서 $x \in L$을 $\exists \alpha \in \mathrm{Ord} :\mathsf{IsInL}_\alpha(x)$를 대체하는 형식적 표현으로 이해하여 사용하도록 한다. (물론 $\alpha \in \mathrm{Ord}$ 또한 1차 논리식을 대체하는 형식적 표현으로 이해되어야 한다)</p>
+
+<h2 id="2-상대화">2. 상대화</h2>
+
+<h3 id="21-명제의-상대화">2.1. 명제의 상대화</h3>
+
+<p>1차 논리 명제는 양화사를 포함할 수 있다. 때문에 양화사의 정의역을 어떻게 설정하느냐의 따라 명제의 의미가 달라진다.</p>
+
+<p>명제 $\phi$와 집합 (또는 모임) $A$에 대해, $\phi$의 상대화 $\phi^A$를 $\phi$의 모든 양화사를 $A$로 제한한 명제로 정의한다. 약간의 서사적 표현을 곁들이자면, $\phi^A$는 $A$의 “내부”에서 이해한 $\phi$라고 할 수 있겠다. 예를 들어, $\phi : \forall x \; \exists y : y &lt; x$일 때</p>
+
+<ul>
+  <li>$\phi^\mathbb{N} : \forall x \in \mathbb{N} \; \exists y \in \mathbb{N} : y &lt; x$</li>
+  <li>$\phi^\mathbb{Z} : \forall x \in \mathbb{Z} \; \exists y \in \mathbb{Z} : y &lt; x$</li>
+</ul>
+
+<p>$T_\mathbb{Q}$가 자연수 및 정수를 특정할 수 있는 정도의 표현력을 지니는 유리수 이론이라고 하면,</p>
+
+<ul>
+  <li>$T_\mathbb{Q} \vdash \phi$</li>
+  <li>$T_\mathbb{Q} \not\vdash \phi^\mathbb{N}$</li>
+  <li>$T_\mathbb{Q} \vdash \phi^{\mathbb{Z}}$</li>
+</ul>
+
+<p>이다. 따라서 $\phi$는 자연수와 유리수를 성공적으로 구분해 내지만, 정수와 유리수는 구분해 내지 못한다. 이 관찰을 일반화하면, 이론 $T$와 집합 $A$에 대해 $T \vdash \phi \leftrightarrow \phi^A$인 $\phi$가 많으면 많을수록 $A$는 $T$의 기술에 잘 “부합한다“고 말할 수 있다.</p>
+
+<p>위 논의를 조금 일반화하여, 다음과 같이 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 이론 $T$와 집합 $A$에 대해서</p>
+
+\[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
+
+  <p>일 때, $\phi$는 $A$에 대해 <strong>절대적<sub>absolute</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<p>일례로 $T_\mathbb{Q}$에 대해 $\phi(x) : \exists y (y &lt; x)$는 정수에 대해 절대적이지만 자연수에 대해 절대적이지는 않다.</p>
+
+<h3 id="22-l-상대화">2.2. $L$-상대화</h3>
+
+<p>이제 우리의 목표는 $L$이 $\mathsf{ZF}$와 극대적으로 부합함을 보이는 것이다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리 1.</strong> $\phi$가 ZF의 공리라면 $\mathsf{ZF} \vdash \phi^L$이다.</p>
+</blockquote>
+
+<p>정리 1의 의미를 말로 풀어 보자면,</p>
+
+<blockquote>
+  <p>“$L$의 내부에서 보았을 때 $L$은 ZF의 모델이다”를 ZF로 증명할 수 있다.</p>
+</blockquote>
+
+<p>물론 우리는 $L \subset V$만 알고 $V = L$인지는 알지 못하기 때문에, 어떤 집합 $x$는 $L$에 속하지 않을 수도 있다. 그러나 설령 $x \in V \setminus L$인 집합 $x$가 있더라도, 그러한 $x$의 결여는 $L$의 <em>내적 정합성</em>을 깨뜨리지 않는다는 것이 정리 1의 내용이다.</p>
+
+<p>예를 들어 어떤 집합 $y, z$에 대해 $x = \lbrace  y, z \rbrace$가 $L$에 결여되어 있다고 하자. 일면 $x$의 결여는 $L$이 짝 공리 $\mathsf{Pair}$을 만족하지 않음을 시사하는 듯하다.</p>
+
+\[\mathsf{Pair} := \forall y, z \; \exists x \; \forall w: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>하지만 $L$의 내부에서 본 짝 공리는 다음과 같다.</p>
+
+\[\mathsf{Pair}^L := \forall y, z \in L \; \exists x \in L \; \forall w \in L: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>$\forall y, z$의 양화 또한 $L$로 한정됨에 주목하라. 즉, $x = \lbrace  y, z \rbrace$의 결여가 $L$에게 문제를 일으키는 경우는 $y, z \in L$일 때이다. 거꾸로 말해, $x = \lbrace  y, z \rbrace \notin L$이 $y, z \notin L$을 시사한다면 $L$은 $\mathsf{Pair}^L$을 만족한다. 이것이 “$L$이 내적 정합성을 유지하는 방식으로 집합을 결여한다”의 의미이다.</p>
+
+<p>정리 1이 성립하는 핵심 이유는 $L$과 $V$가 <strong>추이성이라는 성질을 공유</strong>하기 때문이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> 다음 술어는 ZF에서 $L$에 대해 절대적이다.</p>
+
+  <ol>
+    <li>$x \in y$</li>
+    <li>$x \subset y$</li>
+    <li>$x = \bigcup y$</li>
+    <li>$x = \lbrace  y, z \rbrace$</li>
+    <li>$\alpha \in \mathrm{Ord}$</li>
+    <li>$x$는 추이적이다.</li>
+    <li><a href="https://math.stackexchange.com/questions/404699/delta-0-formulas">$\Delta_0$ 논리식</a></li>
+  </ol>
+</blockquote>
+
+<p>또한 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 2.</strong> $\mathsf{ZF} \vdash (V = L)^L$</p>
+</blockquote>
+
+<p>여기서 $V = L$은, “모든 집합이 $L$에 속한다”를 의미한다. 따라서 일면 보기에 $(V = L)^L$은 “$L$에 속하는 모든 집합이 $L$에 속한다”라는 자명한 명제인 듯하다. 하지만 실제로 $V = L$을 논리식으로 적으면</p>
+
+\[\forall x \; \exists \alpha  : \alpha \in \mathrm{Ord} \land x \in L_\alpha\]
+
+<p>이므로 $(V = L)^L$은</p>
+
+\[\forall x \in L \; \exists \alpha \in L : (\alpha \in \mathrm{Ord})^L \land (x \in L_\alpha)^L\]
+
+<p>이다. 특히, $\alpha \in \mathrm{Ord}$와 $x \in L_\alpha$가 진정한 의미에서의 $\in$-술어가 아닌 1차 논리식의 형식적 표현이기 때문에 마찬가지로 $L$로 상대화해야 함에 유의하라. 이에 따라 $(V = L)^L$을 ZF에서 증명하기 위해서는 $\alpha \in \mathsf{Ord}$와 $x \in L_\alpha$가 절대적임을 증명해야 한다. 두 증명 모두 초한귀납법을 사용하면 가능하다.</p>
+
+<p>정리 1과 정리 2로부터 다음을 증명할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리 3.</strong> $\mathsf{ZFL} \vdash \phi \implies \mathsf{ZF} \vdash \phi^L$</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathsf{ZFL} \vdash \phi$의 증명 길이에 대한 귀납법으로 증명한다. 증명 길이가 0일 때 $\phi$는 ZFL의 공리이다. $\phi$가 ZF의 공리일 때 정리 1로부터 증명되고, $\phi$가 $V = L$일 때 정리 2로부터 증명된다.</p>
+
+<p>이제 $\phi$가 $\lbrace  \psi_1, \dots, \psi_n \rbrace$에 추론 규칙을 적용하는 것으로 증명된다고 가정하자. $\psi_k$의 증명 길이는 $\phi$보다 작으므로 귀납 가정에 의해 $\mathsf{ZF} \vdash \psi_k^L$이며, 논리 공리와 추론 규칙은 $L$에 대해 절대적임을 쉽게 보일 수 있다. 따라서 $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$가 논리적 참이라면 $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ 또한 논리적 참이며, 이에 따라 $\mathsf{ZF} \vdash \phi^L$이다. ■</p>
+
+<p>정리 3의 따름정리로서 정리 4를 얻는다.</p>
+
+<blockquote>
+  <p><strong>정리 4.</strong> ZF가 무모순적이라면 ZFL 또한 무모순적이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> ZFL이 모순적이라면 $\mathsf{ZFL} \vdash \varnothing \neq \varnothing$이며, 정리 3에 의해 $\mathsf{ZF} \vdash (\varnothing \neq \varnothing)^L \iff \mathsf{ZF} \vdash \varnothing \neq \varnothing$이다.</p>
+
+<p>따라서 <strong>V = L은 ZF와 일관적이다</strong>.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/11/VL-axiom/en"> Consistency of the V = L Axiom </a>
+      </h1>
+    <span class="post-date">11 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <h2 id="1-universe">1. Universe</h2>
+
+<h3 id="11-von-neumann-universe">1.1. Von Neumann Universe</h3>
+
+<p>We define $\lbrace  V_\alpha \rbrace$ using <a href="https://dimenerno.github.io/2024/12/05/transfinite-recursion/">transfinite recursion</a>.</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$</li>
+  <li>When $\lambda$ is a limit ordinal, $V_\lambda = \bigcup_{\alpha &lt; \lambda} V_\alpha$</li>
+</ul>
+
+<p>The first few $V_\alpha$ are as follows:</p>
+
+<ul>
+  <li>$V_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$V_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$V_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$V_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>The collection of all $V_\alpha$ for every ordinal $\alpha$ is called the <strong>Von Neumann universe</strong>.</p>
+
+\[V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha\]
+
+<p>When $x \in y \in z$ implies $x \in z$, we call $z$ a <strong>transitive set</strong>. This is an important property of $V$.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>For $\alpha \in \mathrm{Ord}$, $V_\alpha$ is transitive.</li>
+    <li>$V$ is transitive.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> By transfinite induction.</p>
+
+<p>Accordingly, we can also define $V$ as follows:</p>
+
+<ul>
+  <li>$V_0 = \varnothing$</li>
+  <li>$V_{\alpha + 1} = \mathcal{P}(V_\alpha)$</li>
+  <li>When $\lambda$ is a limit ordinal, $V_\lambda = \bigcup_{\alpha &lt; \lambda}V_\alpha$</li>
+</ul>
+
+<p>Intuitively, $V$ appears to contain all sets. Indeed, we can prove the following:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $x$ is a set, then $x \in V$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> For a set $x$, we define the <strong>transitive closure</strong> $\bar{x}$ of $x$ as the smallest transitive set containing $x$ as an element. Note that this is well-defined as the intersection of transitive sets is transitive.</p>
+
+<p>Assume $x \notin V$. By the axiom of separation, $y = \lbrace  u \in \bar{x} : u \notin V \rbrace$ is a set, and by the axiom of foundation, there exists an $\in$-minimal element $z$ of $y$. If there exists $w \in z$ such that $w \notin V$, then by transitivity $w \in y$, contradicting the $\in$-minimality of $z$. Therefore, all elements of $z$ are in $V$, and by the axiom of replacement, $\Omega = \lbrace  \alpha \in \mathrm{Ord} \mid \exists w \in z : w \in V_\alpha\rbrace$ is a set. Let $\beta = \bigcup_{\alpha \in \Omega}\alpha$. Then $\beta$ is an ordinal, and $z \in V_{\beta + 1}$. (This is where the definition of von Neumann universe $V_{\beta + 1} = \mathcal{P}(V_\beta)$ is invoked.) This yields a contradiction. ■</p>
+
+<p>Consequently, $V$ is not a set. Therefore, while $V$ is a model of ZFC in the sense that it contains all sets, <a href="https://math.stackexchange.com/questions/56726/how-can-there-be-genuine-models-of-set-theory">many mathematicians require models to be sets</a>, so it is not a model in the strict sense. (This explains why our proof that $V$ is a ‘model’ of ZFC does not contradict Gödel’s incompleteness theorems; within ZFC, $V$ is not recognised as a valid set-theoretic object.) However, for convenience, in this article, we shall refer to $V$ as a model of set theory. Moreover, we shall understand $x \in V$ as a formal expression for “$x$ is a set”.</p>
+
+<h3 id="12-gödel-constructible-universe">1.2. Gödel Constructible Universe</h3>
+
+<p>First, we define <a href="https://dimenerno.github.io/2025/05/13/saturation">constructibility</a> as follows:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathfrak{A}$ be an $\mathcal{L}$-structure and let $A$ be the underlying domain of $\mathfrak{A}$. $u$ is <strong>constructible</strong> from $\mathfrak{A}$ if there exist some $\mathcal{L}$-formula $\phi(y, x_1, \dots, x_n)$ and $a_1, \dots, a_n \in A$ such that the following holds:</p>
+
+\[y \in u \iff y \in A \land \mathfrak{A} \vDash \phi(y, a_1, \dots, a_n)\]
+</blockquote>
+
+<p>Sometimes we abuse the notation and say that $u$ is constructible from $A$.</p>
+
+<p>For example, with respect to the standard model of arithmetics, the following constructs $u = \lbrace  1, 2 \rbrace$:</p>
+
+<ul>
+  <li>$\phi(y, x_1, x_2) : (y = x_1) \lor (y = x_2)$</li>
+  <li>$a_1 = 1, a_2 = 2$</li>
+</ul>
+
+<p>The following constructs $u = \lbrace 2, 5, 10, 17, \dots \rbrace$:</p>
+
+<ul>
+  <li>$\phi(y, x_1) : \exists z (z \cdot z + x_1 = y)$</li>
+  <li>$a_1 = 1$</li>
+</ul>
+
+<p>Gödel’s constructibility differs from constructibility in the general sense, namely expressibility in language. For instance, since the set of real numbers expressible in language is countable, some real numbers cannot be expressed in language. Let such a real number be $r$. With respect to the standard model of real numbers, the following “constructs” $u = \lbrace  r \rbrace$:</p>
+
+<ul>
+  <li>$\phi(y, x_1) : x_1 = y$</li>
+  <li>$a_1 = r$</li>
+</ul>
+
+<p>That is, Gödel’s constructibility is more versatile than linguistic constructibility in that it allows initialisation of free variables to arbitrary elements. Nonetheless, it is constrained to have only finite number of free variables.</p>
+
+<p>We now define $\lbrace  L_\alpha \rbrace$ using transfinite recursion:</p>
+
+<ul>
+  <li>$L_0 = \varnothing$</li>
+  <li>$L_{\alpha + 1} = \lbrace  x : x \text{ is constructible from } L_\alpha  \rbrace$</li>
+  <li>When $\lambda$ is a limit ordinal, $L_\lambda = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+  <li>$L = \bigcup_{\alpha &lt; \lambda} L_\alpha$</li>
+</ul>
+
+<p>We can easily show that $L_\alpha = V_\alpha$ when $\alpha &lt; \omega$. Specifically, when $\alpha = n$, we can construct $x \in V_\alpha$ with at most $n$ disjunctions. Therefore:</p>
+
+<ul>
+  <li>$L_1 = \lbrace  \varnothing \rbrace$</li>
+  <li>$L_2 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace \rbrace$</li>
+  <li>$L_3 = \lbrace  \varnothing, \lbrace  \varnothing \rbrace, \lbrace  \lbrace  \varnothing \rbrace \rbrace, \lbrace  \varnothing, \lbrace  \lbrace  \varnothing\rbrace \rbrace  \rbrace$</li>
+  <li>$L_\omega = \mathsf{HF}$</li>
+</ul>
+
+<p>However, $L_{\omega + 1} \subsetneq V_{\omega + 1}$. This is because although $\mathcal{P}(\mathbb{N}) \subset V_{\omega + 1}$ is uncountable, since the set of first-order logical sentences and $L_\omega$ are both countable, $L_{\omega + 1}$ is countable. In general, when $\alpha$ is countable, $L_\alpha$ is countable.</p>
+
+<p>Nevertheless, $L$ shares many properties with $V$. For instance:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For $\alpha \in \mathrm{Ord}$, the following hold:</p>
+
+  <ol>
+    <li>$L_\alpha$ is transitive. (Therefore $L$ is transitive)</li>
+    <li>$\alpha \in L_{\alpha + 1} \setminus L_{\alpha}$</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> By transfinite induction.</p>
+
+<p>Note that $L$ is not a set since it contains all ordinals. However, there exists a first-order formula $\mathsf{IsInL}_\alpha(x)$ that expresses $x \in L_\alpha$. The proof is intricate and involves arithmetising propositions using Gödel numbers. (<a href="https://math.stackexchange.com/questions/198437/a-formula-that-defines-constructible-universe">See link</a>) At any rate, this means that we may understand $x \in L$ as a formal expression expressing $\exists \alpha \in \mathrm{Ord} :\mathsf{IsInL}_\alpha(x)$. The two will be co-extensional for models of ZF.</p>
+
+<h2 id="2-relativisation">2. Relativisation</h2>
+
+<h3 id="21-relativisation-of-formulas">2.1. Relativisation of Formulas</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $T$ be an $\mathcal{L}$-theory and $\psi$ an $\mathcal{L}$-formula. We define the <strong>relativisation</strong> $\phi^\psi$, read as the relativisaion of $\phi$ respect to $\psi$, as the formula where all quantifiers in $\phi$ are restricted to satisfy $\psi$.</p>
+</blockquote>
+
+<p>Using $\mathsf{PA}$ as an example, if $\psi(x) : \exists z(z + z = x)$ and $\phi(x) : \exists z(z \cdot z = x)$, then:</p>
+
+\[\phi^\psi(x) : \exists z (\psi(z) \land z \cdot z = x)\]
+
+<p>Semantically, $\phi(x)$ expresses “$x$ is a perfect square” while $\phi^\psi(x)$ expresses “$x$ is a square of an even number”.</p>
+
+<p>When it is clear that what $\psi(x)$ is supposed to express is $x \in S$, then we abuse the notation and write $\phi^S$ instead of $\phi^\psi$. Hence in the case of the previous example, we may write $\phi^E$ instead, where $E$ is the set of even numbers. That is,</p>
+
+\[\phi^E(x) : \exists z \in E (z \cdot z = x)\]
+
+<p>To use a bit of metaphoric expression, $\phi^S$ is how $\phi$ is “seen from” $S$.</p>
+
+<p>For example, let $o(x)$ be the first-order formula expressing “$x$ is an ordinal”. Specifically, it is defined as:</p>
+
+\[o(x) : \mathrm{tr}(x) \land \forall y \in x \; \mathrm{tr}(y)\]
+
+<p>where $\mathrm{tr}(x) : \forall y \in x \; \forall z \in y (z \in x)$ expresses “$x$ is transitive”. By the abuse of notation, we may write $\phi^{\mathrm{Ord}}$ instead of $\phi^o$. $\phi^{\mathrm{Ord}}$ is how $\phi$ is “seen from” the class of all ordinals. Define:</p>
+
+<ul>
+  <li>$\phi_1 : \forall x \exists y \forall z (z \subset x \rightarrow z \in y)$</li>
+  <li>$\phi_2 : \forall x \forall y \exists z (z = x \cup y)$</li>
+</ul>
+
+<p>That is, $\phi_1$ expresses closure under power set operation and $\phi_2$ expresses closure under set union. We have:</p>
+
+<ul>
+  <li>$\mathsf{ZFC} \not\vdash \phi_1^\mathrm{Ord}$</li>
+  <li>$\mathsf{ZFC} \vdash \phi_2^\mathrm{Ord}$,</li>
+</ul>
+
+<p>since the set of ordinals is closed under union but not under power set. Put in another way, $\phi_1$ successfully distinguishes the class of all sets — what ZFC tries to describe — and the class of ordinals, while $\phi_2$ cannot. Generalising this observation, for a theory $T$ and a set $A$, the more formulas $\phi$ such that $T \vdash \phi \leftrightarrow \phi^A$, the better $A$ “conforms” to the description of $T$.</p>
+
+<p>This leads us to the following definition.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For an $\mathcal{L}$-theory $T$ and a set $A$, $\phi$ is said to be <strong>absolute</strong> with respect to $A$ if for every $\mathcal{L}$-formula $\phi$,</p>
+
+\[T \vdash \forall x_1, \dots, x_n \in A (\phi(x_1, \dots, x_n) \leftrightarrow \phi^A(x_1, \dots, x_n))\]
+</blockquote>
+
+<p>Note that the definition simply becomes $T \vdash \phi^A$ when $\phi$ has no free variables, and it is given that $T \vdash \phi$.</p>
+
+<h3 id="22-l-relativisation">2.2. $L$-Relativisation</h3>
+
+<p>Our goal now is to show that the axioms of ZF are absoulte with respect to $L$. That is:</p>
+
+<blockquote>
+  <p><strong>Theorem 1.</strong> If $\phi$ is an axiom of ZF, then $\mathsf{ZF} \vdash \phi^L$.</p>
+</blockquote>
+
+<p>That is to say,</p>
+
+<blockquote>
+  <p>“When <em>seen from</em> $L$, $L$ is a model of ZF” can be proved in ZF.</p>
+</blockquote>
+
+<p>Of course, we only know that $L \subset V$ and do not know whether $V = L$, which leaves open the possibility of some set $x$ not belonging to $L$. Yet according to Theorem 1 states is that, even if there exists such a set $x$, its abscence does not break the <em>internal consistency</em> of $L$.</p>
+
+<p>For example, suppose some set $x = \lbrace  y, z \rbrace$ is absent from $L$. At first glance, the absence of $x$ seems to suggest that $L$ does not satisfy the pairing axiom $\mathsf{Pair}$:</p>
+
+\[\mathsf{Pair} := \forall y, z \; \exists x \; \forall w: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>However, the pairing axiom as viewed from inside $L$ is:</p>
+
+\[\mathsf{Pair}^L := \forall y, z \in L \; \exists x \in L \; \forall w \in L: w \in x \leftrightarrow (w = y \lor w = z)\]
+
+<p>Note that the quantification $\forall y, z$ is also restricted to $L$. That is, the absence of $x = \lbrace  y, z \rbrace$ causes problems in $L$ <em>only when</em> $y, z \in L$. Conversely, if $x = \lbrace  y, z \rbrace \notin L$ implies $y, z \notin L$, then $L$ satisfies $\mathsf{Pair}^L$. This is, $L$ lacks sets only in a way that maintains internal consistency.</p>
+
+<p>Although we do not give the full proof, we highlight that the key reason Theorem 1 holds is that $L$, like $V$, is a transitivie class of sets, which leads to the following lemma.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> The following predicates are absolute with respect to $L$ in ZF:</p>
+
+  <ol>
+    <li>$x \in y$</li>
+    <li>$x \subset y$</li>
+    <li>$x = \bigcup y$</li>
+    <li>$x = \lbrace  y, z \rbrace$</li>
+    <li>$\alpha \in \mathrm{Ord}$</li>
+    <li>$x$ is transitive</li>
+    <li><a href="https://math.stackexchange.com/questions/404699/delta-0-formulas">$\Delta_0$ formulas</a></li>
+  </ol>
+</blockquote>
+
+<p>From this lemma, it is not too difficult to prove Theorem 1. Moreover, we can prove:</p>
+
+<blockquote>
+  <p><strong>Theorem 2.</strong> $\mathsf{ZF} \vdash (V = L)^L$</p>
+</blockquote>
+
+<p>Here, $V = L$ is a formal expression standing for $\forall x (x \in L)$. At first glance it may seem that $(V = L)^L$ is thus the trivial proposition $\forall x \in L (x \in L)$. However, when we actually expand $V = L$ as a first-order formula, we have:</p>
+
+\[\forall x \; \exists \alpha  \; (\alpha \in \mathrm{Ord} \land x \in L_\alpha)\]
+
+<p>so $(V = L)^L$ becomes:</p>
+
+\[\forall x \in L \; \exists \alpha \in L \; (\alpha \in \mathrm{Ord})^L \land (x \in L_\alpha)^L\]
+
+<p>Note particularly that since $\alpha \in \mathrm{Ord}$ and $x \in L_\alpha$ are formal expressions of first-order formulas rather than a genuine $\in$-relation, they must likewise be relativised to $L$. Thus, to prove $(V = L)^L$ in ZF, <em>we must prove that $\alpha \in \mathrm{Ord}$ and $x \in L_\alpha$ are also absolute</em>. The former follows from the previous lemma, and the latter also “almost” follows from the lemma, except that $x \in L_\alpha$ is a $\Sigma_1$-sentence, so slightly more argument is required to secure its absoluteness.</p>
+
+<p>From Theorems 1 and 2, we can prove:</p>
+
+<blockquote>
+  <p><strong>Theorem 3.</strong> $\mathsf{ZFL} \vdash \phi \implies \mathsf{ZF} \vdash \phi^L$</p>
+</blockquote>
+
+<p><strong>Proof.</strong> We prove by induction on the proof length of $\mathsf{ZFL} \vdash \phi$. When the proof length is 0, $\phi$ is an axiom of ZFL. When $\phi$ is an axiom of ZF, it follows from Theorem 1, and when $\phi$ is $V = L$, it follows from Theorem 2.</p>
+
+<p>Now assume $\phi$ is proved by applying an inference rule to $\lbrace  \psi_1, \dots, \psi_n \rbrace$. The proof length of $\psi_k$ is smaller than that of $\phi$, so by the induction hypothesis $\mathsf{ZF} \vdash \psi_k^L$. We can easily show that logical axioms and inference rules are absolute with respect to $L$. Using modus ponens as an example, this means that:</p>
+
+\[\mathsf{ZF} \vdash ((\phi \land \phi \rightarrow \psi) \rightarrow \psi)^L\]
+
+<p>Therefore, if $(\psi_1 \land \dots \land \psi_n) \rightarrow \phi$ is logically valid, then $(\psi_1^L \land \dots \land \psi_n^L) → \phi^L$ is also logically valid, and consequently $\mathsf{ZF} \vdash \phi^L$. ■</p>
+
+<p>As a corollary of Theorem 3, we obtain Theorem 4:</p>
+
+<blockquote>
+  <p><strong>Theorem 4.</strong> If ZF is consistent, then ZFL is also consistent.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> If ZFL is inconsistent, then $\mathsf{ZFL} \vdash \varnothing \neq \varnothing$, and by Theorem 3, $\mathsf{ZF} \vdash (\varnothing \neq \varnothing)^L \iff \mathsf{ZF} \vdash \varnothing \neq \varnothing$, which contradicts the consistency of ZF. ■</p>
+
+<p>Therefore, <strong>V = L is consistent with ZF</strong>.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/05/transfinite-recursion"> 초한귀납과 초한재귀 </a>
+      </h1>
+    <span class="post-date">05 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <h3 id="1-초한귀납법">1. 초한귀납법</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $P$가 서수 위에서 정의된 속성이고 임의의 $\alpha \in \mathrm{Ord}$에 대해</p>
+
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha)\]
+
+  <p>가 성립할 때, $P$는 모든 서수에 대해 참이다.</p>
+</blockquote>
+
+<p><em>Remark.</em> $P$의 정의역인 $\mathrm{Ord}$는 집합이 아닌 진모임<sub>proper class</sub>이므로 “술어” 대신 “속성”이란 표현을 사용한다.</p>
+
+<p><strong>증명.</strong> 서수가 정렬 순서라는 사실과 귀류법을 사용한다.</p>
+
+<p>$\lnot P(\lambda)$인 $\lambda$가 존재한다고 하자. $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$는 공집합이 아닌 정렬 집합이므로 최소 원소 $\alpha_0$가 존재한다. 이때 $\forall \beta &lt; \alpha_0 : P(\beta)$이므로 가정에 의해 $P(\alpha_0)$가 되어 모순이다. ■</p>
+
+<p><strong>응용.</strong> 폰 노인만 계층에서 $V_\alpha$는 추이적이다. 따라서 $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$ 대신 $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$로 정의할 수 있다.</p>
+
+<h3 id="2-초한재귀적-정의">2. 초한재귀적 정의</h3>
+
+<p><em>Motivation.</em> 자연수의 재귀적 정의를 생각해 보자. $n$개의 집합 $x_1, \dots , x_n$이 주어졌을 때 집합을 출력하는 함수 $g$가 존재한다면 다음과 같이 $f: \mathbb{N} → V$을 정의할 수 있을 것이다.</p>
+
+\[f(n) = g(f(0), \dots, f(n - 1))\]
+
+<p>문제는 $g$가 고정된 수의 매개변수만을 가질 수 있다는 것이다. 따라서 다음과 같이 $g$의 매개변수를 순서쌍으로 묶는다.</p>
+
+\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
+
+<p>이 순서쌍은 $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$과 같이 표현할 수 있다. 즉,</p>
+
+\[f(n) = g(f \upharpoonright n).\]
+
+<p>이를 서수에 대해서 일반화하면 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $G: V → V$가 모임함수(class function)이라고 하자. 다음을 만족하는 모임함수 $F: \mathrm{Ord} → V$가 존재한다.</p>
+
+\[F(\alpha) = G(F \upharpoonright \alpha)\]
+</blockquote>
+
+<p><strong>증명.</strong> 초한귀납법을 겁나게 쓰면 된다. (불친절해서 ㅈㅅ)</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/05/transfinite-recursion/en"> Transfinite Induction and Transfinite Recursion </a>
+      </h1>
+    <span class="post-date">05 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <h3 id="1-transfinite-induction">1. Transfinite Induction</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $P$ be a property defined on ordinals, and suppose that for any $\alpha \in \mathrm{Ord}$,</p>
+
+\[[ \forall \beta &lt; \alpha : P(\beta)] → P(\alpha).\]
+
+  <p>Then $P$ is true for all ordinals.</p>
+</blockquote>
+
+<p><em>Remark.</em> Since $\mathrm{Ord}$, the domain of $P$, is a proper class rather than a set, we use the term “property” instead of “predicate”.</p>
+
+<p><strong>Proof.</strong> Suppose there exists $\lambda$ such that $\lnot P(\lambda)$. Then $\Omega = \lbrace  \alpha \in \lambda : \lnot P(\alpha) \rbrace$ is a non-empty well-ordered set, so it has a minimal element $\alpha_0$. Since $\forall \beta &lt; \alpha_0 : P(\beta)$, by hypothesis we have $P(\alpha_0)$, which is a contradiction. ■</p>
+
+<p><strong>Application.</strong> Show that the von Neumann hierarchy may be defined as $V_{\alpha + 1} = \mathcal{P}(V_\alpha)$ instead of $V_{\alpha + 1} = V_\alpha \cup \mathcal{P}(V_\alpha)$.</p>
+
+<h3 id="2-transfinite-recursive-definition">2. Transfinite Recursive Definition</h3>
+
+<p><em>Motivation.</em> Consider recursive definitions on natural numbers. Given $n$ sets $x_1, \dots , x_n$ and a function $g$ that outputs a set, we would like to define $f: \mathbb{N} → V$ as follows:</p>
+
+\[f(n) = g(f(0), \dots, f(n - 1))\]
+
+<p>The problem is that $g$ can only take a fixed number of parameters. Therefore, we group the parameters of $g$ into an ordered pair:</p>
+
+\[f(n) = g(\langle f(0), \dots, f(n - 1) \rangle)\]
+
+<p>This ordered pair can be represented as $\lbrace  (0, f(0)), \dots, (n - 1, f(n - 1)) \rbrace = f \upharpoonright n$. That is,</p>
+
+\[f(n) = g(f \upharpoonright n).\]
+
+<p>Generalising this to ordinals, we obtain the following:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $G: V → V$ be a class function. There exists a class function $F: \mathrm{Ord} → V$ satisfying</p>
+
+\[F(\alpha) = G(F \upharpoonright \alpha)\]
+</blockquote>
+
+<p><strong>Proof.</strong> Apply transfinite induction extensively. (Sorry for the brevity, lol.) It is worth remarking that the proof does not depend on the axiom of choice, for the well-orderedness of ordinals is provable from ZF. Note, however, that the proof that every well-ordered set is order isomorophic to an ordinal <em>does</em> require AC.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/01/net"> 콤팩트성과 그물 </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <h3 id="콤팩트성">콤팩트성</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $X$가 위상공간이라고 하자.</p>
+
+  <ol>
+    <li>임의의 열린 덮개가 유한한 부분덮개를 가질 때 $X$를 <strong>콤팩트</strong>하다고 한다.</li>
+    <li>임의의 점렬 $\lbrace x_n \in X \rbrace$가 수렴하는 부분점렬을 가질 때 $X$를 <strong>점렬 콤팩트<sub>sequentially compact</sub></strong>하다고 한다.</li>
+    <li>임의의 무한집합 $S \subset X$가 극점을 가질 때 $X$를 <strong>극점 콤팩트<sub>limit point compact</sub></strong>하다고 한다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>점렬 콤팩트 $\rightarrow$ 극점 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 콤팩트</li>
+    <li>극점 콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><img src="/public/three-compactness.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$S \subset X$가 극점이 없는 무한집합이라고 하자. $\overline{S} = S \cup S’ = S$이므로 $S$는 닫힌 집합이며, $X \setminus S$는 열린 집합이다. 임의의 $s \in S$에 대해, $s$가 극점이 아니므로 $U_s \cap S = \lbrace  s \rbrace$인 $s$의 근방 $U_s$가 존재한다. 따라서 다음 $X$의 열린 덮개는 유한한 부분덮개를 가지지 않는다.</li>
+</ol>
+
+\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
+
+<ol>
+  <li>$S \subset X$가 무한집합이라고 하자. $S$의 원소들을 임의로 추출하여 점렬 $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$을 만든다. $X$가 점렬 콤팩트하므로 $\lbrace  s_n \rbrace → s$이며, $s$는 $S$의 극점이다.</li>
+  <li>순서 토폴로지가 주어진 $\omega_1$은 극점 콤팩트하지만 콤팩트하지 않다.</li>
+  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, $\mathbb{N}$에는 이산 토폴로지가 주어지고 $\lbrace  0, 1\rbrace$에는 자명한 토폴로지가 주어짐.</li>
+</ol>
+
+<p><strong>Remark.</strong> 4의 올바르지 못한 “증명”</p>
+
+<blockquote>
+  <p>$X$가 극점 콤팩트하다고 하자. 점렬 $(x_n)$이 주어졌을 때, $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$이 유한집합이라면 $(x_n)$은 수렴하는 부분점렬을 자명하게 가진다. $S$가 무한집합이라면 $X$의 극점 콤팩트성에 의해 $x \in S’$가 존재한다. <strong>이제 다음 조건을 만족하는 $x$의 근방들의 가산 모임 $\mathcal{U} = \lbrace  U_n \rbrace$을 정의한다.</strong></p>
+
+  <ol>
+    <li>$n &lt; m \implies U_n \supset U_m$</li>
+    <li>$V$가 $x$의 근방일 때, $\exists U \in \mathcal{U} : U \subset V$</li>
+  </ol>
+
+  <p>이로부터 다음 조건을 만족하는 함수 $k: \mathbb{N} → \mathbb{N}$을 정의할 수 있다.</p>
+
+  <ol>
+    <li>$x_{k(n)} \in U_n$</li>
+    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+    <li>$n \neq m \implies x_{k(n)} \neq x_{k(m)}$</li>
+  </ol>
+
+  <p>2가 가능한 이유는 $k(i)$가 $i \leq n$까지 정의되었을 때 $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$가 여전히 $x$를 극점으로 가지기 때문이다. 즉, $(x_n)$은 수렴하는 부분점렬 $(x_{k(n)})$을 가진다.</p>
+</blockquote>
+
+<p>위 증명이 올바르지 않은 이유는 볼드체 부분이 일반적으로 가능하지 않기 때문이다. 대신 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 1차 가산 $T_1$ 공간에서 극점 콤팩트성과 점렬 콤팩트성은 동치이다.</p>
+</blockquote>
+
+<p>$T_1$은 조건 3을 일반적으로 성립시키는 데 필요하다.</p>
+
+<h3 id="그물과-점렬">그물과 점렬</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 원순서<sub>preorder</sub>라고 하자. 임의의 $x, y \in J$에 대해 $x, y \leq z$인 $z \in J$가 존재한다면 $(J, \leq)$를 <strong>방향 집합<sub>directed set</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $K$가 $(J, \leq)$의 부분집합이라고 하자. 임의의 $x \in J$에 대해 $x \leq y$인 $y \in K$가 존재한다면 $K$를 <strong>공종<sub>cofinal</sub></strong>이라고 한다.</p>
+</blockquote>
+
+<p><strong>Remark 1.</strong> $(J, \leq)$가 방향 집합이면 $J$는 $J$에서 자명하게 공종이다. 한편 $K \subset J$가 공종이라면 $(K, \leq)$ 또한 방향 집합이다.</p>
+
+<p><strong>Remark 2.</strong> 이후 드러나듯이, 방향성은 수렴의 일반화와 관련되는 조건이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $(J, \leq)$가 방향 집합이라고 하자. 위상공간 $X$에 대해 $J$에서 $X$로 가는 함수 $f: J → X$를 <strong>그물<sub>net</sub></strong>이라고 한다. 특히, $\alpha \in J$에 대해 $f(\alpha)$를 $x_\alpha$와 같이 표기한다.</p>
+</blockquote>
+
+<p><img src="/public/directed-set-net.png" style="width: 100%; max-width: 600px; margin: 0 auto" /></p>
+
+<blockquote>
+  <p><strong>정의.</strong> 그물 $(x_\alpha)$가 $x$로 수렴한다는 것은, 임의의 $x$의 근방 $U$에 대해 어떤 $\alpha \in J$가 존재하여</p>
+
+\[\alpha \leq \beta \implies x_\beta \in U\]
+
+  <p>인 것이다.</p>
+</blockquote>
+
+<p>방향성에 의해, 특정한 $\alpha \in J$에 대해 $\alpha \leq \beta$인 $\beta$들만 고려해도 $\mathrm{im} f$ 전체를 포섭할 수 있음을 유의하라. 즉, 임의의 $x_\gamma$에 대해 $\alpha, \gamma \leq \beta$인 $\beta$가 존재한다. 달리 말해, 그물이 $x$로 수렴한다는 것은 임의의 $x$의 근방 $U$가 주어졌을 때, 그물의 어느 원소에서 시작하든 간에 위로 충분히 올라가다 보면 어느 지점부터 이후의 모든 원소가 $U$에 속한다는 것이다.</p>
+
+<p>일반 위상 공간에서의 그물의 수렴은 1차 가산 공간에서 점렬의 수렴과 대응된다. 즉,</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 1차 가산 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 점렬 $(x_n)$이 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 점렬 $(x_n)$에 대해 $x_n → x$라면 $f(x_n) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 위상 공간이라고 하자.</p>
+
+  <ol>
+    <li>$A \subset X$에 대해, $x \in \bar{A}$일 필요충분조건은 $x$로 수렴하는 그물 $(x_\alpha)$가 존재하는 것이다.</li>
+    <li>$f: X → Y$에 대해, $f$가 연속일 필요충분조건은 임의의 그물 $(x_\alpha)$에 대해 $x_\alpha → x$라면 $f(x_\alpha) → f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$\mathcal{U}_x$를 $x$의 근방들의 집합이라고 하자. 역포함관계로 $\mathcal{U}_x$에 순서 $\leq$를 준다. $x \in \bar{A}$라면 임의의 $U_\alpha \in \mathcal{U}_x$에 대해 $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$인 $x_\alpha$가 존재한다. $x_\alpha → x$임을 확인하라.</li>
+</ol>
+
+<blockquote>
+  <p><strong>정의.</strong> $(x_\alpha)_{\alpha \in J}$가 그물이라고 하자. $(I, \preceq)$가 방향 집합이고, $g: (I, \preceq) → (J, \leq)$가 순서 보존이며, $\operatorname{im}g$가 공종일 때, $(x_{g(\beta)})_{\beta \in I}$를 $(x_\alpha)$의 부분그물이라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $X$가 콤팩트할 필요충분조건은 임의의 그물이 수렴하는 부분그물을 가지는 것이다.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> ”수렴하는 점렬이 존재한다“는 ”수렴하는 그물이 존재한다“보다 강한 조건이지만, ”임의의 점렬이 수렴하는 부분점렬을 가진다”는 “임의의 그물이 수렴하는 부분그물을 가진다”보다 강하지도, 약하지도 않은 조건임에 유의하라. 주어는 후자가 더 강하고, 술어는 전자가 더 강하다. 따라서 <strong>콤팩트성과 점렬 콤팩트성은 일반적으로 시사 관계가 없다.</strong> 구체적으로,</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>콤팩트 $\not\rightarrow$ 점렬 콤팩트</li>
+    <li>점렬 콤팩트 $\not\rightarrow$ 콤팩트</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<ol>
+  <li>$[0, 1]^{[0, 1]}$은 티호노프 정리에 의해 콤팩트하지만 점렬 콤팩트하지 않다.</li>
+  <li>Long line과 $\omega_1$은 점렬 콤팩트하지만 콤팩트하지 않다.</li>
+</ol>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/01/net/en"> Compactness and Nets </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <h3 id="compactness">Compactness</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $X$ be a topological space.</p>
+
+  <ol>
+    <li>$X$ is said to be <strong>compact</strong> if every open cover has a finite subcover.</li>
+    <li>$X$ is said to be <strong>sequentially compact</strong> if every sequence $\lbrace x_n \in X \rbrace$ has a convergent subsequence.</li>
+    <li>$X$ is said to be <strong>limit point compact</strong> if every infinite set $S \subset X$ has a limit point.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>Compact $\rightarrow$ Limit point compact</li>
+    <li>Sequentially compact $\rightarrow$ Limit point compact</li>
+    <li>Limit point compact $\not\rightarrow$ Compact</li>
+    <li>Limit point compact $\not\rightarrow$ Sequentially compact</li>
+  </ol>
+</blockquote>
+
+<p><img src="/public/three-compactness.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>Let $S \subset X$ be an infinite set with no limit points. Since $\overline{S} = S \cup S’ = S$, $S$ is a closed set and $X \setminus S$ is an open set. For any $s \in S$, since $s$ is not a limit point, there exists a neighbourhood $U_s$ of $s$ such that $U_s \cap S = \lbrace  s \rbrace$. Therefore, the following open cover of $X$ has no finite subcover:</li>
+</ol>
+
+\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
+
+<ol>
+  <li>Let $S \subset X$ be an infinite set. Arbitrarily extract elements of $S$ to form a sequence $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$. Since $X$ is sequentially compact, $\lbrace  s_n \rbrace → s$, and $s$ is a limit point of $S$.</li>
+  <li>$\omega_1$ with the order topology is limit point compact but not compact.</li>
+  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, where $\mathbb{N}$ is given the discrete topology and $\lbrace  0, 1\rbrace$ is given the trivial topology.</li>
+</ol>
+
+<p><strong>Remark.</strong> An incorrect “proof” of 4</p>
+
+<blockquote>
+  <p>Suppose $X$ is limit point compact. Given a sequence $(x_n)$, if $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$ is a finite set, then $(x_n)$ trivially has a convergent subsequence. If $S$ is an infinite set, then by the limit point compactness of $X$, there exists $x \in S’$. <strong>Now we define a countable collection of neighbourhoods of $x$, $\mathcal{U} = \lbrace  U_n \rbrace$, satisfying the following conditions:</strong></p>
+
+  <ol>
+    <li>$n &lt; m \implies U_n \supset U_m$</li>
+    <li>For any neighbourhood $V$ of $x$, $\exists U \in \mathcal{U} : U \subset V$</li>
+  </ol>
+
+  <p>From this, we can define a function $k: \mathbb{N} → \mathbb{N}$ satisfying the following conditions:</p>
+
+  <ol>
+    <li>$x_{k(n)} \in U_n$</li>
+    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+    <li>$n \neq m \implies x_{k(n)} \neq x_{k(m)}$</li>
+  </ol>
+
+  <p>Condition 2 is possible because when $k(i)$ is defined for $i \leq n$, $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$ still has $x$ as a limit point. Thus, $(x_n)$ has a convergent subsequence $(x_{k(n)})$.</p>
+</blockquote>
+
+<p>The above proof is incorrect because the bold portion is not generally possible. Consider, for instance, a topological space where $x \in S’$ has uncountably many neighbourhoods which form uncountably infinite distinct classes of containment chain. Hence, in the diagram below, the same-coloured sets contain one or the other properly, but distinct-coloured sets do not, although they need not be strictly disjoint either. Such a space may be limit point compact yet not be sequentially compact, for there is no guaranteed way to enumerate the points of $S$ into a series such that whichever open set one chooses, for a large enough index, all points after that index is included in that open set. (Exercise: Convince yourself that this is not the case if the open sets can be arranged to form only finite distinct classes of chain, or countably infinite distinct classes of chain.)</p>
+
+<p><img src="/public/limit-vs-sequential.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
+
+<p>Instead, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> In first countable $T_1$ spaces, limit point compactness and sequential compactness are equivalent.</p>
+</blockquote>
+
+<p>Note that $T_1$-ness is also required, for without it Condition 3 cannot be guaranteed.</p>
+
+<h3 id="nets-and-sequences">Nets and Sequences</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(J, \leq)$ be a preorder. If for any $x, y \in J$, there exists $z \in J$ such that $x, y \leq z$, then $(J, \leq)$ is called a <strong>directed set</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $K$ be a subset of $(J, \leq)$. If for any $x \in J$, there exists $y \in K$ such that $x \leq y$, then $K$ is said to be <strong>cofinal</strong>.</p>
+</blockquote>
+
+<p><strong>Remark 1.</strong> If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.</p>
+
+<p><strong>Remark 2.</strong> As will be shown, cofinality is related with the generalisation of convergence.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(J, \leq)$ be a directed set. For a topological space $X$, a function $f: J → X$ is called a <strong>net</strong>. In particular, for $\alpha \in J$, we denote $f(\alpha)$ as $x_\alpha$.</p>
+</blockquote>
+
+<p><img src="/public/directed-set-net.png" style="width: 100%; max-width: 600px; margin: 0 auto" /></p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A net $(x_\alpha)$ converges to $x$ if, for any neighbourhood $U$ of $x$, there exists some $\alpha \in J$ such that</p>
+
+\[\alpha \leq \beta \implies x_\beta \in U\]
+</blockquote>
+
+<p>The convergence of nets in general topological spaces corresponds to the convergence of sequences in first countable spaces. That is,</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $X$ be a first countable space.</p>
+
+  <ol>
+    <li>For $A \subset X$, $x \in \bar{A}$ if and only if there exists a sequence $(x_n)$ converging to $x$.</li>
+    <li>For $f: X → Y$, $f$ is continuous if and only if for any sequence $(x_n)$, if $x_n → x$ then $f(x_n) → f(x)$.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $X$ be a topological space.</p>
+
+  <ol>
+    <li>For $A \subset X$, $x \in \bar{A}$ if and only if there exists a net $(x_\alpha)$ converging to $x$.</li>
+    <li>For $f: X → Y$, $f$ is continuous if and only if for any net $(x_\alpha)$, if $x_\alpha → x$ then $f(x_\alpha) → f(x)$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>Let $\mathcal{U}_x$ be the set of neighbourhoods of $x$. Give $\mathcal{U}_x$ the order $\leq$ by reverse inclusion. If $x \in \bar{A}$, then for any $U_\alpha \in \mathcal{U}_x$, there exists $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$. Verify that $x_\alpha → x$.</li>
+</ol>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(x_\alpha)_{\alpha \in J}$ be a net. If $(I, \preceq)$ is a directed set, $g: (I, \preceq) → (J, \leq)$ is order-preserving, and $\operatorname{im}g$ is cofinal, then $(x_{g(\beta)})_{\beta \in I}$ is called a subnet of $(x_\alpha)$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $X$ is compact if and only if every net has a convergent subnet.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> Note that “there exists a convergent sequence” is a stronger condition than “there exists a convergent net”, but “every sequence has a convergent subsequence” is neither stronger nor weaker than “every net has a convergent subnet”. The subject (for every sequence v. for every net) is stronger in the latter case, while the predicate (there exists a subsequence v. there exists a subnet) is stronger in the former case. Therefore, <strong>compactness and sequential compactness have no implication relation in general.</strong> Specifically,</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>Compact $\not\rightarrow$ Sequentially compact</li>
+    <li>Sequentially compact $\not\rightarrow$ Compact</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>$[0, 1]^{[0, 1]}$ is compact by Tychonoff’s theorem but not sequentially compact.</li>
+  <li>The long line and $\omega_1$ are sequentially compact but not compact.</li>
+</ol>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2024/12/01/baire"> 베르 범주 정리 </a>
@@ -793,954 +1822,6 @@ S = \lbrace  \alpha_a \in \mathrm{Ord} :  a \in A\rbrace
 <p>치환 공리의 필요성을 보여주는 다른 예시로, 치환 공리꼴 없이는 $\omega + \omega$의 존재성을 보장할 수 없다. 각 $n \in \mathbb{N}$에 대해 $\omega + n$이 존재함은 짝 공리와 합집합 공리로 보일 수 있지만, $\omega + \omega := \cup_{n \in \mathbb{N}} (\omega + n)$가 존재함은 보일 수 없다. 그렇다고 임의의 집합들의 합집합을 허용하는 공리를 추가할 수는 없는데, 이는 “모든 집합들의 집합”을 집합으로 만듦으로써 러셀의 역설을 일으키기 때문이다.</p>
 
 <p>위 두 경우에서 우리에게 필요한 것은, “잘 정의된 일대일 대응 관계 $R(x,y)$와 집합 $X$가 주어졌을 때 $\lbrace  y : R(x, y), x \in X \rbrace$는 집합이다”라는 내용의 공리이다. 이 공리가 치환 공리이다. 치환 공리를 사용하면 $\omega = \lbrace 0, 1, 2, … \rbrace$와 관계 $R(x, y): y = \omega + x$에 대해 $\mathrm{im}R\vert_\omega = \lbrace  \omega, \omega + 1, \omega + 2, … \rbrace$가 존재하며, $\omega \cup \mathrm{im}R\vert_\omega = \omega + \omega$가 존재함을 보일 수 있다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/21/trichotomy/en"> Trichotomy and Completeness of Ordinals </a>
-      </h1>
-    <span class="post-date">21 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <h2 id="1-basic-concepts">1. Basic Concepts</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> A set $(W, &lt;)$ is called a <strong>well-ordered set</strong> if it satisfies the following conditions:</p>
-
-  <ol>
-    <li>$(W, &lt;)$ is a total order.</li>
-    <li>Every non-empty subset of $W$ has a least element.</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> If $(W, &lt;)$ is a well-ordered set, a subset $S$ of $W$ such that $x &lt; a \rightarrow x \in S$ for some $a \in S$ is called an <strong>initial segment.</strong></p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $S$ is an initial segment of a well-ordered set $(W, &lt;)$, then for some $a \in W$, the following holds:</p>
-
-\[S = W[a] := \{ x \in W : x &lt; a \}\]
-</blockquote>
-
-<p><strong>Proof.</strong> Let $a$ be the least element of $W \setminus S$.</p>
-
-<h2 id="2-trichotomy-of-order">2. Trichotomy of Order</h2>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-  <ol>
-    <li>A well-ordered set cannot be isomorphic to its initial segment.</li>
-    <li>The only order-preserving automorphism of a well-ordered set is the identity map.</li>
-    <li>The isomorphism between two well-ordered sets is unique.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong> We first prove the following lemma:</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> If $f: (W, &lt;) \to (W, &lt;)$ is order-preserving, then for all $x \in W$, $x \leq f(x)$.</p>
-</blockquote>
-
-<p><em>Proof of the Lemma.</em> Assume for contradiction that $S = \lbrace x \in W : x &gt; f(x) \rbrace$ is nonempty. Since $W$ is a well-ordered set, there exists a least element $c = \min S$. Since $c \in S$, we have $c &gt; f(c)$, and since $f$ is order-preserving, it follows that $f(c) &gt; f(f(c))$. On the other hand, since $c = \min S$, we have $f(c) \notin S$, and thus $f(f(c)) \geq f(c)$, leading to a contradiction. □</p>
-
-<p><strong>Proof of (1).</strong></p>
-
-<p>Assume $f: (W, &lt;) \to (W[a], &lt;)$ is an isomorphism. The inclusion map $j: W[a] \to W$ implies that $jf: (W, &lt;) \to (W, &lt;)$ is order-preserving. Therefore, $jf(a) \geq a$. However, since $a \notin \mathrm{im}f$, this leads to a contradiction. □</p>
-
-<p><strong>Proof of (2).</strong></p>
-
-<p>Assume $f: (W, &lt;) \to (W, &lt;)$ is an isomorphism. Since $f^{-1}$ is also an isomorphism, for all $x \in W$, we have $x \leq f(x)$ and $f(x) \leq f^{-1}(f(x)) = x$. Thus, $x = f(x)$. □</p>
-
-<p><strong>Proof of (3).</strong></p>
-
-<p>Assume $f, g: (W_1, &lt;_1) \to (W_2, &lt;_2)$ are isomorphisms. The composition $g^{-1}f: (W_1, &lt;_1) \to (W_1, &lt;_1)$ is an automorphism, and by (2), it must be the identity map. Therefore, $f = g$. ■</p>
-
-<blockquote>
-  <p><strong>Trichotomy of Order.</strong> For well-ordered sets $(W_1, &lt;_1)$ and $(W_2, &lt;_2)$, exactly one of the following holds:</p>
-
-  <ol>
-    <li>$(W_1, &lt;_1) \sim (W_2, &lt;_2)$</li>
-    <li>For some $a$, $(W_1[a], &lt;_1) \sim (W_2, &lt;_2)$</li>
-    <li>For some $b$, $(W_1, &lt;_1) \sim (W_2[b], &lt;_2)$</li>
-  </ol>
-
-  <p>In each case, the isomorphism is unique, and in cases 2 and 3, $a$ and $b$ are unique.</p>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<p>The preceding theorems guarantee that 1, 2, and 3 are mutually exclusive and establish the claim of uniqueness. Therefore, it suffices to show that any pair of well-ordered sets $(W_1, &lt;_1)$ and $(W_2, &lt;_2)$ falls into one of the three cases.</p>
-
-<p>We define a partial function $f: W_1 \to W_2$ as follows:</p>
-
-\[f := \{ (x, y) \in (W_1, W_2) : (W_1[x], &lt;_1) \sim (W_2[y], &lt;_2) \}\]
-
-<p>It can be easily verified that $f$ is injective and order-preserving. We now consider two cases.</p>
-
-<p><em>Case 1.</em> $\mathrm{dom} f = W_1$</p>
-
-<p>This corresponds to case 3 of the theorem, concluding the proof.</p>
-
-<p><em>Case 2.</em> $\mathrm{dom} f \subsetneq W_1$</p>
-
-<p>First, we show that for some $a \in W$, $\mathrm{dom}f = W_1[a]$. If $x \in \mathrm{dom}f$, then $W_1[x] \sim W_2[f(x)]$. Let $\phi$ be the isomorphism of that isomorphism. For $x’ &lt; x$, we have $W_1[x’] = W_2[\phi(x’)]$, thus $x’ \in \mathrm{dom}f$. Therefore, $\mathrm{dom} f$ is an initial segment.</p>
-
-<p>Next, we show that $\mathrm{im} f = W_2$. Assume $\mathrm{dom}f = W_1[a]$. By a similar argument as above, we can show that $\mathrm{im}f$ is also an initial segment of $W_2$. If $\mathrm{im}f = W_2[b]$, then $(a, b) \in f$, which implies $a \in \mathrm{dom}f$, leading to a contradiction. ■</p>
-
-<h2 id="3-completeness-of-ordinals">3. Completeness of Ordinals</h2>
-
-<blockquote>
-  <p><strong>Completeness of Ordinals.</strong> Every well-ordered set is order-isomorphic to some ordinal.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Let $(W, &lt;)$ be a well-ordered set. We define $A$ and $S$ as follows:</p>
-
-\[\begin{gather}
-A = \{ a \in W : W[a] \sim \alpha_a \text{ where } \alpha_a \in \mathrm{Ord} \}\\
-S = \{ \alpha_a \in \mathrm{Ord} : a \in A \}
-\end{gather}\]
-
-<p>It can be easily shown that $S$ is an ordinal and $A$ is an initial segment. Let $S = \beta$ and $A = W[c]$. The function $f: A \to S; a \mapsto \alpha_a$ is an order isomorphism between $(A, &lt;)$ and $(S, \in)$. Thus, $W[c] \simeq \beta$, which implies $c \in A$, leading to a contradiction. Therefore, $A = W \sim \beta$. ■</p>
-
-<h2 id="4-axiom-of-replacement">4. Axiom of Replacement</h2>
-
-<p>The existence of $S$ in the above proof cannot be guaranteed without the Axiom of Replacement. This is because, due to Burali-Forti’s paradox, $\mathrm{Ord}$ is not a set, and thus the existence of $S$ cannot be guaranteed by the Axiom of Separation (see: <a href="https://dimenerno.github.io/2024/11/18/ZFC/en">List of ZFC Axioms</a>).</p>
-
-<p>Another example demonstrating the necessity of the Axiom of Replacement is that without it, we cannot guarantee the existence of $\omega + \omega$. For each $n \in \mathbb{N}$, the existence of $\omega + n$ can be shown using the Axiom of Pairing and the Axiom of Union, but the existence of $\omega + \omega := \bigcup_{n \in \mathbb{N}} (\omega + n)$ cannot be established. However, we cannot simply add an axiom allowing the union of arbitrary sets, as this would make “the set of all sets” a set, leading to Russell’s paradox.</p>
-
-<p>In both cases, what we need is an axiom stating that “given a well-defined one-to-one correspondence $R(x,y)$ and a set $X$, the collection $\lbrace y : R(x, y), x \in X \rbrace$ is a set.” This axiom is the Axiom of Replacement. Using the Axiom of Replacement, we can show that given:</p>
-
-\[\begin{gather}
-\omega = \lbrace 0, 1, 2, ... \rbrace \\
-R(x, y): y = \omega + x,
-\end{gather}\]
-
-<p>the image $\mathrm{im}R|_\omega = \lbrace \omega, \omega + 1, \omega + 2, … \rbrace$ exists, and thus $\omega \cup \mathrm{im}R|_\omega = \omega + \omega$ exists.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/20/Rational-Real"> 유리수와 실수의 집합론적 정의 </a>
-      </h1>
-    <span class="post-date">20 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <h3 id="1-칸토어의-동형성-정리">1. 칸토어의 동형성 정리</h3>
-
-<blockquote>
-  <p><strong>칸토어의 동형성 정리.</strong> 가산이고 양끝점이 없으며 조밀한 전순서 집합은 순서 동형에 대해 유일하다.</p>
-</blockquote>
-
-<p><strong>증명 1. (Back-and-Forth Argument)</strong></p>
-
-<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B  \setminus \mathrm{im} f_n$과 대응시키고, <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$
-를 순서 동형성을 만족하게끔 <strong>임의의</strong> 
-$a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$
-와 대응시킨다. (그림의 파란색은 ‘가장 인덱스가 작은’으로 선택된 원소)</p>
-
-<p><strong>증명 2. (Only-Forth Argument)</strong></p>
-
-<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus  \mathrm{im}f_n$과 대응시킨다.</p>
-
-<p><strong>잘못된 증명. (Incorrect Only-Forth Argument)</strong></p>
-
-<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B \setminus  \mathrm{im}f_n$와 대응시킨다.</p>
-
-<p><u>잘못된 이유</u>. $\mathrm{im} \left[ \bigcup f_n \right]$이 $B$ 전체를 소진한다는 보장이 없다. 일례로 모든 경우 선택된 $b$의 인덱스가 짝수인 경우가 가능하다.</p>
-
-<h3 id="2-데데킨트-절단">2. 데데킨트 절단</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 전순서 집합 $(P, &lt;)$에 대하여 $P$의 부분집합 $A, B$가 다음을 만족할 때 $(A, B)$를 <strong>절단</strong>이라고 한다.</p>
-
-  <ol>
-    <li>$A \sqcup B = P$</li>
-    <li>임의의 $a \in A, b \in B$에 대해 $a &lt; b$이다.</li>
-  </ol>
-
-  <p>추가로 다음을 만족할 때 <strong>데데킨트 절단</strong>이라고 한다.</p>
-
-  <ol>
-    <li>$A$는 최대 원소를 가지지 않는다.</li>
-  </ol>
-
-  <p>추가로 다음까지 만족할 때 <strong>틈</strong>이라고 한다.</p>
-
-  <ol>
-    <li>$B$는 최소 원소를 가지지 않는다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Remark</strong></p>
-<ol>
-  <li>$P$가 완비이다 ⇔ $P$는 틈을 가지지 않는다.</li>
-  <li>$P = \mathbb{Q}$일 때 틈은 무리수 집합을, 데데킨트 절단은 실수 집합을 나타낸다.</li>
-</ol>
-
-<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
-
-<h3 id="3-완비화-정리">3. 완비화 정리</h3>
-
-<blockquote>
-  <p><strong>완비화 정리.</strong> $(P, &lt;)$가 양끝점이 없는 조밀한 전순서라면 다음을 만족하는 완비 전순서 $(C, \prec)$가 순서 동형에 대해 유일하게 존재한다.</p>
-
-  <ol>
-    <li>$P \subseteq C$</li>
-    <li>$\prec$는 $P$에서 $&lt;$와 일치한다.</li>
-    <li>$P$는 $C$에서 조밀하다. 즉, $c_1 &lt; c_2 \in C$에 대해 $c_1 &lt; p &lt; c_2$를 만족하는 $p \in P$가 언제나 존재한다.</li>
-    <li>$C$는 양끝점이 없다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>유일성 증명.</strong>
-$(C, \prec)$와 $(C^\ast, \prec^\ast)$가 조건을 만족하는 완비 전순서라고 하자. 다음과 같이 정의된 $\phi: C → C^\ast$는 순서 동형 사상이다.</p>
-
-<ol>
-  <li>$c \in P$라면 $\phi(c)=c$</li>
-  <li>$c \notin P$라면 $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
-</ol>
-
-<p><strong>존재성 증명.</strong>
-다음과 같이 정의한다.</p>
-
-\[\begin{gather}
-\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
-\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
-\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
-\end{gather}\]
-
-<p>라고 하자. 다음과 같이 $\mathcal{D}$에 순서를 준다.</p>
-
-\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
-
-<p>$(A, B) \in \mathcal{P}$라면 어떤 $p$에 대해 $B = \lbrace  x \in P : x \geq p  \rbrace$이며, 이때 $(A, B) = [p]$라고 적자. 즉,</p>
-
-\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
-
-<p>$(\mathcal{P}, \prec) \sim (P, &lt;)$임을 쉽게 확인할 수 있다. 이제 다음을 보인다.</p>
-
-<p><em>Claim.</em> $\mathcal{D}$는 $\mathcal{P}$에 대해 완비화 정리의 4가지 조건을 모두 만족하는 확장이다.</p>
-
-<p>1, 2, 4는 자명하다. 3을 보인다.</p>
-
-<p>$\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$에 대해 $\mathfrak{d_1} \prec \mathfrak{d}_2$, 즉 $A_1 \subset A_2$라고 하자. $p \in A_2 \setminus A_1$이며 $p$가 $B$의 최소 원소가 아닌 $p \in P$가 존재한다. 그러한 $p$에 대해 $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$이다. □</p>
-
-<p>마지막으로 다음을 보인다.</p>
-
-<p><em>Claim.</em> $(\mathcal{D}, \prec)$는 완비이다.</p>
-
-<p>$\mathcal{S}$가 위로 유계인 $\mathcal{D}$의 공집합이 아닌 부분집합이라고 하자. 다음과 같이 정의한다.</p>
-
-\[\begin{gather}
-A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
-B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
-\end{gather}\]
-
-<p>$(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$이며, $\mathcal{S}$의 최소 상계임을 확인할 수 있다. ◾</p>
-
-<blockquote>
-  <p><strong>집합론적 실수의 정의.</strong> 다음을 만족하는 집합 $(R, &lt;)$은 순서 동형에 대해 유일하다.</p>
-
-  <ol>
-    <li>완비 전순서 집합이다.</li>
-    <li>양끝점이 없다.</li>
-    <li>분리 가능하다(separable). 즉, $Q \subset R$이 존재하여 $Q$는 가산집합이고 $R$에서 조밀하다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> 칸토어의 동형성 정리와 완비화 정리로부터 따라 나온다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/20/Rational-Real/en"> Set-theoretic Definitions of Rational and Real Numbers </a>
-      </h1>
-    <span class="post-date">20 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <h3 id="1-cantors-isomorphism-theorem">1. Cantor’s Isomorphism Theorem</h3>
-
-<blockquote>
-  <p><strong>Cantor’s Isomorphism Theorem.</strong> Any countable, dense, linear order without endpoints is unique up to order isomorphism.</p>
-</blockquote>
-
-<p><strong>Proof 1. (Back-and-Forth Argument)</strong></p>
-
-<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B  \setminus \mathrm{im} f_n$ so that order isomorphism is preserved, and then map the <strong>least-indexed</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$ to an <strong>arbitrary</strong> $a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$ so that order isomorphism is preserved. (In the diagram, blue indicates the ‘least-indexed’ elements.)</p>
-
-<p><strong>Proof 2. (Only-Forth Argument)</strong></p>
-
-<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to the <strong>least-indexed</strong> $b_l \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
-
-<p><strong>Incorrect Proof. (Incorrect Only-Forth Argument)</strong></p>
-
-<p>At the $n$-th step, match the <strong>least-index</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
-
-<p><u>Why this is incorrect</u>: There is no guarantee that $\mathrm{im} \left[ \bigcup f_n \right]$ exhausts all of $B$. For example, it is possible that only $b$’s with even indices are chosen in every step.</p>
-
-<h3 id="2-dedekind-cuts">2. Dedekind Cuts</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a linearly ordered set $(P, &lt;)$, a pair of subsets $A, B$ of $P$ is called a <strong>cut</strong> if:</p>
-
-  <ol>
-    <li>$A \sqcup B = P$</li>
-    <li>For any $a \in A, b \in B$, $a &lt; b$.</li>
-  </ol>
-
-  <p>Furthermore, it is a <strong>Dedekind cut</strong> if:</p>
-
-  <ol>
-    <li>$A$ has no greatest element.</li>
-  </ol>
-
-  <p>It is called a <strong>gap</strong> if, in addition:</p>
-
-  <ol>
-    <li>$B$ has no least element.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Remark</strong></p>
-
-<ol>
-  <li>$P$ is complete ⇔ $P$ has no gaps.</li>
-  <li>As will be seen, for $P = \mathbb{Q}$, gaps correspond to irrational numbers while Dedekind cuts correspond to real numbers.</li>
-</ol>
-
-<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
-
-<h3 id="3-completion-theorem">3. Completion Theorem</h3>
-
-<blockquote>
-  <p><strong>Completion Theorem.</strong> If $(P, &lt;)$ is a dense linear order without endpoints, then there exists a unique (up to order isomorphism) complete linear order $(C, \prec)$ satisfying:</p>
-
-  <ol>
-    <li>$P \subseteq C$</li>
-    <li>$\prec$ coincides with $&lt;$ on $P$</li>
-    <li>$P$ is dense in $C$: for any $c_1 &lt; c_2 \in C$, there exists $p \in P$ with $c_1 &lt; p &lt; c_2$</li>
-    <li>$C$ has no endpoints.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Uniqueness Proof.</strong>
-Suppose $(C, \prec)$ and $(C^\ast, \prec^\ast)$ are complete linear orders satisfying the conditions. Define $\phi: C \to C^\ast$ as follows:</p>
-
-<ol>
-  <li>If $c \in P$, then $\phi(c)=c$</li>
-  <li>If $c \notin P$, then $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
-</ol>
-
-<p>This $\phi$ is an order isomorphism.</p>
-
-<p><strong>Existence Proof.</strong>
-Define:</p>
-
-\[\begin{gather}
-\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
-\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
-\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
-\end{gather}\]
-
-<p>Define an order on $\mathcal{D}$ by:</p>
-
-\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
-
-<p>If $(A, B) \in \mathcal{P}$, then for some $p$, $B = \lbrace  x \in P : x \geq p  \rbrace$, and we write $(A, B) = [p]$. That is,</p>
-
-\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
-
-<p>It is easy to check that $(\mathcal{P}, \prec) \sim (P, &lt;)$. Now, we show the following:</p>
-
-<p><em>Claim.</em> $\mathcal{D}$ is an extension of $\mathcal{P}$ satisfying all four conditions of the Completion Theorem.</p>
-
-<p>Conditions 1, 2, and 4 are clear. We show 3.</p>
-
-<p>Let $\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$ with $\mathfrak{d}_1 \prec \mathfrak{d}_2$, i.e., $A_1 \subset A_2$. There exists $p \in A_2 \setminus A_1$ such that $p$ is not the least element of $B$, i.e., $p \in P$. For such $p$, we have $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$. □</p>
-
-<p>Finally, we show:</p>
-
-<p><em>Claim.</em> $(\mathcal{D}, \prec)$ is complete.</p>
-
-<p>Let $\mathcal{S}$ be a nonempty, upward-bounded subset of $\mathcal{D}$. Define:</p>
-
-\[\begin{gather}
-A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
-B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
-\end{gather}\]
-
-<p>Then $(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$ and is the least upper bound of $\mathcal{S}$. ◾</p>
-
-<blockquote>
-  <p><strong>Set-theoretic Definition of the Real Numbers.</strong> A set $(R, &lt;)$ satisfying the following is unique up to order isomorphism:</p>
-
-  <ol>
-    <li>It is a complete linear order.</li>
-    <li>It has no endpoints.</li>
-    <li>It is separable; i.e., there exists $Q \subset R$ which is countable and dense in $R$.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong> This follows from Cantor’s Isomorphism Theorem and the Completion Theorem.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/19/CSB"> 칸토어-슈뢰더-베른슈타인 정리 </a>
-      </h1>
-    <span class="post-date">19 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>정리.</strong> 두 집합 $X, Y$에 대해 $|X| \leq |Y|$, $|X| \geq |Y|$라면 $|X| = |Y|$이다.</p>
-</blockquote>
-
-<p>매우 당연해 보이지만 $\leq$가 단사함수의 존재성으로, $=$가 전단사함수의 존재성으로 정의된다는 점에서 트리키한 함수 핸들링을 요구한다.</p>
-
-<p>여담으로 “칸토어-베른슈타인 정리(위키피디아)” 또는 “슈뢰더-베른슈타인 정리(나무위키)”라고도 부르는데 “칸토어-슈뢰더 정리”라고 부르는 경우는 못 봤다. 홍대병에 취해 있다면 “칸토어-슈뢰더 정리”라고 불러보자.</p>
-
-<h3 id="첫-번째-증명">첫 번째 증명</h3>
-
-<p><img src="/public/csb-1.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
-
-<p>조건에 의해 단사함수 $f: X \to Y, g: Y \to X$가 존재한다. $Z := \mathrm{Im} f$가 $Y$와 같다면 증명이 끝나므로 $Z \subsetneq Y$라고 하자.</p>
-
-<p>임의의 $y \in Z \setminus Y$ (그림에서 빈 점으로 표시) 에 대해,</p>
-
-<ul>
-  <li>$x_1^y = g^{-1}(y)$</li>
-  <li>$x_{n+1}^y = g(f(x_n))$</li>
-</ul>
-
-<p>와 같이 두어, $h: X \to Y$를 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$h_y(x_1^y) = y$</li>
-  <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
-</ul>
-
-<p>다음이 성립함을 확인하라.</p>
-
-\[x^y_n = x^z_m \iff y = z, n = m\]
-
-<p>따라서 다음의 함수 $h: X → Y$는 well-defined이다.</p>
-
-<p><img src="/public/csb-2.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
-
-\[h(x) = \begin{cases}
-h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
-f(x) &amp;\text{otherwise}
-\end{cases}\]
-
-<p>$h$가 전단사임을 확인하라. ◾</p>
-
-<h3 id="두-번째-증명">두 번째 증명</h3>
-
-<blockquote>
-  <p><strong>보조정리 (기수의 샌드위치 정리).</strong> $A_1 \supseteq B \supseteq A_2$에 대해 $|A_1| = |A_2|$라면 $|A_1| = |B| = |A_2|$이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $f: A_1 → A_2$가 전단사라고 하자. $B_1 = B$로 둔다. 다음과 같이 $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace $을 정의한다.</p>
-
-\[\begin{gather}
-A_{n+1} = f[A_n]\\
-B_{n+1} = f[B_n]\\
-C_n = A_n \setminus B_n
-\end{gather}\]
-
-<p>$C = \bigcup C_n$ (그림에서 색칠되지 않은 영역), $D = A_1 \setminus C$ (그림에서 색칠된 영역) 라고 하자. $f[C] \subset C, f[D] \subset D$임을 확인하라. 따라서 다음의 $g: B_1 → A_2$는 전단사이다. (화살표)</p>
-
-<p><img src="/public/csb-3.png" style="width: 100%; max-width: 400px; margin: 2em auto 0 auto;" /></p>
-
-\[g(x) = \begin{cases}
-x &amp; x \in C\\
-f(x) &amp; x \in D
-\end{cases}\]
-
-<p><strong>본 정리의 증명.</strong> $f: X → Y, g: Y → X$가 전사일 때 $gf[X] \subseteq g[Y] \subseteq X$이고, $| gf[X] | = | X |$이므로, 보조정리에 의해 $|g[Y]| = |Y| = |X|$이다. ◾</p>
-
-<p>잘 생각해 보면 두 증명은 사실 같다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/19/CSB/en"> Cantor–Schröder–Bernstein Theorem </a>
-      </h1>
-    <span class="post-date">19 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>Theorem.</strong> For two sets $X, Y$, if $|X| \leq |Y|$ and $|X| \geq |Y|$, then $|X| = |Y|$.</p>
-</blockquote>
-
-<p>Although this may seem obvious, it requires some delicate function handling, since $\leq$ is defined by the existence of an injective function, while $=$ is defined by the existence of a bijective function.</p>
-
-<p>As a side note, the theorem is often called the “Cantor–Bernstein theorem” or the “Schröder–Bernstein theorem”, but I’ve never seen it called the “Cantor–Schröder theorem.” If you’re feeling a bit pretentious, it’s an open option.</p>
-
-<h3 id="first-proof">First Proof</h3>
-
-<p><img src="/public/csb-1.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
-
-<p>By assumption there exists $f: X \to Y, g: Y \to X$ injective. If $Z := \mathrm{Im} f$ equals $Y$, the proof is done, so let us assume $Z \subsetneq Y$.</p>
-
-<p>For any $y \in Z \setminus Y$ (represented as an empty dot in the diagram),</p>
-
-<ul>
-  <li>let $x_1^y = g^{-1}(y)$</li>
-  <li>let $x_{n+1}^y = g(f(x_n))$</li>
-</ul>
-
-<p>Now define a function $h: X \to Y$ as follows:</p>
-
-<ul>
-  <li>$h_y(x_1^y) = y$</li>
-  <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
-</ul>
-
-<p>Check that the following holds:</p>
-
-\[x^y_n = x^z_m \iff y = z, n = m\]
-
-<p>Thus, the function $h: X \to Y$ defined by</p>
-
-<p><img src="/public/csb-2.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
-
-\[h(x) = \begin{cases}
-h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
-f(x) &amp;\text{otherwise}
-\end{cases}\]
-
-<p>is well-defined. Verify that $h$ is bijective. ◾</p>
-
-<h3 id="second-proof">Second Proof</h3>
-
-<blockquote>
-  <p><strong>Lemma (Sandwich Theorem for Cardinals).</strong> If $A_1 \supseteq B \supseteq A_2$ and $|A_1| = |A_2|$, then $|A_1| = |B| = |A_2|$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Assume $f: A_1 \to A_2$ is bijective. Let $B_1 = B$. Define the sequences $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace$ as follows:</p>
-
-\[\begin{gather}
-A_{n+1} = f[A_n]\\
-B_{n+1} = f[B_n]\\
-C_n = A_n \setminus B_n
-\end{gather}\]
-
-<p>Let $C = \bigcup C_n$ (the unshaded region in the diagram) and $D = A_1 \setminus C$ (the shaded region). Verify that $f[C] \subset C$ and $f[D] \subset D$. Then, define $g: B_1 \to A_2$ as follows (represented as arrows in the diagram).</p>
-
-\[g(x) = \begin{cases}
-x &amp; x \in C\\
-f(x) &amp; x \in D
-\end{cases}\]
-
-<p><img src="/public/csb-3.png" style="width: 100%; max-width: 400px; margin: 2em auto 0 auto;" /></p>
-
-<p>Then $g$ is bijective.</p>
-
-<p><strong>Proof of the main theorem.</strong> Given $f: X \to Y$ and $g: Y \to X$ are injective, we have $gf[X] \subseteq g[Y] \subseteq X$ and $| gf[X] | = | X |$. By the lemma, we obtain $|g[Y]| = |Y| = |X|$. ◾</p>
-
-<p>Upon closer reflection, the two proofs are essentially the same.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/18/ZFC"> ZFC 공리의 목록 </a>
-      </h1>
-    <span class="post-date">18 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <table>
-  <thead>
-    <tr>
-      <th>공리명</th>
-      <th>의미</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>외연 공리</td>
-      <td>집합은 원소의 모임이다.</td>
-    </tr>
-    <tr>
-      <td>공집합 공리*</td>
-      <td>공집합이 존재한다.</td>
-    </tr>
-    <tr>
-      <td>짝 공리*</td>
-      <td>$X, Y$로부터 $Z = \lbrace  X, Y \rbrace$를 정의할 수 있다.</td>
-    </tr>
-    <tr>
-      <td>합집합 공리</td>
-      <td>$X = \lbrace  Y_i \rbrace$로부터 $Z = \bigcup Y_i$를 정의할 수 있다.</td>
-    </tr>
-    <tr>
-      <td>멱집합 공리</td>
-      <td>$X$로부터 $\mathcal{P}(X)$를 정의할 수 있다.</td>
-    </tr>
-    <tr>
-      <td>분류 공리꼴**</td>
-      <td>$X$로부터 $Y = \lbrace  y \in X : \phi(y) \rbrace$를 정의할 수 있다. ($\phi$는 1차 논리식)</td>
-    </tr>
-    <tr>
-      <td>무한 공리</td>
-      <td>모든 자연수를 포함하는 집합이 존재한다.</td>
-    </tr>
-    <tr>
-      <td>정칙 공리</td>
-      <td>$\in$은 정렬 순서이다.</td>
-    </tr>
-    <tr>
-      <td>치환 공리꼴</td>
-      <td>$X$로부터 $f[X]$를 정의할 수 있다. ($f$는 class function)</td>
-    </tr>
-    <tr>
-      <td>선택 공리</td>
-      <td>집합족 $\lbrace  X_i \rbrace$에 대해 각 $X_i$의 원소를 하나씩 선택할 수 있다.</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>공리명</th>
-      <th>논리식(자유변수는 $\forall$로 양화)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>외연 공리</td>
-      <td>$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$</td>
-    </tr>
-    <tr>
-      <td>공집합 공리*</td>
-      <td>$\exists Z : z \not\in Z$</td>
-    </tr>
-    <tr>
-      <td>짝 공리*</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$</td>
-    </tr>
-    <tr>
-      <td>합집합 공리</td>
-      <td>$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$</td>
-    </tr>
-    <tr>
-      <td>멱집합 공리</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$</td>
-    </tr>
-    <tr>
-      <td>분류 공리꼴**</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$</td>
-    </tr>
-    <tr>
-      <td>무한 공리</td>
-      <td>$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$</td>
-    </tr>
-    <tr>
-      <td>정칙 공리</td>
-      <td>$\exists x \in X : \forall y \in X [ y \not\in x]$</td>
-    </tr>
-    <tr>
-      <td>치환 공리꼴</td>
-      <td>$\displaylines{[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow [\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$</td>
-    </tr>
-    <tr>
-      <td>선택 공리</td>
-      <td>$\displaylines{\varnothing \notin X \rightarrow \exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Remarks.</strong></p>
-
-<ul>
-  <li>정칙 공리는 다음과 동치</li>
-</ul>
-
-\[\exists x \in X : x \cap X = \varnothing\]
-
-<ul>
-  <li>(*)로 표시된 공리는 분류 공리꼴로부터 유도할 수 있다.</li>
-  <li>(**)로 표시된 공리는 치환 공리꼴로부터 유도할 수 있다.
-    <ul>
-      <li>분류 공리꼴의 내용은 “X가 집합이다 → f[X]가 집합이다(f는 함수)”이라는 것이다. f가 함수임을(즉, f의 정의역이 집합임을) 선결적으로 요구함에 유의하라.</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="공리의-필요성">공리의 필요성</h3>
-
-<p><strong>정리.</strong> 다음의 정리들은 선택 공리를 필요로 한다.</p>
-
-<ul>
-  <li>
-    <p>$f: X → Y$가 전사일 때, 어떤 $X$의 부분집합 $Z$에 대해 $f\vert_Z$는 전단사이다.</p>
-  </li>
-  <li>
-    <p>$\varnothing \not\in \lbrace  X_i\rbrace$일 때 $\prod X_i \neq \varnothing$이다.</p>
-  </li>
-  <li>
-    <p><strong>정렬 원리:</strong> 임의의 집합에 정렬 순서를 줄 수 있다.</p>
-  </li>
-  <li>
-    <p><strong>초른의 보조정리:</strong> $(X, &lt;)$의 임의의 체인이 $X$에서 상계를 가진다면, $X$는 극댓값<sub>maximal element</sub>을 가진다.</p>
-  </li>
-</ul>
-
-<p><strong>정리.</strong> 다음의 정리들은 치환 공리꼴을 필요로 한다.</p>
-
-<ul>
-  <li>
-    <p>$\omega + \omega$가 존재한다.</p>
-  </li>
-  <li>
-    <p><a href="http://dimenerno.github.io/2024/11/21/trichotomy"><strong>서수 완전성 정리.</strong></a> 모든 정렬 순서는 서수와 순서 동형이다.</p>
-  </li>
-</ul>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/18/ZFC/en"> List of ZFC Axioms </a>
-      </h1>
-    <span class="post-date">18 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Extensionality</td>
-      <td>Set is an unordered collection of elements.</td>
-    </tr>
-    <tr>
-      <td>Existence*</td>
-      <td>There exists the empty set.</td>
-    </tr>
-    <tr>
-      <td>Pairing*</td>
-      <td>From $X, Y$ follows $Z = \lbrace  X, Y \rbrace$.</td>
-    </tr>
-    <tr>
-      <td>Union</td>
-      <td>From $X = \lbrace  Y_i \rbrace$ follows $Z = \bigcup Y_i$.</td>
-    </tr>
-    <tr>
-      <td>Power Set</td>
-      <td>From $X$ follows $\mathcal{P}(X)$.</td>
-    </tr>
-    <tr>
-      <td>Separation Schema**</td>
-      <td>From $X$ follows $Y = \lbrace  y \in X : \phi(y) \rbrace$, where $\phi$ is a first-order formula.</td>
-    </tr>
-    <tr>
-      <td>Infinity</td>
-      <td>There exists a set containing all the natural numbers.</td>
-    </tr>
-    <tr>
-      <td>Regularity</td>
-      <td>$\in$ is a well-ordering.</td>
-    </tr>
-    <tr>
-      <td>Replacement</td>
-      <td>From $X$ follows $f[X]$, where $f$ is a class function definable in first-order logic.</td>
-    </tr>
-    <tr>
-      <td>Choice</td>
-      <td>Every collection of nonempty sets $\lbrace  X_i \rbrace$ has a choice function.</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Formula (Free variables are to be quantified by $\forall$)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Extensionality</td>
-      <td>$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$</td>
-    </tr>
-    <tr>
-      <td>Existence*</td>
-      <td>$\exists Z : z \not\in Z$</td>
-    </tr>
-    <tr>
-      <td>Pairing*</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$</td>
-    </tr>
-    <tr>
-      <td>Union</td>
-      <td>$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$</td>
-    </tr>
-    <tr>
-      <td>Power Set</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$</td>
-    </tr>
-    <tr>
-      <td>Separation Schema**</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$</td>
-    </tr>
-    <tr>
-      <td>Infinity</td>
-      <td>$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$</td>
-    </tr>
-    <tr>
-      <td>Regularity</td>
-      <td>$\exists x \in X : \forall y \in X [ y \not\in x]$</td>
-    </tr>
-    <tr>
-      <td>Replacement</td>
-      <td>$\displaylines{[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow [\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$</td>
-    </tr>
-    <tr>
-      <td>Choice</td>
-      <td>$\displaylines{\varnothing \notin X \rightarrow \exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Remarks.</strong></p>
-
-<ul>
-  <li>Regularity is equivalent to the following:</li>
-</ul>
-
-\[\exists x \in X : x \cap X = \varnothing\]
-
-<ul>
-  <li>
-    <p>Those marked by (*) can be derived from the Separation.</p>
-  </li>
-  <li>
-    <p>Those marked by (**) can be derived from the Replacement.</p>
-  </li>
-</ul>
-
-<p>Replacement is <em>strictly</em> stronger than Separation:</p>
-
-<ul>
-  <li>Separation can be stated as: If $X$ is a set and $f$ is a function, then $f[X]$ is a set.</li>
-  <li>Replacement can be stated as: If $X$ is a set and $f$ is a class function, then $f[X]$ is a set.</li>
-</ul>
-
-<p>The proof of following theorems require Choice.</p>
-
-<ul>
-  <li>If $f: X → Y$ is surjective, there exists a subset $Z$ of $X$ such that $f\vert_Z$ is bijective.</li>
-  <li>If $\varnothing \not\in \lbrace  X_i\rbrace$, then $\prod X_i \neq \varnothing$.</li>
-  <li><strong>Well-ordering Principle.</strong> Every set can be well-ordered.</li>
-  <li><strong>Zorn’s Lemma.</strong> If every chain of $(X, &lt;)$ is bounded in $X$, $X$ has a maximal element.</li>
-</ul>
-
-<p>The proof of following theorems require Replacement.</p>
-
-<ul>
-  <li>$\omega + \omega$ exists.</li>
-  <li><a href="http://dimenerno.github.io/2024/11/21/trichotomy"><strong>Completeness of Ordinals.</strong></a> Every well-ordered set is order-isomorphic to a unique ordinal.</li>
-</ul>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -431,6 +431,954 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/21/trichotomy/en"> Trichotomy and Completeness of Ordinals </a>
+      </h1>
+    <span class="post-date">21 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <h2 id="1-basic-concepts">1. Basic Concepts</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> A set $(W, &lt;)$ is called a <strong>well-ordered set</strong> if it satisfies the following conditions:</p>
+
+  <ol>
+    <li>$(W, &lt;)$ is a total order.</li>
+    <li>Every non-empty subset of $W$ has a least element.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> If $(W, &lt;)$ is a well-ordered set, a subset $S$ of $W$ such that $x &lt; a \rightarrow x \in S$ for some $a \in S$ is called an <strong>initial segment.</strong></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $S$ is an initial segment of a well-ordered set $(W, &lt;)$, then for some $a \in W$, the following holds:</p>
+
+\[S = W[a] := \{ x \in W : x &lt; a \}\]
+</blockquote>
+
+<p><strong>Proof.</strong> Let $a$ be the least element of $W \setminus S$.</p>
+
+<h2 id="2-trichotomy-of-order">2. Trichotomy of Order</h2>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>A well-ordered set cannot be isomorphic to its initial segment.</li>
+    <li>The only order-preserving automorphism of a well-ordered set is the identity map.</li>
+    <li>The isomorphism between two well-ordered sets is unique.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> We first prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $f: (W, &lt;) \to (W, &lt;)$ is order-preserving, then for all $x \in W$, $x \leq f(x)$.</p>
+</blockquote>
+
+<p><em>Proof of the Lemma.</em> Assume for contradiction that $S = \lbrace x \in W : x &gt; f(x) \rbrace$ is nonempty. Since $W$ is a well-ordered set, there exists a least element $c = \min S$. Since $c \in S$, we have $c &gt; f(c)$, and since $f$ is order-preserving, it follows that $f(c) &gt; f(f(c))$. On the other hand, since $c = \min S$, we have $f(c) \notin S$, and thus $f(f(c)) \geq f(c)$, leading to a contradiction. □</p>
+
+<p><strong>Proof of (1).</strong></p>
+
+<p>Assume $f: (W, &lt;) \to (W[a], &lt;)$ is an isomorphism. The inclusion map $j: W[a] \to W$ implies that $jf: (W, &lt;) \to (W, &lt;)$ is order-preserving. Therefore, $jf(a) \geq a$. However, since $a \notin \mathrm{im}f$, this leads to a contradiction. □</p>
+
+<p><strong>Proof of (2).</strong></p>
+
+<p>Assume $f: (W, &lt;) \to (W, &lt;)$ is an isomorphism. Since $f^{-1}$ is also an isomorphism, for all $x \in W$, we have $x \leq f(x)$ and $f(x) \leq f^{-1}(f(x)) = x$. Thus, $x = f(x)$. □</p>
+
+<p><strong>Proof of (3).</strong></p>
+
+<p>Assume $f, g: (W_1, &lt;_1) \to (W_2, &lt;_2)$ are isomorphisms. The composition $g^{-1}f: (W_1, &lt;_1) \to (W_1, &lt;_1)$ is an automorphism, and by (2), it must be the identity map. Therefore, $f = g$. ■</p>
+
+<blockquote>
+  <p><strong>Trichotomy of Order.</strong> For well-ordered sets $(W_1, &lt;_1)$ and $(W_2, &lt;_2)$, exactly one of the following holds:</p>
+
+  <ol>
+    <li>$(W_1, &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>For some $a$, $(W_1[a], &lt;_1) \sim (W_2, &lt;_2)$</li>
+    <li>For some $b$, $(W_1, &lt;_1) \sim (W_2[b], &lt;_2)$</li>
+  </ol>
+
+  <p>In each case, the isomorphism is unique, and in cases 2 and 3, $a$ and $b$ are unique.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<p>The preceding theorems guarantee that 1, 2, and 3 are mutually exclusive and establish the claim of uniqueness. Therefore, it suffices to show that any pair of well-ordered sets $(W_1, &lt;_1)$ and $(W_2, &lt;_2)$ falls into one of the three cases.</p>
+
+<p>We define a partial function $f: W_1 \to W_2$ as follows:</p>
+
+\[f := \{ (x, y) \in (W_1, W_2) : (W_1[x], &lt;_1) \sim (W_2[y], &lt;_2) \}\]
+
+<p>It can be easily verified that $f$ is injective and order-preserving. We now consider two cases.</p>
+
+<p><em>Case 1.</em> $\mathrm{dom} f = W_1$</p>
+
+<p>This corresponds to case 3 of the theorem, concluding the proof.</p>
+
+<p><em>Case 2.</em> $\mathrm{dom} f \subsetneq W_1$</p>
+
+<p>First, we show that for some $a \in W$, $\mathrm{dom}f = W_1[a]$. If $x \in \mathrm{dom}f$, then $W_1[x] \sim W_2[f(x)]$. Let $\phi$ be the isomorphism of that isomorphism. For $x’ &lt; x$, we have $W_1[x’] = W_2[\phi(x’)]$, thus $x’ \in \mathrm{dom}f$. Therefore, $\mathrm{dom} f$ is an initial segment.</p>
+
+<p>Next, we show that $\mathrm{im} f = W_2$. Assume $\mathrm{dom}f = W_1[a]$. By a similar argument as above, we can show that $\mathrm{im}f$ is also an initial segment of $W_2$. If $\mathrm{im}f = W_2[b]$, then $(a, b) \in f$, which implies $a \in \mathrm{dom}f$, leading to a contradiction. ■</p>
+
+<h2 id="3-completeness-of-ordinals">3. Completeness of Ordinals</h2>
+
+<blockquote>
+  <p><strong>Completeness of Ordinals.</strong> Every well-ordered set is order-isomorphic to some ordinal.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $(W, &lt;)$ be a well-ordered set. We define $A$ and $S$ as follows:</p>
+
+\[\begin{gather}
+A = \{ a \in W : W[a] \sim \alpha_a \text{ where } \alpha_a \in \mathrm{Ord} \}\\
+S = \{ \alpha_a \in \mathrm{Ord} : a \in A \}
+\end{gather}\]
+
+<p>It can be easily shown that $S$ is an ordinal and $A$ is an initial segment. Let $S = \beta$ and $A = W[c]$. The function $f: A \to S; a \mapsto \alpha_a$ is an order isomorphism between $(A, &lt;)$ and $(S, \in)$. Thus, $W[c] \simeq \beta$, which implies $c \in A$, leading to a contradiction. Therefore, $A = W \sim \beta$. ■</p>
+
+<h2 id="4-axiom-of-replacement">4. Axiom of Replacement</h2>
+
+<p>The existence of $S$ in the above proof cannot be guaranteed without the Axiom of Replacement. This is because, due to Burali-Forti’s paradox, $\mathrm{Ord}$ is not a set, and thus the existence of $S$ cannot be guaranteed by the Axiom of Separation (see: <a href="https://dimenerno.github.io/2024/11/18/ZFC/en">List of ZFC Axioms</a>).</p>
+
+<p>Another example demonstrating the necessity of the Axiom of Replacement is that without it, we cannot guarantee the existence of $\omega + \omega$. For each $n \in \mathbb{N}$, the existence of $\omega + n$ can be shown using the Axiom of Pairing and the Axiom of Union, but the existence of $\omega + \omega := \bigcup_{n \in \mathbb{N}} (\omega + n)$ cannot be established. However, we cannot simply add an axiom allowing the union of arbitrary sets, as this would make “the set of all sets” a set, leading to Russell’s paradox.</p>
+
+<p>In both cases, what we need is an axiom stating that “given a well-defined one-to-one correspondence $R(x,y)$ and a set $X$, the collection $\lbrace y : R(x, y), x \in X \rbrace$ is a set.” This axiom is the Axiom of Replacement. Using the Axiom of Replacement, we can show that given:</p>
+
+\[\begin{gather}
+\omega = \lbrace 0, 1, 2, ... \rbrace \\
+R(x, y): y = \omega + x,
+\end{gather}\]
+
+<p>the image $\mathrm{im}R|_\omega = \lbrace \omega, \omega + 1, \omega + 2, … \rbrace$ exists, and thus $\omega \cup \mathrm{im}R|_\omega = \omega + \omega$ exists.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/20/Rational-Real"> 유리수와 실수의 집합론적 정의 </a>
+      </h1>
+    <span class="post-date">20 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <h3 id="1-칸토어의-동형성-정리">1. 칸토어의 동형성 정리</h3>
+
+<blockquote>
+  <p><strong>칸토어의 동형성 정리.</strong> 가산이고 양끝점이 없으며 조밀한 전순서 집합은 순서 동형에 대해 유일하다.</p>
+</blockquote>
+
+<p><strong>증명 1. (Back-and-Forth Argument)</strong></p>
+
+<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B  \setminus \mathrm{im} f_n$과 대응시키고, <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$
+를 순서 동형성을 만족하게끔 <strong>임의의</strong> 
+$a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$
+와 대응시킨다. (그림의 파란색은 ‘가장 인덱스가 작은’으로 선택된 원소)</p>
+
+<p><strong>증명 2. (Only-Forth Argument)</strong></p>
+
+<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>가장 인덱스가 작은</strong> $b_l \in B \setminus  \mathrm{im}f_n$과 대응시킨다.</p>
+
+<p><strong>잘못된 증명. (Incorrect Only-Forth Argument)</strong></p>
+
+<p>$n$번째 단계에서 <strong>가장 인덱스가 작은</strong> $a_k \in A \setminus \mathrm{dom} f_n$을 순서 동형성을 만족하게끔 <strong>임의의</strong> $b \in B \setminus  \mathrm{im}f_n$와 대응시킨다.</p>
+
+<p><u>잘못된 이유</u>. $\mathrm{im} \left[ \bigcup f_n \right]$이 $B$ 전체를 소진한다는 보장이 없다. 일례로 모든 경우 선택된 $b$의 인덱스가 짝수인 경우가 가능하다.</p>
+
+<h3 id="2-데데킨트-절단">2. 데데킨트 절단</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 전순서 집합 $(P, &lt;)$에 대하여 $P$의 부분집합 $A, B$가 다음을 만족할 때 $(A, B)$를 <strong>절단</strong>이라고 한다.</p>
+
+  <ol>
+    <li>$A \sqcup B = P$</li>
+    <li>임의의 $a \in A, b \in B$에 대해 $a &lt; b$이다.</li>
+  </ol>
+
+  <p>추가로 다음을 만족할 때 <strong>데데킨트 절단</strong>이라고 한다.</p>
+
+  <ol>
+    <li>$A$는 최대 원소를 가지지 않는다.</li>
+  </ol>
+
+  <p>추가로 다음까지 만족할 때 <strong>틈</strong>이라고 한다.</p>
+
+  <ol>
+    <li>$B$는 최소 원소를 가지지 않는다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Remark</strong></p>
+<ol>
+  <li>$P$가 완비이다 ⇔ $P$는 틈을 가지지 않는다.</li>
+  <li>$P = \mathbb{Q}$일 때 틈은 무리수 집합을, 데데킨트 절단은 실수 집합을 나타낸다.</li>
+</ol>
+
+<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
+
+<h3 id="3-완비화-정리">3. 완비화 정리</h3>
+
+<blockquote>
+  <p><strong>완비화 정리.</strong> $(P, &lt;)$가 양끝점이 없는 조밀한 전순서라면 다음을 만족하는 완비 전순서 $(C, \prec)$가 순서 동형에 대해 유일하게 존재한다.</p>
+
+  <ol>
+    <li>$P \subseteq C$</li>
+    <li>$\prec$는 $P$에서 $&lt;$와 일치한다.</li>
+    <li>$P$는 $C$에서 조밀하다. 즉, $c_1 &lt; c_2 \in C$에 대해 $c_1 &lt; p &lt; c_2$를 만족하는 $p \in P$가 언제나 존재한다.</li>
+    <li>$C$는 양끝점이 없다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>유일성 증명.</strong>
+$(C, \prec)$와 $(C^\ast, \prec^\ast)$가 조건을 만족하는 완비 전순서라고 하자. 다음과 같이 정의된 $\phi: C → C^\ast$는 순서 동형 사상이다.</p>
+
+<ol>
+  <li>$c \in P$라면 $\phi(c)=c$</li>
+  <li>$c \notin P$라면 $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
+</ol>
+
+<p><strong>존재성 증명.</strong>
+다음과 같이 정의한다.</p>
+
+\[\begin{gather}
+\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
+\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
+\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
+\end{gather}\]
+
+<p>라고 하자. 다음과 같이 $\mathcal{D}$에 순서를 준다.</p>
+
+\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
+
+<p>$(A, B) \in \mathcal{P}$라면 어떤 $p$에 대해 $B = \lbrace  x \in P : x \geq p  \rbrace$이며, 이때 $(A, B) = [p]$라고 적자. 즉,</p>
+
+\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
+
+<p>$(\mathcal{P}, \prec) \sim (P, &lt;)$임을 쉽게 확인할 수 있다. 이제 다음을 보인다.</p>
+
+<p><em>Claim.</em> $\mathcal{D}$는 $\mathcal{P}$에 대해 완비화 정리의 4가지 조건을 모두 만족하는 확장이다.</p>
+
+<p>1, 2, 4는 자명하다. 3을 보인다.</p>
+
+<p>$\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$에 대해 $\mathfrak{d_1} \prec \mathfrak{d}_2$, 즉 $A_1 \subset A_2$라고 하자. $p \in A_2 \setminus A_1$이며 $p$가 $B$의 최소 원소가 아닌 $p \in P$가 존재한다. 그러한 $p$에 대해 $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$이다. □</p>
+
+<p>마지막으로 다음을 보인다.</p>
+
+<p><em>Claim.</em> $(\mathcal{D}, \prec)$는 완비이다.</p>
+
+<p>$\mathcal{S}$가 위로 유계인 $\mathcal{D}$의 공집합이 아닌 부분집합이라고 하자. 다음과 같이 정의한다.</p>
+
+\[\begin{gather}
+A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
+B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
+\end{gather}\]
+
+<p>$(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$이며, $\mathcal{S}$의 최소 상계임을 확인할 수 있다. ◾</p>
+
+<blockquote>
+  <p><strong>집합론적 실수의 정의.</strong> 다음을 만족하는 집합 $(R, &lt;)$은 순서 동형에 대해 유일하다.</p>
+
+  <ol>
+    <li>완비 전순서 집합이다.</li>
+    <li>양끝점이 없다.</li>
+    <li>분리 가능하다(separable). 즉, $Q \subset R$이 존재하여 $Q$는 가산집합이고 $R$에서 조밀하다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 칸토어의 동형성 정리와 완비화 정리로부터 따라 나온다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/20/Rational-Real/en"> Set-theoretic Definitions of Rational and Real Numbers </a>
+      </h1>
+    <span class="post-date">20 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <h3 id="1-cantors-isomorphism-theorem">1. Cantor’s Isomorphism Theorem</h3>
+
+<blockquote>
+  <p><strong>Cantor’s Isomorphism Theorem.</strong> Any countable, dense, linear order without endpoints is unique up to order isomorphism.</p>
+</blockquote>
+
+<p><strong>Proof 1. (Back-and-Forth Argument)</strong></p>
+
+<p><img src="/public/back-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B  \setminus \mathrm{im} f_n$ so that order isomorphism is preserved, and then map the <strong>least-indexed</strong> $b_l \in B \setminus (\mathrm{im} f_n \cup \lbrace  b \rbrace)$ to an <strong>arbitrary</strong> $a \in A \setminus (\mathrm{dom}f_n \cup \lbrace a_k\rbrace)$ so that order isomorphism is preserved. (In the diagram, blue indicates the ‘least-indexed’ elements.)</p>
+
+<p><strong>Proof 2. (Only-Forth Argument)</strong></p>
+
+<p><img src="/public/only-forth.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
+
+<p>At the $n$-th step, map the <strong>least-indexed</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to the <strong>least-indexed</strong> $b_l \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
+
+<p><strong>Incorrect Proof. (Incorrect Only-Forth Argument)</strong></p>
+
+<p>At the $n$-th step, match the <strong>least-index</strong> $a_k \in A \setminus \mathrm{dom} f_n$ to an <strong>arbitrary</strong> $b \in B \setminus  \mathrm{im}f_n$ so that order isomorphism is preserved.</p>
+
+<p><u>Why this is incorrect</u>: There is no guarantee that $\mathrm{im} \left[ \bigcup f_n \right]$ exhausts all of $B$. For example, it is possible that only $b$’s with even indices are chosen in every step.</p>
+
+<h3 id="2-dedekind-cuts">2. Dedekind Cuts</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a linearly ordered set $(P, &lt;)$, a pair of subsets $A, B$ of $P$ is called a <strong>cut</strong> if:</p>
+
+  <ol>
+    <li>$A \sqcup B = P$</li>
+    <li>For any $a \in A, b \in B$, $a &lt; b$.</li>
+  </ol>
+
+  <p>Furthermore, it is a <strong>Dedekind cut</strong> if:</p>
+
+  <ol>
+    <li>$A$ has no greatest element.</li>
+  </ol>
+
+  <p>It is called a <strong>gap</strong> if, in addition:</p>
+
+  <ol>
+    <li>$B$ has no least element.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Remark</strong></p>
+
+<ol>
+  <li>$P$ is complete ⇔ $P$ has no gaps.</li>
+  <li>As will be seen, for $P = \mathbb{Q}$, gaps correspond to irrational numbers while Dedekind cuts correspond to real numbers.</li>
+</ol>
+
+<p><img src="/public/dedekind-cut.png" style="width: 100%; max-width: 550px; margin: 1.5em auto;" /></p>
+
+<h3 id="3-completion-theorem">3. Completion Theorem</h3>
+
+<blockquote>
+  <p><strong>Completion Theorem.</strong> If $(P, &lt;)$ is a dense linear order without endpoints, then there exists a unique (up to order isomorphism) complete linear order $(C, \prec)$ satisfying:</p>
+
+  <ol>
+    <li>$P \subseteq C$</li>
+    <li>$\prec$ coincides with $&lt;$ on $P$</li>
+    <li>$P$ is dense in $C$: for any $c_1 &lt; c_2 \in C$, there exists $p \in P$ with $c_1 &lt; p &lt; c_2$</li>
+    <li>$C$ has no endpoints.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Uniqueness Proof.</strong>
+Suppose $(C, \prec)$ and $(C^\ast, \prec^\ast)$ are complete linear orders satisfying the conditions. Define $\phi: C \to C^\ast$ as follows:</p>
+
+<ol>
+  <li>If $c \in P$, then $\phi(c)=c$</li>
+  <li>If $c \notin P$, then $\phi(c) = \sup^\ast  \lbrace  p \in P : p \prec c \rbrace$</li>
+</ol>
+
+<p>This $\phi$ is an order isomorphism.</p>
+
+<p><strong>Existence Proof.</strong>
+Define:</p>
+
+\[\begin{gather}
+\mathcal{G} = \lbrace  (A, B) : (A, B) \text{ is a gap of } P \rbrace \\
+\mathcal{D} = \lbrace  (A, B) : (A, B) \text{ is a Dedekind cut of } P \rbrace \\
+\mathcal{P} = \mathcal{D} \setminus \mathcal{G}
+\end{gather}\]
+
+<p>Define an order on $\mathcal{D}$ by:</p>
+
+\[(A_1, B_1) \prec (A_2, B_2) \iff A_1 \subset A_2\]
+
+<p>If $(A, B) \in \mathcal{P}$, then for some $p$, $B = \lbrace  x \in P : x \geq p  \rbrace$, and we write $(A, B) = [p]$. That is,</p>
+
+\[\mathcal{P} = \lbrace  [p] : p \in P \rbrace\]
+
+<p>It is easy to check that $(\mathcal{P}, \prec) \sim (P, &lt;)$. Now, we show the following:</p>
+
+<p><em>Claim.</em> $\mathcal{D}$ is an extension of $\mathcal{P}$ satisfying all four conditions of the Completion Theorem.</p>
+
+<p>Conditions 1, 2, and 4 are clear. We show 3.</p>
+
+<p>Let $\mathfrak{d}_1 = (A_1, B_1), \mathfrak{d}_2 = (A_2, B_2) \in \mathcal{D}$ with $\mathfrak{d}_1 \prec \mathfrak{d}_2$, i.e., $A_1 \subset A_2$. There exists $p \in A_2 \setminus A_1$ such that $p$ is not the least element of $B$, i.e., $p \in P$. For such $p$, we have $\mathfrak{d}_1 \prec [p] \prec \mathfrak{d}_2$. □</p>
+
+<p>Finally, we show:</p>
+
+<p><em>Claim.</em> $(\mathcal{D}, \prec)$ is complete.</p>
+
+<p>Let $\mathcal{S}$ be a nonempty, upward-bounded subset of $\mathcal{D}$. Define:</p>
+
+\[\begin{gather}
+A_\mathcal{S} = \bigcup \lbrace  A : (A, B) \in \mathcal{S} \rbrace\\
+B_\mathcal{S} = \bigcap \lbrace  B : (A, B) \in \mathcal{S} \rbrace
+\end{gather}\]
+
+<p>Then $(A_\mathcal{S}, B_\mathcal{S}) \in \mathcal{D}$ and is the least upper bound of $\mathcal{S}$. ◾</p>
+
+<blockquote>
+  <p><strong>Set-theoretic Definition of the Real Numbers.</strong> A set $(R, &lt;)$ satisfying the following is unique up to order isomorphism:</p>
+
+  <ol>
+    <li>It is a complete linear order.</li>
+    <li>It has no endpoints.</li>
+    <li>It is separable; i.e., there exists $Q \subset R$ which is countable and dense in $R$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> This follows from Cantor’s Isomorphism Theorem and the Completion Theorem.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/19/CSB"> 칸토어-슈뢰더-베른슈타인 정리 </a>
+      </h1>
+    <span class="post-date">19 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>정리.</strong> 두 집합 $X, Y$에 대해 $|X| \leq |Y|$, $|X| \geq |Y|$라면 $|X| = |Y|$이다.</p>
+</blockquote>
+
+<p>매우 당연해 보이지만 $\leq$가 단사함수의 존재성으로, $=$가 전단사함수의 존재성으로 정의된다는 점에서 트리키한 함수 핸들링을 요구한다.</p>
+
+<p>여담으로 “칸토어-베른슈타인 정리(위키피디아)” 또는 “슈뢰더-베른슈타인 정리(나무위키)”라고도 부르는데 “칸토어-슈뢰더 정리”라고 부르는 경우는 못 봤다. 홍대병에 취해 있다면 “칸토어-슈뢰더 정리”라고 불러보자.</p>
+
+<h3 id="첫-번째-증명">첫 번째 증명</h3>
+
+<p><img src="/public/csb-1.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
+
+<p>조건에 의해 단사함수 $f: X \to Y, g: Y \to X$가 존재한다. $Z := \mathrm{Im} f$가 $Y$와 같다면 증명이 끝나므로 $Z \subsetneq Y$라고 하자.</p>
+
+<p>임의의 $y \in Z \setminus Y$ (그림에서 빈 점으로 표시) 에 대해,</p>
+
+<ul>
+  <li>$x_1^y = g^{-1}(y)$</li>
+  <li>$x_{n+1}^y = g(f(x_n))$</li>
+</ul>
+
+<p>와 같이 두어, $h: X \to Y$를 다음과 같이 정의한다.</p>
+
+<ul>
+  <li>$h_y(x_1^y) = y$</li>
+  <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
+</ul>
+
+<p>다음이 성립함을 확인하라.</p>
+
+\[x^y_n = x^z_m \iff y = z, n = m\]
+
+<p>따라서 다음의 함수 $h: X → Y$는 well-defined이다.</p>
+
+<p><img src="/public/csb-2.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
+
+\[h(x) = \begin{cases}
+h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
+f(x) &amp;\text{otherwise}
+\end{cases}\]
+
+<p>$h$가 전단사임을 확인하라. ◾</p>
+
+<h3 id="두-번째-증명">두 번째 증명</h3>
+
+<blockquote>
+  <p><strong>보조정리 (기수의 샌드위치 정리).</strong> $A_1 \supseteq B \supseteq A_2$에 대해 $|A_1| = |A_2|$라면 $|A_1| = |B| = |A_2|$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $f: A_1 → A_2$가 전단사라고 하자. $B_1 = B$로 둔다. 다음과 같이 $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace $을 정의한다.</p>
+
+\[\begin{gather}
+A_{n+1} = f[A_n]\\
+B_{n+1} = f[B_n]\\
+C_n = A_n \setminus B_n
+\end{gather}\]
+
+<p>$C = \bigcup C_n$ (그림에서 색칠되지 않은 영역), $D = A_1 \setminus C$ (그림에서 색칠된 영역) 라고 하자. $f[C] \subset C, f[D] \subset D$임을 확인하라. 따라서 다음의 $g: B_1 → A_2$는 전단사이다. (화살표)</p>
+
+<p><img src="/public/csb-3.png" style="width: 100%; max-width: 400px; margin: 2em auto 0 auto;" /></p>
+
+\[g(x) = \begin{cases}
+x &amp; x \in C\\
+f(x) &amp; x \in D
+\end{cases}\]
+
+<p><strong>본 정리의 증명.</strong> $f: X → Y, g: Y → X$가 전사일 때 $gf[X] \subseteq g[Y] \subseteq X$이고, $| gf[X] | = | X |$이므로, 보조정리에 의해 $|g[Y]| = |Y| = |X|$이다. ◾</p>
+
+<p>잘 생각해 보면 두 증명은 사실 같다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/19/CSB/en"> Cantor–Schröder–Bernstein Theorem </a>
+      </h1>
+    <span class="post-date">19 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>Theorem.</strong> For two sets $X, Y$, if $|X| \leq |Y|$ and $|X| \geq |Y|$, then $|X| = |Y|$.</p>
+</blockquote>
+
+<p>Although this may seem obvious, it requires some delicate function handling, since $\leq$ is defined by the existence of an injective function, while $=$ is defined by the existence of a bijective function.</p>
+
+<p>As a side note, the theorem is often called the “Cantor–Bernstein theorem” or the “Schröder–Bernstein theorem”, but I’ve never seen it called the “Cantor–Schröder theorem.” If you’re feeling a bit pretentious, it’s an open option.</p>
+
+<h3 id="first-proof">First Proof</h3>
+
+<p><img src="/public/csb-1.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
+
+<p>By assumption there exists $f: X \to Y, g: Y \to X$ injective. If $Z := \mathrm{Im} f$ equals $Y$, the proof is done, so let us assume $Z \subsetneq Y$.</p>
+
+<p>For any $y \in Z \setminus Y$ (represented as an empty dot in the diagram),</p>
+
+<ul>
+  <li>let $x_1^y = g^{-1}(y)$</li>
+  <li>let $x_{n+1}^y = g(f(x_n))$</li>
+</ul>
+
+<p>Now define a function $h: X \to Y$ as follows:</p>
+
+<ul>
+  <li>$h_y(x_1^y) = y$</li>
+  <li>$h_y(x_{n+1}^y) = f(x_n)$</li>
+</ul>
+
+<p>Check that the following holds:</p>
+
+\[x^y_n = x^z_m \iff y = z, n = m\]
+
+<p>Thus, the function $h: X \to Y$ defined by</p>
+
+<p><img src="/public/csb-2.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
+
+\[h(x) = \begin{cases}
+h_y(x) &amp;x = x^y_n \text{ for some } y, n \\\\
+f(x) &amp;\text{otherwise}
+\end{cases}\]
+
+<p>is well-defined. Verify that $h$ is bijective. ◾</p>
+
+<h3 id="second-proof">Second Proof</h3>
+
+<blockquote>
+  <p><strong>Lemma (Sandwich Theorem for Cardinals).</strong> If $A_1 \supseteq B \supseteq A_2$ and $|A_1| = |A_2|$, then $|A_1| = |B| = |A_2|$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Assume $f: A_1 \to A_2$ is bijective. Let $B_1 = B$. Define the sequences $\lbrace A_n\rbrace , \lbrace B_n\rbrace , \lbrace C_n\rbrace$ as follows:</p>
+
+\[\begin{gather}
+A_{n+1} = f[A_n]\\
+B_{n+1} = f[B_n]\\
+C_n = A_n \setminus B_n
+\end{gather}\]
+
+<p>Let $C = \bigcup C_n$ (the unshaded region in the diagram) and $D = A_1 \setminus C$ (the shaded region). Verify that $f[C] \subset C$ and $f[D] \subset D$. Then, define $g: B_1 \to A_2$ as follows (represented as arrows in the diagram).</p>
+
+\[g(x) = \begin{cases}
+x &amp; x \in C\\
+f(x) &amp; x \in D
+\end{cases}\]
+
+<p><img src="/public/csb-3.png" style="width: 100%; max-width: 400px; margin: 2em auto 0 auto;" /></p>
+
+<p>Then $g$ is bijective.</p>
+
+<p><strong>Proof of the main theorem.</strong> Given $f: X \to Y$ and $g: Y \to X$ are injective, we have $gf[X] \subseteq g[Y] \subseteq X$ and $| gf[X] | = | X |$. By the lemma, we obtain $|g[Y]| = |Y| = |X|$. ◾</p>
+
+<p>Upon closer reflection, the two proofs are essentially the same.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/18/ZFC"> ZFC 공리의 목록 </a>
+      </h1>
+    <span class="post-date">18 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <table>
+  <thead>
+    <tr>
+      <th>공리명</th>
+      <th>의미</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>외연 공리</td>
+      <td>집합은 원소의 모임이다.</td>
+    </tr>
+    <tr>
+      <td>공집합 공리*</td>
+      <td>공집합이 존재한다.</td>
+    </tr>
+    <tr>
+      <td>짝 공리*</td>
+      <td>$X, Y$로부터 $Z = \lbrace  X, Y \rbrace$를 정의할 수 있다.</td>
+    </tr>
+    <tr>
+      <td>합집합 공리</td>
+      <td>$X = \lbrace  Y_i \rbrace$로부터 $Z = \bigcup Y_i$를 정의할 수 있다.</td>
+    </tr>
+    <tr>
+      <td>멱집합 공리</td>
+      <td>$X$로부터 $\mathcal{P}(X)$를 정의할 수 있다.</td>
+    </tr>
+    <tr>
+      <td>분류 공리꼴**</td>
+      <td>$X$로부터 $Y = \lbrace  y \in X : \phi(y) \rbrace$를 정의할 수 있다. ($\phi$는 1차 논리식)</td>
+    </tr>
+    <tr>
+      <td>무한 공리</td>
+      <td>모든 자연수를 포함하는 집합이 존재한다.</td>
+    </tr>
+    <tr>
+      <td>정칙 공리</td>
+      <td>$\in$은 정렬 순서이다.</td>
+    </tr>
+    <tr>
+      <td>치환 공리꼴</td>
+      <td>$X$로부터 $f[X]$를 정의할 수 있다. ($f$는 class function)</td>
+    </tr>
+    <tr>
+      <td>선택 공리</td>
+      <td>집합족 $\lbrace  X_i \rbrace$에 대해 각 $X_i$의 원소를 하나씩 선택할 수 있다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>공리명</th>
+      <th>논리식(자유변수는 $\forall$로 양화)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>외연 공리</td>
+      <td>$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$</td>
+    </tr>
+    <tr>
+      <td>공집합 공리*</td>
+      <td>$\exists Z : z \not\in Z$</td>
+    </tr>
+    <tr>
+      <td>짝 공리*</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$</td>
+    </tr>
+    <tr>
+      <td>합집합 공리</td>
+      <td>$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$</td>
+    </tr>
+    <tr>
+      <td>멱집합 공리</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$</td>
+    </tr>
+    <tr>
+      <td>분류 공리꼴**</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$</td>
+    </tr>
+    <tr>
+      <td>무한 공리</td>
+      <td>$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$</td>
+    </tr>
+    <tr>
+      <td>정칙 공리</td>
+      <td>$\exists x \in X : \forall y \in X [ y \not\in x]$</td>
+    </tr>
+    <tr>
+      <td>치환 공리꼴</td>
+      <td>$\displaylines{[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow [\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$</td>
+    </tr>
+    <tr>
+      <td>선택 공리</td>
+      <td>$\displaylines{\varnothing \notin X \rightarrow \exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Remarks.</strong></p>
+
+<ul>
+  <li>정칙 공리는 다음과 동치</li>
+</ul>
+
+\[\exists x \in X : x \cap X = \varnothing\]
+
+<ul>
+  <li>(*)로 표시된 공리는 분류 공리꼴로부터 유도할 수 있다.</li>
+  <li>(**)로 표시된 공리는 치환 공리꼴로부터 유도할 수 있다.
+    <ul>
+      <li>분류 공리꼴의 내용은 “X가 집합이다 → f[X]가 집합이다(f는 함수)”이라는 것이다. f가 함수임을(즉, f의 정의역이 집합임을) 선결적으로 요구함에 유의하라.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="공리의-필요성">공리의 필요성</h3>
+
+<p><strong>정리.</strong> 다음의 정리들은 선택 공리를 필요로 한다.</p>
+
+<ul>
+  <li>
+    <p>$f: X → Y$가 전사일 때, 어떤 $X$의 부분집합 $Z$에 대해 $f\vert_Z$는 전단사이다.</p>
+  </li>
+  <li>
+    <p>$\varnothing \not\in \lbrace  X_i\rbrace$일 때 $\prod X_i \neq \varnothing$이다.</p>
+  </li>
+  <li>
+    <p><strong>정렬 원리:</strong> 임의의 집합에 정렬 순서를 줄 수 있다.</p>
+  </li>
+  <li>
+    <p><strong>초른의 보조정리:</strong> $(X, &lt;)$의 임의의 체인이 $X$에서 상계를 가진다면, $X$는 극댓값<sub>maximal element</sub>을 가진다.</p>
+  </li>
+</ul>
+
+<p><strong>정리.</strong> 다음의 정리들은 치환 공리꼴을 필요로 한다.</p>
+
+<ul>
+  <li>
+    <p>$\omega + \omega$가 존재한다.</p>
+  </li>
+  <li>
+    <p><a href="http://dimenerno.github.io/2024/11/21/trichotomy"><strong>서수 완전성 정리.</strong></a> 모든 정렬 순서는 서수와 순서 동형이다.</p>
+  </li>
+</ul>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/11/18/ZFC/en"> List of ZFC Axioms </a>
+      </h1>
+    <span class="post-date">18 Nov 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Extensionality</td>
+      <td>Set is an unordered collection of elements.</td>
+    </tr>
+    <tr>
+      <td>Existence*</td>
+      <td>There exists the empty set.</td>
+    </tr>
+    <tr>
+      <td>Pairing*</td>
+      <td>From $X, Y$ follows $Z = \lbrace  X, Y \rbrace$.</td>
+    </tr>
+    <tr>
+      <td>Union</td>
+      <td>From $X = \lbrace  Y_i \rbrace$ follows $Z = \bigcup Y_i$.</td>
+    </tr>
+    <tr>
+      <td>Power Set</td>
+      <td>From $X$ follows $\mathcal{P}(X)$.</td>
+    </tr>
+    <tr>
+      <td>Separation Schema**</td>
+      <td>From $X$ follows $Y = \lbrace  y \in X : \phi(y) \rbrace$, where $\phi$ is a first-order formula.</td>
+    </tr>
+    <tr>
+      <td>Infinity</td>
+      <td>There exists a set containing all the natural numbers.</td>
+    </tr>
+    <tr>
+      <td>Regularity</td>
+      <td>$\in$ is a well-ordering.</td>
+    </tr>
+    <tr>
+      <td>Replacement</td>
+      <td>From $X$ follows $f[X]$, where $f$ is a class function definable in first-order logic.</td>
+    </tr>
+    <tr>
+      <td>Choice</td>
+      <td>Every collection of nonempty sets $\lbrace  X_i \rbrace$ has a choice function.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Formula (Free variables are to be quantified by $\forall$)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Extensionality</td>
+      <td>$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$</td>
+    </tr>
+    <tr>
+      <td>Existence*</td>
+      <td>$\exists Z : z \not\in Z$</td>
+    </tr>
+    <tr>
+      <td>Pairing*</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$</td>
+    </tr>
+    <tr>
+      <td>Union</td>
+      <td>$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$</td>
+    </tr>
+    <tr>
+      <td>Power Set</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$</td>
+    </tr>
+    <tr>
+      <td>Separation Schema**</td>
+      <td>$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$</td>
+    </tr>
+    <tr>
+      <td>Infinity</td>
+      <td>$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$</td>
+    </tr>
+    <tr>
+      <td>Regularity</td>
+      <td>$\exists x \in X : \forall y \in X [ y \not\in x]$</td>
+    </tr>
+    <tr>
+      <td>Replacement</td>
+      <td>$\displaylines{[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow [\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$</td>
+    </tr>
+    <tr>
+      <td>Choice</td>
+      <td>$\displaylines{\varnothing \notin X \rightarrow \exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Remarks.</strong></p>
+
+<ul>
+  <li>Regularity is equivalent to the following:</li>
+</ul>
+
+\[\exists x \in X : x \cap X = \varnothing\]
+
+<ul>
+  <li>
+    <p>Those marked by (*) can be derived from the Separation.</p>
+  </li>
+  <li>
+    <p>Those marked by (**) can be derived from the Replacement.</p>
+  </li>
+</ul>
+
+<p>Replacement is <em>strictly</em> stronger than Separation:</p>
+
+<ul>
+  <li>Separation can be stated as: If $X$ is a set and $f$ is a function, then $f[X]$ is a set.</li>
+  <li>Replacement can be stated as: If $X$ is a set and $f$ is a class function, then $f[X]$ is a set.</li>
+</ul>
+
+<p>The proof of following theorems require Choice.</p>
+
+<ul>
+  <li>If $f: X → Y$ is surjective, there exists a subset $Z$ of $X$ such that $f\vert_Z$ is bijective.</li>
+  <li>If $\varnothing \not\in \lbrace  X_i\rbrace$, then $\prod X_i \neq \varnothing$.</li>
+  <li><strong>Well-ordering Principle.</strong> Every set can be well-ordered.</li>
+  <li><strong>Zorn’s Lemma.</strong> If every chain of $(X, &lt;)$ is bounded in $X$, $X$ has a maximal element.</li>
+</ul>
+
+<p>The proof of following theorems require Replacement.</p>
+
+<ul>
+  <li>$\omega + \omega$ exists.</li>
+  <li><a href="http://dimenerno.github.io/2024/11/21/trichotomy"><strong>Completeness of Ordinals.</strong></a> Every well-ordered set is order-isomorphic to a unique ordinal.</li>
+</ul>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2024/11/17/bell-rocket"> 벨의 우주선 사고실험: 수동적 로렌츠 수축과 능동적 로렌츠 수축 </a>
