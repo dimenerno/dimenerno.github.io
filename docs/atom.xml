@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-01-21T13:08:47+09:00</updated>
+ <updated>2026-01-21T13:11:50+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -169,10 +169,10 @@
 &lt;p&gt;Interestingly, the measure problem is related to the continuum hypothesis and large cardinal axioms. Let us first examine the following theorem:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If a measure exists on $\nu$, then some $\kappa \leq \nu$ is weakly inaccessible.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If a probabilistic measure exists on $\nu$, then some $\kappa \leq \nu$ is weakly inaccessible.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Suppose a measure $\mu$ exists on $\nu$. The collection $\mathcal{I}$ of null sets with respect to $\mu$ forms an ideal. In particular, it can be easily shown that $\mathcal{I}$ satisfies the following properties:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; Suppose a probabilistic measure $\mu$ exists on $\nu$. The collection $\mathcal{I}$ of null sets with respect to $\mu$ forms an ideal. In particular, it can be easily shown that $\mathcal{I}$ satisfies the following properties:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Contains singletons: For any $\xi &amp;lt; \nu$, $\lbrace \xi \rbrace \in \mathcal{I}$.&lt;/li&gt;

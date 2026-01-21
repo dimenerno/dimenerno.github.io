@@ -31,9 +31,9 @@ If such a measure exists, it is known that the Lebesgue measure can be extended 
 
 Interestingly, the measure problem is related to the continuum hypothesis and large cardinal axioms. Let us first examine the following theorem:
 
-> **Theorem.** If a measure exists on $\nu$, then some $\kappa \leq \nu$ is weakly inaccessible.
+> **Theorem.** If a probabilistic measure exists on $\nu$, then some $\kappa \leq \nu$ is weakly inaccessible.
 
-**Proof.** Suppose a measure $\mu$ exists on $\nu$. The collection $\mathcal{I}$ of null sets with respect to $\mu$ forms an ideal. In particular, it can be easily shown that $\mathcal{I}$ satisfies the following properties:
+**Proof.** Suppose a probabilistic measure $\mu$ exists on $\nu$. The collection $\mathcal{I}$ of null sets with respect to $\mu$ forms an ideal. In particular, it can be easily shown that $\mathcal{I}$ satisfies the following properties:
 
 1. Contains singletons: For any $\xi < \nu$, $\lbrace \xi \rbrace \in \mathcal{I}$.
 2. Countably closed: If $\lbrace A\_n \rbrace\_{n < \omega}$ is a collection of sets in $\mathcal{I}$, then $\bigcup\_{n < \omega} A\_n \in \mathcal{I}$.
