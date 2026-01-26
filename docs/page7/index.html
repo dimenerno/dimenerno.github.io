@@ -433,6 +433,318 @@
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/05/08/robinson-craig/en"> Robinson, Craig, and Beth's Theorems </a>
+      </h1>
+    <span class="post-date">08 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/model-theory/'">
+        Model Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h3 id="elementary-amalgamation-property">Elementary Amalgamation Property</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathfrak{A}$ be an $\mathcal{L}$-structure and $\mathfrak{B}$ be an $\mathcal{L}’$-structure such that the $\mathcal{L}$-reduct of $\mathfrak{B}$ is elementarily equivalent to $\mathfrak{A}$. Then there exists an $\mathcal{L}’$-structure $\mathfrak{C}$ such that $f: \mathfrak{A} \to \mathfrak{C}$ is an <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">elementary embedding</a> in $\mathcal{L}$ and $g: \mathfrak{B} \to \mathfrak{C}$ is an elementary embedding in $\mathcal{L}’$.</p>
+
+  <p><img src="/public/elementary-amalgamation-2.png" style="width: 100%; max-width: 110px; margin: 1em auto; mix-blend-mode: multiply" /></p>
+</blockquote>
+
+<p><strong>Proof.</strong> Following the notation of <a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">this post</a>, consider the theory $E(\mathfrak{A})$ in language $L_\mathfrak{A}$ and the theory $E(\mathfrak{B})$ in language $L’<em>\mathfrak{B}$. Let $T = E(\mathfrak{A}) \cup E(\mathfrak{B})$ be a theory in the language $\mathcal{L}’</em>{\mathfrak{AB}} = \mathcal{L}<em>\mathfrak{A} \cup \mathcal{L}’</em>\mathfrak{B}$. We shall show that $T$ has a model $\mathfrak{C}$.</p>
+
+<p>Suppose $T$ has no model. Then $T$ is inconsistent. By the compactness theorem, there exist some $\mathcal{L}$-formula $\phi$ and $\mathcal{L}’$-formula $\psi$ such that for appropriate ${a_i} \subset \mathcal{L}<em>\mathfrak{A}$ and ${b_j} \subset \mathcal{L}</em>\mathfrak{B}$,</p>
+
+\[\{\phi(a_1, \dots, a_n), \psi(b_1, \dots, b_m)\}\]
+
+<p>has no model. Since $\mathfrak{B} \vDash \psi(b_1, \dots, b_m)$, there must be no way to assign the constants $a_1, \dots, a_n$ to elements of the domain of $\mathfrak{B}$ such that $\mathfrak{B} \vDash \phi(a_1, \dots, a_n)$. That is,</p>
+
+\[\mathfrak{B} \not\vDash \exists x_1, \dots x_n \; \phi(x_1, \dots, x_n)\]
+
+<p>However, since the $\mathcal{L}$-reduct of $\mathfrak{B}$ is elementarily equivalent to $\mathfrak{A}$, and the right-hand side above is an $\mathcal{L}$-sentence that is satisfied by $\mathfrak{A}$, this yields a contradiction. Therefore, $T$ has a model $\mathfrak{C}$. Since $\mathfrak{C}$ is a model of both $E(\mathfrak{A})$ and $E(\mathfrak{B})$, both $\mathfrak{A}$ and $\mathfrak{B}$ are naturally elementarily embedded into $\mathfrak{C}$. ■</p>
+
+<h3 id="robinson-consistency-theorem">Robinson Consistency Theorem</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathcal{L} = \mathcal{L}_1 \cap \mathcal{L}_2$. Suppose $T$ is a (semantically) complete theory in $\mathcal{L}$, and $T_1$ and $T_2$ are consistent theories in $\mathcal{L}_1$ and $\mathcal{L}_2$ respectively, each extending $T$. Then $T_1 \cup T_2$ is consistent as a theory in $\mathcal{L}_1 \cup \mathcal{L}_2$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> It suffices to construct a model of $T_1 \cup T_2$.</p>
+
+<p>Since $T_1$ and $T_2$ are consistent, they have models $\mathfrak{A}_0$ and $\mathfrak{B}_0$ respectively. Since $T = T_1 \cap T_2$ is complete, the $\mathcal{L}$-reducts of $\mathfrak{A}_0$ and $\mathfrak{B}_0$ are elementarily equivalent. Therefore, by the elementary amalgamation property, there exist an $\mathcal{L}$-elementary embedding $f_0$ and an $\mathcal{L}_2$-elementary embedding $h_0$ such that the following holds:</p>
+
+<p><img src="/public/robinson-1.png" style="width: 100%; max-width: 115px; margin: 1em auto" /></p>
+
+<p>Now considering the $\mathcal{L}$-reduct of $\mathfrak{B}_1$, this is elementarily equivalent to $\mathfrak{A}_0$, so again by the elementary amalgamation property, there exist an $\mathcal{L}$-elementary embedding $g_0$ and an $\mathcal{L}_1$-elementary embedding $k_0$ such that the following holds:</p>
+
+<p><img src="/public/robinson-2.png" style="width: 100%; max-width: 127px; margin: 1em auto" /></p>
+
+<p>Repeating this process, we obtain the following directed system of structures:</p>
+
+<p><img src="/public/robinson-3.png" style="width: 100%; max-width: 285px; margin: 1em auto" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Map</th>
+      <th>Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$f, g$</td>
+      <td>$\mathcal{L}$-elementary embedding</td>
+    </tr>
+    <tr>
+      <td>$k$</td>
+      <td>$\mathcal{L}_1$-elementary embedding</td>
+    </tr>
+    <tr>
+      <td>$h$</td>
+      <td>$\mathcal{L}_2$-elementary embedding</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Reducing all models in the above directed system to $\mathcal{L}$ gives an $\mathcal{L}$-structure directed system. Let $\mathfrak{C}$ be the colimit of this directed system. $\mathfrak{C}$ is also the colimit of the directed system consisting of ${\mathfrak{A}_i}$, since the parts of the original directed system shown in grey all project to one of the ${\mathfrak{A}_i}$. Therefore, $\mathfrak{C}$ is an $\mathcal{L}_1$-structure that elementarily embeds $\mathfrak{A}_0$.</p>
+
+<p><img src="/public/robinson-4.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
+
+<p>For the same reason, $\mathfrak{C}$ is also the colimit of the directed system consisting of ${\mathfrak{B}_i}$. Therefore, $\mathfrak{C}$ is an $\mathcal{L}_2$-structure that elementarily embeds $\mathfrak{B}_0$.</p>
+
+<p><img src="/public/robinson-5.png" style="width: 100%; max-width: 300px; margin: 1.5em auto" /></p>
+
+<p>That is, $\mathfrak{C}$ embeds both $\mathfrak{A}$ and $\mathfrak{B}$, from which it follows that it is a model of $T_1 \cup T_2$. ■</p>
+
+<h3 id="craig-interpolation-theorem">Craig Interpolation Theorem</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For $\mathcal{L}$-sentences $\phi$ and $\psi$, if $\phi \vDash \psi$, then there exists an $\mathcal{L}$-sentence $\theta$ such that $\phi \vDash \theta$ and $\theta \vDash \psi$. Moreover, the non-logical symbols (constants, predicates, functions) contained in $\theta$ are those common to both $\phi$ and $\psi$.</p>
+</blockquote>
+
+<p>$\theta$ is called a <strong>Craig interpolant</strong> of $\phi$ and $\psi$.</p>
+
+<p><strong>Proof.</strong> We prove by contradiction. Suppose no Craig interpolant exists. Then $\phi$ has a model, for if $\phi$ had no model, then $\perp$ would be a Craig interpolant of $\phi$ and $\psi$. Also, $\lnot \psi$ has a model, for otherwise $\top$ would be a Craig interpolant.</p>
+
+<p>Let $\mathcal{L}’$ be the language consisting of the non-logical symbols common to both $\phi$ and $\psi$. Let $\Gamma$ be the set of $\mathcal{L}’$-sentences $\sigma$ such that either $\phi \vDash \sigma$ or $\lnot \psi \vDash \sigma$.</p>
+
+<p>We show that $\Gamma \cup {\phi}$ is consistent. Suppose it is inconsistent. Then by the compactness theorem, there exist $\mathcal{L}’$-sentences $\sigma_1$ and $\sigma_2$ such that $\phi \vDash \sigma_1$, $\lnot\psi \vDash \sigma_2$, and ${\sigma_1, \sigma_2, \phi}$ is inconsistent. Since $\phi \vDash \sigma_1$, we have $\phi \vDash \lnot\sigma_2$. By contraposition, from $\lnot\psi \vDash \sigma_2$ we obtain $\lnot\sigma_2 \vDash \psi$. Thus $\lnot\sigma_2$ is a Craig interpolant of $\phi$ and $\psi$, contradicting our assumption.</p>
+
+<p>Therefore, $\Gamma \cup {\phi}$ is consistent, and by the same reasoning, $\Gamma \cup {\lnot\psi}$ is also consistent. Now applying Zorn’s lemma, define $\overline{\Gamma}$ as the maximum of the following ordered set of $\mathcal{L}’$-theories:</p>
+
+\[\{ \Gamma' : \Gamma \subseteq \Gamma', \Gamma' \cup \{\phi\} \text{ and } \Gamma' \cup \{\lnot \psi\} \text{ are consistent} \}\]
+
+<p>We show that $\overline{\Gamma}$ is complete. Suppose $\overline{\Gamma}$ is not complete. Then there exists an $\mathcal{L}’$-sentence $\sigma$ such that $\sigma \notin \overline{\Gamma}$, and either $\overline{\Gamma} \cup {\sigma, \phi}$ or $\overline{\Gamma} \cup {\sigma, \lnot \psi}$ is consistent.</p>
+
+<p>In the former case, by the compactness theorem, there exists a sentence $\theta$ in $\overline{\Gamma}$ such that $\phi \vDash \theta \rightarrow \lnot \sigma$. By the definition of $\Gamma$, we have $\theta \rightarrow \lnot \sigma \in \Gamma \subseteq \overline{\Gamma}$. Therefore, $\overline{\Gamma} \cup {\sigma, \phi}$ proves $\lnot\phi$, which is a contradiction. The latter case yields a similar contradiction. Therefore, $\overline{\Gamma}$ is complete.</p>
+
+<p>Since $\overline{\Gamma}$ is complete and $\overline{\Gamma} \cup {\phi}$ and $\overline{\Gamma} \cup {\lnot\psi}$ are consistent, by Robinson’s consistency theorem, $\overline{\Gamma} \cup {\phi, \lnot \psi}$ is consistent. But this contradicts $\phi \vDash \psi$. Therefore, by contradiction, $\phi$ and $\psi$ have a Craig interpolant. ■</p>
+
+<h3 id="beth-definability-theorem">Beth Definability Theorem</h3>
+
+<p>Consider a language $\mathcal{L}$ and a predicate $P$ not contained in $\mathcal{L}$. Let $T$ be a theory in $\mathcal{L} \cup {P}$. We say that $T$ <strong>implicitly defines</strong> $P$ when there is a unique way to extend any $\mathcal{L}$-structure $\mathfrak{A}$ satisfying $T$ to $\mathcal{L} \cup {P}$.</p>
+
+<p>This can also be stated as follows. Let $T(P’)$ be the theory in $\mathcal{L} \cup {P’}$ obtained by replacing every occurrence of $P$ in $T$ with $P’$. Then $T$ implicitly defines $P$ if and only if the following holds:</p>
+
+\[T \cup T(P') \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow P'(x_1, \dots, x_n)\]
+
+<p>On the other hand, $T$ <strong>explicitly defines</strong> $P$ if there exists an $\mathcal{L}$-formula $\phi$ satisfying:</p>
+
+\[T \vDash \forall x_1, \dots, x_n \; P(x_1, \dots, x_n) \leftrightarrow \phi(x_1, \dots, x_n)\]
+
+<p>For example, consider the following theory $T$, which adds axioms concerning a predicate $P(x, y)$ to the theory $\mathsf{PA}$ in the language $\mathcal{L} = (0, S, +, \cdot)$:</p>
+
+\[T = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
+
+<p>$T(P’)$ is as follows:</p>
+
+\[T(P') = \mathsf{PA} \cup \Big\{ \forall x, y \big[ P'(x, y) \rightarrow x + y = S(0) \big] \Big\}\]
+
+<p>That $T$ implicitly defines $P$ means the following holds:</p>
+
+\[T \cup T(P') \vDash \forall x, y \big[ P(x, y) \leftrightarrow P'(x, y) \big]\]
+
+<p>This follows naturally from the induction axiom schema. But $P$ can also be explicitly defined in $T$ as follows:</p>
+
+\[\begin{gather}
+T \vDash \forall x, y \big[ P(x, y) \leftrightarrow \phi(x, y) \big] \\\\
+\text{where}\\\\
+\phi(x, y) : \forall z \big[ x + z = S(0) \rightarrow z = y \big]
+\end{gather}\]
+
+<p>This is no coincidence.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For a language $\mathcal{L}$, if a theory $T$ in $\mathcal{L} \cup {P}$ implicitly defines $P$, then $T$ explicitly defines $P$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Suppose $P$ is an $n$-ary predicate. Let $\mathcal{L}’$ be the language obtained by adding new constants $c_1, \dots, c_n$ to $\mathcal{L}$. Since $T$ implicitly defines $P$, we have:</p>
+
+\[T \cup T(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>By the compactness theorem, there exists an $\mathcal{L} \cup {P}$-sentence $\psi$ such that $T \vdash \psi$ and the following holds:</p>
+
+\[\psi \land \psi(P') \vDash P(c_1, \dots, c_n) \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>Using the deduction theorem and rearranging:</p>
+
+\[\psi \land P(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)\]
+
+<p>The left-hand side is a sentence in $\mathcal{L}’ \cup {P}$, and the right-hand side is a sentence in $\mathcal{L}’ \cup {P’}$. Therefore, by Craig’s interpolation theorem, there exists an $\mathcal{L}’$-formula $\theta$ such that:</p>
+
+\[\begin{gather}
+\psi \land P(c_1, \dots, c_n) \vDash \theta(c_1, \dots, c_n), \\\\
+\theta(c_1, \dots, c_n) \vDash \psi(P') \rightarrow P'(c_1, \dots, c_n)
+\end{gather}\]
+
+<p>Rearranging again and substituting $P$ for $P’$:</p>
+
+\[\begin{gather}
+\psi \vDash P(c_1, \dots, c_n) \rightarrow \theta(c_1, \dots, c_n), \\\\
+\psi \vDash \theta(c_1, \dots, c_n) \rightarrow P(c_1, \dots, c_n)
+\end{gather}\]
+
+<p>Therefore, $\theta$ explicitly defines $P$. ■</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/05/04/regular-singular"> 정칙 기수와 특이 기수, 그리고 도달 불가능 기수 </a>
+      </h1>
+    <span class="post-date">04 May 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <p>이 글에서 $\kappa$는 무한 기수이다. 또한, 기수를 초기 서수<sub>initial ordinal</sub>로 정의하는 방식을 택한다(<a href="https://dimenerno.github.io/2025/04/20/cardinality/">이 글</a>의 3번). 이에 따라 모든 기수는 서수이기도 하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\theta$가 $\kappa$보다 작은 극한 서수라고 하자. 각 $\nu$에 대해 $\alpha_\nu &lt; \kappa$인 증가하는 서수열 $\langle \alpha_\nu : \nu &lt; \theta \rangle$에 대하여, 언제나 $\lim_{\nu \to \theta} \alpha_\nu &lt; \kappa$일 때, $\kappa$를 <strong>정칙 기수<sub>regular cardinal</sub></strong>라고 한다. 정칙 기수가 아닌 기수를 <strong>특이 기수<sub>singular cardinal</sub></strong>라고 한다.</p>
+</blockquote>
+
+<p><em>Remark.</em> $\alpha_\nu$와 $\theta$는 일반적으로 기수가 아니라 서수이다.</p>
+
+<p>예를 들어 $\aleph_0$는 정칙 기수이다. $\aleph_0$개보다 적은 개수의 — 즉, 유한한 — $\aleph_0$보다 작은 기수들 — 즉, 자연수 —  의 상한은 $\aleph_0$에 달하지 않기 때문이다.</p>
+
+<p>반면 $\aleph_\omega$는 특이 기수이다. 다음 기수열에서 각각의 기수는 $\aleph_\omega$보다 작고, 기수열의 길이 또한 $\aleph_0 &lt; \aleph_\omega$이지만, 그 상한은 $\aleph_\omega$이기 때문이다.</p>
+
+\[\aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \aleph_3 \quad \cdots\]
+
+<blockquote>
+  <p><strong>정리. (특이 기수 판별법)</strong> $\kappa$가 특이 기수일 필요충분조건은 $\kappa$가 $\kappa$개보다 적은 개수의 $\kappa$보다 작은 기수들의 합일 것이다. 즉, $|I| &lt; \kappa$, $\kappa_i &lt; \kappa \;(\forall i \in I)$에 대하여,</p>
+
+\[\sum_{i \in I} \kappa_i = \kappa\]
+</blockquote>
+
+<p><em>Remark.</em> $\kappa_i$는 일반적인 서수가 아닌 기수이다. 그리고 $\sum$은 서수 덧셈이 아니라 기수 덧셈이다.</p>
+
+<p><strong>증명.</strong></p>
+
+<p>($\Rightarrow$) $\kappa$가 특이 기수라면 어떤 서수열 $\langle \alpha_\nu : \nu &lt; \theta\rangle$이 존재하여,</p>
+
+\[\lim_{\nu \to \theta} \alpha_\nu = \sup \alpha_\nu = \bigcup_{\nu &lt; \theta}\alpha_\nu = \kappa\]
+
+<p>이다. 일반적으로 서수 $\alpha$는 자기보다 작은 서수 $\beta &lt; \alpha$들의 합집합이다. 따라서 다음이 성립한다.</p>
+
+\[\kappa = \bigcup_{\nu &lt; \theta}\alpha_\nu = \bigcup_{\nu &lt; \theta}\left( \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi \right)\]
+
+<p>$A_\nu = \alpha_\nu - \bigcup_{\xi &lt; \nu} \alpha_\xi$라고 하자. $A_\nu$는 더이상 서수가 아니지만 그건 중요하지 않다. 중요한 것은 $\lbrace  A_\nu \rbrace $가 쌍으로 서로소라는 것이다. 따라서 $\kappa_\nu = |A_\nu|$라고 하면 기수 덧셈의 정의에 의해,</p>
+
+\[\sum_{\nu &lt; \theta} \kappa_\nu = \left| \bigcup_{\nu &lt; \theta} A_\nu \right| = \kappa\]
+
+<p>이다.</p>
+
+<p>($\Leftarrow$) $\kappa = \sum_{i \in I}\kappa_i$라고 하자. $|I| = \lambda$라고 하면 기수 덧셈의 성질에 의해 $\kappa = \lambda \cdot \sup \kappa_i$이다. $\lambda &lt; \kappa$이므로, 기수 곱셈의 성질에 의해 $\kappa = \sup \kappa_i$이다. 각 $i \in I$에 대해 $\kappa_i &lt; \kappa$인데 $\sup \kappa_i = \kappa$이므로, 초한귀납법을 통해 증가하는 기수열</p>
+
+\[\langle \kappa_\nu : \kappa_\nu = \kappa_i \text{ for some } i \in I, \nu &lt; \theta\rangle\]
+
+<p>을 구축할 수 있으며, $\theta \leq \lambda$이므로 정리가 보여졌다. ■</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 어떤 $\alpha \in \mathrm{Ord}$에 대해 $\kappa = \aleph_{\alpha + 1}$일 때, $\kappa$를 <strong>계승 기수<sub>successor cardinal</sub></strong>라고 한다. 계승 기수가 아닌 기수를 <strong>극한 기수<sub>limit cardinal</sub></strong>라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 모든 계승 기수는 정칙이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\kappa = \aleph_{\alpha + 1}$이라고 하자. $\kappa$가 특이 기수라면, 특이 기수 판별법에 의해 $\kappa = \sum_{i \in I} \kappa_i$이며 $\kappa_i, |I| &lt; \kappa$이다. 이는 $\kappa_i , |I| \leq \aleph_\alpha$와 같다. 그런데</p>
+
+\[\sum_{i \in I} \kappa_i \leq \sum_{i \in I} \aleph_\alpha = |I| \cdot  \aleph_\alpha \leq  \aleph_\alpha \cdot \aleph_\alpha =  \aleph_\alpha &lt; \kappa\]
+
+<p>이므로 모순이다. ■</p>
+
+<p>따라서 모든 특이 기수는 극한 기수이다. 그러나 모든 극한 기수가 특이 기수인 것은 아니다. $\aleph_0$는 정칙인 극한 기수이기 때문이다. 그러나 $\aleph_0$ 이외에 정칙인 극한 기수가 존재할까?</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 비가산 정칙 극한 기수를 <strong>도달 불가능 기수<sub>inaccessible cardinal</sub></strong>라고 한다.<a href="#sub1" id="sup1"><sup>1</sup></a></p>
+</blockquote>
+
+<p>$\aleph_\alpha$가 도달 불가능 기수라고 하자. 다음의 증가 기수열의 극한은 $\aleph_\alpha$이다.</p>
+
+\[\langle \aleph_\beta : \beta &lt; \alpha \rangle : \aleph_0 \quad \aleph_1 \quad \aleph_2 \quad \cdots \quad \to \aleph_\alpha\]
+
+<p>따라서 $\aleph_\alpha$가 정칙이기 위해서는 위 기수열의 길이인 $\alpha$가 $\aleph_\alpha$보다 작아서는 안 된다. 그런데 $\alpha \leq \aleph_\alpha$이므로, $\alpha = \aleph_\alpha$임이 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\aleph_\alpha$가 도달 불가능할 필요조건은 $\alpha = \aleph_\alpha$인 것이다.</p>
+</blockquote>
+
+<p>이는 $\alpha$가 무지막지하게 큰 기수임을 시사한다. 일례로 다음의 기수열 $\langle \alpha_n : n \in \omega \rangle$을 보자.</p>
+
+\[\alpha_0 = \aleph_0, \alpha_{n + 1} = \aleph_{\alpha_n}\]
+
+<p>위 기수열의 상한을 $\kappa$라고 하자. 상한의 정의에 의해 $\lambda &lt; \kappa$라면 $\alpha_n &gt; \lambda$인 $n$이 존재한다. 따라서 $\aleph_\lambda = \alpha_{n+1} &lt; \kappa$이며,</p>
+
+\[\aleph_\kappa = \sum_{\lambda &lt; \kappa} \aleph_\lambda \leq \sum_{\lambda &lt; \kappa} \kappa = \kappa\]
+
+<p>이다. 다시 말해, $\alpha = \aleph_\alpha$를 만족하는 기수는 적어도 다음에 비견되는 크기를 가진다.</p>
+
+\[\kappa = \aleph_{\aleph_{\aleph_{\aleph_{\ddots}}}}\]
+
+<p>여기서 집고 넘어갈 점이 있다. 비록 $\kappa$가 $\kappa = \aleph_\kappa$를 보이긴 했지만, $\kappa$가 도달 불가능함을 보인 것은 아니다. 오히려 $\kappa$는 특이 기수이다. 길이가 $\omega$인 기수열 $\alpha_n$의 극한이기 때문이다.</p>
+
+<p>사실 도달 불가능 기수의 존재성은 ZFC와 독립적이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 도달 불가능 기수의 존재성은 ZFC와 독립이다.</p>
+</blockquote>
+
+<p>따라서 도달 불가능 기수의 존재는 공리로서 가정해야 한다. 도달 불가능 기수의 존재를 가정하는 부류의 공리들을 <strong>큰 기수 공리<sub>large cardinal axioms</sub></strong>라고 부르며, 이와 관련된 연구는 집합론의 중요한 부분을 이룬다.</p>
+
+<hr />
+
+<p><a href="#sup1" id="sub1">1.</a> 엄밀히 말해 이는 <strong>약한 도달 불가능 기수<sub>weakly inaccessible cardinal</sub></strong>에 해당한다. $\kappa$가 <strong>강한 도달 불가능 기수<sub>strongly inaccessible cardinal</sub></strong>라는 것은 $\kappa$가 약한 도달 불가능 기수이며, 추가로 $\lambda &lt; \kappa$일 때 $2^\lambda &lt; \kappa$인 것이다. 연속체 가설을 인정할 때 약한 도달 불가능성과 강한 도달 불가능성은 동치이다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/05/04/regular-singular/en"> Regular Cardinals, Singular Cardinals, and Inaccessible Cardinals </a>
       </h1>
     <span class="post-date">04 May 2025</span>
@@ -1337,349 +1649,6 @@ $$
 <p>위 퍼즐이 특히 기묘한 이유는, 청력 상실 조건에 의해 서로 다른 두 죄수가 모자를 맞히는 사건이 독립이므로, 각각의 죄수가 정답을 맞힐 확률은 $p$로 동일해야 할 듯하기 때문이다. 이 경우 총 $N$명의 죄수가 정답을 맞히는 확률은 $p^N$이 되므로, $N \to \infty$에 따라 확률은 0으로 수렴한다. 그러나 실제로는 무한히 많은 죄수들이 정답을 맞힌다.</p>
 
 <p>이 역설의 뿌리는, 임의의 죄수가 정답을 맞히는 확률이 <strong>정의되지 않는다</strong>는 데 있다. 잘 생각해 보면, 임의의 죄수가 정답을 맞히는 사건은 주어진 실수 $r \in [0, 1]$이 <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">비탈리 집합</a>에 포함되는 사건과 동일한데, 비탈리 집합은 비가측 집합이므로 이 사건에는 확률을 정의할 수 없기 때문이다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/18/prisoner-hat/en"> Infinite Prisoner Hat Problem </a>
-      </h1>
-    <span class="post-date">18 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>You have likely encountered puzzles where prisoners attempt to guess the colour of their own hats. Consider the following example:</p>
-
-<blockquote>
-  <p>Three prisoners A, B, and C stand in a line. A guard selects three hats from two black hats and three white hats, places them on each prisoner, and announces that if any one of them correctly guesses their hat colour, all will be freed, but if they guess incorrectly, all will be executed. Each prisoner can see the hat colours of those in front of them, but cannot see their own hat colour or those of prisoners behind them. After a long silence, one prisoner correctly identifies their hat colour. Which prisoner solved the problem?</p>
-
-  <p><img src="/public/hat-1.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(1)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Answer</u>
-</div>
-
-<div id="answer1" class="answer" style="padding-bottom: 1em;">
-<p><strong>C provides the correct answer.</strong></p>
-<p>If both B and C wore black hats, A would have correctly guessed that their hat was white. However, since a "long silence" ensued, A could not determine their hat colour, indicating that the hat colours of B and C represent one of the cases: (white, black), (black, white), or (white, white).</p>
-<p>Considering this information, if C's hat were black, B would have correctly guessed that their hat was white. The fact that a "long silence" continued indicates that B also could not determine their hat colour, therefore C's hat must be white.</p>
-</div>
-
-<p>A more challenging problem follows:</p>
-
-<blockquote>
-  <p>One hundred prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, while those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What is the maximum number of prisoners whose survival can be guaranteed with certainty?</p>
-
-  <p><img src="/public/hat-2.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(8)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Hint</u>
-</div>
-
-<div id="answer8" class="answer" style="padding-bottom: 1em;">
-<p>The survival of 99 prisoners, excluding the first, can be guaranteed.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(2)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Answer</u>
-</div>
-
-<div id="answer2" class="answer" style="padding-bottom: 1em;">
-<p><strong>The survival of 99 prisoners, excluding the first, can be guaranteed.</strong></p>
-<p>The first prisoner can observe the hat colours of the remaining 99 prisoners. If the number of black hats amongst them is even, they guess their own hat is black; if odd, they guess white. The second prisoner can then compare the information conveyed by the first prisoner with the parity of black hats amongst those in front of them to correctly determine their own hat colour. Similarly, the third prisoner can use the information from the first prisoner and the fact that the second prisoner correctly identified their hat colour to determine their own, and in this manner, all 99 prisoners can be freed.</p>
-</div>
-
-<p>Let us now make the problem more formidable:</p>
-
-<blockquote>
-  <p><strong>Infinitely many prisoners stand in a line.</strong> A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, while those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. What strategy minimises the number of prisoners who die? <strong>We assume that all prisoners possess infinite computational power and are mathematically omniscient.</strong> That is, when $f$ is a mathematically well-defined function, prisoners can always compute the value of $f$, and when discussing strategy beforehand, they may agree to employ $f$.</p>
-
-  <p><img src="/public/hat-3.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(3)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Hint 1</u>
-</div>
-
-<div id="answer3" class="answer" style="padding-bottom: 1em;">
-<p>The survival of all prisoners except the first can be guaranteed.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(4)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Hint 2</u>
-</div>
-
-<div id="answer4" class="answer" style="padding-bottom: 1em;">
-<p>The axiom of choice is employed.</p>
-</div>
-
-<div></div>
-
-<div onclick="toggleAnswer(5)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Answer</u>
-</div>
-
-<div id="answer5" class="answer" style="padding-bottom: 1em;">
-
-<p>By representing black hats as 0 and white hats as 1, the prisoners' hat arrangement can be expressed as an infinite sequence such as 101011... When a decimal point is placed at the beginning and read in binary, the prisoners' hat arrangement corresponds bijectively to a real number between 0 and 1 inclusive.</p>
-
-<p>For real numbers $a, b \in [0, 1]$, we define $a \sim b$ when their binary expansions differ in finitely many digits. For example:</p>
-
-$$
-0.11111\dots \sim 0.01111\dots, \; 0.10101\dots \not\sim 0.01010\dots
-$$
-
-<p>It can be readily shown that $\sim$ is an equivalence relation. Therefore, we may form the quotient $[0, 1]/\sim$. By the axiom of choice, there exists a choice function $\iota$ for $[0, 1]/\sim$. Since we have assumed that the prisoners are mathematically omniscient, they can agree beforehand on which choice function $\iota$ to employ.</p>
-
-<p>When the hat-guessing begins, the $n$-th prisoner can observe all hat colours except for $n$ hats. That is, when the real number corresponding to the prisoners' hat arrangement is $r$, the $n$-th prisoner knows all digits except for $n$ digits after the decimal point of $r$. Thus, they know which equivalence class of $[0, 1]/\sim$ contains $r$, and when the equivalence class containing $r$ is denoted $[r]$, they can compute $\iota([r])$.</p>
-
-<p>The following strategy is now employed: By the definition of $\sim$, $r$ and $\iota([r])$ differ in only finitely many digits. The first prisoner guesses their hat colour as black if the hat arrangement they observe differs from the hat arrangement corresponding to $\iota([r])$ by an even number of positions, and white if they differ by an odd number. The remaining prisoners can then determine their hat colours in the same manner as in the 100-prisoner problem.</p>
-
-<p>Thus, the axiom of choice ensures that when taking $N \to \infty$ in the $N$-prisoner problem, the conclusion that all prisoners except the first can survive remains valid.</p>
-
-</div>
-
-<p>while the above puzzle is remarkably intriguing, the following puzzle is even more extraordinary:</p>
-
-<blockquote>
-  <p>Infinitely many prisoners stand in a line. A guard randomly places either a black or white hat on each prisoner, then instructs them to guess their hat colour in order, starting from prisoner 1. Those who guess correctly are freed, while those who guess incorrectly are executed. The prisoners may discuss strategy beforehand, but after the hats are placed, all communication and actions are forbidden except stating their answer. Furthermore, <strong>the moment the hats are placed, the prisoners completely lose their hearing and cannot exchange any information whatsoever.</strong> Is there a strategy that ensures only finitely many prisoners die? (Similarly, prisoners possess infinite computational power and are mathematically omniscient.)</p>
-
-  <p><img src="/public/hat-4.png" style="max-height: 180px; margin: 0 auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<div onclick="toggleAnswer(6)" style="cursor: pointer; font-weight: bold; display: inline-block; margin-bottom: 1em;">
-<u>View Answer</u>
-</div>
-
-<div id="answer6" class="answer" style="padding-bottom: 1em;">
-
-<p>As in the previous problem, let $\iota$ be a choice function for $[0, 1]/\sim$. The following strategy is employed: The $n$-th prisoner guesses their hat colour as the colour corresponding to the $n$-th digit of $\iota([r])$. By the definition of $\sim$, all prisoners except finitely many will answer correctly.</p>
-
-</div>
-
-<p>This puzzle is particularly extraordinary because the hearing loss condition renders the hat-guessing events of any two distinct prisoners independent, suggesting that each prisoner should have the same probability $p$ of guessing correctly. In this case, the probability that all $N$ prisoners guess correctly would be $p^N$, which converges to 0 as $N \to \infty$. However, in reality, infinitely many prisoners guess correctly.</p>
-
-<p>The root of this paradox lies in the fact that the probability of an arbitrary prisoner guessing correctly is <strong>undefined</strong>. Upon careful consideration, the event of an arbitrary prisoner guessing correctly is equivalent to the event that a given real number $r \in [0, 1]$ belongs to a <a href="https://dimenerno.github.io/2025/02/24/algebra-measure/">Vitali set</a>. Since Vitali sets are non-measurable, no probability can be defined for this event.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/04/17/los-tarski"> 워시-타르스키 보존 정리 </a>
-      </h1>
-    <span class="post-date">17 Apr 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/대수학/'">
-        대수학
-      </div>
-      
-    </div>
-     <p>군 $G$의 부분군 $H, K$에 대해 $H \cap K$는 언제나 군이다. 환과 체의 경우에도 마찬가지이다. 이는 워시-타르스키 정리의 따름결과로 설명할 수 있다.</p>
-
-<blockquote>
-  <p><em>Notation.</em> 본 글에서 $T$는 언어 $\mathcal{L}$의 1차 논리 이론이며, 프락투르 글자 $\mathfrak{M}, \mathfrak{N}, \dots$은 $\mathcal{L}$-구조<sub>structure</sub>이다. 또한 $\mathfrak{M}, \mathfrak{N}, \dots$의 정의역을 $M, N, \dots$와 같이 적는다.</p>
-</blockquote>
-
-<h2 id="기본-개념">기본 개념</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $N \subseteq M$이고 $\mathfrak{N}$에서의 해석<sub>interpretation</sub>이 $\mathfrak{M}$에서의 해석을 $N$으로 제한한 것일 때, $\mathfrak{N}$을 $\mathfrak{M}$의 <strong>부분모델<sub>submodel</sub></strong>이라고 하며, 기호로 $\mathfrak{N} \subseteq \mathfrak{M}$과 같이 적는다. 또한, $\mathfrak{M}$을 $\mathfrak{N}$의 <strong>확장<sub>extension</sub></strong>이라고 한다.</p>
-</blockquote>
-
-<p>일례로 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 부분모델이고, $(\mathbb{Q}, +, \cdot)$는 $(\mathbb{R}, +, \cdot)$의 부분모델이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 임의의 $\mathcal{L}$-문장 $\phi$에 대해 $\mathfrak{M} \vDash \phi \iff \mathfrak{N} \vDash \phi$일 때 $\mathfrak{M}$과 $\mathfrak{N}$이 <strong>초등적으로 동등<sub>elementarily equivalent</sub></strong>하다고 하며, 기호로 $\mathfrak{M} \equiv \mathfrak{N}$과 같이 적는다.</p>
-</blockquote>
-
-<p><a href="https://dimenerno.github.io/2025/04/10/completeness-theorem/">뢰벤하임-스콜렘 정리</a>에 의해 $\kappa$가 $|\mathcal{L}|$ 이상의 무한 기수라면, 임의의 무한 구조 $\mathfrak{M}$과 초등적으로 동등하며 크기가 $\kappa$인 모델 $\mathfrak{N}$이 존재한다. (cf. 워시-보트 판별<sub>Łoś-Vaught test</sub>)</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{M}$과 $\mathfrak{N}$이 구조적으로 동일할 때 <strong>동형<sub>isomorphic</sub></strong>이라고 하며, 기호로 $\mathfrak{M} \cong \mathfrak{N}$과 같이 적는다. 구체적으로, 어떤 일대일 대응 $\phi: M \to N$이 존재하여, $\mathcal{L}$의 임의의 함수 $f$와 관계 $R$에 대해 다음이 임의의 $a_1, \dots, a_n \in M$에 대해 성립할 때 $\mathfrak{M} \cong \mathfrak{N}$이다.</p>
-
-\[\begin{gather}
-\phi(f_\mathfrak{M}(a_1, \dots, a_n)) = f_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n)), \\\\
-R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
-\end{gather}\]
-</blockquote>
-
-<p>$(\mathbb{Z}, +)$와 $(2\mathbb{Z}, +)$는 $\phi: x \mapsto 2x$를 통해 동형이지만 $(\mathbb{Q}, +, \cdot)$와 $(\mathbb{R}, +, \cdot)$은 동형이 아니다.</p>
-
-<p>다음 정리의 증명은 거의 자명하다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 동형인 두 구조는 초등적으로 동등하다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathfrak{N} \subseteq \mathfrak{M}$이라고 하자. 임의의 $\mathcal{L}$-명제 $\phi$와 $\mathfrak{N}$에서의 자유변수 할당<sub>assignment</sub> $g$에 대해, $\mathfrak{N} \vDash \phi[g] \iff \mathfrak{M} \vDash \phi[g]$일 때 $\mathfrak{N}$이 $\mathfrak{M}$의 <strong>초등적 부분모델<sub>elementary submodel</sub></strong>이라고 하며, 기호로 $\mathfrak{N} \preceq \mathfrak{M}$과 같이 적는다.</p>
-</blockquote>
-
-<p>2와 3은 1보다 강하지만, 2와 3은 서로를 시사하지 않는다.</p>
-
-<ol>
-  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \equiv \mathfrak{M}$</li>
-  <li>$\mathfrak{N} \subseteq \mathfrak{M}$, $\mathfrak{N} \cong \mathfrak{M}$</li>
-  <li>$\mathfrak{N} \preceq \mathfrak{M}$</li>
-</ol>
-
-<p>2와 3이 서로를 시사하지 않는 이유는, 2가 구조적 동등을 요구한다는 점에서 3보다 약하지 않은 한편, 3이 임의의 할당에 대한 동등을 요구한다는 점에서 2보다 약하지 않기 때문이다. 예를 들어 $\mathfrak{M} = (\mathbb{R}, +, \cdot)$에 대해, $\mathfrak{N}$이 $\mathfrak{M}$의 동형인 부분모델이기 위해서는 <em>구성 가능한</em> 실수에 대해 <em>구조적으로</em> 동일해야 하는 반면, $\mathfrak{N}$이 $\mathfrak{M}$의 초등적 부분모델이기 위해서는 두 모델이 <em>모든</em> 실수에 대해 <em>초등적으로</em> 동등해야 한다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>2</th>
-      <th>3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2가 3보다 약하지 않다</td>
-      <td>구조적 동일성</td>
-      <td>초등적 동일성</td>
-    </tr>
-    <tr>
-      <td>3이 2보다 약하지 않다</td>
-      <td>구성 가능한 대상</td>
-      <td>임의의 대상</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>일례로 앞서 보았듯이 $(2\mathbb{Z}, +)$는 $(\mathbb{Z}, +)$의 동형인 부분모델이지만, $\exists y \; (y + y = x)$에 $x \mapsto 2$ 할당을 고려하면 초등적 부분모델은 아님을 알 수 있다.</p>
-
-<h2 id="워시-타르스키-정리">워시-타르스키 정리</h2>
-
-<p>$\mathfrak{M}$이 $T$의 모델이라고 하자. $T$가 어떤 이론이어야 $\mathfrak{M}$의 임의의 부분모델 또한 $T$의 모델이 될까? 그 답은 다음의 정리로 주어진다.</p>
-
-<blockquote>
-  <p><strong>워시-타르스키<sub>Łoś-Tarski</sub> 보존 정리.</strong> $T$의 모델의 부분모델 또한 $T$의 모델일 필요충분조건은 $T$가 $\Pi_1$ 문장으로 이루어진 이론과 동치인 것이다.</p>
-</blockquote>
-
-<p>$\Pi_1$ 문장이 무엇인지에 대해서는 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a> 글에서 다룬 바 있다. 간략히만 설명하자면 $\forall$만을 양화사로 가지는 이론이다. 직관적으로 $\Pi_1$ 문장은 정의역이 제한될수록 만족시키기 쉬우므로, $T$가 $\Pi_1$ 이론이라면 $T$는 부분모델에 대해 보존될 것이다. 필요조건은 증명하기가 좀 더 까다롭다.</p>
-
-<p><strong>증명.</strong> 충분조건은 거의 자명하므로 필요조건만 증명한다. 다음의 보조정리를 증명한다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $T$가 언어 $\mathcal{L}$의 무모순적인 이론이라고 하자. $\mathcal{L}$ 문장들의 집합 $\Delta$가 다음 두 조건을 만족할 때, $\Delta$는 $T$의 공리화를 포함한다.</p>
-
-  <ol>
-    <li>$\Delta$는 선언<sub>disjunction</sub>에 대해 닫혀 있다. 즉, $\phi, \psi \in \Delta$라면 $\phi \lor \psi \in \Delta$이다.</li>
-    <li>$T$의 모델 $\mathfrak{A}$에 대해, $\mathfrak{B}$가 $\mathfrak{A}$에서 만족되는 모든 $\Delta$의 문장들을 만족한다면 $\mathfrak{B}$ 또한 $T$의 모델이다.</li>
-  </ol>
-</blockquote>
-
-<p><em>보조정리의 증명.</em> $\Gamma = \lbrace  \delta \in \Delta : T \vDash \delta \rbrace $라고 하자. $\Delta$가 $T$의 공리화를 포함함을 보이기 위해서는 다음을 보이면 충분하다.</p>
-
-\[\mathfrak{B} \vDash \Gamma \implies \mathfrak{B} \vDash T\]
-
-<p>$\mathfrak{B}$가 $\Gamma$의 모델이라고 하자. 다음과 같이 정의한다.</p>
-
-\[\Sigma = \{ \lnot \delta : \delta \in \Delta, \mathfrak{B} \not\vDash \delta \}\]
-
-<p>$T \cup \Sigma$는 무모순적인 이론임을 보이자. 만약 $T \cup \Sigma$가 모순적이라면 어떤 $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$에 대해 $T \vdash \lnot(\lnot\delta_1 \land \cdots \land \lnot\delta_n)$이므로, $T \vdash \delta_1 \lor \cdots \lor \delta_n$이다. $\Delta$가 선언에 대해 닫혀 있으므로 $\delta_1 \lor \cdots \lor \delta_n \in \Delta$이다. $\Gamma$의 정의에 의해 $\delta_1 \lor \cdots \lor \delta_n \in \Gamma$이므로 $\mathfrak{B} \vDash \delta_1 \lor \cdots \lor \delta_n$이다. 이는 $\lnot\delta_1, \dots, \lnot\delta_n \in \Sigma$에 모순이다.</p>
-
-<p>$T \cup \Sigma$가 무모순적이므로 완전성 정리에 의해 모델을 가진다. 해당 모델을 $\mathfrak{A}$라고 하자. $\mathfrak{B}$는 $\mathfrak{A}$가 만족시키는 $\Delta$의 문장들을 모두 만족시키므로, 가정에 의해 $T$의 모델이다. □</p>
-
-<p>이제 본 정리의 증명으로 넘어가자. $\Delta$를 모든 $\mathcal{L}$의 $\Pi_1$ 문장들의 집합이라고 하자. 우리의 목표는 $\Delta$가 $T$의 공리화를 포함함을 보이는 것이다. $\Pi_1$ 문장들은 선언에 대해 닫혀 있으므로, 보조정리에 의해 다음을 보이면 충분하다.</p>
-
-<blockquote>
-  <p>$T$가 부분모델에 대해 보존적인 이론이라고 하자. $T$의 모델 $\mathfrak{A}$에 대해, $\mathfrak{B}$가 $\mathfrak{A}$에서 만족되는 모든 $\Pi_1$ 문장들을 만족한다면 $\mathfrak{B}$ 또한 $T$의 모델이다.</p>
-</blockquote>
-
-<p><a href="https://dimenerno.github.io/2025/05/01/elementary-embedding/">이 글</a>에서의 표기법을 따라 $E(\mathfrak{B})$를 정의하자. 즉, $\mathfrak{M}$이 $E(\mathfrak{B})$를 만족할 때 $\mathfrak{B} \preceq \mathfrak{M}$이다.</p>
-
-<p>$T \cup E(\mathfrak{B})$는 무모순적임을 보이자. 만약 $T \cup E(\mathfrak{B})$가 모순적이라면, 어떤 $E(\mathfrak{B})$의 문장 $\phi(b_1, \dots, b_n)$이 존재하여 $T \cup \lbrace  \phi \rbrace $는 모델을 가지지 않는다. 따라서 $T$의 모델인 $\mathfrak{A}$는 $\phi$를 만족시키는 $\mathcal{L} \cup \lbrace b_1, \dots, b_n \rbrace $ 모델로 확장될 수 없다. 즉, 다음이 성립한다.</p>
-
-\[\mathfrak{A} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)\]
-
-<p>우변은 $\Pi_1$ 문장이므로, 가정에 의해 $\mathfrak{B} \vDash \forall x_1 \cdots \forall x_n \lnot \phi(x_1, \dots, x_n)$이다. 그런데 $\phi(b_1, \dots, b_n) \in E(\mathfrak{B})$이므로, 이는 모순이다. 따라서 $T \cup E(\mathfrak{B})$는 무모순적이며, 완전성 정리에 의해 모델 $\mathfrak{C}$를 가진다. 그리고 $\mathfrak{C}$는 $E(\mathfrak{B})$를 만족하므로, $\mathfrak{B} \preceq \mathfrak{C}$이다. 한편 $\mathfrak{C}$는 부분모델에 대해 보존적인 이론 $T$의 모델이므로, $\mathfrak{B}$는 $T$의 모델이다. ■</p>
-
-<h2 id="응용">응용</h2>
-
-<p>군의 1차 논리적 공리화는, 항등원과 역원을 별도의 상수 $e$와 함수 $(-)^{-1}$로 표현하는지의 여부에 따라 구분된다.</p>
-
-<h4 id="표현하지-않는-경우">표현하지 않는 경우</h4>
-
-<p>언어 $\mathcal{L}_1 = \lbrace  G, \cdot \rbrace $의 이론 $T_1$를 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\exists x \forall y : x \cdot y = y \cdot x = y$</li>
-  <li>$\forall x \exists y \forall z : (x \cdot y) \cdot z = (y \cdot x) \cdot z = z$</li>
-</ul>
-
-<h4 id="표현하는-경우">표현하는 경우</h4>
-
-<p>언어 $\mathcal{L}_2 = \lbrace  G, \cdot, e, (-)^{-1} \rbrace $의 이론 $T_2$를 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\forall x : x \cdot e = e \cdot x = x$</li>
-  <li>$\forall x : x \cdot x^{-1} = x^{-1} \cdot x = e$</li>
-</ul>
-
-<p>$T_1$은 $\Pi_1$ 이론이 아니지만 $T_2$는 $\Pi_1$ 이론이다. 따라서 워시-타르스키 정리에 의해, $T_1$은 부분모델 보존적이지 않지만 $T_2$는 보존적이다. $T_1$이 부분모델 보존적이지 않다는 것은, 군의 부분집합이 연산에 대해 닫혀 있다고 해서 언제나 부분군인 것은 아님을 의미한다<small>(일례로 $\mathbb{Z}$의 부분집합 $\mathbb{Z}_{&gt; 0}$은 연산에 대해 닫혀 있지만 역원을 결여하므로 군이 아니다)</small>. 반면 $T_2$가 부분모델 보존적이라는 것은 다음이 성립함을 의미한다.</p>
-
-<blockquote>
-  <p>군 $G$에 대해, $G$의 부분집합 $H$가 다음을 만족한다면 $H$는 $G$의 부분군이다.</p>
-
-  <ol>
-    <li>연산에 대해 닫혀 있다.</li>
-    <li>역원에 대해 닫혀 있다.</li>
-    <li>$G$의 항등원을 포함한다.</li>
-  </ol>
-</blockquote>
-
-<p>그런데 위보다 더 강한 다음의 결과가 일반적으로 성립한다.</p>
-
-<blockquote>
-  <p>군 $G$에 대해, $G$의 부분집합 $H$가 다음을 만족한다면 $H$는 $G$의 부분군이다.</p>
-
-  <ol>
-    <li>연산에 대해 닫혀 있다.</li>
-    <li>역원에 대해 닫혀 있다.</li>
-  </ol>
-</blockquote>
-
-<p>즉, 항등원을 지시할 상수를 결여하는 언어 $\mathcal{L}_3 = \lbrace  G, \cdot, (-)^{-1} \rbrace$에서도 군의 이론은 부분모델 보존적이며, 이는 $\mathcal{L}_3$로 군을 형식화하는 $\Pi_1$ 이론이 존재함을 의미한다. 머리를 잘 굴려보면 실제로 다음의 이론 $T_3$가 존재함을 발견할 수 있다.</p>
-
-<ul>
-  <li>$\forall x, y, z : (x \cdot y) \cdot z = x \cdot (y \cdot z)$</li>
-  <li>$\forall x, y : (x \cdot x^{-1}) \cdot y = y \cdot (x \cdot x^{-1}) = y$</li>
-</ul>
 
   </div>
   <div style="margin-bottom: 6em"></div>

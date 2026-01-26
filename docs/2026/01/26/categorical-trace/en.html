@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: 인문학 &middot; 디멘의 블로그 
+     Categorical Trace &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/%EC%9D%B8%EB%AC%B8%ED%95%99/" />
+  <link rel="canonical" href="/2026/01/26/categorical-trace/en" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -368,28 +368,132 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Categorical Trace</h1>
+  <span class="post-date">26 Jan 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'" >Category Theory</div>
+      
+      <div class="tag" onclick="location.href='/tags/algebra/'" >Algebra</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
 
+<p>Readers may recall learning about the trace of a matrix in their linear algebra classes.</p>
 
-<h1>인문학</h1>
+<blockquote>
+  <p><strong>Definition.</strong> For an $n \times n$ matrix $A$, the trace $\mathrm{tr}(A)$ is defined as the sum of the diagonal entries of $A$.</p>
+</blockquote>
 
-<ul>
-                                                           
-  <li>
-    <a href="/2025/08/08/pork-and-salmon">돼지고기와 연어: 윤리적 삶은 사치품인가?</a>
-  </li>
-                          
-  <li>
-    <a href="/2025/06/17/kafka-blue-octavos">프란츠 카프카, 「여덟 권의 청색 팔절판 노트」 중 제1권</a>
-  </li>
-        
-  <li>
-    <a href="/2025/06/06/zizek-soft-facism">슬라보예 지젝, ｢소프트 파시즘, 인공지능, 그리고 수치심의 몰락｣</a>
-  </li>
-                                                                                                                                                                                                                         
-</ul>
+<p>In particular, the trace has the following property:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $A$ and $B$ are similar matrices, then $\operatorname{tr}(A) = \operatorname{tr}(B)$.</p>
+</blockquote>
+
+<p>In other words, the trace is not merely a function of matrices but also a function of linear transformations.</p>
+
+<p>However, upon revisiting the definition of the trace after learning this result, one might find it somewhat unsatisfactory. While the trace has an intuitive meaning as “the sum of diagonal entries” in the case of matrices, this intuitive interpretation is absent for linear transformations. This contrasts with eigenvalues, which have an intuitive meaning as “the scaling factors of unit squares under the transformation.” As a result, the fact that the trace is a function of linear transformations might seem almost coincidental.</p>
+
+<p>While our neighbours in the physics department might shrug and proceed with their calculations, we, the brilliant minds of the mathematics department, should not settle for such a perspective. A more natural and mathematical approach would be to define the trace first as a function of linear transformations and then show that this definition coincides with the traditional one. This is the motivation for the <strong>categorical trace</strong>.</p>
+
+<p>Let us first define a few maps. By the definition of the dual space, for any $k$-vector space $V$, the following map exists:</p>
+
+\[\mathrm{ev} : V^* \otimes V \to k;\; 
+\phi \otimes v \mapsto \phi(v)\]
+
+<p>Since $(\phi, v) \mapsto \phi(v)$ is a bilinear map, $\mathrm{ev}$ is a linear map by the definition of the tensor product. Thus, we can take the dual of $\mathrm{ev}$, which we shall denote by $\mathrm{coev}$. That is,</p>
+
+\[\mathrm{coev}: k^* \to (V^* \otimes V)^*\]
+
+<p>However, since $k^\ast$ is canonically isomorphic to $k$, $V^{\ast\ast}$ is canonically isomorphic to $V$, and $(V \otimes W)^\ast$ is canonically isomorphic to $V^\ast \otimes W^\ast$ for finite-dimensional vector spaces $V$ and $W$, we may equivalently think of $\mathrm{coev}$ as follows:</p>
+
+\[\mathrm{coev}: k \to V \otimes V^*\]
+
+<blockquote>
+  <p><strong>Remark.</strong> The fact that these are canonical isomorphisms is crucial. For instance, while $V^\ast \cong V$, this isomorphism depends on the choice of a basis, so we cannot write $\mathrm{coev} : k \to V \otimes V$. Our goal is to construct a function of linear transformations from $\mathrm{ev}$ and $\mathrm{coev}$, so basis dependence must be avoided.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Remark.</strong> For finite-dimensional spaces $V$ and $W$, the map $\Psi : V^\ast \otimes W^\ast \to (V \otimes W)^\ast$ defined as follows is a canonical isomorphism:</p>
+
+\[\Psi : \phi \otimes \psi \mapsto \big( (v\otimes w) \mapsto \phi(v)\psi(w) \big)\]
+
+  <p>The finite-dimensionality condition is necessary to ensure surjectivity. In this case, the following map can be verified as the inverse of the above map (where $\lbrace e_i\rbrace , \lbrace f_j\rbrace $ are bases of $V$ and $W$, and $\lbrace  g_{ij} \rbrace $ is a basis of $V \otimes W$):</p>
+
+\[\Psi^{-1} : g^{ij} \mapsto e^i \otimes f^j\]
+
+  <p>While $\Psi^{-1}$ appears to depend on the choice of basis, it is not basis-dependent because $\Psi$ itself is not basis-dependent, and $\Psi^{-1}$ is the inverse of $\Psi$.</p>
+</blockquote>
+
+<p>Since $k$ is a one-dimensional vector space, knowing $\mathrm{coev}(1)$ determines $\mathrm{coev}$ entirely. To compute $\mathrm{coev}(1)$, recall the following definition: for $T : V \to W$,</p>
+
+\[T^*: W^* \to V^*; \; \psi \mapsto \psi \circ T\]
+
+<p>Thus,</p>
+
+\[\mathrm{coev} : 1 \mapsto 1 \circ \mathrm{ev} = \mathrm{ev}\]
+
+<p>In other words, $\mathrm{coev}(1)$ is none other than $\mathrm{ev}$. This makes sense because $\mathrm{ev}$ is a linear map that sends $V^\ast \otimes V$ to scalars, and hence it is itself an element of $(V^\ast \otimes V)^\ast = V \otimes V^\ast$.</p>
+
+<p>How, then, is $\mathrm{ev}$ expressed in $V \otimes V^\ast$? First, let us see how $\mathrm{ev}$ is expressed in $(V^\ast \otimes V)^\ast$. Choosing a basis $\lbrace e_i\rbrace $ of $V$, we obtain the induced basis $\lbrace  f_{ij} = e^i \otimes e_j \rbrace $ of $V^\ast \otimes V$. From the definition of $\mathrm{ev}$, we have:</p>
+
+\[\mathrm{ev} = \sum_i f^{ii}\]
+
+<p>Applying $\Psi^{-1}$, as defined in the Remark above, to the right-hand side yields:</p>
+
+\[\mathrm{ev} = \sum_i e_i \otimes e^i\]
+
+<p>Now, let us define the categorical trace.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a $k$-vector space $V$ and a linear transformation $T: V \to V$, define $\operatorname{tr}_T: k \to k$ as the composition of the following maps:</p>
+
+\[k \xrightarrow{\operatorname{coev}} V \otimes V^* \xrightarrow{T \otimes \mathrm{id}} V \otimes V^* \xrightarrow{\operatorname{twist}} V^* \otimes V \xrightarrow{\operatorname{ev}} k\]
+
+  <p>This $\mathrm{tr}_T$ is called the <strong>categorical trace</strong>.</p>
+</blockquote>
+
+<p>Since all the maps used in the definition are basis-independent, the categorical trace is also basis-independent. The relationship between the categorical trace and the traditional trace is as follows:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $\mathrm{tr}_T(1) = \mathrm{tr}(T)$</p>
+</blockquote>
+
+<p><strong>Proof.</strong> The following holds:</p>
+
+\[\begin{align}
+1 &amp;\xmapsto{\operatorname{coev}} \sum e_i \otimes e^i \\
+&amp;\xmapsto{T \otimes \mathrm{id}} \sum T(e_i) \otimes e^i \\
+&amp;\xmapsto{\operatorname{twist}} \sum e^i \otimes T(e_i) \\
+&amp;\xmapsto{\operatorname{ev}} \sum [T]_{ii}
+\end{align}\]
+
+<p>Here, $[T]$ is the matrix representation of $T$ with respect to the basis $\lbrace  e_i \rbrace $. Thus, $\sum [T]_{ii} = \mathrm{tr}(T)$. ■</p>
+
+<p>This demonstrates that $\mathrm{tr}$ is a function of linear transformations without resorting to cumbersome calculations. Elegant, isn’t it?</p>
+
+<p>Meanwhile, the astute reader may have noticed that, despite the name “categorical trace,” no particularly categorical concepts have appeared in the discussion so far. Nevertheless, the concept defined in this post is called the “categorical trace” because the definition introduced here can be naturally generalised from vector spaces to symmetric monoidal categories. Interested readers are encouraged to consult the <a href="https://en.wikipedia.org/wiki/Categorical_trace">Wikipedia article</a> for further details.</p>
+
 </div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://dimenerno.github.io/404.html</loc>
-<lastmod>2026-01-21T13:11:50+09:00</lastmod>
+<lastmod>2026-01-26T20:55:35+09:00</lastmod>
 </url>
 <url>
 <loc>https://dimenerno.github.io/about/</loc>
@@ -629,6 +629,14 @@
 <lastmod>2026-01-15T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>https://dimenerno.github.io/2026/01/26/categorical-trace/en</loc>
+<lastmod>2026-01-26T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://dimenerno.github.io/2026/01/26/categorical-trace</loc>
+<lastmod>2026-01-26T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>https://dimenerno.github.io/temp/2025-03-05-hole-argument/</loc>
 </url>
 <url>
@@ -755,12 +763,6 @@
 <loc>https://dimenerno.github.io/tags/%EC%97%90%EC%84%B8%EC%9D%B4/</loc>
 </url>
 <url>
-<loc>https://dimenerno.github.io/tags/set-theory/</loc>
-</url>
-<url>
-<loc>https://dimenerno.github.io/tags/measure-theory/</loc>
-</url>
-<url>
 <loc>https://dimenerno.github.io/page2/</loc>
 </url>
 <url>
@@ -801,6 +803,9 @@
 </url>
 <url>
 <loc>https://dimenerno.github.io/page15/</loc>
+</url>
+<url>
+<loc>https://dimenerno.github.io/page16/</loc>
 </url>
 <url>
 <loc>https://dimenerno.github.io/public/Boghossian,%20The%20Rule-Following%20Considerations.pdf</loc>

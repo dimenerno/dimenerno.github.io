@@ -7,6 +7,232 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>범주론적 대각합</title>
+        <link>https://dimenerno.github.io/2026/01/26/categorical-trace</link>
+        <guid>https://dimenerno.github.io/2026/01/26/categorical-trace</guid>
+        <pubDate>Mon, 26 Jan 2026 00:00:00 +0900</pubDate>
+        <description>&lt;p&gt;독자는 선형대수학 수업에서 행렬의 대각합&lt;sub&gt;trace&lt;/sub&gt;을 배웠을 것이다.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/01/26/categorical-trace">
+          <![CDATA[
+            <p>독자는 선형대수학 수업에서 행렬의 대각합<sub>trace</sub>을 배웠을 것이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $n\times n$ 행렬 $A$의 대각합 $\mathrm{tr}(A)$를, $A$의 대각 성분들의 합으로 정의한다.</p>
+</blockquote>
+
+<p>특히, 대각합은 다음의 성질을 가진다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $A$와 $B$가 닮은 행렬이면 $\operatorname{tr}(A) = \operatorname{tr}(B)$이다.</p>
+</blockquote>
+
+<p>즉, 대각합은 행렬에 대한 함수일 뿐 아니라 선형 변환에 대한 함수이기도 하다.</p>
+
+<p>그런데 이 결과를 알고 나서 대각합의 정의를 다시 보면 불만족스러운<small>(짜치는)</small> 점이 있다. 대각합이 선형 변환에 대한 함수임에도 불구하고, “대각선 성분의 합”이라는 직관적 의미가 있는 행렬의 경우와 달리 선형 변환의 경우에는 직관적 의미가 읽히지 않기 때문이다. 이는 고윳값이 “단위 정사각형이 변환된 후의 넓이”라는 직관적 의미를 가지는 것과 대조된다. 때문에 대각합이 선형 변환에 대한 함수라는 사실은 마치 우연처럼 보인다.</p>
+
+<p>옆집 물리학과 애들이라면 그게 뭐 어째서 ‒ 하며 계산이나 하러 가겠지만, 우리 우수한 수학과의 인재들은 이를 차치해서는 안 될 것이다. 더욱 자연스럽고 수학적인 방식은, 대각합을 먼저 선형 변환에 대한 함수로서 정의한 뒤, 이 정의가 기존의 정의와 일치함을 보이는 것이다. 이것이 <strong>범주론적 대각합<sub>categorical trace</sub></strong>의 동기이다.</p>
+
+<p>먼저 몇 가지 함수를 정의하자. 쌍대 공간의 정의에 따라, 임의의 $k$-벡터 공간 $V$에 대해 다음 사상이 존재한다.</p>
+
+\[\mathrm{ev} : V^* \otimes V \to k;\; 
+\phi \otimes v \mapsto \phi(v)\]
+
+<p>그런데 $(\phi, v) \mapsto \phi(v)$가 쌍선형 사상<sub>bilinear map</sub>이므로, 텐서곱의 정의에 의해 $\mathrm{ev}$는 선형 사상이다. 따라서 $\mathrm{ev}$의 쌍대를 취할 수 있는데, 이를 $\mathrm{coev}$라고 하자. 즉,</p>
+
+\[\mathrm{coev}: k^* \to (V^* \otimes V)^*\]
+
+<p>그런데 $k^\ast$는 $k$와 표준적<sub>canonically</sub>으로 동형이고, $V^{\ast\ast}$는 $V$와 표준적으로 동형이며, $V, W$가 유한 차원 벡터 공간일 때 $(V \otimes W)^\ast$는 $V^\ast \otimes W^\ast$와 표준적으로 동형이므로, $\mathrm{coev}$를 다음과 같이 생각해도 무방하다.</p>
+
+\[\mathrm{coev}: k \to V \otimes V^*\]
+
+<blockquote>
+  <p><strong>Remark.</strong> 그냥 동형이 아니라 표준적으로 동형이라는 사실이 중요하다. 일례로 $V^\ast \cong V$이지만, 이 동형은 특정 기저의 선택에 의존적이기 때문에 $\mathrm{coev} : k \to V \otimes V$라고 할 수는 없다. 우리의 목표는 $\mathrm{ev}$와 $\mathrm{coev}$로부터 <em>선형 변환에 대한</em> 함수를 구성하는 것이기 때문에, 기저 의존성이 개입되어서는 안 된다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Remark.</strong> $V, W$가 유한 차원 공간일 때, 다음과 같이 정의되는 $\Psi : V^\ast \otimes W^\ast \to (V \otimes W)^\ast$는 표준 동형 사상이다.</p>
+
+\[\Psi : \phi \otimes \psi \mapsto \big( (v\otimes w) \mapsto \phi(v)\psi(w) \big)\]
+
+  <p>유한 차원 조건이 필요한 이유는 전사성을 보장하기 위해서이다. 이 경우, 다음 사상이 위 사상의 역사상임을 확인할 수 있다. ($\lbrace e_i\rbrace , \lbrace f_j\rbrace $는 $V, W$의 기저이고, $\lbrace  g_{ij} \rbrace $는 $V \otimes W$의 기저이다.)</p>
+
+\[\Psi^{-1} : g^{ij} \mapsto e^i \otimes f^j\]
+
+  <p>표면적으로 $\Psi^{-1}$은 기저 선택에 의존적인 것으로 보이지만, $\Psi$가 기저 의존적이지 않고, $\Psi^{-1}$이 $\Psi$의 역사상이기 때문에, $\Psi^{-1}$ 또한 기저 의존적이지 않다.</p>
+</blockquote>
+
+<p>$k$는 1차원 벡터 공간이므로, $\mathrm{coev}(1)$을 알면 $\mathrm{coev}$ 전체가 결정된다. $\mathrm{coev}(1)$을 구하기 위해 다음의 정의를 떠올리자. $T : V \to W$에 대해,</p>
+
+\[T^*: W^* \to V^*; \; \psi \mapsto \psi \circ T\]
+
+<p>이다.  따라서,</p>
+
+\[\mathrm{coev} : 1 \mapsto 1 \circ \mathrm{ev} = \mathrm{ev}\]
+
+<p>즉, $\mathrm{coev}(1)$은 다름아닌 $\mathrm{ev}$이다. 이는 말이 되는 게, $\mathrm{ev}$는 $V^\ast \otimes V$를 스칼라로 보내는 선형 사상이므로 그 자체로 $(V^\ast \otimes V)^\ast = V \otimes V^\ast$의 원소이다.</p>
+
+<p>그렇다면 $\mathrm{ev}$는 어떻게 $V \otimes V^\ast$로 표현될까? 우선 $\mathrm{ev}$가 $(V^\ast \otimes V)^\ast$에서 어떻게 표현되는지를 보자. $V$의 기저 $\lbrace e_i\rbrace $를 선택한다면, $V^\ast \otimes V$의 기저가 $\lbrace  f_{ij} = e^i \otimes e_j \rbrace $로 유도된다. $\mathrm{ev}$의 정의로부터 다음이 따라 나온다.</p>
+
+\[\mathrm{ev} = \sum_i f^{ii}\]
+
+<p>위의 Remark에서 정의한 $\Psi^{-1}$을 우변에 취하면 다음을 얻는다.</p>
+
+\[\mathrm{ev} = \sum_i e_i \otimes e^i\]
+
+<p>이제 범주론적 대각합을 정의하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $k$-벡터 공간 $V$와 선형 변환 $T: V \to V$에 대해, $\operatorname{tr}_T: k \to k$를 다음 사상들의 합성으로 정의한다.</p>
+
+\[k \xrightarrow{\operatorname{coev}} V \otimes V^* \xrightarrow{T \otimes \mathrm{id}} V \otimes V^* \xrightarrow{\operatorname{twist}} V^* \otimes V \xrightarrow{\operatorname{ev}} k\]
+
+  <p>$\mathrm{tr}_T$를 <strong>범주론적 대각합</strong>이라고 한다.</p>
+</blockquote>
+
+<p>정의에 사용된 사상들이 모두 기저 비의존적이므로, 범주론적 대각합 또한 기저 비의존적이다. 범주론적 대각합과 기존의 대각합은 다음의 관계에 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathrm{tr}_T(1) = \mathrm{tr}(T)$</p>
+</blockquote>
+
+<p><strong>증명.</strong> 다음이 성립한다.</p>
+
+\[\begin{align}
+1 &amp;\xmapsto{\operatorname{coev}} \sum e_i \otimes e^i \\
+&amp;\xmapsto{T \otimes \mathrm{id}} \sum T(e_i) \otimes e^i \\
+&amp;\xmapsto{\operatorname{twist}} \sum e^i \otimes T(e_i) \\
+&amp;\xmapsto{\operatorname{ev}} \sum [T]_{ii}
+\end{align}\]
+
+<p>여기서 $[T]$는 $\lbrace  e_i \rbrace $를 기저로 선택했을 때 $T$의 행렬 표현이다. 따라서 $\sum [T]_{ii} = \mathrm{tr}(T)$이다. ■</p>
+
+<p>이로써 구차한 계산 없이 $\mathrm{tr}$이 선형 변환에 대한 함수임을 보일 수 있다. 우아하지 않은가?</p>
+
+<p>한편 예리한 독자는 “범주론적 대각합”이라는 이름이 무색하게, 지금까지의 논의에서 특별히 범주론적인 개념은 등장하지 않았음을 눈치챘을 것이다. 그럼에도 불구하고 이 글에서 정의한 개념의 이름이 “범주론적 대각합”인 이유는, 이 글에서 소개한 정의를 벡터 공간에서 대칭적 모노이드 범주<sub>symmetric monoidal category</sub>로 자연스럽게 일반화할 수 있기 때문이다. 관심 있는 독자는 <a href="https://en.wikipedia.org/wiki/Categorical_trace">위키피디아 문서</a>를 참고하길 바란다.</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Categorical Trace</title>
+        <link>https://dimenerno.github.io/2026/01/26/categorical-trace/en</link>
+        <guid>https://dimenerno.github.io/2026/01/26/categorical-trace/en</guid>
+        <pubDate>Mon, 26 Jan 2026 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/01/26/categorical-trace/en">
+          <![CDATA[
+            <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>Readers may recall learning about the trace of a matrix in their linear algebra classes.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For an $n \times n$ matrix $A$, the trace $\mathrm{tr}(A)$ is defined as the sum of the diagonal entries of $A$.</p>
+</blockquote>
+
+<p>In particular, the trace has the following property:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $A$ and $B$ are similar matrices, then $\operatorname{tr}(A) = \operatorname{tr}(B)$.</p>
+</blockquote>
+
+<p>In other words, the trace is not merely a function of matrices but also a function of linear transformations.</p>
+
+<p>However, upon revisiting the definition of the trace after learning this result, one might find it somewhat unsatisfactory. While the trace has an intuitive meaning as “the sum of diagonal entries” in the case of matrices, this intuitive interpretation is absent for linear transformations. This contrasts with eigenvalues, which have an intuitive meaning as “the scaling factors of unit squares under the transformation.” As a result, the fact that the trace is a function of linear transformations might seem almost coincidental.</p>
+
+<p>While our neighbours in the physics department might shrug and proceed with their calculations, we, the brilliant minds of the mathematics department, should not settle for such a perspective. A more natural and mathematical approach would be to define the trace first as a function of linear transformations and then show that this definition coincides with the traditional one. This is the motivation for the <strong>categorical trace</strong>.</p>
+
+<p>Let us first define a few maps. By the definition of the dual space, for any $k$-vector space $V$, the following map exists:</p>
+
+\[\mathrm{ev} : V^* \otimes V \to k;\; 
+\phi \otimes v \mapsto \phi(v)\]
+
+<p>Since $(\phi, v) \mapsto \phi(v)$ is a bilinear map, $\mathrm{ev}$ is a linear map by the definition of the tensor product. Thus, we can take the dual of $\mathrm{ev}$, which we shall denote by $\mathrm{coev}$. That is,</p>
+
+\[\mathrm{coev}: k^* \to (V^* \otimes V)^*\]
+
+<p>However, since $k^\ast$ is canonically isomorphic to $k$, $V^{\ast\ast}$ is canonically isomorphic to $V$, and $(V \otimes W)^\ast$ is canonically isomorphic to $V^\ast \otimes W^\ast$ for finite-dimensional vector spaces $V$ and $W$, we may equivalently think of $\mathrm{coev}$ as follows:</p>
+
+\[\mathrm{coev}: k \to V \otimes V^*\]
+
+<blockquote>
+  <p><strong>Remark.</strong> The fact that these are canonical isomorphisms is crucial. For instance, while $V^\ast \cong V$, this isomorphism depends on the choice of a basis, so we cannot write $\mathrm{coev} : k \to V \otimes V$. Our goal is to construct a function of linear transformations from $\mathrm{ev}$ and $\mathrm{coev}$, so basis dependence must be avoided.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Remark.</strong> For finite-dimensional spaces $V$ and $W$, the map $\Psi : V^\ast \otimes W^\ast \to (V \otimes W)^\ast$ defined as follows is a canonical isomorphism:</p>
+
+\[\Psi : \phi \otimes \psi \mapsto \big( (v\otimes w) \mapsto \phi(v)\psi(w) \big)\]
+
+  <p>The finite-dimensionality condition is necessary to ensure surjectivity. In this case, the following map can be verified as the inverse of the above map (where $\lbrace e_i\rbrace , \lbrace f_j\rbrace $ are bases of $V$ and $W$, and $\lbrace  g_{ij} \rbrace $ is a basis of $V \otimes W$):</p>
+
+\[\Psi^{-1} : g^{ij} \mapsto e^i \otimes f^j\]
+
+  <p>While $\Psi^{-1}$ appears to depend on the choice of basis, it is not basis-dependent because $\Psi$ itself is not basis-dependent, and $\Psi^{-1}$ is the inverse of $\Psi$.</p>
+</blockquote>
+
+<p>Since $k$ is a one-dimensional vector space, knowing $\mathrm{coev}(1)$ determines $\mathrm{coev}$ entirely. To compute $\mathrm{coev}(1)$, recall the following definition: for $T : V \to W$,</p>
+
+\[T^*: W^* \to V^*; \; \psi \mapsto \psi \circ T\]
+
+<p>Thus,</p>
+
+\[\mathrm{coev} : 1 \mapsto 1 \circ \mathrm{ev} = \mathrm{ev}\]
+
+<p>In other words, $\mathrm{coev}(1)$ is none other than $\mathrm{ev}$. This makes sense because $\mathrm{ev}$ is a linear map that sends $V^\ast \otimes V$ to scalars, and hence it is itself an element of $(V^\ast \otimes V)^\ast = V \otimes V^\ast$.</p>
+
+<p>How, then, is $\mathrm{ev}$ expressed in $V \otimes V^\ast$? First, let us see how $\mathrm{ev}$ is expressed in $(V^\ast \otimes V)^\ast$. Choosing a basis $\lbrace e_i\rbrace $ of $V$, we obtain the induced basis $\lbrace  f_{ij} = e^i \otimes e_j \rbrace $ of $V^\ast \otimes V$. From the definition of $\mathrm{ev}$, we have:</p>
+
+\[\mathrm{ev} = \sum_i f^{ii}\]
+
+<p>Applying $\Psi^{-1}$, as defined in the Remark above, to the right-hand side yields:</p>
+
+\[\mathrm{ev} = \sum_i e_i \otimes e^i\]
+
+<p>Now, let us define the categorical trace.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a $k$-vector space $V$ and a linear transformation $T: V \to V$, define $\operatorname{tr}_T: k \to k$ as the composition of the following maps:</p>
+
+\[k \xrightarrow{\operatorname{coev}} V \otimes V^* \xrightarrow{T \otimes \mathrm{id}} V \otimes V^* \xrightarrow{\operatorname{twist}} V^* \otimes V \xrightarrow{\operatorname{ev}} k\]
+
+  <p>This $\mathrm{tr}_T$ is called the <strong>categorical trace</strong>.</p>
+</blockquote>
+
+<p>Since all the maps used in the definition are basis-independent, the categorical trace is also basis-independent. The relationship between the categorical trace and the traditional trace is as follows:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $\mathrm{tr}_T(1) = \mathrm{tr}(T)$</p>
+</blockquote>
+
+<p><strong>Proof.</strong> The following holds:</p>
+
+\[\begin{align}
+1 &amp;\xmapsto{\operatorname{coev}} \sum e_i \otimes e^i \\
+&amp;\xmapsto{T \otimes \mathrm{id}} \sum T(e_i) \otimes e^i \\
+&amp;\xmapsto{\operatorname{twist}} \sum e^i \otimes T(e_i) \\
+&amp;\xmapsto{\operatorname{ev}} \sum [T]_{ii}
+\end{align}\]
+
+<p>Here, $[T]$ is the matrix representation of $T$ with respect to the basis $\lbrace  e_i \rbrace $. Thus, $\sum [T]_{ii} = \mathrm{tr}(T)$. ■</p>
+
+<p>This demonstrates that $\mathrm{tr}$ is a function of linear transformations without resorting to cumbersome calculations. Elegant, isn’t it?</p>
+
+<p>Meanwhile, the astute reader may have noticed that, despite the name “categorical trace,” no particularly categorical concepts have appeared in the discussion so far. Nevertheless, the concept defined in this post is called the “categorical trace” because the definition introduced here can be naturally generalised from vector spaces to symmetric monoidal categories. Interested readers are encouraged to consult the <a href="https://en.wikipedia.org/wiki/Categorical_trace">Wikipedia article</a> for further details.</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
         <title>측도 문제와 연속체 가설</title>
         <link>https://dimenerno.github.io/2026/01/15/measure-problem</link>
         <guid>https://dimenerno.github.io/2026/01/15/measure-problem</guid>
@@ -972,356 +1198,6 @@ Z_p = B_p \oplus G_p\\\\
 </ul>
 
 <p>Thus, the 0th, 1st, and 2nd Betti numbers of a sphere are 1, 0, and 1, respectively, and $1 - 0 + 1 = 2$. Therefore, for convex polyhedra, $v - e + f = 2$.</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>클럽 집합과 정상 집합</title>
-        <link>https://dimenerno.github.io/2025/11/11/stationary-sets</link>
-        <guid>https://dimenerno.github.io/2025/11/11/stationary-sets</guid>
-        <pubDate>Tue, 11 Nov 2025 00:00:00 +0900</pubDate>
-        <description>&lt;h2 id=&quot;클럽-집합&quot;&gt;클럽 집합&lt;/h2&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/11/11/stationary-sets">
-          <![CDATA[
-            <h2 id="클럽-집합">클럽 집합</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $C \subseteq \omega_1$이 <strong>클럽 집합<sub>club set</sub></strong>이라는 것은 $C$가 닫히고 무계<sub>closed and unbounded</sub>라는 것이다. 즉,</p>
-
-  <ul>
-    <li>임의의 서수열 $(\alpha_n)_{n \in \omega} \subseteq C$에 대해 $\alpha_n \to \alpha$라면 $\alpha \in C$이다.</li>
-    <li>임의의 $\gamma &lt; \kappa$에 대해 $\alpha &gt; \gamma$인 $\alpha \in C$가 존재한다.</li>
-  </ul>
-</blockquote>
-
-<p>그야말로 정직한 네이밍이 아닐 수 없다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $C_1, C_2 \subseteq \omega_1$이 두 클럽 집합일 때, $C = C_1 \cap C_2$ 또한 클럽 집합이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $C$가 닫힘이라는 것은 쉽게 보여진다. $C$가 무계임을 보이기 위해 임의의 $\gamma \in \omega_1$를 잡자. $C_1$이 무계이므로 $\gamma &lt; \alpha_0$을 만족하는 가장 작은 $\alpha_0 \in C_1$가 있다. $C_2$가 무계이므로 $\alpha_0 &lt; \beta_0$인 가장 작은 $\beta_0 \in C_2$가 있다. 다시 $C_1$이 무계이므로 $\beta_0 &lt; \alpha_1$인 $\alpha_1 \in C_1$가 있다. 이 과정을 계속 반복하여 서수열 $\lbrace  \alpha_n \rbrace $과 $\lbrace  \beta_n \rbrace $을 얻는다. 두 서수열은 같은 서수 $\delta$로 수렴하므로 $\delta \in C$이며, $\delta &gt; \gamma$이다. (p.s. “가장 작은”은 불필요한 선택 공리의 사용을 피하기 위해 사용되었다) ■</p>
-
-<p>위 증명을 살짝 변형하면 다음 정리를 얻을 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\lbrace  C_n \rbrace _{n &lt; \omega}$가 클럽 집합들의 가산 모임일 때, $C = \bigcap C_n$ 또한 클럽 집합이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 연습문제 (힌트: 삼각형을 사용한다) ■</p>
-
-<p>따라서 가산 개의 클럽 집합들이 주어지면 교집합을 취함으로써 새로운 클럽 집합을 얻을 수 있다. 한편, 비가산 개의 클럽 집합들이 주어지면 다음을 사용할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\lbrace  C_\xi \rbrace _{\xi &lt; \omega_1}$이 클럽 집합들의 모임일 때, $\lbrace C_\xi \rbrace $의 <strong>대각 교집합<sub>diagonal intersection</sub></strong>을 다음과 같이 정의한다.</p>
-
-\[\Delta_{\xi &lt; \omega_1} C_\xi = \{ \alpha \in \omega_1 : \forall \xi &lt; \alpha \;\; \alpha \in C_\xi \}\]
-
-  <p>$D$는 클럽 집합이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $D$가 닫혀 있음을 먼저 보이자. 서수열 $(\alpha_n)_{n \in \omega} \subseteq D$에 대해 $\alpha_n \to \alpha$라고 하자. 임의의 $\xi &lt; \alpha$에 대해 $\xi &lt; \alpha_n$인 $n \in \omega$가 존재하며, 대각 교집합의 정의에 의해 $C_\xi$은 $\lbrace  \alpha_m : m \geq n \rbrace $을 포함한다. 따라서 $\sup \lbrace  \alpha_m : m \geq n \rbrace  = \alpha \in C_\xi$이므로 $\alpha \in D$이다.</p>
-
-<p>이제 $D$가 무계임을 보이자. 임의의 $\gamma &lt; \omega_1$에 대해, $D_0 = \bigcap_{\xi &lt; \gamma} C_\xi$는 클럽 집합이므로 무계이다. 따라서 $\alpha_0 &gt; \gamma$를 만족하는 가장 작은 $\alpha_0 \in D_0$가 존재한다. 마찬가지로 $D_1 = \bigcap_{\xi &lt; \alpha_0} C_\xi$가 클럽 집합이므로 $\alpha_1 &gt; \alpha_0$를 만족하는 가장 작은 $\alpha_1 \in D_1$이 존재한다. 이 과정을 귀납적으로 반복하여 얻은 서수열 $(\alpha_n)$의 극한이 $\alpha$라고 하자. 임의의 $\xi &lt; \alpha$에 대해, 어떤 $n$이 존재하여 $\xi &lt; \alpha_n$이므로 임의의 $m \geq n$에 대하여 $\alpha_m \in C_\xi$이다. 따라서 $\alpha \in C_\xi$이며 $\alpha \in D$이다. ■</p>
-
-<p>$\Delta C_\xi \supseteq \bigcap C_\xi$임을 확인하라.</p>
-
-<p>참고로 지금까지의 정의와 정리들은 다음과 같이 일반화될 수 있다. $\kappa$가 $\operatorname{cf}\kappa &gt; \omega$인 비가산 기수라고 하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $C \subseteq \kappa$가 <strong>클럽 집합<sub>club set</sub></strong>이라는 것은 $C$가 닫히고 무계<sub>closed and unbounded</sub>라는 것이다. 즉,</p>
-
-  <ul>
-    <li>임의의 $\alpha &lt; \kappa$에 대해 $\sup (C \cap \alpha) = \alpha$라면 (즉 $C$가 $\alpha$에서 무계라면) $\alpha \in C$이다.</li>
-    <li>임의의 $\gamma &lt; \kappa$에 대해 $\alpha &gt; \gamma$인 $\alpha \in C$가 존재한다.</li>
-  </ul>
-
-  <p><strong>정리.</strong> $\lambda &lt; \operatorname{cf}\kappa$에 대해 $\lbrace  C_\xi \rbrace _{\xi &lt; \lambda}$가 클럽 집합들의 모임일 때, $C = \bigcap C_\xi$ 또한 클럽 집합이다.</p>
-
-  <p><strong>정리.</strong> $\kappa$가 정칙<sub>regular</sub>이라면, $\lbrace  C_\xi \rbrace _{\xi &lt; \kappa}$가 클럽 집합들의 모임일 때, $\lbrace C_\xi \rbrace $의 대각 교집합 또한 클럽 집합이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $\kappa = \omega_1$인 경우와 거의 같다. ■</p>
-
-<h2 id="정상-집합">정상 집합</h2>
-
-<p>유한 교집합 닫힘에 의해 클럽 집합들의 모임은 필터를 생성한다. 해당 필터의 쌍대<sub>dual</sub> 아이디얼에 속하지 않는 집합을 <strong>정상 집합<sub>stationary set</sub></strong>이라고 한다. 다른 말로 하자면 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $S \subseteq \omega_1$이라고 하자. 임의의 클럽 집합 $C \subseteq \omega_1$에 대해 $C \cap S \neq \varnothing$이라면 $S$는 정상 집합이다.</p>
-</blockquote>
-
-<p>어떤 클럽 집합 $C$에 대해 $C \cap S = \varnothing$이라면 $S^c \subseteq C$이므로 $C$는 쌍대 아이디얼의 원소이다. 따라서 두 정의는 동치이다.</p>
-
-<p>정상 집합은 $\omega_1$의 부분집합 중 “유의미하게 큰” 집합들을 포착한다. 이 사실은 다음의 (엄밀하지는 않은) 유비를 통해 더 잘 이해할 수 있다. $\omega_1$의 측도가 1이라고 할 때, 클럽 집합은 $\mu(C) = 1$인 집합에, 정상 집합은 $\mu(S) &gt; 0$인 집합에 대응된다.</p>
-
-<p>다음의 사실들은 쉽게 증명될 수 있다 (1번과 3번이 측도 유비와 자연스럽게 연결되는 것에 주목하라).</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 다음이 성립한다.</p>
-
-  <ol>
-    <li>모든 클럽 집합은 정상 집합이다.</li>
-    <li>모든 정상 집합은 무계이다.</li>
-    <li>$\bigcup_{n &lt; \omega} A_n$가 정상 집합이라면 어떤 $m \in \omega$에 대해 $A_m$은 정상 집합이다.</li>
-  </ol>
-</blockquote>
-
-<p>정상 집합의 이름이 stationary인 이유는 다음의 정리 때문이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $S \subseteq \omega_1$에 대해, $f: S \to \omega_1$이 <strong>퇴행적<sub>regressive</sub></strong>이라는 것은 임의의 $\alpha \in S$에 대해 $f(\alpha) &lt; \alpha$라는 것이다. 다음이 동치이다.</p>
-
-  <ol>
-    <li>$S$는 정상 집합이다.</li>
-    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 무계 집합 $T \subseteq S$ 위에서 상수<sub>constant</sub>이다.</li>
-    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 정상 집합 $T \subseteq S$ 위에서 상수이다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> 3 ⇒ 2는 자명하므로, 1 ⇒ 3과 2 ⇒ 1을 증명하면 된다.</p>
-
-<h4 id="1--3">1 ⇒ 3</h4>
-
-<p>대우를 증명한다. 어떤 퇴행적 함수 $f: S \to \omega_1$에 대해, $S$의 모든 정상 부분집합 위에서 $f$가 상수가 아니라고 하자. 즉, 임의의 $\xi \in \omega_1$에 대하여 $A_\xi = f^{-1}(\lbrace  \xi \rbrace )$는 정상 집합이 아니다. 따라서 $A_\xi \cap C_\xi = \varnothing$인 클럽 집합 $C_\xi$가 존재한다.</p>
-
-<p>$D = \Delta_{\xi &lt; \omega_1} C_\xi$라고 하자. $D$는 클럽 집합이므로, 만약 $S$가 정상 집합이라면 $D \cap S \neq \varnothing$이다. $\alpha \in D \cap S$라고 하자. $\alpha \in D$이므로 임의의 $\xi &lt; \alpha$에 대하여 $\alpha \in C_\xi$이다. 즉, $\alpha \notin A_\xi$이므로 $f(\alpha) \neq \xi$이다. 그런데 $\alpha \in S$이므로 $f(\alpha) &lt; \alpha$이다. 이는 모순이므로 $S$는 정상 집합이 아니다. □</p>
-
-<h4 id="2--1">2 ⇒ 1</h4>
-
-<p>마찬가지로 대우를 증명한다. $S$가 정상 집합이 아니라고 하자. 그러면 어떤 클럽 집합 $C$에 대해 $S \cap C = \varnothing$이다. 다음의 함수를 정의하자.</p>
-
-\[f(\alpha) = \sup (C \cap \alpha)\]
-
-<p>임의의 $\alpha \in S$에 대하여 $f(\alpha) \leq \alpha$이다. 만약 $f(\alpha) = \alpha$라면, $C$는 $\alpha$로 수렴하는 서수열을 가진다. 그런데 $C$는 닫힌 집합이므로, $\alpha \in C$이다. 이는 $S \cap C = \varnothing$에 모순이다. 따라서 $f(\alpha) &lt; \alpha$이며, $f$는 퇴행적이다.</p>
-
-<p>만약 어떤 무계 집합 $T$ 위에서 $f$의 값이 $\gamma &lt; \omega_1$로 일정했다면, 어떤 무계인 서수열 $(\alpha_n)$에 대해 $\sup (C \cap \alpha_n) = \gamma$이다. 그런데 $C$는 무계이므로, 이는 $\sup \alpha_n = \gamma$를 함축한다. 그런데 $(\alpha_n)$이 무계이므로 $\sup \alpha_n = \omega_1$이다. 이는 모순이다. 따라서 $f$는 어떠한 무계 집합 위에서도 상수가 아닌 퇴행적 함수이다. ■</p>
-
-<p>위 정리는 다음의 정리로 일반화될 수 있다.</p>
-
-<blockquote>
-  <p><strong>포더 보조정리<sub>Fodor’s lemma</sub>.</strong> $\kappa$가 비가산 정칙 기수라고 하자. 임의의 $S \subseteq \kappa$에 대해 다음이 동치이다.</p>
-
-  <ol>
-    <li>$S$는 정상 집합이다.</li>
-    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 무계 집합 $T \subseteq S$ 위에서 상수이다.</li>
-    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 정상 집합 $T \subseteq S$ 위에서 상수이다.</li>
-  </ol>
-</blockquote>
-
-<h2 id="정상-집합의-응용">정상 집합의 응용</h2>
-
-<p>정상 집합의 한 응용으로서 조합론의 다음 정리를 보자.</p>
-
-<blockquote>
-  <p><strong>Δ-계 보조정리<sub>Δ-system lemma</sub>.</strong> $\lbrace A_\xi\rbrace _{\xi &lt; \omega_1}$가 $\omega_1$의 유한부분집합들의 모임이라고 하자. 어떤 무계인 $I \subseteq \omega_1$와 유한집합 $A$가 존재하여, 임의의 $i, j \in I, i \neq j$에 대해 $A_i \cap A_j = A$이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> 비둘기집의 원리에 의해 일반성을 잃지 않고, 임의의 $\xi &lt; \omega_1$에 대해 $|A_\xi | = n$이라고 가정할 수 있다. 다음과 같이 정의하자.</p>
-
-\[C = \{ \alpha &lt; \omega_1 : \forall \xi &lt; \alpha \;\; \operatorname{max}C_\xi &lt; \alpha \}\]
-
-<p>$C$는 클럽 집합이다. 또한 $0 \leq k \leq n$에 대해 다음과 같이 정의하자.</p>
-
-\[T_k = \{ \alpha \in C : |A_\alpha \cap \alpha | = k \}\]
-
-<p>$\bigcup_{0 \leq k \leq n} T_k = C$이므로 어떤 $m$에 대해 $T_m$은 정적 집합이다. 이제 $0 \leq l &lt; m$에 대해 다음의 함수를 정의하자.</p>
-
-\[f_l(\alpha) : T_m \to \omega_1; \quad \alpha \mapsto \text{$l$th element of $A_\alpha$}\]
-
-<p>$|A_\alpha \cap \alpha| &gt; l$이므로 $f_l(\alpha) &lt; \alpha$이다. 따라서 각 $l$에 대해 $f_l$는 퇴행적이다. 이제 다음의 단계를 반복한다.</p>
-
-<ul>
-  <li>$f_0$가 상수가 되는 정적 집합 $S_0 \subseteq T_m$이 존재한다.</li>
-  <li>$f_1 |_{S_0}$이 상수가 되는 정적 집합 $S_1 \subseteq S_0$가 존재한다.</li>
-  <li>$f_2 |_{S_1}$이 상수가 되는 정적 집합 $S_2 \subseteq S_1$이 존재한다.</li>
-  <li>…</li>
-  <li>$f_{m-1} |_{S_{m-2}}$가 상수가 되는 정적 집합 $S_{m-1} \subseteq S_{m-2}$가 존재한다.</li>
-</ul>
-
-<p>그러면 임의의 $0 \leq l &lt; m$에 대해 $f_l$은 $S_{m-1}$에서 상수이다. 이제 $S_{m-1} = I$가 찾고자 하는 집합임을 쉽게 확인할 수 있다. ■</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>Club Sets and Stationary Sets</title>
-        <link>https://dimenerno.github.io/2025/11/11/stationary-sets/en</link>
-        <guid>https://dimenerno.github.io/2025/11/11/stationary-sets/en</guid>
-        <pubDate>Tue, 11 Nov 2025 00:00:00 +0900</pubDate>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/11/11/stationary-sets/en">
-          <![CDATA[
-            <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<h2 id="club-sets">Club Sets</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> $C \subseteq \omega_1$ is a <strong>club set</strong> if $C$ is closed and unbounded. That is,</p>
-
-  <ul>
-    <li>For any sequence of ordinals $(\alpha_n)_{n \in \omega} \subseteq C$, if $\alpha_n \to \alpha$, then $\alpha \in C$.</li>
-    <li>For any $\gamma &lt; \kappa$, there exists $\alpha \in C$ such that $\alpha &gt; \gamma$.</li>
-  </ul>
-</blockquote>
-
-<p>The name is indeed quite straightforward.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $C_1, C_2 \subseteq \omega_1$ are two club sets, then $C = C_1 \cap C_2$ is also a club set.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> It is easy to show that $C$ is closed. To prove that $C$ is unbounded, let us take an arbitrary $\gamma \in \omega_1$. Since $C_1$ is unbounded, there exists the smallest $\alpha_0 \in C_1$ such that $\gamma &lt; \alpha_0$. Similarly, since $C_2$ is unbounded, there exists the smallest $\beta_0 \in C_2$ such that $\alpha_0 &lt; \beta_0$. Again, since $C_1$ is unbounded, there exists $\alpha_1 \in C_1$ such that $\beta_0 &lt; \alpha_1$. Repeating this process, we obtain sequences of ordinals $\lbrace \alpha_n \rbrace$ and $\lbrace \beta_n \rbrace$. These sequences converge to the same ordinal $\delta$, so $\delta \in C$ and $\delta &gt; \gamma$. (Note: “the smallest” is used to avoid unnecessary reliance on the axiom of choice.) ■</p>
-
-<p>By slightly modifying the above proof, we can derive the following theorem.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $\lbrace C_n \rbrace _{n &lt; \omega}$ is a countable collection of club sets, then $C = \bigcap C_n$ is also a club set.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Exercise (Hint: Use a triangle argument). ■</p>
-
-<p>Thus, given a countable collection of club sets, we can obtain a new club set by taking their intersection. On the other hand, if we are given an uncountable collection of club sets, the following result can be used.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $\lbrace C_\xi \rbrace _{\xi &lt; \omega_1}$ be a collection of club sets. The <strong>diagonal intersection</strong> of $\lbrace C_\xi \rbrace$ is defined as follows:</p>
-
-\[\Delta_{\xi &lt; \omega_1} C_\xi = \{ \alpha \in \omega_1 : \forall \xi &lt; \alpha \;\; \alpha \in C_\xi \}\]
-
-  <p>$D$ is a club set.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> First, let us show that $D$ is closed. Suppose $(\alpha_n)_{n \in \omega} \subseteq D$ and $\alpha_n \to \alpha$. For any $\xi &lt; \alpha$, there exists $n \in \omega$ such that $\xi &lt; \alpha_n$. By the definition of the diagonal intersection, $C_\xi$ contains $\lbrace \alpha_m : m \geq n \rbrace$. Hence, $\sup \lbrace \alpha_m : m \geq n \rbrace = \alpha \in C_\xi$, so $\alpha \in D$.</p>
-
-<p>Next, let us show that $D$ is unbounded. For any $\gamma &lt; \omega_1$, let $D_0 = \bigcap_{\xi &lt; \gamma} C_\xi$. Since $D_0$ is a club set, it is unbounded. Thus, there exists the smallest $\alpha_0 \in D_0$ such that $\alpha_0 &gt; \gamma$. Similarly, let $D_1 = \bigcap_{\xi &lt; \alpha_0} C_\xi$. Since $D_1$ is a club set, there exists the smallest $\alpha_1 \in D_1$ such that $\alpha_1 &gt; \alpha_0$. Repeating this process inductively, we obtain a sequence $(\alpha_n)$ whose limit is $\alpha$. For any $\xi &lt; \alpha$, there exists $n$ such that $\xi &lt; \alpha_n$, and for all $m \geq n$, $\alpha_m \in C_\xi$. Hence, $\alpha \in C_\xi$ and $\alpha \in D$. ■</p>
-
-<p>Verify that $\Delta C_\xi \supseteq \bigcap C_\xi$.</p>
-
-<p>The definitions and theorems discussed so far can be generalised as follows. Let $\kappa$ be an uncountable cardinal with $\operatorname{cf}\kappa &gt; \omega$.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> $C \subseteq \kappa$ is a <strong>club set</strong> if $C$ is closed and unbounded. That is,</p>
-
-  <ul>
-    <li>For any $\alpha &lt; \kappa$, if $\sup (C \cap \alpha) = \alpha$ (i.e., $C$ is unbounded at $\alpha$), then $\alpha \in C$.</li>
-    <li>For any $\gamma &lt; \kappa$, there exists $\alpha \in C$ such that $\alpha &gt; \gamma$.</li>
-  </ul>
-
-  <p><strong>Theorem.</strong> If $\lambda &lt; \operatorname{cf}\kappa$ and $\lbrace C_\xi \rbrace _{\xi &lt; \lambda}$ is a collection of club sets, then $C = \bigcap C_\xi$ is also a club set.</p>
-
-  <p><strong>Theorem.</strong> If $\kappa$ is regular, then the diagonal intersection of a collection $\lbrace C_\xi \rbrace _{\xi &lt; \kappa}$ of club sets is also a club set.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> The proof is almost identical to the case $\kappa = \omega_1$. ■</p>
-
-<h2 id="stationary-sets">Stationary Sets</h2>
-
-<p>By closure under finite intersections, the collection of club sets generates a filter. A set that does not belong to the dual ideal of this filter is called a <strong>stationary set</strong>. In other words:</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $S \subseteq \omega_1$. If $C \cap S \neq \varnothing$ for every club set $C \subseteq \omega_1$, then $S$ is a stationary set.</p>
-</blockquote>
-
-<p>If there exists a club set $C$ such that $C \cap S = \varnothing$, then $S^c \subseteq C$, so $C$ belongs to the dual ideal. Thus, the two definitions are equivalent.</p>
-
-<p>Stationary sets capture “significantly large” subsets of $\omega_1$. This can be better understood through the following (informal) analogy: if $\omega_1$ has measure 1, then club sets correspond to sets with $\mu(C) = 1$, and stationary sets correspond to sets with $\mu(S) &gt; 0$.</p>
-
-<p>The following facts are easily proven (note how 1 and 3 naturally align with the measure analogy):</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> The following hold:</p>
-
-  <ol>
-    <li>Every club set is a stationary set.</li>
-    <li>Every stationary set is unbounded.</li>
-    <li>If $\bigcup_{n &lt; \omega} A_n$ is a stationary set, then there exists some $m \in \omega$ such that $A_m$ is a stationary set.</li>
-  </ol>
-</blockquote>
-
-<p>The name “stationary” for stationary sets arises from the following theorem.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $S \subseteq \omega_1$. A function $f: S \to \omega_1$ is <strong>regressive</strong> if $f(\alpha) &lt; \alpha$ for all $\alpha \in S$. The following are equivalent:</p>
-
-  <ol>
-    <li>$S$ is a stationary set.</li>
-    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some unbounded set $T \subseteq S$.</li>
-    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some stationary set $T \subseteq S$.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong> 3 ⇒ 2 is trivial, so it suffices to prove 1 ⇒ 3 and 2 ⇒ 1.</p>
-
-<h4 id="1--3">1 ⇒ 3</h4>
-
-<p>We prove the contrapositive. Suppose there exists a regressive function $f: S \to \omega_1$ such that $f$ is not constant on any stationary subset of $S$. That is, for every $\xi \in \omega_1$, $A_\xi = f^{-1}(\lbrace \xi \rbrace)$ is not stationary. Hence, there exists a club set $C_\xi$ such that $A_\xi \cap C_\xi = \varnothing$.</p>
-
-<p>Let $D = \Delta_{\xi &lt; \omega_1} C_\xi$. Since $D$ is a club set, if $S$ is stationary, then $D \cap S \neq \varnothing$. Let $\alpha \in D \cap S$. Since $\alpha \in D$, for any $\xi &lt; \alpha$, $\alpha \in C_\xi$. Thus, $\alpha \notin A_\xi$, so $f(\alpha) \neq \xi$. However, since $\alpha \in S$, $f(\alpha) &lt; \alpha$. This is a contradiction, so $S$ is not stationary. □</p>
-
-<h4 id="2--1">2 ⇒ 1</h4>
-
-<p>We again prove the contrapositive. Suppose $S$ is not stationary. Then there exists a club set $C$ such that $S \cap C = \varnothing$. Define the following function:</p>
-
-\[f(\alpha) = \sup (C \cap \alpha)\]
-
-<p>For any $\alpha \in S$, $f(\alpha) \leq \alpha$. If $f(\alpha) = \alpha$, then $C$ contains a sequence of ordinals converging to $\alpha$. Since $C$ is closed, $\alpha \in C$. This contradicts $S \cap C = \varnothing$. Thus, $f(\alpha) &lt; \alpha$, and $f$ is regressive.</p>
-
-<p>If $f$ were constant on some unbounded set $T$, then for some $\gamma &lt; \omega_1$, there would exist an unbounded sequence $(\alpha_n)$ such that $\sup (C \cap \alpha_n) = \gamma$. Since $C$ is unbounded, this implies $\sup \alpha_n = \gamma$. However, since $(\alpha_n)$ is unbounded, $\sup \alpha_n = \omega_1$. This is a contradiction. Thus, $f$ is a regressive function that is not constant on any unbounded set. ■</p>
-
-<p>The above theorem can be generalised as follows:</p>
-
-<blockquote>
-  <p><strong>Fodor’s Lemma.</strong> Let $\kappa$ be an uncountable regular cardinal. For any $S \subseteq \kappa$, the following are equivalent:</p>
-
-  <ol>
-    <li>$S$ is a stationary set.</li>
-    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some unbounded set $T \subseteq S$.</li>
-    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some stationary set $T \subseteq S$.</li>
-  </ol>
-</blockquote>
-
-<h2 id="applications-of-stationary-sets">Applications of Stationary Sets</h2>
-
-<p>As an application of stationary sets, consider the following combinatorial theorem:</p>
-
-<blockquote>
-  <p><strong>Δ-System Lemma.</strong> Let $\lbrace A_\xi\rbrace _{\xi &lt; \omega_1}$ be a collection of finite subsets of $\omega_1$. There exist an unbounded set $I \subseteq \omega_1$ and a finite set $A$ such that for any $i, j \in I$ with $i \neq j$, $A_i \cap A_j = A$.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> By the pigeonhole principle, we may assume without loss of generality that $|A_\xi | = n$ for all $\xi &lt; \omega_1$. Define:</p>
-
-\[C = \{ \alpha &lt; \omega_1 : \forall \xi &lt; \alpha \;\; \operatorname{max}C_\xi &lt; \alpha \}\]
-
-<p>$C$ is a club set. For $0 \leq k \leq n$, define:</p>
-
-\[T_k = \{ \alpha \in C : |A_\alpha \cap \alpha | = k \}\]
-
-<p>Since $\bigcup_{0 \leq k \leq n} T_k = C$, there exists some $m$ such that $T_m$ is stationary. For $0 \leq l &lt; m$, define:</p>
-
-\[f_l(\alpha) : T_m \to \omega_1; \quad \alpha \mapsto \text{$l$th element of $A_\alpha$}\]
-
-<p>Since $|A_\alpha \cap \alpha| &gt; l$, $f_l(\alpha) &lt; \alpha$. Thus, $f_l$ is regressive. Now, repeat the following steps:</p>
-
-<ul>
-  <li>There exists a stationary set $S_0 \subseteq T_m$ such that $f_0$ is constant on $S_0$.</li>
-  <li>There exists a stationary set $S_1 \subseteq S_0$ such that $f_1 |_{S_0}$ is constant on $S_1$.</li>
-  <li>There exists a stationary set $S_2 \subseteq S_1$ such that $f_2 |_{S_1}$ is constant on $S_2$.</li>
-  <li>…</li>
-  <li>There exists a stationary set $S_{m-1} \subseteq S_{m-2}$ such that $f_{m-1} |_{S_{m-2}}$ is constant on $S_{m-1}$.</li>
-</ul>
-
-<p>For each $0 \leq l &lt; m$, $f_l$ is constant on $S_{m-1}$. It is now easy to verify that $S_{m-1} = I$ is the desired set. ■</p>
 
           ]]>
         </content:encoded>

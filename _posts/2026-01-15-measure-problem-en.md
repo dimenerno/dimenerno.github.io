@@ -2,7 +2,7 @@
 layout: post
 title: "The Measure Problem and the Continuum Hypothesis"
 date: 2026-01-15
-tags: ["Mathematics", "Set theory", "Measure theory"]
+tags: ["Mathematics", "Set Theory", "Measure Theory"]
 related:
 lang: en
 ---
