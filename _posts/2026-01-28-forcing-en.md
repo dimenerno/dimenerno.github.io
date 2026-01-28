@@ -506,7 +506,7 @@ $$
 By Fundamental Theorem 2,
 
 $$
-\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G:p\Vdash \phi(\pi, \vec{\tau}) 
+\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G: q\Vdash \phi(\pi, \vec{\tau}) 
 $$
 
 By Fundamental Theorem 1,
@@ -531,7 +531,7 @@ At this point we use the following lemma.
 >
 > Then $\sigma\_G = \overline{\sigma}\_G$, and $\overline{\sigma} \in M^{\mathbb{P}}$.
 
-The proof is almost immediate from the definition of a filter. From the lemma and the directedness of the filter, we obtain $(r \leq p, q)$.
+The proof is almost immediate from the definition of a filter. From the lemma, the directedness of the filter, and the directedness of $\Vdash^\ast$, we obtain: $(r \leq p, q)$
 
 $$
 y = \Big\{ \pi_G : \exists r\in G\; \big( (\pi, r) \in \overline{\sigma} \land (r \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\} 
@@ -543,7 +543,7 @@ $$
 \check{y} = \Big\{ (\pi, r) \in \overline{\sigma} : \big(r \Vdash^* \phi(\pi, \vec{\tau})\big)^M \  \Big\} 
 $$
 
-then $\check{y}\_G = y$. But $\check{y}$ is obtained in $M$ by separating $\sigma$ using the predicate $p \Vdash^\ast \phi(\pi, \vec{\tau})$, and since $M$ satisfies Separation, we have $\hat{y} \in M$, and hence $y \in M[G]$.
+then $\check{y}\_G = y$. But $\check{y}$ is obtained in $M$ by separating $\sigma$ using the predicate $p \Vdash^\ast \phi(\pi, \vec{\tau})$, and since $M$ satisfies Separation, we have $\check{y} \in M$, and hence $y \in M[G]$.
 
 The remaining axioms may be proved similarly. ■
 

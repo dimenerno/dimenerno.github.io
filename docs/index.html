@@ -1000,7 +1000,7 @@
 
 <p>제2기본정리에 의해,</p>
 
-\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G:p\Vdash \phi(\pi, \vec{\tau})\]
+\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G: q \Vdash \phi(\pi, \vec{\tau})\]
 
 <p>제1기본정리에 의해,</p>
 
@@ -1020,7 +1020,7 @@
   <p>이때, $\sigma_G = \overline{\sigma}_G$이며, $\overline{\sigma} \in M^{\mathbb{P}}$이다.</p>
 </blockquote>
 
-<p>증명은 필터의 정의로부터 거의 자명하다. 보조정리와, 필터의 방향성으로부터 다음을 얻는다 $(r \leq p, q)$.</p>
+<p>증명은 필터의 정의로부터 거의 자명하다. 보조정리와, 필터의 방향성 및 $\Vdash^\ast$의 방향성으로부터 다음을 얻는다 $(r \leq p, q)$.</p>
 
 \[y = \Big\{ \pi_G : \exists r\in G\; \big( (\pi, r) \in \overline{\sigma} \land (r \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\}\]
 
@@ -1028,7 +1028,7 @@
 
 \[\check{y} = \Big\{ (\pi, r) \in \overline{\sigma} : \big(r \Vdash^* \phi(\pi, \vec{\tau})\big)^M \  \Big\}\]
 
-<p>일 때 $\check{y}_G = y$이다. 그런데 $\check{y}$는 $M$에서 $\sigma$를 $p \Vdash^\ast \phi(\pi, \vec{\tau})$에 대해 분리한 집합이고, $M$은 분리 공리를 만족하므로, $\hat{y} \in M$이며, 이에 따라 $y \in M[G]$이다.</p>
+<p>일 때 $\check{y}_G = y$이다. 그런데 $\check{y}$는 $M$에서 $\sigma$를 $p \Vdash^\ast \phi(\pi, \vec{\tau})$에 대해 분리한 집합이고, $M$은 분리 공리를 만족하므로, $\check{y} \in M$이며, 이에 따라 $y \in M[G]$이다.</p>
 
 <p>나머지 공리에 대해서도 비슷하게 증명할 수 있다. ■</p>
 
@@ -1582,7 +1582,7 @@
 
 <p>By Fundamental Theorem 2,</p>
 
-\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G:p\Vdash \phi(\pi, \vec{\tau})\]
+\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G: q\Vdash \phi(\pi, \vec{\tau})\]
 
 <p>By Fundamental Theorem 1,</p>
 
@@ -1602,7 +1602,7 @@
   <p>Then $\sigma_G = \overline{\sigma}_G$, and $\overline{\sigma} \in M^{\mathbb{P}}$.</p>
 </blockquote>
 
-<p>The proof is almost immediate from the definition of a filter. From the lemma and the directedness of the filter, we obtain $(r \leq p, q)$.</p>
+<p>The proof is almost immediate from the definition of a filter. From the lemma, the directedness of the filter, and the directedness of $\Vdash^\ast$, we obtain: $(r \leq p, q)$</p>
 
 \[y = \Big\{ \pi_G : \exists r\in G\; \big( (\pi, r) \in \overline{\sigma} \land (r \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\}\]
 
@@ -1610,7 +1610,7 @@
 
 \[\check{y} = \Big\{ (\pi, r) \in \overline{\sigma} : \big(r \Vdash^* \phi(\pi, \vec{\tau})\big)^M \  \Big\}\]
 
-<p>then $\check{y}_G = y$. But $\check{y}$ is obtained in $M$ by separating $\sigma$ using the predicate $p \Vdash^\ast \phi(\pi, \vec{\tau})$, and since $M$ satisfies Separation, we have $\hat{y} \in M$, and hence $y \in M[G]$.</p>
+<p>then $\check{y}_G = y$. But $\check{y}$ is obtained in $M$ by separating $\sigma$ using the predicate $p \Vdash^\ast \phi(\pi, \vec{\tau})$, and since $M$ satisfies Separation, we have $\check{y} \in M$, and hence $y \in M[G]$.</p>
 
 <p>The remaining axioms may be proved similarly. ■</p>
 

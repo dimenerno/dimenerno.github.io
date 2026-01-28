@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-01-28T20:02:59+09:00</updated>
+ <updated>2026-01-28T20:09:25+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -514,7 +514,7 @@
 
 &lt;p&gt;제2기본정리에 의해,&lt;/p&gt;
 
-\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G:p\Vdash \phi(\pi, \vec{\tau})\]
+\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G: q \Vdash \phi(\pi, \vec{\tau})\]
 
 &lt;p&gt;제1기본정리에 의해,&lt;/p&gt;
 
@@ -534,7 +534,7 @@
   &lt;p&gt;이때, $\sigma_G = \overline{\sigma}_G$이며, $\overline{\sigma} \in M^{\mathbb{P}}$이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;증명은 필터의 정의로부터 거의 자명하다. 보조정리와, 필터의 방향성으로부터 다음을 얻는다 $(r \leq p, q)$.&lt;/p&gt;
+&lt;p&gt;증명은 필터의 정의로부터 거의 자명하다. 보조정리와, 필터의 방향성 및 $\Vdash^\ast$의 방향성으로부터 다음을 얻는다 $(r \leq p, q)$.&lt;/p&gt;
 
 \[y = \Big\{ \pi_G : \exists r\in G\; \big( (\pi, r) \in \overline{\sigma} \land (r \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\}\]
 
@@ -542,7 +542,7 @@
 
 \[\check{y} = \Big\{ (\pi, r) \in \overline{\sigma} : \big(r \Vdash^* \phi(\pi, \vec{\tau})\big)^M \  \Big\}\]
 
-&lt;p&gt;일 때 $\check{y}_G = y$이다. 그런데 $\check{y}$는 $M$에서 $\sigma$를 $p \Vdash^\ast \phi(\pi, \vec{\tau})$에 대해 분리한 집합이고, $M$은 분리 공리를 만족하므로, $\hat{y} \in M$이며, 이에 따라 $y \in M[G]$이다.&lt;/p&gt;
+&lt;p&gt;일 때 $\check{y}_G = y$이다. 그런데 $\check{y}$는 $M$에서 $\sigma$를 $p \Vdash^\ast \phi(\pi, \vec{\tau})$에 대해 분리한 집합이고, $M$은 분리 공리를 만족하므로, $\check{y} \in M$이며, 이에 따라 $y \in M[G]$이다.&lt;/p&gt;
 
 &lt;p&gt;나머지 공리에 대해서도 비슷하게 증명할 수 있다. ■&lt;/p&gt;
 
@@ -1079,7 +1079,7 @@
 
 &lt;p&gt;By Fundamental Theorem 2,&lt;/p&gt;
 
-\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G:p\Vdash \phi(\pi, \vec{\tau})\]
+\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G: q\Vdash \phi(\pi, \vec{\tau})\]
 
 &lt;p&gt;By Fundamental Theorem 1,&lt;/p&gt;
 
@@ -1099,7 +1099,7 @@
   &lt;p&gt;Then $\sigma_G = \overline{\sigma}_G$, and $\overline{\sigma} \in M^{\mathbb{P}}$.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;The proof is almost immediate from the definition of a filter. From the lemma and the directedness of the filter, we obtain $(r \leq p, q)$.&lt;/p&gt;
+&lt;p&gt;The proof is almost immediate from the definition of a filter. From the lemma, the directedness of the filter, and the directedness of $\Vdash^\ast$, we obtain: $(r \leq p, q)$&lt;/p&gt;
 
 \[y = \Big\{ \pi_G : \exists r\in G\; \big( (\pi, r) \in \overline{\sigma} \land (r \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\}\]
 
@@ -1107,7 +1107,7 @@
 
 \[\check{y} = \Big\{ (\pi, r) \in \overline{\sigma} : \big(r \Vdash^* \phi(\pi, \vec{\tau})\big)^M \  \Big\}\]
 
-&lt;p&gt;then $\check{y}_G = y$. But $\check{y}$ is obtained in $M$ by separating $\sigma$ using the predicate $p \Vdash^\ast \phi(\pi, \vec{\tau})$, and since $M$ satisfies Separation, we have $\hat{y} \in M$, and hence $y \in M[G]$.&lt;/p&gt;
+&lt;p&gt;then $\check{y}_G = y$. But $\check{y}$ is obtained in $M$ by separating $\sigma$ using the predicate $p \Vdash^\ast \phi(\pi, \vec{\tau})$, and since $M$ satisfies Separation, we have $\check{y} \in M$, and hence $y \in M[G]$.&lt;/p&gt;
 
 &lt;p&gt;The remaining axioms may be proved similarly. ■&lt;/p&gt;
 
