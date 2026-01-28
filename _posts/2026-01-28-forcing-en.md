@@ -9,7 +9,7 @@ lang: en
 
 > This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
 
-Gödel, in 1938, introduced the axiom of constructibility and demonstrated that the negation of the continuum hypothesis is unprovable in ZFC. This is because the constructible universe $L$ is a model of ZFC in which the continuum hypothesis holds. Later, in 1963, Cohen developed forcing and discovered a model of ZFC in which the continuum hypothesis does not hold. This established the independence of the continuum hypothesis from ZFC. This post outlines Cohen's forcing and the proof of the independence of the continuum hypothesis.
+Gödel, in 1938, introduced the axiom of constructibility and demonstrated that the negation of the continuum hypothesis is unprovable in ZFC. This is because the constructible universe $L$ is a model of ZFC in which the continuum hypothesis holds. Later, in 1963, Cohen developed forcing and discovered a model of ZFC in which the continuum hypothesis does not hold. This established the independence of the continuum hypothesis from ZFC. This post outlines Cohen's forcing and the proof of the independence of the continuum hypothesis. The proofs are written somewhat loosely, with an emphasis on the basic ideas, so readers should refer to textbooks for more rigorous approach.
 
 It goes without saying that this post assumes the consistency of ZFC.
 
