@@ -19,7 +19,7 @@ In particular, the trace has the following property:
 
 In other words, the trace is not merely a function of matrices but also a function of linear transformations.
 
-However, upon revisiting the definition of the trace after learning this result, one might find it somewhat unsatisfactory. While the trace has an intuitive meaning as "the sum of diagonal entries" in the case of matrices, this intuitive interpretation is absent for linear transformations. This contrasts with eigenvalues, which have an intuitive meaning as "the scaling factors of unit squares under the transformation." As a result, the fact that the trace is a function of linear transformations might seem almost coincidental.
+However, upon revisiting the definition of the trace after learning this result, one might find it somewhat unsatisfactory. While the trace has an intuitive meaning as "the sum of diagonal entries" in the case of matrices, this intuitive interpretation is absent for linear transformations. This contrasts with determinants, which have an intuitive meaning as "the scaling factors of unit squares under the transformation." As a result, the fact that the trace is a function of linear transformations might seem almost coincidental.
 
 While our neighbours in the physics department might shrug and proceed with their calculations, we, the brilliant minds of the mathematics department, should not settle for such a perspective. A more natural and mathematical approach would be to define the trace first as a function of linear transformations and then show that this definition coincides with the traditional one. This is the motivation for the **categorical trace**.
 

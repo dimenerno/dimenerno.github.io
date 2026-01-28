@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-01-26T20:55:35+09:00</updated>
+ <updated>2026-01-28T12:59:00+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -31,7 +31,7 @@
 
 &lt;p&gt;즉, 대각합은 행렬에 대한 함수일 뿐 아니라 선형 변환에 대한 함수이기도 하다.&lt;/p&gt;
 
-&lt;p&gt;그런데 이 결과를 알고 나서 대각합의 정의를 다시 보면 불만족스러운&lt;small&gt;(짜치는)&lt;/small&gt; 점이 있다. 대각합이 선형 변환에 대한 함수임에도 불구하고, “대각선 성분의 합”이라는 직관적 의미가 있는 행렬의 경우와 달리 선형 변환의 경우에는 직관적 의미가 읽히지 않기 때문이다. 이는 고윳값이 “단위 정사각형이 변환된 후의 넓이”라는 직관적 의미를 가지는 것과 대조된다. 때문에 대각합이 선형 변환에 대한 함수라는 사실은 마치 우연처럼 보인다.&lt;/p&gt;
+&lt;p&gt;그런데 이 결과를 알고 나서 대각합의 정의를 다시 보면 불만족스러운&lt;small&gt;(짜치는)&lt;/small&gt; 점이 있다. 대각합이 선형 변환에 대한 함수임에도 불구하고, “대각선 성분의 합”이라는 직관적 의미가 있는 행렬의 경우와 달리 선형 변환의 경우에는 직관적 의미가 읽히지 않기 때문이다. 이는 행렬값이 “단위 정사각형이 변환된 후의 넓이”라는 직관적 의미를 가지는 것과 대조된다. 때문에 대각합이 선형 변환에 대한 함수라는 사실은 마치 우연처럼 보인다.&lt;/p&gt;
 
 &lt;p&gt;옆집 물리학과 애들이라면 그게 뭐 어째서 ‒ 하며 계산이나 하러 가겠지만, 우리 우수한 수학과의 인재들은 이를 차치해서는 안 될 것이다. 더욱 자연스럽고 수학적인 방식은, 대각합을 먼저 선형 변환에 대한 함수로서 정의한 뒤, 이 정의가 기존의 정의와 일치함을 보이는 것이다. 이것이 &lt;strong&gt;범주론적 대각합&lt;sub&gt;categorical trace&lt;/sub&gt;&lt;/strong&gt;의 동기이다.&lt;/p&gt;
 
@@ -138,7 +138,7 @@
 
 &lt;p&gt;In other words, the trace is not merely a function of matrices but also a function of linear transformations.&lt;/p&gt;
 
-&lt;p&gt;However, upon revisiting the definition of the trace after learning this result, one might find it somewhat unsatisfactory. While the trace has an intuitive meaning as “the sum of diagonal entries” in the case of matrices, this intuitive interpretation is absent for linear transformations. This contrasts with eigenvalues, which have an intuitive meaning as “the scaling factors of unit squares under the transformation.” As a result, the fact that the trace is a function of linear transformations might seem almost coincidental.&lt;/p&gt;
+&lt;p&gt;However, upon revisiting the definition of the trace after learning this result, one might find it somewhat unsatisfactory. While the trace has an intuitive meaning as “the sum of diagonal entries” in the case of matrices, this intuitive interpretation is absent for linear transformations. This contrasts with determinants, which have an intuitive meaning as “the scaling factors of unit squares under the transformation.” As a result, the fact that the trace is a function of linear transformations might seem almost coincidental.&lt;/p&gt;
 
 &lt;p&gt;While our neighbours in the physics department might shrug and proceed with their calculations, we, the brilliant minds of the mathematics department, should not settle for such a perspective. A more natural and mathematical approach would be to define the trace first as a function of linear transformations and then show that this definition coincides with the traditional one. This is the motivation for the &lt;strong&gt;categorical trace&lt;/strong&gt;.&lt;/p&gt;
 
