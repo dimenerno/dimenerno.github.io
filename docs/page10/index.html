@@ -433,6 +433,370 @@
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/03/10/temporal-logic/en"> Temporal Logic </a>
+      </h1>
+    <span class="post-date">10 Mar 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'">
+        Philosophy
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Consider the following three statements.</p>
+
+<ol>
+  <li>Gayeong will go to school at some point.</li>
+  <li>Nayeong will go to school at some point.</li>
+  <li>Nayeong will not go to school before Gayeong goes to school.</li>
+</ol>
+
+<p>From these, we can infer the following.</p>
+
+<p>   4. Gayeong will go to school first, and then Nayeong will go to school.</p>
+
+<p>However, classical logic—at least superficially—does not entail the above inference relation. Therefore, what we need is a logic that can reason about time, namely <strong>temporal logic</strong>.</p>
+
+<h2 id="1-classical-temporal-logic">1. Classical Temporal Logic</h2>
+
+<h3 id="11-semantics">1.1. Semantics</h3>
+
+<p>There are two ways to define temporal logic. The first is to obtain temporal logic by imposing a particular structure on classical logic. Let us examine this method first.</p>
+
+<p>The signature of temporal logic consists of one binary relation $\prec$ and zero or more unary predicates $P, Q, \dots$. A model of temporal logic is as follows. (This model is called a <strong>Kripke model</strong>.)</p>
+
+\[\mathcal{T} = (T, \prec^\mathcal{T}, P^\mathcal{T}, Q^\mathcal{T}, \dots)\]
+
+<ul>
+  <li>Universe $T$: represents all the moments under consideration.</li>
+  <li>$t_1 \prec^\mathcal{T} t_2$: means that $t_1$ is earlier than $t_2$.</li>
+  <li>$P^\mathcal{T}(t)$: means that $P$ is true at time $t$.</li>
+</ul>
+
+<p>For example, in temporal logic considering only yesterday, today, and tomorrow, we can set $T = \lbrace  -1, 0, 1 \rbrace $. Classical mechanics considers $T = \mathbb{R}$.</p>
+
+<p>If we let $A$ denote the event of Gayeong going to school and $B$ denote the event of Nayeong going to school, then statement 3 from the introduction can be written as follows.</p>
+
+\[\forall t_1 \forall t_2 \; \big( A(t_1) \land B(t_2) \rightarrow t_1 \prec t_2 \big)\]
+
+<p>Let $\phi$ be a formula with one free variable $x$. When $\phi$ is true with $t \in T$ taken as the <em>present</em>, we write this as $\mathcal{T} \vDash \phi[t]$.</p>
+
+<h3 id="12-frames">1.2. Frames</h3>
+
+<p>A pair $(T, \prec)$ consisting of a set and a binary relation defined on it is called a <strong>frame</strong>. Let $\mathbf{F}$ be a class of frames. When $\mathcal{T} \vDash \phi[t]$ for any model $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$ with $(T, \prec) \in \mathbf{F}$ and any $t \in T$, we say that $\phi$ is true with respect to $\mathbf{F}$.</p>
+
+<p>By requiring $\mathbf{F}$ to have certain properties, we can capture characteristics of time. The following properties can be required:</p>
+
+<ul>
+  <li>Transitivity: for any distinct $t_1, t_2, t_3 \in T$, if $t_1 \prec t_2$ and $t_2 \prec t_3$, then $t_1 \prec t_3$.</li>
+  <li>Linearity: for any distinct $t_1, t_2 \in T$, either $t_1 \prec t_2$ or $t_2 \prec t_1$.</li>
+  <li>Density: for any distinct $t_1, t_2 \in T$, there exists some $t_3 \in T$ such that $t_1 \prec t_3 \prec t_2$.</li>
+  <li>Right-extendability: for any $t \in T$, there exists some $t’ \in T$ such that $t \prec t’$.</li>
+  <li>Left-extendability: for any $t \in T$, there exists some $t’ \in T$ such that $t’ \prec t$.</li>
+</ul>
+
+<p>The argument from the introduction can be shown to be valid with respect to linear frames.</p>
+
+<h2 id="2-independent-temporal-logic">2. Independent Temporal Logic</h2>
+
+<p>The second way to define temporal logic is to introduce logical symbols specific to temporal logic. Each is read as follows:</p>
+
+<ul>
+  <li>$\mathsf{F}p$: Future $p$ (at some point $p$ will be the case)</li>
+  <li>$\mathsf{P}p$: Past $p$ (at some point $p$ was the case)</li>
+  <li>$\mathsf{G}p$: Going to always be $p$ (always $p$ will be the case)</li>
+  <li>$\mathsf{H}p$: Has always been $p$ (always $p$ was the case)</li>
+</ul>
+
+<p>The relationships between $\mathsf{F}, \mathsf{P}, \mathsf{G}, \mathsf{H}$ are as follows:</p>
+
+<ul>
+  <li>$\mathsf{F}p \equiv \lnot\mathsf{G}\lnot p$</li>
+  <li>$\mathsf{P}p \equiv \lnot\mathsf{H}\lnot p$</li>
+</ul>
+
+<p>Propositions of independent temporal logic can always be translated into propositions of classical temporal logic through the <strong>Meredith translation</strong>. For example, $\mathsf{G}p$ is translated as $\forall x \succ t \; p(x)$. However, the converse does not hold. Therefore, independent temporal logic has weaker expressive power than classical temporal logic. Nevertheless, independent temporal logic is a subject worth studying because, in exchange for sacrificing some expressive power, one can obtain good properties such as decidability and completeness, and it also provides connections to modal logic, amongst other significant philosophical merits.</p>
+
+<p>The model of independent temporal logic is $\mathcal{T} = (T, \prec, \lbrace  P^\mathcal{T} \rbrace )$, the same as dependent temporal logic. The satisfaction relation is defined naturally. For example,</p>
+
+<ul>
+  <li>$\mathcal{T} \vDash \mathsf{F}p[t] \iff$ for some $t \prec t’$, $\mathcal{T} \vDash p[t’]$</li>
+</ul>
+
+<h2 id="3-temporal-axioms">3. Temporal Axioms</h2>
+
+<p>So far we have examined the semantics of temporal logic. Now let us examine proofs in temporal logic.</p>
+
+<h3 id="31-minimal-temporal-logic">3.1. Minimal Temporal Logic</h3>
+
+<p>The minimal temporal logic $L_0$ consists of the following axioms:</p>
+
+<ul>
+  <li>When $\tau$ is a tautology of propositional logic, $\tau$</li>
+  <li>$\mathsf{G}(\phi \to \psi) \to (\mathsf{G}\phi \to \mathsf{G}\psi)$</li>
+  <li>$\mathsf{H}(\phi \to \psi) \to (\mathsf{H}\phi \to \mathsf{H}\psi)$</li>
+  <li>$\phi \to \mathsf{GP}\phi$</li>
+  <li>$\phi \to \mathsf{HF}\phi$</li>
+</ul>
+
+<p>And it consists of the following inference rules:</p>
+
+<ul>
+  <li><strong>MP</strong> $\vdash \phi, \phi \to \psi \implies \vdash \psi$</li>
+  <li><strong>TG1:</strong> $\vdash \phi \implies \vdash \mathsf{G}\phi$</li>
+  <li><strong>TG2:</strong> $\vdash \phi \implies \vdash \mathsf{H}\phi$</li>
+</ul>
+
+<p>MP is an abbreviation for Modus Ponens, and TG is an abbreviation for Temporal Generalisation.</p>
+
+<p>Note that TG does not mean $\vdash \phi \to \mathsf{G}\phi$. TG means that <em>only for logically proven propositions $\phi$,</em> one can derive $\mathsf{G}\phi$ or $\mathsf{H}\phi$. That is, TG means that logical propositions are independent of time.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $L_0$ is sound.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> The proof is by induction on the form of logical formulae, almost identical to the soundness theorem for propositional logic.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Provability in $L_0$ is closed under the following rules:</p>
+
+  <ol>
+    <li><strong>Mirror rule:</strong> Let the mirror proposition $\bar{\phi}$ be the proposition obtained by swapping $\mathsf{G}$ with $\mathsf{H}$ and $\mathsf{F}$ with $\mathsf{P}$ in proposition $\phi$. If $\vdash \phi$, then $\vdash \bar{\phi}$.</li>
+    <li><strong>Becker’s rule:</strong> Let $\mathsf{T}$ be one of $\mathsf{G, H, F, P}$. If $\vdash \phi \to \psi$, then $\vdash \mathsf{T}\phi \to \mathsf{T}\psi$.</li>
+    <li><strong>Dual rule:</strong> Let the dual proposition $\phi^\ast$ be the proposition obtained by swapping $\land$ with $\lor$, $\mathsf{G}$ with $\mathsf{F}$, and $\mathsf{H}$ with $\mathsf{P}$ in proposition $\phi$. If $\vdash \phi$, then $\vdash \phi^\ast$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> Exercise (^^)</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $L_0$ is complete with respect to the class of all frames $\mathbf{F}_0$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> TODO</p>
+
+<h3 id="32-temporal-logic-of-classical-mechanics">3.2. Temporal Logic of Classical Mechanics</h3>
+
+<p>Consider the class $\mathbf{F}_1$ of frames that have transitivity, linearity, density, and left and right extendability. $\mathbf{F}_1$ represents time as postulated in classical mechanics. Let us find an axiom system that is sound and complete for $\mathbf{F}_1$.</p>
+
+<p>The temporal logic of classical mechanics $L_1$ is obtained by adding the following axioms to $L_0$:</p>
+
+<ul>
+  <li>$\mathsf{G} p \to \mathsf{GG}p$ (transitivity)</li>
+  <li>$(\mathsf{P}p \land \mathsf{P}q) \to (\mathsf{P}(p \land \mathsf{P}q) \lor \mathsf{P}(p \land q) \lor \mathsf{P}(\mathsf{P}p \land q))$ (left linearity)</li>
+  <li>$(\mathsf{F}p \land \mathsf{F}q) \to (\mathsf{F}(p \land \mathsf{F}q) \lor \mathsf{F}(p \land q) \lor \mathsf{F}(\mathsf{F}p \land q))$ (right linearity)</li>
+  <li>$\mathsf{H}p \to \mathsf{P}p$ (left extendability)</li>
+  <li>$\mathsf{G}p \to \mathsf{F}p$ (right extendability)</li>
+  <li>$\mathsf{GG}p \to \mathsf{G}p$ (density)</li>
+</ul>
+
+<blockquote>
+  <p><strong>Hamblin’s theorem.</strong> In $L_1$, combinations of temporal symbols are equivalent to one of 14 tenses. The 14 tenses are $\mathsf{FH, H, PH, HP, P, GP}$ and $\mathsf{PG, G, FG, GF, F, HF}$, together with $\mathsf{GH} = \mathsf{HG}$ and $\mathsf{FP} = \mathsf{PF}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> In transitive frames, nested tenses such as $\mathsf{PP}$ can easily be shown to be equivalent to the single tense $\mathsf{P}$. Therefore, it suffices to show that combinations $\mathsf{XYZ}$ of tenses where $\mathsf{X} \neq \mathsf{Y}$ and $\mathsf{Y} \neq \mathsf{Z}$ are equivalent to some combination of two tenses. By the mirror rule and dual rule, we need only consider the case where $\mathsf{Z} = \mathsf{G}$. Meanwhile, to show that $\mathsf{XY}$ and $\mathsf{X’Y’}$ are not equivalent to each other, one can find a Kripke model where the implication relation does not hold.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $L_1$ is complete with respect to $\mathbf{F}_1$.</p>
+</blockquote>
+
+<h2 id="4-temporal-predicate-logic">4. Temporal Predicate Logic</h2>
+
+<p>In classical logic, predicate logic is obtained by adding the following axioms to propositional logic:</p>
+
+<ul>
+  <li>$\forall x \phi \to \phi[y/x]$ (provided $y$ is free for $x$ in $\phi$)</li>
+  <li>$\forall x (\phi \to \psi) \to (\phi \to \forall x \psi)$ (provided $x$ is not a free variable of $\phi$)</li>
+  <li>$x = x$</li>
+  <li>$x = y \to (\phi[x/z] \to \phi[y / z]$) (provided $x, y$ are free for $z$ in $\phi$)</li>
+</ul>
+
+<p>And the following inference rule is added:</p>
+
+<ul>
+  <li><strong>UG (Universal Generalisation):</strong> $\vdash \phi \implies \vdash \forall x \phi$</li>
+</ul>
+
+<p>The logical system obtained by adding the aforementioned axioms and inference rule to temporal logic $L_0$ is called temporal predicate logic $L_P$.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $L_P$ proves the following:</p>
+
+  <ul>
+    <li><strong>Direct Barcan:</strong> $\forall x \mathsf{G}\phi \to \mathsf{G}\forall x \phi$</li>
+    <li><strong>Converse Barcan:</strong> $\mathsf{G}\forall x \phi \to \forall x \mathsf{G} \phi$</li>
+    <li><strong>Permanence of identity:</strong> $x = y \to \mathsf{G}(x = y)$</li>
+  </ul>
+</blockquote>
+
+<p><strong>Proof.</strong> Let us prove only the converse Barcan formula.</p>
+
+\[\begin{aligned}
+&amp;1.  &amp;&amp;\forall x \phi \to \phi &amp;&amp;&amp;\text{Axiom} \\
+&amp;2. &amp;&amp;\mathsf{G}\forall x \phi \to \mathsf{G} \phi &amp;&amp;&amp;\text{Becker}\\
+&amp;3. &amp;&amp;\forall x (\mathsf{G}\forall x \phi \to \mathsf{G}\phi) &amp;&amp;&amp;\text{2, UG}\\
+&amp;4. &amp;&amp;\forall x (\mathsf{G}\forall x \phi \to \mathsf{G}\phi) \to (\mathsf{G}\forall x \phi \to \forall x \mathsf{G}\phi) &amp;&amp;&amp;\text{Axiom}\\
+&amp;5. &amp;&amp;\mathsf{G}\forall x \phi \to \forall x \mathsf{G} \phi \quad &amp;&amp;&amp;\text{3, 4, MP} \\
+&amp; \blacksquare
+\end{aligned}\]
+
+<p>In natural language terms:</p>
+
+<ul>
+  <li>Direct Barcan: suppose that all objects currently existing will always be ____. Then for any future time point, all objects existing at that time will be ____.</li>
+  <li>Converse Barcan: suppose that for any future time point, all objects existing at that time will be ____. Then all objects currently existing will always be ____.</li>
+  <li>Permanence of identity: two identical objects are always identical.</li>
+</ul>
+
+<p>The permanence of identity is intuitively correct, as constants behave like rigid designators in temporal logic. However, the Barcan formulae are intuitively false. As an example, let us substitute “$x$ exists” for $\phi(x)$.</p>
+
+<ul>
+  <li>Converse Barcan: ① suppose that for any future time point, all objects existing at that time exist. ② Then all objects currently existing will always exist.</li>
+</ul>
+
+<p>But this proposition is false. ① holds trivially, but ② does not hold since not all objects currently existing will exist forever. Therefore, the converse Barcan formula is problematic.</p>
+
+<p>The reason $L_P$ derives pathological propositions like the Barcan formulae is that TG is not valid for open formulae (TG is needed for the proof of Becker’s rule. That is, the problem in the proof is at step 2). As mentioned earlier, TG means that logically true propositions are true regardless of time. However, open formulae are neither true nor false. Open formulae are satisfied or not satisfied by particular objects.</p>
+
+<p>To overcome this problem, one might propose restricting TG to apply only to closed formulae, but it is known that restricted temporal predicate logic fails to prove some desirable propositions. The task of creating a temporal predicate logic that is both sound and complete remains an unsolved problem.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/03/04/tensor"> 텐서곱에 관한 노트 </a>
+      </h1>
+    <span class="post-date">04 Mar 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/대수학/'">
+        대수학
+      </div>
+      
+    </div>
+     <p><strong>TL;DR.</strong> 벡터 공간의 텐서곱은 다음의 의미를 가진다.</p>
+
+<ol>
+  <li>다중 선형 사상의 선형화를 위한 정의역</li>
+  <li>다중 선형 사상의 공간</li>
+</ol>
+
+<p>엄밀히 말해 1이 $U \otimes V$에 해당하고, 2는 $U^\ast \otimes V^\ast$이다. 하지만 혼용되는 경향이 있는 듯하다.</p>
+
+<h3 id="1-도입">1. 도입</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $U, V, W$가 체 $\mathbb{F}$ 위에서 정의된 벡터 공간이라고 하자. $b: U \times V \to W$가 <strong>쌍선형 사상<sub>bilinear map</sub></strong>이라는 것은 각 항에 대해서 $B$가 선형이라는 것이다. 즉, 임의의 $\mathbf{u}_1, \mathbf{u}_2 \in U, \mathbf{v}_1, \mathbf{v}_2 \in V$와 스칼라 $\alpha \in \mathbb{F}$에 대해 다음이 성립한다.</p>
+
+\[b(\alpha \mathbf{u}_1 + \mathbf{u}_2, \mathbf{v}_1) = \alpha b(\mathbf{u}_1, \mathbf{v}_1) + b(\mathbf{u}_2, \mathbf{v}_1)\]
+
+\[b(\mathbf{u}_1, \alpha \mathbf{v}_1 + \mathbf{v}_2) = \alpha b(\mathbf{u}_1, \mathbf{v}_1) + b(\mathbf{u}_1, \mathbf{v}_2)\]
+</blockquote>
+
+<p>예를 들어 실수 벡터 공간에서의 내적 $\cdot : V \times V \to \mathbb{R}$은, $\mathbb{R}$을 1차원 벡터 공간으로 간주했을 때 쌍선형 사상이다. 비슷한 방식으로 <strong>다중 선형 사상<sub>multilinear form</sub></strong>을 정의할 수 있다. $V$가 $n$차원 벡터 공간일 때, $\mathrm{det}: V \times \dots \times V \to \mathbb{R}$은 $n$중 선형 사상이다.</p>
+
+<p>$b: U \times V \to W$가 쌍선형 사상이라고 하자. 당연하게도 $b$는 선형 사상이 아니다. $b$는 서로 다른 두 공간의 벡터를 매개변수로 받는 사상이지, 한 공간의 벡터를 매개변수로 받는 사상이 아니기 때문이다. 설령 $b$를 직합 $U \oplus V$에서 $W$로 가는 사상으로 생각하더라도, $b(\alpha(u, v)) = b((\alpha u, \alpha v)) = \alpha^2 b(u, v)$이므로 선형성을 만족하지 않는다.</p>
+
+<p>그러나 텐서곱을 이용하면 $b$를 선형 사상과 동일시할 수 있다.</p>
+
+<h3 id="2-텐서곱의-정의">2. 텐서곱의 정의</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 벡터 공간 $U, V$에 대해, <strong>텐서곱<sub>tensor product</sub></strong> $U \otimes V$를 다음 보편 성질<sub>universal property</sub>를 만족하는 벡터 공간으로 정의한다.</p>
+
+  <p><img src="/public/tensor.png" width="280px" style="margin: 0 auto; mix-blend-mode: multiply;" /></p>
+
+  <p>또한 $U \otimes V$의 원소를 <strong>텐서</strong>라고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> 임의의 벡터 공간의 텐서곱은 언제나 존재하며, 동형 사상에 대해 유일하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 유한 차원 벡터 공간에 대해서만 증명한다. $U$와 $V$의 차원이 각각 $n, m$이고, 기저가 $\lbrace  e_1, \dots, e_n\rbrace , \lbrace  f_1, \dots, f_m\rbrace$이라고 하자. $T$가 차원이 $nm$인 벡터 공간이라고 하자. 차원이 같은 벡터 공간은 모두 동형이므로, 그러한 $T$는 동형 사상에 대해 유일하다. $T$의 형식적 기저를 다음과 같이 두자.</p>
+
+\[\mathcal{B} = \{ e_1f_1, \dots, e_1f_m, \dots, e_nf_1, \dots, e_nf_m \}\]
+
+<p>$T$가 $U$와 $V$의 텐서곱임을 보이기 위해서 임의의 쌍선형 사상 $b: U \times V \to W$를 상정한다. $b$로부터 다음의 행벡터를 정의한다.</p>
+
+\[\tilde {b} = \big[ b(e_1, f_1), \dots, b(e_1, f_m), \dots, b(e_n, f_1), \dots, b(e_n, f_m) \big]_\mathcal{B}\]
+
+<p>또한 $\otimes: V \times W \to T$를 다음과 같이 정의한다.</p>
+
+\[\otimes: (u, v) = (u_1e_1 + \dots + u_ne_n, v_1f_1 + \dots + v_mf_m) \mapsto \begin{bmatrix} u_1v_1 \\ \vdots \\ u_1v_m \\ \vdots \\ u_nv_1 \\ \vdots \\ u_nf_m \end{bmatrix}_{\mathcal{B}}\]
+
+<p>이때 다음이 성립한다.</p>
+
+\[\begin{align}
+\tilde {b}(\otimes(u, v)) &amp;= \sum_i \sum_j (u_i v_j)b(e_i, f_j) \\
+&amp;= b\left( \sum_i   u_i e_i, \sum_j v_j f_j \right)  &amp;&amp; (\text{by bilinearity})\\
+&amp;= b(u, v) &amp;&amp; \blacksquare
+\end{align}\]
+
+<h3 id="3-텐서와-다중-선형-사상의-동일시">3. 텐서와 다중 선형 사상의 동일시</h3>
+
+<p>지금까지의 논의를 한 줄로 요약하면 다음과 같다.</p>
+
+\[\mathrm{Hom}^2(U \times V, W) \cong \mathrm{Hom}(U \otimes V, W)\]
+
+<p>여기서 $\mathrm{Hom}^2$은 쌍선형 사상의 공간을 의미한다. 특히 $W = \mathbb{F}$일 때, 쌍대 공간의 정의에 의해 다음이 성립한다.</p>
+
+\[\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong \mathrm{Hom}(U \otimes V, \mathbb{F}) \cong (U \otimes V)^*\]
+
+<p>이 관계를 이용하면 텐서곱을 쌍선형 사상의 선형화를 위한 정의역으로 보는 시각을 넘어, 쌍선형 사상의 공간 그 자체로 볼 수도 있다. 먼저 다음의 보조정리를 증명한다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $(U \otimes V)^\ast = U^\ast \otimes V^\ast$</p>
+</blockquote>
+
+<p><strong>증명.</strong> 앞선 관계식과 쌍대 공간의 정의로 인해 다음을 보이면 충분하다.</p>
+
+\[\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong \mathrm{Hom}(U, \mathbb{F}) \otimes \mathrm{Hom}(V, \mathbb{F})\]
+
+<p>즉, $\mathrm{Hom}^2(U \times V, \mathbb{F})$가 보편 성질을 만족함을 보이면 된다. 이는 앞선 증명과 거의 동일하므로 생략한다. ■</p>
+
+<p>보조정리로부터 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong U^\ast \otimes V^\ast$</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+\[\begin{align}
+U^* \otimes V^* &amp;\cong U^{***} \otimes V^{***} \\
+&amp;\cong (U^{**} \otimes V^{**})^* \\
+&amp;\cong (U \otimes V)^* \\
+&amp;\cong \mathrm{Hom}^2(U \times V, \mathbb{F})
+\end{align}\]
+
+<p>두 번째 식에서 세 번째 식으로 넘어갈 때 $V \cong V^{\ast\ast}$ 표준<sub>canonical</sub> 동일시를 사용했다. ■</p>
+
+<p>따라서 쌍대 공간의 텐서는 쌍선형 사상과 표준적으로 동일시할 수 있다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/03/04/tensor/en"> Notes on Tensor Products </a>
       </h1>
     <span class="post-date">04 Mar 2025</span>
@@ -1643,369 +2007,6 @@ J_2 = (1/9, 2/9) \cup (7/9, 8/9) \\
 <p>이므로 $\mu$와 $\nu$는 전체 공간에서 일치한다. ■</p>
 
 <p>다음 글에서는 카라테오도리 정리를 이용하여 르베그 측도를 구성한 뒤, 모든 보렐 가측 집합은 르베그 가측 집합이지만 그 역은 성립하지 않음을 보인다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/25/caratheodory/en"> Construction of Measures via Carathéodory's Theorem </a>
-      </h1>
-    <span class="post-date">25 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/measure-theory/'">
-        Measure Theory
-      </div>
-      
-    </div>
-     <p>I prefer to approach Carathéodory’s theorem by dividing it into three subtheorems. They are as follows:</p>
-
-<ol>
-  <li><strong>Carathéodory Construction Theorem:</strong> Any collection of sets and a positive function define an outer measure.</li>
-  <li><strong>Carathéodory Restriction Theorem:</strong> Restricting the domain of an outer measure to measurable sets yields a measure.</li>
-  <li><strong>Carathéodory Extension Theorem:</strong> There exists a unique extension of premeasure $\mu_0$ on an algebra $\mathcal{A}_0$ to a measure $\mu$ on the $\sigma$-algebra $\sigma(\mathcal{A}_0)$. Furthermore, $\mu$ is the measure obtained by applying the construction theorem with the collection of sets as $\mathcal{A}_0$ and the positive function as $\mu_0$, and then applying the restriction theorem.</li>
-</ol>
-
-<p>Schematically, this can be understood as follows:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>(1)</th>
-      <th>(2)</th>
-      <th>(3)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Domain</td>
-      <td>Algebra $\mathcal{A}_0$</td>
-      <td>$\sigma$-algebra $\mathcal{A}$</td>
-      <td>Power set $\mathcal{P}(X)$</td>
-    </tr>
-    <tr>
-      <td>Function</td>
-      <td>Premeasure $\mu_0$</td>
-      <td>Measure $\mu$</td>
-      <td>Outer measure $\mu^\ast$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The construction theorem goes in the direction (1) → (3), the restriction theorem goes (3) → (2), and the extension theorem goes (1) → (2). Let us examine each one by one.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> An <strong>outer measure</strong> $\mu^\ast: \mathcal{P}(X) \to [0, \infty]$ on $X$ is a function satisfying the following:</p>
-
-  <ol>
-    <li>$\mu^\ast(\varnothing) = 0$</li>
-    <li>$A \subset B \implies \mu^\ast(A) \leq \mu^\ast(B)$</li>
-    <li>$\mu^\ast\left( \bigcup_{n \in \mathbb{N}} A_n  \right) \leq \sum_{n \in \mathbb{N}} \mu^\ast(A_n)$</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>Carathéodory Construction Theorem.</strong> Given any collection $\mathcal{S}$ of subsets of $X$ and any function $l: \mathcal{S} \to [0, \infty]$ satisfying $l(\varnothing) = 0$, the function $\mu^\ast$ defined as follows is an outer measure:</p>
-
-\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} l(A_n) : \{ A_n \} \subset \mathcal{S} \text{ covers }E  \right\}\]
-</blockquote>
-
-<p>That is, $\mu^\ast$ is a function that defines something akin to a ‘measure’ of $E$ as an infimum over covers, and is conceptually similar to the upper sum<sub>upper sum</sub> in Riemann integration.</p>
-
-<p><strong>Proof.</strong> Properties 1 and 2 are trivial. We prove property 3.</p>
-
-<p>Let $A = \bigcup A_n$ and suppose an arbitrary $\epsilon &gt; 0$ is given. By the definition of $\mu^\ast$, for each $n$, there exists a cover $\mathcal{C}_n = \lbrace  A_{nm} \rbrace_{m \in \mathbb{N}} \subset \mathcal{S}$ of $A_n$ satisfying:</p>
-
-\[\sum l(A_{nm}) \leq \mu^*(A_n) + \epsilon/2^n\]
-
-<p>Therefore,</p>
-
-\[\sum_{n, m \in \mathbb{N}} l(A_{nm}) \leq \sum \mu^*(A_n) + \epsilon.\]
-
-<p>Since $\bigcup \mathcal{C}_n$ covers $A$, by the definition of $\mu^\ast$, we have $\mu^\ast(A) \leq \sum_{n, m \in \mathbb{N}} l(A_{nm})$. ■</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $A$ is said to be <strong>measurable</strong> with respect to $\mu^\ast$ if it satisfies the following for any $E$:</p>
-
-\[\mu^*(E) = \mu^*(E \cap A) + \mu^*(E \cap A^c)\]
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $\mu^\ast$ be an outer measure. A set $N$ with $\mu^\ast(N) = 0$ is called a <strong>null set</strong>.</p>
-</blockquote>
-
-<p>That is, a measurable set is one that ‘cleanly’ partitions any set with respect to $\mu^\ast$. Therefore, we can expect that $\mu^\ast$ will behave like an ordinary measure on the collection consisting only of measurable sets. The following restriction theorem validates this expectation.</p>
-
-<blockquote>
-  <p><strong>Carathéodory Restriction Theorem.</strong> Let $\mu^\ast$ be an outer measure. Let $\mathcal{A}$ be the collection of sets that are measurable with respect to $\mu^\ast$. Then the following hold:</p>
-
-  <ol>
-    <li>$\mathcal{A}$ is a $\sigma$-algebra.</li>
-    <li>$\mu^\ast |_\mathcal{A}$ is a measure.</li>
-    <li>$\mathcal{A}$ contains all null sets of $\mu^\ast$.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<p><strong>1. $\mathcal{A}$ is an algebra.</strong></p>
-
-<p>Closure under complements is trivial. We show closure under finite intersections.</p>
-
-<p>Suppose $A, B$ are measurable. To show that $A \cap B$ is measurable, it suffices to prove:</p>
-
-\[\mu^*(E \cap (A \cap B)) + \mu^*(E \cap (A \cap B)^c) \leq \mu^*(E) \quad \cdots \quad (*)\]
-
-<p>Since $A, B$ are measurable, the following holds:</p>
-
-\[\begin{aligned}
-\mu^*(E) &amp;= \mu^*(E \cap A) + \mu^*(E \cap A^c) \\
-&amp;= \mu^*(E \cap A \cap B) + \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B) + \mu^*(E \cap A^c \cap B^c)
-\end{aligned}\]
-
-<p>Therefore, $(\ast)$ is equivalent to:</p>
-
-\[\begin{aligned}
-\mu^*(E \cap (A^c \cup B^c)) &amp;\leq \mu^*(E \cap A \cap B^c) \\ &amp;+ \mu^*(E \cap A^c \cap B)  \quad \cdots \quad (**) \\ &amp;+ \mu^*(E \cap A^c \cap B^c)
-\end{aligned}\]
-
-<p>From elementary set theory, we have:</p>
-
-\[A^c \cup B^c = (A \cap B^c) \cup (A^c \cap B) \cup (A^c \cap B^c)\]
-
-<p>Therefore, $(\ast\ast)$ holds. □</p>
-
-<p><strong>2. $\mathcal{A}$ is a $\sigma$-algebra.</strong></p>
-
-<p>It suffices to show that for $\lbrace  A_n \rbrace  \subset \mathcal{A}$ with $A_n \uparrow A$, we have $A \in \mathcal{A}$. (Why?)</p>
-
-<p>By the definition of outer measure, $\mu^\ast(E \cap A_n) \leq \mu^\ast(E \cap A)$. Let $C_1 = A_1, C_n = A_n \setminus A_{n - 1}$. Then $\bigsqcup C_n = A$. Moreover,</p>
-
-\[\begin{aligned}
-\mu^*(E \cap A_n) &amp;= \mu^*(E \cap A_n \cap C_n) + \mu^*(E \cap A_n \cap C_n^c) \\
-&amp;= \mu^*(E \cap C_n) + \mu^*(E \cap A_{n - 1}) \\
-&amp;= \cdots \\
-&amp;= \sum^n_{k = 1} \mu^*(E \cap C_k)
-\end{aligned}\]
-
-<p>Therefore, $\sum^\infty \mu^\ast(E \cap C_n) \leq \mu^\ast(E \cap A)$. Since $\lbrace  E \cap C_n \rbrace $ covers $E \cap A$, we have $\sum^\infty \mu^\ast(E \cap C_n) \geq \mu^\ast(E \cap A)$. Therefore, $\sum^\infty \mu^\ast(E \cap C_n) = \mu^\ast(E \cap A)$.</p>
-
-<p>Thus, for any $\epsilon &gt; 0$, there exists a sufficiently large $N$ such that $\mu^\ast(E \cap A) - \epsilon \leq \mu^\ast(E \cap A_n)$. Therefore,</p>
-
-\[\begin{aligned}
-\mu^*(E \cap A_n^c) &amp;= \mu^*(E) - \mu^*(E \cap A_n) \\
-&amp;\leq \mu^*(E) - \mu^*(E \cap A) + \epsilon
-\end{aligned}\]
-
-<p>whence we obtain:</p>
-
-\[\mu^*(E) \leq \mu^*(E \cap A_n) + \mu^*(E \cap A_n^c) \leq \mu^*(E) + \epsilon\]
-
-<p>Letting $n \to \infty$, we get $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) = \mu^\ast(E)$. □</p>
-
-<p><strong>3. $\mu^\ast|_\mathcal{A}$ is a measure, 4. $\mathcal{A}$ contains all null sets.</strong></p>
-
-<p>Left as an exercise to the readers. (Not difficult) ■</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $\mathcal{A}_0$ be an algebra. A function $\rho: \mathcal{A}_0 \to [0, \infty]$ is called a <strong>premeasure</strong> if it satisfies the following:</p>
-
-  <ol>
-    <li>$\rho(\varnothing) = 0$</li>
-    <li>For any pairwise disjoint countable collection $\lbrace  A_n \rbrace $, if $\bigcup A_n \in \mathcal{A}_0$, then $\rho\left( \bigcup A_n \right) = \sum \rho(A_n)$</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>Carathéodory Extension Theorem.</strong> For a premeasure $\rho$ on an algebra $\mathcal{A}_0$, define:</p>
-
-\[\mu^*(E) = \inf \left\{ \sum_{n \in \mathbb{N}} \mu_0(A_n) : \{ A_n \} \subset \mathcal{A}_0 \text{ covers }E \right\}\]
-
-  <p>Then the following hold:</p>
-
-  <ol>
-    <li>If $A \in \mathcal{A}_0$, then $\mu^\ast(A) = \rho(A)$.</li>
-    <li>$\sigma(\mathcal{A}_0)$ is measurable with respect to $\mu^\ast$.</li>
-    <li>If $\rho$ is $\sigma$-finite, then $\mu^\ast|_{\sigma(\mathcal{A}_0)}$ is the unique measure that extends $\rho$ to $\sigma(\mathcal{A}_0)$.</li>
-  </ol>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-<p><strong>1. If $A \in \mathcal{A}_0$, then $\mu^\ast(A) = \rho(A)$.</strong></p>
-
-<p>Since $A$ is a cover of $A$, we have $\mu^\ast(A) \leq \rho(A)$. If $\mu^\ast(A) &lt; \rho(A)$, then there exists some cover $\lbrace  A_n \rbrace $ of $A$ such that $\sum \rho(A_n) &lt; \rho(A)$. However, since $\rho$ is a premeasure, this is a contradiction. □</p>
-
-<p><strong>2. $\sigma(\mathcal{A}_0)$ is measurable with respect to $\mu^\ast$.</strong></p>
-
-<p>First, we show that $\mathcal{A}_0$ is measurable. For any $A \in \mathcal{A}_0$, it suffices to show $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$. By the definition of $\mu^\ast$, for any $\epsilon &gt; 0$, there exists some cover $\mathcal{C}$ of $E$ such that:</p>
-
-\[\sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon\]
-
-<p>Since $\mathcal{A}_0$ is an algebra, $A \cap C_n, A^c \cap C_n \in \mathcal{A}_0$. Therefore,</p>
-
-\[\begin{aligned}
-\mu^*(E \cap A) + \mu^*(E \cap A^c) &amp;\leq \sum^\infty_{n = 1} \mu^*(A \cap C_n) + \sum^\infty_{n = 1} \mu^*(A^c \cap C_n) \\
-&amp;= \sum^\infty_{n = 1} \rho(A \cap C_n) + \sum^\infty_{n = 1} \rho(A^c \cap C_n) \\
-&amp;= \sum^\infty_{n = 1} \rho(C_n) \leq \mu^*(E) + \epsilon
-\end{aligned}\]
-
-<p>(Strictly speaking, one should consider $\sum^n_{k=1}$ and then take the limit $n \to \infty$) Therefore, $\mu^\ast(E \cap A) + \mu^\ast(E \cap A^c) \leq \mu^\ast(E)$, and $\mathcal{A}_0$ is measurable. By the Carathéodory restriction theorem, measurable sets form a $\sigma$-algebra, so $\sigma(\mathcal{A}_0)$ is also measurable. □</p>
-
-<p><strong>3. If $\rho$ is $\sigma$-finite, then $\mu^\ast|_{\sigma(\mathcal{A}_0)}$ is the unique measure that extends $\rho$ to $\sigma(\mathcal{A}_0)$.</strong></p>
-
-<p>First, assume $\rho &lt; \infty$. Suppose a measure $\nu$ defined on $\sigma(\mathcal{A}_0)$ agrees with $\rho$ on $\mathcal{A}_0$. Let $\mu = \mu^\ast|_{\sigma(\mathcal{A}_0)}$. We show $\nu = \mu$.</p>
-
-<p>Let $E \in \sigma(\mathcal{A}_0)$. There exists some cover $\lbrace  A_n \rbrace  \subset \mathcal{A}_0$ of $E$ such that:</p>
-
-\[\sum \rho(A_n) \leq \mu(E) + \epsilon\]
-
-<p>Since $\nu$ agrees with $\rho$ on $\mathcal{A}_0$, we have $\sum \rho(A_n) = \sum \nu(A_n) \geq \nu(E)$. Therefore, $\nu \leq \mu$.</p>
-
-<p>Now define $B_n = \bigcup^n_{k=1}A_k$ and let $A = \bigcup^\infty_{n = 1} A_n = \lim_{n \to \infty} B_n$. Since $\mu(B) = \sum \rho(A_n) \leq \mu(E) + \epsilon$, we have $\mu(B \setminus E) \leq \epsilon$. Since $\nu$ is a measure,</p>
-
-\[\mu(A) = \lim \rho(B_n) = \lim \nu(B_n) = \nu(A)\]
-
-<p>Therefore,</p>
-
-\[\begin{aligned}
-\mu(E) \leq \mu(B) &amp;= \mu(B \setminus E) + \mu(E) \\
-&amp;\leq \epsilon + \nu(E)
-\end{aligned}\]
-
-<p>That is, $\mu \leq \nu$. Therefore, $\mu = \nu$.</p>
-
-<p>Now assume $\rho$ is $\sigma$-finite. There exists a collection $\lbrace  C_n \rbrace $ such that $C_n \uparrow X$ and $\rho(C_n) &lt; \infty$. By the preceding argument, $\mu$ and $\nu$ agree on $C_n$. Therefore,</p>
-
-\[\mu(A) = \lim \mu(A \cap C_i) = \lim \nu (A \cap C_i) = \nu(A)\]
-
-<p>so $\mu$ and $\nu$ agree on the entire space. ■</p>
-
-<p>In the next article, we shall construct Lebesgue measure using Carathéodory’s theorem, and then show that while every Borel measurable set is Lebesgue measurable, the converse does not hold.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/24/algebra-measure"> 대수와 측도의 정의 </a>
-      </h1>
-    <span class="post-date">24 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/측도론/'">
-        측도론
-      </div>
-      
-    </div>
-     <h2 id="1-비탈리-정리">1. 비탈리 정리</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mu$가 집합 $X$ 위의 <strong>측도<sub>measure</sub></strong>라는 것은 다음을 만족한다는 것이다.</p>
-
-  <ol>
-    <li>$\mu(\varnothing) = 0$</li>
-    <li>쌍으로 서로소<sub>pairwise disjoint</sub>인 가산 집합족 $\lbrace A_n \rbrace$에 대해, $\mu\left( \bigcup A_n \right) = \sum \mu(A_n)$</li>
-  </ol>
-</blockquote>
-
-<p>유감스럽게도 $X = \mathbb{R}$일 때, 측도 $\mu$는 실수의 모든 부분집합에 대해서 정의될 수 없다.</p>
-
-<blockquote>
-  <p><strong>비탈리 정리.</strong> 다음을 모두 만족하는 $\mathbb{R}$의 측도 $\mu$는 존재하지 않는다.</p>
-
-  <ol>
-    <li>항등적으로 0이 아니다.</li>
-    <li>평행이동에 대해 보존적이다. 즉, 임의의 $r \in \mathbb{R}$에 대해 $\mu(A + r) = \mu(A)$.</li>
-    <li>$\operatorname{dom} \mu = \mathcal{P}(\mathbb{R})$</li>
-  </ol>
-</blockquote>
-
-<p><strong>증명.</strong> 그러한 측도 $\mu$가 존재한다고 가정하자. $\mathbb{R}$ 위에서 다음의 동치 관계를 정의하자.</p>
-
-\[x \sim y \iff x - y \in \mathbb{Q}\]
-
-<p>선택 공리에 의해 $[0, 1]/{\sim}$의 선택 함수 $\iota$가 존재한다. $V = \operatorname{im} \iota$라고 하자. $V$를 <strong>비탈리 집합<sub>Vitali set</sub></strong>이라고 부른다. 예를 들어 $V = \lbrace 0.1, \pi - 3, \sqrt{2} - 1, \dots \rbrace$이다. $\mu$는 $V$에서 정의될 수 없음을 보인다.</p>
-
-<p>$V$의 정의에 의해, $q \in \mathbb{Q}$에 대해 $V$와 $V + q$는 서로소이다. 또한 $[0, 1] \subset \bigcup_{q \in \mathbb{Q}} (V + q) \subset [-1, 3]$이다. 따라서,</p>
-
-\[1 \leq \sum_{q \in \mathbb{Q}}\mu(V + q) \leq 4.\]
-
-<p>그런데 $\mu(V + q) = \mu(V)$이므로, $\mu(V) = 0$이면 왼쪽 부등식이 성립하지 않고 $\mu(V) &gt; 0$이면 오른쪽 부등식이 성립하지 않는다. 따라서 모순이다. ■</p>
-
-<h2 id="2-sigma-대수">2. $\sigma$-대수</h2>
-
-<p>따라서 올바른 측도를 구축하기 위해서는 측도의 정의역을 적절히 제한할 필요가 있다. 이에 대수의 개념을 도입한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 집합 $X$의 <strong>대수<sub>algebra</sub></strong> $\mathcal{A}_0$는 다음을 만족하는 집합족이다.</p>
-
-  <ol>
-    <li>$\varnothing, X \in \mathcal{A}_0$</li>
-    <li>$A \in \mathcal{A}_0 \implies A^c \in \mathcal{A}_0$</li>
-    <li>$A, B \in \mathcal{A}_0 \implies A \cup B \in \mathcal{A}_0$</li>
-  </ol>
-</blockquote>
-
-<p><em>Remark.</em> 2번 공리와 드모르간의 법칙에 의해, 3번 공리는 $A \cap B \in \mathcal{A}_0$ 또한 시사한다.</p>
-
-<p>대수의 3번 정의를 가산 합집합으로 강화하면 $\sigma$-대수의 정의를 얻는다. 즉,</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 집합 $X$의 <strong>$\sigma$-대수</strong> $\mathcal{A}$는 다음을 만족하는 대수이다.</p>
-
-  <ol>
-    <li>$\lbrace  A_n \rbrace _{n \in \mathbb{N}} \subset \mathcal{A}_0 \implies \bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$</li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> $\lbrace \mathcal{A}_i \rbrace_{i \in I}$가 $X$의 $\sigma$-대수들의 모임이라면 $\bigcap_{i \in I}\mathcal{A}_i$ 또한 $X$의 $\sigma$-대수이다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $\sigma$-대수의 정의로부터 쉽게 증명할 수 있다. 그런데 이렇게만 적으면 재미 없으니까, 조금 독특한 증명을 남긴다. <strong>워시-타르스키 정리<sub>Łoś-Tarski theorem</sub></strong>에 따르면 1차 이론이 교집합에 대해 보존적일 필요충분조건은 1차 이론의 모든 문장이 $\Pi_1$ 문장인 것이다. 그리고 $\sigma$-대수의 세 공리는 모두 $\Pi_1$ 문장이므로, $\sigma$-대수는 교집합에 대해 보존적이다. ■</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> $\mathcal{C}$가 $X$의 부분집합으로 이루어진 집합족일 때, $\mathcal{C}$를 포함하는 가장 작은 $\sigma$-대수가 존재한다. 그러한 $\sigma$-대수를 $\sigma(\mathcal{C})$와 같이 적는다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $\mathcal{S} = \lbrace \mathcal{A} : \mathcal{A} \text{ is an algebra containing } \mathcal{C} \rbrace$라고 하자. $\mathcal{P}(X) \in \mathcal{S}$이므로 $\mathcal{S}$는 공집합이 아니다. $\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \in \mathcal{S}} \mathcal{A}$이다.</p>
-
-<p>대표적인 $\sigma$-대수의 예시로, 보렐 $\sigma$-대수를 살펴보자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $\mathcal{G}$가 $\mathbb{R}$의 열린 집합들의 집합족이라고 하자. $\sigma(\mathcal{G})$를 <strong>보렐 $\sigma$-대수<sub>Borel $\sigma$-algebra</sub></strong>라고 하며, $\mathcal{B}$와 같이 적는다.</p>
-</blockquote>
-
-<p>보렐 $\sigma$-대수는 <strong>보렐 위계<sub>Borel hierarchy</sub></strong>를 통해서 이해할 수도 있다. $\Sigma_1$을 열린 집합들의 모임, $\Pi_1$을 닫힌 집합들의 모임이라고 하자. 다음과 같이 정의한다.</p>
-
-<ul>
-  <li>$\Delta_n = \Sigma_n \cap \Pi_n$</li>
-  <li>$\Sigma_{n + 1} = \lbrace S : \exists \lbrace P_n \rbrace _{n \in \mathbb{N}} \subset \Pi_n \; S = \bigcup_{n \in \mathbb{N}} P_n \rbrace$</li>
-  <li>$\Pi_n = \lbrace P : \exists S \in \Sigma_n \; P = S^c \rbrace$</li>
-</ul>
-
-<p>즉 $\Sigma_2 = F_\sigma$, $\Pi_2 = G_\delta$이다. 합집합을 $\exists$, 교집합을 $\forall$로 생각했을 때 <a href="https://dimenerno.github.io/2025/02/07/arithmetic-hierarchy/">산술 위계</a>와 정의의 형태가 유사함에 주목하라.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{B} = \Sigma_{\omega_1} = \Pi_{\omega_1} = \Delta_{\omega_1}$</p>
-</blockquote>
-
-<p><strong>증명.</strong> 생략. 하지만 직관적으로 이해할 수 있다. $\mathcal{B}$는 가산 교집합과 가산 합집합, 그리고 여집합에 대해 닫혀 있어야 하므로 모든 가산 서수 $\alpha$에 대해 $\Sigma_\alpha, \Pi_\alpha, \Delta_\alpha \subset \mathcal{B}$이다. 이 사실로부터 초한 귀납을 취해 정리를 얻는다. ■</p>
-
-<p>어떤 집합 위의 대수와 예비측도라는 것이 주어졌을 때, 이로부터 측도를 정의하는 방법이 알려져 있다. 이 방법을 카라테오도리 방법<sub>Carathéodory method</sub>이라고 부른다. 예비측도는 구성하기가 매우 쉽기 때문에, 이 방법을 이용하면 측도를 아주 쉽게 구성할 수 있다. 카라테오도리 방법에 대해서는 <a href="http://dimenerno.github.io/2025/02/25/caratheodory/">다음 글</a>에서 알아본다.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

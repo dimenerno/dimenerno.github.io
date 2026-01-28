@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  <title>
+     강제법 개론 &middot; 디멘의 블로그 
+  </title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2026/01/28/forcing" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko">이데아를 여행하는 히치하이커</p>
+    <p class="lang-en" style="display: none;">Alice in Logicland</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/book/"
+      >새벽의 자연학 수업</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/book/"
+    >Twilight Wonders (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Dimen's Blog</a>
+            <small><div class="lang-ko">이데아를 여행하는 히치하이커</div>
+              <div class="lang-en">Alice in Logicland</div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">한</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">강제법 개론</h1>
+  <span class="post-date">28 Jan 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'" >집합론</div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'" >논리학</div>
+      
+    </div>
+  
+  <p>괴델은 1938년에 구성가능성 공리를 도입함으로써 연속체 가설의 부정이 ZFC에서 증명 불가능함을 보였다. 구성가능 전체 $L$이 연속체 가설이 성립하는 ZFC의 모델이기 때문이다. 이후 1963년에 코헨이 강제법을 개발하여, 연속체 가설이 성립하지 않는 ZFC의 모델을 발견했다. 이로써 연속체 가설은 ZFC와 독립적임이 보여졌다. 이 글에서는 코헨의 강제법과, 연속체 가설의 독립성 증명의 개요를 살펴본다.</p>
+
+<p>당연한 말이지만, 이 글에서는 ZFC가 무모순하다고 가정할 것이다.</p>
+
+<h3 id="1-가산-추이적-모델">1. 가산 추이적 모델</h3>
+
+<p>$V$가 누적 위계<sub>cumulative hierarchy</sub>라고 하자. $(V, \in)$은 ZFC의 “모델”이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 다음의 성질을 만족하는 $V$의 부분모델<sub>submodel</sub> $(M, \in)$가 존재한다.</p>
+
+  <ol>
+    <li>$M$은 ZFC의 모델이다.</li>
+    <li>$M$은 가산이다.</li>
+    <li>$M$은 추이적<sub>transitive</sub>이다. 즉, 임의의 $x \in M$과 $y \in V$에 대해,</li>
+  </ol>
+
+\[V \vDash y \in x \implies V \vDash y \in M\]
+</blockquote>
+
+<p><strong>증명.</strong> 다음 정리를 사용한다.</p>
+
+<blockquote>
+  <p><strong>모스토프스키 붕괴 정리<sub>Mostowski collapse lemma</sub>.</strong> 모임<sub>class</sub> $X$ 위의 이항 관계 $R$이 다음을 만족한다고 하자.</p>
+
+  <ol>
+    <li><strong>크기 제한<sub>smallness</sub>:</strong> $R^{-1}(x) = \lbrace  y \in X : yRx \rbrace $는 집합이다.</li>
+    <li><strong>기초성<sub>well-foundedness</sub>:</strong> 공집합이 아닌 $X$의 부분집합 $S$는 $R$-극소 원소를 가진다.</li>
+    <li><strong>외연성<sub>extensionality</sub>:</strong> $x = y$일 필요충분조건은 $R^{-1}(x) = R^{-1}(y)$이다.</li>
+  </ol>
+
+  <p>이때, 어떤 $V$의 추이적 모델 $(M, \in)$이 유일하게 존재하여 $(M, \in)$과 $(X, R)$이 동형이다.</p>
+</blockquote>
+
+<p>이 정리의 증명은 비교적 자명하나 쓸 게 많으므로 Hrbacek &amp; Jech, 14장을 대신 참고로 달아놓는다.</p>
+
+<p>하향 뢰벤하임-스콜렘 정리에 의해 $(V, \in)$의 가산 부분모델 $(N, \in)$이 존재한다. 크기 제한, 기초성, 외연성은 모두 1차 논리로 표현 가능한 성질이므로, $(V, \in)$이 모스토프스키 붕괴 정리의 조건들을 만족한다는 사실로부터 $(N, \in)$ 또한 만족한다는 사실이 따라 나온다. 따라서 $(N, \in)$과 동형인 추이적 모델 $(M, \in)$이 존재한다. $N, M$이 동형이므로 $M$은 가산이다. ■</p>
+
+<p>따라서 $V$는 가산 추이적 부분모델 $M$을 가진다. $M$의 가산성과 추이성은 나중에 강제법에서 중요하게 쓰일 것이다.</p>
+
+<h3 id="2-표기에-관해">2. 표기에 관해</h3>
+
+<p>앞서 $V$가 모델이라고 할 때 큰따옴표를 쳤는데, 그 이유는 엄밀히 말해 모델은 집합이어야 하기 때문이다. 즉, $V$는 모델이 되기에 너무 크다. 때문에 방금 증명에서 한 것처럼 $V$에 대해 뢰벤하임-스콜렘 정리를 마냥 사용할 수는 없다.</p>
+
+<p>그러나 이 문제는 $V$를 $V_\kappa$ ($\kappa$는 도달 불가능 기수), 또는 (ZFC의 무모순성을 가정했을 때 괴델의 완전성 정리로부터 보장되는) ZFC의 다른 집합-모델로 바꿔치기 함으로써 해결할 수 있다. 따라서 이 글에서는 편의를 위해 $V$를 모델(집합)처럼 다룰 것이지만, 이것이 불편한 독자는 이 글의 모든 $V$를 $V_\kappa$로 바꿔치기 하면 된다.</p>
+
+<p>추가적으로 다음 규약을 사용하겠다.</p>
+
+<blockquote>
+  <p><strong>규약.</strong></p>
+
+  <ol>
+    <li>“집합론의 모델”을 “ZFC의 모델”과 동의어로 사용한다.</li>
+    <li>$V \vDash \phi$를 간단히 $\phi$라고 적는다. <strong>즉, 모든 명제의 배경은 $V$이다.</strong></li>
+  </ol>
+</blockquote>
+
+<h3 id="3-상대화">3. 상대화</h3>
+
+<p>$M$이 집합론의 추이적 모델이라고 하자. ZFC는 단 하나의 이항 관계 $\in$를 가지는 언어의 이론이기 때문에 임의의 $x, y \in M$에 대해 다음은 보장이 되지만, (앞선 규약에 따라 우변의 $x \in y$는 $V \vDash x \in y$임을 유의하라)</p>
+
+\[M \vDash x \in y \iff  x \in y\]
+
+<p>이외의 관계에서는 이것이 자동적으로 보장되지는 않는다. 예를 들어 $x, z \in M$에 대해,</p>
+
+\[M \vDash y = \mathcal{P}(x)\]
+
+<p>이지만</p>
+
+\[y \neq \mathcal{P}(x)\]
+
+<p>일 수 있다.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> 따라서 ($V$에서의) 명제 $\phi$와 $M$ “내부”에서 본 명제 $\phi$를 구별할 필요가 있다. 이를 위해 다음을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 명제 $\phi$에 대해, $\phi^M$을 $M$에 대해 <strong>상대화<sub>relativization</sub></strong>한 $\phi$라고 부르며, 다음과 같이 재귀적으로 정의한다.</p>
+
+  <ol>
+    <li>$x, y \in M$에 대해 $(x \in y)^M$은 $x \in y$와 같다.</li>
+    <li>$x, y \in M$에 대해 $(x = y)^M$은 $x = y$와 같다.</li>
+    <li>$(\phi \land \psi)^M$은 $\phi^M \land \psi^M$과 같다.</li>
+    <li>$(\phi \lor \psi)^M$은 $\phi^M \lor \psi^M$과 같다.</li>
+    <li>$(\lnot \phi)^M$은 $\lnot \phi^M$과 같다.</li>
+    <li>$(\forall x:\phi)^M$은 $\forall x \in M: \phi^M$과 같다.</li>
+    <li>$(\exists x:\phi)^M$은 $\exists x \in M : \phi^M$과 같다.</li>
+  </ol>
+</blockquote>
+
+<p>즉, $M$에 대해 상대화한 명제는 기존의 명제에서 양화사의 범위를 모두 $M$으로 제한한 것이다.</p>
+
+<blockquote>
+  <p><strong>Remark.</strong> 상대화의 정의로부터 $\phi^M \iff M \vDash \phi$이다. 때문에 이런 의문이 들 수 있다. 이미 $\vDash$가 있는데 왜 상대화를 정의하는 것일까? 그 이유는, $M \vDash \phi$는 (모델론의) <em>메타명제</em>인 반면, $\phi^M$은 (집합론의) <em>명제</em>이기 때문이다. 즉, 상대화를 사용하면 “$\phi$가 $M$에서 성립한다”는 사실을 $V$에서 표현할 수 있다. 이는 이후 강제 관계 $\Vdash$를 정의할 때 중요해질 것이다.</p>
+</blockquote>
+
+<h3 id="4-절대성">4. 절대성</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $M, N$이 집합론의 추이적 “모델”이고, $M$이 $N$의 부분”모델”이라고 하자. $\phi$가 $n$항 명제라고 하자. 임의의 $x_1, \dots, x_n \in M$에 대해,</p>
+
+\[\phi^M(x_1, \dots x_n) \leftrightarrow \phi^N(x_1, \dots, x_n)\]
+
+  <p>가 성립한다면 $\phi$가 $M, N$ <em>사이에서</em> <strong>절대적<sub>absolute</sub></strong>이라고 한다. $N = V$인 경우, $V$에 대한 언급을 생략하여 $\phi$가 $M$ <em>위에서</em> 절대적이라고 한다.</p>
+</blockquote>
+
+<p>즉, $\phi$가 $M$ 위에서 절대적이라는 것은 $M$ 내부에서 본 $\phi$가, 전체에서 본 $\phi$와 일치한다는 것이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\exists x \in A, \forall x \in A$와 같이 범위가 특정 집합으로 한정되어 있는 양화사를 한정 양화사라고 한다. 모든 양화사가 한정 양화사인 명제를 $\Delta_0$ 명제라고 한다.</p>
+</blockquote>
+
+<p>예를 들어 $y \subseteq x$의 정의는 다음과 같은데, $\forall z$가 $y$로 한정되어 있으므로 $\Delta_0$ 명제이다.</p>
+
+\[\forall z \in y (z \in x)\]
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>절대적 명제들의 합성은 절대적이다.</li>
+    <li>$\Delta_0$ 명제는 추이적 모델 사이에서 절대적이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 명제에 대한 귀납법으로 증명한다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> 다음 명제들은 추이적 모델 사이에서 절대적이다.</p>
+
+  <ol>
+    <li>$y \subseteq x$</li>
+    <li>$f$는 함수이다, $f$는 전사이다, $f$는 단사이다</li>
+  </ol>
+</blockquote>
+
+<p>명제에 대한 절대성을 확장하여, 집합에 대한 절대성을 정의할 수 있다. 예를 들어 $\omega$는 가장 작은 귀납적 집합으로 정의된다. 구체적으로,</p>
+
+\[\mathrm{IsInductive}(x) : 0 \in x \land \forall y( y \in x \rightarrow y\cup \{y\} \in x)\]
+
+<p>로 정의하고,</p>
+
+\[\mathrm{IsOmega}(x) : \mathrm{IsInductive}(x) \land \forall z\Big(\mathrm{IsInductive}(z) \rightarrow z \subseteq x \Big)\]
+
+<p>로 정의하자. 이때 $\mathrm{IsOmega}$를 만족하는 집합이 유일하게 존재함을 보일 수 있으며, 그 집합을 $\omega$로 정의한다.</p>
+
+<p>이와 같이 집합 $s$의 정의가 명제 $\phi$로 주어지는 경우<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>, 만약 $\phi$가 $M, N$ 사이에서 절대적이라면, 집합 $s$가 $M, N$ 사이에서 절대적이라고 한다. 예를 들어 위의 따름정리로부터 $\mathrm{IsOmega}$가 추이적 모델 사이에서 절대적임을 알 수 있다. 따라서 $\omega$는 추이적 모델 사이에서 절대적이다.</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> 다음 집합들은 추이적 모델 사이에서 절대적이다.</p>
+
+  <ol>
+    <li>$\varnothing$</li>
+    <li>$x \times y, \lbrace  x, y \rbrace , (x, y)$</li>
+    <li>$\bigcup x, \bigcap x$</li>
+    <li>$x$가 순서쌍들의 집합일 때, $\operatorname{dom} x$</li>
+    <li>$\omega\; (=\aleph_0)$</li>
+  </ol>
+</blockquote>
+
+<p>절대적이지 않은 명제/집합들의 예시를 보자.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 다음 명제/집합들은 추이적 모델 사이에서 절대적이지 않다.</p>
+
+  <ol>
+    <li>$\mathcal{P}(x)$</li>
+    <li>$x$는 가산이다.</li>
+    <li>$x$는 기수이다.</li>
+    <li>$\aleph_n \; (n &gt; 0)$</li>
+  </ol>
+</blockquote>
+
+<p>$\mathcal{P}(x)$가 절대적이지 않은 이유를 훑어보자. $\mathcal{P}(x)$의 정의는 다음과 같다.</p>
+
+\[y = \mathcal{P}(x) : \underbrace{\forall z \subseteq x (z \in y)}_{(1)} \land \underbrace{\forall z \in y (z \subseteq x)}_{(2)}\]
+
+<p>(2)는 $\Delta_0$이기 때문에 괜찮지만, (1)이 문제다. (1)은 한정 양화사인 척을 하고 있지만, 사실 풀어쓰면 다음과 같다.</p>
+
+\[(1) : \forall z (z \subseteq x \rightarrow z \in y)\]
+
+<p>즉, (1)의 양화사는 비한정이다. 따라서 $\mathcal{P}(x)$는 $\Delta_0$가 아니며, 실제로도 절대적이지 않다. 2, 3, 4에 또한 $\Delta_0$로 표현되지 않음을 확인할 수 있다.</p>
+
+<h3 id="5-강제-부분순서집합">5. 강제 부분순서집합</h3>
+
+<p>드디어 강제법과 관련된 용어들이 등장하기 시작한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $(\mathbb{P}, \leq, 1)$이 강제 부분순서집합<sub>forcing poset</sub>이라는 것은 $(\mathbb{P}, \leq)$가 $1$을 극대 원소로 가지는 부분순서집합이라는 것이다.</p>
+</blockquote>
+
+<p>강제법의 맥락에서 $p \leq q$는 보통 $p$가 $q$보다 “자세하다”, “엄격하다”, “까다롭다”, “일어날 확률이 작다” 등의 의미를 가진다. 또는, $p$는 $q$의 “확장”이다. 예를 들어,</p>
+
+<ul>
+  <li>$p:$ 주사위를 굴려서 나온 수가 4 이하의 짝수인 사건</li>
+  <li>$q:$ 주사위를 굴려서 나온 수가 짝수인 사건</li>
+</ul>
+
+<p>라고 하자. $p$는 $q$보다 자세하고, 엄격하며, 까다롭고, 일어날 확률이 작은 사건이다. 또한 $p$는 조건이 추가된 $q$라는 점에서 $q$의 확장이기도 하다. 따라서 강제법의 맥락에서는 $p \leq q$로 순서를 주는 것이 자연스럽다.</p>
+
+<p>조금 더 수학적인 예시로,</p>
+
+\[\mathrm{Fn}(\omega, \omega) = \{ f \; | \; f : \omega \to \omega \text{ is a partial function with finite domain}\}\]
+
+<p>에 대해 다음과 같이 순서를 주자.</p>
+
+\[f \leq g \iff f|_{\operatorname{dom}g} = g\]
+
+<p>예를 들어 $\lbrace (0, 1), (1, 2) \rbrace  \leq \lbrace  (1, 2) \rbrace $이다. 즉, $f \leq g$일 때 $f$는 $g$보다 “자세한” 함수이다. 다르게 말하면, $f$는 $g$의 확장이다. 또한 $\mathrm{Fn}(\omega, \omega)$는 $\varnothing$를 극대 원소로 가지므로, $\mathrm{Fn}(\omega, \omega)$는 강제 부분순서집합이다.</p>
+
+<p>이후 특별한 언급이 없다면 $\mathbb{P}$는 강제 부분순서집합인 것으로 생각한다.</p>
+
+<h3 id="6-필터">6. 필터</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathbb{P}$의 부분집합 $\mathcal{F}$가 $\mathbb{P}$ 위의 <strong>필터<sub>filter</sub></strong>라는 것은 다음을 만족한다는 것이다.</p>
+
+  <ol>
+    <li>$1 \in \mathcal{F}$</li>
+    <li>$x \in \mathcal{F}$이고 $x \leq y$라면, $y \in \mathcal{F}$이다.</li>
+    <li>$x, y \in \mathcal{F}$라면, 어떤 $z \in \mathcal{F}$가 존재하여 $z \leq x, z \leq y$이다.</li>
+  </ol>
+</blockquote>
+
+<p>필터에 대해서는 이미 이 블로그에서 여러 번 다루었는데, 필터의 핵심 성질은 3번이다. 즉, 필터의 임의의 두 원소는 공통 확장을 가진다. 이는 필터에 일종의 방향성을 준다. 위상수학에서는 이 방향성을 이용하여 필터를 점으로 수렴시키기도 하고, 모델론에서는 필터로부터 새로운 구조(초곱)를 구성하기도 한다. 이에 착안하여, 강제법은 필터로부터 새로운 집합론의 모델을 얻어낼 것이다.</p>
+
+<p>예를 들어 앞선 $\mathbb{P} = \mathrm{Fn}(\omega, \omega)$의 예시로 돌아가자면, 전함수<sub>total function</sub> $f: \omega \to \omega$에 대해 다음은 필터이다.</p>
+
+\[\mathcal{F}_f = \{ g \in \mathrm{Fn}(\omega, \omega) : f \leq g\}\]
+
+<p>특히, $\mathcal{F}_f$는 함수 $f$를 “표현”하는 필터라고 볼 수 있다. 구체적으로, 다음이 성립한다.</p>
+
+\[\bigcup \mathcal{F}_f = f\]
+
+<p>정리하자면, 부분함수<sub>partial function</sub>들의 순서로부터 필터를 정의하여 전함수를 얻을 수 있다. 이는 다음의 흥미로운 가능성을 시사한다. 집합론의 모델 $M$에 대해, $\mathbb{P}$는 $M$의 원소이지만, $\mathbb{P}$의 필터 $\mathcal{F}$와 $\bigcup \mathcal{F}$는 $M$의 원소가 아닐 수 있다. 그렇다면 $M$에 $\mathcal{F}$를 “추가”하여, 새로운 집합론의 모델을 얻어봄직하다. 실제로 이것이 강제법의 아이디어이다.</p>
+
+<p>조금 더 구체적으로 이후의 과정을 개괄해 보자. $M$이 가산 추이적인 $V$의 부분모델이라고 하자. 먼저 적절한 강제 부분순서집합 $\mathbb{P} \in M$과 필터 $\mathcal{F} \subseteq \mathbb{P}$를 정의할 것이다. 특히, $\mathcal{F}$와 $\mathbb{P}$가 특정 조건 — 구체적으로, $\mathcal{F}$는 <strong>제너릭</strong>이어야 하고 $\mathbb{P}$는 <strong>분리적</strong>이어야 한다 — 을 만족하게끔 정의하면 $\mathcal{F} \notin M$이 될 것이다. 이에 따라 $M$에 $\mathcal{F}$를 “추가”함으로써 새로운 집합론의 모델 $M[\mathcal{F}]$를 얻을 수 있다. 이는 체론에서 체 $F$에 원소 $a$를 추가하여 $F(a)$를 얻는 것과 개념적으로 비슷하다.</p>
+
+<p>물론 $M[\mathcal{F}]$가 집합론의 모델이기 위해서는, $M$에 $\mathcal{F}$뿐 아니라, $\mathcal{F}$와 $M$의 원소들의 집합 연산으로부터 얻어질 수 있는 모든 집합들 또한 추가해야 한다. 이 또한 체론에서 $F$에 $a$를 추가하기 위해서는 $a^2, a + 1, 3a$ 등도 함께 추가해줘야 하는 것과 비슷하다. 이 과정을 일률적으로 달성하기 위해 <strong>$\mathbb{P}$-이름</strong>이라는 개념을 도입할 것이다.</p>
+
+<h3 id="7-조밀성과-제너릭-필터">7. 조밀성과 제너릭 필터</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $D \subseteq \mathbb{P}$가 다음을 만족할 때, $D$는 <strong>조밀<sub>dense</sub></strong>하다고 한다.</p>
+
+\[\forall x \in \mathbb{P} \; \exists y \in D : y \leq x\]
+</blockquote>
+
+<p>즉, $D$는 임의의 $x \in \mathbb{P}$보다 자세한 원소를 언제나 가지고 있다. 이는 마치 $A = \lbrace 0.9, 0.99, 0.999, …\rbrace $가 임의의 $x \in \mathbb{R}\setminus\lbrace 1\rbrace $보다 1에 가까운 원소를 언제나 가지고 있는 것과 비슷하다. 특히 $A$가 1 주변에서 조밀하다는 것을 생각해 보면, 위와 같은 이름이 붙은 이유를 이해할 수 있다.</p>
+
+<p>다시 $\mathbb{P} = \mathrm{Fn}(\omega, \omega)$의 예시로 돌아가자면, 임의의 $n \in \omega$에 대해 다음의 $D_n$는 조밀하다.</p>
+
+\[D_n = \{ g \in \mathrm{Fn}(\omega, \omega) : n \in \operatorname{dom}g\}\]
+
+<p>왜냐하면 임의의 부분함수는 정의역이 $n$을 포함하도록 확장될 수 있기 때문이다.</p>
+
+<p>한편 조밀한 $D$는 “흔한 성질”을 표현하는 것으로 이해될 수 있다. 예를 들어 앞서 정의한 $D_n$은, “정의역이 $n$을 포함함”이라는 성질을 표현하는데, 이는 “흔한” 성질이다. 왜냐하면 모든 부분함수는 정의역이 $n$을 포함하도록 확장될 수 있기 때문이다.</p>
+
+<p>직관적으로 생각했을 때, $\mathbb{P}$ 위의 필터 $\mathcal{F}$가 $M$에 없는 새로운 원소이기를 바란다면 $\mathcal{F}$는 <em>정의하기 어려워야</em> 한다. 만약 $\mathcal{F}$가 $\phi$로 정의된다면, $\exists! x \lnot\phi(x)$는 ZFC의 정리일 것이고, 이에 따라 이미 $\mathcal{F} \in M$일 것이기 때문이다. 그리고 $\mathcal{F}$가 정의하기 어렵다는 것은 $\mathcal{F}$가 <em>특출난 데가 없다</em>는 의미이다. 즉, $\mathcal{F}$는 <em>모든</em> 흔한 특징을 가져야 한다.</p>
+
+<p>이는 다음의 정의로 이어진다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $M$이 집합론의 추이적 모델이고, $\mathbb{P} \in M$이며, $G \subseteq \mathbb{P}$가 필터라고 하자 ($G \in M$일 필요는 없음). 임의의 $\mathbb{P}$의 조밀한 부분집합 $D \in M$에 대해 $D \cap \mathcal{F} \neq \varnothing$라면, $\mathcal{F}$가 <strong>$M$ 위에서 $\mathbb{P}$-제너릭<sub>generic</sub></strong>하다고 한다.</p>
+</blockquote>
+
+<p>여기서 $D \cap \mathcal{F} \neq \varnothing$은 직관적으로 $\mathcal{F}$가 $D$라는 성질을 가진다는 의미이다. 제너릭의 정의는 배경이 되는 집합론의 모델 $M$에 상대적임에 유의하라.</p>
+
+<p>구체적인 예시를 들어 보자. $\mathrm{id}:\omega \to \omega$가 항등함수라고 하자. 필터 $\mathcal{F}_{\mathrm{id}}$는 제너릭하지 않다. 왜냐하면</p>
+
+\[D = \{ f \in \mathrm{Fn}(\omega, \omega) \;|\; \exists n \in \operatorname{dom} f : f(n) \neq n \}\]
+
+<p>가 조밀함에도 불구하고 $D \cap \mathcal{F} = \varnothing$이기 때문이다. 이는 $\mathrm{id}$가 쉽게 정의 가능하며, $\mathrm{id} \in M$이라는 사실과 일맥상통한다.</p>
+
+<p>그렇다면 역으로, 제너릭 필터는 정말 $M$의 원소가 아닐까? 이를 보장하기 위해서는 한 가지 조건이 더 필요하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $x, y \in \mathbb{P}$에 대해 $z \leq x, z \leq y$를 만족하는 $z \in \mathbb{P}$가 없다면 $x$와 $y$가 <strong>양립 불가능<sub>incompatible</sub></strong>하다고 하며, $x \perp y$라고 적는다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathbb{P}$가 <strong>분리적<sub>separative</sub></strong>이라는 것은, 임의의 $z \in \mathbb{P}$에 대해 어떤 $x \leq z, y \leq z$가 존재하여 $x \perp y$라는 것이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $M$이 집합론의 추이적 모델이라고 하자. $\mathbb{P} \in M$이 분리적이고 $G \subseteq \mathbb{P}$가 $M$ 위의 $\mathbb{P}$-제너릭 필터라면 $G \notin M$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $G \in M$이라고 하자. 그러면 $D = \mathbb{P} \setminus G$는 $M$의 원소이다. $D$가 조밀함을 보이자. 만약 $D$가 조밀하지 않다면 어떤 $x \in \mathbb{P}$가 존재하여 $y \leq x$라면 $y \notin D$이다. 즉, $y \in G$이다. $\mathbb{P}$가 분리적이므로, $y_1 \perp y_2$인 $y_1, y_2 \leq x$가 존재한다. 따라서 $y_1, y_2 \in G$이다. 필터의 정의에 의해 어떤 $z \in \mathbb{P}$가 존재하여 $z \leq y_1, y_2$이다. 그런데 이는 $y_1 \perp y_2$에 모순된다.</p>
+
+<p>따라서 $D$는 조밀하다. $G$는 제너릭하므로 $G \cap D \neq \varnothing$이어야 한다. 그런데 이는 $D$의 정의에 모순된다. 따라서 $G \notin M$이다. ■</p>
+
+<p>제너릭 필터의 특징상, 제너릭 필터의 예시를 구체적으로 구성하기는 쉽지 않다. 대신 다음의 정리가 제너릭 필터의 존재성을 보장해 준다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{C}$가 $\mathbb{P}$에서 조밀한 집합들의 모임이라고 하자. 필터 $G \subseteq \mathbb{P}$가 $\mathcal{C}$-제너릭하다는 것은, 임의의 $D \in \mathcal{C}$에 대해 $D \cap G \neq \varnothing$이라는 것이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{C}$가 $\mathbb{P}$에서 조밀한 집합들의 가산 모임이라면 $\mathcal{C}$-제너릭 필터가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathcal{C} = \lbrace  D_n \rbrace _{n \in \omega}$라고 하자. 먼저 $x_0 \in D_0$를 선택한다. $x_n \in D_n$이 선택되었을 때, $x_{n+1} \in D_{n + 1}$을 $x_{n + 1} \leq x_n$을 만족하도록 선택한다 ($D_{n + 1}$이 조밀하므로 그러한 $x_{n+1}$은 언제나 존재한다). $G = \lbrace  x_n \rbrace _{n \in \omega}$가 구하고자 하는 제너릭 필터이다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $M$이 가산 추이적 모델이라면 $M$ 위의 $\mathbb{P}$-제너릭 필터 $G$가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $M$이 가산이므로 $\mathcal{C} = \lbrace  D \in M : D \text{ is }\mathbb{P}\text{-dense}\rbrace $는 가산이다. ■</p>
+
+<p>따라서 가산 추이적 모델에서는 언제나 $\mathbb{P}$-제너릭 필터를 상정할 수 있다. 이것이 도입부에서 가산성이 중요하다고 말한 이유이다.</p>
+
+<h3 id="여담-8-마틴-공리">(여담) 8. 마틴 공리</h3>
+
+<p>$\mathcal{C}$가 가산이 아닐 때에는 $\mathcal{C}$-제너릭 필터가 존재하지 않을 수 있다. 그러나 $\mathbb{P}$의 크기에 제한을 건다면, 가능한 조밀 집합들의 가능성이 한정되고, 이에 따라 비가산인 $\mathcal{C}$ 또한 제너릭 필터를 가지게 될 수 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathbb{P}$의 부분집합 $A$가 <strong>반체인<sub>antichain</sub></strong>이라는 것은, 임의의 $x, y \in A$에 대해 $x \perp y$라는 것이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathbb{P}$가 <strong>가산 체인 성질<sub>countable chain condition</sub></strong>을 가진다는 것은 $\mathbb{P}$의 반체인이 기껏 가산이라는 것이다.</p>
+</blockquote>
+
+<p>반체인과 가산 체인 성질에 대해서는 <a href="https://dimenerno.github.io/2025/12/26/suslin">이 글</a>에서 다룬 바 있는데, 그때 가산 체인 성질이 순서 집합(트리)의 “너비”를 제한한다고 설명했다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\kappa$가  기수라고 하자. $\mathrm{MA}_\kappa$를 다음 진술로 정의한다: $\mathbb{P}$가 가산 체인 성질을 가지고, $\mathcal{C}$가 $\mathbb{P}$-조밀한 집합들의 모임이며, $|\mathcal{C}| \leq \kappa$라면, $\mathcal{C}$-제너릭 필터가 존재한다.</p>
+</blockquote>
+
+<p>앞선 정리에 의해 $\mathrm{MA}_{\aleph_0}$는 자명하게 성립한다. 한편 $\mathrm{MA}_{\kappa}$는 $\kappa &lt; 2^{\aleph_0}$를 시사하기 때문에 $\kappa \geq 2^{\aleph_0}$에 대해 $\mathrm{MA}_\kappa$는 성립하지 않는다.</p>
+
+<blockquote>
+  <p><strong>마틴 공리<sub>Martin’s axiom</sub>.</strong> 모든 $\kappa &lt; 2^{\aleph_0}$에 대해  $\mathrm{MA}_{\kappa}$가 성립한다.</p>
+</blockquote>
+
+<p>마틴 공리는 ZFC와 독립적임이 알려져 있다. 짐작할 수 있다시피, 마틴 공리를 가정하면 제너릭 필터를 쉽게 얻을 수 있으므로 강제법을 좀 더 자유롭게 쓸 수 있다. 다만 연속체 가설의 무모순성을 증명할 때는 마틴 공리까지 필요하지는 않다.</p>
+
+<h3 id="9-mathbbp-이름">9. $\mathbb{P}$-이름</h3>
+
+<p>$\mathbb{P}$가 분리적이고 $G$가 $\mathbb{P}$-제너릭할 때 $G \notin M$임을 보았다. 따라서 $M$에서는 $G$에 관해 진술할 수 있는 방법이 없는 것으로 보인다. 그러나 굉장히 기발한 트릭을 사용하면 $M$에서도 어느 정도 $G$에 관해 진술할 수 있다. 사실 이것이 강제법의 천재성이다.</p>
+
+<p>아이디어는 다음과 같다. <a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">이 글</a>에서 필터는 “참”인 원소들의 모임으로 생각할 수 있다고 설명했다. 즉, $\mathbb{P}$를 사건들의 모임으로 본다면, $\mathcal{F}$는 실제로 일어난 사건들의 모임으로 생각할 수 있다.</p>
+
+<p>이에 착안해, $\mathbb{P}$를 이용하여 <em>원소를 확률적으로 가지는 집합</em>이라는 개념을 떠올릴 수 있다. 예를 들어 $p \in \mathbb{P}$가 실제로 일어난다면 $a$를 원소로 가지는 집합 $X$는 다음과 같이 적는 것이다.</p>
+
+\[(a, p) \in X\]
+
+<p>필터 $G$는 실제로 일어난 사건들이 무엇인지를 명시한다. 만약 $p \in G$라면, $X$는 실제로 $a$를 원소로 가진다. 이를 다음과 같이 표현하자.</p>
+
+\[p \in G \iff a \in X_G\]
+
+<p>비유하자면, $X$는 양자 중첩 상태이고 $X_G$은 관측 후의 상태이다.</p>
+
+<p>그런데 $X$와 같은 확률적 집합이 또다른 집합의 원소일 수도 있을 것이다. 거꾸로 말해, $(a, p) \in X$에서 $a$ 또한 확률적 집합일 수도 있다. 따라서 다음과 같이 적는 것이 정확하다.</p>
+
+\[p \in G \iff a_G \in X_G\]
+
+<p>이상의 논의를 엄밀하게 정리하면 $\mathbb{P}$-이름의 정의를 얻는다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 다음 꼴의 집합을 <strong>$\mathbb{P}$-이름<sub>$\mathbb{P}$-name</sub></strong>이라고 한다.</p>
+
+\[\sigma = \{ (\tau, p) : p \in \mathbb{P}, \tau \text{ is a }\mathbb{P}\text{-name}\}\]
+
+  <p>$\mathbb{P}$-이름들 중 $M$에 속하는 이름들의 집합을 $M^\mathbb{P}$와 같이 적는다.</p>
+</blockquote>
+
+<p>정의에 의해 $M^\mathbb{P} \subseteq M$이지만, $M^\mathbb{P} \in M$은 보장되지 않음에 유의하라.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $G$가 $\mathbb{P}$ 위의 필터이고 $\sigma$가 $\mathbb{P}$-이름일 때, $G$에서 $\sigma$의 <strong>평가<sub>valuation</sub></strong> $\sigma_G$를 다음과 같이 정의한다.</p>
+
+\[\sigma_G = \{ \tau_G \;|\; \exists p \in G :(\tau, p) \in \sigma \}\]
+</blockquote>
+
+<p>위 정의는 순환 정의처럼 보이지만, 정확한 재귀 정의이다.[^3] 일례로 $\varnothing$이 $\mathbb{P}$-이름이며, 이에 따라 임의의 $p \in \mathbb{P}$에 대해 $\sigma = \lbrace  (\varnothing, p) \rbrace $ 또한 $\mathbb{P}$-이름이다. 특히,</p>
+
+\[p \in G \iff \sigma_G = \{\varnothing \}\]
+
+<p>이다. 조금 더 복잡한 예시로, $p, q, r \in \mathbb{P}$일 때</p>
+
+\[\tau = \bigg\{ \Big(\big\{ ( \{ (\varnothing, r) \}, p), (\varnothing, q) \big\}, q\Big), (\varnothing, r) \bigg\}\]
+
+<p>또한 $\mathbb{P}$-이름이며, 특히 $q, r \in G, p \notin G$일 때 다음과 같음을 확인하라.</p>
+
+\[\tau_G = \{\{ \varnothing\}, \varnothing\}\]
+
+<p>이쯤에서 다음의 표기법을 도입하자.</p>
+
+\[\check{x} = \{(y, 1): y \in x\}\]
+
+<p>$1$은 $\mathbb{P}$의 극대 원소였음에 유의하라. 이로부터, <em>임의의</em> 필터 $G$에 대해 $\check{x}_G = x$임을 알 수 있다. 즉, $\check{x}$는 $x$의 “이름표”이다.</p>
+
+<p>앞서 $\mathbb{P}$-이름을 사용하면 $M \notin G$임에도 $M$ 내에서 $G$에 관해 어느 정도 진술할 수 있다고 했다. 이는 다음의 $\mathbb{P}$-이름이 $G$의 “이름표”이기 때문이다.</p>
+
+\[\Gamma = \{ (\check{p}, p) : p \in \mathbb{P} \}\]
+
+<p>$\Gamma$가 $G$의 이름표라는 말의 의미는, $\Gamma_G = G$가 성립한다는 것이다 (직접 확인해 보라). 그리고 이 점이 중요한데, $\mathbb{P} \in M$이므로 $\Gamma \in M$이다. 즉, $G$는 $M$의 원소가 아닐지언정 $G$의 이름표는 $M$의 원소인 것이다.</p>
+
+<p>이제 다음과 같이 $M[G]$를 정의하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong></p>
+
+\[M[G] = \{\sigma_G : \sigma \in M^\mathbb{P} \}\]
+</blockquote>
+
+<p>$x \in M$일 때 $\check{x}_G = x$이므로 $M \subset M[G]$이며, $\Gamma_G = G$이므로 $G \in M[G]$이다.</p>
+
+<p>유추했겠다시피, 바로 이 $M[G]$가 우리가 얻고자 했던 “새로운” 집합론의 모델이다. 즉, $M$이 집합론의 추이적 모델일 때 $M[G]$ 또한 집합론의 추이적 모델이다. 이 사실을 증명하기 위해, 우선 강제 관계를 정의하도록 하자.</p>
+
+<h3 id="10-강제-관계">10. 강제 관계</h3>
+
+<p>$G$가 어떤 원소를 가지느냐에 따라 $M[G]$의 생김새는 크게 달라진다. 다시 앞선 $\mathrm{Fn}(\omega, \omega)$의 예시로 돌아가자. 앞서 $f: \omega \to \omega$가 전함수일 때, 필터 $\mathcal{F}_f$가 존재하여 $\bigcup \mathcal{F}_f = f$라고 했다. 이의 역도 어느 정도 성립한다. 만약 $G$가 $\mathrm{Fn}(\omega, \omega)$의 제너릭 필터라면, $\bigcup G: \omega \to \omega$는 전함수이다. 추가로 $(1, 2) \in G$라면, $\bigcup G : 1 \mapsto 2$이다. 이를 다음과 같이 표현해 봄직하다.</p>
+
+\[(1, 2) \text{ forces } \Big(\bigcup G \Big)(1) = 2\]
+
+<p>그런데 우리는 위 진술이 $M$ 안에서도 표현 가능하기를 바라기 때문에, $\mathbb{P}$-이름을 대신 사용할 것이다. 즉,</p>
+
+\[(1, 2) \text{ forces } \Big(\bigcup \Gamma \Big)(\check{1}) = \check{2}\]
+
+<p>이를 엄밀히 정의하면 강제 관계를 얻는다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\phi(x_1, \dots, x_n)$가 $n$개의 자유변수를 가지는 명제라고 하자. 임의의 $\tau_1, \dots, \tau_n \in M^\mathbb{P}$와 $p \in \mathbb{P}$에 대해,</p>
+
+\[p \Vdash \phi(\tau_1, \dots, \tau_n)\]
+
+  <p>을 다음으로 정의한다: 임의의 $M$ 위의 $\mathbb{P}$-제너릭한 필터 $G$에 대해,</p>
+
+\[p \in G \rightarrow \phi^{M[G]}\big((\tau_1)_G, \dots, (\tau_n)_G\big)\]
+</blockquote>
+
+<p>(이쯤에서 명제의 성립은 $V$를 기준으로 한다는 사실을 리마인드하는 것이 좋겠다)</p>
+
+<p>$\Vdash$는 forces로 읽는다.</p>
+
+<p>예시로, 다음이 성립한다.</p>
+
+\[(1, 2) \Vdash \Big(\bigcup \Gamma \Big)(\check{1}) = \check{2}\]
+
+\[\varnothing \Vdash \bigcup \Gamma \text{ is a function}\]
+
+<h3 id="11-강제법의-기본-정리">11. 강제법의 기본 정리</h3>
+
+<p>이제 우리는 강제법의 핵심이라고 부를 수 있는 정리에 다다랐다. 안타깝게도 이 정리의 증명은 필자도 아직 공부 중이기에 생략하지만, 관심 있는 독자는 Kunen (1980)을 참고하기를 바란다 (제1정리와 제2정리는 7장, Theorem 3.6에서 등장한다).</p>
+
+<blockquote>
+  <p><strong>강제법 제1정리.</strong> $\mathbb{P}$가 주어졌을 때, $M$ 내에서 정의 가능한 관계 $\Vdash^\ast$가 존재하여, 다음이 성립한다: 임의의 명제 $\phi$와 $\mathbb{P}$-이름 $\tau_1, \dots, \tau_n$이 대해,</p>
+
+\[p \Vdash \phi(\tau_1, \dots, \tau_n) \longleftrightarrow \Big( p \Vdash^* \phi(\tau_1, \dots, \tau_n) \Big)^M\]
+</blockquote>
+
+<p>즉, $M$ 내부에서도 강제 관계 $\Vdash$를 정확하게 흉내낼 수 있다. 또다른 중요한 정리는 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>강제법 제2정리.</strong> 임의의 명제 $\phi$와 $\mathbb{P}$-이름 $\tau_1, \dots, \tau_n$이 대해,</p>
+
+\[\bigg( \phi\Big((\tau_1)_G, \dots, (\tau_n)_G \Big) \bigg)^{M[G]} \longleftrightarrow \;\;\exists p \in G : p \Vdash \phi(\tau_1, \dots, \tau_n)\]
+</blockquote>
+
+<p>즉, 만약 $\phi(\vec{\tau}_G)$가 $M[G]$에서 참이라면, 이는 $\phi(\vec{\tau})$를 강제하는 $p$가 $G$에 있기 때문이다. 직관적으로 이는 다음과 같이 이해할 수 있다. $G$가 제너릭하다는 것은 $G$가 어떠한 우연성이나 특이점 없이 극히 평범하다는 의미이므로, 만약 $M[G]$가 $M$에서는 만족되지 않는 명제 $\phi$를 새롭게 만족하게 되었다면, 이는 외부의 우연에 의해서가 아닌 $G$ 내부 조건에 의한 것이어야 한다.</p>
+
+<p>제1정리와 제2정리로부터, 다음이 얻어진다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $M$이 집합론의 추이적 모델이라면, $M[G]$ 또한 집합론의 추이적 모델이다.</p>
+</blockquote>
+
+<p>(이 증명은 필자가 스스로 끄적여 본 것이기 때문에 틀릴 수도 있다.)</p>
+
+<p><strong>증명.</strong> 먼저 추이성을 증명하자. $x \in M[G]$이고, $y \in x$라고 하자. $y \in M[G]$를 보여야 한다.</p>
+
+<p>$M[G]$의 정의에 의해 어떤 $\sigma \in M^{\mathbb{P}}$가 있어 $x = \sigma_G$이다. 따라서 $y \in x$로부터 다음을 알 수 있다: 어떤 $\mathbb{P}$-이름 $\tau$와 $p \in G$가 존재하여 $(\tau, p) \in \sigma$이고 $y = \tau_G$이다. $M$이 추이적이므로,</p>
+
+\[(\tau, p) \in \sigma \in M\]
+
+<p>으로부터 $(\tau, p) \in M$임을, 즉 $\tau \in M$임을 알 수 있다. 따라서 $\tau_G = y \in M[G]$이다.</p>
+
+<p>이제 $M[G]$가 ZFC의 모델임을 증명하자. $\theta$가 ZFC의 공리일 때, $\theta^{M[G]}$가 성립함을 보이면 된다. 예를 들어 $\theta$가 $\phi(x, \vec{c})$에 대한 분리 공리라고 하자 ($\vec{c}$는 $M[G]$의 원소들). 즉,</p>
+
+\[\theta \Leftrightarrow \forall x \;\exists y : y = \{z \in x : \phi(z, \vec{c})\}\]
+
+<p>이며,</p>
+
+\[\theta \Leftrightarrow \forall x \in M[G] \;\exists y\in M[G] : y = \{z \in x : \phi^{M[G]}(z, \vec{c})\}\]
+
+<p>이다.</p>
+
+<p>$\forall$의 정의에 의해 어떤 $x = a$에 대해 $\theta^{M[G]}$가 성립함을 보이면 충분하다.</p>
+
+\[y = \{ z \in \sigma_G : \phi^{M[G]}(z, \vec{c}) \} \in M[G]\]
+
+<p>$M[G]$의 정의에 의해 어떤 $\vec{\tau} \in M^{\mathbb{P}}$가 존재하여 $\vec{c} = \vec{\tau}_G$이다. 이로부터 다음과 같이 정리할 수 있다.</p>
+
+\[y = \Big\{ \pi_G : \big( \exists p\in G\; (\pi, p) \in \sigma \big)\land\phi^{M[G]}(\pi_G, \vec{\tau}_G) \Big\}\]
+
+<p>제2기본정리에 의해,</p>
+
+\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G:p\Vdash \phi(\pi, \vec{\tau})\]
+
+<p>제1기본정리에 의해,</p>
+
+\[q\Vdash \phi(\pi, \vec{\tau}) \longleftrightarrow \Big( q \Vdash^* \phi(\pi, \vec{\tau}) \Big)^M\]
+
+<p>따라서,</p>
+
+\[y = \Big\{ \pi_G : \big( \exists p\in G\; (\pi, p) \in \sigma \big)\land \big(\exists q \in G\; (q \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\}\]
+
+<p>여기서 다음의 보조정리를 사용하자.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $\sigma \in M^{\mathbb{P}}$일 때, 다음과 같이 정의한다.</p>
+
+\[\overline{\sigma} = \Big\{ (\tau, q) : \exists p \in \mathbb{P} \; \Big( (\tau, p) \in \sigma \land q \leq p \Big) \Big\}\]
+
+  <p>이때, $\sigma_G = \overline{\sigma}_G$이며, $\overline{\sigma} \in M^{\mathbb{P}}$이다.</p>
+</blockquote>
+
+<p>증명은 필터의 정의로부터 거의 자명하다. 보조정리와, 필터의 방향성으로부터 다음을 얻는다 $(r \leq p, q)$.</p>
+
+\[y = \Big\{ \pi_G : \exists r\in G\; \big( (\pi, r) \in \overline{\sigma} \land (r \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\}\]
+
+<p>따라서,</p>
+
+\[\check{y} = \Big\{ (\pi, r) \in \overline{\sigma} : \big(r \Vdash^* \phi(\pi, \vec{\tau})\big)^M \  \Big\}\]
+
+<p>일 때 $\check{y}_G = y$이다. 그런데 $\check{y}$는 $M$에서 $\sigma$를 $p \Vdash^\ast \phi(\pi, \vec{\tau})$에 대해 분리한 집합이고, $M$은 분리 공리를 만족하므로, $\hat{y} \in M$이며, 이에 따라 $y \in M[G]$이다.</p>
+
+<p>나머지 공리에 대해서도 비슷하게 증명할 수 있다. ■</p>
+
+<hr />
+
+<p>이로써 강제 관계를 정의하고, 그 성질을 살펴본 뒤, 제너릭 필터로부터 주어지는 $M[G]$가 집합론의 모델임을 간단히 증명해 보았다. 다음 글에서는 이 글에서 얻은 결과들을 이용하여 연속체 가설의 무모순성을 증명할 것이다.</p>
+
+<h4 id="reference">Reference</h4>
+<ul>
+  <li>전한울, <em>What is forcing?</em> (2015)</li>
+  <li>K. Kunen, <em>Set theory: an introduction to independence proofs</em> (1980)</li>
+  <li>K. Hrbacek &amp; T. Jech, <em>Introduction to Set Theory</em>, 3rd edition (1999)</li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>$y = \mathcal{P}(x)$의 정의는 $\forall z \subseteq x (z \in y) \land \forall z \in y (z \subseteq x)$이고, $y \subseteq x$의 정의는 $\forall z \in y (z \in x)$이다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>프레게-러셀 식의 기술주의가 떠오르는 대목이다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

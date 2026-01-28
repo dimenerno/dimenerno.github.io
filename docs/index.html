@@ -484,6 +484,1163 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2026/01/28/forcing"> 강제법 개론 </a>
+      </h1>
+    <span class="post-date">28 Jan 2026</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+    </div>
+     <p>괴델은 1938년에 구성가능성 공리를 도입함으로써 연속체 가설의 부정이 ZFC에서 증명 불가능함을 보였다. 구성가능 전체 $L$이 연속체 가설이 성립하는 ZFC의 모델이기 때문이다. 이후 1963년에 코헨이 강제법을 개발하여, 연속체 가설이 성립하지 않는 ZFC의 모델을 발견했다. 이로써 연속체 가설은 ZFC와 독립적임이 보여졌다. 이 글에서는 코헨의 강제법과, 연속체 가설의 독립성 증명의 개요를 살펴본다.</p>
+
+<p>당연한 말이지만, 이 글에서는 ZFC가 무모순하다고 가정할 것이다.</p>
+
+<h3 id="1-가산-추이적-모델">1. 가산 추이적 모델</h3>
+
+<p>$V$가 누적 위계<sub>cumulative hierarchy</sub>라고 하자. $(V, \in)$은 ZFC의 “모델”이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 다음의 성질을 만족하는 $V$의 부분모델<sub>submodel</sub> $(M, \in)$가 존재한다.</p>
+
+  <ol>
+    <li>$M$은 ZFC의 모델이다.</li>
+    <li>$M$은 가산이다.</li>
+    <li>$M$은 추이적<sub>transitive</sub>이다. 즉, 임의의 $x \in M$과 $y \in V$에 대해,</li>
+  </ol>
+
+\[V \vDash y \in x \implies V \vDash y \in M\]
+</blockquote>
+
+<p><strong>증명.</strong> 다음 정리를 사용한다.</p>
+
+<blockquote>
+  <p><strong>모스토프스키 붕괴 정리<sub>Mostowski collapse lemma</sub>.</strong> 모임<sub>class</sub> $X$ 위의 이항 관계 $R$이 다음을 만족한다고 하자.</p>
+
+  <ol>
+    <li><strong>크기 제한<sub>smallness</sub>:</strong> $R^{-1}(x) = \lbrace  y \in X : yRx \rbrace $는 집합이다.</li>
+    <li><strong>기초성<sub>well-foundedness</sub>:</strong> 공집합이 아닌 $X$의 부분집합 $S$는 $R$-극소 원소를 가진다.</li>
+    <li><strong>외연성<sub>extensionality</sub>:</strong> $x = y$일 필요충분조건은 $R^{-1}(x) = R^{-1}(y)$이다.</li>
+  </ol>
+
+  <p>이때, 어떤 $V$의 추이적 모델 $(M, \in)$이 유일하게 존재하여 $(M, \in)$과 $(X, R)$이 동형이다.</p>
+</blockquote>
+
+<p>이 정리의 증명은 비교적 자명하나 쓸 게 많으므로 Hrbacek &amp; Jech, 14장을 대신 참고로 달아놓는다.</p>
+
+<p>하향 뢰벤하임-스콜렘 정리에 의해 $(V, \in)$의 가산 부분모델 $(N, \in)$이 존재한다. 크기 제한, 기초성, 외연성은 모두 1차 논리로 표현 가능한 성질이므로, $(V, \in)$이 모스토프스키 붕괴 정리의 조건들을 만족한다는 사실로부터 $(N, \in)$ 또한 만족한다는 사실이 따라 나온다. 따라서 $(N, \in)$과 동형인 추이적 모델 $(M, \in)$이 존재한다. $N, M$이 동형이므로 $M$은 가산이다. ■</p>
+
+<p>따라서 $V$는 가산 추이적 부분모델 $M$을 가진다. $M$의 가산성과 추이성은 나중에 강제법에서 중요하게 쓰일 것이다.</p>
+
+<h3 id="2-표기에-관해">2. 표기에 관해</h3>
+
+<p>앞서 $V$가 모델이라고 할 때 큰따옴표를 쳤는데, 그 이유는 엄밀히 말해 모델은 집합이어야 하기 때문이다. 즉, $V$는 모델이 되기에 너무 크다. 때문에 방금 증명에서 한 것처럼 $V$에 대해 뢰벤하임-스콜렘 정리를 마냥 사용할 수는 없다.</p>
+
+<p>그러나 이 문제는 $V$를 $V_\kappa$ ($\kappa$는 도달 불가능 기수), 또는 (ZFC의 무모순성을 가정했을 때 괴델의 완전성 정리로부터 보장되는) ZFC의 다른 집합-모델로 바꿔치기 함으로써 해결할 수 있다. 따라서 이 글에서는 편의를 위해 $V$를 모델(집합)처럼 다룰 것이지만, 이것이 불편한 독자는 이 글의 모든 $V$를 $V_\kappa$로 바꿔치기 하면 된다.</p>
+
+<p>추가적으로 다음 규약을 사용하겠다.</p>
+
+<blockquote>
+  <p><strong>규약.</strong></p>
+
+  <ol>
+    <li>“집합론의 모델”을 “ZFC의 모델”과 동의어로 사용한다.</li>
+    <li>$V \vDash \phi$를 간단히 $\phi$라고 적는다. <strong>즉, 모든 명제의 배경은 $V$이다.</strong></li>
+  </ol>
+</blockquote>
+
+<h3 id="3-상대화">3. 상대화</h3>
+
+<p>$M$이 집합론의 추이적 모델이라고 하자. ZFC는 단 하나의 이항 관계 $\in$를 가지는 언어의 이론이기 때문에 임의의 $x, y \in M$에 대해 다음은 보장이 되지만, (앞선 규약에 따라 우변의 $x \in y$는 $V \vDash x \in y$임을 유의하라)</p>
+
+\[M \vDash x \in y \iff  x \in y\]
+
+<p>이외의 관계에서는 이것이 자동적으로 보장되지는 않는다. 예를 들어 $x, z \in M$에 대해,</p>
+
+\[M \vDash y = \mathcal{P}(x)\]
+
+<p>이지만</p>
+
+\[y \neq \mathcal{P}(x)\]
+
+<p>일 수 있다.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> 따라서 ($V$에서의) 명제 $\phi$와 $M$ “내부”에서 본 명제 $\phi$를 구별할 필요가 있다. 이를 위해 다음을 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 명제 $\phi$에 대해, $\phi^M$을 $M$에 대해 <strong>상대화<sub>relativization</sub></strong>한 $\phi$라고 부르며, 다음과 같이 재귀적으로 정의한다.</p>
+
+  <ol>
+    <li>$x, y \in M$에 대해 $(x \in y)^M$은 $x \in y$와 같다.</li>
+    <li>$x, y \in M$에 대해 $(x = y)^M$은 $x = y$와 같다.</li>
+    <li>$(\phi \land \psi)^M$은 $\phi^M \land \psi^M$과 같다.</li>
+    <li>$(\phi \lor \psi)^M$은 $\phi^M \lor \psi^M$과 같다.</li>
+    <li>$(\lnot \phi)^M$은 $\lnot \phi^M$과 같다.</li>
+    <li>$(\forall x:\phi)^M$은 $\forall x \in M: \phi^M$과 같다.</li>
+    <li>$(\exists x:\phi)^M$은 $\exists x \in M : \phi^M$과 같다.</li>
+  </ol>
+</blockquote>
+
+<p>즉, $M$에 대해 상대화한 명제는 기존의 명제에서 양화사의 범위를 모두 $M$으로 제한한 것이다.</p>
+
+<blockquote>
+  <p><strong>Remark.</strong> 상대화의 정의로부터 $\phi^M \iff M \vDash \phi$이다. 때문에 이런 의문이 들 수 있다. 이미 $\vDash$가 있는데 왜 상대화를 정의하는 것일까? 그 이유는, $M \vDash \phi$는 (모델론의) <em>메타명제</em>인 반면, $\phi^M$은 (집합론의) <em>명제</em>이기 때문이다. 즉, 상대화를 사용하면 “$\phi$가 $M$에서 성립한다”는 사실을 $V$에서 표현할 수 있다. 이는 이후 강제 관계 $\Vdash$를 정의할 때 중요해질 것이다.</p>
+</blockquote>
+
+<h3 id="4-절대성">4. 절대성</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $M, N$이 집합론의 추이적 “모델”이고, $M$이 $N$의 부분”모델”이라고 하자. $\phi$가 $n$항 명제라고 하자. 임의의 $x_1, \dots, x_n \in M$에 대해,</p>
+
+\[\phi^M(x_1, \dots x_n) \leftrightarrow \phi^N(x_1, \dots, x_n)\]
+
+  <p>가 성립한다면 $\phi$가 $M, N$ <em>사이에서</em> <strong>절대적<sub>absolute</sub></strong>이라고 한다. $N = V$인 경우, $V$에 대한 언급을 생략하여 $\phi$가 $M$ <em>위에서</em> 절대적이라고 한다.</p>
+</blockquote>
+
+<p>즉, $\phi$가 $M$ 위에서 절대적이라는 것은 $M$ 내부에서 본 $\phi$가, 전체에서 본 $\phi$와 일치한다는 것이다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\exists x \in A, \forall x \in A$와 같이 범위가 특정 집합으로 한정되어 있는 양화사를 한정 양화사라고 한다. 모든 양화사가 한정 양화사인 명제를 $\Delta_0$ 명제라고 한다.</p>
+</blockquote>
+
+<p>예를 들어 $y \subseteq x$의 정의는 다음과 같은데, $\forall z$가 $y$로 한정되어 있으므로 $\Delta_0$ 명제이다.</p>
+
+\[\forall z \in y (z \in x)\]
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>절대적 명제들의 합성은 절대적이다.</li>
+    <li>$\Delta_0$ 명제는 추이적 모델 사이에서 절대적이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 명제에 대한 귀납법으로 증명한다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> 다음 명제들은 추이적 모델 사이에서 절대적이다.</p>
+
+  <ol>
+    <li>$y \subseteq x$</li>
+    <li>$f$는 함수이다, $f$는 전사이다, $f$는 단사이다</li>
+  </ol>
+</blockquote>
+
+<p>명제에 대한 절대성을 확장하여, 집합에 대한 절대성을 정의할 수 있다. 예를 들어 $\omega$는 가장 작은 귀납적 집합으로 정의된다. 구체적으로,</p>
+
+\[\mathrm{IsInductive}(x) : 0 \in x \land \forall y( y \in x \rightarrow y\cup \{y\} \in x)\]
+
+<p>로 정의하고,</p>
+
+\[\mathrm{IsOmega}(x) : \mathrm{IsInductive}(x) \land \forall z\Big(\mathrm{IsInductive}(z) \rightarrow z \subseteq x \Big)\]
+
+<p>로 정의하자. 이때 $\mathrm{IsOmega}$를 만족하는 집합이 유일하게 존재함을 보일 수 있으며, 그 집합을 $\omega$로 정의한다.</p>
+
+<p>이와 같이 집합 $s$의 정의가 명제 $\phi$로 주어지는 경우<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>, 만약 $\phi$가 $M, N$ 사이에서 절대적이라면, 집합 $s$가 $M, N$ 사이에서 절대적이라고 한다. 예를 들어 위의 따름정리로부터 $\mathrm{IsOmega}$가 추이적 모델 사이에서 절대적임을 알 수 있다. 따라서 $\omega$는 추이적 모델 사이에서 절대적이다.</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> 다음 집합들은 추이적 모델 사이에서 절대적이다.</p>
+
+  <ol>
+    <li>$\varnothing$</li>
+    <li>$x \times y, \lbrace  x, y \rbrace , (x, y)$</li>
+    <li>$\bigcup x, \bigcap x$</li>
+    <li>$x$가 순서쌍들의 집합일 때, $\operatorname{dom} x$</li>
+    <li>$\omega\; (=\aleph_0)$</li>
+  </ol>
+</blockquote>
+
+<p>절대적이지 않은 명제/집합들의 예시를 보자.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 다음 명제/집합들은 추이적 모델 사이에서 절대적이지 않다.</p>
+
+  <ol>
+    <li>$\mathcal{P}(x)$</li>
+    <li>$x$는 가산이다.</li>
+    <li>$x$는 기수이다.</li>
+    <li>$\aleph_n \; (n &gt; 0)$</li>
+  </ol>
+</blockquote>
+
+<p>$\mathcal{P}(x)$가 절대적이지 않은 이유를 훑어보자. $\mathcal{P}(x)$의 정의는 다음과 같다.</p>
+
+\[y = \mathcal{P}(x) : \underbrace{\forall z \subseteq x (z \in y)}_{(1)} \land \underbrace{\forall z \in y (z \subseteq x)}_{(2)}\]
+
+<p>(2)는 $\Delta_0$이기 때문에 괜찮지만, (1)이 문제다. (1)은 한정 양화사인 척을 하고 있지만, 사실 풀어쓰면 다음과 같다.</p>
+
+\[(1) : \forall z (z \subseteq x \rightarrow z \in y)\]
+
+<p>즉, (1)의 양화사는 비한정이다. 따라서 $\mathcal{P}(x)$는 $\Delta_0$가 아니며, 실제로도 절대적이지 않다. 2, 3, 4에 또한 $\Delta_0$로 표현되지 않음을 확인할 수 있다.</p>
+
+<h3 id="5-강제-부분순서집합">5. 강제 부분순서집합</h3>
+
+<p>드디어 강제법과 관련된 용어들이 등장하기 시작한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $(\mathbb{P}, \leq, 1)$이 강제 부분순서집합<sub>forcing poset</sub>이라는 것은 $(\mathbb{P}, \leq)$가 $1$을 극대 원소로 가지는 부분순서집합이라는 것이다.</p>
+</blockquote>
+
+<p>강제법의 맥락에서 $p \leq q$는 보통 $p$가 $q$보다 “자세하다”, “엄격하다”, “까다롭다”, “일어날 확률이 작다” 등의 의미를 가진다. 또는, $p$는 $q$의 “확장”이다. 예를 들어,</p>
+
+<ul>
+  <li>$p:$ 주사위를 굴려서 나온 수가 4 이하의 짝수인 사건</li>
+  <li>$q:$ 주사위를 굴려서 나온 수가 짝수인 사건</li>
+</ul>
+
+<p>라고 하자. $p$는 $q$보다 자세하고, 엄격하며, 까다롭고, 일어날 확률이 작은 사건이다. 또한 $p$는 조건이 추가된 $q$라는 점에서 $q$의 확장이기도 하다. 따라서 강제법의 맥락에서는 $p \leq q$로 순서를 주는 것이 자연스럽다.</p>
+
+<p>조금 더 수학적인 예시로,</p>
+
+\[\mathrm{Fn}(\omega, \omega) = \{ f \; | \; f : \omega \to \omega \text{ is a partial function with finite domain}\}\]
+
+<p>에 대해 다음과 같이 순서를 주자.</p>
+
+\[f \leq g \iff f|_{\operatorname{dom}g} = g\]
+
+<p>예를 들어 $\lbrace (0, 1), (1, 2) \rbrace  \leq \lbrace  (1, 2) \rbrace $이다. 즉, $f \leq g$일 때 $f$는 $g$보다 “자세한” 함수이다. 다르게 말하면, $f$는 $g$의 확장이다. 또한 $\mathrm{Fn}(\omega, \omega)$는 $\varnothing$를 극대 원소로 가지므로, $\mathrm{Fn}(\omega, \omega)$는 강제 부분순서집합이다.</p>
+
+<p>이후 특별한 언급이 없다면 $\mathbb{P}$는 강제 부분순서집합인 것으로 생각한다.</p>
+
+<h3 id="6-필터">6. 필터</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathbb{P}$의 부분집합 $\mathcal{F}$가 $\mathbb{P}$ 위의 <strong>필터<sub>filter</sub></strong>라는 것은 다음을 만족한다는 것이다.</p>
+
+  <ol>
+    <li>$1 \in \mathcal{F}$</li>
+    <li>$x \in \mathcal{F}$이고 $x \leq y$라면, $y \in \mathcal{F}$이다.</li>
+    <li>$x, y \in \mathcal{F}$라면, 어떤 $z \in \mathcal{F}$가 존재하여 $z \leq x, z \leq y$이다.</li>
+  </ol>
+</blockquote>
+
+<p>필터에 대해서는 이미 이 블로그에서 여러 번 다루었는데, 필터의 핵심 성질은 3번이다. 즉, 필터의 임의의 두 원소는 공통 확장을 가진다. 이는 필터에 일종의 방향성을 준다. 위상수학에서는 이 방향성을 이용하여 필터를 점으로 수렴시키기도 하고, 모델론에서는 필터로부터 새로운 구조(초곱)를 구성하기도 한다. 이에 착안하여, 강제법은 필터로부터 새로운 집합론의 모델을 얻어낼 것이다.</p>
+
+<p>예를 들어 앞선 $\mathbb{P} = \mathrm{Fn}(\omega, \omega)$의 예시로 돌아가자면, 전함수<sub>total function</sub> $f: \omega \to \omega$에 대해 다음은 필터이다.</p>
+
+\[\mathcal{F}_f = \{ g \in \mathrm{Fn}(\omega, \omega) : f \leq g\}\]
+
+<p>특히, $\mathcal{F}_f$는 함수 $f$를 “표현”하는 필터라고 볼 수 있다. 구체적으로, 다음이 성립한다.</p>
+
+\[\bigcup \mathcal{F}_f = f\]
+
+<p>정리하자면, 부분함수<sub>partial function</sub>들의 순서로부터 필터를 정의하여 전함수를 얻을 수 있다. 이는 다음의 흥미로운 가능성을 시사한다. 집합론의 모델 $M$에 대해, $\mathbb{P}$는 $M$의 원소이지만, $\mathbb{P}$의 필터 $\mathcal{F}$와 $\bigcup \mathcal{F}$는 $M$의 원소가 아닐 수 있다. 그렇다면 $M$에 $\mathcal{F}$를 “추가”하여, 새로운 집합론의 모델을 얻어봄직하다. 실제로 이것이 강제법의 아이디어이다.</p>
+
+<p>조금 더 구체적으로 이후의 과정을 개괄해 보자. $M$이 가산 추이적인 $V$의 부분모델이라고 하자. 먼저 적절한 강제 부분순서집합 $\mathbb{P} \in M$과 필터 $\mathcal{F} \subseteq \mathbb{P}$를 정의할 것이다. 특히, $\mathcal{F}$와 $\mathbb{P}$가 특정 조건 — 구체적으로, $\mathcal{F}$는 <strong>제너릭</strong>이어야 하고 $\mathbb{P}$는 <strong>분리적</strong>이어야 한다 — 을 만족하게끔 정의하면 $\mathcal{F} \notin M$이 될 것이다. 이에 따라 $M$에 $\mathcal{F}$를 “추가”함으로써 새로운 집합론의 모델 $M[\mathcal{F}]$를 얻을 수 있다. 이는 체론에서 체 $F$에 원소 $a$를 추가하여 $F(a)$를 얻는 것과 개념적으로 비슷하다.</p>
+
+<p>물론 $M[\mathcal{F}]$가 집합론의 모델이기 위해서는, $M$에 $\mathcal{F}$뿐 아니라, $\mathcal{F}$와 $M$의 원소들의 집합 연산으로부터 얻어질 수 있는 모든 집합들 또한 추가해야 한다. 이 또한 체론에서 $F$에 $a$를 추가하기 위해서는 $a^2, a + 1, 3a$ 등도 함께 추가해줘야 하는 것과 비슷하다. 이 과정을 일률적으로 달성하기 위해 <strong>$\mathbb{P}$-이름</strong>이라는 개념을 도입할 것이다.</p>
+
+<h3 id="7-조밀성과-제너릭-필터">7. 조밀성과 제너릭 필터</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> $D \subseteq \mathbb{P}$가 다음을 만족할 때, $D$는 <strong>조밀<sub>dense</sub></strong>하다고 한다.</p>
+
+\[\forall x \in \mathbb{P} \; \exists y \in D : y \leq x\]
+</blockquote>
+
+<p>즉, $D$는 임의의 $x \in \mathbb{P}$보다 자세한 원소를 언제나 가지고 있다. 이는 마치 $A = \lbrace 0.9, 0.99, 0.999, …\rbrace $가 임의의 $x \in \mathbb{R}\setminus\lbrace 1\rbrace $보다 1에 가까운 원소를 언제나 가지고 있는 것과 비슷하다. 특히 $A$가 1 주변에서 조밀하다는 것을 생각해 보면, 위와 같은 이름이 붙은 이유를 이해할 수 있다.</p>
+
+<p>다시 $\mathbb{P} = \mathrm{Fn}(\omega, \omega)$의 예시로 돌아가자면, 임의의 $n \in \omega$에 대해 다음의 $D_n$는 조밀하다.</p>
+
+\[D_n = \{ g \in \mathrm{Fn}(\omega, \omega) : n \in \operatorname{dom}g\}\]
+
+<p>왜냐하면 임의의 부분함수는 정의역이 $n$을 포함하도록 확장될 수 있기 때문이다.</p>
+
+<p>한편 조밀한 $D$는 “흔한 성질”을 표현하는 것으로 이해될 수 있다. 예를 들어 앞서 정의한 $D_n$은, “정의역이 $n$을 포함함”이라는 성질을 표현하는데, 이는 “흔한” 성질이다. 왜냐하면 모든 부분함수는 정의역이 $n$을 포함하도록 확장될 수 있기 때문이다.</p>
+
+<p>직관적으로 생각했을 때, $\mathbb{P}$ 위의 필터 $\mathcal{F}$가 $M$에 없는 새로운 원소이기를 바란다면 $\mathcal{F}$는 <em>정의하기 어려워야</em> 한다. 만약 $\mathcal{F}$가 $\phi$로 정의된다면, $\exists! x \lnot\phi(x)$는 ZFC의 정리일 것이고, 이에 따라 이미 $\mathcal{F} \in M$일 것이기 때문이다. 그리고 $\mathcal{F}$가 정의하기 어렵다는 것은 $\mathcal{F}$가 <em>특출난 데가 없다</em>는 의미이다. 즉, $\mathcal{F}$는 <em>모든</em> 흔한 특징을 가져야 한다.</p>
+
+<p>이는 다음의 정의로 이어진다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $M$이 집합론의 추이적 모델이고, $\mathbb{P} \in M$이며, $G \subseteq \mathbb{P}$가 필터라고 하자 ($G \in M$일 필요는 없음). 임의의 $\mathbb{P}$의 조밀한 부분집합 $D \in M$에 대해 $D \cap \mathcal{F} \neq \varnothing$라면, $\mathcal{F}$가 <strong>$M$ 위에서 $\mathbb{P}$-제너릭<sub>generic</sub></strong>하다고 한다.</p>
+</blockquote>
+
+<p>여기서 $D \cap \mathcal{F} \neq \varnothing$은 직관적으로 $\mathcal{F}$가 $D$라는 성질을 가진다는 의미이다. 제너릭의 정의는 배경이 되는 집합론의 모델 $M$에 상대적임에 유의하라.</p>
+
+<p>구체적인 예시를 들어 보자. $\mathrm{id}:\omega \to \omega$가 항등함수라고 하자. 필터 $\mathcal{F}_{\mathrm{id}}$는 제너릭하지 않다. 왜냐하면</p>
+
+\[D = \{ f \in \mathrm{Fn}(\omega, \omega) \;|\; \exists n \in \operatorname{dom} f : f(n) \neq n \}\]
+
+<p>가 조밀함에도 불구하고 $D \cap \mathcal{F} = \varnothing$이기 때문이다. 이는 $\mathrm{id}$가 쉽게 정의 가능하며, $\mathrm{id} \in M$이라는 사실과 일맥상통한다.</p>
+
+<p>그렇다면 역으로, 제너릭 필터는 정말 $M$의 원소가 아닐까? 이를 보장하기 위해서는 한 가지 조건이 더 필요하다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $x, y \in \mathbb{P}$에 대해 $z \leq x, z \leq y$를 만족하는 $z \in \mathbb{P}$가 없다면 $x$와 $y$가 <strong>양립 불가능<sub>incompatible</sub></strong>하다고 하며, $x \perp y$라고 적는다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathbb{P}$가 <strong>분리적<sub>separative</sub></strong>이라는 것은, 임의의 $z \in \mathbb{P}$에 대해 어떤 $x \leq z, y \leq z$가 존재하여 $x \perp y$라는 것이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $M$이 집합론의 추이적 모델이라고 하자. $\mathbb{P} \in M$이 분리적이고 $G \subseteq \mathbb{P}$가 $M$ 위의 $\mathbb{P}$-제너릭 필터라면 $G \notin M$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $G \in M$이라고 하자. 그러면 $D = \mathbb{P} \setminus G$는 $M$의 원소이다. $D$가 조밀함을 보이자. 만약 $D$가 조밀하지 않다면 어떤 $x \in \mathbb{P}$가 존재하여 $y \leq x$라면 $y \notin D$이다. 즉, $y \in G$이다. $\mathbb{P}$가 분리적이므로, $y_1 \perp y_2$인 $y_1, y_2 \leq x$가 존재한다. 따라서 $y_1, y_2 \in G$이다. 필터의 정의에 의해 어떤 $z \in \mathbb{P}$가 존재하여 $z \leq y_1, y_2$이다. 그런데 이는 $y_1 \perp y_2$에 모순된다.</p>
+
+<p>따라서 $D$는 조밀하다. $G$는 제너릭하므로 $G \cap D \neq \varnothing$이어야 한다. 그런데 이는 $D$의 정의에 모순된다. 따라서 $G \notin M$이다. ■</p>
+
+<p>제너릭 필터의 특징상, 제너릭 필터의 예시를 구체적으로 구성하기는 쉽지 않다. 대신 다음의 정리가 제너릭 필터의 존재성을 보장해 준다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{C}$가 $\mathbb{P}$에서 조밀한 집합들의 모임이라고 하자. 필터 $G \subseteq \mathbb{P}$가 $\mathcal{C}$-제너릭하다는 것은, 임의의 $D \in \mathcal{C}$에 대해 $D \cap G \neq \varnothing$이라는 것이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{C}$가 $\mathbb{P}$에서 조밀한 집합들의 가산 모임이라면 $\mathcal{C}$-제너릭 필터가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathcal{C} = \lbrace  D_n \rbrace _{n \in \omega}$라고 하자. 먼저 $x_0 \in D_0$를 선택한다. $x_n \in D_n$이 선택되었을 때, $x_{n+1} \in D_{n + 1}$을 $x_{n + 1} \leq x_n$을 만족하도록 선택한다 ($D_{n + 1}$이 조밀하므로 그러한 $x_{n+1}$은 언제나 존재한다). $G = \lbrace  x_n \rbrace _{n \in \omega}$가 구하고자 하는 제너릭 필터이다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $M$이 가산 추이적 모델이라면 $M$ 위의 $\mathbb{P}$-제너릭 필터 $G$가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $M$이 가산이므로 $\mathcal{C} = \lbrace  D \in M : D \text{ is }\mathbb{P}\text{-dense}\rbrace $는 가산이다. ■</p>
+
+<p>따라서 가산 추이적 모델에서는 언제나 $\mathbb{P}$-제너릭 필터를 상정할 수 있다. 이것이 도입부에서 가산성이 중요하다고 말한 이유이다.</p>
+
+<h3 id="여담-8-마틴-공리">(여담) 8. 마틴 공리</h3>
+
+<p>$\mathcal{C}$가 가산이 아닐 때에는 $\mathcal{C}$-제너릭 필터가 존재하지 않을 수 있다. 그러나 $\mathbb{P}$의 크기에 제한을 건다면, 가능한 조밀 집합들의 가능성이 한정되고, 이에 따라 비가산인 $\mathcal{C}$ 또한 제너릭 필터를 가지게 될 수 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathbb{P}$의 부분집합 $A$가 <strong>반체인<sub>antichain</sub></strong>이라는 것은, 임의의 $x, y \in A$에 대해 $x \perp y$라는 것이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathbb{P}$가 <strong>가산 체인 성질<sub>countable chain condition</sub></strong>을 가진다는 것은 $\mathbb{P}$의 반체인이 기껏 가산이라는 것이다.</p>
+</blockquote>
+
+<p>반체인과 가산 체인 성질에 대해서는 <a href="https://dimenerno.github.io/2025/12/26/suslin">이 글</a>에서 다룬 바 있는데, 그때 가산 체인 성질이 순서 집합(트리)의 “너비”를 제한한다고 설명했다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\kappa$가  기수라고 하자. $\mathrm{MA}_\kappa$를 다음 진술로 정의한다: $\mathbb{P}$가 가산 체인 성질을 가지고, $\mathcal{C}$가 $\mathbb{P}$-조밀한 집합들의 모임이며, $|\mathcal{C}| \leq \kappa$라면, $\mathcal{C}$-제너릭 필터가 존재한다.</p>
+</blockquote>
+
+<p>앞선 정리에 의해 $\mathrm{MA}_{\aleph_0}$는 자명하게 성립한다. 한편 $\mathrm{MA}_{\kappa}$는 $\kappa &lt; 2^{\aleph_0}$를 시사하기 때문에 $\kappa \geq 2^{\aleph_0}$에 대해 $\mathrm{MA}_\kappa$는 성립하지 않는다.</p>
+
+<blockquote>
+  <p><strong>마틴 공리<sub>Martin’s axiom</sub>.</strong> 모든 $\kappa &lt; 2^{\aleph_0}$에 대해  $\mathrm{MA}_{\kappa}$가 성립한다.</p>
+</blockquote>
+
+<p>마틴 공리는 ZFC와 독립적임이 알려져 있다. 짐작할 수 있다시피, 마틴 공리를 가정하면 제너릭 필터를 쉽게 얻을 수 있으므로 강제법을 좀 더 자유롭게 쓸 수 있다. 다만 연속체 가설의 무모순성을 증명할 때는 마틴 공리까지 필요하지는 않다.</p>
+
+<h3 id="9-mathbbp-이름">9. $\mathbb{P}$-이름</h3>
+
+<p>$\mathbb{P}$가 분리적이고 $G$가 $\mathbb{P}$-제너릭할 때 $G \notin M$임을 보았다. 따라서 $M$에서는 $G$에 관해 진술할 수 있는 방법이 없는 것으로 보인다. 그러나 굉장히 기발한 트릭을 사용하면 $M$에서도 어느 정도 $G$에 관해 진술할 수 있다. 사실 이것이 강제법의 천재성이다.</p>
+
+<p>아이디어는 다음과 같다. <a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">이 글</a>에서 필터는 “참”인 원소들의 모임으로 생각할 수 있다고 설명했다. 즉, $\mathbb{P}$를 사건들의 모임으로 본다면, $\mathcal{F}$는 실제로 일어난 사건들의 모임으로 생각할 수 있다.</p>
+
+<p>이에 착안해, $\mathbb{P}$를 이용하여 <em>원소를 확률적으로 가지는 집합</em>이라는 개념을 떠올릴 수 있다. 예를 들어 $p \in \mathbb{P}$가 실제로 일어난다면 $a$를 원소로 가지는 집합 $X$는 다음과 같이 적는 것이다.</p>
+
+\[(a, p) \in X\]
+
+<p>필터 $G$는 실제로 일어난 사건들이 무엇인지를 명시한다. 만약 $p \in G$라면, $X$는 실제로 $a$를 원소로 가진다. 이를 다음과 같이 표현하자.</p>
+
+\[p \in G \iff a \in X_G\]
+
+<p>비유하자면, $X$는 양자 중첩 상태이고 $X_G$은 관측 후의 상태이다.</p>
+
+<p>그런데 $X$와 같은 확률적 집합이 또다른 집합의 원소일 수도 있을 것이다. 거꾸로 말해, $(a, p) \in X$에서 $a$ 또한 확률적 집합일 수도 있다. 따라서 다음과 같이 적는 것이 정확하다.</p>
+
+\[p \in G \iff a_G \in X_G\]
+
+<p>이상의 논의를 엄밀하게 정리하면 $\mathbb{P}$-이름의 정의를 얻는다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 다음 꼴의 집합을 <strong>$\mathbb{P}$-이름<sub>$\mathbb{P}$-name</sub></strong>이라고 한다.</p>
+
+\[\sigma = \{ (\tau, p) : p \in \mathbb{P}, \tau \text{ is a }\mathbb{P}\text{-name}\}\]
+
+  <p>$\mathbb{P}$-이름들 중 $M$에 속하는 이름들의 집합을 $M^\mathbb{P}$와 같이 적는다.</p>
+</blockquote>
+
+<p>정의에 의해 $M^\mathbb{P} \subseteq M$이지만, $M^\mathbb{P} \in M$은 보장되지 않음에 유의하라.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $G$가 $\mathbb{P}$ 위의 필터이고 $\sigma$가 $\mathbb{P}$-이름일 때, $G$에서 $\sigma$의 <strong>평가<sub>valuation</sub></strong> $\sigma_G$를 다음과 같이 정의한다.</p>
+
+\[\sigma_G = \{ \tau_G \;|\; \exists p \in G :(\tau, p) \in \sigma \}\]
+</blockquote>
+
+<p>위 정의는 순환 정의처럼 보이지만, 정확한 재귀 정의이다.[^3] 일례로 $\varnothing$이 $\mathbb{P}$-이름이며, 이에 따라 임의의 $p \in \mathbb{P}$에 대해 $\sigma = \lbrace  (\varnothing, p) \rbrace $ 또한 $\mathbb{P}$-이름이다. 특히,</p>
+
+\[p \in G \iff \sigma_G = \{\varnothing \}\]
+
+<p>이다. 조금 더 복잡한 예시로, $p, q, r \in \mathbb{P}$일 때</p>
+
+\[\tau = \bigg\{ \Big(\big\{ ( \{ (\varnothing, r) \}, p), (\varnothing, q) \big\}, q\Big), (\varnothing, r) \bigg\}\]
+
+<p>또한 $\mathbb{P}$-이름이며, 특히 $q, r \in G, p \notin G$일 때 다음과 같음을 확인하라.</p>
+
+\[\tau_G = \{\{ \varnothing\}, \varnothing\}\]
+
+<p>이쯤에서 다음의 표기법을 도입하자.</p>
+
+\[\check{x} = \{(y, 1): y \in x\}\]
+
+<p>$1$은 $\mathbb{P}$의 극대 원소였음에 유의하라. 이로부터, <em>임의의</em> 필터 $G$에 대해 $\check{x}_G = x$임을 알 수 있다. 즉, $\check{x}$는 $x$의 “이름표”이다.</p>
+
+<p>앞서 $\mathbb{P}$-이름을 사용하면 $M \notin G$임에도 $M$ 내에서 $G$에 관해 어느 정도 진술할 수 있다고 했다. 이는 다음의 $\mathbb{P}$-이름이 $G$의 “이름표”이기 때문이다.</p>
+
+\[\Gamma = \{ (\check{p}, p) : p \in \mathbb{P} \}\]
+
+<p>$\Gamma$가 $G$의 이름표라는 말의 의미는, $\Gamma_G = G$가 성립한다는 것이다 (직접 확인해 보라). 그리고 이 점이 중요한데, $\mathbb{P} \in M$이므로 $\Gamma \in M$이다. 즉, $G$는 $M$의 원소가 아닐지언정 $G$의 이름표는 $M$의 원소인 것이다.</p>
+
+<p>이제 다음과 같이 $M[G]$를 정의하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong></p>
+
+\[M[G] = \{\sigma_G : \sigma \in M^\mathbb{P} \}\]
+</blockquote>
+
+<p>$x \in M$일 때 $\check{x}_G = x$이므로 $M \subset M[G]$이며, $\Gamma_G = G$이므로 $G \in M[G]$이다.</p>
+
+<p>유추했겠다시피, 바로 이 $M[G]$가 우리가 얻고자 했던 “새로운” 집합론의 모델이다. 즉, $M$이 집합론의 추이적 모델일 때 $M[G]$ 또한 집합론의 추이적 모델이다. 이 사실을 증명하기 위해, 우선 강제 관계를 정의하도록 하자.</p>
+
+<h3 id="10-강제-관계">10. 강제 관계</h3>
+
+<p>$G$가 어떤 원소를 가지느냐에 따라 $M[G]$의 생김새는 크게 달라진다. 다시 앞선 $\mathrm{Fn}(\omega, \omega)$의 예시로 돌아가자. 앞서 $f: \omega \to \omega$가 전함수일 때, 필터 $\mathcal{F}_f$가 존재하여 $\bigcup \mathcal{F}_f = f$라고 했다. 이의 역도 어느 정도 성립한다. 만약 $G$가 $\mathrm{Fn}(\omega, \omega)$의 제너릭 필터라면, $\bigcup G: \omega \to \omega$는 전함수이다. 추가로 $(1, 2) \in G$라면, $\bigcup G : 1 \mapsto 2$이다. 이를 다음과 같이 표현해 봄직하다.</p>
+
+\[(1, 2) \text{ forces } \Big(\bigcup G \Big)(1) = 2\]
+
+<p>그런데 우리는 위 진술이 $M$ 안에서도 표현 가능하기를 바라기 때문에, $\mathbb{P}$-이름을 대신 사용할 것이다. 즉,</p>
+
+\[(1, 2) \text{ forces } \Big(\bigcup \Gamma \Big)(\check{1}) = \check{2}\]
+
+<p>이를 엄밀히 정의하면 강제 관계를 얻는다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\phi(x_1, \dots, x_n)$가 $n$개의 자유변수를 가지는 명제라고 하자. 임의의 $\tau_1, \dots, \tau_n \in M^\mathbb{P}$와 $p \in \mathbb{P}$에 대해,</p>
+
+\[p \Vdash \phi(\tau_1, \dots, \tau_n)\]
+
+  <p>을 다음으로 정의한다: 임의의 $M$ 위의 $\mathbb{P}$-제너릭한 필터 $G$에 대해,</p>
+
+\[p \in G \rightarrow \phi^{M[G]}\big((\tau_1)_G, \dots, (\tau_n)_G\big)\]
+</blockquote>
+
+<p>(이쯤에서 명제의 성립은 $V$를 기준으로 한다는 사실을 리마인드하는 것이 좋겠다)</p>
+
+<p>$\Vdash$는 forces로 읽는다.</p>
+
+<p>예시로, 다음이 성립한다.</p>
+
+\[(1, 2) \Vdash \Big(\bigcup \Gamma \Big)(\check{1}) = \check{2}\]
+
+\[\varnothing \Vdash \bigcup \Gamma \text{ is a function}\]
+
+<h3 id="11-강제법의-기본-정리">11. 강제법의 기본 정리</h3>
+
+<p>이제 우리는 강제법의 핵심이라고 부를 수 있는 정리에 다다랐다. 안타깝게도 이 정리의 증명은 필자도 아직 공부 중이기에 생략하지만, 관심 있는 독자는 Kunen (1980)을 참고하기를 바란다 (제1정리와 제2정리는 7장, Theorem 3.6에서 등장한다).</p>
+
+<blockquote>
+  <p><strong>강제법 제1정리.</strong> $\mathbb{P}$가 주어졌을 때, $M$ 내에서 정의 가능한 관계 $\Vdash^\ast$가 존재하여, 다음이 성립한다: 임의의 명제 $\phi$와 $\mathbb{P}$-이름 $\tau_1, \dots, \tau_n$이 대해,</p>
+
+\[p \Vdash \phi(\tau_1, \dots, \tau_n) \longleftrightarrow \Big( p \Vdash^* \phi(\tau_1, \dots, \tau_n) \Big)^M\]
+</blockquote>
+
+<p>즉, $M$ 내부에서도 강제 관계 $\Vdash$를 정확하게 흉내낼 수 있다. 또다른 중요한 정리는 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>강제법 제2정리.</strong> 임의의 명제 $\phi$와 $\mathbb{P}$-이름 $\tau_1, \dots, \tau_n$이 대해,</p>
+
+\[\bigg( \phi\Big((\tau_1)_G, \dots, (\tau_n)_G \Big) \bigg)^{M[G]} \longleftrightarrow \;\;\exists p \in G : p \Vdash \phi(\tau_1, \dots, \tau_n)\]
+</blockquote>
+
+<p>즉, 만약 $\phi(\vec{\tau}_G)$가 $M[G]$에서 참이라면, 이는 $\phi(\vec{\tau})$를 강제하는 $p$가 $G$에 있기 때문이다. 직관적으로 이는 다음과 같이 이해할 수 있다. $G$가 제너릭하다는 것은 $G$가 어떠한 우연성이나 특이점 없이 극히 평범하다는 의미이므로, 만약 $M[G]$가 $M$에서는 만족되지 않는 명제 $\phi$를 새롭게 만족하게 되었다면, 이는 외부의 우연에 의해서가 아닌 $G$ 내부 조건에 의한 것이어야 한다.</p>
+
+<p>제1정리와 제2정리로부터, 다음이 얻어진다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $M$이 집합론의 추이적 모델이라면, $M[G]$ 또한 집합론의 추이적 모델이다.</p>
+</blockquote>
+
+<p>(이 증명은 필자가 스스로 끄적여 본 것이기 때문에 틀릴 수도 있다.)</p>
+
+<p><strong>증명.</strong> 먼저 추이성을 증명하자. $x \in M[G]$이고, $y \in x$라고 하자. $y \in M[G]$를 보여야 한다.</p>
+
+<p>$M[G]$의 정의에 의해 어떤 $\sigma \in M^{\mathbb{P}}$가 있어 $x = \sigma_G$이다. 따라서 $y \in x$로부터 다음을 알 수 있다: 어떤 $\mathbb{P}$-이름 $\tau$와 $p \in G$가 존재하여 $(\tau, p) \in \sigma$이고 $y = \tau_G$이다. $M$이 추이적이므로,</p>
+
+\[(\tau, p) \in \sigma \in M\]
+
+<p>으로부터 $(\tau, p) \in M$임을, 즉 $\tau \in M$임을 알 수 있다. 따라서 $\tau_G = y \in M[G]$이다.</p>
+
+<p>이제 $M[G]$가 ZFC의 모델임을 증명하자. $\theta$가 ZFC의 공리일 때, $\theta^{M[G]}$가 성립함을 보이면 된다. 예를 들어 $\theta$가 $\phi(x, \vec{c})$에 대한 분리 공리라고 하자 ($\vec{c}$는 $M[G]$의 원소들). 즉,</p>
+
+\[\theta \Leftrightarrow \forall x \;\exists y : y = \{z \in x : \phi(z, \vec{c})\}\]
+
+<p>이며,</p>
+
+\[\theta \Leftrightarrow \forall x \in M[G] \;\exists y\in M[G] : y = \{z \in x : \phi^{M[G]}(z, \vec{c})\}\]
+
+<p>이다.</p>
+
+<p>$\forall$의 정의에 의해 어떤 $x = a$에 대해 $\theta^{M[G]}$가 성립함을 보이면 충분하다.</p>
+
+\[y = \{ z \in \sigma_G : \phi^{M[G]}(z, \vec{c}) \} \in M[G]\]
+
+<p>$M[G]$의 정의에 의해 어떤 $\vec{\tau} \in M^{\mathbb{P}}$가 존재하여 $\vec{c} = \vec{\tau}_G$이다. 이로부터 다음과 같이 정리할 수 있다.</p>
+
+\[y = \Big\{ \pi_G : \big( \exists p\in G\; (\pi, p) \in \sigma \big)\land\phi^{M[G]}(\pi_G, \vec{\tau}_G) \Big\}\]
+
+<p>제2기본정리에 의해,</p>
+
+\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G:p\Vdash \phi(\pi, \vec{\tau})\]
+
+<p>제1기본정리에 의해,</p>
+
+\[q\Vdash \phi(\pi, \vec{\tau}) \longleftrightarrow \Big( q \Vdash^* \phi(\pi, \vec{\tau}) \Big)^M\]
+
+<p>따라서,</p>
+
+\[y = \Big\{ \pi_G : \big( \exists p\in G\; (\pi, p) \in \sigma \big)\land \big(\exists q \in G\; (q \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\}\]
+
+<p>여기서 다음의 보조정리를 사용하자.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $\sigma \in M^{\mathbb{P}}$일 때, 다음과 같이 정의한다.</p>
+
+\[\overline{\sigma} = \Big\{ (\tau, q) : \exists p \in \mathbb{P} \; \Big( (\tau, p) \in \sigma \land q \leq p \Big) \Big\}\]
+
+  <p>이때, $\sigma_G = \overline{\sigma}_G$이며, $\overline{\sigma} \in M^{\mathbb{P}}$이다.</p>
+</blockquote>
+
+<p>증명은 필터의 정의로부터 거의 자명하다. 보조정리와, 필터의 방향성으로부터 다음을 얻는다 $(r \leq p, q)$.</p>
+
+\[y = \Big\{ \pi_G : \exists r\in G\; \big( (\pi, r) \in \overline{\sigma} \land (r \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\}\]
+
+<p>따라서,</p>
+
+\[\check{y} = \Big\{ (\pi, r) \in \overline{\sigma} : \big(r \Vdash^* \phi(\pi, \vec{\tau})\big)^M \  \Big\}\]
+
+<p>일 때 $\check{y}_G = y$이다. 그런데 $\check{y}$는 $M$에서 $\sigma$를 $p \Vdash^\ast \phi(\pi, \vec{\tau})$에 대해 분리한 집합이고, $M$은 분리 공리를 만족하므로, $\hat{y} \in M$이며, 이에 따라 $y \in M[G]$이다.</p>
+
+<p>나머지 공리에 대해서도 비슷하게 증명할 수 있다. ■</p>
+
+<hr />
+
+<p>이로써 강제 관계를 정의하고, 그 성질을 살펴본 뒤, 제너릭 필터로부터 주어지는 $M[G]$가 집합론의 모델임을 간단히 증명해 보았다. 다음 글에서는 이 글에서 얻은 결과들을 이용하여 연속체 가설의 무모순성을 증명할 것이다.</p>
+
+<h4 id="reference">Reference</h4>
+<ul>
+  <li>전한울, <em>What is forcing?</em> (2015)</li>
+  <li>K. Kunen, <em>Set theory: an introduction to independence proofs</em> (1980)</li>
+  <li>K. Hrbacek &amp; T. Jech, <em>Introduction to Set Theory</em>, 3rd edition (1999)</li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>$y = \mathcal{P}(x)$의 정의는 $\forall z \subseteq x (z \in y) \land \forall z \in y (z \subseteq x)$이고, $y \subseteq x$의 정의는 $\forall z \in y (z \in x)$이다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>프레게-러셀 식의 기술주의가 떠오르는 대목이다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2026/01/28/forcing/en"> Introduction to Forcing </a>
+      </h1>
+    <span class="post-date">28 Jan 2026</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>Gödel, in 1938, introduced the axiom of constructibility and demonstrated that the negation of the continuum hypothesis is unprovable in ZFC. This is because the constructible universe $L$ is a model of ZFC in which the continuum hypothesis holds. Later, in 1963, Cohen developed forcing and discovered a model of ZFC in which the continuum hypothesis does not hold. This established the independence of the continuum hypothesis from ZFC. This post outlines Cohen’s forcing and the proof of the independence of the continuum hypothesis.</p>
+
+<p>It goes without saying that this post assumes the consistency of ZFC.</p>
+
+<h3 id="1-countable-transitive-models">1. Countable Transitive Models</h3>
+
+<p>Let $V$ be the cumulative hierarchy. Then $(V, \in)$ is a “model” of ZFC.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> There exists a submodel $(M, \in)$ of $V$ satisfying the following properties:</p>
+
+  <ol>
+    <li>$M$ is a model of ZFC.</li>
+    <li>$M$ is countable.</li>
+    <li>$M$ is transitive. That is, for any $x \in M$ and $y \in V$,</li>
+  </ol>
+
+\[V \vDash y \in x \implies V \vDash y \in M\]
+</blockquote>
+
+<p><strong>Proof.</strong> The following theorem is used:</p>
+
+<blockquote>
+  <p><strong>Mostowski Collapse Lemma.</strong> Let $X$ be a class with a binary relation $R$ satisfying the following:</p>
+
+  <ol>
+    <li><strong>Smallness:</strong> $R^{-1}(x) = \lbrace y \in X : yRx \rbrace$ is a set.</li>
+    <li><strong>Well-foundedness:</strong> Any non-empty subset $S$ of $X$ has an $R$-minimal element.</li>
+    <li><strong>Extensionality:</strong> $x = y$ if and only if $R^{-1}(x) = R^{-1}(y)$.</li>
+  </ol>
+
+  <p>Then there exists a unique transitive model $(M, \in)$ of $V$ such that $(M, \in)$ is isomorphic to $(X, R)$.</p>
+</blockquote>
+
+<p>The proof of this lemma is relatively straightforward but lengthy, so refer to Chapter 14 of Hrbacek &amp; Jech instead.</p>
+
+<p>By the downward Löwenheim-Skolem theorem, there exists a countable submodel $(N, \in)$ of $(V, \in)$. Since smallness, well-foundedness, and extensionality are all expressible in first-order logic, it follows that $(N, \in)$ satisfies the conditions of the Mostowski Collapse Lemma if $(V, \in)$ does. Hence, there exists a transitive model $(M, \in)$ isomorphic to $(N, \in)$. Since $N$ and $M$ are isomorphic, $M$ is countable. ■</p>
+
+<p>Thus, $V$ has a countable transitive submodel $M$. The countability and transitivity of $M$ will play an important role in forcing.</p>
+
+<h3 id="2-on-notation">2. On Notation</h3>
+
+<p>Earlier, we referred to $V$ as a “model” with quotation marks because, strictly speaking, a model must be a set. That is, $V$ is too large to be a model. Therefore, the Löwenheim-Skolem theorem cannot be applied to $V$ directly.</p>
+
+<p>However, this issue can be resolved by replacing $V$ with $V_\kappa$ (where $\kappa$ is an inaccessible cardinal) or with another set-model of ZFC (guaranteed by Gödel’s completeness theorem, assuming the consistency of ZFC). For convenience, this post will treat $V$ as if it were a model (set), but readers uncomfortable with this can replace every occurrence of $V$ in this post with $V_\kappa$.</p>
+
+<p>Additionally, the following conventions will be used:</p>
+
+<blockquote>
+  <p><strong>Conventions.</strong></p>
+
+  <ol>
+    <li>“Model of set theory” will be used synonymously with “model of ZFC.”</li>
+    <li>$V \vDash \phi$ will be abbreviated as $\phi$. <strong>That is, the background of all statements is $V$.</strong></li>
+  </ol>
+</blockquote>
+
+<h3 id="3-relativisation">3. Relativisation</h3>
+
+<p>Let $M$ be a transitive model of set theory. Since ZFC is a theory in the language of a single binary relation $\in$, the following is guaranteed for any $x, y \in M$ (note that, by the earlier convention, $x \in y$ on the right-hand side means $V \vDash x \in y$):</p>
+
+\[M \vDash x \in y \iff x \in y\]
+
+<p>However, this does not automatically hold for other relations. For example, for $x, z \in M$,</p>
+
+\[M \vDash y = \mathcal{P}(x)\]
+
+<p>but</p>
+
+\[y \neq \mathcal{P}(x)\]
+
+<p>may hold.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> Therefore, it is necessary to distinguish between a statement $\phi$ in $V$ and the statement $\phi$ as viewed “internally” in $M$. To this end, we define the following:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a statement $\phi$, the relativisation of $\phi$ to $M$, denoted $\phi^M$, is defined recursively as follows:</p>
+
+  <ol>
+    <li>For $x, y \in M$, $(x \in y)^M$ is $x \in y$.</li>
+    <li>For $x, y \in M$, $(x = y)^M$ is $x = y$.</li>
+    <li>$(\phi \land \psi)^M$ is $\phi^M \land \psi^M$.</li>
+    <li>$(\phi \lor \psi)^M$ is $\phi^M \lor \psi^M$.</li>
+    <li>$(\lnot \phi)^M$ is $\lnot \phi^M$.</li>
+    <li>$(\forall x:\phi)^M$ is $\forall x \in M: \phi^M$.</li>
+    <li>$(\exists x:\phi)^M$ is $\exists x \in M : \phi^M$.</li>
+  </ol>
+</blockquote>
+
+<p>In other words, a statement relativised to $M$ is obtained by restricting the quantifiers in the original statement to $M$.</p>
+
+<blockquote>
+  <p><strong>Remark.</strong> By definition, $\phi^M \iff M \vDash \phi$. This may raise the question: why define relativisation when $\vDash$ already exists? The reason is that $M \vDash \phi$ is a meta-statement in model theory, whereas $\phi^M$ is a statement in set theory. That is, relativisation allows the fact that “$\phi$ holds in $M$” to be expressed within $V$. This will become important when defining the forcing relation $\Vdash$.</p>
+</blockquote>
+
+<h3 id="4-absoluteness">4. Absoluteness</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $M, N$ be transitive “models” of set theory, and suppose $M$ is a sub”model” of $N$. Let $\phi$ be an $n$-ary statement. If, for any $x_1, \dots, x_n \in M$,</p>
+
+\[\phi^M(x_1, \dots x_n) \leftrightarrow \phi^N(x_1, \dots, x_n),\]
+
+  <p>then $\phi$ is said to be <strong>absolute</strong> between $M$ and $N$. If $N = V$, the reference to $V$ is omitted, and $\phi$ is said to be absolute over $M$.</p>
+</blockquote>
+
+<p>That is, a statement $\phi$ is absolute over $M$ if $\phi$ as viewed internally in $M$ coincides with $\phi$ as viewed externally in $V$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A statement is $\Delta_0$ if all its quantifiers are bounded, such as $\exists x \in A$ and $\forall x \in A$.</p>
+</blockquote>
+
+<p>For example, the definition of $y \subseteq x$ is</p>
+
+\[\forall z \in y (z \in x),\]
+
+<p>which is a $\Delta_0$ statement because $\forall z$ is bounded by $y$.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>The composition of absolute statements is absolute.</li>
+    <li>$\Delta_0$ statements are absolute between transitive models.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> By induction on statements. ■</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> The following statements are absolute between transitive models:</p>
+
+  <ol>
+    <li>$y \subseteq x$</li>
+    <li>$f$ is a function, $f$ is surjective, $f$ is injective</li>
+  </ol>
+</blockquote>
+
+<p>The notion of absoluteness can be extended from statements to sets. For example, $\omega$ is defined as the smallest inductive set. Specifically,</p>
+
+\[\mathrm{IsInductive}(x) : 0 \in x \land \forall y( y \in x \rightarrow y\cup \{y\} \in x)\]
+
+<p>and</p>
+
+\[\mathrm{IsOmega}(x) : \mathrm{IsInductive}(x) \land \forall z\Big(\mathrm{IsInductive}(z) \rightarrow z \subseteq x \Big).\]
+
+<p>It can be shown that there exists a unique set satisfying $\mathrm{IsOmega}$, which is defined as $\omega$.</p>
+
+<p>If the definition of a set $s$ is given by a statement $\phi$,<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> then $s$ is said to be absolute between $M$ and $N$ if $\phi$ is absolute between $M$ and $N$. For example, by the corollary above, $\mathrm{IsOmega}$ is absolute between transitive models. Hence, $\omega$ is absolute between transitive models.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> The following sets are absolute between transitive models:</p>
+
+  <ol>
+    <li>$\varnothing$</li>
+    <li>$x \times y, \lbrace x, y \rbrace, (x, y)$</li>
+    <li>$\bigcup x, \bigcap x$</li>
+    <li>$\operatorname{dom} x$ when $x$ is a set of ordered pairs</li>
+    <li>$\omega\; (=\aleph_0)$</li>
+  </ol>
+</blockquote>
+
+<p>Here are some examples nof non-absoluteness.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The following propositions/sets are not absolute between transitive models:</p>
+
+  <ol>
+    <li>$\mathcal{P}(x)$</li>
+    <li>$x$ is countable.</li>
+    <li>$x$ is a cardinal.</li>
+    <li>$\aleph_n \; (n &gt; 0)$</li>
+  </ol>
+</blockquote>
+
+<p>Let us briefly examine why $\mathcal{P}(x)$ is not absolute. The definition of $\mathcal{P}(x)$ is as follows:</p>
+
+\[y = \mathcal{P}(x) : \underbrace{\forall z \subseteq x (z \in y)}_{(1)} \land \underbrace{\forall z \in y (z \subseteq x)}_{(2)}\]
+
+<p>While (2) is $\Delta_0$ and thus unproblematic, (1) is the issue. Although (1) appears to be a bounded quantifier, it can be expanded as follows:</p>
+
+\[(1) : \forall z (z \subseteq x \rightarrow z \in y)\]
+
+<p>This shows that the quantifier in (1) is unbounded. Therefore, $\mathcal{P}(x)$ is not $\Delta_0$ and, indeed, is not absolute. Similarly, it can be verified that 2, 3, and 4 are also not expressible as $\Delta_0$ statements.</p>
+
+<h3 id="5-forcing-posets">5. Forcing Posets</h3>
+
+<p>We now introduce terminology directly related to forcing.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> $(\mathbb{P}, \leq, 1)$ is a forcing poset if $(\mathbb{P}, \leq)$ is a partially ordered set with $1$ as its greatest element.</p>
+</blockquote>
+
+<p>In the context of forcing, $p \leq q$ is typically interpreted as “$p$ is more detailed than $q$,” “$p$ is stricter,” “$p$ is more specific,” or “$p$ is less likely to occur.” Alternatively, $p$ is an “extension” of $q$. For example:</p>
+
+<ul>
+  <li>$p$: The event that the result of rolling a die is an even number less than or equal to 4.</li>
+  <li>$q$: The event that the result of rolling a die is an even number.</li>
+</ul>
+
+<p>Here, $p$ is more detailed, stricter, and less likely to occur than $q$. Moreover, $p$ is an extension of $q$ since $p$ imposes additional conditions on $q$. Thus, it is natural to define the order $p \leq q$ in the context of forcing.</p>
+
+<p>A more mathematical example is given by:</p>
+
+\[\mathrm{Fn}(\omega, \omega) = \{ f \; | \; f : \omega \to \omega \text{ is a partial function with finite domain}\}\]
+
+<p>with the following order:</p>
+
+\[f \leq g \iff f|_{\operatorname{dom}g} = g\]
+
+<p>For instance, $\lbrace (0, 1), (1, 2) \rbrace  \leq \lbrace  (1, 2) \rbrace $. That is, $f \leq g$ means that $f$ is a more detailed function than $g$. Alternatively, $f$ is an extension of $g$. Since $\mathrm{Fn}(\omega, \omega)$ has $\varnothing$ as its greatest element, $\mathrm{Fn}(\omega, \omega)$ is a forcing poset.</p>
+
+<p>Unless otherwise stated, $\mathbb{P}$ will be assumed to be a forcing poset.</p>
+
+<h3 id="6-filters">6. Filters</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> A subset $\mathcal{F} \subseteq \mathbb{P}$ is a <strong>filter</strong> on $\mathbb{P}$ if it satisfies the following:</p>
+
+  <ol>
+    <li>$1 \in \mathcal{F}$.</li>
+    <li>If $x \in \mathcal{F}$ and $x \leq y$, then $y \in \mathcal{F}$.</li>
+    <li>If $x, y \in \mathcal{F}$, then there exists $z \in \mathcal{F}$ such that $z \leq x$ and $z \leq y$.</li>
+  </ol>
+</blockquote>
+
+<p>Filters have been discussed multiple times on this blog, and their key property is condition 3. That is, any two elements of a filter have a common extension. This property gives filters a certain “directedness.” In topology, this directedness is used to make filters converge to a point, and in model theory, filters are used to construct new structures (ultraproducts). Inspired by this, forcing uses filters to construct new models of set theory.</p>
+
+<p>For example, consider the earlier example $\mathbb{P} = \mathrm{Fn}(\omega, \omega)$. For a total function $f: \omega \to \omega$, the following is a filter:</p>
+
+\[\mathcal{F}_f = \{ g \in \mathrm{Fn}(\omega, \omega) : f \leq g\}\]
+
+<p>In particular, $\mathcal{F}_f$ can be thought of as the filter that “represents” the function $f$. Specifically, the following holds:</p>
+
+\[\bigcup \mathcal{F}_f = f\]
+
+<p>In summary, a total function can be obtained from the order of partial functions by defining a filter. This suggests an intriguing possibility: for a model of set theory $M$, $\mathbb{P}$ may be an element of $M$, but the filter $\mathcal{F}$ and $\bigcup \mathcal{F}$ may not be elements of $M$. In that case, one might consider “adding” $\mathcal{F}$ to $M$ to obtain a new model of set theory. This is, in essence, the idea behind forcing.</p>
+
+<p>To elaborate, suppose $M$ is a countable transitive submodel of $V$. We will define a suitable forcing poset $\mathbb{P} \in M$ and a filter $\mathcal{F} \subseteq \mathbb{P}$. In particular, $\mathcal{F}$ will be defined to satisfy certain conditions — specifically, $\mathcal{F}$ must be <strong>generic</strong>, and $\mathbb{P}$ must be <strong>separative</strong> — ensuring that $\mathcal{F} \notin M$. By “adding” $\mathcal{F}$ to $M$, we obtain a new model of set theory $M[\mathcal{F}]$. This is conceptually similar to adjoining an element $a$ to a field $F$ to obtain $F(a)$.</p>
+
+<p>Of course, for $M[\mathcal{F}]$ to be a model of set theory, we must add not only $\mathcal{F}$ to $M$ but also all sets that can be obtained from $\mathcal{F}$ and the elements of $M$ through set operations. This is analogous to adjoining $a^2, a + 1, 3a$, etc., when adjoining $a$ to a field $F$. To achieve this systematically, we will introduce the concept of <strong>$\mathbb{P}$-names</strong>.</p>
+
+<h3 id="7-denseness-and-generic-filters">7. Denseness and Generic Filters</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> A subset $D \subseteq \mathbb{P}$ is <strong>dense</strong> if the following holds:</p>
+
+\[\forall x \in \mathbb{P} \; \exists y \in D : y \leq x\]
+</blockquote>
+
+<p>That is, $D$ always contains an element more detailed than any given $x \in \mathbb{P}$. This is analogous to the set $A = \lbrace 0.9, 0.99, 0.999, …\rbrace $ being “dense” around 1, as $A$ always contains elements closer to 1 than any given $x \in \mathbb{R}\setminus\lbrace 1\rbrace $.</p>
+
+<p>Returning to the example $\mathbb{P} = \mathrm{Fn}(\omega, \omega)$, for any $n \in \omega$, the following $D_n$ is dense:</p>
+
+\[D_n = \{ g \in \mathrm{Fn}(\omega, \omega) : n \in \operatorname{dom}g\}\]
+
+<p>This is because any partial function can be extended to include $n$ in its domain.</p>
+
+<p>A dense set $D$ can be understood as representing a “common property.” For instance, the earlier $D_n$ represents the property “having $n$ in the domain,” which is a “common” property since any partial function can be extended to have $n$ in its domain.</p>
+
+<p>Intuitively, if we want a filter $\mathcal{F}$ on $\mathbb{P}$ to be a new element not in $M$, $\mathcal{F}$ must be <em>hard to define</em>. If $\mathcal{F}$ were definable by some $\phi$, then $\exists! x \lnot\phi(x)$ would be a theorem of ZFC, implying $\mathcal{F} \in M$. The difficulty in defining $\mathcal{F}$ means that $\mathcal{F}$ must <em>lack any special characteristics</em>. In other words, $\mathcal{F}$ must satisfy <em>all</em> common properties.</p>
+
+<p>This leads to the following definition:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $M$ be a transitive model of set theory, $\mathbb{P} \in M$, and $G \subseteq \mathbb{P}$ a filter (not necessarily in $M$). If $G \cap D \neq \varnothing$ for every dense subset $D \in M$ of $\mathbb{P}$, then $G$ is said to be <strong>$\mathbb{P}$-generic over $M$</strong>.</p>
+</blockquote>
+
+<p>Here, $G \cap D \neq \varnothing$ intuitively means that $G$ satisfies the property represented by $D$. Note that the definition of genericity is relative to the background model $M$.</p>
+
+<p>For a concrete example, let $\mathrm{id}:\omega \to \omega$ be the identity function. The filter $\mathcal{F}_{\mathrm{id}}$ is not generic. This is because:</p>
+
+\[D = \{ f \in \mathrm{Fn}(\omega, \omega) \;|\; \exists n \in \operatorname{dom} f : f(n) \neq n \}\]
+
+<p>is dense, yet $D \cap \mathcal{F} = \varnothing$. This aligns with the fact that $\mathrm{id}$ is easily definable and $\mathrm{id} \in M$.</p>
+
+<p>Conversely, is a generic filter truly not an element of $M$? To ensure this, one additional condition is required.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For $x, y \in \mathbb{P}$, if there is no $z \in \mathbb{P}$ such that $z \leq x$ and $z \leq y$, then $x$ and $y$ are said to be <strong>incompatible</strong>, denoted $x \perp y$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> $\mathbb{P}$ is <strong>separative</strong> if, for any $z \in \mathbb{P}$, there exist $x, y \leq z$ such that $x \perp y$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $M$ be a transitive model of set theory. If $\mathbb{P} \in M$ is separative and $G \subseteq \mathbb{P}$ is a $\mathbb{P}$-generic filter over $M$, then $G \notin M$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Suppose $G \in M$. Then $D = \mathbb{P} \setminus G$ is an element of $M$. We show that $D$ is dense. If $D$ is not dense, there exists $x \in \mathbb{P}$ such that $y \leq x$ implies $y \notin D$. That is, $y \in G$. Since $\mathbb{P}$ is separative, there exist $y_1, y_2 \leq x$ such that $y_1 \perp y_2$. Thus, $y_1, y_2 \in G$. By the definition of a filter, there exists $z \in \mathbb{P}$ such that $z \leq y_1, y_2$. However, this contradicts $y_1 \perp y_2$.</p>
+
+<p>Hence, $D$ is dense. Since $G$ is generic, $G \cap D \neq \varnothing$. However, this contradicts the definition of $D$. Therefore, $G \notin M$. ■</p>
+
+<p>Due to the nature of generic filters, constructing explicit examples of generic filters is challenging. Instead, the following theorem guarantees their existence.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathcal{C}$ be a collection of dense subsets of $\mathbb{P}$. A filter $G \subseteq \mathbb{P}$ is $\mathcal{C}$-generic if $G \cap D \neq \varnothing$ for every $D \in \mathcal{C}$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\mathcal{C}$ is a countable collection of dense subsets of $\mathbb{P}$, then a $\mathcal{C}$-generic filter exists.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Let $\mathcal{C} = \lbrace  D_n \rbrace _{n \in \omega}$. First, choose $x_0 \in D_0$. If $x_n \in D_n$ has been chosen, choose $x_{n+1} \in D_{n+1}$ such that $x_{n+1} \leq x_n$ (such an $x_{n+1}$ always exists since $D_{n+1}$ is dense). Then $G = \lbrace  x_n \rbrace _{n \in \omega}$ is the desired generic filter. ■</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> If $M$ is a countable transitive model, then there exists a $\mathbb{P}$-generic filter over $M$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Since $M$ is countable, $\mathcal{C} = \lbrace  D \in M : D \text{ is }\mathbb{P}\text{-dense}\rbrace $ is countable. ■</p>
+
+<p>Thus, in countable transitive models, a $\mathbb{P}$-generic filter can always be assumed. This is why countability is crucial, as mentioned earlier.</p>
+<blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h3 id="8-martins-axiom-a-digression">8. Martin’s Axiom (A Digression)</h3>
+
+<p>When $\mathcal{C}$ is uncountable, a $\mathcal{C}$-generic filter may not exist. However, if the size of $\mathbb{P}$ is restricted, the possible dense sets become limited, and consequently, even uncountable $\mathcal{C}$ may admit a generic filter.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A subset $A$ of $\mathbb{P}$ is an <strong>antichain</strong> if, for any $x, y \in A$, $x \perp y$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> $\mathbb{P}$ satisfies the <strong>countable chain condition</strong> if every antichain in $\mathbb{P}$ is at most countable.</p>
+</blockquote>
+
+<p>Antichains and the countable chain condition were discussed in <a href="https://dimenerno.github.io/2025/12/26/suslin">this post</a>, where it was explained that the countable chain condition limits the “width” of a partially ordered set (or tree).</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\kappa$ be a cardinal. $\mathrm{MA}_\kappa$ is the following statement: if $\mathbb{P}$ satisfies the countable chain condition and $\mathcal{C}$ is a collection of $\mathbb{P}$-dense sets with $|\mathcal{C}| \leq \kappa$, then a $\mathcal{C}$-generic filter exists.</p>
+</blockquote>
+
+<p>By the earlier theorem, $\mathrm{MA}_{\aleph_0}$ trivially holds. On the other hand, $\mathrm{MA}_\kappa$ implies $\kappa &lt; 2^{\aleph_0}$, so $\mathrm{MA}_\kappa$ does not hold for $\kappa \geq 2^{\aleph_0}$.</p>
+
+<blockquote>
+  <p><strong>Martin’s Axiom.</strong> $\mathrm{MA}_\kappa$ holds for all $\kappa &lt; 2^{\aleph_0}$.</p>
+</blockquote>
+
+<p>Martin’s Axiom is known to be independent of ZFC. As one might expect, assuming Martin’s Axiom makes it easier to obtain generic filters, thereby allowing forcing to be used more freely. However, Martin’s Axiom is not necessary for proving the consistency of the continuum hypothesis.</p>
+
+<h3 id="9-mathbbp-names">9. $\mathbb{P}$-names</h3>
+
+<p>We have seen that if $\mathbb{P}$ is separative and $G$ is $\mathbb{P}$-generic, then $G \notin M$. Thus, it appears that $M$ cannot make any statements about $G$. However, by employing a rather ingenious trick, it is possible to make some statements about $G$ even within $M$. This is, in fact, the brilliance of forcing.</p>
+
+<p>The idea is as follows. In <a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">this post</a>, filters were described as collections of “true” elements. That is, if $\mathbb{P}$ is viewed as a collection of events, then $\mathcal{F}$ can be thought of as the collection of events that actually occur.</p>
+
+<p>Building on this, one can conceive of the notion of a <em>set that probabilistically contains elements</em> using $\mathbb{P}$. For instance, if $p \in \mathbb{P}$ actually occurs, then a set $X$ containing $a$ as an element can be written as follows:</p>
+
+\[(a, p) \in X\]
+
+<p>The filter $G$ specifies which events actually occur. If $p \in G$, then $X$ actually contains $a$ as an element. This can be expressed as follows:</p>
+
+\[p \in G \iff a \in X_G\]
+
+<p>Metaphorically, $X$ is in a quantum superposition state, and $X_G$ is its state after observation.</p>
+
+<p>However, $X$, such a probabilistic set, could itself be an element of another set. Conversely, in $(a, p) \in X$, $a$ could also be a probabilistic set. Thus, it is more accurate to write:</p>
+
+\[p \in G \iff a_G \in X_G\]
+
+<p>Formalising the above discussion rigorously yields the definition of $\mathbb{P}$-names.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A set of the following form is called a <strong>$\mathbb{P}$-name</strong>:</p>
+
+\[\sigma = \{ (\tau, p) : p \in \mathbb{P}, \tau \text{ is a }\mathbb{P}\text{-name}\}\]
+
+  <p>The collection of $\mathbb{P}$-names in $M$ is denoted $M^\mathbb{P}$.</p>
+</blockquote>
+
+<p>Note that, by definition, $M^\mathbb{P} \subseteq M$, but $M^\mathbb{P} \in M$ is not guaranteed.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $G$ be a filter on $\mathbb{P}$, and let $\sigma$ be a $\mathbb{P}$-name. The <strong>valuation</strong> of $\sigma$ in $G$, denoted $\sigma_G$, is defined as follows:</p>
+
+\[\sigma_G = \{ \tau_G \;|\; \exists p \in G : (\tau, p) \in \sigma \}\]
+</blockquote>
+
+<p>Although this definition may appear circular, it is, in fact, a proper recursive definition.[^3] For example, $\varnothing$ is a $\mathbb{P}$-name, and for any $p \in \mathbb{P}$, $\sigma = \lbrace (\varnothing, p) \rbrace$ is also a $\mathbb{P}$-name. In particular,</p>
+
+\[p \in G \iff \sigma_G = \{\varnothing\}\]
+
+<p>A slightly more complex example is the following: for $p, q, r \in \mathbb{P}$,</p>
+
+\[\tau = \bigg\{ \Big(\big\{ ( \{ (\varnothing, r) \}, p), (\varnothing, q) \big\}, q\Big), (\varnothing, r) \bigg\}\]
+
+<p>is a $\mathbb{P}$-name. Verify that if $q, r \in G$ and $p \notin G$, then</p>
+
+\[\tau_G = \{\{ \varnothing\}, \varnothing\}\]
+
+<p>At this point, let us introduce the following notation:</p>
+
+\[\check{x} = \{(y, 1): y \in x\}\]
+
+<p>Recall that $1$ is the greatest element of $\mathbb{P}$. From this, it follows that for any filter $G$, $\check{x}_G = x$. That is, $\check{x}$ is the “name tag” of $x$.</p>
+
+<p>Earlier, it was stated that $\mathbb{P}$-names allow some statements about $G$ to be made within $M$, even though $G \notin M$. This is because the following $\mathbb{P}$-name serves as the “name tag” of $G$:</p>
+
+\[\Gamma = \{ (\check{p}, p) : p \in \mathbb{P} \}\]
+
+<p>The meaning of $\Gamma$ being the name tag of $G$ is that $\Gamma_G = G$ (verify this directly). This is significant because $\Gamma \in M$ since $\mathbb{P} \in M$. In other words, while $G$ may not be an element of $M$, its name tag is.</p>
+
+<p>Now, define $M[G]$ as follows:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong></p>
+
+\[M[G] = \{\sigma_G : \sigma \in M^\mathbb{P} \}\]
+</blockquote>
+
+<p>Since $\check{x}_G = x$ for $x \in M$, it follows that $M \subset M[G]$. Moreover, since $\Gamma_G = G$, it follows that $G \in M[G]$.</p>
+
+<p>As you might have guessed, $M[G]$ is the “new” model of set theory we sought to obtain. That is, if $M$ is a transitive model of set theory, then $M[G]$ is also a transitive model of set theory. To prove this, we first define the forcing relation.</p>
+
+<h3 id="10-forcing-relation">10. Forcing Relation</h3>
+
+<p>The structure of $M[G]$ varies significantly depending on the elements of $G$. Let us return to the earlier example of $\mathrm{Fn}(\omega, \omega)$. Previously, it was stated that if $f: \omega \to \omega$ is a total function, then there exists a filter $\mathcal{F}_f$ such that $\bigcup \mathcal{F}_f = f$. The converse also holds to some extent. If $G$ is a generic filter on $\mathrm{Fn}(\omega, \omega)$, then $\bigcup G: \omega \to \omega$ is a total function. Furthermore, if $(1, 2) \in G$, then $\bigcup G : 1 \mapsto 2$. This can be expressed as follows:</p>
+
+\[(1, 2) \text{ forces } \Big(\bigcup G \Big)(1) = 2\]
+
+<p>However, since we wish for the above statement to be expressible within $M$, we will instead use $\mathbb{P}$-names. That is,</p>
+
+\[(1, 2) \text{ forces } \Big(\bigcup \Gamma \Big)(\check{1}) = \check{2}\]
+
+<p>By defining this rigorously, we obtain the forcing relation.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\phi(x_1, \dots, x_n)$ be a formula with $n$ free variables. For any $\tau_1, \dots, \tau_n \in M^\mathbb{P}$ and $p \in \mathbb{P}$, we define</p>
+
+\[p \Vdash \phi(\tau_1, \dots, \tau_n)\]
+
+  <p>as follows: for any $\mathbb{P}$-generic filter $G$ over $M$,</p>
+
+\[p \in G \rightarrow \phi^{M[G]}\big((\tau_1)_G, \dots, (\tau_n)_G\big)\]
+</blockquote>
+
+<p>(At this point, it is worth reminding the reader that the truth of a formula is evaluated with respect to $V$.)</p>
+
+<p>The symbol $\Vdash$ is read as “forces.”</p>
+
+<p>As an example, the following statements hold:</p>
+
+\[(1, 2) \Vdash \Big(\bigcup \Gamma \Big)(\check{1}) = \check{2}\]
+
+\[\varnothing \Vdash \bigcup \Gamma \text{ is a function}\]
+
+<h3 id="11-fundamental-theorems-of-forcing">11. Fundamental theorems of forcing</h3>
+
+<p>We have now arrived at what may be called the core theorems of forcing. Unfortunately, the proofs are omitted here, as the author is still studying them; interested readers are referred to Kunen (1980) (Theorem 1 and Theorem 2 appear in Chapter 7, Theorem 3.6).</p>
+
+<blockquote>
+  <p><strong>Fundamental Theorem 1 of Forcing.</strong> Given $\mathbb{P}$, there exists a relation $\Vdash^\ast$ that is definable within $M$ such that the following holds: for any formula $\phi$ and any $\mathbb{P}$-names $\tau_1, \dots, \tau_n$,</p>
+
+\[p \Vdash \phi(\tau_1, \dots, \tau_n) \longleftrightarrow \Big( p \Vdash^* \phi(\tau_1, \dots, \tau_n) \Big)^M\]
+</blockquote>
+
+<p>In other words, even inside $M$ one can faithfully simulate the forcing relation $\Vdash$. Another central theorem is the following.</p>
+
+<blockquote>
+  <p><strong>Fundamental Theorem 2 of Forcing.</strong> For any formula $\phi$ and any $\mathbb{P}$-names $\tau_1, \dots, \tau_n$,</p>
+
+\[\bigg( \phi\Big((\tau_1)_G, \dots, (\tau_n)_G \Big) \bigg)^{M[G]} \longleftrightarrow \;\;\exists p \in G : p \Vdash \phi(\tau_1, \dots, \tau_n)\]
+</blockquote>
+
+<p>Thus, if $\phi(\vec{\tau}_G)$ is true in $M[G]$, this is because there is some $p \in G$ that forces $\phi(\vec{\tau})$. Intuitively, one may understand this as follows. To say that $G$ is generic is to say that $G$ is maximally “typical”, in the sense of avoiding accidental coincidences or exceptional behaviour. Hence, if $M[G]$ comes to satisfy a sentence $\phi$ that was not satisfied in $M$, this must be due not to some external accident, but rather to conditions internal to $G$.</p>
+
+<p>From Fundamental Theorems 1 and 2, we obtain the following.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $M$ is a transitive model of set theory, then $M[G]$ is also a transitive model of set theory.</p>
+</blockquote>
+
+<p>(The proof below was written informally by the author, and may contain mistakes.)</p>
+
+<p><strong>Proof.</strong> We first show transitivity. Let $x \in M[G]$, and suppose $y \in x$. We must show that $y \in M[G]$.</p>
+
+<p>By the definition of $M[G]$, there exists some $\sigma \in M^{\mathbb{P}}$ such that $x = \sigma_G$. Hence, from $y \in x$ we obtain that there exist a $\mathbb{P}$-name $\tau$ and some $p \in G$ such that $(\tau, p) \in \sigma$ and $y = \tau_G$. Since $M$ is transitive, from</p>
+
+\[(\tau, p) \in \sigma \in M\]
+
+<p>it follows that $(\tau, p) \in M$, and in particular that $\tau \in M$. Therefore $\tau_G = y \in M[G]$.</p>
+
+<p>We now show that $M[G]$ is a model of ZFC. Let $\theta$ be an axiom of ZFC; it suffices to show that $\theta^{M[G]}$ holds. For instance, suppose that $\theta$ is the Separation axiom for $\phi(x, \vec{c})$ (where $\vec{c}$ are elements of $M[G]$). That is,</p>
+
+\[\theta \Leftrightarrow \forall x \;\exists y : y = \{z \in x : \phi(z, \vec{c})\}\]
+
+<p>and</p>
+
+\[\theta \Leftrightarrow \forall x \in M[G] \;\exists y\in M[G] : y = \{z \in x : \phi^{M[G]}(z, \vec{c})\}\]
+
+<p>By the meaning of $\forall$, it is enough to show that $\theta^{M[G]}$ holds for an arbitrary $x = a$.</p>
+
+\[y = \{ z \in \sigma_G : \phi^{M[G]}(z, \vec{c}) \} \in M[G]\]
+
+<p>By the definition of $M[G]$, there exists some $\vec{\tau} \in M^{\mathbb{P}}$ such that $\vec{c} = \vec{\tau}_G$. Hence we may rewrite this as</p>
+
+\[y = \Big\{ \pi_G : \big( \exists p\in G\; (\pi, p) \in \sigma \big)\land\phi^{M[G]}(\pi_G, \vec{\tau}_G) \Big\}\]
+
+<p>By Fundamental Theorem 2,</p>
+
+\[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G:p\Vdash \phi(\pi, \vec{\tau})\]
+
+<p>By Fundamental Theorem 1,</p>
+
+\[q\Vdash \phi(\pi, \vec{\tau}) \longleftrightarrow \Big( q \Vdash^* \phi(\pi, \vec{\tau}) \Big)^M\]
+
+<p>Therefore,</p>
+
+\[y = \Big\{ \pi_G : \big( \exists p\in G\; (\pi, p) \in \sigma \big)\land \big(\exists q \in G\; (q \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\}\]
+
+<p>At this point we use the following lemma.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> Given $\sigma \in M^{\mathbb{P}}$, define</p>
+
+\[\overline{\sigma} = \Big\{ (\tau, q) : \exists p \in \mathbb{P} \; \Big( (\tau, p) \in \sigma \land q \leq p \Big) \Big\}\]
+
+  <p>Then $\sigma_G = \overline{\sigma}_G$, and $\overline{\sigma} \in M^{\mathbb{P}}$.</p>
+</blockquote>
+
+<p>The proof is almost immediate from the definition of a filter. From the lemma and the directedness of the filter, we obtain $(r \leq p, q)$.</p>
+
+\[y = \Big\{ \pi_G : \exists r\in G\; \big( (\pi, r) \in \overline{\sigma} \land (r \Vdash^* \phi(\pi, \vec{\tau}))^M \big)  \Big\}\]
+
+<p>Hence, if</p>
+
+\[\check{y} = \Big\{ (\pi, r) \in \overline{\sigma} : \big(r \Vdash^* \phi(\pi, \vec{\tau})\big)^M \  \Big\}\]
+
+<p>then $\check{y}_G = y$. But $\check{y}$ is obtained in $M$ by separating $\sigma$ using the predicate $p \Vdash^\ast \phi(\pi, \vec{\tau})$, and since $M$ satisfies Separation, we have $\hat{y} \in M$, and hence $y \in M[G]$.</p>
+
+<p>The remaining axioms may be proved similarly. ■</p>
+
+<hr />
+
+<p>In this way, we defined the forcing relation, examined its properties, and gave a brief proof that $M[G]$ arising from a generic filter is a model of set theory. In the next post, we shall use the results obtained here to prove the consistency of the Continuum Hypothesis.</p>
+
+<h4 id="reference">Reference</h4>
+<ul>
+  <li>Hanul Jeon, <em>What is forcing?</em> (2015)</li>
+  <li>K. Kunen, <em>Set theory: an introduction to independence proofs</em> (1980)</li>
+  <li>K. Hrbacek &amp; T. Jech, <em>Introduction to Set Theory</em>, 3rd edition (1999)</li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>$y = \mathcal{P}(x)$ is defined as $\forall z \subseteq x (z \in y) \land \forall z \in y (z \subseteq x)$, and $y \subseteq x$ is defined as $\forall z \in y (z \in x)$. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>This is a passage that calls to mind Frege–Russell-style descriptivism. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2026/01/26/categorical-trace"> 범주론적 대각합 </a>
       </h1>
     <span class="post-date">26 Jan 2026</span>
@@ -1474,264 +2631,6 @@
 </blockquote>
 
 <p>Thus, the existence of Suslin lines is related to the regulation of the set-theoretic universe. While this may seem paradoxical, it is not so surprising when one considers that one of the conditions for Suslin lines is the “non-existence” of countable dense sets. Suslin lines are a feature of a “loose” set-theoretic universe that achieves the countable chain condition without generating countable dense sets.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/11/23/euler-poincare"> 오일러-푸앵카레 정리 </a>
-      </h1>
-    <span class="post-date">23 Nov 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <p>독자 분은 어렸을 때 다음의 정리를 배웠을 것이다.</p>
-
-<blockquote>
-  <p><strong>오일러 공식.</strong> 볼록다면체의 꼭짓점, 모서리, 면의 개수를 $v, e, f$라고 할 때, $v - e + f= 2$이다.</p>
-</blockquote>
-
-<p>예를 들어 정육면체의 경우 $v = 8, e = 12, f = 6$이므로 $v - e + f = 2$가 성립한다. 볼록다면체라는 조건은 중요한데, 만약 다면체에 “구멍”이 있으면 공식이 성립하지 않기 때문이다. 예를 들어 아래의 구멍 난 프리즘의 경우 $v = 16, e = 32, f = 16$이므로 $v - e + f = 0$이다.</p>
-
-<p><img src="/public/punctured-prism.png" style="width: 100%; max-width: 300px; margin: 1em auto 1.5em auto;" /></p>
-
-<p>이로부터 우리는 $v - e + f$의 값이 도형의 위상에 의해 결정된다고 추측할 수 있다. 이것이 오일러-푸앵카레 정리의 내용이다. 정리를 진술하기 앞서, 먼저 다음의 개념을 정의하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$에 대해, $X$의 호몰로지 군 $H_p(X)$의 자유 부분<sub>free part</sub>의 랭크를 $X$의 $p$번째 <strong>베티 수<sub>Betti number</sub></strong>라고 하며 $R_p(X)$라고 적는다.</p>
-</blockquote>
-
-<p>원래 $b_p(X)$라고 적는 것이 관행인데, 이 글에서는 $b_p$를 다른 의미로 사용할 것이기 때문에 다른 표기법을 채택했다. 호몰로지 군은 위상 불변이므로 베티 수 또한 위상 불변이다.</p>
-
-<p>예를 들어 토러스의 호몰로지 군은 다음과 같다.</p>
-
-<ul>
-  <li>$H_0(X) = \mathbb{Z}$</li>
-  <li>$H_1(X) = \mathbb{Z} \oplus \mathbb{Z}$</li>
-  <li>$H_2(X) = \mathbb{Z}$</li>
-</ul>
-
-<p>따라서 토러스의 0차, 1차, 2차 베티 수는 각각 1, 2, 1이다. 베티 수는 직관적으로 구멍의 의미를 가진다 (<a href="https://dimenerno.github.io/2025/11/05/euler-poincare">이전 글</a> 참조). 특히, 0차 베티 수는 $K$를 이루는 연결 요소들의 수이다. 즉, 두 개의 사면체를 하나의 단체 복합체로 간주한다면 이 복합체의 0차 베티 수는 2이다.</p>
-
-<blockquote>
-  <p><strong>오일러-푸앵카레 정리.</strong> $n$-단체 복합체 $K$에 대해, $\alpha_p \; (p \leq n)$를 $K$의 $p$-단체들의 개수라고 하자. 다음이 성립한다.</p>
-
-\[\sum^n_{p = 0} (-1)^p\alpha_p = \sum^n_{p=0}(-1)^p R_p(K)\]
-</blockquote>
-
-<p>위 정리의 증명에서는 $p$-체인들을 자유군의 원소로 보는 것보다 선형 공간의 원소로 보는 것이 더 자연스럽기 때문에 이 접근을 취한다.</p>
-
-<p><strong>증명.</strong> $K$의 $p$-체인, 고리, 경계가 각각 유리수체에 대해 이루는 선형 공간을 $C_p, Z_p, B_p$라고 하자. $\lbrace  d^i_p \rbrace $가 고리를 선형 생성하지 않는 $C_p$의 극대 부분집합이라고 하고, $\lbrace  d^i_p \rbrace $가 생성하는 선형공간을 $D_p$라고 하자. 다음이 성립한다 ($\oplus$는 벡터 공간의 직합).</p>
-
-\[\begin{gather}
-C_p = D_p \oplus Z_p\\\\
-\alpha_p = \dim C_p = \dim D_p + \dim Z_p
-\end{gather}\]
-
-<p>$p \leq n - 1$에 대해, $b^i_p = \partial d^i_{p + 1}$라고 하자. $\lbrace  b^i_p \rbrace $가 생성하는 선형 공간을 $B_p$라고 하자. $\partial$은 선형 연산자이므로, $\lbrace  d^i_{p +1} \rbrace $가 $D_{p + 1}$의 선형 기저라는 사실로부터 $\lbrace  b^i_p \rbrace $가 $B_p$의 선형 기저라는 사실이 따라 나온다. 다음의 보조정리를 증명한다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $B_p$는 $K$의 모든 $p$-경계들을 포함한다.</p>
-</blockquote>
-
-<p><em>증명.</em> 만약 $b_p$가 $K$의 $p$-경계라면, 어떤 $c_{p + 1} \in C_{p + 1}$에 대해 $\partial c_{p + 1} = b_p$이다. $C_{p + 1} = D_{p + 1} \oplus Z_{p + 1}$ 관계에 의해 어떤 유일한 $d_{p + 1} \in D_{p + 1}, z_{p + 1} \in Z_{p + 1}$이 존재하여 $c_{p + 1 } = d_{p + 1} + z_{p + 1}$이다. 그런데 $\partial z_{p + 1} = 0$이므로 $\partial d_{p + 1} = b_p$이다. 따라서 $b_p \in B_p$이다. □</p>
-
-<p>$\lbrace  z^i_p \rbrace $가 $B_p$의 원소를 선형 생성하지 않는 $Z_p$의 극대 부분집합이라고 하고, $\lbrace  z^i_p \rbrace $가 생성하는 선형공간을 $G_p$라고 하자. 보조정리에 의해 다음이 성립한다.</p>
-
-\[\dim G_p = R_p\]
-
-<p>따라서 다음이 성립한다.</p>
-
-\[\begin{gather}
-Z_p = B_p \oplus G_p\\\\
-\dim Z_p = \dim B_p + \dim G_p = \dim D_{p + 1} + R_p
-\end{gather}\]
-
-<p>앞선 결과와 연립하면 다음을 얻는다 ($p \leq n - 1$).</p>
-
-\[\alpha_p = \dim D_{p + 1} + \dim D_p + R_p\]
-
-<p>$p = n$일 때 $\alpha_n = \dim D_n + R_n$이고, $p = 0$일 때 $\alpha_0 = \dim D_1 + R_0$이다. 따라서 다음을 얻는다 (wlog, $n$은 짝수).</p>
-
-\[\begin{alignat}{3}
-&amp;\alpha_n      &amp;&amp;= \;\cancel{\dim D_n} + R_p \\
-&amp;-\alpha_{n-1} &amp;&amp;= \;\cancel{-\dim D_{n}} \cancel{- \dim D_{n - 1}} - R_{n - 1} \\
-&amp;\alpha_{n-2}  &amp;&amp;= \;\cancel{\dim D_{n - 1}} \cancel{ + \dim D_{n - 2}} + R_{n - 2} \\
-&amp;&amp;\vdots \\
-&amp;-\alpha_{1}   &amp;&amp;= \;\cancel{-\dim D_{2}} \cancel{-\dim D_{1}} - R_{1} \\
-&amp;\alpha_{0}    &amp;&amp;= \;\cancel{\dim D_{1}} + R_{0} \\
-\hline
-&amp;\sum_{p = 0}^n (-1)^p \alpha_p &amp;&amp;= \;\sum_{p=0}^n (-1)^p R_p(K) \quad \blacksquare
-\end{alignat}\]
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간 X에 대해, 다음 값을 <strong>오일러 종수<sub>Euler characteristic</sub></strong>라고 한다.</p>
-
-\[\xi(X) = \sum (-1)^p R_p(X)\]
-</blockquote>
-
-<p>베티 수가 위상 불변이므로 오일러 종수 또한 위상 불변이다.</p>
-
-<blockquote>
-  <p><strong>따름정리.</strong> 다면체 $P$의 꼭짓점, 모서리, 면의 개수를 $v, e, f$라고 하자. 2차원 위상공간으로서의 $P$의 표면을 $X$라고 하자. 다음이 성립한다.</p>
-
-\[v - e + f = \xi(X)\]
-</blockquote>
-
-<p><strong>증명.</strong> $k$각형의 삼각화는 $k - 3$개의 모서리를 추가함으로써 얻을 수 있는데, 이 과정에서 $k - 3$개의 면이 생긴다. 따라서 $P$는 $P$의 삼각화와 $v - e + f$ 값이 같으며, 이는 오일러 종수와 같다. ■</p>
-
-<p><img src="/public/triangulation.png" style="width: 100%; max-width: 400px; margin: 1em auto 1.5em auto;" /></p>
-
-<p>앞서 우리는 구멍이 하나 있는 다면체의 경우 $v - e + f = 0$임을 보았다. 실제로 토러스의 0차, 1차, 2차 베티 수는 1, 2, 1이며, $1 - 2 + 1 = 0$이다. 한편 구의 호몰로지 군은 다음과 같다.</p>
-
-<ul>
-  <li>$H_0(K) = \mathbb{Z}$</li>
-  <li>$H_1(K) = 0$</li>
-  <li>$H_2(K) = \mathbb{Z}$</li>
-</ul>
-
-<p>따라서 구의 0차, 1차, 2차 베티 수는 1, 0, 1이며, $1 - 0 + 1 = 2$이다. 따라서 볼록다면체의 경우 $v - e + f = 2$이다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/11/23/euler-poincare/en"> Euler-Poincaré Theorem </a>
-      </h1>
-    <span class="post-date">23 Nov 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>Readers may recall learning the following theorem in their youth:</p>
-
-<blockquote>
-  <p><strong>Euler’s Formula.</strong> For a convex polyhedron, let $v, e, f$ denote the number of vertices, edges, and faces, respectively. Then $v - e + f = 2$.</p>
-</blockquote>
-
-<p>For instance, in the case of a cube, $v = 8, e = 12, f = 6$, so $v - e + f = 2$ holds. The condition of convexity is crucial; if the polyhedron has “holes,” the formula does not hold. For example, in the case of the punctured prism below, $v = 16, e = 32, f = 16$, so $v - e + f = 0$.</p>
-
-<p><img src="/public/punctured-prism.png" style="width: 100%; max-width: 300px; margin: 1em auto 1.5em auto;" /></p>
-
-<p>From this, we may conjecture that the value of $v - e + f$ is determined by the topology of the shape. This is the essence of the Euler-Poincaré theorem. Before stating the theorem, let us first define the following concept:</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a topological space $X$, the rank of the free part of the homology group $H_p(X)$ of $X$ is called the $p$th <strong>Betti number</strong> of $X$, denoted $R_p(X)$.</p>
-</blockquote>
-
-<p>While it is customary to denote this as $b_p(X)$, we adopt a different notation here as $b_p$ will be used for another purpose in this article. Since homology groups are topological invariants, Betti numbers are also topological invariants.</p>
-
-<p>For example, the homology groups of a torus are as follows:</p>
-
-<ul>
-  <li>$H_0(X) = \mathbb{Z}$</li>
-  <li>$H_1(X) = \mathbb{Z} \oplus \mathbb{Z}$</li>
-  <li>$H_2(X) = \mathbb{Z}$</li>
-</ul>
-
-<p>Thus, the 0th, 1st, and 2nd Betti numbers of the torus are 1, 2, and 1, respectively. Intuitively, Betti numbers represent the number of “holes” (see <a href="https://dimenerno.github.io/2025/11/05/euler-poincare">previous post</a>). In particular, the 0th Betti number corresponds to the number of connected components of $K$. For instance, if two tetrahedra are considered as a single simplicial complex, the 0th Betti number of this complex is 2.</p>
-
-<blockquote>
-  <p><strong>Euler-Poincaré Theorem.</strong> For an $n$-dimensional simplicial complex $K$, let $\alpha_p \; (p \leq n)$ denote the number of $p$-simplices in $K$. Then the following holds:</p>
-
-\[\sum^n_{p = 0} (-1)^p\alpha_p = \sum^n_{p=0}(-1)^p R_p(K)\]
-</blockquote>
-
-<p>In proving this theorem, it is more natural to view $p$-chains as elements of a vector space rather than a free group, and we adopt this approach.</p>
-
-<p><strong>Proof.</strong> Let $C_p, Z_p, B_p$ denote the vector spaces of $p$-chains, cycles, and boundaries of $K$ over the field of rational numbers, respectively. Let $\lbrace  d^i_p \rbrace $ be a maximal subset of $C_p$ that does not linearly generate cycles, and let the vector space spanned by $\lbrace  d^i_p \rbrace $ be $D_p$. Then the following holds ($\oplus$ denotes the direct sum of vector spaces):</p>
-
-\[\begin{gather}
-C_p = D_p \oplus Z_p\\\\
-\alpha_p = \dim C_p = \dim D_p + \dim Z_p
-\end{gather}\]
-
-<p>For $p \leq n - 1$, let $b^i_p = \partial d^i_{p + 1}$. Let the vector space spanned by $\lbrace  b^i_p \rbrace $ be $B_p$. Since $\partial$ is a linear operator, it follows from the fact that $\lbrace  d^i_{p +1} \rbrace $ forms a basis of $D_{p + 1}$ that $\lbrace  b^i_p \rbrace $ forms a basis of $B_p$. We prove the following lemma:</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> $B_p$ contains all $p$-boundaries of $K$.</p>
-</blockquote>
-
-<p><em>Proof.</em> If $b_p$ is a $p$-boundary of $K$, then there exists some $c_{p + 1} \in C_{p + 1}$ such that $\partial c_{p + 1} = b_p$. By the relation $C_{p + 1} = D_{p + 1} \oplus Z_{p + 1}$, there exist unique $d_{p + 1} \in D_{p + 1}$ and $z_{p + 1} \in Z_{p + 1}$ such that $c_{p + 1 } = d_{p + 1} + z_{p + 1}$. Since $\partial z_{p + 1} = 0$, it follows that $\partial d_{p + 1} = b_p$. Hence, $b_p \in B_p$. □</p>
-
-<p>Let $\lbrace  z^i_p \rbrace $ be a maximal subset of $Z_p$ that does not linearly generate elements of $B_p$, and let the vector space spanned by $\lbrace  z^i_p \rbrace $ be $G_p$. By the lemma, the following holds:</p>
-
-\[\dim G_p = R_p\]
-
-<p>Thus, we have:</p>
-
-\[\begin{gather}
-Z_p = B_p \oplus G_p\\\\
-\dim Z_p = \dim B_p + \dim G_p = \dim D_{p + 1} + R_p
-\end{gather}\]
-
-<p>Combining this with earlier results, we obtain the following for $p \leq n - 1$:</p>
-
-\[\alpha_p = \dim D_{p + 1} + \dim D_p + R_p\]
-
-<p>For $p = n$, $\alpha_n = \dim D_n + R_n$, and for $p = 0$, $\alpha_0 = \dim D_1 + R_0$. Hence, we derive the following (wlog, $n$ is even):</p>
-
-\[\begin{alignat}{3}
-&amp;\alpha_n      &amp;&amp;= \;\cancel{\dim D_n} + R_p \\
-&amp;-\alpha_{n-1} &amp;&amp;= \;\cancel{-\dim D_{n}} \cancel{- \dim D_{n - 1}} - R_{n - 1} \\
-&amp;\alpha_{n-2}  &amp;&amp;= \;\cancel{\dim D_{n - 1}} \cancel{ + \dim D_{n - 2}} + R_{n - 2} \\
-&amp;&amp;\vdots \\
-&amp;-\alpha_{1}   &amp;&amp;= \;\cancel{-\dim D_{2}} \cancel{-\dim D_{1}} - R_{1} \\
-&amp;\alpha_{0}    &amp;&amp;= \;\cancel{\dim D_{1}} + R_{0} \\
-\hline
-&amp;\sum_{p = 0}^n (-1)^p \alpha_p &amp;&amp;= \;\sum_{p=0}^n (-1)^p R_p(K) \quad \blacksquare
-\end{alignat}\]
-
-<blockquote>
-  <p><strong>Definition.</strong> For a topological space $X$, the following value is called the <strong>Euler characteristic</strong>:</p>
-
-\[\xi(X) = \sum (-1)^p R_p(X)\]
-</blockquote>
-
-<p>Since Betti numbers are topological invariants, the Euler characteristic is also a topological invariant.</p>
-
-<blockquote>
-  <p><strong>Corollary.</strong> Let $v, e, f$ denote the number of vertices, edges, and faces of a polyhedron $P$, respectively. Let $X$ denote the surface of $P$ as a 2-dimensional topological space. Then the following holds:</p>
-
-\[v - e + f = \xi(X)\]
-</blockquote>
-
-<p><strong>Proof.</strong> The triangulation of a $k$-gon can be obtained by adding $k - 3$ edges, which creates $k - 3$ faces. Thus, $P$ has the same $v - e + f$ value as its triangulation, which equals the Euler characteristic. ■</p>
-
-<p><img src="/public/triangulation.png" style="width: 100%; max-width: 400px; margin: 1em auto 1.5em auto;" /></p>
-
-<p>Earlier, we observed that for a polyhedron with one hole, $v - e + f = 0$. Indeed, the 0th, 1st, and 2nd Betti numbers of a torus are 1, 2, and 1, respectively, and $1 - 2 + 1 = 0$. On the other hand, the homology groups of a sphere are as follows:</p>
-
-<ul>
-  <li>$H_0(K) = \mathbb{Z}$</li>
-  <li>$H_1(K) = 0$</li>
-  <li>$H_2(K) = \mathbb{Z}$</li>
-</ul>
-
-<p>Thus, the 0th, 1st, and 2nd Betti numbers of a sphere are 1, 0, and 1, respectively, and $1 - 0 + 1 = 2$. Therefore, for convex polyhedra, $v - e + f = 2$.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -433,6 +433,264 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/11/23/euler-poincare"> 오일러-푸앵카레 정리 </a>
+      </h1>
+    <span class="post-date">23 Nov 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <p>독자 분은 어렸을 때 다음의 정리를 배웠을 것이다.</p>
+
+<blockquote>
+  <p><strong>오일러 공식.</strong> 볼록다면체의 꼭짓점, 모서리, 면의 개수를 $v, e, f$라고 할 때, $v - e + f= 2$이다.</p>
+</blockquote>
+
+<p>예를 들어 정육면체의 경우 $v = 8, e = 12, f = 6$이므로 $v - e + f = 2$가 성립한다. 볼록다면체라는 조건은 중요한데, 만약 다면체에 “구멍”이 있으면 공식이 성립하지 않기 때문이다. 예를 들어 아래의 구멍 난 프리즘의 경우 $v = 16, e = 32, f = 16$이므로 $v - e + f = 0$이다.</p>
+
+<p><img src="/public/punctured-prism.png" style="width: 100%; max-width: 300px; margin: 1em auto 1.5em auto;" /></p>
+
+<p>이로부터 우리는 $v - e + f$의 값이 도형의 위상에 의해 결정된다고 추측할 수 있다. 이것이 오일러-푸앵카레 정리의 내용이다. 정리를 진술하기 앞서, 먼저 다음의 개념을 정의하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$에 대해, $X$의 호몰로지 군 $H_p(X)$의 자유 부분<sub>free part</sub>의 랭크를 $X$의 $p$번째 <strong>베티 수<sub>Betti number</sub></strong>라고 하며 $R_p(X)$라고 적는다.</p>
+</blockquote>
+
+<p>원래 $b_p(X)$라고 적는 것이 관행인데, 이 글에서는 $b_p$를 다른 의미로 사용할 것이기 때문에 다른 표기법을 채택했다. 호몰로지 군은 위상 불변이므로 베티 수 또한 위상 불변이다.</p>
+
+<p>예를 들어 토러스의 호몰로지 군은 다음과 같다.</p>
+
+<ul>
+  <li>$H_0(X) = \mathbb{Z}$</li>
+  <li>$H_1(X) = \mathbb{Z} \oplus \mathbb{Z}$</li>
+  <li>$H_2(X) = \mathbb{Z}$</li>
+</ul>
+
+<p>따라서 토러스의 0차, 1차, 2차 베티 수는 각각 1, 2, 1이다. 베티 수는 직관적으로 구멍의 의미를 가진다 (<a href="https://dimenerno.github.io/2025/11/05/euler-poincare">이전 글</a> 참조). 특히, 0차 베티 수는 $K$를 이루는 연결 요소들의 수이다. 즉, 두 개의 사면체를 하나의 단체 복합체로 간주한다면 이 복합체의 0차 베티 수는 2이다.</p>
+
+<blockquote>
+  <p><strong>오일러-푸앵카레 정리.</strong> $n$-단체 복합체 $K$에 대해, $\alpha_p \; (p \leq n)$를 $K$의 $p$-단체들의 개수라고 하자. 다음이 성립한다.</p>
+
+\[\sum^n_{p = 0} (-1)^p\alpha_p = \sum^n_{p=0}(-1)^p R_p(K)\]
+</blockquote>
+
+<p>위 정리의 증명에서는 $p$-체인들을 자유군의 원소로 보는 것보다 선형 공간의 원소로 보는 것이 더 자연스럽기 때문에 이 접근을 취한다.</p>
+
+<p><strong>증명.</strong> $K$의 $p$-체인, 고리, 경계가 각각 유리수체에 대해 이루는 선형 공간을 $C_p, Z_p, B_p$라고 하자. $\lbrace  d^i_p \rbrace $가 고리를 선형 생성하지 않는 $C_p$의 극대 부분집합이라고 하고, $\lbrace  d^i_p \rbrace $가 생성하는 선형공간을 $D_p$라고 하자. 다음이 성립한다 ($\oplus$는 벡터 공간의 직합).</p>
+
+\[\begin{gather}
+C_p = D_p \oplus Z_p\\\\
+\alpha_p = \dim C_p = \dim D_p + \dim Z_p
+\end{gather}\]
+
+<p>$p \leq n - 1$에 대해, $b^i_p = \partial d^i_{p + 1}$라고 하자. $\lbrace  b^i_p \rbrace $가 생성하는 선형 공간을 $B_p$라고 하자. $\partial$은 선형 연산자이므로, $\lbrace  d^i_{p +1} \rbrace $가 $D_{p + 1}$의 선형 기저라는 사실로부터 $\lbrace  b^i_p \rbrace $가 $B_p$의 선형 기저라는 사실이 따라 나온다. 다음의 보조정리를 증명한다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $B_p$는 $K$의 모든 $p$-경계들을 포함한다.</p>
+</blockquote>
+
+<p><em>증명.</em> 만약 $b_p$가 $K$의 $p$-경계라면, 어떤 $c_{p + 1} \in C_{p + 1}$에 대해 $\partial c_{p + 1} = b_p$이다. $C_{p + 1} = D_{p + 1} \oplus Z_{p + 1}$ 관계에 의해 어떤 유일한 $d_{p + 1} \in D_{p + 1}, z_{p + 1} \in Z_{p + 1}$이 존재하여 $c_{p + 1 } = d_{p + 1} + z_{p + 1}$이다. 그런데 $\partial z_{p + 1} = 0$이므로 $\partial d_{p + 1} = b_p$이다. 따라서 $b_p \in B_p$이다. □</p>
+
+<p>$\lbrace  z^i_p \rbrace $가 $B_p$의 원소를 선형 생성하지 않는 $Z_p$의 극대 부분집합이라고 하고, $\lbrace  z^i_p \rbrace $가 생성하는 선형공간을 $G_p$라고 하자. 보조정리에 의해 다음이 성립한다.</p>
+
+\[\dim G_p = R_p\]
+
+<p>따라서 다음이 성립한다.</p>
+
+\[\begin{gather}
+Z_p = B_p \oplus G_p\\\\
+\dim Z_p = \dim B_p + \dim G_p = \dim D_{p + 1} + R_p
+\end{gather}\]
+
+<p>앞선 결과와 연립하면 다음을 얻는다 ($p \leq n - 1$).</p>
+
+\[\alpha_p = \dim D_{p + 1} + \dim D_p + R_p\]
+
+<p>$p = n$일 때 $\alpha_n = \dim D_n + R_n$이고, $p = 0$일 때 $\alpha_0 = \dim D_1 + R_0$이다. 따라서 다음을 얻는다 (wlog, $n$은 짝수).</p>
+
+\[\begin{alignat}{3}
+&amp;\alpha_n      &amp;&amp;= \;\cancel{\dim D_n} + R_p \\
+&amp;-\alpha_{n-1} &amp;&amp;= \;\cancel{-\dim D_{n}} \cancel{- \dim D_{n - 1}} - R_{n - 1} \\
+&amp;\alpha_{n-2}  &amp;&amp;= \;\cancel{\dim D_{n - 1}} \cancel{ + \dim D_{n - 2}} + R_{n - 2} \\
+&amp;&amp;\vdots \\
+&amp;-\alpha_{1}   &amp;&amp;= \;\cancel{-\dim D_{2}} \cancel{-\dim D_{1}} - R_{1} \\
+&amp;\alpha_{0}    &amp;&amp;= \;\cancel{\dim D_{1}} + R_{0} \\
+\hline
+&amp;\sum_{p = 0}^n (-1)^p \alpha_p &amp;&amp;= \;\sum_{p=0}^n (-1)^p R_p(K) \quad \blacksquare
+\end{alignat}\]
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 X에 대해, 다음 값을 <strong>오일러 종수<sub>Euler characteristic</sub></strong>라고 한다.</p>
+
+\[\xi(X) = \sum (-1)^p R_p(X)\]
+</blockquote>
+
+<p>베티 수가 위상 불변이므로 오일러 종수 또한 위상 불변이다.</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> 다면체 $P$의 꼭짓점, 모서리, 면의 개수를 $v, e, f$라고 하자. 2차원 위상공간으로서의 $P$의 표면을 $X$라고 하자. 다음이 성립한다.</p>
+
+\[v - e + f = \xi(X)\]
+</blockquote>
+
+<p><strong>증명.</strong> $k$각형의 삼각화는 $k - 3$개의 모서리를 추가함으로써 얻을 수 있는데, 이 과정에서 $k - 3$개의 면이 생긴다. 따라서 $P$는 $P$의 삼각화와 $v - e + f$ 값이 같으며, 이는 오일러 종수와 같다. ■</p>
+
+<p><img src="/public/triangulation.png" style="width: 100%; max-width: 400px; margin: 1em auto 1.5em auto;" /></p>
+
+<p>앞서 우리는 구멍이 하나 있는 다면체의 경우 $v - e + f = 0$임을 보았다. 실제로 토러스의 0차, 1차, 2차 베티 수는 1, 2, 1이며, $1 - 2 + 1 = 0$이다. 한편 구의 호몰로지 군은 다음과 같다.</p>
+
+<ul>
+  <li>$H_0(K) = \mathbb{Z}$</li>
+  <li>$H_1(K) = 0$</li>
+  <li>$H_2(K) = \mathbb{Z}$</li>
+</ul>
+
+<p>따라서 구의 0차, 1차, 2차 베티 수는 1, 0, 1이며, $1 - 0 + 1 = 2$이다. 따라서 볼록다면체의 경우 $v - e + f = 2$이다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/11/23/euler-poincare/en"> Euler-Poincaré Theorem </a>
+      </h1>
+    <span class="post-date">23 Nov 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>Readers may recall learning the following theorem in their youth:</p>
+
+<blockquote>
+  <p><strong>Euler’s Formula.</strong> For a convex polyhedron, let $v, e, f$ denote the number of vertices, edges, and faces, respectively. Then $v - e + f = 2$.</p>
+</blockquote>
+
+<p>For instance, in the case of a cube, $v = 8, e = 12, f = 6$, so $v - e + f = 2$ holds. The condition of convexity is crucial; if the polyhedron has “holes,” the formula does not hold. For example, in the case of the punctured prism below, $v = 16, e = 32, f = 16$, so $v - e + f = 0$.</p>
+
+<p><img src="/public/punctured-prism.png" style="width: 100%; max-width: 300px; margin: 1em auto 1.5em auto;" /></p>
+
+<p>From this, we may conjecture that the value of $v - e + f$ is determined by the topology of the shape. This is the essence of the Euler-Poincaré theorem. Before stating the theorem, let us first define the following concept:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, the rank of the free part of the homology group $H_p(X)$ of $X$ is called the $p$th <strong>Betti number</strong> of $X$, denoted $R_p(X)$.</p>
+</blockquote>
+
+<p>While it is customary to denote this as $b_p(X)$, we adopt a different notation here as $b_p$ will be used for another purpose in this article. Since homology groups are topological invariants, Betti numbers are also topological invariants.</p>
+
+<p>For example, the homology groups of a torus are as follows:</p>
+
+<ul>
+  <li>$H_0(X) = \mathbb{Z}$</li>
+  <li>$H_1(X) = \mathbb{Z} \oplus \mathbb{Z}$</li>
+  <li>$H_2(X) = \mathbb{Z}$</li>
+</ul>
+
+<p>Thus, the 0th, 1st, and 2nd Betti numbers of the torus are 1, 2, and 1, respectively. Intuitively, Betti numbers represent the number of “holes” (see <a href="https://dimenerno.github.io/2025/11/05/euler-poincare">previous post</a>). In particular, the 0th Betti number corresponds to the number of connected components of $K$. For instance, if two tetrahedra are considered as a single simplicial complex, the 0th Betti number of this complex is 2.</p>
+
+<blockquote>
+  <p><strong>Euler-Poincaré Theorem.</strong> For an $n$-dimensional simplicial complex $K$, let $\alpha_p \; (p \leq n)$ denote the number of $p$-simplices in $K$. Then the following holds:</p>
+
+\[\sum^n_{p = 0} (-1)^p\alpha_p = \sum^n_{p=0}(-1)^p R_p(K)\]
+</blockquote>
+
+<p>In proving this theorem, it is more natural to view $p$-chains as elements of a vector space rather than a free group, and we adopt this approach.</p>
+
+<p><strong>Proof.</strong> Let $C_p, Z_p, B_p$ denote the vector spaces of $p$-chains, cycles, and boundaries of $K$ over the field of rational numbers, respectively. Let $\lbrace  d^i_p \rbrace $ be a maximal subset of $C_p$ that does not linearly generate cycles, and let the vector space spanned by $\lbrace  d^i_p \rbrace $ be $D_p$. Then the following holds ($\oplus$ denotes the direct sum of vector spaces):</p>
+
+\[\begin{gather}
+C_p = D_p \oplus Z_p\\\\
+\alpha_p = \dim C_p = \dim D_p + \dim Z_p
+\end{gather}\]
+
+<p>For $p \leq n - 1$, let $b^i_p = \partial d^i_{p + 1}$. Let the vector space spanned by $\lbrace  b^i_p \rbrace $ be $B_p$. Since $\partial$ is a linear operator, it follows from the fact that $\lbrace  d^i_{p +1} \rbrace $ forms a basis of $D_{p + 1}$ that $\lbrace  b^i_p \rbrace $ forms a basis of $B_p$. We prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> $B_p$ contains all $p$-boundaries of $K$.</p>
+</blockquote>
+
+<p><em>Proof.</em> If $b_p$ is a $p$-boundary of $K$, then there exists some $c_{p + 1} \in C_{p + 1}$ such that $\partial c_{p + 1} = b_p$. By the relation $C_{p + 1} = D_{p + 1} \oplus Z_{p + 1}$, there exist unique $d_{p + 1} \in D_{p + 1}$ and $z_{p + 1} \in Z_{p + 1}$ such that $c_{p + 1 } = d_{p + 1} + z_{p + 1}$. Since $\partial z_{p + 1} = 0$, it follows that $\partial d_{p + 1} = b_p$. Hence, $b_p \in B_p$. □</p>
+
+<p>Let $\lbrace  z^i_p \rbrace $ be a maximal subset of $Z_p$ that does not linearly generate elements of $B_p$, and let the vector space spanned by $\lbrace  z^i_p \rbrace $ be $G_p$. By the lemma, the following holds:</p>
+
+\[\dim G_p = R_p\]
+
+<p>Thus, we have:</p>
+
+\[\begin{gather}
+Z_p = B_p \oplus G_p\\\\
+\dim Z_p = \dim B_p + \dim G_p = \dim D_{p + 1} + R_p
+\end{gather}\]
+
+<p>Combining this with earlier results, we obtain the following for $p \leq n - 1$:</p>
+
+\[\alpha_p = \dim D_{p + 1} + \dim D_p + R_p\]
+
+<p>For $p = n$, $\alpha_n = \dim D_n + R_n$, and for $p = 0$, $\alpha_0 = \dim D_1 + R_0$. Hence, we derive the following (wlog, $n$ is even):</p>
+
+\[\begin{alignat}{3}
+&amp;\alpha_n      &amp;&amp;= \;\cancel{\dim D_n} + R_p \\
+&amp;-\alpha_{n-1} &amp;&amp;= \;\cancel{-\dim D_{n}} \cancel{- \dim D_{n - 1}} - R_{n - 1} \\
+&amp;\alpha_{n-2}  &amp;&amp;= \;\cancel{\dim D_{n - 1}} \cancel{ + \dim D_{n - 2}} + R_{n - 2} \\
+&amp;&amp;\vdots \\
+&amp;-\alpha_{1}   &amp;&amp;= \;\cancel{-\dim D_{2}} \cancel{-\dim D_{1}} - R_{1} \\
+&amp;\alpha_{0}    &amp;&amp;= \;\cancel{\dim D_{1}} + R_{0} \\
+\hline
+&amp;\sum_{p = 0}^n (-1)^p \alpha_p &amp;&amp;= \;\sum_{p=0}^n (-1)^p R_p(K) \quad \blacksquare
+\end{alignat}\]
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, the following value is called the <strong>Euler characteristic</strong>:</p>
+
+\[\xi(X) = \sum (-1)^p R_p(X)\]
+</blockquote>
+
+<p>Since Betti numbers are topological invariants, the Euler characteristic is also a topological invariant.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> Let $v, e, f$ denote the number of vertices, edges, and faces of a polyhedron $P$, respectively. Let $X$ denote the surface of $P$ as a 2-dimensional topological space. Then the following holds:</p>
+
+\[v - e + f = \xi(X)\]
+</blockquote>
+
+<p><strong>Proof.</strong> The triangulation of a $k$-gon can be obtained by adding $k - 3$ edges, which creates $k - 3$ faces. Thus, $P$ has the same $v - e + f$ value as its triangulation, which equals the Euler characteristic. ■</p>
+
+<p><img src="/public/triangulation.png" style="width: 100%; max-width: 400px; margin: 1em auto 1.5em auto;" /></p>
+
+<p>Earlier, we observed that for a polyhedron with one hole, $v - e + f = 0$. Indeed, the 0th, 1st, and 2nd Betti numbers of a torus are 1, 2, and 1, respectively, and $1 - 2 + 1 = 0$. On the other hand, the homology groups of a sphere are as follows:</p>
+
+<ul>
+  <li>$H_0(K) = \mathbb{Z}$</li>
+  <li>$H_1(K) = 0$</li>
+  <li>$H_2(K) = \mathbb{Z}$</li>
+</ul>
+
+<p>Thus, the 0th, 1st, and 2nd Betti numbers of a sphere are 1, 0, and 1, respectively, and $1 - 0 + 1 = 2$. Therefore, for convex polyhedra, $v - e + f = 2$.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/11/11/stationary-sets"> 클럽 집합과 정상 집합 </a>
       </h1>
     <span class="post-date">11 Nov 2025</span>
@@ -1590,572 +1848,6 @@ F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
 <blockquote>
   <p><strong>Corollary.</strong> If $B \subseteq \mathbb{R}$ is a Borel set, then $|B| = \aleph_0$ or $|B| = 2^{\aleph_0}$.</p>
 </blockquote>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/09/16/cardinal-arithmetics"> 기수 연산 </a>
-      </h1>
-    <span class="post-date">16 Sep 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/집합론/'">
-        집합론
-      </div>
-      
-    </div>
-     <p>이 글에서 모든 집합과 기수는 무한하다.</p>
-
-<h2 id="1-기수-덧셈">1. 기수 덧셈</h2>
-
-<p>기수 산술<sub>cardinal arithmetics</sub>을 다룰 때에는 각 연산의 정의를 정확히 아는 것이 중요하다. 정의와 정리를 혼동하기가 쉽기 때문이다. 먼저 기수 덧셈부터 보자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 서로소 집합이라고 하자. $\kappa + \lambda$를 $|A \cup B |$로 정의한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> 기수의 유한 덧셈은 교환법칙과 결합법칙을 만족한다.</p>
-</blockquote>
-
-<p>위 정의가 well-defined임을 보이기 위해서는 $\kappa + \lambda$가 $A, B$의 선택에 의존적이지 않음을 보여야 한다. 이는 ZF에서 쉽게 증명 가능하다. 또한 유한한 기수 덧셈은 그저 최대 기수를 구하는 것이기 때문에 계산하기가 상당히 용이하다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\]
-</blockquote>
-
-<p><strong>증명.</strong> “2. 기수 곱셈”의 보조정리와 칸토어-베른슈타인 정리에 의해, $\aleph_\alpha = \aleph_\alpha + \aleph_\alpha$이다. 따라서 $|A| \leq |B|$라면 $|B| \leq |A + B| \leq |B + B| = |B|$이다. ■</p>
-
-<p>기수 덧셈의 정의를 무한한 경우로 확장하면,</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 쌍으로 서로소인 집합족 $\lbrace A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
-
-\[\sum_{i \in I} \kappa_i = \left| \bigcup_{i \in I}A_i \right|\]
-</blockquote>
-
-<p>유의할 점은, 위 정의가 well-defined임을 보이는 데는 선택 공리가 필요하다는 점이다. 각 $i \in I$에 대해 일대일 대응 $A_i \to \kappa_i$을 선택할 수 있어야 하기 때문이다. 그래서 기수 산술을 다룰 때에는 거의 언제나 선택 공리를 전제한다.</p>
-
-<p>$\kappa + \lambda = \mathrm{max}(\kappa, \lambda)$ 관계식으로부터 다음의 관계식을 유도하고 싶을 수 있지만, 성립하는 식이 아님에 주의해야 한다.</p>
-
-<blockquote>
-  <p><strong>주의.</strong> $\sum_{i \in I} \kappa_i = \sup \kappa_i$는 일반적으로 성립하지 않는다.</p>
-</blockquote>
-
-<h2 id="2-기수-곱셈">2. 기수 곱셈</h2>
-
-<p>그렇다면 무한한 기수 덧셈은 어떻게 계산해야 할까? 이를 알아보기 위해, 먼저 기수 곱셈을 정의하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 집합이라고 하자. $\kappa \cdot \lambda$를 $| A \times B|$로 정의한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>정리.</strong> 기수의 유한 곱셈은 교환법칙과 결합법칙을 만족한다.</p>
-</blockquote>
-
-<p>아주 용이하게도 유한 기수 곱셈의 계산은 유한 기수 덧셈의 계산과 같다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\]
-</blockquote>
-
-<p><strong>증명.</strong> 다음의 보조정리로부터 따라 나온다. ■</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> 임의의 $\alpha \in \mathrm{Ord}$에 대해, $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$</p>
-</blockquote>
-
-<p>증명 개요는 다음과 같다. 임의의 $\alpha \in \mathrm{Ord}$에 대해, 다음과 같이 정의된 순서 $\prec$가 $\omega_\alpha \times \omega_\alpha$의 정렬 순서임을 보인다. $\hat{x} = \mathrm{max}(x_1, x_2), \hat{y} = \mathrm{max}(y_1, y_2)$일 때,</p>
-
-\[(x_1, x_2) \prec (y_1, y_2) \iff \begin{cases}
-\hat{x} &lt; \hat{y}\\
-x_1 &lt; y_1 \quad (\text{if }\hat{x} &lt; \hat{y}) \\
-x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
-\end{cases}\]
-
-<p>즉, $\prec$은 최댓값 우선 후 사전식 순서이다. 초한귀납법에 따라 모든 $\beta &lt; \alpha$에 대해 $\aleph_\beta \cdot \aleph_\beta = \aleph_\beta$일 때 $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$임을 보인다. 이를 위해 $(\omega_\alpha \times \omega_\alpha, \prec)$의 순서형<sub>order type</sub>이 $\omega_\alpha$를 넘지 않음을 보이면 된다. 이를 위해 임의의 $(\gamma_1, \gamma_2) \in \omega_\alpha \times \omega_\alpha$에 대해</p>
-
-\[X = \{ (\xi_1, \xi_2) : (\xi_1, \xi_2) \prec (\gamma_1, \gamma_2) \}\]
-
-<p>라면 $|X| &lt; \aleph_\alpha$임을 보이면 된다. $\gamma = \mathrm{max}(\gamma_1, \gamma_2) + 1$이라고 하자. $\omega_\alpha$는 극한 서수이므로 $\gamma \in \omega_\alpha$이며, 따라서 $|\gamma| = \aleph_\delta \; (\delta &lt; \alpha)$이다. 한편으로 $X \subseteq \gamma \times \gamma$이므로 $|X| \leq \aleph_\delta \cdot \aleph_\delta$이며 이는 귀납 가정에 의해 $\aleph_\delta$이다. ■</p>
-
-<p><strong>기수 곱셈의 정의는 기수 덧셈과 아무 관련이 없다.</strong> 즉, 기수 곱셈의 정의에는 “$\kappa$를 $\lambda$번 더한다”와 같은 의미가 없다. 그럼에도 다음 <em>정리</em>에 의해 기수 곱셈을 기수 덧셈과 연관지을 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\sum_{i \in I} \kappa = |I| \cdot \kappa\]
-</blockquote>
-
-<p><strong>증명.</strong> $\lbrace  A_i \rbrace $가 쌍으로 서로소이며 $|A_i| = \kappa$인 집합족이라고 하자. 좌변은 $\bigcup_{i \in I} A_i$의 기수이고, 우변은 $I \times A$의 기수이다 $(|A| = \kappa)$. 선택 공리에 의해 각 $i \in I$에 대해 일대일 대응 $f_i : A_i \to A$를 정의할 수 있다. 다음의 대응 $f: \bigcup_{i \in I} A_i \to I \times A$을 정의하자.</p>
-
-\[f(x) = (i, f_i(x)) \quad (\text{if } x \in A_i)\]
-
-<p>위 함수가 일대일 대응임은 쉽게 확인할 수 있다. 따라서 (좌변) = (우변)이다. ■</p>
-
-<p>이로부터 앞선 언급한 “주의”에 해당되는 올바른 관계식을 증명할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\]
-</blockquote>
-
-<p><strong>증명.</strong> $\kappa = \sup \lbrace  \kappa_i : i \in I \rbrace $라고 하고, 좌변을 $L$, 우변을 $R$이라고 하자. 앞선 정리에 의해 $|I| \cdot \kappa = \sum_{i \in I} \kappa$이고 $\kappa_i \leq \kappa$이므로 $L ≤ R$이다. 반대로, $| I | = \sum_{i \in I} 1 \leq L$이고, $\kappa = \sup \kappa_i \leq L$이다. 글 하단의 보조정리에 의해 $L = L \cdot L$이므로 $L \geq | I | \cdot \kappa = R$이다. 따라서 칸토어-베른슈타인 정리에 의해 $L = R$이다. (이 증명에는 선택 공리가 암시적으로 많이 사용되었으니 관심 있는 독자는 생략된 논증을 자세히 써 봐도 좋을 것이다) ■</p>
-
-<p>이제 기수 곱셈도 무한 경우로 일반화하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 각 $i \in I$에 대해 $A_i$가 기수 $\kappa_i$인 집합족 $\lbrace A_i \rbrace $가 주어졌을 때, 다음과 같이 정의한다.</p>
-
-\[\prod_{i \in I} \kappa_i = \left| \prod_{i \in I}A_i \right|\]
-</blockquote>
-
-<p>기수 곱셈을 계산할 때 쾨니히 정리<sub>König’s Theorem</sub>가 유용하게 사용될 수 있다.</p>
-
-<blockquote>
-  <p><strong>쾨니히 정리.</strong> 인덱스 집합 $I$에 대해 $\kappa_i &lt; \lambda_i$라고 하자. 다음이 성립한다.</p>
-
-\[\sum \kappa_i &lt; \prod \lambda_i\]
-</blockquote>
-
-<p>당연한 거 아니냐고 생각할 수 있겠지만, 일반적으로 1, 2는 고사하고 3도 성립하지 않는다는 사실에 유의하라.</p>
-
-<ol>
-  <li>$\kappa_i &lt; \lambda_i$라면 $\sum \kappa_i &lt; \sum \lambda_i$</li>
-  <li>$\kappa_i &lt; \lambda_i$라면 $\prod \kappa_i &lt; \prod \lambda_i$</li>
-  <li>$\kappa_i \leq \lambda_i$일 때 $\sum \kappa_i &lt; \prod \lambda_i$</li>
-</ol>
-
-<p>물론 1, 2, 3에서 결론부의 부등호를 $&lt;$에서 $\leq$로 약화하면 모두 성립한다. 쾨니히 정리의 특징은 결론부가 엄격한 부등호라는 것이다.</p>
-
-<p><strong>증명.</strong> $\lbrace  A_i \rbrace , \lbrace  B_i \rbrace $가 각각 기수가 $\kappa_i, \lambda_i$인 (쌍으로 서로소인) 집합들의 모임이라고 하자. 귀류법에 따라, $f: \prod B_i \to \cup A_i$인 단사함수가 존재한다고 하자. 임의의 $i \in I$에 대해, $f$의 단사성으로부터 $|f^{-1}(A_i)| = |A_i|$이다. 그런데 $|A_i| &lt; |B_i|$이므로 $\pi_i (f^{-1}(A_i)) \subset B_i$는 $B_i$보다 크기가 엄격히 작으며, 이에 따라 $b_i \in B_i \setminus \pi_i (f^{-1}(A_i))$가 존재한다. 각 $i$에 대해 그러한 $b_i$를 고른 뒤, $b = (b_i)_{i \in I}$를 생각하면, 임의의 $i \in I$에 대해 $\pi_i(b) = b_i$이므로 $f(b) \notin \cup A_i$가 되어 모순이다. ■</p>
-
-<h2 id="3-기수-지수">3. 기수 지수</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> $A, B$가 각각 기수가 $\kappa, \lambda$인 집합이라고 하자. $\kappa^\lambda$를 $|A^B |$로 정의한다. ($A^B$는 $B$에서 $A$로 가는 함수들의 집합이다)</p>
-</blockquote>
-
-<p>기수 곱셈의 경우와 마찬가지로, 비록 기수 지수의 정의는 기수 곱셈과 아무 관련이 없지만, 다음 정리에 의해 둘 사이에 다리를 놓을 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\prod_{i \in I} \kappa = \kappa^{|I|}\]
-</blockquote>
-
-<p>또한 기수 지수는 일반적인 지수의 여러 좋은 성질을 공유한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 기수의 지수 연산은 지수법칙을 만족한다. 즉,</p>
-
-  <ul>
-    <li>$\kappa^{\lambda + \mu} = \kappa^\lambda \cdot \kappa^\mu$</li>
-    <li>$(\kappa^\lambda)^\mu = \kappa^{\lambda \cdot \mu}$</li>
-    <li>$(\kappa \cdot \lambda)^{\mu} = \kappa^\mu \cdot \lambda^\mu$</li>
-  </ul>
-</blockquote>
-
-<p>그럼에도 기수 지수를 정확히 계산하기란 굉장히 까다로운데, 일반화된 연속체 가설<sub>Generalized Continuum Hypothesis</sub>을 전제하지 않으면 얻을 수 있는 결과가 제한적이기 때문이다. 우선 일반화된 연속체 가설 없이 증명할 수 있는 정리들을 보자.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-  <ol>
-    <li>$2^{\aleph_\alpha} &gt; \aleph_\alpha$</li>
-    <li>$\alpha \leq \beta \implies \kappa^{\aleph_\alpha} \leq \kappa^{\aleph_\beta}$</li>
-    <li>$\mathrm{cf}(\kappa^{\aleph_\alpha}) &gt; \aleph_\alpha$</li>
-  </ol>
-</blockquote>
-
-<p>$\mathrm{cf}(\kappa) \leq \kappa$이므로 3이 1을 함의한다는 사실에 주목하라.</p>
-
-<p><strong>증명.</strong> 1은 칸토어의 정리이고, 2는 선택 공리를 사용하면 자명하다. 3의 증명은 쾨니히 정리를 사용한다. $\mathrm{cf}(\kappa^{\aleph_\alpha}) = \aleph_\lambda$라고 하자. $\mathrm{cf}$의 정의에 의해 $\xi_i &lt; \kappa^{\aleph_\alpha}$이며 $\sum_{i &lt; \omega_\lambda} \xi_i = \kappa^{\aleph_\alpha}$을 만족하는 $\lbrace  \xi_i \rbrace _{i &lt; \omega_\lambda}$가 존재한다. 쾨니히 정리에 의해 다음이 성립한다.</p>
-
-\[\kappa^{\aleph_\alpha} = \sum_{i &lt; \omega_\lambda} \xi_i &lt; \prod_{i &lt; \omega_\lambda} \kappa^{\aleph_\alpha} = \kappa^{\aleph_\alpha \cdot \aleph_\lambda}\]
-
-<p>그런데 만약 $\aleph_\lambda = \aleph_\alpha$라면 $\kappa^{\aleph_\alpha \cdot \aleph_\lambda} = \kappa^{\aleph_\alpha}$이므로 $&lt;$가 성립하지 않는다. 따라서 $\aleph_\lambda &gt; \aleph_\alpha$이다. ■</p>
-
-<p>다음의 두 정리는 특히 유용하다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-\[\aleph_\alpha^{\aleph_\beta} =
-\begin{cases}
-2^{\aleph_\beta} &amp; (\aleph_\alpha \leq \aleph_\beta) \\
-\mathrm{card} \{ A \subseteq \omega_\alpha : |A| = \aleph_\beta \} &amp; (\aleph_\beta &lt; \aleph_\alpha)
-\end{cases}\]
-</blockquote>
-
-<p><strong>증명.</strong> $\aleph_\alpha \leq \aleph_\beta$인 경우의 증명은 다음과 같다.</p>
-
-\[2^{\aleph_\beta} \leq \aleph_\alpha^{\aleph_\beta} \leq (2^{\aleph_\alpha})^{\aleph_\beta} = 2^{\aleph_\alpha \cdot \aleph_\beta} = 2^{\aleph_\beta}\]
-
-<p>$\aleph_\alpha &gt; \aleph_\beta$인 경우를 증명하자. 좌변의 집합을 $S$라고 하자. 각 $S$의 원소는 $\aleph_\beta$에서 $\aleph_\alpha$로 가는 단사함수로 생각할 수 있으므로 $|S| \leq {\aleph_\alpha}^{\aleph_\beta}$이다. 역방향을 보이기 위해 먼저 $\aleph_\beta &lt; \aleph_\alpha$이므로 $\aleph_\alpha = \aleph_\beta \cdot \aleph_\alpha$임을 관찰하자. 따라서,</p>
-
-\[|S| = |T| \quad \text{where} \quad T = \{ A \subseteq \omega_\beta \times \omega_\alpha : |A| = \aleph_\beta \}\]
-
-<p>그런데 $T$의 각 원소는 $\omega_\alpha$에서 <em>중복을 허용하고</em> $\aleph_\beta$개의 원소를 뽑는 경우의 수로 생각될 수 있다. 이는 $T$에서 ${\aleph_\alpha}^{\aleph_\beta}$로 가는 전사 관계를 정의한다. 따라서 ${\aleph_\alpha}^{\aleph_\beta} = |S|$이다. ■</p>
-
-<p>이의 따름정리는 하우스도르프 정리이다.</p>
-
-<blockquote>
-  <p><strong>하우스도르프 정리.</strong></p>
-
-\[\aleph_{\alpha+1}^{\aleph_\beta} = \aleph_\alpha^{\aleph_\beta} \cdot \aleph_{\alpha + 1}\]
-</blockquote>
-
-<p><strong>증명.</strong> $\beta &gt; \alpha$라면 앞선 정리에 의해 정리가 자명하게 성립한다. 따라서 $\beta \leq \alpha$라고 하자. $\aleph_{\alpha+1}^{\aleph_\beta} \geq \aleph_\alpha^{\aleph_\beta}, \aleph_{\alpha + 1}$이므로 $\geq$ 방향은 자명하게 성립한다. 따라서 $\leq$ 방향을 보이면 충분하다.</p>
-
-<p>$\aleph_{\alpha + 1}$은 계승자 기수<sub>successor cardinal</sub>이므로 <a href="https://dimenerno.github.io/2025/05/04/regular-singular">정칙<sub>regular</sub></a>이며, 이에 따라 $\aleph_\beta &lt; \mathrm{cf}(\aleph_{\alpha + 1})$이다. 따라서 $f \in \omega_\alpha^{\omega_\beta}$는 상계를 가진다. 즉,</p>
-
-\[\aleph_{\alpha+1}^{\aleph_\beta} = \bigcup_{\gamma &lt; \omega_{\alpha + 1}} \gamma^{\omega_\beta}\]
-
-<p>여기서 각 $\gamma$는 기수가 $\aleph_\alpha$ 이하이다. 따라서 다음이 성립한다.</p>
-
-\[\aleph_{\alpha+1}^{\aleph_\beta} \leq \sum_{\gamma &lt; \omega_{\alpha + 1}} |\gamma|^{\aleph_\beta} \leq \sum_{\gamma &lt; \omega_{\alpha + 1}} {\aleph_\alpha}^{\aleph_\beta} =  {\aleph_\alpha}^{\aleph_\beta} \cdot \aleph_{\alpha + 1} \quad \blacksquare\]
-
-<h2 id="4-일반화된-연속체-가설-하에서">4. 일반화된 연속체 가설 하에서</h2>
-
-<p>일반화된 연속체 가설을 전제하면 훨씬 더 강력한 결과들을 증명할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\aleph_\alpha$가 정칙 기수인 경우, 다음이 성립한다.</p>
-
-\[\aleph_\alpha^{\aleph_\beta} = \begin{cases}
-\aleph_{\beta + 1} &amp; \aleph_\alpha \leq \aleph_\beta \\
-\aleph_{\alpha} &amp; \aleph_\beta &lt; \aleph_\alpha \end{cases}\]
-</blockquote>
-
-<p><strong>증명.</strong> $\aleph_\alpha \leq \aleph_\beta$인 경우 $\aleph_\alpha^{\aleph_\beta} = 2^{\aleph_\beta}$이므로 GCH에 의해 성립한다. $\aleph_\alpha &gt; \aleph_\beta$인 경우,</p>
-
-\[\aleph_\alpha^{\aleph_\beta} = |S| \quad \text{where} S = \{ A \subseteq \omega_\alpha : |A| = \aleph_\beta \}\]
-
-<p>이다. $\aleph_\alpha$가 정칙이므로 $S$의 각 원소는 유계이다. 따라서,</p>
-
-\[S \subseteq \bigcup_{\lambda \in \omega_\alpha} \mathcal{P}(\lambda)\]
-
-<p>이다. 임의의 $\lambda \in \omega_\alpha$에 대해 $|\lambda| = \aleph_\delta$라고 하면, $\aleph_\delta &lt; \aleph_\alpha$이므로 $2^{|\lambda|} = \aleph_{\delta + 1} &lt; \aleph_\alpha$이다. 따라서 다음이 성립한다.</p>
-
-\[\begin{align}
-|S| &amp;\leq \sum_{\lambda \in \omega_\alpha} 2^{|\lambda} \\
-&amp;\leq \sum_{\lambda \in \omega_\alpha} \aleph_\alpha \\
-&amp;= \aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha \quad \blacksquare
-\end{align}\]
-
-<blockquote>
-  <p><strong>정리.</strong> $\aleph_\alpha$가 특이 기수인 경우, 다음이 성립한다.</p>
-
-\[\aleph_\alpha^{\aleph_\beta} = \begin{cases}
-\aleph_{\beta + 1} &amp; \aleph_\alpha \leq \aleph_\beta \\
-\aleph_{\alpha + 1} &amp; \mathrm{cf}(\aleph_\alpha) \leq \aleph_\beta &lt; \aleph_\alpha \\
-\aleph_{\alpha} &amp; \aleph_\beta &lt; \mathrm{cf}(\aleph_\alpha) \end{cases}\]
-</blockquote>
-
-<p><strong>증명.</strong> 첫 번째 경우와 세 번째 경우는 이전 정리의 증명과 거의 같으므로, 두 번째 경우만 살펴보자. 다음이 성립한다.</p>
-
-\[\aleph_\alpha \leq \aleph_\alpha^{\aleph_\beta} \leq \aleph_\alpha^{\aleph_\alpha} = 2^{\aleph_\alpha} = \aleph_{\alpha+1}\]
-
-<p>따라서 $\aleph_\alpha &lt; \aleph_\alpha^{\aleph_\beta}$임을 보이면 충분하다. 만약 $\aleph_\alpha = \aleph_\alpha^{\aleph_\beta}$라면 $\mathrm{cf}(\aleph_\alpha) = \mathrm{cf}(\aleph_\alpha^{\aleph_\beta}) &gt; \aleph_\beta$인데, 가정에 의해 $\mathrm{cf}(\aleph_\alpha) \leq \aleph_\beta$이므로 모순이다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/09/16/cardinal-arithmetics/en"> Cardinal Arithmetic </a>
-      </h1>
-    <span class="post-date">16 Sep 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>In this article, all sets and cardinals are infinite.</p>
-
-<h2 id="1-cardinal-addition">1. Cardinal Addition</h2>
-
-<p>When dealing with cardinal arithmetic, it is important to know the precise definitions of each operation. It is easy to confuse definitions with theorems. Let us begin with cardinal addition.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $A, B$ be disjoint sets with cardinalities $\kappa, \lambda$ respectively. Define $\kappa + \lambda$ as $|A \cup B |$.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Finite cardinal addition satisfies the commutative and associative laws.</p>
-</blockquote>
-
-<p>To show that the above definition is well-defined, we must prove that $\kappa + \lambda$ does not depend on the choice of $A, B$. This is easily provable in ZF. Moreover, finite cardinal addition is merely finding the maximum cardinal, making it quite easy to compute.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-\[\kappa + \lambda = \mathrm{max}(\kappa, \lambda)\]
-</blockquote>
-
-<p><strong>Proof.</strong> By the lemma in “2. Cardinal Multiplication” and the Cantor-Bernstein theorem, $\aleph_\alpha = \aleph_\alpha + \aleph_\alpha$. Therefore, if $|A| \leq |B|$, then $|B| \leq |A + B| \leq |B + B| = |B|$. ■</p>
-
-<p>Extending the definition of cardinal addition to the infinite case,</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Given a family of pairwise disjoint sets $\lbrace  A_i \rbrace $ where each $A_i$ has cardinality $\kappa_i$ for $i \in I$, we define:</p>
-
-\[\sum_{i \in I} \kappa_i = \left| \bigcup_{i \in I}A_i \right|\]
-</blockquote>
-
-<p>Note that proving this definition is well-defined requires the axiom of choice. For each $i \in I$, we must be able to choose a bijection $A_i \to \kappa_i$. Therefore, when dealing with cardinal arithmetic, the axiom of choice is almost always presupposed.</p>
-
-<p>From the relation $\kappa + \lambda = \mathrm{max}(\kappa, \lambda)$, one might wish to derive the following relation, but note that this is not a valid equation.</p>
-
-<blockquote>
-  <p><strong>Warning.</strong> $\sum_{i \in I} \kappa_i = \sup \kappa_i$ does not hold in general.</p>
-</blockquote>
-
-<h2 id="2-cardinal-multiplication">2. Cardinal Multiplication</h2>
-
-<p>How then should we compute infinite cardinal addition? To understand this, let us first define cardinal multiplication.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $A, B$ be sets with cardinalities $\kappa, \lambda$ respectively. Define $\kappa \cdot \lambda$ as $| A \times B|$.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Finite cardinal multiplication satisfies the commutative and associative laws.</p>
-</blockquote>
-
-<p>Very conveniently, the computation of finite cardinal multiplication is the same as that of finite cardinal addition.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-\[\kappa \cdot \lambda = \mathrm{max}(\kappa, \lambda)\]
-</blockquote>
-
-<p><strong>Proof.</strong> This follows from the lemma below. ■</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> For any $\alpha \in \mathrm{Ord}$, $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$</p>
-</blockquote>
-
-<p>The proof outline is as follows. For any $\alpha \in \mathrm{Ord}$, we show that the order $\prec$ defined as follows is a well-ordering of $\omega_\alpha \times \omega_\alpha$. When $\hat{x} = \mathrm{max}(x_1, x_2), \hat{y} = \mathrm{max}(y_1, y_2)$,</p>
-
-\[(x_1, x_2) \prec (y_1, y_2) \iff \begin{cases}
-\hat{x} &lt; \hat{y}\\
-x_1 &lt; y_1 \quad (\text{if }\hat{x} &lt; \hat{y}) \\
-x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
-\end{cases}\]
-
-<p>That is, $\prec$ is the maximum-first then lexicographic order. By transfinite induction, we show that $\aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha$ when $\aleph_\beta \cdot \aleph_\beta = \aleph_\beta$ for all $\beta &lt; \alpha$. For this, it suffices to show that the order type of $(\omega_\alpha \times \omega_\alpha, \prec)$ does not exceed $\omega_\alpha$. We need to show that for any $(\gamma_1, \gamma_2) \in \omega_\alpha \times \omega_\alpha$,</p>
-
-\[X = \{ (\xi_1, \xi_2) : (\xi_1, \xi_2) \prec (\gamma_1, \gamma_2) \}\]
-
-<p>satisfies $|X| &lt; \aleph_\alpha$. Let $\gamma = \mathrm{max}(\gamma_1, \gamma_2) + 1$. Since $\omega_\alpha$ is a limit ordinal, $\gamma \in \omega_\alpha$, and therefore $|\gamma| = \aleph_\delta$ for some $\delta &lt; \alpha$. On the other hand, $X \subseteq \gamma \times \gamma$, so $|X| \leq \aleph_\delta \cdot \aleph_\delta$, which equals $\aleph_\delta$ by the induction hypothesis. ■</p>
-
-<p><strong>The definition of cardinal multiplication has no relation to cardinal addition.</strong> That is, there is no meaning like “adding $\kappa$ exactly $\lambda$ times” in the definition of cardinal multiplication. Nevertheless, the following <em>theorem</em> allows us to relate cardinal multiplication to cardinal addition.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-\[\sum_{i \in I} \kappa = |I| \cdot \kappa\]
-</blockquote>
-
-<p><strong>Proof.</strong> Let $\lbrace  A_i \rbrace $ be a family of pairwise disjoint sets with $|A_i| = \kappa$. The left side is the cardinality of $\bigcup_{i \in I} A_i$, and the right side is the cardinality of $I \times A$ where $|A| = \kappa$. By the axiom of choice, for each $i \in I$ we can define a bijection $f_i : A_i \to A$. Define the following correspondence $f: \bigcup_{i \in I} A_i \to I \times A$:</p>
-
-\[f(x) = (i, f_i(x)) \quad (\text{if } x \in A_i)\]
-
-<p>It is easily verified that this function is a bijection. Therefore (left side) = (right side). ■</p>
-
-<p>From this, we can prove the correct relation corresponding to the aforementioned “warning”.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-\[\sum_{i \in I} \kappa_i = |I| \cdot \sup \kappa_i\]
-</blockquote>
-
-<p><strong>Proof.</strong> Let $\kappa = \sup \lbrace  \kappa_i : i \in I \rbrace $, and denote the left side as $L$ and the right side as $R$. By the previous theorem, $|I| \cdot \kappa = \sum_{i \in I} \kappa$, and since $\kappa_i \leq \kappa$, we have $L ≤ R$. Conversely, $| I | = \sum_{i \in I} 1 \leq L$ and $\kappa = \sup \kappa_i \leq L$. By the lemma at the bottom of this article, $L = L \cdot L$, so $L \geq | I | \cdot \kappa = R$. Therefore, by the Cantor-Bernstein theorem, $L = R$. (The axiom of choice is implicitly used extensively in this proof, so interested readers may wish to write out the omitted arguments in detail.) ■</p>
-
-<p>Now let us generalise cardinal multiplication to the infinite case.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Given a family of sets $\lbrace  A_i \rbrace $ where each $A_i$ has cardinality $\kappa_i$ for $i \in I$, we define:</p>
-
-\[\prod_{i \in I} \kappa_i = \left| \prod_{i \in I}A_i \right|\]
-</blockquote>
-
-<p>König’s theorem can be usefully employed when computing cardinal multiplication.</p>
-
-<blockquote>
-  <p><strong>König’s Theorem.</strong> For an index set $I$, suppose $\kappa_i &lt; \lambda_i$. The following holds:</p>
-
-\[\sum \kappa_i &lt; \prod \lambda_i\]
-</blockquote>
-
-<p>One might think this is obvious, but note that in general, not only do 1 and 2 fail to hold, but even 3 does not hold.</p>
-
-<ol>
-  <li>If $\kappa_i &lt; \lambda_i$, then $\sum \kappa_i &lt; \sum \lambda_i$</li>
-  <li>If $\kappa_i &lt; \lambda_i$, then $\prod \kappa_i &lt; \prod \lambda_i$</li>
-  <li>If $\kappa_i \leq \lambda_i$, then $\sum \kappa_i &lt; \prod \lambda_i$</li>
-</ol>
-
-<p>Of course, if we weaken the inequality in the conclusion from $&lt;$ to $\leq$ in 1, 2, and 3, they all hold. The distinctive feature of König’s theorem is that the conclusion involves a strict inequality.</p>
-
-<p><strong>Proof.</strong> Let $\lbrace  A_i \rbrace , \lbrace  B_i \rbrace $ be collections of (pairwise disjoint) sets with cardinalities $\kappa_i, \lambda_i$ respectively. By contradiction, suppose there exists an injective function $f: \prod B_i \to \cup A_i$. For any $i \in I$, by the injectivity of $f$, $|f^{-1}(A_i)| = |A_i|$. But since $|A_i| &lt; |B_i|$, $\pi_i (f^{-1}(A_i)) \subset B_i$ has strictly smaller cardinality than $B_i$, and accordingly there exists $b_i \in B_i \setminus \pi_i (f^{-1}(A_i))$. Choosing such $b_i$ for each $i$ and considering $b = (b_i)_{i \in I}$, we have $\pi_i(b) = b_i$ for any $i \in I$, so $f(b) \notin \cup A_i$, which is a contradiction. ■</p>
-
-<h2 id="3-cardinal-exponentiation">3. Cardinal Exponentiation</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $A, B$ be sets with cardinalities $\kappa, \lambda$ respectively. Define $\kappa^\lambda$ as $|A^B |$, where $A^B$ is the set of functions from $B$ to $A$.</p>
-</blockquote>
-
-<p>As in the case of cardinal multiplication, although the definition of cardinal exponentiation has no relation to cardinal multiplication, the following theorem allows us to bridge the two.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-\[\prod_{i \in I} \kappa = \kappa^{|I|}\]
-</blockquote>
-
-<p>Moreover, cardinal exponentiation shares several nice properties of ordinary exponentiation.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Cardinal exponentiation satisfies the laws of exponents. That is,</p>
-
-  <ul>
-    <li>$\kappa^{\lambda + \mu} = \kappa^\lambda \cdot \kappa^\mu$</li>
-    <li>$(\kappa^\lambda)^\mu = \kappa^{\lambda \cdot \mu}$</li>
-    <li>$(\kappa \cdot \lambda)^{\mu} = \kappa^\mu \cdot \lambda^\mu$</li>
-  </ul>
-</blockquote>
-
-<p>Nevertheless, computing cardinal exponentiation precisely is quite challenging, as the results obtainable without assuming the Generalised Continuum Hypothesis are limited. Let us first examine theorems that can be proved without the Generalised Continuum Hypothesis.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-  <ol>
-    <li>$2^{\aleph_\alpha} &gt; \aleph_\alpha$</li>
-    <li>$\alpha \leq \beta \implies \kappa^{\aleph_\alpha} \leq \kappa^{\aleph_\beta}$</li>
-    <li>$\mathrm{cf}(\kappa^{\aleph_\alpha}) &gt; \aleph_\alpha$</li>
-  </ol>
-</blockquote>
-
-<p>Note that since $\mathrm{cf}(\kappa) \leq \kappa$, property 3 implies 1.</p>
-
-<p><strong>Proof.</strong> 1 is Cantor’s theorem, and 2 is trivial using the axiom of choice. The proof of 3 uses König’s theorem. Let $\mathrm{cf}(\kappa^{\aleph_\alpha}) = \aleph_\lambda$. By the definition of $\mathrm{cf}$, there exists $\lbrace  \xi_i \rbrace _{i &lt; \omega_\lambda}$ such that $\xi_i &lt; \kappa^{\aleph_\alpha}$ and $\sum_{i &lt; \omega_\lambda} \xi_i = \kappa^{\aleph_\alpha}$. By König’s theorem, the following holds:</p>
-
-\[\kappa^{\aleph_\alpha} = \sum_{i &lt; \omega_\lambda} \xi_i &lt; \prod_{i &lt; \omega_\lambda} \kappa^{\aleph_\alpha} = \kappa^{\aleph_\alpha \cdot \aleph_\lambda}\]
-
-<p>But if $\aleph_\lambda = \aleph_\alpha$, then $\kappa^{\aleph_\alpha \cdot \aleph_\lambda} = \kappa^{\aleph_\alpha}$, so the strict inequality $&lt;$ does not hold. Therefore $\aleph_\lambda &gt; \aleph_\alpha$. ■</p>
-
-<p>The following two theorems are particularly useful.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-\[\aleph_\alpha^{\aleph_\beta} =
-\begin{cases}
-2^{\aleph_\beta} &amp; (\aleph_\alpha \leq \aleph_\beta) \\
-\mathrm{card} \{ A \subseteq \omega_\alpha : |A| = \aleph_\beta \} &amp; (\aleph_\beta &lt; \aleph_\alpha)
-\end{cases}\]
-</blockquote>
-
-<p><strong>Proof.</strong> The proof for the case $\aleph_\alpha \leq \aleph_\beta$ is as follows:</p>
-
-\[2^{\aleph_\beta} \leq \aleph_\alpha^{\aleph_\beta} \leq (2^{\aleph_\alpha})^{\aleph_\beta} = 2^{\aleph_\alpha \cdot \aleph_\beta} = 2^{\aleph_\beta}\]
-
-<p>Let us prove the case $\aleph_\alpha &gt; \aleph_\beta$. Let $S$ denote the set on the left. Each element of $S$ can be thought of as an injective function from $\aleph_\beta$ to $\aleph_\alpha$, so $|S| \leq {\aleph_\alpha}^{\aleph_\beta}$. To show the reverse direction, first observe that since $\aleph_\beta &lt; \aleph_\alpha$, we have $\aleph_\alpha = \aleph_\beta \cdot \aleph_\alpha$. Therefore,</p>
-
-\[|S| = |T| \quad \text{where} \quad T = \{ A \subseteq \omega_\beta \times \omega_\alpha : |A| = \aleph_\beta \}\]
-
-<p>But each element of $T$ can be thought of as the number of ways to choose $\aleph_\beta$ elements from $\omega_\alpha$ <em>with repetition allowed</em>. This defines a surjective relation from $T$ to ${\aleph_\alpha}^{\aleph_\beta}$. Therefore ${\aleph_\alpha}^{\aleph_\beta} = |S|$. ■</p>
-
-<p>A corollary of this is Hausdorff’s theorem.</p>
-
-<blockquote>
-  <p><strong>Hausdorff’s Theorem.</strong></p>
-
-\[\aleph_{\alpha+1}^{\aleph_\beta} = \aleph_\alpha^{\aleph_\beta} \cdot \aleph_{\alpha + 1}\]
-</blockquote>
-
-<p><strong>Proof.</strong> If $\beta &gt; \alpha$, then by the previous theorem the statement holds trivially. Therefore suppose $\beta \leq \alpha$. Since $\aleph_{\alpha+1}^{\aleph_\beta} \geq \aleph_\alpha^{\aleph_\beta}, \aleph_{\alpha + 1}$, the $\geq$ direction holds trivially. Therefore it suffices to show the $\leq$ direction.</p>
-
-<p>Since $\aleph_{\alpha + 1}$ is a successor cardinal, it is regular, and accordingly $\aleph_\beta &lt; \mathrm{cf}(\aleph_{\alpha + 1})$. Therefore $f \in \omega_\alpha^{\omega_\beta}$ has an upper bound. That is,</p>
-
-\[\aleph_{\alpha+1}^{\aleph_\beta} = \bigcup_{\gamma &lt; \omega_{\alpha + 1}} \gamma^{\omega_\beta}\]
-
-<p>where each $\gamma$ has cardinality at most $\aleph_\alpha$. Therefore the following holds:</p>
-
-\[\aleph_{\alpha+1}^{\aleph_\beta} \leq \sum_{\gamma &lt; \omega_{\alpha + 1}} |\gamma|^{\aleph_\beta} \leq \sum_{\gamma &lt; \omega_{\alpha + 1}} {\aleph_\alpha}^{\aleph_\beta} =  {\aleph_\alpha}^{\aleph_\beta} \cdot \aleph_{\alpha + 1} \quad \blacksquare\]
-
-<h2 id="4-under-the-generalised-continuum-hypothesis">4. Under the Generalised Continuum Hypothesis</h2>
-
-<p>Assuming the Generalised Continuum Hypothesis allows us to prove much stronger results.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $\aleph_\alpha$ is a regular cardinal, the following holds:</p>
-
-\[\aleph_\alpha^{\aleph_\beta} = \begin{cases}
-\aleph_{\beta + 1} &amp; \aleph_\alpha \leq \aleph_\beta \\
-\aleph_{\alpha} &amp; \aleph_\beta &lt; \aleph_\alpha \end{cases}\]
-</blockquote>
-
-<p><strong>Proof.</strong> For the case $\aleph_\alpha \leq \aleph_\beta$, $\aleph_\alpha^{\aleph_\beta} = 2^{\aleph_\beta}$, so it holds by GCH. For the case $\aleph_\alpha &gt; \aleph_\beta$,</p>
-
-\[\aleph_\alpha^{\aleph_\beta} = |S| \quad \text{where} S = \{ A \subseteq \omega_\alpha : |A| = \aleph_\beta \}\]
-
-<p>Since $\aleph_\alpha$ is regular, each element of $S$ is bounded. Therefore,</p>
-
-\[S \subseteq \bigcup_{\lambda \in \omega_\alpha} \mathcal{P}(\lambda)\]
-
-<p>For any $\lambda \in \omega_\alpha$, let $|\lambda| = \aleph_\delta$. Then $\aleph_\delta &lt; \aleph_\alpha$, so $2^{|\lambda|} = \aleph_{\delta + 1} &lt; \aleph_\alpha$. Therefore the following holds:</p>
-
-\[\begin{align}
-|S| &amp;\leq \sum_{\lambda \in \omega_\alpha} 2^{|\lambda} \\
-&amp;\leq \sum_{\lambda \in \omega_\alpha} \aleph_\alpha \\
-&amp;= \aleph_\alpha \cdot \aleph_\alpha = \aleph_\alpha \quad \blacksquare
-\end{align}\]
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $\aleph_\alpha$ is a singular cardinal, the following holds:</p>
-
-\[\aleph_\alpha^{\aleph_\beta} = \begin{cases}
-\aleph_{\beta + 1} &amp; \aleph_\alpha \leq \aleph_\beta \\
-\aleph_{\alpha + 1} &amp; \mathrm{cf}(\aleph_\alpha) \leq \aleph_\beta &lt; \aleph_\alpha \\
-\aleph_{\alpha} &amp; \aleph_\beta &lt; \mathrm{cf}(\aleph_\alpha) \end{cases}\]
-</blockquote>
-
-<p><strong>Proof.</strong> The first and third cases are almost the same as the proof of the previous theorem, so we examine only the second case. The following holds:</p>
-
-\[\aleph_\alpha \leq \aleph_\alpha^{\aleph_\beta} \leq \aleph_\alpha^{\aleph_\alpha} = 2^{\aleph_\alpha} = \aleph_{\alpha+1}\]
-
-<p>Therefore it suffices to show that $\aleph_\alpha &lt; \aleph_\alpha^{\aleph_\beta}$. If $\aleph_\alpha = \aleph_\alpha^{\aleph_\beta}$, then $\mathrm{cf}(\aleph_\alpha) = \mathrm{cf}(\aleph_\alpha^{\aleph_\beta}) &gt; \aleph_\beta$, but by assumption $\mathrm{cf}(\aleph_\alpha) \leq \aleph_\beta$, which is a contradiction. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

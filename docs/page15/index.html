@@ -433,6 +433,294 @@
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
+        <a href="/2024/12/01/net/en"> Compactness and Nets </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <h3 id="compactness">Compactness</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $X$ be a topological space.</p>
+
+  <ol>
+    <li>$X$ is said to be <strong>compact</strong> if every open cover has a finite subcover.</li>
+    <li>$X$ is said to be <strong>sequentially compact</strong> if every sequence $\lbrace x_n \in X \rbrace$ has a convergent subsequence.</li>
+    <li>$X$ is said to be <strong>limit point compact</strong> if every infinite set $S \subset X$ has a limit point.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>Compact $\rightarrow$ Limit point compact</li>
+    <li>Sequentially compact $\rightarrow$ Limit point compact</li>
+    <li>Limit point compact $\not\rightarrow$ Compact</li>
+    <li>Limit point compact $\not\rightarrow$ Sequentially compact</li>
+  </ol>
+</blockquote>
+
+<p><img src="/public/three-compactness.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>Let $S \subset X$ be an infinite set with no limit points. Since $\overline{S} = S \cup S’ = S$, $S$ is a closed set and $X \setminus S$ is an open set. For any $s \in S$, since $s$ is not a limit point, there exists a neighbourhood $U_s$ of $s$ such that $U_s \cap S = \lbrace  s \rbrace$. Therefore, the following open cover of $X$ has no finite subcover:</li>
+</ol>
+
+\[\mathcal{C} = \lbrace  X \setminus S \rbrace \cup \bigcup_{s \in S} \lbrace  U_s \rbrace\]
+
+<ol>
+  <li>Let $S \subset X$ be an infinite set. Arbitrarily extract elements of $S$ to form a sequence $\lbrace  s_n \rbrace \;(n \neq m \implies s_n \neq s_m)$. Since $X$ is sequentially compact, $\lbrace  s_n \rbrace → s$, and $s$ is a limit point of $S$.</li>
+  <li>$\omega_1$ with the order topology is limit point compact but not compact.</li>
+  <li>$X = \mathbb{N} \times \lbrace  0, 1 \rbrace$, where $\mathbb{N}$ is given the discrete topology and $\lbrace  0, 1\rbrace$ is given the trivial topology.</li>
+</ol>
+
+<p><strong>Remark.</strong> An incorrect “proof” of 4</p>
+
+<blockquote>
+  <p>Suppose $X$ is limit point compact. Given a sequence $(x_n)$, if $S = \lbrace  x_n : n \in \mathbb{N}\rbrace$ is a finite set, then $(x_n)$ trivially has a convergent subsequence. If $S$ is an infinite set, then by the limit point compactness of $X$, there exists $x \in S’$. <strong>Now we define a countable collection of neighbourhoods of $x$, $\mathcal{U} = \lbrace  U_n \rbrace$, satisfying the following conditions:</strong></p>
+
+  <ol>
+    <li>$n &lt; m \implies U_n \supset U_m$</li>
+    <li>For any neighbourhood $V$ of $x$, $\exists U \in \mathcal{U} : U \subset V$</li>
+  </ol>
+
+  <p>From this, we can define a function $k: \mathbb{N} → \mathbb{N}$ satisfying the following conditions:</p>
+
+  <ol>
+    <li>$x_{k(n)} \in U_n$</li>
+    <li>$n &lt; m \implies k(n) &lt; k(m)$</li>
+    <li>$n \neq m \implies x_{k(n)} \neq x_{k(m)}$</li>
+  </ol>
+
+  <p>Condition 2 is possible because when $k(i)$ is defined for $i \leq n$, $T = S \setminus \lbrace  x_i : i \leq k(n) \rbrace$ still has $x$ as a limit point. Thus, $(x_n)$ has a convergent subsequence $(x_{k(n)})$.</p>
+</blockquote>
+
+<p>The above proof is incorrect because the bold portion is not generally possible. Consider, for instance, a topological space where $x \in S’$ has uncountably many neighbourhoods which form uncountably infinite distinct classes of containment chain. Hence, in the diagram below, the same-coloured sets contain one or the other properly, but distinct-coloured sets do not, although they need not be strictly disjoint either. Such a space may be limit point compact yet not be sequentially compact, for there is no guaranteed way to enumerate the points of $S$ into a series such that whichever open set one chooses, for a large enough index, all points after that index is included in that open set. (Exercise: Convince yourself that this is not the case if the open sets can be arranged to form only finite distinct classes of chain, or countably infinite distinct classes of chain.)</p>
+
+<p><img src="/public/limit-vs-sequential.png" style="width: 100%; max-width: 550px; margin: 2em auto" /></p>
+
+<p>Instead, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> In first countable $T_1$ spaces, limit point compactness and sequential compactness are equivalent.</p>
+</blockquote>
+
+<p>Note that $T_1$-ness is also required, for without it Condition 3 cannot be guaranteed.</p>
+
+<h3 id="nets-and-sequences">Nets and Sequences</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(J, \leq)$ be a preorder. If for any $x, y \in J$, there exists $z \in J$ such that $x, y \leq z$, then $(J, \leq)$ is called a <strong>directed set</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $K$ be a subset of $(J, \leq)$. If for any $x \in J$, there exists $y \in K$ such that $x \leq y$, then $K$ is said to be <strong>cofinal</strong>.</p>
+</blockquote>
+
+<p><strong>Remark 1.</strong> If $(J, \leq)$ is a directed set and $K \subset J$ is cofinal, then $(K, \leq)$ is also a directed set.</p>
+
+<p><strong>Remark 2.</strong> As will be shown, cofinality is related with the generalisation of convergence.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(J, \leq)$ be a directed set. For a topological space $X$, a function $f: J → X$ is called a <strong>net</strong>. In particular, for $\alpha \in J$, we denote $f(\alpha)$ as $x_\alpha$.</p>
+</blockquote>
+
+<p><img src="/public/directed-set-net.png" style="width: 100%; max-width: 600px; margin: 0 auto" /></p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A net $(x_\alpha)$ converges to $x$ if, for any neighbourhood $U$ of $x$, there exists some $\alpha \in J$ such that</p>
+
+\[\alpha \leq \beta \implies x_\beta \in U\]
+</blockquote>
+
+<p>The convergence of nets in general topological spaces corresponds to the convergence of sequences in first countable spaces. That is,</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $X$ be a first countable space.</p>
+
+  <ol>
+    <li>For $A \subset X$, $x \in \bar{A}$ if and only if there exists a sequence $(x_n)$ converging to $x$.</li>
+    <li>For $f: X → Y$, $f$ is continuous if and only if for any sequence $(x_n)$, if $x_n → x$ then $f(x_n) → f(x)$.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $X$ be a topological space.</p>
+
+  <ol>
+    <li>For $A \subset X$, $x \in \bar{A}$ if and only if there exists a net $(x_\alpha)$ converging to $x$.</li>
+    <li>For $f: X → Y$, $f$ is continuous if and only if for any net $(x_\alpha)$, if $x_\alpha → x$ then $f(x_\alpha) → f(x)$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>Let $\mathcal{U}_x$ be the set of neighbourhoods of $x$. Give $\mathcal{U}_x$ the order $\leq$ by reverse inclusion. If $x \in \bar{A}$, then for any $U_\alpha \in \mathcal{U}_x$, there exists $x_\alpha \in U_\alpha \cap A, x_\alpha \neq x$. Verify that $x_\alpha → x$.</li>
+</ol>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $(x_\alpha)_{\alpha \in J}$ be a net. If $(I, \preceq)$ is a directed set, $g: (I, \preceq) → (J, \leq)$ is order-preserving, and $\operatorname{im}g$ is cofinal, then $(x_{g(\beta)})_{\beta \in I}$ is called a subnet of $(x_\alpha)$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> $X$ is compact if and only if every net has a convergent subnet.</p>
+</blockquote>
+
+<p><strong>Remark.</strong> Note that “there exists a convergent sequence” is a stronger condition than “there exists a convergent net”, but “every sequence has a convergent subsequence” is neither stronger nor weaker than “every net has a convergent subnet”. The subject (for every sequence v. for every net) is stronger in the latter case, while the predicate (there exists a subsequence v. there exists a subnet) is stronger in the former case. Therefore, <strong>compactness and sequential compactness have no implication relation in general.</strong> Specifically,</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>Compact $\not\rightarrow$ Sequentially compact</li>
+    <li>Sequentially compact $\not\rightarrow$ Compact</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<ol>
+  <li>$[0, 1]^{[0, 1]}$ is compact by Tychonoff’s theorem but not sequentially compact.</li>
+  <li>The long line and $\omega_1$ are sequentially compact but not compact.</li>
+</ol>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2024/12/01/baire"> 베르 범주 정리 </a>
+      </h1>
+    <span class="post-date">01 Dec 2024</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <h3 id="1-베르-공간">1. 베르 공간</h3>
+
+<blockquote>
+  <p><strong>정리.</strong> $S$가 위상공간 $X$의 부분집합일 때, 다음은 동치이다.</p>
+
+  <ul>
+    <li>$\left( \operatorname{cl}S \right)^\circ$가 공집합이다.</li>
+    <li>$(\operatorname{cl}S)^c$가 조밀하다.</li>
+    <li>$S$는 어떠한 $X$의 열린 집합에서도 조밀하지 않다.</li>
+  </ul>
+
+  <p>이때, $S$를 <strong>희박(rare)</strong>하다고 한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> 희박한 닫힌 집합들의 가산 합집합 $\bigcup F_n$이 희박한 공간 $X$를 베르 공간이라고 한다.</p>
+</blockquote>
+
+<p><img src="/public/baire.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
+
+<p><em>Remark.</em> $X$가 베르 공간이다 iff $X$의 열린 조밀 집합들의 가산 교집합은 조밀하다.</p>
+
+<p><strong>예시.</strong> $\mathbb{Q}$는 베르 공간이 아니다.</p>
+
+<ul>
+  <li>$\lbrace  q \rbrace$는 닫힌 희박 집합이지만 $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$는 희박하지 않다.</li>
+  <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$는 열린 조밀 집합이지만 $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$은 조밀하지 않다.</li>
+</ul>
+
+<h3 id="2-베르-범주-정리">2. 베르 범주 정리</h3>
+
+<blockquote>
+  <p><strong>콤팩트 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$X$가 콤팩트하다.</li>
+    <li>임의의 유한 교집합 속성을 가진 닫힌 집합들의 모임 $\mathcal{C}$에 대해 $\bigcap_{C \in \mathcal{C}} C \neq \varnothing$이다.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+<p><strong>완비 거리 공간에서의 칸토어 축소 정리.</strong> 다음은 동치이다.</p>
+<ol start="3">
+  <li>$X$가 완비 거리 공간이다.</li>
+  <li>임의의 공집합이 없는 닫힌 집합열 $C_1 \supset C_2 \supset \cdots$에 대해 $\bigcap C_n \neq \varnothing$이며, 특히 $\operatorname{diam}C_n \to 0$일 때 $\bigcap C_n$은 홑원소 집합이다.</li>
+</ol>
+</blockquote>
+
+<p><em>Remark.</em> 2는 4를 함의한다. 이로부터 콤팩트 거리 공간은 완비임을 보일 수 있다. <strong>역은 성립하지 않는다.</strong></p>
+
+<blockquote>
+  <p><strong>정리.</strong> 완비 거리 공간과 콤팩트 하우스도르프 공간은 베르 공간이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong></p>
+
+<p>$X$가 완비 거리 공간 또는 콤팩트 하우스도르프 공간이라고 하자. 희박한 닫힌 집합들의 가산 모임 $\lbrace  F_n \rbrace$이 주어졌을 때, 임의의 열린 집합 $U$에 대해 $U \not\subset \bigcup F_n$임을 보이면 된다. 이를 위해 $\forall n : x \not\in F_n$인 $x \in U$를 찾을 것이다.</p>
+
+<p>$F_1$이 희박하므로 $x_1 \in U \setminus F_1$이 존재한다. $X$는 정칙 공간이므로 $x_1 \in U_1$, $\overline{U_1} \cap F_1 = \varnothing$인 열린 집합 $U_1$이 존재한다. 귀납적으로 다음과 같이 정의할 수 있다.</p>
+
+<ul>
+  <li>$x_n \in U_n \setminus F_n$</li>
+  <li>$U_n \subset U_{n - 1}$</li>
+  <li>$\overline{U_n} \cap F_n = \varnothing$</li>
+</ul>
+
+<p><img src="/public/baire-category-proof.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
+
+<p>칸토어 축소 정리에 의해 $x \in \bigcap \overline{U_n}$인 $x$가 존재한다.</p>
+
+<h3 id="3-베르-범주-정리의-응용">3. 베르 범주 정리의 응용</h3>
+
+<blockquote>
+  <p><strong>연속함수열의 수렴은 거의 연속이다.</strong> $\lbrace  f_n : X → (Y, d) \rbrace$가 $f$로 수렴하는 연속함수열일 때,</p>
+
+\[S = \lbrace  x \in X : f\text{ is continuous at } x \rbrace\]
+
+  <p>는 $X$에서 조밀하다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>KAIST POW2024-20.</strong> $f$가 연속함수이고,</p>
+
+\[\forall x \geq 0 : \lim_{n \to \infty} f(nx) = 0\]
+
+  <p>라면 $\lim_{x \to \infty} f(x) = 0$이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>병리적 함수의 존재성.</strong> $h : [0, 1] → \mathbb{R}$가 연속함수라고 하자. 임의의 $ε &gt; 0$에 대해 다음을 만족하는 함수 $g : [0,1] → \mathbb{R}$가 존재한다.</p>
+
+  <ul>
+    <li>$\lVert h − g\rVert &lt; ε$이다.</li>
+    <li>$g$는 전 구간에서 연속이다.</li>
+    <li>$g$는 전 구간에서 미분 불가능하다.</li>
+  </ul>
+</blockquote>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
         <a href="/2024/12/01/baire/en"> The Baire Category Theorem </a>
       </h1>
     <span class="post-date">01 Dec 2024</span>
@@ -1461,337 +1749,6 @@ f(x) &amp; x \in D
     <p><a href="http://dimenerno.github.io/2024/11/21/trichotomy"><strong>서수 완전성 정리.</strong></a> 모든 정렬 순서는 서수와 순서 동형이다.</p>
   </li>
 </ul>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/18/ZFC/en"> List of ZFC Axioms </a>
-      </h1>
-    <span class="post-date">18 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/set-theory/'">
-        Set Theory
-      </div>
-      
-    </div>
-     <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Extensionality</td>
-      <td>Set is an unordered collection of elements.</td>
-    </tr>
-    <tr>
-      <td>Existence*</td>
-      <td>There exists the empty set.</td>
-    </tr>
-    <tr>
-      <td>Pairing*</td>
-      <td>From $X, Y$ follows $Z = \lbrace  X, Y \rbrace$.</td>
-    </tr>
-    <tr>
-      <td>Union</td>
-      <td>From $X = \lbrace  Y_i \rbrace$ follows $Z = \bigcup Y_i$.</td>
-    </tr>
-    <tr>
-      <td>Power Set</td>
-      <td>From $X$ follows $\mathcal{P}(X)$.</td>
-    </tr>
-    <tr>
-      <td>Separation Schema**</td>
-      <td>From $X$ follows $Y = \lbrace  y \in X : \phi(y) \rbrace$, where $\phi$ is a first-order formula.</td>
-    </tr>
-    <tr>
-      <td>Infinity</td>
-      <td>There exists a set containing all the natural numbers.</td>
-    </tr>
-    <tr>
-      <td>Regularity</td>
-      <td>$\in$ is a well-ordering.</td>
-    </tr>
-    <tr>
-      <td>Replacement</td>
-      <td>From $X$ follows $f[X]$, where $f$ is a class function definable in first-order logic.</td>
-    </tr>
-    <tr>
-      <td>Choice</td>
-      <td>Every collection of nonempty sets $\lbrace  X_i \rbrace$ has a choice function.</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Formula (Free variables are to be quantified by $\forall$)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Extensionality</td>
-      <td>$X = Y \leftrightarrow (z \in X \leftrightarrow z \in Y)$</td>
-    </tr>
-    <tr>
-      <td>Existence*</td>
-      <td>$\exists Z : z \not\in Z$</td>
-    </tr>
-    <tr>
-      <td>Pairing*</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (z = X \lor z = Y)$</td>
-    </tr>
-    <tr>
-      <td>Union</td>
-      <td>$\exists Z : z \in Z \leftrightarrow \exists x \in X (z \in x)$</td>
-    </tr>
-    <tr>
-      <td>Power Set</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (w \in z \rightarrow w \in X)$</td>
-    </tr>
-    <tr>
-      <td>Separation Schema**</td>
-      <td>$\exists Z : z \in Z \leftrightarrow (z \in X \land \phi(z))$</td>
-    </tr>
-    <tr>
-      <td>Infinity</td>
-      <td>$\exists Z : \varnothing \in Z \land (z \in Z \rightarrow z \cup \lbrace  z \rbrace \in Z)$</td>
-    </tr>
-    <tr>
-      <td>Regularity</td>
-      <td>$\exists x \in X : \forall y \in X [ y \not\in x]$</td>
-    </tr>
-    <tr>
-      <td>Replacement</td>
-      <td>$\displaylines{[\forall x \in X \; \exists! y :\phi(x, y)] \rightarrow [\exists Y \; \forall x \in X \; \exists y \in Y : \phi(x, y)]}$</td>
-    </tr>
-    <tr>
-      <td>Choice</td>
-      <td>$\displaylines{\varnothing \notin X \rightarrow \exists f : X \rightarrow \bigcup X [ f(x) \in x ]}$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Remarks.</strong></p>
-
-<ul>
-  <li>Regularity is equivalent to the following:</li>
-</ul>
-
-\[\exists x \in X : x \cap X = \varnothing\]
-
-<ul>
-  <li>
-    <p>Those marked by (*) can be derived from the Separation.</p>
-  </li>
-  <li>
-    <p>Those marked by (**) can be derived from the Replacement.</p>
-  </li>
-</ul>
-
-<p>Replacement is <em>strictly</em> stronger than Separation:</p>
-
-<ul>
-  <li>Separation can be stated as: If $X$ is a set and $f$ is a function, then $f[X]$ is a set.</li>
-  <li>Replacement can be stated as: If $X$ is a set and $f$ is a class function, then $f[X]$ is a set.</li>
-</ul>
-
-<p>The proof of following theorems require Choice.</p>
-
-<ul>
-  <li>If $f: X → Y$ is surjective, there exists a subset $Z$ of $X$ such that $f\vert_Z$ is bijective.</li>
-  <li>If $\varnothing \not\in \lbrace  X_i\rbrace$, then $\prod X_i \neq \varnothing$.</li>
-  <li><strong>Well-ordering Principle.</strong> Every set can be well-ordered.</li>
-  <li><strong>Zorn’s Lemma.</strong> If every chain of $(X, &lt;)$ is bounded in $X$, $X$ has a maximal element.</li>
-</ul>
-
-<p>The proof of following theorems require Replacement.</p>
-
-<ul>
-  <li>$\omega + \omega$ exists.</li>
-  <li><a href="http://dimenerno.github.io/2024/11/21/trichotomy"><strong>Completeness of Ordinals.</strong></a> Every well-ordered set is order-isomorphic to a unique ordinal.</li>
-</ul>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2024/11/17/bell-rocket"> 벨의 우주선 사고실험: 수동적 로렌츠 수축과 능동적 로렌츠 수축 </a>
-      </h1>
-    <span class="post-date">17 Nov 2024</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/물리학/'">
-        물리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/상대론/'">
-        상대론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>우주선 A, B가 가느다란 실로 연결된 채 관성 상태에 있다가 동시에 같은 가속도로 광속에 가깝게 운동하기 시작한다. A와 B를 연결하는 실은 어떻게 되는가?</p>
-
-  <ol>
-    <li>끊어진다.</li>
-    <li>느슨해진다.</li>
-    <li>변화가 없다.</li>
-  </ol>
-</blockquote>
-
-<p>이 문제는 드원과 베란이 1959년에 처음 고안했으나 1976년에 존 스튜어트 벨이 CERN의 물리학자들과 나눈 토론을 통해 유명해졌다. 벨은 로렌츠 수축을 근거로 실이 끊어진다고 주장했으나 CERN의 물리학자들 대다수는 실에 변화가 없다고 반박했으며, 한 저명한 물리학자는 벨이 상대론을 오도하고 있다고까지 말했다. 그렇다면 정답은 과연 무엇일까?</p>
-
-<p>정답은 <strong>1. 끊어진다</strong> 이다.</p>
-
-<p>이 답은 일면 비직관적이다. 로렌츠 수축은 관성계에 의존적인 현상이기 때문이다. 일례로 철수에 대해 영희가 광속에 가깝게 움직인다면 영희는 수축한다. 하지만 동 상황에서 영희의 관성계를 기준으로는 철수가 광속에 가깝게 움직이므로 철수가 수축한다. 이같은 대칭성은 로렌츠 수축이 실재하는 물리적 현상이 아닌 관성계의 선택에 따른 수학적 현상임을 시사한다. 이같은 로렌츠 수축의 해석은 Rindler 1977의 글에서 볼 수 있듯이 물리학계에서 널리 퍼져있다.</p>
-
-<blockquote>
-  <p>로렌츠에 따르면 수축의 원인은 원자 구조를 밀집시키는 전기적 응집력이 [물체가 에테르를 통과함에 따라] 증가하는 데 있다… [하지만] 상대론에서 로렌츠 수축은 본질적으로 기하학적 투영 효과로서, 정지해 있는 막대기를 비스듬한 시선으로 보는 것과 유사하다.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
-</blockquote>
-
-<p>그러나 Rindler의 설명은 반만 맞고 반은 틀렸다. 그 이유는 로렌츠 수축에 두 가지 유형이 있기 때문이다. <strong>수동적 로렌츠 변환<sub>passive Lorentz transformation</sub></strong>의 경우에는 Rindler의 주장대로 로렌츠 수축이 관성계의 선택에 따른 부수 현상에 불과하지만, <strong>능동적 로렌츠 변환<sub>active Lorentz transformation</sub></strong>의 경우에는 로렌츠 수축이 전기력의 증가와 같은 실질적 물리 현상을 야기한다. 본 글에서는 두 변환의 차이가 무엇인지, 그리고 어떻게 능동적 로렌츠 변환은 전기력과 연관되는지 살펴볼 것이다.</p>
-
-<h3 id="1-수동적-변환">1. 수동적 변환</h3>
-
-<p>점입자 A가 빈 공간에서 관성 운동한다. A에 대해 정지해 있는 관성좌표계 $(x, t)$를 기준으로 민코프스키 다이어그램을 그리면 해당 상황은 (a)와 같이 표현할 수 있다. 반면 $(x, t)$에 대해 $0.6c$의 속도를 가지는 관성좌표계 $(x’, t’)$을 기준으로 하는 민코프스키 다이어그램은 (b) 및 (b’)와 같다.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
-
-<p><img src="/public/bell-1.png" style="width: 100%; margin: 0 auto;" /></p>
-
-<p>A의 운동에 좌표를 부여하는 방식은 다르지만 (a)와 (b)는 동일한 물리적 상황을 표현한다. 이와 같이 계의 물리적 속성을 보존하는 관성좌표계의 변환을 <strong>수동적 변환</strong>이라고 한다. 뉴턴 역학에서 시공간의 수동적 변환은 전단 변환<sub>shear transformation</sub>으로 주어지지만 잘 알려져 있듯이 상대론에서는 로렌츠 변환으로 주어진다.</p>
-
-<h3 id="2-능동적-변환">2. 능동적 변환</h3>
-
-<p>이제 A의 속도에 순간적으로 $-0.6c$가 더해진 상황을 생각해 보자. $(x, t)$에 대해 속도가 더해진 후의 다이어그램은 (c)와 같다.</p>
-
-<p><img src="/public/bell-2.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
-
-<p>주목할 점은, (a)-(b)와는 달리 (a)-(c)는 <em>같은</em> 관성좌표계를 사용한다는 것이다. (a)-(c)의 변환은 관성좌표계의 변환이 아닌, A의 속도에 $-0.6c$가 더해졌다는 물리적 변화로 일어났다. 이처럼 물리적 변화로 인한 다이어그램의 변환을 <strong>능동적 변환</strong>이라고 한다.</p>
-
-<p>일면 능동적 변환 (b)와 수동적 변환 (c)의 차이는 관점의 차이에 지나지 않는 것으로 보인다. 실제로 고전역학에서 능동적 변환과 수동적 변환은 동일시될 수 있으며, 이것은 고전역학에서 뇌터 정리를 적용할 수 있는 조건에 다름 아니다. 하지만 상대론에서 둘의 동일시는 매우 신중한 주의를 요구한다. 왜냐하면 상대론에서는 <strong>동시성의 상대성</strong>을 고려해야 하기 때문이다.</p>
-
-<h3 id="3-동시성의-상대성">3. 동시성의 상대성</h3>
-
-<p>동시성의 상대성이 왜 중요한지 알아보기 위해 상황을 바꿔보자. 두 점입자 A, B가 빈 공간에서 서로 $c$의 거리를 유지하고 있다. 이 상황을 A에 대해 정지해 있는 관성좌표계 $(x, t)$와, A에 대해 $0.6c$로 움직이는 관성계 $(x’, t’)$으로 표현한 민코프스키 다이어그램은 각각 다음과 같다.</p>
-
-<p><img src="/public/bell-3.png" style="width: 100%; max-width: 520px; margin: 0 auto;" /></p>
-
-<p>$(x, t)$에서 $P$와 $Q$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x’, t’)$에서는 $P$와 $Q’$가 동시적이므로 A, B 거리는 $d’$이다. 민코프스키 기하학을 이용하여 계산하면 $d’ = 0.8c$ 이며 $d’ &lt; d$이다.<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup></p>
-
-<p>같은 현상을 능동적 변환으로 해석해 보자. A, B가 $c$의 거리를 유지하다가 $(x, t)$에 대해 동시에 $-0.6c$의 속도가 더해졌다고 하자. 민코프스키 다이어그램은 다음과 같다. $(x'', t'')$은 속도가 더해진 이후의 A를 기준으로 하는 관성좌표계이다.</p>
-
-<p><img src="/public/bell-4.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
-
-<p>$(x, t)$에서 $(P, Q)$가 동시적이므로 A, B의 거리는 $d$이다. 반면 $(x'', t'')$에서는 $(P, Q'')$가 동시적이므로 A, B의 거리는 $d''$이다. 마찬가지로 민코프스키 기하학을 이용하여 $d''$을 계산하면 $d'' = 1.25c$ 이며 $d'' &gt; d$이다.</p>
-
-<p>따라서 상대론에서는 수동적 변환과 능동적 변환 사이에 실질적인 차이가 있다. 수동적 변환은 A 관점의 거리를 유지시키고 새 관성좌표계 관점의 거리를 수축시키는 한편, 능동적 변환은 기존 관성좌표계 관점의 거리를 유지시키고 A 관점의 거리를 팽창시킨다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>A와 B의 거리</th>
-      <th>A 관점</th>
-      <th>A에 대해 움직이는 관성계 관점</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>수동적 변환</td>
-      <td>유지</td>
-      <td>수축</td>
-    </tr>
-    <tr>
-      <td>능동적 변환 (A와 B가 분리되어 있을 때)</td>
-      <td>팽창</td>
-      <td>유지</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="4-강체의-능동적-변환">4. 강체의 능동적 변환</h3>
-
-<p>앞서 본 경우에는 A와 B가 분리되어 있었다. 이제 A와 B가 강체를 이루는 경우를 생각해 보자. 구체적으로 A, B가 길이가 $c$인 강철 막대기 M의 양끝점이라고 하자.</p>
-
-<p>강체의 특징은 수용 가능한 변화에 대해 원 상태를 유지하는 성질을 가지고 있다는 것이다. 예를 들어 고무공은 강체가 아니기 때문에 힘을 가하면 부피가 줄어들거나 늘어나지만, 강철공은 부피가 변하지 않는다.</p>
-
-<p>그렇다면 M이 능동적 변환에 가해졌을 때 무슨 일이 일어날 것인가? 예컨대 M이 관성좌표계 $(x, t)$에서 관성 운동하던 도중, M의 모든 부분이 “$(x, t)$에 대해 동시에” 가속하여 $0.6c$의 속도에 다다르면 M에는 무슨 일이 일어날 것인가?</p>
-
-<p>M이 강체가 아니었다면 M의 길이는 A의 관점에서 $1.25c$로 팽창했을 것이다. 그러나 M은 강체이므로 자신의 원래 길이를 유지하려고 한다. 이에 따라 M이 가속하는 동안 M의 내부에서는 두 가지 효과가 대립하며 매우 복잡한 양상이 펼쳐진다.</p>
-
-<ul>
-  <li>효과 1: 동시성의 상대성으로 인해 B가 A보다 먼저 가속하여 M의 양끝이 잡아당겨진다.</li>
-  <li>효과 2: M의 강체적 특성으로 인해 M의 원자 구조가 효과 1에 저항하는 장력을 발생시킨다.</li>
-</ul>
-
-<p>효과 2로 발생하는 내부 장력을 <strong>상대론적 장력<sub>relativistic stress</sub></strong>이라고 부른다. 만약 M이 충분히 강한 강체라면 상대론적 장력을 버텨내어 M의 길이는 (A, B의 관점에서) $c$로 유지된다. 그러나 가속이 너무나 급격하여 상대론적 장력이 M의 수용 범위를 벗어나면 강체는 변형되거나 파괴된다. 일례로 쿠크다스를 광속에 가깝게 가속시키면 쿠크다스는 파괴된다.</p>
-
-<h3 id="5-결론">5. 결론</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>A와 B의 거리</th>
-      <th>A 관점</th>
-      <th>A에 대해 움직이는 관성계 관점</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>수동적 변환</td>
-      <td>유지</td>
-      <td>수축</td>
-    </tr>
-    <tr>
-      <td>능동적 변환 (A와 B가 분리되어 있을 때)</td>
-      <td>팽창</td>
-      <td>유지</td>
-    </tr>
-    <tr>
-      <td>능동적 변환 (A와 B가 강체를 이룰 때)</td>
-      <td>유지</td>
-      <td>감소</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>이제 벨의 사고실험으로 돌아가자. 두 우주선 A, B가 가속할 때 “우주선-실-우주선” 계는 능동적 변환을 겪는다. A의 관점에서 두 효과가 관측된다.</p>
-
-<ul>
-  <li>효과 1: A와 B는 분리되어 있으므로 A와 B의 거리는 팽창한다.</li>
-  <li>효과 2: 팽팽히 당겨진 실의 강체적 특성에 의해 실의 길이는 유지된다.</li>
-</ul>
-
-<p>이에 따라 가속이 일정 시간 이상 지속되면 효과 1이 효과 2를 압도하여 실은 끊어진다. 만약 A와 B가 실이 아니라 강철 케이블로 연결되어 있었다면 효과 2가 효과 1을 압도하여 A와 B는 (A 및 B의 관점에서) 일정한 거리를 유지하게 된다.</p>
-
-<hr />
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1">
-      <p>Rindler (1977), p. 41. Maudlin, <em>Philosophy of Physics: Space and Time</em> 에서 발췌. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:2">
-      <p>(a)와 (b)는 같은 물리적 현상을 다른 관성좌표계로 표현한 다이어그램이다. 한편, (b)와 (b’)은 — 같은 물리적 현상을 같은 관성좌표계로 표현한 — 같은 다이어그램의 다른 표현이다. (a), (b)는 같은 정육면체를 정사영과 등각 투영법으로 그린 것에, (b), (b’)은 같은 정육면체를 같은 투영법을 이용하여 위와 옆에서 그린 것에 비견할 수 있다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:3">
-      <p>그림에서는 $d’ &gt; d$인 것으로 보이지만, 민코스프키 다이어그램의 기하학은 유클리드 기하학이 아닌 민코프스키 기하학임을 유념해야 한다. 평면지도에서는 알래스카가 아프리카와 거의 비슷한 크기이지만 실제로는 아프리카가 훨씬 더 크듯이, 민코프스키 다이어그램에서는 $d’ &gt; d$인 것으로 보이지만 실제 로렌츠 변환을 계산하면 $d’ &lt; d$이다. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
 
   </div>
   <div style="margin-bottom: 6em"></div>
