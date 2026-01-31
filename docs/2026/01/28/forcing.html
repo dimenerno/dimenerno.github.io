@@ -627,7 +627,7 @@
 \[\forall x \in \mathbb{P} \; \exists y \in D : y \leq x\]
 </blockquote>
 
-<p>즉, $D$는 임의의 $x \in \mathbb{P}$보다 자세한 원소를 언제나 가지고 있다. 이는 마치 $A = \lbrace 0.9, 0.99, 0.999, …\rbrace $가 임의의 $x \in \mathbb{R}\setminus\lbrace 1\rbrace $보다 1에 가까운 원소를 언제나 가지고 있는 것과 비슷하다. 특히 $A$가 1 주변에서 조밀하다는 것을 생각해 보면, 위와 같은 이름이 붙은 이유를 이해할 수 있다.</p>
+<p>즉, $D$는 임의의 $x \in \mathbb{P}$보다 자세한 원소를 언제나 가지고 있다. 이는 마치 $A = \lbrace 0.9, 0.99, 0.999, …\rbrace $가 임의의 $x \in \mathbb{R}\setminus\lbrace 1\rbrace $보다 1에 가까운 원소를 언제나 가지고 있는 것과 비슷하다. 특히 $A$가 1 주변에서 조밀하다는 것을 생각해 보면, 위와 같은 이름이 붙은 이유를 이해할 수 있다. (여담: 스톤 이중성을 사용하여 이것보다 더 자연스러운 “조밀성”의 해석을 얻을 수 있다. 이에 관해서는 나중에 다뤄보겠다.)</p>
 
 <p>다시 $\mathbb{P} = \mathrm{Fn}(\omega, \omega)$의 예시로 돌아가자면, 임의의 $n \in \omega$에 대해 다음의 $D_n$는 조밀하다.</p>
 
@@ -715,7 +715,7 @@
   <p><strong>마틴 공리<sub>Martin’s axiom</sub>.</strong> 모든 $\kappa &lt; 2^{\aleph_0}$에 대해  $\mathrm{MA}_{\kappa}$가 성립한다.</p>
 </blockquote>
 
-<p>마틴 공리는 ZFC와 독립적임이 알려져 있다. 짐작할 수 있다시피, 마틴 공리를 가정하면 제너릭 필터를 쉽게 얻을 수 있으므로 강제법을 좀 더 자유롭게 쓸 수 있다. 다만 연속체 가설의 무모순성을 증명할 때는 마틴 공리까지 필요하지는 않다.</p>
+<p>만약 연속체 가설이 참이라면 $\kappa &lt; 2^{\aleph_0} \rightarrow \kappa = \aleph_0$이므로 마틴 공리가 성립한다. 그러나 마틴 공리와 연속체 가설의 부정이 무모순적임이 알려져 있다 (이 사실의 증명 또한 강제법을 사용한다. 개요: $2^{\aleph_0} = \aleph_2$이도록 강제한 다음, 추가로 $\mathrm{MA}_{\aleph_1}$을 강제한다.). 따라서 마틴 공리는 연속체 가설의 약화된 버전으로 생각될 수 있다.</p>
 
 <h3 id="9-mathbbp-이름">9. $\mathbb{P}$-이름</h3>
 
@@ -859,29 +859,29 @@
 
 <p>으로부터 $(\tau, p) \in M$임을, 즉 $\tau \in M$임을 알 수 있다. 따라서 $\tau_G = y \in M[G]$이다.</p>
 
-<p>이제 $M[G]$가 ZFC의 모델임을 증명하자. $\theta$가 ZFC의 공리일 때, $\theta^{M[G]}$가 성립함을 보이면 된다. 예를 들어 $\theta$가 $\phi(x, \vec{c})$에 대한 분리 공리라고 하자 ($\vec{c}$는 $M[G]$의 원소들). 즉,</p>
+<p>이제 $M[G]$가 ZFC의 모델임을 증명하자. $\theta$가 ZFC의 공리일 때, $\theta^{M[G]}$가 성립함을 보이면 된다. 예를 들어 $\theta$가 $\phi(x, \vec{\tau}_G)$에 대한 분리 공리라고 하자 ($\vec{\tau}_G$는 $M[G]$의 원소들). 즉,</p>
 
-\[\theta \Leftrightarrow \forall x \;\exists y : y = \{z \in x : \phi(z, \vec{c})\}\]
+\[\theta \Leftrightarrow \forall x \;\exists y : y = \{z \in x : \phi(z, \vec{\tau}_G)\}\]
 
 <p>이며,</p>
 
-\[\theta \Leftrightarrow \forall x \in M[G] \;\exists y\in M[G] : y = \{z \in x : \phi^{M[G]}(z, \vec{c})\}\]
+\[\theta \Leftrightarrow \forall x \in M[G] \;\exists y\in M[G] : y = \{z \in x : \phi^{M[G]}(z, \vec{\tau}_G)\}\]
 
 <p>이다.</p>
 
-<p>$\forall$의 정의에 의해 어떤 $x = a$에 대해 $\theta^{M[G]}$가 성립함을 보이면 충분하다.</p>
+<p>$\forall$의 정의에 의해 어떤 $x = \sigma_G$에 대해 $\theta^{M[G]}$가 성립함을 보이면 충분하다.</p>
 
-\[y = \{ z \in \sigma_G : \phi^{M[G]}(z, \vec{c}) \} \in M[G]\]
+\[y = \{ z \in \sigma_G : \phi^{M[G]}(z, \vec{\tau}_G) \} \in M[G]\]
 
-<p>$M[G]$의 정의에 의해 어떤 $\vec{\tau} \in M^{\mathbb{P}}$가 존재하여 $\vec{c} = \vec{\tau}_G$이다. 이로부터 다음과 같이 정리할 수 있다.</p>
+<p>$y$를 다음과 같이 정리할 수 있다.</p>
 
 \[y = \Big\{ \pi_G : \big( \exists p\in G\; (\pi, p) \in \sigma \big)\land\phi^{M[G]}(\pi_G, \vec{\tau}_G) \Big\}\]
 
-<p>제2기본정리에 의해,</p>
+<p>제2정리에 의해,</p>
 
 \[\phi^{M[G]}(\pi_G, \vec{\tau}_G) \longleftrightarrow \exists q \in G: q \Vdash \phi(\pi, \vec{\tau})\]
 
-<p>제1기본정리에 의해,</p>
+<p>제1정리에 의해,</p>
 
 \[q\Vdash \phi(\pi, \vec{\tau}) \longleftrightarrow \Big( q \Vdash^* \phi(\pi, \vec{\tau}) \Big)^M\]
 
