@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-02-23T16:43:01+09:00</updated>
+ <updated>2026-02-23T16:45:25+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -111,6 +111,112 @@
 \end{align}\]
 
 &lt;p&gt;일반적으로, &lt;strong&gt;관측자와 계를 분리하면 관측은 계의 파동함수를 붕괴시키지만, 관측자를 계에 포함시키면 관측 또한 계의 유니터리 시간 변화의 일부이다.&lt;/strong&gt; 이 결론을 확장하면, &lt;strong&gt;우주 전체의 파동함수&lt;/strong&gt;는 항상 유니터리하게 시간 변화하며, 우주 전체의 파동함수만이 유일하게 물리적으로 유의미한 파동함수라는 주장을 얻는다. 이는 양자역학에 대한 다세계 해석으로 이어지게 된다.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>On the Locality of Quantum Mechanics</title>
+   <link href="https://dimenerno.github.io/2026/02/23/quantum-locality/en"/>
+   <updated>2026-02-23T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2026/02/23/quantum-locality/quantum-locality-en</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The Bell inequality is often summarised as concluding that “quantum mechanics is non-local.” However, this summary is misleading, as quantum mechanics is perfectly local when judged by the standard definition of locality. The standard definition of locality is as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A physical theory is local if, for any two events in spacetime, one event does not influence the other faster than the speed of light.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;When interpreted appropriately, quantum mechanics can be shown to be local under this definition. For instance, consider a system consisting of two entangled particles, A and B, with a wavefunction $\psi(a, b)$. If we are only interested in particle A, the outcomes of measurements on A can be fully described by the following density matrix:&lt;/p&gt;
+
+\[\rho_{a&apos;a} = \sum_{b} \psi^*(a, b)\psi(a&apos;, b)\]
+
+&lt;p&gt;For example, when an observable $\mathbf{L}$ acts locally on A, the expectation value of $\mathbf{L}$ is known to be given by:&lt;/p&gt;
+
+\[\langle \mathbf{L} \rangle = \operatorname{tr} \rho L\]
+
+&lt;p&gt;Here, the expression “observable $\mathbf{L}$ acts locally on A” means the following:&lt;/p&gt;
+
+\[L_{a&apos;b&apos;, ab} = L_{a&apos;a} \delta_{b&apos;b}\]
+
+&lt;p&gt;Thus, if local changes in time at particle B do not affect the density matrix of particle A, quantum mechanics is local in the following sense:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;For any two particles, local changes in time at one particle do not influence the local state of the other particle faster than the speed of light.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let us prove this. Suppose a local change in time occurs at particle B, such as measuring its position, momentum, or entangling it with another particle. Whatever happens, this will alter $\psi(a, b)$. In quantum mechanics, the time evolution of a system is represented by a unitary matrix. That is, there exists a unitary operator $\mathbf{U}$ such that, after some time, the state of the system becomes $\psi_f(a’, b’)$:&lt;/p&gt;
+
+\[\psi_f(a&apos;, b&apos;) = \sum_{a, b} U_{a&apos;b&apos;, ab} \psi(a, b)\]
+
+&lt;p&gt;If the time evolution is local to B, then $U_{a’b’, ab} = 0$ when $a \neq a’$. Hence,&lt;/p&gt;
+
+\[\psi_f(a, b&apos;) = \sum_{b} U_{b&apos;b} \psi(a, b)\]
+
+&lt;p&gt;This leads to the following update of A’s density matrix:&lt;/p&gt;
+
+\[\rho&apos;_{a&apos;a} = \sum_{b} \psi_f^*(a, b)\psi(a&apos;, b)\]
+
+&lt;p&gt;Combining the two equations, we have:&lt;/p&gt;
+
+\[\begin{align}
+\rho&apos;_{a&apos;a} &amp;amp;= \sum_{b} \left( \left( \sum_{b&apos;} U_{bb&apos;} \psi(a, b&apos;) \right)^* \left( \sum_{b&apos;&apos;} U_{bb&apos;&apos;} \psi(a&apos;, b&apos;&apos;) \right) \right) \\
+&amp;amp;= \sum_{b, b&apos;, b&apos;&apos;} U^*_{b&apos;b} U_{bb&apos;&apos;} \psi^*(a, b&apos;) \psi(a&apos;, b&apos;&apos;)
+\end{align}\]
+
+&lt;p&gt;Since $\mathbf{U}$ is unitary, $\sum_b U^\ast_{b’b} U_{bb’’} = (U^\ast U)_{b’ b’’} = \delta_{b’ b’’}$. Therefore,&lt;/p&gt;
+
+\[\rho&apos;_{a&apos;a} = \sum_{b&apos;} \psi^*(a, b&apos;) \psi(a&apos;, b&apos;) = \rho_{a&apos;a}\]
+
+&lt;p&gt;Thus, $\rho’ = \rho$. &lt;strong&gt;In other words, unitary time evolution local to B does not alter the density matrix of A.&lt;/strong&gt; This effectively proves the following theorem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;No-communication theorem.&lt;/strong&gt; (Even considering entanglement) It is impossible to transmit information faster than the speed of light.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;How, then, should we understand cases like the Bell inequality, which are often presented as evidence of the non-locality of quantum mechanics? For instance, according to the Copenhagen interpretation, if Alice and Bob share two electrons with a total angular momentum of zero, and Bob observes a spin-up electron, Alice’s electron instantaneously collapses to spin-down. Does this not imply that Alice’s electron’s density matrix changes accordingly?&lt;/p&gt;
+
+&lt;p&gt;The “positivist” answer to this question is as follows (the term “positivist” is used here to set aside philosophical interpretations for now). If not only the two electrons but also &lt;em&gt;Alice and Bob&lt;/em&gt; are considered part of the entire system, the wavefunction of the system evolves as follows before and after Bob’s observation:&lt;/p&gt;
+
+&lt;p&gt;Before observation:&lt;/p&gt;
+
+\[\begin{align}
+\psi &amp;amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
+&amp;amp;\qquad \land \,\,\, \text{Bob has not observed his spin-down electron}) \\
+&amp;amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
+&amp;amp;\qquad \land \,\,\, \text{Bob has not observed his spin-up electron})
+\end{align}\]
+
+&lt;p&gt;After observation:&lt;/p&gt;
+
+\[\begin{align}
+\psi_f &amp;amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
+&amp;amp;\qquad \land \,\,\, \text{Bob has observed his spin-down electron}) \\
+&amp;amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
+&amp;amp;\qquad \land \,\,\, \text{Bob has observed his spin-up electron})
+\end{align}\]
+
+&lt;p&gt;In other words, &lt;strong&gt;since Bob is part of the system, his actions are not a discontinuous collapse of the system but part of its unitary time evolution.&lt;/strong&gt; Instead, if a third party, Charlie, observes Bob, then $\psi_f$ might collapse as follows:&lt;/p&gt;
+
+\[\begin{align}
+\psi_f \longmapsto\; &amp;amp;(\text{Alice has not observed her spin-down electron} \\ 
+&amp;amp;\land \; \text{Bob has observed his spin-up electron})
+\end{align}\]
+
+&lt;p&gt;However, if Charlie is also considered part of the system along with Bob and Alice, the wavefunction of the entire system evolves unitarily as follows:&lt;/p&gt;
+
+\[\begin{align}
+\psi_f &amp;amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
+&amp;amp;\qquad \land \,\,\, \text{Bob has observed his spin-down electron} \\
+&amp;amp;\qquad \land \,\,\, \text{Charlie has observed Bob observing spin-down}) \\
+&amp;amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
+&amp;amp;\qquad \land \,\,\, \text{Bob has observed his spin-up electron} \\
+&amp;amp;\qquad \land \,\,\, \text{Charlie has observed Bob observing spin-up}) \\
+\end{align}\]
+
+&lt;p&gt;In general, &lt;strong&gt;if the observer and the system are separated, observation collapses the system’s wavefunction, but if the observer is included in the system, observation is part of the system’s unitary time evolution.&lt;/strong&gt; Extending this conclusion, the &lt;strong&gt;wavefunction of the entire universe&lt;/strong&gt; always evolves unitarily, and only the wavefunction of the entire universe is physically meaningful. This leads to the many-worlds interpretation of quantum mechanics.&lt;/p&gt;
 </content>
  </entry>
  

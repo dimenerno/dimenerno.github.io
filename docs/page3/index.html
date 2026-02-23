@@ -431,6 +431,136 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/09/25/ch-for-borel"> 닫힌집합과 보렐 집합에서의 연속체 가설 </a>
+      </h1>
+    <span class="post-date">25 Sep 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <p>연속체 가설은 $\aleph_1 = 2^{\aleph_0}$가 성립하는지에 관한 질문이다. 이는 비가산 집합 중 실수 집합보다 크기가 작은 집합이 있는지에 관한 질문과 같다. 잘 알려져 있듯이 연속체 가설은 ZFC에서 증명과 반증이 불가능하지만, 몇몇 제한적인 경우에 대해서는 증명할 수 있다. 일찍이 칸토어는 연속체 가설을 실수의 닫힌집합으로 제한할 경우 성립함을 증명했다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $F \subseteq \mathbb{R}$이 닫힌집합이라면 $|F| = \aleph_0$이거나 $|F| = 2^{\aleph_0}$이다.</p>
+</blockquote>
+
+<p>이 정리의 증명은 <strong>완벽한 집합<sub>perfect set</sub></strong>이라는 개념을 사용한다. 이에 관해서는 예전에 <a href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson">칸토어-벤딕슨 정리</a>를 다루며 소개한 적 있지만 다시 소개하겠다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$에 대해 $P \subseteq X$가 완벽하다는 것은 $P = P’$이라는 것이다. ($P’$은 $X$에 대한 $P$의 극점<sub>limit point</sub>들의 집합)</p>
+</blockquote>
+
+<p>일반적으로 부분집합 $A \subseteq X$에 대해 $A$와 $A’$이 서로 포함 관계가 아닌 이유는 두 가지이다:</p>
+
+<ol>
+  <li>$x$가 $A$의 고립점일 경우 $x \in A$이지만 $x \notin A’$</li>
+  <li>$x$가 $A$에 속하지 않는 극점일 경우 $x \notin A$이지만 $x \in A’$</li>
+</ol>
+
+<p>따라서 완벽한 집합은 고립점을 가지지 않는 닫힌집합이다. 이에 따라, 어떤 닫힌집합 $F$가 주어졌을 때 $F$의 고립점들을 모두 ‘덜어’ 내면 완벽한 집합이 되지 않을까 기대할 수 있다. 문제는, 고립점을 덜어 낸 집합이 또다시 고립점을 가질 수 있다는 것이다. 예를 들어,</p>
+
+\[F = \mathbb{N} \cup \lbrace  m - 1/n : m \geq 0, n &gt; 1 \rbrace\]
+
+<p>일 때, $F$의 고립점들을 덜어 낸 집합은 $\mathbb{N}$으로 또다시 가산 개의 고립점을 가진다. 그러나 이같이 고립점을 ‘덜어’ 내는 과정을 초한귀납적으로 반복한다면 다음의 흥미로운 결과를 얻을 수 있다.</p>
+
+<blockquote>
+  <p><strong>칸토어-벤딕슨 정리.</strong> $F \subseteq \mathbb{R}$가 닫힌집합이라면 어떤 가산집합 $C$와 완벽한 집합 $P$가 존재하여 $F = P \sqcup C$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 앞선 링크에 증명이 소개되어 있지만, 여기서는 칸토어의 증명을 소개한다.</p>
+
+<p>초한귀납적으로 다음과 같이 정의하자.</p>
+
+\[\begin{gather}
+F_0 = F \\
+F_{\alpha + 1} = F_\alpha' \\
+F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
+\end{gather}\]
+
+<p>다음을 관찰하라.</p>
+
+<ol>
+  <li>각 $F_\alpha$는 닫힌집합이다.</li>
+  <li>$\alpha \leq \beta$라면 $F_\alpha \supseteq F_\beta$이다.</li>
+  <li>$F_\alpha \setminus F_{\alpha + 1}$은 $F_\alpha$의 고립점들의 집합이다.</li>
+  <li>$\alpha \neq \beta$라면 $F_{\alpha} \setminus F_{\alpha + 1}$와 $F_{\beta} \setminus F_{\beta+1}$는 서로소이다.</li>
+</ol>
+
+<p>만약 모든 $\alpha \in \mathrm{Ord}$에 대해 $F_{\alpha} \setminus F_{\alpha+1} \neq \varnothing$이었다면 $\mathcal{P}(F)$의 하르토그 수 $\gamma$에 대해 $f : \gamma \to \mathcal{P}(F); \alpha \mapsto F_{\alpha} \setminus F_{\alpha + 1}$가 단사이므로 모순이다. 따라서 $F_{\xi} \setminus F_{\xi+1} = \varnothing$인 $\xi$가 존재한다. 따라서 $P = F_\xi$로 두면 $P$는 공집합이거나 완벽한 집합이다.</p>
+
+<p>$C = F \setminus P$라고 하자. $\mathcal{B} = \lbrace  B_n \rbrace $이 $\mathbb{R}$의 가산 기저라고 하자. 다음과 같이 $f: C \to \omega$를 정의한다.</p>
+
+\[f(x) = \mathop{\arg \min}\limits_{n \in \omega} : B_n \cap F_\alpha = \{ x \} \quad (x \in F_\alpha \setminus F_{\alpha + 1})\]
+
+<p>$f$가 well-defined이며 단사임을 확인하라. ■</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $P \subseteq \mathbb{R}$이 공집합이 아닌 완벽한 집합이라면 $|P| = 2^{\aleph_0}$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 다음의 두 보조정리를 증명한다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $P \subseteq \mathbb{R}$이 공집합이 아닌 완벽한 집합이라면, 어떤 공집합이 아니며 완벽한 서로소 집합 $P_1, P_2 \subset P$가 존재한다.</p>
+</blockquote>
+
+<p><em>증명.</em> $\alpha = \inf P, \beta = \sup P$라고 하자 ($\alpha, \beta$는 $\pm \infty$일 수도 있다). $(\alpha, \beta) \subset P$라면 $\alpha &lt; r &lt; s &lt; \beta$인 임의의 $r, s$에 대해 $P \cap (-\infty, r], P \cap [s, \infty)$가 조건을 만족한다. $(\alpha, \beta) \not\subset P$라면, 어떤 $x \in (\alpha, \beta)$가 존재하여 $x \notin P$이다. $P = P’$이므로, $x$는 $P$의 극점이 아니다. 따라서 어떤 충분히 작은 $\delta &gt; 0$가 존재하여 $(x - \delta, x + \delta)$가 $F$와 서로소이고 $\alpha &lt; x - \delta, x + \delta &lt; \beta$이다. 이때 $P \cap (-\infty, x - \delta], P \cap [x + \delta, \infty)$가 조건을 만족한다. □</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $P \subseteq \mathbb{R}$이 공집합이 아닌 완벽한 집합이라면, 임의의 $n &gt; 0$에 대해 어떤 공집합이 아니며 완벽한 집합 $P’ \subset P$가 존재하여 $\mathrm{diam} P’ &lt; 1/n$이다.</p>
+</blockquote>
+
+<p><em>증명.</em> $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $에 대해, 어떤 $(k/n, (k+1)/n) \in \mathcal{J}$가 존재하여 $J \cap F \neq \varnothing$이다 (만약 그렇지 않다면 $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $이므로 완벽하지 않다). $a = \inf F \cap (k/n, (k+1)/n)$, $b = \sup F \cap (k/n, (k+1)/n)$라고 하고 $E = F \cap [a, b]$로 두자. $E = F \cap [k/n, (k+1)/n]$이라고 하자. $E$는 닫힌집합이므로, $E$가 고립점을 가지지 않는다면 $E$는 완벽하다. 귀류법에 따라 $x \in E$가 고립점이라고 하자. 상한과 하한의 정의에 의해 $x \neq a, b$이다. 따라서 어떤 충분히 작은 $\delta &gt; 0$가 존재하여 $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $이고 $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$이다. 이때 $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $이므로 $x$는 $F$의 고립점이다. 이는 모순이므로, $E$는 완벽하다. □</p>
+
+<p>$P$가 공집합이 아닌 완벽한 집합이라고 하자. 위 두 보조정리로부터, 선택 공리를 사용함으로써 다음과 같이 귀납적으로 정의할 수 있다.</p>
+
+<ul>
+  <li>$P_1, P_2 \subset P, P_1 \cap P_2 = \varnothing, \mathrm{diam} P_1, \mathrm{diam} P_2 &lt; 1/2$</li>
+  <li>$P_{11}, P_{12} \subset P_1, P_{11} \cap P_{12} = \varnothing, \mathrm{diam} P_{11}, \mathrm{diam} P_{12} &lt; 1/4$</li>
+  <li>$P_{21}, P_{22} \subset P_2, P_{21} \cap P_{22} = \varnothing, \mathrm{diam} P_{21}, \mathrm{diam} P_{22} &lt; 1/4$</li>
+  <li>$P_{111}, P_{112} \subset P_{11}, P_{111} \cap P_{112} = \varnothing, \mathrm{diam} P_{111}, \mathrm{diam} P_{112} &lt; 1/8$</li>
+  <li>…</li>
+</ul>
+
+<p>모든 $P_i$의 교집합을 $A$라고 하자. $A$는 칸토어 집합과 크기가 같다. 그런데 칸토어 집합은 실수와 크기가 같으므로, $|P| = 2^{\aleph_0}$이다. ■</p>
+
+<p>위 정리와 칸토어-벤딕슨 정리로부터 다음 결과가 얻어진다.</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $F \subseteq \mathbb{R}$이 닫힌집합이라면 $|F| = \aleph_0$이거나 $|F| = 2^{\aleph_0}$이다.</p>
+</blockquote>
+
+<p>참고로 칸토어-벤딕슨 정리와 비슷한 결과가 보렐 집합에서 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $B \subseteq \mathbb{R}$이 비가산 보렐 집합이라면 $B$는 완벽한 집합을 포함한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 생략.</p>
+
+<p>따라서 보다 일반적으로 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>따름정리.</strong> $B \subseteq \mathbb{R}$이 보렐 집합이라면 $|B| = \aleph_0$이거나 $|B| = 2^{\aleph_0}$이다.</p>
+</blockquote>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
         <a href="/2025/09/25/ch-for-borel/en"> The Continuum Hypothesis for Closed Sets and Borel Sets </a>
@@ -2185,178 +2315,6 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 <p>For models $\mathfrak{A} \subseteq \mathfrak{B}$ of $T$, if $\mathfrak{A} \not\preceq \mathfrak{B}$ then by the compactness theorem there exists some $\mathcal{L}_\mathfrak{A}$-sentence $\phi(\vec{a})$ such that $\mathfrak{A} \not\vDash \phi(\vec{a})$ but $\mathfrak{B} \vDash \phi(\vec{a})$.</p>
 
 <p>By assumption, there exists a $\Pi_1$ formula $\psi$ such that $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$. Therefore $\mathfrak{B} \vDash \psi(\vec{a})$. However, this is a $\Pi_1$ sentence, and $\Pi_1$ sentences are preserved under submodels, so $\mathfrak{A} \vDash \psi(\vec{a})$, which gives a contradiction. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/08/11/tychonoff-with-ultrafilter"> 초필터를 이용한 티호노프 정리의 증명 </a>
-      </h1>
-    <span class="post-date">11 Aug 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>티호노프 정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
-</blockquote>
-
-<p>굉장히 단순하고 강력한 정리이지만, Munkres 등의 학부 위상 책을 보면 증명이 상당히 복잡하다. 아예 증명을 생략하는 책도 많은 듯하다. 하지만 초필터를 이용하면 매우 간단하게 이를 증명해 보일 수 있다.</p>
-
-<h2 id="1-선행-개념">1. 선행 개념</h2>
-
-<p>여기서 소개된 개념의 자세한 설명과 증명은 <em>Stephen Willard, General Topology</em> 4장을 참고하라.</p>
-
-<h3 id="필터와-초필터">필터와 초필터</h3>
-
-<p><a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">이전 글</a>에서 불 대수 구조의 필터를 소개했다. 위상공간에서 $\cup$과 $\cap$을 각각 논리합과 논리곱에 대응하면 불 대수 구조가 되므로, 위상공간에서 필터를 정의할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$에 대해, $X$ 위의 필터 $\mathcal{F}$는 다음 조건을 만족하는 $X$의 부분집합들의 모임이다.</p>
-
-  <ol>
-    <li>$X \in \mathcal{F}, \varnothing \notin \mathcal{F}$</li>
-    <li>$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
-    <li>$A \in \mathcal{F}, A \subseteq B \implies B \in \mathcal{F}$</li>
-  </ol>
-</blockquote>
-
-<p>추가로 다음을 만족하면 초필터이다.</p>
-
-<blockquote>
-<ol start="4">
-  <li>$A \notin \mathcal{F} \implies X \setminus A \in \mathcal{F}$</li>
-</ol>
-</blockquote>
-
-<h3 id="근방-필터">근방 필터</h3>
-
-<p>위상수학에서 중요한 필터 중 하나는 근방 필터이다. 먼저 근방을 다음과 같이 정의한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$에 대해 $N \subseteq X$가 $x \in X$의 <strong>근방<sub>neighbourhood</sub></strong>이라는 것은, 어떤 열린집합 $U$가 존재하여 $x \in U \subseteq N$라는 것이다.</p>
-</blockquote>
-
-<p><strong>근방은 열린집합일 필요가 없다는 점에 주목하라.</strong> 근방이 열린집합일 경우 열린 근방이라고 한다. 이는 근방과 열린 근방을 동의어로 사용하는 일부 교재의 관행과 대조적이므로 주의를 요한다.</p>
-
-<blockquote>
-  <p><strong>표기.</strong> $x$의 근방들의 모임을 $\mathcal{N}(x)$ 또는 $\mathcal{N}_x$라고 표기한다.</p>
-</blockquote>
-
-<p>$\mathcal{N}(x)$는 필터임을 쉽게 확인할 수 있다. 이에 따라 $\mathcal{N}(x)$를 <strong>근방 필터</strong>라고 부른다.</p>
-
-<h3 id="필터의-생성">필터의 생성</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 위상공간 $X$의 부분집합들의 모임 $\mathcal{C}$가 다음을 만족할 때, $\mathcal{C}$를 <strong>예비 필터<sub>prefilter</sub></strong> 또는 <strong>필터 기저<sub>filter base</sub></strong>라고 부른다.</p>
-
-  <ol>
-    <li>$\varnothing \notin \mathcal{C}$</li>
-    <li>$A, B \in \mathcal{C} \implies \exists C \in \mathcal{C} : C \subseteq A \cap B$</li>
-  </ol>
-</blockquote>
-
-<p>즉, 필터가 교집합에 대해 닫혀 있는 한편 예비 필터는 교집합에 대해 “약하게” 닫혀 있다. $\mathcal{C}$가 예비 필터일 때, $\mathcal{C}$로부터 다음과 같이 필터 $\mathcal{F}$를 <strong>생성<sub>generate</sub></strong>할 수 있다.</p>
-
-\[\mathcal{F} = \{ F \subseteq X : C \subseteq F \text{ for some } C \in \mathcal{C} \}\]
-
-<p>또한 사상 $f: X \to Y$와 $X$ 위의 필터 $\mathcal{F}$가 주어졌을 때, 다음 집합족은 예비 필터이다.</p>
-
-\[\mathcal{C} = \{ f(F) : F \in \mathcal{F} \}\]
-
-<blockquote>
-  <p><strong>표기.</strong> $\mathcal{C}$가 생성하는 필터를 $f(\mathcal{F})$와 같이 표기한다.</p>
-</blockquote>
-
-<p>$f$가 전사<sub>onto</sub>일 경우 $\mathcal{C} = f(\mathcal{F})$라서 다루기 편하다. 또한 $f$가 전사일 때 다음이 (자명하게) 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $f: X \to Y$가 전사이고 $\mathcal{F}$가 $X$ 위의 초필터일 때, $f(\mathcal{F})$는 $Y$의 초필터이다.</p>
-</blockquote>
-
-<h3 id="초필터로의-확장">초필터로의 확장</h3>
-
-<p>모든 필터는 초필터로 확장될 수 있다. 증명은 <a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">이전 글</a>을 참고하라 (선택 공리를 사용한다).</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathcal{F}$가 $X$ 위의 필터일 때, $X$ 위의 초필터 $\mathcal{U}$가 존재하여 $\mathcal{U} \supseteq \mathcal{F}$이다.</p>
-</blockquote>
-
-<h3 id="필터의-수렴">필터의 수렴</h3>
-
-<blockquote>
-  <p><strong>정의.</strong> 필터 $\mathcal{F}$가 $\mathcal{N}(x)$를 포함할 때 $\mathcal{F}$는 $x$로 <strong>수렴</strong>한다고 하며, $\mathcal{F} \to x$와 같이 적는다.</p>
-</blockquote>
-
-<p>예를 들어 예비 필터 $\lbrace  (0, \epsilon) : \epsilon &gt; 0 \rbrace $로 생성되는 필터는 $0$으로 수렴한다 (이 예시는 $\mathcal{F} \to x$라고 해서 $\mathcal{F}$의 모든 원소가 $x$를 원소로 가질 필요는 없음을 보여준다).</p>
-
-<p>필터 수렴의 주요 성질은 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong></p>
-
-  <ol>
-    <li>$E \subseteq X$에 대해 $x \in \overline{E}$일 필요충분조건은 어떤 필터 $\mathcal{F}$가 존재하여 $E \in \mathcal{F}$이고, $\mathcal{F} \to x$인 것이다.</li>
-    <li>$f: X \to Y$가 연속일 필요충분조건은 임의의 필터 $\mathcal{F}$에 대해 $\mathcal{F} \to x$라면 $f(\mathcal{F}) \to f(x)$인 것이다.</li>
-  </ol>
-</blockquote>
-
-<p>이는 1차 가산 공간에서 점렬로 폐포와 연속함수를 특징지었던 것을 일반화한 것이다.</p>
-
-<p>곱공간에서 필터의 수렴은 각 요소 공간에서의 수렴과 동치이다. 즉, 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 곱공간 $\prod_{i \in I}X_i$ 위의 필터 $\mathcal{F}$가 $x$로 수렴할 필요충분조건은 각각의 $i \in I$에 대해 $\pi_i(\mathcal{F}) \to \pi_i(x)$인 것이다.</p>
-</blockquote>
-
-<h2 id="2-티호노프-정리의-증명">2. 티호노프 정리의 증명</h2>
-
-<p>이제 티호노프 정리를 증명해 보자. 핵심은 다음의 보조정리이다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $X$가 콤팩트할 필요충분조건은 $X$의 모든 초필터가 수렴하는 것이다.</p>
-</blockquote>
-
-<h4 id="증명">증명</h4>
-
-<p>$(\Rightarrow)$ $\mathcal{F}$가 수렴하지 않는 $X$의 초필터라고 하자. $\mathcal{F}$가 어느 점으로도 수렴하지 않는다는 것은, 임의의 $x \in X$에 대해 어떤 열린집합 $U_x$가 존재하여 $U_x \notin \mathcal{F}$라는 것이다. $\mathcal{F}$가 초필터이므로 $X \setminus U_x \in \mathcal{F}$이다. 이제 $U_x$들의 모임 $\mathcal{C} = \lbrace  U_x : x \in X \rbrace $를 생각하자. $\mathcal{C}$는 $X$를 덮으며, $X$가 콤팩트하므로 유한 부분덮개 $\lbrace U_{x_1}, \dots, U_{x_n} \rbrace $을 가진다. 따라서,</p>
-
-\[\begin{align}
-&amp;X \setminus (U_{x_1} \cup \dots \cup U_{x_n}) \\
-&amp;= (X \setminus U_{x_1}) \cap \dots \cap (X \setminus U_{x_n}) \\
-&amp;= \varnothing
-\end{align}\]
-
-<p>그런데 각 $1 \leq i \leq n$에 대해 $X \setminus U_{x_i} \in \mathcal{F}$이므로, 필터의 교집합 닫힘에 의해 $\varnothing \in \mathcal{F}$가 되어 모순이다. □</p>
-
-<p>$(\Leftarrow)$ $X$가 콤팩트하지 않다고 하자. 그러면 어떤 $X$의 열린 덮개 $\mathcal{C}$가 존재하여 $\mathcal{C}$는 유한 부분덮개를 가지지 않는다. 따라서 다음과 같이 $\mathcal{P}$를 정의할 때,</p>
-
-\[\mathcal{P} = \{ X \setminus (U_1 \cup \dots \cup U_n) : U_i \in \mathcal{C} \}\]
-
-<p>$\mathcal{P}$는 유한 교집합에 대해 닫혀 있으며 공집합을 원소로 가지지 않으므로 예비 필터이다. 이에 따라 $\mathcal{P}$는 필터로 확장될 수 있으며, 이 필터는 초필터로 확장될 수 있다. 그러한 초필터를 $\mathcal{F}$라고 하자. 가정에 의해 $\mathcal{F}$는 어떤 점 $x$로 수렴한다. 즉, $\mathcal{N}(x) \subseteq \mathcal{F}$이다. 따라서 다음이 성립한다.</p>
-
-\[x \in \bigcap_{F \in \mathcal{F}} \overline{F}\]
-
-<p>그런데 이는 $\bigcap_{P \in \mathcal{P}} \overline{P} = \bigcap_{P \in \mathcal{P}} P = \varnothing$ ($\mathcal{C}$가 $X$의 덮개이므로) 에 모순된다. ■</p>
-
-<p>이제 티호노프 정리는 거의 자명하게 따라 나온다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
-</blockquote>
-
-<h4 id="증명-1">증명</h4>
-
-<p>각각의 $i \in I$에 대해 $X_i$가 콤팩트 공간이라고 하자. $X$가 콤팩트할 필요충분조건은 임의의 $\prod_{i \in I}$ 위의 초필터 $\mathcal{F}$가 수렴하는 것이고, $\mathcal{F}$가 수렴할 필요충분조건은 $\pi_i(\mathcal{F})$가 $X_i$에서 수렴하는 것이다. 그런데 $\pi_i$는 전사이므로 $\pi_i(\mathcal{F})$는 초필터이고, $X_i$는 콤팩트하므로 $\pi_i(\mathcal{F})$는 수렴한다. 이에 따라 $X$는 콤팩트하다. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://dimenerno.github.io/404.html</loc>
-<lastmod>2026-02-23T16:43:01+09:00</lastmod>
+<lastmod>2026-02-23T16:45:25+09:00</lastmod>
 </url>
 <url>
 <loc>https://dimenerno.github.io/about/</loc>
@@ -645,6 +645,10 @@
 <lastmod>2026-01-28T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>https://dimenerno.github.io/2026/02/23/quantum-locality/en</loc>
+<lastmod>2026-02-23T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>https://dimenerno.github.io/2026/02/23/quantum-locality</loc>
 <lastmod>2026-02-23T00:00:00+09:00</lastmod>
 </url>
@@ -773,6 +777,9 @@
 </url>
 <url>
 <loc>https://dimenerno.github.io/tags/%EC%97%90%EC%84%B8%EC%9D%B4/</loc>
+</url>
+<url>
+<loc>https://dimenerno.github.io/tags/quantum-mechanics/</loc>
 </url>
 <url>
 <loc>https://dimenerno.github.io/tags/%EC%96%91%EC%9E%90%EC%97%AD%ED%95%99/</loc>

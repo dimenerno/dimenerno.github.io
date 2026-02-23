@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: Philosophy &middot; 디멘의 블로그 
+     On the Locality of Quantum Mechanics &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/philosophy/" />
+  <link rel="canonical" href="/2026/02/23/quantum-locality/en" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -368,80 +368,129 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">On the Locality of Quantum Mechanics</h1>
+  <span class="post-date">23 Feb 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/physics/'" >Physics</div>
+      
+      <div class="tag" onclick="location.href='/tags/quantum-mechanics/'" >Quantum Mechanics</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
 
+<p>The Bell inequality is often summarised as concluding that “quantum mechanics is non-local.” However, this summary is misleading, as quantum mechanics is perfectly local when judged by the standard definition of locality. The standard definition of locality is as follows:</p>
 
-<h1>Philosophy</h1>
+<blockquote>
+  <p><strong>Definition.</strong> A physical theory is local if, for any two events in spacetime, one event does not influence the other faster than the speed of light.</p>
+</blockquote>
 
-<ul>
-                                     
-  <li>
-    <a href="/2025/11/07/mathematics-morality-evolution copy/en">Are Mathematics and Ethics in the Same Boat?: The Evolutionary Challenge</a>
-  </li>
-                  
-  <li>
-    <a href="/2025/09/14/alien-natural-numbers/en">Natural Numbers as a Mirage: A Short Story in Logic</a>
-  </li>
-      
-  <li>
-    <a href="/2025/09/13/natural-teleology-and-logic/en">Can Natural Teleology Ground Logic?</a>
-  </li>
-              
-  <li>
-    <a href="/2025/08/08/pork-and-salmon/en">Pork and Salmon: Is Ethical Living a Luxury?</a>
-  </li>
-      
-  <li>
-    <a href="/2025/07/21/private-language/en">Is Private Language Possible?</a>
-  </li>
-                  
-  <li>
-    <a href="/2025/07/03/kripkenstein/en">The Kripke-Wittgenstein Paradox</a>
-  </li>
-            
-  <li>
-    <a href="/2025/06/06/zizek-soft-facism/en">Slavoj Žižek, "Soft Fascism, Artificial Intelligence, and Shamelessness"</a>
-  </li>
-          
-  <li>
-    <a href="/2025/06/02/wittgenstein-conant/en">Are Logically Alien Beings Possible? Descartes, Kant, Frege, and the Tractus</a>
-  </li>
-      
-  <li>
-    <a href="/2025/05/26/quine-two-dogmas/en">Quine, Two Dogmas of Empiricism</a>
-  </li>
-                                                                      
-  <li>
-    <a href="/2025/03/18/quanitfying-in/en">On Existential Quantification in Modal Contexts — Quine and Frege</a>
-  </li>
-      
-  <li>
-    <a href="/2025/03/12/what-is-a-theory-of-truth/en">What is a Theory of Truth?</a>
-  </li>
-      
-  <li>
-    <a href="/2025/03/10/temporal-logic/en">Temporal Logic</a>
-  </li>
-                                          
-  <li>
-    <a href="/2025/02/09/godel-lucas-penrose/en">Can the Mind Be Reduced to a Machine: Gödel's Disjunction and the Penrose-Lucas Argument</a>
-  </li>
-                          
-  <li>
-    <a href="/2025/01/18/reference-3/en">On Reference — Definite Descriptions</a>
-  </li>
-      
-  <li>
-    <a href="/2025/01/13/reference-2/en">On Reference — Character Model and Intentionalism</a>
-  </li>
-      
-  <li>
-    <a href="/2025/01/07/reference-1/en">On Reference — Descriptivism and Causal Theory</a>
-  </li>
-                                                       
-</ul>
+<p>When interpreted appropriately, quantum mechanics can be shown to be local under this definition. For instance, consider a system consisting of two entangled particles, A and B, with a wavefunction $\psi(a, b)$. If we are only interested in particle A, the outcomes of measurements on A can be fully described by the following density matrix:</p>
+
+\[\rho_{a'a} = \sum_{b} \psi^*(a, b)\psi(a', b)\]
+
+<p>For example, when an observable $\mathbf{L}$ acts locally on A, the expectation value of $\mathbf{L}$ is known to be given by:</p>
+
+\[\langle \mathbf{L} \rangle = \operatorname{tr} \rho L\]
+
+<p>Here, the expression “observable $\mathbf{L}$ acts locally on A” means the following:</p>
+
+\[L_{a'b', ab} = L_{a'a} \delta_{b'b}\]
+
+<p>Thus, if local changes in time at particle B do not affect the density matrix of particle A, quantum mechanics is local in the following sense:</p>
+
+<blockquote>
+  <p>For any two particles, local changes in time at one particle do not influence the local state of the other particle faster than the speed of light.</p>
+</blockquote>
+
+<p>Let us prove this. Suppose a local change in time occurs at particle B, such as measuring its position, momentum, or entangling it with another particle. Whatever happens, this will alter $\psi(a, b)$. In quantum mechanics, the time evolution of a system is represented by a unitary matrix. That is, there exists a unitary operator $\mathbf{U}$ such that, after some time, the state of the system becomes $\psi_f(a’, b’)$:</p>
+
+\[\psi_f(a', b') = \sum_{a, b} U_{a'b', ab} \psi(a, b)\]
+
+<p>If the time evolution is local to B, then $U_{a’b’, ab} = 0$ when $a \neq a’$. Hence,</p>
+
+\[\psi_f(a, b') = \sum_{b} U_{b'b} \psi(a, b)\]
+
+<p>This leads to the following update of A’s density matrix:</p>
+
+\[\rho'_{a'a} = \sum_{b} \psi_f^*(a, b)\psi(a', b)\]
+
+<p>Combining the two equations, we have:</p>
+
+\[\begin{align}
+\rho'_{a'a} &amp;= \sum_{b} \left( \left( \sum_{b'} U_{bb'} \psi(a, b') \right)^* \left( \sum_{b''} U_{bb''} \psi(a', b'') \right) \right) \\
+&amp;= \sum_{b, b', b''} U^*_{b'b} U_{bb''} \psi^*(a, b') \psi(a', b'')
+\end{align}\]
+
+<p>Since $\mathbf{U}$ is unitary, $\sum_b U^\ast_{b’b} U_{bb’’} = (U^\ast U)_{b’ b’’} = \delta_{b’ b’’}$. Therefore,</p>
+
+\[\rho'_{a'a} = \sum_{b'} \psi^*(a, b') \psi(a', b') = \rho_{a'a}\]
+
+<p>Thus, $\rho’ = \rho$. <strong>In other words, unitary time evolution local to B does not alter the density matrix of A.</strong> This effectively proves the following theorem:</p>
+
+<blockquote>
+  <p><strong>No-communication theorem.</strong> (Even considering entanglement) It is impossible to transmit information faster than the speed of light.</p>
+</blockquote>
+
+<p>How, then, should we understand cases like the Bell inequality, which are often presented as evidence of the non-locality of quantum mechanics? For instance, according to the Copenhagen interpretation, if Alice and Bob share two electrons with a total angular momentum of zero, and Bob observes a spin-up electron, Alice’s electron instantaneously collapses to spin-down. Does this not imply that Alice’s electron’s density matrix changes accordingly?</p>
+
+<p>The “positivist” answer to this question is as follows (the term “positivist” is used here to set aside philosophical interpretations for now). If not only the two electrons but also <em>Alice and Bob</em> are considered part of the entire system, the wavefunction of the system evolves as follows before and after Bob’s observation:</p>
+
+<p>Before observation:</p>
+
+\[\begin{align}
+\psi &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
+&amp;\qquad \land \,\,\, \text{Bob has not observed his spin-down electron}) \\
+&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
+&amp;\qquad \land \,\,\, \text{Bob has not observed his spin-up electron})
+\end{align}\]
+
+<p>After observation:</p>
+
+\[\begin{align}
+\psi_f &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
+&amp;\qquad \land \,\,\, \text{Bob has observed his spin-down electron}) \\
+&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
+&amp;\qquad \land \,\,\, \text{Bob has observed his spin-up electron})
+\end{align}\]
+
+<p>In other words, <strong>since Bob is part of the system, his actions are not a discontinuous collapse of the system but part of its unitary time evolution.</strong> Instead, if a third party, Charlie, observes Bob, then $\psi_f$ might collapse as follows:</p>
+
+\[\begin{align}
+\psi_f \longmapsto\; &amp;(\text{Alice has not observed her spin-down electron} \\ 
+&amp;\land \; \text{Bob has observed his spin-up electron})
+\end{align}\]
+
+<p>However, if Charlie is also considered part of the system along with Bob and Alice, the wavefunction of the entire system evolves unitarily as follows:</p>
+
+\[\begin{align}
+\psi_f &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
+&amp;\qquad \land \,\,\, \text{Bob has observed his spin-down electron} \\
+&amp;\qquad \land \,\,\, \text{Charlie has observed Bob observing spin-down}) \\
+&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
+&amp;\qquad \land \,\,\, \text{Bob has observed his spin-up electron} \\
+&amp;\qquad \land \,\,\, \text{Charlie has observed Bob observing spin-up}) \\
+\end{align}\]
+
+<p>In general, <strong>if the observer and the system are separated, observation collapses the system’s wavefunction, but if the observer is included in the system, observation is part of the system’s unitary time evolution.</strong> Extending this conclusion, the <strong>wavefunction of the entire universe</strong> always evolves unitarily, and only the wavefunction of the entire universe is physically meaningful. This leads to the many-worlds interpretation of quantum mechanics.</p>
+
 </div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

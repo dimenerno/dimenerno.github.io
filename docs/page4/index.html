@@ -431,6 +431,178 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/08/11/tychonoff-with-ultrafilter"> 초필터를 이용한 티호노프 정리의 증명 </a>
+      </h1>
+    <span class="post-date">11 Aug 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>티호노프 정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
+</blockquote>
+
+<p>굉장히 단순하고 강력한 정리이지만, Munkres 등의 학부 위상 책을 보면 증명이 상당히 복잡하다. 아예 증명을 생략하는 책도 많은 듯하다. 하지만 초필터를 이용하면 매우 간단하게 이를 증명해 보일 수 있다.</p>
+
+<h2 id="1-선행-개념">1. 선행 개념</h2>
+
+<p>여기서 소개된 개념의 자세한 설명과 증명은 <em>Stephen Willard, General Topology</em> 4장을 참고하라.</p>
+
+<h3 id="필터와-초필터">필터와 초필터</h3>
+
+<p><a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">이전 글</a>에서 불 대수 구조의 필터를 소개했다. 위상공간에서 $\cup$과 $\cap$을 각각 논리합과 논리곱에 대응하면 불 대수 구조가 되므로, 위상공간에서 필터를 정의할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$에 대해, $X$ 위의 필터 $\mathcal{F}$는 다음 조건을 만족하는 $X$의 부분집합들의 모임이다.</p>
+
+  <ol>
+    <li>$X \in \mathcal{F}, \varnothing \notin \mathcal{F}$</li>
+    <li>$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
+    <li>$A \in \mathcal{F}, A \subseteq B \implies B \in \mathcal{F}$</li>
+  </ol>
+</blockquote>
+
+<p>추가로 다음을 만족하면 초필터이다.</p>
+
+<blockquote>
+<ol start="4">
+  <li>$A \notin \mathcal{F} \implies X \setminus A \in \mathcal{F}$</li>
+</ol>
+</blockquote>
+
+<h3 id="근방-필터">근방 필터</h3>
+
+<p>위상수학에서 중요한 필터 중 하나는 근방 필터이다. 먼저 근방을 다음과 같이 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$에 대해 $N \subseteq X$가 $x \in X$의 <strong>근방<sub>neighbourhood</sub></strong>이라는 것은, 어떤 열린집합 $U$가 존재하여 $x \in U \subseteq N$라는 것이다.</p>
+</blockquote>
+
+<p><strong>근방은 열린집합일 필요가 없다는 점에 주목하라.</strong> 근방이 열린집합일 경우 열린 근방이라고 한다. 이는 근방과 열린 근방을 동의어로 사용하는 일부 교재의 관행과 대조적이므로 주의를 요한다.</p>
+
+<blockquote>
+  <p><strong>표기.</strong> $x$의 근방들의 모임을 $\mathcal{N}(x)$ 또는 $\mathcal{N}_x$라고 표기한다.</p>
+</blockquote>
+
+<p>$\mathcal{N}(x)$는 필터임을 쉽게 확인할 수 있다. 이에 따라 $\mathcal{N}(x)$를 <strong>근방 필터</strong>라고 부른다.</p>
+
+<h3 id="필터의-생성">필터의 생성</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$의 부분집합들의 모임 $\mathcal{C}$가 다음을 만족할 때, $\mathcal{C}$를 <strong>예비 필터<sub>prefilter</sub></strong> 또는 <strong>필터 기저<sub>filter base</sub></strong>라고 부른다.</p>
+
+  <ol>
+    <li>$\varnothing \notin \mathcal{C}$</li>
+    <li>$A, B \in \mathcal{C} \implies \exists C \in \mathcal{C} : C \subseteq A \cap B$</li>
+  </ol>
+</blockquote>
+
+<p>즉, 필터가 교집합에 대해 닫혀 있는 한편 예비 필터는 교집합에 대해 “약하게” 닫혀 있다. $\mathcal{C}$가 예비 필터일 때, $\mathcal{C}$로부터 다음과 같이 필터 $\mathcal{F}$를 <strong>생성<sub>generate</sub></strong>할 수 있다.</p>
+
+\[\mathcal{F} = \{ F \subseteq X : C \subseteq F \text{ for some } C \in \mathcal{C} \}\]
+
+<p>또한 사상 $f: X \to Y$와 $X$ 위의 필터 $\mathcal{F}$가 주어졌을 때, 다음 집합족은 예비 필터이다.</p>
+
+\[\mathcal{C} = \{ f(F) : F \in \mathcal{F} \}\]
+
+<blockquote>
+  <p><strong>표기.</strong> $\mathcal{C}$가 생성하는 필터를 $f(\mathcal{F})$와 같이 표기한다.</p>
+</blockquote>
+
+<p>$f$가 전사<sub>onto</sub>일 경우 $\mathcal{C} = f(\mathcal{F})$라서 다루기 편하다. 또한 $f$가 전사일 때 다음이 (자명하게) 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $f: X \to Y$가 전사이고 $\mathcal{F}$가 $X$ 위의 초필터일 때, $f(\mathcal{F})$는 $Y$의 초필터이다.</p>
+</blockquote>
+
+<h3 id="초필터로의-확장">초필터로의 확장</h3>
+
+<p>모든 필터는 초필터로 확장될 수 있다. 증명은 <a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">이전 글</a>을 참고하라 (선택 공리를 사용한다).</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{F}$가 $X$ 위의 필터일 때, $X$ 위의 초필터 $\mathcal{U}$가 존재하여 $\mathcal{U} \supseteq \mathcal{F}$이다.</p>
+</blockquote>
+
+<h3 id="필터의-수렴">필터의 수렴</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 필터 $\mathcal{F}$가 $\mathcal{N}(x)$를 포함할 때 $\mathcal{F}$는 $x$로 <strong>수렴</strong>한다고 하며, $\mathcal{F} \to x$와 같이 적는다.</p>
+</blockquote>
+
+<p>예를 들어 예비 필터 $\lbrace  (0, \epsilon) : \epsilon &gt; 0 \rbrace $로 생성되는 필터는 $0$으로 수렴한다 (이 예시는 $\mathcal{F} \to x$라고 해서 $\mathcal{F}$의 모든 원소가 $x$를 원소로 가질 필요는 없음을 보여준다).</p>
+
+<p>필터 수렴의 주요 성질은 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$E \subseteq X$에 대해 $x \in \overline{E}$일 필요충분조건은 어떤 필터 $\mathcal{F}$가 존재하여 $E \in \mathcal{F}$이고, $\mathcal{F} \to x$인 것이다.</li>
+    <li>$f: X \to Y$가 연속일 필요충분조건은 임의의 필터 $\mathcal{F}$에 대해 $\mathcal{F} \to x$라면 $f(\mathcal{F}) \to f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p>이는 1차 가산 공간에서 점렬로 폐포와 연속함수를 특징지었던 것을 일반화한 것이다.</p>
+
+<p>곱공간에서 필터의 수렴은 각 요소 공간에서의 수렴과 동치이다. 즉, 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 곱공간 $\prod_{i \in I}X_i$ 위의 필터 $\mathcal{F}$가 $x$로 수렴할 필요충분조건은 각각의 $i \in I$에 대해 $\pi_i(\mathcal{F}) \to \pi_i(x)$인 것이다.</p>
+</blockquote>
+
+<h2 id="2-티호노프-정리의-증명">2. 티호노프 정리의 증명</h2>
+
+<p>이제 티호노프 정리를 증명해 보자. 핵심은 다음의 보조정리이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $X$가 콤팩트할 필요충분조건은 $X$의 모든 초필터가 수렴하는 것이다.</p>
+</blockquote>
+
+<h4 id="증명">증명</h4>
+
+<p>$(\Rightarrow)$ $\mathcal{F}$가 수렴하지 않는 $X$의 초필터라고 하자. $\mathcal{F}$가 어느 점으로도 수렴하지 않는다는 것은, 임의의 $x \in X$에 대해 어떤 열린집합 $U_x$가 존재하여 $U_x \notin \mathcal{F}$라는 것이다. $\mathcal{F}$가 초필터이므로 $X \setminus U_x \in \mathcal{F}$이다. 이제 $U_x$들의 모임 $\mathcal{C} = \lbrace  U_x : x \in X \rbrace $를 생각하자. $\mathcal{C}$는 $X$를 덮으며, $X$가 콤팩트하므로 유한 부분덮개 $\lbrace U_{x_1}, \dots, U_{x_n} \rbrace $을 가진다. 따라서,</p>
+
+\[\begin{align}
+&amp;X \setminus (U_{x_1} \cup \dots \cup U_{x_n}) \\
+&amp;= (X \setminus U_{x_1}) \cap \dots \cap (X \setminus U_{x_n}) \\
+&amp;= \varnothing
+\end{align}\]
+
+<p>그런데 각 $1 \leq i \leq n$에 대해 $X \setminus U_{x_i} \in \mathcal{F}$이므로, 필터의 교집합 닫힘에 의해 $\varnothing \in \mathcal{F}$가 되어 모순이다. □</p>
+
+<p>$(\Leftarrow)$ $X$가 콤팩트하지 않다고 하자. 그러면 어떤 $X$의 열린 덮개 $\mathcal{C}$가 존재하여 $\mathcal{C}$는 유한 부분덮개를 가지지 않는다. 따라서 다음과 같이 $\mathcal{P}$를 정의할 때,</p>
+
+\[\mathcal{P} = \{ X \setminus (U_1 \cup \dots \cup U_n) : U_i \in \mathcal{C} \}\]
+
+<p>$\mathcal{P}$는 유한 교집합에 대해 닫혀 있으며 공집합을 원소로 가지지 않으므로 예비 필터이다. 이에 따라 $\mathcal{P}$는 필터로 확장될 수 있으며, 이 필터는 초필터로 확장될 수 있다. 그러한 초필터를 $\mathcal{F}$라고 하자. 가정에 의해 $\mathcal{F}$는 어떤 점 $x$로 수렴한다. 즉, $\mathcal{N}(x) \subseteq \mathcal{F}$이다. 따라서 다음이 성립한다.</p>
+
+\[x \in \bigcap_{F \in \mathcal{F}} \overline{F}\]
+
+<p>그런데 이는 $\bigcap_{P \in \mathcal{P}} \overline{P} = \bigcap_{P \in \mathcal{P}} P = \varnothing$ ($\mathcal{C}$가 $X$의 덮개이므로) 에 모순된다. ■</p>
+
+<p>이제 티호노프 정리는 거의 자명하게 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
+</blockquote>
+
+<h4 id="증명-1">증명</h4>
+
+<p>각각의 $i \in I$에 대해 $X_i$가 콤팩트 공간이라고 하자. $X$가 콤팩트할 필요충분조건은 임의의 $\prod_{i \in I}$ 위의 초필터 $\mathcal{F}$가 수렴하는 것이고, $\mathcal{F}$가 수렴할 필요충분조건은 $\pi_i(\mathcal{F})$가 $X_i$에서 수렴하는 것이다. 그런데 $\pi_i$는 전사이므로 $\pi_i(\mathcal{F})$는 초필터이고, $X_i$는 콤팩트하므로 $\pi_i(\mathcal{F})$는 수렴한다. 이에 따라 $X$는 콤팩트하다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
         <a href="/2025/08/11/tychonoff-with-ultrafilter/en"> Proof of Tychonoff's Theorem Using Ultrafilters </a>
@@ -2467,158 +2639,6 @@ x \lor y = x + y + xy \\
 \end{align*}\]
 
 <p>Thus, $\beta : \mathbf{Top} \to \mathbf{CHaus}$ is a functor, and in particular, it is the left adjoint to $U: \mathbf{CHaus} \to \mathbf{Top}$. It follows that for any $X$, the pair $(e, \beta X)$ that satisfies the universal condition is the initial object in the comma category $(A \Rightarrow U)$, which implies uniqueness up to isomorphism. (For further details, refer to <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint">this post</a>) ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/07/09/urysohn"> 우리손 보조정리와 우리손 거리화 정리 </a>
-      </h1>
-    <span class="post-date">09 Jul 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <h2 id="우리손-보조정리">우리손 보조정리</h2>
-
-<blockquote>
-  <p><strong>우리손 보조정리<sub>Urysohn Lemma</sub>.</strong> $X$가 정규<sub>normal</sub> 공간이라고 하자. $A, B$가 서로소인 $X$의 닫힌집합일 때, 어떤 연속함수 $f: X \to [0, 1]$이 존재하여 $f[A] = \lbrace  0 \rbrace$, $f[B] = \lbrace 1 \rbrace$이다.</p>
-
-  <p><img src="/public/urysohn-1.png" style="width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-</blockquote>
-
-<p>정규성을 비롯한 분리 공리는 <em>해당 공간에서</em> 점과 닫힌집합을 분리한다. 우리손 보조정리의 의의는, 정규성 분리 공리의 경우 두 닫힌집합은 <em>좋은 공간에서도</em> 분리 가능하다는 것이다. 구체적으로, 정규공간을 적절한 연속함수로 사상시켰을 때 두 닫힌집합은 $[0, 1]$에서 분리 가능하다. 그리고 $[0, 1]$의 여러 좋은 성질은 — 콤팩트 하우스도르프 거리 공간일 뿐 아니라 우리에게 굉장히 익숙한 공간이라 논증하기도 쉽다 — 우리손 보조정리의 굉장한 잠재력을 암시한다.</p>
-
-<h4 id="증명">증명</h4>
-
-<p>$Q = [0, 1] \cap \mathbb{Q}$라고 하자 (사실 $[0, 1]$의 가산 조밀 집합이기만 하면 된다). $Q$가 가산이므로 $Q$의 원소를 열거<sub>enumerate</sub>하는 방법이 존재한다. 일례로 분모-분자의 사전식 열거 $\prec$를 고려하자.</p>
-
-\[0 \prec 1 \prec 1/2 \prec 1/3 \prec 2/3 \prec 1/4 \prec 1/5 \prec 2/5 \prec \cdots\]
-
-<p>이제 다음과 같이 $\lbrace  U_q \rbrace _{q \in Q}$를 정의하자. 먼저 $U_1 = X \setminus B$이다 ($B$가 닫힌집합이므로 $U_1$은 열린집합이다). 정규성에 의해 $A \subset U_0$이면서 $\overline{U_0} \subset U_1$인 $U_0$가 존재한다. 나머지 $U_q$는 열거 순서에 따라 다음과 같이 정의한다. $p \prec q$인 임의의 $p$에 대해,</p>
-
-<ul>
-  <li>$p &lt; q \implies \overline{U_p} \subset U_q$</li>
-  <li>$q &lt; p \implies \overline{U_q} \subset U_p$</li>
-</ul>
-
-<p>정규성에 의해 위 조건을 만족하며 $\lbrace  U_q \rbrace _{q \in Q}$를 완전히 정의할 수 있다.</p>
-
-<p><img src="/public/urysohn-2.png" style="width: 100%; max-width: 400px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<p>이제 다음과 같이 함수 $f: X \to [0, 1]$을 정의하자.</p>
-
-\[f(x) = \begin{cases}
-\sup_{&lt;}\{q \in Q : x \notin U_q \} &amp; x \notin U_0 \\
-0 &amp; x \in U_0
-\end{cases}\]
-
-<p>$\sup_&lt;$라는 표기는 $\prec$가 아닌 $&lt;$에 대해 상한을 취함을 의미한다. 정의로부터 $f[A] = 0, f[B] = 1$가 따라 나온다.</p>
-
-<p>이제 $f$가 연속임을 보이면 정리가 증명된다. $\lbrace  B_\epsilon(q) \cap [0, 1] : q \in Q, \epsilon \in \mathbb{Q}_{&gt;0} \rbrace $가 $[0, 1]$의 위상 기저이므로, 임의의 $q \in Q$와 특정 상한보다 작은 양의 유리수 $\epsilon$에 대해 $S_{q, \epsilon} = f^{-1}(B_\epsilon(q) \cap [0, 1])$가 열린집합임을 보이면 충분하다.</p>
-
-<ul>
-  <li>$0 &lt; q &lt; 1$인 경우, $S_{q, \epsilon} = (X \setminus \overline{U_{q-\epsilon}}) \cap U_{q + \epsilon}$이므로 열린집합이다.</li>
-  <li>$q = 0$인 경우, $S_{0, \epsilon} = U_\epsilon$이므로 열린집합이다.</li>
-  <li>$q = 1$인 경우, $S_{1, \epsilon} = X \setminus \overline{U_{1 - \epsilon}}$이므로 열린집합이다.</li>
-</ul>
-
-<p>따라서 $f$는 연속이다. ■</p>
-
-<h4 id="고찰">고찰</h4>
-
-<ul>
-  <li>
-    <p>우리손 보조정리의 역은 자명히 성립한다. 즉, 임의의 닫힌집합 $A, B \subset X$에 대해 어떤 연속인 $f: X \to [0, 1]$가 $A, B$를 분리한다면, $U = f^{-1}[0, 1/2)$, $V = f^{-1}(1/2, 1]$는 $A, B$를 분리하는 서로소 열린집합이므로 $X$는 정규이다. 간단히 말해, <strong>정규공간에서는 우리손 분리가능성과 분리 공리가 동치이다.</strong></p>
-  </li>
-  <li>
-    <p>정칙<sub>regular</sub> 공간에서는 이가 성립하지 않는다. 즉, 정칙 공간 $X$에서 임의의 닫힌집합 $F$와 점 $a$가 주어졌을 때, $f(a) = 0$, $f[F] = \lbrace 1 \rbrace$을 만족하는 연속인 $f: X \to [0, 1]$이 언제나 존재하는 것은 아니다. 우리손 분리가능한 정칙 공간을 <strong>티호노프<sub>Tychonoff</sub> 공간</strong> 또는 <strong>완전 정칙<sub>completely regular</sub> 공간</strong>이라고 하며, 정칙보다 엄격히 강한 조건이다.</p>
-  </li>
-  <li>
-    <p>우리손 보조정리의 증명이 정칙 공간에 대해 유효하지 않은 이유는 $p &lt; q \implies \overline{U_p} \subset U_q$를 만족하는 $\lbrace U_q \rbrace $를 구성할 때 정규 공리가 필요하기 때문이다.</p>
-  </li>
-</ul>
-
-<h2 id="우리손-거리화-정리">우리손 거리화 정리</h2>
-
-<p>우리손 보조정리의 응용으로서, 우리손 거리화 정리를 증명하자.</p>
-
-<blockquote>
-  <p><strong>우리손 거리화 정리<sub>Urysohn metrisation theorem</sub>.</strong> 2차 가산인 정규 공간은 거리화 가능하다.</p>
-</blockquote>
-
-<p>그런데 2차 가산인 정칙 공간은 정규 공간임이 알려져 있으므로 위 정리의 진술은 “2차 가산인 정칙 공간은 거리화 가능하다”와 같이 자연스럽게 강화할 수 있다.</p>
-
-<p>따라서 공간들 간의 시사 관계는 다음과 같다. <strong>화살표의 길이가 길수록 요구되는 조건이 강해진다.</strong> $T_2 \to T_4$는 $T_3 \to T_4$보다 엄격히 어려운 시사 관계이며, 이것은 전자에서 요구되는 콤팩트성이 후자에서 요구되는 린델뢰프보다 엄격히 강한 조건인 데에서 드러난다. 마찬가지로 $T_3 \to \mathrm{Met}$는 $T_3 \to T_4$보다 엄격히 어려운 시사 관계이며, 전자에서 요구되는 2차 가산성은 후자에서 요구되는 린델뢰프보다 엄격히 강한 조건이다. 그러나 $T_2 \to T_4$와 $T_3 \to \mathrm{Met}$는 어느 한쪽이 엄격히 어려운 시사 관계가 아니다 (두 화살표의 길이는 엇비슷하다). 이것은 콤팩트성과 2차 가산성이 일반적으로 서로를 시사하지 않는다는 점에서 드러난다.</p>
-
-<p><img src="/public/urysohn-3.png" style="width: 100%; max-width: 240px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<h4 id="증명-1">증명</h4>
-
-<p>$X$가 2차 가산인 정규 공간이라고 하자. 다음의 보조정리를 증명한다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $X$를 $[0, 1]$에 사상시키는 연속함수의 가산족 $\mathcal{F}$가 존재하여, 임의의 $x_0 \in X$와 그 근방 $U$에 대해, $f(x_0) &gt; 0$이고 $f[X \setminus U] = \lbrace  0 \rbrace $인 $f \in \mathcal{F}$가 존재한다.</p>
-</blockquote>
-
-<p>$x_0$와 $U$가 주어졌을 때 그러한 $f$가 존재함은 우리손 보조정리로부터 알 수 있다. 우리가 해야할 일은 이를 가산 함수족으로 줄이는 것이다. $\mathcal{B} = \lbrace  B_n \rbrace $이 $X$의 가산인 위상기저라고 하자. $B_m \subset B_n$일 때, 우리손 보조정리로부터 $f_{nm}: X \to [0, 1]$을 다음을 만족하는 연속함수로 정의하자.</p>
-
-<ul>
-  <li>$f_{nm}[\overline{B_m}] = 1$</li>
-  <li>$f_{nm}[X \setminus B_n] = 0$</li>
-</ul>
-
-<p>$\mathcal{F} = \lbrace  f_{nm} \rbrace $으로 정의하자. 임의의 $x_0$와 그 근방 $U$가 주어졌을 때, 위상기저의 정의에 의해 $x_0 \in B_n \subset U$인 $B_n$이 존재한다. 또한 정규성에 의해 $x \in \overline{V} \subset B_n$인 열린집합 $V$가 존재한다. 다시 위상기저의 정의에 의해 $x \in B_m \subset V$인 $B_m$이 존재한다. 이때 $f_{nm} \in \mathcal{F}$가 보조정리의 조건을 만족하는 함수이다. □</p>
-
-<p>이제 본 정리를 증명하자. 아이디어는 $X$를 $[0, 1]^\omega$에 임베딩하는 것이다. $[0, 1]^\omega$에 곱 위상이 주어지면 거리 공간임이 알려져 있으므로 $X$는 거리 공간의 부분공간과 동형인 공간으로서 거리화 가능함이 보여진다.</p>
-
-<p>$\mathcal{F} = \lbrace  f_n \mid n \in \omega \rbrace $가 보조정리로서 주어지는 가산 함수족이라고 하자. 다음과 같이 $F: X \to [0, 1]^\omega$를 정의한다.</p>
-
-\[F: x \mapsto (f_1(x), f_2(x), f_3(x), \dots)\]
-
-<p>$F$가 임베딩을 보이자. 즉, $F$가 연속이고, 단사이며, 정의역과 치역의 동형사상임을 보여야 한다.</p>
-
-<p>각 $f_n$은 연속이므로 곱 위상의 성질(<a href="https://dimenerno.github.io/2025/04/02/box-v-product">정의이기도 하다</a>)에 의해 $F$는 연속이다. $F$가 단사임은 $X$가 하우스도르프라는 사실에서 따라 나온다. 따라서 다음을 보이면 충분하다.</p>
-
-<blockquote>
-  <p>$U \subset X$가 열린집합일 때, $F[U]$는 $\mathrm{im} F$에서 열린집합이다.</p>
-</blockquote>
-
-<p>임의의 $y_0 \in F[U]$에 대해 $y_0 \in V \subset F[U]$이며 $\mathrm{im} F$에서 열린 $V$가 존재함을 보이자. $F[U]$의 정의에 의해 어떤 $x_0 \in X$가 존재하여 $F(x_0) = y_0$이다. $x_0$와 $U$에 대해 보조정리를 만족하는 함수가 $f_n \in \mathcal{F}$라고 하자. $f_n(x_0) = 1$이므로 $(y_0)_n = 1$이다. 따라서 $W = \pi_n^{-1}(0, 1] \subset [0, 1]^\omega$와 같이 정의하면 $W$는 $y_0$를 원소로 가지는 $[0, 1]^\omega$에서 열린집합이다.</p>
-
-<p>$W \cap \mathrm{im} F \subset F[U]$임을 보이자. 임의의 $w \in W$는 $F(x_1) = w$와 같이 쓸 수 있다. 추가로 $w \in \mathrm{im} F$라면 $f_n(x_1) = 1$이다. 그런데 $f_n$은 $U$ 외부에서는 $0$이므로, $x_1 \in U$이다. 따라서 $w \in F[U]$이다. 따라서 $W \cap \mathrm{im} F$는 $F[U]$에 포함되며 $y_0$를 원소로 가지는 $\mathrm{im} F$의 열린집합이다. 따라서 $F[U]$는 $\mathrm{im} F$에서 열린집합이다. ■</p>
-
-<h4 id="고찰-1">고찰</h4>
-
-<ul>
-  <li>
-    <p>우리손 거리화 정리는 <strong>나가타-스미로느프 거리화 정리<sub>Nagata-Smirnov metrisation theorem</sub></strong>로 강화할 수 있다. 진술은 다음과 같다.</p>
-
-    <blockquote>
-      <p>$X$가 거리화 가능할 필요충분조건은 $X$가 정칙이며 가산-국소적으로 유한한<sub>countably locally finite</sub> 위상기저를 가지는 공간인 것이다.</p>
-    </blockquote>
-
-    <p>위상공간 $X$의 부분집합들로 이루어진 집합족 $\mathcal{A}$가 <strong>국소적으로 유한</strong>하다는 것은, 임의의 $x \in X$에 대해 어떤 근방 $U$가 존재하여 $U$가 $\mathcal{A}$의 오직 유한한 개수의 집합과만 교집합을 가진다는 것이다. 위상기저 $\mathcal{B}$가 <strong>가산-국소적으로 유한</strong>하다는 것은, 각각의 $\mathcal{B}_n$이 국소적으로 유한이도록 $\mathcal{B} = \bigcup_{n \in \omega}\mathcal{B}_n$와 같이 적을 수 있다는 것이다.</p>
-  </li>
-  <li>
-    <p>우리손 거리화 정리의 증명을 살짝 변형하면 다음 사실을 발견할 수 있다.</p>
-
-    <blockquote>
-      <p><strong>정리.</strong> $T_1$ 공간인 $X$에 대해, $\lbrace f_{\alpha} \rbrace _{\alpha \in J} $가 다음 조건을 만족하는 연속함수 $f_\alpha : X \to [0, 1]$의 모임이라고 하자: 임의의 $x_0 \in X$와 근방 $U$에 대해, 어떤 $\alpha \in J$가 존재하여 $f_\alpha(x_0) = 1$이고 $f_\alpha[X \setminus U] = \lbrace  0 \rbrace $이다. 이때, $F(x) = (f_\alpha(x))_{\alpha \in J}$는 $X$를 $[0, 1]^J$로 임베딩하는 사상이다.</p>
-    </blockquote>
-
-    <p>$T_1$ 조건을 생략하면 $F$는 단사가 아닐 수 있음을 확인하라. 위 정리는 스톤-체흐 콤팩트화<sub>Stone-Čech compactification</sub>를 증명하는 데 사용된다.</p>
-  </li>
-</ul>
 
   </div>
   <div style="margin-bottom: 6em"></div>
