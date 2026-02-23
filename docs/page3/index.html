@@ -431,6 +431,136 @@
 
 <div class="posts">
   
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/09/25/ch-for-borel/en"> The Continuum Hypothesis for Closed Sets and Borel Sets </a>
+      </h1>
+    <span class="post-date">25 Sep 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <p>The continuum hypothesis (CH) asks whether $\aleph_1 = 2^{\aleph_0}$ holds. This is equivalent to asking whether there exists an uncountable set whose cardinality is smaller than that of the real numbers. As is well known, CH is neither provable nor disprovable in ZFC, but it can be proven for certain restricted cases. Cantor proved that CH holds when restricted to closed subsets of the real numbers.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then $|F| = \aleph_0$ or $|F| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+<p>The proof of this theorem uses the concept of a <strong>perfect set</strong>. I previously introduced this when discussing the <a href="https://dimenerno.github.io/2024/12/25/Cantor-Bendixson">Cantor-Bendixson theorem</a>, but let me reintroduce it here.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, a subset $P \subseteq X$ is said to be perfect if $P = P’$, where $P’$ is the set of limit points of $P$ in $X$.</p>
+</blockquote>
+
+<p>In general, for a subset $A \subseteq X$, there are two reasons why $A$ and $A’$ may not include one or the other.</p>
+
+<ol>
+  <li>If $x$ is an isolated point of $A$, then $x \in A$ but $x \notin A’$</li>
+  <li>If $x$ is a limit point of $A$ that does not belong to $A$, then $x \notin A$ but $x \in A’$</li>
+</ol>
+
+<p>Therefore, a perfect set is a closed set with no isolated points. Accordingly, when given a closed set $F$, one might expect that removing all isolated points from $F$ would yield a perfect set. The problem is that the set obtained after removing isolated points may itself have isolated points. For example,</p>
+
+\[F = \mathbb{N} \cup \lbrace  m - 1/n : m \geq 0, n &gt; 1 \rbrace\]
+
+<p>The set obtained by removing the isolated points of $F$ is $\mathbb{N}$, each of whose points is isolated. However, if we repeat this process of ‘removing’ isolated points transfinitely, we obtain the following interesting result.</p>
+
+<blockquote>
+  <p><strong>Cantor-Bendixson Theorem.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then there exist a countable set $C$ and a perfect set $P$ such that $F = P \sqcup C$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Although a proof is presented in the previous link, here we present Cantor’s alternate proof.</p>
+
+<p>Define transfinitely as follows:</p>
+
+\[\begin{gather}
+F_0 = F \\
+F_{\alpha + 1} = F_\alpha' \\
+F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
+\end{gather}\]
+
+<p>Observe the following:</p>
+
+<ol>
+  <li>Each $F_\alpha$ is a closed set.</li>
+  <li>If $\alpha \leq \beta$, then $F_\alpha \supseteq F_\beta$.</li>
+  <li>$F_\alpha \setminus F_{\alpha + 1}$ is the set of isolated points of $F_\alpha$.</li>
+  <li>If $\alpha \neq \beta$, then $F_{\alpha} \setminus F_{\alpha + 1}$ and $F_{\beta} \setminus F_{\beta+1}$ are disjoint.</li>
+</ol>
+
+<p>If $F_{\alpha} \setminus F_{\alpha+1} \neq \varnothing$ for all $\alpha \in \mathrm{Ord}$, then for the Hartogs number $\gamma$ of $\mathcal{P}(F)$, the function $f : \gamma \to \mathcal{P}(F); \alpha \mapsto F_{\alpha} \setminus F_{\alpha + 1}$ would be injective, which is a contradiction. Therefore, there exists $\xi$ such that $F_{\xi} \setminus F_{\xi+1} = \varnothing$. Setting $P = F_\xi$, we have that $P$ is either empty or perfect.</p>
+
+<p>Let $C = F \setminus P$. Let $\mathcal{B} = \lbrace  B_n \rbrace $ be a countable basis for $\mathbb{R}$. Define $f: C \to \omega$ as follows:</p>
+
+\[f(x) = \mathop{\arg \min}\limits_{n \in \omega} : B_n \cap F_\alpha = \{ x \} \quad (x \in F_\alpha \setminus F_{\alpha + 1})\]
+
+<p>Verify that $f$ is well-defined and injective. ■</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then $|P| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> We prove the following two lemmas.</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then there exist non-empty perfect disjoint sets $P_1, P_2 \subset P$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Let $\alpha = \inf P$ and $\beta = \sup P$ (where $\alpha, \beta$ may be $\pm \infty$). If $(\alpha, \beta) \subset P$, then for any $r, s$ with $\alpha &lt; r &lt; s &lt; \beta$, the sets $P \cap (-\infty, r]$ and $P \cap [s, \infty)$ satisfy the conditions. If $(\alpha, \beta) \not\subset P$, then there exists some $x \in (\alpha, \beta)$ such that $x \notin P$. Since $P = P’$, $x$ is not a limit point of $P$. Therefore, there exists sufficiently small $\delta &gt; 0$ such that $(x - \delta, x + \delta)$ is disjoint from $F$ and $\alpha &lt; x - \delta, x + \delta &lt; \beta$. In this case, $P \cap (-\infty, x - \delta]$ and $P \cap [x + \delta, \infty)$ satisfy the conditions. □</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $P \subseteq \mathbb{R}$ is a non-empty perfect set, then for any $n &gt; 0$, there exists a non-empty perfect set $P’ \subset P$ such that $\mathrm{diam} P’ &lt; 1/n$.</p>
+</blockquote>
+
+<p><em>Proof.</em> For $\mathcal{J} = \lbrace  (m/n, (m+1)/n) : m \in \mathbb{Z} \rbrace $, there exists $(k/n, (k+1)/n) \in \mathcal{J}$ such that $J \cap F \neq \varnothing$ (otherwise $P = \lbrace  m/n : m \in \mathbb{Z} \rbrace $, which is not perfect). Let $a = \inf F \cap (k/n, (k+1)/n)$ and $b = \sup F \cap (k/n, (k+1)/n)$ and take $E = F \cap [a, b]$. Since $E$ is a closed set, if $E$ has no isolated points, then $E$ is perfect. For contradiction, assume that $x \in E$ is an isolated point of $E$. By the definition of supremum and inifimum, $x \neq a, b$. Hence there exists sufficiently small $\delta &gt; 0$ such that $E \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $ and $k/n &lt; x - \delta, x + \delta &lt; (k + 1)/n$. In this case, $F \cap (x - \delta, x + \delta) = \lbrace  x\rbrace $, so $x$ is an isolated point of $F$, which is a contradiction. Hence, $E$ is perfect. □</p>
+
+<p>Let $P$ be a non-empty perfect set. From the two lemmas above, using the axiom of choice, we can inductively define:</p>
+
+<ul>
+  <li>$P_1, P_2 \subset P, P_1 \cap P_2 = \varnothing, \mathrm{diam} P_1, \mathrm{diam} P_2 &lt; 1/2$</li>
+  <li>$P_{11}, P_{12} \subset P_1, P_{11} \cap P_{12} = \varnothing, \mathrm{diam} P_{11}, \mathrm{diam} P_{12} &lt; 1/4$</li>
+  <li>$P_{21}, P_{22} \subset P_2, P_{21} \cap P_{22} = \varnothing, \mathrm{diam} P_{21}, \mathrm{diam} P_{22} &lt; 1/4$</li>
+  <li>$P_{111}, P_{112} \subset P_{11}, P_{111} \cap P_{112} = \varnothing, \mathrm{diam} P_{111}, \mathrm{diam} P_{112} &lt; 1/8$</li>
+  <li>…</li>
+</ul>
+
+<p>Let $A$ be the intersection of all $P_i$. $A$ has the same cardinality as the Cantor set. Since the Cantor set has the same cardinality as the real numbers, $|P| = 2^{\aleph_0}$. ■</p>
+
+<p>From the above theorem and the Cantor-Bendixson theorem, we obtain the following result.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> If $F \subseteq \mathbb{R}$ is a closed set, then $|F| = \aleph_0$ or $|F| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+<p>Incidentally, a result similar to the Cantor-Bendixson theorem holds for Borel sets.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $B \subseteq \mathbb{R}$ is an uncountable Borel set, then $B$ contains a perfect set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Omitted.</p>
+
+<p>Therefore, more generally, the following holds.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> If $B \subseteq \mathbb{R}$ is a Borel set, then $|B| = \aleph_0$ or $|B| = 2^{\aleph_0}$.</p>
+</blockquote>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
         <a href="/2025/09/16/cardinal-arithmetics"> 기수 연산 </a>
@@ -2227,178 +2357,6 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 <h4 id="증명-1">증명</h4>
 
 <p>각각의 $i \in I$에 대해 $X_i$가 콤팩트 공간이라고 하자. $X$가 콤팩트할 필요충분조건은 임의의 $\prod_{i \in I}$ 위의 초필터 $\mathcal{F}$가 수렴하는 것이고, $\mathcal{F}$가 수렴할 필요충분조건은 $\pi_i(\mathcal{F})$가 $X_i$에서 수렴하는 것이다. 그런데 $\pi_i$는 전사이므로 $\pi_i(\mathcal{F})$는 초필터이고, $X_i$는 콤팩트하므로 $\pi_i(\mathcal{F})$는 수렴한다. 이에 따라 $X$는 콤팩트하다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/08/11/tychonoff-with-ultrafilter/en"> Proof of Tychonoff's Theorem Using Ultrafilters </a>
-      </h1>
-    <span class="post-date">11 Aug 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>Tychonoff’s Theorem.</strong> The product of compact spaces is compact.</p>
-</blockquote>
-
-<p>This is an extremely simple yet powerful theorem, but its proof is rather tedious in undergraduate topology texts such as Munkres. However, there is an elegant proof using ultrafilters.</p>
-
-<h2 id="1-preliminary-concepts">1. Preliminary Concepts</h2>
-
-<p>For detailed explanations and proofs of the concepts introduced here, refer to Chapter 4 of <em>Stephen Willard, General Topology</em>.</p>
-
-<h3 id="filters-and-ultrafilters">Filters and Ultrafilters</h3>
-
-<p>In a <a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">previous post</a>, we introduced filters in Boolean algebra structures. Since topological spaces form Boolean algebraic structures when $\cup$ and $\cap$ correspond to disjunction and conjunction respectively, we can define filters on topological spaces.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a topological space $X$, a filter $\mathcal{F}$ on $X$ is a collection of subsets of $X$ satisfying the following conditions:</p>
-
-  <ol>
-    <li>$X \in \mathcal{F}, \varnothing \notin \mathcal{F}$</li>
-    <li>$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
-    <li>$A \in \mathcal{F}, A \subseteq B \implies B \in \mathcal{F}$</li>
-  </ol>
-</blockquote>
-
-<p>Additionally, if the following is satisfied, it is an ultrafilter:</p>
-
-<blockquote>
-<ol start="4">
-  <li>$A \notin \mathcal{F} \implies X \setminus A \in \mathcal{F}$</li>
-</ol>
-</blockquote>
-
-<h3 id="neighbourhood-filters">Neighbourhood Filters</h3>
-
-<p>One important filter in topology is the neighbourhood filter. First, we define neighbourhood as follows:</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a topological space $X$, we say that $N \subseteq X$ is a <strong>neighbourhood</strong> of $x \in X$ if there exists some open set $U$ such that $x \in U \subseteq N$.</p>
-</blockquote>
-
-<p><strong>Note that neighbourhoods need not be open sets.</strong> When a neighbourhood is an open set, it is called an open neighbourhood. This contrasts with the convention in some textbooks that use neighbourhood and open neighbourhood synonymously, so care must be taken.</p>
-
-<blockquote>
-  <p><strong>Notation.</strong> The collection of neighbourhoods of $x$ is denoted $\mathcal{N}(x)$ or $\mathcal{N}_x$.</p>
-</blockquote>
-
-<p>One can easily verify that $\mathcal{N}(x)$ is a filter. Accordingly, $\mathcal{N}(x)$ is called the <strong>neighbourhood filter</strong>.</p>
-
-<h3 id="generation-of-filters">Generation of Filters</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> A collection $\mathcal{C}$ of subsets of a topological space $X$ is called a <strong>prefilter</strong> or <strong>filter base</strong> when it satisfies the following:</p>
-
-  <ol>
-    <li>$\varnothing \notin \mathcal{C}$</li>
-    <li>$A, B \in \mathcal{C} \implies \exists C \in \mathcal{C} : C \subseteq A \cap B$</li>
-  </ol>
-</blockquote>
-
-<p>When $\mathcal{C}$ is a prefilter, one can <strong>generate</strong> a filter $\mathcal{F}$ from $\mathcal{C}$ as follows:</p>
-
-\[\mathcal{F} = \{ F \subseteq X : C \subseteq F \text{ for some } C \in \mathcal{C} \}\]
-
-<p>Moreover, given a mapping $f: X \to Y$ and a filter $\mathcal{F}$ on $X$, the following collection is a prefilter:</p>
-
-\[\mathcal{C} = \{ f(F) : F \in \mathcal{F} \}\]
-
-<blockquote>
-  <p><strong>Notation.</strong> The filter generated by $\mathcal{C}$ is denoted $f(\mathcal{F})$.</p>
-</blockquote>
-
-<p>When $f$ is onto, we have $\mathcal{C} = f(\mathcal{F})$. Also, when $f$ is onto, the following holds (trivially):</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $f: X \to Y$ is onto and $\mathcal{F}$ is an ultrafilter on $X$, then $f(\mathcal{F})$ is an ultrafilter on $Y$.</p>
-</blockquote>
-
-<h3 id="extension-to-ultrafilters">Extension to Ultrafilters</h3>
-
-<p>Every filter can be extended to an ultrafilter. For the proof, refer to the <a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">previous post</a> (the axiom of choice is used).</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $\mathcal{F}$ is a filter on $X$, then there exists an ultrafilter $\mathcal{U}$ on $X$ such that $\mathcal{U} \supseteq \mathcal{F}$.</p>
-</blockquote>
-
-<h3 id="convergence-of-filters">Convergence of Filters</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> When a filter $\mathcal{F}$ contains $\mathcal{N}(x)$, we say that $\mathcal{F}$ <strong>converges</strong> to $x$, and write $\mathcal{F} \to x$.</p>
-</blockquote>
-
-<p>For example, the filter generated by the prefilter $\lbrace  (0, \epsilon) : \epsilon &gt; 0 \rbrace $ converges to $0$ (this example shows that $\mathcal{F} \to x$ does not require all elements of $\mathcal{F}$ to contain $x$ as an element).</p>
-
-<p>The main properties of filter convergence are as follows:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-  <ol>
-    <li>For $E \subseteq X$, $x \in \overline{E}$ if and only if there exists some filter $\mathcal{F}$ such that $E \in \mathcal{F}$ and $\mathcal{F} \to x$.</li>
-    <li>$f: X \to Y$ is continuous if and only if for any filter $\mathcal{F}$, if $\mathcal{F} \to x$ then $f(\mathcal{F}) \to f(x)$.</li>
-  </ol>
-</blockquote>
-
-<p>This generalises the characterisation of closure and continuous functions by sequences in first countable spaces.</p>
-
-<p>Convergence of filters in product spaces is equivalent to convergence in each component space. That is, the following holds:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> A filter $\mathcal{F}$ on the product space $\prod_{i \in I}X_i$ converges to $x$ if and only if $\pi_i(\mathcal{F}) \to \pi_i(x)$ for each $i \in I$.</p>
-</blockquote>
-
-<h2 id="2-proof-of-tychonoffs-theorem">2. Proof of Tychonoff’s Theorem</h2>
-
-<p>We now prove Tychonoff’s theorem. The key is the following lemma:</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> $X$ is compact if and only if every ultrafilter on $X$ converges.</p>
-</blockquote>
-
-<h4 id="proof">Proof</h4>
-
-<p>$(\Rightarrow)$ Let $\mathcal{F}$ be an ultrafilter on $X$ that does not converge. That $\mathcal{F}$ does not converge to any point means that for any $x \in X$, there exists some open set $U_x$ such that $U_x \notin \mathcal{F}$. Since $\mathcal{F}$ is an ultrafilter, $X \setminus U_x \in \mathcal{F}$. Now consider the collection $\mathcal{C} = \lbrace  U_x : x \in X \rbrace $. $\mathcal{C}$ covers $X$, and since $X$ is compact, it has a finite subcover $\lbrace U_{x_1}, \dots, U_{x_n} \rbrace $. Therefore,</p>
-
-\[\begin{align}
-&amp;X \setminus (U_{x_1} \cup \dots \cup U_{x_n}) \\
-&amp;= (X \setminus U_{x_1}) \cap \dots \cap (X \setminus U_{x_n}) \\
-&amp;= \varnothing
-\end{align}\]
-
-<p>But since $X \setminus U_{x_i} \in \mathcal{F}$ for each $1 \leq i \leq n$, by closure of filters under intersection, $\varnothing \in \mathcal{F}$, which is a contradiction. □</p>
-
-<p>$(\Leftarrow)$ Suppose $X$ is not compact. Then there exists some open cover $\mathcal{C}$ of $X$ that has no finite subcover. Therefore, when we define $\mathcal{P}$ as follows:</p>
-
-\[\mathcal{P} = \{ X \setminus (U_1 \cup \dots \cup U_n) : U_i \in \mathcal{C} \}\]
-
-<p>$\mathcal{P}$ is closed under finite intersection and does not contain the empty set, so it is a prefilter. Accordingly, $\mathcal{P}$ can be extended to a filter, and this filter can be extended to an ultrafilter. Let such an ultrafilter be $\mathcal{F}$. By assumption, $\mathcal{F}$ converges to some point $x$. That is, $\mathcal{N}(x) \subseteq \mathcal{F}$. Therefore, the following holds:</p>
-
-\[x \in \bigcap_{F \in \mathcal{F}} \overline{F}\]
-
-<p>But this contradicts $\bigcap_{P \in \mathcal{P}} \overline{P} = \bigcap_{P \in \mathcal{P}} P = \varnothing$ (since $\mathcal{C}$ is a cover of $X$). ■</p>
-
-<p>Tychonoff’s theorem now follows almost trivially.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> The product of compact spaces is compact.</p>
-</blockquote>
-
-<h4 id="proof-1">Proof</h4>
-
-<p>Let each $X_i$ be a compact space for $i \in I$. $X$ is compact if and only if any ultrafilter $\mathcal{F}$ on $\prod_{i \in I}$ converges, and $\mathcal{F}$ converges if and only if $\pi_i(\mathcal{F})$ converges in $X_i$. Since $\pi_i$ is onto, $\pi_i(\mathcal{F})$ is an ultrafilter, and since $X_i$ is compact, $\pi_i(\mathcal{F})$ converges. Hence, $X$ is compact. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

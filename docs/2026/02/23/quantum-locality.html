@@ -12,7 +12,7 @@
   />
 
   <title>
-     주제별로 보기 &middot; 디멘의 블로그 
+     양자역학의 국소성에 대하여 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/archive-tag/" />
+  <link rel="canonical" href="/2026/02/23/quantum-locality" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -235,12 +235,12 @@
   >
         
     <a
-      class="sidebar-nav-item active lang-ko"
+      class="sidebar-nav-item lang-ko"
       href="/archive-tag/"
       >주제별로 보기</a
     >
     <a
-    class="sidebar-nav-item active lang-en"
+    class="sidebar-nav-item lang-en"
     href="/archive-tag/"
     >List by topics</a
   >
@@ -368,311 +368,125 @@
         </div>
       </div>
 
-      <div class="container content"><div class="page">
-  <h1 class="page-title lang-ko">주제별로 보기</h1>
-  <h1 class="page-title lang-en">List by topics</h1>
-  <ul>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">양자역학의 국소성에 대하여</h1>
+  <span class="post-date">23 Feb 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/물리학/'" >물리학</div>
+      
+      <div class="tag" onclick="location.href='/tags/양자역학/'" >양자역학</div>
+      
+    </div>
+  
+  <p>벨 부등식은 흔히 “양자역학은 국소적이지 않다”는 결론으로 요약되곤 한다. 그러나 이 요약은 오해를 일으키는 표현인데, 국소성의 표준적인 의미로 따지면 양자역학은 완벽히 국소적이기 때문이다. 국소성의 표준적 의미란 다음과 같다.</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/physics">Physics (4)</a>
-  </li>
+<blockquote>
+  <p><strong>정의.</strong> 어떤 물리 이론이 국소적<sub>local</sub>일 조건은, 시공간의 두 사건<sub>event</sub>에 대해 한 사건이 다른 사건에 빛보다 빠르게 영향을 주지 않는 것이다.</p>
+</blockquote>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/relativity">Relativity (1)</a>
-  </li>
+<p>그리고 위의 정의를 적절히 해석했을 때 양자역학은 국소적임을 증명할 수 있다. 가령, 두 개의 얽힌 입자 A와 B로 이루어진 계의 파동함수 $\psi(a, b)$를 생각하자. 만약 우리가 입자 A에만 관심을 가진다면, 입자 A를 대상으로 한 관측의 결과가 어떻게 나올지는 다음의 밀도 행렬<sub>density matrix</sub>로 완전히 표현할 수 있다.</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/물리학">물리학 (5)</a>
-  </li>
+\[\rho_{a'a} = \sum_{b} \psi^*(a, b)\psi(a', b)\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/상대론">상대론 (1)</a>
-  </li>
+<p>예를 들어 관측량<sub>observable</sub> $\mathbf{L}$이 A에 국소적으로 작용할 때, $\mathbf{L}$의 기댓값은 다음과 같이 구할 수 있음이 알려져 있다.</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/mathematics">Mathematics (55)</a>
-  </li>
+\[\langle \mathbf{L} \rangle = \operatorname{tr} \rho L\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/set-theory">Set Theory (17)</a>
-  </li>
+<p>여기서 $\mathbf{L}$이 A에 국소적으로 작용한다는 표현의 의미는 다음과 같다.</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/수학">수학 (55)</a>
-  </li>
+\[L_{a'b', ab} = L_{a'a} \delta_{b'b}\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/집합론">집합론 (17)</a>
-  </li>
+<p>따라서 입자 B에서 국소적으로 일어나는 시간 변화가 입자 A의 밀도 행렬을 변화시키지 않는다면, 다음의 의미에서 양자역학은 국소적이다.</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/topology">Topology (14)</a>
-  </li>
+<blockquote>
+  <p>임의의 두 입자에 대해, 한 입자의 국소적 시간 변화가 다른 입자의 국소적 상태에 빛보다 빠르게 영향을 주지 않는다.</p>
+</blockquote>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/위상수학">위상수학 (14)</a>
-  </li>
+<p>이 사실을 증명해 보자. 입자 B에서 국소적 시간 변화가 진행된다고 하자. 가령 입자 B의 위치를 관측하거나, 운동량을 관측하거나, 입자 B를 다른 입자와 얽히게 만드는 등의 일이 일어난다. 무슨 일이 일어나든 간에 이 일은 $\psi(a, b)$를 변화시킬 것이다. 양자역학에서 계의 시간에 따른 변화는 유니터리 행렬로 표현된다. 즉, 어떤 유니터리 연산자 $\mathbf{U}$가 존재하여, 일정 시간이 지난 이후 계의 상태를 $\psi_f(a’, b’)$라고 하면</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/mechanics">Mechanics (3)</a>
-  </li>
+\[\psi_f(a', b') = \sum_{a, b} U_{a'b', ab} \psi(a, b)\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/역학">역학 (3)</a>
-  </li>
+<p>이다. 그런데 시간 변화가 B에서만 국소적으로 진행된다면 $a \neq a’$일 때 $U_{a’b’, ab} = 0$이다. 따라서,</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/category-theory">Category Theory (7)</a>
-  </li>
+\[\psi_f(a, b') = \sum_{b} U_{b'b} \psi(a, b)\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/범주론">범주론 (7)</a>
-  </li>
+<p>로 줄여 쓸 수 있다. 이로 인해 A의 밀도 행렬은 다음과 같이 갱신된다.</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/philosophy">Philosophy (16)</a>
-  </li>
+\[\rho'_{a'a} = \sum_{b} \psi_f^*(a, b)\psi(a', b)\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/philosophy-of-language">Philosophy of Language (10)</a>
-  </li>
+<p>두 식을 연립하면,</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/철학">철학 (16)</a>
-  </li>
+\[\begin{align}
+\rho'_{a'a} &amp;= \sum_{b} \left( \left( \sum_{b'} U_{bb'} \psi(a, b') \right)^* \left( \sum_{b''} U_{bb''} \psi(a', b'') \right) \right) \\
+&amp;= \sum_{b, b', b''} U^*_{b'b} U_{bb''} \psi^*(a, b') \psi(a', b'')
+\end{align}\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/언어철학">언어철학 (10)</a>
-  </li>
+<p>이다. 그런데 $\mathbf{U}$가 유니터리이므로 $\sum_b U^\ast_{b’b} U_{bb’’} = (U^\ast U)_{b’ b’’} = \delta_{b’ b’’}$이다. 따라서,</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/logic">Logic (23)</a>
-  </li>
+\[\rho'_{a'a} = \sum_{b'} \psi^*(a, b') \psi(a', b') = \rho_{a'a}\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/논리학">논리학 (23)</a>
-  </li>
+<p>이다. 따라서 $\rho’ = \rho$이다. <strong>즉, B에서 국소적으로 진행되는 유니터리한 시간 변화는 A의 밀도 행렬을 변화시키지 않는다.</strong> 실질적으로 이는 다음의 정리를 증명한 것이다.</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/algebra">Algebra (6)</a>
-  </li>
+<blockquote>
+  <p><strong>통신 없음 정리<sub>No-communication theorem</sub>.</strong> (얽힘을 고려하더라도) 빛보다 빠르게 정보를 전달하는 것은 불가능하다.</p>
+</blockquote>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/대수학">대수학 (6)</a>
-  </li>
+<p>그렇다면 벨 부등식을 비롯한, 흔히 양자역학의 비국소성을 보여주는 것으로 제시되는 사례들은 어떻게 이해되어야 하는가? 가령, 코펜하겐 해석에 따르면 각운동량의 총합이 0인 두 전자를 앨리스와 밥이 나눠가진 뒤, 밥이 스핀 업의 전자를 관측한다면, 앨리스의 전자는 그 즉시 스핀 다운으로 붕괴된다. 그렇다면 앨리스의 전자의 밀도 행렬도 그에 맞추어 변해야 하는 것 아닌가?</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/combinatorics">Combinatorics (1)</a>
-  </li>
+<p>이 질문에 대한 “실증주의적” 해답은 이렇다 (실증주의적이라는 표현은 이 해답에 대한 철학적 해석을 일단 차치하겠다는 것이다). 만약 두 개의 전자뿐 아니라 <em>앨리스와 밥 또한</em> 전체 계의 일부로 간주한다면, 밥의 관측이 있기 전과 후 계의 파동함수는 다음과 변화한다.</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/조합론">조합론 (1)</a>
-  </li>
+<p>관측 전:</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/measure-theory">Measure Theory (4)</a>
-  </li>
+\[\begin{align}
+\psi &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
+&amp;\qquad \land \,\,\, \text{Bob has not observed his spin-down electron}) \\
+&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
+&amp;\qquad \land \,\,\, \text{Bob has not observed his spin-up electron})
+\end{align}\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/측도론">측도론 (4)</a>
-  </li>
+<p>관측 후:</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/model-theory">Model Theory (4)</a>
-  </li>
+\[\begin{align}
+\psi_f &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
+&amp;\qquad \land \,\,\, \text{Bob has observed his spin-down electron}) \\
+&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
+&amp;\qquad \land \,\,\, \text{Bob has observed his spin-up electron})
+\end{align}\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/모델론">모델론 (4)</a>
-  </li>
+<p>즉, <strong>밥도 계의 일부이기 때문에 밥의 행위는 계를 불연속적으로 붕괴시키는 것이 아닌, 계의 유니터리한 시간 변화의 일부이다.</strong> 대신 앨리스-밥 계의 외부에서 제3자인 찰리가 <em>밥을 관측한다면</em> 그때는 $\psi_f$가 가령 다음과 같이 붕괴할 것이다.</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/humanities">Humanities (3)</a>
-  </li>
+\[\begin{align}
+\psi_f \longmapsto\; &amp;(\text{Alice has not observed her spin-down electron} \\ 
+&amp;\land \; \text{Bob has observed his spin-up electron})
+\end{align}\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/인문학">인문학 (3)</a>
-  </li>
+<p>그러나 만약 찰리 또한 밥과 앨리스와 함께 계의 일부로 간주한다면, 전체 계의 파동함수는 다음과 같이 유니터리하게 시간 변화한다.</p>
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/체스">체스 (1)</a>
-  </li>
+\[\begin{align}
+\psi_f &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
+&amp;\qquad \land \,\,\, \text{Bob has observed his spin-down electron} \\
+&amp;\qquad \land \,\,\, \text{Charlie has observed Bob observing spin-down}) \\
+&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
+&amp;\qquad \land \,\,\, \text{Bob has observed his spin-up electron} \\
+&amp;\qquad \land \,\,\, \text{Charlie has observed Bob observing spin-up}) \\
+\end{align}\]
 
-  
-  
-  
-  
-  <li class="tag-item" data-lang="en">
-    <a href="/tags/essay">Essay (1)</a>
-  </li>
-
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/에세이">에세이 (1)</a>
-  </li>
-
-  
-  
-  
-  
-  <li class="tag-item" data-lang="ko">
-    <a href="/tags/양자역학">양자역학 (1)</a>
-  </li>
-
-</ul>
-
-<script>
-  function filterTagsByLang(lang) {
-  document.querySelectorAll(".tag-item").forEach(item => {
-    item.style.display = item.dataset.lang === lang ? "" : "none";
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("lang") || "ko";
-  filterTagsByLang(savedLang);
-
-  const toggle = document.getElementById("lang-toggle");
-  if (toggle) {
-    toggle.checked = savedLang === "en";
-    toggle.addEventListener("change", () => {
-      const newLang = toggle.checked ? "en" : "ko";
-      localStorage.setItem("lang", newLang);
-      filterTagsByLang(newLang);
-    });
-  }
-});
-  </script>
-
+<p>일반적으로, <strong>관측자와 계를 분리하면 관측은 계의 파동함수를 붕괴시키지만, 관측자를 계에 포함시키면 관측 또한 계의 유니터리 시간 변화의 일부이다.</strong> 이 결론을 확장하면, <strong>우주 전체의 파동함수</strong>는 항상 유니터리하게 시간 변화하며, 우주 전체의 파동함수만이 유일하게 물리적으로 유의미한 파동함수라는 주장을 얻는다. 이는 양자역학에 대한 다세계 해석으로 이어지게 된다.</p>
 
 </div>
-</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
