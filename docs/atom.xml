@@ -4,13 +4,127 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-05-06T14:49:49+09:00</updated>
+ <updated>2026-05-07T19:08:36+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>유형론적 요네다 보조정리</title>
+   <link href="https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda"/>
+   <updated>2026-05-07T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;요네다 보조정리.&lt;/strong&gt; $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$에서 자연스럽다.&lt;/p&gt;
+
+\[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;이는 범주론의 잘 알려진 정리이다. 그런데 흥미롭게도, 요네다 보조정리와 비슷한 형태의 정리를 유형론에서 발견할 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;유형론적 요네다 보조정리.&lt;/strong&gt; $A$가 유형이고, $B$가 $A$에 의존하는 유형이라고 하자. 각 $a : A$에 대해 다음이 성립한다.&lt;/p&gt;
+
+\[\prod_{x: A}((x = a) \to B(x)) \simeq B(a)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;둘의 유사성을 조금 더 부각하기 위해 기호를 바꿔 적으면 다음과 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$\mathcal{A}$가 유형이고, $F$가 $\mathcal{A}$에 의존하는 유형이라고 하자. 각 $A : \mathcal{A}$에 대해 다음이 성립한다.&lt;/p&gt;
+
+\[\prod_{X: \mathcal{A}}((X = A) \to F(X)) \simeq F(A)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;유형론적 요네다 보조정리는 다음 정리의 특수한 사례이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 각 $a: A$에 대해 다음 사상은 동형이다.&lt;/p&gt;
+
+\[\mathrm{ev} : \prod_{x: A}\prod_{p: a = x} B(x, p) \to B(a, \mathrm{refl}_a); \quad  h \mapsto h(a, \mathrm{refl}_a)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 동일성 유형의 귀납법에 따라 다음 사상이 존재하며, $\mathrm{ev}$의 섹션이다.&lt;/p&gt;
+
+\[\mathrm{ind} : B(a, \mathrm{refl}_a) \to \prod_{x: A}\prod_{p: a = x} B(x, p)\]
+
+&lt;p&gt;따라서 $\mathrm{ind}$가 $\mathrm{ev}$의 리트랙트라는 것을 보이면 충분하다. 즉, 각 $h: \prod_{x: A}\prod_{p: a = x} B(x, p)$에 대해 다음이 성립함을 보이면 충분하다.&lt;/p&gt;
+
+\[\mathrm{ind}(h(a, \mathrm{refl}_a)) = h\]
+
+&lt;p&gt;함수 외연성 공리에 따라, 다음을 보이면 충분하다.&lt;/p&gt;
+
+\[\prod_{x: A}\prod_{p: a = x} \mathrm{ind}(h(a, \mathrm{refl}_a), x, p) = h(x, p)\]
+
+&lt;p&gt;동일성 유형의 귀납법에 따라, 다음을 보이면 충분하다.&lt;/p&gt;
+
+\[\mathrm{ind}(h(a, \mathrm{refl}_a), a, \mathrm{refl}_a) = h(a, \mathrm{refl}_a)\]
+
+&lt;p&gt;이는 $\mathrm{ind}$의 정의로부터 판단적으로 따라 나온다. ■&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Type-Theoretic Yoneda Lemma</title>
+   <link href="https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/en"/>
+   <updated>2026-05-07T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/type-theoretic-yoneda-en</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Yoneda Lemma.&lt;/strong&gt; Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$:&lt;/p&gt;
+
+\[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is a well-known theorem in category theory. Interestingly, a theorem similar in form to the Yoneda Lemma can also be found in type theory.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Type-Theoretic Yoneda Lemma.&lt;/strong&gt; Let $A$ be a type, and let $B$ be a type dependent on $A$. For each $a : A$, the following holds:&lt;/p&gt;
+
+\[\prod_{x: A}((x = a) \to B(x)) \simeq B(a)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;To highlight the similarity between the two, we can rewrite the notation as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Let $\mathcal{A}$ be a type, and let $F$ be a type dependent on $\mathcal{A}$. For each $A : \mathcal{A}$, the following holds:&lt;/p&gt;
+
+\[\prod_{X: \mathcal{A}}((X = A) \to F(X)) \simeq F(A)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;The type-theoretic Yoneda Lemma is a special case of the following theorem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; For each $a: A$, the following map is an isomorphism:&lt;/p&gt;
+
+\[\mathrm{ev} : \prod_{x: A}\prod_{p: a = x} B(x, p) \to B(a, \mathrm{refl}_a); \quad  h \mapsto h(a, \mathrm{refl}_a)\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof.&lt;/strong&gt; By induction on the identity type, the following map exists and serves as a section of $\mathrm{ev}$:&lt;/p&gt;
+
+\[\mathrm{ind} : B(a, \mathrm{refl}_a) \to \prod_{x: A}\prod_{p: a = x} B(x, p)\]
+
+&lt;p&gt;Thus, it suffices to show that $\mathrm{ind}$ is a retraction of $\mathrm{ev}$. That is, for each $h: \prod_{x: A}\prod_{p: a = x} B(x, p)$, we need to show:&lt;/p&gt;
+
+\[\mathrm{ind}(h(a, \mathrm{refl}_a)) = h\]
+
+&lt;p&gt;By the principle of function extensionality, this amounts to showing:&lt;/p&gt;
+
+\[\prod_{x: A}\prod_{p: a = x} \mathrm{ind}(h(a, \mathrm{refl}_a), x, p) = h(x, p)\]
+
+&lt;p&gt;By induction on the identity type, it suffices to show:&lt;/p&gt;
+
+\[\mathrm{ind}(h(a, \mathrm{refl}_a), a, \mathrm{refl}_a) = h(a, \mathrm{refl}_a)\]
+
+&lt;p&gt;This follows judgmentally from the definition of $\mathrm{ind}$. ■&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>양자역학의 국소성에 대하여</title>

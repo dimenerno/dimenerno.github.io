@@ -433,6 +433,160 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/12/27/distributive-law"> 교환법칙, 분배법칙, 지수법칙의 범주론적 증명 </a>
+      </h1>
+    <span class="post-date">27 Dec 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'">
+        범주론
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>분배법칙: $(A + B) \times C = A \times C + B \times C$</li>
+    <li>지수법칙: $(A \times B)^C = A^C \times B^C$</li>
+  </ol>
+</blockquote>
+
+<p><a href="https://dimenerno.github.io/2025/04/02/box-v-product">이전 글</a>에서 범주론적 합과 곱을 살펴 보았다. 합은 쌍극한의 일종이고, 곱은 극한의 일종이다. 이 관찰로부터, 분배법칙과 지수법칙을 다음 정리로 일반화할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 좌 어드조인트는 쌍극한<sub>colimit</sub>을, 우 어드조인트는 극한<sub>limit</sub>을 보존한다.</p>
+</blockquote>
+
+<p>이 정리의 정확한 의미는 다음과 같다. $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$에 대해 $F \dashv G$라고 하자. $G$가 <strong>극한을 보존<sub>preserves limits</sub></strong>한다는 것은, 임의의 작은 범주<sub>small category</sub> $\mathbf{I}$와 함자 $D : \mathbf{I} \to \mathcal{B}$에 대해 다음이 성립한다는 것이다.</p>
+
+<blockquote>
+  <p>$\big(B \xrightarrow{q_I} D(I)\big)_{I \in \mathbf{I}}$가 $\mathcal{B}$에서 극한 고깔<sub>limit cone</sub>일 때, $\big(G(B) \xrightarrow{G(q_I)} GD(I)\big)_{I \in \mathbf{I}}$가 $\mathcal{A}$에서 극한 고깔이다.</p>
+</blockquote>
+
+<p>이로부터, $G$가 극한을 보존할 때 다음이 성립함을 알 수 있다.</p>
+
+\[G\left(\lim_{\leftarrow \mathbf{I}} D\right) \cong \lim_{\leftarrow \mathbf{I}} G \circ D\]
+
+<p>쌍극한의 경우에는 고깔을 쌍고깔로 바꿔 정의한다.</p>
+
+<p>한편, 임의의 $X, Y, Z \in \mathbf{Set}$에 대해 $\hom(X \times Y, Z) \cong \hom(X, Z^Y)$가 성립한다 (이는 함수형 프로그래밍에서 자주 등장하는 커링<sub>Currying</sub> 기법이다). 이로부터 다음의 어드조인트 관계가 따라 나온다.</p>
+
+\[(-) \times Y \dashv (-)^Y\]
+
+<p>따라서 함자 $(-) \times Y$는 쌍극한을 보존하고, $(-)^Y$는 극한을 보존한다. 이로부터 일반화된 분배법칙과 지수법칙을 얻을 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 집합 $A, B, Y$에 대해, $A, B$가 서로소라면 다음이 성립한다.</p>
+
+  <ol>
+    <li>$(A + B) \times Y \cong (A \times Y) + (B \times Y)$</li>
+    <li>$(A \times B)^Y \cong A^Y \times B^Y$</li>
+  </ol>
+</blockquote>
+
+<p>여기서 $+$는 서로소 집합의 합집합으로, $\sqcup$과 의미가 같으나 분배법칙과의 유사성을 강조하기 위해 사용되었다. 좌변이 $G\left(\lim_{\leftarrow \mathbf{I}} D\right)$에, 우변이 $\lim_{\leftarrow \mathbf{I}} G \circ D$에 대응된다. 위 정리에 집합의 크기 연산을 취하면 자연수에서의 분배법칙과 지수법칙을 얻는다.</p>
+
+<p>참고로 극한에 대한 다음 성질 또한 알려져 있다 ($\bullet, -$ 표기법은 <a href="https://dimenerno.github.io/2025/03/21/yoneda">이 글</a>을 참고)</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathbf{I}, \mathbf{J}$가 작은 범주이고, $\mathcal{S}$가 $\mathbf{I}, \mathbf{J}$ 모양의 극한들을 가지는 국소적으로 작은 범주라고 하자. $D: \mathbf{I} \times \mathbf{J} \to \mathcal{S}$에 대해, 다음이 성립한다.</p>
+
+\[\lim_{\leftarrow \mathbf{J}}\lim_{\leftarrow \mathbf{I}} D(\bullet, -) \cong \lim_{\leftarrow \mathbf{I} \times \mathbf{J}} D \cong \lim_{\leftarrow \mathbf{I}}\lim_{\leftarrow \mathbf{J}} D(-, \bullet)\]
+</blockquote>
+
+<p>즉, 극한끼리는 교환법칙을 만족한다. 이것은 덧셈의 교환법칙과 곱셈의 교환법칙을 일반화한 것으로 생각할 수 있다.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/12/27/distributive-law/en"> Categorical Proofs of the Commutative Law, Distributive Law, and Exponential Law </a>
+      </h1>
+    <span class="post-date">27 Dec 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'">
+        Category Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>Distributive law: $(A + B) \times C = A \times C + B \times C$</li>
+    <li>Exponential law: $(A \times B)^C = A^C \times B^C$</li>
+  </ol>
+</blockquote>
+
+<p>In a <a href="https://dimenerno.github.io/2025/04/02/box-v-product">previous post</a>, we explored categorical sums and products. Sums are a type of colimit, while products are a type of limit. From this observation, the distributive and exponential laws can be generalised into the following theorem.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Left adjoints preserve colimits, and right adjoints preserve limits.</p>
+</blockquote>
+
+<p>The precise meaning of this theorem is as follows. Let $F: \mathcal{A} \to \mathcal{B}$ and $G: \mathcal{B} \to \mathcal{A}$, and suppose $F \dashv G$. The statement that $G$ <strong>preserves limits</strong> means that for any small category $\mathbf{I}$ and functor $D : \mathbf{I} \to \mathcal{B}$, the following holds:</p>
+
+<blockquote>
+  <p>If $\big(B \xrightarrow{q_I} D(I)\big)_{I \in \mathbf{I}}$ is a limit cone in $\mathcal{B}$, then $\big(G(B) \xrightarrow{G(q_I)} G(D(I))\big)_{I \in \mathbf{I}}$ is a limit cone in $\mathcal{A}$.</p>
+</blockquote>
+
+<p>From this, we can deduce the following when $G$ preserves limits:</p>
+
+\[G\left(\lim_{\leftarrow \mathbf{I}} D\right) \cong \lim_{\leftarrow \mathbf{I}} G \circ D\]
+
+<p>For colimits, the definition is analogous, replacing cones with cocones.</p>
+
+<p>On the other hand, for any $X, Y, Z \in \mathbf{Set}$, the following holds: $\hom(X \times Y, Z) \cong \hom(X, Z^Y)$ (this is a common technique in functional programming known as currying). From this, the following adjoint relationship arises:</p>
+
+\[(-) \times Y \dashv (-)^Y\]
+
+<p>Thus, the functor $(-) \times Y$ preserves colimits, and the functor $(-)^Y$ preserves limits. From this, we can derive the generalised distributive and exponential laws.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For sets $A, B, Y$, if $A$ and $B$ are disjoint, the following holds:</p>
+
+  <ol>
+    <li>$(A + B) \times Y \cong (A \times Y) + (B \times Y)$</li>
+    <li>$(A \times B)^Y \cong A^Y \times B^Y$</li>
+  </ol>
+</blockquote>
+
+<p>Here, $+$ denotes the disjoint union of sets, which is equivalent to $\sqcup$, but the notation $+$ is used to emphasise its similarity to the distributive law. The left-hand side corresponds to $G\left(\lim_{\leftarrow \mathbf{I}} D\right)$, while the right-hand side corresponds to $\lim_{\leftarrow \mathbf{I}} G \circ D$. By applying cardinality operations to the sets in the above theorem, we recover the distributive and exponential laws for natural numbers.</p>
+
+<p>Additionally, the following property of limits is also known (the $\bullet, -$ notation is explained in <a href="https://dimenerno.github.io/2025/03/21/yoneda">this post</a>):</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\mathbf{I}$ and $\mathbf{J}$ be small categories, and let $\mathcal{S}$ be a locally small category that admits limits of shape $\mathbf{I}$ and $\mathbf{J}$. For $D: \mathbf{I} \times \mathbf{J} \to \mathcal{S}$, the following holds:</p>
+
+\[\lim_{\leftarrow \mathbf{J}}\lim_{\leftarrow \mathbf{I}} D(\bullet, -) \cong \lim_{\leftarrow \mathbf{I} \times \mathbf{J}} D \cong \lim_{\leftarrow \mathbf{I}}\lim_{\leftarrow \mathbf{J}} D(-, \bullet)\]
+</blockquote>
+
+<p>In other words, limits satisfy the commutative law. This can be thought of as a generalisation of the commutative laws for addition and multiplication.</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/12/26/suslin"> 서슬린의 문제와 다이아몬드 원리 </a>
       </h1>
     <span class="post-date">26 Dec 2025</span>
@@ -1790,134 +1944,6 @@ Z_p = B_p \oplus G_p\\\\
 <p>It is commonly thought that the trivial explanation is unconvincing in ethics. This is because, in ethics, sufficiently reasonable individuals often hold conflicting positions. If rational individuals can hold different ethical facts, then worlds with different ethical facts are imaginably coherent. In contrast, such conflicts are rarely observed in mathematics. Compare the divergence of opinions on the trolley dilemma with the consensus on the Pythagorean theorem.</p>
 
 <p>However, the author argues that this comparison is biased against ethical realists. We can find ethical propositions on which ethical realists unanimously agree — for instance, “it is wrong to torture children for fun.” Conversely, we can also find mathematical axioms on which mathematical realists disagree. Finitism denies the axiom that there is always a natural number greater than any given natural number, the</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/11/05/simplicial-homology"> 단체 호몰로지 </a>
-      </h1>
-    <span class="post-date">05 Nov 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>정의.</strong> $K$가 순수 $k$-단체 복합체<sub>pure simplicial complex</sub>이고, $p \leq k$에 대해 $C_p(K)$가 $K$의 $p$-체인<sub>chain</sub>들의 집합이라고 하자.</p>
-
-  <ul>
-    <li>$z \in C_p(K)$가 $K$의 <strong>$p$-고리<sub>cycle</sub></strong>라는 것은 $z \in \ker \partial_p$라는 것이다.</li>
-    <li>$b \in C_p(K)$가 $K$의 <strong>$p$-경계<sub>boundary</sub></strong>라는 것은 $b \in \operatorname{im} \partial_{p + 1}$이라는 것이다.</li>
-  </ul>
-
-  <p>$p$-고리들의 집합을 $Z_p(K)$, $p$-경계들의 집합을 $B_p(K)$라고 적는다.</p>
-</blockquote>
-
-<p>$C_p(K)$를 자유 아벨군으로 보았을 때 $Z_p(K)$와 $B_p(K)$는 $C_p(K)$의 부분군이다. 자유 아벨군의 부분군은 언제나 자유 아벨군이므로 $Z_p(K)$와 $B_p(K)$는 자유 아벨군이다. 또한 $\partial_p \partial_{p+1} = 0$이므로 $B_p(K) \leq Z_p(K)$이며, 아벨군의 부분군은 정규부분군이므로 몫군 $Z_p(K)/B_p(K)$를 취할 수 있다. 이 목군을 <strong>호몰로지 군<sub>homology group</sub></strong>이라고 하며 $H_p(K)$라고 적는다.</p>
-
-<p>쉬운 언어로 설명하자면, 두 1-고리 $z_1, z_2$가 같은 호몰로지 군의 원소에 대응된다는 것은 $z_1 - z_2$가 어떤 2-체인의 경계를 이룬다는 것이다. 예를 들어 띠<sub>cylinder</sub>의 삼각화인 다음 복합체 $K$를 보자.</p>
-
-<p><img src="/public/homology-1.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>$z_1 = \langle 01 \rangle + \langle 12 \rangle + \langle 20 \rangle, z_2 = \langle 34 \rangle + \langle 45 \rangle + \langle 53 \rangle$이라고 하자. $z_1 - z_2$는 오른쪽과 같다.</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 1em;">
-<img src="/public/homology-2.png" style="width: 100%; max-width: 300px; margin: 0 auto" />
-<img src="/public/homology-3.png" style="width: 100%; max-width: 300px; margin: 0 auto" />
-</div>
-
-<p>그런데 이는 띠 전체의 경계와 같다. 구체적으로,</p>
-
-\[\begin{align*}
-&amp;\partial (\langle 013 \rangle + \langle 143 \rangle + \langle 124 \rangle + \langle 254 \rangle + \langle 205 \rangle + \langle 035 \rangle) \\
-&amp;= (\langle 01 \rangle + \langle 12 \rangle + \langle 20 \rangle) - ( \langle 34 \rangle + \langle 45 \rangle + \langle 53 \rangle) \\
-&amp;= z_1 - z_2
-\end{align*}\]
-
-<p>따라서 $z_1$과 $z_2$는 같은 호몰로지 군의 원소에 대응된다. 그러나 $n, m \in \mathbb{Z}$에 대해 $n \neq m$이라면 $n \cdot z_1$과 $m \cdot z_1$은 서로 다른 호몰로지 군의 원소에 대응된다. $(n - m) \cdot z_1$이 $B_1(K)$에 속하지 않기 때문이다. 이로부터 띠의 1-호몰로지 군이 $\mathbb{Z}$임을 유추할 수 있으며, 이 유추는 올바르다.</p>
-
-<p>반면 토러스의 경우, 다음의 $w_1$과 $w_2$는 서로 다른 호몰로지 군의 원소에 대응된다. $w_1 - w_2$가 어떠한 2-체인의 경계도 아님을 직관적으로 파악할 수 있을 것이다. 실제로 토러스의 1-호몰로지 군은 $\mathbb{Z} \oplus \mathbb{Z}$이다.</p>
-
-<p><img src="/public/homology-4.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
-
-<p>호몰로지 군의 랭크<sub>rank</sub>는 직관적으로 구멍의 의미를 가진다. 띠의 1-호몰로지 군의 랭크가 1이라는 것은 띠의 1차원 구멍이 하나 있다는 것이고, 토러스의 1-호몰로지 군의 랭크가 2라는 것은 토러스의 1차원 구멍이 2개 있다는 것이다. (여기서 $n$차원 구멍이라 함은 $n$차원 경로에 의해 둘러질 수 있는 구멍을 말한다.)</p>
-
-<p><img src="/public/homology-5.png" style="width: 100%; max-width: 550px; margin: 0 auto;" /></p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/11/05/simplicial-homology/en"> Simplicial Homology </a>
-      </h1>
-    <span class="post-date">05 Nov 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $K$ be a pure $k$-simplicial complex, and for $p \leq k$, let $C_p(K)$ denote the set of $p$-chains of $K$.</p>
-
-  <ul>
-    <li>$z \in C_p(K)$ is called a <strong>$p$-cycle</strong> of $K$ if $z \in \ker \partial_p$.</li>
-    <li>$b \in C_p(K)$ is called a <strong>$p$-boundary</strong> of $K$ if $b \in \operatorname{im} \partial_{p + 1}$.</li>
-  </ul>
-
-  <p>The set of $p$-cycles is denoted by $Z_p(K)$, and the set of $p$-boundaries is denoted by $B_p(K)$.</p>
-</blockquote>
-
-<p>When $C_p(K)$ is regarded as a free abelian group, $Z_p(K)$ and $B_p(K)$ are subgroups of $C_p(K)$. Since subgroups of free abelian groups are themselves free abelian, $Z_p(K)$ and $B_p(K)$ are free abelian groups. Moreover, as $\partial_p \partial_{p+1} = 0$, we have $B_p(K) \leq Z_p(K)$. Since subgroups of abelian groups are normal, the quotient group $Z_p(K)/B_p(K)$ can be formed. This quotient group is called the <strong>homology group</strong> and is denoted by $H_p(K)$.</p>
-
-<p>To explain in simpler terms, two 1-cycles $z_1$ and $z_2$ correspond to the same element in the homology group if $z_1 - z_2$ forms the boundary of some 2-chain. For example, consider the following simplicial complex $K$, which is a triangulation of a cylinder.</p>
-
-<p><img src="/public/homology-1.png" style="width: 100%; max-width: 350px; margin: 0 auto;" /></p>
-
-<p>Let $z_1 = \langle 01 \rangle + \langle 12 \rangle + \langle 20 \rangle$ and $z_2 = \langle 34 \rangle + \langle 45 \rangle + \langle 53 \rangle$. Then $z_1 - z_2$ is as shown on the right.</p>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 1em;">
-<img src="/public/homology-2.png" style="width: 100%; max-width: 300px; margin: 0 auto" />
-<img src="/public/homology-3.png" style="width: 100%; max-width: 300px; margin: 0 auto" />
-</div>
-
-<p>However, this is equal to the boundary of the entire cylinder. Specifically,</p>
-
-\[\begin{align*}
-&amp;\partial (\langle 013 \rangle + \langle 143 \rangle + \langle 124 \rangle + \langle 254 \rangle + \langle 205 \rangle + \langle 035 \rangle) \\
-&amp;= (\langle 01 \rangle + \langle 12 \rangle + \langle 20 \rangle) - ( \langle 34 \rangle + \langle 45 \rangle + \langle 53 \rangle) \\
-&amp;= z_1 - z_2
-\end{align*}\]
-
-<p>Thus, $z_1$ and $z_2$ correspond to the same element in the homology group. However, for $n, m \in \mathbb{Z}$ with $n \neq m$, $n \cdot z_1$ and $m \cdot z_1$ correspond to different elements in the homology group, as $(n - m) \cdot z_1$ does not belong to $B_1(K)$. From this, we can deduce that the 1-homology group of the cylinder is $\mathbb{Z}$, and this deduction is correct.</p>
-
-<p>On the other hand, in the case of the torus, the following $w_1$ and $w_2$ correspond to different elements in the homology group. Intuitively, one can see that $w_1 - w_2$ is not the boundary of any 2-chain. Indeed, the 1-homology group of the torus is $\mathbb{Z} \oplus \mathbb{Z}$.</p>
-
-<p><img src="/public/homology-4.png" style="width: 100%; max-width: 300px; margin: 0 auto;" /></p>
-
-<p>The rank of the homology group intuitively represents the number of holes. The fact that the rank of the 1-homology group of the cylinder is 1 indicates that the cylinder has one 1-dimensional hole, while the fact that the rank of the 1-homology group of the torus is 2 indicates that the torus has two 1-dimensional holes. (Here, an $n$-dimensional hole refers to a hole that can be enclosed by an $n$-dimensional path.)</p>
-
-<p><img src="/public/homology-5.png" style="width: 100%; max-width: 550px; margin: 0 auto;" /></p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

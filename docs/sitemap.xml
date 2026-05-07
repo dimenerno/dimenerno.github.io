@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://dimenerno.github.io/404.html</loc>
-<lastmod>2026-05-06T14:49:49+09:00</lastmod>
+<lastmod>2026-05-07T19:08:36+09:00</lastmod>
 </url>
 <url>
 <loc>https://dimenerno.github.io/about/</loc>
@@ -653,6 +653,14 @@
 <lastmod>2026-02-23T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/en</loc>
+<lastmod>2026-05-07T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda</loc>
+<lastmod>2026-05-07T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>https://dimenerno.github.io/temp/2025-03-05-hole-argument/</loc>
 </url>
 <url>
@@ -783,6 +791,12 @@
 </url>
 <url>
 <loc>https://dimenerno.github.io/tags/%EC%96%91%EC%9E%90%EC%97%AD%ED%95%99/</loc>
+</url>
+<url>
+<loc>https://dimenerno.github.io/tags/type-theory/</loc>
+</url>
+<url>
+<loc>https://dimenerno.github.io/tags/%EC%9C%A0%ED%98%95%EB%A1%A0/</loc>
 </url>
 <url>
 <loc>https://dimenerno.github.io/page2/</loc>

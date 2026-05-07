@@ -7,6 +7,140 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>유형론적 요네다 보조정리</title>
+        <link>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda</link>
+        <guid>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda</guid>
+        <pubDate>Thu, 07 May 2026 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;요네다 보조정리.&lt;/strong&gt; $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$에서 자연스럽다.&lt;/p&gt;
+
+\[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda">
+          <![CDATA[
+            <blockquote>
+  <p><strong>요네다 보조정리.</strong> $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$에서 자연스럽다.</p>
+
+\[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
+</blockquote>
+
+<p>이는 범주론의 잘 알려진 정리이다. 그런데 흥미롭게도, 요네다 보조정리와 비슷한 형태의 정리를 유형론에서 발견할 수 있다.</p>
+
+<blockquote>
+  <p><strong>유형론적 요네다 보조정리.</strong> $A$가 유형이고, $B$가 $A$에 의존하는 유형이라고 하자. 각 $a : A$에 대해 다음이 성립한다.</p>
+
+\[\prod_{x: A}((x = a) \to B(x)) \simeq B(a)\]
+</blockquote>
+
+<p>둘의 유사성을 조금 더 부각하기 위해 기호를 바꿔 적으면 다음과 같다.</p>
+
+<blockquote>
+  <p>$\mathcal{A}$가 유형이고, $F$가 $\mathcal{A}$에 의존하는 유형이라고 하자. 각 $A : \mathcal{A}$에 대해 다음이 성립한다.</p>
+
+\[\prod_{X: \mathcal{A}}((X = A) \to F(X)) \simeq F(A)\]
+</blockquote>
+
+<p>유형론적 요네다 보조정리는 다음 정리의 특수한 사례이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 각 $a: A$에 대해 다음 사상은 동형이다.</p>
+
+\[\mathrm{ev} : \prod_{x: A}\prod_{p: a = x} B(x, p) \to B(a, \mathrm{refl}_a); \quad  h \mapsto h(a, \mathrm{refl}_a)\]
+</blockquote>
+
+<p><strong>증명.</strong> 동일성 유형의 귀납법에 따라 다음 사상이 존재하며, $\mathrm{ev}$의 섹션이다.</p>
+
+\[\mathrm{ind} : B(a, \mathrm{refl}_a) \to \prod_{x: A}\prod_{p: a = x} B(x, p)\]
+
+<p>따라서 $\mathrm{ind}$가 $\mathrm{ev}$의 리트랙트라는 것을 보이면 충분하다. 즉, 각 $h: \prod_{x: A}\prod_{p: a = x} B(x, p)$에 대해 다음이 성립함을 보이면 충분하다.</p>
+
+\[\mathrm{ind}(h(a, \mathrm{refl}_a)) = h\]
+
+<p>함수 외연성 공리에 따라, 다음을 보이면 충분하다.</p>
+
+\[\prod_{x: A}\prod_{p: a = x} \mathrm{ind}(h(a, \mathrm{refl}_a), x, p) = h(x, p)\]
+
+<p>동일성 유형의 귀납법에 따라, 다음을 보이면 충분하다.</p>
+
+\[\mathrm{ind}(h(a, \mathrm{refl}_a), a, \mathrm{refl}_a) = h(a, \mathrm{refl}_a)\]
+
+<p>이는 $\mathrm{ind}$의 정의로부터 판단적으로 따라 나온다. ■</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Type-Theoretic Yoneda Lemma</title>
+        <link>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/en</link>
+        <guid>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/en</guid>
+        <pubDate>Thu, 07 May 2026 00:00:00 +0900</pubDate>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/en">
+          <![CDATA[
+            <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Yoneda Lemma.</strong> Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$:</p>
+
+\[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
+</blockquote>
+
+<p>This is a well-known theorem in category theory. Interestingly, a theorem similar in form to the Yoneda Lemma can also be found in type theory.</p>
+
+<blockquote>
+  <p><strong>Type-Theoretic Yoneda Lemma.</strong> Let $A$ be a type, and let $B$ be a type dependent on $A$. For each $a : A$, the following holds:</p>
+
+\[\prod_{x: A}((x = a) \to B(x)) \simeq B(a)\]
+</blockquote>
+
+<p>To highlight the similarity between the two, we can rewrite the notation as follows:</p>
+
+<blockquote>
+  <p>Let $\mathcal{A}$ be a type, and let $F$ be a type dependent on $\mathcal{A}$. For each $A : \mathcal{A}$, the following holds:</p>
+
+\[\prod_{X: \mathcal{A}}((X = A) \to F(X)) \simeq F(A)\]
+</blockquote>
+
+<p>The type-theoretic Yoneda Lemma is a special case of the following theorem:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For each $a: A$, the following map is an isomorphism:</p>
+
+\[\mathrm{ev} : \prod_{x: A}\prod_{p: a = x} B(x, p) \to B(a, \mathrm{refl}_a); \quad  h \mapsto h(a, \mathrm{refl}_a)\]
+</blockquote>
+
+<p><strong>Proof.</strong> By induction on the identity type, the following map exists and serves as a section of $\mathrm{ev}$:</p>
+
+\[\mathrm{ind} : B(a, \mathrm{refl}_a) \to \prod_{x: A}\prod_{p: a = x} B(x, p)\]
+
+<p>Thus, it suffices to show that $\mathrm{ind}$ is a retraction of $\mathrm{ev}$. That is, for each $h: \prod_{x: A}\prod_{p: a = x} B(x, p)$, we need to show:</p>
+
+\[\mathrm{ind}(h(a, \mathrm{refl}_a)) = h\]
+
+<p>By the principle of function extensionality, this amounts to showing:</p>
+
+\[\prod_{x: A}\prod_{p: a = x} \mathrm{ind}(h(a, \mathrm{refl}_a), x, p) = h(x, p)\]
+
+<p>By induction on the identity type, it suffices to show:</p>
+
+\[\mathrm{ind}(h(a, \mathrm{refl}_a), a, \mathrm{refl}_a) = h(a, \mathrm{refl}_a)\]
+
+<p>This follows judgmentally from the definition of $\mathrm{ind}$. ■</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
         <title>양자역학의 국소성에 대하여</title>
         <link>https://dimenerno.github.io/2026/02/23/quantum-locality</link>
         <guid>https://dimenerno.github.io/2026/02/23/quantum-locality</guid>
@@ -1841,157 +1975,6 @@
 </blockquote>
 
 <p><strong>Proof.</strong> If the measure problem holds and $2^{\aleph_0} = \aleph_1$, then by the theorem, $\aleph_0$ or $\aleph_1$ must be weakly inaccessible. However, $\aleph_0$ is countable, and $\aleph_1$ is a successor cardinal, leading to a contradiction. ■</p>
-
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>교환법칙, 분배법칙, 지수법칙의 범주론적 증명</title>
-        <link>https://dimenerno.github.io/2025/12/27/distributive-law</link>
-        <guid>https://dimenerno.github.io/2025/12/27/distributive-law</guid>
-        <pubDate>Sat, 27 Dec 2025 00:00:00 +0900</pubDate>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;ol&gt;
-    &lt;li&gt;분배법칙: $(A + B) \times C = A \times C + B \times C$&lt;/li&gt;
-    &lt;li&gt;지수법칙: $(A \times B)^C = A^C \times B^C$&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/12/27/distributive-law">
-          <![CDATA[
-            <blockquote>
-  <p><strong>정리.</strong></p>
-
-  <ol>
-    <li>분배법칙: $(A + B) \times C = A \times C + B \times C$</li>
-    <li>지수법칙: $(A \times B)^C = A^C \times B^C$</li>
-  </ol>
-</blockquote>
-
-<p><a href="https://dimenerno.github.io/2025/04/02/box-v-product">이전 글</a>에서 범주론적 합과 곱을 살펴 보았다. 합은 쌍극한의 일종이고, 곱은 극한의 일종이다. 이 관찰로부터, 분배법칙과 지수법칙을 다음 정리로 일반화할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 좌 어드조인트는 쌍극한<sub>colimit</sub>을, 우 어드조인트는 극한<sub>limit</sub>을 보존한다.</p>
-</blockquote>
-
-<p>이 정리의 정확한 의미는 다음과 같다. $F: \mathcal{A} \to \mathcal{B}, G: \mathcal{B} \to \mathcal{A}$에 대해 $F \dashv G$라고 하자. $G$가 <strong>극한을 보존<sub>preserves limits</sub></strong>한다는 것은, 임의의 작은 범주<sub>small category</sub> $\mathbf{I}$와 함자 $D : \mathbf{I} \to \mathcal{B}$에 대해 다음이 성립한다는 것이다.</p>
-
-<blockquote>
-  <p>$\big(B \xrightarrow{q_I} D(I)\big)_{I \in \mathbf{I}}$가 $\mathcal{B}$에서 극한 고깔<sub>limit cone</sub>일 때, $\big(G(B) \xrightarrow{G(q_I)} GD(I)\big)_{I \in \mathbf{I}}$가 $\mathcal{A}$에서 극한 고깔이다.</p>
-</blockquote>
-
-<p>이로부터, $G$가 극한을 보존할 때 다음이 성립함을 알 수 있다.</p>
-
-\[G\left(\lim_{\leftarrow \mathbf{I}} D\right) \cong \lim_{\leftarrow \mathbf{I}} G \circ D\]
-
-<p>쌍극한의 경우에는 고깔을 쌍고깔로 바꿔 정의한다.</p>
-
-<p>한편, 임의의 $X, Y, Z \in \mathbf{Set}$에 대해 $\hom(X \times Y, Z) \cong \hom(X, Z^Y)$가 성립한다 (이는 함수형 프로그래밍에서 자주 등장하는 커링<sub>Currying</sub> 기법이다). 이로부터 다음의 어드조인트 관계가 따라 나온다.</p>
-
-\[(-) \times Y \dashv (-)^Y\]
-
-<p>따라서 함자 $(-) \times Y$는 쌍극한을 보존하고, $(-)^Y$는 극한을 보존한다. 이로부터 일반화된 분배법칙과 지수법칙을 얻을 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 집합 $A, B, Y$에 대해, $A, B$가 서로소라면 다음이 성립한다.</p>
-
-  <ol>
-    <li>$(A + B) \times Y \cong (A \times Y) + (B \times Y)$</li>
-    <li>$(A \times B)^Y \cong A^Y \times B^Y$</li>
-  </ol>
-</blockquote>
-
-<p>여기서 $+$는 서로소 집합의 합집합으로, $\sqcup$과 의미가 같으나 분배법칙과의 유사성을 강조하기 위해 사용되었다. 좌변이 $G\left(\lim_{\leftarrow \mathbf{I}} D\right)$에, 우변이 $\lim_{\leftarrow \mathbf{I}} G \circ D$에 대응된다. 위 정리에 집합의 크기 연산을 취하면 자연수에서의 분배법칙과 지수법칙을 얻는다.</p>
-
-<p>참고로 극한에 대한 다음 성질 또한 알려져 있다 ($\bullet, -$ 표기법은 <a href="https://dimenerno.github.io/2025/03/21/yoneda">이 글</a>을 참고)</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathbf{I}, \mathbf{J}$가 작은 범주이고, $\mathcal{S}$가 $\mathbf{I}, \mathbf{J}$ 모양의 극한들을 가지는 국소적으로 작은 범주라고 하자. $D: \mathbf{I} \times \mathbf{J} \to \mathcal{S}$에 대해, 다음이 성립한다.</p>
-
-\[\lim_{\leftarrow \mathbf{J}}\lim_{\leftarrow \mathbf{I}} D(\bullet, -) \cong \lim_{\leftarrow \mathbf{I} \times \mathbf{J}} D \cong \lim_{\leftarrow \mathbf{I}}\lim_{\leftarrow \mathbf{J}} D(-, \bullet)\]
-</blockquote>
-
-<p>즉, 극한끼리는 교환법칙을 만족한다. 이것은 덧셈의 교환법칙과 곱셈의 교환법칙을 일반화한 것으로 생각할 수 있다.</p>
-
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>Categorical Proofs of the Commutative Law, Distributive Law, and Exponential Law</title>
-        <link>https://dimenerno.github.io/2025/12/27/distributive-law/en</link>
-        <guid>https://dimenerno.github.io/2025/12/27/distributive-law/en</guid>
-        <pubDate>Sat, 27 Dec 2025 00:00:00 +0900</pubDate>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2025/12/27/distributive-law/en">
-          <![CDATA[
-            <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong></p>
-
-  <ol>
-    <li>Distributive law: $(A + B) \times C = A \times C + B \times C$</li>
-    <li>Exponential law: $(A \times B)^C = A^C \times B^C$</li>
-  </ol>
-</blockquote>
-
-<p>In a <a href="https://dimenerno.github.io/2025/04/02/box-v-product">previous post</a>, we explored categorical sums and products. Sums are a type of colimit, while products are a type of limit. From this observation, the distributive and exponential laws can be generalised into the following theorem.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Left adjoints preserve colimits, and right adjoints preserve limits.</p>
-</blockquote>
-
-<p>The precise meaning of this theorem is as follows. Let $F: \mathcal{A} \to \mathcal{B}$ and $G: \mathcal{B} \to \mathcal{A}$, and suppose $F \dashv G$. The statement that $G$ <strong>preserves limits</strong> means that for any small category $\mathbf{I}$ and functor $D : \mathbf{I} \to \mathcal{B}$, the following holds:</p>
-
-<blockquote>
-  <p>If $\big(B \xrightarrow{q_I} D(I)\big)_{I \in \mathbf{I}}$ is a limit cone in $\mathcal{B}$, then $\big(G(B) \xrightarrow{G(q_I)} G(D(I))\big)_{I \in \mathbf{I}}$ is a limit cone in $\mathcal{A}$.</p>
-</blockquote>
-
-<p>From this, we can deduce the following when $G$ preserves limits:</p>
-
-\[G\left(\lim_{\leftarrow \mathbf{I}} D\right) \cong \lim_{\leftarrow \mathbf{I}} G \circ D\]
-
-<p>For colimits, the definition is analogous, replacing cones with cocones.</p>
-
-<p>On the other hand, for any $X, Y, Z \in \mathbf{Set}$, the following holds: $\hom(X \times Y, Z) \cong \hom(X, Z^Y)$ (this is a common technique in functional programming known as currying). From this, the following adjoint relationship arises:</p>
-
-\[(-) \times Y \dashv (-)^Y\]
-
-<p>Thus, the functor $(-) \times Y$ preserves colimits, and the functor $(-)^Y$ preserves limits. From this, we can derive the generalised distributive and exponential laws.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> For sets $A, B, Y$, if $A$ and $B$ are disjoint, the following holds:</p>
-
-  <ol>
-    <li>$(A + B) \times Y \cong (A \times Y) + (B \times Y)$</li>
-    <li>$(A \times B)^Y \cong A^Y \times B^Y$</li>
-  </ol>
-</blockquote>
-
-<p>Here, $+$ denotes the disjoint union of sets, which is equivalent to $\sqcup$, but the notation $+$ is used to emphasise its similarity to the distributive law. The left-hand side corresponds to $G\left(\lim_{\leftarrow \mathbf{I}} D\right)$, while the right-hand side corresponds to $\lim_{\leftarrow \mathbf{I}} G \circ D$. By applying cardinality operations to the sets in the above theorem, we recover the distributive and exponential laws for natural numbers.</p>
-
-<p>Additionally, the following property of limits is also known (the $\bullet, -$ notation is explained in <a href="https://dimenerno.github.io/2025/03/21/yoneda">this post</a>):</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> Let $\mathbf{I}$ and $\mathbf{J}$ be small categories, and let $\mathcal{S}$ be a locally small category that admits limits of shape $\mathbf{I}$ and $\mathbf{J}$. For $D: \mathbf{I} \times \mathbf{J} \to \mathcal{S}$, the following holds:</p>
-
-\[\lim_{\leftarrow \mathbf{J}}\lim_{\leftarrow \mathbf{I}} D(\bullet, -) \cong \lim_{\leftarrow \mathbf{I} \times \mathbf{J}} D \cong \lim_{\leftarrow \mathbf{I}}\lim_{\leftarrow \mathbf{J}} D(-, \bullet)\]
-</blockquote>
-
-<p>In other words, limits satisfy the commutative law. This can be thought of as a generalisation of the commutative laws for addition and multiplication.</p>
 
 
           ]]>

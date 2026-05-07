@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: 에세이 &middot; 디멘의 블로그 
+     Type-Theoretic Yoneda Lemma &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/%EC%97%90%EC%84%B8%EC%9D%B4/" />
+  <link rel="canonical" href="/2026/05/07/type-theoretic-yoneda/en" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -368,20 +368,84 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Type-Theoretic Yoneda Lemma</h1>
+  <span class="post-date">07 May 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/type-theory/'" >Type Theory</div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'" >Category Theory</div>
+      
+    </div>
+  
+  <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
 
+<blockquote>
+  <p><strong>Yoneda Lemma.</strong> Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$:</p>
 
-<h1>에세이</h1>
+\[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
+</blockquote>
 
-<ul>
-                                                                       
-  <li>
-    <a href="/2025/08/08/pork-and-salmon">돼지고기와 연어: 윤리적 삶은 사치품인가?</a>
-  </li>
-                                                                                                                                                                                                                                                       
-</ul>
+<p>This is a well-known theorem in category theory. Interestingly, a theorem similar in form to the Yoneda Lemma can also be found in type theory.</p>
+
+<blockquote>
+  <p><strong>Type-Theoretic Yoneda Lemma.</strong> Let $A$ be a type, and let $B$ be a type dependent on $A$. For each $a : A$, the following holds:</p>
+
+\[\prod_{x: A}((x = a) \to B(x)) \simeq B(a)\]
+</blockquote>
+
+<p>To highlight the similarity between the two, we can rewrite the notation as follows:</p>
+
+<blockquote>
+  <p>Let $\mathcal{A}$ be a type, and let $F$ be a type dependent on $\mathcal{A}$. For each $A : \mathcal{A}$, the following holds:</p>
+
+\[\prod_{X: \mathcal{A}}((X = A) \to F(X)) \simeq F(A)\]
+</blockquote>
+
+<p>The type-theoretic Yoneda Lemma is a special case of the following theorem:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For each $a: A$, the following map is an isomorphism:</p>
+
+\[\mathrm{ev} : \prod_{x: A}\prod_{p: a = x} B(x, p) \to B(a, \mathrm{refl}_a); \quad  h \mapsto h(a, \mathrm{refl}_a)\]
+</blockquote>
+
+<p><strong>Proof.</strong> By induction on the identity type, the following map exists and serves as a section of $\mathrm{ev}$:</p>
+
+\[\mathrm{ind} : B(a, \mathrm{refl}_a) \to \prod_{x: A}\prod_{p: a = x} B(x, p)\]
+
+<p>Thus, it suffices to show that $\mathrm{ind}$ is a retraction of $\mathrm{ev}$. That is, for each $h: \prod_{x: A}\prod_{p: a = x} B(x, p)$, we need to show:</p>
+
+\[\mathrm{ind}(h(a, \mathrm{refl}_a)) = h\]
+
+<p>By the principle of function extensionality, this amounts to showing:</p>
+
+\[\prod_{x: A}\prod_{p: a = x} \mathrm{ind}(h(a, \mathrm{refl}_a), x, p) = h(x, p)\]
+
+<p>By induction on the identity type, it suffices to show:</p>
+
+\[\mathrm{ind}(h(a, \mathrm{refl}_a), a, \mathrm{refl}_a) = h(a, \mathrm{refl}_a)\]
+
+<p>This follows judgmentally from the definition of $\mathrm{ind}$. ■</p>
+
 </div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
