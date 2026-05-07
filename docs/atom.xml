@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-05-07T19:08:36+09:00</updated>
+ <updated>2026-05-07T19:11:47+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -18,7 +18,7 @@
    <updated>2026-05-07T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;요네다 보조정리.&lt;/strong&gt; $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$에서 자연스럽다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;요네다 보조정리.&lt;/strong&gt; $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$와 $F$에서 자연스럽다.&lt;/p&gt;
 
 \[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
 &lt;/blockquote&gt;
@@ -73,11 +73,7 @@
    <updated>2026-05-07T00:00:00+09:00</updated>
    <id>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/type-theoretic-yoneda-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Yoneda Lemma.&lt;/strong&gt; Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$:&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Yoneda Lemma.&lt;/strong&gt; Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$ and $F$:&lt;/p&gt;
 
 \[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
 &lt;/blockquote&gt;

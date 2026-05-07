@@ -7,9 +7,7 @@ related:
 lang: en
 ---
 
-> This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.
-
-> **Yoneda Lemma.** Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$:
+> **Yoneda Lemma.** Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$ and $F$:
 >
 > $$
 > [\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)

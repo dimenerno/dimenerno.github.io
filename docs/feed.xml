@@ -12,7 +12,7 @@
         <guid>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda</guid>
         <pubDate>Thu, 07 May 2026 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;요네다 보조정리.&lt;/strong&gt; $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$에서 자연스럽다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;요네다 보조정리.&lt;/strong&gt; $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$와 $F$에서 자연스럽다.&lt;/p&gt;
 
 \[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
 &lt;/blockquote&gt;
@@ -21,7 +21,7 @@
           xml:base="https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda">
           <![CDATA[
             <blockquote>
-  <p><strong>요네다 보조정리.</strong> $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$에서 자연스럽다.</p>
+  <p><strong>요네다 보조정리.</strong> $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$와 $F$에서 자연스럽다.</p>
 
 \[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
 </blockquote>
@@ -78,18 +78,16 @@
         <guid>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/en</guid>
         <pubDate>Thu, 07 May 2026 00:00:00 +0900</pubDate>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Yoneda Lemma.&lt;/strong&gt; Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$ and $F$:&lt;/p&gt;
+
+\[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
           xml:base="https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/en">
           <![CDATA[
             <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Yoneda Lemma.</strong> Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$:</p>
+  <p><strong>Yoneda Lemma.</strong> Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$ and $F$:</p>
 
 \[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
 </blockquote>

@@ -6,7 +6,7 @@ tags: ["수학", "유형론", "범주론"]
 related:
 ---
 
-> **요네다 보조정리.** $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$에서 자연스럽다.
+> **요네다 보조정리.** $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$와 $F$에서 자연스럽다.
 >
 > $$
 > [\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)
