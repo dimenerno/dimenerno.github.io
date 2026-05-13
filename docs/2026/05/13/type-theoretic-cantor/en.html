@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: 체스 &middot; 디멘의 블로그 
+     Type-Theoretic Diagonal Argument &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/%EC%B2%B4%EC%8A%A4/" />
+  <link rel="canonical" href="/2026/05/13/type-theoretic-cantor/en" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -368,20 +368,110 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Type-Theoretic Diagonal Argument</h1>
+  <span class="post-date">13 May 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/type-theory/'" >Type Theory</div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'" >Set Theory</div>
+      
+    </div>
+  
+  <h2 id="type-theoretic-definition-of-surjectivity">Type-Theoretic Definition of Surjectivity</h2>
 
+<blockquote>
+  <p><strong>Definition.</strong> For a map $f: A \to X$, we define:</p>
 
-<h1>체스</h1>
+\[\text{is-surj}(f) := \prod_{x: X} \| \mathrm{fib}_f(x) \|\]
+</blockquote>
 
-<ul>
-                                                                                                       
-  <li>
-    <a href="/2025/06/12/italian-game">이탈리안 게임</a>
-  </li>
-                                                                                                                                                                                                                           
-</ul>
+<p>The above definition expresses that “every element of the codomain has a non-empty fibre.” An equivalent definition is “the codomain equals the image.” To translate the latter definition into type theory, we define as follows:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Consider the following commutative diagram where $\iota$ is an embedding, and the commutativity is witnessed by a homotopy $H: f \sim \iota q$.</p>
+
+  <p><img src="/public/image-inclusion.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
+
+  <p>We say that $\iota$ satisfies the <strong>universal property of the image inclusion</strong> if the following holds: for any embedding $m: C \to X$, the precomposition</p>
+
+\[- \circ (q, H): \hom_X(\iota, m) \to \hom_X(f, m)\]
+
+  <p>is an equivalence.</p>
+</blockquote>
+
+<p>The above definition indeed satisfies the universal property of the image inclusion. That is, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> For a map $f: A \to X$, the following holds:</p>
+
+  <ul>
+    <li>The following satisfies the universal property of the image inclusion:</li>
+  </ul>
+
+\[\begin{align}
+&amp;\operatorname{im} f := \sum_{x: X} \| \mathrm{fib}_f(x) \| \\
+&amp;q_f : A \to \operatorname{im} f; &amp;&amp;a \mapsto (f(a), |(a, \mathrm{refl}_{f(a)})) \\
+&amp;\iota_f : \operatorname{im} f \to X; &amp;&amp;\mathrm{pr}_1
+\end{align}\]
+
+  <ul>
+    <li>The embedding satisfying the universal property of the image inclusion is unique. That is, if two embeddings $i: B \to X$ and $i’: B’ \to X$ satisfy the universal property, then the type of equivalences $e: B \simeq B’$ satisfying the following commutative diagram is contractible.</li>
+  </ul>
+
+  <p><img src="/public/uniqueness-of-image.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<p>Having defined the image type-theoretically, we can now present the second definition of surjectivity.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> In the following commutative diagram, let $\iota: B \to X$ be an embedding. Then $q$ is surjective if and only if $\iota$ satisfies the universal property of the image inclusion.</p>
+
+  <p><img src="/public/image-inclusion.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<h2 id="type-theoretic-diagonal-argument">Type-Theoretic Diagonal Argument</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a type $X$, we define:</p>
+
+\[\mathcal{P}(X) := X \to \mathsf{Prop}\]
+</blockquote>
+
+<p>That is, the power set of $X$ is the family of propositions over $X$. For instance, the set of even natural numbers corresponds to the proposition “is even” over the natural numbers. On the other hand, the power set of $X$ is not defined as $X \to 2$ because, in this case, the power set of $X$ would be restricted to <em>decidable</em> propositions.</p>
+
+<blockquote>
+  <p><strong>Cantor’s Theorem.</strong> For any $f: X \to \mathcal{P}(X)$, $f$ is not surjective.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Define the following proposition $Q : X \to \mathsf{Prop}$ over $X$:</p>
+
+\[Q := \lambda x. \lnot f(x, x)\]
+
+<p>If $f$ were surjective, then there would exist $g: \prod_{P: X \to \mathsf{Prop}} \| \mathrm{fib}_f(P) \|$. Hence, $g(Q) : \| \mathrm{fib}_f(Q) \|$.</p>
+
+<p>Define $\mathrm{fib}_f(Q) \to \varnothing$ as follows:</p>
+
+\[(x, p) \mapsto \mathrm{tr}(f(x, x), p)(f(x, x))\]
+
+<p>From the definition of propositional truncation, the above map induces $\| \mathrm{fib}_f(Q) \| \to \varnothing$. Thus, $g(Q) \to \varnothing$, which is a contradiction. Therefore, $f$ is not surjective. ■</p>
+
 </div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
