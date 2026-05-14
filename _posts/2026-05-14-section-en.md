@@ -9,7 +9,7 @@ lang: en
 
 In type theory, the term "section" appears in two different contexts.
 
-> **Definition.** For a map $r: B \to A$, if $s: A \to B$ satisfies $fs \sim \mathrm{id}\_A$, then $s$ is called a **section** of $r$, and $r$ is called a **retract** of $s$. That is,
+> **Definition.** Given maps $r: B \to A$ and $s: A \to B$, if $rs \sim \mathrm{id}\_A$, then $s$ is called a **section** of $r$, and $r$ is called a **retract** of $s$. That is,
 >
 > $$
 > \begin{gather}

@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-05-14T16:16:17+09:00</updated>
+ <updated>2026-05-14T16:18:22+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -20,7 +20,7 @@
    <content type="html">&lt;p&gt;유형론에서 섹션&lt;sub&gt;section&lt;/sub&gt;이라는 용어는 두 가지 의미로 등장한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 사상 $r: B \to A$에 대해, $s: A \to B$가 $fs \sim \mathrm{id}_A$를 만족한다면 $s$를 $r$의 &lt;strong&gt;섹션&lt;/strong&gt;이라고 하고, $r$을 $s$의 &lt;strong&gt;리트랙트&lt;/strong&gt;라고 한다. 즉, 다음과 같이 정의한다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 사상 $r: B \to A$과 $s: A \to B$가 $rs \sim \mathrm{id}_A$를 만족한다면 $s$를 $r$의 &lt;strong&gt;섹션&lt;/strong&gt;이라고 하고, $r$을 $s$의 &lt;strong&gt;리트랙트&lt;/strong&gt;라고 한다. 즉, 다음과 같이 정의한다.&lt;/p&gt;
 
 \[\begin{gather}
 \mathrm{sec}(r) := \sum_{s&apos;: A \to B} rs&apos; \sim \mathrm{id}_A\\
@@ -64,7 +64,7 @@
    <content type="html">&lt;p&gt;In type theory, the term “section” appears in two different contexts.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; For a map $r: B \to A$, if $s: A \to B$ satisfies $fs \sim \mathrm{id}_A$, then $s$ is called a &lt;strong&gt;section&lt;/strong&gt; of $r$, and $r$ is called a &lt;strong&gt;retract&lt;/strong&gt; of $s$. That is,&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Given maps $r: B \to A$ and $s: A \to B$, if $rs \sim \mathrm{id}_A$, then $s$ is called a &lt;strong&gt;section&lt;/strong&gt; of $r$, and $r$ is called a &lt;strong&gt;retract&lt;/strong&gt; of $s$. That is,&lt;/p&gt;
 
 \[\begin{gather}
 \mathrm{sec}(r) := \sum_{s&apos;: A \to B} rs&apos; \sim \mathrm{id}_A\\
