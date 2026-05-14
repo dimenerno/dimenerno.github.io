@@ -7,6 +7,108 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>섹션의 의미에 관한 노트</title>
+        <link>https://dimenerno.github.io/2026/05/14/section</link>
+        <guid>https://dimenerno.github.io/2026/05/14/section</guid>
+        <pubDate>Thu, 14 May 2026 00:00:00 +0900</pubDate>
+        <description>&lt;p&gt;유형론에서 섹션&lt;sub&gt;section&lt;/sub&gt;이라는 용어는 두 가지 의미로 등장한다.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/05/14/section">
+          <![CDATA[
+            <p>유형론에서 섹션<sub>section</sub>이라는 용어는 두 가지 의미로 등장한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 사상 $r: B \to A$에 대해, $s: A \to B$가 $fs \sim \mathrm{id}_A$를 만족한다면 $s$를 $r$의 <strong>섹션</strong>이라고 하고, $r$을 $s$의 <strong>리트랙트</strong>라고 한다. 즉, 다음과 같이 정의한다.</p>
+
+\[\begin{gather}
+\mathrm{sec}(r) := \sum_{s': A \to B} r's \sim \mathrm{id}_A\\
+\mathrm{ret}(s) := \sum_{r': A \to B} rs' \sim \mathrm{id}_B
+\end{gather}\]
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $B$가 $A$에 대한 유형족<sub>type family</sub>이라고 하자. $x: A$가 주어졌을 때 $b(x): B(x)$라면, $b$를 $B$의 <strong>섹션</strong>이라고 부른다.</p>
+</blockquote>
+
+<p>두 가지 의미의 섹션은 연관돼 있다. 첫 번째 정의를 기하학적으로 해석하면, 섹션 $s: A \to B$는 공간 $A$를 공간 $B$에 한 <strong>단면</strong>으로서 포함시키는 사상이며, 그에 대응되는 리트랙트 $r: B \to A$는 공간 $B$를 공간 $A$로 <strong>투영</strong>하는 사상이다. 이로부터 몇 가지 사실을 고찰할 수 있다.</p>
+
+<ul>
+  <li>
+    <p>일반적으로, “확대 후 축소”는 원 공간의 관계를 보존하지만 “축소 후 확대”는 보존하지 않는다. 이는 $r, s$가 리트랙트-섹션 관계일 때, $rs \sim \mathrm{id}_A$이지만 일반적으로 $sr \sim \mathrm{id}_B$이지는 않음을 시사한다.</p>
+  </li>
+  <li>
+    <p>섹션은 각 $a: A$에 대해 $r$의 $a$-섬유<sub>fiber</sub>에서 한 점을 <strong>선택</strong>한다. 이는 도형의 $z$-등고면은 각각 특정한 $z$-좌푯값의 선택과 같은 것으로 이해할 수 있다.</p>
+  </li>
+  <li>
+    <p>그림에서 섬유는 한 가닥의 실처럼 보이며, 이것은 “섬유”라는 이름의 유래이다.</p>
+  </li>
+</ul>
+
+<p><img src="/public/section-1.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;" /></p>
+
+<p>한편 $b$가 $A$에 대한 유형족 $B$의 섹션일 때, $b$는 각 $a: A$에 대해 $b(a): B(a)$를 선택한다. 여기서 $B(a)$는 $\mathrm{pr}_1: \sum_{x: A}B(x) \to A$의 $a$-섬유와 자연스럽게 동치이다. 따라서 $b$가 $B$의 (두 번째 의미에서의) 섹션일 때, $\lambda x. b(x)$는 $\mathrm{pr}_1$의 (첫 번째 의미에서의) 섹션이다.</p>
+
+<p><img src="/public/section-2.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;" /></p>
+
+<p>물론, $\lambda x . b(x)$는 $b$와 판단적으로 같다. 따라서 섹션의 두 번째 의미는 첫 번째 의미의 특수한 사례이다.</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Notes on the Meaning of Sections</title>
+        <link>https://dimenerno.github.io/2026/05/14/section/en</link>
+        <guid>https://dimenerno.github.io/2026/05/14/section/en</guid>
+        <pubDate>Thu, 14 May 2026 00:00:00 +0900</pubDate>
+        <description>&lt;p&gt;In type theory, the term “section” appears in two different contexts.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/05/14/section/en">
+          <![CDATA[
+            <p>In type theory, the term “section” appears in two different contexts.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a map $r: B \to A$, if $s: A \to B$ satisfies $fs \sim \mathrm{id}_A$, then $s$ is called a <strong>section</strong> of $r$, and $r$ is called a <strong>retract</strong> of $s$. That is,</p>
+
+\[\begin{gather}
+\mathrm{sec}(r) := \sum_{s': A \to B} r's \sim \mathrm{id}_A\\
+\mathrm{ret}(s) := \sum_{r': A \to B} rs' \sim \mathrm{id}_B
+\end{gather}\]
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $B$ be a type family over $A$. Given $x: A$, if $b(x): B(x)$, then $b$ is called a <strong>section</strong> of $B$.</p>
+</blockquote>
+
+<p>The two meanings of section are related. Regarding the first definition, geometrically, a section $s: A \to B$ is a map that includes the space $A$ as a <strong>(cross-)section</strong> in the space $B$, while the corresponding retract $r: B \to A$ is a map that <strong>projects</strong> the space $B$ onto the space $A$. From this, several observations can be made:</p>
+
+<ul>
+  <li>
+    <p>Generally, “expanding and then contracting” preserves the relationship of the original space, but “contracting and then expanding” does not. This suggests that when $r$ and $s$ are in a retract-section relationship, $rs \sim \mathrm{id}_A$, but $sr \sim \mathrm{id}_B$ does not generally hold.</p>
+  </li>
+  <li>
+    <p>A section <em>chooses</em> a point in the $a$-fibre of $r$ for each $a: A$. This can be understood as analogous to selecting a specific $z$-coordinate value for each $z$-contour of a figure.</p>
+  </li>
+  <li>
+    <p>In the diagram, the fibre appears like a strand of thread, which is the origin of the term “fibre.”</p>
+  </li>
+</ul>
+
+<p><img src="/public/section-1.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;" /></p>
+
+<p>On the other hand, when $b$ is a section of a type family $B$ over $A$, $b$ chooses $b(a): B(a)$ for each $a: A$. Here, $B(a)$ is naturally equivalent to the $a$-fibre of $\mathrm{pr}_1: \sum_{x: A}B(x) \to A$. Therefore, when $b$ is a section of $B$ (in the second sense), $\lambda x. b(x)$ is a section of $\mathrm{pr}_1$ (in the first sense).</p>
+
+<p><img src="/public/section-2.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;" /></p>
+
+<p>Of course, $\lambda x . b(x)$ is judgementally equal to $b$. Thus, the second meaning of section is just a special case of the first.</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
         <title>유형론적 대각선 논법</title>
         <link>https://dimenerno.github.io/2026/05/13/type-theoretic-cantor</link>
         <guid>https://dimenerno.github.io/2026/05/13/type-theoretic-cantor</guid>
@@ -29,7 +131,7 @@
 <blockquote>
   <p><strong>정의.</strong> 다음의 가환 도식에서 $\iota$가 임베딩이고, 가환성이 호모토피 $H: f \sim \iota q$에 의해 목격된다고 하자.</p>
 
-  <p><img src="/public/image-inclusion.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
+  <p><img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
 
   <p>다음이 만족될 경우 $\iota$가 <strong>치역 임베딩의 보편 성질</strong>을 만족한다고 한다: 임의의 임베딩 $m: C \to X$에 대해, 전치 합성</p>
 
@@ -57,7 +159,7 @@
     <li>치역 임베딩의 보편 성질을 만족하는 임베딩은 유일하다. 즉, 두 임베딩 $i: B \to X$와 $i’: B’ \to X$가 보편 성질을 만족한다면, 다음의 가환 도식을 만족하는 동치 관계 $e: B \simeq B’$의 유형은 수축 가능하다<sub>contractible</sub>.</li>
   </ul>
 
-  <p><img src="/public/uniqueness-of-image.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
+  <p><img src="/public/uniqueness-of-image.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
 </blockquote>
 
 <p>유형론적으로 치역을 정의했으므로, 전사성의 두 번째 정의를 제시할 수 있다.</p>
@@ -65,7 +167,7 @@
 <blockquote>
   <p><strong>정리.</strong> 다음의 가환 도식에서 $\iota: B \to X$가 임베딩이라고 하자. $q$가 전사일 필요충분조건은 $\iota$가 치역 임베딩의 보편 성질을 만족하는 것이다.</p>
 
-  <p><img src="/public/image-inclusion.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
+  <p><img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
 </blockquote>
 
 <h2 id="유형론적-대각선-논법">유형론적 대각선 논법</h2>
@@ -121,7 +223,7 @@
 <blockquote>
   <p><strong>Definition.</strong> Consider the following commutative diagram where $\iota$ is an embedding, and the commutativity is witnessed by a homotopy $H: f \sim \iota q$.</p>
 
-  <p><img src="/public/image-inclusion.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
+  <p><img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
 
   <p>We say that $\iota$ satisfies the <strong>universal property of the image inclusion</strong> if the following holds: for any embedding $m: C \to X$, the precomposition</p>
 
@@ -149,7 +251,7 @@
     <li>The embedding satisfying the universal property of the image inclusion is unique. That is, if two embeddings $i: B \to X$ and $i’: B’ \to X$ satisfy the universal property, then the type of equivalences $e: B \simeq B’$ satisfying the following commutative diagram is contractible.</li>
   </ul>
 
-  <p><img src="/public/uniqueness-of-image.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
+  <p><img src="/public/uniqueness-of-image.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
 </blockquote>
 
 <p>Having defined the image type-theoretically, we can now present the second definition of surjectivity.</p>
@@ -157,7 +259,7 @@
 <blockquote>
   <p><strong>Theorem.</strong> In the following commutative diagram, let $\iota: B \to X$ be an embedding. Then $q$ is surjective if and only if $\iota$ satisfies the universal property of the image inclusion.</p>
 
-  <p><img src="/public/image-inclusion.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
+  <p><img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
 </blockquote>
 
 <h2 id="type-theoretic-diagonal-argument">Type-Theoretic Diagonal Argument</h2>
@@ -1680,232 +1782,6 @@
     </li>
   </ol>
 </div>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>범주론적 대각합</title>
-        <link>https://dimenerno.github.io/2026/01/26/categorical-trace</link>
-        <guid>https://dimenerno.github.io/2026/01/26/categorical-trace</guid>
-        <pubDate>Mon, 26 Jan 2026 00:00:00 +0900</pubDate>
-        <description>&lt;p&gt;독자는 선형대수학 수업에서 행렬의 대각합&lt;sub&gt;trace&lt;/sub&gt;을 배웠을 것이다.&lt;/p&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2026/01/26/categorical-trace">
-          <![CDATA[
-            <p>독자는 선형대수학 수업에서 행렬의 대각합<sub>trace</sub>을 배웠을 것이다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $n\times n$ 행렬 $A$의 대각합 $\mathrm{tr}(A)$를, $A$의 대각 성분들의 합으로 정의한다.</p>
-</blockquote>
-
-<p>특히, 대각합은 다음의 성질을 가진다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $A$와 $B$가 닮은 행렬이면 $\operatorname{tr}(A) = \operatorname{tr}(B)$이다.</p>
-</blockquote>
-
-<p>즉, 대각합은 행렬에 대한 함수일 뿐 아니라 선형 변환에 대한 함수이기도 하다.</p>
-
-<p>그런데 이 결과를 알고 나서 대각합의 정의를 다시 보면 불만족스러운<small>(짜치는)</small> 점이 있다. 대각합이 선형 변환에 대한 함수임에도 불구하고, “대각선 성분의 합”이라는 직관적 의미가 있는 행렬의 경우와 달리 선형 변환의 경우에는 직관적 의미가 읽히지 않기 때문이다. 이는 행렬값이 “단위 정사각형이 변환된 후의 넓이”라는 직관적 의미를 가지는 것과 대조된다. 때문에 대각합이 선형 변환에 대한 함수라는 사실은 마치 우연처럼 보인다.</p>
-
-<p>옆집 물리학과 애들이라면 그게 뭐 어째서 ‒ 하며 계산이나 하러 가겠지만, 우리 우수한 수학과의 인재들은 이를 차치해서는 안 될 것이다. 더욱 자연스럽고 수학적인 방식은, 대각합을 먼저 선형 변환에 대한 함수로서 정의한 뒤, 이 정의가 기존의 정의와 일치함을 보이는 것이다. 이것이 <strong>범주론적 대각합<sub>categorical trace</sub></strong>의 동기이다.</p>
-
-<p>먼저 몇 가지 함수를 정의하자. 쌍대 공간의 정의에 따라, 임의의 $k$-벡터 공간 $V$에 대해 다음 사상이 존재한다.</p>
-
-\[\mathrm{ev} : V^* \otimes V \to k;\; 
-\phi \otimes v \mapsto \phi(v)\]
-
-<p>그런데 $(\phi, v) \mapsto \phi(v)$가 쌍선형 사상<sub>bilinear map</sub>이므로, 텐서곱의 정의에 의해 $\mathrm{ev}$는 선형 사상이다. 따라서 $\mathrm{ev}$의 쌍대를 취할 수 있는데, 이를 $\mathrm{coev}$라고 하자. 즉,</p>
-
-\[\mathrm{coev}: k^* \to (V^* \otimes V)^*\]
-
-<p>그런데 $k^\ast$는 $k$와 표준적<sub>canonically</sub>으로 동형이고, $V^{\ast\ast}$는 $V$와 표준적으로 동형이며, $V, W$가 유한 차원 벡터 공간일 때 $(V \otimes W)^\ast$는 $V^\ast \otimes W^\ast$와 표준적으로 동형이므로, $\mathrm{coev}$를 다음과 같이 생각해도 무방하다.</p>
-
-\[\mathrm{coev}: k \to V \otimes V^*\]
-
-<blockquote>
-  <p><strong>Remark.</strong> 그냥 동형이 아니라 표준적으로 동형이라는 사실이 중요하다. 일례로 $V^\ast \cong V$이지만, 이 동형은 특정 기저의 선택에 의존적이기 때문에 $\mathrm{coev} : k \to V \otimes V$라고 할 수는 없다. 우리의 목표는 $\mathrm{ev}$와 $\mathrm{coev}$로부터 <em>선형 변환에 대한</em> 함수를 구성하는 것이기 때문에, 기저 의존성이 개입되어서는 안 된다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Remark.</strong> $V, W$가 유한 차원 공간일 때, 다음과 같이 정의되는 $\Psi : V^\ast \otimes W^\ast \to (V \otimes W)^\ast$는 표준 동형 사상이다.</p>
-
-\[\Psi : \phi \otimes \psi \mapsto \big( (v\otimes w) \mapsto \phi(v)\psi(w) \big)\]
-
-  <p>유한 차원 조건이 필요한 이유는 전사성을 보장하기 위해서이다. 이 경우, 다음 사상이 위 사상의 역사상임을 확인할 수 있다. ($\lbrace e_i\rbrace , \lbrace f_j\rbrace $는 $V, W$의 기저이고, $\lbrace  g_{ij} \rbrace $는 $V \otimes W$의 기저이다.)</p>
-
-\[\Psi^{-1} : g^{ij} \mapsto e^i \otimes f^j\]
-
-  <p>표면적으로 $\Psi^{-1}$은 기저 선택에 의존적인 것으로 보이지만, $\Psi$가 기저 의존적이지 않고, $\Psi^{-1}$이 $\Psi$의 역사상이기 때문에, $\Psi^{-1}$ 또한 기저 의존적이지 않다.</p>
-</blockquote>
-
-<p>$k$는 1차원 벡터 공간이므로, $\mathrm{coev}(1)$을 알면 $\mathrm{coev}$ 전체가 결정된다. $\mathrm{coev}(1)$을 구하기 위해 다음의 정의를 떠올리자. $T : V \to W$에 대해,</p>
-
-\[T^*: W^* \to V^*; \; \psi \mapsto \psi \circ T\]
-
-<p>이다.  따라서,</p>
-
-\[\mathrm{coev} : 1 \mapsto 1 \circ \mathrm{ev} = \mathrm{ev}\]
-
-<p>즉, $\mathrm{coev}(1)$은 다름아닌 $\mathrm{ev}$이다. 이는 말이 되는 게, $\mathrm{ev}$는 $V^\ast \otimes V$를 스칼라로 보내는 선형 사상이므로 그 자체로 $(V^\ast \otimes V)^\ast = V \otimes V^\ast$의 원소이다.</p>
-
-<p>그렇다면 $\mathrm{ev}$는 어떻게 $V \otimes V^\ast$로 표현될까? 우선 $\mathrm{ev}$가 $(V^\ast \otimes V)^\ast$에서 어떻게 표현되는지를 보자. $V$의 기저 $\lbrace e_i\rbrace $를 선택한다면, $V^\ast \otimes V$의 기저가 $\lbrace  f_{ij} = e^i \otimes e_j \rbrace $로 유도된다. $\mathrm{ev}$의 정의로부터 다음이 따라 나온다.</p>
-
-\[\mathrm{ev} = \sum_i f^{ii}\]
-
-<p>위의 Remark에서 정의한 $\Psi^{-1}$을 우변에 취하면 다음을 얻는다.</p>
-
-\[\mathrm{ev} = \sum_i e_i \otimes e^i\]
-
-<p>이제 범주론적 대각합을 정의하자.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> $k$-벡터 공간 $V$와 선형 변환 $T: V \to V$에 대해, $\operatorname{tr}_T: k \to k$를 다음 사상들의 합성으로 정의한다.</p>
-
-\[k \xrightarrow{\operatorname{coev}} V \otimes V^* \xrightarrow{T \otimes \mathrm{id}} V \otimes V^* \xrightarrow{\operatorname{twist}} V^* \otimes V \xrightarrow{\operatorname{ev}} k\]
-
-  <p>$\mathrm{tr}_T$를 <strong>범주론적 대각합</strong>이라고 한다.</p>
-</blockquote>
-
-<p>정의에 사용된 사상들이 모두 기저 비의존적이므로, 범주론적 대각합 또한 기저 비의존적이다. 범주론적 대각합과 기존의 대각합은 다음의 관계에 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> $\mathrm{tr}_T(1) = \mathrm{tr}(T)$</p>
-</blockquote>
-
-<p><strong>증명.</strong> 다음이 성립한다.</p>
-
-\[\begin{align}
-1 &amp;\xmapsto{\operatorname{coev}} \sum e_i \otimes e^i \\
-&amp;\xmapsto{T \otimes \mathrm{id}} \sum T(e_i) \otimes e^i \\
-&amp;\xmapsto{\operatorname{twist}} \sum e^i \otimes T(e_i) \\
-&amp;\xmapsto{\operatorname{ev}} \sum [T]_{ii}
-\end{align}\]
-
-<p>여기서 $[T]$는 $\lbrace  e_i \rbrace $를 기저로 선택했을 때 $T$의 행렬 표현이다. 따라서 $\sum [T]_{ii} = \mathrm{tr}(T)$이다. ■</p>
-
-<p>이로써 구차한 계산 없이 $\mathrm{tr}$이 선형 변환에 대한 함수임을 보일 수 있다. 우아하지 않은가?</p>
-
-<p>한편 예리한 독자는 “범주론적 대각합”이라는 이름이 무색하게, 지금까지의 논의에서 특별히 범주론적인 개념은 등장하지 않았음을 눈치챘을 것이다. 그럼에도 불구하고 이 글에서 정의한 개념의 이름이 “범주론적 대각합”인 이유는, 이 글에서 소개한 정의를 벡터 공간에서 대칭적 모노이드 범주<sub>symmetric monoidal category</sub>로 자연스럽게 일반화할 수 있기 때문이다. 관심 있는 독자는 <a href="https://en.wikipedia.org/wiki/Categorical_trace">위키피디아 문서</a>를 참고하길 바란다.</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>Categorical Trace</title>
-        <link>https://dimenerno.github.io/2026/01/26/categorical-trace/en</link>
-        <guid>https://dimenerno.github.io/2026/01/26/categorical-trace/en</guid>
-        <pubDate>Mon, 26 Jan 2026 00:00:00 +0900</pubDate>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2026/01/26/categorical-trace/en">
-          <![CDATA[
-            <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>Readers may recall learning about the trace of a matrix in their linear algebra classes.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> For an $n \times n$ matrix $A$, the trace $\mathrm{tr}(A)$ is defined as the sum of the diagonal entries of $A$.</p>
-</blockquote>
-
-<p>In particular, the trace has the following property:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $A$ and $B$ are similar matrices, then $\operatorname{tr}(A) = \operatorname{tr}(B)$.</p>
-</blockquote>
-
-<p>In other words, the trace is not merely a function of matrices but also a function of linear transformations.</p>
-
-<p>However, upon revisiting the definition of the trace after learning this result, one might find it somewhat unsatisfactory. While the trace has an intuitive meaning as “the sum of diagonal entries” in the case of matrices, this intuitive interpretation is absent for linear transformations. This contrasts with determinants, which have an intuitive meaning as “the scaling factors of unit squares under the transformation.” As a result, the fact that the trace is a function of linear transformations might seem almost coincidental.</p>
-
-<p>While our neighbours in the physics department might shrug and proceed with their calculations, we, the brilliant minds of the mathematics department, should not settle for such a perspective. A more natural and mathematical approach would be to define the trace first as a function of linear transformations and then show that this definition coincides with the traditional one. This is the motivation for the <strong>categorical trace</strong>.</p>
-
-<p>Let us first define a few maps. By the definition of the dual space, for any $k$-vector space $V$, the following map exists:</p>
-
-\[\mathrm{ev} : V^* \otimes V \to k;\; 
-\phi \otimes v \mapsto \phi(v)\]
-
-<p>Since $(\phi, v) \mapsto \phi(v)$ is a bilinear map, $\mathrm{ev}$ is a linear map by the definition of the tensor product. Thus, we can take the dual of $\mathrm{ev}$, which we shall denote by $\mathrm{coev}$. That is,</p>
-
-\[\mathrm{coev}: k^* \to (V^* \otimes V)^*\]
-
-<p>However, since $k^\ast$ is canonically isomorphic to $k$, $V^{\ast\ast}$ is canonically isomorphic to $V$, and $(V \otimes W)^\ast$ is canonically isomorphic to $V^\ast \otimes W^\ast$ for finite-dimensional vector spaces $V$ and $W$, we may equivalently think of $\mathrm{coev}$ as follows:</p>
-
-\[\mathrm{coev}: k \to V \otimes V^*\]
-
-<blockquote>
-  <p><strong>Remark.</strong> The fact that these are canonical isomorphisms is crucial. For instance, while $V^\ast \cong V$, this isomorphism depends on the choice of a basis, so we cannot write $\mathrm{coev} : k \to V \otimes V$. Our goal is to construct a function of linear transformations from $\mathrm{ev}$ and $\mathrm{coev}$, so basis dependence must be avoided.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Remark.</strong> For finite-dimensional spaces $V$ and $W$, the map $\Psi : V^\ast \otimes W^\ast \to (V \otimes W)^\ast$ defined as follows is a canonical isomorphism:</p>
-
-\[\Psi : \phi \otimes \psi \mapsto \big( (v\otimes w) \mapsto \phi(v)\psi(w) \big)\]
-
-  <p>The finite-dimensionality condition is necessary to ensure surjectivity. In this case, the following map can be verified as the inverse of the above map (where $\lbrace e_i\rbrace , \lbrace f_j\rbrace $ are bases of $V$ and $W$, and $\lbrace  g_{ij} \rbrace $ is a basis of $V \otimes W$):</p>
-
-\[\Psi^{-1} : g^{ij} \mapsto e^i \otimes f^j\]
-
-  <p>While $\Psi^{-1}$ appears to depend on the choice of basis, it is not basis-dependent because $\Psi$ itself is not basis-dependent, and $\Psi^{-1}$ is the inverse of $\Psi$.</p>
-</blockquote>
-
-<p>Since $k$ is a one-dimensional vector space, knowing $\mathrm{coev}(1)$ determines $\mathrm{coev}$ entirely. To compute $\mathrm{coev}(1)$, recall the following definition: for $T : V \to W$,</p>
-
-\[T^*: W^* \to V^*; \; \psi \mapsto \psi \circ T\]
-
-<p>Thus,</p>
-
-\[\mathrm{coev} : 1 \mapsto 1 \circ \mathrm{ev} = \mathrm{ev}\]
-
-<p>In other words, $\mathrm{coev}(1)$ is none other than $\mathrm{ev}$. This makes sense because $\mathrm{ev}$ is a linear map that sends $V^\ast \otimes V$ to scalars, and hence it is itself an element of $(V^\ast \otimes V)^\ast = V \otimes V^\ast$.</p>
-
-<p>How, then, is $\mathrm{ev}$ expressed in $V \otimes V^\ast$? First, let us see how $\mathrm{ev}$ is expressed in $(V^\ast \otimes V)^\ast$. Choosing a basis $\lbrace e_i\rbrace $ of $V$, we obtain the induced basis $\lbrace  f_{ij} = e^i \otimes e_j \rbrace $ of $V^\ast \otimes V$. From the definition of $\mathrm{ev}$, we have:</p>
-
-\[\mathrm{ev} = \sum_i f^{ii}\]
-
-<p>Applying $\Psi^{-1}$, as defined in the Remark above, to the right-hand side yields:</p>
-
-\[\mathrm{ev} = \sum_i e_i \otimes e^i\]
-
-<p>Now, let us define the categorical trace.</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a $k$-vector space $V$ and a linear transformation $T: V \to V$, define $\operatorname{tr}_T: k \to k$ as the composition of the following maps:</p>
-
-\[k \xrightarrow{\operatorname{coev}} V \otimes V^* \xrightarrow{T \otimes \mathrm{id}} V \otimes V^* \xrightarrow{\operatorname{twist}} V^* \otimes V \xrightarrow{\operatorname{ev}} k\]
-
-  <p>This $\mathrm{tr}_T$ is called the <strong>categorical trace</strong>.</p>
-</blockquote>
-
-<p>Since all the maps used in the definition are basis-independent, the categorical trace is also basis-independent. The relationship between the categorical trace and the traditional trace is as follows:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $\mathrm{tr}_T(1) = \mathrm{tr}(T)$</p>
-</blockquote>
-
-<p><strong>Proof.</strong> The following holds:</p>
-
-\[\begin{align}
-1 &amp;\xmapsto{\operatorname{coev}} \sum e_i \otimes e^i \\
-&amp;\xmapsto{T \otimes \mathrm{id}} \sum T(e_i) \otimes e^i \\
-&amp;\xmapsto{\operatorname{twist}} \sum e^i \otimes T(e_i) \\
-&amp;\xmapsto{\operatorname{ev}} \sum [T]_{ii}
-\end{align}\]
-
-<p>Here, $[T]$ is the matrix representation of $T$ with respect to the basis $\lbrace  e_i \rbrace $. Thus, $\sum [T]_{ii} = \mathrm{tr}(T)$. ■</p>
-
-<p>This demonstrates that $\mathrm{tr}$ is a function of linear transformations without resorting to cumbersome calculations. Elegant, isn’t it?</p>
-
-<p>Meanwhile, the astute reader may have noticed that, despite the name “categorical trace,” no particularly categorical concepts have appeared in the discussion so far. Nevertheless, the concept defined in this post is called the “categorical trace” because the definition introduced here can be naturally generalised from vector spaces to symmetric monoidal categories. Interested readers are encouraged to consult the <a href="https://en.wikipedia.org/wiki/Categorical_trace">Wikipedia article</a> for further details.</p>
 
           ]]>
         </content:encoded>

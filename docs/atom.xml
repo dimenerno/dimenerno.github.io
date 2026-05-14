@@ -4,13 +4,101 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-05-13T10:21:13+09:00</updated>
+ <updated>2026-05-14T16:15:05+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
    <email>dimenerno@kaist.ac.kr</email>
  </author>
 
+ 
+ <entry>
+   <title>섹션의 의미에 관한 노트</title>
+   <link href="https://dimenerno.github.io/2026/05/14/section"/>
+   <updated>2026-05-14T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2026/05/14/section</id>
+   <content type="html">&lt;p&gt;유형론에서 섹션&lt;sub&gt;section&lt;/sub&gt;이라는 용어는 두 가지 의미로 등장한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 사상 $r: B \to A$에 대해, $s: A \to B$가 $fs \sim \mathrm{id}_A$를 만족한다면 $s$를 $r$의 &lt;strong&gt;섹션&lt;/strong&gt;이라고 하고, $r$을 $s$의 &lt;strong&gt;리트랙트&lt;/strong&gt;라고 한다. 즉, 다음과 같이 정의한다.&lt;/p&gt;
+
+\[\begin{gather}
+\mathrm{sec}(r) := \sum_{s&apos;: A \to B} r&apos;s \sim \mathrm{id}_A\\
+\mathrm{ret}(s) := \sum_{r&apos;: A \to B} rs&apos; \sim \mathrm{id}_B
+\end{gather}\]
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $B$가 $A$에 대한 유형족&lt;sub&gt;type family&lt;/sub&gt;이라고 하자. $x: A$가 주어졌을 때 $b(x): B(x)$라면, $b$를 $B$의 &lt;strong&gt;섹션&lt;/strong&gt;이라고 부른다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;두 가지 의미의 섹션은 연관돼 있다. 첫 번째 정의를 기하학적으로 해석하면, 섹션 $s: A \to B$는 공간 $A$를 공간 $B$에 한 &lt;strong&gt;단면&lt;/strong&gt;으로서 포함시키는 사상이며, 그에 대응되는 리트랙트 $r: B \to A$는 공간 $B$를 공간 $A$로 &lt;strong&gt;투영&lt;/strong&gt;하는 사상이다. 이로부터 몇 가지 사실을 고찰할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;일반적으로, “확대 후 축소”는 원 공간의 관계를 보존하지만 “축소 후 확대”는 보존하지 않는다. 이는 $r, s$가 리트랙트-섹션 관계일 때, $rs \sim \mathrm{id}_A$이지만 일반적으로 $sr \sim \mathrm{id}_B$이지는 않음을 시사한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;섹션은 각 $a: A$에 대해 $r$의 $a$-섬유&lt;sub&gt;fiber&lt;/sub&gt;에서 한 점을 &lt;strong&gt;선택&lt;/strong&gt;한다. 이는 도형의 $z$-등고면은 각각 특정한 $z$-좌푯값의 선택과 같은 것으로 이해할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그림에서 섬유는 한 가닥의 실처럼 보이며, 이것은 “섬유”라는 이름의 유래이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/section-1.png&quot; style=&quot;width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;한편 $b$가 $A$에 대한 유형족 $B$의 섹션일 때, $b$는 각 $a: A$에 대해 $b(a): B(a)$를 선택한다. 여기서 $B(a)$는 $\mathrm{pr}_1: \sum_{x: A}B(x) \to A$의 $a$-섬유와 자연스럽게 동치이다. 따라서 $b$가 $B$의 (두 번째 의미에서의) 섹션일 때, $\lambda x. b(x)$는 $\mathrm{pr}_1$의 (첫 번째 의미에서의) 섹션이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/section-2.png&quot; style=&quot;width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;물론, $\lambda x . b(x)$는 $b$와 판단적으로 같다. 따라서 섹션의 두 번째 의미는 첫 번째 의미의 특수한 사례이다.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Notes on the Meaning of Sections</title>
+   <link href="https://dimenerno.github.io/2026/05/14/section/en"/>
+   <updated>2026-05-14T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2026/05/14/section/section-en</id>
+   <content type="html">&lt;p&gt;In type theory, the term “section” appears in two different contexts.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; For a map $r: B \to A$, if $s: A \to B$ satisfies $fs \sim \mathrm{id}_A$, then $s$ is called a &lt;strong&gt;section&lt;/strong&gt; of $r$, and $r$ is called a &lt;strong&gt;retract&lt;/strong&gt; of $s$. That is,&lt;/p&gt;
+
+\[\begin{gather}
+\mathrm{sec}(r) := \sum_{s&apos;: A \to B} r&apos;s \sim \mathrm{id}_A\\
+\mathrm{ret}(s) := \sum_{r&apos;: A \to B} rs&apos; \sim \mathrm{id}_B
+\end{gather}\]
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $B$ be a type family over $A$. Given $x: A$, if $b(x): B(x)$, then $b$ is called a &lt;strong&gt;section&lt;/strong&gt; of $B$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The two meanings of section are related. Regarding the first definition, geometrically, a section $s: A \to B$ is a map that includes the space $A$ as a &lt;strong&gt;(cross-)section&lt;/strong&gt; in the space $B$, while the corresponding retract $r: B \to A$ is a map that &lt;strong&gt;projects&lt;/strong&gt; the space $B$ onto the space $A$. From this, several observations can be made:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Generally, “expanding and then contracting” preserves the relationship of the original space, but “contracting and then expanding” does not. This suggests that when $r$ and $s$ are in a retract-section relationship, $rs \sim \mathrm{id}_A$, but $sr \sim \mathrm{id}_B$ does not generally hold.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A section &lt;em&gt;chooses&lt;/em&gt; a point in the $a$-fibre of $r$ for each $a: A$. This can be understood as analogous to selecting a specific $z$-coordinate value for each $z$-contour of a figure.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the diagram, the fibre appears like a strand of thread, which is the origin of the term “fibre.”&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/section-1.png&quot; style=&quot;width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;On the other hand, when $b$ is a section of a type family $B$ over $A$, $b$ chooses $b(a): B(a)$ for each $a: A$. Here, $B(a)$ is naturally equivalent to the $a$-fibre of $\mathrm{pr}_1: \sum_{x: A}B(x) \to A$. Therefore, when $b$ is a section of $B$ (in the second sense), $\lambda x. b(x)$ is a section of $\mathrm{pr}_1$ (in the first sense).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/section-2.png&quot; style=&quot;width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Of course, $\lambda x . b(x)$ is judgementally equal to $b$. Thus, the second meaning of section is just a special case of the first.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>유형론적 대각선 논법</title>
@@ -30,7 +118,7 @@
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 다음의 가환 도식에서 $\iota$가 임베딩이고, 가환성이 호모토피 $H: f \sim \iota q$에 의해 목격된다고 하자.&lt;/p&gt;
 
-  &lt;p&gt;&lt;img src=&quot;/public/image-inclusion.png&quot; style=&quot;width: 250px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/public/image-inclusion.png&quot; style=&quot;width: 230px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 
   &lt;p&gt;다음이 만족될 경우 $\iota$가 &lt;strong&gt;치역 임베딩의 보편 성질&lt;/strong&gt;을 만족한다고 한다: 임의의 임베딩 $m: C \to X$에 대해, 전치 합성&lt;/p&gt;
 
@@ -58,7 +146,7 @@
     &lt;li&gt;치역 임베딩의 보편 성질을 만족하는 임베딩은 유일하다. 즉, 두 임베딩 $i: B \to X$와 $i’: B’ \to X$가 보편 성질을 만족한다면, 다음의 가환 도식을 만족하는 동치 관계 $e: B \simeq B’$의 유형은 수축 가능하다&lt;sub&gt;contractible&lt;/sub&gt;.&lt;/li&gt;
   &lt;/ul&gt;
 
-  &lt;p&gt;&lt;img src=&quot;/public/uniqueness-of-image.png&quot; style=&quot;width: 250px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/public/uniqueness-of-image.png&quot; style=&quot;width: 230px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;유형론적으로 치역을 정의했으므로, 전사성의 두 번째 정의를 제시할 수 있다.&lt;/p&gt;
@@ -66,7 +154,7 @@
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;정리.&lt;/strong&gt; 다음의 가환 도식에서 $\iota: B \to X$가 임베딩이라고 하자. $q$가 전사일 필요충분조건은 $\iota$가 치역 임베딩의 보편 성질을 만족하는 것이다.&lt;/p&gt;
 
-  &lt;p&gt;&lt;img src=&quot;/public/image-inclusion.png&quot; style=&quot;width: 250px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/public/image-inclusion.png&quot; style=&quot;width: 230px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;유형론적-대각선-논법&quot;&gt;유형론적 대각선 논법&lt;/h2&gt;
@@ -115,7 +203,7 @@
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Consider the following commutative diagram where $\iota$ is an embedding, and the commutativity is witnessed by a homotopy $H: f \sim \iota q$.&lt;/p&gt;
 
-  &lt;p&gt;&lt;img src=&quot;/public/image-inclusion.png&quot; style=&quot;width: 250px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/public/image-inclusion.png&quot; style=&quot;width: 230px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 
   &lt;p&gt;We say that $\iota$ satisfies the &lt;strong&gt;universal property of the image inclusion&lt;/strong&gt; if the following holds: for any embedding $m: C \to X$, the precomposition&lt;/p&gt;
 
@@ -143,7 +231,7 @@
     &lt;li&gt;The embedding satisfying the universal property of the image inclusion is unique. That is, if two embeddings $i: B \to X$ and $i’: B’ \to X$ satisfy the universal property, then the type of equivalences $e: B \simeq B’$ satisfying the following commutative diagram is contractible.&lt;/li&gt;
   &lt;/ul&gt;
 
-  &lt;p&gt;&lt;img src=&quot;/public/uniqueness-of-image.png&quot; style=&quot;width: 250px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/public/uniqueness-of-image.png&quot; style=&quot;width: 230px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Having defined the image type-theoretically, we can now present the second definition of surjectivity.&lt;/p&gt;
@@ -151,7 +239,7 @@
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; In the following commutative diagram, let $\iota: B \to X$ be an embedding. Then $q$ is surjective if and only if $\iota$ satisfies the universal property of the image inclusion.&lt;/p&gt;
 
-  &lt;p&gt;&lt;img src=&quot;/public/image-inclusion.png&quot; style=&quot;width: 250px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/public/image-inclusion.png&quot; style=&quot;width: 230px; margin: 1em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;type-theoretic-diagonal-argument&quot;&gt;Type-Theoretic Diagonal Argument&lt;/h2&gt;

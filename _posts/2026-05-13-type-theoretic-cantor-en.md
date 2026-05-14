@@ -19,7 +19,7 @@ The above definition expresses that "every element of the codomain has a non-emp
 
 > **Definition.** Consider the following commutative diagram where $\iota$ is an embedding, and the commutativity is witnessed by a homotopy $H: f \sim \iota q$.
 >
-> <img src="/public/image-inclusion.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;">
+> <img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;">
 >
 > We say that $\iota$ satisfies the **universal property of the image inclusion** if the following holds: for any embedding $m: C \to X$, the precomposition
 >
@@ -45,13 +45,13 @@ The above definition indeed satisfies the universal property of the image inclus
 > 
 > - The embedding satisfying the universal property of the image inclusion is unique. That is, if two embeddings $i: B \to X$ and $i': B' \to X$ satisfy the universal property, then the type of equivalences $e: B \simeq B'$ satisfying the following commutative diagram is contractible.
 >
-> <img src="/public/uniqueness-of-image.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;">
+> <img src="/public/uniqueness-of-image.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;">
 
 Having defined the image type-theoretically, we can now present the second definition of surjectivity.
 
 > **Theorem.** In the following commutative diagram, let $\iota: B \to X$ be an embedding. Then $q$ is surjective if and only if $\iota$ satisfies the universal property of the image inclusion.
 >
-> <img src="/public/image-inclusion.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;">
+> <img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;">
 
 ## Type-Theoretic Diagonal Argument
 

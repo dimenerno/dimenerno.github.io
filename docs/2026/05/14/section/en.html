@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: 언어철학 &middot; 디멘의 블로그 
+     Notes on the Meaning of Sections &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/%EC%96%B8%EC%96%B4%EC%B2%A0%ED%95%99/" />
+  <link rel="canonical" href="/2026/05/14/section/en" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -368,56 +368,67 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Notes on the Meaning of Sections</h1>
+  <span class="post-date">14 May 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/type-theory/'" >Type Theory</div>
+      
+    </div>
+  
+  <p>In type theory, the term “section” appears in two different contexts.</p>
 
+<blockquote>
+  <p><strong>Definition.</strong> For a map $r: B \to A$, if $s: A \to B$ satisfies $fs \sim \mathrm{id}_A$, then $s$ is called a <strong>section</strong> of $r$, and $r$ is called a <strong>retract</strong> of $s$. That is,</p>
 
-<h1>언어철학</h1>
+\[\begin{gather}
+\mathrm{sec}(r) := \sum_{s': A \to B} r's \sim \mathrm{id}_A\\
+\mathrm{ret}(s) := \sum_{r': A \to B} rs' \sim \mathrm{id}_B
+\end{gather}\]
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $B$ be a type family over $A$. Given $x: A$, if $b(x): B(x)$, then $b$ is called a <strong>section</strong> of $B$.</p>
+</blockquote>
+
+<p>The two meanings of section are related. Regarding the first definition, geometrically, a section $s: A \to B$ is a map that includes the space $A$ as a <strong>(cross-)section</strong> in the space $B$, while the corresponding retract $r: B \to A$ is a map that <strong>projects</strong> the space $B$ onto the space $A$. From this, several observations can be made:</p>
 
 <ul>
-                                                                   
   <li>
-    <a href="/2025/09/13/natural-teleology-and-logic">자연주의적 목적론은 논리를 설명할 수 있는가?</a>
+    <p>Generally, “expanding and then contracting” preserves the relationship of the original space, but “contracting and then expanding” does not. This suggests that when $r$ and $s$ are in a retract-section relationship, $rs \sim \mathrm{id}_A$, but $sr \sim \mathrm{id}_B$ does not generally hold.</p>
   </li>
-                  
   <li>
-    <a href="/2025/07/21/private-language">사적 언어는 가능한가?</a>
+    <p>A section <em>chooses</em> a point in the $a$-fibre of $r$ for each $a: A$. This can be understood as analogous to selecting a specific $z$-coordinate value for each $z$-contour of a figure.</p>
   </li>
-                  
   <li>
-    <a href="/2025/07/03/kripkenstein">크립키-비트겐슈타인 역설</a>
+    <p>In the diagram, the fibre appears like a strand of thread, which is the origin of the term “fibre.”</p>
   </li>
-                    
-  <li>
-    <a href="/2025/06/02/wittgenstein-conant">논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》</a>
-  </li>
-      
-  <li>
-    <a href="/2025/05/26/quine-two-dogmas">콰인, ⟪경험주의의 두 독단⟫</a>
-  </li>
-                                                                      
-  <li>
-    <a href="/2025/03/18/quanitfying-in">양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게</a>
-  </li>
-      
-  <li>
-    <a href="/2025/03/12/what-is-a-theory-of-truth">참에 대한 이론이란 무엇인가?</a>
-  </li>
-                                                                      
-  <li>
-    <a href="/2025/01/18/reference-3">지시에 대하여 — 한정 기술구</a>
-  </li>
-      
-  <li>
-    <a href="/2025/01/13/reference-2">지시에 대하여 — 특성 모델과 의도주의</a>
-  </li>
-      
-  <li>
-    <a href="/2025/01/07/reference-1">지시에 대하여 — 기술주의와 인과 이론</a>
-  </li>
-                                                         
 </ul>
+
+<p><img src="/public/section-1.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;" /></p>
+
+<p>On the other hand, when $b$ is a section of a type family $B$ over $A$, $b$ chooses $b(a): B(a)$ for each $a: A$. Here, $B(a)$ is naturally equivalent to the $a$-fibre of $\mathrm{pr}_1: \sum_{x: A}B(x) \to A$. Therefore, when $b$ is a section of $B$ (in the second sense), $\lambda x. b(x)$ is a section of $\mathrm{pr}_1$ (in the first sense).</p>
+
+<p><img src="/public/section-2.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;" /></p>
+
+<p>Of course, $\lambda x . b(x)$ is judgementally equal to $b$. Thus, the second meaning of section is just a special case of the first.</p>
+
 </div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

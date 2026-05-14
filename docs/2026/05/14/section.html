@@ -12,7 +12,7 @@
   />
 
   <title>
-     Tag: 언어철학 &middot; 디멘의 블로그 
+     섹션의 의미에 관한 노트 &middot; 디멘의 블로그 
   </title>
 
   <style>
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/tags/%EC%96%B8%EC%96%B4%EC%B2%A0%ED%95%99/" />
+  <link rel="canonical" href="/2026/05/14/section" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -368,56 +368,67 @@
         </div>
       </div>
 
-      <div class="container content"><a class="lang-ko" href="/archive-tag">모든 주제 보기</a>
-<a class="lang-en" href="/archive-tag">See all topics</a>
+      <div class="container content"><div class="post">
+  <h1 class="post-title">섹션의 의미에 관한 노트</h1>
+  <span class="post-date">14 May 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/유형론/'" >유형론</div>
+      
+    </div>
+  
+  <p>유형론에서 섹션<sub>section</sub>이라는 용어는 두 가지 의미로 등장한다.</p>
 
+<blockquote>
+  <p><strong>정의.</strong> 사상 $r: B \to A$에 대해, $s: A \to B$가 $fs \sim \mathrm{id}_A$를 만족한다면 $s$를 $r$의 <strong>섹션</strong>이라고 하고, $r$을 $s$의 <strong>리트랙트</strong>라고 한다. 즉, 다음과 같이 정의한다.</p>
 
-<h1>언어철학</h1>
+\[\begin{gather}
+\mathrm{sec}(r) := \sum_{s': A \to B} r's \sim \mathrm{id}_A\\
+\mathrm{ret}(s) := \sum_{r': A \to B} rs' \sim \mathrm{id}_B
+\end{gather}\]
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $B$가 $A$에 대한 유형족<sub>type family</sub>이라고 하자. $x: A$가 주어졌을 때 $b(x): B(x)$라면, $b$를 $B$의 <strong>섹션</strong>이라고 부른다.</p>
+</blockquote>
+
+<p>두 가지 의미의 섹션은 연관돼 있다. 첫 번째 정의를 기하학적으로 해석하면, 섹션 $s: A \to B$는 공간 $A$를 공간 $B$에 한 <strong>단면</strong>으로서 포함시키는 사상이며, 그에 대응되는 리트랙트 $r: B \to A$는 공간 $B$를 공간 $A$로 <strong>투영</strong>하는 사상이다. 이로부터 몇 가지 사실을 고찰할 수 있다.</p>
 
 <ul>
-                                                                   
   <li>
-    <a href="/2025/09/13/natural-teleology-and-logic">자연주의적 목적론은 논리를 설명할 수 있는가?</a>
+    <p>일반적으로, “확대 후 축소”는 원 공간의 관계를 보존하지만 “축소 후 확대”는 보존하지 않는다. 이는 $r, s$가 리트랙트-섹션 관계일 때, $rs \sim \mathrm{id}_A$이지만 일반적으로 $sr \sim \mathrm{id}_B$이지는 않음을 시사한다.</p>
   </li>
-                  
   <li>
-    <a href="/2025/07/21/private-language">사적 언어는 가능한가?</a>
+    <p>섹션은 각 $a: A$에 대해 $r$의 $a$-섬유<sub>fiber</sub>에서 한 점을 <strong>선택</strong>한다. 이는 도형의 $z$-등고면은 각각 특정한 $z$-좌푯값의 선택과 같은 것으로 이해할 수 있다.</p>
   </li>
-                  
   <li>
-    <a href="/2025/07/03/kripkenstein">크립키-비트겐슈타인 역설</a>
+    <p>그림에서 섬유는 한 가닥의 실처럼 보이며, 이것은 “섬유”라는 이름의 유래이다.</p>
   </li>
-                    
-  <li>
-    <a href="/2025/06/02/wittgenstein-conant">논리적 외계인은 가능한가? 데카르트, 칸트, 프레게, 그리고 《논리철학논고》</a>
-  </li>
-      
-  <li>
-    <a href="/2025/05/26/quine-two-dogmas">콰인, ⟪경험주의의 두 독단⟫</a>
-  </li>
-                                                                      
-  <li>
-    <a href="/2025/03/18/quanitfying-in">양상 문맥 내 존재 양화에 관하여 — 콰인과 프레게</a>
-  </li>
-      
-  <li>
-    <a href="/2025/03/12/what-is-a-theory-of-truth">참에 대한 이론이란 무엇인가?</a>
-  </li>
-                                                                      
-  <li>
-    <a href="/2025/01/18/reference-3">지시에 대하여 — 한정 기술구</a>
-  </li>
-      
-  <li>
-    <a href="/2025/01/13/reference-2">지시에 대하여 — 특성 모델과 의도주의</a>
-  </li>
-      
-  <li>
-    <a href="/2025/01/07/reference-1">지시에 대하여 — 기술주의와 인과 이론</a>
-  </li>
-                                                         
 </ul>
+
+<p><img src="/public/section-1.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;" /></p>
+
+<p>한편 $b$가 $A$에 대한 유형족 $B$의 섹션일 때, $b$는 각 $a: A$에 대해 $b(a): B(a)$를 선택한다. 여기서 $B(a)$는 $\mathrm{pr}_1: \sum_{x: A}B(x) \to A$의 $a$-섬유와 자연스럽게 동치이다. 따라서 $b$가 $B$의 (두 번째 의미에서의) 섹션일 때, $\lambda x. b(x)$는 $\mathrm{pr}_1$의 (첫 번째 의미에서의) 섹션이다.</p>
+
+<p><img src="/public/section-2.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;" /></p>
+
+<p>물론, $\lambda x . b(x)$는 $b$와 판단적으로 같다. 따라서 섹션의 두 번째 의미는 첫 번째 의미의 특수한 사례이다.</p>
+
 </div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>

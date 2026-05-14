@@ -433,6 +433,221 @@
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/04/01/modal-logic/en"> Modal Logic </a>
+      </h1>
+    <span class="post-date">01 Apr 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h3 id="types">Types</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Entailment</th>
+      <th>Axioms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>K</strong></td>
+      <td>Kripke model for possible worlds</td>
+      <td>$\Box(p \to q) \to (\Box p \to \Box q)$</td>
+    </tr>
+    <tr>
+      <td><strong>T</strong></td>
+      <td>Reflexivity</td>
+      <td><strong>K</strong> + $\Box p \to p$</td>
+    </tr>
+    <tr>
+      <td><strong>S4</strong></td>
+      <td>Reflexivity + Transitivity</td>
+      <td><strong>T</strong> + $\Box p \to \Box \Box p$</td>
+    </tr>
+    <tr>
+      <td><strong>S4.2</strong></td>
+      <td>Reflexivity + Transitivity + R-convergence</td>
+      <td><strong>S4</strong> + $\Diamond \Box p \to \Box \Diamond p$</td>
+    </tr>
+    <tr>
+      <td><strong>S4.3</strong></td>
+      <td>Reflexivity + Transitivity + R-linearity</td>
+      <td><strong>S4</strong> + $(\Diamond p \land \Diamond q) \to$ <br /> $(\Diamond (p \land \Diamond q) \lor \Diamond(\Diamond p \land q))$</td>
+    </tr>
+    <tr>
+      <td><strong>S5</strong></td>
+      <td>Reflexivity + Transitivity + Symmetry</td>
+      <td><strong>S4</strong> + $(p \to \Box \Diamond p)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The logics become strictly stronger as one moves down the table.</p>
+
+<h3 id="modal-reduction">Modal Reduction</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> In <strong>S4</strong>, any sequence of modal operators is equivalent to one of six combinations, and the entailment relations amongst these combinations are as follows:</p>
+
+  <p><img src="/public/modal-operators.jpeg" width="550px" style="margin: 0 auto; mix-blend-mode: multiply;" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Theorem.</strong> In <strong>S5</strong>, any sequence of modal operators is equivalent to either $\Box$ or $\Diamond$. Furthermore, every formula is equivalent to a <strong>flat</strong> formula—that is, a formula containing no modal operators within the scope of other modal operators.</p>
+</blockquote>
+
+<h3 id="completeness-theorem">Completeness Theorem</h3>
+
+<blockquote>
+  <p><strong>Theorem.</strong> <strong>K</strong> is complete.</p>
+</blockquote>
+
+<p><strong>Proof.</strong></p>
+
+<blockquote>
+  <p><strong>Lindenbaum’s Lemma.</strong> Any consistent theory can be extended to a maximally consistent theory.</p>
+</blockquote>
+
+<p>The completeness statement is equivalent to “every consistent theory is satisfiable”, and applying Lindenbaum’s lemma, this is equivalent to “every maximally consistent theory is satisfiable”.</p>
+
+<p>Let $u, v$ be maximally consistent theories. We write $u \lhd v$ when $\Box p \in u \implies p \in v$. The following can be shown without difficulty:</p>
+
+<ul>
+  <li>When $u \lhd v$, we have $p \in v \implies \Diamond p \in u$</li>
+  <li>For any maximally consistent theory $u$, if $p \in u$ and $\Box p \notin u$, then there exist maximally consistent theories $v, v’$ such that $p \in v, \lnot p \in v’$ and $u \lhd v, v’$.</li>
+</ul>
+
+<p>From this, for a maximally consistent theory $u$, we can define the <strong>canonical Kripke model</strong> $\mathfrak{K} = (U, \prec, V)$ as follows:</p>
+
+<ul>
+  <li>The collection of possible worlds $U$ is the collection of $v$ satisfying $u \lhd v$.</li>
+  <li>The accessibility relation $\prec$ is $\lhd$.</li>
+  <li>The valuation function $V(p, v)$ is true if and only if $p \in v$.</li>
+</ul>
+
+<p>It can be shown without difficulty that $\mathfrak{K}$ satisfies $u$. ■</p>
+
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/03/21/yoneda"> 요네다 보조정리 </a>
+      </h1>
+    <span class="post-date">21 Mar 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'">
+        범주론
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><em>Notation.</em></p>
+
+  <ol>
+    <li>$-$는 매개변수의 자릿값이다. $-$가 두 개 쓰였으면 매개변수가 두 개라는 뜻이다. 어느 매개변수가 어느 자리에 해당하는지는 맥락으로 파악한다.</li>
+    <li>$\bullet$은 $-$를 우선하는 매개변수이다. 따라서 $\hom(-, \bullet)$은 $A$를 함자 $\hom(-, A)$에 대응시키는 함자이다.</li>
+    <li>함자 $F, G$에 대해 $[F, G]$를 $F$에서 $G$로 가는 자연적 변환<sub>natural transformation</sub>들의 모임으로 정의한다.</li>
+    <li>모든 범주는 국소적으로 작은<sub>locally small</sub> 범주라고 가정한다.</li>
+  </ol>
+</blockquote>
+
+<p>요네다 보조정리<sub>Yoneda lemma</sub>는 표현가능함자<sub>representable</sub>가 다른 함자를 <em>바라볼</em> 때 <em>보이는</em> 것이 무엇인지를 알려주는 정리이다.</p>
+
+<p>예를 들어 $A \in \mathcal{A}$에 대해, 표현가능함자 $\hom_{\mathcal{A}}(-, A)$를 생각하자. 이 함자가 속하는 범주는 $[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$이다. 따라서 $\hom_{\mathcal{A}}(-, A)$가 함자 $F : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$를 <em>바라볼</em> 때 <em>보이는</em> 것은 다음 자연적 변환들의 집합이다.</p>
+
+\[[\hom_{\mathcal{A}}(-, A), F]\]
+
+<p>위 집합은 $A \in \mathcal{A}$와 $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$으로부터 정의된 집합이다. 그런데 $A, F$로부터 집합을 정의할 수 있는 또다른 자연스러운 방식이 있다. 단순히 $F$에 $A$를 취하는 것이다.</p>
+
+\[F(A)\]
+
+<p>요네다 보조정리에 따르면 두 집합은 <strong>동형<sub>isomorphic</sub></strong>이다. 게다가 그냥 동형인 것이 아니라, $A \in \mathcal{A}$와 $F \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$에서 자연스럽게 동형<sub>naturally isomorphic</sub>이다. 요컨대 다음 두 함자가 $[\mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}], \mathbf{Set}]$에서 동형이다.</p>
+
+\[\begin{aligned}
+\text{(i)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
+&amp;\xrightarrow{\hspace{0.15cm} \hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}} \times 1 \hspace{0.15cm}} [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}] \\
+&amp;\xrightarrow{\hom_{[\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]}(-, -)} \mathbf{Set} \\\\
+\text{(ii)} \quad \mathcal{A}^{\mathrm{op}} \times [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]
+&amp;\xrightarrow{-(-)} \mathbf{Set}
+\end{aligned}\]
+
+<blockquote>
+  <p><em>Remark.</em> $\hom_{\mathcal{A}}(-, \cdot)^{\mathrm{op}}$에 붙은 $\mathrm{op}$는 함자의 정의역을 $\mathcal{A}^\mathrm{op}$로 맞춰주기 위함이고, 실질적으로는 $\hom_{\mathcal{A}}(-, \cdot)$와 같다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 증명의 개요만 적자면, $\hat{(\;\;)} : [\hom_\mathcal{A}(-, A), F] \to F(A)$와 $\tilde{(\;\;)}: F(A) \to [\hom_\mathcal{A}(-, A), F]$를 다음과 같이 정의한다.</p>
+
+\[\hat{\alpha} = \alpha_A(1_A), \quad \tilde{x} = \theta\]
+
+<p>여기서 $\theta$는 $f : A’ \to A$를 다음과 같이 사상하는 자연적 변환이다.</p>
+
+\[\theta_{A'}: f \mapsto F(f^{\mathrm{op}})(x)\]
+
+<p>$\theta$를 위와 같이 정의하는 이유는 다음 가환 도식을 만족하게끔 만들기 위함이다. ($(-)$에 $1_A$를 대입해 확인해 보라.)</p>
+
+<p><img src="/public/yoneda-def.png" style="margin: 0 auto; width: 400px" /></p>
+
+<p>이제 임의의 $A \in \mathcal{A}, F : \mathcal{A}^\mathrm{op} \to \mathbf{Set}$에 대해 다음이 성립함을 보여아 한다.</p>
+
+<ul>
+  <li>임의의 $\alpha \in [\hom_\mathcal{A}(-, A), F]$에 대해 $\tilde{\hat{\alpha}} = \alpha$이다.</li>
+  <li>임의의 $x \in F(A)$에 대해 $\hat{\tilde{x}} = x$이다.</li>
+</ul>
+
+<p>이것은 $[\hom_\mathcal{A}(-, A), F] \cong F(A)$임을 보인다. 여기에 더해, 해당 동형이 자연적임을 보여아 한다. 자아아알 생각해 보면 이것은 임의의 $A, A’ \in \mathcal{A}$와 $F, G \in [\mathcal{A}^{\mathrm{op}}, \mathbf{Set}]$와 $f: A’ \to A$와 $\alpha: F \Rightarrow G$에 대해 다음 도식이 가환임을 보이는 것과 같다.</p>
+
+<p><img src="/public/yoneda-naturality.png" style="margin: 0 auto; width: 470px" /></p>
+
+<p>원소 단위로 적으면,</p>
+
+<p><img src="/public/yoneda-comm.png" style="margin: 0 auto; margin-bottom: 2em; width: 400px" /></p>
+
+<p>위가 성립함은 $\theta$의 자연성으로부터 따라 나온다. ■</p>
+
+<h2 id="요네다-따름정리와-관계론적-존재론">요네다 따름정리와 관계론적 존재론</h2>
+
+<p>요네다 보조정리가 함의하는 결과 중 다음은 아주 중요하다. 필자는 이를 그냥 <strong>요네다 따름정리</strong>라고 부른다.</p>
+
+<blockquote>
+  <p><strong>요네다 따름정리.</strong> $X, Y \in \mathcal{A}$라고 하자.</p>
+
+  <ol>
+    <li>$[\hom(-, X), \hom(-, Y)] \cong \hom(X, Y)$</li>
+    <li>$X \cong Y \iff \hom(-, X) \cong \hom(-, Y)$</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> $F = \hom(-, Y)$로 둔다. ■</p>
+
+<p>요컨대 범주론에서 <strong>대상은, 그것이 받는 사상들의 집합과 다름없다.</strong> 일례로 정수 순서 범주에서 $0$은 초기 대상으로 정의할 수 있고, 더 일반적으로 $n$은 받는 사상들의 수가 $n$개인 대상으로 정의할 수 있다. 요네다 따름정리는 이처럼 대상을 그것이 다른 대상과 맺는 사상들로서 정의하는 접근이 모든<small>(엄밀히는 국소적으로 작은)</small> 범주에서 유효함을 보장한다. 필자는 이 접근을 <strong>관계론적 존재론</strong>이라고 부른다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/03/21/yoneda/en"> Yoneda Lemma </a>
       </h1>
     <span class="post-date">21 Mar 2025</span>
@@ -2427,244 +2642,6 @@ U^* \otimes V^* &amp;\cong U^{***} \otimes V^{***} \\
 <p>두 번째 식에서 세 번째 식으로 넘어갈 때 $V \cong V^{\ast\ast}$ 표준<sub>canonical</sub> 동일시를 사용했다. ■</p>
 
 <p>따라서 쌍대 공간의 텐서는 쌍선형 사상과 표준적으로 동일시할 수 있다.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/03/04/tensor/en"> Notes on Tensor Products </a>
-      </h1>
-    <span class="post-date">04 Mar 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/algebra/'">
-        Algebra
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p><strong>TL;DR.</strong> The tensor product of vector spaces has the following significance:</p>
-
-<ol>
-  <li>A domain for the linearisation of multilinear maps</li>
-  <li>A space of multilinear maps</li>
-</ol>
-
-<p>Strictly speaking, 1 corresponds to $U \otimes V$, while 2 corresponds to $U^\ast \otimes V^\ast$. However, these appear to be used interchangeably.</p>
-
-<h3 id="1-introduction">1. Introduction</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> Let $U, V, W$ be vector spaces defined over a field $\mathbb{F}$. A map $b: U \times V \to W$ is called a <strong>bilinear map</strong> if $B$ is linear in each argument. That is, for any $\mathbf{u}_1, \mathbf{u}_2 \in U, \mathbf{v}_1, \mathbf{v}_2 \in V$ and scalar $\alpha \in \mathbb{F}$, the following hold:</p>
-
-\[b(\alpha \mathbf{u}_1 + \mathbf{u}_2, \mathbf{v}_1) = \alpha b(\mathbf{u}_1, \mathbf{v}_1) + b(\mathbf{u}_2, \mathbf{v}_1)\]
-
-\[b(\mathbf{u}_1, \alpha \mathbf{v}_1 + \mathbf{v}_2) = \alpha b(\mathbf{u}_1, \mathbf{v}_1) + b(\mathbf{u}_1, \mathbf{v}_2)\]
-</blockquote>
-
-<p>For example, the inner product $\cdot : V \times V \to \mathbb{R}$ in real vector spaces is a bilinear map when $\mathbb{R}$ is regarded as a one-dimensional vector space. Similarly, one can define <strong>multilinear forms</strong>. When $V$ is an $n$-dimensional vector space, $\mathrm{det}: V \times \dots \times V \to \mathbb{R}$ is an $n$-multilinear map.</p>
-
-<p>Let $b: U \times V \to W$ be a bilinear map. Naturally, $b$ is not a linear map. This is because $b$ takes vectors from two different spaces as arguments, rather than vectors from a single space. Even if we consider $b$ as a map from the direct sum $U \oplus V$ to $W$, we have $b(\alpha(u, v)) = b((\alpha u, \alpha v)) = \alpha^2 b(u, v)$, which does not satisfy linearity.</p>
-
-<p>However, using tensor products, we can identify $b$ with a linear map.</p>
-
-<h3 id="2-definition-of-tensor-products">2. Definition of Tensor Products</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong> For vector spaces $U, V$, the <strong>tensor product</strong> $U \otimes V$ is defined as the vector space satisfying the following universal property:</p>
-
-  <p><img src="/public/tensor.png" width="280px" style="margin: 0 auto; mix-blend-mode: multiply;" /></p>
-
-  <p>Elements of $U \otimes V$ are called <strong>tensors</strong>.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>Theorem.</strong> The tensor product of any vector spaces always exists and is unique up to isomorphism.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> We prove this only for finite-dimensional vector spaces. Suppose $U$ and $V$ have dimensions $n$ and $m$ respectively, with bases $\lbrace  e_1, \dots, e_n\rbrace$ and $\lbrace  f_1, \dots, f_m\rbrace$. Let $T$ be a vector space of dimension $nm$. Since vector spaces of the same dimension are isomorphic, such a $T$ is unique up to isomorphism. Let the formal basis of $T$ be:</p>
-
-\[\mathcal{B} = \{ e_1f_1, \dots, e_1f_m, \dots, e_nf_1, \dots, e_nf_m \}\]
-
-<p>To show that $T$ is the tensor product of $U$ and $V$, consider an arbitrary bilinear map $b: U \times V \to W$. From $b$, define the following row vector:</p>
-
-\[\tilde {b} = \big[ b(e_1, f_1), \dots, b(e_1, f_m), \dots, b(e_n, f_1), \dots, b(e_n, f_m) \big]_\mathcal{B}\]
-
-<p>Also define $\otimes: V \times W \to T$ as follows:</p>
-
-\[\otimes: (u, v) = (u_1e_1 + \dots + u_ne_n, v_1f_1 + \dots + v_mf_m) \mapsto \begin{bmatrix} u_1v_1 \\ \vdots \\ u_1v_m \\ \vdots \\ u_nv_1 \\ \vdots \\ u_nf_m \end{bmatrix}_{\mathcal{B}}\]
-
-<p>Then the following holds:</p>
-
-\[\begin{align}
-\tilde {b}(\otimes(u, v)) &amp;= \sum_i \sum_j (u_i v_j)b(e_i, f_j) \\
-&amp;= b\left( \sum_i   u_i e_i, \sum_j v_j f_j \right)  &amp;&amp; (\text{by bilinearity})\\
-&amp;= b(u, v) &amp;&amp; \blacksquare
-\end{align}\]
-
-<h3 id="3-identification-of-tensors-with-multilinear-maps">3. Identification of Tensors with Multilinear Maps</h3>
-
-<p>The discussion thus far can be summarised in one line:</p>
-
-\[\mathrm{Hom}^2(U \times V, W) \cong \mathrm{Hom}(U \otimes V, W)\]
-
-<p>Here $\mathrm{Hom}^2$ denotes the space of bilinear maps. In particular, when $W = \mathbb{F}$, by the definition of dual spaces, the following holds:</p>
-
-\[\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong \mathrm{Hom}(U \otimes V, \mathbb{F}) \cong (U \otimes V)^*\]
-
-<p>Using this relationship, we can view tensor products not merely as domains for the linearisation of bilinear maps, but as spaces of bilinear maps themselves. First, we prove the following lemma.</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> $(U \otimes V)^\ast = U^\ast \otimes V^\ast$</p>
-</blockquote>
-
-<p><strong>Proof.</strong> By the previous relationship and the definition of dual spaces, it suffices to show:</p>
-
-\[\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong \mathrm{Hom}(U, \mathbb{F}) \otimes \mathrm{Hom}(V, \mathbb{F})\]
-
-<p>That is, we need to show that $\mathrm{Hom}^2(U \times V, \mathbb{F})$ satisfies the universal property. This is almost identical to the previous proof, so we omit it. ■</p>
-
-<p>From the lemma, the following holds:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> $\mathrm{Hom}^2(U \times V, \mathbb{F}) \cong U^\ast \otimes V^\ast$</p>
-</blockquote>
-
-<p><strong>Proof.</strong></p>
-
-\[\begin{align}
-U^* \otimes V^* &amp;\cong U^{***} \otimes V^{***} \\
-&amp;\cong (U^{**} \otimes V^{**})^* \\
-&amp;\cong (U \otimes V)^* \\
-&amp;\cong \mathrm{Hom}^2(U \times V, \mathbb{F})
-\end{align}\]
-
-<p>In going from the second to the third expression, we used the canonical identification $V \cong V^{\ast\ast}$. ■</p>
-
-<p>Therefore, tensors in dual spaces can be canonically identified with bilinear maps.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/02/27/general-covariance"> 일반 공변성에 대한 노트 </a>
-      </h1>
-    <span class="post-date">27 Feb 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/물리학/'">
-        물리학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/역학/'">
-        역학
-      </div>
-      
-    </div>
-     <p>어떤 이론이 <strong>일반 공변적<sub>general covariant</sub></strong>이라는 것은, 물리 법칙의 형태<sub>form</sub>가 미분가능한 좌표계 변환에 대해 보존된다는 것이다. 구체적으로, 좌표계 $\lbrace q_i \rbrace $와 좌표계 $\lbrace q’_i \rbrace $가 다음 관계에 있다고 하자.</p>
-
-\[q_i' = f_i(\{ q \})\]
-
-<p>각 $i$에 대해 $f_i$가 미분 가능하다고 하자. 일반 공변적 이론이라면 좌표계 $\lbrace q_i \rbrace $를 사용했을 때와 좌표계 $\lbrace q_i’ \rbrace $를 사용했을 때의 물리 법칙이 형태가 같아야 한다.</p>
-
-<p>예시를 보자. 퍼텐셜이 0인 계 안의 입자의 위치를 극좌표계 $(r, \theta)$ 또는 직교 좌표계 $(x, y)$를 사용하여 표현하는 경우를 생각해 보자. 두 좌표계는 다음 관계에 있다.</p>
-
-\[\begin{gather}
-x = f_1(r, \theta) = r \cos \theta\\
-y = f_2(r, \theta) = r \sin \theta
-\end{gather}\]
-
-<p>$f_1$과 $f_2$가 미분 가능하므로 일반 공변적 이론은 두 좌표계로 표현했을 때의 형태가 같아야 한다.</p>
-
-<p>먼저 뉴턴 역학의 경우를 보자. 뉴턴 역학의 물리 법칙은 다음과 같다.</p>
-
-\[\begin{gather}
--\frac{dV(x, y)}{dx} = m\ddot{x} \\
--\frac{dV(x, y)}{dy} = m\ddot{y}
-\end{gather}\]
-
-<p>$V(x, y) = 0$이므로 $\ddot{x} = \ddot{y} = 0$이다. 즉 입자는 등속 선형 운동을 한다. 만약 뉴턴 역학이 일반 공변적이라면 위 법칙을 $(x, y)$에서 $(r, \theta)$로 바꿔 표현해도 결과가 같아야 한다.</p>
-
-\[\begin{gather}
--\frac{dV(r, \theta)}{dr} = m\ddot{r} \\
--\frac{dV(r, \theta)}{d\theta} = m\ddot{\theta}
-\end{gather}\]
-
-<p>$V(r, \theta) = 0$이므로 $\ddot{r} = \ddot{\theta} = 0$이다. 이번에는 입자가 등속 원운동을 한다. 결과가 달라졌으므로 <strong>뉴턴 역학은 일반 공변적이지 않다.</strong></p>
-
-<p>이제 <a href="http://dimenerno.github.io/2025/02/27/euler-lagrange/">라그랑주 역학</a>의 경우를 보자. 라그랑주 역학의 물리 법칙은 다음과 같다.</p>
-
-\[\begin{gather}
-\frac{\partial \mathcal{L}}{\partial x} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} \\
-\frac{\partial \mathcal{L}}{\partial y} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{y}}
-\end{gather}\]
-
-<p>$\mathcal{L}(x, y) = T - V = \frac{m}{2}(\dot{x}^2 + \dot{y}^2)$를 대입하면 $\ddot{x} = \ddot{y} = 0$, 즉 등속 선형 운동을 얻는다. 여기까지는 뉴턴 역학과 같다.</p>
-
-<p>이제 오일러-라그랑주 방정식의 $(x, y)$를 $(r, \theta)$로 치환해 보자.</p>
-
-\[\begin{gather}
-\frac{\partial \mathcal{L}}{\partial r} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{r}} \\
-\frac{\partial \mathcal{L}}{\partial \theta} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\theta}}
-\end{gather}\]
-
-<p>$x = r\cos\theta, y = r\sin\theta$를 대입하여 정리하면 $\mathcal{L}(r, \theta)$는 다음과 같다.</p>
-
-\[\mathcal{L}(r, \theta) = \frac{m}{2}(\dot{r}^2 + r^2 \dot{\theta}^2)\]
-
-<blockquote>
-  <p><em>Remark.</em> 오일러-라그랑주 방정식에서는 단순히 $(x, y)$를 $(r, \theta)$로 치환했지만, 라그랑지안에서는 $x = r \cos \theta, y = r \sin \theta$ 관계식을 대입하는 이유는 라그랑지안이 <strong>실수쌍</strong>에 대한 함수가 아니라 <strong>시공간의 점</strong>에 대한 함수이기 때문이다. 일반 공변성은 무지성, 일편단률적인 좌표 변환에 대해서 식의 형태가 유지된다는 의미가 아니라, 물리계를 표현하는 함수들은 유지된 채 그것을 표현하는 좌표가 바뀌었을 때 식의 형태가 유지된다는 의미이다.</p>
-</blockquote>
-
-<p>대입하여 계산하면 다음과 같다.</p>
-
-\[\begin{gather}
-\ddot{r} = r\dot{\theta}^2 \\
-2\dot{r}\dot{\theta} + r\ddot{\theta} = 0
-\end{gather}\]
-
-<p>미분방정식이 복잡해서 알아보기 힘들지만, 위 두 미분방정식은 $\ddot{x} = \ddot{y} = 0$과 동치이다. 일례로 $\theta = \tan^{-1}t, r = \sqrt{1 + t^2}$가 방정식의 해인 것을 확인할 수 있다.</p>
-
-<p>일반적으로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 라그랑주 역학은 일반 공변성을 가진다.</p>
-</blockquote>
-
-<p>뉴턴 역학은 일반 공변성이 없지만 라그랑주 역학은 있다는 것이 신기하게 느껴질 수 있지만, 잘 생각해 보면 이것은 당연하다. 뉴턴의 제1법칙은 보통 $F = 0 \implies \ddot{x} = 0$이라는 수식으로 표현되지만 정확한 진술은 다음과 같다.</p>
-
-<blockquote>
-  <p>외력을 받지 않는 입자의 시공간 다이어그램은 선형이다.</p>
-</blockquote>
-
-<p>‘선형’이라는 표현에 주목하라. 선형성은 특정한 기하학에 의존적인 표현이다. 예를 들어 유클리드 기하학에서 ‘선형’이란 우리가 흔히 말하는 직선이지만, 구면 기하학에서 ‘선형’은 대원으로 주어진다. 그러므로 위 진술은 다음과 같이 밝혀 쓰는 것이 가장 정확하다.</p>
-
-<blockquote>
-  <p><strong>뉴턴 역학</strong>. 외력을 받지 않는 입자의 시공간 다이어그램은 유클리드 기하학의 선형이다.</p>
-</blockquote>
-
-<p>그리고 유클리드 기하학의 선형은 직교 좌표계에서 $\ddot{x} = \ddot{y} = 0$ 꼴로 주어진다. 따라서 $F = 0 \implies \ddot{x} = 0$은, 유클리드 기하학과 직교 좌표계를 전제했을 때에만 올바른 수식인 것이다.</p>
-
-<p>거꾸로 말해, 이론이 특정한 기하학에 의존하지 않는다면 그 이론은 일반 공변적이다. 라그랑주 역학은 그러한 이론의 사례이다. 라그랑주 역학의 진술은 다음과 같이 표현할 수 있다.</p>
-
-<blockquote>
-  <p><strong>라그랑주 역학</strong>. 라그랑지안의 적분을 극화시키는 경로가 입자의 운동 경로이다.</p>
-</blockquote>
-
-<p>그리고 라그랑지안은 특정 기하학에 의존적인 함수가 아닌, 그저 시공간의 점들에 대해 실숫값을 출력하는 함수이다. 따라서 위 진술은 어떠한 기하학에 대해서도 의존적이지 않으며, 라그랑주 역학은 일반 공변적이다.</p>
-
-<p>구멍 논증<sub>hole argument</sub>에 따르면 일반 공변적인 이론들은 형이상학적인 의미에서 비결정론적이다. 이에 대한 설명은 나중에 하도록 하겠다.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

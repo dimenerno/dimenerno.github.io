@@ -433,6 +433,366 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/11/11/stationary-sets"> 클럽 집합과 정상 집합 </a>
+      </h1>
+    <span class="post-date">11 Nov 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/집합론/'">
+        집합론
+      </div>
+      
+    </div>
+     <h2 id="클럽-집합">클럽 집합</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> $C \subseteq \omega_1$이 <strong>클럽 집합<sub>club set</sub></strong>이라는 것은 $C$가 닫히고 무계<sub>closed and unbounded</sub>라는 것이다. 즉,</p>
+
+  <ul>
+    <li>임의의 서수열 $(\alpha_n)_{n \in \omega} \subseteq C$에 대해 $\alpha_n \to \alpha$라면 $\alpha \in C$이다.</li>
+    <li>임의의 $\gamma &lt; \kappa$에 대해 $\alpha &gt; \gamma$인 $\alpha \in C$가 존재한다.</li>
+  </ul>
+</blockquote>
+
+<p>그야말로 정직한 네이밍이 아닐 수 없다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $C_1, C_2 \subseteq \omega_1$이 두 클럽 집합일 때, $C = C_1 \cap C_2$ 또한 클럽 집합이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $C$가 닫힘이라는 것은 쉽게 보여진다. $C$가 무계임을 보이기 위해 임의의 $\gamma \in \omega_1$를 잡자. $C_1$이 무계이므로 $\gamma &lt; \alpha_0$을 만족하는 가장 작은 $\alpha_0 \in C_1$가 있다. $C_2$가 무계이므로 $\alpha_0 &lt; \beta_0$인 가장 작은 $\beta_0 \in C_2$가 있다. 다시 $C_1$이 무계이므로 $\beta_0 &lt; \alpha_1$인 $\alpha_1 \in C_1$가 있다. 이 과정을 계속 반복하여 서수열 $\lbrace  \alpha_n \rbrace $과 $\lbrace  \beta_n \rbrace $을 얻는다. 두 서수열은 같은 서수 $\delta$로 수렴하므로 $\delta \in C$이며, $\delta &gt; \gamma$이다. (p.s. “가장 작은”은 불필요한 선택 공리의 사용을 피하기 위해 사용되었다) ■</p>
+
+<p>위 증명을 살짝 변형하면 다음 정리를 얻을 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\lbrace  C_n \rbrace _{n &lt; \omega}$가 클럽 집합들의 가산 모임일 때, $C = \bigcap C_n$ 또한 클럽 집합이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 연습문제 (힌트: 삼각형을 사용한다) ■</p>
+
+<p>따라서 가산 개의 클럽 집합들이 주어지면 교집합을 취함으로써 새로운 클럽 집합을 얻을 수 있다. 한편, 비가산 개의 클럽 집합들이 주어지면 다음을 사용할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\lbrace  C_\xi \rbrace _{\xi &lt; \omega_1}$이 클럽 집합들의 모임일 때, $\lbrace C_\xi \rbrace $의 <strong>대각 교집합<sub>diagonal intersection</sub></strong>을 다음과 같이 정의한다.</p>
+
+\[\Delta_{\xi &lt; \omega_1} C_\xi = \{ \alpha \in \omega_1 : \forall \xi &lt; \alpha \;\; \alpha \in C_\xi \}\]
+
+  <p>$D$는 클럽 집합이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $D$가 닫혀 있음을 먼저 보이자. 서수열 $(\alpha_n)_{n \in \omega} \subseteq D$에 대해 $\alpha_n \to \alpha$라고 하자. 임의의 $\xi &lt; \alpha$에 대해 $\xi &lt; \alpha_n$인 $n \in \omega$가 존재하며, 대각 교집합의 정의에 의해 $C_\xi$은 $\lbrace  \alpha_m : m \geq n \rbrace $을 포함한다. 따라서 $\sup \lbrace  \alpha_m : m \geq n \rbrace  = \alpha \in C_\xi$이므로 $\alpha \in D$이다.</p>
+
+<p>이제 $D$가 무계임을 보이자. 임의의 $\gamma &lt; \omega_1$에 대해, $D_0 = \bigcap_{\xi &lt; \gamma} C_\xi$는 클럽 집합이므로 무계이다. 따라서 $\alpha_0 &gt; \gamma$를 만족하는 가장 작은 $\alpha_0 \in D_0$가 존재한다. 마찬가지로 $D_1 = \bigcap_{\xi &lt; \alpha_0} C_\xi$가 클럽 집합이므로 $\alpha_1 &gt; \alpha_0$를 만족하는 가장 작은 $\alpha_1 \in D_1$이 존재한다. 이 과정을 귀납적으로 반복하여 얻은 서수열 $(\alpha_n)$의 극한이 $\alpha$라고 하자. 임의의 $\xi &lt; \alpha$에 대해, 어떤 $n$이 존재하여 $\xi &lt; \alpha_n$이므로 임의의 $m \geq n$에 대하여 $\alpha_m \in C_\xi$이다. 따라서 $\alpha \in C_\xi$이며 $\alpha \in D$이다. ■</p>
+
+<p>$\Delta C_\xi \supseteq \bigcap C_\xi$임을 확인하라.</p>
+
+<p>참고로 지금까지의 정의와 정리들은 다음과 같이 일반화될 수 있다. $\kappa$가 $\operatorname{cf}\kappa &gt; \omega$인 비가산 기수라고 하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $C \subseteq \kappa$가 <strong>클럽 집합<sub>club set</sub></strong>이라는 것은 $C$가 닫히고 무계<sub>closed and unbounded</sub>라는 것이다. 즉,</p>
+
+  <ul>
+    <li>임의의 $\alpha &lt; \kappa$에 대해 $\sup (C \cap \alpha) = \alpha$라면 (즉 $C$가 $\alpha$에서 무계라면) $\alpha \in C$이다.</li>
+    <li>임의의 $\gamma &lt; \kappa$에 대해 $\alpha &gt; \gamma$인 $\alpha \in C$가 존재한다.</li>
+  </ul>
+
+  <p><strong>정리.</strong> $\lambda &lt; \operatorname{cf}\kappa$에 대해 $\lbrace  C_\xi \rbrace _{\xi &lt; \lambda}$가 클럽 집합들의 모임일 때, $C = \bigcap C_\xi$ 또한 클럽 집합이다.</p>
+
+  <p><strong>정리.</strong> $\kappa$가 정칙<sub>regular</sub>이라면, $\lbrace  C_\xi \rbrace _{\xi &lt; \kappa}$가 클럽 집합들의 모임일 때, $\lbrace C_\xi \rbrace $의 대각 교집합 또한 클럽 집합이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\kappa = \omega_1$인 경우와 거의 같다. ■</p>
+
+<h2 id="정상-집합">정상 집합</h2>
+
+<p>유한 교집합 닫힘에 의해 클럽 집합들의 모임은 필터를 생성한다. 해당 필터의 쌍대<sub>dual</sub> 아이디얼에 속하지 않는 집합을 <strong>정상 집합<sub>stationary set</sub></strong>이라고 한다. 다른 말로 하자면 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $S \subseteq \omega_1$이라고 하자. 임의의 클럽 집합 $C \subseteq \omega_1$에 대해 $C \cap S \neq \varnothing$이라면 $S$는 정상 집합이다.</p>
+</blockquote>
+
+<p>어떤 클럽 집합 $C$에 대해 $C \cap S = \varnothing$이라면 $S^c \subseteq C$이므로 $C$는 쌍대 아이디얼의 원소이다. 따라서 두 정의는 동치이다.</p>
+
+<p>정상 집합은 $\omega_1$의 부분집합 중 “유의미하게 큰” 집합들을 포착한다. 이 사실은 다음의 (엄밀하지는 않은) 유비를 통해 더 잘 이해할 수 있다. $\omega_1$의 측도가 1이라고 할 때, 클럽 집합은 $\mu(C) = 1$인 집합에, 정상 집합은 $\mu(S) &gt; 0$인 집합에 대응된다.</p>
+
+<p>다음의 사실들은 쉽게 증명될 수 있다 (1번과 3번이 측도 유비와 자연스럽게 연결되는 것에 주목하라).</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 다음이 성립한다.</p>
+
+  <ol>
+    <li>모든 클럽 집합은 정상 집합이다.</li>
+    <li>모든 정상 집합은 무계이다.</li>
+    <li>$\bigcup_{n &lt; \omega} A_n$가 정상 집합이라면 어떤 $m \in \omega$에 대해 $A_m$은 정상 집합이다.</li>
+  </ol>
+</blockquote>
+
+<p>정상 집합의 이름이 stationary인 이유는 다음의 정리 때문이다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $S \subseteq \omega_1$에 대해, $f: S \to \omega_1$이 <strong>퇴행적<sub>regressive</sub></strong>이라는 것은 임의의 $\alpha \in S$에 대해 $f(\alpha) &lt; \alpha$라는 것이다. 다음이 동치이다.</p>
+
+  <ol>
+    <li>$S$는 정상 집합이다.</li>
+    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 무계 집합 $T \subseteq S$ 위에서 상수<sub>constant</sub>이다.</li>
+    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 정상 집합 $T \subseteq S$ 위에서 상수이다.</li>
+  </ol>
+</blockquote>
+
+<p><strong>증명.</strong> 3 ⇒ 2는 자명하므로, 1 ⇒ 3과 2 ⇒ 1을 증명하면 된다.</p>
+
+<h4 id="1--3">1 ⇒ 3</h4>
+
+<p>대우를 증명한다. 어떤 퇴행적 함수 $f: S \to \omega_1$에 대해, $S$의 모든 정상 부분집합 위에서 $f$가 상수가 아니라고 하자. 즉, 임의의 $\xi \in \omega_1$에 대하여 $A_\xi = f^{-1}(\lbrace  \xi \rbrace )$는 정상 집합이 아니다. 따라서 $A_\xi \cap C_\xi = \varnothing$인 클럽 집합 $C_\xi$가 존재한다.</p>
+
+<p>$D = \Delta_{\xi &lt; \omega_1} C_\xi$라고 하자. $D$는 클럽 집합이므로, 만약 $S$가 정상 집합이라면 $D \cap S \neq \varnothing$이다. $\alpha \in D \cap S$라고 하자. $\alpha \in D$이므로 임의의 $\xi &lt; \alpha$에 대하여 $\alpha \in C_\xi$이다. 즉, $\alpha \notin A_\xi$이므로 $f(\alpha) \neq \xi$이다. 그런데 $\alpha \in S$이므로 $f(\alpha) &lt; \alpha$이다. 이는 모순이므로 $S$는 정상 집합이 아니다. □</p>
+
+<h4 id="2--1">2 ⇒ 1</h4>
+
+<p>마찬가지로 대우를 증명한다. $S$가 정상 집합이 아니라고 하자. 그러면 어떤 클럽 집합 $C$에 대해 $S \cap C = \varnothing$이다. 다음의 함수를 정의하자.</p>
+
+\[f(\alpha) = \sup (C \cap \alpha)\]
+
+<p>임의의 $\alpha \in S$에 대하여 $f(\alpha) \leq \alpha$이다. 만약 $f(\alpha) = \alpha$라면, $C$는 $\alpha$로 수렴하는 서수열을 가진다. 그런데 $C$는 닫힌 집합이므로, $\alpha \in C$이다. 이는 $S \cap C = \varnothing$에 모순이다. 따라서 $f(\alpha) &lt; \alpha$이며, $f$는 퇴행적이다.</p>
+
+<p>만약 어떤 무계 집합 $T$ 위에서 $f$의 값이 $\gamma &lt; \omega_1$로 일정했다면, 어떤 무계인 서수열 $(\alpha_n)$에 대해 $\sup (C \cap \alpha_n) = \gamma$이다. 그런데 $C$는 무계이므로, 이는 $\sup \alpha_n = \gamma$를 함축한다. 그런데 $(\alpha_n)$이 무계이므로 $\sup \alpha_n = \omega_1$이다. 이는 모순이다. 따라서 $f$는 어떠한 무계 집합 위에서도 상수가 아닌 퇴행적 함수이다. ■</p>
+
+<p>위 정리는 다음의 정리로 일반화될 수 있다.</p>
+
+<blockquote>
+  <p><strong>포더 보조정리<sub>Fodor’s lemma</sub>.</strong> $\kappa$가 비가산 정칙 기수라고 하자. 임의의 $S \subseteq \kappa$에 대해 다음이 동치이다.</p>
+
+  <ol>
+    <li>$S$는 정상 집합이다.</li>
+    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 무계 집합 $T \subseteq S$ 위에서 상수이다.</li>
+    <li>임의의 퇴행적 함수 $f: S \to \omega_1$에 대해, $f$는 어떤 정상 집합 $T \subseteq S$ 위에서 상수이다.</li>
+  </ol>
+</blockquote>
+
+<h2 id="정상-집합의-응용">정상 집합의 응용</h2>
+
+<p>정상 집합의 한 응용으로서 조합론의 다음 정리를 보자.</p>
+
+<blockquote>
+  <p><strong>Δ-계 보조정리<sub>Δ-system lemma</sub>.</strong> $\lbrace A_\xi\rbrace _{\xi &lt; \omega_1}$가 $\omega_1$의 유한부분집합들의 모임이라고 하자. 어떤 무계인 $I \subseteq \omega_1$와 유한집합 $A$가 존재하여, 임의의 $i, j \in I, i \neq j$에 대해 $A_i \cap A_j = A$이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 비둘기집의 원리에 의해 일반성을 잃지 않고, 임의의 $\xi &lt; \omega_1$에 대해 $|A_\xi | = n$이라고 가정할 수 있다. 다음과 같이 정의하자.</p>
+
+\[C = \{ \alpha &lt; \omega_1 : \forall \xi &lt; \alpha \;\; \operatorname{max}C_\xi &lt; \alpha \}\]
+
+<p>$C$는 클럽 집합이다. 또한 $0 \leq k \leq n$에 대해 다음과 같이 정의하자.</p>
+
+\[T_k = \{ \alpha \in C : |A_\alpha \cap \alpha | = k \}\]
+
+<p>$\bigcup_{0 \leq k \leq n} T_k = C$이므로 어떤 $m$에 대해 $T_m$은 정적 집합이다. 이제 $0 \leq l &lt; m$에 대해 다음의 함수를 정의하자.</p>
+
+\[f_l(\alpha) : T_m \to \omega_1; \quad \alpha \mapsto \text{$l$th element of $A_\alpha$}\]
+
+<p>$|A_\alpha \cap \alpha| &gt; l$이므로 $f_l(\alpha) &lt; \alpha$이다. 따라서 각 $l$에 대해 $f_l$는 퇴행적이다. 이제 다음의 단계를 반복한다.</p>
+
+<ul>
+  <li>$f_0$가 상수가 되는 정적 집합 $S_0 \subseteq T_m$이 존재한다.</li>
+  <li>$f_1 |_{S_0}$이 상수가 되는 정적 집합 $S_1 \subseteq S_0$가 존재한다.</li>
+  <li>$f_2 |_{S_1}$이 상수가 되는 정적 집합 $S_2 \subseteq S_1$이 존재한다.</li>
+  <li>…</li>
+  <li>$f_{m-1} |_{S_{m-2}}$가 상수가 되는 정적 집합 $S_{m-1} \subseteq S_{m-2}$가 존재한다.</li>
+</ul>
+
+<p>그러면 임의의 $0 \leq l &lt; m$에 대해 $f_l$은 $S_{m-1}$에서 상수이다. 이제 $S_{m-1} = I$가 찾고자 하는 집합임을 쉽게 확인할 수 있다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/11/11/stationary-sets/en"> Club Sets and Stationary Sets </a>
+      </h1>
+    <span class="post-date">11 Nov 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/set-theory/'">
+        Set Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<h2 id="club-sets">Club Sets</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> $C \subseteq \omega_1$ is a <strong>club set</strong> if $C$ is closed and unbounded. That is,</p>
+
+  <ul>
+    <li>For any sequence of ordinals $(\alpha_n)_{n \in \omega} \subseteq C$, if $\alpha_n \to \alpha$, then $\alpha \in C$.</li>
+    <li>For any $\gamma &lt; \kappa$, there exists $\alpha \in C$ such that $\alpha &gt; \gamma$.</li>
+  </ul>
+</blockquote>
+
+<p>The name is indeed quite straightforward.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $C_1, C_2 \subseteq \omega_1$ are two club sets, then $C = C_1 \cap C_2$ is also a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> It is easy to show that $C$ is closed. To prove that $C$ is unbounded, let us take an arbitrary $\gamma \in \omega_1$. Since $C_1$ is unbounded, there exists the smallest $\alpha_0 \in C_1$ such that $\gamma &lt; \alpha_0$. Similarly, since $C_2$ is unbounded, there exists the smallest $\beta_0 \in C_2$ such that $\alpha_0 &lt; \beta_0$. Again, since $C_1$ is unbounded, there exists $\alpha_1 \in C_1$ such that $\beta_0 &lt; \alpha_1$. Repeating this process, we obtain sequences of ordinals $\lbrace \alpha_n \rbrace$ and $\lbrace \beta_n \rbrace$. These sequences converge to the same ordinal $\delta$, so $\delta \in C$ and $\delta &gt; \gamma$. (Note: “the smallest” is used to avoid unnecessary reliance on the axiom of choice.) ■</p>
+
+<p>By slightly modifying the above proof, we can derive the following theorem.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\lbrace C_n \rbrace _{n &lt; \omega}$ is a countable collection of club sets, then $C = \bigcap C_n$ is also a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> Exercise (Hint: Use a triangle argument). ■</p>
+
+<p>Thus, given a countable collection of club sets, we can obtain a new club set by taking their intersection. On the other hand, if we are given an uncountable collection of club sets, the following result can be used.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $\lbrace C_\xi \rbrace _{\xi &lt; \omega_1}$ be a collection of club sets. The <strong>diagonal intersection</strong> of $\lbrace C_\xi \rbrace$ is defined as follows:</p>
+
+\[\Delta_{\xi &lt; \omega_1} C_\xi = \{ \alpha \in \omega_1 : \forall \xi &lt; \alpha \;\; \alpha \in C_\xi \}\]
+
+  <p>$D$ is a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> First, let us show that $D$ is closed. Suppose $(\alpha_n)_{n \in \omega} \subseteq D$ and $\alpha_n \to \alpha$. For any $\xi &lt; \alpha$, there exists $n \in \omega$ such that $\xi &lt; \alpha_n$. By the definition of the diagonal intersection, $C_\xi$ contains $\lbrace \alpha_m : m \geq n \rbrace$. Hence, $\sup \lbrace \alpha_m : m \geq n \rbrace = \alpha \in C_\xi$, so $\alpha \in D$.</p>
+
+<p>Next, let us show that $D$ is unbounded. For any $\gamma &lt; \omega_1$, let $D_0 = \bigcap_{\xi &lt; \gamma} C_\xi$. Since $D_0$ is a club set, it is unbounded. Thus, there exists the smallest $\alpha_0 \in D_0$ such that $\alpha_0 &gt; \gamma$. Similarly, let $D_1 = \bigcap_{\xi &lt; \alpha_0} C_\xi$. Since $D_1$ is a club set, there exists the smallest $\alpha_1 \in D_1$ such that $\alpha_1 &gt; \alpha_0$. Repeating this process inductively, we obtain a sequence $(\alpha_n)$ whose limit is $\alpha$. For any $\xi &lt; \alpha$, there exists $n$ such that $\xi &lt; \alpha_n$, and for all $m \geq n$, $\alpha_m \in C_\xi$. Hence, $\alpha \in C_\xi$ and $\alpha \in D$. ■</p>
+
+<p>Verify that $\Delta C_\xi \supseteq \bigcap C_\xi$.</p>
+
+<p>The definitions and theorems discussed so far can be generalised as follows. Let $\kappa$ be an uncountable cardinal with $\operatorname{cf}\kappa &gt; \omega$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> $C \subseteq \kappa$ is a <strong>club set</strong> if $C$ is closed and unbounded. That is,</p>
+
+  <ul>
+    <li>For any $\alpha &lt; \kappa$, if $\sup (C \cap \alpha) = \alpha$ (i.e., $C$ is unbounded at $\alpha$), then $\alpha \in C$.</li>
+    <li>For any $\gamma &lt; \kappa$, there exists $\alpha \in C$ such that $\alpha &gt; \gamma$.</li>
+  </ul>
+
+  <p><strong>Theorem.</strong> If $\lambda &lt; \operatorname{cf}\kappa$ and $\lbrace C_\xi \rbrace _{\xi &lt; \lambda}$ is a collection of club sets, then $C = \bigcap C_\xi$ is also a club set.</p>
+
+  <p><strong>Theorem.</strong> If $\kappa$ is regular, then the diagonal intersection of a collection $\lbrace C_\xi \rbrace _{\xi &lt; \kappa}$ of club sets is also a club set.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> The proof is almost identical to the case $\kappa = \omega_1$. ■</p>
+
+<h2 id="stationary-sets">Stationary Sets</h2>
+
+<p>By closure under finite intersections, the collection of club sets generates a filter. A set that does not belong to the dual ideal of this filter is called a <strong>stationary set</strong>. In other words:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $S \subseteq \omega_1$. If $C \cap S \neq \varnothing$ for every club set $C \subseteq \omega_1$, then $S$ is a stationary set.</p>
+</blockquote>
+
+<p>If there exists a club set $C$ such that $C \cap S = \varnothing$, then $S^c \subseteq C$, so $C$ belongs to the dual ideal. Thus, the two definitions are equivalent.</p>
+
+<p>Stationary sets capture “significantly large” subsets of $\omega_1$. This can be better understood through the following (informal) analogy: if $\omega_1$ has measure 1, then club sets correspond to sets with $\mu(C) = 1$, and stationary sets correspond to sets with $\mu(S) &gt; 0$.</p>
+
+<p>The following facts are easily proven (note how 1 and 3 naturally align with the measure analogy):</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The following hold:</p>
+
+  <ol>
+    <li>Every club set is a stationary set.</li>
+    <li>Every stationary set is unbounded.</li>
+    <li>If $\bigcup_{n &lt; \omega} A_n$ is a stationary set, then there exists some $m \in \omega$ such that $A_m$ is a stationary set.</li>
+  </ol>
+</blockquote>
+
+<p>The name “stationary” for stationary sets arises from the following theorem.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $S \subseteq \omega_1$. A function $f: S \to \omega_1$ is <strong>regressive</strong> if $f(\alpha) &lt; \alpha$ for all $\alpha \in S$. The following are equivalent:</p>
+
+  <ol>
+    <li>$S$ is a stationary set.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some unbounded set $T \subseteq S$.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some stationary set $T \subseteq S$.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Proof.</strong> 3 ⇒ 2 is trivial, so it suffices to prove 1 ⇒ 3 and 2 ⇒ 1.</p>
+
+<h4 id="1--3">1 ⇒ 3</h4>
+
+<p>We prove the contrapositive. Suppose there exists a regressive function $f: S \to \omega_1$ such that $f$ is not constant on any stationary subset of $S$. That is, for every $\xi \in \omega_1$, $A_\xi = f^{-1}(\lbrace \xi \rbrace)$ is not stationary. Hence, there exists a club set $C_\xi$ such that $A_\xi \cap C_\xi = \varnothing$.</p>
+
+<p>Let $D = \Delta_{\xi &lt; \omega_1} C_\xi$. Since $D$ is a club set, if $S$ is stationary, then $D \cap S \neq \varnothing$. Let $\alpha \in D \cap S$. Since $\alpha \in D$, for any $\xi &lt; \alpha$, $\alpha \in C_\xi$. Thus, $\alpha \notin A_\xi$, so $f(\alpha) \neq \xi$. However, since $\alpha \in S$, $f(\alpha) &lt; \alpha$. This is a contradiction, so $S$ is not stationary. □</p>
+
+<h4 id="2--1">2 ⇒ 1</h4>
+
+<p>We again prove the contrapositive. Suppose $S$ is not stationary. Then there exists a club set $C$ such that $S \cap C = \varnothing$. Define the following function:</p>
+
+\[f(\alpha) = \sup (C \cap \alpha)\]
+
+<p>For any $\alpha \in S$, $f(\alpha) \leq \alpha$. If $f(\alpha) = \alpha$, then $C$ contains a sequence of ordinals converging to $\alpha$. Since $C$ is closed, $\alpha \in C$. This contradicts $S \cap C = \varnothing$. Thus, $f(\alpha) &lt; \alpha$, and $f$ is regressive.</p>
+
+<p>If $f$ were constant on some unbounded set $T$, then for some $\gamma &lt; \omega_1$, there would exist an unbounded sequence $(\alpha_n)$ such that $\sup (C \cap \alpha_n) = \gamma$. Since $C$ is unbounded, this implies $\sup \alpha_n = \gamma$. However, since $(\alpha_n)$ is unbounded, $\sup \alpha_n = \omega_1$. This is a contradiction. Thus, $f$ is a regressive function that is not constant on any unbounded set. ■</p>
+
+<p>The above theorem can be generalised as follows:</p>
+
+<blockquote>
+  <p><strong>Fodor’s Lemma.</strong> Let $\kappa$ be an uncountable regular cardinal. For any $S \subseteq \kappa$, the following are equivalent:</p>
+
+  <ol>
+    <li>$S$ is a stationary set.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some unbounded set $T \subseteq S$.</li>
+    <li>For any regressive function $f: S \to \omega_1$, $f$ is constant on some stationary set $T \subseteq S$.</li>
+  </ol>
+</blockquote>
+
+<h2 id="applications-of-stationary-sets">Applications of Stationary Sets</h2>
+
+<p>As an application of stationary sets, consider the following combinatorial theorem:</p>
+
+<blockquote>
+  <p><strong>Δ-System Lemma.</strong> Let $\lbrace A_\xi\rbrace _{\xi &lt; \omega_1}$ be a collection of finite subsets of $\omega_1$. There exist an unbounded set $I \subseteq \omega_1$ and a finite set $A$ such that for any $i, j \in I$ with $i \neq j$, $A_i \cap A_j = A$.</p>
+</blockquote>
+
+<p><strong>Proof.</strong> By the pigeonhole principle, we may assume without loss of generality that $|A_\xi | = n$ for all $\xi &lt; \omega_1$. Define:</p>
+
+\[C = \{ \alpha &lt; \omega_1 : \forall \xi &lt; \alpha \;\; \operatorname{max}C_\xi &lt; \alpha \}\]
+
+<p>$C$ is a club set. For $0 \leq k \leq n$, define:</p>
+
+\[T_k = \{ \alpha \in C : |A_\alpha \cap \alpha | = k \}\]
+
+<p>Since $\bigcup_{0 \leq k \leq n} T_k = C$, there exists some $m$ such that $T_m$ is stationary. For $0 \leq l &lt; m$, define:</p>
+
+\[f_l(\alpha) : T_m \to \omega_1; \quad \alpha \mapsto \text{$l$th element of $A_\alpha$}\]
+
+<p>Since $|A_\alpha \cap \alpha| &gt; l$, $f_l(\alpha) &lt; \alpha$. Thus, $f_l$ is regressive. Now, repeat the following steps:</p>
+
+<ul>
+  <li>There exists a stationary set $S_0 \subseteq T_m$ such that $f_0$ is constant on $S_0$.</li>
+  <li>There exists a stationary set $S_1 \subseteq S_0$ such that $f_1 |_{S_0}$ is constant on $S_1$.</li>
+  <li>There exists a stationary set $S_2 \subseteq S_1$ such that $f_2 |_{S_1}$ is constant on $S_2$.</li>
+  <li>…</li>
+  <li>There exists a stationary set $S_{m-1} \subseteq S_{m-2}$ such that $f_{m-1} |_{S_{m-2}}$ is constant on $S_{m-1}$.</li>
+</ul>
+
+<p>For each $0 \leq l &lt; m$, $f_l$ is constant on $S_{m-1}$. It is now easy to verify that $S_{m-1} = I$ is the desired set. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/11/07/mathematics-morality-evolution"> 수학과 윤리학은 같은 배를 탔는가? 진화론 논변을 중심으로 </a>
       </h1>
     <span class="post-date">07 Nov 2025</span>
@@ -1796,382 +2156,6 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
 \[\aleph_\alpha \leq \aleph_\alpha^{\aleph_\beta} \leq \aleph_\alpha^{\aleph_\alpha} = 2^{\aleph_\alpha} = \aleph_{\alpha+1}\]
 
 <p>Therefore it suffices to show that $\aleph_\alpha &lt; \aleph_\alpha^{\aleph_\beta}$. If $\aleph_\alpha = \aleph_\alpha^{\aleph_\beta}$, then $\mathrm{cf}(\aleph_\alpha) = \mathrm{cf}(\aleph_\alpha^{\aleph_\beta}) &gt; \aleph_\beta$, but by assumption $\mathrm{cf}(\aleph_\alpha) \leq \aleph_\beta$, which is a contradiction. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/09/14/alien-natural-numbers"> 자연수라는 신기루: 짧은 논리학 이야기 </a>
-      </h1>
-    <span class="post-date">14 Sep 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/철학/'">
-        철학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/논리학/'">
-        논리학
-      </div>
-      
-    </div>
-     <p>어느 날 디멘은 외계인을 만났습니다. 외계인이 디멘에게 물었습니다.</p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>외계인</strong>
-<p>인간들이 사용하는 개념 중에서 이해되지 않는 게 있어. 도대체 자연수가 뭐야?</p>
-</div>
-
-<p><img src="/public/low1.png" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>디멘</strong>
-<p>뭐긴 뭐야. 자연수란 1부터 시작해서 2, 3, … 이렇게 순서대로 나아가는 수 체계야.</p>
-<strong>외계인</strong>
-<p>음…그러면 이것도 자연수야?</p>
-</div>
-
-<p><img src="/public/low2.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>디멘</strong>
-<p>엥, 그럴 리가! 자연수는 끝없이 이어져.</p>
-<strong>외계인</strong>
-<p>끝없이 이어진다고? 고리를 이룬다는 말인가? 그럼 1, 2, 3, 4, 5, 3, 4, 5, 3, 4, 5, … 이렇게 끝없이 이어지는데.</p>
-</div>
-
-<p><img src="/public/low3.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>디멘</strong>
-<p>맙소사, 그 뜻이 아니야. 고리 같은 거 없이 끝없이 이어져.</p>
-<strong>외계인</strong>
-<p>흠...그럼 중간에 가지라도 치나?</p>
-</div>
-
-<p><img src="/public/low4.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>디멘</strong>
-<p>그것도 아니야! 가지는 없어!</p>
-<strong>외계인</strong>
-<p>알겠어. 그렇다면 혹시 $c$도 자연수니?</p>
-<strong>디멘</strong>
-<p>$c$라니, 무슨 말이야?</p>
-<strong>외계인</strong>
-<p>너가 알려준 자연수의 정의대로라면 $c$가 자연수가 아닐 이유는 없는데? 자연수는 끝없이 이어진다고 했지만 모든 자연수가 그러한 연쇄에 포함된다고 말하지는 않았잖아.</p>
-</div>
-
-<p><img src="/public/low5.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>디멘</strong>
-<p>저건 또 뭐야... 자연수에는 자연수밖에 없어!</p>
-<strong>외계인</strong>
-<p>자연수에는 자연수밖에 없다니, 순환논법이 따로 없네.</p>
-<strong>디멘</strong>
-<p>너 지금 나 놀리는 거지?</p>
-<strong>외계인</strong>
-<p>무슨 소리야, 난 진짜 자연수가 뭔지 모르겠어. 너야말로 자연수의 정의를 제대로 알려줘야 내가 이해를 할 거 아니야.</p>
-<strong>디멘</strong>
-<p>자연수란...음...그러니까...하, 이걸 어떻게 설명하지!</p>
-</div>
-
-<p><img src="/public/low6.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<p>그 순간, 데데킨트라는 사람이 나타났습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>데데킨트</strong>
-<p>내가 이 문제를 확실히 해결해 주지. 자연수란 다음 세 가지 조건을 만족하는 집합을 말해. 이 세 가지 조건을 만족하는 집합이 유일하다는 사실은 내가 증명해 놓았으니 더 이상 오해의 여지라고는 없지.</p>
-</div>
-
-<blockquote>
-  <p><strong>데데킨트의 자연수 정의.</strong> 집합 $A$, 원소 $e \in A$, 그리고 함수 $S: A \to A$가 다음 세 가지 조건을 만족한다면 $A, e, S$는 각각 자연수 집합, $0$, 그리고 $x \mapsto x + 1$에 대응된다.</p>
-
-  <ol>
-    <li>$S(x) = e$를 만족하는 $x$는 존재하지 않는다.</li>
-    <li>$S(x) = S(y)$라면 $x = y$이다.</li>
-    <li>$A$를 정의역으로 하는 임의의 명제 $P(x)$에 대해 다음 두 조건이 성립한다면 $P(x)$는 $A$의 모든 원소에 대해 참이다.
-      <ol>
-        <li>$P(e)$가 참이다.</li>
-        <li>$P(x)$가 참이라면 $P(S(x))$가 참이다.</li>
-      </ol>
-    </li>
-  </ol>
-</blockquote>
-
-<p>데데킨트의 대답에 외계인은 흡족해했지만, 이내 또다시 의아하다는 표정을 지었습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>외계인</strong>
-<p>세 번째 조건에 "임의의 명제"라는 표현이 말이 돼? $P(x)$가 임의의 명제라면 $P(x)$는 "$x$가 자연수이다" 가 될 수도 있잖아. 하지만 자연수의 정의에 자연수에 대한 명제가 포함되는 건 순환논법일 텐데?</p>
-<strong>데데킨트</strong>
-<p>엇...그런가...?</p>
-<strong>외계인</strong>
-<p>애초에 "명제"라는 것이 정확히 뭐야? "$x$는 자기 자신을 포함하지 않는 집합이다" 는 잘 정의된 명제야?</p>
-<strong>디멘</strong>
-<p>(만약 $x$가 자기 자신을 포함하지 않는 집합이라면 $x$는 $x$의 정의에 해당하므로 자기 자신을 포함하게 되고, $x$가 자기 자신을 포함하는 집합이라면 $x$는 $x$의 정의에 해당하지 않으므로 자기 자신을 포함하지 않게 되고...엥?)</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>뜻밖의 지적에 데데킨트가 우물쭈물하자 옆에서 뢰벤하임이라는 사람이 끼어들었습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>뢰벤하임</strong>
-<p>확실히 "임의의 명제"라는 표현은 문제가 있어 보이네. 아무래도 수학에서 이런 표현은 제한해야겠어. 이렇게 제한된 논리학을 <strong>1차 논리</strong>라고 부르자.</p>
-</div>
-
-<p><img src="/public/low7.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>데데킨트</strong>
-<p>그렇다면 이제 어떻게 1차 논리로 자연수를 정확하게 정의할 수 있는지 알아봐야겠군.</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>이 말에 스콜렘이라는 사람이 불쑥 나타났습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>스콜렘</strong>
-<p>맞아. 그리고 내가 이 질문에 대한 답을 발견했어.</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>스콜렘의 발언에 모두가 주의를 집중했습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>스콜렘</strong>
-<p><strong>불가능해.</strong> 1차 논리로는 자연수의 필요충분조건을 기술할 수 없어. 구체적으로, 자연수의 정의를 시도하는 모든 1차 논리적 정의에는 자연수가 아닌 반례가 존재해. <strong>따라서 자연수는 논리로 환원될 수 없어.</strong> 자연수를 순환논법 없이는 정의할 수 없다는 말이야.</p>
-</div>
-
-<blockquote>
-  <p><strong>뢰벤하임-스콜렘 정리.</strong> 자연수를 비롯하여, 원소가 무한히 많은 수 체계는 1차 논리로 유일하게 특정될 수 없다.</p>
-</blockquote>
-
-<p><img src="/public/low8.jpg" style="width: 100%; max-width: 400px; margin: 2em auto" /></p>
-
-<p>순간 정적이 흘렀습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>외계인</strong>
-<p>그렇다면 인간들은 어떻게 자연수가 뭔지 아는 거야? 알고 보면 인간들은 저마다 자연수를 다르게 알고 있는 거 아냐?</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>외계인의 질문에 아무도 대답하지 못했습니다. 그들은 신기루 같은 자연수의 실체에 대해 할 말이 더 이상 남아 있지 않았습니다.</p>
-<div style="margin: 2em auto"></div>
-
-<p><img src="/public/low9.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<p><em>Note.</em> 이야기의 자연스러운 흐름을 위해 왜곡된 역사적 · 수학적 · 철학적 내용이 있습니다. 1차 논리의 탄생은 뢰벤하임을 비롯한 여러 수학자들의 점진적인 연구로 이루어졌습니다. 또한 데데킨트의 자연수 정의가 사용하는 2차 논리가 정말로 순환적인지에 관해서는 더 자세한 논의가 필요합니다. 마지막으로 스콜렘의 역설은 자연수에 관한 것이 아닌 집합론에 관한 것인데, 뢰벤하임-스콜렘 정리의 귀결이라는 점에서 두 현상은 유사하기 때문에 말풍선에 넣었습니다.</p>
-
-<h3 id="더-읽어보기">더 읽어보기</h3>
-
-<ul>
-  <li><a href="/2025/07/03/kripkenstein">크립키-비트겐슈타인 역설</a></li>
-  <li><a href="/2025/07/21/private-language">사적 언어</a></li>
-  <li><a href="/2025/04/10/completeness-theorem">뢰벤하임-스콜렘 정리</a></li>
-  <li><a href="https://plato.stanford.edu/entries/logic-higher-order/#SetTheoSheeClot">2차 논리는 “양의 탈을 쓴 집합론”인가?</a></li>
-</ul>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/09/14/alien-natural-numbers/en"> Natural Numbers as a Mirage: A Short Story in Logic </a>
-      </h1>
-    <span class="post-date">14 Sep 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/philosophy/'">
-        Philosophy
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/logic/'">
-        Logic
-      </div>
-      
-    </div>
-     <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>One day, Dimen encountered an alien. The alien asked Dimen:</p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Alien</strong>
-<p>There's a concept that humans use which I don't understand. What exactly are natural numbers?</p>
-</div>
-
-<p><img src="/public/low1.png" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dimen</strong>
-<p>What do you mean? Natural numbers are a number system that starts from 1 and proceeds sequentially: 2, 3, … and so on.</p>
-<strong>Alien</strong>
-<p>Hmm... Then are these also natural numbers?</p>
-</div>
-
-<p><img src="/public/low2.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dimen</strong>
-<p>No way! Natural numbers continue indefinitely.</p>
-<strong>Alien</strong>
-<p>Continue indefinitely? Do you mean they form a loop? Then they would continue indefinitely like this: 1, 2, 3, 4, 5, 3, 4, 5, 3, 4, 5, …</p>
-</div>
-
-<p><img src="/public/low3.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dimen</strong>
-<p>Good heavens, that's not what I meant. They continue indefinitely without any loops.</p>
-<strong>Alien</strong>
-<p>Hmm... Then do they branch somewhere?</p>
-</div>
-
-<p><img src="/public/low4.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dimen</strong>
-<p>That's not it either! There are no branches!</p>
-<strong>Alien</strong>
-<p>I see. Then is $c$ also a natural number by any chance?</p>
-<strong>Dimen</strong>
-<p>$c$? What do you mean?</p>
-<strong>Alien</strong>
-<p>According to the definition of natural numbers you've given me, there's no reason why $c$ shouldn't be a natural number. You said natural numbers continue indefinitely, but you didn't say that all natural numbers are included in such a chain.</p>
-</div>
-
-<p><img src="/public/low5.png" style="width: 100%; max-width: 450px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dimen</strong>
-<p>What is that supposed to be... Natural numbers contain only natural numbers!</p>
-<strong>Alien</strong>
-<p>Natural numbers contain only natural numbers—that's nothing but circular reasoning.</p>
-<strong>Dimen</strong>
-<p>Are you making fun of me?</p>
-<strong>Alien</strong>
-<p>What are you talking about? I genuinely don't understand what natural numbers are. You need to give me a proper definition of natural numbers for me to understand.</p>
-<strong>Dimen</strong>
-<p>Natural numbers are... well... that is... ugh, how do I explain this!</p>
-</div>
-
-<p><img src="/public/low6.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<p>At that moment, a person named Dedekind appeared.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dedekind</strong>
-<p>I shall resolve this problem definitively. Natural numbers are a set that satisfies the following three conditions. I have proven that a set satisfying these three conditions is unique, so there is no room for further misunderstanding.</p>
-</div>
-
-<blockquote>
-  <p><strong>Dedekind’s definition of natural numbers.</strong> If a set $A$, an element $e \in A$, and a function $S: A \to A$ satisfy the following three conditions, then $A$, $e$, and $S$ correspond to the set of natural numbers, $0$, and $x \mapsto x + 1$, respectively.</p>
-
-  <ol>
-    <li>There exists no $x$ such that $S(x) = e$.</li>
-    <li>If $S(x) = S(y)$, then $x = y$.</li>
-    <li>For any proposition $P(x)$ with domain $A$, if the following two conditions hold, then $P(x)$ is true for all elements of $A$:
-      <ol>
-        <li>$P(e)$ is true.</li>
-        <li>If $P(x)$ is true, then $P(S(x))$ is true.</li>
-      </ol>
-    </li>
-  </ol>
-</blockquote>
-
-<p>The alien was satisfied with Dedekind’s answer, but soon looked puzzled again.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Alien</strong>
-<p>Does the expression "any proposition" in the third condition make sense? If $P(x)$ is any proposition, then $P(x)$ could be "$x$ is a natural number". But including a proposition about natural numbers in the definition of natural numbers would be circular reasoning, wouldn't it?</p>
-<strong>Dedekind</strong>
-<p>Oh... is that so...?</p>
-<strong>Alien</strong>
-<p>What exactly is a "proposition" anyway? Is "$x$ is a set that does not contain itself" a well-defined proposition?</p>
-<strong>Dimen</strong>
-<p>(If $x$ is a set that does not contain itself, then $x$ satisfies the definition of $x$, so it contains itself; but if $x$ is a set that contains itself, then $x$ does not satisfy the definition of $x$, so it does not contain itself... huh?)</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>As Dedekind hesitated at this unexpected criticism, a person named Löwenheim interjected from the side.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Löwenheim</strong>
-<p>Indeed, the expression "any proposition" seems problematic. We should restrict such expressions in mathematics. Let us call this restricted logic <strong>first-order logic</strong>.</p>
-</div>
-
-<p><img src="/public/low7.jpg" style="width: 100%; max-width: 500px; margin: 0 auto" /></p>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Dedekind</strong>
-<p>Then we must now discover how to define natural numbers precisely using first-order logic.</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>At these words, a person named Skolem suddenly appeared.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Skolem</strong>
-<p>Precisely. And I have discovered the answer to this question.</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>Everyone focused their attention on Skolem’s statement.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Skolem</strong>
-<p><strong>It's impossible.</strong> First-order logic cannot describe the necessary and sufficient conditions for natural numbers. Specifically, every first-order logical definition that attempts to define natural numbers has counterexamples that are not natural numbers. <strong>Therefore, natural numbers cannot be reduced to logic.</strong> Natural numbers cannot be defined without circular reasoning.</p>
-</div>
-
-<blockquote>
-  <p><strong>Löwenheim-Skolem theorem.</strong> Mathematical systems with infinitely many elements, including natural numbers, cannot be uniquely characterised by first-order logic.</p>
-</blockquote>
-
-<p><img src="/public/low8.jpg" style="width: 100%; max-width: 400px; margin: 2em auto" /></p>
-
-<p>A moment of silence followed.</p>
-<div style="margin: 2em auto"></div>
-
-<div style="display: grid; grid-template-columns: 5em 1fr;">
-<strong>Alien</strong>
-<p>Then how do humans know what natural numbers are? Don't humans actually understand natural numbers differently from one another?</p>
-</div>
-
-<div style="margin: 1em auto"></div>
-<p>No one could answer the alien’s question. They had nothing more to say about the mirage-like reality of natural numbers.</p>
-<div style="margin: 2em auto"></div>
-
-<p><img src="/public/low9.png" style="width: 100%; max-width: 400px; margin: 0 auto" /></p>
-
-<p><em>Note.</em> For the natural flow of the narrative, there are distorted historical, mathematical, and philosophical contents. The birth of first-order logic was achieved through the gradual research of several mathematicians, including Löwenheim. Moreover, whether Dedekind’s definition of natural numbers using second-order logic is truly circular requires more detailed discussion. Finally, Skolem’s paradox concerns set theory rather than natural numbers, but it was included in the speech bubble because the two phenomena are similar as consequences of the Löwenheim-Skolem theorem.</p>
-
-<h3 id="further-reading">Further Reading</h3>
-
-<ul>
-  <li><a href="/2025/07/03/kripkenstein">Kripke-Wittgenstein Paradox</a></li>
-  <li><a href="/2025/07/21/private-language">Private Language</a></li>
-  <li><a href="/2025/04/10/completeness-theorem">Löwenheim-Skolem Theorem</a></li>
-  <li><a href="https://plato.stanford.edu/entries/logic-higher-order/#SetTheoSheeClot">Is Second-Order Logic “Set Theory in Sheep’s Clothing”?</a></li>
-</ul>
 
   </div>
   <div style="margin-bottom: 6em"></div>

@@ -18,7 +18,7 @@ related:
 
 > **정의.** 다음의 가환 도식에서 $\iota$가 임베딩이고, 가환성이 호모토피 $H: f \sim \iota q$에 의해 목격된다고 하자.
 >
-> <img src="/public/image-inclusion.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;">
+> <img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;">
 >
 > 다음이 만족될 경우 $\iota$가 **치역 임베딩의 보편 성질**을 만족한다고 한다: 임의의 임베딩 $m: C \to X$에 대해, 전치 합성
 >
@@ -44,13 +44,13 @@ related:
 > 
 > - 치역 임베딩의 보편 성질을 만족하는 임베딩은 유일하다. 즉, 두 임베딩 $i: B \to X$와 $i': B' \to X$가 보편 성질을 만족한다면, 다음의 가환 도식을 만족하는 동치 관계 $e: B \simeq B'$의 유형은 수축 가능하다<sub>contractible</sub>.
 >
-> <img src="/public/uniqueness-of-image.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;">
+> <img src="/public/uniqueness-of-image.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;">
 
 유형론적으로 치역을 정의했으므로, 전사성의 두 번째 정의를 제시할 수 있다.
 
 > **정리.** 다음의 가환 도식에서 $\iota: B \to X$가 임베딩이라고 하자. $q$가 전사일 필요충분조건은 $\iota$가 치역 임베딩의 보편 성질을 만족하는 것이다.
 >
-> <img src="/public/image-inclusion.png" style="width: 250px; margin: 1em auto; mix-blend-mode: multiply;">
+> <img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;">
 
 ## 유형론적 대각선 논법
 
