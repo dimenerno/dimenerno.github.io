@@ -13,8 +13,8 @@ In type theory, the term "section" appears in two different contexts.
 >
 > $$
 > \begin{gather}
-> \mathrm{sec}(r) := \sum_{s': A \to B} r's \sim \mathrm{id}_A\\
-> \mathrm{ret}(s) := \sum_{r': A \to B} rs' \sim \mathrm{id}_B
+> \mathrm{sec}(r) := \sum_{s': A \to B} rs' \sim \mathrm{id}_A\\
+> \mathrm{ret}(s) := \sum_{r': A \to B} r's \sim \mathrm{id}_B
 > \end{gather}
 > $$
 
