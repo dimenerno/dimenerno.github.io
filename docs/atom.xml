@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-05-14T16:18:22+09:00</updated>
+ <updated>2026-06-05T00:46:54+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -22388,11 +22388,11 @@ for y ∈ P:
     &lt;li&gt;$S$는 어떠한 $X$의 열린 집합에서도 조밀하지 않다.&lt;/li&gt;
   &lt;/ul&gt;
 
-  &lt;p&gt;이때, $S$를 &lt;strong&gt;희박(rare)&lt;/strong&gt;하다고 한다.&lt;/p&gt;
+  &lt;p&gt;이때, $S$를 &lt;strong&gt;희박(rare, nowhere dense)&lt;/strong&gt;하다고 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 희박한 닫힌 집합들의 가산 합집합 $\bigcup F_n$이 희박한 공간 $X$를 베르 공간이라고 한다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X$가 위상공간이라고 하자. 각 $n \in \mathbb{N}$에 대해 $F_n$이 내부가 공집합인 $X$의 닫힌집합이라고 하자. $\bigcap F_n$의 내부 또한 언제나 공집합일 때, $X$를 &lt;strong&gt;베르 공간&lt;/strong&gt;이라고 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/baire.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
@@ -22402,7 +22402,7 @@ for y ∈ P:
 &lt;p&gt;&lt;strong&gt;예시.&lt;/strong&gt; $\mathbb{Q}$는 베르 공간이 아니다.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$\lbrace  q \rbrace$는 닫힌 희박 집합이지만 $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$는 희박하지 않다.&lt;/li&gt;
+  &lt;li&gt;$\lbrace  q \rbrace$는 내부가 공집합인 닫힌 집합이지만 $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$는 내부를 가진다.&lt;/li&gt;
   &lt;li&gt;$\mathbb{Q} \setminus \lbrace  q \rbrace$는 열린 조밀 집합이지만 $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$은 조밀하지 않다.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -22497,17 +22497,15 @@ for y ∈ P:
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A space $X$ is called a &lt;strong&gt;Baire space&lt;/strong&gt; if every &lt;em&gt;countable&lt;/em&gt; union $\bigcup F_n$ of rare closed sets is rare.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A space is called a &lt;strong&gt;Baire space&lt;/strong&gt; if every countable union of closed sets, each with empty interior, has empty interior. Equivalently, every countable intersection of dense open sets is dense.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/baire.png&quot; style=&quot;width: 100%; max-width: 500px; margin: 2em auto;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; $X$ is a Baire space iff every countable intersection of open dense sets in $X$ is dense.&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;Example.&lt;/strong&gt; $\mathbb{Q}$ is not a Baire space.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$\lbrace  q \rbrace$ is a rare closed set, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ is not rare.&lt;/li&gt;
+  &lt;li&gt;$\lbrace  q \rbrace$ is a closed set with empty interior, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ has nonempty interior.&lt;/li&gt;
   &lt;li&gt;$\mathbb{Q} \setminus \lbrace  q \rbrace$ is a dense open set, but $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$ is not dense.&lt;/li&gt;
 &lt;/ul&gt;
 

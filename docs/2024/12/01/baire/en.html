@@ -395,17 +395,15 @@
 </blockquote>
 
 <blockquote>
-  <p><strong>Definition.</strong> A space $X$ is called a <strong>Baire space</strong> if every <em>countable</em> union $\bigcup F_n$ of rare closed sets is rare.</p>
+  <p><strong>Definition.</strong> A space is called a <strong>Baire space</strong> if every countable union of closed sets, each with empty interior, has empty interior. Equivalently, every countable intersection of dense open sets is dense.</p>
 </blockquote>
 
 <p><img src="/public/baire.png" style="width: 100%; max-width: 500px; margin: 2em auto;" /></p>
 
-<p><em>Remark.</em> $X$ is a Baire space iff every countable intersection of open dense sets in $X$ is dense.</p>
-
 <p><strong>Example.</strong> $\mathbb{Q}$ is not a Baire space.</p>
 
 <ul>
-  <li>$\lbrace  q \rbrace$ is a rare closed set, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ is not rare.</li>
+  <li>$\lbrace  q \rbrace$ is a closed set with empty interior, but $\bigcup_{q \in \mathbb{Q}} \lbrace q\rbrace = \mathbb{Q}$ has nonempty interior.</li>
   <li>$\mathbb{Q} \setminus \lbrace  q \rbrace$ is a dense open set, but $\bigcap_{q \in \mathbb{Q}} \left( \mathbb{Q} \setminus \lbrace  q \rbrace  \right) = \varnothing$ is not dense.</li>
 </ul>
 
