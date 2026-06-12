@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-06-12T18:48:26+09:00</updated>
+ <updated>2026-06-12T19:05:46+09:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>최정담</name>
@@ -65,10 +65,70 @@
 &lt;p&gt;결국 똑같은 동전을 연달아 던지는 것이 독립동일분포라고 주장하기 위해서는 다름아닌 &lt;strong&gt;시간의 균등성 전제가 필요하다.&lt;/strong&gt; 일반적으로, 큰 수의 법칙을 “경험적 확률은 수학적 확률로 수렴한다” 등과 같이 해석하는 것은 암암리에 시간의 균등성 전제를 가정한다. 그러나 시간의 균등성 전제는 순수 수학이 아닌 물리학 내지 형이상학에 속한다. 이것을 도식적으로 다음과 같이 나타낼 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;큰 수의 법칙(수학) + 시간의 균등성 전제(물리학 내지 형이상학) ⇒ 통상적으로 소개되는 큰 수의 법칙&lt;/p&gt;
+  &lt;p&gt;큰 수의 법칙(수학/선험적) + 시간의 균등성 전제(물리학 내지 형이상학/경험적) ⇒ 통상적으로 소개되는 큰 수의 법칙(경험적)&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;따라서 큰 수의 법칙을 둘러 싼 오해는 순수 수학의 정리와 형이상학적 전제가 불분명하게 뒤섞인 데 있다. 필자 또한 이런 이유로 학창 시절에 큰 수의 법칙을 이해하는 데 어려움이 있었던지라 모처럼 글로 정리해 보았다.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Is the Law of Large Numbers empirical or a priori?</title>
+   <link href="https://dimenerno.github.io/2026/06/12/lln/en"/>
+   <updated>2026-06-12T00:00:00+09:00</updated>
+   <id>https://dimenerno.github.io/2026/06/12/lln/lln-en</id>
+   <content type="html">&lt;p&gt;The Law of Large Numbers is one of the most celebrated theorems in probability theory and is usually presented as follows.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Commonly presented form of the Law of Large Numbers.&lt;/strong&gt; When a random variable with expectation $\mu$ is observed repeatedly, the sample mean of the observations approaches $\mu$ as the number of trials increases.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is often summarised by slogans such as “empirical probability converges to mathematical probability” or “statistics become more accurate as sample size grows”.&lt;/p&gt;
+
+&lt;p&gt;There is, however, a puzzling aspect to such presentations. They suggest that the Law of Large Numbers bridges the realm of experience and the realm of mathematics. Yet the law itself is a theorem of pure mathematics. How, then, can a theorem of pure mathematics tell us anything about empirical facts? The suggestion is reminiscent of early modern rationalists who claimed that pure reason alone yields knowledge of the world, which is a strikingly dubious claim.&lt;/p&gt;
+
+&lt;p&gt;The issue can be clarified via the well-known philosophical riddle concerning induction. Hume observed that the justification of induction is circular. Induction rests on the assumption that regularities observed in the past will persist into the future; call this &lt;strong&gt;the uniformity of time assumption&lt;/strong&gt;. We accept this assumption only because it has held in the past. In other words, we can justify the principle of induction only inductively. Hume therefore concluded that induction is not an a priori, necessary law but a habit of mind arising from human psychology.&lt;/p&gt;
+
+&lt;p&gt;Hume’s argument rests on the observation that statements about the future are always contingently true: extreme forms of temporal non-uniformity, such as a sudden, universal change of physical laws, are logically possible. Hence, on Hume’s view, the claim that “the expectations of events will converge to a particular value” is at best contingently true. Yet that claim is precisely the Law of Large Numbers, and the Law of Large Numbers, as a mathematical theorem, is a priori and necessary.&lt;/p&gt;
+
+&lt;p&gt;Does this mean Hume was wrong? Of course not. The problem lies in the usual presentation of the Law of Large Numbers. A careful reading of the actual theorem shows that it contains no assertions about “trials” or “observations”.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $(\Omega, \mathcal{F}, \mathbb{P})$ be a probability space and let $X_1, X_2, \ldots: \Omega \to E \; (E = \mathbb{R})$ be a sequence of random variables that are independent and identically distributed (iid) with $E[X_n] = \mu &amp;lt; \infty$. Then the following hold.&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Weak Law of Large Numbers.&lt;/strong&gt; For every $\epsilon &amp;gt; 0$,&lt;/li&gt;
+  &lt;/ul&gt;
+
+\[\mathbb{P}\left( \left\{ \omega \in \Omega: \left| \frac{1}{n} \sum^n_{k=1}X_k(\omega) - \mu \right| &amp;gt; \epsilon \right\} \right) \to 0.\]
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Strong Law of Large Numbers.&lt;/strong&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+\[\mathbb{P}\left( \left\{ \omega \in \Omega: \lim_{n \to \infty} \frac{1}{n} \sum^n_{k=1}X_k(\omega) = \mu \right\}  \right) = 1.\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;So where does the interpretation “empirical probability converges to mathematical probability” come from? The key is the phrase “independent and identically distributed”. Two random variables $X, Y: \Omega \to E$ are said to be &lt;strong&gt;independent and identically distributed&lt;/strong&gt; when their marginal distributions coincide and, for any $x,y \in E$, (assuming for simplicity that $E$ is discrete) the following holds:&lt;/p&gt;
+
+\[\begin{align}
+&amp;amp;\mathbb{P}(\{\omega \in \Omega : X(\omega) = x \land Y(\omega) = y \\}) \\
+&amp;amp;= \mathbb{P}(\{ \omega \in \Omega: X(\omega) = x\}) \cdot \mathbb{P}(\{ \omega \in \Omega: Y(\omega) = y\}).
+\end{align}\]
+
+&lt;p&gt;For example, when tossing two coins, if the probability of heads on the first coin and on the second coin is $p$ and the outcome of the first toss does not influence the outcome of the second, then the two tosses may be modelled as independent and identically distributed.&lt;/p&gt;
+
+&lt;p&gt;Another example is successive tosses of the same coin. It is natural to model them as iid, for each toss has the same probability $p$ of heads, and past tosses do not affect future ones. If this assumption holds, the Law of Large Numbers implies that the number of heads in $N$ tosses will be close to $pN$ for large $N$.&lt;/p&gt;
+
+&lt;p&gt;The problem is that, in the actual world, we can &lt;strong&gt;never&lt;/strong&gt; know with certainty that a given sequence of trials is iid. This is precisely Hume’s point. Even successive tosses of the same coin cannot be guaranteed to be iid: the physical laws governing the coin might suddenly change so that heads occurs with probability 1.&lt;/p&gt;
+
+&lt;p&gt;Hence the claim that successive tosses are iid assumes the uniformity of time. In practice, interpreting the Law of Large Numbers as “empirical probability converges to mathematical probability” implicitly assumes the uniformity of time. Yet the uniformity of time is not a theorem of pure mathematics but an assumption from physics or metaphysics. We may express this schematically:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Law of Large Numbers (mathematics / a priori) + uniformity of time assumption (physics or metaphysics / empirical) ⇒ Commonly presented Law of Large Numbers (empirical)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Thus the misunderstanding surrounding the Law of Large Numbers arises from an ambiguous mixing of a mathematical theorem with a metaphysical assumption. I too found the law difficult to understand as a student for precisely this reason, so I have written this post to clarify the point.&lt;/p&gt;
 </content>
  </entry>
  

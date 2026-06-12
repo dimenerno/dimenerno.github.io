@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://dimenerno.github.io/404.html</loc>
-<lastmod>2026-06-12T18:48:26+09:00</lastmod>
+<lastmod>2026-06-12T19:05:46+09:00</lastmod>
 </url>
 <url>
 <loc>https://dimenerno.github.io/about/</loc>
@@ -677,6 +677,10 @@
 <lastmod>2026-05-14T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>https://dimenerno.github.io/2026/06/12/lln/en</loc>
+<lastmod>2026-06-12T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>https://dimenerno.github.io/2026/06/12/lln</loc>
 <lastmod>2026-06-12T00:00:00+09:00</lastmod>
 </url>
@@ -817,6 +821,9 @@
 </url>
 <url>
 <loc>https://dimenerno.github.io/tags/%EC%9C%A0%ED%98%95%EB%A1%A0/</loc>
+</url>
+<url>
+<loc>https://dimenerno.github.io/tags/probability-theory/</loc>
 </url>
 <url>
 <loc>https://dimenerno.github.io/tags/%ED%99%95%EB%A5%A0%EB%A1%A0/</loc>
