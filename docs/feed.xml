@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>디멘의 블로그</title>
-    <description>이데아를 여행하는 히치하이커</description>
+    <description></description>
     <link>https://dimenerno.github.io</link>
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
@@ -118,7 +118,7 @@
 <p>So where does the interpretation “empirical probability converges to mathematical probability” come from? The key is the phrase “independent and identically distributed”. Two random variables $X, Y: \Omega \to E$ are said to be <strong>independent and identically distributed</strong> when their marginal distributions coincide and, for any $x,y \in E$, (assuming for simplicity that $E$ is discrete) the following holds:</p>
 
 \[\begin{align}
-&amp;\mathbb{P}(\{\omega \in \Omega : X(\omega) = x \land Y(\omega) = y \\}) \\
+&amp;\mathbb{P}(\{\omega \in \Omega : X(\omega) = x \land Y(\omega) = y \}) \\
 &amp;= \mathbb{P}(\{ \omega \in \Omega: X(\omega) = x\}) \cdot \mathbb{P}(\{ \omega \in \Omega: Y(\omega) = y\}).
 \end{align}\]
 

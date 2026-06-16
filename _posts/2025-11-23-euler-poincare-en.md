@@ -29,7 +29,7 @@ For example, the homology groups of a torus are as follows:
 - $H_1(X) = \mathbb{Z} \oplus \mathbb{Z}$
 - $H_2(X) = \mathbb{Z}$
 
-Thus, the 0th, 1st, and 2nd Betti numbers of the torus are 1, 2, and 1, respectively. Intuitively, Betti numbers represent the number of "holes" (see [previous post](https://dimenerno.github.io/2025/11/05/euler-poincare)). In particular, the 0th Betti number corresponds to the number of connected components of $K$. For instance, if two tetrahedra are considered as a single simplicial complex, the 0th Betti number of this complex is 2.
+Thus, the 0th, 1st, and 2nd Betti numbers of the torus are 1, 2, and 1, respectively. Intuitively, Betti numbers represent the number of "holes" (see [previous post](https://dimenerno.github.io/2025/11/05/simplicial-homology)). In particular, the 0th Betti number corresponds to the number of connected components of $K$. For instance, if two tetrahedra are considered as a single simplicial complex, the 0th Betti number of this complex is 2.
 
 > **Euler-Poincaré Theorem.** For an $n$-dimensional simplicial complex $K$, let $\alpha_p \; (p \leq n)$ denote the number of $p$-simplices in $K$. Then the following holds:
 >
