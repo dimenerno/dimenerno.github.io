@@ -25,7 +25,7 @@ date: 2024-04-04
       postElement.innerHTML = "";
     }
 
-    const lang = localStorage.getItem("lang") || "ko";
+    const lang = localStorage.getItem("lang") || "en";
 
     fetch("/search.json")
       .then(res => res.json())

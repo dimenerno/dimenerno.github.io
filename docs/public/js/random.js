@@ -1,5 +1,5 @@
 function goToRandomPost() {
-  const lang = localStorage.getItem("lang") || "ko";
+  const lang = localStorage.getItem("lang") || "en";
   fetch("/search.json")
     .then((res) => res.json())
     .then((posts) => {

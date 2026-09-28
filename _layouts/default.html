@@ -74,7 +74,7 @@
               style="white-space: nowrap"
               class="lang-en"
               title="Home"
-            >{{ site.title-en }}</a>
+            >{{ site.title-en | default: site.title }}</a>
             <small><div class="lang-ko">{{ site.tagline }}</div>
               <div class="lang-en">{{ site.tagline-en }}</div></small>
 
@@ -94,12 +94,12 @@
           </form>
 
           <div class="lang-toggle-wrapper">
-            <span class="lang-label">한</span>
+            <span class="lang-label">EN</span>
             <label class="switch">
-              <input type="checkbox" id="lang-toggle" />
+              <input type="checkbox" id="lang-toggle"/>
               <span class="slider round"></span>
             </label>
-            <span class="lang-label">EN</span>
+            <span class="lang-label">한</span>
           </div>
         </div>
       </div>

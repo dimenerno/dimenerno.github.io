@@ -46,6 +46,14 @@ mjx-container {
 }
 
 @font-face {
+  font-family: "Wanted Sans";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("./woff2/WantedSansVariable.woff2") format("woff2-variations");
+}
+
+@font-face {
   font-family: "Eulyoo1945";
   src: url("./woff2/Eulyoo1945-Regular.woff2") format("woff2"),
     url("./woff2/Eulyoo1945-Regular.woff") format("woff");
@@ -82,7 +90,7 @@ html {
 }
 @media (min-width: 38em) {
   html {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.95;
   }
 }

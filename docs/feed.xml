@@ -7,10 +7,50 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>거짓말쟁이 다리 이야기</title>
+        <link>https://dimenerno.github.io/2026/09/28/german-fable</link>
+        <guid>https://dimenerno.github.io/2026/09/28/german-fable</guid>
+        <pubDate>Mon, 28 Sep 2026 00:00:00 -0700</pubDate>
+        <description>&lt;p&gt;어느 날 길을 걷다가 아들이 새빨간 거짓말을 하자 아버지가 이제 ‘거짓말쟁이 다리’를 건널 거라며 잔뜩 겁을 준다. “이 다리는 거짓말쟁이가 건너면 반드시 무너진단다.” 오싹한 경고를 들은 아들은 거짓말을 실토하고 진실을 털어놓는다. 아버지는 만족하며 아들과 함께 다리 위로 올랐다. 그 순간, 다리가 아버지의 발밑에서 무너졌다. 아버지가 거짓말을 했기 때문이다. 거짓말쟁이 다리 같은 것은 없으니 말이다.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/09/28/german-fable">
+          <![CDATA[
+            <p>어느 날 길을 걷다가 아들이 새빨간 거짓말을 하자 아버지가 이제 ‘거짓말쟁이 다리’를 건널 거라며 잔뜩 겁을 준다. “이 다리는 거짓말쟁이가 건너면 반드시 무너진단다.” 오싹한 경고를 들은 아들은 거짓말을 실토하고 진실을 털어놓는다. 아버지는 만족하며 아들과 함께 다리 위로 올랐다. 그 순간, 다리가 아버지의 발밑에서 무너졌다. 아버지가 거짓말을 했기 때문이다. 거짓말쟁이 다리 같은 것은 없으니 말이다.</p>
+
+<blockquote>
+  <p>더글러스 호프스태터, ⟪사고의 유희⟫ (노승영 역)에서 발췌. 해당 우화는 18세기 독일인 크리스티안 겔레르트가 지은 &lt;농부와 아들&gt;이 원본이며, 네덜란드의 수학자 한스 프로이덴탈에 의해 각색되었다.</p>
+</blockquote>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>The Liar's Bridge</title>
+        <link>https://dimenerno.github.io/2026/09/28/german-fable/en</link>
+        <guid>https://dimenerno.github.io/2026/09/28/german-fable/en</guid>
+        <pubDate>Mon, 28 Sep 2026 00:00:00 -0700</pubDate>
+        <description>&lt;p&gt;One day, while they were walking along a road, the son told a blatant lie, so his father frightened him by saying that they were about to cross the “Liar’s Bridge.” “This bridge always collapses when a liar crosses it.” After hearing this chilling warning, the son confessed his lie and told the truth. Satisfied, the father stepped on the bridge with his son. At that moment, the bridge collapsed beneath the father’s feet. It was because the father had lied — for there is no such thing as a Liar’s Bridge.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/09/28/german-fable/en">
+          <![CDATA[
+            <p>One day, while they were walking along a road, the son told a blatant lie, so his father frightened him by saying that they were about to cross the “Liar’s Bridge.” “This bridge always collapses when a liar crosses it.” After hearing this chilling warning, the son confessed his lie and told the truth. Satisfied, the father stepped on the bridge with his son. At that moment, the bridge collapsed beneath the father’s feet. It was because the father had lied — for there is no such thing as a Liar’s Bridge.</p>
+
+<blockquote>
+  <p>Excerpted from Douglas Hofstadter’s <em>Metamagical Themas</em>. The original version of this fable was “The Farmer and His Son,” written by the eighteenth-century German author Christian Gellert; it was adapted by the Dutch mathematician Hans Freudenthal.</p>
+</blockquote>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
         <title>큰 수의 법칙은 경험적인가 선험적인가?</title>
         <link>https://dimenerno.github.io/2026/06/12/lln</link>
         <guid>https://dimenerno.github.io/2026/06/12/lln</guid>
-        <pubDate>Fri, 12 Jun 2026 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 12 Jun 2026 00:00:00 -0700</pubDate>
         <description>&lt;p&gt;큰 수의 법칙은 확률론의 가장 유명한 정리 중 하나로, 보통 다음과 같이 소개된다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
@@ -77,7 +117,7 @@
         <title>Is the Law of Large Numbers empirical or a priori?</title>
         <link>https://dimenerno.github.io/2026/06/12/lln/en</link>
         <guid>https://dimenerno.github.io/2026/06/12/lln/en</guid>
-        <pubDate>Fri, 12 Jun 2026 00:00:00 +0900</pubDate>
+        <pubDate>Fri, 12 Jun 2026 00:00:00 -0700</pubDate>
         <description>&lt;p&gt;The Law of Large Numbers is one of the most celebrated theorems in probability theory and is usually presented as follows.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
@@ -144,7 +184,7 @@
         <title>섹션의 의미에 관한 노트</title>
         <link>https://dimenerno.github.io/2026/05/14/section</link>
         <guid>https://dimenerno.github.io/2026/05/14/section</guid>
-        <pubDate>Thu, 14 May 2026 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 14 May 2026 00:00:00 -0700</pubDate>
         <description>&lt;p&gt;유형론에서 섹션&lt;sub&gt;section&lt;/sub&gt;이라는 용어는 두 가지 의미로 등장한다.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
@@ -195,7 +235,7 @@
         <title>Notes on the Meaning of Sections</title>
         <link>https://dimenerno.github.io/2026/05/14/section/en</link>
         <guid>https://dimenerno.github.io/2026/05/14/section/en</guid>
-        <pubDate>Thu, 14 May 2026 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 14 May 2026 00:00:00 -0700</pubDate>
         <description>&lt;p&gt;In type theory, the term “section” appears in two different contexts.&lt;/p&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
@@ -246,7 +286,7 @@
         <title>유형론적 대각선 논법</title>
         <link>https://dimenerno.github.io/2026/05/13/type-theoretic-cantor</link>
         <guid>https://dimenerno.github.io/2026/05/13/type-theoretic-cantor</guid>
-        <pubDate>Wed, 13 May 2026 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 13 May 2026 00:00:00 -0700</pubDate>
         <description>&lt;h2 id=&quot;전사성의-유형론적-정의&quot;&gt;전사성의 유형론적 정의&lt;/h2&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
@@ -338,7 +378,7 @@
         <title>Type-Theoretic Diagonal Argument</title>
         <link>https://dimenerno.github.io/2026/05/13/type-theoretic-cantor/en</link>
         <guid>https://dimenerno.github.io/2026/05/13/type-theoretic-cantor/en</guid>
-        <pubDate>Wed, 13 May 2026 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 13 May 2026 00:00:00 -0700</pubDate>
         <description>&lt;h2 id=&quot;type-theoretic-definition-of-surjectivity&quot;&gt;Type-Theoretic Definition of Surjectivity&lt;/h2&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
@@ -430,7 +470,7 @@
         <title>유형론적 요네다 보조정리</title>
         <link>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda</link>
         <guid>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda</guid>
-        <pubDate>Thu, 07 May 2026 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 07 May 2026 00:00:00 -0700</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;요네다 보조정리.&lt;/strong&gt; $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$와 $F$에서 자연스럽다.&lt;/p&gt;
 
@@ -496,7 +536,7 @@
         <title>Type-Theoretic Yoneda Lemma</title>
         <link>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/en</link>
         <guid>https://dimenerno.github.io/2026/05/07/type-theoretic-yoneda/en</guid>
-        <pubDate>Thu, 07 May 2026 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 07 May 2026 00:00:00 -0700</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Yoneda Lemma.&lt;/strong&gt; Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$ and $F$:&lt;/p&gt;
 
@@ -553,230 +593,6 @@
 \[\mathrm{ind}(h(a, \mathrm{refl}_a), a, \mathrm{refl}_a) = h(a, \mathrm{refl}_a)\]
 
 <p>This follows judgmentally from the definition of $\mathrm{ind}$. ■</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>양자역학의 국소성에 대하여</title>
-        <link>https://dimenerno.github.io/2026/02/23/quantum-locality</link>
-        <guid>https://dimenerno.github.io/2026/02/23/quantum-locality</guid>
-        <pubDate>Mon, 23 Feb 2026 00:00:00 +0900</pubDate>
-        <description>&lt;p&gt;벨 부등식은 흔히 “양자역학은 국소적이지 않다”는 결론으로 요약되곤 한다. 그러나 이 요약은 오해를 일으키는 표현인데, 국소성의 표준적인 의미로 따지면 양자역학은 완벽히 국소적이기 때문이다. 국소성의 표준적 의미란 다음과 같다.&lt;/p&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2026/02/23/quantum-locality">
-          <![CDATA[
-            <p>벨 부등식은 흔히 “양자역학은 국소적이지 않다”는 결론으로 요약되곤 한다. 그러나 이 요약은 오해를 일으키는 표현인데, 국소성의 표준적인 의미로 따지면 양자역학은 완벽히 국소적이기 때문이다. 국소성의 표준적 의미란 다음과 같다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 어떤 물리 이론이 국소적<sub>local</sub>일 조건은, 시공간의 두 사건<sub>event</sub>에 대해 한 사건이 다른 사건에 빛보다 빠르게 영향을 주지 않는 것이다.</p>
-</blockquote>
-
-<p>그리고 위의 정의를 적절히 해석했을 때 양자역학은 국소적임을 증명할 수 있다. 가령, 두 개의 얽힌 입자 A와 B로 이루어진 계의 파동함수 $\psi(a, b)$를 생각하자. 만약 우리가 입자 A에만 관심을 가진다면, 입자 A를 대상으로 한 관측의 결과가 어떻게 나올지는 다음의 밀도 행렬<sub>density matrix</sub>로 완전히 표현할 수 있다.</p>
-
-\[\rho_{a'a} = \sum_{b} \psi^*(a, b)\psi(a', b)\]
-
-<p>예를 들어 관측량<sub>observable</sub> $\mathbf{L}$이 A에 국소적으로 작용할 때, $\mathbf{L}$의 기댓값은 다음과 같이 구할 수 있음이 알려져 있다.</p>
-
-\[\langle \mathbf{L} \rangle = \operatorname{tr} \rho L\]
-
-<p>여기서 $\mathbf{L}$이 A에 국소적으로 작용한다는 표현의 의미는 다음과 같다.</p>
-
-\[L_{a'b', ab} = L_{a'a} \delta_{b'b}\]
-
-<p>따라서 입자 B에서 국소적으로 일어나는 시간 변화가 입자 A의 밀도 행렬을 변화시키지 않는다면, 다음의 의미에서 양자역학은 국소적이다.</p>
-
-<blockquote>
-  <p>임의의 두 입자에 대해, 한 입자의 국소적 시간 변화가 다른 입자의 국소적 상태에 빛보다 빠르게 영향을 주지 않는다.</p>
-</blockquote>
-
-<p>이 사실을 증명해 보자. 입자 B에서 국소적 시간 변화가 진행된다고 하자. 가령 입자 B의 위치를 관측하거나, 운동량을 관측하거나, 입자 B를 다른 입자와 얽히게 만드는 등의 일이 일어난다. 무슨 일이 일어나든 간에 이 일은 $\psi(a, b)$를 변화시킬 것이다. 양자역학에서 계의 시간에 따른 변화는 유니터리 행렬로 표현된다. 즉, 어떤 유니터리 연산자 $\mathbf{U}$가 존재하여, 일정 시간이 지난 이후 계의 상태를 $\psi_f(a’, b’)$라고 하면</p>
-
-\[\psi_f(a', b') = \sum_{a, b} U_{a'b', ab} \psi(a, b)\]
-
-<p>이다. 그런데 시간 변화가 B에서만 국소적으로 진행된다면 $a \neq a’$일 때 $U_{a’b’, ab} = 0$이다. 따라서,</p>
-
-\[\psi_f(a, b') = \sum_{b} U_{b'b} \psi(a, b)\]
-
-<p>로 줄여 쓸 수 있다. 이로 인해 A의 밀도 행렬은 다음과 같이 갱신된다.</p>
-
-\[\rho'_{a'a} = \sum_{b} \psi_f^*(a, b)\psi(a', b)\]
-
-<p>두 식을 연립하면,</p>
-
-\[\begin{align}
-\rho'_{a'a} &amp;= \sum_{b} \left( \left( \sum_{b'} U_{bb'} \psi(a, b') \right)^* \left( \sum_{b''} U_{bb''} \psi(a', b'') \right) \right) \\
-&amp;= \sum_{b, b', b''} U^*_{b'b} U_{bb''} \psi^*(a, b') \psi(a', b'')
-\end{align}\]
-
-<p>이다. 그런데 $\mathbf{U}$가 유니터리이므로 $\sum_b U^\ast_{b’b} U_{bb’’} = (U^\ast U)_{b’ b’’} = \delta_{b’ b’’}$이다. 따라서,</p>
-
-\[\rho'_{a'a} = \sum_{b'} \psi^*(a, b') \psi(a', b') = \rho_{a'a}\]
-
-<p>이다. 따라서 $\rho’ = \rho$이다. <strong>즉, B에서 국소적으로 진행되는 유니터리한 시간 변화는 A의 밀도 행렬을 변화시키지 않는다.</strong> 실질적으로 이는 다음의 정리를 증명한 것이다.</p>
-
-<blockquote>
-  <p><strong>통신 없음 정리<sub>No-communication theorem</sub>.</strong> (얽힘을 고려하더라도) 빛보다 빠르게 정보를 전달하는 것은 불가능하다.</p>
-</blockquote>
-
-<p>그렇다면 벨 부등식을 비롯한, 흔히 양자역학의 비국소성을 보여주는 것으로 제시되는 사례들은 어떻게 이해되어야 하는가? 가령, 코펜하겐 해석에 따르면 각운동량의 총합이 0인 두 전자를 앨리스와 밥이 나눠가진 뒤, 밥이 스핀 업의 전자를 관측한다면, 앨리스의 전자는 그 즉시 스핀 다운으로 붕괴된다. 그렇다면 앨리스의 전자의 밀도 행렬도 그에 맞추어 변해야 하는 것 아닌가?</p>
-
-<p>이 질문에 대한 “실증주의적” 해답은 이렇다 (실증주의적이라는 표현은 이 해답에 대한 철학적 해석을 일단 차치하겠다는 것이다). 만약 두 개의 전자뿐 아니라 <em>앨리스와 밥 또한</em> 전체 계의 일부로 간주한다면, 밥의 관측이 있기 전과 후 계의 파동함수는 다음과 변화한다.</p>
-
-<p>관측 전:</p>
-
-\[\begin{align}
-\psi &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
-&amp;\qquad \land \,\,\, \text{Bob has not observed his spin-down electron}) \\
-&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
-&amp;\qquad \land \,\,\, \text{Bob has not observed his spin-up electron})
-\end{align}\]
-
-<p>관측 후:</p>
-
-\[\begin{align}
-\psi_f &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
-&amp;\qquad \land \,\,\, \text{Bob has observed his spin-down electron}) \\
-&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
-&amp;\qquad \land \,\,\, \text{Bob has observed his spin-up electron})
-\end{align}\]
-
-<p>즉, <strong>밥도 계의 일부이기 때문에 밥의 행위는 계를 불연속적으로 붕괴시키는 것이 아닌, 계의 유니터리한 시간 변화의 일부이다.</strong> 대신 앨리스-밥 계의 외부에서 제3자인 찰리가 <em>밥을 관측한다면</em> 그때는 $\psi_f$가 가령 다음과 같이 붕괴할 것이다.</p>
-
-\[\begin{align}
-\psi_f \longmapsto\; &amp;(\text{Alice has not observed her spin-down electron} \\ 
-&amp;\land \; \text{Bob has observed his spin-up electron})
-\end{align}\]
-
-<p>그러나 만약 찰리 또한 밥과 앨리스와 함께 계의 일부로 간주한다면, 전체 계의 파동함수는 다음과 같이 유니터리하게 시간 변화한다.</p>
-
-\[\begin{align}
-\psi_f &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
-&amp;\qquad \land \,\,\, \text{Bob has observed his spin-down electron} \\
-&amp;\qquad \land \,\,\, \text{Charlie has observed Bob observing spin-down}) \\
-&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
-&amp;\qquad \land \,\,\, \text{Bob has observed his spin-up electron} \\
-&amp;\qquad \land \,\,\, \text{Charlie has observed Bob observing spin-up}) \\
-\end{align}\]
-
-<p>일반적으로, <strong>관측자와 계를 분리하면 관측은 계의 파동함수를 붕괴시키지만, 관측자를 계에 포함시키면 관측 또한 계의 유니터리 시간 변화의 일부이다.</strong> 이 결론을 확장하면, <strong>우주 전체의 파동함수</strong>는 항상 유니터리하게 시간 변화하며, 우주 전체의 파동함수만이 유일하게 물리적으로 유의미한 파동함수라는 주장을 얻는다. 이는 양자역학에 대한 다세계 해석으로 이어지게 된다.</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>On the Locality of Quantum Mechanics</title>
-        <link>https://dimenerno.github.io/2026/02/23/quantum-locality/en</link>
-        <guid>https://dimenerno.github.io/2026/02/23/quantum-locality/en</guid>
-        <pubDate>Mon, 23 Feb 2026 00:00:00 +0900</pubDate>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2026/02/23/quantum-locality/en">
-          <![CDATA[
-            <blockquote>
-  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
-</blockquote>
-
-<p>The Bell inequality is often summarised as concluding that “quantum mechanics is non-local.” However, this summary is misleading, as quantum mechanics is perfectly local when judged by the standard definition of locality. The standard definition of locality is as follows:</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> A physical theory is local if, for any two events in spacetime, one event does not influence the other faster than the speed of light.</p>
-</blockquote>
-
-<p>When interpreted appropriately, quantum mechanics can be shown to be local under this definition. For instance, consider a system consisting of two entangled particles, A and B, with a wavefunction $\psi(a, b)$. If we are only interested in particle A, the outcomes of measurements on A can be fully described by the following density matrix:</p>
-
-\[\rho_{a'a} = \sum_{b} \psi^*(a, b)\psi(a', b)\]
-
-<p>For example, when an observable $\mathbf{L}$ acts locally on A, the expectation value of $\mathbf{L}$ is known to be given by:</p>
-
-\[\langle \mathbf{L} \rangle = \operatorname{tr} \rho L\]
-
-<p>Here, the expression “observable $\mathbf{L}$ acts locally on A” means the following:</p>
-
-\[L_{a'b', ab} = L_{a'a} \delta_{b'b}\]
-
-<p>Thus, if local changes in time at particle B do not affect the density matrix of particle A, quantum mechanics is local in the following sense:</p>
-
-<blockquote>
-  <p>For any two particles, local changes in time at one particle do not influence the local state of the other particle faster than the speed of light.</p>
-</blockquote>
-
-<p>Let us prove this. Suppose a local change in time occurs at particle B, such as measuring its position, momentum, or entangling it with another particle. Whatever happens, this will alter $\psi(a, b)$. In quantum mechanics, the time evolution of a system is represented by a unitary matrix. That is, there exists a unitary operator $\mathbf{U}$ such that, after some time, the state of the system becomes $\psi_f(a’, b’)$:</p>
-
-\[\psi_f(a', b') = \sum_{a, b} U_{a'b', ab} \psi(a, b)\]
-
-<p>If the time evolution is local to B, then $U_{a’b’, ab} = 0$ when $a \neq a’$. Hence,</p>
-
-\[\psi_f(a, b') = \sum_{b} U_{b'b} \psi(a, b)\]
-
-<p>This leads to the following update of A’s density matrix:</p>
-
-\[\rho'_{a'a} = \sum_{b} \psi_f^*(a, b)\psi(a', b)\]
-
-<p>Combining the two equations, we have:</p>
-
-\[\begin{align}
-\rho'_{a'a} &amp;= \sum_{b} \left( \left( \sum_{b'} U_{bb'} \psi(a, b') \right)^* \left( \sum_{b''} U_{bb''} \psi(a', b'') \right) \right) \\
-&amp;= \sum_{b, b', b''} U^*_{b'b} U_{bb''} \psi^*(a, b') \psi(a', b'')
-\end{align}\]
-
-<p>Since $\mathbf{U}$ is unitary, $\sum_b U^\ast_{b’b} U_{bb’’} = (U^\ast U)_{b’ b’’} = \delta_{b’ b’’}$. Therefore,</p>
-
-\[\rho'_{a'a} = \sum_{b'} \psi^*(a, b') \psi(a', b') = \rho_{a'a}\]
-
-<p>Thus, $\rho’ = \rho$. <strong>In other words, unitary time evolution local to B does not alter the density matrix of A.</strong> This effectively proves the following theorem:</p>
-
-<blockquote>
-  <p><strong>No-communication theorem.</strong> (Even considering entanglement) It is impossible to transmit information faster than the speed of light.</p>
-</blockquote>
-
-<p>How, then, should we understand cases like the Bell inequality, which are often presented as evidence of the non-locality of quantum mechanics? For instance, according to the Copenhagen interpretation, if Alice and Bob share two electrons with a total angular momentum of zero, and Bob observes a spin-up electron, Alice’s electron instantaneously collapses to spin-down. Does this not imply that Alice’s electron’s density matrix changes accordingly?</p>
-
-<p>The “positivist” answer to this question is as follows (the term “positivist” is used here to set aside philosophical interpretations for now). If not only the two electrons but also <em>Alice and Bob</em> are considered part of the entire system, the wavefunction of the system evolves as follows before and after Bob’s observation:</p>
-
-<p>Before observation:</p>
-
-\[\begin{align}
-\psi &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
-&amp;\qquad \land \,\,\, \text{Bob has not observed his spin-down electron}) \\
-&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
-&amp;\qquad \land \,\,\, \text{Bob has not observed his spin-up electron})
-\end{align}\]
-
-<p>After observation:</p>
-
-\[\begin{align}
-\psi_f &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
-&amp;\qquad \land \,\,\, \text{Bob has observed his spin-down electron}) \\
-&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
-&amp;\qquad \land \,\,\, \text{Bob has observed his spin-up electron})
-\end{align}\]
-
-<p>In other words, <strong>since Bob is part of the system, his actions are not a discontinuous collapse of the system but part of its unitary time evolution.</strong> Instead, if a third party, Charlie, observes Bob, then $\psi_f$ might collapse as follows:</p>
-
-\[\begin{align}
-\psi_f \longmapsto\; &amp;(\text{Alice has not observed her spin-down electron} \\ 
-&amp;\land \; \text{Bob has observed his spin-up electron})
-\end{align}\]
-
-<p>However, if Charlie is also considered part of the system along with Bob and Alice, the wavefunction of the entire system evolves unitarily as follows:</p>
-
-\[\begin{align}
-\psi_f &amp;= \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-up electron}\\
-&amp;\qquad \land \,\,\, \text{Bob has observed his spin-down electron} \\
-&amp;\qquad \land \,\,\, \text{Charlie has observed Bob observing spin-down}) \\
-&amp;+ \frac{1}{\sqrt{2}}(\text{Alice has not observed her spin-down electron} \\
-&amp;\qquad \land \,\,\, \text{Bob has observed his spin-up electron} \\
-&amp;\qquad \land \,\,\, \text{Charlie has observed Bob observing spin-up}) \\
-\end{align}\]
-
-<p>In general, <strong>if the observer and the system are separated, observation collapses the system’s wavefunction, but if the observer is included in the system, observation is part of the system’s unitary time evolution.</strong> Extending this conclusion, the <strong>wavefunction of the entire universe</strong> always evolves unitarily, and only the wavefunction of the entire universe is physically meaningful. This leads to the many-worlds interpretation of quantum mechanics.</p>
 
           ]]>
         </content:encoded>

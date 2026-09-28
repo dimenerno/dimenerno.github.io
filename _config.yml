@@ -1,6 +1,6 @@
 # Setup
 title:               디멘의 블로그
-title-en:            Dimen's Blog
+title-en:            Jeongdam's Blog
 
 
 paginate:            10
@@ -10,8 +10,8 @@ destination: docs
 
 # About/contact
 author:
-  name:              최정담
-  email:             dimen@stanforde.edu
+  name:              Jeongdam Choi
+  email:             dimen@stanford.edu
 
 # Gems
 plugins:

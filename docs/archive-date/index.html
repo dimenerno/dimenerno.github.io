@@ -11,9 +11,9 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1"
   />
 
-  <title>
-     날짜별로 보기 &middot; 디멘의 블로그 
-  </title>
+  
+  
+  <title data-title-ko="날짜별로 보기 · 디멘의 블로그" data-title-en="List by dates · Jeongdam&#39;s Blog">List by dates · Jeongdam&#39;s Blog</title>
 
   <style>
     .answer {
@@ -327,7 +327,7 @@
               style="white-space: nowrap"
               class="lang-en"
               title="Home"
-            >Dimen's Blog</a>
+            >Jeongdam's Blog</a>
             <small><div class="lang-ko"></div>
               <div class="lang-en"></div></small>
 
@@ -347,12 +347,12 @@
           </form>
 
           <div class="lang-toggle-wrapper">
-            <span class="lang-label">한</span>
+            <span class="lang-label">EN</span>
             <label class="switch">
-              <input type="checkbox" id="lang-toggle" />
+              <input type="checkbox" id="lang-toggle"/>
               <span class="slider round"></span>
             </label>
-            <span class="lang-label">EN</span>
+            <span class="lang-label">한</span>
           </div>
         </div>
       </div>
@@ -361,6 +361,19 @@
   <h1 class="page-title lang-ko">날짜별로 보기</h1>
   <h1 class="page-title lang-en">List by dates</h1>
   
+<h2 style="margin-bottom: 0.6em">September 2026</h2>
+<ul class="post-list">
+    
+      <li class="post-item" data-lang="ko">
+        <a href="/2026/09/28/german-fable">거짓말쟁이 다리 이야기</a>
+      </li>
+    
+      <li class="post-item" data-lang="en">
+        <a href="/2026/09/28/german-fable/en">The Liar's Bridge</a>
+      </li>
+    
+  </ul>
+
 <h2 style="margin-bottom: 0.6em">June 2026</h2>
 <ul class="post-list">
     
@@ -1127,17 +1140,17 @@ function filterPostItemsByLang(lang) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("lang") || "ko";
+  const savedLang = localStorage.getItem("lang") || "en";
   filterPostItemsByLang(savedLang);
 
   const toggle = document.getElementById("lang-toggle");
   if (toggle) {
     // 토글 UI 상태 초기화
-    toggle.checked = savedLang === "en";
+    toggle.checked = savedLang === "ko";
 
     // 토글 변경 시 리스트 갱신
     toggle.addEventListener("change", () => {
-      const newLang = toggle.checked ? "en" : "ko";
+      const newLang = toggle.checked ? "ko" : "en";
       localStorage.setItem("lang", newLang);
       filterPostItemsByLang(newLang);
     });

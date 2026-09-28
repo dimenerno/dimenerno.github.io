@@ -92,7 +92,7 @@ title-en: Main
       style="max-width: calc(min(85vw, 400px)); margin: 1.5em auto 1em auto"
     />
     <p class="fade-rise-3 lang-ko">
-      논리학, 철학, 수학 등을 다루는 블로그입니다.<br />
+      논리학, 철학, 수학을 다루는 블로그입니다.<br />
       아래에서 저의 가장 최근 글들을 읽을 수 있습니다.<br />
       <small>To read in English, toggle the button in the header.</small>
     </p>
@@ -107,8 +107,9 @@ title-en: Main
     style="max-width: calc(min(85vw, 400px)); margin: 1.5em auto 1em auto"
   />
     <p class="fade-rise-3 lang-en">
-      A blog on logic, philosophy, mathematics, et cetra.<br />
-      You can read my most recent posts below.
+      A blog on logic, philosophy, and mathematics.<br />
+      You can read my most recent posts below.<br />
+      <small>한국어로 읽기 위해서는 상단의 토글을 눌러주세요.</small>
     </p>
   </div>
 </div>
@@ -197,7 +198,7 @@ title-en: Main
   // 배너 이미지 로드 후 애니메이션 트리거 스크립트
   document.addEventListener("DOMContentLoaded", () => {
 
-    const lang = localStorage.getItem("lang") || "ko";
+  const lang = localStorage.getItem("lang") || "en";
   document.querySelectorAll('.post[data-lang]').forEach(post => {
     if (post.dataset.lang === lang) {
       post.style.display = '';
@@ -256,7 +257,7 @@ title-en: Main
     const langToggle = document.getElementById("lang-toggle");
     if (langToggle) {
       langToggle.addEventListener("change", () => {
-        const newLang = langToggle.checked ? "en" : "ko";
+        const newLang = langToggle.checked ? "ko" : "en";
         localStorage.setItem("lang", newLang);
         document.querySelectorAll('.post[data-lang]').forEach(post => {
           post.style.display = post.dataset.lang === newLang ? '' : 'none';

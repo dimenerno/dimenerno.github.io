@@ -11,9 +11,9 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1"
   />
 
-  <title>
-     검색 결과 &middot; 디멘의 블로그 
-  </title>
+  
+  
+  <title data-title-ko="검색 결과 · 디멘의 블로그" data-title-en="Search results · Jeongdam&#39;s Blog">Search results · Jeongdam&#39;s Blog</title>
 
   <style>
     .answer {
@@ -327,7 +327,7 @@
               style="white-space: nowrap"
               class="lang-en"
               title="Home"
-            >Dimen's Blog</a>
+            >Jeongdam's Blog</a>
             <small><div class="lang-ko"></div>
               <div class="lang-en"></div></small>
 
@@ -347,12 +347,12 @@
           </form>
 
           <div class="lang-toggle-wrapper">
-            <span class="lang-label">한</span>
+            <span class="lang-label">EN</span>
             <label class="switch">
-              <input type="checkbox" id="lang-toggle" />
+              <input type="checkbox" id="lang-toggle"/>
               <span class="slider round"></span>
             </label>
-            <span class="lang-label">EN</span>
+            <span class="lang-label">한</span>
           </div>
         </div>
       </div>
@@ -424,14 +424,14 @@
       if (window.MathJax && window.MathJax.typeset) MathJax.typeset();
     }
 
-    const initialLang = localStorage.getItem("lang") || "ko";
+    const initialLang = localStorage.getItem("lang") || "en";
     renderResultsForLang(initialLang);
 
     // 🟢 언어 토글 변경 시 결과 다시 렌더링
     const langToggle = document.getElementById("lang-toggle");
     if (langToggle) {
       langToggle.addEventListener("change", () => {
-        const newLang = langToggle.checked ? "en" : "ko";
+        const newLang = langToggle.checked ? "ko" : "en";
         localStorage.setItem("lang", newLang);
         renderResultsForLang(newLang);
       });

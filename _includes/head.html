@@ -9,10 +9,16 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1"
   />
 
-  <title>
-    {% if page.title == "메인" or page.title == "Main" %} {{ site.title }} &middot; {{ site.tagline }}
-    {% else %} {{ page.title }} &middot; {{ site.title }} {% endif %}
-  </title>
+  {% assign site_title_en = site.title-en | default: site.title %}
+  {% if page.title == "메인" or page.title == "Main" %}
+    {% assign title_ko = site.title %}
+    {% assign title_en = site_title_en %}
+  {% else %}
+    {% assign page_title_en = page.title-en | default: page.title %}
+    {% assign title_ko = page.title | append: " · " | append: site.title %}
+    {% assign title_en = page_title_en | append: " · " | append: site_title_en %}
+  {% endif %}
+  <title data-title-ko="{{ title_ko | escape }}" data-title-en="{{ title_en | escape }}">{{ title_en | escape }}</title>
 
   <style>
     .answer {

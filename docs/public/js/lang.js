@@ -12,9 +12,14 @@ function updateLanguageUI(lang) {
     searchInput.placeholder = isEnglish ? "Search" : "검색";
   }
 
+  const titleEl = document.querySelector("title[data-title-en]");
+  if (titleEl) {
+    document.title = isEnglish ? titleEl.dataset.titleEn : titleEl.dataset.titleKo;
+  }
+
   const toggle = document.getElementById("lang-toggle");
   if (toggle) {
-    toggle.checked = isEnglish;
+    toggle.checked = !isEnglish;
   }
 }
 
@@ -46,12 +51,12 @@ function maybeRedirectOnLang(lang) {
 function waitForToggleAndInit() {
   const toggle = document.getElementById("lang-toggle");
   if (toggle) {
-    const savedLang = localStorage.getItem("lang") || "ko";
+    const savedLang = localStorage.getItem("lang") || "en";
     updateLanguageUI(savedLang);
     maybeRedirectOnLang(savedLang);
 
     toggle.addEventListener("change", () => {
-      const newLang = toggle.checked ? "en" : "ko";
+      const newLang = toggle.checked ? "ko" : "en";
       localStorage.setItem("lang", newLang);
       updateLanguageUI(newLang);
       maybeRedirectOnLang(newLang);

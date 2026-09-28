@@ -25,14 +25,14 @@ date: 2024-03-03
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("lang") || "ko";
+  const savedLang = localStorage.getItem("lang") || "en";
   filterTagsByLang(savedLang);
 
   const toggle = document.getElementById("lang-toggle");
   if (toggle) {
-    toggle.checked = savedLang === "en";
+    toggle.checked = savedLang === "ko";
     toggle.addEventListener("change", () => {
-      const newLang = toggle.checked ? "en" : "ko";
+      const newLang = toggle.checked ? "ko" : "en";
       localStorage.setItem("lang", newLang);
       filterTagsByLang(newLang);
     });

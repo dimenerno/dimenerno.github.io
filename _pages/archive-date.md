@@ -46,17 +46,17 @@ function filterPostItemsByLang(lang) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("lang") || "ko";
+  const savedLang = localStorage.getItem("lang") || "en";
   filterPostItemsByLang(savedLang);
 
   const toggle = document.getElementById("lang-toggle");
   if (toggle) {
     // 토글 UI 상태 초기화
-    toggle.checked = savedLang === "en";
+    toggle.checked = savedLang === "ko";
 
     // 토글 변경 시 리스트 갱신
     toggle.addEventListener("change", () => {
-      const newLang = toggle.checked ? "en" : "ko";
+      const newLang = toggle.checked ? "ko" : "en";
       localStorage.setItem("lang", newLang);
       filterPostItemsByLang(newLang);
     });
