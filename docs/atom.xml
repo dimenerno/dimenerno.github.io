@@ -4,13 +4,113 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-09-28T10:23:57-07:00</updated>
+ <updated>2026-10-01T01:06:11-07:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>Jeongdam Choi</name>
    <email>dimen@stanford.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>자기지시적 문장의 세 유형</title>
+   <link href="https://dimenerno.github.io/2026/10/01/self-referential"/>
+   <updated>2026-10-01T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/01/self-referential</id>
+   <content type="html">&lt;p&gt;이 짧은 글에서 나는 자기지시적 문장을 세 유형으로 분류하고, 이 분류를 바탕으로 역설적 자기지시 문장(예: “이 문장은 거짓이다”)과 실질적 자기지시 문장(예: “이 문장은 증명 불가능하다”)을 구별하는 설명을 개략적으로 제시하고자 한다. 세 유형은 다음과 같다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;물리적 자기지시:&lt;/strong&gt; 문장이 물리적 대상으로서 지시된다. 따라서 그 문장은 색깔, 너비, 위치 등의 물리적 속성에 의해서, 그리고 오직 물리적 속성에 의해서만 서술될 수 있다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;구문론적 자기지시:&lt;/strong&gt; 문장이 구문론적 대상으로서 지시된다. 따라서 그 문장은 문법성, 단어 수, 증명가능성 등의 구문론적 속성에 의해서, 그리고 오직 구문론적 속성에 의해서만 서술될 수 있다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;의미론적 자기지시:&lt;/strong&gt; 문장이 의미론적 대상으로서 지시된다. 따라서 그 문장은 참·거짓, 유의미성, 동의성 등의 의미론적 속성에 의해서, 그리고 오직 의미론적 속성에 의해서만 서술될 수 있다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;각 유형의 예는 다음과 같다.&lt;/p&gt;
+
+&lt;ol start=&quot;1&quot;&gt;
+  &lt;li&gt;이 문장은 검은색으로 표시되어 있다.&lt;/li&gt;
+  &lt;li&gt;이 문장은 열세 글자로 되어 있다.&lt;/li&gt;
+  &lt;li&gt;이 문장은 참이다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;1과 2는 참인 반면, 3에는 뚜렷한 진리치가 없다. &lt;strong&gt;이 글의 논제는 오직 물리적으로 또는 구문론적으로 자기지시하는 문장만이 진리조건을 가지며, 따라서 “실질적”이라는 것이다.&lt;/strong&gt; “실질적” 자기지시 문장의 대표적인 예인 괴델 문장이 구문론적으로 자기지시한다는 점에 주목하라. 증명가능성은 형식적 개념이기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;어떤 자기지시 문장이 어느 유형에 속하는지는 사용된 술어의 유형으로부터 추론할 수 있다. 이 점은 ‘문장’이라는 개념의 중의성을 해소하면 더욱 분명하게 드러난다. 물리적·구문론적·의미론적 대상으로서의 문장을 각각 &lt;strong&gt;표기물·기호열·명제&lt;/strong&gt;라고 부르자. 그러면 위의 예들을 다음과 같이 고쳐 쓸 수 있다.&lt;/p&gt;
+
+&lt;ol start=&quot;4&quot;&gt;
+  &lt;li&gt;이 표기물은 검은색으로 표시되어 있다.&lt;/li&gt;
+  &lt;li&gt;이 기호열은 열세 글자로 되어 있다.&lt;/li&gt;
+  &lt;li&gt;이 명제는 참이다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;5가 거짓이라는 점에 주목하라. 이는 예상된 결과이다. ‘문장’과 ‘기호열’은 구문론적으로 서로 다르며, 따라서 2와 5의 주어는 구문론적으로 구별되기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;이 분류는 유형-개별자 구별과 같은 추가적인 고려를 통해 더 정교해질 수 있지만(예컨대 “이 문장은 괄호 안에 있다”는 개별자로 보면 참이지만 유형으로 보면 거짓이다), 여기서는 단순성을 위해 이를 다루지 않겠다.&lt;/p&gt;
+
+&lt;p&gt;이 분류의 요점은, 합성적 의미론의 틀 안에서 작업하는 한 의미론적으로 자기지시하는 문장은 진리치를 결여한다는 것이다. 6의 진리조건을 결정하려면 그 주어의 진리조건이 필요하다. 그런데 그 주어는 6 자체이므로 우리는 무한퇴행에 빠진다. 이를 다음의 무해한 예와 대조해 보자.&lt;/p&gt;
+
+&lt;ol start=&quot;7&quot;&gt;
+  &lt;li&gt;눈은 희다.&lt;/li&gt;
+  &lt;li&gt;위의 명제는 참이다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;8의 진리조건을 결정하려면 그 주어의 진리조건이 필요하다. 주어는 7이며, 7의 진리조건은 눈이 희다는 것으로 주어진다. 이 조건이 성립하므로 7은 참이고, 따라서 8도 참이다.&lt;/p&gt;
+
+&lt;p&gt;요약하자면, 물리적·구문론적으로 자기지시하는 문장이 정당한 것은 “이 문장”의 재귀가 단 한 번만 작동하기 때문이다. 즉 재귀의 깊이가 1이다. 이 일차 재귀는 더 이상 자기재귀를 하지 않는 “휴면” 상태의 문장을 반환한다. 이는 재귀가 정초적(well-founded)이지 않은 의미론적 자기지시 문장과 대조된다.&lt;/p&gt;
+
+&lt;p&gt;이 글을 가능한 한 짧게 유지하고 싶었으므로, 주목할 만한 한 가지 점을 간략히 스케치하며 마무리하겠다. 구문론과 의미론의 경계가 항상 분명한 것은 아니다. 어떤 형태의 규약주의는 이 구별을 구문론 쪽으로 붕괴시키는 것처럼 보인다. 그러한 그림에서 적절하게 형성된 문장은, 관련 증거를 입력받아 참 또는 거짓 중 하나에서 정지하는 형식적 자동기계에 비견될 수 있다. 이 유비를 따르면, 거짓말쟁이 역설은 정지하지 않는 자동기계가 될 것이다.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Three Types of Self-referential Sentences</title>
+   <link href="https://dimenerno.github.io/2026/10/01/self-referential/en"/>
+   <updated>2026-10-01T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/01/self-referential/self-referential-en</id>
+   <content type="html">&lt;p&gt;In this short essay I’ll classify the three types of self-referential sentences and employ this classification to sketch an explanation that sets apart paradoxical self-referential sentences (e.g. “This sentence is false”) from substantial self-referential sentences (e.g. “This sentence is not provable”). The three types are as follow:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Physicallly self-referring:&lt;/strong&gt; The sentence is referred as a physical entity. Thus it can be predicated by, and only by, physical properties such as color, width, location, etc.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Syntactically self-referring:&lt;/strong&gt; The sentence is referred as a syntactic entity. Thus it can be predicated by, and only by, syntactic properties such as grammaticality, word count, provability, etc.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Semantically self-referring:&lt;/strong&gt; The sentence is referred as a semantic entity. Thus it can be predicated by, and only by, semantic properties such as truth-falsity, meaningfulness, synonymity, etc.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here are the examples for each type:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;This sentence is shown in black.&lt;/li&gt;
+  &lt;li&gt;This sentence has thirty five characters.&lt;/li&gt;
+  &lt;li&gt;This sentence is true.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;1 and 2 are true, while 3 lacks apparent truth-value. &lt;strong&gt;The thesis of this essay is that only physically and syntactically self-referring sentences have truth-conditions, and thus are “substantial”.&lt;/strong&gt; Note that the Gödel sentence, the prime example of a “substantial” self-referential sentence, is syntactically self-referring, for provability is a formal notion.&lt;/p&gt;
+
+&lt;p&gt;To which type a self-referential sentence belongs can be inferred from the type of predicate used. This may be brought out even more clearly by disambiguiting the notion of sentence. Let us call sentences as physical / syntactic / semantic entities, &lt;strong&gt;markings / strings / propositions&lt;/strong&gt;, respectively. We thus rewrite the above examples as follows:&lt;/p&gt;
+
+&lt;ol start=&quot;4&quot;&gt;
+    &lt;li&gt;This marking is shown in black.&lt;/li&gt;
+    &lt;li&gt;This string has thirty five characters.&lt;/li&gt;
+    &lt;li&gt;This proposition is true.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Note that 5 is false. This is expected, since ‘sentence’ and ‘string’ are syntactically different, hence the subject of 2 and 5 are syntactically distinct.&lt;/p&gt;
+
+&lt;p&gt;This classification may be made more elaborate by further considerations such as the type-token distinction (e.g. “This sentence is inside parentheses” is true if token-wise but false type-wise), but I will not be concerned with them here for simplicity.&lt;/p&gt;
+
+&lt;p&gt;The upshot of the classification is that semantically self-referring sentences lack truth value insofar as one operates with compositional semantics. To determine the truth-condition of 6, the truth-condition of its subject is required. Yet the subject is 6 and we end in a regress. Contrast this with an innocuous example:&lt;/p&gt;
+
+&lt;ol start=&quot;7&quot;&gt;
+    &lt;li&gt;Snow is white.&lt;/li&gt;
+    &lt;li&gt;The above proposition is true.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To determine the truth-condition of 8, the truth-condition of its subject is required. The subject is 7 and its truth-condition is given as snow being white. Since this condition holds, 7 is true and so is 8.&lt;/p&gt;
+
+&lt;p&gt;To summarize, physically and syntactically self-referring sentences are legitimate since the recursiveness of “this sentence” is effective only once — the depth of recursion is 1. This primary recursion returns a “dormant” version of the sentence with no further self-recursion. This contrasts with semantically self-referring sentences, in which the recursion is not well-founded.&lt;/p&gt;
+
+&lt;p&gt;I wanted to keep this essay as short as possible, so let me conclude with a brief sketch on a noteworthy point. The line between syntax and semantics is not always clear. Some forms of conventionalism seem to collapse this distinction in favor of syntax. In such pictures, a properly formed sentence is comparable to a formal automaton that receives relevant evidence and halts on either truth or falsity. Following this analogy, the Liar paradox would be a non-halting automaton.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>거짓말쟁이 다리 이야기</title>

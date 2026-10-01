@@ -473,6 +473,124 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2026/10/01/self-referential"> 자기지시적 문장의 세 유형 </a>
+      </h1>
+    <span class="post-date">01 Oct 2026</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+    </div>
+     <p>이 짧은 글에서 나는 자기지시적 문장을 세 유형으로 분류하고, 이 분류를 바탕으로 역설적 자기지시 문장(예: “이 문장은 거짓이다”)과 실질적 자기지시 문장(예: “이 문장은 증명 불가능하다”)을 구별하는 설명을 개략적으로 제시하고자 한다. 세 유형은 다음과 같다.</p>
+
+<ol>
+  <li><strong>물리적 자기지시:</strong> 문장이 물리적 대상으로서 지시된다. 따라서 그 문장은 색깔, 너비, 위치 등의 물리적 속성에 의해서, 그리고 오직 물리적 속성에 의해서만 서술될 수 있다.</li>
+  <li><strong>구문론적 자기지시:</strong> 문장이 구문론적 대상으로서 지시된다. 따라서 그 문장은 문법성, 단어 수, 증명가능성 등의 구문론적 속성에 의해서, 그리고 오직 구문론적 속성에 의해서만 서술될 수 있다.</li>
+  <li><strong>의미론적 자기지시:</strong> 문장이 의미론적 대상으로서 지시된다. 따라서 그 문장은 참·거짓, 유의미성, 동의성 등의 의미론적 속성에 의해서, 그리고 오직 의미론적 속성에 의해서만 서술될 수 있다.</li>
+</ol>
+
+<p>각 유형의 예는 다음과 같다.</p>
+
+<ol start="1">
+  <li>이 문장은 검은색으로 표시되어 있다.</li>
+  <li>이 문장은 열세 글자로 되어 있다.</li>
+  <li>이 문장은 참이다.</li>
+</ol>
+
+<p>1과 2는 참인 반면, 3에는 뚜렷한 진리치가 없다. <strong>이 글의 논제는 오직 물리적으로 또는 구문론적으로 자기지시하는 문장만이 진리조건을 가지며, 따라서 “실질적”이라는 것이다.</strong> “실질적” 자기지시 문장의 대표적인 예인 괴델 문장이 구문론적으로 자기지시한다는 점에 주목하라. 증명가능성은 형식적 개념이기 때문이다.</p>
+
+<p>어떤 자기지시 문장이 어느 유형에 속하는지는 사용된 술어의 유형으로부터 추론할 수 있다. 이 점은 ‘문장’이라는 개념의 중의성을 해소하면 더욱 분명하게 드러난다. 물리적·구문론적·의미론적 대상으로서의 문장을 각각 <strong>표기물·기호열·명제</strong>라고 부르자. 그러면 위의 예들을 다음과 같이 고쳐 쓸 수 있다.</p>
+
+<ol start="4">
+  <li>이 표기물은 검은색으로 표시되어 있다.</li>
+  <li>이 기호열은 열세 글자로 되어 있다.</li>
+  <li>이 명제는 참이다.</li>
+</ol>
+
+<p>5가 거짓이라는 점에 주목하라. 이는 예상된 결과이다. ‘문장’과 ‘기호열’은 구문론적으로 서로 다르며, 따라서 2와 5의 주어는 구문론적으로 구별되기 때문이다.</p>
+
+<p>이 분류는 유형-개별자 구별과 같은 추가적인 고려를 통해 더 정교해질 수 있지만(예컨대 “이 문장은 괄호 안에 있다”는 개별자로 보면 참이지만 유형으로 보면 거짓이다), 여기서는 단순성을 위해 이를 다루지 않겠다.</p>
+
+<p>이 분류의 요점은, 합성적 의미론의 틀 안에서 작업하는 한 의미론적으로 자기지시하는 문장은 진리치를 결여한다는 것이다. 6의 진리조건을 결정하려면 그 주어의 진리조건이 필요하다. 그런데 그 주어는 6 자체이므로 우리는 무한퇴행에 빠진다. 이를 다음의 무해한 예와 대조해 보자.</p>
+
+<ol start="7">
+  <li>눈은 희다.</li>
+  <li>위의 명제는 참이다.</li>
+</ol>
+
+<p>8의 진리조건을 결정하려면 그 주어의 진리조건이 필요하다. 주어는 7이며, 7의 진리조건은 눈이 희다는 것으로 주어진다. 이 조건이 성립하므로 7은 참이고, 따라서 8도 참이다.</p>
+
+<p>요약하자면, 물리적·구문론적으로 자기지시하는 문장이 정당한 것은 “이 문장”의 재귀가 단 한 번만 작동하기 때문이다. 즉 재귀의 깊이가 1이다. 이 일차 재귀는 더 이상 자기재귀를 하지 않는 “휴면” 상태의 문장을 반환한다. 이는 재귀가 정초적(well-founded)이지 않은 의미론적 자기지시 문장과 대조된다.</p>
+
+<p>이 글을 가능한 한 짧게 유지하고 싶었으므로, 주목할 만한 한 가지 점을 간략히 스케치하며 마무리하겠다. 구문론과 의미론의 경계가 항상 분명한 것은 아니다. 어떤 형태의 규약주의는 이 구별을 구문론 쪽으로 붕괴시키는 것처럼 보인다. 그러한 그림에서 적절하게 형성된 문장은, 관련 증거를 입력받아 참 또는 거짓 중 하나에서 정지하는 형식적 자동기계에 비견될 수 있다. 이 유비를 따르면, 거짓말쟁이 역설은 정지하지 않는 자동기계가 될 것이다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2026/10/01/self-referential/en"> Three Types of Self-referential Sentences </a>
+      </h1>
+    <span class="post-date">01 Oct 2026</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+    </div>
+     <p>In this short essay I’ll classify the three types of self-referential sentences and employ this classification to sketch an explanation that sets apart paradoxical self-referential sentences (e.g. “This sentence is false”) from substantial self-referential sentences (e.g. “This sentence is not provable”). The three types are as follow:</p>
+
+<ol>
+  <li><strong>Physicallly self-referring:</strong> The sentence is referred as a physical entity. Thus it can be predicated by, and only by, physical properties such as color, width, location, etc.</li>
+  <li><strong>Syntactically self-referring:</strong> The sentence is referred as a syntactic entity. Thus it can be predicated by, and only by, syntactic properties such as grammaticality, word count, provability, etc.</li>
+  <li><strong>Semantically self-referring:</strong> The sentence is referred as a semantic entity. Thus it can be predicated by, and only by, semantic properties such as truth-falsity, meaningfulness, synonymity, etc.</li>
+</ol>
+
+<p>Here are the examples for each type:</p>
+
+<ol>
+  <li>This sentence is shown in black.</li>
+  <li>This sentence has thirty five characters.</li>
+  <li>This sentence is true.</li>
+</ol>
+
+<p>1 and 2 are true, while 3 lacks apparent truth-value. <strong>The thesis of this essay is that only physically and syntactically self-referring sentences have truth-conditions, and thus are “substantial”.</strong> Note that the Gödel sentence, the prime example of a “substantial” self-referential sentence, is syntactically self-referring, for provability is a formal notion.</p>
+
+<p>To which type a self-referential sentence belongs can be inferred from the type of predicate used. This may be brought out even more clearly by disambiguiting the notion of sentence. Let us call sentences as physical / syntactic / semantic entities, <strong>markings / strings / propositions</strong>, respectively. We thus rewrite the above examples as follows:</p>
+
+<ol start="4">
+    <li>This marking is shown in black.</li>
+    <li>This string has thirty five characters.</li>
+    <li>This proposition is true.</li>
+</ol>
+
+<p>Note that 5 is false. This is expected, since ‘sentence’ and ‘string’ are syntactically different, hence the subject of 2 and 5 are syntactically distinct.</p>
+
+<p>This classification may be made more elaborate by further considerations such as the type-token distinction (e.g. “This sentence is inside parentheses” is true if token-wise but false type-wise), but I will not be concerned with them here for simplicity.</p>
+
+<p>The upshot of the classification is that semantically self-referring sentences lack truth value insofar as one operates with compositional semantics. To determine the truth-condition of 6, the truth-condition of its subject is required. Yet the subject is 6 and we end in a regress. Contrast this with an innocuous example:</p>
+
+<ol start="7">
+    <li>Snow is white.</li>
+    <li>The above proposition is true.</li>
+</ol>
+
+<p>To determine the truth-condition of 8, the truth-condition of its subject is required. The subject is 7 and its truth-condition is given as snow being white. Since this condition holds, 7 is true and so is 8.</p>
+
+<p>To summarize, physically and syntactically self-referring sentences are legitimate since the recursiveness of “this sentence” is effective only once — the depth of recursion is 1. This primary recursion returns a “dormant” version of the sentence with no further self-recursion. This contrasts with semantically self-referring sentences, in which the recursion is not well-founded.</p>
+
+<p>I wanted to keep this essay as short as possible, so let me conclude with a brief sketch on a noteworthy point. The line between syntax and semantics is not always clear. Some forms of conventionalism seem to collapse this distinction in favor of syntax. In such pictures, a properly formed sentence is comparable to a formal automaton that receives relevant evidence and halts on either truth or falsity. Following this analogy, the Liar paradox would be a non-halting automaton.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2026/09/28/german-fable"> 거짓말쟁이 다리 이야기 </a>
       </h1>
     <span class="post-date">28 Sep 2026</span>
@@ -991,150 +1109,6 @@
 \[(x, p) \mapsto \mathrm{tr}(f(x, x), p)(f(x, x))\]
 
 <p>From the definition of propositional truncation, the above map induces $\| \mathrm{fib}_f(Q) \| \to \varnothing$. Thus, $g(Q) \to \varnothing$, which is a contradiction. Therefore, $f$ is not surjective. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2026/05/07/type-theoretic-yoneda"> 유형론적 요네다 보조정리 </a>
-      </h1>
-    <span class="post-date">07 May 2026</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/유형론/'">
-        유형론
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/범주론/'">
-        범주론
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>요네다 보조정리.</strong> $\mathcal{A}$가 범주이고, $A \in \mathcal{A}$이며, $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$이라고 하자. 다음의 동형 관계가 $A$와 $F$에서 자연스럽다.</p>
-
-\[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
-</blockquote>
-
-<p>이는 범주론의 잘 알려진 정리이다. 그런데 흥미롭게도, 요네다 보조정리와 비슷한 형태의 정리를 유형론에서 발견할 수 있다.</p>
-
-<blockquote>
-  <p><strong>유형론적 요네다 보조정리.</strong> $A$가 유형이고, $B$가 $A$에 의존하는 유형이라고 하자. 각 $a : A$에 대해 다음이 성립한다.</p>
-
-\[\prod_{x: A}((x = a) \to B(x)) \simeq B(a)\]
-</blockquote>
-
-<p>둘의 유사성을 조금 더 부각하기 위해 기호를 바꿔 적으면 다음과 같다.</p>
-
-<blockquote>
-  <p>$\mathcal{A}$가 유형이고, $F$가 $\mathcal{A}$에 의존하는 유형이라고 하자. 각 $A : \mathcal{A}$에 대해 다음이 성립한다.</p>
-
-\[\prod_{X: \mathcal{A}}((X = A) \to F(X)) \simeq F(A)\]
-</blockquote>
-
-<p>유형론적 요네다 보조정리는 다음 정리의 특수한 사례이다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 각 $a: A$에 대해 다음 사상은 동형이다.</p>
-
-\[\mathrm{ev} : \prod_{x: A}\prod_{p: a = x} B(x, p) \to B(a, \mathrm{refl}_a); \quad  h \mapsto h(a, \mathrm{refl}_a)\]
-</blockquote>
-
-<p><strong>증명.</strong> 동일성 유형의 귀납법에 따라 다음 사상이 존재하며, $\mathrm{ev}$의 섹션이다.</p>
-
-\[\mathrm{ind} : B(a, \mathrm{refl}_a) \to \prod_{x: A}\prod_{p: a = x} B(x, p)\]
-
-<p>따라서 $\mathrm{ind}$가 $\mathrm{ev}$의 리트랙트라는 것을 보이면 충분하다. 즉, 각 $h: \prod_{x: A}\prod_{p: a = x} B(x, p)$에 대해 다음이 성립함을 보이면 충분하다.</p>
-
-\[\mathrm{ind}(h(a, \mathrm{refl}_a)) = h\]
-
-<p>함수 외연성 공리에 따라, 다음을 보이면 충분하다.</p>
-
-\[\prod_{x: A}\prod_{p: a = x} \mathrm{ind}(h(a, \mathrm{refl}_a), x, p) = h(x, p)\]
-
-<p>동일성 유형의 귀납법에 따라, 다음을 보이면 충분하다.</p>
-
-\[\mathrm{ind}(h(a, \mathrm{refl}_a), a, \mathrm{refl}_a) = h(a, \mathrm{refl}_a)\]
-
-<p>이는 $\mathrm{ind}$의 정의로부터 판단적으로 따라 나온다. ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2026/05/07/type-theoretic-yoneda/en"> Type-Theoretic Yoneda Lemma </a>
-      </h1>
-    <span class="post-date">07 May 2026</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/type-theory/'">
-        Type Theory
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/category-theory/'">
-        Category Theory
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>Yoneda Lemma.</strong> Let $\mathcal{A}$ be a category, $A \in \mathcal{A}$, and $F: \mathcal{A}^\mathrm{op} \to \mathbf{Set}$. The following isomorphism is natural in $A$ and $F$:</p>
-
-\[[\mathrm{hom}_\mathcal{A}(-, A), F] \cong F(A)\]
-</blockquote>
-
-<p>This is a well-known theorem in category theory. Interestingly, a theorem similar in form to the Yoneda Lemma can also be found in type theory.</p>
-
-<blockquote>
-  <p><strong>Type-Theoretic Yoneda Lemma.</strong> Let $A$ be a type, and let $B$ be a type dependent on $A$. For each $a : A$, the following holds:</p>
-
-\[\prod_{x: A}((x = a) \to B(x)) \simeq B(a)\]
-</blockquote>
-
-<p>To highlight the similarity between the two, we can rewrite the notation as follows:</p>
-
-<blockquote>
-  <p>Let $\mathcal{A}$ be a type, and let $F$ be a type dependent on $\mathcal{A}$. For each $A : \mathcal{A}$, the following holds:</p>
-
-\[\prod_{X: \mathcal{A}}((X = A) \to F(X)) \simeq F(A)\]
-</blockquote>
-
-<p>The type-theoretic Yoneda Lemma is a special case of the following theorem:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> For each $a: A$, the following map is an isomorphism:</p>
-
-\[\mathrm{ev} : \prod_{x: A}\prod_{p: a = x} B(x, p) \to B(a, \mathrm{refl}_a); \quad  h \mapsto h(a, \mathrm{refl}_a)\]
-</blockquote>
-
-<p><strong>Proof.</strong> By induction on the identity type, the following map exists and serves as a section of $\mathrm{ev}$:</p>
-
-\[\mathrm{ind} : B(a, \mathrm{refl}_a) \to \prod_{x: A}\prod_{p: a = x} B(x, p)\]
-
-<p>Thus, it suffices to show that $\mathrm{ind}$ is a retraction of $\mathrm{ev}$. That is, for each $h: \prod_{x: A}\prod_{p: a = x} B(x, p)$, we need to show:</p>
-
-\[\mathrm{ind}(h(a, \mathrm{refl}_a)) = h\]
-
-<p>By the principle of function extensionality, this amounts to showing:</p>
-
-\[\prod_{x: A}\prod_{p: a = x} \mathrm{ind}(h(a, \mathrm{refl}_a), x, p) = h(x, p)\]
-
-<p>By induction on the identity type, it suffices to show:</p>
-
-\[\mathrm{ind}(h(a, \mathrm{refl}_a), a, \mathrm{refl}_a) = h(a, \mathrm{refl}_a)\]
-
-<p>This follows judgmentally from the definition of $\mathrm{ind}$. ■</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>
