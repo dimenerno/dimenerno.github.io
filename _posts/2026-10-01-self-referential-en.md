@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Three Types of Self-referential Sentences"
-date: 2026-10-01
+date: 2026-09-30
 tags: ["Logic"]
 lang: en
 related:

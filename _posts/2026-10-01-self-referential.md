@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "자기지시적 문장의 세 유형"
-date: 2026-10-01
+date: 2026-09-30
 tags: ["논리학"]
 related:
 ---
