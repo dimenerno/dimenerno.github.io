@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-10-01T22:44:25-07:00</updated>
+ <updated>2026-10-01T23:11:19-07:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>Jeongdam Choi</name>
@@ -67,7 +67,9 @@
    <link href="https://dimenerno.github.io/2026/09/30/self-referential/en"/>
    <updated>2026-09-30T00:00:00-07:00</updated>
    <id>https://dimenerno.github.io/2026/09/30/self-referential/self-referential-en</id>
-   <content type="html">&lt;p&gt;In this short essay I’ll classify the three types of self-referential sentences and employ this classification to sketch an explanation that sets apart paradoxical self-referential sentences (e.g. “This sentence is false”) from innocuous self-referential sentences (e.g. “This sentence is not provable”). The three types are as follow:&lt;/p&gt;
+   <content type="html">&lt;p&gt;* All em-dashes in this essay are human-generated.&lt;/p&gt;
+
+&lt;p&gt;In this short essay I’ll classify the three types of self-referential sentences and employ this classification to sketch an explanation that sets apart paradoxical self-referential sentences (e.g. “This sentence is false”) from innocuous self-referential sentences (e.g. “This sentence is not provable”). The three types are as follow:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Physically self-referring:&lt;/strong&gt; The sentence is referred to as a physical entity. Thus it can be predicated by, and only by, physical properties such as color, width, location, etc.&lt;/li&gt;
@@ -129,8 +131,6 @@
 &lt;p&gt;Another alternative is to collapse the distinction between syntax and semantics altogether. Some forms of conventionalism seem to do just this. In such pictures, a properly formed sentence is comparable to a quasi-automaton that, relative to relevant evidences, halts with an output of either “true” or “false”. Following this analogy, the Liar paradox would be a non-halting automaton.&lt;/p&gt;
 
 &lt;p&gt;Finally, I am aware that similar (identical?) points have been made by various philosophers, notably Kripke’s theory of “groundedness”, and this is part of the reason why I kept this essay short — it is an archive of rough ideas that I had before I seriously engage with related literature.&lt;/p&gt;
-
-&lt;p&gt;* All em-dashes in this essay are human-produced.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;To read:&lt;/strong&gt;&lt;/p&gt;
 
