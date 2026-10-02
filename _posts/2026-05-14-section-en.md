@@ -1,11 +1,11 @@
----
+<!-- ---
 layout: post
 title: "Notes on the Meaning of Sections"
 date: 2026-05-14
 tags: ["Mathematics", "Type Theory"]
 related:
 lang: en
----
+--- -->
 
 In type theory, the term "section" appears in two different contexts.
 

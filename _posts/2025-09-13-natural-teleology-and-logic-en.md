@@ -7,7 +7,7 @@ lang: en
 related:
 ---
 
-> PDF version: <a href="/public/natural_teleology_and_logic.pdf">Link</a>
+> The below text is outdated. Read the most recent PDF version: <a href="/public/natural_teleology_and_logic.pdf">Link</a>
 
 ### Abstract
 

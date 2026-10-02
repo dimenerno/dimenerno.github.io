@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-10-01T22:27:25-07:00</updated>
+ <updated>2026-10-01T22:39:26-07:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>Jeongdam Choi</name>
@@ -339,11 +339,20 @@
  </entry>
  
  <entry>
-   <title>Notes on the Meaning of Sections</title>
-   <link href="https://dimenerno.github.io/2026/05/14/section/en"/>
+   <title>Section En</title>
+   <link href="https://dimenerno.github.io/2026/05/14/section-en"/>
    <updated>2026-05-14T00:00:00-07:00</updated>
-   <id>https://dimenerno.github.io/2026/05/14/section/section-en</id>
-   <content type="html">&lt;p&gt;In type theory, the term “section” appears in two different contexts.&lt;/p&gt;
+   <id>https://dimenerno.github.io/2026/05/14/section-en</id>
+   <content type="html">&lt;!-- ---
+layout: post
+title: &quot;Notes on the Meaning of Sections&quot;
+date: 2026-05-14
+tags: [&quot;Mathematics&quot;, &quot;Type Theory&quot;]
+related:
+lang: en
+--- --&gt;
+
+&lt;p&gt;In type theory, the term “section” appears in two different contexts.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Given maps $r: B \to A$ and $s: A \to B$, if $rs \sim \mathrm{id}_A$, then $s$ is called a &lt;strong&gt;section&lt;/strong&gt; of $r$, and $r$ is called a &lt;strong&gt;retract&lt;/strong&gt; of $s$. That is,&lt;/p&gt;
@@ -5275,7 +5284,7 @@ x_2 &amp;lt; y_2 \quad (\text{if }\hat{x} &amp;lt; \hat{y}, x_1 = y_1) \\
    <updated>2025-09-13T00:00:00-07:00</updated>
    <id>https://dimenerno.github.io/2025/09/13/natural-teleology-and-logic/natural-teleology-and-logic-en</id>
    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;PDF version: &lt;a href=&quot;/public/natural_teleology_and_logic.pdf&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;The below text is outdated. Read the most recent PDF version: &lt;a href=&quot;/public/natural_teleology_and_logic.pdf&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;abstract&quot;&gt;Abstract&lt;/h3&gt;
