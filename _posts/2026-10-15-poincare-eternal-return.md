@@ -82,7 +82,7 @@ $$
 d(\Phi_N(T^n x), \Phi_N(x)) \le d(\Phi_N(T^n x), q) + d(q, \Phi_N(x)) < 2r < \varepsilon \quad \blacksquare
 $$
 
-## 무엇이 "제한"인가
+## 고찰
 
 위 정리는 니체의 영원회귀와 네 가지 점에서 다르다.
 

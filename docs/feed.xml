@@ -94,7 +94,7 @@
 
 \[d(\Phi_N(T^n x), \Phi_N(x)) \le d(\Phi_N(T^n x), q) + d(q, \Phi_N(x)) &lt; 2r &lt; \varepsilon \quad \blacksquare\]
 
-<h2 id="무엇이-제한인가">무엇이 “제한”인가</h2>
+<h2 id="고찰">고찰</h2>
 
 <p>위 정리는 니체의 영원회귀와 네 가지 점에서 다르다.</p>
 

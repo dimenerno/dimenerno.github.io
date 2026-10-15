@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-10-15T16:16:49-07:00</updated>
+ <updated>2026-10-15T16:19:53-07:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>Jeongdam Choi</name>
@@ -95,7 +95,7 @@
 
 \[d(\Phi_N(T^n x), \Phi_N(x)) \le d(\Phi_N(T^n x), q) + d(q, \Phi_N(x)) &amp;lt; 2r &amp;lt; \varepsilon \quad \blacksquare\]
 
-&lt;h2 id=&quot;무엇이-제한인가&quot;&gt;무엇이 “제한”인가&lt;/h2&gt;
+&lt;h2 id=&quot;고찰&quot;&gt;고찰&lt;/h2&gt;
 
 &lt;p&gt;위 정리는 니체의 영원회귀와 네 가지 점에서 다르다.&lt;/p&gt;
 
