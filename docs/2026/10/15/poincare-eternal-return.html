@@ -375,7 +375,7 @@
   
   <h2 id="들어가며">들어가며</h2>
 
-<p>니체는 『즐거운 학문』에서 유명한 사고실험을 제시한다. 어느 날 악마가 찾아와, 네가 지금 살고 있는 이 삶을 똑같은 순서 그대로 다시 한번, 그리고 셀 수 없이 여러 번 살게 될 것이라고 속삭인다면 어떻겠는가? 이른바 <strong>영원회귀</strong>이다.</p>
+<p>니체는 『즐거운 학문』에서 유명한 사고실험을 제시한다. 어느 날 악마가 찾아와, 네가 지금 살고 있는 이 삶을 똑같은 순서 그대로 다시 한번, 그리고 셀 수 없이 여러 번 살게 될 것이라고 속삭인다는 사고실험, 이른바 <strong>영원회귀</strong>이다.</p>
 
 <p>영원회귀는 보통 실존적 사고실험으로 읽힌다. 그러나 니체는 유고에서 이것을 우주론적 사실로 증명하려 시도하기도 했다. 그리고 필자는 이것이 허황된 시도라고 생각하지 않는다.</p>
 
@@ -396,26 +396,24 @@
 <blockquote>
   <p><strong>정의.</strong> 상태 $x$에서 시작하는 길이 $N$의 <strong>인생</strong>을</p>
 
-\[\Phi\_N(x) = (x, Tx, \ldots, T^{N-1}x) \in X^N\]
+\[\Phi_N(x) = (x, Tx, \ldots, T^{N-1}x) \in X^N\]
 
-  <p>으로 정의한다. 또한 $X^N$ 위의 거리를 다음과 같이 정의한다.</p>
+  <p>으로 정의한다. 또한 $X^N$ 위의 거리 $D$를 다음과 같이 정의한다.</p>
 
-\[d\big((x_i)_{i&lt;N}, (y_i)_{i&lt;N}\big) = \max_{0 \le i &lt; N} d(x_i, y_i)\]
+\[D\big((x_i)_{i&lt;N}, (y_i)_{i&lt;N}\big) = \max_{0 \le i &lt; N} d(x_i, y_i)\]
 </blockquote>
-
-<p>따라서 두 인생 사이의 거리는 $d(\Phi_N(x), \Phi_N(y)) = \max_{0 \le i &lt; N} d(T^i x, T^i y)$이며, 두 인생이 가깝다는 것은 모든 순간이 가깝고, 그 순서까지 같다는 것이다.</p>
 
 <h2 id="정리">정리</h2>
 
 <blockquote>
-  <p><strong>정리 (제한된 영원회귀).</strong> $\mu$가 $X$의 보렐 집합 위의 <strong>유한측도</strong>이며, $T: X \to X$는 가측이고 $\mu$를 보존한다고 하자. 즉 임의의 보렐 집합 $A$에 대해 $\mu(T^{-1}A) = \mu(A)$이다. 이때, 다음이 성립한다:</p>
+  <p><strong>정리 (제한된 영원회귀).</strong> $\mu$가 $X$의 보렐 집합 위의 <strong>유한측도</strong>이며, $T: X \to X$는 가측이고 $\mu$를 보존한다고 하자. 즉 임의의 보렐 집합 $A$에 대해 $\mu(T^{-1}A) = \mu(A)$이다. 이때, $\mu$ 측도에서 거의 모든 $x \in X$에 대해 다음이 성립한다.</p>
 
   <blockquote>
-    <p>$\mu$ 측도에서 거의 모든 $x \in X$에 대해 다음이 성립한다. 임의의 $N \in \mathbb{N}$과 $\varepsilon &gt; 0$에 대해, $d(\Phi_N(x), \Phi_N(T^n x)) &lt; \varepsilon$을 만족하는 $n$이 무한히 많다.</p>
+    <p>임의의 $N \in \mathbb{N}$과 $\varepsilon &gt; 0$에 대해, $D(\Phi_N(x), \Phi_N(T^n x)) &lt; \varepsilon$을 만족하는 $n$이 무한히 많다.</p>
   </blockquote>
 </blockquote>
 
-<p>즉 거의 모든 세계에서, 지금부터 $N$단위 시간 동안의 역사는 $\varepsilon$ 이내의 오차로 무한히 다시 일어난다. $\Phi_N(T^n x)$가 바로 시각 $n$에서 시작하는 인생이기 때문이다.</p>
+<p>즉 거의 모든 세계에서, 지금부터 $N$단위 시간 동안의 역사는 $\varepsilon$ 이내의 오차로 무한히 다시 일어난다.</p>
 
 <blockquote>
   <p>에르고딕성은 필요하지 않다는 점에 주목하라. 에르고딕성은 한 번도 실현된 적 없는 인생이 언제가 실현된다는 것을 보장할 때 필요하다. 이미 실현된 인생이 반복된다는 것을 보이는 데에는 측도의 유한성과 상태공간의 가분성만으로 충분하다.</p>
@@ -426,10 +424,10 @@
 <p>증명의 핵심은 다음 정리이다.</p>
 
 <blockquote>
-  <p><strong>푸앵카레 재귀정리.</strong> $A \subseteq X$가 가측집합이라면, $A$의 거의 모든 점은 $A$로 무한히 자주 돌아온다.</p>
+  <p><strong>푸앵카레 재귀정리.</strong> 위 정리의 전제에서, $A \subseteq X$가 가측집합이라면, $\mu$에 대해 $A$의 거의 모든 점은 $A$로 무한히 자주 돌아온다.</p>
 </blockquote>
 
-<p><strong>증명.</strong> $A$의 점 중 한 번도 $A$로 돌아오지 않는 점들의 집합을 $B$라고 하자.</p>
+<p><strong>증명.</strong> $A$의 점 중 한 번도 $A$로 돌아오지 않는 점들의 집합을 $B$라고 하자. 즉,</p>
 
 \[B = \{ x \in A : \forall n \ge 1 \;\; T^n x \notin A \}\]
 
@@ -441,15 +439,15 @@
 
 <h2 id="정리의-증명">정리의 증명</h2>
 
-<p><strong>증명.</strong> $X$가 가분이므로 $X^N$ 또한 가분이며, 따라서 $X^N$의 가산 조밀부분집합 $D_N$이 존재한다. 각 $q \in D_N$과 $r \in \mathbb{Q}^+$에 대해 다음과 같이 정의하자.</p>
+<p><strong>증명.</strong> $X$가 가분이므로 $X^N$ 또한 가분이며, 따라서 $X^N$의 가산 조밀부분집합 $Q_N$이 존재한다. 각 $q \in Q_N$과 $r \in \mathbb{Q}^+$에 대해 다음과 같이 정의하자.</p>
 
 \[A_{N,q,r} = \Phi_N^{-1}\big( B(q, r) \big)\]
 
 <p>$T$가 가측이므로 $\Phi_N$ 또한 가측이며, 따라서 $A_{N,q,r}$은 가측집합이다. 각 $A_{N,q,r}$에 보조정리를 적용하면, 그 집합으로 무한히 자주 돌아오지 않는 점들의 영집합 $E_{N,q,r}$을 얻는다. 이제 $E$를 모든 $N, q, r$에 대한 $E_{N,q,r}$의 합집합이라고 하자. $E$는 가산 개의 영집합의 합집합이므로 $\mu(E) = 0$이다.</p>
 
-<p>임의의 $x \notin E$와 $N, \varepsilon$를 잡자. $D_N$의 조밀성에 의해, $d(\Phi_N(x), q) &lt; r &lt; \varepsilon/2$를 만족하는 $q \in D_N$과 $r \in \mathbb{Q}^+$를 고를 수 있다. 그러면 $x \in A_{N,q,r}$이고 $x \notin E$이므로, $T^n x \in A_{N,q,r}$을 만족하는 $n$이 무한히 많다. 그러한 각 $n$에 대해 삼각부등식에 의해 다음이 성립한다.</p>
+<p>임의의 $x \notin E$와 $N, \varepsilon$를 잡자. $Q_N$의 조밀성에 의해, $D(\Phi_N(x), q) &lt; r &lt; \varepsilon/2$를 만족하는 $q \in Q_N$과 $r \in \mathbb{Q}^+$를 고를 수 있다. 그러면 $x \in A_{N,q,r}$이고 $x \notin E$이므로, $T^n x \in A_{N,q,r}$을 만족하는 $n$이 무한히 많다. 그러한 각 $n$에 대해 삼각부등식에 의해 다음이 성립한다.</p>
 
-\[d(\Phi_N(T^n x), \Phi_N(x)) \le d(\Phi_N(T^n x), q) + d(q, \Phi_N(x)) &lt; 2r &lt; \varepsilon \quad \blacksquare\]
+\[D(\Phi_N(T^n x), \Phi_N(x)) \le D(\Phi_N(T^n x), q) + D(q, \Phi_N(x)) &lt; 2r &lt; \varepsilon \quad \blacksquare\]
 
 <h2 id="고찰">고찰</h2>
 
