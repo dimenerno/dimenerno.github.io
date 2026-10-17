@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "인류원리로 강화하는 영원회귀"
+title: "인류원리로 증명하는 영원회귀"
 date: 2026-10-16
 tags: ["철학", "확률론"]
 related:
