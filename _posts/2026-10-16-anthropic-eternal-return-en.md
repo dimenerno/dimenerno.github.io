@@ -8,8 +8,6 @@ related:
   - "Proving Eternal Recurrence from the Poincaré Recurrence Theorem"
 ---
 
-## Introduction
-
 In the [previous post](https://dimenerno.github.io/2026/10/15/poincare-eternal-return/en), I used the Poincaré recurrence theorem to prove a restricted form of eternal recurrence. I must confess, however, that even I find the assumptions used in that proof unpersuasive. But while having dinner yesterday, it suddenly occurred to me that a kind of anthropic principle could make them significantly more plausible, so I would like to present the idea here. You do not need to have read the previous post to follow this one.
 
 ## Assumptions
