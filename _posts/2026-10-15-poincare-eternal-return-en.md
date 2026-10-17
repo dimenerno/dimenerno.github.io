@@ -7,9 +7,7 @@ lang: en
 related:
 ---
 
-## Introduction
-
-In *The Gay Science*, Nietzsche presents a famous thought experiment. One day a demon comes to you and whispers that you will have to live the life you are now living once again, in exactly the same order, and innumerable times more. This is the so-called **eternal recurrence**.
+In *The Gay Science*, Nietzsche presents a famous thought experiment. What if, one day a demon comes to you and whispers that you will have to live the life you are now living once again, in exactly the same order, and innumerable times more?
 
 Eternal recurrence is usually read as an existential thought experiment. But in his unpublished notebooks, Nietzsche also attempted to prove it as a cosmological fact. And I do not think this attempt is a fanciful one.
 
