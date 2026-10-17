@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  
+  
+  <title data-title-ko="On the Transcendental Nature of the Cosmic Censorship Hypothesis · 디멘의 블로그" data-title-en="On the Transcendental Nature of the Cosmic Censorship Hypothesis · Jeongdam&#39;s Blog">On the Transcendental Nature of the Cosmic Censorship Hypothesis · Jeongdam&#39;s Blog</title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2026/10/17/cch/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko"></p>
+    <p class="lang-en" style="display: none;"></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Jeongdam's Blog</a>
+            <small><div class="lang-ko"></div>
+              <div class="lang-en"></div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">EN</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle"/>
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">한</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">On the Transcendental Nature of the Cosmic Censorship Hypothesis</h1>
+  <span class="post-date">17 Oct 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'" >Philosophy</div>
+      
+      <div class="tag" onclick="location.href='/tags/physics/'" >Physics</div>
+      
+    </div>
+  
+  <p>To put it very briefly, the <strong>cosmic censorship hypothesis</strong> is the principle that “the observable universe obeys causality.”</p>
+
+<p>Observability here is meant in the relativistic sense: a point in spacetime is observable if a light signal emitted from it can be observed after a sufficient amount of time. For instance, the Andromeda Galaxy is observable — since it lies 2.5 million light-years from Earth, a light signal emitted from Andromeda will be observed 2.5 million years later — whereas the interior of a black hole’s “event horizon” is not. A light signal emitted inside the event horizon gets “sucked” into the singularity.</p>
+
+<p>The reason the paragraph above is only a “very brief” introduction is that defining, with mathematical and formal rigor, what observability and causality mean has turned out to be a ridiculously difficult task. This work was carried out by Hawking, Ellis, Wald, and others, and it goes roughly as follows. (Feel free to skip it.)</p>
+
+<blockquote>
+  <p>Given a spacetime $(M, g)$, if there exists an open set $\tilde V$ in $\tilde M$ containing $\overline{J^-(\mathscr{I}^+) \cap M}$ such that $(\tilde V, \tilde g)$ is globally hyperbolic, we say that $(M, g)$ is strongly asymptotically predictable.</p>
+
+  <p><strong>Conjecture.</strong> For nonsingular, asymptotically flat initial data $(\Sigma, h, K)$ with suitable matter fields (e.g. no matter with infinite or negative energy), the maximal Cauchy development $(M, g)$ is strongly asymptotically predictable.</p>
+</blockquote>
+
+<p>But a counterexample to this conjecture was found by Christodoulou. Conclusion: the cosmic censorship hypothesis is false.</p>
+
+<p>…Of course, the discussion could hardly have ended there. Physicists, Christodoulou himself among them, pointed out that this counterexample universe is extremely unstable. Perhaps, by adding a sufficiently strong stability condition, the cosmic censorship hypothesis can still be made to hold.</p>
+
+<p>Here, though, we might imagine a possible future. Suppose a version of the hypothesis with stability condition A is proposed, and later some physicist finds a counterexample that satisfies even A. Would the cosmic censorship hypothesis then, at last, be rejected?</p>
+
+<p>I don’t think so. A new version with stability condition B would probably be proposed instead. And if a counterexample satisfying even B were soon found? Then a version with stability condition C would be proposed, and so on and so forth…</p>
+
+<p>This is clearly different from how we treat other scientific theories. Ordinarily, when counterexamples to a theory (e.g. phlogiston theory) are found, the theory is at first loosened or modified to accommodate them (phlogiston with negative mass), but once too many counterexamples pile up, the old theory is rejected and a new one (oxygen theory) is adopted.</p>
+
+<p>In the case of the cosmic censorship hypothesis, however — at least by my intuition — <strong>no matter how many</strong> counterexamples arise, it would be revised again and again but never rejected outright. And if we grant this intuition, the question about the cosmic censorship hypothesis no longer seems to be whether it is true or false. The cosmic censorship hypothesis <strong>must be true a priori.</strong> For the hypothesis is nothing other than the cosmological formalization of causality, and causality is nothing other than a <strong>transcendental condition</strong> that makes physical inquiry possible. What we must do, then, is to specify precisely the conditions under which the cosmic censorship hypothesis <strong>comes out</strong> true.</p>
+
+<p>So might not the expectation that physicists will respond to future counterexamples by relaxing the hypothesis rather than rejecting it run parallel to the way Kantians responded to the “counterexample” of non-Euclidean geometry by relaxing the rigidity of the pure form of spatiotemporal intuition rather than rejecting it? I think this could be an interesting case where the history of philosophy and the history of science intersect.</p>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>
