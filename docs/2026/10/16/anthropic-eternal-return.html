@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  
+  
+  <title data-title-ko="인류원리로 강화하는 영원회귀 · 디멘의 블로그" data-title-en="인류원리로 강화하는 영원회귀 · Jeongdam&#39;s Blog">인류원리로 강화하는 영원회귀 · Jeongdam&#39;s Blog</title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2026/10/16/anthropic-eternal-return" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko"></p>
+    <p class="lang-en" style="display: none;"></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Jeongdam's Blog</a>
+            <small><div class="lang-ko"></div>
+              <div class="lang-en"></div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">EN</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle"/>
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">한</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">인류원리로 강화하는 영원회귀</h1>
+  <span class="post-date">16 Oct 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/철학/'" >철학</div>
+      
+      <div class="tag" onclick="location.href='/tags/확률론/'" >확률론</div>
+      
+    </div>
+  
+  <h2 id="들어가며">들어가며</h2>
+
+<p><a href="https://dimenerno.github.io/2026/10/15/poincare-eternal-return">지난 글</a>에서 푸앵카레 재귀정리를 이용해 영원회귀의 제한된 형태를 증명했다. 하지만 고백하건대 필자 본인도 그 증명에 사용된 가정들의 설득력은 낮다고 생각한다. 그런데 어제 저녁밥을 먹다가, 일종의 인류원리<sub>anthropic principle</sub>를 통해 이 설득력을 유의미하게 높일 수 있겠다는 생각이 문득 들어 소개해보고자 한다. 지난 글을 읽지 않았더라도 이 글을 이해하는 데에는 지장이 없다.</p>
+
+<h2 id="가정">가정</h2>
+
+<p>막스 테그마크의 구분법을 따라 <strong>4단계 다중우주론</strong><sub>Level IV multiverse</sub>이 성립한다고 가정하자. 즉, 우리가 논리적·수학적으로 상상할 수 있는 모든 수학적 구조는 그 자체로 하나의 독립된 우주이다. 4단계 다중우주론을 지지하는 유력한 근거로는 미세조정 문제가 있는데(이 또한 인류원리에 호소한다), 이 글에서는 4단계 다중우주론을 받아들일 합리적인 근거가 있다는 점을 일단 인정하기로 하자.</p>
+
+<p>또한 영원회귀하는 우주는 논리적·수학적으로 무모순이며, 그러한 우주 중에는 관측 가능한 영역 내에서 우리 우주와 동일한 순간을 포함하는 우주 또한 존재한다고 가정하자. 이 가정만큼은 <a href="/2026/10/15/poincare-eternal-return">지난 글</a>에 의해 충분히 논증되었다고 생각한다.</p>
+
+<p>두 가정은 함께 다음을 시사한다.</p>
+
+<blockquote>
+  <p>어떤 영원회귀적 우주가 존재하여, 그 우주에는 관측 가능한 영역 내에서 나와 같은 삶을 사는 “쌍둥이-나”가 있다.</p>
+</blockquote>
+
+<h2 id="논증">논증</h2>
+
+<p>이제 다음과 같이 논증하자. 우리의 현실 우주를 $@$라고 하고, 관측 가능한 영역 내에서 $@$과 동일한 두 우주 $U_1$과 $U_2$가 있다고 하자. $U_1$은 비회귀적 우주이고, $U_2$는 영원회귀적 우주이다. $@ = U_1$이거나 $@ = U_2$라는 사실이 주어졌다면, 두 가능성 중 어느 쪽의 확률이 더 높을까?</p>
+
+<p>인류원리에 따르면 답은 이렇다. <strong>나</strong>는 $U_1$에 속해 있을 확률보다 $U_2$에 속해 있을 확률이 <em>무한히</em> 더 높다. $U_1$에서는 “나”의 사례가 한 번만 실현되지만, $U_2$에서는 “나”의 사례가 무한히 많이 실현되기 때문이다. 따라서</p>
+
+\[P(@ = U_1 \mid @ \in \{U_1, U_2\}) = 0, \qquad P(@ = U_2 \mid @ \in \{U_1, U_2\}) = 1\]
+
+<p>이다.</p>
+
+<p>이제 독자는 필자가 어떤 방향으로 결론을 내리고자 하는지 짐작했을 것이다. $U_1$과 $U_2$을 비롯해 관측 가능한 영역 내에서 $@$과 충분히 유사한 모든 우주들의 모임 $\mathcal{U}$를 고려한다면, $\mathcal{U}$는 비회귀적 유형과 영원회귀적 유형으로 양분할 수 있다. 필자의 주장은, 위의 인류원리 논증에 따르면 $@$은 영원회귀적 유형에 속할 확률이 압도적으로 높다는 것이다.</p>
+
+<p>위의 논증 스케치는 우리의 우주가 영원회귀적 우주일 확률이 압도적으로 높다는 사실을 시사한다. 물론 이 논증을 자세히 다듬으려면 가능세계 위의 확률분포와 측도 문제를 자세히 따져야 하겠지만, 이 부분은 독자에게 연습문제로 남긴다.</p>
+
+</div>
+
+
+  <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
+  <h3 class="lang-ko">관련 글</h3>
+  <h3 class="lang-en">Related Posts</h3>
+  <ul>
+    
+      
+      
+        <li><a href="/2026/10/15/poincare-eternal-return">푸앵카레 재귀정리로 증명하는 영원회귀</a></li>
+      
+    
+  </ul>
+  <div style="margin-bottom: 3em;" ></div>
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

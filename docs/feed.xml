@@ -7,6 +7,92 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>인류원리로 강화하는 영원회귀</title>
+        <link>https://dimenerno.github.io/2026/10/16/anthropic-eternal-return</link>
+        <guid>https://dimenerno.github.io/2026/10/16/anthropic-eternal-return</guid>
+        <pubDate>Fri, 16 Oct 2026 00:00:00 -0700</pubDate>
+        <description>&lt;h2 id=&quot;들어가며&quot;&gt;들어가며&lt;/h2&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/10/16/anthropic-eternal-return">
+          <![CDATA[
+            <h2 id="들어가며">들어가며</h2>
+
+<p><a href="https://dimenerno.github.io/2026/10/15/poincare-eternal-return">지난 글</a>에서 푸앵카레 재귀정리를 이용해 영원회귀의 제한된 형태를 증명했다. 하지만 고백하건대 필자 본인도 그 증명에 사용된 가정들의 설득력은 낮다고 생각한다. 그런데 어제 저녁밥을 먹다가, 일종의 인류원리<sub>anthropic principle</sub>를 통해 이 설득력을 유의미하게 높일 수 있겠다는 생각이 문득 들어 소개해보고자 한다. 지난 글을 읽지 않았더라도 이 글을 이해하는 데에는 지장이 없다.</p>
+
+<h2 id="가정">가정</h2>
+
+<p>막스 테그마크의 구분법을 따라 <strong>4단계 다중우주론</strong><sub>Level IV multiverse</sub>이 성립한다고 가정하자. 즉, 우리가 논리적·수학적으로 상상할 수 있는 모든 수학적 구조는 그 자체로 하나의 독립된 우주이다. 4단계 다중우주론을 지지하는 유력한 근거로는 미세조정 문제가 있는데(이 또한 인류원리에 호소한다), 이 글에서는 4단계 다중우주론을 받아들일 합리적인 근거가 있다는 점을 일단 인정하기로 하자.</p>
+
+<p>또한 영원회귀하는 우주는 논리적·수학적으로 무모순이며, 그러한 우주 중에는 관측 가능한 영역 내에서 우리 우주와 동일한 순간을 포함하는 우주 또한 존재한다고 가정하자. 이 가정만큼은 <a href="/2026/10/15/poincare-eternal-return">지난 글</a>에 의해 충분히 논증되었다고 생각한다.</p>
+
+<p>두 가정은 함께 다음을 시사한다.</p>
+
+<blockquote>
+  <p>어떤 영원회귀적 우주가 존재하여, 그 우주에는 관측 가능한 영역 내에서 나와 같은 삶을 사는 “쌍둥이-나”가 있다.</p>
+</blockquote>
+
+<h2 id="논증">논증</h2>
+
+<p>이제 다음과 같이 논증하자. 우리의 현실 우주를 $@$라고 하고, 관측 가능한 영역 내에서 $@$과 동일한 두 우주 $U_1$과 $U_2$가 있다고 하자. $U_1$은 비회귀적 우주이고, $U_2$는 영원회귀적 우주이다. $@ = U_1$이거나 $@ = U_2$라는 사실이 주어졌다면, 두 가능성 중 어느 쪽의 확률이 더 높을까?</p>
+
+<p>인류원리에 따르면 답은 이렇다. <strong>나</strong>는 $U_1$에 속해 있을 확률보다 $U_2$에 속해 있을 확률이 <em>무한히</em> 더 높다. $U_1$에서는 “나”의 사례가 한 번만 실현되지만, $U_2$에서는 “나”의 사례가 무한히 많이 실현되기 때문이다. 따라서</p>
+
+\[P(@ = U_1 \mid @ \in \{U_1, U_2\}) = 0, \qquad P(@ = U_2 \mid @ \in \{U_1, U_2\}) = 1\]
+
+<p>이다.</p>
+
+<p>이제 독자는 필자가 어떤 방향으로 결론을 내리고자 하는지 짐작했을 것이다. $U_1$과 $U_2$을 비롯해 관측 가능한 영역 내에서 $@$과 충분히 유사한 모든 우주들의 모임 $\mathcal{U}$를 고려한다면, $\mathcal{U}$는 비회귀적 유형과 영원회귀적 유형으로 양분할 수 있다. 필자의 주장은, 위의 인류원리 논증에 따르면 $@$은 영원회귀적 유형에 속할 확률이 압도적으로 높다는 것이다.</p>
+
+<p>위의 논증 스케치는 우리의 우주가 영원회귀적 우주일 확률이 압도적으로 높다는 사실을 시사한다. 물론 이 논증을 자세히 다듬으려면 가능세계 위의 확률분포와 측도 문제를 자세히 따져야 하겠지만, 이 부분은 독자에게 연습문제로 남긴다.</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Proving Eternal Recurrence from the Anthropic Principle</title>
+        <link>https://dimenerno.github.io/2026/10/16/anthropic-eternal-return/en</link>
+        <guid>https://dimenerno.github.io/2026/10/16/anthropic-eternal-return/en</guid>
+        <pubDate>Fri, 16 Oct 2026 00:00:00 -0700</pubDate>
+        <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/10/16/anthropic-eternal-return/en">
+          <![CDATA[
+            <h2 id="introduction">Introduction</h2>
+
+<p>In the <a href="https://dimenerno.github.io/2026/10/15/poincare-eternal-return/en">previous post</a>, I used the Poincaré recurrence theorem to prove a restricted form of eternal recurrence. I must confess, however, that even I find the assumptions used in that proof unpersuasive. But while having dinner yesterday, it suddenly occurred to me that a kind of anthropic principle could make them significantly more plausible, so I would like to present the idea here. You do not need to have read the previous post to follow this one.</p>
+
+<h2 id="assumptions">Assumptions</h2>
+
+<p>Following Max Tegmark’s classification, let us assume that the <strong>Level IV multiverse</strong> holds. That is, every mathematical structure we can conceive of logically and mathematically is, in its own right, an independent universe. A leading argument for the Level IV multiverse is the fine-tuning problem (which also appeals to the anthropic principle), but in this post let us simply grant that there are reasonable grounds for accepting it.</p>
+
+<p>Let us also assume that an eternally recurring universe is logically and mathematically consistent, and that among such universes there is one containing a moment identical to ours within the observable region. This assumption, at least, I take to have been adequately argued for in the <a href="https://dimenerno.github.io/2026/10/15/poincare-eternal-return/en">previous post</a>.</p>
+
+<p>Together, the two assumptions suggest the following.</p>
+
+<blockquote>
+  <p>There exists an eternally recurring universe containing a “twin-me” who, within the observable region, lives the same life as I do.</p>
+</blockquote>
+
+<h2 id="the-argument">The Argument</h2>
+
+<p>Now let us argue as follows. Let $@$ be our actual universe, and let $U_1$ and $U_2$ be two universes identical to $@$ within the observable region. $U_1$ is a non-recurring universe, and $U_2$ is an eternally recurring one. Given that either $@ = U_1$ or $@ = U_2$, which of the two possibilities is more probable?</p>
+
+<p>According to the anthropic principle, the answer is this: it is <em>infinitely</em> more probable that <strong>I</strong> belong to $U_2$ than to $U_1$. For in $U_1$ an instance of “me” is realized only once, whereas in $U_2$ instances of “me” are realized infinitely many times. Therefore,</p>
+
+\[P(@ = U_1 \mid @ \in \{U_1, U_2\}) = 0, \qquad P(@ = U_2 \mid @ \in \{U_1, U_2\}) = 1.\]
+
+<p>By now the reader has probably guessed where I am heading. Consider the collection $\mathcal{U}$ of all universes sufficiently similar to $@$ within the observable region, including $U_1$ and $U_2$. Then $\mathcal{U}$ can be divided into a non-recurring type and an eternally recurring type. My claim is that, by the anthropic argument above, $@$ is overwhelmingly likely to belong to the eternally recurring type.</p>
+
+<p>The argument sketched above suggests that our universe is overwhelmingly likely to be an eternally recurring one. Of course, making the argument rigorous would require a careful treatment of probability distributions over possible worlds and the attendant measure problem, but I leave this part as an exercise for the reader.</p>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
         <title>푸앵카레 재귀정리로 증명하는 영원회귀</title>
         <link>https://dimenerno.github.io/2026/10/15/poincare-eternal-return</link>
         <guid>https://dimenerno.github.io/2026/10/15/poincare-eternal-return</guid>
@@ -527,190 +613,6 @@ lang: en
 <p><img src="/public/section-2.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;" /></p>
 
 <p>Of course, $\lambda x . b(x)$ is judgementally equal to $b$. Thus, the second meaning of section is just a special case of the first.</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>유형론적 대각선 논법</title>
-        <link>https://dimenerno.github.io/2026/05/13/type-theoretic-cantor</link>
-        <guid>https://dimenerno.github.io/2026/05/13/type-theoretic-cantor</guid>
-        <pubDate>Wed, 13 May 2026 00:00:00 -0700</pubDate>
-        <description>&lt;h2 id=&quot;전사성의-유형론적-정의&quot;&gt;전사성의 유형론적 정의&lt;/h2&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2026/05/13/type-theoretic-cantor">
-          <![CDATA[
-            <h2 id="전사성의-유형론적-정의">전사성의 유형론적 정의</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> 사상 $f: A \to X$에 대해 다음과 같이 정의한다.</p>
-
-\[\text{is-surj}(f) := \prod_{x: X} \| \mathrm{fib}_f(x) \|\]
-</blockquote>
-
-<p>위의 정의는 “임의의 공역의 원소는 공집합이 아닌 역사상<sub>fiber</sub>을 가진다”를 표현한 것이다. 이와 동치인 정의는 “공역이 치역과 같다”이다. 후자의 정의를 유형론적으로 옮기기 위해서 다음과 같이 정의한다.</p>
-
-<blockquote>
-  <p><strong>정의.</strong> 다음의 가환 도식에서 $\iota$가 임베딩이고, 가환성이 호모토피 $H: f \sim \iota q$에 의해 목격된다고 하자.</p>
-
-  <p><img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
-
-  <p>다음이 만족될 경우 $\iota$가 <strong>치역 임베딩의 보편 성질</strong>을 만족한다고 한다: 임의의 임베딩 $m: C \to X$에 대해, 전치 합성</p>
-
-\[- \circ (q, H): \hom_X(\iota, m) \to \hom_X(f, m)\]
-
-  <p>이 동치 관계<sub>equivalence</sub>이다.</p>
-</blockquote>
-
-<p>위의 정의는 치역 임베딩의 보편 성질이 정말로 맞다. 즉, 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 사상 $f: A \to X$에 대해 다음이 성립한다.</p>
-
-  <ul>
-    <li>다음은 치역 임베딩의 보편 성질을 만족한다.</li>
-  </ul>
-
-\[\begin{align}
-&amp;\operatorname{im} f := \sum_{x: X} \| \mathrm{fib}_f(x) \| \\
-&amp;q_f : A \to \operatorname{im} f; &amp;&amp;a \mapsto (f(a), |(a, \mathrm{refl}_{f(a)})) \\
-&amp;\iota_f : \operatorname{im} f \to X; &amp;&amp;\mathrm{pr}_1
-\end{align}\]
-
-  <ul>
-    <li>치역 임베딩의 보편 성질을 만족하는 임베딩은 유일하다. 즉, 두 임베딩 $i: B \to X$와 $i’: B’ \to X$가 보편 성질을 만족한다면, 다음의 가환 도식을 만족하는 동치 관계 $e: B \simeq B’$의 유형은 수축 가능하다<sub>contractible</sub>.</li>
-  </ul>
-
-  <p><img src="/public/uniqueness-of-image.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<p>유형론적으로 치역을 정의했으므로, 전사성의 두 번째 정의를 제시할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리.</strong> 다음의 가환 도식에서 $\iota: B \to X$가 임베딩이라고 하자. $q$가 전사일 필요충분조건은 $\iota$가 치역 임베딩의 보편 성질을 만족하는 것이다.</p>
-
-  <p><img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<h2 id="유형론적-대각선-논법">유형론적 대각선 논법</h2>
-
-<blockquote>
-  <p><strong>정의.</strong> 유형 $X$에 대해, 다음과 같이 정의한다.</p>
-
-\[\mathcal{P}(X) := X \to \mathsf{Prop}\]
-</blockquote>
-
-<p>즉, $X$의 멱집합은 $X$에 대한 명제들의 모임<sub>family of propositions over $X$</sub>이다. 이는 가령 자연수의 부분집합인 짝수 집합이 “짝수임”이라는 자연수에 대한 명제와 대응하는 것으로 이해할 수 있다. 한편, $X$의 멱집합을 $X \to 2$로 정의하지 않는 이유는 이 경우 $X$의 멱집합이 <em>결정 가능한</em> 명제로 한정되기 때문이다.</p>
-
-<blockquote>
-  <p><strong>칸토어 정리.</strong> $f: X \to \mathcal{P}(X)$라면 $f$는 전사가 아니다.</p>
-</blockquote>
-
-<p><strong>증명.</strong> $X$에 대한 다음의 명제 $Q : X \to \mathsf{Prop}$를 정의하자.</p>
-
-\[Q := \lambda x. \lnot f(x, x)\]
-
-<p>$f$가 전사라면 $g: \prod_{P: X \to \mathsf{Prop}} \| \mathrm{fib}_f(P) \|$가 존재한다. 따라서 $g(Q) : \| \mathrm{fib}_f(Q) \|$이다.</p>
-
-<p>다음과 같이 $\mathrm{fib}_f(Q) \to \varnothing$을 정의하자.</p>
-
-\[(x, p) \mapsto \mathrm{tr}(f(x, x), p)(f(x, x))\]
-
-<p>명제적 절단<sub>propositional truncation</sub>의 정의로부터, 위의 사상은 $\| \mathrm{fib}_f(Q) \| \to \varnothing$을 유도한다. 따라서 $g(Q) \to \varnothing$이다. 이는 모순이므로 $f$는 전사가 아니다. ■</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>Type-Theoretic Diagonal Argument</title>
-        <link>https://dimenerno.github.io/2026/05/13/type-theoretic-cantor/en</link>
-        <guid>https://dimenerno.github.io/2026/05/13/type-theoretic-cantor/en</guid>
-        <pubDate>Wed, 13 May 2026 00:00:00 -0700</pubDate>
-        <description>&lt;h2 id=&quot;type-theoretic-definition-of-surjectivity&quot;&gt;Type-Theoretic Definition of Surjectivity&lt;/h2&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2026/05/13/type-theoretic-cantor/en">
-          <![CDATA[
-            <h2 id="type-theoretic-definition-of-surjectivity">Type-Theoretic Definition of Surjectivity</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a map $f: A \to X$, we define:</p>
-
-\[\text{is-surj}(f) := \prod_{x: X} \| \mathrm{fib}_f(x) \|\]
-</blockquote>
-
-<p>The above definition expresses that “every element of the codomain has a non-empty fibre.” An equivalent definition is “the codomain equals the image.” To translate the latter definition into type theory, we define as follows:</p>
-
-<blockquote>
-  <p><strong>Definition.</strong> Consider the following commutative diagram where $\iota$ is an embedding, and the commutativity is witnessed by a homotopy $H: f \sim \iota q$.</p>
-
-  <p><img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
-
-  <p>We say that $\iota$ satisfies the <strong>universal property of the image inclusion</strong> if the following holds: for any embedding $m: C \to X$, the precomposition</p>
-
-\[- \circ (q, H): \hom_X(\iota, m) \to \hom_X(f, m)\]
-
-  <p>is an equivalence.</p>
-</blockquote>
-
-<p>The above definition indeed satisfies the universal property of the image inclusion. That is, the following holds:</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> For a map $f: A \to X$, the following holds:</p>
-
-  <ul>
-    <li>The following satisfies the universal property of the image inclusion:</li>
-  </ul>
-
-\[\begin{align}
-&amp;\operatorname{im} f := \sum_{x: X} \| \mathrm{fib}_f(x) \| \\
-&amp;q_f : A \to \operatorname{im} f; &amp;&amp;a \mapsto (f(a), |(a, \mathrm{refl}_{f(a)})) \\
-&amp;\iota_f : \operatorname{im} f \to X; &amp;&amp;\mathrm{pr}_1
-\end{align}\]
-
-  <ul>
-    <li>The embedding satisfying the universal property of the image inclusion is unique. That is, if two embeddings $i: B \to X$ and $i’: B’ \to X$ satisfy the universal property, then the type of equivalences $e: B \simeq B’$ satisfying the following commutative diagram is contractible.</li>
-  </ul>
-
-  <p><img src="/public/uniqueness-of-image.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<p>Having defined the image type-theoretically, we can now present the second definition of surjectivity.</p>
-
-<blockquote>
-  <p><strong>Theorem.</strong> In the following commutative diagram, let $\iota: B \to X$ be an embedding. Then $q$ is surjective if and only if $\iota$ satisfies the universal property of the image inclusion.</p>
-
-  <p><img src="/public/image-inclusion.png" style="width: 230px; margin: 1em auto; mix-blend-mode: multiply;" /></p>
-</blockquote>
-
-<h2 id="type-theoretic-diagonal-argument">Type-Theoretic Diagonal Argument</h2>
-
-<blockquote>
-  <p><strong>Definition.</strong> For a type $X$, we define:</p>
-
-\[\mathcal{P}(X) := X \to \mathsf{Prop}\]
-</blockquote>
-
-<p>That is, the power set of $X$ is the family of propositions over $X$. For instance, the set of even natural numbers corresponds to the proposition “is even” over the natural numbers. On the other hand, the power set of $X$ is not defined as $X \to 2$ because, in this case, the power set of $X$ would be restricted to <em>decidable</em> propositions.</p>
-
-<blockquote>
-  <p><strong>Cantor’s Theorem.</strong> For any $f: X \to \mathcal{P}(X)$, $f$ is not surjective.</p>
-</blockquote>
-
-<p><strong>Proof.</strong> Define the following proposition $Q : X \to \mathsf{Prop}$ over $X$:</p>
-
-\[Q := \lambda x. \lnot f(x, x)\]
-
-<p>If $f$ were surjective, then there would exist $g: \prod_{P: X \to \mathsf{Prop}} \| \mathrm{fib}_f(P) \|$. Hence, $g(Q) : \| \mathrm{fib}_f(Q) \|$.</p>
-
-<p>Define $\mathrm{fib}_f(Q) \to \varnothing$ as follows:</p>
-
-\[(x, p) \mapsto \mathrm{tr}(f(x, x), p)(f(x, x))\]
-
-<p>From the definition of propositional truncation, the above map induces $\| \mathrm{fib}_f(Q) \| \to \varnothing$. Thus, $g(Q) \to \varnothing$, which is a contradiction. Therefore, $f$ is not surjective. ■</p>
 
           ]]>
         </content:encoded>

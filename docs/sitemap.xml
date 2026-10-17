@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://dimenerno.github.io/404.html</loc>
-<lastmod>2026-10-16T12:36:19-07:00</lastmod>
+<lastmod>2026-10-16T23:29:46-07:00</lastmod>
 </url>
 <url>
 <loc>https://dimenerno.github.io/about/</loc>
@@ -695,6 +695,14 @@
 <url>
 <loc>https://dimenerno.github.io/2026/10/15/poincare-eternal-return</loc>
 <lastmod>2026-10-15T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>https://dimenerno.github.io/2026/10/16/anthropic-eternal-return/en</loc>
+<lastmod>2026-10-16T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>https://dimenerno.github.io/2026/10/16/anthropic-eternal-return</loc>
+<lastmod>2026-10-16T00:00:00-07:00</lastmod>
 </url>
 <url>
 <loc>https://dimenerno.github.io/temp/2025-03-05-hole-argument/</loc>
