@@ -4,10 +4,10 @@ title: "Leibniz and Psychoanalysis"
 date: 2026-10-18
 tags: ["Philosophy", "Logic", "Essay"]
 lang: en
-related: []
+related: 
 ---
 
-Leibniz held that every true proposition has the form "P is Q". "P is Q" is true iff the concept (intension) of P contains Q. For instance, "Bachelors are men" is true because the concept of bachelor is the concept of man with the concept of unmarried added to it.
+Leibniz held that every true proposition has the form "P is Q", which is true iff the concept (intension) of P contains Q. For instance, "Bachelors are men" is true because the concept of bachelor includes the concept of man (along with the concept of unmarried).
 
 In set-theoretic terms, the hallmark of Leibnizian logic is that it uses only ⊆ and no ∈ (⟨man⟩ ⊆ ⟨bachelor⟩[^1]). This analysis, however, runs into **the problem of distinguishing universal from singular judgments**. On the traditional classification, "Bachelors are men" is a universal judgment, since it concerns all bachelors, while "Socrates is a man" is a singular judgment, since it concerns a single individual. In Leibnizian logic, however, the two propositions are analyzed as ⟨man⟩ ⊆ ⟨bachelor⟩ and ⟨man⟩ ⊆ ⟨Socrates⟩ respectively, and the distinction between universal and singular judgments collapses.
 
