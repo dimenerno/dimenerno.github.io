@@ -2,7 +2,7 @@
 layout: post
 title: "Proving Eternal Recurrence from the Anthropic Principle"
 date: 2026-10-16
-tags: ["Philosophy", "Probability Theory"]
+tags: ["Philosophy", "Probability Theory", "Essay"]
 lang: en
 related:
   - "Proving Eternal Recurrence from the Poincaré Recurrence Theorem"

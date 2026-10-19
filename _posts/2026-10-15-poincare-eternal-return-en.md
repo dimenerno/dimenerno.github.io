@@ -2,7 +2,7 @@
 layout: post
 title: "Proving Eternal Recurrence from the Poincaré Recurrence Theorem"
 date: 2026-10-15
-tags: ["Philosophy", "Physics", "Mechanics", "Measure Theory"]
+tags: ["Philosophy", "Physics", "Mechanics", "Measure Theory", "Essay"]
 lang: en
 related:
 ---

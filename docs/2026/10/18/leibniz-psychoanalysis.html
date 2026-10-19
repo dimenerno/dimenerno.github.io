@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  
+  
+  <title data-title-ko="라이프니츠와 정신분석학 · 디멘의 블로그" data-title-en="라이프니츠와 정신분석학 · Jeongdam&#39;s Blog">라이프니츠와 정신분석학 · Jeongdam&#39;s Blog</title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2026/10/18/leibniz-psychoanalysis" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko"></p>
+    <p class="lang-en" style="display: none;"></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Jeongdam's Blog</a>
+            <small><div class="lang-ko"></div>
+              <div class="lang-en"></div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">EN</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle"/>
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">한</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">라이프니츠와 정신분석학</h1>
+  <span class="post-date">18 Oct 2026</span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/철학/'" >철학</div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'" >논리학</div>
+      
+      <div class="tag" onclick="location.href='/tags/에세이/'" >에세이</div>
+      
+    </div>
+  
+  <p>라이프니츠는 모든 참인 명제가 “P는 Q이다”의 형식이라고 보았다. “P는 Q이다”가 참이라는 것은 P의 개념(내포)이 Q를 포함한다는 것이다. 가령 “총각은 남자이다”는 참인데, 총각의 개념은 남자의 개념에 미혼의 개념을 더한 것이기 때문이다.</p>
+
+<p>집합론의 언어를 사용하자면, 라이프니츠식 논리학의 특징은 ∈을 사용하지 않고 ⊆만 사용한다는 것이다(⟨남자⟩ ⊆ ⟨총각⟩)<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>. 그런데 이 같은 분석은 <strong>전칭판단과 단칭판단의 구별 문제</strong>에 봉착한다. 전통적 분류에서 “총각은 남자이다”는 모든 총각에 관한 판단이므로 전칭판단, “소크라테스는 남자이다”는 주어가 단수이므로 단칭판단이다. 그러나 라이프니츠식 논리학에서 두 명제는 ⟨남자⟩ ⊆ ⟨총각⟩, ⟨남자⟩ ⊆ ⟨소크라테스⟩와 같이 분석되므로 전칭판단과 단칭판단의 구별이 붕괴한다.</p>
+
+<p>라이프니츠식 논리학에서 전칭판단과 단칭판단의 구별을 유지할 수 있는 방법이 있을까? 한 가지 제안은 주어가 <strong>최종 개념</strong>인지 여부에 따라 구별하는 것이다. 최종 개념이란 ⊂에 대한 극대 원소, 즉 더 이상 확장될 수 없는 개념이다. 가령 ⟨총각⟩은 최종 개념이 아닌데, ⟨총각⟩ ⊂ X를 만족하는 X가 존재하기 때문이다(e.g. X = ⟨뉴턴⟩). 반면 ⟨소크라테스⟩는 특정 인물을 유일하게 지칭하므로, 최종 개념인 것으로 보인다.</p>
+
+<p>그러나 이 제안은 곧 난관에 부딪힌다. 우리가 가진 ⟨소크라테스⟩가 정말로 최종 개념인지 불분명하기 때문이다. 우리의 ⟨소크라테스⟩는 “플라톤의 스승이며 독배를 마신 아테네의 철학자” 정도의 내용을 담고 있지만, 그가 플라톤을 사랑했는지는 정하지 않는다. 즉, ⟨소크라테스⟩에 “플라톤을 사랑했음”을 더한 개념과 “플라톤을 사랑하지 않았음”을 더한 개념이 모두 무모순적이므로 ⟨소크라테스⟩는 최종 개념이 아니다.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup> 나아가 유한한 술어를 아무리 덧붙이더라도 결정되지 않은 술어가 남는다면, ⟨S⟩ ⊂ ⟨S’⟩ ⊂ ⟨S’‘⟩ ⊂ …와 같은 사슬이 무한히 이어지리라는 것 또한 유추할 수 있다. 소크라테스의 개별적 개념은 이 사슬의 극한으로서만 주어진다.</p>
+
+<p>실제로 라이프니츠는 개별적 개념(individual concept; 우리가 “최종 개념”이라고 부른 것에 대응된다)은 무한 지성으로만 파악 가능하다고 보았다. 따라서 라이프니츠에 따르면 우리는 대상을 언제나 “흐릿하게” 파악한다. 그의 표현으로 말하자면, 개체에 대한 우리의 개념은 결코 충전적(adequate)이지 않다. 분석을 끝까지 수행하는 것은 신만이 할 수 있는 일이다.</p>
+
+<p>그러나 라이프니츠의 주장에도 불구하고 우리가 <em>더없이 확실하게</em> 파악하는 개념이 단 하나 있는 것처럼 보인다. 그것은 바로 <strong>나</strong>의 개념이다. 데카르트의 코기토를 정초하는 ⟨나⟩, 이 세계를 표상하고 수용하는 ⟨나⟩는 나 자신에게 직접적이고 의심할 수 없이 주어진다. 그렇다면 ⟨나⟩라는 개념만큼은 개별적 개념으로 분류해야 하지 않을까?</p>
+
+<p>이 지적에 대해 라이프니츠는 두 가지 방식으로 대응할 수 있을 것이다. 첫 번째는 온건한 태도로, 나 자신에 관한 개념을 유일한 예외로서 허용하는 것이다. 두 번째는 강경한 태도로, 나 자신에 관한 개념<em>조차</em> 개별적 개념이 아니라고 주장하는 것이다. 이것이 라이프니츠 본인의 입장으로<sup id="fnref:3"><a href="#fn:3" class="footnote" rel="footnote" role="doc-noteref">3</a></sup>, 그의 근거는 <strong>확실성과 충전성의 구별</strong>이다. 코기토가 제공하는 것은 내가 존재한다는 사실뿐이며, 내가 무엇인지에 대한 충전적 인식은 아니다. 나는 내가 있다는 것을 의심할 수 없지만, 내가 무엇인지를 끝까지 분석할 수는 없다.</p>
+
+<p>그리고 우리는 나 자신조차 나를 완전히 파악할 수 없는, 이 자기 불투명성의 근대적 이름을 알고 있다. 바로 <strong>정신분석학</strong>이다. 라이프니츠의 형이상학에서 나의 분석은 나에 의해서가 아닌 신에 의해서만 가능하다. 정신분석학에서 환자의 분석은 환자에 의해서가 아닌 분석가에 의해서만 가능하다. 분석가는 신이 아니므로 최종 분석에 도달하지 못하며, 분석은 어느 시점에서 임의로 종료될 수밖에 없다는 점이 다를 뿐이다.<sup id="fnref:4"><a href="#fn:4" class="footnote" rel="footnote" role="doc-noteref">4</a></sup> 개별적 개념에 대한 라이프니츠의 통찰에서, 우리는 분석의 대상과 분석을 수행하는 주체를 분리함으로써 자아의 분열과 불안을 집요하게 파고드는 정신분석학의 단초를 엿볼 수 있는 것이다.</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>내포 포함 관계는 외연 포함 관계와 반대임에 유의하라. 또한 이 글에서 ⊆는 포함 관계, ⊂는 엄격한 포함 관계이다. 명제의 참은 ⊆로 표현하는데, “A는 A이다”가 참이기 때문이다. 최종 개념의 극대성은 ⊂로 정의한다. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>라이프니츠는 이러한 불완전한 개념을 “막연한 아담”의 사례로 설명한 바 있다. 비트겐슈타인의 『철학적 탐구』에 나오는 모세의 사례 또한 유사한 논증이다. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>가령 『신인간지성론』 서문에 따르면 영혼 안에는 매 순간 통각되지 않는 무수한 “미세지각”이 있다. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>프로이트의 1937년 논문 「끝낼 수 있는 분석과 끝낼 수 없는 분석」은 이러한 정신분석학의 한계를 다루고 있다. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+</div>
+
+
+
+  <!-- Utterances -->
+  <script src="https://utteranc.es/client.js"
+        repo="dimenerno/dimenerno.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script></div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

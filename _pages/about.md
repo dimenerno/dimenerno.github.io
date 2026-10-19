@@ -8,7 +8,7 @@ date: 2024-01-01
 <!-- <img src="/public/profile-picture.png" alt="Profile picture" width="250px" style="margin: 0 auto;"> -->
 
 <div class="profile-section">
-  <img src="/public/profile-photo-2.jpg" alt="Profile photo" width="300px" style="margin: 15px auto;">
+  <img src="/public/profile-photo-2.jpg" alt="Profile photo" width="300px" style="margin: 8px auto;">
 
   <div class="lang-ko">
     <p>안녕하세요, 디멘(최정담)입니다. 학부 때 카이스트 수리과학과 및 전산학부를 복수전공했으며, 현재 스탠퍼드 Symbolic Systems 석사과정입니다.</p>
