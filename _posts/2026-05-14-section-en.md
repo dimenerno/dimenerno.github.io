@@ -1,11 +1,11 @@
-<!-- ---
+---
 layout: post
 title: "Notes on the Meaning of Sections"
 date: 2026-05-14
 tags: ["Mathematics", "Type Theory"]
 related:
 lang: en
---- -->
+---
 
 In type theory, the term "section" appears in two different contexts.
 
@@ -28,10 +28,50 @@ The two meanings of section are related. Regarding the first definition, geometr
 
 - In the diagram, the fibre appears like a strand of thread, which is the origin of the term "fibre."
 
-<img src="/public/section-1.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;">
+{% tikz %}
+\begin{tikzpicture}[>=stealth, line width=0.9pt]
+   \useasboundingbox (-1.6,-1.15) rectangle (7.6,3.45);
+  \filldraw[fill=gray!20] (0,1.5) ellipse (1.5 and 0.4);
+  \draw (0,3) ellipse (1.5 and 0.4);
+  \draw (-1.5,3) -- (-1.5,0);
+  \draw (1.5,3) -- (1.5,0);
+  \draw[dashed] (-1.5,0) arc[start angle=180, end angle=0, x radius=1.5, y radius=0.4];
+  \draw (-1.5,0) arc[start angle=180, end angle=360, x radius=1.5, y radius=0.4];
+  \draw (-0.9,2.85) -- (-0.9,0.05);
+  \fill (-0.9,1.5) circle (2.5pt) node[right] {$s(a)$};
+  \node[anchor=west] at (-0.85,0.1) {$\mathit{fib}_r(a)$};
+  \node at (0,-1) {$B$};
+  \filldraw[fill=gray!20] (6,1.5) ellipse (1.5 and 0.5);
+  \fill (5.5,1.6) circle (2.5pt) node[right] {$a$};
+  \node at (7.2,0.65) {$A$};
+  \draw[->] (1.75,3) -- (5.4,2.05);
+  \draw[->] (1.75,0) -- node[below right, pos=0.4] {$r$} (5.35,1.0);
+  \draw[->] (4.75,1.9) to[bend right=12] node[above] {$s$} (1.65,1.75);
+\end{tikzpicture}
+{% endtikz %}
 
 On the other hand, when $b$ is a section of a type family $B$ over $A$, $b$ chooses $b(a): B(a)$ for each $a: A$. Here, $B(a)$ is naturally equivalent to the $a$-fibre of $\mathrm{pr}\_1: \sum\_{x: A}B(x) \to A$. Therefore, when $b$ is a section of $B$ (in the second sense), $\lambda x. b(x)$ is a section of $\mathrm{pr}\_1$ (in the first sense).
 
-<img src="/public/section-2.png" style="width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;">
+{% tikz %}
+\begin{tikzpicture}[>=stealth, line width=0.9pt]
+   \useasboundingbox (-1.6,-1.15) rectangle (7.6,3.45);
+  \filldraw[fill=gray!20] (0,1.5) ellipse (1.5 and 0.4);
+  \draw (0,3) ellipse (1.5 and 0.4);
+  \draw (-1.5,3) -- (-1.5,0);
+  \draw (1.5,3) -- (1.5,0);
+  \draw[dashed] (-1.5,0) arc[start angle=180, end angle=0, x radius=1.5, y radius=0.4];
+  \draw (-1.5,0) arc[start angle=180, end angle=360, x radius=1.5, y radius=0.4];
+  \draw (-0.9,2.85) -- (-0.9,0.05);
+  \fill (-0.9,1.5) circle (2.5pt) node[right] {$b(a)$};
+  \node[anchor=west] at (-0.85,0.1) {$B(a)$};
+  \node at (0,-1) {$\sum_{x:A} B(x)$};
+  \filldraw[fill=gray!20] (6,1.5) ellipse (1.5 and 0.5);
+  \fill (5.5,1.6) circle (2.5pt) node[right] {$a$};
+  \node at (7.2,0.65) {$A$};
+  \draw[->] (1.75,3) -- (5.4,2.05);
+  \draw[->] (1.75,0) -- node[below right, pos=0.4] {$\mathrm{pr}_1$} (5.35,1.0);
+  \draw[->] (4.75,1.9) to[bend right=12] node[above] {$\lambda x.\, b(x)$} (1.65,1.75);
+\end{tikzpicture}
+{% endtikz %}
 
 Of course, $\lambda x . b(x)$ is judgementally equal to $b$. Thus, the second meaning of section is just a special case of the first.

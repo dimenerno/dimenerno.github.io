@@ -37,6 +37,7 @@ include:
 
 exclude:
   - post-list.json
+  - public/tikz   # tikz.rb 플러그인이 직접 등록
 
 collections:
   pages:

@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-10-19T11:46:18-07:00</updated>
+ <updated>2026-10-21T12:58:33-07:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>Jeongdam Choi</name>
@@ -626,31 +626,22 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/section-1.png&quot; style=&quot;width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+&lt;figure class=&quot;tikz&quot;&gt;&lt;img src=&quot;/public/tikz/332f23b2825e2bca.svg&quot; alt=&quot;TikZ diagram&quot; /&gt;&lt;/figure&gt;
 
 &lt;p&gt;한편 $b$가 $A$에 대한 유형족 $B$의 섹션일 때, $b$는 각 $a: A$에 대해 $b(a): B(a)$를 선택한다. 여기서 $B(a)$는 $\mathrm{pr}_1: \sum_{x: A}B(x) \to A$의 $a$-섬유와 자연스럽게 동치이다. 따라서 $b$가 $B$의 (두 번째 의미에서의) 섹션일 때, $\lambda x. b(x)$는 $\mathrm{pr}_1$의 (첫 번째 의미에서의) 섹션이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/section-2.png&quot; style=&quot;width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+&lt;figure class=&quot;tikz&quot;&gt;&lt;img src=&quot;/public/tikz/b7340f8eb3fea628.svg&quot; alt=&quot;TikZ diagram&quot; /&gt;&lt;/figure&gt;
 
 &lt;p&gt;물론, $\lambda x . b(x)$는 $b$와 판단적으로 같다. 따라서 섹션의 두 번째 의미는 첫 번째 의미의 특수한 사례이다.&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
-   <title>Section En</title>
-   <link href="https://dimenerno.github.io/2026/05/14/section-en"/>
+   <title>Notes on the Meaning of Sections</title>
+   <link href="https://dimenerno.github.io/2026/05/14/section/en"/>
    <updated>2026-05-14T00:00:00-07:00</updated>
-   <id>https://dimenerno.github.io/2026/05/14/section-en</id>
-   <content type="html">&lt;!-- ---
-layout: post
-title: &quot;Notes on the Meaning of Sections&quot;
-date: 2026-05-14
-tags: [&quot;Mathematics&quot;, &quot;Type Theory&quot;]
-related:
-lang: en
---- --&gt;
-
-&lt;p&gt;In type theory, the term “section” appears in two different contexts.&lt;/p&gt;
+   <id>https://dimenerno.github.io/2026/05/14/section/section-en</id>
+   <content type="html">&lt;p&gt;In type theory, the term “section” appears in two different contexts.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Given maps $r: B \to A$ and $s: A \to B$, if $rs \sim \mathrm{id}_A$, then $s$ is called a &lt;strong&gt;section&lt;/strong&gt; of $r$, and $r$ is called a &lt;strong&gt;retract&lt;/strong&gt; of $s$. That is,&lt;/p&gt;
@@ -679,11 +670,11 @@ lang: en
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/section-1.png&quot; style=&quot;width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+&lt;figure class=&quot;tikz&quot;&gt;&lt;img src=&quot;/public/tikz/332f23b2825e2bca.svg&quot; alt=&quot;TikZ diagram&quot; /&gt;&lt;/figure&gt;
 
 &lt;p&gt;On the other hand, when $b$ is a section of a type family $B$ over $A$, $b$ chooses $b(a): B(a)$ for each $a: A$. Here, $B(a)$ is naturally equivalent to the $a$-fibre of $\mathrm{pr}_1: \sum_{x: A}B(x) \to A$. Therefore, when $b$ is a section of $B$ (in the second sense), $\lambda x. b(x)$ is a section of $\mathrm{pr}_1$ (in the first sense).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/public/section-2.png&quot; style=&quot;width: 400px; margin: 2.5em auto; mix-blend-mode: multiply;&quot; /&gt;&lt;/p&gt;
+&lt;figure class=&quot;tikz&quot;&gt;&lt;img src=&quot;/public/tikz/b7340f8eb3fea628.svg&quot; alt=&quot;TikZ diagram&quot; /&gt;&lt;/figure&gt;
 
 &lt;p&gt;Of course, $\lambda x . b(x)$ is judgementally equal to $b$. Thus, the second meaning of section is just a special case of the first.&lt;/p&gt;
 </content>

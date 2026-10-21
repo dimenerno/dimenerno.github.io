@@ -492,3 +492,12 @@ a.pagination-item:hover {
     align-items: center;
   }
 }
+/* TikZ diagrams (_plugins/tikz.rb) */
+figure.tikz {
+  margin: 2rem 0;
+  text-align: center;
+}
+figure.tikz img {
+  display: inline-block;
+  margin: 0;
+}
