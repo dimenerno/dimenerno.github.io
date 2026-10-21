@@ -421,6 +421,560 @@
   
     <div class="post fade-in-section" data-lang="ko" style="display: none">
       <h1 class="post-title">
+        <a href="/2025/09/11/robinson-test"> 모델 완전성에 대한 로빈슨 판별법 </a>
+      </h1>
+    <span class="post-date">11 Sep 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'">
+        논리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/모델론/'">
+        모델론
+      </div>
+      
+    </div>
+     <p>이 글에서 $T$는 언어 $\mathcal{L}$의 이론이다. 또한 $x_1, \dots, x_n$을 $\vec{x}$로 쓴다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 이론 $T$가 <strong>모델 완전<sub>model complete</sub></strong>하다는 것은 임의의 $T$의 모델 $\mathfrak{A}, \mathfrak{B}$에 대해</p>
+
+\[\mathfrak{A} \subseteq \mathfrak{B} \implies \mathfrak{A} \preceq \mathfrak{B}\]
+
+  <p>라는 것이다.</p>
+</blockquote>
+
+<p><strong>예시</strong></p>
+
+<ol>
+  <li>
+    <p>체<sub>field</sub> 이론은 모델 완전하지 않다. 실수체 $\mathbb{R}$과 유리수체 $\mathbb{Q}$에 대해 $\mathbb{Q} \subseteq \mathbb{R}$이지만 $\exists x (x \cdot x = 2)$의 진릿값이 두 모델에서 다르므로 $\mathbb{Q} \not\preceq \mathbb{R}$이기 때문이다.</p>
+  </li>
+  <li>
+    <p>비꼬임 가분 아벨군<sub>torsion-free divisible abelian group</sub> 이론은 모델 완전하다.</p>
+  </li>
+  <li>
+    <p>양화사 제거 가능한 이론은 모델 완전하다.</p>
+  </li>
+</ol>
+
+<p>2를 비롯하여, 모델 완전성을 판별하는 데 유용한 정리 중 하나는 다음이다.</p>
+
+<blockquote>
+  <p><strong>로빈슨 판별법<sub>Robinson’s Test</sub>.</strong> 다음은 동치이다.</p>
+
+  <ol>
+    <li>$T$가 모델 완전하다.</li>
+    <li>임의의 $T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해, $\mathfrak{B}$가 만족하는 $\Sigma_1(\mathcal{L}_\mathfrak{A})$-문장은 $\mathfrak{A}$에서도 만족된다.</li>
+    <li>임의의 $\mathcal{L}$-명제 $\phi(\vec{x})$에 대해, $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$를 만족하는 $\Pi_1(\mathcal{L})$-명제 $\psi(\vec{x})$가 존재한다.</li>
+  </ol>
+</blockquote>
+
+<h3 id="증명">증명</h3>
+
+<h4 id="1--2">(1) → (2)</h4>
+
+<p>$T$가 모델 완전하므로 $\mathfrak{A} \subseteq \mathfrak{B}$라면 $\mathfrak{A} \preceq \mathfrak{B}$이다. 따라서 $\mathfrak{A}, \mathfrak{B}$는 $\mathcal{L}_\mathfrak{A}$-문장들에 대해 동치이다. □</p>
+
+<h4 id="2--3">(2) → (3)</h4>
+
+<p>$\phi(\vec{x})$가 $\Sigma_1(\mathcal{L})$-명제라고 하자. $\mathcal{L}$에 상수 $\vec{c}$를 추가한 언어를 $\mathcal{L}’$이라고 하자. $T$를 $\mathcal{L}’$-이론으로 생각하고, $\mathfrak{A} \subseteq \mathfrak{B}$를 $\mathcal{L}’$-구조들의 임베딩으로 생각할 수 있다.</p>
+
+<p>이제 $\mathcal{L}’$-이론 $T’ = T \cup { \phi(\vec{c}) }$를 생각하자. $\mathfrak{B}$가 $T’$의 모델이라고 하자. $\mathfrak{A}$ 또한 $T’$의 모델임을 보인다. $\mathfrak{A} \subseteq \mathfrak{B}$가 $\mathcal{L}’$-구조들의 임베딩이므로 다음이 성립함을 관찰하라.</p>
+
+\[\mathfrak{B} \vDash \phi(\vec{c}) \iff \exists \vec{a} \in \mathcal{L}_\mathfrak{A}  \text{ where } \mathfrak{B} \vDash \phi(\vec{a})\]
+
+<p>$\phi(\vec{a})$는 $\Sigma_1(\mathcal{L}_\mathfrak{A})$-문장이므로 가정에 의해 $\mathfrak{A}$에서도 성립한다. 따라서 $\mathfrak{A}$는 $T’$의 모델이다.</p>
+
+<p>이제 <a href="/2025/04/17/los-tarski">워시-타르스키 정리</a>의 다음 일반화를 사용한다 (증명은 연습문제).</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{L}’$-이론 $T \subseteq T’$에 대해 다음이 성립한다고 하자.</p>
+
+  <ul>
+    <li>임의의 $T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해 $\mathfrak{B}$가 $T’$의 모델이라면 $\mathfrak{A}$도 $T’$의 모델이다.</li>
+  </ul>
+
+  <p>이때, 어떤 $\Pi_1(\mathcal{L}’)$-문장들의 모임 $P$가 존재하여 $T’$은 $T \cup P$와 동치이다.</p>
+</blockquote>
+
+<p>위 정리에 의해 $T’$은 어떤 $\Pi_1(\mathcal{L}’)$-문장들의 모임 $P$에 대해 $T \cup P$와 동치이다. 즉,</p>
+
+\[T \cup P \vdash \phi(\vec{c})\]
+
+<p>증명의 유한성에 의해 $T \cup P$에서 $\phi$를 증명하는 데 필요한 $P$의 명제는 유한하다. 그 명제들의 논리곱을 $\pi(\vec{c})$라고 하면,</p>
+
+\[T \vdash \forall x (\phi(\vec{x}) \leftrightarrow \pi(\vec{x}))\]
+
+<p>이고 $\pi(\vec{x})$는 $\Pi_1(\mathcal{L})$-명제이므로, $\phi \in \Sigma_1$일 때 증명이 완료되었다.</p>
+
+<p>이제 $\phi$에 대한 구조적 귀납법으로 증명하자. $\exists \leftrightarrow \lnot\forall\lnot$이므로, $\lor, \lnot, \forall$에 대해서만 고려하면 된다. $\lor, \forall$의 경우는 자명하므로 $\lnot$의 경우를 살핀다.</p>
+
+<p>어떤 $\Pi_1(\mathcal{L})$-명제 $\psi$에 대해 $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$라고 하자. 그러면 $\lnot \phi$는 $\lnot \psi$와 동치이며, 이는 $\Sigma_1(\mathcal{L})$-명제이다. 그리고 이는 앞선 논증에 의해 $\Pi_1$ 문장과 동치이다. □</p>
+
+<h4 id="3--1">(3) → (1)</h4>
+
+<p>$T$의 모델 $\mathfrak{A} \subseteq \mathfrak{B}$에 대해, 만약 $\mathfrak{A} \not\preceq \mathfrak{B}$라면 콤팩트성 정리에 의해 어떤 $\mathcal{L}_\mathfrak{A}$의 문장 $\phi(\vec{a})$가 존재하여 $\mathfrak{A} \not\vDash \phi(\vec{a})$이지만 $\mathfrak{B} \vDash \phi(\vec{a})$이다.</p>
+
+<p>가정에 의해 $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$를 만족하는 $\Pi_1$ 명제 $\psi$가 존재한다. 따라서 $\mathfrak{B} \vDash \psi(\vec{a})$이다. 그런데 이는 $\Pi_1$ 문장이고, $\Pi_1$ 문장은 부분모델에 대해 보존되므로 $\mathfrak{A} \vDash \psi(\vec{a})$가 되어 모순이다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/09/11/robinson-test/en"> Robinson's Test for Model Completeness </a>
+      </h1>
+    <span class="post-date">11 Sep 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/logic/'">
+        Logic
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/model-theory/'">
+        Model Theory
+      </div>
+      
+    </div>
+     <blockquote>
+  <p>This post was originally written in Korean, and has been machine translated into English. It may contain minor errors or unnatural expressions. Proofreading will be done in the near future.</p>
+</blockquote>
+
+<p>In this article, $T$ is a theory in language $\mathcal{L}$. We also write $x_1, \dots, x_n$ as $\vec{x}$.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> A theory $T$ is <strong>model complete</strong> if for any models $\mathfrak{A}, \mathfrak{B}$ of $T$,</p>
+
+\[\mathfrak{A} \subseteq \mathfrak{B} \implies \mathfrak{A} \preceq \mathfrak{B}\]
+</blockquote>
+
+<p><strong>Examples</strong></p>
+
+<ol>
+  <li>
+    <p>The theory of fields is not model complete. For the real field $\mathbb{R}$ and the rational field $\mathbb{Q}$, we have $\mathbb{Q} \subseteq \mathbb{R}$ but $\mathbb{Q} \not\preceq \mathbb{R}$ since the truth value of $\exists x (x \cdot x = 2)$ differs in the two models.</p>
+  </li>
+  <li>
+    <p>The theory of torsion-free divisible abelian groups is model complete.</p>
+  </li>
+  <li>
+    <p>Theories admitting quantifier elimination are model complete.</p>
+  </li>
+</ol>
+
+<p>One useful theorem for determining model completeness, including case 2 above, is the following.</p>
+
+<blockquote>
+  <p><strong>Robinson’s Test.</strong> The following are equivalent:</p>
+
+  <ol>
+    <li>$T$ is model complete.</li>
+    <li>For any models $\mathfrak{A} \subseteq \mathfrak{B}$ of $T$, any $\Sigma_1(\mathcal{L}_\mathfrak{A})$-sentence satisfied by $\mathfrak{B}$ is also satisfied by $\mathfrak{A}$.</li>
+    <li>For any $\mathcal{L}$-formula $\phi(\vec{x})$, there exists a $\Pi_1(\mathcal{L})$-formula $\psi(\vec{x})$ such that $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$.</li>
+  </ol>
+</blockquote>
+
+<h3 id="proof">Proof</h3>
+
+<h4 id="1--2">(1) → (2)</h4>
+
+<p>Since $T$ is model complete, if $\mathfrak{A} \subseteq \mathfrak{B}$ then $\mathfrak{A} \preceq \mathfrak{B}$. Therefore, $\mathfrak{A}$ and $\mathfrak{B}$ are equivalent with respect to $\mathcal{L}_\mathfrak{A}$-sentences. □</p>
+
+<h4 id="2--3">(2) → (3)</h4>
+
+<p>Suppose $\phi(\vec{x})$ is a $\Sigma_1(\mathcal{L})$-formula. Let $\mathcal{L}’$ be the language obtained by adding constants $\vec{c}$ to $\mathcal{L}$. We can view $T$ as an $\mathcal{L}’$-theory and consider $\mathfrak{A} \subseteq \mathfrak{B}$ as an embedding of $\mathcal{L}’$-structures.</p>
+
+<p>Now consider the $\mathcal{L}’$-theory $T’ = T \cup { \phi(\vec{c}) }$. Suppose $\mathfrak{B}$ is a model of $T’$. We show that $\mathfrak{A}$ is also a model of $T’$. Since $\mathfrak{A} \subseteq \mathfrak{B}$ is an embedding of $\mathcal{L}’$-structures, observe that:</p>
+
+\[\mathfrak{B} \vDash \phi(\vec{c}) \iff \exists \vec{a} \in \mathcal{L}_\mathfrak{A}  \text{ where } \mathfrak{B} \vDash \phi(\vec{a})\]
+
+<p>Since $\phi(\vec{a})$ is a $\Sigma_1(\mathcal{L}_\mathfrak{A})$-sentence, by assumption it also holds in $\mathfrak{A}$. Therefore, $\mathfrak{A}$ is a model of $T’$.</p>
+
+<p>We now use the following generalisation of the <a href="/2025/04/17/los-tarski">Łoś-Tarski theorem</a> (proof left as an exercise).</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $T \subseteq T’$ be $\mathcal{L}’$-theories such that:</p>
+
+  <ul>
+    <li>For any models $\mathfrak{A} \subseteq \mathfrak{B}$ of $T$, if $\mathfrak{B}$ is a model of $T’$ then $\mathfrak{A}$ is also a model of $T’$.</li>
+  </ul>
+
+  <p>Then there exists a collection $P$ of $\Pi_1(\mathcal{L}’)$-sentences such that $T’$ is equivalent to $T \cup P$.</p>
+</blockquote>
+
+<p>By the theorem above, $T’$ is equivalent to $T \cup P$ for some collection $P$ of $\Pi_1(\mathcal{L}’)$-sentences. That is,</p>
+
+\[T \cup P \vdash \phi(\vec{c})\]
+
+<p>By the finiteness of proofs, only finitely many sentences from $P$ are needed to prove $\phi$ from $T \cup P$. Let $\pi(\vec{c})$ be the conjunction of these sentences. Then</p>
+
+\[T \vdash \forall x (\phi(\vec{x}) \leftrightarrow \pi(\vec{x}))\]
+
+<p>and $\pi(\vec{x})$ is a $\Pi_1(\mathcal{L})$-formula, completing the proof for the case when $\phi \in \Sigma_1$.</p>
+
+<p>We now prove by structural induction on $\phi$. Since $\exists \leftrightarrow \lnot\forall\lnot$, we need only consider $\lor, \lnot, \forall$. The cases for $\lor$ and $\forall$ are trivial, so we examine the case for $\lnot$.</p>
+
+<p>Suppose for some $\Pi_1(\mathcal{L})$-formula $\psi$ we have $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$. Then $\lnot \phi$ is equivalent to $\lnot \psi$, which is a $\Sigma_1(\mathcal{L})$-formula. By the preceding argument, this is equivalent to a $\Pi_1$ sentence. □</p>
+
+<h4 id="3--1">(3) → (1)</h4>
+
+<p>For models $\mathfrak{A} \subseteq \mathfrak{B}$ of $T$, if $\mathfrak{A} \not\preceq \mathfrak{B}$ then by the compactness theorem there exists some $\mathcal{L}_\mathfrak{A}$-sentence $\phi(\vec{a})$ such that $\mathfrak{A} \not\vDash \phi(\vec{a})$ but $\mathfrak{B} \vDash \phi(\vec{a})$.</p>
+
+<p>By assumption, there exists a $\Pi_1$ formula $\psi$ such that $T \vdash \forall \vec{x} (\phi(\vec{x}) \leftrightarrow \psi(\vec{x}))$. Therefore $\mathfrak{B} \vDash \psi(\vec{a})$. However, this is a $\Pi_1$ sentence, and $\Pi_1$ sentences are preserved under submodels, so $\mathfrak{A} \vDash \psi(\vec{a})$, which gives a contradiction. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/08/11/tychonoff-with-ultrafilter"> 초필터를 이용한 티호노프 정리의 증명 </a>
+      </h1>
+    <span class="post-date">11 Aug 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'">
+        수학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/위상수학/'">
+        위상수학
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>티호노프 정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
+</blockquote>
+
+<p>굉장히 단순하고 강력한 정리이지만, Munkres 등의 학부 위상 책을 보면 증명이 상당히 복잡하다. 아예 증명을 생략하는 책도 많은 듯하다. 하지만 초필터를 이용하면 매우 간단하게 이를 증명해 보일 수 있다.</p>
+
+<h2 id="1-선행-개념">1. 선행 개념</h2>
+
+<p>여기서 소개된 개념의 자세한 설명과 증명은 <em>Stephen Willard, General Topology</em> 4장을 참고하라.</p>
+
+<h3 id="필터와-초필터">필터와 초필터</h3>
+
+<p><a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">이전 글</a>에서 불 대수 구조의 필터를 소개했다. 위상공간에서 $\cup$과 $\cap$을 각각 논리합과 논리곱에 대응하면 불 대수 구조가 되므로, 위상공간에서 필터를 정의할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$에 대해, $X$ 위의 필터 $\mathcal{F}$는 다음 조건을 만족하는 $X$의 부분집합들의 모임이다.</p>
+
+  <ol>
+    <li>$X \in \mathcal{F}, \varnothing \notin \mathcal{F}$</li>
+    <li>$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
+    <li>$A \in \mathcal{F}, A \subseteq B \implies B \in \mathcal{F}$</li>
+  </ol>
+</blockquote>
+
+<p>추가로 다음을 만족하면 초필터이다.</p>
+
+<blockquote>
+<ol start="4">
+  <li>$A \notin \mathcal{F} \implies X \setminus A \in \mathcal{F}$</li>
+</ol>
+</blockquote>
+
+<h3 id="근방-필터">근방 필터</h3>
+
+<p>위상수학에서 중요한 필터 중 하나는 근방 필터이다. 먼저 근방을 다음과 같이 정의한다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$에 대해 $N \subseteq X$가 $x \in X$의 <strong>근방<sub>neighbourhood</sub></strong>이라는 것은, 어떤 열린집합 $U$가 존재하여 $x \in U \subseteq N$라는 것이다.</p>
+</blockquote>
+
+<p><strong>근방은 열린집합일 필요가 없다는 점에 주목하라.</strong> 근방이 열린집합일 경우 열린 근방이라고 한다. 이는 근방과 열린 근방을 동의어로 사용하는 일부 교재의 관행과 대조적이므로 주의를 요한다.</p>
+
+<blockquote>
+  <p><strong>표기.</strong> $x$의 근방들의 모임을 $\mathcal{N}(x)$ 또는 $\mathcal{N}_x$라고 표기한다.</p>
+</blockquote>
+
+<p>$\mathcal{N}(x)$는 필터임을 쉽게 확인할 수 있다. 이에 따라 $\mathcal{N}(x)$를 <strong>근방 필터</strong>라고 부른다.</p>
+
+<h3 id="필터의-생성">필터의 생성</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 위상공간 $X$의 부분집합들의 모임 $\mathcal{C}$가 다음을 만족할 때, $\mathcal{C}$를 <strong>예비 필터<sub>prefilter</sub></strong> 또는 <strong>필터 기저<sub>filter base</sub></strong>라고 부른다.</p>
+
+  <ol>
+    <li>$\varnothing \notin \mathcal{C}$</li>
+    <li>$A, B \in \mathcal{C} \implies \exists C \in \mathcal{C} : C \subseteq A \cap B$</li>
+  </ol>
+</blockquote>
+
+<p>즉, 필터가 교집합에 대해 닫혀 있는 한편 예비 필터는 교집합에 대해 “약하게” 닫혀 있다. $\mathcal{C}$가 예비 필터일 때, $\mathcal{C}$로부터 다음과 같이 필터 $\mathcal{F}$를 <strong>생성<sub>generate</sub></strong>할 수 있다.</p>
+
+\[\mathcal{F} = \{ F \subseteq X : C \subseteq F \text{ for some } C \in \mathcal{C} \}\]
+
+<p>또한 사상 $f: X \to Y$와 $X$ 위의 필터 $\mathcal{F}$가 주어졌을 때, 다음 집합족은 예비 필터이다.</p>
+
+\[\mathcal{C} = \{ f(F) : F \in \mathcal{F} \}\]
+
+<blockquote>
+  <p><strong>표기.</strong> $\mathcal{C}$가 생성하는 필터를 $f(\mathcal{F})$와 같이 표기한다.</p>
+</blockquote>
+
+<p>$f$가 전사<sub>onto</sub>일 경우 $\mathcal{C} = f(\mathcal{F})$라서 다루기 편하다. 또한 $f$가 전사일 때 다음이 (자명하게) 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $f: X \to Y$가 전사이고 $\mathcal{F}$가 $X$ 위의 초필터일 때, $f(\mathcal{F})$는 $Y$의 초필터이다.</p>
+</blockquote>
+
+<h3 id="초필터로의-확장">초필터로의 확장</h3>
+
+<p>모든 필터는 초필터로 확장될 수 있다. 증명은 <a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">이전 글</a>을 참고하라 (선택 공리를 사용한다).</p>
+
+<blockquote>
+  <p><strong>정리.</strong> $\mathcal{F}$가 $X$ 위의 필터일 때, $X$ 위의 초필터 $\mathcal{U}$가 존재하여 $\mathcal{U} \supseteq \mathcal{F}$이다.</p>
+</blockquote>
+
+<h3 id="필터의-수렴">필터의 수렴</h3>
+
+<blockquote>
+  <p><strong>정의.</strong> 필터 $\mathcal{F}$가 $\mathcal{N}(x)$를 포함할 때 $\mathcal{F}$는 $x$로 <strong>수렴</strong>한다고 하며, $\mathcal{F} \to x$와 같이 적는다.</p>
+</blockquote>
+
+<p>예를 들어 예비 필터 $\lbrace  (0, \epsilon) : \epsilon &gt; 0 \rbrace $로 생성되는 필터는 $0$으로 수렴한다 (이 예시는 $\mathcal{F} \to x$라고 해서 $\mathcal{F}$의 모든 원소가 $x$를 원소로 가질 필요는 없음을 보여준다).</p>
+
+<p>필터 수렴의 주요 성질은 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong></p>
+
+  <ol>
+    <li>$E \subseteq X$에 대해 $x \in \overline{E}$일 필요충분조건은 어떤 필터 $\mathcal{F}$가 존재하여 $E \in \mathcal{F}$이고, $\mathcal{F} \to x$인 것이다.</li>
+    <li>$f: X \to Y$가 연속일 필요충분조건은 임의의 필터 $\mathcal{F}$에 대해 $\mathcal{F} \to x$라면 $f(\mathcal{F}) \to f(x)$인 것이다.</li>
+  </ol>
+</blockquote>
+
+<p>이는 1차 가산 공간에서 점렬로 폐포와 연속함수를 특징지었던 것을 일반화한 것이다.</p>
+
+<p>곱공간에서 필터의 수렴은 각 요소 공간에서의 수렴과 동치이다. 즉, 다음이 성립한다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 곱공간 $\prod_{i \in I}X_i$ 위의 필터 $\mathcal{F}$가 $x$로 수렴할 필요충분조건은 각각의 $i \in I$에 대해 $\pi_i(\mathcal{F}) \to \pi_i(x)$인 것이다.</p>
+</blockquote>
+
+<h2 id="2-티호노프-정리의-증명">2. 티호노프 정리의 증명</h2>
+
+<p>이제 티호노프 정리를 증명해 보자. 핵심은 다음의 보조정리이다.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $X$가 콤팩트할 필요충분조건은 $X$의 모든 초필터가 수렴하는 것이다.</p>
+</blockquote>
+
+<h4 id="증명">증명</h4>
+
+<p>$(\Rightarrow)$ $\mathcal{F}$가 수렴하지 않는 $X$의 초필터라고 하자. $\mathcal{F}$가 어느 점으로도 수렴하지 않는다는 것은, 임의의 $x \in X$에 대해 어떤 열린집합 $U_x$가 존재하여 $U_x \notin \mathcal{F}$라는 것이다. $\mathcal{F}$가 초필터이므로 $X \setminus U_x \in \mathcal{F}$이다. 이제 $U_x$들의 모임 $\mathcal{C} = \lbrace  U_x : x \in X \rbrace $를 생각하자. $\mathcal{C}$는 $X$를 덮으며, $X$가 콤팩트하므로 유한 부분덮개 $\lbrace U_{x_1}, \dots, U_{x_n} \rbrace $을 가진다. 따라서,</p>
+
+\[\begin{align}
+&amp;X \setminus (U_{x_1} \cup \dots \cup U_{x_n}) \\
+&amp;= (X \setminus U_{x_1}) \cap \dots \cap (X \setminus U_{x_n}) \\
+&amp;= \varnothing
+\end{align}\]
+
+<p>그런데 각 $1 \leq i \leq n$에 대해 $X \setminus U_{x_i} \in \mathcal{F}$이므로, 필터의 교집합 닫힘에 의해 $\varnothing \in \mathcal{F}$가 되어 모순이다. □</p>
+
+<p>$(\Leftarrow)$ $X$가 콤팩트하지 않다고 하자. 그러면 어떤 $X$의 열린 덮개 $\mathcal{C}$가 존재하여 $\mathcal{C}$는 유한 부분덮개를 가지지 않는다. 따라서 다음과 같이 $\mathcal{P}$를 정의할 때,</p>
+
+\[\mathcal{P} = \{ X \setminus (U_1 \cup \dots \cup U_n) : U_i \in \mathcal{C} \}\]
+
+<p>$\mathcal{P}$는 유한 교집합에 대해 닫혀 있으며 공집합을 원소로 가지지 않으므로 예비 필터이다. 이에 따라 $\mathcal{P}$는 필터로 확장될 수 있으며, 이 필터는 초필터로 확장될 수 있다. 그러한 초필터를 $\mathcal{F}$라고 하자. 가정에 의해 $\mathcal{F}$는 어떤 점 $x$로 수렴한다. 즉, $\mathcal{N}(x) \subseteq \mathcal{F}$이다. 따라서 다음이 성립한다.</p>
+
+\[x \in \bigcap_{F \in \mathcal{F}} \overline{F}\]
+
+<p>그런데 이는 $\bigcap_{P \in \mathcal{P}} \overline{P} = \bigcap_{P \in \mathcal{P}} P = \varnothing$ ($\mathcal{C}$가 $X$의 덮개이므로) 에 모순된다. ■</p>
+
+<p>이제 티호노프 정리는 거의 자명하게 따라 나온다.</p>
+
+<blockquote>
+  <p><strong>정리.</strong> 콤팩트 공간들의 곱공간은 콤팩트 공간이다.</p>
+</blockquote>
+
+<h4 id="증명-1">증명</h4>
+
+<p>각각의 $i \in I$에 대해 $X_i$가 콤팩트 공간이라고 하자. $X$가 콤팩트할 필요충분조건은 임의의 $\prod_{i \in I}$ 위의 초필터 $\mathcal{F}$가 수렴하는 것이고, $\mathcal{F}$가 수렴할 필요충분조건은 $\pi_i(\mathcal{F})$가 $X_i$에서 수렴하는 것이다. 그런데 $\pi_i$는 전사이므로 $\pi_i(\mathcal{F})$는 초필터이고, $X_i$는 콤팩트하므로 $\pi_i(\mathcal{F})$는 수렴한다. 이에 따라 $X$는 콤팩트하다. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2025/08/11/tychonoff-with-ultrafilter/en"> Proof of Tychonoff's Theorem Using Ultrafilters </a>
+      </h1>
+    <span class="post-date">11 Aug 2025</span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'">
+        Mathematics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/topology/'">
+        Topology
+      </div>
+      
+    </div>
+     <blockquote>
+  <p><strong>Tychonoff’s Theorem.</strong> The product of compact spaces is compact.</p>
+</blockquote>
+
+<p>This is an extremely simple yet powerful theorem, but its proof is rather tedious in undergraduate topology texts such as Munkres. However, there is an elegant proof using ultrafilters.</p>
+
+<h2 id="1-preliminary-concepts">1. Preliminary Concepts</h2>
+
+<p>For detailed explanations and proofs of the concepts introduced here, refer to Chapter 4 of <em>Stephen Willard, General Topology</em>.</p>
+
+<h3 id="filters-and-ultrafilters">Filters and Ultrafilters</h3>
+
+<p>In a <a href="https://dimenerno.github.io/2025/07/18/boolean-algebra">previous post</a>, we introduced filters in Boolean algebra structures. Since topological spaces form Boolean algebraic structures when $\cup$ and $\cap$ correspond to disjunction and conjunction respectively, we can define filters on topological spaces.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, a filter $\mathcal{F}$ on $X$ is a collection of subsets of $X$ satisfying the following conditions:</p>
+
+  <ol>
+    <li>$X \in \mathcal{F}, \varnothing \notin \mathcal{F}$</li>
+    <li>$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$</li>
+    <li>$A \in \mathcal{F}, A \subseteq B \implies B \in \mathcal{F}$</li>
+  </ol>
+</blockquote>
+
+<p>Additionally, if the following is satisfied, it is an ultrafilter:</p>
+
+<blockquote>
+<ol start="4">
+  <li>$A \notin \mathcal{F} \implies X \setminus A \in \mathcal{F}$</li>
+</ol>
+</blockquote>
+
+<h3 id="neighbourhood-filters">Neighbourhood Filters</h3>
+
+<p>One important filter in topology is the neighbourhood filter. First, we define neighbourhood as follows:</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> For a topological space $X$, we say that $N \subseteq X$ is a <strong>neighbourhood</strong> of $x \in X$ if there exists some open set $U$ such that $x \in U \subseteq N$.</p>
+</blockquote>
+
+<p><strong>Note that neighbourhoods need not be open sets.</strong> When a neighbourhood is an open set, it is called an open neighbourhood. This contrasts with the convention in some textbooks that use neighbourhood and open neighbourhood synonymously, so care must be taken.</p>
+
+<blockquote>
+  <p><strong>Notation.</strong> The collection of neighbourhoods of $x$ is denoted $\mathcal{N}(x)$ or $\mathcal{N}_x$.</p>
+</blockquote>
+
+<p>One can easily verify that $\mathcal{N}(x)$ is a filter. Accordingly, $\mathcal{N}(x)$ is called the <strong>neighbourhood filter</strong>.</p>
+
+<h3 id="generation-of-filters">Generation of Filters</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> A collection $\mathcal{C}$ of subsets of a topological space $X$ is called a <strong>prefilter</strong> or <strong>filter base</strong> when it satisfies the following:</p>
+
+  <ol>
+    <li>$\varnothing \notin \mathcal{C}$</li>
+    <li>$A, B \in \mathcal{C} \implies \exists C \in \mathcal{C} : C \subseteq A \cap B$</li>
+  </ol>
+</blockquote>
+
+<p>When $\mathcal{C}$ is a prefilter, one can <strong>generate</strong> a filter $\mathcal{F}$ from $\mathcal{C}$ as follows:</p>
+
+\[\mathcal{F} = \{ F \subseteq X : C \subseteq F \text{ for some } C \in \mathcal{C} \}\]
+
+<p>Moreover, given a mapping $f: X \to Y$ and a filter $\mathcal{F}$ on $X$, the following collection is a prefilter:</p>
+
+\[\mathcal{C} = \{ f(F) : F \in \mathcal{F} \}\]
+
+<blockquote>
+  <p><strong>Notation.</strong> The filter generated by $\mathcal{C}$ is denoted $f(\mathcal{F})$.</p>
+</blockquote>
+
+<p>When $f$ is onto, we have $\mathcal{C} = f(\mathcal{F})$. Also, when $f$ is onto, the following holds (trivially):</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $f: X \to Y$ is onto and $\mathcal{F}$ is an ultrafilter on $X$, then $f(\mathcal{F})$ is an ultrafilter on $Y$.</p>
+</blockquote>
+
+<h3 id="extension-to-ultrafilters">Extension to Ultrafilters</h3>
+
+<p>Every filter can be extended to an ultrafilter. For the proof, refer to the <a href="https://dimenerno.github.io/2025/01/22/hypernaturals/">previous post</a> (the axiom of choice is used).</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\mathcal{F}$ is a filter on $X$, then there exists an ultrafilter $\mathcal{U}$ on $X$ such that $\mathcal{U} \supseteq \mathcal{F}$.</p>
+</blockquote>
+
+<h3 id="convergence-of-filters">Convergence of Filters</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong> When a filter $\mathcal{F}$ contains $\mathcal{N}(x)$, we say that $\mathcal{F}$ <strong>converges</strong> to $x$, and write $\mathcal{F} \to x$.</p>
+</blockquote>
+
+<p>For example, the filter generated by the prefilter $\lbrace  (0, \epsilon) : \epsilon &gt; 0 \rbrace $ converges to $0$ (this example shows that $\mathcal{F} \to x$ does not require all elements of $\mathcal{F}$ to contain $x$ as an element).</p>
+
+<p>The main properties of filter convergence are as follows:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong></p>
+
+  <ol>
+    <li>For $E \subseteq X$, $x \in \overline{E}$ if and only if there exists some filter $\mathcal{F}$ such that $E \in \mathcal{F}$ and $\mathcal{F} \to x$.</li>
+    <li>$f: X \to Y$ is continuous if and only if for any filter $\mathcal{F}$, if $\mathcal{F} \to x$ then $f(\mathcal{F}) \to f(x)$.</li>
+  </ol>
+</blockquote>
+
+<p>This generalises the characterisation of closure and continuous functions by sequences in first countable spaces.</p>
+
+<p>Convergence of filters in product spaces is equivalent to convergence in each component space. That is, the following holds:</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> A filter $\mathcal{F}$ on the product space $\prod_{i \in I}X_i$ converges to $x$ if and only if $\pi_i(\mathcal{F}) \to \pi_i(x)$ for each $i \in I$.</p>
+</blockquote>
+
+<h2 id="2-proof-of-tychonoffs-theorem">2. Proof of Tychonoff’s Theorem</h2>
+
+<p>We now prove Tychonoff’s theorem. The key is the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> $X$ is compact if and only if every ultrafilter on $X$ converges.</p>
+</blockquote>
+
+<h4 id="proof">Proof</h4>
+
+<p>$(\Rightarrow)$ Let $\mathcal{F}$ be an ultrafilter on $X$ that does not converge. That $\mathcal{F}$ does not converge to any point means that for any $x \in X$, there exists some open set $U_x$ such that $U_x \notin \mathcal{F}$. Since $\mathcal{F}$ is an ultrafilter, $X \setminus U_x \in \mathcal{F}$. Now consider the collection $\mathcal{C} = \lbrace  U_x : x \in X \rbrace $. $\mathcal{C}$ covers $X$, and since $X$ is compact, it has a finite subcover $\lbrace U_{x_1}, \dots, U_{x_n} \rbrace $. Therefore,</p>
+
+\[\begin{align}
+&amp;X \setminus (U_{x_1} \cup \dots \cup U_{x_n}) \\
+&amp;= (X \setminus U_{x_1}) \cap \dots \cap (X \setminus U_{x_n}) \\
+&amp;= \varnothing
+\end{align}\]
+
+<p>But since $X \setminus U_{x_i} \in \mathcal{F}$ for each $1 \leq i \leq n$, by closure of filters under intersection, $\varnothing \in \mathcal{F}$, which is a contradiction. □</p>
+
+<p>$(\Leftarrow)$ Suppose $X$ is not compact. Then there exists some open cover $\mathcal{C}$ of $X$ that has no finite subcover. Therefore, when we define $\mathcal{P}$ as follows:</p>
+
+\[\mathcal{P} = \{ X \setminus (U_1 \cup \dots \cup U_n) : U_i \in \mathcal{C} \}\]
+
+<p>$\mathcal{P}$ is closed under finite intersection and does not contain the empty set, so it is a prefilter. Accordingly, $\mathcal{P}$ can be extended to a filter, and this filter can be extended to an ultrafilter. Let such an ultrafilter be $\mathcal{F}$. By assumption, $\mathcal{F}$ converges to some point $x$. That is, $\mathcal{N}(x) \subseteq \mathcal{F}$. Therefore, the following holds:</p>
+
+\[x \in \bigcap_{F \in \mathcal{F}} \overline{F}\]
+
+<p>But this contradicts $\bigcap_{P \in \mathcal{P}} \overline{P} = \bigcap_{P \in \mathcal{P}} P = \varnothing$ (since $\mathcal{C}$ is a cover of $X$). ■</p>
+
+<p>Tychonoff’s theorem now follows almost trivially.</p>
+
+<blockquote>
+  <p><strong>Theorem.</strong> The product of compact spaces is compact.</p>
+</blockquote>
+
+<h4 id="proof-1">Proof</h4>
+
+<p>Let each $X_i$ be a compact space for $i \in I$. $X$ is compact if and only if any ultrafilter $\mathcal{F}$ on $\prod_{i \in I}$ converges, and $\mathcal{F}$ converges if and only if $\pi_i(\mathcal{F})$ converges in $X_i$. Since $\pi_i$ is onto, $\pi_i(\mathcal{F})$ is an ultrafilter, and since $X_i$ is compact, $\pi_i(\mathcal{F})$ converges. Hence, $X$ is compact. ■</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
         <a href="/2025/08/08/pork-and-salmon"> 돼지고기와 연어: 윤리적 삶은 사치품인가? </a>
       </h1>
     <span class="post-date">08 Aug 2025</span>
@@ -2019,572 +2573,6 @@ x \lor y = x + y + xy \\
 </table>
 
 <p>This is a model of propositional logic where $P$ is true and $Q, R$ are false. In this way, generally when a Boolean algebraic structure is given a prime ideal or ultrafilter, we can construct a logical model based on that information. This is a stepping stone towards the <strong>Stone representation theorem</strong>.</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/07/10/stone-cech"> 스톤-체흐 콤팩트화 </a>
-      </h1>
-    <span class="post-date">10 Jul 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>정의.</strong> $\iota : X \to Y$가 임베딩이라고 하자. 즉, $\iota$는 단사이며 $X$와 $\iota [X]$의 위상동형사상이다. $Y$가 $X$의 <strong>콤팩트화<sub>compactification</sub></strong>라는 것은 $Y$가 콤팩트 공간이고, $\overline{\iota [X]} = Y$인 것이다.</p>
-</blockquote>
-
-<p><strong>고찰</strong></p>
-
-<ul>
-  <li>
-    <p>일반적으로 $X$의 콤팩트화는 유일하지 않다. $\overline{X}$는 배경 위상에 따라 달라질 수 있기 때문이다.</p>
-  </li>
-  <li>
-    <p>$X, Y$가 하우스도르프라면 $Y$는 콤팩트 하우스도르프 공간이므로 정규이고, 따라서 티호노프(완전 정칙)이다. 그리고 티호노프 공간의 부분공간은 티호노프임이 알려져 있기 때문에 $X$ 또한 티호노프이다. 즉, <strong>하우스도르프 공간으로 콤팩트화 가능한 공간은 티호노프이다.</strong></p>
-  </li>
-  <li>
-    <p>이의 역도 성립한다. 즉, <strong>티호노프 공간은 하우스도르프 공간으로 콤팩트화 가능하다.</strong> 이것이 이 글에서 다루는 스톤-체흐 콤팩트화의 함의 중 하나이다.</p>
-  </li>
-</ul>
-
-<p>국소적으로 콤팩트<sub>locally compact</sub>한 하우스도르프 공간 $X$에 대해서는 $X$의 한점 콤팩트화<sub>one-point compactification</sub> 공간 $X^\ast$가 존재한다. (이 사실과 위의 고찰로부터 국소적으로 콤팩트한 하우스도르프 공간은 티호노프임이 따라 나온다.) 특히 $X^\ast$는 $X$의 “가장 작은” 콤팩트화이다.</p>
-
-<p>스톤-체흐 콤팩트화는 어떤 면에서 이의 반대 개념이다. $X$의 스톤-체흐 콤팩트화 공간 $\beta X$는 $X$의 “가장 큰” 콤팩트화이다. 여기서 “가장 큰”의 정확한 정의는 다음의 보편 성질<sub>universal property</sub>이다.</p>
-
-<blockquote>
-  <p><strong>정리 1.</strong> $X$가 티호노프일 때, 어떤 콤팩트 하우스도르프 공간 $\beta X$와 임베딩 $\iota: X \to \beta X$가 유일하게 존재하여, 다음을 만족한다: $K$가 임의의 콤팩트 하우스도르프 공간이고 $f: X \to K$가 연속사상일 때, $f = f^\ast \circ \iota$를 만족하는 연속사상 $f^\ast: \beta X \to K$가 유일하게 존재한다.</p>
-
-  <p><img src="/public/stone-cech-1.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1.5em auto;" /></p>
-
-  <p>또한 $\beta X$는 $X$의 콤팩트화이다. 이를 <strong>스톤-체흐 콤팩트화<sub>Stone-Čech compactification</sub></strong>라고 한다.</p>
-</blockquote>
-
-<p>여기서 $X$가 티호노프라는 조건을 빼도 꽤 강력한 결론을 유지할 수 있다.</p>
-
-<blockquote>
-  <p><strong>정리 2.</strong> $X$가 <em>일반 위상공간</em>일 때, 어떤 콤팩트 하우스도르프 공간 $\beta X$와 <em>연속함수</em> $e : X \to \beta X$가 유일하게 존재하여, 다음을 만족한다: $K$가 임의의 콤팩트 하우스도르프 공간이고 $f: X \to K$가 연속사상일 때, $f = f^\ast \circ \iota$를 만족하는 연속사상 $f^\ast: \beta X \to K$가 유일하게 존재한다.</p>
-
-  <p><img src="/public/stone-cech-2.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1em auto;" /></p>
-</blockquote>
-
-<p>차이점은 $e$가 임베딩이 아니라 연속함수라는 점이다. 실제로 $X$가 일반 위상공간일 때 $e$는 동형성은 고사하고 단사조차 아닐 수 있다. 이 경우 $\beta X$는 엄밀한 의미에서 $X$의 콤팩트화가 아니지만, 그럼에도 이 글에서는 편의를 위해 일반적으로 $\beta X$를 $X$의 스톤-체흐 콤팩트화라고 부를 것이다.</p>
-
-<p>한점 콤팩트화가 국소적으로 콤팩트한 공간에서만 가능한 것과 달리, 정리 2에서 드러나듯이 스톤-체흐 콤팩트화는 <em>모든</em> 위상공간에서 가능하다. 덕분에 스톤-체흐 콤팩트화는 일반 위상공간의 범주 $\mathbf{Top}$를 콤팩트 하우스도르프 공간의 범주 $\mathbf{CHaus}$로 보내는 <strong>함자</strong>로서 간주될 수 있다. 실제로 다음이 성립한다.</p>
-
-<blockquote>
-  <p><strong>정리 3.</strong> 망각함자<sub>forgetful functor</sub> $U: \mathbf{CHaus} \to \mathbf{Top}$는 좌 어드조인트 $\beta: \mathbf{Top} \to \mathbf{CHaus}$를 가진다. 또한 $X \in \mathbf{Top}$에 대해 $\beta X$는 $X$의 스톤-체흐 콤팩트화에 해당한다.</p>
-</blockquote>
-
-<p><a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">예전 글</a>에서 다룬 동치성으로 인해 이는 처음의 정의와 동치이다.</p>
-
-<p>$\beta$의 존재성 증명은 크게 세 단계로 구성된다. 첫째, 임의의 위상공간 $X$에 대해 $\beta X$를 정의한다. 둘째, $\beta X$가 보편 성질을 만족함을 보인다. 셋째, $X$와 $\beta X$의 관계가 함수적<sub>functorial</sub>임을, 즉 $\beta$가 함자임을 보인다. 위에서 정리 1, 정리 2, 정리 3을 구분하기는 했지만 아래의 증명에서는 세 정리를 함께 증명한다.</p>
-
-<h4 id="증명">증명.</h4>
-
-<p><strong>1. $\beta X$의 정의</strong></p>
-
-<p>집합 $C$를 다음과 같이 정의하자.</p>
-
-\[C = \{ f \mid f : X \to [0, 1] \text{ is continuous } \}\]
-
-<p>$[0, 1]^C$에 곱 위상을 주어 위상공간으로 만들자. $[0, 1]^C$는 $C \to [0, 1]$ 사상들의 공간으로 생각할 수 있다. 하우스도르프 공간의 곱은 언제나 하우스도르프이고, 콤팩트 공간의 곱 또한 언제나 콤팩트하므로 (티호노프 정리), $[0, 1]^C$는 콤팩트 하우스도르프 공간이다. 이제 $e: X \to [0, 1]^C$를 다음과 같이 정의한다.</p>
-
-\[e: x \mapsto \lambda_x \quad \text{where} \quad \lambda_x : f \mapsto f(x)\]
-
-<p>곱 위상의 성질(<a href="https://dimenerno.github.io/2025/04/02/box-v-product">정의</a>)에 의해 $e$는 연속함수이다. 특히 $X$가 티호노프 공간이라면 <a href="https://dimenerno.github.io/2025/07/09/urysohn">우리손 보조정리</a>와 그 따름결과 (링크의 말단에 있는 정리) 에 의해 $e$는 임베딩이다.</p>
-
-<p><strong>$\beta X$를 $[0, 1]^C$에서 $e[X]$의 폐포로 정의하자.</strong> $\beta X$는 콤팩트 공간의 닫힌집합이므로 콤팩트이며, 하우스도르프 공간의 부분공간이므로 하우스도르프이다. 따라서 $\beta X$는 콤팩트 하우스도르프이다. 특히, 직전 문단의 고찰로 인해 $X$가 티호노프일 때 $\beta X$는 $X$의 콤팩트화이다.</p>
-
-<h4 id="2-beta-x의-보편-성질-확인">2. $\beta X$의 보편 성질 확인</h4>
-
-<p>이제 $\beta X$가 보편 성질을 만족함을 보이자. 먼저 $K = [0, 1]$일 때를 보인다.</p>
-
-<p>임의의 연속사상 $f: X \to [0, 1]$이 주어졌다고 하자. $f^\ast : \beta X \to [0, 1]$을 다음과 같이 정의한다.</p>
-
-\[f^\ast : \lambda \mapsto \lambda (f)\]
-
-<p>즉, $(x_g)_{g \in C}$를 $x_f$로 사상시키는 사영사상 $\pi_f: [0, 1]^C \to [0, 1]$에 대해, $f^\ast = \pi_f \rvert_{\beta X}$이다. $\pi_f$가 연속이므로 $f^\ast$는 연속이다. 또한 임의의 $x \in X$에 대해,</p>
-
-\[(f^\ast \circ e)(x) = f^\ast (\lambda_x) = \lambda_x(f) = f(x)\]
-
-<p>이므로 $f^\ast$는 보편 성질이 요구하는 사상이다.</p>
-
-<p>이제 일반적인 콤팩트 하우스도르프 공간 $K$와 연속사상 $f: X \to K$을 고려하자. $K$는 티호노프 공간이므로 어떤 집합 $J$에 대해 $[0, 1]^J$에 임베딩될 수 있다. 그러므로 일반성을 잃지 않고 $K = [0, 1]^J$, $f: X \to [0, 1]^J$인 경우를 고려하면 충분하다. 이 경우 $f^\ast$를 다음과 같이 정의한다.</p>
-
-\[f^\ast : \lambda \mapsto (\lambda (\pi_\alpha f))_{\alpha \in J}\]
-
-<p>$K = [0, 1]$인 경우의 논증으로부터, $f^\ast$는 연속이며 보편 성질을 만족함이 따라 나온다. 따라서 $\beta X$는 $X$의 스톤-체흐 콤팩트화이다.</p>
-
-<h4 id="3-beta의-함자-조건-확인">3. $\beta$의 함자 조건 확인</h4>
-
-<p>마지막으로 $\beta$가 함자임을 보이자. 임의의 위상공간 $X, Y$와 연속사상 $\psi : X \to Y$에 대해 다음 가환 도식이 성립하도록 $\beta \psi$를 정의할 수 있음을 보여야 한다.</p>
-
-<p><img src="/public/stone-cech-3.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1em auto;" /></p>
-
-<p>다음과 같이 $\beta \psi$를 정의하자. 임의의 $\lambda \in \beta X$에 대해,</p>
-
-\[\beta \psi : \lambda \mapsto (g \mapsto \lambda(g \circ \psi) )_{g \in C_Y}\]
-
-<p>여기서 $C_Y$는 연속인 $g : Y \to [0, 1]$의 모임이다. (연습문제: 위 식이 잘 정의되었음을 각 함수의 정의역과 공역을 따져 확인해 보라.) 가환 도식의 성립은 다음 식으로 환원된다.</p>
-
-\[\beta \psi(\lambda_x) = \lambda_{\psi(x)}\]
-
-<p>좌변을 정의에 따라 풀어쓰면 위 식이 성립함을 알 수 있다.</p>
-
-\[\begin{align*}
-\beta \psi(\lambda_x) &amp;= (g \mapsto \lambda_x(g\circ \psi))_{g \in C_Y} \\
-&amp;= (g \mapsto (g \circ \psi)(x))_{g \in C_Y} \\
-&amp;= (g \mapsto g(\psi(x)))_{g \in C_Y} \\
-&amp;= \lambda_{\psi(x)}
-\end{align*}\]
-
-<p>따라서 $\beta : \mathbf{Top} \to \mathbf{CHaus}$는 함자이며, 특히 $U: \mathbf{CHaus} \to \mathbf{Top}$의 좌 어드조인트이다. 이로부터 임의의 $X$에 대해, 보편 조건을 만족하는 $(e, \beta X)$는 콤마 카테고리 $(A \Rightarrow U)$의 초기 대상이므로 동형성에 대해 유일함이 따라 나온다. (자세한 설명은 <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint">이 글</a>을 참조) ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/07/10/stone-cech/en"> Stone-Čech Compactification </a>
-      </h1>
-    <span class="post-date">10 Jul 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>Definition.</strong> Let $\iota : X \to Y$ be an embedding. That is, $\iota$ is injective and a homeomorphism between $X$ and $\iota [X]$. $Y$ is said to be a <strong>compactification</strong> of $X$ if it is a compact space such that $\overline{\iota [X]} = Y$.</p>
-</blockquote>
-
-<p><strong>Remarks</strong></p>
-
-<ul>
-  <li>
-    <p>Generally, compactification of $X$ is not unique, as $\overline{X}$ may vary depending on the background topology.</p>
-  </li>
-  <li>
-    <p>If $X$ and $Y$ are Hausdorff, then $Y$ is a compact Hausdorff space, hence normal, hence Tychonoff (completely regular). Since it is known that subspaces of Tychonoff spaces are Tychonoff, $X$ is also Tychonoff. Thus, <strong>spaces that can be compactified as Hausdorff spaces are Tychonoff.</strong></p>
-  </li>
-  <li>
-    <p>The converse also holds. That is, <strong>Tychonoff spaces can be compactified as Hausdorff spaces.</strong> This is one of the implications of the Stone-Čech compactification discussed in this post.</p>
-  </li>
-</ul>
-
-<p>For a locally compact Hausdorff space $X$, there exists a one-point compactification space $X^\ast$. (From this fact and the above remark, it follows that locally compact Hausdorff spaces are Tychonoff.) In particular, $X^\ast$ is the “smallest” compactification of $X$.</p>
-
-<p>The Stone-Čech compactification is, in some sense, the opposite concept. The Stone-Čech compactification space $\beta X$ of $X$ is the “largest” compactification of $X$. The precise definition of “largest” is given by the following universal property.</p>
-
-<blockquote>
-  <p><strong>Theorem 1.</strong> If $X$ is Tychonoff, then there exists a unique compact Hausdorff space $\beta X$ and an embedding $\iota: X \to \beta X$ such that the following holds: for any compact Hausdorff space $K$ and any continuous map $f: X \to K$, there exists a unique continuous map $f^\ast: \beta X \to K$ such that $f = f^\ast \circ \iota$.</p>
-
-  <p><img src="/public/stone-cech-1.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1.5em auto;" /></p>
-
-  <p>Furthermore, $\beta X = \overline{\iota[X]}$ and hence is a compactification of $X$. This is referred to as the <strong>Stone-Čech compactification</strong>.</p>
-</blockquote>
-
-<p>Here, even without the condition that $X$ is Tychonoff, quite strong conclusions can still be maintained.</p>
-
-<blockquote>
-  <p><strong>Theorem 2.</strong> If $X$ is a general topological space, then there exists a unique compact Hausdorff space $\beta X$ and a continuous function $e : X \to \beta X$ such that the following holds: for any compact Hausdorff space $K$ and any continuous map $f: X \to K$, there exists a unique continuous map $f^\ast: \beta X \to K$ such that $f = f^\ast \circ e$.</p>
-
-  <p><img src="/public/stone-cech-2.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1em auto;" /></p>
-
-  <p>Furthermore, $\beta X = \overline{\iota[X]}$.</p>
-</blockquote>
-
-<p>The difference is that $e$ is just a continuous function rather than an embedding. In fact, when $X$ is a general topological space, $e$ may not even be injective, let alone an homoemorphism. In this case, $\beta X$ is not a compactification of $X$ in the strict sense, but for convenience, this post will generally refer to $\beta X$ as the Stone-Čech compactification of $X$.</p>
-
-<p>Unlike one-point compactifications, which are only possible for locally compact spaces, the Stone-Čech compactification is possible for <em>all</em> topological spaces. Consequently, the Stone-Čech compactification can be regarded as a <strong>functor</strong> that maps the category of general topological spaces $\mathbf{Top}$ to the category of compact Hausdorff spaces $\mathbf{CHaus}$. Indeed, the following holds.</p>
-
-<blockquote>
-  <p><strong>Theorem 3.</strong> The forgetful functor $U: \mathbf{CHaus} \to \mathbf{Top}$ has a left adjoint $\beta: \mathbf{Top} \to \mathbf{CHaus}$.</p>
-</blockquote>
-
-<p>Due to the equivalence discussed in a <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint/">previous post</a>, this may well be taken as the <em>definition</em> of Stone-Čech compactification.</p>
-
-<p>The proof of Theorem 3 consists of three main steps. First, we define $\beta X$ for a topological space $X$. Second, we show that $\beta X$ satisfies the universal property. Third, we show that the relationship between $X$ and $\beta X$ is functorial, meaning that $\beta$ is a functor. Although Theorems 1, 2, and 3 are distinguished above, the proof below will demonstrate all three theorems together.</p>
-
-<h4 id="proof">Proof.</h4>
-
-<p><strong>1. Defining $\beta X$</strong></p>
-
-<p>Let us define the set $C$ as follows.</p>
-
-\[C = \{ f \mid f : X \to [0, 1] \text{ is continuous } \}\]
-
-<p>We shall give the product topology to $[0, 1]^C$ to form a topological space. $[0, 1]^C$ can be thought of as the space of maps from $C$ to $[0, 1]$. Note that the product of Hausdorff spaces is always Hausdorff, and the product of compact spaces is always compact (Tychonoff’s theorem), so $[0, 1]^C$ is a compact Hausdorff space. Now, let us define $e: X \to [0, 1]^C$ as follows.</p>
-
-\[e: x \mapsto \lambda_x \quad \text{where} \quad \lambda_x : f \mapsto f(x)\]
-
-<p>By the properties of the product topology (indeed, its <a href="https://dimenerno.github.io/2025/04/02/box-v-product">definition</a>), $e$ is a continuous function. In particular, if $X$ is a Tychonoff space, then by the Urysohn lemma and its corollary (the theorems in <a href="https://dimenerno.github.io/2025/07/09/urysohn">this post</a>), $e$ is an embedding.</p>
-
-<p><strong>Let us define $\beta X$ as the closure of $e[X]$ in $[0, 1]^C$.</strong> Since $\beta X$ is a closed subset of a compact space, it is compact, and since it is a subspace of a Hausdorff space, it is Hausdorff. Therefore, $\beta X$ is compact Hausdorff. In particular, due to the remark in the previous paragraph, if $X$ is Tychonoff, then $\beta X$ is a compactification of $X$.</p>
-
-<h4 id="2-beta-x-satisfies-the-universal-property">2. $\beta X$ satisfies the universal property</h4>
-
-<p>Now let us show that $\beta X$ satisfies the universal property. First, we consider the case when $K = [0, 1]$.</p>
-
-<p>Let us assume we are given a continuous map $f: X \to [0, 1]$. We define $f^\ast : \beta X \to [0, 1]$ as follows.</p>
-
-\[f^\ast : \lambda \mapsto \lambda (f)\]
-
-<p>That is, for the projection map $\pi_f: [0, 1]^C \to [0, 1]$ that maps $(x_g)_{g \in C}$ to $x_f$, we have $f^\ast = \pi_f \rvert_{\beta X}$. Since $\pi_f$ is continuous, $f^\ast$ is continuous. Furthermore, for any $x \in X$,</p>
-
-\[(f^\ast \circ e)(x) = f^\ast (\lambda_x) = \lambda_x(f) = f(x)\]
-
-<p>Thus, $f^\ast$ is the map required by the universal property.</p>
-
-<p>For general $K$ compact Hausdorff and $f: X \to K$ continuous, we observe that $K$ is Tychonoff, and hence can be embedded into $[0, 1]^J$ for some index set $J$. It then follows that without loss of generality we may only consider cases where $K = [0, 1]^J$ and $f: X \to [0, 1]^J$. In such cases, we let $f^\ast$ be:</p>
-
-\[f^\ast : \lambda \mapsto (\lambda (\pi_\alpha f))_{\alpha \in J}\]
-
-<p>It follows from the $K = [0, 1]$ case that $f^\ast$ is continuous, and satisfies the universal property. Therefore, $\beta X$ is the Stone-Čech compactification of $X$.</p>
-
-<h4 id="3-beta-is-a-functor">3. $\beta$ is a functor</h4>
-
-<p>Finally, we need to show that $\beta$ is a functor. That is, we need to show that for any topological spaces $X, Y$ and continuous map $\psi : X \to Y$, one can define $\beta \psi$ such that the following commutative diagram holds.</p>
-
-<p><img src="/public/stone-cech-3.png" style="width: 100%; max-width: 150px; mix-blend-mode: multiply; margin: 0.5em auto 1em auto;" /></p>
-
-<p>Let us define $\beta \psi$ as follows. For any $\lambda \in \beta X$,</p>
-
-\[\beta \psi : \lambda \mapsto (g \mapsto \lambda(g \circ \psi) )_{g \in C_Y}\]
-
-<p>where $C_Y$ is the collection of continuous functions $g : Y \to [0, 1]$. (Exercise: Verify that the above definition is well-defined by checking the domains and codomains of each function.) The commutativity of the diagram reduces to the following equation.</p>
-
-\[\beta \psi(\lambda_x) = \lambda_{\psi(x)}\]
-
-<p>Expanding the left-hand side according to the definition, we see that the equation indeed holds.</p>
-
-\[\begin{align*}
-\beta \psi(\lambda_x) &amp;= (g \mapsto \lambda_x(g\circ \psi))_{g \in C_Y} \\
-&amp;= (g \mapsto (g \circ \psi)(x))_{g \in C_Y} \\
-&amp;= (g \mapsto g(\psi(x)))_{g \in C_Y} \\
-&amp;= \lambda_{\psi(x)}
-\end{align*}\]
-
-<p>Thus, $\beta : \mathbf{Top} \to \mathbf{CHaus}$ is a functor, and in particular, it is the left adjoint to $U: \mathbf{CHaus} \to \mathbf{Top}$. It follows that for any $X$, the pair $(e, \beta X)$ that satisfies the universal condition is the initial object in the comma category $(A \Rightarrow U)$, which implies uniqueness up to isomorphism. (For further details, refer to <a href="http://dimenerno.github.io/2025/02/13/three-definitions-of-adjoint">this post</a>) ■</p>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="ko" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/07/09/urysohn"> 우리손 보조정리와 우리손 거리화 정리 </a>
-      </h1>
-    <span class="post-date">09 Jul 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/수학/'">
-        수학
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/위상수학/'">
-        위상수학
-      </div>
-      
-    </div>
-     <h2 id="우리손-보조정리">우리손 보조정리</h2>
-
-<blockquote>
-  <p><strong>우리손 보조정리<sub>Urysohn Lemma</sub>.</strong> $X$가 정규<sub>normal</sub> 공간이라고 하자. $A, B$가 서로소인 $X$의 닫힌집합일 때, 어떤 연속함수 $f: X \to [0, 1]$이 존재하여 $f[A] = \lbrace  0 \rbrace$, $f[B] = \lbrace 1 \rbrace$이다.</p>
-
-  <p><img src="/public/urysohn-1.png" style="width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-</blockquote>
-
-<p>정규성을 비롯한 분리 공리는 <em>해당 공간에서</em> 점과 닫힌집합을 분리한다. 우리손 보조정리의 의의는, 정규성 분리 공리의 경우 두 닫힌집합은 <em>좋은 공간에서도</em> 분리 가능하다는 것이다. 구체적으로, 정규공간을 적절한 연속함수로 사상시켰을 때 두 닫힌집합은 $[0, 1]$에서 분리 가능하다. 그리고 $[0, 1]$의 여러 좋은 성질은 — 콤팩트 하우스도르프 거리 공간일 뿐 아니라 우리에게 굉장히 익숙한 공간이라 논증하기도 쉽다 — 우리손 보조정리의 굉장한 잠재력을 암시한다.</p>
-
-<h4 id="증명">증명</h4>
-
-<p>$Q = [0, 1] \cap \mathbb{Q}$라고 하자 (사실 $[0, 1]$의 가산 조밀 집합이기만 하면 된다). $Q$가 가산이므로 $Q$의 원소를 열거<sub>enumerate</sub>하는 방법이 존재한다. 일례로 분모-분자의 사전식 열거 $\prec$를 고려하자.</p>
-
-\[0 \prec 1 \prec 1/2 \prec 1/3 \prec 2/3 \prec 1/4 \prec 1/5 \prec 2/5 \prec \cdots\]
-
-<p>이제 다음과 같이 $\lbrace  U_q \rbrace _{q \in Q}$를 정의하자. 먼저 $U_1 = X \setminus B$이다 ($B$가 닫힌집합이므로 $U_1$은 열린집합이다). 정규성에 의해 $A \subset U_0$이면서 $\overline{U_0} \subset U_1$인 $U_0$가 존재한다. 나머지 $U_q$는 열거 순서에 따라 다음과 같이 정의한다. $p \prec q$인 임의의 $p$에 대해,</p>
-
-<ul>
-  <li>$p &lt; q \implies \overline{U_p} \subset U_q$</li>
-  <li>$q &lt; p \implies \overline{U_q} \subset U_p$</li>
-</ul>
-
-<p>정규성에 의해 위 조건을 만족하며 $\lbrace  U_q \rbrace _{q \in Q}$를 완전히 정의할 수 있다.</p>
-
-<p><img src="/public/urysohn-2.png" style="width: 100%; max-width: 400px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<p>이제 다음과 같이 함수 $f: X \to [0, 1]$을 정의하자.</p>
-
-\[f(x) = \begin{cases}
-\sup_{&lt;}\{q \in Q : x \notin U_q \} &amp; x \notin U_0 \\
-0 &amp; x \in U_0
-\end{cases}\]
-
-<p>$\sup_&lt;$라는 표기는 $\prec$가 아닌 $&lt;$에 대해 상한을 취함을 의미한다. 정의로부터 $f[A] = 0, f[B] = 1$가 따라 나온다.</p>
-
-<p>이제 $f$가 연속임을 보이면 정리가 증명된다. $\lbrace  B_\epsilon(q) \cap [0, 1] : q \in Q, \epsilon \in \mathbb{Q}_{&gt;0} \rbrace $가 $[0, 1]$의 위상 기저이므로, 임의의 $q \in Q$와 특정 상한보다 작은 양의 유리수 $\epsilon$에 대해 $S_{q, \epsilon} = f^{-1}(B_\epsilon(q) \cap [0, 1])$가 열린집합임을 보이면 충분하다.</p>
-
-<ul>
-  <li>$0 &lt; q &lt; 1$인 경우, $S_{q, \epsilon} = (X \setminus \overline{U_{q-\epsilon}}) \cap U_{q + \epsilon}$이므로 열린집합이다.</li>
-  <li>$q = 0$인 경우, $S_{0, \epsilon} = U_\epsilon$이므로 열린집합이다.</li>
-  <li>$q = 1$인 경우, $S_{1, \epsilon} = X \setminus \overline{U_{1 - \epsilon}}$이므로 열린집합이다.</li>
-</ul>
-
-<p>따라서 $f$는 연속이다. ■</p>
-
-<h4 id="고찰">고찰</h4>
-
-<ul>
-  <li>
-    <p>우리손 보조정리의 역은 자명히 성립한다. 즉, 임의의 닫힌집합 $A, B \subset X$에 대해 어떤 연속인 $f: X \to [0, 1]$가 $A, B$를 분리한다면, $U = f^{-1}[0, 1/2)$, $V = f^{-1}(1/2, 1]$는 $A, B$를 분리하는 서로소 열린집합이므로 $X$는 정규이다. 간단히 말해, <strong>정규공간에서는 우리손 분리가능성과 분리 공리가 동치이다.</strong></p>
-  </li>
-  <li>
-    <p>정칙<sub>regular</sub> 공간에서는 이가 성립하지 않는다. 즉, 정칙 공간 $X$에서 임의의 닫힌집합 $F$와 점 $a$가 주어졌을 때, $f(a) = 0$, $f[F] = \lbrace 1 \rbrace$을 만족하는 연속인 $f: X \to [0, 1]$이 언제나 존재하는 것은 아니다. 우리손 분리가능한 정칙 공간을 <strong>티호노프<sub>Tychonoff</sub> 공간</strong> 또는 <strong>완전 정칙<sub>completely regular</sub> 공간</strong>이라고 하며, 정칙보다 엄격히 강한 조건이다.</p>
-  </li>
-  <li>
-    <p>우리손 보조정리의 증명이 정칙 공간에 대해 유효하지 않은 이유는 $p &lt; q \implies \overline{U_p} \subset U_q$를 만족하는 $\lbrace U_q \rbrace $를 구성할 때 정규 공리가 필요하기 때문이다.</p>
-  </li>
-</ul>
-
-<h2 id="우리손-거리화-정리">우리손 거리화 정리</h2>
-
-<p>우리손 보조정리의 응용으로서, 우리손 거리화 정리를 증명하자.</p>
-
-<blockquote>
-  <p><strong>우리손 거리화 정리<sub>Urysohn metrisation theorem</sub>.</strong> 2차 가산인 정규 공간은 거리화 가능하다.</p>
-</blockquote>
-
-<p>그런데 2차 가산인 정칙 공간은 정규 공간임이 알려져 있으므로 위 정리의 진술은 “2차 가산인 정칙 공간은 거리화 가능하다”와 같이 자연스럽게 강화할 수 있다.</p>
-
-<p>따라서 공간들 간의 시사 관계는 다음과 같다. <strong>화살표의 길이가 길수록 요구되는 조건이 강해진다.</strong> $T_2 \to T_4$는 $T_3 \to T_4$보다 엄격히 어려운 시사 관계이며, 이것은 전자에서 요구되는 콤팩트성이 후자에서 요구되는 린델뢰프보다 엄격히 강한 조건인 데에서 드러난다. 마찬가지로 $T_3 \to \mathrm{Met}$는 $T_3 \to T_4$보다 엄격히 어려운 시사 관계이며, 전자에서 요구되는 2차 가산성은 후자에서 요구되는 린델뢰프보다 엄격히 강한 조건이다. 그러나 $T_2 \to T_4$와 $T_3 \to \mathrm{Met}$는 어느 한쪽이 엄격히 어려운 시사 관계가 아니다 (두 화살표의 길이는 엇비슷하다). 이것은 콤팩트성과 2차 가산성이 일반적으로 서로를 시사하지 않는다는 점에서 드러난다.</p>
-
-<p><img src="/public/urysohn-3.png" style="width: 100%; max-width: 240px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<h4 id="증명-1">증명</h4>
-
-<p>$X$가 2차 가산인 정규 공간이라고 하자. 다음의 보조정리를 증명한다.</p>
-
-<blockquote>
-  <p><strong>보조정리.</strong> $X$를 $[0, 1]$에 사상시키는 연속함수의 가산족 $\mathcal{F}$가 존재하여, 임의의 $x_0 \in X$와 그 근방 $U$에 대해, $f(x_0) &gt; 0$이고 $f[X \setminus U] = \lbrace  0 \rbrace $인 $f \in \mathcal{F}$가 존재한다.</p>
-</blockquote>
-
-<p>$x_0$와 $U$가 주어졌을 때 그러한 $f$가 존재함은 우리손 보조정리로부터 알 수 있다. 우리가 해야할 일은 이를 가산 함수족으로 줄이는 것이다. $\mathcal{B} = \lbrace  B_n \rbrace $이 $X$의 가산인 위상기저라고 하자. $B_m \subset B_n$일 때, 우리손 보조정리로부터 $f_{nm}: X \to [0, 1]$을 다음을 만족하는 연속함수로 정의하자.</p>
-
-<ul>
-  <li>$f_{nm}[\overline{B_m}] = 1$</li>
-  <li>$f_{nm}[X \setminus B_n] = 0$</li>
-</ul>
-
-<p>$\mathcal{F} = \lbrace  f_{nm} \rbrace $으로 정의하자. 임의의 $x_0$와 그 근방 $U$가 주어졌을 때, 위상기저의 정의에 의해 $x_0 \in B_n \subset U$인 $B_n$이 존재한다. 또한 정규성에 의해 $x \in \overline{V} \subset B_n$인 열린집합 $V$가 존재한다. 다시 위상기저의 정의에 의해 $x \in B_m \subset V$인 $B_m$이 존재한다. 이때 $f_{nm} \in \mathcal{F}$가 보조정리의 조건을 만족하는 함수이다. □</p>
-
-<p>이제 본 정리를 증명하자. 아이디어는 $X$를 $[0, 1]^\omega$에 임베딩하는 것이다. $[0, 1]^\omega$에 곱 위상이 주어지면 거리 공간임이 알려져 있으므로 $X$는 거리 공간의 부분공간과 동형인 공간으로서 거리화 가능함이 보여진다.</p>
-
-<p>$\mathcal{F} = \lbrace  f_n \mid n \in \omega \rbrace $가 보조정리로서 주어지는 가산 함수족이라고 하자. 다음과 같이 $F: X \to [0, 1]^\omega$를 정의한다.</p>
-
-\[F: x \mapsto (f_1(x), f_2(x), f_3(x), \dots)\]
-
-<p>$F$가 임베딩을 보이자. 즉, $F$가 연속이고, 단사이며, 정의역과 치역의 동형사상임을 보여야 한다.</p>
-
-<p>각 $f_n$은 연속이므로 곱 위상의 성질(<a href="https://dimenerno.github.io/2025/04/02/box-v-product">정의이기도 하다</a>)에 의해 $F$는 연속이다. $F$가 단사임은 $X$가 하우스도르프라는 사실에서 따라 나온다. 따라서 다음을 보이면 충분하다.</p>
-
-<blockquote>
-  <p>$U \subset X$가 열린집합일 때, $F[U]$는 $\mathrm{im} F$에서 열린집합이다.</p>
-</blockquote>
-
-<p>임의의 $y_0 \in F[U]$에 대해 $y_0 \in V \subset F[U]$이며 $\mathrm{im} F$에서 열린 $V$가 존재함을 보이자. $F[U]$의 정의에 의해 어떤 $x_0 \in X$가 존재하여 $F(x_0) = y_0$이다. $x_0$와 $U$에 대해 보조정리를 만족하는 함수가 $f_n \in \mathcal{F}$라고 하자. $f_n(x_0) = 1$이므로 $(y_0)_n = 1$이다. 따라서 $W = \pi_n^{-1}(0, 1] \subset [0, 1]^\omega$와 같이 정의하면 $W$는 $y_0$를 원소로 가지는 $[0, 1]^\omega$에서 열린집합이다.</p>
-
-<p>$W \cap \mathrm{im} F \subset F[U]$임을 보이자. 임의의 $w \in W$는 $F(x_1) = w$와 같이 쓸 수 있다. 추가로 $w \in \mathrm{im} F$라면 $f_n(x_1) = 1$이다. 그런데 $f_n$은 $U$ 외부에서는 $0$이므로, $x_1 \in U$이다. 따라서 $w \in F[U]$이다. 따라서 $W \cap \mathrm{im} F$는 $F[U]$에 포함되며 $y_0$를 원소로 가지는 $\mathrm{im} F$의 열린집합이다. 따라서 $F[U]$는 $\mathrm{im} F$에서 열린집합이다. ■</p>
-
-<h4 id="고찰-1">고찰</h4>
-
-<ul>
-  <li>
-    <p>우리손 거리화 정리는 <strong>나가타-스미로느프 거리화 정리<sub>Nagata-Smirnov metrisation theorem</sub></strong>로 강화할 수 있다. 진술은 다음과 같다.</p>
-
-    <blockquote>
-      <p>$X$가 거리화 가능할 필요충분조건은 $X$가 정칙이며 가산-국소적으로 유한한<sub>countably locally finite</sub> 위상기저를 가지는 공간인 것이다.</p>
-    </blockquote>
-
-    <p>위상공간 $X$의 부분집합들로 이루어진 집합족 $\mathcal{A}$가 <strong>국소적으로 유한</strong>하다는 것은, 임의의 $x \in X$에 대해 어떤 근방 $U$가 존재하여 $U$가 $\mathcal{A}$의 오직 유한한 개수의 집합과만 교집합을 가진다는 것이다. 위상기저 $\mathcal{B}$가 <strong>가산-국소적으로 유한</strong>하다는 것은, 각각의 $\mathcal{B}_n$이 국소적으로 유한이도록 $\mathcal{B} = \bigcup_{n \in \omega}\mathcal{B}_n$와 같이 적을 수 있다는 것이다.</p>
-  </li>
-  <li>
-    <p>우리손 거리화 정리의 증명을 살짝 변형하면 다음 사실을 발견할 수 있다.</p>
-
-    <blockquote>
-      <p><strong>정리.</strong> $T_1$ 공간인 $X$에 대해, $\lbrace f_{\alpha} \rbrace _{\alpha \in J} $가 다음 조건을 만족하는 연속함수 $f_\alpha : X \to [0, 1]$의 모임이라고 하자: 임의의 $x_0 \in X$와 근방 $U$에 대해, 어떤 $\alpha \in J$가 존재하여 $f_\alpha(x_0) = 1$이고 $f_\alpha[X \setminus U] = \lbrace  0 \rbrace $이다. 이때, $F(x) = (f_\alpha(x))_{\alpha \in J}$는 $X$를 $[0, 1]^J$로 임베딩하는 사상이다.</p>
-    </blockquote>
-
-    <p>$T_1$ 조건을 생략하면 $F$는 단사가 아닐 수 있음을 확인하라. 위 정리는 스톤-체흐 콤팩트화<sub>Stone-Čech compactification</sub>를 증명하는 데 사용된다.</p>
-  </li>
-</ul>
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2025/07/09/urysohn/en"> The Urysohn Lemma and Urysohn Metrisation Theorem </a>
-      </h1>
-    <span class="post-date">09 Jul 2025</span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/topology/'">
-        Topology
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>Urysohn Lemma.</strong> Let $X$ be a normal space. If $A$ and $B$ are disjoint closed sets in $X$, then there exists a continuous function $f: X \to [0, 1]$ such that $f[A] = \lbrace  0 \rbrace$ and $f[B] = \lbrace 1 \rbrace$.</p>
-
-  <p><img src="/public/urysohn-1.png" style="width: 100%; max-width: 320px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-</blockquote>
-
-<p>The separation axioms, e.g. normality, separate points from closed sets in the <em>given</em> space. The significance of the Urysohn Lemma lies in the fact that, in the case of the normal space, two closed sets can be further separated in a <em>nice</em> space. Specifically, with respect to an appropriate continuous map defined on the normal space to $[0, 1]$, two closed sets can be separated in $[0, 1]$. And the myriad “nice” properties of $[0, 1]$ — being a compact Hausdorff metric space, and a space which we are very familiar with and can visualise easily — suggest the remarkable potential of the Urysohn lemma.</p>
-
-<h4 id="proof">Proof</h4>
-
-<p>Let us denote $Q = [0, 1] \cap \mathbb{Q}$ (actually it suffices for $Q$ to be a countable dense subset of $[0, 1]$). Since $Q$ is countable, there exists an enumeration of the elements of $Q$. For instance, consider the lexicographic enumeration of the numerators and denominators, $\prec$.</p>
-
-\[0 \prec 1 \prec 1/2 \prec 1/3 \prec 2/3 \prec 1/4 \prec 1/5 \prec 2/5 \prec \cdots\]
-
-<p>Let us now define the collection $\lbrace  U_q \rbrace _{q \in Q}$. First, let $U_1 = X \setminus B$ (since $B$ is a closed set, $U_1$ is an open set). By normality, there exists an open set $U_0$ such that $A \subset U_0$ and $\overline{U_0} \subset U_1$. The remaining $U_q$ are recursively defined in the following manner. For any $p \prec q$,</p>
-
-<ul>
-  <li>If $p &lt; q$, then $\overline{U_p} \subset U_q$.</li>
-  <li>If $q &lt; p$, then $\overline{U_q} \subset U_p$.</li>
-</ul>
-
-<p>By normality, these conditions can be satisfied, allowing us to fully define the collection $\lbrace  U_q \rbrace _{q \in Q}$.</p>
-
-<p><img src="/public/urysohn-2.png" style="width: 100%; max-width: 400px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<p>Now, let us define the function $f: X \to [0, 1]$ as follows.</p>
-
-\[f(x) = \begin{cases}
-\sup_{&lt;}\{q \in Q : x \notin U_q \} &amp; x \notin U_0 \\
-0 &amp; x \in U_0
-\end{cases}\]
-
-<p>The notation $\sup_&lt;$ indicates that we are taking the supremum with respect to $&lt;$ rather than $\prec$. From the definition, it follows that $f[A] = 0$ and $f[B] = 1$.</p>
-
-<p>To complete the proof, we must show that $f$ is continuous. Since $\lbrace  B_\epsilon(q) \cap [0, 1] : q \in Q, \epsilon \in \mathbb{Q}_{&gt;0} \rbrace$ forms a basis for the topology on $[0, 1]$, it suffices to show that for any $q \in Q$ and postivie rational $\epsilon$ smaller than a certain supremum, the set $S_{q, \epsilon} = f^{-1}(B_\epsilon(q) \cap [0, 1])$ is an open set. Indeed,</p>
-
-<ul>
-  <li>If $0 &lt; q &lt; 1$, then $S_{q, \epsilon} = (X \setminus \overline{U_{q-\epsilon}}) \cap U_{q + \epsilon}$, which is an open set.</li>
-  <li>If $q = 0$, then $S_{0, \epsilon} = U_\epsilon$, which is an open set.</li>
-  <li>If $q = 1$, then $S_{1, \epsilon} = X \setminus \overline{U_{1 - \epsilon}}$, which is an open set.</li>
-</ul>
-
-<p>Thus, $f$ is continuous. ■</p>
-
-<h4 id="remarks">Remarks</h4>
-
-<ul>
-  <li>
-    <p>The converse of the Urysohn lemma trivially holds. That is, for any closed sets $A, B \subset X$, if there exists a continuous function $f: X \to [0, 1]$ that separates $A$ and $B$, then the sets $U = f^{-1}[0, 1/2)$ and $V = f^{-1}(1/2, 1]$ are disjoint open sets that separate $A$ and $B$, implying that $X$ is normal. In simple terms, <strong>in normal spaces, the Urysohn separation property and the separation axiom are equivalent.</strong></p>
-  </li>
-  <li>
-    <p>This does not hold in regular spaces. Specifically, given any closed set $F$ and point $a$ in a regular space $X$, it is not always the case that there exists a continuous function $f: X \to [0, 1]$ satisfying $f(a) = 0$ and $f[F] = \lbrace 1 \rbrace$. A regular space that is Urysohn separable is called a <strong>Tychonoff space</strong> or a <strong>completely regular space</strong>, which is a strictly stronger condition than regularity.</p>
-  </li>
-  <li>
-    <p>The reason the proof of the Urysohn Lemma does not go through for regular spaces is that constructing the collection $\lbrace  U_q \rbrace $ satisfying $p &lt; q \implies \overline{U_p} \subset U_q$ requires the normality axiom.</p>
-  </li>
-</ul>
-
-<h3 id="urysohn-metrisation-theorem">Urysohn Metrisation Theorem</h3>
-
-<p>As an application of the Urysohn Lemma, let us prove the Urysohn Metrisation Theorem.</p>
-
-<blockquote>
-  <p><strong>Urysohn Metrisation Theorem.</strong> A second countable normal space is metrizable.</p>
-</blockquote>
-
-<p>Recall that a second countable regular space is a normal space. Hence the statement of the above theorem can be strengthened to “A second countable regular space is metrisable.”</p>
-
-<p>Thus, the implications between spaces can be summarised as follows. Note that <strong>the longer the arrow, the stronger the required condition.</strong> The implication $T_2 \to T_4$ is strictly more difficult than $T_3 \to T_4$, and this is evidenced by the fact that the former requires a condition — compactness — strictly stronger than the latter — Lindelöf. Similarly, $T_3 \to \mathrm{Met}$ is strictly more difficult than $T_3 \to T_4$, as the second countability required in the former is strictly stronger than the Lindelöf property. However, neither $T_2 \to T_4$ nor $T_3 \to \mathrm{Met}$ is strictly more difficult than the other (the lengths of both arrows are similar). This is again evidenced by the fact that compactness and second countability do not generally imply each other.</p>
-
-<p><img src="/public/urysohn-3.png" style="width: 100%; max-width: 240px; mix-blend-mode: multiply; margin: 2em auto 1em auto;" /></p>
-
-<h4 id="proof-1">Proof</h4>
-
-<p>Let $X$ be a second countable normal space. We will prove the following lemma.</p>
-
-<blockquote>
-  <p><strong>Lemma.</strong> There exists a countable collection of continuous functions $\mathcal{F}$ mapping $X$ to $[0, 1]$ such that for any point $x_0 \in X$ and its neighbourhood $U$, there exists a function $f \in \mathcal{F}$ satisfying $f(x_0) &gt; 0$ and $f[X \setminus U] = \lbrace  0 \rbrace$.</p>
-</blockquote>
-
-<p>Given $x_0$ and $U$, the existence of such an $f$ follows from the Urysohn Lemma. Our task is to reduce this to a countable collection of functions. Let $\mathcal{B} = \lbrace  B_n \rbrace $ be a countable basis for the topology on $X$. When $B_m \subset B_n$, we define a continuous function $f_{nm}: X \to [0, 1]$ satisfying the following conditions according to the Urysohn Lemma:</p>
-
-<ul>
-  <li>$f_{nm}[\overline{B_m}] = 1$</li>
-  <li>$f_{nm}[X \setminus B_n] = 0$</li>
-</ul>
-
-<p>Let $\mathcal{F} = \lbrace  f_{nm} \rbrace $. Given any point $x_0$ and its neighbourhood $U$, by the definition of a basis, there exists a basis element $B_n$ such that $x_0 \in B_n \subset U$. Furthermore, by normality, there exists an open set $V$ such that $x \in \overline{V} \subset B_n$. Again, by the definition of a basis, there exists a basis element $B_m$ such that $x \in B_m \subset V$. Hence $f_{nm} \in \mathcal{F}$ satisfies the conditions of the lemma. □</p>
-
-<p>Now, let us prove the main theorem. The idea is to embed $X$ into $[0, 1]^\omega$, as $[0, 1]^\omega$ equipped with metric topology is known to be a metric space. It then follows that $X$ is metrisable, being a space homeomorphic to a subspace of a metric space.</p>
-
-<p>Let $\mathcal{F} = \lbrace  f_n \mid n \in \omega \rbrace $ be the countable collection of functions given by the lemma. We define the mapping $F: X \to [0, 1]^\omega$ as follows:</p>
-
-\[F: x \mapsto (f_1(x), f_2(x), f_3(x), \dots)\]
-
-<p>We will show that $F$ is an embedding. That is, we need to demonstrate that $F$ is continuous, injective, and a homeomorphism between the domain and the image.</p>
-
-<p>Since each $f_n$ is continuous, by the properties of the product topology, $F$ is continuous (side note: one can regard this as the <a href="https://dimenerno.github.io/2025/04/02/box-v-product">definition</a> of the product toplogy). The injectivity of $F$ follows from the fact that $X$ is Hausdorff. Therefore, it suffices to show the following:</p>
-
-<blockquote>
-  <p>If $U \subset X$ is an open set, then $F[U]$ is open in $\mathrm{im} F$.</p>
-</blockquote>
-
-<p>Let us show that for any $y_0 \in F[U]$, there exists a set $V \subset F[U]$ open in $\mathrm{im} F$ that contains $y_0$. By the definition of $F[U]$, there exists some $x_0 \in X$ such that $F(x_0) = y_0$. Let $f_n \in \mathcal{F}$ be a function satisfying the conditions of the lemma for $x_0$ and $U$. Since $f_n(x_0) = 1$, it follows that $(y_0)_n = 1$. Therefore, $W = \pi_n^{-1}(0, 1] \subset [0, 1]^\omega$ is a set containing $y_0$ that is open in $[0, 1]^\omega$.</p>
-
-<p>Now, we need to show that $W \cap \mathrm{im} F \subset F[U]$. For any $w \in W$, we can write $F(x_1) = w$. Additionally, if $w \in \mathrm{im} F$, then $f_n(x_1) = 1$. However, since $f_n$ vanishes outside of $U$, it follows that $x_1 \in U$. Thus, $w \in F[U]$, i.e. $W \cap \mathrm{im} F$ is contained in $F[U]$ and is an open set in $\mathrm{im} F$ containing $y_0$. Hence, $F[U]$ is an open set in $\mathrm{im} F$. ■</p>
-
-<h4 id="remarks-1">Remarks</h4>
-
-<ul>
-  <li>
-    <p>The Urysohn Metrisation Theorem can be strengthened to the <strong>Nagata-Smirnov Metrisation Theorem</strong>. The statement is as follows:</p>
-
-    <blockquote>
-      <p>A space $X$ is metrizable if and only if $X$ is regular and has a countably locally finite topology basis.</p>
-    </blockquote>
-
-    <p>A collection of subsets $\mathcal{A}$ of a topological space $X$ is said to be <strong>locally finite</strong> if for any point $x \in X$, there exists a neighbourhood $U$ such that $U$ intersects only finitely many sets from $\mathcal{A}$. A topological basis $\mathcal{B}$ is said to be <strong>countably locally finite</strong> if it can be expressed as $\mathcal{B} = \bigcup_{n \in \omega}\mathcal{B}_n$ where each $\mathcal{B}_n$ is locally finite.</p>
-  </li>
-  <li>
-    <p>A slight modification of the proof of the Urysohn Metrisation Theorem leads to the following result.</p>
-
-    <blockquote>
-      <p><strong>Theorem.</strong> Let $X$ be a $T_1$ space, and let $\lbrace f_{\alpha} \rbrace_{\alpha \in J}$ be a collection of continuous functions $f_\alpha : X \to [0, 1]$ satisfying the following condition: for any point $x_0 \in X$ and its neighbourhood $U$, there exists $\alpha \in J$ such that $f_\alpha(x_0) = 1$ and $f_\alpha[X \setminus U] = \lbrace  0 \rbrace$. Then, the mapping $F(x) = (f_\alpha(x))_{\alpha \in J}$ embeds $X$ into $[0, 1]^J$.</p>
-    </blockquote>
-
-    <p>Omitting the $T_1$ condition may result in $F$ not being injective. This theorem is used to prove the Stone-Čech compactification.</p>
-  </li>
-</ul>
 
   </div>
   <div style="margin-bottom: 6em"></div>

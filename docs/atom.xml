@@ -4,13 +4,627 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-10-21T12:58:33-07:00</updated>
+ <updated>2026-10-21T16:56:08-07:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>Jeongdam Choi</name>
    <email>dimen@stanford.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Notes on Field Theory</title>
+   <link href="https://dimenerno.github.io/2026/10/18/notes-on-tensor/en"/>
+   <updated>2026-10-18T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/18/notes-on-tensor/notes-on-tensor-en</id>
+   <content type="html">&lt;h3 id=&quot;lorentz-force&quot;&gt;Lorentz Force&lt;/h3&gt;
+
+\[\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})\]
+
+&lt;p&gt;Q) Is this equation Lorentz invariant?&lt;/p&gt;
+
+&lt;p&gt;A) Proof by construction of Lorentz invariant Lagrangian: Assume a 4-vector $A_\mu(t, x)$ that encodes all the information about $\mathbf{E}$ and $\mathbf{B}$ in the following way.&lt;/p&gt;
+
+\[\begin{align}
+F_{\mu \nu} &amp;amp;= \partial_\mu A_\nu -\partial_\nu A_\mu \\
+
+&amp;amp;= \begin{pmatrix}
+0 &amp;amp; -E_x &amp;amp; -E_y &amp;amp; -E_z \\
+E_x &amp;amp; 0 &amp;amp; B_z &amp;amp; -B_y \\
+E_y &amp;amp; -B_z &amp;amp; 0 &amp;amp; B_x \\
+E_z &amp;amp; B_y &amp;amp; -B_x &amp;amp; 0 \\
+\end{pmatrix}
+
+\end{align}\]
+
+&lt;blockquote&gt;
+  &lt;p&gt;Convention: $x$ stands for all the spatial coordinates of $X^\mu$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The following is a scalar including a &lt;em&gt;product&lt;/em&gt; of the particle’s position with the field (hence represents the action of &lt;em&gt;interaction&lt;/em&gt;):&lt;/p&gt;
+
+\[S_{\mathrm{int}}=e\int dX^\mu A_\mu(t, x)\]
+
+&lt;p&gt;The following is the action for a free particle:&lt;/p&gt;
+
+\[S_{\mathrm{part}} = \int -m\sqrt{1-\dot{x}^2}dt\]
+
+&lt;p&gt;We thus add the two together to obtain the total action $S = S_{\mathrm{int}} + S_{\mathrm{part}}$. To find the Lagrangian, we rewrite the integral to factor out $dt$, by which we obtain:&lt;/p&gt;
+
+\[\mathcal{L} = -m\sqrt{1-\dot{x}^2} + eA_0(t, x) + e\dot{X^n}A_n(t, x)\]
+
+&lt;p&gt;Using Euler-Lagrange, we indeed obtain the equation for relativistic Lorentz force:&lt;/p&gt;
+
+\[m \frac{d}{dt}\frac{\dot{X_p}}{\sqrt{1 - \dot{x}^2}} = e(\mathbf{E} + \mathbf{v} \times \mathbf{B})_p\]
+
+&lt;p&gt;Or more succintly,&lt;/p&gt;
+
+\[m\frac{d^2 X_\mu}{d\tau^2} =  e F_{\mu\nu} \frac{dX^\nu}{d\tau}\]
+
+&lt;h3 id=&quot;homogeneous-maxwell-equations&quot;&gt;Homogeneous Maxwell Equations&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt;&lt;/p&gt;
+
+\[\begin{align}
+F_{\mu \nu} &amp;amp;= \partial_\mu A_\nu -\partial_\nu A_\mu \\
+
+&amp;amp;= \begin{pmatrix}
+0 &amp;amp; -E_x &amp;amp; -E_y &amp;amp; -E_z \\
+E_x &amp;amp; 0 &amp;amp; B_z &amp;amp; -B_y \\
+E_y &amp;amp; -B_z &amp;amp; 0 &amp;amp; B_x \\
+E_z &amp;amp; B_y &amp;amp; -B_x &amp;amp; 0 \\
+\end{pmatrix}
+
+\end{align}\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;The above definition yields the following &lt;em&gt;mathematical identities&lt;/em&gt;.&lt;/p&gt;
+
+\[\begin{gather}
+\nabla \cdot \mathbf{B} = 0 \\
+\nabla \times \mathbf{E} + \frac{\partial \mathbf{B}}{\partial t} = 0
+\end{gather}\]
+
+&lt;h3 id=&quot;current-density-4-vector&quot;&gt;Current density 4-vector&lt;/h3&gt;
+
+\[\rho = \frac{dQ}{dxdydz}, \, j_x = \frac{dQ}{dydzdt}\]
+
+&lt;p&gt;To write succintly,&lt;/p&gt;
+
+\[J^\mu = \frac{dQ}{dxdydzdt}dX^\mu\]
+
+&lt;p&gt;We thus have the following local conservation equation:&lt;/p&gt;
+
+\[\partial_\mu J^\mu = 0 \quad \left(\text{i.e. } \frac{\partial{\rho}}{\partial{t}} + \nabla \cdot\mathbf{J} = 0 \right)\]
+
+&lt;p&gt;This suggests that the following is a 4-vector.&lt;/p&gt;
+
+\[J^\mu = \begin{pmatrix} \rho \\ J_x \\ J_y \\ J_z \end{pmatrix}\]
+
+&lt;p&gt;Indeed, a simple thought experiment proves that $J^\mu$ respects Lorentz transformation, see pg. 412-413 of &lt;em&gt;The Theoretical Minimum: Special Relativity and Field Theory&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;deriving-the-non-homogeneous-maxwells-equations&quot;&gt;Deriving the non-homogeneous Maxwell’s equations&lt;/h3&gt;
+
+&lt;p&gt;Simple algebra shows that the non-homogeneous equations are equivalent to:&lt;/p&gt;
+
+\[\partial_\mu F^{\mu\nu} = -J^\nu\]
+
+&lt;p&gt;To derive this, we will first set up a Lagrangian that is&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Lorentz invariant&lt;/li&gt;
+  &lt;li&gt;Gauge-invariant&lt;/li&gt;
+  &lt;li&gt;Local&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;First, we adopt the following notation:&lt;/p&gt;
+
+\[\partial_\mu \phi = \phi_{,\mu}\]
+
+&lt;p&gt;By locality, the Lagrangian should depend only up to first derivative, i.e.&lt;/p&gt;
+
+\[\mathcal{L}(\phi, \phi_{,\mu})\]
+
+&lt;p&gt;To respect gauge invariance, the Lagrangian must be invariant under the following transformation:&lt;/p&gt;
+
+\[A_\mu \Rightarrow A_\mu + \frac{\partial S}{\partial X^\mu}\]
+
+&lt;p&gt;where $S$ is a scalar field. Since $F^{\mu\nu}$ is gauge invariant, we are free to use these terms in the Lagrangian, but we are prohibited from using such terms as $A_\mu A^\mu$ (although it is a perfectly fine scalar).&lt;/p&gt;
+
+&lt;h3 id=&quot;lagrangian-when-mathbfj--0&quot;&gt;Lagrangian when $\mathbf{J} = 0$&lt;/h3&gt;
+
+&lt;p&gt;The above considerations lead us to postulate the following Lagrangian:&lt;/p&gt;
+
+\[\begin{align}
+\mathcal{L} &amp;amp;= -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \\
+&amp;amp;= -\frac{1}{4}(A_{\nu,\mu}-A_{\mu,\nu})(A^{\nu,\mu}-A^{\mu,\nu}) \\
+&amp;amp;= \frac{1}{2}(E^2 - B^2)
+\end{align}\]
+
+&lt;p&gt;To find the eqution of motion, use the Euler-Lagrange equations for field:&lt;/p&gt;
+
+\[\frac{\partial}{\partial X^\mu} \frac{\partial \mathcal{L}}{\partial \phi_{,\mu}} = \frac{\partial \mathcal{L}}{\partial \phi}\]
+
+&lt;p&gt;Note that each $\phi$ is a field; since we are dealing with four fields $A_t, A_x, A_y, A_z$, we will obtain a system of four equations, each of them being:&lt;/p&gt;
+
+\[\frac{\partial}{\partial X^\nu} \frac{\partial \mathcal{L}}{\partial A_{\mu,\nu}} = \frac{\partial \mathcal{L}}{\partial A_\mu}\]
+
+&lt;p&gt;Calculating the terms yield:&lt;/p&gt;
+
+\[\frac{\partial F^{\mu\nu}}{\partial X^\nu} = 0\]
+
+&lt;p&gt;i.e.&lt;/p&gt;
+
+\[\partial_\mu F^{\mu\nu} = 0 = J_\mu.\]
+
+&lt;h3 id=&quot;lagrangian-when-mathbfj-neq-0&quot;&gt;Lagrangian when $\mathbf{J} \neq 0$&lt;/h3&gt;
+
+&lt;p&gt;Q) How should we add $\mathbf{J}$ to the Lagrangian?&lt;/p&gt;
+
+&lt;p&gt;A) Although $A^\mu A_\mu$ is not Gauge invariant, $J^\mu A_\mu$ is! Let’s check this fact.&lt;/p&gt;
+
+&lt;p&gt;Let the new action be:&lt;/p&gt;
+
+\[\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \underbrace{- J^\mu(x)A_\mu(x)}_{\text{new term}}\]
+
+&lt;p&gt;The gauge transform is:
+\(\mathcal{L}&apos; = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} - J^\mu(x)\left( A_\mu(x) + \frac{\partial S}{\partial X^\mu} \right)\)&lt;/p&gt;
+
+&lt;p&gt;Thus,&lt;/p&gt;
+
+\[\begin{align}
+\Delta S &amp;amp;=  \int -J^\mu(x)\frac{\partial S}{\partial X^\mu} d^4x \\ 
+&amp;amp;= \int -\frac{J^\mu(x)}{\partial X^\mu} S \,d^4x \quad(\because \text{partial integral}) \\
+&amp;amp;= \int -(\partial_\mu J^\mu)S \,d^4x \\
+&amp;amp;= 0 \quad (\because \text{continuity equation})
+\end{align}\]
+
+&lt;p&gt;Thus, $\mathcal{L}$ is Gauge invariant. Let us now extract the equation of motion:&lt;/p&gt;
+
+\[\frac{\partial}{\partial X^\nu} \frac{\partial \mathcal{L}}{\partial A_{\mu,\nu}} = \frac{\partial \mathcal{L}}{\partial A_\mu}\]
+
+&lt;p&gt;Since the new term only explicitly depends on $A_\mu$, its effect on LHS is nil. Calculating the RHS, we obtain:&lt;/p&gt;
+
+\[\frac{\partial \mathcal{L}}{\partial A_\mu} = -J^\mu\]
+
+&lt;p&gt;Hence,&lt;/p&gt;
+
+\[\partial_\mu F^{\mu\nu} = -J^\nu \qquad \blacksquare\]
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Notes on Tensor</title>
+   <link href="https://dimenerno.github.io/2026/10/18/notes-on-tensor-en copy/en"/>
+   <updated>2026-10-18T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/18/notes-on-tensor-en copy/notes-on-tensor-en copy</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Basic Theorems.&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;$(V \otimes W)^* \simeq V^* \otimes W^*$&lt;/li&gt;
+    &lt;li&gt;$\hom(V\otimes W, Z) \simeq \hom(V, \hom(W, Z))$&lt;/li&gt;
+    &lt;li&gt;$V^{**} \simeq V$&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;&lt;strong&gt;Corollary.&lt;/strong&gt; $V^* \otimes W \simeq \hom (V, W)$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;tensor&quot;&gt;Tensor&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;TFAE.&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;$M$ is a type $(n, m)$ tensor&lt;/li&gt;
+    &lt;li&gt;$M \in V^{\otimes n} \otimes (V^*)^{\otimes m}$&lt;/li&gt;
+    &lt;li&gt;$M: (V^*)^n \times V^m \to k$&lt;/li&gt;
+    &lt;li&gt;$M: V^{\otimes m} \to V^{\otimes n}$&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;1-1-tensor&quot;&gt;(1, 1)-tensor&lt;/h3&gt;
+
+&lt;p&gt;Let $\Lambda$ be a (1, 1)-tensor, i.e. $\Lambda: V^* \times V \to k$.&lt;/p&gt;
+
+&lt;p&gt;If we fix a basis ${e_i}$ for $V$, we can write $\Lambda$ as a matrix form:&lt;/p&gt;
+
+\[\Lambda^\mu_{\;\nu} =\Lambda(e^\mu, e_\nu)\]
+
+&lt;p&gt;For example, given:&lt;/p&gt;
+
+\[\begin{gather}
+\Lambda(e^0, e_0) = a\\
+\Lambda(e^1, e_0) = b\\
+\Lambda(e^0, e_1) = c\\
+\Lambda(e^1, e_1) = d,
+\end{gather}\]
+
+&lt;p&gt;we have:&lt;/p&gt;
+
+\[\Lambda^\mu_{\;\nu} =
+\begin{pmatrix}
+a &amp;amp; c \\
+b &amp;amp; d
+\end{pmatrix}\]
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: Specification of matrix component is only relevant with the left-right order (rightmost index corresponds to column) and irrelevant with the up-down position.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\Lambda(-, \mathbf{a}) : V^* \to k$ and $\hom(V^*, k) \simeq V$, we have $\Lambda(-, \mathbf{a}) \in V$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}’ = (a’)^\mu e_\mu$. We then have:&lt;/p&gt;
+
+\[(a&apos;)^\mu = \Lambda(e^\mu, \mathbf{a}) = \sum_\nu \Lambda(e^\mu, e_\nu)a^\nu = \Lambda^\mu_{\;\nu}a^\nu.\]
+
+&lt;h3 id=&quot;0-2-tensor&quot;&gt;(0, 2)-tensor&lt;/h3&gt;
+
+&lt;p&gt;Let $\eta$ be a (0, 2)-tensor, i.e. $\eta: V \times V \to k$.&lt;/p&gt;
+
+&lt;p&gt;If we fix a basis ${e_i}$ for $V$, we can write $\eta$ as a matrix form:&lt;/p&gt;
+
+\[\eta_{\mu \nu} =\eta(e_\mu, e_\nu)\]
+
+&lt;p&gt;For example, given:&lt;/p&gt;
+
+\[\begin{gather}
+\eta(e_0, e_0) = a\\
+\eta(e_1, e_0) = b\\
+\eta(e_0, e_1) = c\\
+\eta(e_1, e_1) = d,
+\end{gather}\]
+
+&lt;p&gt;we have:&lt;/p&gt;
+
+\[\eta_{\mu\nu} =
+\begin{pmatrix}
+a &amp;amp; c \\
+b &amp;amp; d
+\end{pmatrix}\]
+
+&lt;p&gt;Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\eta(-, \mathbf{a}) : V \to k$ and $\hom(V, k) \simeq V^&lt;em&gt;$, we have $\Lambda(-, \mathbf{a}) \in V^&lt;/em&gt;$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}’ = (a’)_\mu e^\mu$. We then have:&lt;/p&gt;
+
+\[(a&apos;)_\mu = \eta(e_\mu, \mathbf{a}) = \sum_\nu \eta(e_\mu, e_\nu)a^\nu = \eta_{\mu\nu}a^\nu.\]
+
+&lt;p&gt;Generalizing, for a $(2, 3)$-tensor $T^{\alpha \beta}&lt;em&gt;{\gamma \delta \epsilon} : V^* \times V^* \times V \times V \times V \to k$, if we product $T$ with 1 dual coordinate $a&lt;/em&gt;\mu$ and 3 vector coordinates $b^\nu$, then we are left with a coordinate for $\hom(V^*, k) \simeq V$, which is a contravariant result. Indeed,&lt;/p&gt;
+
+\[T^{\alpha \beta}_{\gamma \delta \epsilon} b_\beta c^\gamma d^\delta e^\epsilon = a^\alpha\]
+
+&lt;p&gt;Alternatively we can product $T$ with 2 dual coordinates and 2 vector coordinates to obtain a coordinate for $\hom(V, k) \simeq V^*$.&lt;/p&gt;
+
+&lt;h3 id=&quot;index-raisinglowering&quot;&gt;Index raising/lowering&lt;/h3&gt;
+
+&lt;p&gt;Let $M^\mu_{\;\nu}$ act on $V$. How does $M$ “act” on $V^*$?&lt;/p&gt;
+
+&lt;h4 id=&quot;1-phiv-conservation&quot;&gt;1. $\phi(v)$ conservation&lt;/h4&gt;
+&lt;p&gt;If we require that $\phi(v)$ be conserved, i.e.&lt;/p&gt;
+
+\[(M^*\phi)(Mv) = \phi(v),\]
+
+&lt;p&gt;then $M$ should act &lt;em&gt;inversely&lt;/em&gt; on $V^*$. That is,&lt;/p&gt;
+
+\[\begin{gather}
+(M^*)_\mu^{\;\nu} a_\nu = a&apos;_\mu \\\\
+\text{where} \quad M^* := (M^{-1})^T
+\end{gather}\]
+
+&lt;h4 id=&quot;2-coordinate-change&quot;&gt;2. Coordinate change&lt;/h4&gt;
+&lt;p&gt;Alternatively, we can simply change $\phi$ to its corresponding vector $v_\phi$, transform $v_\phi$, and change it back to $V^*$. That is,&lt;/p&gt;
+
+\[\begin{gather}
+(M&apos;)_\mu^{\;\nu}a_\nu := \eta_{\mu \sigma}( M^\sigma_{\;\tau} a^\tau) = \eta_{\mu\sigma} M^\sigma_{\;\tau}\eta^{\tau\nu}a_\nu \\\\
+\text{i.e.} \quad M&apos; = \eta M \eta
+\end{gather}\]
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; If $\eta$ is invariant under $M$, i.e. $\eta(Mu, Mv) = \eta(u, v)$, the two conversions coincide.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hence, we work with 2, since it’s much easier to calculate. The point is that, &lt;strong&gt;insofar we deal with Lorentz invariant transformations, index raising/lowering and contraction of indices flow naturally.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Furthermore, since $\eta$ has nonzero indices only on the diagonal, we can use the following shortcut:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Multiply by -1 when raising/lowering time index.
+Leave everything else unchanged.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Example.&lt;/strong&gt;&lt;/p&gt;
+
+\[\begin{gather}
+\Lambda^\mu_{\;\nu} =
+\begin{pmatrix}
+\gamma &amp;amp; -\beta\gamma &amp;amp; 0 &amp;amp; 0\\
+-\beta\gamma &amp;amp; \gamma &amp;amp; 0 &amp;amp; 0\\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0\\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1
+\end{pmatrix} \\\\
+\Lambda_{\mu\nu} =
+\begin{pmatrix}
+-\gamma &amp;amp; \beta\gamma &amp;amp; 0 &amp;amp; 0\\
+-\beta\gamma &amp;amp; \gamma &amp;amp; 0 &amp;amp; 0\\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0\\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1
+\end{pmatrix} \\\\
+\Lambda^{\mu\nu} =
+\begin{pmatrix}
+-\gamma &amp;amp; -\beta\gamma &amp;amp; 0 &amp;amp; 0\\
+\beta\gamma &amp;amp; \gamma &amp;amp; 0 &amp;amp; 0\\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0\\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1
+\end{pmatrix}\\\\
+\Lambda_{\mu}^{\;\nu} =
+\begin{pmatrix}
+\gamma &amp;amp; \beta\gamma &amp;amp; 0 &amp;amp; 0\\
+\beta\gamma &amp;amp; \gamma &amp;amp; 0 &amp;amp; 0\\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0\\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1
+\end{pmatrix}
+\end{gather}\]
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Notes on Relativity</title>
+   <link href="https://dimenerno.github.io/2026/10/18/notes-on-relativity/en"/>
+   <updated>2026-10-18T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/18/notes-on-relativity/notes-on-relativity-en</id>
+   <content type="html">&lt;p&gt;Throughout the note, we use the following tensor:&lt;/p&gt;
+
+\[\Lambda^\mu_{\;\nu} =
+\begin{pmatrix}
+\gamma &amp;amp; -\beta\gamma &amp;amp; 0 &amp;amp; 0\\
+-\beta\gamma &amp;amp; \gamma &amp;amp; 0 &amp;amp; 0\\
+0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0\\
+0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1
+\end{pmatrix}\]
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A transformation $M$ is &lt;em&gt;Lorentz invariant&lt;/em&gt; if it leaves the Minkowski metric (inner product) between two events invariant, i.e.&lt;/p&gt;
+
+\[\eta(Mu, Mv) = \eta(u,v)\]
+
+  &lt;p&gt;Note that this condition is equivalent to $M^T\eta M = \eta$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollary.&lt;/strong&gt; $d\tau$ is invariant under Lorentz invariant transformation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;See “Notes on Tensor”. Due to Lorentz invariance, we are free to use index raising/lowering &amp;amp; index contraction to construct tensor equations.&lt;/p&gt;
+
+&lt;h3 id=&quot;clock&quot;&gt;Clock&lt;/h3&gt;
+
+&lt;p&gt;A clock should measure a &lt;em&gt;Lorentz invariant quantity&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Consider a light clock, i.e. light traversing between two mirrors:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Trajectory of light is Lorentz invariant&lt;/li&gt;
+  &lt;li&gt;The distance betwee mirrors is Lorentz invariant under smooth impulse, &lt;em&gt;if the mirrors are connected by a &lt;strong&gt;rigid&lt;/strong&gt; rod&lt;/em&gt; (⇒ rigidity: tendency to maintain equilibrium)&lt;/li&gt;
+  &lt;li&gt;Hence, a rigid rod with mirrors attached at each end is an ideal clock&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;lagrangian-of-a-free-relativistic-particle&quot;&gt;Lagrangian of a free relativistic particle&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Criteria for Lagrangian:&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Local (Up to first derivative only)&lt;/li&gt;
+    &lt;li&gt;Lorentz invariant&lt;/li&gt;
+    &lt;li&gt;(Gauge invariant =&amp;gt; Action must be invariant under Gauge transform)&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Since $d\tau$ is Lorentz invariant, we will use this to construct the Lagrangian:&lt;/p&gt;
+
+\[S = -mc\int d\tau\]
+
+&lt;p&gt;Note that $c$ is simply a constant, added to match the dimensions. From $d\tau^2 = dt^2 - \frac{dx^2}{c^2}$, we have&lt;/p&gt;
+
+\[d\tau = \sqrt{\dot{t}^2 - \frac{\dot{x}^2}{c^2}} d\lambda\]
+
+&lt;p&gt;where $\lambda$ is a formal variable and dot stands for $d/d\lambda$. We then have:&lt;/p&gt;
+
+\[S = \int \underbrace{-mc\sqrt{\dot{t}^2 - \frac{\dot{x}^2}{c^2}}}_{L(x, t, \dot{x}, \dot{t})}d\lambda\]
+
+&lt;p&gt;To minimize $S$, we use Euler-Lagrange equation:&lt;/p&gt;
+
+\[\frac{d}{d\lambda}\frac{\partial L}{\partial \dot{X^\mu}} = \frac{\partial L}{\partial X^\mu}\]
+
+&lt;h3 id=&quot;4-momentum&quot;&gt;4-momentum&lt;/h3&gt;
+
+&lt;p&gt;The canonical momentum for $L$ are:&lt;/p&gt;
+
+\[P_t =-mc\frac{\dot t} {\sqrt{\dot t^{2}-\dot{x}^{2}/c^2}}\]
+
+&lt;p&gt;If we let $\lambda = \tau$,&lt;/p&gt;
+
+\[\dot{t} = \gamma, \; \dot{x} = \gamma v, \; \sqrt{\dot t^{2}-\dot{x}^{2}/c^2} = 1\]
+
+&lt;p&gt;Hence,&lt;/p&gt;
+
+\[P_t = -mc \gamma\]
+
+&lt;p&gt;or alternatively, $P^t = mc\gamma$. Indeed, we have:&lt;/p&gt;
+
+\[P^\mu = mU^\mu\]
+
+&lt;h3 id=&quot;conservation-laws&quot;&gt;Conservation Laws&lt;/h3&gt;
+
+&lt;p&gt;Since $P^\mu$ is the canonical momentum obtained from the Lagrangian, we can use Noether’s law:&lt;/p&gt;
+
+\[\sum P^\mu f(\mathbf{x}) \text{ is conserved}\]
+
+&lt;p&gt;Hence we obtain that $P^t$ is conserved under time translation. &lt;strong&gt;Hence, $P^0$ is the energy of the system&lt;/strong&gt;. Matching the dimension, we have $cP^t = E$.&lt;/p&gt;
+
+&lt;h3 id=&quot;mass&quot;&gt;Mass&lt;/h3&gt;
+
+&lt;p&gt;Consider a free particle moving at velocity $v$. Since 4-momentum is a 4-vector, we can Lorentz transform it to have zero velocity, i.e.&lt;/p&gt;
+
+\[P^\mu = \begin{pmatrix} E/c \\ 0 \\ 0 \\ 0 \end{pmatrix}\]
+
+&lt;p&gt;Note that $E/c$ is a time-invariant quantity that does not depend on $v$ (since we can always Lorentz transform to an appropriate frame). Thus, this quantity is &lt;em&gt;intrinsic&lt;/em&gt; to the system. &lt;strong&gt;We thus define this quantity to be the mass&lt;/strong&gt;. Matching the dimension, we have $m = E/c^2$.&lt;/p&gt;
+
+&lt;h3 id=&quot;translation-between-relativistic-unit-and-standard-unit&quot;&gt;Translation between relativistic unit and standard unit&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;General rule:&lt;/strong&gt;&lt;/p&gt;
+
+\[t \mapsto ct, \quad v \mapsto v/c\]
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hence, with $\gamma = \frac{1}{\sqrt{1 - v^2}}$ and $\gamma_s = \frac{1}{\sqrt{1 - (v/c)^2}}$,&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Relativistic unit&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Standard unit&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$x’ = \gamma(x - vt)$&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$x’ = \gamma_s(x - vt)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$t’ = \gamma(t - vx)$&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$\displaystyle t’ = \gamma_s\left(t - \frac{vx}{c^2}\right)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$X^\mu = (t, x, y, z)$&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$X^\mu = (ct, x, y, z)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$d\tau^2 = dt^2 - dx^2 - dy^2 - dz^2$&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$c^2 d\tau^2 = c^2 dt^2 - dx^2 - dy^2 - dz^2$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$\displaystyle U^\mu = \frac{dX^\mu}{d\tau} = (\gamma, \gamma\dot{x})$&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$U^\mu = (c\gamma_s, \gamma_s\dot{x})$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Notes on Adjoints, Representables, Limits</title>
+   <link href="https://dimenerno.github.io/2026/10/18/notes-on-adjoints/en"/>
+   <updated>2026-10-18T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/18/notes-on-adjoints/notes-on-adjoints-en</id>
+   <content type="html">&lt;h2 id=&quot;functorialness-of-cones&quot;&gt;Functorialness of Cones&lt;/h2&gt;
+
+&lt;p&gt;Define the diagonal functor $\Delta : \mathcal{A} \to [ \mathbf{I}, \mathcal{A} ]$, where $\Delta (A) : \mathbf{I} \to \mathcal{A}$ maps every element and map of $\mathbf{I}$ to $A$ and $1_A$, respectively.&lt;/p&gt;
+
+&lt;p&gt;We then have,&lt;/p&gt;
+
+\[\mathrm{Cone}(A, D) = \hom_{[\mathbf{I}, \mathcal{A}]}(\Delta A, D)\]
+
+&lt;p&gt;Hence, $\mathrm{Cone}(A, D)$ is functorial in $A$ (contravariantly) and $D$ (covariantly).&lt;/p&gt;
+
+&lt;h2 id=&quot;limits-as-representables&quot;&gt;Limits as Representables&lt;/h2&gt;
+
+&lt;p&gt;Varying $A$ yields the following theorem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A limit of $D$ is a representation of $\hom_{[\mathbf{I}, \mathcal{A}]}(\Delta -, D)$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Varying $D$ yields the following theorem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Let $\alpha$ be a natural transformation between $D, D’ : \mathbf{I} \to \mathcal{A}$. The limits of $D, D’$ induce $\lim_{\leftarrow I}\alpha : \lim_{\leftarrow I} D \to \lim_{\leftarrow I}D’$ such that,&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;(a) commutes&lt;/li&gt;
+    &lt;li&gt;(c) commutes if (b) commutes&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;figure class=&quot;tikz&quot;&gt;&lt;img src=&quot;/public/tikz/7cb5409ccc3fe5cd.svg&quot; alt=&quot;TikZ diagram&quot; /&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;limits-as-adjoints&quot;&gt;Limits as Adjoints&lt;/h2&gt;
+
+&lt;p&gt;If $\mathcal{A}$ has &lt;em&gt;all&lt;/em&gt; limits of shape $\mathbf{I}$, we can give a second reformulation:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$\lim_{\leftarrow \mathbf{I}} : [\mathbf{I}, \mathcal{A}] \to \mathcal{A}$ is the right adjoint to the diagonal functor $\Delta : \mathcal{A} \to [ \mathbf{I}, \mathcal{A} ]$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;representables-preserve-limits&quot;&gt;Representables preserve Limits&lt;/h2&gt;
+
+&lt;p&gt;For a locally small category $\mathcal{S}$ that has products and equalizers, one can construct limits for arbitrary $D: \mathbf{I} \to \mathcal{S}$ by taking the equalizer of the following:&lt;/p&gt;
+
+\[\prod_{I \in \mathbf{I}} D(I)\; \substack{\underrightarrow{\;\;s\;\;}\\ \overrightarrow{\;\;t\;\;}} \prod_{I \xrightarrow{u} J} D(J)\]
+
+&lt;p&gt;where $s_u = Du \circ \pi_I$ and $t_u = \pi_J$. In light of this, we have:&lt;/p&gt;
+
+\[\mathrm{Cone}(A, D) \cong \lim_{\leftarrow I}\hom_\mathcal{A} (A, D(-))\]
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Since $\hom_\mathcal{A}(A, D(-))$ is a functor into $\mathbf{Set}$, its limit is given by the above formula, which is the set of all families $\big(f_I : A \to D(I)\big)_{I \in \mathbf{I}}$ such that $Du \circ f_I = f_J$, which happens to coincide with $\mathrm{Cone}(A, D)$. ■&lt;/p&gt;
+
+&lt;p&gt;Since $\mathrm{Cone}(A, D) \cong \hom_\mathcal{A} (A, \lim D)$, we have&lt;/p&gt;
+
+\[\hom_\mathcal{A}\left(A, \lim_{\leftarrow \mathbf{I}} D\right)  \cong \lim_{\leftarrow \mathbf{I}} \hom_\mathcal{A} (A, D(-))\]
+
+&lt;p&gt;that is, &lt;strong&gt;representables preserve limits.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To dualize the result, note that $\hom_\mathcal{A}(-, A)$ is a contravariant functor from $\mathcal{A}$, and hence a covariant functor from $\mathcal{A}^{\mathrm{op}}$. Hence, $\hom_\mathcal{A}(-, A) : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$ preserves limits in $\mathcal{A}^\mathrm{op}$, i.e.&lt;/p&gt;
+
+\[\hom_\mathcal{A}\left( \lim_{\leftarrow \mathbf{I}^{\rm{op}}} D^{\rm{op}}, A\right)  \cong \lim_{\leftarrow \mathbf{I}^{\rm{op}}} \hom_\mathcal{A} (D^{\rm{op}}(-), A)\]
+
+&lt;p&gt;where $D^{\rm{op}}: \mathbf{I}^{\rm{op}} \to \mathcal{A}^{\rm{op}}$. If we dualize $D^\mathrm{op}$ to $D: \mathbf{I} \to \mathcal{A}$, we have $\lim_{\leftarrow \mathbf{I}^{\rm{op}}} D^{\rm{op}} = \lim_{\rightarrow \mathbf{I}} D$.&lt;/p&gt;
+
+&lt;p&gt;Hence,&lt;/p&gt;
+
+\[\hom_\mathcal{A}\left( \lim_{\rightarrow \mathbf{I}} D, A\right)  \cong \lim_{\leftarrow \mathbf{I}} \hom_\mathcal{A} (D(-), A).\]
+
+&lt;p&gt;Note that RHS is limit, not colimit.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollary.&lt;/strong&gt; Left adjoints preserve colimits and right adjoints preserve limits.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; From the definition of adjointness and $\mathrm{Cone}(A, D) \cong \lim \hom_\mathcal{A} (A, D(-)) \cong \hom_\mathcal{A}(A, \lim D)$, we have&lt;/p&gt;
+
+\[\begin{align}
+\hom_\mathcal{A} (A, G(\lim D)) &amp;amp;\cong \hom_\mathcal{B} (F(A), \lim D) \\
+&amp;amp;\cong \lim \hom_\mathcal{B} (F(A), D(-)) \\
+&amp;amp;\cong \lim \hom_\mathcal{A}(A, GD(-)) \\
+&amp;amp;\cong \mathrm{Cone}(A, G\circ D).
+\end{align}\]
+
+&lt;p&gt;Hence, $G(\lim D)$ represents $\mathrm{Cone}(-, G \circ D)$, i.e. $G(\lim D) \cong \lim G \circ D$. ■&lt;/p&gt;
+
+&lt;h2 id=&quot;limits-in-functor-categories-are-pointwise-computed&quot;&gt;Limits in Functor Categories are Pointwise-computed&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Let $D: \mathbf{I} \to [\mathbf{A}, \mathcal{S}]$ be a diagram, and that for each $A \in \mathbf{A}$, $D(-)(A) : \mathbf{I} \to \mathcal{S}$ has a limit. Then there exists a cone on $D$ such that its image under $\mathrm{ev}_A$ is a limit cone on $D(-)(A)$ for each $A \in \mathbf{A}$. Moreover, any such cone on $D$ is a limit cone.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Follows from “Limits as Representables, varying $D$”. Refer to the following diagram.&lt;/p&gt;
+
+&lt;figure class=&quot;tikz&quot;&gt;&lt;img src=&quot;/public/tikz/64138676565fd967.svg&quot; alt=&quot;TikZ diagram&quot; /&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollaries.&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;Limits commute with limits.&lt;/li&gt;
+    &lt;li&gt;$\mathrm{ev}_A : [\mathbf{A} , \mathcal{S} ] \to \mathcal{S}$ preserves limits.&lt;/li&gt;
+    &lt;li&gt;$よ: \mathbf{A} \to [\mathbf{A}^{\rm{op}}, \mathbf{Set}]$ preserves limits.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;density-theorem&quot;&gt;Density Theorem&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem.&lt;/strong&gt; Every presheaf is a colimit of representables. More precisely, for $X : \mathbf{A}^{\rm{op}} \to \mathbf{Set}$, $X$ is the colimit of&lt;/p&gt;
+
+\[\mathbf{E}(X) \xrightarrow{P} \mathbf{A} \xrightarrow{よ} [\mathbf{A}^{\rm{op}}, \mathbf{Set}].\]
+&lt;/blockquote&gt;
+</content>
+ </entry>
  
  <entry>
    <title>라이프니츠와 정신분석학</title>
