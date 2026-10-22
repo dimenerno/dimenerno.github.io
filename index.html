@@ -122,7 +122,10 @@ title-en: Main
       <h1 class="post-title">
         <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
       </h1>
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <span class="post-date">
+      {{ post.date | date_to_string }}
+      <a class="pdf-export" href="{{ post.url | relative_url }}?print=1" title="Save as PDF">PDF</a>
+    </span>
     {% if post.tags %}
     <div class="tag-container">
       {% for tag in post.tags %}

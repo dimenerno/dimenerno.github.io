@@ -39,11 +39,11 @@ function maybeRedirectOnLang(lang) {
 
     if (lang === "ko" && isEnglishPath) {
       console.log("🇰🇷 Redirecting to KO version:", basePath);
-      window.location.replace(basePath);
+      window.location.replace(basePath + window.location.search);
     } else if (lang === "en" && !isEnglishPath) {
       const enPath = basePath + "/en";
       console.log("🇺🇸 Redirecting to EN version:", enPath);
-      window.location.replace(enPath);
+      window.location.replace(enPath + window.location.search);
     }
   }
 }

@@ -643,6 +643,14 @@ x_2 &lt; y_2 \quad (\text{if }\hat{x} &lt; \hat{y}, x_1 = y_1) \\
     var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
     ready.then(function () { window.print(); });
   }
+
+  // Opened from the main page's PDF link: export once everything has loaded.
+  if (new URLSearchParams(location.search).has("print")) {
+    window.addEventListener("load", function () {
+      history.replaceState(null, "", location.pathname);
+      exportPDF();
+    });
+  }
 </script>
 
   <!-- Utterances -->

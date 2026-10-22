@@ -585,10 +585,13 @@ a.pagination-item:hover {
   vertical-align: middle;
   position: relative;
   top: -2px;
+  text-decoration: none;
 }
-.pdf-export:hover {
+.pdf-export:hover,
+.pdf-export:focus {
   color: #303030;
   border-color: #9ea0a3;
+  text-decoration: none;
 }
 
 /* Print / Save as PDF: show only the article */
