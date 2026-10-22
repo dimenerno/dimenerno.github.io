@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-10-21T17:18:54-07:00</updated>
+ <updated>2026-10-21T22:18:54-07:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>Jeongdam Choi</name>
@@ -209,7 +209,7 @@ Leave everything else unchanged.&lt;/p&gt;
   &lt;p&gt;&lt;strong&gt;Corollary.&lt;/strong&gt; $d\tau$ is invariant under Lorentz invariant transformation.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;See “Notes on Tensor”. Due to Lorentz invariance, we are free to use index raising/lowering &amp;amp; index contraction to construct tensor equations.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&quot;https://dimenerno.github.io/2026/10/18/notes-on-tensor/en&quot;&gt;&lt;em&gt;Notes on Tensor&lt;/em&gt;&lt;/a&gt;. Due to Lorentz invariance, we are free to use index raising/lowering &amp;amp; index contraction to construct tensor equations.&lt;/p&gt;
 
 &lt;h3 id=&quot;clock&quot;&gt;Clock&lt;/h3&gt;
 

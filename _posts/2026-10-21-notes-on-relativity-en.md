@@ -29,7 +29,7 @@ $$
 
 > **Corollary.** $d\tau$ is invariant under Lorentz invariant transformation.
 
-See "Notes on Tensor". Due to Lorentz invariance, we are free to use index raising/lowering & index contraction to construct tensor equations.
+See [*Notes on Tensor*](https://dimenerno.github.io/2026/10/18/notes-on-tensor/en). Due to Lorentz invariance, we are free to use index raising/lowering & index contraction to construct tensor equations.
 
 ### Clock
 
