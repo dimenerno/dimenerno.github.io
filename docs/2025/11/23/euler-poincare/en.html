@@ -359,7 +359,10 @@
 
       <div class="container content"><div class="post">
   <h1 class="post-title">Euler-Poincaré Theorem</h1>
-  <span class="post-date">23 Nov 2025</span>
+  <span class="post-date">
+    23 Nov 2025
+    <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
+  </span>
   
     <div class="tag-container">
       
@@ -483,6 +486,14 @@ Z_p = B_p \oplus G_p\\\\
 </div>
 
 
+
+<script>
+  // Wait for MathJax to finish typesetting so equations are in the PDF.
+  function exportPDF() {
+    var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
+    ready.then(function () { window.print(); });
+  }
+</script>
 
   <!-- Utterances -->
   <script src="https://utteranc.es/client.js"

@@ -359,7 +359,10 @@
 
       <div class="container content"><div class="post">
   <h1 class="post-title">양자역학의 국소성에 대하여</h1>
-  <span class="post-date">23 Feb 2026</span>
+  <span class="post-date">
+    23 Feb 2026
+    <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
+  </span>
   
     <div class="tag-container">
       
@@ -467,6 +470,14 @@
 </div>
 
 
+
+<script>
+  // Wait for MathJax to finish typesetting so equations are in the PDF.
+  function exportPDF() {
+    var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
+    ready.then(function () { window.print(); });
+  }
+</script>
 
   <!-- Utterances -->
   <script src="https://utteranc.es/client.js"

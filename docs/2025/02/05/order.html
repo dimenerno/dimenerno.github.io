@@ -359,7 +359,10 @@
 
       <div class="container content"><div class="post">
   <h1 class="post-title">곱군과 위수에 관한 노트: 페르마 소수 정리와 윌슨의 정리</h1>
-  <span class="post-date">05 Feb 2025</span>
+  <span class="post-date">
+    05 Feb 2025
+    <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
+  </span>
   
     <div class="tag-container">
       
@@ -428,6 +431,14 @@
 </div>
 
 
+
+<script>
+  // Wait for MathJax to finish typesetting so equations are in the PDF.
+  function exportPDF() {
+    var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
+    ready.then(function () { window.print(); });
+  }
+</script>
 
   <!-- Utterances -->
   <script src="https://utteranc.es/client.js"

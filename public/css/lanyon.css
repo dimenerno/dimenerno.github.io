@@ -569,5 +569,91 @@ a.pagination-item:hover {
 
 /* Only one tweak for a reverse layout */
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
-  box-shadow: -0.25rem 0 0.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: -0.25rem 0 0.5rem rgba(210, 85, 85, 0.1);
+}
+
+/* PDF export button */
+.pdf-export {
+  margin-left: 0.6em;
+  padding: 1px 8px;
+  font-size: 0.75rem;
+  color: var(--slate);
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+.pdf-export:hover {
+  color: #303030;
+  border-color: #9ea0a3;
+}
+
+/* Print / Save as PDF: show only the article */
+@page {
+  margin: 2cm 2cm;
+}
+
+@media print {
+  .sidebar,
+  #sidebar-checkbox,
+  .masthead,
+  .tag-container,
+  .pdf-export,
+  .related-posts,
+  .utterances,
+  script {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: white;
+    font-size: 11pt;
+  }
+
+  .wrap {
+    transform: none !important;
+  }
+
+  .container,
+  .container.content {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .post {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  pre,
+  code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  pre,
+  blockquote,
+  img,
+  svg,
+  table,
+  mjx-container[display="true"] {
+    break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+  }
 }

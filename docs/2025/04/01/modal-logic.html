@@ -359,7 +359,10 @@
 
       <div class="container content"><div class="post">
   <h1 class="post-title">양상 논리</h1>
-  <span class="post-date">01 Apr 2025</span>
+  <span class="post-date">
+    01 Apr 2025
+    <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
+  </span>
   
     <div class="tag-container">
       
@@ -461,6 +464,7 @@
 </div>
 
 
+<div class="related-posts">
   <div style="border-bottom: 1px solid var(--lighter-slate); margin-bottom: 3em;" ></div>
   <h3 class="lang-ko">관련 글</h3>
   <h3 class="lang-en">Related Posts</h3>
@@ -473,7 +477,16 @@
     
   </ul>
   <div style="margin-bottom: 3em;" ></div>
+</div>
 
+
+<script>
+  // Wait for MathJax to finish typesetting so equations are in the PDF.
+  function exportPDF() {
+    var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
+    ready.then(function () { window.print(); });
+  }
+</script>
 
   <!-- Utterances -->
   <script src="https://utteranc.es/client.js"

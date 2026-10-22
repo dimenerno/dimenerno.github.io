@@ -359,7 +359,10 @@
 
       <div class="container content"><div class="post">
   <h1 class="post-title">The Łoś-Tarski Preservation Theorem</h1>
-  <span class="post-date">17 Apr 2025</span>
+  <span class="post-date">
+    17 Apr 2025
+    <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
+  </span>
   
     <div class="tag-container">
       
@@ -554,6 +557,14 @@ R_\mathfrak{M}(a_1, \dots, a_n) \iff R_\mathfrak{N}(\phi(a_1), \dots, \phi(a_n))
 </div>
 
 
+
+<script>
+  // Wait for MathJax to finish typesetting so equations are in the PDF.
+  function exportPDF() {
+    var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
+    ready.then(function () { window.print(); });
+  }
+</script>
 
   <!-- Utterances -->
   <script src="https://utteranc.es/client.js"

@@ -359,7 +359,10 @@
 
       <div class="container content"><div class="post">
   <h1 class="post-title">The Continuum Hypothesis for Closed Sets and Borel Sets</h1>
-  <span class="post-date">25 Sep 2025</span>
+  <span class="post-date">
+    25 Sep 2025
+    <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
+  </span>
   
     <div class="tag-container">
       
@@ -480,6 +483,14 @@ F_\lambda = \bigcap_{\alpha &lt; \lambda} F_\alpha \quad (\lim \lambda)
 </div>
 
 
+
+<script>
+  // Wait for MathJax to finish typesetting so equations are in the PDF.
+  function exportPDF() {
+    var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
+    ready.then(function () { window.print(); });
+  }
+</script>
 
   <!-- Utterances -->
   <script src="https://utteranc.es/client.js"
