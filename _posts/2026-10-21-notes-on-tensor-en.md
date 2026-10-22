@@ -1,232 +1,183 @@
 ---
 layout: post
-title: "Notes on Field Theory"
+title: "Notes on Tensor"
 date: 2026-10-18
-tags: ["Physics", "Relativity"]
+tags: ["Physics", "Mathematics"]
 lang: en
 related: 
 ---
 
-### Lorentz Force
-
-$$
-\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
-$$
-
-Q) Is this equation Lorentz invariant?
-
-A) Proof by construction of Lorentz invariant Lagrangian: Assume a 4-vector $A_\mu(t, x)$ that encodes all the information about $\mathbf{E}$ and $\mathbf{B}$ in the following way.
-
-$$
-\begin{align}
-F_{\mu \nu} &= \partial_\mu A_\nu -\partial_\nu A_\mu \\
-
-&= \begin{pmatrix}
-0 & -E_x & -E_y & -E_z \\
-E_x & 0 & B_z & -B_y \\
-E_y & -B_z & 0 & B_x \\
-E_z & B_y & -B_x & 0 \\
-\end{pmatrix}
-
-\end{align}
-$$
-
-> Convention: $x$ stands for all the spatial coordinates of $X^\mu$.
-
-The following is a scalar including a *product* of the particle's position with the field (hence represents the action of *interaction*):
-
-$$
-S_{\mathrm{int}}=e\int dX^\mu A_\mu(t, x)
-$$
-
-The following is the action for a free particle:
-
-$$
-S_{\mathrm{part}} = \int -m\sqrt{1-\dot{x}^2}dt
-$$
-
-We thus add the two together to obtain the total action $S = S_{\mathrm{int}} + S_{\mathrm{part}}$. To find the Lagrangian, we rewrite the integral to factor out $dt$, by which we obtain:
-
-$$
-\mathcal{L} = -m\sqrt{1-\dot{x}^2} + eA_0(t, x) + e\dot{X^n}A_n(t, x)
-$$
-
-Using Euler-Lagrange, we indeed obtain the equation for relativistic Lorentz force:
-
-$$
-m \frac{d}{dt}\frac{\dot{X_p}}{\sqrt{1 - \dot{x}^2}} = e(\mathbf{E} + \mathbf{v} \times \mathbf{B})_p
-$$
-
-Or more succintly,
-
-$$
-m\frac{d^2 X_\mu}{d\tau^2} =  e F_{\mu\nu} \frac{dX^\nu}{d\tau}
-$$
-
-### Homogeneous Maxwell Equations
-
-> **Definition.**
+> **Basic Theorems.**
 >
-> $$
-> \begin{align}
-> F_{\mu \nu} &= \partial_\mu A_\nu -\partial_\nu A_\mu \\
-> 
-> &= \begin{pmatrix}
-> 0 & -E_x & -E_y & -E_z \\
-> E_x & 0 & B_z & -B_y \\
-> E_y & -B_z & 0 & B_x \\
-> E_z & B_y & -B_x & 0 \\
-> \end{pmatrix}
-> 
-> \end{align}
-> $$
+> 1. $(V \otimes W)^* \simeq V^* \otimes W^*$
+> 2. $\hom(V\otimes W, Z) \simeq \hom(V, \hom(W, Z))$
+> 3. $V^{**} \simeq V$
+>
+> **Corollary.** $V^* \otimes W \simeq \hom (V, W)$
 
-The above definition yields the following *mathematical identities*.
+## Tensor
+
+> **TFAE.**
+>
+> 1. $M$ is a type $(n, m)$ tensor
+> 2. $M \in V^{\otimes n} \otimes (V^*)^{\otimes m}$
+> 3. $M: (V^*)^n \times V^m \to k$
+> 4. $M: V^{\otimes m} \to V^{\otimes n}$
+
+### (1, 1)-tensor
+
+Let $\Lambda$ be a (1, 1)-tensor, i.e. $\Lambda: V^* \times V \to k$.
+
+If we fix a basis $\{e_i\}$ for $V$, we can write $\Lambda$ as a matrix form:
+
+$$
+\Lambda^\mu_{\;\nu} =\Lambda(e^\mu, e_\nu)
+$$
+
+For example, given:
 
 $$
 \begin{gather}
-\nabla \cdot \mathbf{B} = 0 \\
-\nabla \times \mathbf{E} + \frac{\partial \mathbf{B}}{\partial t} = 0
+\Lambda(e^0, e_0) = a\\
+\Lambda(e^1, e_0) = b\\
+\Lambda(e^0, e_1) = c\\
+\Lambda(e^1, e_1) = d,
 \end{gather}
 $$
 
-### Current density 4-vector
+we have:
 
 $$
-\rho = \frac{dQ}{dxdydz}, \, j_x = \frac{dQ}{dydzdt}
+\Lambda^\mu_{\;\nu} =
+\begin{pmatrix}
+a & c \\
+b & d
+\end{pmatrix}
 $$
 
-To write succintly,
+> Note: Specification of matrix component is only relevant with the left-right order (rightmost index corresponds to column) and irrelevant with the up-down position.
+
+Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\Lambda(-, \mathbf{a}) : V^* \to k$ and $\hom(V^*, k) \simeq V$, we have $\Lambda(-, \mathbf{a}) \in V$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}' = (a')^\mu e_\mu$. We then have:
 
 $$
-J^\mu = \frac{dQ}{dxdydzdt}dX^\mu
+(a')^\mu = \Lambda(e^\mu, \mathbf{a}) = \sum_\nu \Lambda(e^\mu, e_\nu)a^\nu = \Lambda^\mu_{\;\nu}a^\nu.
 $$
 
-We thus have the following local conservation equation:
+### (0, 2)-tensor
+
+Let $\eta$ be a (0, 2)-tensor, i.e. $\eta: V \times V \to k$.
+
+If we fix a basis $\{e_i\}$ for $V$, we can write $\eta$ as a matrix form:
 
 $$
-\partial_\mu J^\mu = 0 \quad \left(\text{i.e. } \frac{\partial{\rho}}{\partial{t}} + \nabla \cdot\mathbf{J} = 0 \right)
+\eta_{\mu \nu} =\eta(e_\mu, e_\nu)
 $$
 
-This suggests that the following is a 4-vector.
+For example, given:
 
 $$
-J^\mu = \begin{pmatrix} \rho \\ J_x \\ J_y \\ J_z \end{pmatrix}
+\begin{gather}
+\eta(e_0, e_0) = a\\
+\eta(e_1, e_0) = b\\
+\eta(e_0, e_1) = c\\
+\eta(e_1, e_1) = d,
+\end{gather}
 $$
 
-Indeed, a simple thought experiment proves that $J^\mu$ respects Lorentz transformation, see pg. 412-413 of *The Theoretical Minimum: Special Relativity and Field Theory*.
-
-### Deriving the non-homogeneous Maxwell's equations
-
-Simple algebra shows that the non-homogeneous equations are equivalent to:
+we have:
 
 $$
-\partial_\mu F^{\mu\nu} = -J^\nu
+\eta_{\mu\nu} =
+\begin{pmatrix}
+a & c \\
+b & d
+\end{pmatrix}
 $$
 
-To derive this, we will first set up a Lagrangian that is
-1. Lorentz invariant 
-2. Gauge-invariant
-3. Local
-
-First, we adopt the following notation:
+Let $\mathbf{a} = a^\mu e\_\mu \in V$. Since $\eta(-, \mathbf{a}) : V \to k$ and $\hom(V, k) \simeq V^\*$, we have $\Lambda(-, \mathbf{a}) \in V^*$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}' = (a')\_\mu e^\mu$. We then have:
 
 $$
-\partial_\mu \phi = \phi_{,\mu}
+(a')_\mu = \eta(e_\mu, \mathbf{a}) = \sum_\nu \eta(e_\mu, e_\nu)a^\nu = \eta_{\mu\nu}a^\nu.
 $$
 
-By locality, the Lagrangian should depend only up to first derivative, i.e.
+Generalizing, for a $(2, 3)$-tensor $T^{\alpha \beta}\_{\gamma \delta \epsilon} : V^\* \times V^\* \times V \times V \times V \to k$, if we product $T$ with 1 dual coordinate $a\_\mu$ and 3 vector coordinates $b^\nu$, then we are left with a coordinate for $\hom(V^\*, k) \simeq V$, which is a contravariant result. Indeed,
 
 $$
-\mathcal{L}(\phi, \phi_{,\mu})
+T^{\alpha \beta}_{\gamma \delta \epsilon} b_\beta c^\gamma d^\delta e^\epsilon = a^\alpha
 $$
 
-To respect gauge invariance, the Lagrangian must be invariant under the following transformation:
+Alternatively we can product $T$ with 2 dual coordinates and 2 vector coordinates to obtain a coordinate for $\hom(V, k) \simeq V^*$.
+
+### Index raising/lowering
+
+Let $M^\mu_{\;\nu}$ act on $V$. How does $M$ "act" on $V^*$?
+
+#### 1. $\phi(v)$ conservation
+If we require that $\phi(v)$ be conserved, i.e.
 
 $$
-A_\mu \Rightarrow A_\mu + \frac{\partial S}{\partial X^\mu}
+(M^*\phi)(Mv) = \phi(v),
 $$
 
-where $S$ is a scalar field. Since $F^{\mu\nu}$ is gauge invariant, we are free to use these terms in the Lagrangian, but we are prohibited from using such terms as $A_\mu A^\mu$ (although it is a perfectly fine scalar).
-
-### Lagrangian when $\mathbf{J} = 0$
-
-The above considerations lead us to postulate the following Lagrangian:
+then $M$ should act *inversely* on $V^*$. That is,
 
 $$
-\begin{align}
-\mathcal{L} &= -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \\
-&= -\frac{1}{4}(A_{\nu,\mu}-A_{\mu,\nu})(A^{\nu,\mu}-A^{\mu,\nu}) \\
-&= \frac{1}{2}(E^2 - B^2)
-\end{align}
+\begin{gather}
+(M^*)_\mu^{\;\nu} a_\nu = a'_\mu \\\\
+\text{where} \quad M^* := (M^{-1})^T
+\end{gather}
 $$
 
-To find the eqution of motion, use the Euler-Lagrange equations for field:
+#### 2. Coordinate change
+Alternatively, we can simply change $\phi$ to its corresponding vector $v_\phi$, transform $v_\phi$, and change it back to $V^*$. That is,
 
 $$
-\frac{\partial}{\partial X^\mu} \frac{\partial \mathcal{L}}{\partial \phi_{,\mu}} = \frac{\partial \mathcal{L}}{\partial \phi}
+\begin{gather}
+(M')_\mu^{\;\nu}a_\nu := \eta_{\mu \sigma}( M^\sigma_{\;\tau} a^\tau) = \eta_{\mu\sigma} M^\sigma_{\;\tau}\eta^{\tau\nu}a_\nu \\\\
+\text{i.e.} \quad M' = \eta M \eta
+\end{gather}
 $$
 
-Note that each $\phi$ is a field; since we are dealing with four fields $A_t, A_x, A_y, A_z$, we will obtain a system of four equations, each of them being:
+> **Theorem.** If $\eta$ is invariant under $M$, i.e. $\eta(Mu, Mv) = \eta(u, v)$, the two conversions coincide.
+
+Hence, we work with 2, since it's much easier to calculate. The point is that, **insofar we deal with Lorentz invariant transformations, index raising/lowering and contraction of indices flow naturally.**
+
+Furthermore, since $\eta$ has nonzero indices only on the diagonal, we can use the following shortcut:
+
+> Multiply by -1 when raising/lowering time index.
+> Leave everything else unchanged.
+
+**Example.**
 
 $$
-\frac{\partial}{\partial X^\nu} \frac{\partial \mathcal{L}}{\partial A_{\mu,\nu}} = \frac{\partial \mathcal{L}}{\partial A_\mu}
-$$
-
-Calculating the terms yield:
-
-$$
-\frac{\partial F^{\mu\nu}}{\partial X^\nu} = 0
-$$
-
-i.e.
-
-$$
-\partial_\mu F^{\mu\nu} = 0 = J_\mu.
-$$
-
-### Lagrangian when $\mathbf{J} \neq 0$
-
-Q) How should we add $\mathbf{J}$ to the Lagrangian?
-
-A) Although $A^\mu A_\mu$ is not Gauge invariant, $J^\mu A_\mu$ is! Let's check this fact.
-
-Let the new action be:
-
-$$
-\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \underbrace{- J^\mu(x)A_\mu(x)}_{\text{new term}}
-$$
-
-The gauge transform is:
-$$
-\mathcal{L}' = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} - J^\mu(x)\left( A_\mu(x) + \frac{\partial S}{\partial X^\mu} \right)
-$$
-
-Thus,
-
-$$
-\begin{align}
-\Delta S &=  \int -J^\mu(x)\frac{\partial S}{\partial X^\mu} d^4x \\ 
-&= \int -\frac{J^\mu(x)}{\partial X^\mu} S \,d^4x \quad(\because \text{partial integral}) \\
-&= \int -(\partial_\mu J^\mu)S \,d^4x \\
-&= 0 \quad (\because \text{continuity equation})
-\end{align}
-$$
-
-Thus, $\mathcal{L}$ is Gauge invariant. Let us now extract the equation of motion:
-
-$$
-\frac{\partial}{\partial X^\nu} \frac{\partial \mathcal{L}}{\partial A_{\mu,\nu}} = \frac{\partial \mathcal{L}}{\partial A_\mu}
-$$
-
-Since the new term only explicitly depends on $A_\mu$, its effect on LHS is nil. Calculating the RHS, we obtain:
-
-$$
-\frac{\partial \mathcal{L}}{\partial A_\mu} = -J^\mu
-$$
-
-Hence,
-
-$$
-\partial_\mu F^{\mu\nu} = -J^\nu \qquad \blacksquare
+\begin{gather}
+\Lambda^\mu_{\;\nu} =
+\begin{pmatrix}
+\gamma & -\beta\gamma & 0 & 0\\
+-\beta\gamma & \gamma & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1
+\end{pmatrix} \\\\
+\Lambda_{\mu\nu} =
+\begin{pmatrix}
+-\gamma & \beta\gamma & 0 & 0\\
+-\beta\gamma & \gamma & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1
+\end{pmatrix} \\\\
+\Lambda^{\mu\nu} =
+\begin{pmatrix}
+-\gamma & -\beta\gamma & 0 & 0\\
+\beta\gamma & \gamma & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1
+\end{pmatrix}\\\\
+\Lambda_{\mu}^{\;\nu} =
+\begin{pmatrix}
+\gamma & \beta\gamma & 0 & 0\\
+\beta\gamma & \gamma & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\end{gather}
 $$

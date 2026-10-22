@@ -7,197 +7,9 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Notes on Field Theory</title>
+        <title>Notes on Tensor</title>
         <link>https://dimenerno.github.io/2026/10/18/notes-on-tensor/en</link>
         <guid>https://dimenerno.github.io/2026/10/18/notes-on-tensor/en</guid>
-        <pubDate>Sun, 18 Oct 2026 00:00:00 -0700</pubDate>
-        <description>&lt;h3 id=&quot;lorentz-force&quot;&gt;Lorentz Force&lt;/h3&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2026/10/18/notes-on-tensor/en">
-          <![CDATA[
-            <h3 id="lorentz-force">Lorentz Force</h3>
-
-\[\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})\]
-
-<p>Q) Is this equation Lorentz invariant?</p>
-
-<p>A) Proof by construction of Lorentz invariant Lagrangian: Assume a 4-vector $A_\mu(t, x)$ that encodes all the information about $\mathbf{E}$ and $\mathbf{B}$ in the following way.</p>
-
-\[\begin{align}
-F_{\mu \nu} &amp;= \partial_\mu A_\nu -\partial_\nu A_\mu \\
-
-&amp;= \begin{pmatrix}
-0 &amp; -E_x &amp; -E_y &amp; -E_z \\
-E_x &amp; 0 &amp; B_z &amp; -B_y \\
-E_y &amp; -B_z &amp; 0 &amp; B_x \\
-E_z &amp; B_y &amp; -B_x &amp; 0 \\
-\end{pmatrix}
-
-\end{align}\]
-
-<blockquote>
-  <p>Convention: $x$ stands for all the spatial coordinates of $X^\mu$.</p>
-</blockquote>
-
-<p>The following is a scalar including a <em>product</em> of the particle’s position with the field (hence represents the action of <em>interaction</em>):</p>
-
-\[S_{\mathrm{int}}=e\int dX^\mu A_\mu(t, x)\]
-
-<p>The following is the action for a free particle:</p>
-
-\[S_{\mathrm{part}} = \int -m\sqrt{1-\dot{x}^2}dt\]
-
-<p>We thus add the two together to obtain the total action $S = S_{\mathrm{int}} + S_{\mathrm{part}}$. To find the Lagrangian, we rewrite the integral to factor out $dt$, by which we obtain:</p>
-
-\[\mathcal{L} = -m\sqrt{1-\dot{x}^2} + eA_0(t, x) + e\dot{X^n}A_n(t, x)\]
-
-<p>Using Euler-Lagrange, we indeed obtain the equation for relativistic Lorentz force:</p>
-
-\[m \frac{d}{dt}\frac{\dot{X_p}}{\sqrt{1 - \dot{x}^2}} = e(\mathbf{E} + \mathbf{v} \times \mathbf{B})_p\]
-
-<p>Or more succintly,</p>
-
-\[m\frac{d^2 X_\mu}{d\tau^2} =  e F_{\mu\nu} \frac{dX^\nu}{d\tau}\]
-
-<h3 id="homogeneous-maxwell-equations">Homogeneous Maxwell Equations</h3>
-
-<blockquote>
-  <p><strong>Definition.</strong></p>
-
-\[\begin{align}
-F_{\mu \nu} &amp;= \partial_\mu A_\nu -\partial_\nu A_\mu \\
-
-&amp;= \begin{pmatrix}
-0 &amp; -E_x &amp; -E_y &amp; -E_z \\
-E_x &amp; 0 &amp; B_z &amp; -B_y \\
-E_y &amp; -B_z &amp; 0 &amp; B_x \\
-E_z &amp; B_y &amp; -B_x &amp; 0 \\
-\end{pmatrix}
-
-\end{align}\]
-</blockquote>
-
-<p>The above definition yields the following <em>mathematical identities</em>.</p>
-
-\[\begin{gather}
-\nabla \cdot \mathbf{B} = 0 \\
-\nabla \times \mathbf{E} + \frac{\partial \mathbf{B}}{\partial t} = 0
-\end{gather}\]
-
-<h3 id="current-density-4-vector">Current density 4-vector</h3>
-
-\[\rho = \frac{dQ}{dxdydz}, \, j_x = \frac{dQ}{dydzdt}\]
-
-<p>To write succintly,</p>
-
-\[J^\mu = \frac{dQ}{dxdydzdt}dX^\mu\]
-
-<p>We thus have the following local conservation equation:</p>
-
-\[\partial_\mu J^\mu = 0 \quad \left(\text{i.e. } \frac{\partial{\rho}}{\partial{t}} + \nabla \cdot\mathbf{J} = 0 \right)\]
-
-<p>This suggests that the following is a 4-vector.</p>
-
-\[J^\mu = \begin{pmatrix} \rho \\ J_x \\ J_y \\ J_z \end{pmatrix}\]
-
-<p>Indeed, a simple thought experiment proves that $J^\mu$ respects Lorentz transformation, see pg. 412-413 of <em>The Theoretical Minimum: Special Relativity and Field Theory</em>.</p>
-
-<h3 id="deriving-the-non-homogeneous-maxwells-equations">Deriving the non-homogeneous Maxwell’s equations</h3>
-
-<p>Simple algebra shows that the non-homogeneous equations are equivalent to:</p>
-
-\[\partial_\mu F^{\mu\nu} = -J^\nu\]
-
-<p>To derive this, we will first set up a Lagrangian that is</p>
-<ol>
-  <li>Lorentz invariant</li>
-  <li>Gauge-invariant</li>
-  <li>Local</li>
-</ol>
-
-<p>First, we adopt the following notation:</p>
-
-\[\partial_\mu \phi = \phi_{,\mu}\]
-
-<p>By locality, the Lagrangian should depend only up to first derivative, i.e.</p>
-
-\[\mathcal{L}(\phi, \phi_{,\mu})\]
-
-<p>To respect gauge invariance, the Lagrangian must be invariant under the following transformation:</p>
-
-\[A_\mu \Rightarrow A_\mu + \frac{\partial S}{\partial X^\mu}\]
-
-<p>where $S$ is a scalar field. Since $F^{\mu\nu}$ is gauge invariant, we are free to use these terms in the Lagrangian, but we are prohibited from using such terms as $A_\mu A^\mu$ (although it is a perfectly fine scalar).</p>
-
-<h3 id="lagrangian-when-mathbfj--0">Lagrangian when $\mathbf{J} = 0$</h3>
-
-<p>The above considerations lead us to postulate the following Lagrangian:</p>
-
-\[\begin{align}
-\mathcal{L} &amp;= -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \\
-&amp;= -\frac{1}{4}(A_{\nu,\mu}-A_{\mu,\nu})(A^{\nu,\mu}-A^{\mu,\nu}) \\
-&amp;= \frac{1}{2}(E^2 - B^2)
-\end{align}\]
-
-<p>To find the eqution of motion, use the Euler-Lagrange equations for field:</p>
-
-\[\frac{\partial}{\partial X^\mu} \frac{\partial \mathcal{L}}{\partial \phi_{,\mu}} = \frac{\partial \mathcal{L}}{\partial \phi}\]
-
-<p>Note that each $\phi$ is a field; since we are dealing with four fields $A_t, A_x, A_y, A_z$, we will obtain a system of four equations, each of them being:</p>
-
-\[\frac{\partial}{\partial X^\nu} \frac{\partial \mathcal{L}}{\partial A_{\mu,\nu}} = \frac{\partial \mathcal{L}}{\partial A_\mu}\]
-
-<p>Calculating the terms yield:</p>
-
-\[\frac{\partial F^{\mu\nu}}{\partial X^\nu} = 0\]
-
-<p>i.e.</p>
-
-\[\partial_\mu F^{\mu\nu} = 0 = J_\mu.\]
-
-<h3 id="lagrangian-when-mathbfj-neq-0">Lagrangian when $\mathbf{J} \neq 0$</h3>
-
-<p>Q) How should we add $\mathbf{J}$ to the Lagrangian?</p>
-
-<p>A) Although $A^\mu A_\mu$ is not Gauge invariant, $J^\mu A_\mu$ is! Let’s check this fact.</p>
-
-<p>Let the new action be:</p>
-
-\[\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \underbrace{- J^\mu(x)A_\mu(x)}_{\text{new term}}\]
-
-<p>The gauge transform is:
-\(\mathcal{L}' = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} - J^\mu(x)\left( A_\mu(x) + \frac{\partial S}{\partial X^\mu} \right)\)</p>
-
-<p>Thus,</p>
-
-\[\begin{align}
-\Delta S &amp;=  \int -J^\mu(x)\frac{\partial S}{\partial X^\mu} d^4x \\ 
-&amp;= \int -\frac{J^\mu(x)}{\partial X^\mu} S \,d^4x \quad(\because \text{partial integral}) \\
-&amp;= \int -(\partial_\mu J^\mu)S \,d^4x \\
-&amp;= 0 \quad (\because \text{continuity equation})
-\end{align}\]
-
-<p>Thus, $\mathcal{L}$ is Gauge invariant. Let us now extract the equation of motion:</p>
-
-\[\frac{\partial}{\partial X^\nu} \frac{\partial \mathcal{L}}{\partial A_{\mu,\nu}} = \frac{\partial \mathcal{L}}{\partial A_\mu}\]
-
-<p>Since the new term only explicitly depends on $A_\mu$, its effect on LHS is nil. Calculating the RHS, we obtain:</p>
-
-\[\frac{\partial \mathcal{L}}{\partial A_\mu} = -J^\mu\]
-
-<p>Hence,</p>
-
-\[\partial_\mu F^{\mu\nu} = -J^\nu \qquad \blacksquare\]
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>Notes on Tensor</title>
-        <link>https://dimenerno.github.io/2026/10/18/notes-on-tensor-en%20copy/en</link>
-        <guid>https://dimenerno.github.io/2026/10/18/notes-on-tensor-en%20copy/en</guid>
         <pubDate>Sun, 18 Oct 2026 00:00:00 -0700</pubDate>
         <description>&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Basic Theorems.&lt;/strong&gt;&lt;/p&gt;
@@ -212,7 +24,7 @@ E_z &amp; B_y &amp; -B_x &amp; 0 \\
 &lt;/blockquote&gt;
 </description>
         <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2026/10/18/notes-on-tensor-en copy/en">
+          xml:base="https://dimenerno.github.io/2026/10/18/notes-on-tensor/en">
           <![CDATA[
             <blockquote>
   <p><strong>Basic Theorems.</strong></p>
@@ -297,11 +109,11 @@ a &amp; c \\
 b &amp; d
 \end{pmatrix}\]
 
-<p>Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\eta(-, \mathbf{a}) : V \to k$ and $\hom(V, k) \simeq V^<em>$, we have $\Lambda(-, \mathbf{a}) \in V^</em>$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}’ = (a’)_\mu e^\mu$. We then have:</p>
+<p>Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\eta(-, \mathbf{a}) : V \to k$ and $\hom(V, k) \simeq V^*$, we have $\Lambda(-, \mathbf{a}) \in V^*$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}’ = (a’)_\mu e^\mu$. We then have:</p>
 
 \[(a')_\mu = \eta(e_\mu, \mathbf{a}) = \sum_\nu \eta(e_\mu, e_\nu)a^\nu = \eta_{\mu\nu}a^\nu.\]
 
-<p>Generalizing, for a $(2, 3)$-tensor $T^{\alpha \beta}<em>{\gamma \delta \epsilon} : V^* \times V^* \times V \times V \times V \to k$, if we product $T$ with 1 dual coordinate $a</em>\mu$ and 3 vector coordinates $b^\nu$, then we are left with a coordinate for $\hom(V^*, k) \simeq V$, which is a contravariant result. Indeed,</p>
+<p>Generalizing, for a $(2, 3)$-tensor $T^{\alpha \beta}_{\gamma \delta \epsilon} : V^* \times V^* \times V \times V \times V \to k$, if we product $T$ with 1 dual coordinate $a_\mu$ and 3 vector coordinates $b^\nu$, then we are left with a coordinate for $\hom(V^*, k) \simeq V$, which is a contravariant result. Indeed,</p>
 
 \[T^{\alpha \beta}_{\gamma \delta \epsilon} b_\beta c^\gamma d^\delta e^\epsilon = a^\alpha\]
 
@@ -527,6 +339,194 @@ Leave everything else unchanged.</p>
     </tr>
   </tbody>
 </table>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Notes on Field Theory</title>
+        <link>https://dimenerno.github.io/2026/10/18/notes-on-field-theory/en</link>
+        <guid>https://dimenerno.github.io/2026/10/18/notes-on-field-theory/en</guid>
+        <pubDate>Sun, 18 Oct 2026 00:00:00 -0700</pubDate>
+        <description>&lt;h3 id=&quot;lorentz-force&quot;&gt;Lorentz Force&lt;/h3&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/10/18/notes-on-field-theory/en">
+          <![CDATA[
+            <h3 id="lorentz-force">Lorentz Force</h3>
+
+\[\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})\]
+
+<p>Q) Is this equation Lorentz invariant?</p>
+
+<p>A) Proof by construction of Lorentz invariant Lagrangian: Assume a 4-vector $A_\mu(t, x)$ that encodes all the information about $\mathbf{E}$ and $\mathbf{B}$ in the following way.</p>
+
+\[\begin{align}
+F_{\mu \nu} &amp;= \partial_\mu A_\nu -\partial_\nu A_\mu \\
+
+&amp;= \begin{pmatrix}
+0 &amp; -E_x &amp; -E_y &amp; -E_z \\
+E_x &amp; 0 &amp; B_z &amp; -B_y \\
+E_y &amp; -B_z &amp; 0 &amp; B_x \\
+E_z &amp; B_y &amp; -B_x &amp; 0 \\
+\end{pmatrix}
+
+\end{align}\]
+
+<blockquote>
+  <p>Convention: $x$ stands for all the spatial coordinates of $X^\mu$.</p>
+</blockquote>
+
+<p>The following is a scalar including a <em>product</em> of the particle’s position with the field (hence represents the action of <em>interaction</em>):</p>
+
+\[S_{\mathrm{int}}=e\int dX^\mu A_\mu(t, x)\]
+
+<p>The following is the action for a free particle:</p>
+
+\[S_{\mathrm{part}} = \int -m\sqrt{1-\dot{x}^2}dt\]
+
+<p>We thus add the two together to obtain the total action $S = S_{\mathrm{int}} + S_{\mathrm{part}}$. To find the Lagrangian, we rewrite the integral to factor out $dt$, by which we obtain:</p>
+
+\[\mathcal{L} = -m\sqrt{1-\dot{x}^2} + eA_0(t, x) + e\dot{X^n}A_n(t, x)\]
+
+<p>Using Euler-Lagrange, we indeed obtain the equation for relativistic Lorentz force:</p>
+
+\[m \frac{d}{dt}\frac{\dot{X_p}}{\sqrt{1 - \dot{x}^2}} = e(\mathbf{E} + \mathbf{v} \times \mathbf{B})_p\]
+
+<p>Or more succintly,</p>
+
+\[m\frac{d^2 X_\mu}{d\tau^2} =  e F_{\mu\nu} \frac{dX^\nu}{d\tau}\]
+
+<h3 id="homogeneous-maxwell-equations">Homogeneous Maxwell Equations</h3>
+
+<blockquote>
+  <p><strong>Definition.</strong></p>
+
+\[\begin{align}
+F_{\mu \nu} &amp;= \partial_\mu A_\nu -\partial_\nu A_\mu \\
+
+&amp;= \begin{pmatrix}
+0 &amp; -E_x &amp; -E_y &amp; -E_z \\
+E_x &amp; 0 &amp; B_z &amp; -B_y \\
+E_y &amp; -B_z &amp; 0 &amp; B_x \\
+E_z &amp; B_y &amp; -B_x &amp; 0 \\
+\end{pmatrix}
+
+\end{align}\]
+</blockquote>
+
+<p>The above definition yields the following <em>mathematical identities</em>.</p>
+
+\[\begin{gather}
+\nabla \cdot \mathbf{B} = 0 \\
+\nabla \times \mathbf{E} + \frac{\partial \mathbf{B}}{\partial t} = 0
+\end{gather}\]
+
+<h3 id="current-density-4-vector">Current density 4-vector</h3>
+
+\[\rho = \frac{dQ}{dxdydz}, \, j_x = \frac{dQ}{dydzdt}\]
+
+<p>To write succintly,</p>
+
+\[J^\mu = \frac{dQ}{dxdydzdt}dX^\mu\]
+
+<p>We thus have the following local conservation equation:</p>
+
+\[\partial_\mu J^\mu = 0 \quad \left(\text{i.e. } \frac{\partial{\rho}}{\partial{t}} + \nabla \cdot\mathbf{J} = 0 \right)\]
+
+<p>This suggests that the following is a 4-vector.</p>
+
+\[J^\mu = \begin{pmatrix} \rho \\ J_x \\ J_y \\ J_z \end{pmatrix}\]
+
+<p>Indeed, a simple thought experiment proves that $J^\mu$ respects Lorentz transformation, see pg. 412-413 of <em>The Theoretical Minimum: Special Relativity and Field Theory</em>.</p>
+
+<h3 id="deriving-the-non-homogeneous-maxwells-equations">Deriving the non-homogeneous Maxwell’s equations</h3>
+
+<p>Simple algebra shows that the non-homogeneous equations are equivalent to:</p>
+
+\[\partial_\mu F^{\mu\nu} = -J^\nu\]
+
+<p>To derive this, we will first set up a Lagrangian that is</p>
+<ol>
+  <li>Lorentz invariant</li>
+  <li>Gauge-invariant</li>
+  <li>Local</li>
+</ol>
+
+<p>First, we adopt the following notation:</p>
+
+\[\partial_\mu \phi = \phi_{,\mu}\]
+
+<p>By locality, the Lagrangian should depend only up to first derivative, i.e.</p>
+
+\[\mathcal{L}(\phi, \phi_{,\mu})\]
+
+<p>To respect gauge invariance, the Lagrangian must be invariant under the following transformation:</p>
+
+\[A_\mu \Rightarrow A_\mu + \frac{\partial S}{\partial X^\mu}\]
+
+<p>where $S$ is a scalar field. Since $F^{\mu\nu}$ is gauge invariant, we are free to use these terms in the Lagrangian, but we are prohibited from using such terms as $A_\mu A^\mu$ (although it is a perfectly fine scalar).</p>
+
+<h3 id="lagrangian-when-mathbfj--0">Lagrangian when $\mathbf{J} = 0$</h3>
+
+<p>The above considerations lead us to postulate the following Lagrangian:</p>
+
+\[\begin{align}
+\mathcal{L} &amp;= -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \\
+&amp;= -\frac{1}{4}(A_{\nu,\mu}-A_{\mu,\nu})(A^{\nu,\mu}-A^{\mu,\nu}) \\
+&amp;= \frac{1}{2}(E^2 - B^2)
+\end{align}\]
+
+<p>To find the eqution of motion, use the Euler-Lagrange equations for field:</p>
+
+\[\frac{\partial}{\partial X^\mu} \frac{\partial \mathcal{L}}{\partial \phi_{,\mu}} = \frac{\partial \mathcal{L}}{\partial \phi}\]
+
+<p>Note that each $\phi$ is a field; since we are dealing with four fields $A_t, A_x, A_y, A_z$, we will obtain a system of four equations, each of them being:</p>
+
+\[\frac{\partial}{\partial X^\nu} \frac{\partial \mathcal{L}}{\partial A_{\mu,\nu}} = \frac{\partial \mathcal{L}}{\partial A_\mu}\]
+
+<p>Calculating the terms yield:</p>
+
+\[\frac{\partial F^{\mu\nu}}{\partial X^\nu} = 0\]
+
+<p>i.e.</p>
+
+\[\partial_\mu F^{\mu\nu} = 0 = J_\mu.\]
+
+<h3 id="lagrangian-when-mathbfj-neq-0">Lagrangian when $\mathbf{J} \neq 0$</h3>
+
+<p>Q) How should we add $\mathbf{J}$ to the Lagrangian?</p>
+
+<p>A) Although $A^\mu A_\mu$ is not Gauge invariant, $J^\mu A_\mu$ is! Let’s check this fact.</p>
+
+<p>Let the new action be:</p>
+
+\[\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \underbrace{- J^\mu(x)A_\mu(x)}_{\text{new term}}\]
+
+<p>The gauge transform is:
+\(\mathcal{L}' = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} - J^\mu(x)\left( A_\mu(x) + \frac{\partial S}{\partial X^\mu} \right)\)</p>
+
+<p>Thus,</p>
+
+\[\begin{align}
+\Delta S &amp;=  \int -J^\mu(x)\frac{\partial S}{\partial X^\mu} d^4x \\ 
+&amp;= \int -\frac{J^\mu(x)}{\partial X^\mu} S \,d^4x \quad(\because \text{partial integral}) \\
+&amp;= \int -(\partial_\mu J^\mu)S \,d^4x \\
+&amp;= 0 \quad (\because \text{continuity equation})
+\end{align}\]
+
+<p>Thus, $\mathcal{L}$ is Gauge invariant. Let us now extract the equation of motion:</p>
+
+\[\frac{\partial}{\partial X^\nu} \frac{\partial \mathcal{L}}{\partial A_{\mu,\nu}} = \frac{\partial \mathcal{L}}{\partial A_\mu}\]
+
+<p>Since the new term only explicitly depends on $A_\mu$, its effect on LHS is nil. Calculating the RHS, we obtain:</p>
+
+\[\frac{\partial \mathcal{L}}{\partial A_\mu} = -J^\mu\]
+
+<p>Hence,</p>
+
+\[\partial_\mu F^{\mu\nu} = -J^\nu \qquad \blacksquare\]
 
           ]]>
         </content:encoded>
