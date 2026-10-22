@@ -606,7 +606,6 @@ a.pagination-item:hover {
   .tag-container,
   .pdf-export,
   .related-posts,
-  .utterances,
   script {
     display: none !important;
   }
