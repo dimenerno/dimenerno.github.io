@@ -7,6 +7,8 @@ lang: en
 related: 
 ---
 
+> In this essay, "language" is restricted to the "Faculty of Language in the Narrow Sense," that is, language with a recursive structure. The dances of honeybees, the olfaction of dogs, and the acoustic signals of whales share certain features of language in that they serve as means of communication, but they are not language in the "narrow" sense. Recursive language appears to be found only in humans.
+
 Lately I have been learning some perplexing facts about consciousness. They all point towards the thesis that **the capacity to use language is required for a certain level of consciousness**. Here are a few examples:
 
 * Helen Keller, who lost her sight and hearing at nineteen months and acquired language only around the age of seven, recalled that before she acquired language she **did not even know that she existed**. Similar recollections are common among adults who acquired language late.
