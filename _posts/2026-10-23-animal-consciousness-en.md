@@ -11,13 +11,12 @@ Lately I have been learning some perplexing facts about consciousness. They all 
 
 * Helen Keller, who lost her sight and hearing at nineteen months and acquired language only around the age of seven, recalled that before she acquired language she **did not even know that she existed**. Similar recollections are common among adults who acquired language late.
 * Deaf children raised without access to sign language show **delayed development in understanding mental states**. For example, they fail the [Sally–Anne test](https://en.wikipedia.org/wiki/Sally–Anne_test). Once they acquire vocabulary for mental states, however, they pass. [1]
-* Children can hardly recall an event using words they did not have when the event occurred, even after they have learned those words. [2]
 * Childhood amnesia is the phenomenon whereby most adults cannot recall events from before the age of three or four. The end of childhood amnesia coincides with the period of language acquisition.
 
 Of course, these reports admit different interpretations. On a moderate interpretation, pre-linguistic subjects are conscious but simply fail to remember their conscious experiences. But a more radical interpretation is also available: whatever lacks language also lacks consciousness. This would suggest that **most animals other than humans are not conscious**. And there are evidences supporting this conclusion:
 
 - There are many cases of apes being taught sign language, and they sometimes answer the experimenters' questions correctly. But there are almost no reports of an ape asking the experimenter a question **first**.
-- Frogs whose optic nerves have been rewired strike at moving prey in the mirror-reversed direction, yet still avoid stationary obstacles accurately. [3]
+- Frogs whose optic nerves have been rewired strike at moving prey in the mirror-reversed direction, yet still avoid stationary obstacles accurately. [2]
 
 The former case suggests that apes do not understand that "the other" might know what "I" do not, and perhaps that they lack the very ability to distinguish self from other. The latter case suggests that the frog's prey-catching and obstacle-avoidance do not rest on a shared conscious visual experience.
 
@@ -37,14 +36,12 @@ Suppose you prick an animal with a needle. It will show some kind of pain respon
 
 This thought unsettles me. I love animals. I have a dog, I try to practice a rudimentary vegetarianism, and I think animal rights should be expanded. Behind these attitudes lies the belief that animals, too, have conscious experiences comparable to our own. But once this belief is seriously called into question, where should my attitude toward animals find new grounds? Or must the attitude itself be revised?
 
-Let me close with a concrete instance of this worry. If my tentative view that animals have sentience but no self-consciousness is correct, then it seems to follow that **torturing animals is immoral, but killing them is not**. For it seems that to have a right to life, one must at least be able to conceive of oneself as a continuing subject of experiences. [4] This is why we take plants to have life but no *right* to life, and it is also a ground for the ethical permissibility of abortion. So if animals lack self-consciousness, then **animals may have a right not to suffer, but they have no right to life**.
+Let me close with a concrete instance of this worry. If my tentative view that animals have sentience but no self-consciousness is correct, then it seems to follow that **torturing animals is immoral, but killing them is not**. For it seems that to have a right to life, one must at least be able to conceive of oneself as a continuing subject of experiences. [3] This is why we take plants to have life but no *right* to life, and it is also a ground for the ethical permissibility of abortion. So if animals lack self-consciousness, then **animals may have a right not to suffer, but they have no right to life**.
 
 ### References
 
 [1] Pyers, J. E., & Senghas, A. (2009). Language promotes false-belief understanding: Evidence from learners of a new sign language. *Psychological Science*, *20*(7), 805–812.
 
-[2] Simcock, G., & Hayne, H. (2002). Breaking the barrier? Children fail to translate their preverbal memories into language. *Psychological Science*, *13*(3), 225–231.
+[2] Ingle, D. (1973). Two visual systems in the frog. *Science*, *181*(4104), 1053–1055.
 
-[3] Ingle, D. (1973). Two visual systems in the frog. *Science*, *181*(4104), 1053–1055.
-
-[4] Tooley, M. (1972). Abortion and infanticide. *Philosophy & Public Affairs*, *2*(1), 37–65.
+[3] Tooley, M. (1972). Abortion and infanticide. *Philosophy & Public Affairs*, *2*(1), 37–65.
