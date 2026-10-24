@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  
+  
+  <title data-title-ko="Notes on Adjoints, Representables, Limits · 디멘의 블로그" data-title-en="Notes on Adjoints, Representables, Limits · Jeongdam&#39;s Blog">Notes on Adjoints, Representables, Limits · Jeongdam&#39;s Blog</title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2026/10/21/notes-on-adjoints/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko"></p>
+    <p class="lang-en" style="display: none;"></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Jeongdam's Blog</a>
+            <small><div class="lang-ko"></div>
+              <div class="lang-en"></div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">EN</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle"/>
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">한</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Notes on Adjoints, Representables, Limits</h1>
+  <span class="post-date">
+    21 Oct 2026
+    <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
+  </span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'" >Category Theory</div>
+      
+    </div>
+  
+  <h2 id="functorialness-of-cones">Functorialness of Cones</h2>
+
+<p>Define the diagonal functor $\Delta : \mathcal{A} \to [ \mathbf{I}, \mathcal{A} ]$, where $\Delta (A) : \mathbf{I} \to \mathcal{A}$ maps every element and map of $\mathbf{I}$ to $A$ and $1_A$, respectively.</p>
+
+<p>We then have,</p>
+
+\[\mathrm{Cone}(A, D) = \hom_{[\mathbf{I}, \mathcal{A}]}(\Delta A, D)\]
+
+<p>Hence, $\mathrm{Cone}(A, D)$ is functorial in $A$ (contravariantly) and $D$ (covariantly).</p>
+
+<h2 id="limits-as-representables">Limits as Representables</h2>
+
+<p>Varying $A$ yields the following theorem:</p>
+
+<blockquote>
+  <p>A limit of $D$ is a representation of $\hom_{[\mathbf{I}, \mathcal{A}]}(\Delta -, D)$.</p>
+</blockquote>
+
+<p>Varying $D$ yields the following theorem:</p>
+
+<blockquote>
+  <p>Let $\alpha$ be a natural transformation between $D, D’ : \mathbf{I} \to \mathcal{A}$. The limits of $D, D’$ induce $\lim_{\leftarrow I}\alpha : \lim_{\leftarrow I} D \to \lim_{\leftarrow I}D’$ such that,</p>
+
+  <ul>
+    <li>(a) commutes</li>
+    <li>(c) commutes if (b) commutes</li>
+  </ul>
+
+  <figure class="tikz"><img src="/public/tikz/7cb5409ccc3fe5cd.svg" alt="TikZ diagram" /></figure>
+</blockquote>
+
+<h2 id="limits-as-adjoints">Limits as Adjoints</h2>
+
+<p>If $\mathcal{A}$ has <em>all</em> limits of shape $\mathbf{I}$, we can give a second reformulation:</p>
+
+<blockquote>
+  <p>$\lim_{\leftarrow \mathbf{I}} : [\mathbf{I}, \mathcal{A}] \to \mathcal{A}$ is the right adjoint to the diagonal functor $\Delta : \mathcal{A} \to [ \mathbf{I}, \mathcal{A} ]$.</p>
+</blockquote>
+
+<h2 id="representables-preserve-limits">Representables preserve Limits</h2>
+
+<p>For a locally small category $\mathcal{S}$ that has products and equalizers, one can construct limits for arbitrary $D: \mathbf{I} \to \mathcal{S}$ by taking the equalizer of the following:</p>
+
+\[\prod_{I \in \mathbf{I}} D(I)\; \substack{\underrightarrow{\;\;s\;\;}\\ \overrightarrow{\;\;t\;\;}} \prod_{I \xrightarrow{u} J} D(J)\]
+
+<p>where $s_u = Du \circ \pi_I$ and $t_u = \pi_J$. In light of this, we have:</p>
+
+\[\mathrm{Cone}(A, D) \cong \lim_{\leftarrow I}\hom_\mathcal{A} (A, D(-))\]
+
+<p><em>Proof.</em> Since $\hom_\mathcal{A}(A, D(-))$ is a functor into $\mathbf{Set}$, its limit is given by the above formula, which is the set of all families $\big(f_I : A \to D(I)\big)_{I \in \mathbf{I}}$ such that $Du \circ f_I = f_J$, which happens to coincide with $\mathrm{Cone}(A, D)$. ■</p>
+
+<p>Since $\mathrm{Cone}(A, D) \cong \hom_\mathcal{A} (A, \lim D)$, we have</p>
+
+\[\hom_\mathcal{A}\left(A, \lim_{\leftarrow \mathbf{I}} D\right)  \cong \lim_{\leftarrow \mathbf{I}} \hom_\mathcal{A} (A, D(-))\]
+
+<p>that is, <strong>representables preserve limits.</strong></p>
+
+<p>To dualize the result, note that $\hom_\mathcal{A}(-, A)$ is a contravariant functor from $\mathcal{A}$, and hence a covariant functor from $\mathcal{A}^{\mathrm{op}}$. Hence, $\hom_\mathcal{A}(-, A) : \mathcal{A}^{\mathrm{op}} \to \mathbf{Set}$ preserves limits in $\mathcal{A}^\mathrm{op}$, i.e.</p>
+
+\[\hom_\mathcal{A}\left( \lim_{\leftarrow \mathbf{I}^{\rm{op}}} D^{\rm{op}}, A\right)  \cong \lim_{\leftarrow \mathbf{I}^{\rm{op}}} \hom_\mathcal{A} (D^{\rm{op}}(-), A)\]
+
+<p>where $D^{\rm{op}}: \mathbf{I}^{\rm{op}} \to \mathcal{A}^{\rm{op}}$. If we dualize $D^\mathrm{op}$ to $D: \mathbf{I} \to \mathcal{A}$, we have $\lim_{\leftarrow \mathbf{I}^{\rm{op}}} D^{\rm{op}} = \lim_{\rightarrow \mathbf{I}} D$.</p>
+
+<p>Hence,</p>
+
+\[\hom_\mathcal{A}\left( \lim_{\rightarrow \mathbf{I}} D, A\right)  \cong \lim_{\leftarrow \mathbf{I}} \hom_\mathcal{A} (D(-), A).\]
+
+<p>Note that RHS is limit, not colimit.</p>
+
+<blockquote>
+  <p><strong>Corollary.</strong> Left adjoints preserve colimits and right adjoints preserve limits.</p>
+</blockquote>
+
+<p><em>Proof.</em> From the definition of adjointness and $\mathrm{Cone}(A, D) \cong \lim \hom_\mathcal{A} (A, D(-)) \cong \hom_\mathcal{A}(A, \lim D)$, we have</p>
+
+\[\begin{align}
+\hom_\mathcal{A} (A, G(\lim D)) &amp;\cong \hom_\mathcal{B} (F(A), \lim D) \\
+&amp;\cong \lim \hom_\mathcal{B} (F(A), D(-)) \\
+&amp;\cong \lim \hom_\mathcal{A}(A, GD(-)) \\
+&amp;\cong \mathrm{Cone}(A, G\circ D).
+\end{align}\]
+
+<p>Hence, $G(\lim D)$ represents $\mathrm{Cone}(-, G \circ D)$, i.e. $G(\lim D) \cong \lim G \circ D$. ■</p>
+
+<h2 id="limits-in-functor-categories-are-pointwise-computed">Limits in Functor Categories are Pointwise-computed</h2>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Let $D: \mathbf{I} \to [\mathbf{A}, \mathcal{S}]$ be a diagram, and that for each $A \in \mathbf{A}$, $D(-)(A) : \mathbf{I} \to \mathcal{S}$ has a limit. Then there exists a cone on $D$ such that its image under $\mathrm{ev}_A$ is a limit cone on $D(-)(A)$ for each $A \in \mathbf{A}$. Moreover, any such cone on $D$ is a limit cone.</p>
+</blockquote>
+
+<p><em>Proof.</em> Follows from “Limits as Representables, varying $D$”. Refer to the following diagram.</p>
+
+<figure class="tikz"><img src="/public/tikz/64138676565fd967.svg" alt="TikZ diagram" /></figure>
+
+<blockquote>
+  <p><strong>Corollaries.</strong></p>
+
+  <ol>
+    <li>Limits commute with limits.</li>
+    <li>$\mathrm{ev}_A : [\mathbf{A} , \mathcal{S} ] \to \mathcal{S}$ preserves limits.</li>
+    <li>$よ: \mathbf{A} \to [\mathbf{A}^{\rm{op}}, \mathbf{Set}]$ preserves limits.</li>
+  </ol>
+</blockquote>
+
+<h2 id="density-theorem">Density Theorem</h2>
+
+<blockquote>
+  <p><strong>Theorem.</strong> Every presheaf is a colimit of representables. More precisely, for $X : \mathbf{A}^{\rm{op}} \to \mathbf{Set}$, $X$ is the colimit of</p>
+
+\[\mathbf{E}(X) \xrightarrow{P} \mathbf{A} \xrightarrow{よ} [\mathbf{A}^{\rm{op}}, \mathbf{Set}].\]
+</blockquote>
+
+</div>
+
+
+
+<script>
+  // Wait for MathJax to finish typesetting so equations are in the PDF.
+  function exportPDF() {
+    var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
+    ready.then(function () { window.print(); });
+  }
+
+  // Opened from the main page's PDF link: export once everything has loaded.
+  if (new URLSearchParams(location.search).has("print")) {
+    window.addEventListener("load", function () {
+      history.replaceState(null, "", location.pathname);
+      exportPDF();
+    });
+  }
+</script>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

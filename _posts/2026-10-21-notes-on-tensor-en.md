@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Notes on Tensor"
-date: 2026-10-18
+date: 2026-10-21
 tags: ["Physics", "Mathematics"]
 lang: en
 related: 

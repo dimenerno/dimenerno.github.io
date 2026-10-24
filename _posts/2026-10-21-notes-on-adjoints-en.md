@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Notes on Adjoints, Representables, Limits"
-date: 2026-10-18
+date: 2026-10-21
 tags: ["Mathematics", "Category Theory"]
 lang: en
 related: 

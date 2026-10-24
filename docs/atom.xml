@@ -4,7 +4,7 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-10-21T22:18:54-07:00</updated>
+ <updated>2026-10-23T17:23:04-07:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>Jeongdam Choi</name>
@@ -13,10 +13,124 @@
 
  
  <entry>
+   <title>언어 능력이 없는 동물의 의식에 대한 회의</title>
+   <link href="https://dimenerno.github.io/2026/10/23/animal-consciousness"/>
+   <updated>2026-10-23T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/23/animal-consciousness</id>
+   <content type="html">&lt;p&gt;최근 나는 의식에 대한 당혹스러운 사실들을 알아가고 있다. 이 사실들이 가리키는 공통 방향은 &lt;strong&gt;특정 수준의 의식이 발현하기 위해서는 언어를 사용하는 능력이 갖춰져야 한다&lt;/strong&gt;는 것이다. 다음은 그러한 사실들의 몇 가지 사례이다:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;생후 19개월에 시각과 청각을 잃어 일곱 살 무렵에야 언어를 습득한 헬렌 켈러는, 언어를 습득하기 전에는 &lt;strong&gt;내가 존재한다는 것조차 알지 못했다&lt;/strong&gt;고 회고했다. 이와 비슷한 회고는 늦은 시기에 언어를 배운 성인들에게 공통적으로 나타난다.&lt;/li&gt;
+  &lt;li&gt;수어 환경 없이 자란 농인 아동은 &lt;strong&gt;심적 상태를 이해하는 능력의 발달이 지체된다&lt;/strong&gt;. 예를 들어 &lt;a href=&quot;https://en.wikipedia.org/wiki/Sally–Anne_test&quot;&gt;샐리-앤 과제&lt;/a&gt;를 통과하지 못한다. 그러나 심적 상태와 관련된 어휘를 익힌 뒤에는 통과한다. [1]&lt;/li&gt;
+  &lt;li&gt;아동은 어떤 사건을 겪을 당시 갖고 있지 않았던 단어로는, 나중에 그 단어를 배운 뒤에도 그 사건을 거의 기억하지 못한다. [2]&lt;/li&gt;
+  &lt;li&gt;아동기 기억상실은 대부분의 성인이 3~4세 이전의 사건을 기억하지 못하는 현상이다. 아동기 기억상실이 종료되는 시기는 언어를 습득하는 시기와 겹친다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;물론 위의 보고는 상이하게 해석될 수 있다. 온건한 해석에 따르면 언어 이전의 주체는 의식이 있으나 의식적 경험을 기억하지 못할 뿐이다. 그러나 더 극단적인 해석도 가능하다. 즉, 언어를 결여한 대상은 의식도 결여하며, 이는 &lt;strong&gt;인간을 제외한 동물은 대부분 의식이 없음&lt;/strong&gt;을 시사한다. 그리고 이 결론을 지지하는 사례 또한 있다:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;유인원에게 수어를 가르친 사례는 많으며, 이들은 실험자의 질문에 올바르게 대답하기도 한다. 그러나 유인원이 &lt;strong&gt;먼저&lt;/strong&gt; 실험자에게 질문한 사례는 거의 보고되지 않았다.&lt;/li&gt;
+  &lt;li&gt;시신경이 재연결된 개구리는 움직이는 먹이를 향해서는 좌우가 뒤바뀐 방향으로 혀를 뻗지만 정지한 장애물은 정확히 피한다. [3]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;전자의 사례는 유인원이 “자신은 모르는 것을 상대는 알 수도 있다”라는 사실을 이해하지 못하며, 어쩌면 자아와 타자를 구분하는 능력 자체가 결여되어 있을지도 모름을 시사한다. 한편 후자의 사례는 개구리의 먹이 사냥과 장애물 회피가 공통된 의식적 시각 경험으로 이루어지는 것이 아님을 시사한다.&lt;/p&gt;
+
+&lt;p&gt;그러나 동물에게 의식이 없다는 주장은 터무니없지 않은가? 당장 우리의 반려동물인 개나 고양이만 하더라도 그들에게 의식이 없다고 생각할 수 없을 정도로 복잡하고 정교한 행동을 수행하지 않는가?&lt;/p&gt;
+
+&lt;p&gt;이는 직관적인 반박이지만, &lt;strong&gt;정교한 행동이 반드시 의식적 경험을 동반하지는 않음&lt;/strong&gt;을 보여주는 수많은 사례를 잊어서는 안 될 것이다:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;몽유병 환자들은 깊은 수면 상태에서도 요리, 대화, 운전 등 복잡한 행동을 수행하며, 깨어난 뒤에는 이를 기억하지 못한다. (일례로 &lt;a href=&quot;https://en.wikipedia.org/wiki/R_v_Parks&quot;&gt;수면 중 20km 이상을 운전하고 장모를 살해한&lt;/a&gt; 몽유병 환자의 사례가 있다.)&lt;/li&gt;
+  &lt;li&gt;일부 시각피질 손상 환자들은 시야의 특정 영역에 있는 대상을 보이지 않는다고 말하면서도, 그 위치를 가리키거나 피하는 과제는 정확히 수행한다. (이를 맹시라고 한다.)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Patient_DF&quot;&gt;환자 DF&lt;/a&gt;의 사례: 비스듬한 틈새가 주어졌을 때 틈새의 방향을 말로 설명하거나 손으로 흉내 내지 못했지만, 그 틈새에 카드를 넣는 동작은 정확히 수행했다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이러한 당혹스러운 사실들로부터 어떤 결론을 내려야 할까? 내가 생각하는 결론은 다음과 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;일부 동물은 어떠한 형태의 의식(consciousness)도 없다. 일부 동물은 제한된 형태의 의식, 이를테면 감각 능력(sentience)이 있을지도 모른다. 그러나 인간 이외의 어떠한 동물도 자기의식·통각(apperception)은 없다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;가령 동물을 바늘로 찌르면 모종의 고통 반응을 보일 것이다. 그러나 이것은 로봇의 동작과 다를 바 없는, 순전히 행동적인 자극-반응 현상일 수 있다. 일부 동물의 경우는 실제로 고통이라는 감각을 느끼는지도 모른다. 그럼에도 불구하고, &lt;em&gt;어떠한&lt;/em&gt; 동물도 이것을 “&lt;strong&gt;나&lt;/strong&gt;는 괴롭다”라는 사태로서 이해하지는 않는 듯하다. (이는 갓난아기의 경우에도 마찬가지인 듯하다.) 그러므로 동물들의 의식적 세계는 일종의 공산주의다. 그곳에서는 &lt;strong&gt;사유 의식이라는 개념이 성립하지 않는다&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;그리고 이 생각은 나를 동요시킨다. 나는 동물을 좋아한다. 강아지를 키우고, 초보적인 채식주의를 실천하고자 하며, 동물권이 확대되어야 한다고 생각한다. 이러한 태도 이면에는, 동물들도 인간에 준하는 의식적 경험을 한다는 믿음이 있다. 그러나 이 믿음에 심각한 회의가 제기되었을 때, 동물을 대하는 나의 태도는 어디서 새로운 근거를 찾아야 하는가? 혹은, 나의 태도 자체가 수정되어야 하는가?&lt;/p&gt;
+
+&lt;p&gt;이런 고민의 구체적인 사례로 글을 맺도록 하겠다. 동물에게 감각 능력은 있으나 자기의식은 없다는 나의 잠정적 입장이 사실이라면, &lt;strong&gt;동물을 고문하는 것은 비도덕적이지만 죽이는 것은 비도덕적이지 않다는 결론&lt;/strong&gt;이 따라나오는 듯하다. 왜냐하면 생명권을 가지기 위해서는 적어도 자기 자신을 지속하는 경험의 주체로 파악한다는 전제가 필요해 보이기 때문이다.[4] 이는 우리가 식물에게 생명이 있지만 생명&lt;em&gt;권&lt;/em&gt;은 없다고 보는 근거이자, 낙태의 윤리적 정당성을 인정하는 근거이다. 그러므로 만약 동물에게 자기의식이 없다면, &lt;strong&gt;동물에게 쾌고감수권은 있을지언정 생명권은 없다&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;참고문헌&quot;&gt;참고문헌&lt;/h3&gt;
+
+&lt;p&gt;[1] Pyers, J. E., &amp;amp; Senghas, A. (2009). Language promotes false-belief understanding: Evidence from learners of a new sign language. &lt;em&gt;Psychological Science&lt;/em&gt;, &lt;em&gt;20&lt;/em&gt;(7), 805–812.&lt;/p&gt;
+
+&lt;p&gt;[2] Simcock, G., &amp;amp; Hayne, H. (2002). Breaking the barrier? Children fail to translate their preverbal memories into language. &lt;em&gt;Psychological science&lt;/em&gt;, &lt;em&gt;13&lt;/em&gt;(3), 225–231.&lt;/p&gt;
+
+&lt;p&gt;[3] Ingle D. (1973). Two visual systems in the frog. &lt;em&gt;Science (New York, N.Y.)&lt;/em&gt;, &lt;em&gt;181&lt;/em&gt;(4104), 1053–1055.&lt;/p&gt;
+
+&lt;p&gt;[4] Tooley, M. (1972). Abortion and Infanticide. &lt;em&gt;Philosophy &amp;amp; Public Affairs&lt;/em&gt;, &lt;em&gt;2&lt;/em&gt;(1), 37–65.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Skepticism about Consciousness in Animals without Language</title>
+   <link href="https://dimenerno.github.io/2026/10/23/animal-consciousness/en"/>
+   <updated>2026-10-23T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/23/animal-consciousness/animal-consciousness-en</id>
+   <content type="html">&lt;p&gt;Lately I have been learning some perplexing facts about consciousness. They all point towards the thesis that &lt;strong&gt;the capacity to use language is required for a certain level of consciousness&lt;/strong&gt;. Here are a few examples:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Helen Keller, who lost her sight and hearing at nineteen months and acquired language only around the age of seven, recalled that before she acquired language she &lt;strong&gt;did not even know that she existed&lt;/strong&gt;. Similar recollections are common among adults who acquired language late.&lt;/li&gt;
+  &lt;li&gt;Deaf children raised without access to sign language show &lt;strong&gt;delayed development in understanding mental states&lt;/strong&gt;. For example, they fail the &lt;a href=&quot;https://en.wikipedia.org/wiki/Sally–Anne_test&quot;&gt;Sally–Anne test&lt;/a&gt;. Once they acquire vocabulary for mental states, however, they pass. [1]&lt;/li&gt;
+  &lt;li&gt;Children can hardly recall an event using words they did not have when the event occurred, even after they have learned those words. [2]&lt;/li&gt;
+  &lt;li&gt;Childhood amnesia is the phenomenon whereby most adults cannot recall events from before the age of three or four. The end of childhood amnesia coincides with the period of language acquisition.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Of course, these reports admit different interpretations. On a moderate interpretation, pre-linguistic subjects are conscious but simply fail to remember their conscious experiences. But a more radical interpretation is also available: whatever lacks language also lacks consciousness. This would suggest that &lt;strong&gt;most animals other than humans are not conscious&lt;/strong&gt;. And there are evidences supporting this conclusion:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;There are many cases of apes being taught sign language, and they sometimes answer the experimenters’ questions correctly. But there are almost no reports of an ape asking the experimenter a question &lt;strong&gt;first&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Frogs whose optic nerves have been rewired strike at moving prey in the mirror-reversed direction, yet still avoid stationary obstacles accurately. [3]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The former case suggests that apes do not understand that “the other” might know what “I” do not, and perhaps that they lack the very ability to distinguish self from other. The latter case suggests that the frog’s prey-catching and obstacle-avoidance do not rest on a shared conscious visual experience.&lt;/p&gt;
+
+&lt;p&gt;But isn’t the claim that animals lack consciousness absurd? Just look at our beloved dogs and cats; don’t they perform behaviors so complex and sophisticated that we cannot think of them as unconscious?&lt;/p&gt;
+
+&lt;p&gt;This is an intuitive objection, but we should not forget the many cases showing that &lt;strong&gt;complex behavior is not necessarily accompanied by conscious experience&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sleepwalkers perform complex actions such as cooking, talking, and driving while in deep sleep, and remember nothing after waking up. (A strking case is &lt;a href=&quot;https://en.wikipedia.org/wiki/R_v_Parks&quot;&gt;a sleepwalker who drove more than 20 km and killed his mother-in-law&lt;/a&gt; in his sleep.)&lt;/li&gt;
+  &lt;li&gt;Some patients with damage to the visual cortex report that they cannot see objects in a certain region of their visual field, yet accurately point to or avoid them. (This is known as “blindsight”.)&lt;/li&gt;
+  &lt;li&gt;The case of &lt;a href=&quot;https://en.wikipedia.org/wiki/Patient_DF&quot;&gt;Patient DF&lt;/a&gt;: when presented with an angled slot, she could neither verbalize its orientation nor imitate it with her hand, yet she could accurately slip a card through it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What should we conclude from these puzzling facts? Here is my conclusion.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Some animals have no form of consciousness at all. Some animals may have a limited form of consciousness, such as sentience. But no animal other than humans has self-consciousness, or apperception.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Suppose you prick an animal with a needle. It will show some kind of pain response. But this may be a purely behavioral stimulus-response phenomenon, no different from the motion of a robot. On the other hand, some animals may really feel the sensation of pain. Even so, it seems that &lt;em&gt;no&lt;/em&gt; animal understands this situation as “&lt;strong&gt;I&lt;/strong&gt; am in pain.” (The same seems to hold for newborns.) The mental world of animals is therefore a kind of communism. There, &lt;strong&gt;the notion of individual consciousness is nonexistent&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This thought unsettles me. I love animals. I have a dog, I try to practice a rudimentary vegetarianism, and I think animal rights should be expanded. Behind these attitudes lies the belief that animals, too, have conscious experiences comparable to our own. But once this belief is seriously called into question, where should my attitude toward animals find new grounds? Or must the attitude itself be revised?&lt;/p&gt;
+
+&lt;p&gt;Let me close with a concrete instance of this worry. If my tentative view that animals have sentience but no self-consciousness is correct, then it seems to follow that &lt;strong&gt;torturing animals is immoral, but killing them is not&lt;/strong&gt;. For it seems that to have a right to life, one must at least be able to conceive of oneself as a continuing subject of experiences. [4] This is why we take plants to have life but no &lt;em&gt;right&lt;/em&gt; to life, and it is also a ground for the ethical permissibility of abortion. So if animals lack self-consciousness, then &lt;strong&gt;animals may have a right not to suffer, but they have no right to life&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;p&gt;[1] Pyers, J. E., &amp;amp; Senghas, A. (2009). Language promotes false-belief understanding: Evidence from learners of a new sign language. &lt;em&gt;Psychological Science&lt;/em&gt;, &lt;em&gt;20&lt;/em&gt;(7), 805–812.&lt;/p&gt;
+
+&lt;p&gt;[2] Simcock, G., &amp;amp; Hayne, H. (2002). Breaking the barrier? Children fail to translate their preverbal memories into language. &lt;em&gt;Psychological Science&lt;/em&gt;, &lt;em&gt;13&lt;/em&gt;(3), 225–231.&lt;/p&gt;
+
+&lt;p&gt;[3] Ingle, D. (1973). Two visual systems in the frog. &lt;em&gt;Science&lt;/em&gt;, &lt;em&gt;181&lt;/em&gt;(4104), 1053–1055.&lt;/p&gt;
+
+&lt;p&gt;[4] Tooley, M. (1972). Abortion and infanticide. &lt;em&gt;Philosophy &amp;amp; Public Affairs&lt;/em&gt;, &lt;em&gt;2&lt;/em&gt;(1), 37–65.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Notes on Tensor</title>
-   <link href="https://dimenerno.github.io/2026/10/18/notes-on-tensor/en"/>
-   <updated>2026-10-18T00:00:00-07:00</updated>
-   <id>https://dimenerno.github.io/2026/10/18/notes-on-tensor/notes-on-tensor-en</id>
+   <link href="https://dimenerno.github.io/2026/10/21/notes-on-tensor/en"/>
+   <updated>2026-10-21T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/21/notes-on-tensor/notes-on-tensor-en</id>
    <content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Basic Theorems.&lt;/strong&gt;&lt;/p&gt;
 
@@ -184,9 +298,9 @@ Leave everything else unchanged.&lt;/p&gt;
  
  <entry>
    <title>Notes on Relativity</title>
-   <link href="https://dimenerno.github.io/2026/10/18/notes-on-relativity/en"/>
-   <updated>2026-10-18T00:00:00-07:00</updated>
-   <id>https://dimenerno.github.io/2026/10/18/notes-on-relativity/notes-on-relativity-en</id>
+   <link href="https://dimenerno.github.io/2026/10/21/notes-on-relativity/en"/>
+   <updated>2026-10-21T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/21/notes-on-relativity/notes-on-relativity-en</id>
    <content type="html">&lt;p&gt;Throughout the note, we use the following tensor:&lt;/p&gt;
 
 \[\Lambda^\mu_{\;\nu} =
@@ -328,9 +442,9 @@ Leave everything else unchanged.&lt;/p&gt;
  
  <entry>
    <title>Notes on Field Theory</title>
-   <link href="https://dimenerno.github.io/2026/10/18/notes-on-field-theory/en"/>
-   <updated>2026-10-18T00:00:00-07:00</updated>
-   <id>https://dimenerno.github.io/2026/10/18/notes-on-field-theory/notes-on-field-theory-en</id>
+   <link href="https://dimenerno.github.io/2026/10/21/notes-on-field-theory/en"/>
+   <updated>2026-10-21T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/21/notes-on-field-theory/notes-on-field-theory-en</id>
    <content type="html">&lt;h3 id=&quot;lorentz-force&quot;&gt;Lorentz Force&lt;/h3&gt;
 
 \[\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})\]
@@ -509,9 +623,9 @@ E_z &amp;amp; B_y &amp;amp; -B_x &amp;amp; 0 \\
  
  <entry>
    <title>Notes on Adjoints, Representables, Limits</title>
-   <link href="https://dimenerno.github.io/2026/10/18/notes-on-adjoints/en"/>
-   <updated>2026-10-18T00:00:00-07:00</updated>
-   <id>https://dimenerno.github.io/2026/10/18/notes-on-adjoints/notes-on-adjoints-en</id>
+   <link href="https://dimenerno.github.io/2026/10/21/notes-on-adjoints/en"/>
+   <updated>2026-10-21T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/21/notes-on-adjoints/notes-on-adjoints-en</id>
    <content type="html">&lt;h2 id=&quot;functorialness-of-cones&quot;&gt;Functorialness of Cones&lt;/h2&gt;
 
 &lt;p&gt;Define the diagonal functor $\Delta : \mathcal{A} \to [ \mathbf{I}, \mathcal{A} ]$, where $\Delta (A) : \mathbf{I} \to \mathcal{A}$ maps every element and map of $\mathbf{I}$ to $A$ and $1_A$, respectively.&lt;/p&gt;

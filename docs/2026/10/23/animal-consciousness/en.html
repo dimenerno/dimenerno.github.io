@@ -13,7 +13,7 @@
 
   
   
-  <title data-title-ko="Notes on Tensor · 디멘의 블로그" data-title-en="Notes on Tensor · Jeongdam&#39;s Blog">Notes on Tensor · Jeongdam&#39;s Blog</title>
+  <title data-title-ko="Skepticism about Consciousness in Animals without Language · 디멘의 블로그" data-title-en="Skepticism about Consciousness in Animals without Language · Jeongdam&#39;s Blog">Skepticism about Consciousness in Animals without Language · Jeongdam&#39;s Blog</title>
 
   <style>
     .answer {
@@ -118,7 +118,7 @@
   ></script>
 
   
-  <link rel="canonical" href="/2026/10/18/notes-on-tensor/en" />
+  <link rel="canonical" href="/2026/10/23/animal-consciousness/en" />
   
 
   <link rel="stylesheet" href="/public/css/poole.css" />
@@ -358,182 +358,71 @@
       </div>
 
       <div class="container content"><div class="post">
-  <h1 class="post-title">Notes on Tensor</h1>
+  <h1 class="post-title">Skepticism about Consciousness in Animals without Language</h1>
   <span class="post-date">
-    18 Oct 2026
+    23 Oct 2026
     <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
   </span>
   
     <div class="tag-container">
       
-      <div class="tag" onclick="location.href='/tags/physics/'" >Physics</div>
+      <div class="tag" onclick="location.href='/tags/philosophy/'" >Philosophy</div>
       
-      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      <div class="tag" onclick="location.href='/tags/essay/'" >Essay</div>
+      
+      <div class="tag" onclick="location.href='/tags/philosophy-of-mind/'" >Philosophy of Mind</div>
       
     </div>
   
-  <blockquote>
-  <p><strong>Basic Theorems.</strong></p>
+  <p>Lately I have been learning some perplexing facts about consciousness. They all point towards the thesis that <strong>the capacity to use language is required for a certain level of consciousness</strong>. Here are a few examples:</p>
 
-  <ol>
-    <li>$(V \otimes W)^* \simeq V^* \otimes W^*$</li>
-    <li>$\hom(V\otimes W, Z) \simeq \hom(V, \hom(W, Z))$</li>
-    <li>$V^{**} \simeq V$</li>
-  </ol>
+<ul>
+  <li>Helen Keller, who lost her sight and hearing at nineteen months and acquired language only around the age of seven, recalled that before she acquired language she <strong>did not even know that she existed</strong>. Similar recollections are common among adults who acquired language late.</li>
+  <li>Deaf children raised without access to sign language show <strong>delayed development in understanding mental states</strong>. For example, they fail the <a href="https://en.wikipedia.org/wiki/Sally–Anne_test">Sally–Anne test</a>. Once they acquire vocabulary for mental states, however, they pass. [1]</li>
+  <li>Children can hardly recall an event using words they did not have when the event occurred, even after they have learned those words. [2]</li>
+  <li>Childhood amnesia is the phenomenon whereby most adults cannot recall events from before the age of three or four. The end of childhood amnesia coincides with the period of language acquisition.</li>
+</ul>
 
-  <p><strong>Corollary.</strong> $V^* \otimes W \simeq \hom (V, W)$</p>
-</blockquote>
+<p>Of course, these reports admit different interpretations. On a moderate interpretation, pre-linguistic subjects are conscious but simply fail to remember their conscious experiences. But a more radical interpretation is also available: whatever lacks language also lacks consciousness. This would suggest that <strong>most animals other than humans are not conscious</strong>. And there are evidences supporting this conclusion:</p>
 
-<h2 id="tensor">Tensor</h2>
+<ul>
+  <li>There are many cases of apes being taught sign language, and they sometimes answer the experimenters’ questions correctly. But there are almost no reports of an ape asking the experimenter a question <strong>first</strong>.</li>
+  <li>Frogs whose optic nerves have been rewired strike at moving prey in the mirror-reversed direction, yet still avoid stationary obstacles accurately. [3]</li>
+</ul>
 
-<blockquote>
-  <p><strong>TFAE.</strong></p>
+<p>The former case suggests that apes do not understand that “the other” might know what “I” do not, and perhaps that they lack the very ability to distinguish self from other. The latter case suggests that the frog’s prey-catching and obstacle-avoidance do not rest on a shared conscious visual experience.</p>
 
-  <ol>
-    <li>$M$ is a type $(n, m)$ tensor</li>
-    <li>$M \in V^{\otimes n} \otimes (V^*)^{\otimes m}$</li>
-    <li>$M: (V^*)^n \times V^m \to k$</li>
-    <li>$M: V^{\otimes m} \to V^{\otimes n}$</li>
-  </ol>
-</blockquote>
+<p>But isn’t the claim that animals lack consciousness absurd? Just look at our beloved dogs and cats; don’t they perform behaviors so complex and sophisticated that we cannot think of them as unconscious?</p>
 
-<h3 id="1-1-tensor">(1, 1)-tensor</h3>
+<p>This is an intuitive objection, but we should not forget the many cases showing that <strong>complex behavior is not necessarily accompanied by conscious experience</strong>:</p>
 
-<p>Let $\Lambda$ be a (1, 1)-tensor, i.e. $\Lambda: V^* \times V \to k$.</p>
+<ul>
+  <li>Sleepwalkers perform complex actions such as cooking, talking, and driving while in deep sleep, and remember nothing after waking up. (A strking case is <a href="https://en.wikipedia.org/wiki/R_v_Parks">a sleepwalker who drove more than 20 km and killed his mother-in-law</a> in his sleep.)</li>
+  <li>Some patients with damage to the visual cortex report that they cannot see objects in a certain region of their visual field, yet accurately point to or avoid them. (This is known as “blindsight”.)</li>
+  <li>The case of <a href="https://en.wikipedia.org/wiki/Patient_DF">Patient DF</a>: when presented with an angled slot, she could neither verbalize its orientation nor imitate it with her hand, yet she could accurately slip a card through it.</li>
+</ul>
 
-<p>If we fix a basis ${e_i}$ for $V$, we can write $\Lambda$ as a matrix form:</p>
-
-\[\Lambda^\mu_{\;\nu} =\Lambda(e^\mu, e_\nu)\]
-
-<p>For example, given:</p>
-
-\[\begin{gather}
-\Lambda(e^0, e_0) = a\\
-\Lambda(e^1, e_0) = b\\
-\Lambda(e^0, e_1) = c\\
-\Lambda(e^1, e_1) = d,
-\end{gather}\]
-
-<p>we have:</p>
-
-\[\Lambda^\mu_{\;\nu} =
-\begin{pmatrix}
-a &amp; c \\
-b &amp; d
-\end{pmatrix}\]
+<p>What should we conclude from these puzzling facts? Here is my conclusion.</p>
 
 <blockquote>
-  <p>Note: Specification of matrix component is only relevant with the left-right order (rightmost index corresponds to column) and irrelevant with the up-down position.</p>
+  <p>Some animals have no form of consciousness at all. Some animals may have a limited form of consciousness, such as sentience. But no animal other than humans has self-consciousness, or apperception.</p>
 </blockquote>
 
-<p>Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\Lambda(-, \mathbf{a}) : V^* \to k$ and $\hom(V^*, k) \simeq V$, we have $\Lambda(-, \mathbf{a}) \in V$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}’ = (a’)^\mu e_\mu$. We then have:</p>
+<p>Suppose you prick an animal with a needle. It will show some kind of pain response. But this may be a purely behavioral stimulus-response phenomenon, no different from the motion of a robot. On the other hand, some animals may really feel the sensation of pain. Even so, it seems that <em>no</em> animal understands this situation as “<strong>I</strong> am in pain.” (The same seems to hold for newborns.) The mental world of animals is therefore a kind of communism. There, <strong>the notion of individual consciousness is nonexistent</strong>.</p>
 
-\[(a')^\mu = \Lambda(e^\mu, \mathbf{a}) = \sum_\nu \Lambda(e^\mu, e_\nu)a^\nu = \Lambda^\mu_{\;\nu}a^\nu.\]
+<p>This thought unsettles me. I love animals. I have a dog, I try to practice a rudimentary vegetarianism, and I think animal rights should be expanded. Behind these attitudes lies the belief that animals, too, have conscious experiences comparable to our own. But once this belief is seriously called into question, where should my attitude toward animals find new grounds? Or must the attitude itself be revised?</p>
 
-<h3 id="0-2-tensor">(0, 2)-tensor</h3>
+<p>Let me close with a concrete instance of this worry. If my tentative view that animals have sentience but no self-consciousness is correct, then it seems to follow that <strong>torturing animals is immoral, but killing them is not</strong>. For it seems that to have a right to life, one must at least be able to conceive of oneself as a continuing subject of experiences. [4] This is why we take plants to have life but no <em>right</em> to life, and it is also a ground for the ethical permissibility of abortion. So if animals lack self-consciousness, then <strong>animals may have a right not to suffer, but they have no right to life</strong>.</p>
 
-<p>Let $\eta$ be a (0, 2)-tensor, i.e. $\eta: V \times V \to k$.</p>
+<h3 id="references">References</h3>
 
-<p>If we fix a basis ${e_i}$ for $V$, we can write $\eta$ as a matrix form:</p>
+<p>[1] Pyers, J. E., &amp; Senghas, A. (2009). Language promotes false-belief understanding: Evidence from learners of a new sign language. <em>Psychological Science</em>, <em>20</em>(7), 805–812.</p>
 
-\[\eta_{\mu \nu} =\eta(e_\mu, e_\nu)\]
+<p>[2] Simcock, G., &amp; Hayne, H. (2002). Breaking the barrier? Children fail to translate their preverbal memories into language. <em>Psychological Science</em>, <em>13</em>(3), 225–231.</p>
 
-<p>For example, given:</p>
+<p>[3] Ingle, D. (1973). Two visual systems in the frog. <em>Science</em>, <em>181</em>(4104), 1053–1055.</p>
 
-\[\begin{gather}
-\eta(e_0, e_0) = a\\
-\eta(e_1, e_0) = b\\
-\eta(e_0, e_1) = c\\
-\eta(e_1, e_1) = d,
-\end{gather}\]
-
-<p>we have:</p>
-
-\[\eta_{\mu\nu} =
-\begin{pmatrix}
-a &amp; c \\
-b &amp; d
-\end{pmatrix}\]
-
-<p>Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\eta(-, \mathbf{a}) : V \to k$ and $\hom(V, k) \simeq V^*$, we have $\Lambda(-, \mathbf{a}) \in V^*$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}’ = (a’)_\mu e^\mu$. We then have:</p>
-
-\[(a')_\mu = \eta(e_\mu, \mathbf{a}) = \sum_\nu \eta(e_\mu, e_\nu)a^\nu = \eta_{\mu\nu}a^\nu.\]
-
-<p>Generalizing, for a $(2, 3)$-tensor $T^{\alpha \beta}_{\gamma \delta \epsilon} : V^* \times V^* \times V \times V \times V \to k$, if we product $T$ with 1 dual coordinate $a_\mu$ and 3 vector coordinates $b^\nu$, then we are left with a coordinate for $\hom(V^*, k) \simeq V$, which is a contravariant result. Indeed,</p>
-
-\[T^{\alpha \beta}_{\gamma \delta \epsilon} b_\beta c^\gamma d^\delta e^\epsilon = a^\alpha\]
-
-<p>Alternatively we can product $T$ with 2 dual coordinates and 2 vector coordinates to obtain a coordinate for $\hom(V, k) \simeq V^*$.</p>
-
-<h3 id="index-raisinglowering">Index raising/lowering</h3>
-
-<p>Let $M^\mu_{\;\nu}$ act on $V$. How does $M$ “act” on $V^*$?</p>
-
-<h4 id="1-phiv-conservation">1. $\phi(v)$ conservation</h4>
-<p>If we require that $\phi(v)$ be conserved, i.e.</p>
-
-\[(M^*\phi)(Mv) = \phi(v),\]
-
-<p>then $M$ should act <em>inversely</em> on $V^*$. That is,</p>
-
-\[\begin{gather}
-(M^*)_\mu^{\;\nu} a_\nu = a'_\mu \\\\
-\text{where} \quad M^* := (M^{-1})^T
-\end{gather}\]
-
-<h4 id="2-coordinate-change">2. Coordinate change</h4>
-<p>Alternatively, we can simply change $\phi$ to its corresponding vector $v_\phi$, transform $v_\phi$, and change it back to $V^*$. That is,</p>
-
-\[\begin{gather}
-(M')_\mu^{\;\nu}a_\nu := \eta_{\mu \sigma}( M^\sigma_{\;\tau} a^\tau) = \eta_{\mu\sigma} M^\sigma_{\;\tau}\eta^{\tau\nu}a_\nu \\\\
-\text{i.e.} \quad M' = \eta M \eta
-\end{gather}\]
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $\eta$ is invariant under $M$, i.e. $\eta(Mu, Mv) = \eta(u, v)$, the two conversions coincide.</p>
-</blockquote>
-
-<p>Hence, we work with 2, since it’s much easier to calculate. The point is that, <strong>insofar we deal with Lorentz invariant transformations, index raising/lowering and contraction of indices flow naturally.</strong></p>
-
-<p>Furthermore, since $\eta$ has nonzero indices only on the diagonal, we can use the following shortcut:</p>
-
-<blockquote>
-  <p>Multiply by -1 when raising/lowering time index.
-Leave everything else unchanged.</p>
-</blockquote>
-
-<p><strong>Example.</strong></p>
-
-\[\begin{gather}
-\Lambda^\mu_{\;\nu} =
-\begin{pmatrix}
-\gamma &amp; -\beta\gamma &amp; 0 &amp; 0\\
--\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix} \\\\
-\Lambda_{\mu\nu} =
-\begin{pmatrix}
--\gamma &amp; \beta\gamma &amp; 0 &amp; 0\\
--\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix} \\\\
-\Lambda^{\mu\nu} =
-\begin{pmatrix}
--\gamma &amp; -\beta\gamma &amp; 0 &amp; 0\\
-\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}\\\\
-\Lambda_{\mu}^{\;\nu} =
-\begin{pmatrix}
-\gamma &amp; \beta\gamma &amp; 0 &amp; 0\\
-\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\end{gather}\]
+<p>[4] Tooley, M. (1972). Abortion and infanticide. <em>Philosophy &amp; Public Affairs</em>, <em>2</em>(1), 37–65.</p>
 
 </div>
 

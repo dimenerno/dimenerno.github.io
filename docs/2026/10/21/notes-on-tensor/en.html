@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  
+  
+  <title data-title-ko="Notes on Tensor · 디멘의 블로그" data-title-en="Notes on Tensor · Jeongdam&#39;s Blog">Notes on Tensor · Jeongdam&#39;s Blog</title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2026/10/21/notes-on-tensor/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko"></p>
+    <p class="lang-en" style="display: none;"></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Jeongdam's Blog</a>
+            <small><div class="lang-ko"></div>
+              <div class="lang-en"></div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">EN</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle"/>
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">한</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Notes on Tensor</h1>
+  <span class="post-date">
+    21 Oct 2026
+    <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
+  </span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/physics/'" >Physics</div>
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+    </div>
+  
+  <blockquote>
+  <p><strong>Basic Theorems.</strong></p>
+
+  <ol>
+    <li>$(V \otimes W)^* \simeq V^* \otimes W^*$</li>
+    <li>$\hom(V\otimes W, Z) \simeq \hom(V, \hom(W, Z))$</li>
+    <li>$V^{**} \simeq V$</li>
+  </ol>
+
+  <p><strong>Corollary.</strong> $V^* \otimes W \simeq \hom (V, W)$</p>
+</blockquote>
+
+<h2 id="tensor">Tensor</h2>
+
+<blockquote>
+  <p><strong>TFAE.</strong></p>
+
+  <ol>
+    <li>$M$ is a type $(n, m)$ tensor</li>
+    <li>$M \in V^{\otimes n} \otimes (V^*)^{\otimes m}$</li>
+    <li>$M: (V^*)^n \times V^m \to k$</li>
+    <li>$M: V^{\otimes m} \to V^{\otimes n}$</li>
+  </ol>
+</blockquote>
+
+<h3 id="1-1-tensor">(1, 1)-tensor</h3>
+
+<p>Let $\Lambda$ be a (1, 1)-tensor, i.e. $\Lambda: V^* \times V \to k$.</p>
+
+<p>If we fix a basis ${e_i}$ for $V$, we can write $\Lambda$ as a matrix form:</p>
+
+\[\Lambda^\mu_{\;\nu} =\Lambda(e^\mu, e_\nu)\]
+
+<p>For example, given:</p>
+
+\[\begin{gather}
+\Lambda(e^0, e_0) = a\\
+\Lambda(e^1, e_0) = b\\
+\Lambda(e^0, e_1) = c\\
+\Lambda(e^1, e_1) = d,
+\end{gather}\]
+
+<p>we have:</p>
+
+\[\Lambda^\mu_{\;\nu} =
+\begin{pmatrix}
+a &amp; c \\
+b &amp; d
+\end{pmatrix}\]
+
+<blockquote>
+  <p>Note: Specification of matrix component is only relevant with the left-right order (rightmost index corresponds to column) and irrelevant with the up-down position.</p>
+</blockquote>
+
+<p>Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\Lambda(-, \mathbf{a}) : V^* \to k$ and $\hom(V^*, k) \simeq V$, we have $\Lambda(-, \mathbf{a}) \in V$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}’ = (a’)^\mu e_\mu$. We then have:</p>
+
+\[(a')^\mu = \Lambda(e^\mu, \mathbf{a}) = \sum_\nu \Lambda(e^\mu, e_\nu)a^\nu = \Lambda^\mu_{\;\nu}a^\nu.\]
+
+<h3 id="0-2-tensor">(0, 2)-tensor</h3>
+
+<p>Let $\eta$ be a (0, 2)-tensor, i.e. $\eta: V \times V \to k$.</p>
+
+<p>If we fix a basis ${e_i}$ for $V$, we can write $\eta$ as a matrix form:</p>
+
+\[\eta_{\mu \nu} =\eta(e_\mu, e_\nu)\]
+
+<p>For example, given:</p>
+
+\[\begin{gather}
+\eta(e_0, e_0) = a\\
+\eta(e_1, e_0) = b\\
+\eta(e_0, e_1) = c\\
+\eta(e_1, e_1) = d,
+\end{gather}\]
+
+<p>we have:</p>
+
+\[\eta_{\mu\nu} =
+\begin{pmatrix}
+a &amp; c \\
+b &amp; d
+\end{pmatrix}\]
+
+<p>Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\eta(-, \mathbf{a}) : V \to k$ and $\hom(V, k) \simeq V^*$, we have $\Lambda(-, \mathbf{a}) \in V^*$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}’ = (a’)_\mu e^\mu$. We then have:</p>
+
+\[(a')_\mu = \eta(e_\mu, \mathbf{a}) = \sum_\nu \eta(e_\mu, e_\nu)a^\nu = \eta_{\mu\nu}a^\nu.\]
+
+<p>Generalizing, for a $(2, 3)$-tensor $T^{\alpha \beta}_{\gamma \delta \epsilon} : V^* \times V^* \times V \times V \times V \to k$, if we product $T$ with 1 dual coordinate $a_\mu$ and 3 vector coordinates $b^\nu$, then we are left with a coordinate for $\hom(V^*, k) \simeq V$, which is a contravariant result. Indeed,</p>
+
+\[T^{\alpha \beta}_{\gamma \delta \epsilon} b_\beta c^\gamma d^\delta e^\epsilon = a^\alpha\]
+
+<p>Alternatively we can product $T$ with 2 dual coordinates and 2 vector coordinates to obtain a coordinate for $\hom(V, k) \simeq V^*$.</p>
+
+<h3 id="index-raisinglowering">Index raising/lowering</h3>
+
+<p>Let $M^\mu_{\;\nu}$ act on $V$. How does $M$ “act” on $V^*$?</p>
+
+<h4 id="1-phiv-conservation">1. $\phi(v)$ conservation</h4>
+<p>If we require that $\phi(v)$ be conserved, i.e.</p>
+
+\[(M^*\phi)(Mv) = \phi(v),\]
+
+<p>then $M$ should act <em>inversely</em> on $V^*$. That is,</p>
+
+\[\begin{gather}
+(M^*)_\mu^{\;\nu} a_\nu = a'_\mu \\\\
+\text{where} \quad M^* := (M^{-1})^T
+\end{gather}\]
+
+<h4 id="2-coordinate-change">2. Coordinate change</h4>
+<p>Alternatively, we can simply change $\phi$ to its corresponding vector $v_\phi$, transform $v_\phi$, and change it back to $V^*$. That is,</p>
+
+\[\begin{gather}
+(M')_\mu^{\;\nu}a_\nu := \eta_{\mu \sigma}( M^\sigma_{\;\tau} a^\tau) = \eta_{\mu\sigma} M^\sigma_{\;\tau}\eta^{\tau\nu}a_\nu \\\\
+\text{i.e.} \quad M' = \eta M \eta
+\end{gather}\]
+
+<blockquote>
+  <p><strong>Theorem.</strong> If $\eta$ is invariant under $M$, i.e. $\eta(Mu, Mv) = \eta(u, v)$, the two conversions coincide.</p>
+</blockquote>
+
+<p>Hence, we work with 2, since it’s much easier to calculate. The point is that, <strong>insofar we deal with Lorentz invariant transformations, index raising/lowering and contraction of indices flow naturally.</strong></p>
+
+<p>Furthermore, since $\eta$ has nonzero indices only on the diagonal, we can use the following shortcut:</p>
+
+<blockquote>
+  <p>Multiply by -1 when raising/lowering time index.
+Leave everything else unchanged.</p>
+</blockquote>
+
+<p><strong>Example.</strong></p>
+
+\[\begin{gather}
+\Lambda^\mu_{\;\nu} =
+\begin{pmatrix}
+\gamma &amp; -\beta\gamma &amp; 0 &amp; 0\\
+-\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix} \\\\
+\Lambda_{\mu\nu} =
+\begin{pmatrix}
+-\gamma &amp; \beta\gamma &amp; 0 &amp; 0\\
+-\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix} \\\\
+\Lambda^{\mu\nu} =
+\begin{pmatrix}
+-\gamma &amp; -\beta\gamma &amp; 0 &amp; 0\\
+\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}\\\\
+\Lambda_{\mu}^{\;\nu} =
+\begin{pmatrix}
+\gamma &amp; \beta\gamma &amp; 0 &amp; 0\\
+\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\end{gather}\]
+
+</div>
+
+
+
+<script>
+  // Wait for MathJax to finish typesetting so equations are in the PDF.
+  function exportPDF() {
+    var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
+    ready.then(function () { window.print(); });
+  }
+
+  // Opened from the main page's PDF link: export once everything has loaded.
+  if (new URLSearchParams(location.search).has("print")) {
+    window.addEventListener("load", function () {
+      history.replaceState(null, "", location.pathname);
+      exportPDF();
+    });
+  }
+</script>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

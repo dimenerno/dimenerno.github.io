@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Notes on Field Theory"
-date: 2026-10-18
+date: 2026-10-21
 tags: ["Physics", "Relativity"]
 lang: en
 related: 
