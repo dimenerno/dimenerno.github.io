@@ -4,13 +4,499 @@
  <title>디멘의 블로그</title>
  <link href="https://dimenerno.github.io/atom.xml" rel="self"/>
  <link href="https://dimenerno.github.io/"/>
- <updated>2026-10-25T14:42:51-07:00</updated>
+ <updated>2026-10-27T14:23:12-07:00</updated>
  <id>https://dimenerno.github.io</id>
  <author>
    <name>Jeongdam Choi</name>
    <email>dimen@stanford.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>로비어 정리: 칸토어, 러셀, 튜링, 타르스키, 괴델의 일반화</title>
+   <link href="https://dimenerno.github.io/2026/10/27/lawvere"/>
+   <updated>2026-10-27T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/27/lawvere</id>
+   <content type="html">&lt;p&gt;수리논리학을 공부한 독자라면 칸토어의 실수 비가산성 증명, 러셀의 집합론적 역설, 튜링의 정지 문제, 괴델의 불완전성 정리, 타르스키의 정의불가능성 정리가 서로 닮아 있다는 것을 한 번쯤 눈치챘을 것이다. 이들은 모두 어떤 대상을 그 자신에게 “먹이는” &lt;strong&gt;대각선 논법&lt;sub&gt;diagonal argument&lt;/sub&gt;&lt;/strong&gt;을 사용한다. 이 유사성은 범주론의 언어로 정확하게 정식화할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;로비어-정리&quot;&gt;로비어 정리&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; 범주 $\mathcal{C}$가 다음을 만족하면 $\mathcal{C}$를 &lt;strong&gt;데카르트 닫힌 범주&lt;sub&gt;Cartesian closed category&lt;/sub&gt;&lt;/strong&gt;라고 한다.&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;$\mathcal{C}$는 종대상&lt;sub&gt;terminal object&lt;/sub&gt; $1$을 가진다.&lt;/li&gt;
+    &lt;li&gt;$\mathcal{C}$는 유한 개의 대상들의 &lt;a href=&quot;https://dimenerno.github.io/2025/04/02/box-v-product&quot;&gt;곱&lt;/a&gt;을 언제나 가진다.&lt;/li&gt;
+    &lt;li&gt;모든 $B \in \mathcal{C}$에 대해, $(-) \times B : \mathcal{C} \to \mathcal{C}$는 오른쪽 수반&lt;sub&gt;right adjoint&lt;/sub&gt;을 가진다.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;$(-) \times B$의 오른쪽 수반을 &lt;strong&gt;지수&lt;sub&gt;exponential&lt;/sub&gt;&lt;/strong&gt;라 하고 $(-)^B$로 표기한다. 즉,&lt;/p&gt;
+
+\[\hom(A \times B, C) \cong \hom(A, C^B)\]
+
+&lt;p&gt;가 $A, B, C$에 대해 자연스럽게 성립한다. 말하자면 데카르트 닫힌 범주는 커링&lt;sub&gt;currying&lt;/sub&gt;의 일반화이다. 별도의 언급이 없는 한, $\mathcal{C}$는 데카르트 닫힌 범주라고 가정하자.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $A \in \mathcal{C}$의 &lt;strong&gt;대각사상&lt;sub&gt;diagonal map&lt;/sub&gt;&lt;/strong&gt; $\Delta_A$를 다음 도식이 유도하는 유일한 사상으로 정의한다.&lt;/p&gt;
+
+  &lt;figure class=&quot;tikz&quot;&gt;&lt;img src=&quot;/public/tikz/31b587d7583a29ed.svg&quot; alt=&quot;TikZ diagram&quot; /&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $X \in \mathcal{C}$의 &lt;strong&gt;점&lt;sub&gt;point&lt;/sub&gt;&lt;/strong&gt;은 사상 $1 \to X$이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;점은 집합의 원소를 범주론적으로 일반화한 개념이다. 예를 들어 $\mathbf{Set}$에서 $\Delta_A: A \to A \times A$는 사상 $a \mapsto (a, a)$이다.&lt;/p&gt;
+
+&lt;p&gt;이를 이용해 전사성의 개념을 일반화할 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $f: X \to Y$가 &lt;strong&gt;점 전사적&lt;sub&gt;point surjective&lt;/sub&gt;&lt;/strong&gt;이라는 것은, $Y$의 모든 점 $y$에 대해 $f\circ x = y$를 만족하는 $X$의 점 $x$가 존재한다는 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;앞으로 $f \circ x = y$를 $f(x) = y$로도 쓰도록 한다.&lt;/p&gt;
+
+&lt;p&gt;다음 정리는 대각선 논법의 범주론적 일반화이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;로비어 정리.&lt;/strong&gt; $\mathcal{C}$가 데카르트 닫힌 범주라고 하자. $f: A \to B^A$가 점 전사적이면, 모든 $g: B \to B$에 대해 $g(b) = b$를 만족하는 $B$의 점 $b$가 존재한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $\bar{f} : A \times A \to B$를 $f$의 수반이라 하고, $\phi: A \to B$를 $g \circ \bar{f} \circ \Delta_A$로 정의하자.&lt;/p&gt;
+
+\[\hom(A, B) \cong \hom(1 \times A, B) \cong \hom(1, B^A)\]
+
+&lt;p&gt;이므로, $\bar{\phi} : 1 \to B^A$를 $\phi$의 수반이라 하자. $f$의 점 전사성에 의해 $f(a) = \bar{\phi}$를 만족하는 점 $a: 1 \to A$가 존재한다. 수반의 자연성에 의해 다음 도식이 가환한다.&lt;/p&gt;
+
+\[\begin{CD}
+\hom(1\times A,\, B) @&amp;gt;{\overline{(-)}}&amp;gt;{\cong}&amp;gt; \hom(1,\, B^A) \\
+@A{(-)\circ(a\,\times\,\mathrm{id}_A)}AA @AA{(-)\circ a}A \\
+\hom(A\times A,\, B) @&amp;gt;{\cong}&amp;gt;{\overline{(-)}}&amp;gt; \hom(A,\, B^A)
+\end{CD}\]
+
+&lt;p&gt;$\bar f$를 위 사각형을 따라 옮기고, $1 \times A$를 $A$와 동일시하면 (이때 $a \times \mathrm{id}_A$는 $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle : A \to A \times A$가 된다) 다음을 얻는다.&lt;/p&gt;
+
+\[\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle = \phi\]
+
+&lt;p&gt;그런데 $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a = \langle a, a \rangle = \Delta_A \circ a$이므로,&lt;/p&gt;
+
+\[\begin{align}
+\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a &amp;amp;= \bar{f} \circ \Delta_A \circ a \\
+&amp;amp;= \phi \circ a
+\end{align}\]
+
+&lt;p&gt;이다. $b := \bar f \circ \Delta_A \circ a$라 하면 다음 도식이 가환한다.&lt;/p&gt;
+
+&lt;figure class=&quot;tikz&quot;&gt;&lt;img src=&quot;/public/tikz/b286f9825c6155be.svg&quot; alt=&quot;TikZ diagram&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;특히 $g(b) = g \circ \bar f \circ \Delta_A \circ a = \phi(a) = \bar f \circ \Delta_A \circ a = b$이다. ■&lt;/p&gt;
+
+&lt;h2 id=&quot;칸토어와-러셀&quot;&gt;칸토어와 러셀&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;따름정리 (칸토어).&lt;/strong&gt; $\mathbf{Set}$에서 (점) 전사인 사상 $f: A \to 2^A$는 존재하지 않는다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 그렇지 않다고 가정하자. 그러면 로비어의 정리에 의해 모든 사상 $2 \to 2$가 고정점을 가진다. 그러나 $0 \mapsto 1, 1 \mapsto 0$은 고정점을 갖지 않는다. ■&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;따름정리 (러셀).&lt;/strong&gt; 소박한 내포 공리&lt;sub&gt;axiom of naive comprehension&lt;/sub&gt;는 모순이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 소박한 내포 공리를 가정하고, 이 공리가 만들어내는 집합들이 $\mathbf{Set}$에서처럼 데카르트 닫힌 범주를 이룬다고 하자. 그러면 $\phi(x): x = x$는 모든 집합의 집합 $S$를 정의하며, $2^S$는 $S$ 위의 모든 명제들의 집합이다. 다음 사상을 생각하자.&lt;/p&gt;
+
+\[f : S \to 2^S, \qquad x \mapsto (y \mapsto [y \in x]).\]
+
+&lt;p&gt;소박한 내포 공리에 의해 모든 $P \in 2^S$는 집합 ${y : P(y)}$를 결정하므로, $f$는 (점) 전사적이다. 이는 $0 \mapsto 1, 1 \mapsto 0$에 대해 로비어의 정리와 모순이다. (증명을 풀어 보면, 점 $a$는 바로 집합 ${x : x \notin x}$이다.) ■&lt;/p&gt;
+
+&lt;h2 id=&quot;약한-점-전사성&quot;&gt;약한 점 전사성&lt;/h2&gt;
+
+&lt;p&gt;$\mathcal{C}_{\mathsf{PA}}$를 다음과 같은 결정가능 집합의 범주라 하자.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;대상: PA에서 증명가능한 동치 관계로 나눈 $\mathbb{N}$의 결정가능 부분집합.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사상: PA가 전역적&lt;sub&gt;total&lt;/sub&gt;임을 증명하는 함수 (PA에서 증명가능한 동치 관계로 나눈 것).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그러면 $1 = {0}$은 종대상이고,&lt;/p&gt;
+
+\[\begin{gather}
+A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
+\pi_1 : \langle a, b \rangle \mapsto a, \quad \pi_2 : \langle a, b \rangle \mapsto b
+\end{gather}\]
+
+&lt;p&gt;는 곱이다. 여기서 $\langle \cdot, \cdot \rangle$은 순서쌍의 코드이다.&lt;/p&gt;
+
+&lt;p&gt;다음 보조정리를 증명하자.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;보조정리.&lt;/strong&gt; $\mathsf{PA}$가 무모순이면, $\mathcal{C}_\mathsf{PA}$는 데카르트 닫힌 범주가 &lt;em&gt;아니다&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;보조정리의 증명.&lt;/strong&gt; 그렇지 않다고 가정하자. 그러면 $2^\mathbb{N}$의 점은 전역성이 증명가능한 함수 $\mathbb{N} \to 2$의 수반이다. 특히 $2^\mathbb{N}$은 상수함수 $0$의 수반인 점 $e_0$를 가진다. $2^\mathbb{N}$은 $\mathcal{C}_\mathsf{PA}$의 대상이므로 결정가능 부분집합 $E \subseteq \mathbb{N}$이고, 포함사상 $i : E \to \mathbb{N}$을 가진다.&lt;/p&gt;
+
+&lt;p&gt;$\Theta: \mathbb{N} \to 2^\mathbb{N}$를 다음과 같이 정의하자.&lt;/p&gt;
+
+\[\Theta(n) = \begin{cases}
+n &amp;amp;n \in E \\
+e_0 &amp;amp;\text{그 외}
+\end{cases}\]
+
+&lt;p&gt;그러면 $\Theta$는 사상이고 ($E$가 결정가능하므로 전역성이 증명가능하다), $\Theta \circ i = \mathrm{id}_E$이다. 따라서 $2^\mathbb{N}$의 모든 점 $p$에 대해 $\Theta(i \circ p) = p$이므로, $\Theta$는 점 전사적이다. 그러므로 로비어의 정리에 의해 모든 사상 $h: 2 \to 2$는 고정점을 가진다. 그런데 그렇다면 $0 \mapsto 1, 1 \mapsto 0$ 역시 고정점을 가지게 되고, 이로부터 $\mathsf{PA} \vdash 0 = 1$이 따라 나온다. □&lt;/p&gt;
+
+&lt;p&gt;따라서 위에서 진술한 형태의 로비어의 정리는, 계산과 산술이 사는 범주에서는 써먹을 수가 없다. 다행히도 로비어의 정리의 증명은 지수를 실제로 사용하지 않는다. 지수는 “모든 $g$가 코드를 가진다”는 사실을 하나의 사상 $f : A \to B^A$로 포장해줄 뿐이다. 지수를 걷어내면 다음을 얻는다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;정의.&lt;/strong&gt; $\mathcal{C}$가 유한곱을 가진다고 하자. 사상 $\phi : A \times A \to B$가 &lt;strong&gt;약하게 점 전사적&lt;sub&gt;weakly point surjective&lt;/sub&gt;&lt;/strong&gt;이라는 것은, 모든 $h : A \to B$에 대해 $A$의 모든 점 $x$에서 $\phi(\langle a, x \rangle) = h(x)$를 만족하는 $A$의 점 $a$가 존재한다는 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;로비어 정리 (유한곱).&lt;/strong&gt; $\mathcal{C}$가 유한곱을 가지는 범주라고 하자. $\phi : A \times A \to B$가 약하게 점 전사적이면, 모든 $g : B \to B$에 대해 $g(b) = b$를 만족하는 $B$의 점 $b$가 존재한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $h := g \circ \phi \circ \Delta_A$라 하자. 정의에서처럼 $a$를 고르고, $b := \phi \circ \langle a, a \rangle$라 하면&lt;/p&gt;
+
+\[b = \phi(\langle a, a \rangle) = h(a) = g \circ \phi \circ \Delta_A \circ a = g(b). \quad ■\]
+
+&lt;p&gt;원 로비어 정리는 $\phi = \bar f$인 특수한 경우이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;튜링-타르스키-괴델&quot;&gt;튜링, 타르스키, 괴델&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;따름정리 (튜링).&lt;/strong&gt; 정지 문제는 결정불가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; $\mathbf{Rec}$을 대상이 $\mathbb{N}$의 결정가능 부분집합이고, 사상이 전역 계산가능 함수인 범주라 하자. (이때 전역성이 &lt;em&gt;증명가능할&lt;/em&gt; 필요는 없다.) 결정가능 부분집합과 그에 대응하는 결정 프로그램은 동일시하겠다. $\mathcal{C}_\mathsf{PA}$에서와 마찬가지로 $\mathbf{Rec}$은 순서쌍 코드를 통해 유한곱을 가지며, $1 = {0}$, $2 = {0, 1}$이다.&lt;/p&gt;
+
+&lt;p&gt;정지 문제가 결정가능하다고 가정하자. 즉, 프로그램 $e$가 입력 $n$에서 정지하면 $h(e, n) = 1$, 그렇지 않으면 $h(e, n) = 0$인 사상 $h : \mathbb{N} \times \mathbb{N} \to 2$가 존재한다고 하자. 사상 $f: \mathbb{N} \to 2$에 대해, $e_f$를 다음 프로그램이라 하자.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;on input n:
+  if f(n) = 1: return
+  else: infinite loop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;그러면 모든 $n$에 대해 $h(e_f, n) = f(n)$이므로 $h$는 약하게 점 전사적이다. 로비어의 정리에 의해 $0 \mapsto 1, 1 \mapsto 0$이 고정점을 가지게 되어 모순이다. ■&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;따름정리 (타르스키).&lt;/strong&gt; 모든 문장 $\sigma$에 대해&lt;/p&gt;
+
+\[\mathbb{N} \models \mathrm{True}(\ulcorner \sigma \urcorner) \iff \mathbb{N} \models \sigma\]
+
+  &lt;p&gt;를 만족하는 논리식 $\mathrm{True}(x)$는 존재하지 않는다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 자유변수가 하나인 논리식들의 괴델 번호 매김&lt;sub&gt;Gödel numbering&lt;/sub&gt; $\psi_0, \psi_1, \dots$을 고정하자. $\mathbf{Def}$를 대상이 $\mathbb{N}^k \; (k = 0, 1, 2, …)$와 $2$이고, 사상이 표준 산술에서 정의가능한 함수인 범주라 하자.&lt;/p&gt;
+
+&lt;p&gt;$\mathrm{True}$가 존재한다고 가정하자. 대입 함수 $\mathrm{sub}(m, n) = \ulcorner \psi_m(\bar n) \urcorner$는 계산가능하므로 정의가능하다. 따라서&lt;/p&gt;
+
+\[\phi(m, n) := [\mathbb{N} \models \psi_m(\bar n)] = \chi_{\mathrm{True}}(\mathrm{sub}(m, n))\]
+
+&lt;p&gt;는 $\mathbf{Def}$의 사상이다. 이 사상은 약하게 점 전사적이다. $g : \mathbb{N} \to 2$가 논리식 $\gamma(x, y)$로 정의된다면, $\psi(x) := \gamma(x, 1)$은 $\phi(\ulcorner \psi \urcorner, n) = g(n)$을 만족하기 때문이다. 그런데 $0 \mapsto 1, 1 \mapsto 0$은 정의가능하며 고정점을 갖지 않으므로, 이는 로비어의 정리와 모순이다. ■&lt;/p&gt;
+
+&lt;p&gt;괴델의 정리를 위해, 로빈슨 산술&lt;sub&gt;Robinson arithmetic&lt;/sub&gt; $\mathsf{Q}$에 관한 다음 사실을 떠올리자.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;모든 결정가능 집합 $D \subseteq \mathbb{N}$에 대해, $n \in D \Rightarrow \mathsf{Q} \vdash \psi_D(\bar n)$이고 $n \notin D \Rightarrow \mathsf{Q} \vdash \neg\psi_D(\bar n)$을 만족하는 논리식 $\psi_D(x)$가 존재한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;따름정리 (괴델).&lt;/strong&gt; $\mathsf{Q}$를 포함하는 무모순이고 재귀적으로 열거가능한 산술의 공리화 $T$에 대해, $T$에서 증명불가능한 산술적 참이 존재한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 다음 보조정리를 증명하자.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;보조정리.&lt;/strong&gt; $T$가 $\mathsf{Q}$의 무모순인 확장이면, $T$의 정리들의 집합은 결정불가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;증명.&lt;/strong&gt; 결정가능하다고 가정하고 $\mathbf{Rec}$에서 논의하자. 다음과 같이 정의한다.&lt;/p&gt;
+
+\[\phi(m, n) = \begin{cases}
+1 &amp;amp; T \vdash \psi_m(\bar n) \\
+0 &amp;amp; \text{그 외}
+\end{cases}\]
+
+&lt;p&gt;$\mathrm{sub}$가 계산가능하고 $T$가 결정가능하므로 $\phi$는 계산가능하다. 또한 $\phi$는 약하게 점 전사적이다. 계산가능한 $g : \mathbb{N} \to 2$가 주어졌을 때 $D = g^{-1}(1)$이라 하면 다음이 성립하기 때문이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$g(n) = 1$이면 $T \vdash \psi_D(\bar n)$이므로 $\phi(\ulcorner \psi_D \urcorner, n) = 1$이다.&lt;/li&gt;
+  &lt;li&gt;$g(n) = 0$이면 $T \vdash \neg\psi_D(\bar n)$이므로, 무모순성에 의해 $T \nvdash \psi_D(\bar n)$이고 $\phi(\ulcorner \psi_D \urcorner, n) = 0$이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;로비어의 정리에 의해 $0 \mapsto 1, 1 \mapsto 0$이 고정점을 가지게 되어 모순이다. □&lt;/p&gt;
+
+&lt;p&gt;이제 $T$가 완전하다고 가정하자. 그러면 다음 절차는 전역적이고, 따라서 $T$는 결정가능해진다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for n in ℕ:
+  if n is a proof of φ:
+    return True
+  if n is a proof of ¬φ:
+    return False
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이는 위의 보조정리와 모순이다. ■&lt;/p&gt;
+
+&lt;p&gt;몇 가지 덧붙이자면:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;이 논증은 $\omega$-무모순성이 아니라 무모순성만을 사용하므로, 괴델–로서&lt;sub&gt;Gödel–Rosser&lt;/sub&gt; 정리와 같은 강도를 가진다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;증명을 풀어 보면, 점 $a$는 $n \mapsto [T \nvdash \psi_n(\bar n)]$을 표현하는 논리식의 코드이다. 따라서 $\psi_a(\bar a)$는 괴델 문장, 즉 “나는 증명가능하지 않다”라고 말하는 문장이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Lawvere's Theorem: Generalizing Cantor, Russell, Turing, Tarski, and Gödel</title>
+   <link href="https://dimenerno.github.io/2026/10/27/lawvere/en"/>
+   <updated>2026-10-27T00:00:00-07:00</updated>
+   <id>https://dimenerno.github.io/2026/10/27/lawvere/lawvere-en</id>
+   <content type="html">&lt;p&gt;Students of mathematical logic would have at some point noticed that Cantor’s proof of the uncountability of the reals, Russell’s set-theoretic paradox, Turing’s halting problem, Gödel’s incompleteness theorem, and Tarski’s undefinability theorem all share a similarity. They all employ a &lt;strong&gt;diagonal argument&lt;/strong&gt;, whereby one “feeds” an argument to itself. This similarity can be formulated precisely in the language of category theory.&lt;/p&gt;
+
+&lt;h2 id=&quot;lawveres-theorem&quot;&gt;Lawvere’s Theorem&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A category $\mathcal{C}$ is &lt;strong&gt;Cartesian closed&lt;/strong&gt; if it satisfies the following.&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;$\mathcal{C}$ has a terminal object $1$.&lt;/li&gt;
+    &lt;li&gt;$\mathcal{C}$ admits arbitrary &lt;a href=&quot;https://dimenerno.github.io/2025/04/02/box-v-product&quot;&gt;products&lt;/a&gt; of finitely many objects.&lt;/li&gt;
+    &lt;li&gt;For every $B \in \mathcal{C}$, $(-) \times B : \mathcal{C} \to \mathcal{C}$ has a right adjoint.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We call the right adjoint of $(-) \times B$ the &lt;strong&gt;exponential&lt;/strong&gt; and denote $(-)^B$. Thus,&lt;/p&gt;
+
+\[\hom(A \times B, C) \cong \hom(A, C^B)\]
+
+&lt;p&gt;naturally in $A, B, C$. Thus Cartesian closed category is a generalization of currying. Until further notice, we assume that $\mathcal{C}$ is Cartesian closed.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; The &lt;strong&gt;diagonalization&lt;/strong&gt; $\Delta_A$ of $A \in \mathcal{C}$ is the unique map induced by the following diagram:&lt;/p&gt;
+
+  &lt;figure class=&quot;tikz&quot;&gt;&lt;img src=&quot;/public/tikz/31b587d7583a29ed.svg&quot; alt=&quot;TikZ diagram&quot; /&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; A &lt;strong&gt;point&lt;/strong&gt; of $X \in \mathcal{C}$ is a morphism $1 \to X$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Note that a point is a category-theoretic generalization of an element of a set. For example, in $\mathbf{Set}$, $\Delta_A: A \to A \times A$ is the map $a \mapsto (a, a)$.&lt;/p&gt;
+
+&lt;p&gt;We can thus generalize the notion of surjectivity.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; $f: X \to Y$ is &lt;strong&gt;point surjective&lt;/strong&gt; if for every point $y \in Y$, there exists a point $x \in X$ such that $f\circ x = y$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I will also write $f(x) = y$ in place of $f \circ x = y$.&lt;/p&gt;
+
+&lt;p&gt;The following gives a category-theoretic generalization of the diagonal argument.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Lawvere’s Theorem.&lt;/strong&gt; Let $\mathcal{C}$ be a Cartesian closed category. If $f: A \to B^A$ is point surjective, for every $g: B \to B$, there exists a point $b$ of $B$ such that $g(b) = b$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Let $\bar{f} : A \times A \to B$ be the adjoint of $f$. Define $\phi: A \to B$ as $g \circ \bar{f} \circ \Delta_A$.&lt;/p&gt;
+
+&lt;p&gt;Since&lt;/p&gt;
+
+\[\hom(A, B) \cong \hom(1 \times A, B) \cong \hom(1, B^A),\]
+
+&lt;p&gt;let $\bar{\phi} : 1 \to B^A$ be the adjoint of $\phi$. By point surjectivity of $f$, there exists a point $a: 1 \to A$ such that $f(a) = \bar{\phi}$. By naturality of the adjunction, we have the following commutative diagram.&lt;/p&gt;
+
+\[\begin{CD}
+\hom(1\times A,\, B) @&amp;gt;{\overline{(-)}}&amp;gt;{\cong}&amp;gt; \hom(1,\, B^A) \\
+@A{(-)\circ(a\,\times\,\mathrm{id}_A)}AA @AA{(-)\circ a}A \\
+\hom(A\times A,\, B) @&amp;gt;{\cong}&amp;gt;{\overline{(-)}}&amp;gt; \hom(A,\, B^A)
+\end{CD}\]
+
+&lt;p&gt;Chasing $\bar f$ around the square, and identifying $1 \times A$ with $A$ (under which $a \times \mathrm{id}_A$ becomes $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle : A \to A \times A$), we obtain&lt;/p&gt;
+
+\[\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle = \phi\]
+
+&lt;p&gt;Hence, since $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a = \langle a, a \rangle = \Delta_A \circ a$,&lt;/p&gt;
+
+\[\begin{align}
+\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a &amp;amp;= \bar{f} \circ \Delta_A \circ a \\
+&amp;amp;= \phi \circ a
+\end{align}\]
+
+&lt;p&gt;Let $b := \bar f \circ \Delta_A \circ a$. The following diagram then commutes.&lt;/p&gt;
+
+&lt;figure class=&quot;tikz&quot;&gt;&lt;img src=&quot;/public/tikz/b286f9825c6155be.svg&quot; alt=&quot;TikZ diagram&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;In particular, $g(b) = g \circ \bar f \circ \Delta_A \circ a = \phi(a) = \bar f \circ \Delta_A \circ a = b$. ■&lt;/p&gt;
+
+&lt;h2 id=&quot;cantor-and-russell&quot;&gt;Cantor and Russell&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollary (Cantor).&lt;/strong&gt; In $\mathbf{Set}$, there is no (point) surjective map $f: A \to 2^A$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Assume otherwise. Then by Lawvere’s theorem, every map $2 \to 2$ has a fixed point. However, $0 \mapsto 1, 1 \mapsto 0$ does not have a fixed point. ■&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollary (Russell).&lt;/strong&gt; The axiom of naive comprehension is inconsistent.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Assume naive comprehension, and suppose the sets it produces form a Cartesian closed category as in $\mathbf{Set}$. Then $\phi(x): x = x$ defines the set of all sets $S$, and $2^S$ is the set of all propositions over $S$. Consider&lt;/p&gt;
+
+\[f : S \to 2^S, \qquad x \mapsto (y \mapsto [y \in x]).\]
+
+&lt;p&gt;By naive comprehension, every $P \in 2^S$ determines a set ${y : P(y)}$, so $f$ is (point) surjective. This contradicts Lawvere’s theorem, with $0 \mapsto 1, 1 \mapsto 0$. (Unwinding the proof, the point $a$ is the set ${x : x \notin x}$.) ■&lt;/p&gt;
+
+&lt;h2 id=&quot;weak-point-surjectivity&quot;&gt;Weak point-surjectivity&lt;/h2&gt;
+
+&lt;p&gt;Let $\mathcal{C}_{\mathsf{PA}}$ be the category of decidable sets, i.e.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Objects: Decidable subsets of $\mathbb{N}$ modulo PA-provable equivalence.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Morphisms: Functions that PA proves to be total (modulo PA-provable equality).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then $1 = {0}$ is the terminal object, and&lt;/p&gt;
+
+\[\begin{gather}
+A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
+\pi_1 : \langle a, b \rangle \mapsto a, \quad \pi_2 : \langle a, b \rangle \mapsto b
+\end{gather}\]
+
+&lt;p&gt;is the product, where $\langle \cdot, \cdot \rangle$ is the code for a pair.&lt;/p&gt;
+
+&lt;p&gt;We prove the following lemma:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Lemma.&lt;/strong&gt; Assuming $\mathsf{PA}$ is consistent, $\mathcal{C}_\mathsf{PA}$ is &lt;em&gt;not&lt;/em&gt; Cartesian closed.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof of the lemma.&lt;/em&gt; Assume otherwise. Then a point of $2^\mathbb{N}$ is adjoint to a provably total function $\mathbb{N} \to 2$. In particular, $2^\mathbb{N}$ has a point $e_0$, adjoint to the constant function $0$. Since $2^\mathbb{N}$ is an object of $\mathcal{C}_\mathsf{PA}$, it is a decidable subset $E \subseteq \mathbb{N}$, with inclusion $i : E \to \mathbb{N}$.&lt;/p&gt;
+
+&lt;p&gt;Define $\Theta: \mathbb{N} \to 2^\mathbb{N}$ such that&lt;/p&gt;
+
+\[\Theta(n) = \begin{cases}
+n &amp;amp;n \in E \\
+e_0 &amp;amp;\text{otherwise}
+\end{cases}\]
+
+&lt;p&gt;Then $\Theta$ is a morphism (i.e. provably total, since $E$ is decidable), and $\Theta \circ i = \mathrm{id}_E$. Hence for every point $p$ of $2^\mathbb{N}$, $\Theta(i \circ p) = p$, so $\Theta$ is point surjective. Hence, by Lawvere’s theorem, any morphism $h: 2 \to 2$ has a fixed point. But then $0 \mapsto 1, 1 \mapsto 0$ also has a fixed point, which implies $\mathsf{PA} \vdash 0 = 1$. □&lt;/p&gt;
+
+&lt;p&gt;So Lawvere’s theorem, as stated, cannot be applied inside the categories where computation and arithmetic live. Fortunately, the proof never used exponentials: they only package “every $g$ has a code” into a single morphism $f : A \to B^A$. Dropping them, we get the following.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Definition.&lt;/strong&gt; Let $\mathcal{C}$ have finite products. A morphism $\phi : A \times A \to B$ is &lt;strong&gt;weakly point surjective&lt;/strong&gt; if for every $h : A \to B$ there is a point $a$ of $A$ such that $\phi(\langle a, x \rangle) = h(x)$ for every point $x$ of $A$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Lawvere’s Theorem (finite products).&lt;/strong&gt; Let $\mathcal{C}$ be a category with finite products. If $\phi : A \times A \to B$ is weakly point surjective, then for every $g : B \to B$, there exists a point $b$ of $B$ such that $g(b) = b$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Let $h := g \circ \phi \circ \Delta_A$. Choose $a$ as in the definition, and let $b := \phi \circ \langle a, a \rangle$. Then&lt;/p&gt;
+
+\[b = \phi(\langle a, a \rangle) = h(a) = g \circ \phi \circ \Delta_A \circ a = g(b). \quad ■\]
+
+&lt;p&gt;The Cartesian closed version is the special case $\phi = \bar f$.&lt;/p&gt;
+
+&lt;h2 id=&quot;turing-tarski-and-gödel&quot;&gt;Turing, Tarski, and Gödel&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollary (Turing).&lt;/strong&gt; The halting problem is undecidable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Let $\mathbf{Rec}$ be the category whose objects are decidable subsets of $\mathbb{N}$ and whose morphisms are total computable functions (not necessarily &lt;em&gt;provably&lt;/em&gt; total). We will equivocate decidable subsets with its corresponding decision program. As with $\mathcal{C}_\mathsf{PA}$, it has finite products via the pairing code, with $1 = {0}$ and $2 = {0, 1}$.&lt;/p&gt;
+
+&lt;p&gt;Assume that the halting problem is decidable, i.e. there exists a morphism $h : \mathbb{N} \times \mathbb{N} \to 2$ such that $h(e, n) = 1$ if program $e$ halts on input $n$, and $h(e, n) = 0$ otherwise. For a morphism $f: \mathbb{N} \to 2$, let $e_g$ be the program&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;on input n:
+  if f(n) = 1: return
+  else: infinite loop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then $h(e_g, n) = f(n)$ for every $n$, so $h$ is weakly point surjective. By Lawvere’s theorem, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, a contradiction. ■&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollary (Tarski).&lt;/strong&gt; There is no formula $\mathrm{True}(x)$ such that&lt;/p&gt;
+
+\[\mathbb{N} \models \mathrm{True}(\ulcorner \sigma \urcorner) \iff \mathbb{N} \models \sigma\]
+
+  &lt;p&gt;for every sentence $\sigma$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Fix a Gödel numbering $\psi_0, \psi_1, \dots$ of the formulas with one free variable. Let $\mathbf{Def}$ be the category whose objects are $\mathbb{N}^k \; (k = 0, 1, 2, …)$ and $2$, and whose morphisms are functions definable in the standard arithmetic.&lt;/p&gt;
+
+&lt;p&gt;Suppose $\mathrm{True}$ exists. The substitution function $\mathrm{sub}(m, n) = \ulcorner \psi_m(\bar n) \urcorner$ is computable, hence definable. So&lt;/p&gt;
+
+\[\phi(m, n) := [\mathbb{N} \models \psi_m(\bar n)] = \chi_{\mathrm{True}}(\mathrm{sub}(m, n))\]
+
+&lt;p&gt;is a morphism of $\mathbf{Def}$. It is weakly point surjective: if $g : \mathbb{N} \to 2$ is defined by a formula $\gamma(x, y)$, then $\psi(x) := \gamma(x, 1)$ satisfies $\phi(\ulcorner \psi \urcorner, n) = g(n)$. But $0 \mapsto 1, 1 \mapsto 0$ is definable and has no fixed point, contradicting Lawvere’s theorem. ■&lt;/p&gt;
+
+&lt;p&gt;For Gödel, recall the following fact about Robinson arithmetic $\mathsf{Q}$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;For every decidable $D \subseteq \mathbb{N}$, there is a formula $\psi_D(x)$ such that $n \in D \Rightarrow \mathsf{Q} \vdash \psi_D(\bar n)$ and $n \notin D \Rightarrow \mathsf{Q} \vdash \neg\psi_D(\bar n)$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Corollary (Gödel).&lt;/strong&gt; For every consistent, recursively enumerable axiomatization $T \supseteq \mathsf{Q}$ of arithmetic, there exists an arithmetical truth unprovable in $T$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; We prove the following lemma:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Lemma.&lt;/strong&gt; If $T$ is a consistent extension of $\mathsf{Q}$, then the set of theorems of $T$ is undecidable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;Proof.&lt;/em&gt; Suppose it is decidable, and work in $\mathbf{Rec}$. Define&lt;/p&gt;
+
+\[\phi(m, n) = \begin{cases}
+1 &amp;amp; T \vdash \psi_m(\bar n) \\
+0 &amp;amp; \text{otherwise}
+\end{cases}\]
+
+&lt;p&gt;This is computable, since $\mathrm{sub}$ is computable and $T$ is decidable. It is also weakly point surjective; given a computable $g : \mathbb{N} \to 2$, let $D = g^{-1}(1)$. We then have:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If $g(n) = 1$, then $T \vdash \psi_D(\bar n)$, so $\phi(\ulcorner \psi_D \urcorner, n) = 1$.&lt;/li&gt;
+  &lt;li&gt;If $g(n) = 0$, then $T \vdash \neg\psi_D(\bar n)$, so by consistency $T \nvdash \psi_D(\bar n)$, and $\phi(\ulcorner \psi_D \urcorner, n) = 0$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By Lawvere’s theorem, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, a contradiction. □&lt;/p&gt;
+
+&lt;p&gt;Now suppose that $T$ is complete. Then the following procedure is total, with which $T$ becomes decidable.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for n in ℕ:
+  if n is a proof of φ:
+    return True
+  if n is a proof of ¬φ:
+    return False
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This contradicts the lemma above. ■&lt;/p&gt;
+
+&lt;p&gt;A few remarks:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The argument uses only consistency, not $\omega$-consistency, so it has the strength of the Gödel–Rosser theorem.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unwinding the proof, the point $a$ codes a formula representing $n \mapsto [T \nvdash \psi_n(\bar n)]$, so $\psi_a(\bar a)$ is the Gödel sentence; i.e. the sentence “I am not provable.”&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
  
  <entry>
    <title>언어 능력이 없는 동물의 의식에 대한 회의</title>

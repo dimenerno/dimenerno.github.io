@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  
+  
+  <title data-title-ko="Lawvere&#39;s Theorem: Generalizing Cantor, Russell, Turing, Tarski, and Gödel · 디멘의 블로그" data-title-en="Lawvere&#39;s Theorem: Generalizing Cantor, Russell, Turing, Tarski, and Gödel · Jeongdam&#39;s Blog">Lawvere&#39;s Theorem: Generalizing Cantor, Russell, Turing, Tarski, and Gödel · Jeongdam&#39;s Blog</title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2026/10/27/lawvere/en" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko"></p>
+    <p class="lang-en" style="display: none;"></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Jeongdam's Blog</a>
+            <small><div class="lang-ko"></div>
+              <div class="lang-en"></div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">EN</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle"/>
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">한</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">Lawvere's Theorem: Generalizing Cantor, Russell, Turing, Tarski, and Gödel</h1>
+  <span class="post-date">
+    27 Oct 2026
+    <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
+  </span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/mathematics/'" >Mathematics</div>
+      
+      <div class="tag" onclick="location.href='/tags/category-theory/'" >Category Theory</div>
+      
+      <div class="tag" onclick="location.href='/tags/logic/'" >Logic</div>
+      
+    </div>
+  
+  <p>Students of mathematical logic would have at some point noticed that Cantor’s proof of the uncountability of the reals, Russell’s set-theoretic paradox, Turing’s halting problem, Gödel’s incompleteness theorem, and Tarski’s undefinability theorem all share a similarity. They all employ a <strong>diagonal argument</strong>, whereby one “feeds” an argument to itself. This similarity can be formulated precisely in the language of category theory.</p>
+
+<h2 id="lawveres-theorem">Lawvere’s Theorem</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> A category $\mathcal{C}$ is <strong>Cartesian closed</strong> if it satisfies the following.</p>
+
+  <ol>
+    <li>$\mathcal{C}$ has a terminal object $1$.</li>
+    <li>$\mathcal{C}$ admits arbitrary <a href="https://dimenerno.github.io/2025/04/02/box-v-product">products</a> of finitely many objects.</li>
+    <li>For every $B \in \mathcal{C}$, $(-) \times B : \mathcal{C} \to \mathcal{C}$ has a right adjoint.</li>
+  </ol>
+</blockquote>
+
+<p>We call the right adjoint of $(-) \times B$ the <strong>exponential</strong> and denote $(-)^B$. Thus,</p>
+
+\[\hom(A \times B, C) \cong \hom(A, C^B)\]
+
+<p>naturally in $A, B, C$. Thus Cartesian closed category is a generalization of currying. Until further notice, we assume that $\mathcal{C}$ is Cartesian closed.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> The <strong>diagonalization</strong> $\Delta_A$ of $A \in \mathcal{C}$ is the unique map induced by the following diagram:</p>
+
+  <figure class="tikz"><img src="/public/tikz/31b587d7583a29ed.svg" alt="TikZ diagram" /></figure>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> A <strong>point</strong> of $X \in \mathcal{C}$ is a morphism $1 \to X$.</p>
+</blockquote>
+
+<p>Note that a point is a category-theoretic generalization of an element of a set. For example, in $\mathbf{Set}$, $\Delta_A: A \to A \times A$ is the map $a \mapsto (a, a)$.</p>
+
+<p>We can thus generalize the notion of surjectivity.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> $f: X \to Y$ is <strong>point surjective</strong> if for every point $y \in Y$, there exists a point $x \in X$ such that $f\circ x = y$.</p>
+</blockquote>
+
+<p>I will also write $f(x) = y$ in place of $f \circ x = y$.</p>
+
+<p>The following gives a category-theoretic generalization of the diagonal argument.</p>
+
+<blockquote>
+  <p><strong>Lawvere’s Theorem.</strong> Let $\mathcal{C}$ be a Cartesian closed category. If $f: A \to B^A$ is point surjective, for every $g: B \to B$, there exists a point $b$ of $B$ such that $g(b) = b$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Let $\bar{f} : A \times A \to B$ be the adjoint of $f$. Define $\phi: A \to B$ as $g \circ \bar{f} \circ \Delta_A$.</p>
+
+<p>Since</p>
+
+\[\hom(A, B) \cong \hom(1 \times A, B) \cong \hom(1, B^A),\]
+
+<p>let $\bar{\phi} : 1 \to B^A$ be the adjoint of $\phi$. By point surjectivity of $f$, there exists a point $a: 1 \to A$ such that $f(a) = \bar{\phi}$. By naturality of the adjunction, we have the following commutative diagram.</p>
+
+\[\begin{CD}
+\hom(1\times A,\, B) @&gt;{\overline{(-)}}&gt;{\cong}&gt; \hom(1,\, B^A) \\
+@A{(-)\circ(a\,\times\,\mathrm{id}_A)}AA @AA{(-)\circ a}A \\
+\hom(A\times A,\, B) @&gt;{\cong}&gt;{\overline{(-)}}&gt; \hom(A,\, B^A)
+\end{CD}\]
+
+<p>Chasing $\bar f$ around the square, and identifying $1 \times A$ with $A$ (under which $a \times \mathrm{id}_A$ becomes $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle : A \to A \times A$), we obtain</p>
+
+\[\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle = \phi\]
+
+<p>Hence, since $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a = \langle a, a \rangle = \Delta_A \circ a$,</p>
+
+\[\begin{align}
+\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a &amp;= \bar{f} \circ \Delta_A \circ a \\
+&amp;= \phi \circ a
+\end{align}\]
+
+<p>Let $b := \bar f \circ \Delta_A \circ a$. The following diagram then commutes.</p>
+
+<figure class="tikz"><img src="/public/tikz/b286f9825c6155be.svg" alt="TikZ diagram" /></figure>
+
+<p>In particular, $g(b) = g \circ \bar f \circ \Delta_A \circ a = \phi(a) = \bar f \circ \Delta_A \circ a = b$. ■</p>
+
+<h2 id="cantor-and-russell">Cantor and Russell</h2>
+
+<blockquote>
+  <p><strong>Corollary (Cantor).</strong> In $\mathbf{Set}$, there is no (point) surjective map $f: A \to 2^A$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Assume otherwise. Then by Lawvere’s theorem, every map $2 \to 2$ has a fixed point. However, $0 \mapsto 1, 1 \mapsto 0$ does not have a fixed point. ■</p>
+
+<blockquote>
+  <p><strong>Corollary (Russell).</strong> The axiom of naive comprehension is inconsistent.</p>
+</blockquote>
+
+<p><em>Proof.</em> Assume naive comprehension, and suppose the sets it produces form a Cartesian closed category as in $\mathbf{Set}$. Then $\phi(x): x = x$ defines the set of all sets $S$, and $2^S$ is the set of all propositions over $S$. Consider</p>
+
+\[f : S \to 2^S, \qquad x \mapsto (y \mapsto [y \in x]).\]
+
+<p>By naive comprehension, every $P \in 2^S$ determines a set ${y : P(y)}$, so $f$ is (point) surjective. This contradicts Lawvere’s theorem, with $0 \mapsto 1, 1 \mapsto 0$. (Unwinding the proof, the point $a$ is the set ${x : x \notin x}$.) ■</p>
+
+<h2 id="weak-point-surjectivity">Weak point-surjectivity</h2>
+
+<p>Let $\mathcal{C}_{\mathsf{PA}}$ be the category of decidable sets, i.e.</p>
+
+<ul>
+  <li>
+    <p>Objects: Decidable subsets of $\mathbb{N}$ modulo PA-provable equivalence.</p>
+  </li>
+  <li>
+    <p>Morphisms: Functions that PA proves to be total (modulo PA-provable equality).</p>
+  </li>
+</ul>
+
+<p>Then $1 = {0}$ is the terminal object, and</p>
+
+\[\begin{gather}
+A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
+\pi_1 : \langle a, b \rangle \mapsto a, \quad \pi_2 : \langle a, b \rangle \mapsto b
+\end{gather}\]
+
+<p>is the product, where $\langle \cdot, \cdot \rangle$ is the code for a pair.</p>
+
+<p>We prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> Assuming $\mathsf{PA}$ is consistent, $\mathcal{C}_\mathsf{PA}$ is <em>not</em> Cartesian closed.</p>
+</blockquote>
+
+<p><em>Proof of the lemma.</em> Assume otherwise. Then a point of $2^\mathbb{N}$ is adjoint to a provably total function $\mathbb{N} \to 2$. In particular, $2^\mathbb{N}$ has a point $e_0$, adjoint to the constant function $0$. Since $2^\mathbb{N}$ is an object of $\mathcal{C}_\mathsf{PA}$, it is a decidable subset $E \subseteq \mathbb{N}$, with inclusion $i : E \to \mathbb{N}$.</p>
+
+<p>Define $\Theta: \mathbb{N} \to 2^\mathbb{N}$ such that</p>
+
+\[\Theta(n) = \begin{cases}
+n &amp;n \in E \\
+e_0 &amp;\text{otherwise}
+\end{cases}\]
+
+<p>Then $\Theta$ is a morphism (i.e. provably total, since $E$ is decidable), and $\Theta \circ i = \mathrm{id}_E$. Hence for every point $p$ of $2^\mathbb{N}$, $\Theta(i \circ p) = p$, so $\Theta$ is point surjective. Hence, by Lawvere’s theorem, any morphism $h: 2 \to 2$ has a fixed point. But then $0 \mapsto 1, 1 \mapsto 0$ also has a fixed point, which implies $\mathsf{PA} \vdash 0 = 1$. □</p>
+
+<p>So Lawvere’s theorem, as stated, cannot be applied inside the categories where computation and arithmetic live. Fortunately, the proof never used exponentials: they only package “every $g$ has a code” into a single morphism $f : A \to B^A$. Dropping them, we get the following.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathcal{C}$ have finite products. A morphism $\phi : A \times A \to B$ is <strong>weakly point surjective</strong> if for every $h : A \to B$ there is a point $a$ of $A$ such that $\phi(\langle a, x \rangle) = h(x)$ for every point $x$ of $A$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Lawvere’s Theorem (finite products).</strong> Let $\mathcal{C}$ be a category with finite products. If $\phi : A \times A \to B$ is weakly point surjective, then for every $g : B \to B$, there exists a point $b$ of $B$ such that $g(b) = b$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Let $h := g \circ \phi \circ \Delta_A$. Choose $a$ as in the definition, and let $b := \phi \circ \langle a, a \rangle$. Then</p>
+
+\[b = \phi(\langle a, a \rangle) = h(a) = g \circ \phi \circ \Delta_A \circ a = g(b). \quad ■\]
+
+<p>The Cartesian closed version is the special case $\phi = \bar f$.</p>
+
+<h2 id="turing-tarski-and-gödel">Turing, Tarski, and Gödel</h2>
+
+<blockquote>
+  <p><strong>Corollary (Turing).</strong> The halting problem is undecidable.</p>
+</blockquote>
+
+<p><em>Proof.</em> Let $\mathbf{Rec}$ be the category whose objects are decidable subsets of $\mathbb{N}$ and whose morphisms are total computable functions (not necessarily <em>provably</em> total). We will equivocate decidable subsets with its corresponding decision program. As with $\mathcal{C}_\mathsf{PA}$, it has finite products via the pairing code, with $1 = {0}$ and $2 = {0, 1}$.</p>
+
+<p>Assume that the halting problem is decidable, i.e. there exists a morphism $h : \mathbb{N} \times \mathbb{N} \to 2$ such that $h(e, n) = 1$ if program $e$ halts on input $n$, and $h(e, n) = 0$ otherwise. For a morphism $f: \mathbb{N} \to 2$, let $e_g$ be the program</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>on input n:
+  if f(n) = 1: return
+  else: infinite loop
+</code></pre></div></div>
+
+<p>Then $h(e_g, n) = f(n)$ for every $n$, so $h$ is weakly point surjective. By Lawvere’s theorem, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, a contradiction. ■</p>
+
+<blockquote>
+  <p><strong>Corollary (Tarski).</strong> There is no formula $\mathrm{True}(x)$ such that</p>
+
+\[\mathbb{N} \models \mathrm{True}(\ulcorner \sigma \urcorner) \iff \mathbb{N} \models \sigma\]
+
+  <p>for every sentence $\sigma$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Fix a Gödel numbering $\psi_0, \psi_1, \dots$ of the formulas with one free variable. Let $\mathbf{Def}$ be the category whose objects are $\mathbb{N}^k \; (k = 0, 1, 2, …)$ and $2$, and whose morphisms are functions definable in the standard arithmetic.</p>
+
+<p>Suppose $\mathrm{True}$ exists. The substitution function $\mathrm{sub}(m, n) = \ulcorner \psi_m(\bar n) \urcorner$ is computable, hence definable. So</p>
+
+\[\phi(m, n) := [\mathbb{N} \models \psi_m(\bar n)] = \chi_{\mathrm{True}}(\mathrm{sub}(m, n))\]
+
+<p>is a morphism of $\mathbf{Def}$. It is weakly point surjective: if $g : \mathbb{N} \to 2$ is defined by a formula $\gamma(x, y)$, then $\psi(x) := \gamma(x, 1)$ satisfies $\phi(\ulcorner \psi \urcorner, n) = g(n)$. But $0 \mapsto 1, 1 \mapsto 0$ is definable and has no fixed point, contradicting Lawvere’s theorem. ■</p>
+
+<p>For Gödel, recall the following fact about Robinson arithmetic $\mathsf{Q}$.</p>
+
+<blockquote>
+  <p>For every decidable $D \subseteq \mathbb{N}$, there is a formula $\psi_D(x)$ such that $n \in D \Rightarrow \mathsf{Q} \vdash \psi_D(\bar n)$ and $n \notin D \Rightarrow \mathsf{Q} \vdash \neg\psi_D(\bar n)$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Corollary (Gödel).</strong> For every consistent, recursively enumerable axiomatization $T \supseteq \mathsf{Q}$ of arithmetic, there exists an arithmetical truth unprovable in $T$.</p>
+</blockquote>
+
+<p><em>Proof.</em> We prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $T$ is a consistent extension of $\mathsf{Q}$, then the set of theorems of $T$ is undecidable.</p>
+</blockquote>
+
+<p><em>Proof.</em> Suppose it is decidable, and work in $\mathbf{Rec}$. Define</p>
+
+\[\phi(m, n) = \begin{cases}
+1 &amp; T \vdash \psi_m(\bar n) \\
+0 &amp; \text{otherwise}
+\end{cases}\]
+
+<p>This is computable, since $\mathrm{sub}$ is computable and $T$ is decidable. It is also weakly point surjective; given a computable $g : \mathbb{N} \to 2$, let $D = g^{-1}(1)$. We then have:</p>
+
+<ul>
+  <li>If $g(n) = 1$, then $T \vdash \psi_D(\bar n)$, so $\phi(\ulcorner \psi_D \urcorner, n) = 1$.</li>
+  <li>If $g(n) = 0$, then $T \vdash \neg\psi_D(\bar n)$, so by consistency $T \nvdash \psi_D(\bar n)$, and $\phi(\ulcorner \psi_D \urcorner, n) = 0$.</li>
+</ul>
+
+<p>By Lawvere’s theorem, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, a contradiction. □</p>
+
+<p>Now suppose that $T$ is complete. Then the following procedure is total, with which $T$ becomes decidable.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for n in ℕ:
+  if n is a proof of φ:
+    return True
+  if n is a proof of ¬φ:
+    return False
+</code></pre></div></div>
+
+<p>This contradicts the lemma above. ■</p>
+
+<p>A few remarks:</p>
+
+<ol>
+  <li>
+    <p>The argument uses only consistency, not $\omega$-consistency, so it has the strength of the Gödel–Rosser theorem.</p>
+  </li>
+  <li>
+    <p>Unwinding the proof, the point $a$ codes a formula representing $n \mapsto [T \nvdash \psi_n(\bar n)]$, so $\psi_a(\bar a)$ is the Gödel sentence; i.e. the sentence “I am not provable.”</p>
+  </li>
+</ol>
+
+</div>
+
+
+
+<script>
+  // Wait for MathJax to finish typesetting so equations are in the PDF.
+  function exportPDF() {
+    var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
+    ready.then(function () { window.print(); });
+  }
+
+  // Opened from the main page's PDF link: export once everything has loaded.
+  if (new URLSearchParams(location.search).has("print")) {
+    window.addEventListener("load", function () {
+      history.replaceState(null, "", location.pathname);
+      exportPDF();
+    });
+  }
+</script>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://dimenerno.github.io/404.html</loc>
-<lastmod>2026-10-25T14:42:51-07:00</lastmod>
+<lastmod>2026-10-27T14:23:12-07:00</lastmod>
 </url>
 <url>
 <loc>https://dimenerno.github.io/about/</loc>
@@ -745,6 +745,14 @@
 <lastmod>2026-10-23T00:00:00-07:00</lastmod>
 </url>
 <url>
+<loc>https://dimenerno.github.io/2026/10/27/lawvere/en</loc>
+<lastmod>2026-10-27T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>https://dimenerno.github.io/2026/10/27/lawvere</loc>
+<lastmod>2026-10-27T00:00:00-07:00</lastmod>
+</url>
+<url>
 <loc>https://dimenerno.github.io/temp/2025-03-05-hole-argument/</loc>
 </url>
 <url>
@@ -953,6 +961,9 @@
 </url>
 <url>
 <loc>https://dimenerno.github.io/page18/</loc>
+</url>
+<url>
+<loc>https://dimenerno.github.io/page19/</loc>
 </url>
 <url>
 <loc>https://dimenerno.github.io/public/Boghossian,%20The%20Rule-Following%20Considerations.pdf</loc>

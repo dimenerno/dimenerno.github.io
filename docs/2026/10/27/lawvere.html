@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+
+  
+  
+  <title data-title-ko="로비어 정리: 칸토어, 러셀, 튜링, 타르스키, 괴델의 일반화 · 디멘의 블로그" data-title-en="로비어 정리: 칸토어, 러셀, 튜링, 타르스키, 괴델의 일반화 · Jeongdam&#39;s Blog">로비어 정리: 칸토어, 러셀, 튜링, 타르스키, 괴델의 일반화 · Jeongdam&#39;s Blog</title>
+
+  <style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+
+<style>
+  .lang-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-right: 0.5em;
+  }
+
+  .lang-label {
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e7e8eb;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider {
+    background-color: #2e2e2e;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .lang-ko, .lang-en {
+  transition: opacity 0.3s ease;
+}
+</style>
+
+  <script>
+    function toggleAnswer(id) {
+      const answer = document.getElementById("answer" + id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+
+  
+  <link rel="canonical" href="/2026/10/27/lawvere" />
+  
+
+  <link rel="stylesheet" href="/public/css/poole.css" />
+  <link rel="stylesheet" href="/public/css/syntax.css" />
+  <link rel="stylesheet" href="/public/css/lanyon.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"
+  />
+
+
+  <link
+    rel="apple-touch-icon-precomposed"
+    sizes="144x144"
+    href="/public/apple-touch-icon.png"
+  />
+  <link rel="shortcut icon" href="/public/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href=""
+  />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PVGYLWF7GR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PVGYLWF7GR");
+  </script>
+</head>
+
+
+  <style>
+    /* 검색 입력창 */
+    #search-input {
+      padding: 6px 12px;
+      font-size: 15px;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      width: 90%;
+      max-width: 240px;
+      background-color: #fefefe;
+    }
+
+    #search-input::placeholder {
+      color: var(--slate);
+    }
+
+    /* 입력창 포커스 시 */
+    #search-input:focus {
+      border-color: #9ea0a3;
+      background-color: white;
+    }
+
+    @media (max-width: 600px) {
+      .lang-label {
+        display: none;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p class="lang-ko"></p>
+    <p class="lang-en" style="display: none;"></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+    class="sidebar-nav-item lang-ko"
+    href="/"
+    >메인</a>
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/"
+    >Main</a
+  >
+       
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/about/"
+      >저에 대하여</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/about/"
+    >About Me</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-date/"
+      >날짜별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-date/"
+    >List by dates</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/archive-tag/"
+      >주제별로 보기</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/archive-tag/"
+    >List by topics</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/random/"
+      >랜덤 포스트</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/random/"
+    >Go to a random post</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/notes/"
+      >복습노트 아카이브</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/notes/"
+    >Maths Review Notes (Korean)</a
+  >
+        
+    <a
+      class="sidebar-nav-item lang-ko"
+      href="/guestbook/"
+      >방명록</a
+    >
+    <a
+    class="sidebar-nav-item lang-en"
+    href="/guestbook/"
+    >Guestbook</a
+  >
+          
+  </nav>
+
+  <div class="sidebar-item">
+    <p>&copy; 2026. All rights reserved.</p>
+    <p style="color: #202020">
+      &copy; 2026. 디멘 reserved by 곰댕.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead" style="width: 100%">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0px;
+            margin-left: 4em;
+            margin-right: 0;
+            max-width: none;
+            overflow-y: hidden;
+          "
+        >
+          <h3
+            class="masthead-title"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 0.3em;
+              align-items: end;
+              line-height: 1;
+            "
+          >
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-ko"
+              title="Home"
+              >디멘의 블로그</a>
+            <a
+              href="/"
+              style="white-space: nowrap"
+              class="lang-en"
+              title="Home"
+            >Jeongdam's Blog</a>
+            <small><div class="lang-ko"></div>
+              <div class="lang-en"></div></small>
+
+          </h3>
+          <form
+            id="search-form"
+            action="/search.html"
+            method="get"
+            style="display: flex; justify-content: end; padding-right: 1em"
+          >
+            <input
+              type="text"
+              name="q"
+              id="search-input"
+              placeholder="검색"
+            />
+          </form>
+
+          <div class="lang-toggle-wrapper">
+            <span class="lang-label">EN</span>
+            <label class="switch">
+              <input type="checkbox" id="lang-toggle"/>
+              <span class="slider round"></span>
+            </label>
+            <span class="lang-label">한</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content"><div class="post">
+  <h1 class="post-title">로비어 정리: 칸토어, 러셀, 튜링, 타르스키, 괴델의 일반화</h1>
+  <span class="post-date">
+    27 Oct 2026
+    <button type="button" class="pdf-export" onclick="exportPDF()" title="Save as PDF">PDF</button>
+  </span>
+  
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/수학/'" >수학</div>
+      
+      <div class="tag" onclick="location.href='/tags/범주론/'" >범주론</div>
+      
+      <div class="tag" onclick="location.href='/tags/논리학/'" >논리학</div>
+      
+    </div>
+  
+  <p>수리논리학을 공부한 독자라면 칸토어의 실수 비가산성 증명, 러셀의 집합론적 역설, 튜링의 정지 문제, 괴델의 불완전성 정리, 타르스키의 정의불가능성 정리가 서로 닮아 있다는 것을 한 번쯤 눈치챘을 것이다. 이들은 모두 어떤 대상을 그 자신에게 “먹이는” <strong>대각선 논법<sub>diagonal argument</sub></strong>을 사용한다. 이 유사성은 범주론의 언어로 정확하게 정식화할 수 있다.</p>
+
+<h2 id="로비어-정리">로비어 정리</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> 범주 $\mathcal{C}$가 다음을 만족하면 $\mathcal{C}$를 <strong>데카르트 닫힌 범주<sub>Cartesian closed category</sub></strong>라고 한다.</p>
+
+  <ol>
+    <li>$\mathcal{C}$는 종대상<sub>terminal object</sub> $1$을 가진다.</li>
+    <li>$\mathcal{C}$는 유한 개의 대상들의 <a href="https://dimenerno.github.io/2025/04/02/box-v-product">곱</a>을 언제나 가진다.</li>
+    <li>모든 $B \in \mathcal{C}$에 대해, $(-) \times B : \mathcal{C} \to \mathcal{C}$는 오른쪽 수반<sub>right adjoint</sub>을 가진다.</li>
+  </ol>
+</blockquote>
+
+<p>$(-) \times B$의 오른쪽 수반을 <strong>지수<sub>exponential</sub></strong>라 하고 $(-)^B$로 표기한다. 즉,</p>
+
+\[\hom(A \times B, C) \cong \hom(A, C^B)\]
+
+<p>가 $A, B, C$에 대해 자연스럽게 성립한다. 말하자면 데카르트 닫힌 범주는 커링<sub>currying</sub>의 일반화이다. 별도의 언급이 없는 한, $\mathcal{C}$는 데카르트 닫힌 범주라고 가정하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $A \in \mathcal{C}$의 <strong>대각사상<sub>diagonal map</sub></strong> $\Delta_A$를 다음 도식이 유도하는 유일한 사상으로 정의한다.</p>
+
+  <figure class="tikz"><img src="/public/tikz/31b587d7583a29ed.svg" alt="TikZ diagram" /></figure>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $X \in \mathcal{C}$의 <strong>점<sub>point</sub></strong>은 사상 $1 \to X$이다.</p>
+</blockquote>
+
+<p>점은 집합의 원소를 범주론적으로 일반화한 개념이다. 예를 들어 $\mathbf{Set}$에서 $\Delta_A: A \to A \times A$는 사상 $a \mapsto (a, a)$이다.</p>
+
+<p>이를 이용해 전사성의 개념을 일반화할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $f: X \to Y$가 <strong>점 전사적<sub>point surjective</sub></strong>이라는 것은, $Y$의 모든 점 $y$에 대해 $f\circ x = y$를 만족하는 $X$의 점 $x$가 존재한다는 것이다.</p>
+</blockquote>
+
+<p>앞으로 $f \circ x = y$를 $f(x) = y$로도 쓰도록 한다.</p>
+
+<p>다음 정리는 대각선 논법의 범주론적 일반화이다.</p>
+
+<blockquote>
+  <p><strong>로비어 정리.</strong> $\mathcal{C}$가 데카르트 닫힌 범주라고 하자. $f: A \to B^A$가 점 전사적이면, 모든 $g: B \to B$에 대해 $g(b) = b$를 만족하는 $B$의 점 $b$가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\bar{f} : A \times A \to B$를 $f$의 수반이라 하고, $\phi: A \to B$를 $g \circ \bar{f} \circ \Delta_A$로 정의하자.</p>
+
+\[\hom(A, B) \cong \hom(1 \times A, B) \cong \hom(1, B^A)\]
+
+<p>이므로, $\bar{\phi} : 1 \to B^A$를 $\phi$의 수반이라 하자. $f$의 점 전사성에 의해 $f(a) = \bar{\phi}$를 만족하는 점 $a: 1 \to A$가 존재한다. 수반의 자연성에 의해 다음 도식이 가환한다.</p>
+
+\[\begin{CD}
+\hom(1\times A,\, B) @&gt;{\overline{(-)}}&gt;{\cong}&gt; \hom(1,\, B^A) \\
+@A{(-)\circ(a\,\times\,\mathrm{id}_A)}AA @AA{(-)\circ a}A \\
+\hom(A\times A,\, B) @&gt;{\cong}&gt;{\overline{(-)}}&gt; \hom(A,\, B^A)
+\end{CD}\]
+
+<p>$\bar f$를 위 사각형을 따라 옮기고, $1 \times A$를 $A$와 동일시하면 (이때 $a \times \mathrm{id}_A$는 $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle : A \to A \times A$가 된다) 다음을 얻는다.</p>
+
+\[\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle = \phi\]
+
+<p>그런데 $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a = \langle a, a \rangle = \Delta_A \circ a$이므로,</p>
+
+\[\begin{align}
+\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a &amp;= \bar{f} \circ \Delta_A \circ a \\
+&amp;= \phi \circ a
+\end{align}\]
+
+<p>이다. $b := \bar f \circ \Delta_A \circ a$라 하면 다음 도식이 가환한다.</p>
+
+<figure class="tikz"><img src="/public/tikz/b286f9825c6155be.svg" alt="TikZ diagram" /></figure>
+
+<p>특히 $g(b) = g \circ \bar f \circ \Delta_A \circ a = \phi(a) = \bar f \circ \Delta_A \circ a = b$이다. ■</p>
+
+<h2 id="칸토어와-러셀">칸토어와 러셀</h2>
+
+<blockquote>
+  <p><strong>따름정리 (칸토어).</strong> $\mathbf{Set}$에서 (점) 전사인 사상 $f: A \to 2^A$는 존재하지 않는다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 그렇지 않다고 가정하자. 그러면 로비어의 정리에 의해 모든 사상 $2 \to 2$가 고정점을 가진다. 그러나 $0 \mapsto 1, 1 \mapsto 0$은 고정점을 갖지 않는다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리 (러셀).</strong> 소박한 내포 공리<sub>axiom of naive comprehension</sub>는 모순이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 소박한 내포 공리를 가정하고, 이 공리가 만들어내는 집합들이 $\mathbf{Set}$에서처럼 데카르트 닫힌 범주를 이룬다고 하자. 그러면 $\phi(x): x = x$는 모든 집합의 집합 $S$를 정의하며, $2^S$는 $S$ 위의 모든 명제들의 집합이다. 다음 사상을 생각하자.</p>
+
+\[f : S \to 2^S, \qquad x \mapsto (y \mapsto [y \in x]).\]
+
+<p>소박한 내포 공리에 의해 모든 $P \in 2^S$는 집합 ${y : P(y)}$를 결정하므로, $f$는 (점) 전사적이다. 이는 $0 \mapsto 1, 1 \mapsto 0$에 대해 로비어의 정리와 모순이다. (증명을 풀어 보면, 점 $a$는 바로 집합 ${x : x \notin x}$이다.) ■</p>
+
+<h2 id="약한-점-전사성">약한 점 전사성</h2>
+
+<p>$\mathcal{C}_{\mathsf{PA}}$를 다음과 같은 결정가능 집합의 범주라 하자.</p>
+
+<ul>
+  <li>
+    <p>대상: PA에서 증명가능한 동치 관계로 나눈 $\mathbb{N}$의 결정가능 부분집합.</p>
+  </li>
+  <li>
+    <p>사상: PA가 전역적<sub>total</sub>임을 증명하는 함수 (PA에서 증명가능한 동치 관계로 나눈 것).</p>
+  </li>
+</ul>
+
+<p>그러면 $1 = {0}$은 종대상이고,</p>
+
+\[\begin{gather}
+A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
+\pi_1 : \langle a, b \rangle \mapsto a, \quad \pi_2 : \langle a, b \rangle \mapsto b
+\end{gather}\]
+
+<p>는 곱이다. 여기서 $\langle \cdot, \cdot \rangle$은 순서쌍의 코드이다.</p>
+
+<p>다음 보조정리를 증명하자.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $\mathsf{PA}$가 무모순이면, $\mathcal{C}_\mathsf{PA}$는 데카르트 닫힌 범주가 <em>아니다</em>.</p>
+</blockquote>
+
+<p><strong>보조정리의 증명.</strong> 그렇지 않다고 가정하자. 그러면 $2^\mathbb{N}$의 점은 전역성이 증명가능한 함수 $\mathbb{N} \to 2$의 수반이다. 특히 $2^\mathbb{N}$은 상수함수 $0$의 수반인 점 $e_0$를 가진다. $2^\mathbb{N}$은 $\mathcal{C}_\mathsf{PA}$의 대상이므로 결정가능 부분집합 $E \subseteq \mathbb{N}$이고, 포함사상 $i : E \to \mathbb{N}$을 가진다.</p>
+
+<p>$\Theta: \mathbb{N} \to 2^\mathbb{N}$를 다음과 같이 정의하자.</p>
+
+\[\Theta(n) = \begin{cases}
+n &amp;n \in E \\
+e_0 &amp;\text{그 외}
+\end{cases}\]
+
+<p>그러면 $\Theta$는 사상이고 ($E$가 결정가능하므로 전역성이 증명가능하다), $\Theta \circ i = \mathrm{id}_E$이다. 따라서 $2^\mathbb{N}$의 모든 점 $p$에 대해 $\Theta(i \circ p) = p$이므로, $\Theta$는 점 전사적이다. 그러므로 로비어의 정리에 의해 모든 사상 $h: 2 \to 2$는 고정점을 가진다. 그런데 그렇다면 $0 \mapsto 1, 1 \mapsto 0$ 역시 고정점을 가지게 되고, 이로부터 $\mathsf{PA} \vdash 0 = 1$이 따라 나온다. □</p>
+
+<p>따라서 위에서 진술한 형태의 로비어의 정리는, 계산과 산술이 사는 범주에서는 써먹을 수가 없다. 다행히도 로비어의 정리의 증명은 지수를 실제로 사용하지 않는다. 지수는 “모든 $g$가 코드를 가진다”는 사실을 하나의 사상 $f : A \to B^A$로 포장해줄 뿐이다. 지수를 걷어내면 다음을 얻는다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{C}$가 유한곱을 가진다고 하자. 사상 $\phi : A \times A \to B$가 <strong>약하게 점 전사적<sub>weakly point surjective</sub></strong>이라는 것은, 모든 $h : A \to B$에 대해 $A$의 모든 점 $x$에서 $\phi(\langle a, x \rangle) = h(x)$를 만족하는 $A$의 점 $a$가 존재한다는 것이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>로비어 정리 (유한곱).</strong> $\mathcal{C}$가 유한곱을 가지는 범주라고 하자. $\phi : A \times A \to B$가 약하게 점 전사적이면, 모든 $g : B \to B$에 대해 $g(b) = b$를 만족하는 $B$의 점 $b$가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $h := g \circ \phi \circ \Delta_A$라 하자. 정의에서처럼 $a$를 고르고, $b := \phi \circ \langle a, a \rangle$라 하면</p>
+
+\[b = \phi(\langle a, a \rangle) = h(a) = g \circ \phi \circ \Delta_A \circ a = g(b). \quad ■\]
+
+<p>원 로비어 정리는 $\phi = \bar f$인 특수한 경우이다.</p>
+
+<h2 id="튜링-타르스키-괴델">튜링, 타르스키, 괴델</h2>
+
+<blockquote>
+  <p><strong>따름정리 (튜링).</strong> 정지 문제는 결정불가능하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathbf{Rec}$을 대상이 $\mathbb{N}$의 결정가능 부분집합이고, 사상이 전역 계산가능 함수인 범주라 하자. (이때 전역성이 <em>증명가능할</em> 필요는 없다.) 결정가능 부분집합과 그에 대응하는 결정 프로그램은 동일시하겠다. $\mathcal{C}_\mathsf{PA}$에서와 마찬가지로 $\mathbf{Rec}$은 순서쌍 코드를 통해 유한곱을 가지며, $1 = {0}$, $2 = {0, 1}$이다.</p>
+
+<p>정지 문제가 결정가능하다고 가정하자. 즉, 프로그램 $e$가 입력 $n$에서 정지하면 $h(e, n) = 1$, 그렇지 않으면 $h(e, n) = 0$인 사상 $h : \mathbb{N} \times \mathbb{N} \to 2$가 존재한다고 하자. 사상 $f: \mathbb{N} \to 2$에 대해, $e_f$를 다음 프로그램이라 하자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>on input n:
+  if f(n) = 1: return
+  else: infinite loop
+</code></pre></div></div>
+
+<p>그러면 모든 $n$에 대해 $h(e_f, n) = f(n)$이므로 $h$는 약하게 점 전사적이다. 로비어의 정리에 의해 $0 \mapsto 1, 1 \mapsto 0$이 고정점을 가지게 되어 모순이다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리 (타르스키).</strong> 모든 문장 $\sigma$에 대해</p>
+
+\[\mathbb{N} \models \mathrm{True}(\ulcorner \sigma \urcorner) \iff \mathbb{N} \models \sigma\]
+
+  <p>를 만족하는 논리식 $\mathrm{True}(x)$는 존재하지 않는다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 자유변수가 하나인 논리식들의 괴델 번호 매김<sub>Gödel numbering</sub> $\psi_0, \psi_1, \dots$을 고정하자. $\mathbf{Def}$를 대상이 $\mathbb{N}^k \; (k = 0, 1, 2, …)$와 $2$이고, 사상이 표준 산술에서 정의가능한 함수인 범주라 하자.</p>
+
+<p>$\mathrm{True}$가 존재한다고 가정하자. 대입 함수 $\mathrm{sub}(m, n) = \ulcorner \psi_m(\bar n) \urcorner$는 계산가능하므로 정의가능하다. 따라서</p>
+
+\[\phi(m, n) := [\mathbb{N} \models \psi_m(\bar n)] = \chi_{\mathrm{True}}(\mathrm{sub}(m, n))\]
+
+<p>는 $\mathbf{Def}$의 사상이다. 이 사상은 약하게 점 전사적이다. $g : \mathbb{N} \to 2$가 논리식 $\gamma(x, y)$로 정의된다면, $\psi(x) := \gamma(x, 1)$은 $\phi(\ulcorner \psi \urcorner, n) = g(n)$을 만족하기 때문이다. 그런데 $0 \mapsto 1, 1 \mapsto 0$은 정의가능하며 고정점을 갖지 않으므로, 이는 로비어의 정리와 모순이다. ■</p>
+
+<p>괴델의 정리를 위해, 로빈슨 산술<sub>Robinson arithmetic</sub> $\mathsf{Q}$에 관한 다음 사실을 떠올리자.</p>
+
+<blockquote>
+  <p>모든 결정가능 집합 $D \subseteq \mathbb{N}$에 대해, $n \in D \Rightarrow \mathsf{Q} \vdash \psi_D(\bar n)$이고 $n \notin D \Rightarrow \mathsf{Q} \vdash \neg\psi_D(\bar n)$을 만족하는 논리식 $\psi_D(x)$가 존재한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>따름정리 (괴델).</strong> $\mathsf{Q}$를 포함하는 무모순이고 재귀적으로 열거가능한 산술의 공리화 $T$에 대해, $T$에서 증명불가능한 산술적 참이 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 다음 보조정리를 증명하자.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $T$가 $\mathsf{Q}$의 무모순인 확장이면, $T$의 정리들의 집합은 결정불가능하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 결정가능하다고 가정하고 $\mathbf{Rec}$에서 논의하자. 다음과 같이 정의한다.</p>
+
+\[\phi(m, n) = \begin{cases}
+1 &amp; T \vdash \psi_m(\bar n) \\
+0 &amp; \text{그 외}
+\end{cases}\]
+
+<p>$\mathrm{sub}$가 계산가능하고 $T$가 결정가능하므로 $\phi$는 계산가능하다. 또한 $\phi$는 약하게 점 전사적이다. 계산가능한 $g : \mathbb{N} \to 2$가 주어졌을 때 $D = g^{-1}(1)$이라 하면 다음이 성립하기 때문이다.</p>
+
+<ul>
+  <li>$g(n) = 1$이면 $T \vdash \psi_D(\bar n)$이므로 $\phi(\ulcorner \psi_D \urcorner, n) = 1$이다.</li>
+  <li>$g(n) = 0$이면 $T \vdash \neg\psi_D(\bar n)$이므로, 무모순성에 의해 $T \nvdash \psi_D(\bar n)$이고 $\phi(\ulcorner \psi_D \urcorner, n) = 0$이다.</li>
+</ul>
+
+<p>로비어의 정리에 의해 $0 \mapsto 1, 1 \mapsto 0$이 고정점을 가지게 되어 모순이다. □</p>
+
+<p>이제 $T$가 완전하다고 가정하자. 그러면 다음 절차는 전역적이고, 따라서 $T$는 결정가능해진다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for n in ℕ:
+  if n is a proof of φ:
+    return True
+  if n is a proof of ¬φ:
+    return False
+</code></pre></div></div>
+
+<p>이는 위의 보조정리와 모순이다. ■</p>
+
+<p>몇 가지 덧붙이자면:</p>
+
+<ol>
+  <li>
+    <p>이 논증은 $\omega$-무모순성이 아니라 무모순성만을 사용하므로, 괴델–로서<sub>Gödel–Rosser</sub> 정리와 같은 강도를 가진다.</p>
+  </li>
+  <li>
+    <p>증명을 풀어 보면, 점 $a$는 $n \mapsto [T \nvdash \psi_n(\bar n)]$을 표현하는 논리식의 코드이다. 따라서 $\psi_a(\bar a)$는 괴델 문장, 즉 “나는 증명가능하지 않다”라고 말하는 문장이다.</p>
+  </li>
+</ol>
+
+</div>
+
+
+
+<script>
+  // Wait for MathJax to finish typesetting so equations are in the PDF.
+  function exportPDF() {
+    var ready = (window.MathJax && MathJax.startup && MathJax.startup.promise) || Promise.resolve();
+    ready.then(function () { window.print(); });
+  }
+
+  // Opened from the main page's PDF link: export once everything has loaded.
+  if (new URLSearchParams(location.search).has("print")) {
+    window.addEventListener("load", function () {
+      history.replaceState(null, "", location.pathname);
+      exportPDF();
+    });
+  }
+</script>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/lang.js"></script>
+  </body>
+</html>

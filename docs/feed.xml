@@ -7,6 +7,506 @@
     <atom:link href="https://dimenerno.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>로비어 정리: 칸토어, 러셀, 튜링, 타르스키, 괴델의 일반화</title>
+        <link>https://dimenerno.github.io/2026/10/27/lawvere</link>
+        <guid>https://dimenerno.github.io/2026/10/27/lawvere</guid>
+        <pubDate>Tue, 27 Oct 2026 00:00:00 -0700</pubDate>
+        <description>&lt;p&gt;수리논리학을 공부한 독자라면 칸토어의 실수 비가산성 증명, 러셀의 집합론적 역설, 튜링의 정지 문제, 괴델의 불완전성 정리, 타르스키의 정의불가능성 정리가 서로 닮아 있다는 것을 한 번쯤 눈치챘을 것이다. 이들은 모두 어떤 대상을 그 자신에게 “먹이는” &lt;strong&gt;대각선 논법&lt;sub&gt;diagonal argument&lt;/sub&gt;&lt;/strong&gt;을 사용한다. 이 유사성은 범주론의 언어로 정확하게 정식화할 수 있다.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/10/27/lawvere">
+          <![CDATA[
+            <p>수리논리학을 공부한 독자라면 칸토어의 실수 비가산성 증명, 러셀의 집합론적 역설, 튜링의 정지 문제, 괴델의 불완전성 정리, 타르스키의 정의불가능성 정리가 서로 닮아 있다는 것을 한 번쯤 눈치챘을 것이다. 이들은 모두 어떤 대상을 그 자신에게 “먹이는” <strong>대각선 논법<sub>diagonal argument</sub></strong>을 사용한다. 이 유사성은 범주론의 언어로 정확하게 정식화할 수 있다.</p>
+
+<h2 id="로비어-정리">로비어 정리</h2>
+
+<blockquote>
+  <p><strong>정의.</strong> 범주 $\mathcal{C}$가 다음을 만족하면 $\mathcal{C}$를 <strong>데카르트 닫힌 범주<sub>Cartesian closed category</sub></strong>라고 한다.</p>
+
+  <ol>
+    <li>$\mathcal{C}$는 종대상<sub>terminal object</sub> $1$을 가진다.</li>
+    <li>$\mathcal{C}$는 유한 개의 대상들의 <a href="https://dimenerno.github.io/2025/04/02/box-v-product">곱</a>을 언제나 가진다.</li>
+    <li>모든 $B \in \mathcal{C}$에 대해, $(-) \times B : \mathcal{C} \to \mathcal{C}$는 오른쪽 수반<sub>right adjoint</sub>을 가진다.</li>
+  </ol>
+</blockquote>
+
+<p>$(-) \times B$의 오른쪽 수반을 <strong>지수<sub>exponential</sub></strong>라 하고 $(-)^B$로 표기한다. 즉,</p>
+
+\[\hom(A \times B, C) \cong \hom(A, C^B)\]
+
+<p>가 $A, B, C$에 대해 자연스럽게 성립한다. 말하자면 데카르트 닫힌 범주는 커링<sub>currying</sub>의 일반화이다. 별도의 언급이 없는 한, $\mathcal{C}$는 데카르트 닫힌 범주라고 가정하자.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $A \in \mathcal{C}$의 <strong>대각사상<sub>diagonal map</sub></strong> $\Delta_A$를 다음 도식이 유도하는 유일한 사상으로 정의한다.</p>
+
+  <figure class="tikz"><img src="/public/tikz/31b587d7583a29ed.svg" alt="TikZ diagram" /></figure>
+</blockquote>
+
+<blockquote>
+  <p><strong>정의.</strong> $X \in \mathcal{C}$의 <strong>점<sub>point</sub></strong>은 사상 $1 \to X$이다.</p>
+</blockquote>
+
+<p>점은 집합의 원소를 범주론적으로 일반화한 개념이다. 예를 들어 $\mathbf{Set}$에서 $\Delta_A: A \to A \times A$는 사상 $a \mapsto (a, a)$이다.</p>
+
+<p>이를 이용해 전사성의 개념을 일반화할 수 있다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $f: X \to Y$가 <strong>점 전사적<sub>point surjective</sub></strong>이라는 것은, $Y$의 모든 점 $y$에 대해 $f\circ x = y$를 만족하는 $X$의 점 $x$가 존재한다는 것이다.</p>
+</blockquote>
+
+<p>앞으로 $f \circ x = y$를 $f(x) = y$로도 쓰도록 한다.</p>
+
+<p>다음 정리는 대각선 논법의 범주론적 일반화이다.</p>
+
+<blockquote>
+  <p><strong>로비어 정리.</strong> $\mathcal{C}$가 데카르트 닫힌 범주라고 하자. $f: A \to B^A$가 점 전사적이면, 모든 $g: B \to B$에 대해 $g(b) = b$를 만족하는 $B$의 점 $b$가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\bar{f} : A \times A \to B$를 $f$의 수반이라 하고, $\phi: A \to B$를 $g \circ \bar{f} \circ \Delta_A$로 정의하자.</p>
+
+\[\hom(A, B) \cong \hom(1 \times A, B) \cong \hom(1, B^A)\]
+
+<p>이므로, $\bar{\phi} : 1 \to B^A$를 $\phi$의 수반이라 하자. $f$의 점 전사성에 의해 $f(a) = \bar{\phi}$를 만족하는 점 $a: 1 \to A$가 존재한다. 수반의 자연성에 의해 다음 도식이 가환한다.</p>
+
+\[\begin{CD}
+\hom(1\times A,\, B) @&gt;{\overline{(-)}}&gt;{\cong}&gt; \hom(1,\, B^A) \\
+@A{(-)\circ(a\,\times\,\mathrm{id}_A)}AA @AA{(-)\circ a}A \\
+\hom(A\times A,\, B) @&gt;{\cong}&gt;{\overline{(-)}}&gt; \hom(A,\, B^A)
+\end{CD}\]
+
+<p>$\bar f$를 위 사각형을 따라 옮기고, $1 \times A$를 $A$와 동일시하면 (이때 $a \times \mathrm{id}_A$는 $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle : A \to A \times A$가 된다) 다음을 얻는다.</p>
+
+\[\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle = \phi\]
+
+<p>그런데 $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a = \langle a, a \rangle = \Delta_A \circ a$이므로,</p>
+
+\[\begin{align}
+\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a &amp;= \bar{f} \circ \Delta_A \circ a \\
+&amp;= \phi \circ a
+\end{align}\]
+
+<p>이다. $b := \bar f \circ \Delta_A \circ a$라 하면 다음 도식이 가환한다.</p>
+
+<figure class="tikz"><img src="/public/tikz/b286f9825c6155be.svg" alt="TikZ diagram" /></figure>
+
+<p>특히 $g(b) = g \circ \bar f \circ \Delta_A \circ a = \phi(a) = \bar f \circ \Delta_A \circ a = b$이다. ■</p>
+
+<h2 id="칸토어와-러셀">칸토어와 러셀</h2>
+
+<blockquote>
+  <p><strong>따름정리 (칸토어).</strong> $\mathbf{Set}$에서 (점) 전사인 사상 $f: A \to 2^A$는 존재하지 않는다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 그렇지 않다고 가정하자. 그러면 로비어의 정리에 의해 모든 사상 $2 \to 2$가 고정점을 가진다. 그러나 $0 \mapsto 1, 1 \mapsto 0$은 고정점을 갖지 않는다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리 (러셀).</strong> 소박한 내포 공리<sub>axiom of naive comprehension</sub>는 모순이다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 소박한 내포 공리를 가정하고, 이 공리가 만들어내는 집합들이 $\mathbf{Set}$에서처럼 데카르트 닫힌 범주를 이룬다고 하자. 그러면 $\phi(x): x = x$는 모든 집합의 집합 $S$를 정의하며, $2^S$는 $S$ 위의 모든 명제들의 집합이다. 다음 사상을 생각하자.</p>
+
+\[f : S \to 2^S, \qquad x \mapsto (y \mapsto [y \in x]).\]
+
+<p>소박한 내포 공리에 의해 모든 $P \in 2^S$는 집합 ${y : P(y)}$를 결정하므로, $f$는 (점) 전사적이다. 이는 $0 \mapsto 1, 1 \mapsto 0$에 대해 로비어의 정리와 모순이다. (증명을 풀어 보면, 점 $a$는 바로 집합 ${x : x \notin x}$이다.) ■</p>
+
+<h2 id="약한-점-전사성">약한 점 전사성</h2>
+
+<p>$\mathcal{C}_{\mathsf{PA}}$를 다음과 같은 결정가능 집합의 범주라 하자.</p>
+
+<ul>
+  <li>
+    <p>대상: PA에서 증명가능한 동치 관계로 나눈 $\mathbb{N}$의 결정가능 부분집합.</p>
+  </li>
+  <li>
+    <p>사상: PA가 전역적<sub>total</sub>임을 증명하는 함수 (PA에서 증명가능한 동치 관계로 나눈 것).</p>
+  </li>
+</ul>
+
+<p>그러면 $1 = {0}$은 종대상이고,</p>
+
+\[\begin{gather}
+A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
+\pi_1 : \langle a, b \rangle \mapsto a, \quad \pi_2 : \langle a, b \rangle \mapsto b
+\end{gather}\]
+
+<p>는 곱이다. 여기서 $\langle \cdot, \cdot \rangle$은 순서쌍의 코드이다.</p>
+
+<p>다음 보조정리를 증명하자.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $\mathsf{PA}$가 무모순이면, $\mathcal{C}_\mathsf{PA}$는 데카르트 닫힌 범주가 <em>아니다</em>.</p>
+</blockquote>
+
+<p><strong>보조정리의 증명.</strong> 그렇지 않다고 가정하자. 그러면 $2^\mathbb{N}$의 점은 전역성이 증명가능한 함수 $\mathbb{N} \to 2$의 수반이다. 특히 $2^\mathbb{N}$은 상수함수 $0$의 수반인 점 $e_0$를 가진다. $2^\mathbb{N}$은 $\mathcal{C}_\mathsf{PA}$의 대상이므로 결정가능 부분집합 $E \subseteq \mathbb{N}$이고, 포함사상 $i : E \to \mathbb{N}$을 가진다.</p>
+
+<p>$\Theta: \mathbb{N} \to 2^\mathbb{N}$를 다음과 같이 정의하자.</p>
+
+\[\Theta(n) = \begin{cases}
+n &amp;n \in E \\
+e_0 &amp;\text{그 외}
+\end{cases}\]
+
+<p>그러면 $\Theta$는 사상이고 ($E$가 결정가능하므로 전역성이 증명가능하다), $\Theta \circ i = \mathrm{id}_E$이다. 따라서 $2^\mathbb{N}$의 모든 점 $p$에 대해 $\Theta(i \circ p) = p$이므로, $\Theta$는 점 전사적이다. 그러므로 로비어의 정리에 의해 모든 사상 $h: 2 \to 2$는 고정점을 가진다. 그런데 그렇다면 $0 \mapsto 1, 1 \mapsto 0$ 역시 고정점을 가지게 되고, 이로부터 $\mathsf{PA} \vdash 0 = 1$이 따라 나온다. □</p>
+
+<p>따라서 위에서 진술한 형태의 로비어의 정리는, 계산과 산술이 사는 범주에서는 써먹을 수가 없다. 다행히도 로비어의 정리의 증명은 지수를 실제로 사용하지 않는다. 지수는 “모든 $g$가 코드를 가진다”는 사실을 하나의 사상 $f : A \to B^A$로 포장해줄 뿐이다. 지수를 걷어내면 다음을 얻는다.</p>
+
+<blockquote>
+  <p><strong>정의.</strong> $\mathcal{C}$가 유한곱을 가진다고 하자. 사상 $\phi : A \times A \to B$가 <strong>약하게 점 전사적<sub>weakly point surjective</sub></strong>이라는 것은, 모든 $h : A \to B$에 대해 $A$의 모든 점 $x$에서 $\phi(\langle a, x \rangle) = h(x)$를 만족하는 $A$의 점 $a$가 존재한다는 것이다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>로비어 정리 (유한곱).</strong> $\mathcal{C}$가 유한곱을 가지는 범주라고 하자. $\phi : A \times A \to B$가 약하게 점 전사적이면, 모든 $g : B \to B$에 대해 $g(b) = b$를 만족하는 $B$의 점 $b$가 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $h := g \circ \phi \circ \Delta_A$라 하자. 정의에서처럼 $a$를 고르고, $b := \phi \circ \langle a, a \rangle$라 하면</p>
+
+\[b = \phi(\langle a, a \rangle) = h(a) = g \circ \phi \circ \Delta_A \circ a = g(b). \quad ■\]
+
+<p>원 로비어 정리는 $\phi = \bar f$인 특수한 경우이다.</p>
+
+<h2 id="튜링-타르스키-괴델">튜링, 타르스키, 괴델</h2>
+
+<blockquote>
+  <p><strong>따름정리 (튜링).</strong> 정지 문제는 결정불가능하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> $\mathbf{Rec}$을 대상이 $\mathbb{N}$의 결정가능 부분집합이고, 사상이 전역 계산가능 함수인 범주라 하자. (이때 전역성이 <em>증명가능할</em> 필요는 없다.) 결정가능 부분집합과 그에 대응하는 결정 프로그램은 동일시하겠다. $\mathcal{C}_\mathsf{PA}$에서와 마찬가지로 $\mathbf{Rec}$은 순서쌍 코드를 통해 유한곱을 가지며, $1 = {0}$, $2 = {0, 1}$이다.</p>
+
+<p>정지 문제가 결정가능하다고 가정하자. 즉, 프로그램 $e$가 입력 $n$에서 정지하면 $h(e, n) = 1$, 그렇지 않으면 $h(e, n) = 0$인 사상 $h : \mathbb{N} \times \mathbb{N} \to 2$가 존재한다고 하자. 사상 $f: \mathbb{N} \to 2$에 대해, $e_f$를 다음 프로그램이라 하자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>on input n:
+  if f(n) = 1: return
+  else: infinite loop
+</code></pre></div></div>
+
+<p>그러면 모든 $n$에 대해 $h(e_f, n) = f(n)$이므로 $h$는 약하게 점 전사적이다. 로비어의 정리에 의해 $0 \mapsto 1, 1 \mapsto 0$이 고정점을 가지게 되어 모순이다. ■</p>
+
+<blockquote>
+  <p><strong>따름정리 (타르스키).</strong> 모든 문장 $\sigma$에 대해</p>
+
+\[\mathbb{N} \models \mathrm{True}(\ulcorner \sigma \urcorner) \iff \mathbb{N} \models \sigma\]
+
+  <p>를 만족하는 논리식 $\mathrm{True}(x)$는 존재하지 않는다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 자유변수가 하나인 논리식들의 괴델 번호 매김<sub>Gödel numbering</sub> $\psi_0, \psi_1, \dots$을 고정하자. $\mathbf{Def}$를 대상이 $\mathbb{N}^k \; (k = 0, 1, 2, …)$와 $2$이고, 사상이 표준 산술에서 정의가능한 함수인 범주라 하자.</p>
+
+<p>$\mathrm{True}$가 존재한다고 가정하자. 대입 함수 $\mathrm{sub}(m, n) = \ulcorner \psi_m(\bar n) \urcorner$는 계산가능하므로 정의가능하다. 따라서</p>
+
+\[\phi(m, n) := [\mathbb{N} \models \psi_m(\bar n)] = \chi_{\mathrm{True}}(\mathrm{sub}(m, n))\]
+
+<p>는 $\mathbf{Def}$의 사상이다. 이 사상은 약하게 점 전사적이다. $g : \mathbb{N} \to 2$가 논리식 $\gamma(x, y)$로 정의된다면, $\psi(x) := \gamma(x, 1)$은 $\phi(\ulcorner \psi \urcorner, n) = g(n)$을 만족하기 때문이다. 그런데 $0 \mapsto 1, 1 \mapsto 0$은 정의가능하며 고정점을 갖지 않으므로, 이는 로비어의 정리와 모순이다. ■</p>
+
+<p>괴델의 정리를 위해, 로빈슨 산술<sub>Robinson arithmetic</sub> $\mathsf{Q}$에 관한 다음 사실을 떠올리자.</p>
+
+<blockquote>
+  <p>모든 결정가능 집합 $D \subseteq \mathbb{N}$에 대해, $n \in D \Rightarrow \mathsf{Q} \vdash \psi_D(\bar n)$이고 $n \notin D \Rightarrow \mathsf{Q} \vdash \neg\psi_D(\bar n)$을 만족하는 논리식 $\psi_D(x)$가 존재한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>따름정리 (괴델).</strong> $\mathsf{Q}$를 포함하는 무모순이고 재귀적으로 열거가능한 산술의 공리화 $T$에 대해, $T$에서 증명불가능한 산술적 참이 존재한다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 다음 보조정리를 증명하자.</p>
+
+<blockquote>
+  <p><strong>보조정리.</strong> $T$가 $\mathsf{Q}$의 무모순인 확장이면, $T$의 정리들의 집합은 결정불가능하다.</p>
+</blockquote>
+
+<p><strong>증명.</strong> 결정가능하다고 가정하고 $\mathbf{Rec}$에서 논의하자. 다음과 같이 정의한다.</p>
+
+\[\phi(m, n) = \begin{cases}
+1 &amp; T \vdash \psi_m(\bar n) \\
+0 &amp; \text{그 외}
+\end{cases}\]
+
+<p>$\mathrm{sub}$가 계산가능하고 $T$가 결정가능하므로 $\phi$는 계산가능하다. 또한 $\phi$는 약하게 점 전사적이다. 계산가능한 $g : \mathbb{N} \to 2$가 주어졌을 때 $D = g^{-1}(1)$이라 하면 다음이 성립하기 때문이다.</p>
+
+<ul>
+  <li>$g(n) = 1$이면 $T \vdash \psi_D(\bar n)$이므로 $\phi(\ulcorner \psi_D \urcorner, n) = 1$이다.</li>
+  <li>$g(n) = 0$이면 $T \vdash \neg\psi_D(\bar n)$이므로, 무모순성에 의해 $T \nvdash \psi_D(\bar n)$이고 $\phi(\ulcorner \psi_D \urcorner, n) = 0$이다.</li>
+</ul>
+
+<p>로비어의 정리에 의해 $0 \mapsto 1, 1 \mapsto 0$이 고정점을 가지게 되어 모순이다. □</p>
+
+<p>이제 $T$가 완전하다고 가정하자. 그러면 다음 절차는 전역적이고, 따라서 $T$는 결정가능해진다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for n in ℕ:
+  if n is a proof of φ:
+    return True
+  if n is a proof of ¬φ:
+    return False
+</code></pre></div></div>
+
+<p>이는 위의 보조정리와 모순이다. ■</p>
+
+<p>몇 가지 덧붙이자면:</p>
+
+<ol>
+  <li>
+    <p>이 논증은 $\omega$-무모순성이 아니라 무모순성만을 사용하므로, 괴델–로서<sub>Gödel–Rosser</sub> 정리와 같은 강도를 가진다.</p>
+  </li>
+  <li>
+    <p>증명을 풀어 보면, 점 $a$는 $n \mapsto [T \nvdash \psi_n(\bar n)]$을 표현하는 논리식의 코드이다. 따라서 $\psi_a(\bar a)$는 괴델 문장, 즉 “나는 증명가능하지 않다”라고 말하는 문장이다.</p>
+  </li>
+</ol>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
+        <title>Lawvere's Theorem: Generalizing Cantor, Russell, Turing, Tarski, and Gödel</title>
+        <link>https://dimenerno.github.io/2026/10/27/lawvere/en</link>
+        <guid>https://dimenerno.github.io/2026/10/27/lawvere/en</guid>
+        <pubDate>Tue, 27 Oct 2026 00:00:00 -0700</pubDate>
+        <description>&lt;p&gt;Students of mathematical logic would have at some point noticed that Cantor’s proof of the uncountability of the reals, Russell’s set-theoretic paradox, Turing’s halting problem, Gödel’s incompleteness theorem, and Tarski’s undefinability theorem all share a similarity. They all employ a &lt;strong&gt;diagonal argument&lt;/strong&gt;, whereby one “feeds” an argument to itself. This similarity can be formulated precisely in the language of category theory.&lt;/p&gt;
+</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+          xml:base="https://dimenerno.github.io/2026/10/27/lawvere/en">
+          <![CDATA[
+            <p>Students of mathematical logic would have at some point noticed that Cantor’s proof of the uncountability of the reals, Russell’s set-theoretic paradox, Turing’s halting problem, Gödel’s incompleteness theorem, and Tarski’s undefinability theorem all share a similarity. They all employ a <strong>diagonal argument</strong>, whereby one “feeds” an argument to itself. This similarity can be formulated precisely in the language of category theory.</p>
+
+<h2 id="lawveres-theorem">Lawvere’s Theorem</h2>
+
+<blockquote>
+  <p><strong>Definition.</strong> A category $\mathcal{C}$ is <strong>Cartesian closed</strong> if it satisfies the following.</p>
+
+  <ol>
+    <li>$\mathcal{C}$ has a terminal object $1$.</li>
+    <li>$\mathcal{C}$ admits arbitrary <a href="https://dimenerno.github.io/2025/04/02/box-v-product">products</a> of finitely many objects.</li>
+    <li>For every $B \in \mathcal{C}$, $(-) \times B : \mathcal{C} \to \mathcal{C}$ has a right adjoint.</li>
+  </ol>
+</blockquote>
+
+<p>We call the right adjoint of $(-) \times B$ the <strong>exponential</strong> and denote $(-)^B$. Thus,</p>
+
+\[\hom(A \times B, C) \cong \hom(A, C^B)\]
+
+<p>naturally in $A, B, C$. Thus Cartesian closed category is a generalization of currying. Until further notice, we assume that $\mathcal{C}$ is Cartesian closed.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> The <strong>diagonalization</strong> $\Delta_A$ of $A \in \mathcal{C}$ is the unique map induced by the following diagram:</p>
+
+  <figure class="tikz"><img src="/public/tikz/31b587d7583a29ed.svg" alt="TikZ diagram" /></figure>
+</blockquote>
+
+<blockquote>
+  <p><strong>Definition.</strong> A <strong>point</strong> of $X \in \mathcal{C}$ is a morphism $1 \to X$.</p>
+</blockquote>
+
+<p>Note that a point is a category-theoretic generalization of an element of a set. For example, in $\mathbf{Set}$, $\Delta_A: A \to A \times A$ is the map $a \mapsto (a, a)$.</p>
+
+<p>We can thus generalize the notion of surjectivity.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> $f: X \to Y$ is <strong>point surjective</strong> if for every point $y \in Y$, there exists a point $x \in X$ such that $f\circ x = y$.</p>
+</blockquote>
+
+<p>I will also write $f(x) = y$ in place of $f \circ x = y$.</p>
+
+<p>The following gives a category-theoretic generalization of the diagonal argument.</p>
+
+<blockquote>
+  <p><strong>Lawvere’s Theorem.</strong> Let $\mathcal{C}$ be a Cartesian closed category. If $f: A \to B^A$ is point surjective, for every $g: B \to B$, there exists a point $b$ of $B$ such that $g(b) = b$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Let $\bar{f} : A \times A \to B$ be the adjoint of $f$. Define $\phi: A \to B$ as $g \circ \bar{f} \circ \Delta_A$.</p>
+
+<p>Since</p>
+
+\[\hom(A, B) \cong \hom(1 \times A, B) \cong \hom(1, B^A),\]
+
+<p>let $\bar{\phi} : 1 \to B^A$ be the adjoint of $\phi$. By point surjectivity of $f$, there exists a point $a: 1 \to A$ such that $f(a) = \bar{\phi}$. By naturality of the adjunction, we have the following commutative diagram.</p>
+
+\[\begin{CD}
+\hom(1\times A,\, B) @&gt;{\overline{(-)}}&gt;{\cong}&gt; \hom(1,\, B^A) \\
+@A{(-)\circ(a\,\times\,\mathrm{id}_A)}AA @AA{(-)\circ a}A \\
+\hom(A\times A,\, B) @&gt;{\cong}&gt;{\overline{(-)}}&gt; \hom(A,\, B^A)
+\end{CD}\]
+
+<p>Chasing $\bar f$ around the square, and identifying $1 \times A$ with $A$ (under which $a \times \mathrm{id}_A$ becomes $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle : A \to A \times A$), we obtain</p>
+
+\[\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle = \phi\]
+
+<p>Hence, since $\langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a = \langle a, a \rangle = \Delta_A \circ a$,</p>
+
+\[\begin{align}
+\bar{f} \circ \langle a \circ \operatorname{!}_A, \mathrm{id}_A \rangle \circ a &amp;= \bar{f} \circ \Delta_A \circ a \\
+&amp;= \phi \circ a
+\end{align}\]
+
+<p>Let $b := \bar f \circ \Delta_A \circ a$. The following diagram then commutes.</p>
+
+<figure class="tikz"><img src="/public/tikz/b286f9825c6155be.svg" alt="TikZ diagram" /></figure>
+
+<p>In particular, $g(b) = g \circ \bar f \circ \Delta_A \circ a = \phi(a) = \bar f \circ \Delta_A \circ a = b$. ■</p>
+
+<h2 id="cantor-and-russell">Cantor and Russell</h2>
+
+<blockquote>
+  <p><strong>Corollary (Cantor).</strong> In $\mathbf{Set}$, there is no (point) surjective map $f: A \to 2^A$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Assume otherwise. Then by Lawvere’s theorem, every map $2 \to 2$ has a fixed point. However, $0 \mapsto 1, 1 \mapsto 0$ does not have a fixed point. ■</p>
+
+<blockquote>
+  <p><strong>Corollary (Russell).</strong> The axiom of naive comprehension is inconsistent.</p>
+</blockquote>
+
+<p><em>Proof.</em> Assume naive comprehension, and suppose the sets it produces form a Cartesian closed category as in $\mathbf{Set}$. Then $\phi(x): x = x$ defines the set of all sets $S$, and $2^S$ is the set of all propositions over $S$. Consider</p>
+
+\[f : S \to 2^S, \qquad x \mapsto (y \mapsto [y \in x]).\]
+
+<p>By naive comprehension, every $P \in 2^S$ determines a set ${y : P(y)}$, so $f$ is (point) surjective. This contradicts Lawvere’s theorem, with $0 \mapsto 1, 1 \mapsto 0$. (Unwinding the proof, the point $a$ is the set ${x : x \notin x}$.) ■</p>
+
+<h2 id="weak-point-surjectivity">Weak point-surjectivity</h2>
+
+<p>Let $\mathcal{C}_{\mathsf{PA}}$ be the category of decidable sets, i.e.</p>
+
+<ul>
+  <li>
+    <p>Objects: Decidable subsets of $\mathbb{N}$ modulo PA-provable equivalence.</p>
+  </li>
+  <li>
+    <p>Morphisms: Functions that PA proves to be total (modulo PA-provable equality).</p>
+  </li>
+</ul>
+
+<p>Then $1 = {0}$ is the terminal object, and</p>
+
+\[\begin{gather}
+A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
+\pi_1 : \langle a, b \rangle \mapsto a, \quad \pi_2 : \langle a, b \rangle \mapsto b
+\end{gather}\]
+
+<p>is the product, where $\langle \cdot, \cdot \rangle$ is the code for a pair.</p>
+
+<p>We prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> Assuming $\mathsf{PA}$ is consistent, $\mathcal{C}_\mathsf{PA}$ is <em>not</em> Cartesian closed.</p>
+</blockquote>
+
+<p><em>Proof of the lemma.</em> Assume otherwise. Then a point of $2^\mathbb{N}$ is adjoint to a provably total function $\mathbb{N} \to 2$. In particular, $2^\mathbb{N}$ has a point $e_0$, adjoint to the constant function $0$. Since $2^\mathbb{N}$ is an object of $\mathcal{C}_\mathsf{PA}$, it is a decidable subset $E \subseteq \mathbb{N}$, with inclusion $i : E \to \mathbb{N}$.</p>
+
+<p>Define $\Theta: \mathbb{N} \to 2^\mathbb{N}$ such that</p>
+
+\[\Theta(n) = \begin{cases}
+n &amp;n \in E \\
+e_0 &amp;\text{otherwise}
+\end{cases}\]
+
+<p>Then $\Theta$ is a morphism (i.e. provably total, since $E$ is decidable), and $\Theta \circ i = \mathrm{id}_E$. Hence for every point $p$ of $2^\mathbb{N}$, $\Theta(i \circ p) = p$, so $\Theta$ is point surjective. Hence, by Lawvere’s theorem, any morphism $h: 2 \to 2$ has a fixed point. But then $0 \mapsto 1, 1 \mapsto 0$ also has a fixed point, which implies $\mathsf{PA} \vdash 0 = 1$. □</p>
+
+<p>So Lawvere’s theorem, as stated, cannot be applied inside the categories where computation and arithmetic live. Fortunately, the proof never used exponentials: they only package “every $g$ has a code” into a single morphism $f : A \to B^A$. Dropping them, we get the following.</p>
+
+<blockquote>
+  <p><strong>Definition.</strong> Let $\mathcal{C}$ have finite products. A morphism $\phi : A \times A \to B$ is <strong>weakly point surjective</strong> if for every $h : A \to B$ there is a point $a$ of $A$ such that $\phi(\langle a, x \rangle) = h(x)$ for every point $x$ of $A$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Lawvere’s Theorem (finite products).</strong> Let $\mathcal{C}$ be a category with finite products. If $\phi : A \times A \to B$ is weakly point surjective, then for every $g : B \to B$, there exists a point $b$ of $B$ such that $g(b) = b$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Let $h := g \circ \phi \circ \Delta_A$. Choose $a$ as in the definition, and let $b := \phi \circ \langle a, a \rangle$. Then</p>
+
+\[b = \phi(\langle a, a \rangle) = h(a) = g \circ \phi \circ \Delta_A \circ a = g(b). \quad ■\]
+
+<p>The Cartesian closed version is the special case $\phi = \bar f$.</p>
+
+<h2 id="turing-tarski-and-gödel">Turing, Tarski, and Gödel</h2>
+
+<blockquote>
+  <p><strong>Corollary (Turing).</strong> The halting problem is undecidable.</p>
+</blockquote>
+
+<p><em>Proof.</em> Let $\mathbf{Rec}$ be the category whose objects are decidable subsets of $\mathbb{N}$ and whose morphisms are total computable functions (not necessarily <em>provably</em> total). We will equivocate decidable subsets with its corresponding decision program. As with $\mathcal{C}_\mathsf{PA}$, it has finite products via the pairing code, with $1 = {0}$ and $2 = {0, 1}$.</p>
+
+<p>Assume that the halting problem is decidable, i.e. there exists a morphism $h : \mathbb{N} \times \mathbb{N} \to 2$ such that $h(e, n) = 1$ if program $e$ halts on input $n$, and $h(e, n) = 0$ otherwise. For a morphism $f: \mathbb{N} \to 2$, let $e_g$ be the program</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>on input n:
+  if f(n) = 1: return
+  else: infinite loop
+</code></pre></div></div>
+
+<p>Then $h(e_g, n) = f(n)$ for every $n$, so $h$ is weakly point surjective. By Lawvere’s theorem, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, a contradiction. ■</p>
+
+<blockquote>
+  <p><strong>Corollary (Tarski).</strong> There is no formula $\mathrm{True}(x)$ such that</p>
+
+\[\mathbb{N} \models \mathrm{True}(\ulcorner \sigma \urcorner) \iff \mathbb{N} \models \sigma\]
+
+  <p>for every sentence $\sigma$.</p>
+</blockquote>
+
+<p><em>Proof.</em> Fix a Gödel numbering $\psi_0, \psi_1, \dots$ of the formulas with one free variable. Let $\mathbf{Def}$ be the category whose objects are $\mathbb{N}^k \; (k = 0, 1, 2, …)$ and $2$, and whose morphisms are functions definable in the standard arithmetic.</p>
+
+<p>Suppose $\mathrm{True}$ exists. The substitution function $\mathrm{sub}(m, n) = \ulcorner \psi_m(\bar n) \urcorner$ is computable, hence definable. So</p>
+
+\[\phi(m, n) := [\mathbb{N} \models \psi_m(\bar n)] = \chi_{\mathrm{True}}(\mathrm{sub}(m, n))\]
+
+<p>is a morphism of $\mathbf{Def}$. It is weakly point surjective: if $g : \mathbb{N} \to 2$ is defined by a formula $\gamma(x, y)$, then $\psi(x) := \gamma(x, 1)$ satisfies $\phi(\ulcorner \psi \urcorner, n) = g(n)$. But $0 \mapsto 1, 1 \mapsto 0$ is definable and has no fixed point, contradicting Lawvere’s theorem. ■</p>
+
+<p>For Gödel, recall the following fact about Robinson arithmetic $\mathsf{Q}$.</p>
+
+<blockquote>
+  <p>For every decidable $D \subseteq \mathbb{N}$, there is a formula $\psi_D(x)$ such that $n \in D \Rightarrow \mathsf{Q} \vdash \psi_D(\bar n)$ and $n \notin D \Rightarrow \mathsf{Q} \vdash \neg\psi_D(\bar n)$.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Corollary (Gödel).</strong> For every consistent, recursively enumerable axiomatization $T \supseteq \mathsf{Q}$ of arithmetic, there exists an arithmetical truth unprovable in $T$.</p>
+</blockquote>
+
+<p><em>Proof.</em> We prove the following lemma:</p>
+
+<blockquote>
+  <p><strong>Lemma.</strong> If $T$ is a consistent extension of $\mathsf{Q}$, then the set of theorems of $T$ is undecidable.</p>
+</blockquote>
+
+<p><em>Proof.</em> Suppose it is decidable, and work in $\mathbf{Rec}$. Define</p>
+
+\[\phi(m, n) = \begin{cases}
+1 &amp; T \vdash \psi_m(\bar n) \\
+0 &amp; \text{otherwise}
+\end{cases}\]
+
+<p>This is computable, since $\mathrm{sub}$ is computable and $T$ is decidable. It is also weakly point surjective; given a computable $g : \mathbb{N} \to 2$, let $D = g^{-1}(1)$. We then have:</p>
+
+<ul>
+  <li>If $g(n) = 1$, then $T \vdash \psi_D(\bar n)$, so $\phi(\ulcorner \psi_D \urcorner, n) = 1$.</li>
+  <li>If $g(n) = 0$, then $T \vdash \neg\psi_D(\bar n)$, so by consistency $T \nvdash \psi_D(\bar n)$, and $\phi(\ulcorner \psi_D \urcorner, n) = 0$.</li>
+</ul>
+
+<p>By Lawvere’s theorem, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, a contradiction. □</p>
+
+<p>Now suppose that $T$ is complete. Then the following procedure is total, with which $T$ becomes decidable.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for n in ℕ:
+  if n is a proof of φ:
+    return True
+  if n is a proof of ¬φ:
+    return False
+</code></pre></div></div>
+
+<p>This contradicts the lemma above. ■</p>
+
+<p>A few remarks:</p>
+
+<ol>
+  <li>
+    <p>The argument uses only consistency, not $\omega$-consistency, so it has the strength of the Gödel–Rosser theorem.</p>
+  </li>
+  <li>
+    <p>Unwinding the proof, the point $a$ codes a formula representing $n \mapsto [T \nvdash \psi_n(\bar n)]$, so $\psi_a(\bar a)$ is the Gödel sentence; i.e. the sentence “I am not provable.”</p>
+  </li>
+</ol>
+
+          ]]>
+        </content:encoded>
+      </item>
+    
+      <item>
         <title>언어 능력이 없는 동물의 의식에 대한 회의</title>
         <link>https://dimenerno.github.io/2026/10/23/animal-consciousness</link>
         <guid>https://dimenerno.github.io/2026/10/23/animal-consciousness</guid>
@@ -901,86 +1401,6 @@ E_z &amp; B_y &amp; -B_x &amp; 0 \\
     </li>
   </ol>
 </div>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>우주 검열 가설의 초월론적 성격에 관하여</title>
-        <link>https://dimenerno.github.io/2026/10/17/cch</link>
-        <guid>https://dimenerno.github.io/2026/10/17/cch</guid>
-        <pubDate>Sat, 17 Oct 2026 00:00:00 -0700</pubDate>
-        <description>&lt;p&gt;&lt;strong&gt;우주 검열 가설&lt;/strong&gt;을 굉장히 간략히 소개하자면, “관측 가능한 우주는 인과율을 따른다”는 원리이다.&lt;/p&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2026/10/17/cch">
-          <![CDATA[
-            <p><strong>우주 검열 가설</strong>을 굉장히 간략히 소개하자면, “관측 가능한 우주는 인과율을 따른다”는 원리이다.</p>
-
-<p>여기서의 관측 가능성은 상대론적 의미로, 시공간의 특정 지점에서 발신한 광신호가 충분한 시간 이후 관측될 수 있다면 그 지점은 관측 가능하다. 예를 들어 안드로메다 은하는 관측 가능하지만 — 안드로메다 은하와 지구의 거리는 250만 광년이므로 안드로메다 은하에서 발신한 광신호는 250만 년 이후 관측될 것이다 — 블랙홀의 “사건의 지평선” 내부는 관측 불가능하다. 사건의 지평선 내부에서 발신된 광신호는 특이점 안으로 “빨려” 들어가기 때문이다.</p>
-
-<p>그러나 위 문단의 소개가 “굉장히 간략한” 소개에 그치는 이유는, 관측 가능성과 인과율이 무엇을 의미하는지를 수학적/형식적으로 엄밀히 정의하는 것이 말도 안 되게 어려운 작업임이 드러났기 때문이다. 이 작업은 Hawking, Ellis, Wald 등에 의해 이루어졌는데, 대충 다음과 같다. (안 읽어도 된다)</p>
-
-<blockquote>
-  <p>시공간 $(M, g)$에 대해, $\tilde M$ 안에 $\overline{J^-(\mathscr{I}^+) \cap M}$를 포함하는 열린 집합 $\tilde V$가 존재하고 $(\tilde V, \tilde g)$가 대역적 쌍곡이라면, $(M, g)$가 강하게 점근적 예측가능하다고 하자.</p>
-
-  <p><strong>가설.</strong> 적절한 물질장(e.g. 무한한 에너지나 음의 에너지를 갖는 물질이 없다)을 가지며 특이점이 없고 점근적으로 평탄한 초기 데이터 $(Σ, h, K)$에 대해, 그 최대 코시 전개 $(M, g)$는 강하게 점근적 예측가능하다.</p>
-</blockquote>
-
-<p>하지만 이 가설의 반례가 Christodoulou에 의해서 발견되었다. 결론: 우주 검열 가설은 틀렸다.</p>
-
-<p>…로 논의가 끝났을 리는 없다. Christodoulou 자신을 비롯한 이후 물리학자들은 이 반례 우주가 굉장히 불안정하다는 사실을 지적했다. 충분한 안정성 조건을 추가한다면 우주 검열 가설을 성립시키는 것은 여전히 가능할지 모른다.</p>
-
-<p>그런데 여기서 우리는 한 가지 미래의 가능성을 그려 봄 직하다. 안정성 조건 A가 추가된 우주 검열 가설이 제시되었는데, 이후 어떤 물리학자가 A까지 만족하는 반례를 발견했다면 어떨까? 그제야 우주 검열 가설은 기각될까?</p>
-
-<p>필자의 생각으로는 그렇지 않다. 아마 안정성 조건 B가 추가된 우주 검열 가설이 새로 제시될 것이다. 그런데 B까지 만족하는 반례도 곧 발견된다면? 그러면 안정성 조건 C도 추가된 우주 검열 가설이 제시될 것이고, 어쩌고저쩌고…</p>
-
-<p>분명 이것은 우리가 여타 과학 이론을 대하는 태도와 다르다. 보통의 경우, 어떤 이론(e.g. 플로지스톤설)의 반례가 발견될 경우 초기에는 반례를 수용할 수 있도록 이론이 완화/수정되지만(음의 플로지스톤), 반례가 너무 많이 쌓이면 기존의 이론은 기각되고 새로운 이론(산소설)이 채택된다.</p>
-
-<p>그러나 우주 검열 가설의 경우에는 — 적어도 필자의 직관으로는 — <strong>아무리</strong> 반례가 많이 등장하더라도 끊임없이 수정이 가해질지언정 결코 완전히 기각되지는 않을 것으로 생각된다. 그리고 만약 이 직관을 인정한다면, 우주 검열 가설의 문제는 더 이상 이 가설이 참이냐 아니냐의 문제가 아닌 것으로 보인다. 우주 검열 가설은 <strong>선험적(a priori)으로 참이어야만 한다.</strong> 왜냐하면 우주 검열 가설은 인과율의 우주론적 형식화와 다름이 없으며, 인과율은 물리학적 탐구를 가능하게 하는 <strong>초월론적 조건</strong>에 다름 아니기 때문이다. 그러므로 우리가 해야 하는 일은 우주 검열 가설이 참이 <strong>되도록</strong> 하는 조건을 명확하게 규정하는 것이다.</p>
-
-<p>따라서 물리학자들이 앞으로 발견될 반례에 대해 우주 검열 가설을 기각하기보다 우주 검열 가설을 완화하는 방식으로 대응하리라는 생각은, 마치 칸트주의자들이 비유클리드 기하학이라는 “반례”에 대해 시공간의 선험적 직관 형식을 기각하기보다 이 직관 형식의 경직성을 완화하는 방식으로 대응했던 것과 궤를 같이하는 것이 아닐까? 이는 철학사와 과학사의 흥미로운 교차점이 될 수 있다고 필자는 생각한다.</p>
-
-          ]]>
-        </content:encoded>
-      </item>
-    
-      <item>
-        <title>On the Transcendental Nature of the Cosmic Censorship Hypothesis</title>
-        <link>https://dimenerno.github.io/2026/10/17/cch/en</link>
-        <guid>https://dimenerno.github.io/2026/10/17/cch/en</guid>
-        <pubDate>Sat, 17 Oct 2026 00:00:00 -0700</pubDate>
-        <description>&lt;p&gt;To put it very briefly, the &lt;strong&gt;cosmic censorship hypothesis&lt;/strong&gt; is the principle that the observable universe obeys causality.&lt;/p&gt;
-</description>
-        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-          xml:base="https://dimenerno.github.io/2026/10/17/cch/en">
-          <![CDATA[
-            <p>To put it very briefly, the <strong>cosmic censorship hypothesis</strong> is the principle that the observable universe obeys causality.</p>
-
-<p>Observability here is meant in the relativistic sense: a point in spacetime is observable if a light signal emitted from it can be observed after a sufficient amount of time. For instance, the Andromeda Galaxy is observable — since it lies 2.5 million light-years from Earth, a light signal emitted from Andromeda will be observed 2.5 million years later — whereas the interior of a black hole’s “event horizon” is not. A light signal emitted inside the event horizon gets “sucked” into the singularity.</p>
-
-<p>The reason the paragraph above is only a “very brief” introduction is that defining, with mathematical and formal rigor, what observability and causality mean has turned out to be a ridiculously difficult task. This work was carried out by Hawking, Ellis, Wald, and others, and it goes roughly as follows. (Feel free to skip it.)</p>
-
-<blockquote>
-  <p>Given a spacetime $(M, g)$, if there exists an open set $\tilde V$ in $\tilde M$ containing $\overline{J^-(\mathscr{I}^+) \cap M}$ such that $(\tilde V, \tilde g)$ is globally hyperbolic, we say that $(M, g)$ is strongly asymptotically predictable.</p>
-
-  <p><strong>Conjecture.</strong> For nonsingular, asymptotically flat initial data $(\Sigma, h, K)$ with suitable matter fields (e.g. no matter with infinite or negative energy), the maximal Cauchy development $(M, g)$ is strongly asymptotically predictable.</p>
-</blockquote>
-
-<p>But a counterexample to this conjecture was found by Christodoulou. Conclusion: the cosmic censorship hypothesis is false.</p>
-
-<p>…Of course, the discussion could hardly have ended there. Physicists, Christodoulou himself among them, pointed out that this counterexample universe is extremely unstable. Perhaps, by adding a sufficiently strong stability condition, the cosmic censorship hypothesis can still be made to hold.</p>
-
-<p>Here, though, we might imagine a possible future. Suppose a version of the hypothesis with stability condition A is proposed, and later some physicist finds a counterexample that satisfies even A. Would the cosmic censorship hypothesis then, at last, be rejected?</p>
-
-<p>I don’t think so. A new version with stability condition B would probably be proposed instead. And if a counterexample satisfying even B were soon found? Then a version with stability condition C would be proposed, and so on and so forth…</p>
-
-<p>This is clearly different from how we treat other scientific theories. Ordinarily, when counterexamples to a theory (e.g. phlogiston theory) are found, the theory is at first loosened or modified to accommodate them (phlogiston with negative mass), but once too many counterexamples pile up, the old theory is rejected and a new one (oxygen theory) is adopted.</p>
-
-<p>In the case of the cosmic censorship hypothesis, however — at least by my intuition — <strong>no matter how many</strong> counterexamples arise, it would be revised again and again but never rejected outright. And if we grant this intuition, the question about the cosmic censorship hypothesis no longer seems to be whether it is true or false. The cosmic censorship hypothesis <strong>must be true a priori.</strong> For the hypothesis is nothing other than the cosmological formalization of causality, and causality is nothing other than a <strong>transcendental condition</strong> that makes physical inquiry possible. What we must do, then, is to specify precisely the conditions under which the cosmic censorship hypothesis <strong>comes out</strong> true.</p>
-
-<p>So might not the expectation that physicists will respond to future counterexamples by relaxing the hypothesis rather than rejecting it run parallel to the way Kantians responded to the “counterexample” of non-Euclidean geometry by relaxing the rigidity of the pure form of spatiotemporal intuition rather than rejecting it? I think this could be an interesting case where the history of philosophy and the history of science intersect.</p>
 
           ]]>
         </content:encoded>
