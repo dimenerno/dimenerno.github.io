@@ -107,7 +107,7 @@
 
 \[f : S \to 2^S, \qquad x \mapsto (y \mapsto [y \in x]).\]
 
-<p>소박한 내포 공리에 의해 모든 $P \in 2^S$는 집합 ${y : P(y)}$를 결정하므로, $f$는 (점) 전사적이다. 이는 $0 \mapsto 1, 1 \mapsto 0$에 대해 로비어의 정리와 모순이다. (증명을 풀어 보면, 점 $a$는 바로 집합 ${x : x \notin x}$이다.) ■</p>
+<p>소박한 내포 공리에 의해 모든 $P \in 2^S$는 집합 $\lbrace y : P(y)\rbrace $를 결정하므로, $f$는 (점) 전사적이다. 이는 $0 \mapsto 1, 1 \mapsto 0$에 대해 로비어의 정리와 모순이다. (증명을 풀어 보면, 점 $a$는 바로 집합 $\lbrace x : x \notin x\rbrace $이다.) ■</p>
 
 <h2 id="약한-점-전사성">약한 점 전사성</h2>
 
@@ -122,7 +122,7 @@
   </li>
 </ul>
 
-<p>그러면 $1 = {0}$은 종대상이고,</p>
+<p>그러면 $1 = \lbrace 0\rbrace $은 종대상이고,</p>
 
 \[\begin{gather}
 A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
@@ -170,7 +170,7 @@ e_0 &amp;\text{그 외}
   <p><strong>따름정리 (튜링).</strong> 정지 문제는 결정불가능하다.</p>
 </blockquote>
 
-<p><strong>증명.</strong> $\mathbf{Rec}$을 대상이 $\mathbb{N}$의 결정가능 부분집합이고, 사상이 전역 계산가능 함수인 범주라 하자. (이때 전역성이 <em>증명가능할</em> 필요는 없다.) 결정가능 부분집합과 그에 대응하는 결정 프로그램은 동일시하겠다. $\mathcal{C}_\mathsf{PA}$에서와 마찬가지로 $\mathbf{Rec}$은 순서쌍 코드를 통해 유한곱을 가지며, $1 = {0}$, $2 = {0, 1}$이다.</p>
+<p><strong>증명.</strong> $\mathbf{Rec}$을 대상이 $\mathbb{N}$의 결정가능 부분집합이고, 사상이 전역 계산가능 함수인 범주라 하자. (이때 전역성이 <em>증명가능할</em> 필요는 없다.) 결정가능 부분집합과 그에 대응하는 결정 프로그램은 동일시하겠다. $\mathcal{C}_\mathsf{PA}$에서와 마찬가지로 $\mathbf{Rec}$은 순서쌍 코드를 통해 유한곱을 가지며, $1 = \lbrace 0\rbrace $, $2 = \lbrace 0, 1\rbrace $이다.</p>
 
 <p>정지 문제가 결정가능하다고 가정하자. 즉, 프로그램 $e$가 입력 $n$에서 정지하면 $h(e, n) = 1$, 그렇지 않으면 $h(e, n) = 0$인 사상 $h : \mathbb{N} \times \mathbb{N} \to 2$가 존재한다고 하자. 사상 $f: \mathbb{N} \to 2$에 대해, $e_f$를 다음 프로그램이라 하자.</p>
 
@@ -279,11 +279,11 @@ e_0 &amp;\text{그 외}
   </ol>
 </blockquote>
 
-<p>We call the right adjoint of $(-) \times B$ the <strong>exponential</strong> and denote $(-)^B$. Thus,</p>
+<p>We call the right adjoint of $(-) \times B$ the <strong>exponential</strong> and denote it $(-)^B$. Thus,</p>
 
 \[\hom(A \times B, C) \cong \hom(A, C^B)\]
 
-<p>naturally in $A, B, C$. Thus Cartesian closed category is a generalization of currying. Until further notice, we assume that $\mathcal{C}$ is Cartesian closed.</p>
+<p>naturally in $A, B, C$. Thus, a Cartesian closed category is a generalization of currying. Until further notice, we assume that $\mathcal{C}$ is Cartesian closed.</p>
 
 <blockquote>
   <p><strong>Definition.</strong> The <strong>diagonalization</strong> $\Delta_A$ of $A \in \mathcal{C}$ is the unique map induced by the following diagram:</p>
@@ -297,10 +297,10 @@ e_0 &amp;\text{그 외}
 
 <p>Note that a point is a category-theoretic generalization of an element of a set. For example, in $\mathbf{Set}$, $\Delta_A: A \to A \times A$ is the map $a \mapsto (a, a)$.</p>
 
-<p>We can thus generalize the notion of surjectivity.</p>
+<p>Furthermore, we can generalize the notion of surjectivity. Thus,</p>
 
 <blockquote>
-  <p><strong>Definition.</strong> $f: X \to Y$ is <strong>point surjective</strong> if for every point $y \in Y$, there exists a point $x \in X$ such that $f\circ x = y$.</p>
+  <p><strong>Definition.</strong> $f: X \to Y$ is <strong>point surjective</strong> if for every point $y$ of $Y$, there exists a point $x$ of $X$ such that $f\circ x = y$.</p>
 </blockquote>
 
 <p>I will also write $f(x) = y$ in place of $f \circ x = y$.</p>
@@ -308,7 +308,7 @@ e_0 &amp;\text{그 외}
 <p>The following gives a category-theoretic generalization of the diagonal argument.</p>
 
 <blockquote>
-  <p><strong>Lawvere’s Theorem.</strong> Let $\mathcal{C}$ be a Cartesian closed category. If $f: A \to B^A$ is point surjective, for every $g: B \to B$, there exists a point $b$ of $B$ such that $g(b) = b$.</p>
+  <p><strong>Lawvere’s Theorem.</strong> Let $\mathcal{C}$ be a Cartesian closed category. If $f: A \to B^A$ is point surjective, then for every $g: B \to B$, there exists a point $b$ of $B$ such that $g(b) = b$.</p>
 </blockquote>
 
 <p><em>Proof.</em> Let $\bar{f} : A \times A \to B$ be the adjoint of $f$. Define $\phi: A \to B$ as $g \circ \bar{f} \circ \Delta_A$.</p>
@@ -358,48 +358,59 @@ e_0 &amp;\text{그 외}
 
 \[f : S \to 2^S, \qquad x \mapsto (y \mapsto [y \in x]).\]
 
-<p>By naive comprehension, every $P \in 2^S$ determines a set ${y : P(y)}$, so $f$ is (point) surjective. This contradicts Lawvere’s theorem, with $0 \mapsto 1, 1 \mapsto 0$. (Unwinding the proof, the point $a$ is the set ${x : x \notin x}$.) ■</p>
+<p>By naive comprehension, every $P \in 2^S$ determines a set $\lbrace y : P(y)\rbrace $, so $f$ is (point) surjective. This contradicts Lawvere’s theorem, with $0 \mapsto 1, 1 \mapsto 0$. (Unwinding the proof, the point $a$ is the set $\lbrace x : x \notin x\rbrace $.) ■</p>
 
 <h2 id="weak-point-surjectivity">Weak point-surjectivity</h2>
 
-<p>Let $\mathcal{C}_{\mathsf{PA}}$ be the category of decidable sets, i.e.</p>
+<p>Let $\mathcal{C}_{\mathsf{PA}}$ be the category of PA-definable subsets of $\mathbb{N}$:</p>
 
 <ul>
   <li>
-    <p>Objects: Decidable subsets of $\mathbb{N}$ modulo PA-provable equivalence.</p>
+    <p><strong>Objects</strong> $\varphi$: Formula with one free variable, modulo PA-provable equivalence.</p>
   </li>
   <li>
-    <p>Morphisms: Functions that PA proves to be total (modulo PA-provable equality).</p>
+    <p><strong>Morphisms</strong> $F: \varphi \to \psi$: Function-defining formula with two free variables modulo PA-provable equivalence on the domain $\varphi$, i.e.</p>
+  </li>
+  <li>
+    <p><strong>Composition</strong>: $\exists y\,(F(x,y) \land G(y,z))$</p>
   </li>
 </ul>
 
-<p>Then $1 = {0}$ is the terminal object, and</p>
+<p>We also write $x \in \varphi$ for $\varphi(x)$ and treat objects as sets (that satisfy corresponding formula) when convenient. Thus, $1 = \lbrace 0\rbrace $ is the terminal object, and</p>
 
 \[\begin{gather}
 A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
 \pi_1 : \langle a, b \rangle \mapsto a, \quad \pi_2 : \langle a, b \rangle \mapsto b
 \end{gather}\]
 
-<p>is the product, where $\langle \cdot, \cdot \rangle$ is the code for a pair.</p>
+<p>is the product, where $\langle \cdot, \cdot \rangle$ is the code for a pair. Note that $\langle \cdot, \cdot \rangle$, $\pi_1$, and $\pi_2$ are definable and provably total; e.g. Cantor’s pairing:</p>
 
-<p>We prove the following lemma:</p>
+\[\langle a, b \rangle = \tfrac{1}{2}(a+b)(a+b+1) + b.\]
+
+<p>We also write $2 = \lbrace 0, 1\rbrace $ and $\mathbb{N} = \lbrace x : x = x\rbrace $.</p>
+
+<p>Now we prove the following lemma:</p>
 
 <blockquote>
   <p><strong>Lemma.</strong> Assuming $\mathsf{PA}$ is consistent, $\mathcal{C}_\mathsf{PA}$ is <em>not</em> Cartesian closed.</p>
 </blockquote>
 
-<p><em>Proof of the lemma.</em> Assume otherwise. Then a point of $2^\mathbb{N}$ is adjoint to a provably total function $\mathbb{N} \to 2$. In particular, $2^\mathbb{N}$ has a point $e_0$, adjoint to the constant function $0$. Since $2^\mathbb{N}$ is an object of $\mathcal{C}_\mathsf{PA}$, it is a decidable subset $E \subseteq \mathbb{N}$, with inclusion $i : E \to \mathbb{N}$.</p>
-
-<p>Define $\Theta: \mathbb{N} \to 2^\mathbb{N}$ such that</p>
+<p><em>Proof of the lemma.</em> Assume otherwise. Then a point of $2^\mathbb{N}$ is adjoint to a morphism $\mathbb{N} \to 2$, i.e. a provably total function $\mathbb{N} \to 2$. In particular, $2^\mathbb{N}$ has a point $e_0$, adjoint to the constant function $0$. Since $2^\mathbb{N}$ is an object of $\mathcal{C}_\mathsf{PA}$, it is definable by a formula $E(x)$. Let $i : E \to \mathbb{N}$ be the inclusion of $E$. Define $\Theta: \mathbb{N} \to E$ as follows:</p>
 
 \[\Theta(n) = \begin{cases}
 n &amp;n \in E \\
 e_0 &amp;\text{otherwise}
 \end{cases}\]
 
-<p>Then $\Theta$ is a morphism (i.e. provably total, since $E$ is decidable), and $\Theta \circ i = \mathrm{id}_E$. Hence for every point $p$ of $2^\mathbb{N}$, $\Theta(i \circ p) = p$, so $\Theta$ is point surjective. Hence, by Lawvere’s theorem, any morphism $h: 2 \to 2$ has a fixed point. But then $0 \mapsto 1, 1 \mapsto 0$ also has a fixed point, which implies $\mathsf{PA} \vdash 0 = 1$. □</p>
+<p>It is routine to show that PA proves that $\Theta$ is a morphism, i.e. $\Theta$ is total on $\mathbb{N}$ with values in $E$. Observe that for every point $p$ of $2^\mathbb{N}$, $\Theta(i \circ p) = p$, so $\Theta$ is point surjective. Thus, by Lawvere’s theorem, every morphism $2 \to 2$ has a fixed point. In particular, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, which implies $\mathsf{PA} \vdash 0 = 1$, contradicting the consistency of PA. □</p>
 
-<p>So Lawvere’s theorem, as stated, cannot be applied inside the categories where computation and arithmetic live. Fortunately, the proof never used exponentials: they only package “every $g$ has a code” into a single morphism $f : A \to B^A$. Dropping them, we get the following.</p>
+<p>So Lawvere’s theorem, as stated, cannot be applied inside the categories where computation and arithmetic live.</p>
+
+<blockquote>
+  <p><strong>Remark.</strong> Let $\mathbf{Rec}$ be the category whose objects are decidable subsets of $\mathbb{N}$ and whose morphisms are total computable functions (not necessarily <em>provably</em> total).  The same argument shows that $\mathbf{Rec}$ is also not Cartesian closed. ($\Theta$ is computable if $E$ is decidable.)</p>
+</blockquote>
+
+<p>Fortunately, the proof of the Lawvere’s theorem can be generalized so as to not use exponentials: we only need a way to package “every morphism $A \to B$ has a code in $A$”. Let us thus define as follows:</p>
 
 <blockquote>
   <p><strong>Definition.</strong> Let $\mathcal{C}$ have finite products. A morphism $\phi : A \times A \to B$ is <strong>weakly point surjective</strong> if for every $h : A \to B$ there is a point $a$ of $A$ such that $\phi(\langle a, x \rangle) = h(x)$ for every point $x$ of $A$.</p>
@@ -421,16 +432,16 @@ e_0 &amp;\text{otherwise}
   <p><strong>Corollary (Turing).</strong> The halting problem is undecidable.</p>
 </blockquote>
 
-<p><em>Proof.</em> Let $\mathbf{Rec}$ be the category whose objects are decidable subsets of $\mathbb{N}$ and whose morphisms are total computable functions (not necessarily <em>provably</em> total). We will equivocate decidable subsets with its corresponding decision program. As with $\mathcal{C}_\mathsf{PA}$, it has finite products via the pairing code, with $1 = {0}$ and $2 = {0, 1}$.</p>
+<p><em>Proof.</em> Working in $\mathbf{Rec}$, we will identify each decidable subset with its decision program. As with $\mathcal{C}_\mathsf{PA}$, it has finite products via the pairing code.</p>
 
-<p>Assume that the halting problem is decidable, i.e. there exists a morphism $h : \mathbb{N} \times \mathbb{N} \to 2$ such that $h(e, n) = 1$ if program $e$ halts on input $n$, and $h(e, n) = 0$ otherwise. For a morphism $f: \mathbb{N} \to 2$, let $e_g$ be the program</p>
+<p>Assume that the halting problem is decidable, i.e. there exists a morphism $H : \mathbb{N} \times \mathbb{N} \to 2$ such that $H(e, n) = 1$ if program $e$ halts on input $n$, and $H(e, n) = 0$ otherwise. For a morphism $f: \mathbb{N} \to 2$, let $e_f$ be the program</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>on input n:
   if f(n) = 1: return
   else: infinite loop
 </code></pre></div></div>
 
-<p>Then $h(e_g, n) = f(n)$ for every $n$, so $h$ is weakly point surjective. By Lawvere’s theorem, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, a contradiction. ■</p>
+<p>Then $H(e_f, n) = f(n)$ for every $n$, so $H$ is weakly point surjective. By Lawvere’s theorem, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, a contradiction. ■</p>
 
 <blockquote>
   <p><strong>Corollary (Tarski).</strong> There is no formula $\mathrm{True}(x)$ such that</p>
@@ -440,13 +451,13 @@ e_0 &amp;\text{otherwise}
   <p>for every sentence $\sigma$.</p>
 </blockquote>
 
-<p><em>Proof.</em> Fix a Gödel numbering $\psi_0, \psi_1, \dots$ of the formulas with one free variable. Let $\mathbf{Def}$ be the category whose objects are $\mathbb{N}^k \; (k = 0, 1, 2, …)$ and $2$, and whose morphisms are functions definable in the standard arithmetic.</p>
+<p><em>Proof.</em> Fix a Gödel numbering $\psi_0, \psi_1, \dots$ of the formulas with one free variable. Let $\mathbf{Def}$ be the category whose objects are $\mathbb{N}^k \; (k = 0, 1, 2, …)$ and $2$, and whose morphisms are functions definable in the standard arithmetic. Finite products are given by $\mathbb{N}^k \times \mathbb{N}^l = \mathbb{N}^{k+l}$.</p>
 
 <p>Suppose $\mathrm{True}$ exists. The substitution function $\mathrm{sub}(m, n) = \ulcorner \psi_m(\bar n) \urcorner$ is computable, hence definable. So</p>
 
 \[\phi(m, n) := [\mathbb{N} \models \psi_m(\bar n)] = \chi_{\mathrm{True}}(\mathrm{sub}(m, n))\]
 
-<p>is a morphism of $\mathbf{Def}$. It is weakly point surjective: if $g : \mathbb{N} \to 2$ is defined by a formula $\gamma(x, y)$, then $\psi(x) := \gamma(x, 1)$ satisfies $\phi(\ulcorner \psi \urcorner, n) = g(n)$. But $0 \mapsto 1, 1 \mapsto 0$ is definable and has no fixed point, contradicting Lawvere’s theorem. ■</p>
+<p>is a morphism of $\mathbf{Def}$. It is weakly point surjective: if $f : \mathbb{N} \to 2$ is defined by a formula $\gamma(x, y)$, then $\psi(x) := \gamma(x, 1)$ satisfies $\phi(\ulcorner \psi \urcorner, n) = f(n)$. But $0 \mapsto 1, 1 \mapsto 0$ is definable and has no fixed point, contradicting Lawvere’s theorem. ■</p>
 
 <p>For Gödel, recall the following fact about Robinson arithmetic $\mathsf{Q}$.</p>
 
@@ -471,16 +482,16 @@ e_0 &amp;\text{otherwise}
 0 &amp; \text{otherwise}
 \end{cases}\]
 
-<p>This is computable, since $\mathrm{sub}$ is computable and $T$ is decidable. It is also weakly point surjective; given a computable $g : \mathbb{N} \to 2$, let $D = g^{-1}(1)$. We then have:</p>
+<p>This is computable, since $\mathrm{sub}$ is computable and $T$ is decidable. It is also weakly point surjective; given a computable $f : \mathbb{N} \to 2$, let $D = f^{-1}(1)$. We then have:</p>
 
 <ul>
-  <li>If $g(n) = 1$, then $T \vdash \psi_D(\bar n)$, so $\phi(\ulcorner \psi_D \urcorner, n) = 1$.</li>
-  <li>If $g(n) = 0$, then $T \vdash \neg\psi_D(\bar n)$, so by consistency $T \nvdash \psi_D(\bar n)$, and $\phi(\ulcorner \psi_D \urcorner, n) = 0$.</li>
+  <li>If $f(n) = 1$, then $T \vdash \psi_D(\bar n)$, so $\phi(\ulcorner \psi_D \urcorner, n) = 1$.</li>
+  <li>If $f(n) = 0$, then $T \vdash \neg\psi_D(\bar n)$, so by consistency $T \nvdash \psi_D(\bar n)$, and $\phi(\ulcorner \psi_D \urcorner, n) = 0$.</li>
 </ul>
 
 <p>By Lawvere’s theorem, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, a contradiction. □</p>
 
-<p>Now suppose that $T$ is complete. Then the following procedure is total, with which $T$ becomes decidable.</p>
+<p>Now suppose that $T$ is complete. Then the following procedure is total for every sentence $\varphi$, so the set of theorems of $T$ is decidable.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for n in ℕ:
   if n is a proof of φ:

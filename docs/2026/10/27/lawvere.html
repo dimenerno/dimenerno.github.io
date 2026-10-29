@@ -465,7 +465,7 @@
 
 \[f : S \to 2^S, \qquad x \mapsto (y \mapsto [y \in x]).\]
 
-<p>소박한 내포 공리에 의해 모든 $P \in 2^S$는 집합 ${y : P(y)}$를 결정하므로, $f$는 (점) 전사적이다. 이는 $0 \mapsto 1, 1 \mapsto 0$에 대해 로비어의 정리와 모순이다. (증명을 풀어 보면, 점 $a$는 바로 집합 ${x : x \notin x}$이다.) ■</p>
+<p>소박한 내포 공리에 의해 모든 $P \in 2^S$는 집합 $\lbrace y : P(y)\rbrace $를 결정하므로, $f$는 (점) 전사적이다. 이는 $0 \mapsto 1, 1 \mapsto 0$에 대해 로비어의 정리와 모순이다. (증명을 풀어 보면, 점 $a$는 바로 집합 $\lbrace x : x \notin x\rbrace $이다.) ■</p>
 
 <h2 id="약한-점-전사성">약한 점 전사성</h2>
 
@@ -480,7 +480,7 @@
   </li>
 </ul>
 
-<p>그러면 $1 = {0}$은 종대상이고,</p>
+<p>그러면 $1 = \lbrace 0\rbrace $은 종대상이고,</p>
 
 \[\begin{gather}
 A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
@@ -528,7 +528,7 @@ e_0 &amp;\text{그 외}
   <p><strong>따름정리 (튜링).</strong> 정지 문제는 결정불가능하다.</p>
 </blockquote>
 
-<p><strong>증명.</strong> $\mathbf{Rec}$을 대상이 $\mathbb{N}$의 결정가능 부분집합이고, 사상이 전역 계산가능 함수인 범주라 하자. (이때 전역성이 <em>증명가능할</em> 필요는 없다.) 결정가능 부분집합과 그에 대응하는 결정 프로그램은 동일시하겠다. $\mathcal{C}_\mathsf{PA}$에서와 마찬가지로 $\mathbf{Rec}$은 순서쌍 코드를 통해 유한곱을 가지며, $1 = {0}$, $2 = {0, 1}$이다.</p>
+<p><strong>증명.</strong> $\mathbf{Rec}$을 대상이 $\mathbb{N}$의 결정가능 부분집합이고, 사상이 전역 계산가능 함수인 범주라 하자. (이때 전역성이 <em>증명가능할</em> 필요는 없다.) 결정가능 부분집합과 그에 대응하는 결정 프로그램은 동일시하겠다. $\mathcal{C}_\mathsf{PA}$에서와 마찬가지로 $\mathbf{Rec}$은 순서쌍 코드를 통해 유한곱을 가지며, $1 = \lbrace 0\rbrace $, $2 = \lbrace 0, 1\rbrace $이다.</p>
 
 <p>정지 문제가 결정가능하다고 가정하자. 즉, 프로그램 $e$가 입력 $n$에서 정지하면 $h(e, n) = 1$, 그렇지 않으면 $h(e, n) = 0$인 사상 $h : \mathbb{N} \times \mathbb{N} \to 2$가 존재한다고 하자. 사상 $f: \mathbb{N} \to 2$에 대해, $e_f$를 다음 프로그램이라 하자.</p>
 
