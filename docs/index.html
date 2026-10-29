@@ -854,55 +854,61 @@ e_0 &amp;\text{그 외}
 
 <h2 id="weak-point-surjectivity">Weak point-surjectivity</h2>
 
-<p>Let $\mathcal{C}_{\mathsf{PA}}$ be the category of PA-definable subsets of $\mathbb{N}$:</p>
+<p>Let $\mathbf{Def}$ be the category of definable subsets of $\mathbb{N}$:</p>
 
 <ul>
   <li>
-    <p><strong>Objects</strong> $\varphi$: Formula with one free variable, modulo PA-provable equivalence.</p>
+    <p><strong>Objects</strong> $A$: subsets of $\mathbb{N}$ definable in the standard model, i.e. $A = \lbrace n : \mathbb{N} \models \varphi(\bar n)\rbrace $.</p>
   </li>
   <li>
-    <p><strong>Morphisms</strong> $F: \varphi \to \psi$: Function-defining formula with two free variables modulo PA-provable equivalence on the domain $\varphi$, i.e.</p>
-  </li>
-  <li>
-    <p><strong>Composition</strong>: $\exists y\,(F(x,y) \land G(y,z))$</p>
+    <p><strong>Morphisms</strong> $f : A \to B$: functions whose graph is definable, i.e. $f(a) = b \iff \mathbb{N} \models \Phi(\bar a, \bar b)$. (Note that $f$ is not required to provably be a function, albeit a total function, in PA.)</p>
   </li>
 </ul>
 
-<p>We also write $x \in \varphi$ for $\varphi(x)$ and treat objects as sets (that satisfy corresponding formula) when convenient. Thus, $1 = \lbrace 0\rbrace $ is the terminal object, and</p>
+<p>Then $1 = \lbrace 0\rbrace $ is the terminal object, and</p>
 
 \[\begin{gather}
 A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
 \pi_1 : \langle a, b \rangle \mapsto a, \quad \pi_2 : \langle a, b \rangle \mapsto b
 \end{gather}\]
 
-<p>is the product, where $\langle \cdot, \cdot \rangle$ is the code for a pair. Note that $\langle \cdot, \cdot \rangle$, $\pi_1$, and $\pi_2$ are definable and provably total; e.g. Cantor’s pairing:</p>
+<p>is the product, where $\langle \cdot, \cdot \rangle$ is the code for a pair. Note that $\langle \cdot, \cdot \rangle$, $\pi_1$, and $\pi_2$ are definable with Cantor’s pairing:</p>
 
 \[\langle a, b \rangle = \tfrac{1}{2}(a+b)(a+b+1) + b.\]
 
-<p>We also write $2 = \lbrace 0, 1\rbrace $ and $\mathbb{N} = \lbrace x : x = x\rbrace $.</p>
-
-<p>Now we prove the following lemma:</p>
+<p>We now prove the following lemma:</p>
 
 <blockquote>
-  <p><strong>Lemma.</strong> Assuming $\mathsf{PA}$ is consistent, $\mathcal{C}_\mathsf{PA}$ is <em>not</em> Cartesian closed.</p>
+  <p><strong>Lemma.</strong> $\mathbf{Def}$ is <em>not</em> Cartesian closed.</p>
 </blockquote>
 
-<p><em>Proof of the lemma.</em> Assume otherwise. Then a point of $2^\mathbb{N}$ is adjoint to a morphism $\mathbb{N} \to 2$, i.e. a provably total function $\mathbb{N} \to 2$. In particular, $2^\mathbb{N}$ has a point $e_0$, adjoint to the constant function $0$. Since $2^\mathbb{N}$ is an object of $\mathcal{C}_\mathsf{PA}$, it is definable by a formula $E(x)$. Let $i : E \to \mathbb{N}$ be the inclusion of $E$. Define $\Theta: \mathbb{N} \to E$ as follows:</p>
+<p><em>Proof of the lemma.</em> Let $2 = \lbrace 0, 1 \rbrace$. Assume otherwise. Then $2^\mathbb{N}$ is an object of $\mathbf{Def}$, and is thus definable with a formula $\phi$.</p>
+
+<p>$2^\mathbb{N}$ has a point $p_0$, adjoint to the constant function $0$. Define $\Theta: \mathbb{N} \to 2^\mathbb{N}$ as follows:</p>
 
 \[\Theta(n) = \begin{cases}
-n &amp;n \in E \\
-e_0 &amp;\text{otherwise}
+n &amp;n \in 2^\mathbb{N} \\
+p_0 &amp;\text{otherwise}
 \end{cases}\]
 
-<p>It is routine to show that PA proves that $\Theta$ is a morphism, i.e. $\Theta$ is total on $\mathbb{N}$ with values in $E$. Observe that for every point $p$ of $2^\mathbb{N}$, $\Theta(i \circ p) = p$, so $\Theta$ is point surjective. Thus, by Lawvere’s theorem, every morphism $2 \to 2$ has a fixed point. In particular, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, which implies $\mathsf{PA} \vdash 0 = 1$, contradicting the consistency of PA. □</p>
+<p>It is routine to check that $\Theta$ is definable, hence a morphism. Let $i : 2^\mathbb{N} \to \mathbb{N}$ be the inclusion. For every point $p$ of $2^\mathbb{N}$ we have $\Theta(i \circ p) = p$, so $\Theta$ is point surjective. Thus, by Lawvere’s theorem, every morphism $2 \to 2$ has a fixed point. But $0 \mapsto 1, 1 \mapsto 0$ is definable and has no fixed point, a contradiction. □</p>
+
+<blockquote>
+  <p><strong>Remarks.</strong></p>
+
+  <ol>
+    <li>
+      <p>Intuitively, an exponential $2^\mathbb{N}$ in $\mathbf{Def}$ would be a definable set of codes for all definable subsets of $\mathbb{N}$, together with a definable evaluation map $2^\mathbb{N} \times \mathbb{N} \to 2$; that is essentially a definable truth predicate. We will make this precise below as Tarski’s theorem.</p>
+    </li>
+    <li>
+      <p>Let $\mathbf{Rec}$ be the category whose objects are <em>decidable</em> subsets of $\mathbb{N}$ and whose morphisms are <em>total computable</em> functions (not necessarily provably total). The same argument shows that $\mathbf{Rec}$ is also not Cartesian closed.</p>
+    </li>
+  </ol>
+</blockquote>
 
 <p>So Lawvere’s theorem, as stated, cannot be applied inside the categories where computation and arithmetic live.</p>
 
-<blockquote>
-  <p><strong>Remark.</strong> Let $\mathbf{Rec}$ be the category whose objects are decidable subsets of $\mathbb{N}$ and whose morphisms are total computable functions (not necessarily <em>provably</em> total).  The same argument shows that $\mathbf{Rec}$ is also not Cartesian closed. ($\Theta$ is computable if $E$ is decidable.)</p>
-</blockquote>
-
-<p>Fortunately, the proof of the Lawvere’s theorem can be generalized so as to not use exponentials: we only need a way to package “every morphism $A \to B$ has a code in $A$”. Let us thus define as follows:</p>
+<p>Fortunately, the proof of Lawvere’s theorem can be generalized so as to not use exponentials: we only need a way to package “every morphism $A \to B$ has a code in $A$”. Let us thus define as follows:</p>
 
 <blockquote>
   <p><strong>Definition.</strong> Let $\mathcal{C}$ have finite products. A morphism $\phi : A \times A \to B$ is <strong>weakly point surjective</strong> if for every $h : A \to B$ there is a point $a$ of $A$ such that $\phi(\langle a, x \rangle) = h(x)$ for every point $x$ of $A$.</p>
@@ -924,7 +930,7 @@ e_0 &amp;\text{otherwise}
   <p><strong>Corollary (Turing).</strong> The halting problem is undecidable.</p>
 </blockquote>
 
-<p><em>Proof.</em> Working in $\mathbf{Rec}$, we will identify each decidable subset with its decision program. As with $\mathcal{C}_\mathsf{PA}$, it has finite products via the pairing code.</p>
+<p><em>Proof.</em> Working in $\mathbf{Rec}$, we will identify each decidable subset with its decision program. As with $\mathbf{Def}$, it has finite products via the pairing code.</p>
 
 <p>Assume that the halting problem is decidable, i.e. there exists a morphism $H : \mathbb{N} \times \mathbb{N} \to 2$ such that $H(e, n) = 1$ if program $e$ halts on input $n$, and $H(e, n) = 0$ otherwise. For a morphism $f: \mathbb{N} \to 2$, let $e_f$ be the program</p>
 
@@ -943,7 +949,7 @@ e_0 &amp;\text{otherwise}
   <p>for every sentence $\sigma$.</p>
 </blockquote>
 
-<p><em>Proof.</em> Fix a Gödel numbering $\psi_0, \psi_1, \dots$ of the formulas with one free variable. Let $\mathbf{Def}$ be the category whose objects are $\mathbb{N}^k \; (k = 0, 1, 2, …)$ and $2$, and whose morphisms are functions definable in the standard arithmetic. Finite products are given by $\mathbb{N}^k \times \mathbb{N}^l = \mathbb{N}^{k+l}$.</p>
+<p><em>Proof.</em> Work in $\mathbf{Def}$, and fix a Gödel numbering $\psi_0, \psi_1, \dots$ of the formulas with one free variable.</p>
 
 <p>Suppose $\mathrm{True}$ exists. The substitution function $\mathrm{sub}(m, n) = \ulcorner \psi_m(\bar n) \urcorner$ is computable, hence definable. So</p>
 
@@ -1182,193 +1188,7 @@ e_0 &amp;\text{otherwise}
   
     <div class="post fade-in-section" data-lang="en" style="display: none">
       <h1 class="post-title">
-        <a href="/2026/10/21/notes-on-tensor/en"> Notes on Tensor </a>
-      </h1>
-    <span class="post-date">
-      21 Oct 2026
-      <a class="pdf-export" href="/2026/10/21/notes-on-tensor/en?print=1" title="Save as PDF">PDF</a>
-    </span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/physics/'">
-        Physics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/mathematics/'">
-        Mathematics
-      </div>
-      
-    </div>
-     <blockquote>
-  <p><strong>Basic Theorems.</strong></p>
-
-  <ol>
-    <li>$(V \otimes W)^* \simeq V^* \otimes W^*$</li>
-    <li>$\hom(V\otimes W, Z) \simeq \hom(V, \hom(W, Z))$</li>
-    <li>$V^{**} \simeq V$</li>
-  </ol>
-
-  <p><strong>Corollary.</strong> $V^* \otimes W \simeq \hom (V, W)$</p>
-</blockquote>
-
-<h2 id="tensor">Tensor</h2>
-
-<blockquote>
-  <p><strong>TFAE.</strong></p>
-
-  <ol>
-    <li>$M$ is a type $(n, m)$ tensor</li>
-    <li>$M \in V^{\otimes n} \otimes (V^*)^{\otimes m}$</li>
-    <li>$M: (V^*)^n \times V^m \to k$</li>
-    <li>$M: V^{\otimes m} \to V^{\otimes n}$</li>
-  </ol>
-</blockquote>
-
-<h3 id="1-1-tensor">(1, 1)-tensor</h3>
-
-<p>Let $\Lambda$ be a (1, 1)-tensor, i.e. $\Lambda: V^* \times V \to k$.</p>
-
-<p>If we fix a basis ${e_i}$ for $V$, we can write $\Lambda$ as a matrix form:</p>
-
-\[\Lambda^\mu_{\;\nu} =\Lambda(e^\mu, e_\nu)\]
-
-<p>For example, given:</p>
-
-\[\begin{gather}
-\Lambda(e^0, e_0) = a\\
-\Lambda(e^1, e_0) = b\\
-\Lambda(e^0, e_1) = c\\
-\Lambda(e^1, e_1) = d,
-\end{gather}\]
-
-<p>we have:</p>
-
-\[\Lambda^\mu_{\;\nu} =
-\begin{pmatrix}
-a &amp; c \\
-b &amp; d
-\end{pmatrix}\]
-
-<blockquote>
-  <p>Note: Specification of matrix component is only relevant with the left-right order (rightmost index corresponds to column) and irrelevant with the up-down position.</p>
-</blockquote>
-
-<p>Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\Lambda(-, \mathbf{a}) : V^* \to k$ and $\hom(V^*, k) \simeq V$, we have $\Lambda(-, \mathbf{a}) \in V$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}’ = (a’)^\mu e_\mu$. We then have:</p>
-
-\[(a')^\mu = \Lambda(e^\mu, \mathbf{a}) = \sum_\nu \Lambda(e^\mu, e_\nu)a^\nu = \Lambda^\mu_{\;\nu}a^\nu.\]
-
-<h3 id="0-2-tensor">(0, 2)-tensor</h3>
-
-<p>Let $\eta$ be a (0, 2)-tensor, i.e. $\eta: V \times V \to k$.</p>
-
-<p>If we fix a basis ${e_i}$ for $V$, we can write $\eta$ as a matrix form:</p>
-
-\[\eta_{\mu \nu} =\eta(e_\mu, e_\nu)\]
-
-<p>For example, given:</p>
-
-\[\begin{gather}
-\eta(e_0, e_0) = a\\
-\eta(e_1, e_0) = b\\
-\eta(e_0, e_1) = c\\
-\eta(e_1, e_1) = d,
-\end{gather}\]
-
-<p>we have:</p>
-
-\[\eta_{\mu\nu} =
-\begin{pmatrix}
-a &amp; c \\
-b &amp; d
-\end{pmatrix}\]
-
-<p>Let $\mathbf{a} = a^\mu e_\mu \in V$. Since $\eta(-, \mathbf{a}) : V \to k$ and $\hom(V, k) \simeq V^*$, we have $\Lambda(-, \mathbf{a}) \in V^*$. Write $\Lambda(-, \mathbf{a}) = \mathbf{a}’ = (a’)_\mu e^\mu$. We then have:</p>
-
-\[(a')_\mu = \eta(e_\mu, \mathbf{a}) = \sum_\nu \eta(e_\mu, e_\nu)a^\nu = \eta_{\mu\nu}a^\nu.\]
-
-<p>Generalizing, for a $(2, 3)$-tensor $T^{\alpha \beta}_{\gamma \delta \epsilon} : V^* \times V^* \times V \times V \times V \to k$, if we product $T$ with 1 dual coordinate $a_\mu$ and 3 vector coordinates $b^\nu$, then we are left with a coordinate for $\hom(V^*, k) \simeq V$, which is a contravariant result. Indeed,</p>
-
-\[T^{\alpha \beta}_{\gamma \delta \epsilon} b_\beta c^\gamma d^\delta e^\epsilon = a^\alpha\]
-
-<p>Alternatively we can product $T$ with 2 dual coordinates and 2 vector coordinates to obtain a coordinate for $\hom(V, k) \simeq V^*$.</p>
-
-<h3 id="index-raisinglowering">Index raising/lowering</h3>
-
-<p>Let $M^\mu_{\;\nu}$ act on $V$. How does $M$ “act” on $V^*$?</p>
-
-<h4 id="1-phiv-conservation">1. $\phi(v)$ conservation</h4>
-<p>If we require that $\phi(v)$ be conserved, i.e.</p>
-
-\[(M^*\phi)(Mv) = \phi(v),\]
-
-<p>then $M$ should act <em>inversely</em> on $V^*$. That is,</p>
-
-\[\begin{gather}
-(M^*)_\mu^{\;\nu} a_\nu = a'_\mu \\\\
-\text{where} \quad M^* := (M^{-1})^T
-\end{gather}\]
-
-<h4 id="2-coordinate-change">2. Coordinate change</h4>
-<p>Alternatively, we can simply change $\phi$ to its corresponding vector $v_\phi$, transform $v_\phi$, and change it back to $V^*$. That is,</p>
-
-\[\begin{gather}
-(M')_\mu^{\;\nu}a_\nu := \eta_{\mu \sigma}( M^\sigma_{\;\tau} a^\tau) = \eta_{\mu\sigma} M^\sigma_{\;\tau}\eta^{\tau\nu}a_\nu \\\\
-\text{i.e.} \quad M' = \eta M \eta
-\end{gather}\]
-
-<blockquote>
-  <p><strong>Theorem.</strong> If $\eta$ is invariant under $M$, i.e. $\eta(Mu, Mv) = \eta(u, v)$, the two conversions coincide.</p>
-</blockquote>
-
-<p>Hence, we work with 2, since it’s much easier to calculate. The point is that, <strong>insofar we deal with Lorentz invariant transformations, index raising/lowering and contraction of indices flow naturally.</strong></p>
-
-<p>Furthermore, since $\eta$ has nonzero indices only on the diagonal, we can use the following shortcut:</p>
-
-<blockquote>
-  <p>Multiply by -1 when raising/lowering time index.
-Leave everything else unchanged.</p>
-</blockquote>
-
-<p><strong>Example.</strong></p>
-
-\[\begin{gather}
-\Lambda^\mu_{\;\nu} =
-\begin{pmatrix}
-\gamma &amp; -\beta\gamma &amp; 0 &amp; 0\\
--\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix} \\\\
-\Lambda_{\mu\nu} =
-\begin{pmatrix}
--\gamma &amp; \beta\gamma &amp; 0 &amp; 0\\
--\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix} \\\\
-\Lambda^{\mu\nu} =
-\begin{pmatrix}
--\gamma &amp; -\beta\gamma &amp; 0 &amp; 0\\
-\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}\\\\
-\Lambda_{\mu}^{\;\nu} =
-\begin{pmatrix}
-\gamma &amp; \beta\gamma &amp; 0 &amp; 0\\
-\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\end{gather}\]
-
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2026/10/21/notes-on-relativity/en"> Notes on Relativity </a>
+        <a href="/2026/10/21/notes-on-relativity/en"> Notes on Relativity and Field Theory </a>
       </h1>
     <span class="post-date">
       21 Oct 2026
@@ -1386,50 +1206,71 @@ Leave everything else unchanged.</p>
       </div>
       
     </div>
-     <p>Throughout the note, we use the following tensor:</p>
+     <p>Throughout the note, we use the following tensors:</p>
 
-\[\Lambda^\mu_{\;\nu} =
+\[\begin{gather}
+\Lambda^\mu_{\;\nu} =
 \begin{pmatrix}
 \gamma &amp; -\beta\gamma &amp; 0 &amp; 0\\
 -\beta\gamma &amp; \gamma &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}\]
+\end{pmatrix} \\ \\
+\eta_{\mu\nu} = \begin{pmatrix} -1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}
+\end{gather}\]
+
+<h2 id="relativity">Relativity</h2>
+
+<h3 id="invariance-and-tensor-manipulation">Invariance and Tensor Manipulation</h3>
 
 <blockquote>
-  <p><strong>Definition.</strong> A transformation $M$ is <em>Lorentz invariant</em> if it leaves the Minkowski metric (inner product) between two events invariant, i.e.</p>
+  <p><strong>Definition.</strong> A transformation $M: V \to V$ is <em>Lorentz invariant</em> if it leaves the Minkowski metric (inner product) between two events invariant, i.e.</p>
 
 \[\eta(Mu, Mv) = \eta(u,v)\]
 
   <p>Note that this condition is equivalent to $M^T\eta M = \eta$.</p>
 </blockquote>
 
+<p>i.e. $d\tau$ is invariant under Lorentz invariant transformation.</p>
+
+<p>Let $M^\ast : V^\ast \to V^\ast$ be the dual transformation induced by $M$. There are two ways to define $M^\ast$.</p>
+
+<ol>
+  <li>For every $\phi \in V^\ast, v \in V$, we require that $\phi(v)$ is conserved, i.e. $(M^\ast\phi)(Mv) = \phi(v)$.</li>
+  <li>We conjugate $M$ with coordinate change, i.e. $M^\ast = \eta M \eta^{-1}$.</li>
+</ol>
+
 <blockquote>
-  <p><strong>Corollary.</strong> $d\tau$ is invariant under Lorentz invariant transformation.</p>
+  <p><strong>Lemma.</strong> In the first definition, $M^\ast = (M^{-1})^T$.</p>
 </blockquote>
 
-<p>See <a href="https://dimenerno.github.io/2026/10/18/notes-on-tensor/en"><em>Notes on Tensor</em></a>. Due to Lorentz invariance, we are free to use index raising/lowering &amp; index contraction to construct tensor equations.</p>
+<p><em>Proof.</em> Since transpose is the pullback</p>
 
-<h3 id="clock">Clock</h3>
+\[(M^T \phi)(v) := \phi(Mv),\]
 
-<p>A clock should measure a <em>Lorentz invariant quantity</em>.</p>
+<p>we have $((M^{-1})^T)(\phi)(Mv) = (M^{-1}\phi)(Mv) = \phi(v)$. □</p>
 
-<p>Consider a light clock, i.e. light traversing between two mirrors:</p>
-<ul>
-  <li>Trajectory of light is Lorentz invariant</li>
-  <li>The distance betwee mirrors is Lorentz invariant under smooth impulse, <em>if the mirrors are connected by a <strong>rigid</strong> rod</em> (⇒ rigidity: tendency to maintain equilibrium)</li>
-  <li>Hence, a rigid rod with mirrors attached at each end is an ideal clock</li>
-</ul>
+<blockquote>
+  <p><strong>Theorem.</strong> If $M$ is $\eta$-invariant, the two definitions agree.</p>
+</blockquote>
+
+<p><em>Proof.</em> Since $\eta(Mu, Mv) = \eta(u, v)$ implies $M^T\eta M = \eta$, we have</p>
+
+\[\eta M \eta^{-1} = (M^T)^{-1} = (M^{-1})^T \quad \blacksquare\]
+
+<p>Thus for Lorentz invariance transformations, we are free to construct tensor equations with simple index manipulation.</p>
 
 <h3 id="lagrangian-of-a-free-relativistic-particle">Lagrangian of a free relativistic particle</h3>
 
+<p>To construct a Lagrangian, we concoct an expression such that:</p>
+
+<ol>
+  <li>It is local, i.e. only up to first derivatives.</li>
+  <li>It is Lorentz invariant.</li>
+</ol>
+
 <blockquote>
-  <p><strong>Criteria for Lagrangian:</strong></p>
-  <ul>
-    <li>Local (Up to first derivative only)</li>
-    <li>Lorentz invariant</li>
-    <li>(Gauge invariant =&gt; Action must be invariant under Gauge transform)</li>
-  </ul>
+  <p>We may also require Gauge invariance, e.g. see below for concocting the Lagrangian in obtaining Maxwell’s equations.</p>
 </blockquote>
 
 <p>Since $d\tau$ is Lorentz invariant, we will use this to construct the Lagrangian:</p>
@@ -1448,9 +1289,7 @@ Leave everything else unchanged.</p>
 
 \[\frac{d}{d\lambda}\frac{\partial L}{\partial \dot{X^\mu}} = \frac{\partial L}{\partial X^\mu}\]
 
-<h3 id="4-momentum">4-momentum</h3>
-
-<p>The canonical momentum for $L$ are:</p>
+<p>We can now find the canonical momentum for $L$. For $t$-coordinate, we have:</p>
 
 \[P_t =-mc\frac{\dot t} {\sqrt{\dot t^{2}-\dot{x}^{2}/c^2}}\]
 
@@ -1474,21 +1313,17 @@ Leave everything else unchanged.</p>
 
 <p>Hence we obtain that $P^t$ is conserved under time translation. <strong>Hence, $P^0$ is the energy of the system</strong>. Matching the dimension, we have $cP^t = E$.</p>
 
-<h3 id="mass">Mass</h3>
-
-<p>Consider a free particle moving at velocity $v$. Since 4-momentum is a 4-vector, we can Lorentz transform it to have zero velocity, i.e.</p>
+<p>The conservation law yields a relativistic <em>definition</em> of mass. The mass of a system is an invariant, intrinsic to the system. As an example, consider a free particle moving at velocity $v$. Since 4-momentum is a 4-vector, we can Lorentz transform it to have zero velocity, i.e.</p>
 
 \[P^\mu = \begin{pmatrix} E/c \\ 0 \\ 0 \\ 0 \end{pmatrix}\]
 
-<p>Note that $E/c$ is a time-invariant quantity that does not depend on $v$ (since we can always Lorentz transform to an appropriate frame). Thus, this quantity is <em>intrinsic</em> to the system. <strong>We thus define this quantity to be the mass</strong>. Matching the dimension, we have $m = E/c^2$.</p>
+<p>Note that $E/c$ is a time-invariant quantity that does not depend on $v$ (since we can always Lorentz transform to an appropriate frame). Thus, this quantity is <em>intrinsic</em> to the system. We thus define this quantity to be the mass. Matching the dimension, we have $m = E/c^2$.</p>
 
 <h3 id="translation-between-relativistic-unit-and-standard-unit">Translation between relativistic unit and standard unit</h3>
 
-<blockquote>
-  <p><strong>General rule:</strong></p>
+<p>As a general rule,</p>
 
 \[t \mapsto ct, \quad v \mapsto v/c\]
-</blockquote>
 
 <p>Hence, with $\gamma = \frac{1}{\sqrt{1 - v^2}}$ and $\gamma_s = \frac{1}{\sqrt{1 - (v/c)^2}}$,</p>
 
@@ -1523,36 +1358,15 @@ Leave everything else unchanged.</p>
   </tbody>
 </table>
 
-  </div>
-  <div style="margin-bottom: 6em"></div>
-  
-    <div class="post fade-in-section" data-lang="en" style="display: none">
-      <h1 class="post-title">
-        <a href="/2026/10/21/notes-on-field-theory/en"> Notes on Field Theory </a>
-      </h1>
-    <span class="post-date">
-      21 Oct 2026
-      <a class="pdf-export" href="/2026/10/21/notes-on-field-theory/en?print=1" title="Save as PDF">PDF</a>
-    </span>
-    
-    <div class="tag-container">
-      
-      <div class="tag" onclick="location.href='/tags/physics/'">
-        Physics
-      </div>
-      
-      <div class="tag" onclick="location.href='/tags/relativity/'">
-        Relativity
-      </div>
-      
-    </div>
-     <h3 id="lorentz-force">Lorentz Force</h3>
+<h2 id="field-theory">Field Theory</h2>
+
+<h3 id="lorentz-force">Lorentz Force</h3>
+
+<p>The following equation is familiar:</p>
 
 \[\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})\]
 
-<p>Q) Is this equation Lorentz invariant?</p>
-
-<p>A) Proof by construction of Lorentz invariant Lagrangian: Assume a 4-vector $A_\mu(t, x)$ that encodes all the information about $\mathbf{E}$ and $\mathbf{B}$ in the following way.</p>
+<p>Indeed, this equation is Lorentz invariant. We can show this by constructing a Lorentz invariant Lagrangian. Assume a 4-vector $A_\mu(t, x)$ that encodes $\mathbf{E}$ and $\mathbf{B}$ (indeed, without loss of information) in the following way.</p>
 
 \[\begin{align}
 F_{\mu \nu} &amp;= \partial_\mu A_\nu -\partial_\nu A_\mu \\
@@ -1586,7 +1400,7 @@ E_z &amp; B_y &amp; -B_x &amp; 0 \\
 
 \[m \frac{d}{dt}\frac{\dot{X_p}}{\sqrt{1 - \dot{x}^2}} = e(\mathbf{E} + \mathbf{v} \times \mathbf{B})_p\]
 
-<p>Or more succintly,</p>
+<p>We thus see that the Lorentz force is Lorentz invariant. More succintly,</p>
 
 \[m\frac{d^2 X_\mu}{d\tau^2} =  e F_{\mu\nu} \frac{dX^\nu}{d\tau}\]
 
@@ -1640,9 +1454,10 @@ E_z &amp; B_y &amp; -B_x &amp; 0 \\
 \[\partial_\mu F^{\mu\nu} = -J^\nu\]
 
 <p>To derive this, we will first set up a Lagrangian that is</p>
+
 <ol>
   <li>Lorentz invariant</li>
-  <li>Gauge-invariant</li>
+  <li>Gauge invariant</li>
   <li>Local</li>
 </ol>
 
@@ -1688,9 +1503,7 @@ E_z &amp; B_y &amp; -B_x &amp; 0 \\
 
 <h3 id="lagrangian-when-mathbfj-neq-0">Lagrangian when $\mathbf{J} \neq 0$</h3>
 
-<p>Q) How should we add $\mathbf{J}$ to the Lagrangian?</p>
-
-<p>A) Although $A^\mu A_\mu$ is not Gauge invariant, $J^\mu A_\mu$ is! Let’s check this fact.</p>
+<p>To add $\mathbf{J}$ to the Lagrangian, we will use the fact that although $A^\mu A_\mu$ is not Gauge invariant, $J^\mu A_\mu$ is. Let’s check this fact.</p>
 
 <p>Let the new action be:</p>
 
@@ -1978,6 +1791,112 @@ E_z &amp; B_y &amp; -B_x &amp; 0 \\
     </li>
   </ol>
 </div>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="ko" style="display: none">
+      <h1 class="post-title">
+        <a href="/2026/10/17/cch"> 우주 검열 가설의 초월론적 성격에 관하여 </a>
+      </h1>
+    <span class="post-date">
+      17 Oct 2026
+      <a class="pdf-export" href="/2026/10/17/cch?print=1" title="Save as PDF">PDF</a>
+    </span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/철학/'">
+        철학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/물리학/'">
+        물리학
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/에세이/'">
+        에세이
+      </div>
+      
+    </div>
+     <p><strong>우주 검열 가설</strong>을 굉장히 간략히 소개하자면, “관측 가능한 우주는 인과율을 따른다”는 원리이다.</p>
+
+<p>여기서의 관측 가능성은 상대론적 의미로, 시공간의 특정 지점에서 발신한 광신호가 충분한 시간 이후 관측될 수 있다면 그 지점은 관측 가능하다. 예를 들어 안드로메다 은하는 관측 가능하지만 — 안드로메다 은하와 지구의 거리는 250만 광년이므로 안드로메다 은하에서 발신한 광신호는 250만 년 이후 관측될 것이다 — 블랙홀의 “사건의 지평선” 내부는 관측 불가능하다. 사건의 지평선 내부에서 발신된 광신호는 특이점 안으로 “빨려” 들어가기 때문이다.</p>
+
+<p>그러나 위 문단의 소개가 “굉장히 간략한” 소개에 그치는 이유는, 관측 가능성과 인과율이 무엇을 의미하는지를 수학적/형식적으로 엄밀히 정의하는 것이 말도 안 되게 어려운 작업임이 드러났기 때문이다. 이 작업은 Hawking, Ellis, Wald 등에 의해 이루어졌는데, 대충 다음과 같다. (안 읽어도 된다)</p>
+
+<blockquote>
+  <p>시공간 $(M, g)$에 대해, $\tilde M$ 안에 $\overline{J^-(\mathscr{I}^+) \cap M}$를 포함하는 열린 집합 $\tilde V$가 존재하고 $(\tilde V, \tilde g)$가 대역적 쌍곡이라면, $(M, g)$가 강하게 점근적 예측가능하다고 하자.</p>
+
+  <p><strong>가설.</strong> 적절한 물질장(e.g. 무한한 에너지나 음의 에너지를 갖는 물질이 없다)을 가지며 특이점이 없고 점근적으로 평탄한 초기 데이터 $(Σ, h, K)$에 대해, 그 최대 코시 전개 $(M, g)$는 강하게 점근적 예측가능하다.</p>
+</blockquote>
+
+<p>하지만 이 가설의 반례가 Christodoulou에 의해서 발견되었다. 결론: 우주 검열 가설은 틀렸다.</p>
+
+<p>…로 논의가 끝났을 리는 없다. Christodoulou 자신을 비롯한 이후 물리학자들은 이 반례 우주가 굉장히 불안정하다는 사실을 지적했다. 충분한 안정성 조건을 추가한다면 우주 검열 가설을 성립시키는 것은 여전히 가능할지 모른다.</p>
+
+<p>그런데 여기서 우리는 한 가지 미래의 가능성을 그려 봄 직하다. 안정성 조건 A가 추가된 우주 검열 가설이 제시되었는데, 이후 어떤 물리학자가 A까지 만족하는 반례를 발견했다면 어떨까? 그제야 우주 검열 가설은 기각될까?</p>
+
+<p>필자의 생각으로는 그렇지 않다. 아마 안정성 조건 B가 추가된 우주 검열 가설이 새로 제시될 것이다. 그런데 B까지 만족하는 반례도 곧 발견된다면? 그러면 안정성 조건 C도 추가된 우주 검열 가설이 제시될 것이고, 어쩌고저쩌고…</p>
+
+<p>분명 이것은 우리가 여타 과학 이론을 대하는 태도와 다르다. 보통의 경우, 어떤 이론(e.g. 플로지스톤설)의 반례가 발견될 경우 초기에는 반례를 수용할 수 있도록 이론이 완화/수정되지만(음의 플로지스톤), 반례가 너무 많이 쌓이면 기존의 이론은 기각되고 새로운 이론(산소설)이 채택된다.</p>
+
+<p>그러나 우주 검열 가설의 경우에는 — 적어도 필자의 직관으로는 — <strong>아무리</strong> 반례가 많이 등장하더라도 끊임없이 수정이 가해질지언정 결코 완전히 기각되지는 않을 것으로 생각된다. 그리고 만약 이 직관을 인정한다면, 우주 검열 가설의 문제는 더 이상 이 가설이 참이냐 아니냐의 문제가 아닌 것으로 보인다. 우주 검열 가설은 <strong>선험적(a priori)으로 참이어야만 한다.</strong> 왜냐하면 우주 검열 가설은 인과율의 우주론적 형식화와 다름이 없으며, 인과율은 물리학적 탐구를 가능하게 하는 <strong>초월론적 조건</strong>에 다름 아니기 때문이다. 그러므로 우리가 해야 하는 일은 우주 검열 가설이 참이 <strong>되도록</strong> 하는 조건을 명확하게 규정하는 것이다.</p>
+
+<p>따라서 물리학자들이 앞으로 발견될 반례에 대해 우주 검열 가설을 기각하기보다 우주 검열 가설을 완화하는 방식으로 대응하리라는 생각은, 마치 칸트주의자들이 비유클리드 기하학이라는 “반례”에 대해 시공간의 선험적 직관 형식을 기각하기보다 이 직관 형식의 경직성을 완화하는 방식으로 대응했던 것과 궤를 같이하는 것이 아닐까? 이는 철학사와 과학사의 흥미로운 교차점이 될 수 있다고 필자는 생각한다.</p>
+
+  </div>
+  <div style="margin-bottom: 6em"></div>
+  
+    <div class="post fade-in-section" data-lang="en" style="display: none">
+      <h1 class="post-title">
+        <a href="/2026/10/17/cch/en"> On the Transcendental Nature of the Cosmic Censorship Hypothesis </a>
+      </h1>
+    <span class="post-date">
+      17 Oct 2026
+      <a class="pdf-export" href="/2026/10/17/cch/en?print=1" title="Save as PDF">PDF</a>
+    </span>
+    
+    <div class="tag-container">
+      
+      <div class="tag" onclick="location.href='/tags/philosophy/'">
+        Philosophy
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/physics/'">
+        Physics
+      </div>
+      
+      <div class="tag" onclick="location.href='/tags/essay/'">
+        Essay
+      </div>
+      
+    </div>
+     <p>To put it very briefly, the <strong>cosmic censorship hypothesis</strong> is the principle that the observable universe obeys causality.</p>
+
+<p>Observability here is meant in the relativistic sense: a point in spacetime is observable if a light signal emitted from it can be observed after a sufficient amount of time. For instance, the Andromeda Galaxy is observable — since it lies 2.5 million light-years from Earth, a light signal emitted from Andromeda will be observed 2.5 million years later — whereas the interior of a black hole’s “event horizon” is not. A light signal emitted inside the event horizon gets “sucked” into the singularity.</p>
+
+<p>The reason the paragraph above is only a “very brief” introduction is that defining, with mathematical and formal rigor, what observability and causality mean has turned out to be a ridiculously difficult task. This work was carried out by Hawking, Ellis, Wald, and others, and it goes roughly as follows. (Feel free to skip it.)</p>
+
+<blockquote>
+  <p>Given a spacetime $(M, g)$, if there exists an open set $\tilde V$ in $\tilde M$ containing $\overline{J^-(\mathscr{I}^+) \cap M}$ such that $(\tilde V, \tilde g)$ is globally hyperbolic, we say that $(M, g)$ is strongly asymptotically predictable.</p>
+
+  <p><strong>Conjecture.</strong> For nonsingular, asymptotically flat initial data $(\Sigma, h, K)$ with suitable matter fields (e.g. no matter with infinite or negative energy), the maximal Cauchy development $(M, g)$ is strongly asymptotically predictable.</p>
+</blockquote>
+
+<p>But a counterexample to this conjecture was found by Christodoulou. Conclusion: the cosmic censorship hypothesis is false.</p>
+
+<p>…Of course, the discussion could hardly have ended there. Physicists, Christodoulou himself among them, pointed out that this counterexample universe is extremely unstable. Perhaps, by adding a sufficiently strong stability condition, the cosmic censorship hypothesis can still be made to hold.</p>
+
+<p>Here, though, we might imagine a possible future. Suppose a version of the hypothesis with stability condition A is proposed, and later some physicist finds a counterexample that satisfies even A. Would the cosmic censorship hypothesis then, at last, be rejected?</p>
+
+<p>I don’t think so. A new version with stability condition B would probably be proposed instead. And if a counterexample satisfying even B were soon found? Then a version with stability condition C would be proposed, and so on and so forth…</p>
+
+<p>This is clearly different from how we treat other scientific theories. Ordinarily, when counterexamples to a theory (e.g. phlogiston theory) are found, the theory is at first loosened or modified to accommodate them (phlogiston with negative mass), but once too many counterexamples pile up, the old theory is rejected and a new one (oxygen theory) is adopted.</p>
+
+<p>In the case of the cosmic censorship hypothesis, however — at least by my intuition — <strong>no matter how many</strong> counterexamples arise, it would be revised again and again but never rejected outright. And if we grant this intuition, the question about the cosmic censorship hypothesis no longer seems to be whether it is true or false. The cosmic censorship hypothesis <strong>must be true a priori.</strong> For the hypothesis is nothing other than the cosmological formalization of causality, and causality is nothing other than a <strong>transcendental condition</strong> that makes physical inquiry possible. What we must do, then, is to specify precisely the conditions under which the cosmic censorship hypothesis <strong>comes out</strong> true.</p>
+
+<p>So might not the expectation that physicists will respond to future counterexamples by relaxing the hypothesis rather than rejecting it run parallel to the way Kantians responded to the “counterexample” of non-Euclidean geometry by relaxing the rigidity of the pure form of spatiotemporal intuition rather than rejecting it? I think this could be an interesting case where the history of philosophy and the history of science intersect.</p>
 
   </div>
   <div style="margin-bottom: 6em"></div>

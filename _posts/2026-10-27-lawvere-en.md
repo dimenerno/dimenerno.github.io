@@ -126,15 +126,13 @@ By naive comprehension, every $P \in 2^S$ determines a set $\lbrace y : P(y)\rbr
 
 ## Weak point-surjectivity
 
-Let $\mathcal{C}_{\mathsf{PA}}$ be the category of PA-definable subsets of $\mathbb{N}$:
+Let $\mathbf{Def}$ be the category of definable subsets of $\mathbb{N}$:
 
-- **Objects** $\varphi$: Formula with one free variable, modulo PA-provable equivalence.
+- **Objects** $A$: subsets of $\mathbb{N}$ definable in the standard model, i.e. $A = \lbrace n : \mathbb{N} \models \varphi(\bar n)\rbrace $.
 
-- **Morphisms** $F: \varphi \to \psi$: Function-defining formula with two free variables modulo PA-provable equivalence on the domain $\varphi$, i.e.
+- **Morphisms** $f : A \to B$: functions whose graph is definable, i.e. $f(a) = b \iff \mathbb{N} \models \Phi(\bar a, \bar b)$. (Note that $f$ is not required to provably be a function, albeit a total function, in PA.)
 
-- **Composition**: $\exists y\,(F(x,y) \land G(y,z))$
-
-We also write $x \in \varphi$ for $\varphi(x)$ and treat objects as sets (that satisfy corresponding formula) when convenient. Thus, $1 = \lbrace 0\rbrace $ is the terminal object, and
+Then $1 = \lbrace 0\rbrace $ is the terminal object, and
 
 $$
 \begin{gather}
@@ -143,34 +141,38 @@ A \times B = \{ \langle a, b \rangle : a \in A, b \in B \} \\
 \end{gather}
 $$
 
-is the product, where $\langle \cdot, \cdot \rangle$ is the code for a pair. Note that $\langle \cdot, \cdot \rangle$, $\pi_1$, and $\pi_2$ are definable and provably total; e.g. Cantor's pairing:
+is the product, where $\langle \cdot, \cdot \rangle$ is the code for a pair. Note that $\langle \cdot, \cdot \rangle$, $\pi_1$, and $\pi_2$ are definable with Cantor's pairing:
 
 $$
 \langle a, b \rangle = \tfrac{1}{2}(a+b)(a+b+1) + b.
 $$
 
-We also write $2 = \lbrace 0, 1\rbrace $ and $\mathbb{N} = \lbrace x : x = x\rbrace $.
+We now prove the following lemma:
 
-Now we prove the following lemma:
+> **Lemma.** $\mathbf{Def}$ is *not* Cartesian closed.
 
-> **Lemma.** Assuming $\mathsf{PA}$ is consistent, $\mathcal{C}_\mathsf{PA}$ is *not* Cartesian closed.
+*Proof of the lemma.* Let $2 = \lbrace 0, 1 \rbrace$. Assume otherwise. Then $2^\mathbb{N}$ is an object of $\mathbf{Def}$, and is thus definable with a formula $\phi$.
 
-*Proof of the lemma.* Assume otherwise. Then a point of $2^\mathbb{N}$ is adjoint to a morphism $\mathbb{N} \to 2$, i.e. a provably total function $\mathbb{N} \to 2$. In particular, $2^\mathbb{N}$ has a point $e_0$, adjoint to the constant function $0$. Since $2^\mathbb{N}$ is an object of $\mathcal{C}_\mathsf{PA}$, it is definable by a formula $E(x)$. Let $i : E \to \mathbb{N}$ be the inclusion of $E$. Define $\Theta: \mathbb{N} \to E$ as follows:
+$2^\mathbb{N}$ has a point $p_0$, adjoint to the constant function $0$. Define $\Theta: \mathbb{N} \to 2^\mathbb{N}$ as follows:
 
 $$
 \Theta(n) = \begin{cases}
-n &n \in E \\
-e_0 &\text{otherwise}
+n &n \in 2^\mathbb{N} \\
+p_0 &\text{otherwise}
 \end{cases}
 $$
 
-It is routine to show that PA proves that $\Theta$ is a morphism, i.e. $\Theta$ is total on $\mathbb{N}$ with values in $E$. Observe that for every point $p$ of $2^\mathbb{N}$, $\Theta(i \circ p) = p$, so $\Theta$ is point surjective. Thus, by Lawvere's theorem, every morphism $2 \to 2$ has a fixed point. In particular, $0 \mapsto 1, 1 \mapsto 0$ has a fixed point, which implies $\mathsf{PA} \vdash 0 = 1$, contradicting the consistency of PA. □
+It is routine to check that $\Theta$ is definable, hence a morphism. Let $i : 2^\mathbb{N} \to \mathbb{N}$ be the inclusion. For every point $p$ of $2^\mathbb{N}$ we have $\Theta(i \circ p) = p$, so $\Theta$ is point surjective. Thus, by Lawvere's theorem, every morphism $2 \to 2$ has a fixed point. But $0 \mapsto 1, 1 \mapsto 0$ is definable and has no fixed point, a contradiction. □
+
+> **Remarks.**
+>
+> 1. Intuitively, an exponential $2^\mathbb{N}$ in $\mathbf{Def}$ would be a definable set of codes for all definable subsets of $\mathbb{N}$, together with a definable evaluation map $2^\mathbb{N} \times \mathbb{N} \to 2$; that is essentially a definable truth predicate. We will make this precise below as Tarski's theorem.
+>
+> 2. Let $\mathbf{Rec}$ be the category whose objects are *decidable* subsets of $\mathbb{N}$ and whose morphisms are *total computable* functions (not necessarily provably total). The same argument shows that $\mathbf{Rec}$ is also not Cartesian closed.
 
 So Lawvere's theorem, as stated, cannot be applied inside the categories where computation and arithmetic live.
 
-> **Remark.** Let $\mathbf{Rec}$ be the category whose objects are decidable subsets of $\mathbb{N}$ and whose morphisms are total computable functions (not necessarily *provably* total).  The same argument shows that $\mathbf{Rec}$ is also not Cartesian closed. ($\Theta$ is computable if $E$ is decidable.)
-
-Fortunately, the proof of the Lawvere's theorem can be generalized so as to not use exponentials: we only need a way to package "every morphism $A \to B$ has a code in $A$". Let us thus define as follows:
+Fortunately, the proof of Lawvere's theorem can be generalized so as to not use exponentials: we only need a way to package "every morphism $A \to B$ has a code in $A$". Let us thus define as follows:
 
 > **Definition.** Let $\mathcal{C}$ have finite products. A morphism $\phi : A \times A \to B$ is **weakly point surjective** if for every $h : A \to B$ there is a point $a$ of $A$ such that $\phi(\langle a, x \rangle) = h(x)$ for every point $x$ of $A$.
 
@@ -188,7 +190,7 @@ The Cartesian closed version is the special case $\phi = \bar f$.
 
 > **Corollary (Turing).** The halting problem is undecidable.
 
-*Proof.* Working in $\mathbf{Rec}$, we will identify each decidable subset with its decision program. As with $\mathcal{C}_\mathsf{PA}$, it has finite products via the pairing code.
+*Proof.* Working in $\mathbf{Rec}$, we will identify each decidable subset with its decision program. As with $\mathbf{Def}$, it has finite products via the pairing code.
 
 Assume that the halting problem is decidable, i.e. there exists a morphism $H : \mathbb{N} \times \mathbb{N} \to 2$ such that $H(e, n) = 1$ if program $e$ halts on input $n$, and $H(e, n) = 0$ otherwise. For a morphism $f: \mathbb{N} \to 2$, let $e_f$ be the program
 
@@ -208,7 +210,7 @@ Then $H(e_f, n) = f(n)$ for every $n$, so $H$ is weakly point surjective. By Law
 > 
 > for every sentence $\sigma$.
 
-*Proof.* Fix a Gödel numbering $\psi_0, \psi_1, \dots$ of the formulas with one free variable. Let $\mathbf{Def}$ be the category whose objects are $\mathbb{N}^k \; (k = 0, 1, 2, ...)$ and $2$, and whose morphisms are functions definable in the standard arithmetic. Finite products are given by $\mathbb{N}^k \times \mathbb{N}^l = \mathbb{N}^{k+l}$.
+*Proof.* Work in $\mathbf{Def}$, and fix a Gödel numbering $\psi_0, \psi_1, \dots$ of the formulas with one free variable.
 
 Suppose $\mathrm{True}$ exists. The substitution function $\mathrm{sub}(m, n) = \ulcorner \psi_m(\bar n) \urcorner$ is computable, hence definable. So
 
