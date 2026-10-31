@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Proving Eternal Recurrence from the Anthropic Principle"
+title: "Proving Eternal Recurrence from a Self-Locating Argument"
 date: 2026-10-16
 tags: ["Philosophy", "Probability Theory", "Essay"]
 lang: en
